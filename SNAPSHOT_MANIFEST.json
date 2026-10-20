@@ -6,8 +6,8 @@
   "research_release": "research_evidence_v13",
   "source_root": "/data/xuancheng",
   "source_unchanged_check": true,
-  "source_files": 707,
-  "source_bytes": 31459506,
+  "source_files": 710,
+  "source_bytes": 31467664,
   "excluded_classes": [
     "credentials and .env",
     "FreeSurfer license",
@@ -124,9 +124,10 @@
     {
       "path": "agent/modules/agent/backend/analysis_agent.py",
       "source": "/data/xuancheng/agent/modules/agent/backend/analysis_agent.py",
-      "bytes": 70551,
-      "sha256": "e2cc0489000f6f3149ab1ed8401a4e190e4ae3cfb1eec04cd4ab630f8380dfff",
-      "mode": "100644"
+      "bytes": 70663,
+      "sha256": "5f3bf1e173a13b3bd84f8863861adf43299b6c90ce6d30502274efc5ec7fc9c9",
+      "mode": "100644",
+      "synced_at": "2026-10-21T01:34:50.585421+08:00"
     },
     {
       "path": "agent/modules/agent/backend/analysis_artifacts.py",
@@ -159,9 +160,10 @@
     {
       "path": "agent/modules/agent/backend/analysis_internal_review.py",
       "source": "/data/xuancheng/agent/modules/agent/backend/analysis_internal_review.py",
-      "bytes": 10419,
-      "sha256": "843bae2724037a14c1186cb8b2289db855908916d92a75526401dca77f02cf41",
-      "mode": "100644"
+      "bytes": 12371,
+      "sha256": "17538fd19019b457d255677a5e02ea036db2df21bc67dcd3163d93074cc9bdae",
+      "mode": "100644",
+      "synced_at": "2026-10-21T01:34:50.585421+08:00"
     },
     {
       "path": "agent/modules/agent/backend/analysis_jobs.py",
@@ -173,9 +175,10 @@
     {
       "path": "agent/modules/agent/backend/analysis_knowledge.py",
       "source": "/data/xuancheng/agent/modules/agent/backend/analysis_knowledge.py",
-      "bytes": 17950,
-      "sha256": "cef19d86179029144d1b6990f29c5e1553ca4650f9824a508b76fdbea09a7ce7",
-      "mode": "100644"
+      "bytes": 17993,
+      "sha256": "52994406f7d7fc71e37b18f2af2cef9004e8e07f5e7f5dbb20e98df329371d5c",
+      "mode": "100644",
+      "synced_at": "2026-10-21T01:34:50.585421+08:00"
     },
     {
       "path": "agent/modules/agent/backend/analysis_method_graph.py",
@@ -197,6 +200,14 @@
       "bytes": 3149,
       "sha256": "e4caa1b23b6b4bb9d9a77baa0caf9546f7b414a24054f34d9a365a090dc913bb",
       "mode": "100644"
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_release.py",
+      "mode": "100644",
+      "source": "/data/xuancheng/agent/modules/agent/backend/analysis_release.py",
+      "bytes": 1436,
+      "sha256": "596f5a7c0626282419de840f1847e2da45b2c1b3533c19baa75d54625685e1f3",
+      "synced_at": "2026-10-21T01:34:50.585421+08:00"
     },
     {
       "path": "agent/modules/agent/backend/analysis_research.py",
@@ -372,6 +383,14 @@
       "bytes": 10285,
       "sha256": "af3d906f85389576a113849a3913c860153683f87c5a4cc12cf5500b6fe0385d",
       "mode": "100644"
+    },
+    {
+      "path": "agent/modules/agent/knowledge_analysis/research_release.json",
+      "mode": "100644",
+      "source": "/data/xuancheng/agent/modules/agent/knowledge_analysis/research_release.json",
+      "bytes": 380,
+      "sha256": "c1ff171c611054368b42115f9f101b59d4d3295fb153c1026472432604d455ef",
+      "synced_at": "2026-10-21T01:34:50.585421+08:00"
     },
     {
       "path": "agent/modules/agent/knowledge_analysis/runtime_inventory.json",
@@ -862,6 +881,17 @@
       "bytes": 3528,
       "sha256": "36d2fd66a001d645f8b46944bfa03eb2cc48acc2d9a6660fdd77de1ca2b0f1cc",
       "mode": "100644"
+    },
+    {
+      "path": "agent/modules/agent/tests/test_analysis_review_context_release.py",
+      "source": "/data/xuancheng/agent_overnight_20261020/method_graph_loop_20261020/test_review_context_release.py",
+      "bytes": 4235,
+      "sha256": "660d030fc0ced091230ee566b3297380bddef530b204a81f85f3b3475d83ef81",
+      "source_bytes": 4288,
+      "source_sha256": "efab3c6040170006fa96cd27038c7e3e0bc5cd63a8d79720576aeaafabbbcf01",
+      "mode": "100644",
+      "synced_at": "2026-10-21T01:34:50.585421+08:00",
+      "publication_transform": "Only replace candidate-module loader paths with repository-relative production modules; all eight test bodies and assertions are unchanged."
     },
     {
       "path": "agent/modules/agent/tests/test_analysis_runtime_inventory.py",
@@ -4992,5 +5022,69 @@
   ],
   "publication_archives": [
     "knowledge/software_graph/graph.json.gz"
-  ]
+  ],
+  "last_incremental_sync": {
+    "synced_at": "2026-10-21T01:34:50.585421+08:00",
+    "base_commit": "39799ff032a7b0c18d56ca293b951a78450747fb",
+    "original_created_at_preserved": true,
+    "product_files_copied_without_changes": [
+      "agent/modules/agent/backend/analysis_agent.py",
+      "agent/modules/agent/backend/analysis_internal_review.py",
+      "agent/modules/agent/backend/analysis_knowledge.py",
+      "agent/modules/agent/backend/analysis_release.py",
+      "agent/modules/agent/knowledge_analysis/research_release.json"
+    ],
+    "relocated_regression_tests": 8,
+    "changes": [
+      {
+        "path": "agent/modules/agent/backend/analysis_agent.py",
+        "source": "/data/xuancheng/agent/modules/agent/backend/analysis_agent.py",
+        "previous_sha256": "e2cc0489000f6f3149ab1ed8401a4e190e4ae3cfb1eec04cd4ab630f8380dfff",
+        "sha256": "5f3bf1e173a13b3bd84f8863861adf43299b6c90ce6d30502274efc5ec7fc9c9",
+        "bytes": 70663,
+        "source_transform": null
+      },
+      {
+        "path": "agent/modules/agent/backend/analysis_internal_review.py",
+        "source": "/data/xuancheng/agent/modules/agent/backend/analysis_internal_review.py",
+        "previous_sha256": "843bae2724037a14c1186cb8b2289db855908916d92a75526401dca77f02cf41",
+        "sha256": "17538fd19019b457d255677a5e02ea036db2df21bc67dcd3163d93074cc9bdae",
+        "bytes": 12371,
+        "source_transform": null
+      },
+      {
+        "path": "agent/modules/agent/backend/analysis_knowledge.py",
+        "source": "/data/xuancheng/agent/modules/agent/backend/analysis_knowledge.py",
+        "previous_sha256": "cef19d86179029144d1b6990f29c5e1553ca4650f9824a508b76fdbea09a7ce7",
+        "sha256": "52994406f7d7fc71e37b18f2af2cef9004e8e07f5e7f5dbb20e98df329371d5c",
+        "bytes": 17993,
+        "source_transform": null
+      },
+      {
+        "path": "agent/modules/agent/backend/analysis_release.py",
+        "source": "/data/xuancheng/agent/modules/agent/backend/analysis_release.py",
+        "previous_sha256": null,
+        "sha256": "596f5a7c0626282419de840f1847e2da45b2c1b3533c19baa75d54625685e1f3",
+        "bytes": 1436,
+        "source_transform": null
+      },
+      {
+        "path": "agent/modules/agent/knowledge_analysis/research_release.json",
+        "source": "/data/xuancheng/agent/modules/agent/knowledge_analysis/research_release.json",
+        "previous_sha256": null,
+        "sha256": "c1ff171c611054368b42115f9f101b59d4d3295fb153c1026472432604d455ef",
+        "bytes": 380,
+        "source_transform": null
+      },
+      {
+        "path": "agent/modules/agent/tests/test_analysis_review_context_release.py",
+        "sha256": "660d030fc0ced091230ee566b3297380bddef530b204a81f85f3b3475d83ef81",
+        "source_sha256": "efab3c6040170006fa96cd27038c7e3e0bc5cd63a8d79720576aeaafabbbcf01",
+        "bytes": 4235,
+        "source_transform": "Only replace candidate-module loader paths with repository-relative production modules; all eight test bodies and assertions are unchanged."
+      }
+    ],
+    "production_modified": false,
+    "full_cross_environment_deployment_verified": false
+  }
 }

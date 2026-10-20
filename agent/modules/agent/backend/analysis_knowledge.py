@@ -307,7 +307,8 @@ class KnowledgeStore:
         return results
 
     def _research_retriever(self):
-        configured = os.environ.get("AGENT_RESEARCH_EVIDENCE_ROOT")
+        from .analysis_release import configured_research_root
+        configured = configured_research_root()
         if not configured:
             return None
         if not hasattr(self, "_research_evidence"):

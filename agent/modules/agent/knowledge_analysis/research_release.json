@@ -1,0 +1,7 @@
+{
+  "schema": "primatex.research_release_pointer.v1",
+  "root": "/data/xuancheng/agent_overnight_20261020/research_evidence_v13",
+  "config_sha256": "6411bdf75670aa4897d984741a29c347f689535b9dfd8e1a803ac2e62180ba38",
+  "review_status": "AI_assisted_candidates_not_expert_reviewed",
+  "scope": "Read-only planning evidence; no automatic permission or anatomy/biological approval"
+}

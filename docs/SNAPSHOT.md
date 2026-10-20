@@ -4,7 +4,7 @@
 
 本次导出自服务器 /data/xuancheng/，核心代码为 agent/，最新研究知识为 agent_overnight_20261020/research_evidence_v13/。源目录没有 Git 历史；每个原始文件在 SNAPSHOT_MANIFEST.json 中记录来源与 SHA-256。
 
-发布时只读取服务器文件，没有停止或修改正在进行的开发。源文件导出后又逐一核对一次，确认该次快照内未发生并发变化。仓库不是服务器工作目录的自动镜像。
+发布时只读取服务器文件，没有停止或修改正在进行的开发。源文件导出后又逐一核对一次，确认该次快照内未发生并发变化。仓库不是服务器工作目录的自动镜像。2026-10-21 的增量同步保留初始快照时间，并在来源清单中记录各文件的新旧摘要；见 [本次同步与验证](SYNC_20261021.md)。
 
 ## 外部运行依赖
 
@@ -20,7 +20,7 @@
 | Embedding / tokenizer 缓存 | worker.py 当前绑定 /data/xuancheng/retrieval_pilot_20261020/embedding_verified 与 tokenizer_cache |
 | 分割模型和模板 | 参见 environment/manifests/、environment/recipes/ 和 environment/structural_env_README_zh.md |
 | 数据 | 自行准备有权使用的数据，并配置 Agent 的注册数据根目录 |
-| FastSurfer | 原项目以子模块引用，见 agent/.gitmodules；第三方代码与模型需按原项目方式准备 |
+| FastSurfer | 原项目保留了 agent/.gitmodules，但当前仓库没有根 .gitmodules 或 Git 子模块条目；clone --recurse-submodules 不会自动取得 FastSurfer，源码与模型需另行准备 |
 
 agent/modules/agent/requirements-coding.lock 是后端服务依赖，科学分析依赖仍位于隔离运行时；environment/retrieval/installed_requirements.txt 记录检索实验环境。
 
@@ -30,6 +30,8 @@ agent/modules/agent/requirements-coding.lock 是后端服务依赖，科学分�
 
     export AGENT_SOURCE_GRAPH_ROOT=/absolute/path/final_report/knowledge/software_graph
     export AGENT_RESEARCH_EVIDENCE_ROOT=/absolute/path/final_report/knowledge/research_v13
+
+新增的 knowledge_analysis/research_release.json 与服务器原文件保持一致，默认指向服务器上的 v13，并校验 config.json 摘要。新机器必须显式设置上面的 AGENT_RESEARCH_EVIDENCE_ROOT；路径不可用时会报错，不会自动猜测替代知识库。显式设置为空可关闭研究知识检索。
 
 config.json 和图谱包含校验摘要，保留了服务器原始值。迁移检索 Python 路径时，应使用正确的新环境；迁移 worker.py 中模型或 tokenizer 路径时，要重算 worker_sha256 及 snapshot_files 对应条目。修改任何受摘要保护的原文或图谱，也必须维护对应摘要，不能跳过完整性校验。
 
@@ -50,3 +52,7 @@ knowledge/method_audit/release_audit.json 是 v12 的历史抽取审计；当前
 ## 图谱无损归档
 
 连接器多次无法传输大型 JSON，因此软件接口图以 graph.json.gz 无损保存。先运行 python tools/verify_snapshot.py，工具会在注册目录内解压生成 graph.json，核对压缩包摘要、解压长度及原始 SHA-256；解压后的字节与服务器原文件完全一致。原始 JSON 不直接提交到 Git，避免重复保存同一份图谱。Agent 和图谱读取器代码没有因此修改。
+
+## 跨环境部署验收状态
+
+目录迁移冒烟测试已确认方法图谱可以加载、搜索和回读；原文联合检索仍受旧 Python、worker 模型及 tokenizer 路径约束。执行器的 SIF、科学 Python 运行时和授权文件也沿用原服务器默认路径，启动脚本的镜像环境变量并未完整传入该执行器。当前不能仅凭克隆与安装后端依赖就宣称全链路可用。后续应统一这些配置、准备外部依赖，并在干净 Linux 环境验证真实 API、隔离执行、前端与下载流程。此次同步未修改服务器服务或这些运行时默认值。

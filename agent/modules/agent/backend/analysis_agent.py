@@ -323,7 +323,8 @@ class AnalysisTools:
 
     def _method_graph(self) -> Any:
         if self._method_graph_store is None:
-            root = os.environ.get("AGENT_RESEARCH_EVIDENCE_ROOT")
+            from .analysis_release import configured_research_root
+            root = configured_research_root()
             if not root:
                 raise ValueError("Method graph release is not configured")
             self._method_graph_store = MethodGraph(Path(root))
@@ -988,7 +989,7 @@ def _build_graph(coding_agent: Any, tools: AnalysisTools, validator: Any,
                     model=tools._internal_review_model,
                     reserve=lambda: tools._tick(model=True),
                     method_reader=(lambda method_id: tools._method_graph().read(method_id))
-                                  if os.environ.get("AGENT_RESEARCH_EVIDENCE_ROOT") else None)
+                                  if __import__(__package__ + ".analysis_release", fromlist=["configured_research_root"]).configured_research_root() else None)
             except Exception as exc:
                 review = {"decision": "insufficient_evidence", "protocol_valid": False,
                           "findings": [], "limitations": [
