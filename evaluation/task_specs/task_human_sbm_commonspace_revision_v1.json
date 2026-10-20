@@ -1,0 +1,31 @@
+{
+  "task_id": "human_sbm_commonspace_revision_v1",
+  "subjects": [
+    "100610",
+    "101309",
+    "101410"
+  ],
+  "input_roots": [
+    "/data/xuancheng/human_fastsurfer/subjects/100610",
+    "/data/xuancheng/human_fastsurfer/subjects/101309",
+    "/data/xuancheng/human_fastsurfer/subjects/101410",
+    "/data/xuancheng/agent_overnight_20261020/sbm_method_context",
+    "/data/xuancheng/agent_overnight_20261020/workspace/.analysis_runs/856a73184952db1c1aa2cce8ae3370ca/923563e242d2480f82f68401f5c0bfd4"
+  ],
+  "predecessor_run": "human_sbm_commonspace_v1_20261020T054001_986579",
+  "include_predecessor_outputs": true,
+  "required_artifacts": [
+    "analysis_plan.json",
+    "commonspace_lh.tsv",
+    "commonspace_rh.tsv",
+    "commands.json",
+    "qc_summary.json",
+    "software_outputs.json",
+    "report.md",
+    "fig_sphere_mean_sd.png",
+    "fig_distributions.png"
+  ],
+  "message": "继续你上一轮SBM工作，进行一次限定范围的自主修订。/inputs/0、1、2仍是100610、101309、101410的只读原始重建，/inputs/3是官方教程/真实安装帮助，/inputs/4是你上一轮实际代码、软件输出和日志（只读、错误也保留）。不要重新长时间发现数据。旧代码可审查，必须在本次/work自主生成新的修订/复核Python并执行；不得直接调用上轮分析脚本冒充新分析，不改原始输入和旧输出。\n外部检查发现四类问题：\n1. 两个commonspace TSV真实存在但未列入最终manifest。当前正式后端已添加调用方固定产物合同，下面9个文件必须全部在最终验证产物中，不能删掉困难文件得到完成状态。TSV有NA时，finite_columns应只声明确实全有限的列；不要将NA强行改成0或放宽行/唯一键约束。表每半球40962个共同顶点。\n2. 表只保留4位小数，丢失了实际软件/统计数值精度。重新输出至少6位、建议8位小数，均值和ddof1 SD从未舍入的软件值计算，不能从四位小数表反算。\n3. nnfr同时平均厚度和cortex二值mask，然后以mask>0.5筛选，会保留部分皮层/非皮层混合贡献，不能宣称皮层外0完全不进入统计。读官方mapmethod定义，选择能明确避免该问题的成熟办法。可以采用文档支持的nnf同时传播标量和二值mask（说明低分辨率会遗漏部分源顶点等代价），也可用另一有依据、可验证的方案；不能只改文字或任意阈值隐藏混合。每个有效值必须有限、属于正确传播的皮层支持；保留缺失/n口径，不杜撰小厚度剔除阈值。\n4. 之前x_ico/y_ico/z_ico来自重采样fsaverage sphere的坐标值，不是目标ico6本身的权威坐标。目标可直接读取/opt/freesurfer-7.2.0/lib/bem/ic6.tri，按真实文件的顶点ID顺序和FreeSurfer注册球半径解释并核对，不能把重采样的坐标属性冒充目标几何。图标为注册球面，坐标不是个体皮层解剖定位。\n另一个解析问题：读取cortex.label时第二行是顶点数量，不是顶点记录。使用成熟NiBabel read_label或正确跳过头，并核对声明数、唯一数、范围。上轮计数行恰巧落在本来已属于皮层的顶点中，所以六个人脑二值mask成员没有变化，但cortex_vertices诊断数多记了一条；新代码不要继续这个错误。\n保留ico6共同目标和上述9项交付名称，表schema可沿上轮增加有意义的字段；中间文件仍用subject_hemi_thick_ico6.mgh、subject_hemi_cortex_ico6.mgh，以便前后追踪，但新参数和来源必须在commands/plan中写清。可保留实际中间MGH，不能伪装不支持的影像artifact类型。对新软件命令检查真正的returncode，遇到失败有限修正后未成功不得继续伪装完成；旧失败记录单列，成功重试和最终有效输出区别说明。按本次真实软件输出更新hash、shape、目标、掩膜/n、统计、图和报告，不沿用旧数值或旧成功标签。没有外部参考答案/评分代码提供给你，不要自行声称独立数值或专家QC已通过。\n先做最小必要方法核对再开始代码，避免重复十几次文件发现。最后在所有复核之后完整finalize_artifacts一次；9个必需文件均须登记。每个新问题最多两轮有据修复；仍失败如实保留，不死磕。",
+  "revision_round": 1,
+  "next_review": "Keep original 5.1e-6 tolerances and source references. Independently decode final MGH, verify real nnf/other mapping, binary masks, true ico coordinates, unrounded n/mean/ddof1 SD, complete required artifacts, hashes and trustworthy receipts. No reference/gold to generation."
+}

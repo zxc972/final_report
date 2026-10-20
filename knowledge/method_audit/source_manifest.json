@@ -1,0 +1,284 @@
+[
+  {
+    "id": "fs_morph",
+    "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/MorphAndRecon",
+    "evidence_class": "official_tutorial",
+    "attempts": [],
+    "status": "downloaded",
+    "resolved_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/MorphAndRecon",
+    "raw_sha256": "6954059c43df11caf40b7ddad38a548a044309cec3d12f67d1f74fe6ed3f073f",
+    "text_sha256": "aecd9b72d1d4c78f369350ef5a80f6ffa7b65cc7f26cc4a9de82ea286220c628",
+    "text_chars": 31581,
+    "fetched_utc": "2026-10-20T15:23:25Z"
+  },
+  {
+    "id": "fs_parcstats",
+    "url": "https://www.freesurfer.net/fswiki/parcstats",
+    "evidence_class": "official_documentation",
+    "attempts": [],
+    "status": "downloaded",
+    "resolved_url": "https://www.freesurfer.net/fswiki/parcstats",
+    "raw_sha256": "7365c66dd8bcd7487abf754dceb716e81e347f84e617485523bf1aed7de5d7f5",
+    "text_sha256": "7f707c062f079a1e48d5fd4f4de5e2ab7f5f21cec61bfccd06474c26f130f216",
+    "text_chars": 1658,
+    "fetched_utc": "2026-10-20T15:23:25Z"
+  },
+  {
+    "id": "fs_lgi",
+    "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/LGI",
+    "evidence_class": "official_documentation",
+    "attempts": [],
+    "status": "downloaded",
+    "resolved_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/LGI",
+    "raw_sha256": "81fe23e9863a13c6f58df6eff1f4e9cc5d833c80405e312a374155ab6641a877",
+    "text_sha256": "18c98626dcc45aee0c765860b4fcae64d2c24ae5a30d96e64c599ee616b91f48",
+    "text_chars": 9341,
+    "fetched_utc": "2026-10-20T15:23:25Z"
+  },
+  {
+    "id": "fs_samseg",
+    "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/Samseg",
+    "evidence_class": "official_documentation",
+    "attempts": [],
+    "status": "downloaded",
+    "resolved_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/Samseg",
+    "raw_sha256": "97395628f2c5a330751c1ddce7581c6a6e8d9388a30c4d2d65443fb2b6def018",
+    "text_sha256": "08d3c97927dcfaf2d4230086a6a97b0e519badc794bb3dbd6be7ea2a87f7139b",
+    "text_chars": 14482,
+    "fetched_utc": "2026-10-20T15:23:25Z"
+  },
+  {
+    "id": "fsl_vbm",
+    "url": "https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/fslvbm.html",
+    "evidence_class": "official_documentation",
+    "attempts": [],
+    "status": "downloaded",
+    "resolved_url": "https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/fslvbm.html",
+    "raw_sha256": "b5798f3c47ef8c321994e1111cd0404b2698ceeb24296990154805ae0767a52f",
+    "text_sha256": "f2da5980a4ce2f76887bd73cdaee559b0bad7e955712e7ca585fd5bf300fdadc",
+    "text_chars": 18534,
+    "fetched_utc": "2026-10-20T15:23:26Z"
+  },
+  {
+    "id": "cat",
+    "url": "https://neuro-jena.github.io/cat/",
+    "evidence_class": "author_documentation",
+    "attempts": [],
+    "status": "downloaded",
+    "resolved_url": "https://neuro-jena.github.io/cat/",
+    "raw_sha256": "57e343438ce6d22639f88eef702584bfbb30cef9308bc7878a36a868b849521f",
+    "text_sha256": "4d10c5aa5d8708fbccbf6922777fafc0ac6251edaa06f78e39e1cce51863d976",
+    "text_chars": 11902,
+    "fetched_utc": "2026-10-20T15:23:26Z"
+  },
+  {
+    "id": "macapype_commands",
+    "url": "https://macatools.github.io/macapype/command.html",
+    "evidence_class": "author_documentation",
+    "attempts": [],
+    "status": "downloaded",
+    "resolved_url": "https://macatools.github.io/macapype/command.html",
+    "raw_sha256": "a72e89659c839e701a6c938920fa66a7d0a2652defacbfbfbf968591e63e856f",
+    "text_sha256": "d33789a3a71e9582fc7b23797a0ba5170d5a5f162751d8ebb47cdffea4af9519",
+    "text_chars": 7401,
+    "fetched_utc": "2026-10-20T15:23:26Z"
+  },
+  {
+    "id": "nmt",
+    "url": "https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/nonhuman/macaque_tempatl/template_nmtv2.html",
+    "evidence_class": "official_resource",
+    "attempts": [],
+    "status": "downloaded",
+    "resolved_url": "https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/nonhuman/macaque_tempatl/template_nmtv2.html",
+    "raw_sha256": "96080c311ef0425f912ad03adb4ba821cb2f2cd5c0030de68e2b4202cfa0bfba",
+    "text_sha256": "bc416078708a1ddf47bac3969fef66061ecadbe9fe8e3e598e163a3dbc6e05a2",
+    "text_chars": 6329,
+    "fetched_utc": "2026-10-20T15:23:26Z"
+  },
+  {
+    "id": "civet_macaque",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7615896/",
+    "evidence_class": "primary_paper",
+    "attempts": [
+      {
+        "attempt": 1,
+        "error_type": "AssertionError",
+        "error": "No substantial source text"
+      }
+    ],
+    "status": "downloaded",
+    "resolved_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7615896/",
+    "raw_sha256": "0c43a604fa4c9965015415981f6d3dd76d9c1c2c9171871653ee354eb61b6fbb",
+    "text_sha256": "b89b408862a3291fb45f6211d6971498d1c2c4820b5004982d39470ac3b12d2b",
+    "text_chars": 88524,
+    "fetched_utc": "2026-10-20T15:23:29Z"
+  },
+  {
+    "id": "crossspecies_msm",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7180052/",
+    "evidence_class": "primary_paper",
+    "attempts": [
+      {
+        "attempt": 1,
+        "error_type": "AssertionError",
+        "error": "No substantial source text"
+      }
+    ],
+    "status": "downloaded",
+    "resolved_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7180052/",
+    "raw_sha256": "6c3c77c64d5b6eb6e3f67d957a1d0ad391609c19fc6e2a736508b50a1a57fc57",
+    "text_sha256": "f75b8dba1825eff84c48163bba8b1b28dd9e69bd3d3ff72797341188f8831cbe",
+    "text_chars": 162981,
+    "fetched_utc": "2026-10-20T15:23:30Z"
+  },
+  {
+    "id": "nibabel_fs",
+    "url": "https://nipy.org/nibabel/reference/nibabel.freesurfer.html",
+    "evidence_class": "author_api",
+    "attempts": [],
+    "status": "downloaded",
+    "resolved_url": "https://nipy.org/nibabel/reference/nibabel.freesurfer.html",
+    "raw_sha256": "349c5c54f05bbbe7aa3343b6db63eb8f6e2b6e4f2cfb43b1d8be0fdefcd03946",
+    "text_sha256": "a7e8fcd468b10f64b7fb3e3c215409de2cf9df6e5b4a9b150741a13d3dddaf4b",
+    "text_chars": 18431,
+    "fetched_utc": "2026-10-20T15:23:28Z"
+  },
+  {
+    "id": "trimesh_triangles",
+    "url": "https://trimesh.org/trimesh.triangles.html",
+    "evidence_class": "author_api",
+    "attempts": [],
+    "status": "downloaded",
+    "resolved_url": "https://trimesh.org/trimesh.triangles.html",
+    "raw_sha256": "5a75207685188908cdabc291dff11915b95c8c0b270b6e1ee9332e143a6ae4ad",
+    "text_sha256": "ad70416df378880be8edcd6f91b9fecba5f57ee26fa8e7b8ef7b423a4048557e",
+    "text_chars": 9414,
+    "fetched_utc": "2026-10-20T15:23:29Z"
+  },
+  {
+    "id": "ants_thickness",
+    "url": "https://raw.githubusercontent.com/ANTsX/ANTs/main/Scripts/antsCorticalThickness.sh",
+    "evidence_class": "author_source",
+    "attempts": [
+      {
+        "attempt": 1,
+        "error_type": "URLError",
+        "error": "<urlopen error [Errno 104] Connection reset by peer>"
+      },
+      {
+        "attempt": 2,
+        "error_type": "URLError",
+        "error": "<urlopen error [Errno 101] Network is unreachable>"
+      }
+    ],
+    "status": "failed"
+  },
+  {
+    "id": "andy_roi",
+    "url": "https://andysbrainbook.readthedocs.io/en/latest/FreeSurfer/FS_ShortCourse/FS_11_ROIAnalysis.html",
+    "evidence_class": "author_tutorial",
+    "attempts": [],
+    "status": "downloaded",
+    "resolved_url": "https://andysbrainbook.readthedocs.io/en/latest/FreeSurfer/FS_ShortCourse/FS_11_ROIAnalysis.html",
+    "raw_sha256": "921cb052352f587e2fd5f0e01f4fc43c5c2cb5424fdaff832c791e1604d15ca0",
+    "text_sha256": "55bf4c27ffc47ec64b635855dfccaa6f73ea532a2c9abc8ca6b7530c7b8537f1",
+    "text_chars": 9168,
+    "fetched_utc": "2026-10-20T15:23:30Z"
+  },
+  {
+    "id": "andy_failures",
+    "url": "https://andysbrainbook.readthedocs.io/en/latest/FreeSurfer/FS_ShortCourse/FS_12_FailureModes.html",
+    "evidence_class": "author_tutorial",
+    "attempts": [],
+    "status": "downloaded",
+    "resolved_url": "https://andysbrainbook.readthedocs.io/en/latest/FreeSurfer/FS_ShortCourse/FS_12_FailureModes.html",
+    "raw_sha256": "f62ca8c0fba73229eada60b9372a9ae09553b2f6e0da99e438d300dc89055cd8",
+    "text_sha256": "3fe479f48d9ca9e678e24adb3289fada0c7d50d31d189204d7d46055a0ebc854",
+    "text_chars": 9650,
+    "fetched_utc": "2026-10-20T15:23:30Z"
+  },
+  {
+    "id": "alex_samseg",
+    "url": "https://alexbrain.cn/?p=840",
+    "evidence_class": "personal_tutorial",
+    "attempts": [],
+    "status": "downloaded",
+    "resolved_url": "https://alexbrain.cn/?p=840",
+    "raw_sha256": "3338c3577c53edf933929375ea94d64156010d5a7702efb67becde9e29b1a1d0",
+    "text_sha256": "52d6ab157a824e938d62ae81ee05b3e7d68065a670559b1cda00b13d9ac95cb9",
+    "text_chars": 371,
+    "fetched_utc": "2026-10-20T15:23:30Z"
+  },
+  {
+    "id": "alex_hcp",
+    "url": "https://alexbrain.cn/?p=820",
+    "evidence_class": "personal_tutorial",
+    "attempts": [],
+    "status": "downloaded",
+    "resolved_url": "https://alexbrain.cn/?p=820",
+    "raw_sha256": "f664d35f23028fbec8538a1489a07f976435a9d4ac94b5eca2eea3635bc9a590",
+    "text_sha256": "184c475142355ed8f5c5a24ea871214c460ca73b6a869069f535663120ccd1c0",
+    "text_chars": 548,
+    "fetched_utc": "2026-10-20T15:23:31Z"
+  },
+  {
+    "id": "reflexion",
+    "url": "https://arxiv.org/abs/2303.11366",
+    "evidence_class": "primary_paper",
+    "attempts": [],
+    "status": "downloaded",
+    "resolved_url": "https://arxiv.org/abs/2303.11366",
+    "raw_sha256": "3e603a9b007a656c3a0f28f1b618cf972c186d7ac7d2e0c5be3dcb11c565bf1a",
+    "text_sha256": "4dd65bbb7fc90d3af058637555a9bdbbba26576e444a8a4a5eebbb035bb039f0",
+    "text_chars": 5058,
+    "fetched_utc": "2026-10-20T15:23:31Z"
+  },
+  {
+    "id": "codeact",
+    "url": "https://arxiv.org/abs/2402.01030",
+    "evidence_class": "primary_paper",
+    "attempts": [],
+    "status": "downloaded",
+    "resolved_url": "https://arxiv.org/abs/2402.01030",
+    "raw_sha256": "17ef80244a018ddd41f51ff461da54e879c2a1103e719de1b2ec0b7a3c4920bb",
+    "text_sha256": "70f270af6ac50e7571203d0906de24f53d557ffd04c4bf4050b9b62f6c15dc1f",
+    "text_chars": 5249,
+    "fetched_utc": "2026-10-20T15:23:31Z"
+  },
+  {
+    "id": "reflexion_code",
+    "url": "https://raw.githubusercontent.com/noahshinn/reflexion/main/README.md",
+    "evidence_class": "author_source",
+    "attempts": [
+      {
+        "attempt": 1,
+        "error_type": "URLError",
+        "error": "<urlopen error [Errno 101] Network is unreachable>"
+      },
+      {
+        "attempt": 2,
+        "error_type": "URLError",
+        "error": "<urlopen error [Errno 101] Network is unreachable>"
+      }
+    ],
+    "status": "failed"
+  },
+  {
+    "id": "codeact_code",
+    "url": "https://raw.githubusercontent.com/xingyaoww/code-act/main/README.md",
+    "evidence_class": "author_source",
+    "attempts": [
+      {
+        "attempt": 1,
+        "error_type": "URLError",
+        "error": "<urlopen error [Errno 104] Connection reset by peer>"
+      },
+      {
+        "attempt": 2,
+        "error_type": "URLError",
+        "error": "<urlopen error [Errno 101] Network is unreachable>"
+      }
+    ],
+    "status": "failed"
+  }
+]

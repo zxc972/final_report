@@ -1,0 +1,317 @@
+{
+  "created_utc": "2026-10-13T04:06:43.639444+00:00",
+  "status": "installed_and_validated",
+  "image": {
+    "path": "/data/xuancheng/structural_env/images/afni-c3d.sif",
+    "sha256": "980016ba9f8c92189bd3d5fd15474c708ffd87add86cc1d1037b9bb160a2b36d",
+    "bytes": 296300544,
+    "architecture": "x86_64",
+    "runtime": "Apptainer 1.4.5",
+    "gpu_required": false
+  },
+  "AFNI": {
+    "version": "26.3.02",
+    "compile_date": "2026-10-09",
+    "official_url": "https://afni.nimh.nih.gov/pub/dist/tgz/linux_rocky_8.tgz",
+    "frozen_archive": "/data/xuancheng/structural_env/cache/structural_afni/linux_rocky_8.tgz",
+    "sha256": "6b0d2d09bd42a7f50c9501f3dd514ad4d29b0559a4d016953f910ff924ac9485",
+    "bytes": 161678763,
+    "license": "Primarily U.S. Government public domain and CC BY 4.0; bundled components have separate licenses",
+    "license_file": "/data/xuancheng/structural_env/cache/structural_afni/AFNI_LICENSE.txt",
+    "license_official_url": "https://github.com/afni/afni/blob/master/LICENSE.txt",
+    "license_upstream_blob_sha": "b0a3b74dbd11d9aa7d530522a1cfa76f78fc1656",
+    "note": "Upstream archive URL is rolling; preserved local archive and SHA256 define the installed distribution"
+  },
+  "C3D": {
+    "version": "1.4.4",
+    "release_date": "2025-07-29",
+    "compile_date": "2025-08-07",
+    "source_commit": "ecdd33ef4fae481cd0bb5161062b54d1907d984b",
+    "source_url": "https://github.com/pyushkevich/c3d/tree/ecdd33ef4fae481cd0bb5161062b54d1907d984b",
+    "official_url": "https://downloads.sourceforge.net/project/c3d/c3d/Experimental/c3d-1.4.4-Linux-gcc64.tar.gz",
+    "distribution_channel": "Official versioned Experimental Linux distribution",
+    "frozen_archive": "/data/xuancheng/structural_env/cache/structural_c3d/c3d-1.4.4-Linux-gcc64.tar.gz",
+    "sha256": "4930f38ce81b119a375ca416871a597545dd779bf45f22572dcd5e0ea7ce0407",
+    "bytes": 95033870,
+    "license": "GPL-3.0",
+    "license_file": "/data/xuancheng/structural_env/cache/structural_c3d/C3D_COPYING.txt"
+  },
+  "os_runtime_snapshot": {
+    "source_image": "/data/xuancheng/agent/PrimateX_1_7.sif",
+    "source_image_sha256": "2eb7c5f702d6f72b5b87e731d51e00dff11fa151cc6c3e72b49f3d6c40019932",
+    "source_image_hash_record": "/data/xuancheng/structural_env/manifests/existing-images.sha256",
+    "source_userspace": "Ubuntu 22.04.5",
+    "dpkg_versions": "base-files\t12ubuntu4.7\nbc\t1.07.1-3build1\ncoreutils\t8.32-4.1ubuntu1.2\ndebianutils\t5.5-1ubuntu2\nfile\t1:5.41-3ubuntu0.1\nfindutils\t4.8.0-1ubuntu3\ngcc-12-base\t12.3.0-1ubuntu1~22.04.2\nlibacl1\t2.3.1-1\nlibattr1\t1:2.5.1-1build1\nlibbrotli1\t1.0.9-2build6\nlibbsd0\t0.11.5-1\nlibdb5.3\t5.3.28+dfsg1-0.8ubuntu3\nlibffi8\t3.4.2-4\nlibfontconfig1\t2.13.1-4.2ubuntu5\nlibfreetype6\t2.11.1+dfsg-1ubuntu0.3\nlibgcrypt20\t1.9.4-3ubuntu3\nlibgl1\t1.4.0-1\nlibglib2.0-0\t2.72.4-0ubuntu2.6\nlibglvnd0\t1.4.0-1\nlibglx0\t1.4.0-1\nlibgmp10\t2:6.2.1+dfsg-3ubuntu1\nlibgomp1\t12.3.0-1ubuntu1~22.04.2\nlibgssapi-krb5-2\t1.19.2-2ubuntu0.7\nlibice6\t2:1.0.10-1build2\nlibk5crypto3\t1.19.2-2ubuntu0.7\nlibkrb5-3\t1.19.2-2ubuntu0.7\nlibkrb5support0\t1.19.2-2ubuntu0.7\nliblz4-1\t1.9.3-2build2\nlibmagic1\t1:5.41-3ubuntu0.1\nlibmd0\t1.0.4-1build1\nlibmpdec3\t2.5.1-2build2\nlibncursesw6\t6.3-2ubuntu0.1\nlibnsl2\t1.3.0-2build2\nlibpcre2-8-0\t10.39-3ubuntu0.1\nlibpng16-16\t1.6.37-3ubuntu0.1\nlibsm6\t2:1.2.3-1build2\nlibsqlite3-0\t3.37.2-2ubuntu0.5\nlibssl3\t3.0.2-0ubuntu1.20\nlibstdc++6\t12.3.0-1ubuntu1~22.04.2\nlibsystemd0\t249.11-0ubuntu3.17\nlibtinfo6\t6.3-2ubuntu0.1\nlibuuid1\t2.37.2-4ubuntu3.4\nlibx11-6\t2:1.7.5-1ubuntu0.3\nlibxau6\t1:1.0.9-1build5\nlibxcb1\t1.14-3ubuntu3\nlibxdmcp6\t1:1.1.3-0ubuntu5\nlibxext6\t2:1.3.4-1build1\nlibxft2\t2.3.4-1\nlibxinerama1\t2:1.1.4-3\nlibxmu6\t2:1.1.3-3\nlibxpm4\t1:3.5.12-1ubuntu0.22.04.2\nlibxrender1\t1:0.9.10-1build4\nlibxt6\t1:1.2.1-1\nlibzstd1\t1.4.8+dfsg-3build1\nmawk\t1.3.4.20200120-3\nncurses-bin\t6.3-2ubuntu0.1\npython3.10-minimal\t3.10.12-1~22.04.12\ntzdata\t2025b-0ubuntu0.22.04.1\n",
+    "glibc": "2.35-0ubuntu3.11",
+    "libstdcxx": "12.3.0-1ubuntu1~22.04.2",
+    "python": "Ubuntu system Python 3.10.12",
+    "scope": "Only OS runtime libraries and shell/Python/coreutils; no neuroimaging tools from source SIF",
+    "loader_family": "Consistent Ubuntu glibc/ld-linux family; no RHEL host libc copied",
+    "file_inventory": "/data/xuancheng/structural_env/cache/structural_afni/runtime-report.json",
+    "component_copyrights": "/usr/share/licenses/ubuntu inside the image"
+  },
+  "runtime_dependency_rpms": [
+    {
+      "file": "/data/xuancheng/structural_env/cache/structural_afni/rpms/libXfont2-2.0.3-12.el9_8.3.x86_64.rpm",
+      "sha256": "8b0ec512e0e383da3e2a3d9cd5da20e8c44a38afa2082cf476fc3141b797c904",
+      "bytes": 146352,
+      "name": "libXfont2",
+      "version": "2.0.3-12.el9_8.3",
+      "license": "MIT",
+      "official_url": "https://dl.rockylinux.org/pub/rocky/9/AppStream/x86_64/os/Packages/l/libXfont2-2.0.3-12.el9_8.3.x86_64.rpm",
+      "signature_verified": true,
+      "signature_verification_database": "/data/xuancheng/structural_env/cache/structural_afni/rpms/rpmdb"
+    },
+    {
+      "file": "/data/xuancheng/structural_env/cache/structural_afni/rpms/libXp-1.0.3-11.el9.x86_64.rpm",
+      "sha256": "14d4cbc45d7c31c6b9d66bda9f78ae1ca51c939d7eff66dfd61557d5d4c64929",
+      "bytes": 31785,
+      "name": "libXp",
+      "version": "1.0.3-11.el9",
+      "license": "MIT",
+      "official_url": "https://dl.rockylinux.org/pub/rocky/9/AppStream/x86_64/os/Packages/l/libXp-1.0.3-11.el9.x86_64.rpm",
+      "signature_verified": true,
+      "signature_verification_database": "/data/xuancheng/structural_env/cache/structural_afni/rpms/rpmdb"
+    },
+    {
+      "file": "/data/xuancheng/structural_env/cache/structural_afni/rpms/libfontenc-1.1.3-17.el9.x86_64.rpm",
+      "sha256": "867e2805940f8a3da79fe085ad65dddc3e9968e72f14f076e74c99f28220fe23",
+      "bytes": 30582,
+      "name": "libfontenc",
+      "version": "1.1.3-17.el9",
+      "license": "MIT",
+      "official_url": "https://dl.rockylinux.org/pub/rocky/9/AppStream/x86_64/os/Packages/l/libfontenc-1.1.3-17.el9.x86_64.rpm",
+      "signature_verified": true,
+      "signature_verification_database": "/data/xuancheng/structural_env/cache/structural_afni/rpms/rpmdb"
+    },
+    {
+      "file": "/data/xuancheng/structural_env/cache/structural_afni/rpms/libjpeg-turbo-2.0.90-7.el9.x86_64.rpm",
+      "sha256": "fa94c3ec7cc34480d79e592b373eeb54ece8a68e7b925fe2de187db274ca0cbc",
+      "bytes": 178123,
+      "name": "libjpeg-turbo",
+      "version": "2.0.90-7.el9",
+      "license": "IJG",
+      "official_url": "https://dl.rockylinux.org/pub/rocky/9/AppStream/x86_64/os/Packages/l/libjpeg-turbo-2.0.90-7.el9.x86_64.rpm",
+      "signature_verified": true,
+      "signature_verification_database": "/data/xuancheng/structural_env/cache/structural_afni/rpms/rpmdb"
+    },
+    {
+      "file": "/data/xuancheng/structural_env/cache/structural_afni/rpms/libxkbfile-1.1.0-8.el9.x86_64.rpm",
+      "sha256": "e2b4cfd781ce91e12cd760c612d4ed603f763d17ef215ea603be5b4c91b4c82f",
+      "bytes": 90341,
+      "name": "libxkbfile",
+      "version": "1.1.0-8.el9",
+      "license": "MIT",
+      "official_url": "https://dl.rockylinux.org/pub/rocky/9/AppStream/x86_64/os/Packages/l/libxkbfile-1.1.0-8.el9.x86_64.rpm",
+      "signature_verified": true,
+      "signature_verification_database": "/data/xuancheng/structural_env/cache/structural_afni/rpms/rpmdb"
+    },
+    {
+      "file": "/data/xuancheng/structural_env/cache/structural_afni/rpms/mesa-libGLU-9.0.1-6.el9.x86_64.rpm",
+      "sha256": "c7da4f0a399f5b9d5833dc1f5d0f388d9b5ecf6cd7ad6fbd9397f5a661393a68",
+      "bytes": 149718,
+      "name": "mesa-libGLU",
+      "version": "9.0.1-6.el9",
+      "license": "MIT",
+      "official_url": "https://dl.rockylinux.org/pub/rocky/9/AppStream/x86_64/os/Packages/m/mesa-libGLU-9.0.1-6.el9.x86_64.rpm",
+      "signature_verified": true,
+      "signature_verification_database": "/data/xuancheng/structural_env/cache/structural_afni/rpms/rpmdb"
+    },
+    {
+      "file": "/data/xuancheng/structural_env/cache/structural_afni/rpms/mesa-libGLw-8.0.0-23.el9.x86_64.rpm",
+      "sha256": "1fdf4c16d17cd3ec8a72f425f5e592e4b133fa5c96c02c99be0bfb5eac049a6c",
+      "bytes": 18659,
+      "name": "mesa-libGLw",
+      "version": "8.0.0-23.el9",
+      "license": "MIT",
+      "official_url": "https://dl.rockylinux.org/pub/rocky/9/AppStream/x86_64/os/Packages/m/mesa-libGLw-8.0.0-23.el9.x86_64.rpm",
+      "signature_verified": true,
+      "signature_verification_database": "/data/xuancheng/structural_env/cache/structural_afni/rpms/rpmdb"
+    },
+    {
+      "file": "/data/xuancheng/structural_env/cache/structural_afni/rpms/motif-2.3.4-32.el9.x86_64.rpm",
+      "sha256": "8dcbceb300107326e7bfbddfc199fe9c91eb6c2935d8e108223bee336dfa2093",
+      "bytes": 1522693,
+      "name": "motif",
+      "version": "2.3.4-32.el9",
+      "license": "LGPLv2+",
+      "official_url": "https://dl.rockylinux.org/pub/rocky/9/AppStream/x86_64/os/Packages/m/motif-2.3.4-32.el9.x86_64.rpm",
+      "signature_verified": true,
+      "signature_verification_database": "/data/xuancheng/structural_env/cache/structural_afni/rpms/rpmdb"
+    },
+    {
+      "file": "/data/xuancheng/structural_env/cache/structural_afni/rpms/netpbm-10.95.00-3.el9.x86_64.rpm",
+      "sha256": "82b54406eef02bfa3fb6dc7f260a350b84978c0c42140868856fe39dbeb924db",
+      "bytes": 188664,
+      "name": "netpbm",
+      "version": "10.95.00-3.el9",
+      "license": "BSD and GPLv2 and IJG and MIT and Public Domain",
+      "official_url": "https://dl.rockylinux.org/pub/rocky/9/AppStream/x86_64/os/Packages/n/netpbm-10.95.00-3.el9.x86_64.rpm",
+      "signature_verified": true,
+      "signature_verification_database": "/data/xuancheng/structural_env/cache/structural_afni/rpms/rpmdb"
+    },
+    {
+      "file": "/data/xuancheng/structural_env/cache/structural_afni/rpms/netpbm-progs-10.95.00-3.el9.x86_64.rpm",
+      "sha256": "567939b161d3a74fa83a4c6262f6041b833eb17fb2fa3a15ae842ddc49e3a095",
+      "bytes": 2354868,
+      "name": "netpbm-progs",
+      "version": "10.95.00-3.el9",
+      "license": "BSD and GPLv2 and IJG and MIT and Public Domain",
+      "official_url": "https://dl.rockylinux.org/pub/rocky/9/AppStream/x86_64/os/Packages/n/netpbm-progs-10.95.00-3.el9.x86_64.rpm",
+      "signature_verified": true,
+      "signature_verification_database": "/data/xuancheng/structural_env/cache/structural_afni/rpms/rpmdb"
+    },
+    {
+      "file": "/data/xuancheng/structural_env/cache/structural_afni/rpms/pixman-0.40.0-6.el9_3.x86_64.rpm",
+      "sha256": "f90f7b61c355aae65c1c94ab19a6538212ba4f64236457fee42793710331321c",
+      "bytes": 275293,
+      "name": "pixman",
+      "version": "0.40.0-6.el9_3",
+      "license": "MIT",
+      "official_url": "https://dl.rockylinux.org/pub/rocky/9/AppStream/x86_64/os/Packages/p/pixman-0.40.0-6.el9_3.x86_64.rpm",
+      "signature_verified": true,
+      "signature_verification_database": "/data/xuancheng/structural_env/cache/structural_afni/rpms/rpmdb"
+    },
+    {
+      "file": "/data/xuancheng/structural_env/cache/structural_afni/rpms/xkbcomp-1.4.4-4.el9.x86_64.rpm",
+      "sha256": "057eb52b686afd12713d130d797b582568939380a97c75fd08a51b881dcf7337",
+      "bytes": 101570,
+      "name": "xkbcomp",
+      "version": "1.4.4-4.el9",
+      "license": "MIT",
+      "official_url": "https://dl.rockylinux.org/pub/rocky/9/AppStream/x86_64/os/Packages/x/xkbcomp-1.4.4-4.el9.x86_64.rpm",
+      "signature_verified": true,
+      "signature_verification_database": "/data/xuancheng/structural_env/cache/structural_afni/rpms/rpmdb"
+    },
+    {
+      "file": "/data/xuancheng/structural_env/cache/structural_afni/rpms/xkeyboard-config-2.33-2.el9.0.1.noarch.rpm",
+      "sha256": "18df93496b9162543bce4f71587b07548e2d3dd50279725095cf0096376bb844",
+      "bytes": 874910,
+      "name": "xkeyboard-config",
+      "version": "2.33-2.el9.0.1",
+      "license": "MIT",
+      "official_url": "https://dl.rockylinux.org/pub/rocky/9/AppStream/x86_64/os/Packages/x/xkeyboard-config-2.33-2.el9.0.1.noarch.rpm",
+      "signature_verified": true,
+      "signature_verification_database": "/data/xuancheng/structural_env/cache/structural_afni/rpms/rpmdb"
+    },
+    {
+      "file": "/data/xuancheng/structural_env/cache/structural_afni/rpms/xorg-x11-fonts-misc-7.5-33.el9.noarch.rpm",
+      "sha256": "f3f5ff63add1ff98c1e90033eb06a626073009b0a21047289d555ce1ad2cef7d",
+      "bytes": 5408304,
+      "name": "xorg-x11-fonts-misc",
+      "version": "7.5-33.el9",
+      "license": "MIT and Lucida and Public Domain",
+      "official_url": "https://dl.rockylinux.org/pub/rocky/9/AppStream/x86_64/os/Packages/x/xorg-x11-fonts-misc-7.5-33.el9.noarch.rpm",
+      "signature_verified": true,
+      "signature_verification_database": "/data/xuancheng/structural_env/cache/structural_afni/rpms/rpmdb"
+    },
+    {
+      "file": "/data/xuancheng/structural_env/cache/structural_afni/rpms/xorg-x11-server-Xvfb-1.20.11-34.el9_8.3.x86_64.rpm",
+      "sha256": "ee7e4b497933a3836e524f230f48d6353e2ceccb9e320a3c98ad6612324d1e90",
+      "bytes": 917774,
+      "name": "xorg-x11-server-Xvfb",
+      "version": "1.20.11-34.el9_8.3",
+      "license": "MIT and GPLv2",
+      "official_url": "https://dl.rockylinux.org/pub/rocky/9/AppStream/x86_64/os/Packages/x/xorg-x11-server-Xvfb-1.20.11-34.el9_8.3.x86_64.rpm",
+      "signature_verified": true,
+      "signature_verification_database": "/data/xuancheng/structural_env/cache/structural_afni/rpms/rpmdb"
+    },
+    {
+      "file": "/data/xuancheng/structural_env/cache/structural_afni/rpms/xorg-x11-server-common-1.20.11-34.el9_8.3.x86_64.rpm",
+      "sha256": "2661f1f5b7948f2b4ab041d1168f3fc35b69ea22552df3fb9c12295d34462f9c",
+      "bytes": 35120,
+      "name": "xorg-x11-server-common",
+      "version": "1.20.11-34.el9_8.3",
+      "license": "MIT",
+      "official_url": "https://dl.rockylinux.org/pub/rocky/9/AppStream/x86_64/os/Packages/x/xorg-x11-server-common-1.20.11-34.el9_8.3.x86_64.rpm",
+      "signature_verified": true,
+      "signature_verification_database": "/data/xuancheng/structural_env/cache/structural_afni/rpms/rpmdb"
+    }
+  ],
+  "rocky_verification_key": {
+    "official_url": "https://dl.rockylinux.org/pub/rocky/RPM-GPG-KEY-Rocky-9",
+    "path": "/data/xuancheng/structural_env/cache/structural_afni/rpms/RPM-GPG-KEY-Rocky-9",
+    "sha256": "3a66e521e7a4abac9768d889c7cd60a8250f59512b275cf576c8a10ff34624c1"
+  },
+  "validation": {
+    "smoke_summary": "/data/xuancheng/structural_env/tests/afni_c3d/smoke-summary.json",
+    "tests_passed": 20,
+    "synthetic_only": true,
+    "cross_tool_scale_max_abs_error": 0.0,
+    "qc_pngs": [
+      "/data/xuancheng/structural_env/tests/afni_c3d/qc.axi.png",
+      "/data/xuancheng/structural_env/tests/afni_c3d/qc.cor.png",
+      "/data/xuancheng/structural_env/tests/afni_c3d/qc.sag.png"
+    ],
+    "selected_elf_dependencies": {
+      "afni": {
+        "path": "/opt/afni/bin/afni",
+        "missing": []
+      },
+      "3dAllineate": {
+        "path": "/opt/afni/bin/3dAllineate",
+        "missing": []
+      },
+      "3dQwarp": {
+        "path": "/opt/afni/bin/3dQwarp",
+        "missing": []
+      },
+      "3dSkullStrip": {
+        "path": "/opt/afni/bin/3dSkullStrip",
+        "missing": []
+      },
+      "3dUnifize": {
+        "path": "/opt/afni/bin/3dUnifize",
+        "missing": []
+      },
+      "3dcalc": {
+        "path": "/opt/afni/bin/3dcalc",
+        "missing": []
+      },
+      "c3d": {
+        "path": "/opt/c3d/bin/c3d",
+        "missing": []
+      },
+      "c3d_affine_tool": {
+        "path": "/opt/c3d/bin/c3d_affine_tool",
+        "missing": []
+      },
+      "Xvfb": {
+        "path": "/usr/bin/Xvfb",
+        "missing": []
+      },
+      "xkbcomp": {
+        "path": "/usr/bin/xkbcomp",
+        "missing": []
+      },
+      "pnmtopng": {
+        "path": "/usr/bin/pnmtopng",
+        "missing": []
+      },
+      "pnmcat": {
+        "path": "/usr/bin/pnmcat",
+        "missing": []
+      },
+      "pnmcut": {
+        "path": "/usr/bin/pnmcut",
+        "missing": []
+      }
+    },
+    "strict_build_test_log": "/data/xuancheng/structural_env/logs/afni_sif_build_final.log"
+  },
+  "recipes": [
+    "/data/xuancheng/structural_env/recipes/structural_afni_c3d.def",
+    "/data/xuancheng/structural_env/recipes/structural_afni_build_rootfs.py",
+    "/data/xuancheng/structural_env/recipes/structural_afni_get_qc_rpms.sh",
+    "/data/xuancheng/structural_env/recipes/structural_afni_smoke.py",
+    "/data/xuancheng/structural_env/recipes/structural_afni_manifest.py"
+  ],
+  "limitations": [
+    "Full real MRI @animal_warper processing and species-specific QC have not been run",
+    "AFNI R-based statistics are outside this structural image; libR/R packages are not installed",
+    "C3D graphical UI is bundled but has not been validated"
+  ],
+  "preserved": [
+    "Existing SIF files, MRI datasets, FreeSurfer license, GPU driver and system services were not modified"
+  ]
+}

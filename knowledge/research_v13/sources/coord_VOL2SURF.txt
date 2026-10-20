@@ -1,0 +1,145 @@
+mri_vol2surf - assigns values from a volume to each surface vertex
+Synopsis
+mri_vol2surf [<options>] --src inputfile --out outpufile --srcreg registrationfile --hemi hemisphere
+Arguments
+Required Flagged Arguments
+--src
+input volume path
+--out
+output path
+--srcreg registrationfile
+source registration file
+RegistrationFile as computed by tkregister, tkmedit, mri_make_register, or spmmat2register. The volume is mapped onto the surface of subject subjectname (unless --trgsubject is specified). There may or may not be another line with the method used to convert voxel indices from floating to integer during registration. If tkregiser was used to register the volume, the method should be blank or 'tkregister' (no quotes), otherwise it should be 'round'. This can be overridden with --float2int.
+--hemi
+hemisphere (lh or rh)
+Optional Flagged Arguments
+--src_type
+input volume fileformat
+--float2int
+float-to-int conversion method (<round>, tkregister )
+override float2int method in registration file. See BUGS.
+--fixtkreg
+make make registration matrix round-compatible
+Attempt to convert the registration matrix so that it is round (or nearest neighbor) compatible. Setting this flag will only have an effect if the float2int method is tkregister. It will 'fix' the matrix and change the float2int method to round. Don't use this flag unless you know what you are doing.
+--fwhm FWHM
+smooth input volume (mm)
+Smooth input volume with a gaussian kernal with FWHM mm.
+--trgsubject
+target subject (if different than reg)
+resample volume onto this subject instead of the one found in the registration file. The target subject can be either a subject name (as found in $SUBJECTS_DIR) or ico (to map onto the sphere). If the target subject is not the source subject, then the surfaces are mapped using each subject's spherical surface registration (?h.sphere.reg or that specified with --surfreg). If the target subject is ico, then the volume is resampled onto an icosahedron, which is used to uniformly sample a sphere. This requires specifying the icosahedron order (see --icoorder).
+--surf
+target surface (white)
+the surface on which to resample. The default is white. It will look for $SUBJECTS_DIR/subjectname/surf/?h.surfacenam
+With --trgsubject
+--surfreg
+intersubjectregsurface
+Default=sphere.reg. This is a representation of a subject's cortical surface after it has been registered/morphed with a template spherical surface.
+--icoorder n
+order of icosahedron when trgsubject=ico
+specifies the order of the icosahedral tesselation. the number of vertices is given by the formula 10*2^n+2. In general, it is best to use the largest size available.
+Surface Normal Proection
+--projfrac fraction
+(0->1) fractional projection along surface normal
+fraction (0,1) of the cortical thickness at each vertex to project along the surface normal. Default=0. When set at 0.5 with the white surface, this should sample in the middle of the cortical surface. This requires that a ?h.thickness file exist for the source subject. Note, the faction can be less than zero, in which case it will project into the white matter. See also --projdist.
+--projdist mmdist
+distance projection along normal
+Same as --projfrac but projects the given distance in mm at all points of the surface regardless of thickness.
+Output
+--out_type
+output format
+--frame frameno
+save only nth frame (with paint format)
+sample and save only the given frame from the source volume (needed when out_type = paint). Default=0
+--noreshape
+do not save output as multiple 'slices'
+by default, mri_vol2surf will save the output as multiple 'slices'. This is for logistical purposes (eg, in the analyze format the size of a dimension cannot exceed 2^15). Use this flag to prevent this behavior. This has no effect when the output type is paint.
+--rf R
+integer reshaping factor, save as R 'slices'
+Explicity set the reshaping factor to R. R must be an integer factor of the number of vertices.
+--srchit
+volume to store the number of hits at each vox
+Save a volume (the same size as the source) in which the value at each voxel is the number of surface vertices it maps to. The number of voxels hit at least once is printed to stdout as : 'Number of source voxels hit'
+--srchit_type
+source hit volume format
+--nvox nvoxfile
+write number of voxels intersecting surface
+Save the number of voxels intersecting the surface in the file  nvoxfile.
+Other
+--srcsynth seed
+synthesize source volume
+Synthesize the source volume with white gaussian noise. seed is the seed to the random generator. Use -1 to have the seed automatically chosen based on time-of-day. See also --seedfile
+--seedfile fname
+save synth seed to fname
+Save random number generator seed in fname. Has no effect without --srcsynth. This is only useful for keeping track of the distribution of seeds for debugging purposes.
+--help
+print out information on how to use this program
+--version
+print out version and exit
+Outputs
+??
+description
+??
+description
+Description
+SPECIFYING THE INPUT/OUTPUT PATH and TYPE
+mri_vol2surf accepts all input/output types as mri_convert (see mri_convert --help for more information). In addition, an output type of 'paint' can be specified. This outputs data in a form that can be easily read by tksurfer (also known as a '.w file'). See BUGS for more information on paint output.
+NOTES
+The output will be a data set with Nv/R colums, 1 row, R slices, and Nf frames, where Nv is the number of verticies in the output surface, and Nf is the number of frames in the input volume (unless the output format is paint, in which case only one frame is written out). R is the reshaping factor. R is 6 for the icosaheron. For non-ico, the prime factor of Nv closest to 6 is chosen. Reshaping can be important for logistical reasons (eg, Nv can easily exceed the maximum number of elements allowed in the analyze format). R can be forced to 1 with --noreshape. The user can also explicity set R from the command-line using --rf. Any geometry information saved with the output file will be bogus. When resampling for fixed-effects intersubject averaging, make sure to resample variance and not standard deviation. This is automatically
+accomplished when the input volume has been produced by selxavg-sess.
+Examples
+Example 1
+To paint the third frame of bfloat volume sig registered with tkregister onto a the left hemisphere of a surface
+mri_vol2surf --src sig --src_type bfloat --srcreg register.dat --hemi lh --o ./sig-lh.w --out_type paint --float2int tkregister --frame 2
+This will create sig-lh.w in the current directory, which can then be loaded into tksurfer
+Example 2
+To convert an analyze volume onto the sphere (right hemisphere)
+mri_vol2surf --src sig.img --src_type analyze --srcreg register.dat --hemi rh --o ./sig-rh.img --out_type analyze --float2int round --trgsubject ico --icoorder 7
+Bugs
+When the output format is paint, the output file must be specified with a partial path (eg, ./data-lh.w) or else the output will be written into the subject's anatomical directory.
+Currently no support for searching along the surface normal for a maximum value (as can be done with the paint program)
+The ability to put the float2int conversion method in the registration file is new as of Fall 2001. Consequently, there may be some registration files that do not have a method string, which will force the method to be that of tkregister. This is can be overridden with --float2int.
+See Also
+othercommand1, othercommand2
+Links
+FreeSurfer, FsFast
+Methods Description
+The data volume was projected onto the cortical surface.
+References
+References/Lastname###
+Reporting Bugs
+Report bugs to <analysis-bugs@nmr.mgh.harvard.edu>
+Author/s
+DougGreve
+mri_vol2surf  (last edited 2008-04-29 11:45:40 by localhost)
+Immutable Page
+Comments
+Discussion
+Info
+Attachments
+More Actions:
+Raw Text
+Print View
+Render as Docbook
+Delete Cache
+------------------------
+Check Spelling
+Like Pages
+Local Site Map
+------------------------
+Rename Page
+Delete Page
+------------------------
+Subscribe User
+------------------------
+Remove Spam
+Revert to this revision
+Package Pages
+Sync Pages
+------------------------
+Load
+Save
+SlideShow
+MoinMoin Powered
+Python Powered
+GPL licensed
+Valid HTML 4.01

@@ -1,0 +1,252 @@
+funcs — NiBabel 0.1.0.dev1+gabe5e8e0c documentation
+Skip to main content
+Back to top
+Ctrl+K
+We are rolling out a new website! Check out the new features and let us know what you think.
+NiBabel
+Manual
+Tutorials
+Developer guide
+DICOM concepts
+API
+Search
+Ctrl+K
+GitHub
+PyPI
+Mailing List
+License
+Community
+Search
+Ctrl+K
+Manual
+Tutorials
+Developer guide
+DICOM concepts
+API
+GitHub
+PyPI
+Mailing List
+License
+Community
+Section Navigation
+nibabel
+analyze
+spm2analyze
+spm99analyze
+cifti2
+gifti
+freesurfer
+minc1
+minc2
+nicom
+nifti1
+nifti2
+ecat
+parrec
+streamlines
+eulerangles
+funcs
+imageclasses
+imageglobals
+loadsave
+orientations
+quaternions
+spatialimages
+volumeutils
+arraywriters
+casting
+data
+environment
+arrayproxy
+affines
+batteryrunners
+data
+dft
+fileholders
+filename_parser
+fileslice
+onetime
+openers
+optpkg
+rstutils
+tmpdirs
+tripwire
+wrapstruct
+API Reference
+nibabel
+_compression
+_typing
+affines
+analyze
+arrayproxy
+arraywriters
+batteryrunners
+benchmarks
+brikhead
+caret
+casting
+cifti2
+cmdline
+data
+dataobj_images
+deprecated
+deprecator
+dft
+ecat
+environment
+eulerangles
+filebasedimages
+fileholders
+filename_parser
+fileslice
+fileutils
+freesurfer
+funcs
+gifti
+imageclasses
+imageglobals
+imagestats
+loadsave
+minc1
+minc2
+mriutils
+nicom
+nifti1
+nifti2
+onetime
+openers
+optpkg
+orientations
+parrec
+pointset
+processing
+pydicom_compat
+quaternions
+rstutils
+spaces
+spatialimages
+spm2analyze
+spm99analyze
+streamlines
+tmpdirs
+tripwire
+viewers
+volumeutils
+wrapstruct
+xmlutils
+API
+funcs
+funcs#
+Processor functions for images
+as_closest_canonical(img[, enforce_diag])
+Return img with data reordered to be closest to canonical
+concat_images(images[, check_affines, axis])
+Concatenate images in list to single image, along specified dimension
+four_to_three(img)
+Create 3D images from 4D image by slicing over last axis
+squeeze_image(img)
+Return image, remove axes length 1 at end of image shape
+as_closest_canonical#
+nibabel.funcs.as_closest_canonical(img, enforce_diag=False)#
+Return img with data reordered to be closest to canonical
+Canonical order is the ordering of the output axes.
+Parameters:
+imgspatialimage
+enforce_diag{False, True}, optional
+If True, before transforming image, check if the resulting image
+affine will be close to diagonal, and if not, raise an error
+Returns:
+canonical_imgspatialimage
+Version of img where the underlying array may have been
+reordered and / or flipped so that axes 0,1,2 are those axes in
+the input data that are, respectively, closest to the output axis
+orientation.  We modify the affine accordingly.  If img is
+already has the correct data ordering, we just return img
+unmodified.
+concat_images#
+nibabel.funcs.concat_images(images, check_affines=True, axis=None)#
+Concatenate images in list to single image, along specified dimension
+Parameters:
+imagessequence
+sequence of SpatialImage or filenames of the same dimensionalitys
+check_affines{True, False}, optional
+If True, then check that all the affines for images are nearly
+the same, raising a ValueError otherwise.  Default is True
+axisNone or int, optional
+If None, concatenates on a new dimension.  This requires all images to
+be the same shape.  If not None, concatenates on the specified
+dimension.  This requires all images to be the same shape, except on
+the specified dimension.
+Returns:
+concat_imgSpatialImage
+New image resulting from concatenating images across last
+dimension
+four_to_three#
+nibabel.funcs.four_to_three(img)#
+Create 3D images from 4D image by slicing over last axis
+Parameters:
+imgimage
+4D image instance of some class with methods get_data,
+header and affine, and a class constructor
+allowing klass(data, affine, header)
+Returns:
+imgslist
+list of 3D images
+squeeze_image#
+nibabel.funcs.squeeze_image(img)#
+Return image, remove axes length 1 at end of image shape
+For example, an image may have shape (10,20,30,1,1).  In this case
+squeeze will result in an image with shape (10,20,30).  See doctests
+for further description of behavior.
+Parameters:
+imgSpatialImage
+Returns:
+squeezed_imgSpatialImage
+Copy of img, such that data, and data shape have been squeezed,
+for dimensions > 3rd, and at the end of the shape list
+Examples
+>>> import nibabel as nf
+>>> shape = (10,20,30,1,1)
+>>> data = np.arange(np.prod(shape), dtype='int32').reshape(shape)
+>>> affine = np.eye(4)
+>>> img = nf.Nifti1Image(data, affine)
+>>> img.shape == (10, 20, 30, 1, 1)
+True
+>>> img2 = squeeze_image(img)
+>>> img2.shape == (10, 20, 30)
+True
+If the data are 3D then last dimensions of 1 are ignored
+>>> shape = (10,1,1)
+>>> data = np.arange(np.prod(shape), dtype='int32').reshape(shape)
+>>> img = nf.ni1.Nifti1Image(data, affine)
+>>> img.shape == (10, 1, 1)
+True
+>>> img2 = squeeze_image(img)
+>>> img2.shape == (10, 1, 1)
+True
+Only final dimensions of 1 are squeezed
+>>> shape = (1, 1, 5, 1, 2, 1, 1)
+>>> data = data.reshape(shape)
+>>> img = nf.ni1.Nifti1Image(data, affine)
+>>> img.shape == (1, 1, 5, 1, 2, 1, 1)
+True
+>>> img2 = squeeze_image(img)
+>>> img2.shape == (1, 1, 5, 1, 2)
+True
+previous
+eulerangles
+next
+imageclasses
+On this page
+as_closest_canonical
+as_closest_canonical()
+concat_images
+concat_images()
+four_to_three
+four_to_three()
+squeeze_image
+squeeze_image()
+Show Source
+© Copyright 2006, NiBabel developers <neuroimaging@python.org>.
+Created using Sphinx 9.1.0.
+Built with the PyData Sphinx Theme 0.17.0.

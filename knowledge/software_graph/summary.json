@@ -1,0 +1,23 @@
+{
+  "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+  "source_files": 35,
+  "fetch_failures": 1,
+  "total_nodes": 3415,
+  "node_types": {
+    "SoftwareVersion": 1,
+    "SourceFile": 35,
+    "SoftwareFamily": 8,
+    "InputSpec": 203,
+    "InputParameter": 2310,
+    "OutputSpec": 179,
+    "OutputField": 446,
+    "SoftwareInterface": 233
+  },
+  "non_source_nodes": 3380,
+  "relations": 7638,
+  "quarantined_relations": 53,
+  "alias_nodes": 0,
+  "scope": "Nipype software/API contracts for structural and shared image operations; source parsed, inherited/imported specs may be incomplete; no anatomical homology or installed-version approval",
+  "automatic_runtime_approval": false,
+  "llm_extraction_used": false
+}

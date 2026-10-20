@@ -1,0 +1,70 @@
+class matplotlib.colors.ListedColormap(colors, name='from_list', N=None)[source]#
+Bases: Colormap
+Colormap object generated from a list of colors.
+This may be most useful when indexing directly into a colormap,
+but it can also be used to generate special colormaps for ordinary
+mapping.
+Parameters:
+colorslist, array
+Sequence of Matplotlib color specifications (color names or RGB(A)
+values).
+namestr, optional
+String to identify the colormap.
+Nint, optional
+Number of entries in the map. The default is None, in which case
+there is one colormap entry for each element in the list of colors.
+If
+N < len(colors)
+the list will be truncated at N. If
+N > len(colors)
+the list will be extended by repetition.
+Parameters:
+namestr
+The name of the colormap.
+Nint
+The number of RGB quantization levels.
+resampled(lutsize)[source]#
+Return a new colormap with lutsize entries.
+reversed(name=None)[source]#
+Return a reversed instance of the Colormap.
+Parameters:
+namestr, optional
+The name for the reversed colormap. If None, the
+name is set to self.name + "_r".
+Returns:
+ListedColormap
+A reversed instance of the colormap.
+Examples using matplotlib.colors.ListedColormap#
+Selecting individual colors from a colormap
+Selecting individual colors from a colormap
+Lasso Demo
+Lasso Demo
+Layer images with alpha blending
+Layer images with alpha blending
+QuadMesh Demo
+QuadMesh Demo
+Mapping marker properties to multivariate data
+Mapping marker properties to multivariate data
+Nested pie charts
+Nested pie charts
+Bar chart on polar axis
+Bar chart on polar axis
+Left ventricle bullseye
+Left ventricle bullseye
+Histograms
+Histograms
+Time Series Histogram
+Time Series Histogram
+Customized Colorbars Tutorial
+Customized Colorbars Tutorial
+Creating Colormaps in Matplotlib
+Creating Colormaps in Matplotlib
+On this page
+ListedColormap
+ListedColormap.resampled()
+ListedColormap.reversed()
+Examples using matplotlib.colors.ListedColormap
+© Copyright 2002–2012 John Hunter, Darren Dale, Eric Firing, Michael Droettboom and the Matplotlib development team; 2012–2026 The Matplotlib development team.
+Created using Sphinx 9.1.0.
+Built from v3.10.9-2-gdf001ac932.
+Built with the PyData Sphinx Theme 0.15.4.

@@ -1,0 +1,71 @@
+{
+  "date": "2026-10-15",
+  "target": "/data/xuancheng/agent/modules/agent",
+  "implementation": "LangGraph + LangChain + Deep Agents",
+  "service": {
+    "address_on_server": "127.0.0.1:8110",
+    "pid_at_verification": 3942784,
+    "health": "/api/agent/analysis/health",
+    "dependencies_ready": true,
+    "original_18080_service_switched": false
+  },
+  "foundation_tools": [
+    "list_roots", "ls", "glob", "grep", "read_file", "discover_subjects",
+    "submit_pipeline", "pipeline_status"
+  ],
+  "coding_tools": [
+    "search_knowledge", "read_knowledge", "list_data", "read_data", "write_code", "run_python"
+  ],
+  "data_access": {
+    "input_and_output_independent": true,
+    "data_home": "/data/xuancheng",
+    "new_data_subdirectories_discovered_per_request": true,
+    "excluded_home_subdirectories": ["agent", "structural_env", "hidden and authentication directories"],
+    "additional_roots_setting": "AGENT_DATA_ROOTS",
+    "absolute_registered_paths_in_navigation": true,
+    "mapped_readonly_paths_in_python": "/inputs/N",
+    "generated_code_and_results": "/work"
+  },
+  "pipeline_submission": {
+    "source_copy_required": false,
+    "preserve_existing_nonempty_outputs": true,
+    "persistent_duplicate_submission_receipts": true,
+    "segmentation_container_flag": "--nv",
+    "image": "/data/xuancheng/agent/PrimateX_1_7.sif",
+    "worker_state_after_restart": "unknown_after_restart; inspect retained output logs"
+  },
+  "verification": {
+    "deployed_target_pytest_passed": 95,
+    "subtests_passed": 54,
+    "test_duration_seconds": 40.4,
+    "real_apptainer_analysis_tested": true,
+    "independent_synthetic_numeric_reference_tested": true,
+    "incorrect_numeric_result_rejected": true,
+    "pipeline_queue_and_actual_cli_fixture_tested": true,
+    "production_sif_primx_help_successful": true,
+    "real_PRIME_DE_subject_sessions_discovered": 10,
+    "real_human_nifti_candidates_discovered": 5,
+    "live_http_smoke": {
+      "http_status": 200,
+      "model": "deterministic local OpenAI-compatible HTTP fixture",
+      "agent_status": "inspected",
+      "tools_called": ["ls", "discover_subjects"],
+      "real_PRIME_DE_count": 10,
+      "python_executions": 0,
+      "submitted_pipeline_tasks": 0
+    },
+    "live_external_llm_tested": false,
+    "new_real_subject_processing_started": false,
+    "frontend_build_passed": true
+  },
+  "backups": [
+    "/data/xuancheng/agent/.refactor_backups/20261015T061426Z",
+    "/data/xuancheng/agent/.refactor_backups/20261015T131916Z"
+  ],
+  "limitations": [
+    "Live model reasoning and real-data scientific validity have not been evaluated.",
+    "Current knowledge retrieval is lexical, with 56 catalog entries and three draft capabilities.",
+    "Browser refresh recovery UI and persistent external job supervision are not implemented.",
+    "Per-process address-space and per-file limits are not aggregate resource quotas."
+  ]
+}

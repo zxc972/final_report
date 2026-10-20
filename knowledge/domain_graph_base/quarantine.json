@@ -1,0 +1,352 @@
+[
+  {
+    "source_id": "freesurfer_v741_lut",
+    "line": 4,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 0,
+    "name": "Unknown"
+  },
+  {
+    "source_id": "freesurfer_v741_lut",
+    "line": 13,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 9,
+    "name": "Left-Thalamus-unused"
+  },
+  {
+    "source_id": "freesurfer_v741_lut",
+    "line": 25,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 21,
+    "name": "Line-1"
+  },
+  {
+    "source_id": "freesurfer_v741_lut",
+    "line": 26,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 22,
+    "name": "Line-2"
+  },
+  {
+    "source_id": "freesurfer_v741_lut",
+    "line": 27,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 23,
+    "name": "Line-3"
+  },
+  {
+    "source_id": "freesurfer_v741_lut",
+    "line": 33,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 29,
+    "name": "Left-undetermined"
+  },
+  {
+    "source_id": "freesurfer_v741_lut",
+    "line": 52,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 48,
+    "name": "Right-Thalamus-unused"
+  },
+  {
+    "source_id": "freesurfer_v741_lut",
+    "line": 65,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 61,
+    "name": "Right-undetermined"
+  },
+  {
+    "source_id": "freesurfer_v741_lut",
+    "line": 94,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 86,
+    "name": "Left_future_WMSA"
+  },
+  {
+    "source_id": "freesurfer_v741_lut",
+    "line": 95,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 87,
+    "name": "Right_future_WMSA"
+  },
+  {
+    "source_id": "freesurfer_v741_lut",
+    "line": 96,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 88,
+    "name": "future_WMSA"
+  },
+  {
+    "source_id": "freesurfer_v741_lut",
+    "line": 523,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 1000,
+    "name": "ctx-lh-unknown"
+  },
+  {
+    "source_id": "freesurfer_v741_lut",
+    "line": 560,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 2000,
+    "name": "ctx-rh-unknown"
+  },
+  {
+    "source_id": "freesurfer_v741_lut",
+    "line": 597,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 3000,
+    "name": "wm-lh-unknown"
+  },
+  {
+    "source_id": "freesurfer_v741_lut",
+    "line": 634,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 4000,
+    "name": "wm-rh-unknown"
+  },
+  {
+    "source_id": "freesurfer_v741_lut",
+    "line": 723,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 1100,
+    "name": "ctx-lh-Unknown"
+  },
+  {
+    "source_id": "freesurfer_v741_lut",
+    "line": 819,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 2100,
+    "name": "ctx-rh-Unknown"
+  },
+  {
+    "source_id": "freesurfer_v741_lut",
+    "line": 916,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 3100,
+    "name": "wm-lh-Unknown"
+  },
+  {
+    "source_id": "freesurfer_v741_lut",
+    "line": 999,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 4100,
+    "name": "wm-rh-Unknown"
+  },
+  {
+    "source_id": "freesurfer_v741_lut",
+    "line": 1339,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 11100,
+    "name": "ctx_lh_Unknown"
+  },
+  {
+    "source_id": "freesurfer_v741_lut",
+    "line": 1417,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 12100,
+    "name": "ctx_rh_Unknown"
+  },
+  {
+    "source_id": "freesurfer_v741_lut",
+    "line": 1496,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 13100,
+    "name": "wm_lh_Unknown"
+  },
+  {
+    "source_id": "freesurfer_v741_lut",
+    "line": 1573,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 14100,
+    "name": "wm_rh_Unknown"
+  },
+  {
+    "source_id": "fastsurfer_v254_lut",
+    "line": 4,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 0,
+    "name": "Unknown"
+  },
+  {
+    "source_id": "fastsurfer_v254_lut",
+    "line": 13,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 9,
+    "name": "Left-Thalamus-unused"
+  },
+  {
+    "source_id": "fastsurfer_v254_lut",
+    "line": 25,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 21,
+    "name": "Line-1"
+  },
+  {
+    "source_id": "fastsurfer_v254_lut",
+    "line": 26,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 22,
+    "name": "Line-2"
+  },
+  {
+    "source_id": "fastsurfer_v254_lut",
+    "line": 27,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 23,
+    "name": "Line-3"
+  },
+  {
+    "source_id": "fastsurfer_v254_lut",
+    "line": 33,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 29,
+    "name": "Left-undetermined"
+  },
+  {
+    "source_id": "fastsurfer_v254_lut",
+    "line": 52,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 48,
+    "name": "Right-Thalamus-unused"
+  },
+  {
+    "source_id": "fastsurfer_v254_lut",
+    "line": 65,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 61,
+    "name": "Right-undetermined"
+  },
+  {
+    "source_id": "fastsurfer_v254_lut",
+    "line": 94,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 86,
+    "name": "Left_future_WMSA"
+  },
+  {
+    "source_id": "fastsurfer_v254_lut",
+    "line": 95,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 87,
+    "name": "Right_future_WMSA"
+  },
+  {
+    "source_id": "fastsurfer_v254_lut",
+    "line": 96,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 88,
+    "name": "future_WMSA"
+  },
+  {
+    "source_id": "fastsurfer_v254_lut",
+    "line": 574,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 1000,
+    "name": "ctx-lh-unknown"
+  },
+  {
+    "source_id": "fastsurfer_v254_lut",
+    "line": 611,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 2000,
+    "name": "ctx-rh-unknown"
+  },
+  {
+    "source_id": "fastsurfer_v254_lut",
+    "line": 648,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 3000,
+    "name": "wm-lh-unknown"
+  },
+  {
+    "source_id": "fastsurfer_v254_lut",
+    "line": 685,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 4000,
+    "name": "wm-rh-unknown"
+  },
+  {
+    "source_id": "fastsurfer_v254_lut",
+    "line": 780,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 1100,
+    "name": "ctx-lh-Unknown"
+  },
+  {
+    "source_id": "fastsurfer_v254_lut",
+    "line": 876,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 2100,
+    "name": "ctx-rh-Unknown"
+  },
+  {
+    "source_id": "fastsurfer_v254_lut",
+    "line": 973,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 3100,
+    "name": "wm-lh-Unknown"
+  },
+  {
+    "source_id": "fastsurfer_v254_lut",
+    "line": 1056,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 4100,
+    "name": "wm-rh-Unknown"
+  },
+  {
+    "source_id": "fastsurfer_v254_lut",
+    "line": 1641,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 11100,
+    "name": "ctx_lh_Unknown"
+  },
+  {
+    "source_id": "fastsurfer_v254_lut",
+    "line": 1719,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 12100,
+    "name": "ctx_rh_Unknown"
+  },
+  {
+    "source_id": "fastsurfer_v254_lut",
+    "line": 1798,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 13100,
+    "name": "wm_lh_Unknown"
+  },
+  {
+    "source_id": "fastsurfer_v254_lut",
+    "line": 1875,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 14100,
+    "name": "wm_rh_Unknown"
+  },
+  {
+    "source_id": "fastsurfer_v254_lut",
+    "line": 1954,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 15000,
+    "name": "yeo7_lh_Unknown"
+  },
+  {
+    "source_id": "fastsurfer_v254_lut",
+    "line": 1962,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 15010,
+    "name": "yeo7_rh_Net_Unknown"
+  },
+  {
+    "source_id": "fastsurfer_v254_lut",
+    "line": 1971,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 15100,
+    "name": "yeo17_lh_Net_Unknown"
+  },
+  {
+    "source_id": "fastsurfer_v254_lut",
+    "line": 1989,
+    "reason": "reserved_or_unknown_label",
+    "label_id": 15120,
+    "name": "yeo17_rh_Net_Unknown"
+  }
+]

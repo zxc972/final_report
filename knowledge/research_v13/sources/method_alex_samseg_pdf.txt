@@ -1,0 +1,53 @@
+使用Samseg进行全脑分割
+Alex / 2025-04-12 / free_learner@163.com / AlexBrain.cn
+
+本文介绍使用FreeSurfer (v7.4.1)下的Samseg命令对T1加权结构像进行全脑分割的基本步骤，参
+考资料为官方文档。
+一、背景
+Samseg可以将 图像分割得到全脑43个结构，并计算每个结构的体积指标。这些结果使用
+              T1
+       的      流程也可以得到。Samseg的一个优势是计算时间短。在我的测试环境下，
+FreeSurfer recon-all
+如果跑完      需要 个小时，那么跑完Samseg只需要5分钟。如果Samseg生成的结果能够满
+        recon-all    2
+足分析的需求，那么在计算资源有限的情况，Samseg是很好的选择。另一方面，Samseg可以使
+用多模态的数据作为输入，比如同时使用T1和FLAIR数据进行分割，有利于对白质损伤的分割。
+Samseg还针对追踪数据的分割进行了优化。因此，如果数据包含多模态且是追踪实验设计，那
+么Samseg相比于recon-all是有优势的。由于我没有合适的测试数据，当前的测试仅限于一个T1
+加权图像的分割。关于Samseg的更多细节，请参考以下论文：
+      Puonti, O., Iglesias, J. E., & Van Leemput, K. (2016). Fast and sequence-adaptive whole-
+      brain segmentation using parametric Bayesian modeling. NeuroImage, 143, 235–249.
+      https://doi.org/10.1016/j.neuroimage.2016.09.011
+
+      Cerri, S., Puonti, O., Meier, D. S., Wuerfel, J., Mühlau, M., Siebner, H. R., & Van Leemput,
+      K. (2021). A contrast-adaptive method for simultaneous whole-brain and lesion
+      segmentation in multiple sclerosis. NeuroImage, 225, 117471.
+      https://doi.org/10.1016/j.neuroimage.2020.117471
+
+      Cerri, S., Greve, D. N., Hoopes, A., Lundell, H., Siebner, H. R., Mühlau, M., & Van Leemput,
+      K. (2023). An open-source tool for longitudinal whole-brain and white matter lesion
+      segmentation. NeuroImage. Clinical, 38, 103354. https://doi.org/10.1016/j.nicl.2023.103354
+
+
+二、基本步骤
+ 1.   使用如下命令进行分割：
+  run_samseg --input ${sour_dir}/input.nii.gz --output ${targ_dir} --threads 8
+
+
+
+在上面的命令中， ${sour_dir}/input.nii.gz 表示T1原始图像，不需要进行任何预处理；
+${targ_dir} 表示保存输出结果的目录； --threads 8 表示使用8线程进行并行处理。
+2.   在生成的文件中， seg.mgz 表示分割后的图谱文件（如下图所示，类似于recon-all生成的
+     aseg.mgz文件 ）； samseg.stats 表示分割得到的每个结构的体积（类似于recon-all生成的
+     aseg.stats 文件）； sbtiv.stats 表示颅内总体积（TIV），理论上比recon-all得到的TIV
+     更准确，详细介绍参考官方文档。
+
+
+
+
+3.   简单比较一下Samseg和Aseg得到的结果，下图Y轴表示Samseg与Aseg得到的体积差异绝对
+     值的百分比，计算公式为 ∣Aseg−Samseg∣ × 100，X轴表示两者结果中都有的脑结构。注意这
+     只是一个被试数据的结果。
+                     Samseg
+                              ​
+

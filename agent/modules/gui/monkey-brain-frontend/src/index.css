@@ -1,0 +1,63 @@
+/*
+ * Copyright (C) 2026 Wang Zheng Lab, Peking University
+ *
+ * This file is part of PrimateX.
+ *
+ * PrimateX is free software: you can redistribute it and/or modify it under the
+ * terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, either version 3 of the License, or (at your option) any
+ * later version.
+ *
+ * PrimateX is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * If you use PrimateX in academic work, please cite:
+ * Xiaohui Yao*, Yichun Huang*, Kailong Cui*, ..., Shan Cong#, Zheng Wang#.
+ * Multi-agentic routing with PrimateX: standardized structural MRI analysis
+ * for non-human primates and humans.
+ *
+ * * Equal contribution.
+ * Correspondence (#): Shan Cong (shan.cong@hrbeu.edu.cn), Zheng Wang
+ * (zheng.wang@pku.edu.cn).
+ *
+ * See CITATION.cff for full citation details.
+ */
+
+/* Import custom styles */
+@import './styles/markdown.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: #f5f5f5;
+  color: #333;
+  overflow: hidden; /* Prevent page-level scroll */
+}
+
+#root {
+  height: 100vh;
+  width: 100%;
+}

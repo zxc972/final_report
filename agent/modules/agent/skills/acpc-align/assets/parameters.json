@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "properties": {
+    "subjectId": {
+      "type": "string",
+      "description": "Subject ID used to name the output directory."
+    },
+    "workspaceDirectory": {
+      "type": "string",
+      "description": "Root workspace path where subject output lives."
+    },
+    "species": {
+      "type": "string",
+      "description": "Species for template selection (Macaque, Chimpanzee, Marmoset)."
+    },
+    "brainSize": {
+      "type": "integer",
+      "description": "Brain size in mm (default 100)."
+    },
+    "reference": {
+      "type": "string",
+      "description": "Reference image for alignment."
+    },
+    "withWm": {
+      "type": "boolean",
+      "description": "Apply the transform to WM mask if available."
+    }
+  },
+  "required": ["subjectId", "workspaceDirectory", "species"]
+}

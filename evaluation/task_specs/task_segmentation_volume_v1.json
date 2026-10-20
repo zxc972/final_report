@@ -1,0 +1,18 @@
+{
+  "task_id": "segmentation_volume_audit_v1",
+  "subjects": [
+    "100610",
+    "101309",
+    "101410",
+    "KM002"
+  ],
+  "input_roots": [
+    "/data/xuancheng/human_fastsurfer/subjects/100610",
+    "/data/xuancheng/human_fastsurfer/subjects/101309",
+    "/data/xuancheng/human_fastsurfer/subjects/101410",
+    "/data/xuancheng/featurize_20261011/data/KM002/KM002",
+    "/data/xuancheng/agent_overnight_20261020/volume_method_context"
+  ],
+  "next_review": "Compare all nonzero hard-label counts and voxel-derived volumes to independent stdlib MGH reference outside mounted inputs; PV table values separately compared to actual stats; validate n/ddof and review normalization and anatomy claims.",
+  "message": "请自主完成一次分割体积分析与数据质量审计。/inputs/0、1、2分别是人脑开发样本100610、101309、101410的已有结构像结果，/inputs/3是KM002猴脑原生派生目录，/inputs/4是官方方法资料，先调用search_research_knowledge检索分割体积、部分容积校正和eTIV的方法，并用read_research_knowledge实际阅读返回的原文或图节点；再读method_index.md和provenance.json按需核查。检索摘要不等于已读原文，图谱候选不能替代数据适用性判断。\n研究任务：为三个人脑提取已有aseg统计中所有区域的体积，进行跨被试描述统计；同时从四个样本实际可用的硬分割图像独立计算非零标签的体素数与体积，作为数据审计并与人脑统计逐标签对照。KM002若只有presurf分割，应明确输入阶段，不能和人脑最终分割混为同一生产阶段，也不能从名称宣称标签在猴脑中的生物学有效性或跨物种同源。猴脑只做实际标签几何计数和适用性状态，不做区域物种差异检验。\n你必须依据真实文件、表头、cmdline和知识自行绑定输入、字段、单位、标签名称与版本，在本次任务中用write_code自主编写新的完整分析代码、run_python真实执行。不得调用已有任务分析脚本或参考输出。注意从ColHeaders或TableCol动态绑定列；报告不可声称用了实际未实现的解析方式。图像即使以浮点类型存储，也要先验证值为有限整数标签再计数，而不是按文件dtype猜测是概率图。物理体素体积应依据可信header/affine推导，检查分割和背景MRI的空间、形状及仿射是否一致，不默认1mm。\n区分硬分割NVoxels×体素体积和partial-volume-corrected Volume_mm3，二者有差异时应查官方--pv/--pvfile说明，不强行改值或说数值错误。核对已有统计中的eTIV、BrainSeg与相关归一化量是否内部一致；不合适的归一化要标记并拒绝，保留原始值，不为了生成比较结果自行修复源数据、制造阈值或替换估计。描述统计以被试为样本，注明n和标准差自由度；不将同一人的多个区域当作独立被试。\n生成analysis_plan.json、label_counts.tsv（subject_id、label_id、n_voxels、voxel_volume_mm3、hard_volume_mm3、segmentation_file，可增列）、regional_volumes.tsv（subject_id、label_id、label_name、n_voxels、pv_volume_mm3、hard_volume_mm3，可增差异列）、descriptive_statistics.tsv、normalization_qc.json、体积图表及report.md。若背景MRI与分割空间确实匹配，另生成少量正交切片叠加图；只说生成了可供审查的QC图，不把它等同专家解剖QC通过。字段缺失有据记录，继续可行计算。最后一次成功执行后用finalize_artifacts声明实际产物，不猜图像尺寸和报告字符长度。不访问其他被试，不改源数据，不编造独立核对通过。\n执行环境已提供numpy、pandas、scipy、NiBabel、matplotlib，可在一次数据检查中确认，不要反复探测环境。程序内只使用/inputs/N和/work。run_python返回的artifacts可能只列本次执行发现的产物，不是完整目录清单；检查输出请用list_data(/work)，不要据此猜测/work失效或去访问宿主workspace路径。代码适当分成计算和报告等几个新模块，避免单个工具调用超过生成上限。"
+}

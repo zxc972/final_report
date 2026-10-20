@@ -1,0 +1,177 @@
+# PrimateX Agent Backend
+
+The Agent backend is a FastAPI service for the Workflow Assistant. It uses an
+OpenAI-compatible chat-completions API, discovers filesystem-backed Skills,
+and turns validated tool calls into asynchronous `primx` pipeline tasks.
+
+## Setup
+
+From `modules/agent`:
+
+```shell
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+The full GUI stack starts the Agent backend automatically:
+
+```shell
+primx=/path/to/PrimateX/workflows/primx_cli/primx
+"$primx" gui start --token YOUR_TOKEN
+```
+
+To run only this service:
+
+```shell
+primx=/path/to/PrimateX/workflows/primx_cli/primx
+export AGENT_PORT=8100
+export PRIMX_ACCESS_TOKEN=YOUR_TOKEN
+"$primx" agent start-agent-backend
+```
+
+The standalone launcher binds to `127.0.0.1` by default, selects another free
+port if necessary, and updates the GUI runtime port file. Set `AGENT_HOST` to
+change the bind address.
+
+## Model Providers
+
+Two provider modes are supported:
+
+- `platform`: the server uses `PLATFORM_API_KEY` and only allows models listed
+  in `platform_models.json`. `PLATFORM_API_BASE_URL` defaults to
+  `https://api.modelverse.cn/v1`.
+- `custom`: the request supplies an API key and model, plus an optional
+  OpenAI-compatible base URL. The default base URL is
+  `https://api.openai.com/v1`.
+
+The platform API key is never returned to the browser.
+
+## API
+
+All endpoints require `Authorization: Bearer <PRIMX_ACCESS_TOKEN>` when
+`PRIMX_ACCESS_TOKEN` is non-empty.
+
+- `GET /api/agent/skills`: list discovered Skills and their parameter schemas.
+- `GET /api/agent/models`: list platform model choices and availability.
+- `POST /api/agent/chat`: run the bounded Skill/tool loop.
+- `GET /api/agent/tasks`: list Agent-submitted tasks.
+- `GET /api/agent/tasks/{taskId}/log`: read the tail of a task log.
+- `POST /api/agent/tasks/{taskId}/cancel`: cancel a queued, waiting, or running
+  task.
+
+The GUI supplies the per-user session token issued by the Node pipeline
+backend after the User ID has been verified. Task-list requests are then
+filtered to that user's output workspace, and task-specific log/cancel
+requests require a valid token for the task owner.
+
+## Skill Runtime
+
+Skills live under `modules/agent/skills/<skill-name>/`. Each valid Skill
+contains:
+
+- `SKILL.md` with YAML frontmatter `name` and `description`, followed by the
+  operational instructions.
+- `assets/parameters.json` with the JSON schema for its action tool.
+
+Skill use is intentionally two-phase:
+
+1. The first LLM request receives only the Skill catalog and the read-only
+   `load-skill` tool.
+2. Loading a Skill adds its complete `SKILL.md` to trusted system context and
+   exposes that Skill's action tool on the next request.
+3. The model re-plans with those instructions and calls the action once.
+
+If a response mixes any new `load-skill` call with action calls, the backend
+loads the requested Skills but defers every action in that response. This
+phase barrier prevents side effects from running before newly loaded
+instructions have been reviewed. Pure loading rounds do not consume the
+normal `AGENT_MAX_ITERS` action/final-response budget; total LLM calls are
+still bounded by that budget plus the number of available Skills.
+
+The `species-router` metadata specifically instructs the model to route an
+available NIfTI before asking for a missing `species` or `segSpecies`; it
+reports the prediction for confirmation instead of silently treating it as
+ground truth.
+
+## Pipeline Tasks and Concurrency
+
+Agent tasks use a resizable general executor. `context.maxConcurrentTasks`
+controls pipeline concurrency and is clamped to 1-64.
+
+Deep-learning segmentation is serialized at step scope:
+
+- Pipelines may run concurrently.
+- Immediately before a `seg-brain` or `seg-wm` subprocess starts, it acquires
+  one process-local shared segmentation resource.
+- The resource is released as soon as that step exits.
+- Preprocessing, ACPC alignment, FreeSurfer reconstruction, rescaling, and
+  export steps retain normal parallelism.
+
+`Waiting for segmentation resource` is an expected state and remains
+cancellable. Increasing `maxConcurrentTasks` does not create additional
+segmentation slots. The lock is process-local and assumes the current
+single-Uvicorn-worker deployment; multiple Agent worker processes would need
+a cross-process lock or external scheduler.
+
+Cancellation covers queued futures, tasks waiting for the segmentation
+resource, and active subprocess groups. Each task writes:
+
+```text
+<workspaceDirectory>/<subjectId>/logs/agent_pipeline_<taskId>.log
+```
+
+The task store is in memory. Restarting the Agent backend loses historical
+task IDs even though files and existing logs remain on disk.
+
+## Workspace Rules
+
+When the GUI supplies `context.workspaceDirectory`, the backend enforces that
+path for tool execution instead of trusting a path generated by the model.
+Filesystem Skills reject traversal outside the workspace. Official samples
+must first be copied into the user's own namespace with `use-sample-data`.
+
+Supported pipeline steps are:
+
+```text
+preprocess-1
+seg-brain
+acpc-align
+seg-wm
+preprocess-3
+rescale
+freesurfer2caret
+fastsurfer
+```
+
+`fastsurfer` must run by itself and is limited to Human. Neuro steps require
+`species`; segmentation steps require `segSpecies`. The configured
+Preprocess-3 `threads` value is separate from task concurrency.
+
+## Configuration
+
+Useful environment variables:
+
+| Variable | Default | Purpose |
+| --- | --- | --- |
+| `AGENT_HOST` | `127.0.0.1` | Bind address |
+| `AGENT_PORT` | `8100` | Preferred port |
+| `PRIMX_ACCESS_TOKEN` | empty for standalone backend | Bearer-token guard |
+| `PRIMX_PATH` | repository `workflows/primx_cli/primx` | CLI executable |
+| `AGENT_DEFAULT_WORKSPACE` | repository `tests/` | Default/sample workspace |
+| `AGENT_MAX_WORKERS` | `12` | Initial general executor size |
+| `AGENT_MAX_ITERS` | `16` | Normal action/final-response round limit |
+| `PLATFORM_API_KEY` | empty | Enable platform models |
+| `PLATFORM_API_BASE_URL` | `https://api.modelverse.cn/v1` | Platform endpoint |
+
+## Tests
+
+From the repository root, with the Agent dependencies installed:
+
+```shell
+python -m unittest discover -s modules/agent/tests
+```
+
+The tests cover two-phase Skill disclosure, the mixed-call phase barrier,
+step-scoped segmentation serialization, task dispatch/cancellation, and the
+species-router catalog policy.

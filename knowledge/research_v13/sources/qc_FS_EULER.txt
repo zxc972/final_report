@@ -1,0 +1,126 @@
+mris_euler_number - Free Surfer Wiki
+Search:
+Login
+mris_euler_number
+FreeSurferWiki
+RecentChanges
+FindPage
+HelpContents
+mris_euler_number
+Immutable Page
+Comments
+Discussion
+Info
+Attachments
+More Actions:
+Raw Text
+Print View
+Render as Docbook
+Delete Cache
+------------------------
+Check Spelling
+Like Pages
+Local Site Map
+------------------------
+Rename Page
+Delete Page
+------------------------
+Subscribe User
+------------------------
+Remove Spam
+Revert to this revision
+Package Pages
+Sync Pages
+------------------------
+Load
+Save
+SlideShow
+Index
+Contents
+Name
+Synopsis
+Arguments
+Positional Arguments
+Required Flagged Arguments
+Optional Flagged Arguments
+Outputs
+Description
+Examples
+Example 1
+Example 2
+Bugs
+See Also
+Links
+Methods Description
+References
+Reporting Bugs
+Author/s
+Name
+mris_euler_number - computes EulerNumber for a CorticalSurface
+Synopsis
+mris_euler_number [<options>] insurf
+Arguments
+Positional Arguments
+insurf
+input surface file
+Required Flagged Arguments
+none
+Optional Flagged Arguments
+none
+Outputs
+eulernumber
+EulerNumber as text to stdout
+Description
+description
+Examples
+Example 1
+mris_euler_number surface
+Example 2
+??
+Bugs
+none
+See Also
+othercommand1, othercommand2
+Links
+FreeSurfer, FsFast
+Methods Description
+??
+References
+References/Lastname###
+Reporting Bugs
+Report bugs to <analysis-bugs@nmr.mgh.harvard.edu>
+Author/s
+BruceFischl
+mris_euler_number  (last edited 2008-04-29 11:45:13 by localhost)
+Immutable Page
+Comments
+Discussion
+Info
+Attachments
+More Actions:
+Raw Text
+Print View
+Render as Docbook
+Delete Cache
+------------------------
+Check Spelling
+Like Pages
+Local Site Map
+------------------------
+Rename Page
+Delete Page
+------------------------
+Subscribe User
+------------------------
+Remove Spam
+Revert to this revision
+Package Pages
+Sync Pages
+------------------------
+Load
+Save
+SlideShow
+MoinMoin Powered
+Python Powered
+GPL licensed
+Valid HTML 4.01

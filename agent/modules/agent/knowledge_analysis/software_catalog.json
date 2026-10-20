@@ -1,0 +1,1897 @@
+{
+  "schema_version": "0.1.0",
+  "created_date": "2026-10-15",
+  "status": "research_catalog",
+  "normalization_aliases": {
+    "freesurfer_analysis": "freesurfer",
+    "workbench_analysis": "workbench",
+    "statsmodels_host": "statsmodels",
+    "seaborn_host": "seaborn",
+    "pytorch_legacy": "pytorch",
+    "monai_legacy": "monai",
+    "python_analysis": "python"
+  },
+  "entry_count": 56,
+  "policy": "Runtime status comes only from environment-scoped runtime records. Source registration and documentation coverage do not establish execution readiness. Pointer views are derived from two canonical evidence files.",
+  "entries": [
+    {
+      "id": "abagen",
+      "name": "abagen",
+      "record_kind": "software",
+      "runtime_records": [
+        {
+          "file": "runtime_inventory.json",
+          "pointer": "/software/41",
+          "record_id": "abagen"
+        }
+      ],
+      "analysis_records": [
+        {
+          "file": "analysis_catalog.json",
+          "pointer": "/software/17",
+          "record_id": "abagen"
+        }
+      ],
+      "source_pointers": [
+        {
+          "url": "https://abagen.readthedocs.io/en/stable/",
+          "title": "abagen documentation",
+          "review_depth": "official_page_opened_relevant_overview_not_full_api_audit",
+          "topics": [
+            "atlas image/info",
+            "donor/probe与区域匹配",
+            "sample/gene normalization",
+            "region×gene输出",
+            "缺失脑区与跨donor可靠性"
+          ]
+        },
+        {
+          "url": "https://abagen.readthedocs.io/en/stable/user_guide/expression.html",
+          "title": "Parcellating expression data",
+          "review_depth": "official_search_excerpt_reviewed_not_full_page_audit",
+          "topics": [
+            "atlas image/info",
+            "donor/probe与区域匹配",
+            "sample/gene normalization",
+            "region×gene输出",
+            "缺失脑区与跨donor可靠性"
+          ]
+        },
+        {
+          "url": "https://abagen.readthedocs.io/en/stable/user_guide/probes.html",
+          "title": "Probe selection options",
+          "review_depth": "official_search_excerpt_reviewed_not_full_page_audit",
+          "topics": [
+            "atlas image/info",
+            "donor/probe与区域匹配",
+            "sample/gene normalization",
+            "region×gene输出",
+            "缺失脑区与跨donor可靠性"
+          ]
+        },
+        {
+          "url": "https://abagen.readthedocs.io/en/stable/",
+          "title": "abagen documentation",
+          "review_depth": "official_page_opened_relevant_overview_not_full_api_audit"
+        },
+        {
+          "url": "https://abagen.readthedocs.io/en/stable/user_guide/expression.html",
+          "title": "Parcellating expression data",
+          "review_depth": "official_search_excerpt_reviewed_not_full_page_audit"
+        },
+        {
+          "url": "https://abagen.readthedocs.io/en/stable/user_guide/probes.html",
+          "title": "Probe selection options",
+          "review_depth": "official_search_excerpt_reviewed_not_full_page_audit"
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "read_referenced_environment_records"
+    },
+    {
+      "id": "afni",
+      "name": "AFNI",
+      "record_kind": "software",
+      "runtime_records": [
+        {
+          "file": "runtime_inventory.json",
+          "pointer": "/software/13",
+          "record_id": "afni"
+        }
+      ],
+      "analysis_records": [],
+      "source_pointers": [
+        {
+          "url": "https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/nonhuman/main_toc.html",
+          "title": "AFNI Documentation: Non-human processing",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "NMT",
+            "CHARM/SARM",
+            "nonhuman processing",
+            "macaque demos"
+          ]
+        },
+        {
+          "url": "https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/nonhuman/macaque_demos/demo_task_fmri.html",
+          "title": "AFNI Macaque Demo: anatomical alignment with @animal_warper",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "animal_warper",
+            "subject/template registration",
+            "atlas mapping",
+            "QC"
+          ]
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "read_referenced_environment_records"
+    },
+    {
+      "id": "allen_human_brain_atlas",
+      "name": "Allen Human Brain Atlas资源",
+      "record_kind": "reference_resource",
+      "runtime_records": [],
+      "analysis_records": [
+        {
+          "file": "analysis_catalog.json",
+          "pointer": "/software/18",
+          "record_id": "allen_human_brain_atlas"
+        }
+      ],
+      "source_pointers": [
+        {
+          "url": "https://human.brain-map.org/",
+          "title": "Allen Human Brain Atlas",
+          "review_depth": "primary_source_registered_not_reopened_in_this_pass"
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "not_audited_here"
+    },
+    {
+      "id": "ants",
+      "name": "ANTs",
+      "record_kind": "software",
+      "runtime_records": [
+        {
+          "file": "runtime_inventory.json",
+          "pointer": "/software/3",
+          "record_id": "ants"
+        }
+      ],
+      "analysis_records": [],
+      "source_pointers": [
+        {
+          "url": "https://github.com/ANTsX/ANTs/wiki/Anatomy-of-an-antsRegistration-call",
+          "title": "ANTs: Anatomy of an antsRegistration call",
+          "review_depth": "chapter_reviewed",
+          "topics": [
+            "fixed/moving spaces",
+            "registration stages",
+            "multi-resolution parameters",
+            "output transforms"
+          ]
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "read_referenced_environment_records"
+    },
+    {
+      "id": "apptainer",
+      "name": "Apptainer",
+      "record_kind": "software",
+      "runtime_records": [
+        {
+          "file": "runtime_inventory.json",
+          "pointer": "/software/1",
+          "record_id": "apptainer"
+        }
+      ],
+      "analysis_records": [],
+      "source_pointers": [
+        {
+          "url": "https://apptainer.org/docs/user/1.4/quick_start.html",
+          "title": "Apptainer 1.4 User Guide: Quick Start",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "SIF execution",
+            "container CLI",
+            "runtime environment"
+          ]
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "read_referenced_environment_records"
+    },
+    {
+      "id": "bct",
+      "name": "Brain Connectivity Toolbox",
+      "record_kind": "software",
+      "runtime_records": [],
+      "analysis_records": [
+        {
+          "file": "analysis_catalog.json",
+          "pointer": "/software/14",
+          "record_id": "bct"
+        }
+      ],
+      "source_pointers": [
+        {
+          "url": "https://sites.google.com/site/bctnet/",
+          "title": "Brain Connectivity Toolbox",
+          "review_depth": "official_search_excerpt_reviewed_not_full_page_audit"
+        },
+        {
+          "url": "https://sites.google.com/site/bctnet/all-functions",
+          "title": "All functions",
+          "review_depth": "official_search_excerpt_reviewed_not_full_page_audit"
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "not_audited_here"
+    },
+    {
+      "id": "bctpy",
+      "name": "bctpy",
+      "record_kind": "software",
+      "runtime_records": [
+        {
+          "file": "runtime_inventory.json",
+          "pointer": "/software/42",
+          "record_id": "bctpy"
+        }
+      ],
+      "analysis_records": [],
+      "source_pointers": [
+        {
+          "url": "https://github.com/aestrivex/bctpy",
+          "title": "bctpy author repository",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "Python network metrics; distinct implementation from MATLAB BCT"
+          ]
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "read_referenced_environment_records"
+    },
+    {
+      "id": "bids",
+      "name": "BIDS与衍生物规范",
+      "record_kind": "standard",
+      "runtime_records": [],
+      "analysis_records": [
+        {
+          "file": "analysis_catalog.json",
+          "pointer": "/software/26",
+          "record_id": "bids"
+        }
+      ],
+      "source_pointers": [
+        {
+          "url": "https://bids-specification.readthedocs.io/en/stable/",
+          "title": "BIDS specification",
+          "review_depth": "primary_source_registered_not_reopened_in_this_pass"
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "not_audited_here"
+    },
+    {
+      "id": "brainsmash",
+      "name": "BrainSMASH",
+      "record_kind": "software",
+      "runtime_records": [],
+      "analysis_records": [
+        {
+          "file": "analysis_catalog.json",
+          "pointer": "/software/13",
+          "record_id": "brainsmash"
+        }
+      ],
+      "source_pointers": [
+        {
+          "url": "https://brainsmash.readthedocs.io/en/latest/",
+          "title": "BrainSMASH documentation",
+          "review_depth": "official_page_opened_relevant_overview_not_full_api_audit"
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "not_audited_here"
+    },
+    {
+      "id": "brainspace",
+      "name": "BrainSpace",
+      "record_kind": "software",
+      "runtime_records": [
+        {
+          "file": "runtime_inventory.json",
+          "pointer": "/software/38",
+          "record_id": "brainspace"
+        }
+      ],
+      "analysis_records": [
+        {
+          "file": "analysis_catalog.json",
+          "pointer": "/software/11",
+          "record_id": "brainspace"
+        }
+      ],
+      "source_pointers": [
+        {
+          "url": "https://brainspace.readthedocs.io/en/latest/python_doc/auto_examples/plot_tutorial2.html",
+          "title": "Customizing and aligning gradients",
+          "review_depth": "official_search_excerpt_reviewed_not_full_page_audit",
+          "topics": [
+            "affinity/kernel/sparsity",
+            "DM/LE/PCA",
+            "符号、旋转与近简并子空间",
+            "Procrustes/joint embedding",
+            "spin/Moran/variogram及mask"
+          ]
+        },
+        {
+          "url": "https://brainspace.readthedocs.io/en/latest/python_doc/auto_examples/plot_tutorial3.html",
+          "title": "Null models for gradient significance",
+          "review_depth": "official_page_opened_relevant_overview_not_full_api_audit",
+          "topics": [
+            "affinity/kernel/sparsity",
+            "DM/LE/PCA",
+            "符号、旋转与近简并子空间",
+            "Procrustes/joint embedding",
+            "spin/Moran/variogram及mask"
+          ]
+        },
+        {
+          "url": "https://brainspace.readthedocs.io/en/latest/python_doc/auto_examples/plot_tutorial2.html",
+          "title": "Customizing and aligning gradients",
+          "review_depth": "official_search_excerpt_reviewed_not_full_page_audit"
+        },
+        {
+          "url": "https://brainspace.readthedocs.io/en/latest/python_doc/auto_examples/plot_tutorial3.html",
+          "title": "Null models for gradient significance",
+          "review_depth": "official_page_opened_relevant_overview_not_full_api_audit"
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "read_referenced_environment_records"
+    },
+    {
+      "id": "brainstat",
+      "name": "BrainStat",
+      "record_kind": "software",
+      "runtime_records": [
+        {
+          "file": "runtime_inventory.json",
+          "pointer": "/software/33",
+          "record_id": "brainstat"
+        }
+      ],
+      "analysis_records": [
+        {
+          "file": "analysis_catalog.json",
+          "pointer": "/software/7",
+          "record_id": "brainstat"
+        }
+      ],
+      "source_pointers": [
+        {
+          "url": "https://brainstat.readthedocs.io/en/master/python/tutorials/tutorial_1.html",
+          "title": "BrainStat Python Tutorial 1: Statistics Module",
+          "review_depth": "chapter_reviewed",
+          "topics": [
+            "cortical thickness example",
+            "model APIs",
+            "residual QC",
+            "multiple comparisons",
+            "repeated measures"
+          ]
+        },
+        {
+          "url": "https://brainstat.readthedocs.io/en/latest/python/_autosummary/brainstat.stats.SLM.SLM.html",
+          "title": "SLM API",
+          "review_depth": "official_search_excerpt_reviewed_not_full_page_audit"
+        },
+        {
+          "url": "https://brainstat.readthedocs.io/en/master/python/do_not_delete_now/plot_tutorial_01_basics.html",
+          "title": "Tutorial 01 Linear Models",
+          "review_depth": "official_search_excerpt_reviewed_not_full_page_audit"
+        },
+        {
+          "url": "https://brainstat.readthedocs.io/en/master/python/tutorials/tutorial_2.html",
+          "title": "Context decoding tutorial",
+          "review_depth": "primary_source_registered_not_reopened_in_this_pass"
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "read_referenced_environment_records"
+    },
+    {
+      "id": "c3d",
+      "name": "Convert3D (C3D)",
+      "record_kind": "software",
+      "runtime_records": [
+        {
+          "file": "runtime_inventory.json",
+          "pointer": "/software/14",
+          "record_id": "c3d"
+        }
+      ],
+      "analysis_records": [],
+      "source_pointers": [
+        {
+          "url": "https://convert3d.readthedocs.io/en/latest/c3d.html",
+          "title": "Convert3D Documentation",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "stack-based CLI",
+            "image conversion",
+            "image arithmetic",
+            "resampling",
+            "coordinate frames"
+          ]
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "read_referenced_environment_records"
+    },
+    {
+      "id": "cat12",
+      "name": "CAT12",
+      "record_kind": "software",
+      "runtime_records": [
+        {
+          "file": "runtime_inventory.json",
+          "pointer": "/software/35",
+          "record_id": "cat12"
+        }
+      ],
+      "analysis_records": [],
+      "source_pointers": [
+        {
+          "url": "https://neuro-jena.github.io/cat/",
+          "title": "CAT official documentation",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "VBM, surface and regional morphometry; current landing page is CAT26, not a pinned CAT12 manual"
+          ]
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "read_referenced_environment_records"
+    },
+    {
+      "id": "dcm2niix",
+      "name": "dcm2niix",
+      "record_kind": "software",
+      "runtime_records": [
+        {
+          "file": "runtime_inventory.json",
+          "pointer": "/software/7",
+          "record_id": "dcm2niix"
+        }
+      ],
+      "analysis_records": [],
+      "source_pointers": [
+        {
+          "url": "https://github.com/rordenlab/dcm2niix",
+          "title": "dcm2niix official repository and CLI usage README",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "DICOM to NIfTI",
+            "BIDS JSON sidecars",
+            "conversion options",
+            "vendor metadata"
+          ]
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "read_referenced_environment_records"
+    },
+    {
+      "id": "fastsurfer",
+      "name": "FastSurfer",
+      "record_kind": "software",
+      "runtime_records": [
+        {
+          "file": "runtime_inventory.json",
+          "pointer": "/software/11",
+          "record_id": "fastsurfer"
+        }
+      ],
+      "analysis_records": [],
+      "source_pointers": [
+        {
+          "url": "https://deep-mi.org/FastSurfer/stable/overview/QUICKSTART.html",
+          "title": "FastSurfer User Guide: Quick Start",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "T1 input",
+            "container invocation",
+            "segmentation flags",
+            "CPU/GPU runtime"
+          ]
+        },
+        {
+          "url": "https://deep-mi.org/FastSurfer/stable/overview/INSTALL.html",
+          "title": "FastSurfer User Guide: Installation and requirements",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "runtime requirements",
+            "container choices",
+            "FreeSurfer license requirements"
+          ]
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "read_referenced_environment_records"
+    },
+    {
+      "id": "freesurfer",
+      "name": "FreeSurfer",
+      "record_kind": "software",
+      "runtime_records": [
+        {
+          "file": "runtime_inventory.json",
+          "pointer": "/software/4",
+          "record_id": "freesurfer"
+        }
+      ],
+      "analysis_records": [
+        {
+          "file": "analysis_catalog.json",
+          "pointer": "/software/6",
+          "record_id": "freesurfer_analysis"
+        }
+      ],
+      "source_pointers": [
+        {
+          "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/AnatomicalROI",
+          "title": "FreeSurfer Tutorial: Anatomical ROI",
+          "review_depth": "chapter_reviewed",
+          "topics": [
+            "aseg/aparc statistics",
+            "ROI tables",
+            "measure and atlas selection"
+          ]
+        },
+        {
+          "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/GroupAnalysis",
+          "title": "FreeSurfer Tutorial: Group Analysis",
+          "review_depth": "chapter_reviewed",
+          "topics": [
+            "surface common space",
+            "mris_preproc",
+            "FSGD subject order",
+            "GLM output semantics"
+          ]
+        },
+        {
+          "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mri_glmfit",
+          "title": "mri_glmfit",
+          "review_depth": "official_search_excerpt_reviewed_not_full_page_audit"
+        },
+        {
+          "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/aparcstats2table",
+          "title": "aparcstats2table",
+          "review_depth": "primary_source_registered_not_reopened_in_this_pass"
+        },
+        {
+          "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/MultipleComparisonsV6.0Perm",
+          "title": "Multiple comparisons permutation tutorial",
+          "review_depth": "official_search_excerpt_reviewed_not_full_page_audit"
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "read_referenced_environment_records"
+    },
+    {
+      "id": "fsl",
+      "name": "FSL",
+      "record_kind": "software",
+      "runtime_records": [
+        {
+          "file": "runtime_inventory.json",
+          "pointer": "/software/2",
+          "record_id": "fsl"
+        }
+      ],
+      "analysis_records": [],
+      "source_pointers": [
+        {
+          "url": "https://fsl.fmrib.ox.ac.uk/fsl/docs/registration/flirt/user_guide.html",
+          "title": "FSL FLIRT User Guide",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "affine registration",
+            "input/reference roles",
+            "transform application",
+            "convert_xfm"
+          ]
+        },
+        {
+          "url": "https://fsl.fmrib.ox.ac.uk/fsl/docs/registration/fnirt/user_guide.html",
+          "title": "FSL FNIRT User Guide",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "nonlinear registration",
+            "warp application",
+            "configuration"
+          ]
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "read_referenced_environment_records"
+    },
+    {
+      "id": "gseapy",
+      "name": "GSEApy",
+      "record_kind": "software",
+      "runtime_records": [],
+      "analysis_records": [
+        {
+          "file": "analysis_catalog.json",
+          "pointer": "/software/19",
+          "record_id": "gseapy"
+        }
+      ],
+      "source_pointers": [
+        {
+          "url": "https://gseapy.readthedocs.io/en/latest/",
+          "title": "GSEApy documentation",
+          "review_depth": "official_page_opened_relevant_overview_not_full_api_audit"
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "not_audited_here"
+    },
+    {
+      "id": "joblib",
+      "name": "joblib",
+      "record_kind": "software",
+      "runtime_records": [
+        {
+          "file": "runtime_inventory.json",
+          "pointer": "/software/28",
+          "record_id": "joblib"
+        }
+      ],
+      "analysis_records": [],
+      "source_pointers": [
+        {
+          "url": "https://joblib.readthedocs.io/en/stable/",
+          "title": "Joblib documentation",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "Parallel",
+            "Memory caching",
+            "backends",
+            "examples"
+          ]
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "read_referenced_environment_records"
+    },
+    {
+      "id": "matlab",
+      "name": "MATLAB",
+      "record_kind": "software",
+      "runtime_records": [
+        {
+          "file": "runtime_inventory.json",
+          "pointer": "/software/36",
+          "record_id": "matlab"
+        }
+      ],
+      "analysis_records": [],
+      "source_pointers": [
+        {
+          "url": "https://www.mathworks.com/help/matlab/getting-started-with-matlab.html",
+          "title": "MATLAB getting started",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "Array language, functions and scripts; runtime compatibility remains unverified"
+          ]
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "read_referenced_environment_records"
+    },
+    {
+      "id": "matplotlib",
+      "name": "Matplotlib",
+      "record_kind": "software",
+      "runtime_records": [
+        {
+          "file": "runtime_inventory.json",
+          "pointer": "/software/27",
+          "record_id": "matplotlib"
+        }
+      ],
+      "analysis_records": [
+        {
+          "file": "analysis_catalog.json",
+          "pointer": "/software/25",
+          "record_id": "matplotlib"
+        }
+      ],
+      "source_pointers": [
+        {
+          "url": "https://matplotlib.org/stable/users/explain/quick_start.html",
+          "title": "Matplotlib Quick start guide",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "figure and axes",
+            "plot types",
+            "labels",
+            "figure export"
+          ]
+        },
+        {
+          "url": "https://matplotlib.org/stable/users/index.html",
+          "title": "Matplotlib User Guide",
+          "review_depth": "primary_source_registered_not_reopened_in_this_pass"
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "read_referenced_environment_records"
+    },
+    {
+      "id": "mind",
+      "name": "MIND implementation",
+      "record_kind": "software",
+      "runtime_records": [
+        {
+          "file": "runtime_inventory.json",
+          "pointer": "/software/43",
+          "record_id": "mind"
+        }
+      ],
+      "analysis_records": [
+        {
+          "file": "analysis_catalog.json",
+          "pointer": "/software/8",
+          "record_id": "mind"
+        }
+      ],
+      "source_pointers": [
+        {
+          "url": "https://github.com/isebenius/MIND",
+          "title": "Official MIND implementation",
+          "review_depth": "official_page_opened_relevant_overview_not_full_api_audit",
+          "topics": [
+            "compute_MIND",
+            "特征缩写与原始文件",
+            "unknown标签适配",
+            "连续分布/重复值与resample",
+            "不能用区域均值替代分布",
+            "个体网络不等于群体协变/轴突连接"
+          ]
+        },
+        {
+          "url": "https://github.com/isebenius/MIND",
+          "title": "Official MIND implementation",
+          "review_depth": "official_page_opened_relevant_overview_not_full_api_audit"
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "read_referenced_environment_records"
+    },
+    {
+      "id": "monai",
+      "name": "MONAI (legacy PrimateX image)",
+      "record_kind": "software",
+      "runtime_records": [
+        {
+          "file": "runtime_inventory.json",
+          "pointer": "/software/10",
+          "record_id": "monai_legacy"
+        }
+      ],
+      "analysis_records": [],
+      "source_pointers": [
+        {
+          "url": "https://github.com/Project-MONAI/tutorials",
+          "title": "Project MONAI official tutorials repository",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "medical imaging transforms",
+            "segmentation",
+            "inference",
+            "tutorial notebooks"
+          ]
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "read_referenced_environment_records"
+    },
+    {
+      "id": "mrtrix",
+      "name": "MRtrix3",
+      "record_kind": "software",
+      "runtime_records": [
+        {
+          "file": "runtime_inventory.json",
+          "pointer": "/software/6",
+          "record_id": "mrtrix"
+        }
+      ],
+      "analysis_records": [],
+      "source_pointers": [
+        {
+          "url": "https://mrtrix.readthedocs.io/en/latest/reference/commands/mrgrid.html",
+          "title": "MRtrix3 command reference: mrgrid",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "grid regridding",
+            "voxel spacing",
+            "interpolation",
+            "image cropping and padding"
+          ]
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "read_referenced_environment_records"
+    },
+    {
+      "id": "msm",
+      "name": "MSM / MSMSulc",
+      "record_kind": "software",
+      "runtime_records": [
+        {
+          "file": "runtime_inventory.json",
+          "pointer": "/software/15",
+          "record_id": "msm"
+        }
+      ],
+      "analysis_records": [],
+      "source_pointers": [
+        {
+          "url": "https://fsl.fmrib.ox.ac.uk/fsl/docs/registration/msm.html",
+          "title": "FSL MSM: Multimodal Surface Matching user guide",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "spherical surface registration",
+            "feature inputs",
+            "configuration",
+            "registered mesh outputs"
+          ]
+        },
+        {
+          "url": "https://fsl.fmrib.ox.ac.uk/fsl/docs/registration/newmsm/guide.html",
+          "title": "FSL newMSM User Guide",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "version-dependent MSM behavior",
+            "regularisation",
+            "configuration",
+            "newMSM differences"
+          ]
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "read_referenced_environment_records"
+    },
+    {
+      "id": "msn_method",
+      "name": "Morphometric Similarity Networks方法资源",
+      "record_kind": "method",
+      "runtime_records": [],
+      "analysis_records": [
+        {
+          "file": "analysis_catalog.json",
+          "pointer": "/software/10",
+          "record_id": "msn_method"
+        }
+      ],
+      "source_pointers": [
+        {
+          "url": "https://doi.org/10.1016/j.neuron.2017.11.039",
+          "title": "Morphometric Similarity Networks for In Vivo Mapping of Interareal Cortical Connectivity Reflect Cytoarchitecture and Gene Expression",
+          "review_depth": "primary_source_registered_not_reopened_in_this_pass"
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "not_audited_here"
+    },
+    {
+      "id": "netneurotools",
+      "name": "netneurotools",
+      "record_kind": "software",
+      "runtime_records": [],
+      "analysis_records": [
+        {
+          "file": "analysis_catalog.json",
+          "pointer": "/software/15",
+          "record_id": "netneurotools"
+        }
+      ],
+      "source_pointers": [
+        {
+          "url": "https://netneurotools.readthedocs.io/en/latest/api.html",
+          "title": "Python Reference API",
+          "review_depth": "official_page_opened_relevant_overview_not_full_api_audit"
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "not_audited_here"
+    },
+    {
+      "id": "networkx",
+      "name": "NetworkX",
+      "record_kind": "software",
+      "runtime_records": [
+        {
+          "file": "runtime_inventory.json",
+          "pointer": "/software/26",
+          "record_id": "networkx"
+        }
+      ],
+      "analysis_records": [
+        {
+          "file": "analysis_catalog.json",
+          "pointer": "/software/16",
+          "record_id": "networkx"
+        }
+      ],
+      "source_pointers": [
+        {
+          "url": "https://networkx.org/documentation/stable/tutorial.html",
+          "title": "NetworkX Tutorial",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "graph types",
+            "nodes and edges",
+            "attributes",
+            "algorithms"
+          ]
+        },
+        {
+          "url": "https://networkx.org/documentation/stable/reference/algorithms/shortest_paths.html",
+          "title": "Shortest Paths",
+          "review_depth": "official_page_opened_relevant_overview_not_full_api_audit"
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "read_referenced_environment_records"
+    },
+    {
+      "id": "neurocombat",
+      "name": "neuroCombat作者实现",
+      "record_kind": "software",
+      "runtime_records": [],
+      "analysis_records": [
+        {
+          "file": "analysis_catalog.json",
+          "pointer": "/software/20",
+          "record_id": "neurocombat"
+        }
+      ],
+      "source_pointers": [
+        {
+          "url": "https://github.com/Jfortin1/neuroCombat",
+          "title": "Official neuroCombat implementation",
+          "review_depth": "official_search_excerpt_reviewed_not_full_page_audit"
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "not_audited_here"
+    },
+    {
+      "id": "neuroharmonize",
+      "name": "neuroHarmonize作者实现",
+      "record_kind": "software",
+      "runtime_records": [],
+      "analysis_records": [
+        {
+          "file": "analysis_catalog.json",
+          "pointer": "/software/21",
+          "record_id": "neuroharmonize"
+        }
+      ],
+      "source_pointers": [
+        {
+          "url": "https://github.com/rpomponio/neuroHarmonize",
+          "title": "neuroHarmonize official repository",
+          "review_depth": "official_search_excerpt_reviewed_not_full_page_audit"
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "not_audited_here"
+    },
+    {
+      "id": "neuromaps",
+      "name": "neuromaps",
+      "record_kind": "software",
+      "runtime_records": [
+        {
+          "file": "runtime_inventory.json",
+          "pointer": "/software/40",
+          "record_id": "neuromaps"
+        }
+      ],
+      "analysis_records": [
+        {
+          "file": "analysis_catalog.json",
+          "pointer": "/software/12",
+          "record_id": "neuromaps"
+        }
+      ],
+      "source_pointers": [
+        {
+          "url": "https://netneurolab.github.io/neuromaps/user_guide/comparisons.html",
+          "title": "Comparing brain maps",
+          "review_depth": "official_page_opened_relevant_overview_not_full_api_audit",
+          "topics": [
+            "resample_images与目标空间",
+            "连续图与标签插值区别",
+            "compare_images",
+            "null来源和位置参数对应",
+            "排列数与p值分辨率"
+          ]
+        },
+        {
+          "url": "https://github.com/netneurolab/neuromaps/blob/main/docs/user_guide/nulls.rst",
+          "title": "Spatial nulls for significance testing",
+          "review_depth": "official_search_excerpt_reviewed_not_full_page_audit",
+          "topics": [
+            "resample_images与目标空间",
+            "连续图与标签插值区别",
+            "compare_images",
+            "null来源和位置参数对应",
+            "排列数与p值分辨率"
+          ]
+        },
+        {
+          "url": "https://netneurolab.github.io/neuromaps/user_guide/comparisons.html",
+          "title": "Comparing brain maps",
+          "review_depth": "official_page_opened_relevant_overview_not_full_api_audit"
+        },
+        {
+          "url": "https://github.com/netneurolab/neuromaps/blob/main/docs/user_guide/nulls.rst",
+          "title": "Spatial nulls for significance testing",
+          "review_depth": "official_search_excerpt_reviewed_not_full_page_audit"
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "read_referenced_environment_records"
+    },
+    {
+      "id": "nibabel",
+      "name": "NiBabel",
+      "record_kind": "software",
+      "runtime_records": [
+        {
+          "file": "runtime_inventory.json",
+          "pointer": "/software/20",
+          "record_id": "nibabel"
+        }
+      ],
+      "analysis_records": [
+        {
+          "file": "analysis_catalog.json",
+          "pointer": "/software/0",
+          "record_id": "nibabel"
+        }
+      ],
+      "source_pointers": [
+        {
+          "url": "https://nipy.org/nibabel/gettingstarted.html",
+          "title": "NiBabel Getting Started",
+          "review_depth": "chapter_reviewed",
+          "topics": [
+            "neuroimage load/save",
+            "header",
+            "dtype",
+            "units"
+          ]
+        },
+        {
+          "url": "https://nipy.org/nibabel/coordinate_systems.html",
+          "title": "NiBabel Coordinate systems and affines",
+          "review_depth": "chapter_reviewed",
+          "topics": [
+            "voxel/world coordinates",
+            "affine",
+            "RAS/LPS",
+            "reference space"
+          ]
+        },
+        {
+          "url": "https://nipy.org/nibabel/coordinate_systems.html",
+          "title": "Coordinate systems and affines",
+          "review_depth": "official_page_opened_relevant_overview_not_full_api_audit"
+        },
+        {
+          "url": "https://nipy.org/nibabel/reference/nibabel.freesurfer.html",
+          "title": "NiBabel FreeSurfer API",
+          "review_depth": "primary_source_registered_not_reopened_in_this_pass"
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "read_referenced_environment_records"
+    },
+    {
+      "id": "niivue",
+      "name": "NiiVue",
+      "record_kind": "software",
+      "runtime_records": [
+        {
+          "file": "runtime_inventory.json",
+          "pointer": "/software/31",
+          "record_id": "niivue"
+        }
+      ],
+      "analysis_records": [],
+      "source_pointers": [
+        {
+          "url": "https://niivue.com/docs/",
+          "title": "NiiVue Getting started",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "browser neuroimage viewer",
+            "volume/surface display",
+            "API",
+            "examples"
+          ]
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "read_referenced_environment_records"
+    },
+    {
+      "id": "nilearn",
+      "name": "Nilearn",
+      "record_kind": "software",
+      "runtime_records": [
+        {
+          "file": "runtime_inventory.json",
+          "pointer": "/software/21",
+          "record_id": "nilearn"
+        }
+      ],
+      "analysis_records": [
+        {
+          "file": "analysis_catalog.json",
+          "pointer": "/software/5",
+          "record_id": "nilearn"
+        }
+      ],
+      "source_pointers": [
+        {
+          "url": "https://nilearn.github.io/stable/auto_examples/01_plotting/plot_surf_atlas.html",
+          "title": "Nilearn: Loading and plotting of a cortical surface atlas",
+          "review_depth": "chapter_reviewed",
+          "topics": [
+            "SurfaceImage",
+            "mesh and labels",
+            "surface visualization",
+            "atlas lookup table"
+          ]
+        },
+        {
+          "url": "https://nilearn.github.io/stable/auto_examples/05_glm_second_level/plot_oasis.html",
+          "title": "Nilearn: Voxel-Based Morphometry on OASIS dataset",
+          "review_depth": "chapter_reviewed",
+          "topics": [
+            "preprocessed VBM inputs",
+            "design matrix",
+            "GLM APIs",
+            "maps and reports"
+          ]
+        },
+        {
+          "url": "https://nilearn.github.io/stable/glm/second_level_model.html",
+          "title": "Second level models",
+          "review_depth": "official_page_opened_relevant_overview_not_full_api_audit"
+        },
+        {
+          "url": "https://nilearn.github.io/stable/auto_examples/05_glm_second_level/plot_oasis.html",
+          "title": "Voxel-Based Morphometry on OASIS dataset",
+          "review_depth": "primary_source_registered_not_reopened_in_this_pass"
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "read_referenced_environment_records"
+    },
+    {
+      "id": "nipype",
+      "name": "Nipype",
+      "record_kind": "software",
+      "runtime_records": [
+        {
+          "file": "runtime_inventory.json",
+          "pointer": "/software/22",
+          "record_id": "nipype"
+        }
+      ],
+      "analysis_records": [],
+      "source_pointers": [
+        {
+          "url": "https://nipype.readthedocs.io/en/latest/devel/interface_specs.html",
+          "title": "Nipype Interface Specifications",
+          "review_depth": "chapter_reviewed",
+          "topics": [
+            "InputSpec/OutputSpec",
+            "parameter dependencies",
+            "version conditions",
+            "command generation"
+          ]
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "read_referenced_environment_records"
+    },
+    {
+      "id": "nmt_charm_sarm",
+      "name": "NMT v2与CHARM/SARM资源",
+      "record_kind": "reference_resource",
+      "runtime_records": [],
+      "analysis_records": [
+        {
+          "file": "analysis_catalog.json",
+          "pointer": "/software/28",
+          "record_id": "nmt_charm_sarm"
+        }
+      ],
+      "source_pointers": [
+        {
+          "url": "https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/nonhuman/macaque_tempatl/atlas_charm.html",
+          "title": "CHARM official documentation",
+          "review_depth": "primary_source_registered_not_reopened_in_this_pass"
+        },
+        {
+          "url": "https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/nonhuman/macaque_tempatl/atlas_sarm.html",
+          "title": "SARM official documentation",
+          "review_depth": "primary_source_registered_not_reopened_in_this_pass"
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "not_audited_here"
+    },
+    {
+      "id": "nnunet",
+      "name": "nnU-Net v2",
+      "record_kind": "software",
+      "runtime_records": [
+        {
+          "file": "runtime_inventory.json",
+          "pointer": "/software/8",
+          "record_id": "nnunet"
+        }
+      ],
+      "analysis_records": [],
+      "source_pointers": [
+        {
+          "url": "https://github.com/MIC-DKFZ/nnUNet/blob/master/documentation/how_to_use_nnunet.md",
+          "title": "nnU-Net official documentation: How to use nnU-Net",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "data layout",
+            "planning and preprocessing",
+            "model training",
+            "inference"
+          ]
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "read_referenced_environment_records"
+    },
+    {
+      "id": "numpy",
+      "name": "NumPy",
+      "record_kind": "software",
+      "runtime_records": [
+        {
+          "file": "runtime_inventory.json",
+          "pointer": "/software/17",
+          "record_id": "numpy"
+        }
+      ],
+      "analysis_records": [
+        {
+          "file": "analysis_catalog.json",
+          "pointer": "/software/2",
+          "record_id": "numpy"
+        }
+      ],
+      "source_pointers": [
+        {
+          "url": "https://numpy.org/doc/2.2/user/quickstart.html",
+          "title": "NumPy 2.2 quickstart",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "array shape and axes",
+            "indexing",
+            "vectorized operations",
+            "linear algebra"
+          ]
+        },
+        {
+          "url": "https://numpy.org/doc/stable/user/",
+          "title": "NumPy user guide",
+          "review_depth": "primary_source_registered_not_reopened_in_this_pass"
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "read_referenced_environment_records"
+    },
+    {
+      "id": "octave",
+      "name": "GNU Octave",
+      "record_kind": "software",
+      "runtime_records": [
+        {
+          "file": "runtime_inventory.json",
+          "pointer": "/software/37",
+          "record_id": "octave"
+        }
+      ],
+      "analysis_records": [],
+      "source_pointers": [
+        {
+          "url": "https://docs.octave.org/latest/",
+          "title": "GNU Octave manual",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "Numerical runtime; toolbox-specific compatibility must be verified"
+          ]
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "read_referenced_environment_records"
+    },
+    {
+      "id": "palm",
+      "name": "PALM",
+      "record_kind": "software",
+      "runtime_records": [],
+      "analysis_records": [
+        {
+          "file": "analysis_catalog.json",
+          "pointer": "/software/23",
+          "record_id": "palm"
+        }
+      ],
+      "source_pointers": [
+        {
+          "url": "https://fsl.fmrib.ox.ac.uk/fsl/docs/statistics/palm.html",
+          "title": "PALM official documentation",
+          "review_depth": "primary_source_registered_not_reopened_in_this_pass"
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "not_audited_here"
+    },
+    {
+      "id": "pandas",
+      "name": "pandas",
+      "record_kind": "software",
+      "runtime_records": [
+        {
+          "file": "runtime_inventory.json",
+          "pointer": "/software/19",
+          "record_id": "pandas"
+        }
+      ],
+      "analysis_records": [
+        {
+          "file": "analysis_catalog.json",
+          "pointer": "/software/1",
+          "record_id": "pandas"
+        }
+      ],
+      "source_pointers": [
+        {
+          "url": "https://pandas.pydata.org/docs/getting_started/intro_tutorials/index.html",
+          "title": "pandas Getting started tutorials",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "tabular input/output",
+            "selection",
+            "joins",
+            "grouping"
+          ]
+        },
+        {
+          "url": "https://pandas.pydata.org/docs/user_guide/merging.html",
+          "title": "Merge, join, concatenate and compare",
+          "review_depth": "official_page_opened_relevant_overview_not_full_api_audit"
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "read_referenced_environment_records"
+    },
+    {
+      "id": "primatex",
+      "name": "PrimateX",
+      "record_kind": "software",
+      "runtime_records": [
+        {
+          "file": "runtime_inventory.json",
+          "pointer": "/software/0",
+          "record_id": "primatex"
+        }
+      ],
+      "analysis_records": [],
+      "source_pointers": [
+        {
+          "url": "/data/xuancheng/agent/README.md",
+          "title": "PrimateX local deployment README (path confirmed by server source audit)",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "primx CLI",
+            "species workflows",
+            "deployment",
+            "local usage documentation"
+          ]
+        },
+        {
+          "url": "/data/xuancheng/agent/workflows/primx_cli/primx",
+          "title": "PrimateX local CLI source and help entrypoint (path confirmed by server source audit)",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "subcommands",
+            "arguments",
+            "workflow dispatch",
+            "help text"
+          ]
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "read_referenced_environment_records"
+    },
+    {
+      "id": "pybids",
+      "name": "PyBIDS",
+      "record_kind": "software",
+      "runtime_records": [
+        {
+          "file": "runtime_inventory.json",
+          "pointer": "/software/23",
+          "record_id": "pybids"
+        }
+      ],
+      "analysis_records": [
+        {
+          "file": "analysis_catalog.json",
+          "pointer": "/software/27",
+          "record_id": "pybids"
+        }
+      ],
+      "source_pointers": [
+        {
+          "url": "https://bids-standard.github.io/pybids/",
+          "title": "PyBIDS official documentation and tutorial index",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "BIDSLayout",
+            "metadata query",
+            "dataset indexing",
+            "tutorials"
+          ]
+        },
+        {
+          "url": "https://bids-standard.github.io/pybids/",
+          "title": "PyBIDS documentation",
+          "review_depth": "primary_source_registered_not_reopened_in_this_pass"
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "read_referenced_environment_records"
+    },
+    {
+      "id": "python",
+      "name": "Python analysis runtime",
+      "record_kind": "software",
+      "runtime_records": [
+        {
+          "file": "runtime_inventory.json",
+          "pointer": "/software/16",
+          "record_id": "python_analysis"
+        }
+      ],
+      "analysis_records": [],
+      "source_pointers": [
+        {
+          "url": "https://docs.python.org/3.10/tutorial/",
+          "title": "The Python 3.10 Tutorial",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "modules",
+            "file IO",
+            "exceptions",
+            "environments"
+          ]
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "read_referenced_environment_records"
+    },
+    {
+      "id": "pytorch",
+      "name": "PyTorch (legacy PrimateX image)",
+      "record_kind": "software",
+      "runtime_records": [
+        {
+          "file": "runtime_inventory.json",
+          "pointer": "/software/9",
+          "record_id": "pytorch_legacy"
+        }
+      ],
+      "analysis_records": [],
+      "source_pointers": [
+        {
+          "url": "https://docs.pytorch.org/tutorials/beginner/basics/intro.html",
+          "title": "PyTorch Tutorials: Learn the Basics",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "tensors",
+            "datasets and dataloaders",
+            "models",
+            "saving and loading"
+          ]
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "read_referenced_environment_records"
+    },
+    {
+      "id": "scikit_learn",
+      "name": "scikit-learn",
+      "record_kind": "software",
+      "runtime_records": [
+        {
+          "file": "runtime_inventory.json",
+          "pointer": "/software/25",
+          "record_id": "scikit_learn"
+        }
+      ],
+      "analysis_records": [
+        {
+          "file": "analysis_catalog.json",
+          "pointer": "/software/22",
+          "record_id": "scikit_learn"
+        }
+      ],
+      "source_pointers": [
+        {
+          "url": "https://scikit-learn.org/1.7/user_guide.html",
+          "title": "scikit-learn 1.7 User Guide",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "estimators",
+            "preprocessing",
+            "pipelines",
+            "cross-validation",
+            "evaluation"
+          ]
+        },
+        {
+          "url": "https://scikit-learn.org/stable/modules/cross_decomposition.html",
+          "title": "Cross decomposition",
+          "review_depth": "official_page_opened_relevant_overview_not_full_api_audit"
+        },
+        {
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.cross_decomposition.PLSRegression.html",
+          "title": "PLSRegression API",
+          "review_depth": "official_page_opened_relevant_overview_not_full_api_audit"
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "read_referenced_environment_records"
+    },
+    {
+      "id": "scipy",
+      "name": "SciPy",
+      "record_kind": "software",
+      "runtime_records": [
+        {
+          "file": "runtime_inventory.json",
+          "pointer": "/software/18",
+          "record_id": "scipy"
+        }
+      ],
+      "analysis_records": [
+        {
+          "file": "analysis_catalog.json",
+          "pointer": "/software/3",
+          "record_id": "scipy"
+        }
+      ],
+      "source_pointers": [
+        {
+          "url": "https://docs.scipy.org/doc/scipy/tutorial/index.html",
+          "title": "SciPy User Guide",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "statistics",
+            "numerical algorithms",
+            "sparse matrices",
+            "scientific computing"
+          ]
+        },
+        {
+          "url": "https://docs.scipy.org/doc/scipy/reference/stats.html",
+          "title": "Statistical functions scipy.stats",
+          "review_depth": "official_page_opened_relevant_overview_not_full_api_audit"
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "read_referenced_environment_records"
+    },
+    {
+      "id": "scn_method",
+      "name": "传统结构协变网络方法资源",
+      "record_kind": "method",
+      "runtime_records": [],
+      "analysis_records": [
+        {
+          "file": "analysis_catalog.json",
+          "pointer": "/software/9",
+          "record_id": "scn_method"
+        }
+      ],
+      "source_pointers": [
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4043276/",
+          "title": "Imaging structural co-variance between human brain regions",
+          "review_depth": "primary_source_registered_not_reopened_in_this_pass"
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "not_audited_here"
+    },
+    {
+      "id": "seaborn",
+      "name": "seaborn (host Python)",
+      "record_kind": "software",
+      "runtime_records": [
+        {
+          "file": "runtime_inventory.json",
+          "pointer": "/software/30",
+          "record_id": "seaborn_host"
+        }
+      ],
+      "analysis_records": [],
+      "source_pointers": [
+        {
+          "url": "https://seaborn.pydata.org/tutorial.html",
+          "title": "seaborn User guide and tutorial",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "statistical plots",
+            "data structures",
+            "figure-level and axes-level APIs"
+          ]
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "read_referenced_environment_records"
+    },
+    {
+      "id": "simpleitk",
+      "name": "SimpleITK",
+      "record_kind": "software",
+      "runtime_records": [
+        {
+          "file": "runtime_inventory.json",
+          "pointer": "/software/24",
+          "record_id": "simpleitk"
+        }
+      ],
+      "analysis_records": [],
+      "source_pointers": [
+        {
+          "url": "https://insightsoftwareconsortium.github.io/SimpleITK-Notebooks/",
+          "title": "SimpleITK Image-Analysis Notebooks",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "image basics",
+            "transforms and resampling",
+            "registration",
+            "segmentation evaluation"
+          ]
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "read_referenced_environment_records"
+    },
+    {
+      "id": "spm",
+      "name": "SPM",
+      "record_kind": "software",
+      "runtime_records": [
+        {
+          "file": "runtime_inventory.json",
+          "pointer": "/software/34",
+          "record_id": "spm"
+        }
+      ],
+      "analysis_records": [],
+      "source_pointers": [
+        {
+          "url": "https://www.fil.ion.ucl.ac.uk/spm/docs/tutorials/",
+          "title": "SPM tutorials",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "VBM and model specification"
+          ]
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "read_referenced_environment_records"
+    },
+    {
+      "id": "statsmodels",
+      "name": "statsmodels (host Python)",
+      "record_kind": "software",
+      "runtime_records": [
+        {
+          "file": "runtime_inventory.json",
+          "pointer": "/software/29",
+          "record_id": "statsmodels_host"
+        }
+      ],
+      "analysis_records": [
+        {
+          "file": "analysis_catalog.json",
+          "pointer": "/software/4",
+          "record_id": "statsmodels"
+        }
+      ],
+      "source_pointers": [
+        {
+          "url": "https://www.statsmodels.org/v0.14.0/user-guide.html",
+          "title": "statsmodels 0.14.0 User Guide",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "model APIs",
+            "statistical inference",
+            "diagnostics",
+            "examples"
+          ]
+        },
+        {
+          "url": "https://www.statsmodels.org/stable/user-guide.html",
+          "title": "statsmodels User Guide",
+          "review_depth": "official_page_opened_relevant_overview_not_full_api_audit"
+        },
+        {
+          "url": "https://www.statsmodels.org/stable/mixed_linear.html",
+          "title": "Linear Mixed Effects Models",
+          "review_depth": "official_page_opened_relevant_overview_not_full_api_audit"
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "read_referenced_environment_records"
+    },
+    {
+      "id": "surfplot",
+      "name": "surfplot",
+      "record_kind": "software",
+      "runtime_records": [
+        {
+          "file": "runtime_inventory.json",
+          "pointer": "/software/39",
+          "record_id": "surfplot"
+        }
+      ],
+      "analysis_records": [],
+      "source_pointers": [
+        {
+          "url": "https://surfplot.readthedocs.io/en/latest/",
+          "title": "surfplot documentation",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "Surface plotting and examples"
+          ]
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "read_referenced_environment_records"
+    },
+    {
+      "id": "synthstrip",
+      "name": "SynthStrip",
+      "record_kind": "software",
+      "runtime_records": [
+        {
+          "file": "runtime_inventory.json",
+          "pointer": "/software/12",
+          "record_id": "synthstrip"
+        }
+      ],
+      "analysis_records": [],
+      "source_pointers": [
+        {
+          "url": "https://surfer.nmr.mgh.harvard.edu/docs/synthstrip/",
+          "title": "SynthStrip official tool documentation and Usage",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "brain extraction",
+            "input/output flags",
+            "binary mask",
+            "CSF boundary options"
+          ]
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "read_referenced_environment_records"
+    },
+    {
+      "id": "three",
+      "name": "Three.js",
+      "record_kind": "software",
+      "runtime_records": [
+        {
+          "file": "runtime_inventory.json",
+          "pointer": "/software/32",
+          "record_id": "three"
+        }
+      ],
+      "analysis_records": [],
+      "source_pointers": [
+        {
+          "url": "https://threejs.org/manual/",
+          "title": "Three.js official manual entrypoint",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "3D scene rendering",
+            "camera",
+            "geometry",
+            "browser visualization"
+          ]
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "read_referenced_environment_records"
+    },
+    {
+      "id": "workbench",
+      "name": "Connectome Workbench",
+      "record_kind": "software",
+      "runtime_records": [
+        {
+          "file": "runtime_inventory.json",
+          "pointer": "/software/5",
+          "record_id": "workbench"
+        }
+      ],
+      "analysis_records": [
+        {
+          "file": "analysis_catalog.json",
+          "pointer": "/software/24",
+          "record_id": "workbench_analysis"
+        }
+      ],
+      "source_pointers": [
+        {
+          "url": "https://www.humanconnectome.org/software/workbench-command/-metric-resample",
+          "title": "Workbench Command: -metric-resample",
+          "review_depth": "chapter_reviewed",
+          "topics": [
+            "metric and mesh resampling",
+            "registered spheres",
+            "area correction",
+            "ROI behavior"
+          ]
+        },
+        {
+          "url": "https://www.humanconnectome.org/software/workbench-command/-metric-resample",
+          "title": "Workbench metric-resample command",
+          "review_depth": "official_page_opened_relevant_overview_not_full_api_audit"
+        },
+        {
+          "url": "https://www.humanconnectome.org/software/workbench-command",
+          "title": "Workbench command reference",
+          "review_depth": "primary_source_registered_not_reopened_in_this_pass"
+        }
+      ],
+      "knowledge_status": "catalogued_not_fully_curated",
+      "runtime_resolution": "read_referenced_environment_records"
+    }
+  ]
+}

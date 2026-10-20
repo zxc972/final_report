@@ -1,0 +1,22 @@
+{
+  "task_id": "segmentation_volume_semantic_repair_v1",
+  "subjects": [
+    "100610",
+    "101309",
+    "101410",
+    "KM002"
+  ],
+  "input_roots": [
+    "/data/xuancheng/human_fastsurfer/subjects/100610",
+    "/data/xuancheng/human_fastsurfer/subjects/101309",
+    "/data/xuancheng/human_fastsurfer/subjects/101410",
+    "/data/xuancheng/featurize_20261011/data/KM002/KM002",
+    "/data/xuancheng/agent_overnight_20261020/volume_method_context",
+    "/data/xuancheng/agent_overnight_20261020/workspace/.analysis_runs/06cbd2e5bd8567ecbc8d1d0bd217497f/68e7612109054308ac2393ac2ed5442b"
+  ],
+  "next_review": "Recheck unchanged actual data values against the same frozen independent volume contract; review each reported correction, invalid-input guards, macaque/genus provenance, KM002 eTIV source and MGH/NIfTI array consistency. Repair is not an additional independent analysis cohort.",
+  "message": "请审查并修订你刚完成的分割体积任务。/inputs/0、1、2为三个人脑100610、101309、101410，/inputs/3为KM002，/inputs/4为方法原文，新增/inputs/5是你上一轮自己生成的代码、表格、QC图和报告（只读）。本轮是同一任务的审查后修订，不算新独立样本或新分析覆盖。复用自己的已完成计算，不重新展开全面发现；必须在本次写出并执行新的修订/核对代码，不手工改源数据或把旧结果冒充新计算。\n外部审查发现以下实际问题，逐项回看原文和代码后修订，不要无条件照抄反馈，也不要编造独立验证已经通过：\n1. report.md把区域表总行数写成0，与实际表不一致，make_report.py中subject_id读入类型与isin字符串的用法需核对。用实际表键和行数生成报告，不硬编码行数。\n2. normalization_qc.json和代码用了0.75–0.95的“正常生理范围”，报告用了约0.8–0.9，没有读到的来源支持把它当统一门槛。删除这种无来源阈值，也不要换另一个任意范围。保留原始eTIV、BrainSeg、比值和来源，用本队列实际内部不一致作为需要审查/暂停归一化的理由；这不是对健康状态的诊断，不宣称知道错误原因。三个人脑都检查，避免只说其中两个存在BrainSeg>eTIV。\n3. 报告称KM002没有eTIV/ICV文件，然而stats/lh.aparc.stats、rh.aparc.stats及a2009s统计表的Measure头可能已有EstimatedTotalIntraCranialVol/eTIV，而brainvol.stats中没有。请实际读取并比较这些头字段，保留可查的原始估计及其来源；区分“估计字段存在”与“可作为猴脑有效ICV使用”，后者不能凭人脑Talairach方法就认定。保持不进行无证据归一化的限制。\n4. 目前把KM002硬写为macaque；用户只提供猴脑样本，未确认种属。若实际数据无种属来源，将species标为monkey_unknown或等效未确认状态，包含label_counts.tsv、计划、状态JSON、图注和报告，不从文件名或通用模板文档推断物种。数值标签名称仅为软件查表便利，不证明猴脑区域有效性或跨物种同源。\n5. count_labels.py虽然记录finite/integer布尔值，却在无效时仍可能填零或四舍五入计数；对无效标签应明确拒绝，而不是默默修复。CSV数值解析不得把无法解析值强制变成真实0。可以在/work下做明确标记的小型函数反例测试（NaN/非整数/缺列），但这些仅为代码边界测试，绝不进入真实分析表或冒充被试数据。\n6. 0.125的体素体积是与MGZ头/仿射一致的存储网格解释，不是独立物理校准。若继续用NIfTI的标签数组，应实际检查与MGZ的逐体素数组/形状关系，明确sform冲突和采用依据；不修改源文件，不把共同索引叠加图当作配准或专家解剖QC通过。\n把修订版全部写入本轮/work，可用Python复制上一轮自己生成的正确表和图，再按需要修订元数据/报告和自己的函数；保留所有数值、行键与原始值，不用参考评分器替换数字。报告/analysis_plan明确哪些结果复用自哪次运行、哪些代码和检查是本轮新完成。请保持最终文件名label_counts.tsv、regional_volumes.tsv、descriptive_statistics.tsv、normalization_qc.json、monkey_status.json、report.md、analysis_plan.json，可另加review_checks.json。成功执行后调用finalize_artifacts收尾，原始旧产物不改，保留组不访问。",
+  "conversation_id": "segmentation_volume_audit_v1_20261020T042428_d90787",
+  "predecessor_run": "segmentation_volume_audit_v1_20261020T042428_d90787",
+  "include_predecessor_outputs": true
+}

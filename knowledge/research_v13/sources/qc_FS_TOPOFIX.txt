@@ -1,0 +1,90 @@
+TopologyFixer - Free Surfer Wiki
+Search:
+Login
+TopologyFixer
+FreeSurferWiki
+RecentChanges
+FindPage
+HelpContents
+TopologyFixer
+Immutable Page
+Comments
+Discussion
+Info
+Attachments
+More Actions:
+Raw Text
+Print View
+Render as Docbook
+Delete Cache
+------------------------
+Check Spelling
+Like Pages
+Local Site Map
+------------------------
+Rename Page
+Delete Page
+------------------------
+Subscribe User
+------------------------
+Remove Spam
+Revert to this revision
+Package Pages
+Sync Pages
+------------------------
+Load
+Save
+SlideShow
+Automatic Topology Fixer (-<no>fix)
+Finds topological defects (ie, holes in a filled hemisphere) using surf/?h.qsphere.nofix, and changes the orig surface (surf/?h.orig.nofix) to remove the defects. Changes the number of vertices.  All the defects will be removed, but the user should check the orig surface in the volume to make sure that it looks appropriate. Creates surf/?h.orig (by iteratively fixing surf/?h.orig.nofix).
+The Topology Fixer is automatically run during recon-all, using the three programs below.
+Programs
+mris_fix_topology
+mris_euler_number
+mris_remove_intersection
+Manual Inspection
+After the initial surface is inflated, any topological defects must be corrected before proceeding. This is often an iterative process where the surface is inflated, viewed, fixed, and reinflated until the surface looks smooth and continuous in all regions. Topological defects can have many different forms. Some look like holes or tunnels in the surface. Others appear as dimples, bumps, or handles. They are created when there are holes in the segmentation, fill errors, areas of non-white matter classified as white matter, and areas where islands of white matter are cut off entirely from the main volume, or disconnect and then reconnect later. Non-cortical structures that adjacent to the cortex (such as the fornix, basal ganglia, and lateral ventricle) can cause large topological defects.
+All of these are problematic when generating a spherical representation of the cortex, because they represent areas of non-unique mapping to the sphere. In each case, the region must be fixed before inter-subject averaging and morphological studies. The automatic topology corrector can only correct minor errors. You should always inspect the surfaces after they are created and make any edits necessary to correct the topology. If you're not sure what is considered an error, please email our mailing list freesurfer@nmr.mgh.harvard.edu.
+Manual errors can be one of the following:
+Holes
+WM classified as non-WM
+Fix by filling
+Example: filling ventricle
+Handles
+non-WM classified as WM
+Fix by cutting
+Example: removing optic nerve
+(Other areas: fornix, basal ganglia, temporal strands)
+TopologyFixer  (last edited 2018-01-16 16:17:05 by EmmaBoyd)
+Immutable Page
+Comments
+Discussion
+Info
+Attachments
+More Actions:
+Raw Text
+Print View
+Render as Docbook
+Delete Cache
+------------------------
+Check Spelling
+Like Pages
+Local Site Map
+------------------------
+Rename Page
+Delete Page
+------------------------
+Subscribe User
+------------------------
+Remove Spam
+Revert to this revision
+Package Pages
+Sync Pages
+------------------------
+Load
+Save
+SlideShow
+MoinMoin Powered
+Python Powered
+GPL licensed
+Valid HTML 4.01

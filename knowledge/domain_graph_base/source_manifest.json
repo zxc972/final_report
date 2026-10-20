@@ -1,0 +1,74 @@
+[
+  {
+    "id": "freesurfer_v741_lut",
+    "url": "https://raw.githubusercontent.com/freesurfer/freesurfer/v7.4.1/distribution/FreeSurferColorLUT.txt",
+    "version": "v7.4.1",
+    "retrieved_utc": "2026-10-20T04:07:24.846659+00:00",
+    "review_status": "source_candidate_not_scientific_approval",
+    "status": "downloaded",
+    "sha256": "a9c498ee1071b5f7f83e9b4a53e814d71aed767e2d97576e611572e5d1083815",
+    "bytes": 95285,
+    "path": "freesurfer_v741_lut.txt"
+  },
+  {
+    "id": "fastsurfer_v254_lut",
+    "url": "https://raw.githubusercontent.com/Deep-MI/FastSurfer/v2.5.4/FastSurferCNN/config/FreeSurferColorLUT.txt",
+    "version": "v2.5.4",
+    "retrieved_utc": "2026-10-20T04:07:24.848652+00:00",
+    "review_status": "source_candidate_not_scientific_approval",
+    "status": "downloaded",
+    "sha256": "c8949c0c0c23d6c401edbaca01491f54531df57f35a34d00887d24f65db3f42e",
+    "bytes": 115191,
+    "path": "fastsurfer_v254_lut.txt"
+  },
+  {
+    "id": "fastsurfer_v254_segstats",
+    "url": "https://raw.githubusercontent.com/Deep-MI/FastSurfer/v2.5.4/FastSurferCNN/segstats.py",
+    "version": "v2.5.4",
+    "retrieved_utc": "2026-10-20T04:07:24.849651+00:00",
+    "review_status": "source_candidate_not_scientific_approval",
+    "status": "downloaded",
+    "sha256": "047d9fff79958359131aa3691194d1c16983969dd33ab81b571eb07cdfb9059e",
+    "bytes": 95720,
+    "path": "fastsurfer_v254_segstats.txt"
+  },
+  {
+    "id": "afni_charm",
+    "url": "https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/nonhuman/macaque_tempatl/atlas_charm.html",
+    "version": "live_snapshot_20261020",
+    "retrieved_utc": "2026-10-20T04:07:24.850652+00:00",
+    "review_status": "source_candidate_not_scientific_approval",
+    "status": "downloaded",
+    "sha256": "9987be1bbefe760084f7f76bdd189cc47a5d304de28aef17fcdc69a7529321db",
+    "bytes": 21980,
+    "path": "afni_charm.txt",
+    "plain_text_path": "afni_charm.plain.txt",
+    "plain_text_sha256": "f6d02e563796dce990bb252f0563609b3c5744027ba64d246d8e4d95127add45"
+  },
+  {
+    "id": "afni_sarm",
+    "url": "https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/nonhuman/macaque_tempatl/atlas_sarm.html",
+    "version": "live_snapshot_20261020",
+    "retrieved_utc": "2026-10-20T04:07:25.832536+00:00",
+    "review_status": "source_candidate_not_scientific_approval",
+    "status": "downloaded",
+    "sha256": "7cea2865f81e1cf53507ab3daee33fd13410b3a374c5a2567c68fded04948412",
+    "bytes": 22184,
+    "path": "afni_sarm.txt",
+    "plain_text_path": "afni_sarm.plain.txt",
+    "plain_text_sha256": "cc4f98abadee96494e4c800b6ceeee35fcdf73830b1fb34578ddd710be813953"
+  },
+  {
+    "id": "afni_nmt",
+    "url": "https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/nonhuman/macaque_tempatl/template_nmtv2.html",
+    "version": "NMT_v2_documentation_snapshot",
+    "retrieved_utc": "2026-10-20T04:07:26.202114+00:00",
+    "review_status": "source_candidate_not_scientific_approval",
+    "status": "downloaded",
+    "sha256": "96080c311ef0425f912ad03adb4ba821cb2f2cd5c0030de68e2b4202cfa0bfba",
+    "bytes": 25020,
+    "path": "afni_nmt.txt",
+    "plain_text_path": "afni_nmt.plain.txt",
+    "plain_text_sha256": "bed847fb3a679a654cd51de952588957e75022859da623ccb27eebcb420b28eb"
+  }
+]

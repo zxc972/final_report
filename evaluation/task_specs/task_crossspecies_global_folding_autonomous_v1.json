@@ -1,0 +1,29 @@
+{
+  "research_evidence_release": "research_evidence_v13",
+  "enable_background_jobs": false,
+  "include_predecessor_outputs": false,
+  "next_review": "After native termination, independently inspect generated source, actual tool/evidence/feedback trace, code/inputs/output hashes and frozen numeric contract. No external repair instructions during the run.",
+  "task_id": "crossspecies_global_folding_autonomous_v1",
+  "subjects": [
+    "100610",
+    "101309",
+    "101410",
+    "KM002"
+  ],
+  "input_roots": [
+    "/data/xuancheng/human_fastsurfer/subjects/100610",
+    "/data/xuancheng/human_fastsurfer/subjects/101309",
+    "/data/xuancheng/human_fastsurfer/subjects/101410",
+    "/data/xuancheng/featurize_20261011/data/KM002/KM002"
+  ],
+  "required_artifacts": [
+    "analysis_plan.json",
+    "folding_summary.tsv",
+    "scale_sensitivity.tsv",
+    "self_checks.json",
+    "repair_log.json",
+    "report.md",
+    "folding_comparison.png"
+  ],
+  "message": "请使用三例人脑100610、101309、101410和KM002的已有皮层表面，自主选择有文献依据、适合现有数据的无量纲整体折叠指标，实际计算并作描述性比较。检验对坐标作一致的等比例缩放时指标是否改变，并清楚说明表面覆盖范围、方法定义和可比性限制。请区分整体指标与局部脑回化指数，不把已有厚度汇总当成本任务，也不使用同名脑区假装同源。\n先观察实际文件和运行环境，用现有方法图谱及原文检索选择步骤与参数，自己写新代码并执行、自检和纠错；不要调用此前任务的固定分析脚本。本任务不提供先前分析代码或私有参考答案，也不要等待外部结果指导。\nKM002的具体物种、原始尺度、跨物种同源映射和专家QC尚未审核；人脑和猴脑的来源流程也可能不同。能够做技术描述比较不等于已经证明生物学物种差异。无法成立的比较要说明缺项，仍实际完成具备条件的计算与尺度敏感性检查。不得读取保留组102311、105216。\n请生成analysis_plan.json、folding_summary.tsv、scale_sensitivity.tsv、self_checks.json、repair_log.json、report.md、folding_comparison.png，保留实际输入、生成代码、执行与自检证据。"
+}

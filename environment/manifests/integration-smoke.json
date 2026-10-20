@@ -1,0 +1,13 @@
+{
+  "status": "pass",
+  "checks": [
+    "activate.sh resolves structural-env and template paths",
+    "isolated analysis Python launcher",
+    "existing ANTs launcher",
+    "AFNI math numeric result and geometry",
+    "C3D math numeric result and geometry",
+    "AFNI can read NMT template",
+    "SynthStrip launcher prints expected upstream help"
+  ],
+  "scope": "synthetic images only; SynthStrip actual inference recorded separately in SynthStrip.json"
+}

@@ -1,0 +1,910 @@
+{
+  "VBM_TEMPLATE": {
+    "relation_pairs": [
+      [
+        "FSL-VBM",
+        "Study-Specific Template"
+      ],
+      [
+        "FSL-VBM Directory",
+        "Template List"
+      ],
+      [
+        "Study-Specific Template",
+        "T1 Images"
+      ],
+      [
+        "T1 Images",
+        "Template List"
+      ]
+    ],
+    "count": 4,
+    "create_time": 1792427114,
+    "update_time": 1792427114,
+    "_id": "VBM_TEMPLATE"
+  },
+  "SBM_CACHE": {
+    "relation_pairs": [
+      [
+        "FWHM",
+        "Qcache"
+      ],
+      [
+        "Fsaverage",
+        "Qcache"
+      ],
+      [
+        "Qcache",
+        "Recon-All"
+      ],
+      [
+        "Qcache",
+        "Tutorial Data"
+      ]
+    ],
+    "count": 4,
+    "create_time": 1792427114,
+    "update_time": 1792427114,
+    "_id": "SBM_CACHE"
+  },
+  "NHP_WRAPPER": {
+    "relation_pairs": [
+      [
+        "BIDS",
+        "Run Full Pipeline Script"
+      ],
+      [
+        "FreeSurfer License",
+        "Run Full Pipeline Script"
+      ],
+      [
+        "M3",
+        "Run Full Pipeline Script"
+      ],
+      [
+        "M3",
+        "run_full_pipeline.sh"
+      ]
+    ],
+    "count": 4,
+    "create_time": 1792427120,
+    "update_time": 1792427120,
+    "_id": "NHP_WRAPPER"
+  },
+  "STAT_BLOCK": {
+    "relation_pairs": [
+      [
+        "Exchangeability Blocks",
+        "Group Labels"
+      ],
+      [
+        "Exchangeability Blocks",
+        "Randomise"
+      ],
+      [
+        "Guide",
+        "Repeated Measures"
+      ],
+      [
+        "Null-Hypothesis Exchangeability",
+        "Permutation Tests"
+      ],
+      [
+        "Permutation Tests",
+        "Repeated Measures"
+      ],
+      [
+        "Randomise",
+        "Repeated Measures"
+      ]
+    ],
+    "count": 6,
+    "create_time": 1792427122,
+    "update_time": 1792427122,
+    "_id": "STAT_BLOCK"
+  },
+  "NHP_M1": {
+    "relation_pairs": [
+      [
+        "Apptainer",
+        "PREEMACS"
+      ],
+      [
+        "M1",
+        "PREEMACS"
+      ],
+      [
+        "M1",
+        "SUB01"
+      ],
+      [
+        "M1",
+        "out_path"
+      ],
+      [
+        "M1",
+        "t1_path"
+      ],
+      [
+        "M1",
+        "t2_path"
+      ],
+      [
+        "PREEMACS",
+        "preemacs.sif"
+      ]
+    ],
+    "count": 7,
+    "create_time": 1792427127,
+    "update_time": 1792427127,
+    "_id": "NHP_M1"
+  },
+  "NHP_N4": {
+    "relation_pairs": [
+      [
+        "Apptainer",
+        "GenerateN4"
+      ],
+      [
+        "BM",
+        "GenerateN4"
+      ],
+      [
+        "GenerateN4",
+        "M1"
+      ],
+      [
+        "GenerateN4",
+        "N4 Bias-Field Correction"
+      ],
+      [
+        "GenerateN4",
+        "Preemacs.Sif"
+      ],
+      [
+        "GenerateN4",
+        "SUB01"
+      ]
+    ],
+    "count": 6,
+    "create_time": 1792427132,
+    "update_time": 1792427132,
+    "_id": "NHP_N4"
+  },
+  "CROSS_FINDING": {
+    "relation_pairs": [
+      [
+        "Arcuate fasciculus",
+        "Temporal lobe"
+      ],
+      [
+        "Arcuate fasciculus",
+        "Temporo-parietal cortex"
+      ],
+      [
+        "Brain Organization",
+        "Comparative Hypotheses"
+      ],
+      [
+        "Brain Organization",
+        "Cortical Organization"
+      ],
+      [
+        "Chimpanzee",
+        "Cortical myelin"
+      ],
+      [
+        "Computational neuroanatomy approach",
+        "Temporo-parietal cortex"
+      ],
+      [
+        "Cortical myelin",
+        "Human"
+      ],
+      [
+        "Cortical myelin",
+        "Macaque"
+      ],
+      [
+        "Middle longitudinal fasciculus",
+        "Temporo-parietal cortex"
+      ],
+      [
+        "Superior longitudinal fasciculus",
+        "Temporo-parietal cortex"
+      ],
+      [
+        "Temporo-parietal cortex",
+        "White matter tracts"
+      ]
+    ],
+    "count": 11,
+    "create_time": 1792427137,
+    "update_time": 1792427137,
+    "_id": "CROSS_FINDING"
+  },
+  "LONG": {
+    "relation_pairs": [
+      [
+        "Blurry Guess",
+        "Longitudinal Runs"
+      ],
+      [
+        "Cross Sectional Processing",
+        "Longitudinal Processing"
+      ],
+      [
+        "Default Stream",
+        "Subject Data"
+      ],
+      [
+        "Difference Calculation",
+        "Longitudinal Processing"
+      ],
+      [
+        "FreeSurfer",
+        "Longitudinal Processing"
+      ],
+      [
+        "Longitudinal Processing",
+        "Longitudinal Run"
+      ],
+      [
+        "Longitudinal Processing",
+        "Recon-All"
+      ],
+      [
+        "Longitudinal Processing",
+        "Recon-all"
+      ],
+      [
+        "Longitudinal Processing",
+        "SUBJECTS_DIR"
+      ],
+      [
+        "Longitudinal Processing",
+        "Subject Data"
+      ],
+      [
+        "Longitudinal Processing",
+        "Template"
+      ],
+      [
+        "Longitudinal Processing",
+        "Template Run"
+      ],
+      [
+        "Longitudinal Processing",
+        "Timepoint"
+      ],
+      [
+        "Norm.Mgz",
+        "Unbiased Template"
+      ],
+      [
+        "Recon-All",
+        "Unbiased Template"
+      ],
+      [
+        "Template",
+        "Template Comparison"
+      ],
+      [
+        "Template",
+        "Template ID"
+      ],
+      [
+        "Timepoint",
+        "Timepoint ID"
+      ]
+    ],
+    "count": 18,
+    "create_time": 1792427144,
+    "update_time": 1792427144,
+    "_id": "LONG"
+  },
+  "PED": {
+    "relation_pairs": [
+      [
+        "Aseg.Stats",
+        "Cross Sectional Directories"
+      ],
+      [
+        "Aseg.Stats",
+        "Estimated Total Intracranial Volume (eTIV)"
+      ],
+      [
+        "Brain Mask",
+        "Subject Template"
+      ],
+      [
+        "Estimated Total Intracranial Volume (eTIV)",
+        "Subject Template"
+      ],
+      [
+        "Linear Talairach Map",
+        "Subject Template"
+      ],
+      [
+        "Longitudinal Pipeline",
+        "Pediatric Data"
+      ],
+      [
+        "Longitudinal Pipeline",
+        "Template/Base Image"
+      ]
+    ],
+    "count": 7,
+    "create_time": 1792427149,
+    "update_time": 1792427149,
+    "_id": "PED"
+  },
+  "QC_BODY": {
+    "relation_pairs": [
+      [
+        "Coefficient Of Joint Variation",
+        "Ganzetti2016"
+      ],
+      [
+        "Coefficient Of Joint Variation",
+        "INU Correction Algorithm"
+      ],
+      [
+        "Contrast-To-Noise Ratio",
+        "Gray Matter"
+      ],
+      [
+        "Contrast-To-Noise Ratio",
+        "Magnota2006"
+      ],
+      [
+        "Contrast-To-Noise Ratio",
+        "SNR Calculation"
+      ],
+      [
+        "Contrast-To-Noise Ratio",
+        "White Matter"
+      ]
+    ],
+    "count": 6,
+    "create_time": 1792427153,
+    "update_time": 1792427153,
+    "_id": "QC_BODY"
+  },
+  "VBM_FINAL": {
+    "relation_pairs": [
+      [
+        "Cluster-Based Thresholding",
+        "TFCE"
+      ],
+      [
+        "Cluster-Based Thresholding",
+        "Tstat Maps"
+      ],
+      [
+        "Design.con",
+        "Randomise"
+      ],
+      [
+        "Design.mat",
+        "Randomise"
+      ],
+      [
+        "FSL-VBM",
+        "GM Images"
+      ],
+      [
+        "FSL-VBM",
+        "Good et al., 2001"
+      ],
+      [
+        "Fslvbm_3_Proc",
+        "GM Mod Merg S3"
+      ],
+      [
+        "GM Images",
+        "GM_merg"
+      ],
+      [
+        "GM Images",
+        "GM_mod_merg"
+      ],
+      [
+        "GM Images",
+        "Jacobian of the Warp Field"
+      ],
+      [
+        "GM Images",
+        "Study-Specific Template"
+      ],
+      [
+        "GM Mask",
+        "Randomise"
+      ],
+      [
+        "GM Mod Merg S3",
+        "Randomise"
+      ],
+      [
+        "GM_mod_merg",
+        "GM_mod_merg_s3"
+      ],
+      [
+        "GM_mod_merg",
+        "Gaussian Kernels"
+      ],
+      [
+        "GM_mod_merg_s3",
+        "Permutation-Based Non-Parametric Inference"
+      ],
+      [
+        "Permutation-Based Non-Parametric Inference",
+        "Randomise"
+      ],
+      [
+        "Permutation-Based Non-Parametric Inference",
+        "design.mat"
+      ],
+      [
+        "Randomise",
+        "Tstat Maps"
+      ]
+    ],
+    "count": 19,
+    "create_time": 1792428582,
+    "update_time": 1792428582,
+    "_id": "VBM_FINAL"
+  },
+  "VBM_LIMITS": {
+    "relation_pairs": [
+      [
+        "Free-Form Deformation",
+        "Voxelwise Grey Matter Analysis"
+      ],
+      [
+        "Grey Matter",
+        "Voxelwise Grey Matter Analysis"
+      ],
+      [
+        "Grey Matter Atrophy",
+        "Voxelwise Grey Matter Analysis"
+      ],
+      [
+        "Gyrification Pattern",
+        "Voxelwise Grey Matter Analysis"
+      ],
+      [
+        "Non-Rigid Registration",
+        "Voxelwise Grey Matter Analysis"
+      ],
+      [
+        "Smoothing",
+        "Voxelwise Grey Matter Analysis"
+      ]
+    ],
+    "count": 6,
+    "create_time": 1792428586,
+    "update_time": 1792428586,
+    "_id": "VBM_LIMITS"
+  },
+  "STAT_ONEGROUP": {
+    "relation_pairs": [
+      [
+        "4D image",
+        "Randomise"
+      ],
+      [
+        "COPE",
+        "FEAT FMRI analysis"
+      ],
+      [
+        "COPE",
+        "One-sample t-test"
+      ],
+      [
+        "FEAT FMRI analysis",
+        "FSL"
+      ],
+      [
+        "FSL",
+        "Randomise"
+      ],
+      [
+        "One-sample t-test",
+        "Randomise"
+      ],
+      [
+        "OneSamp4D",
+        "OneSampT"
+      ],
+      [
+        "OneSamp4D",
+        "Randomise"
+      ],
+      [
+        "OneSamp4D",
+        "Variance Smoothing"
+      ],
+      [
+        "Randomise",
+        "Variance smoothing"
+      ]
+    ],
+    "count": 10,
+    "create_time": 1792428619,
+    "update_time": 1792428619,
+    "_id": "STAT_ONEGROUP"
+  },
+  "STAT_PAIRED": {
+    "relation_pairs": [
+      [
+        "A-B Contrast",
+        "T-Contrast"
+      ],
+      [
+        "B-A Contrast",
+        "T-Contrast"
+      ],
+      [
+        "Condition A",
+        "Exchangeability-Block Information"
+      ],
+      [
+        "Condition A",
+        "Group Of 8 Subjects"
+      ],
+      [
+        "Condition A",
+        "Two-Sample Paired T-test"
+      ],
+      [
+        "Condition B",
+        "Exchangeability-Block Information"
+      ],
+      [
+        "Condition B",
+        "Group Of 8 Subjects"
+      ],
+      [
+        "Condition B",
+        "Two-Sample Paired T-test"
+      ],
+      [
+        "Contrast",
+        "Design"
+      ],
+      [
+        "Design",
+        "Exchangeability-Block Information"
+      ],
+      [
+        "Design",
+        "Group"
+      ],
+      [
+        "Design",
+        "Mask"
+      ],
+      [
+        "Design",
+        "Randomise"
+      ],
+      [
+        "Design",
+        "T-Contrast"
+      ],
+      [
+        "Design Matrix",
+        "Group Difference"
+      ],
+      [
+        "Design Matrix",
+        "Subject Means"
+      ],
+      [
+        "Design Matrix",
+        "Two-Sample Paired T-test"
+      ],
+      [
+        "Exchangeability-Block Information",
+        "GLM Gui"
+      ],
+      [
+        "Exchangeability-Block Information",
+        "Null Hypothesis"
+      ],
+      [
+        "Exchangeability-Block Information",
+        "Subject"
+      ],
+      [
+        "FSLMaths",
+        "Within-Subject Differences"
+      ],
+      [
+        "Fslmaths",
+        "Paired Analysis"
+      ],
+      [
+        "GLM Gui",
+        "Group Column"
+      ],
+      [
+        "GLM Guide",
+        "Two-Sample Paired T-test"
+      ],
+      [
+        "Group Difference",
+        "T-Contrast"
+      ],
+      [
+        "Group Of 8 Subjects",
+        "Two-Sample Paired T-test"
+      ],
+      [
+        "Mask",
+        "Randomise"
+      ],
+      [
+        "One-Group T-Test",
+        "Within-Subject Differences"
+      ],
+      [
+        "Paired Analysis",
+        "Randomise"
+      ],
+      [
+        "Paired Analysis",
+        "Within-Subject Differences"
+      ],
+      [
+        "PairedT",
+        "Randomise"
+      ],
+      [
+        "PairedT4D",
+        "Randomise"
+      ]
+    ],
+    "count": 32,
+    "create_time": 1792428629,
+    "update_time": 1792428629,
+    "_id": "STAT_PAIRED"
+  },
+  "FS_SINGLE": {
+    "relation_pairs": [
+      [
+        "Base Creation Step",
+        "Longitudinal Stream"
+      ],
+      [
+        "D.N. Greve",
+        "Statistical Analysis of Longitudinal Neuroimage Data with Linear Mixed Effects Models"
+      ],
+      [
+        "J.L. Bernal-Rusiel",
+        "Statistical Analysis of Longitudinal Neuroimage Data with Linear Mixed Effects Models"
+      ],
+      [
+        "Linear Mixed Effects Models (LME)",
+        "Single Time-Point Subjects"
+      ],
+      [
+        "Linear Mixed Effects Models (LME)",
+        "Statistical Analysis of Longitudinal Neuroimage Data with Linear Mixed Effects Models"
+      ],
+      [
+        "Longitudinal Stream",
+        "Single Time-Point Subjects"
+      ],
+      [
+        "M. Reuter",
+        "Statistical Analysis of Longitudinal Neuroimage Data with Linear Mixed Effects Models"
+      ],
+      [
+        "NeuroImage",
+        "Statistical Analysis of Longitudinal Neuroimage Data with Linear Mixed Effects Models"
+      ]
+    ],
+    "count": 8,
+    "create_time": 1792428638,
+    "update_time": 1792428638,
+    "_id": "FS_SINGLE"
+  },
+  "WRAPPER_LICENSE": {
+    "relation_pairs": [
+      [
+        "FS_LICENSE",
+        "SIF"
+      ],
+      [
+        "FS_LICENSE",
+        "T1_INPUT"
+      ],
+      [
+        "FS_LICENSE",
+        "T2_INPUT"
+      ],
+      [
+        "FS_LICENSE",
+        "run_full_pipeline.sh"
+      ],
+      [
+        "OUTPUT_DIR",
+        "run_full_pipeline.sh"
+      ],
+      [
+        "PREEMACS",
+        "run_full_pipeline.sh"
+      ],
+      [
+        "README.md",
+        "run_full_pipeline.sh"
+      ],
+      [
+        "SIF",
+        "T1_INPUT"
+      ],
+      [
+        "SIF",
+        "T2_INPUT"
+      ],
+      [
+        "SUB_ID",
+        "run_full_pipeline.sh"
+      ],
+      [
+        "T1_INPUT",
+        "T2_INPUT"
+      ],
+      [
+        "T1_PATH",
+        "run_full_pipeline.sh"
+      ],
+      [
+        "T2_PATH",
+        "run_full_pipeline.sh"
+      ],
+      [
+        "preemacs.sif",
+        "run_full_pipeline.sh"
+      ]
+    ],
+    "count": 14,
+    "create_time": 1792428649,
+    "update_time": 1792428649,
+    "_id": "WRAPPER_LICENSE"
+  },
+  "WRAPPER_BINDS": {
+    "relation_pairs": [
+      [
+        "--bind flags",
+        "resolve_modality_binds"
+      ],
+      [
+        "BIDS",
+        "Tag"
+      ],
+      [
+        "BIDS anat folder",
+        "resolve_modality_binds"
+      ],
+      [
+        "Bind Mount Arguments",
+        "Destination Directory"
+      ],
+      [
+        "Bind Mount Arguments",
+        "Nifti Files"
+      ],
+      [
+        "File Name",
+        "Seen Names List"
+      ],
+      [
+        "Files",
+        "Find"
+      ],
+      [
+        "Files",
+        "Input"
+      ],
+      [
+        "Files",
+        "NIfTI"
+      ],
+      [
+        "Files",
+        "Sort"
+      ],
+      [
+        "Files",
+        "Tag"
+      ],
+      [
+        "Find",
+        "Recursive"
+      ],
+      [
+        "Input Directory",
+        "Nifti Files"
+      ],
+      [
+        "Input Directory",
+        "Recursive Search Flag"
+      ],
+      [
+        "M1",
+        "resolve_modality_binds"
+      ],
+      [
+        "Nifti Files",
+        "Tag"
+      ],
+      [
+        "resolve_modality_binds",
+        "run_full_pipeline.sh"
+      ]
+    ],
+    "count": 17,
+    "create_time": 1792428673,
+    "update_time": 1792428673,
+    "_id": "WRAPPER_BINDS"
+  },
+  "M1_INPUT_CODE": {
+    "relation_pairs": [
+      [
+        "ACS_DIR",
+        "SUB_ID"
+      ],
+      [
+        "Coords",
+        "Manual Crop"
+      ],
+      [
+        "Num Ima",
+        "T1 Image File"
+      ],
+      [
+        "Num Ima",
+        "T2 Image File"
+      ],
+      [
+        "Orig Folder",
+        "Subject ID"
+      ],
+      [
+        "Orig Folder",
+        "T1 Image File"
+      ],
+      [
+        "Orig Folder",
+        "T2 Image File"
+      ],
+      [
+        "PREEMACS Directory",
+        "Subject ID"
+      ],
+      [
+        "SUB_ID",
+        "raw_${num_ima}_T2.nii.gz"
+      ],
+      [
+        "T1 Image File",
+        "T1 Image Path"
+      ],
+      [
+        "T2 Image File",
+        "T2 Image Path"
+      ],
+      [
+        "num_ima",
+        "raw_${num_ima}_T2.nii.gz"
+      ]
+    ],
+    "count": 12,
+    "create_time": 1792428682,
+    "update_time": 1792428682,
+    "_id": "M1_INPUT_CODE"
+  }
+}

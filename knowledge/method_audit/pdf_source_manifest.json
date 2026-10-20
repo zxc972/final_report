@@ -1,0 +1,24 @@
+[
+  {
+    "id": "alex_samseg_pdf",
+    "url": "https://alexbrain.cn/wp-content/uploads/2025/04/%E4%BD%BF%E7%94%A8Samseg%E8%BF%9B%E8%A1%8C%E5%85%A8%E8%84%91%E5%88%86%E5%89%B2.pdf",
+    "evidence_class": "personal_tutorial",
+    "status": "downloaded",
+    "text_chars": 2018,
+    "raw_sha256": "c3353bc4ee36137d8fec5069d9a4a425411dbedc0d62979eb167e23aa2acf48c",
+    "text_sha256": "5cbdbfcd569d72c3fe838362fc540711cfce06023a25dc45661559b29f60ad29",
+    "extraction": "pdftotext -layout; no claim of layout inspection or independent biological validation",
+    "time": 1792510008.2996128
+  },
+  {
+    "id": "alex_hcp_pdf",
+    "url": "https://alexbrain.cn/wp-content/uploads/2025/01/%E4%BD%BF%E7%94%A8HCP-Pipelines%E9%A2%84%E5%A4%84%E7%90%86HCP%E6%95%B0%E6%8D%AE.pdf",
+    "evidence_class": "personal_tutorial",
+    "status": "downloaded",
+    "text_chars": 5974,
+    "raw_sha256": "17cc38f321b2adf60000ec361dd3cc16b91236d65e6ca2f1cd86b0ca35998d21",
+    "text_sha256": "3312f161572421eee1f6f84cdb65472a61d25fe6edad08da1aa616581d0199b1",
+    "extraction": "pdftotext -layout; no claim of layout inspection or independent biological validation",
+    "time": 1792510009.4012337
+  }
+]

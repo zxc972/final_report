@@ -1,0 +1,43 @@
+{
+  "time": 1792510679.0857131,
+  "release": "research_evidence_v12",
+  "method_cards": 12,
+  "new_method_graph_nodes": 306,
+  "new_method_graph_edges": 618,
+  "new_node_types": {
+    "SourceDocument": 24,
+    "AnalysisMethod": 12,
+    "InputRequirement": 36,
+    "ApplicabilityCondition": 36,
+    "AnalysisStep": 66,
+    "VerificationCheck": 28,
+    "MethodException": 30,
+    "OutputArtifact": 36,
+    "MethodParameter": 38
+  },
+  "existing_label_definitions": 1791,
+  "total_mixed_nodes": 2236,
+  "total_edges": 7248,
+  "registered_parent_snapshots": 79,
+  "unique_source_urls": 63,
+  "quarantined_claims": 48,
+  "whitespace_original_span_reconstructions": 43,
+  "native_index_changed": false,
+  "expert_review": false,
+  "deduplication_scope": "Exact normalized statement within method context; not an expert ontology equivalence count. Software labels and source snapshots are separate types.",
+  "provider_extraction_http_ids": [
+    840,
+    849,
+    839,
+    848,
+    847,
+    838,
+    842,
+    841,
+    845,
+    837,
+    836,
+    846
+  ],
+  "failed_extraction_preserved": "crossspecies_alignment two failed HTTP attempts; no third retry"
+}

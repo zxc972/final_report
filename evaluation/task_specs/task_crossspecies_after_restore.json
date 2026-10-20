@@ -1,0 +1,21 @@
+{
+  "task_id": "crossspecies_geometry_after_subscription_restore",
+  "subjects": [
+    "100610",
+    "101309",
+    "101410",
+    "KM002"
+  ],
+  "input_roots": [
+    "/data/xuancheng/human_fastsurfer/subjects/100610",
+    "/data/xuancheng/human_fastsurfer/subjects/101309",
+    "/data/xuancheng/human_fastsurfer/subjects/101410",
+    "/data/xuancheng/featurize_20261011/data/KM002/KM002",
+    "/data/xuancheng/agent_overnight_20261020/crossspecies_method_context"
+  ],
+  "message": "请自主完成已有重建数据的人脑—猴脑全局表面形态技术性描述对照。/inputs/0、1、2分别是开发组100610、101309、101410，/inputs/3是KM002原生派生目录，/inputs/4是官方NiBabel/FreeSurfer资料和Kong等原始方法。上次任务因接口订阅中断停在环境/表面元数据检查，未产生分析表和最终报告；此次是恢复订阅后的新请求。依据当前数据与知识完成分析，不要仅重复发现步骤。/inputs/4/kong_source_navigation.json是从已下载原论文机械抽取的元数据与定位片段，可优先阅读，再按需核对原文，避免逐个搜索期刊卷页。不要访问其他被试。\n本任务重新开展分析，请在本次任务中自主生成新的Python代码，用write_code保存、run_python执行；使用通用影像/科学计算库可行，不能调用已有任务的分析脚本、参考值或先前结果。计算每个样本左右white完整三角网格的面积和归一化左右不对称指数；如输出cortex掩膜子集面积，请严格限定为三个顶点都在cortex内的三角形，并与完整网格分开。阅读Kong原文，明确AI公式、方向及零分母条件。输出每个网格顶点、面、退化/非退化三角形计数，并检查各计数字段名称和实际计算一致，特别是nondegenerate不可存储degenerate计数。按共同口径选择数据stats进行内部对照，不把cortex统计值当完整网格金标准。\n尺度解释必须依据真实空间元数据和处理证据；左右体素尺寸/边长相似只能支持内部一致性，不能证明完整处理链或排除局部失真。共同正比例缩放在无量纲指数中抵消是条件性代数结论，不能据此宣称人猴绝对面积可直接比较。KM002物种亚型如证据不明保留unknown。网格有限值、拓扑、计数/配对检查是技术QC，不能称解剖放置QC通过；如未实际完成体积叠加或专家评审，应明确not_assessed。异常eTIV或CortexVol是诊断提示，不能自行认定原因。\n本任务只有三个人类样本与一个猴样本，不做物种显著性检验，不把同名分区当同源，也不推断前额叶厚度差异。分别报告几何数值可计算性、存储坐标单位、物理尺度确定程度、解剖QC、跨物种生物学可比性。科学限制与计算完成分别给出，不因限制停止可行计算。\n输出analysis_plan.json、hemisphere_geometry.tsv（sample、hemisphere、full_white_area_mm2、cortex_area_mm2、n_vertices、n_faces、degenerate_tris、nondegenerate_tris；若mm2单位不完全证实在报告及可比性JSON明确存储坐标解释）、area_asymmetry.tsv（sample、AI_full_white、AI_cortex_subset）、comparability.json、图表、report.md。其他诊断列和表可自行增加。参数与方法必须记录实际读取的原文/图谱证据，未读记录不称已验证。Kong论文的期刊卷页直接核对原文，不凭记忆。最后一次成功执行之后调用finalize_artifacts生成清单，保留源数据决定的计数/列约束，但不要手填猜测PNG尺寸或报告字符数。最终工具成功仅表示结构验收，不能自称独立数值验证/专家审查通过。",
+  "next_review": "Independent scalar raw-binary geometry reference; check all area/AI/count fields, evidence usage, semantics, receipts and immutable input hashes. Preserve old failed version and do not feed gold to generation.",
+  "conversation_id": "crossspecies_geometry_v2_20261020T035140_4ac371",
+  "predecessor_run": "crossspecies_geometry_v2_20261020T035140_4ac371",
+  "continuation_reason": "User restored subscription; original failed 403 preserved. New request retains native narrative history and writes a new product run directory, not an altered failed checkpoint."
+}

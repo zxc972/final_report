@@ -1,0 +1,476 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PrimateX software capability knowledge package draft",
+  "description": "Knowledge representation only. Validation of this schema does not establish scientific correctness or authorize execution.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "name",
+    "software_id",
+    "task",
+    "stage",
+    "activation_status",
+    "version_binding",
+    "discovery",
+    "inputs",
+    "outputs",
+    "invocation",
+    "conditions",
+    "checks",
+    "evidence",
+    "views",
+    "validation_state"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._-]+$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "software_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "task": {
+      "type": "string",
+      "minLength": 1
+    },
+    "stage": {
+      "enum": [
+        "preprocessing",
+        "segmentation",
+        "reconstruction",
+        "registration",
+        "conversion",
+        "analysis",
+        "visualization",
+        "infrastructure"
+      ]
+    },
+    "activation_status": {
+      "enum": [
+        "draft",
+        "reviewed",
+        "retired"
+      ]
+    },
+    "version_binding": {
+      "type": "object",
+      "required": [
+        "runtime_target",
+        "documentation_version",
+        "verified_compatible_versions",
+        "compatibility_status"
+      ],
+      "properties": {
+        "runtime_target": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "documentation_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "verified_compatible_versions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "compatibility_status": {
+          "enum": [
+            "unknown",
+            "signature_checked",
+            "example_verified",
+            "artifact_verified",
+            "numerically_verified"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "discovery": {
+      "type": "object",
+      "required": [
+        "summary",
+        "aliases",
+        "tags"
+      ],
+      "properties": {
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "inputs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/artifact"
+      }
+    },
+    "outputs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/artifact"
+      }
+    },
+    "invocation": {
+      "type": "object",
+      "required": [
+        "kind",
+        "entrypoint",
+        "parameter_schema",
+        "illustrative_example",
+        "example_status"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "cli",
+            "python_api",
+            "workflow"
+          ]
+        },
+        "entrypoint": {
+          "type": "string",
+          "minLength": 1
+        },
+        "parameter_schema": {
+          "type": "object"
+        },
+        "illustrative_example": {
+          "type": "string",
+          "minLength": 1
+        },
+        "example_status": {
+          "const": "authored_not_executed"
+        }
+      },
+      "additionalProperties": false
+    },
+    "conditions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "statement",
+          "basis",
+          "source_ids",
+          "unknown_action",
+          "check_implementation"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "statement": {
+            "type": "string",
+            "minLength": 1
+          },
+          "basis": {
+            "enum": [
+              "vendor_documented",
+              "project_policy",
+              "method_evidence"
+            ]
+          },
+          "source_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "unknown_action": {
+            "enum": [
+              "inspect",
+              "stop_and_report_gap",
+              "seek_method_evidence"
+            ]
+          },
+          "check_implementation": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "criterion",
+          "basis",
+          "source_ids",
+          "check_implementation"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "criterion": {
+            "type": "string",
+            "minLength": 1
+          },
+          "basis": {
+            "enum": [
+              "vendor_documented",
+              "project_policy",
+              "method_evidence"
+            ]
+          },
+          "source_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "check_implementation": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "url",
+          "section",
+          "checked_on",
+          "summary",
+          "snapshot_sha256",
+          "review"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "section": {
+            "type": "string",
+            "minLength": 1
+          },
+          "checked_on": {
+            "type": "string",
+            "format": "date"
+          },
+          "summary": {
+            "type": "string",
+            "minLength": 1
+          },
+          "snapshot_sha256": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "review": {
+            "enum": [
+              "page_reviewed",
+              "section_reviewed",
+              "entrypoint_only"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "views": {
+      "type": "object",
+      "required": [
+        "skill_outline",
+        "relations"
+      ],
+      "properties": {
+        "skill_outline": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "relations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "subject",
+              "predicate",
+              "object",
+              "basis",
+              "source_ids"
+            ],
+            "properties": {
+              "subject": {
+                "type": "string",
+                "minLength": 1
+              },
+              "predicate": {
+                "enum": [
+                  "implemented_by",
+                  "requires",
+                  "produces",
+                  "has_space",
+                  "has_atlas",
+                  "has_units",
+                  "alternative_to"
+                ]
+              },
+              "object": {
+                "type": "string",
+                "minLength": 1
+              },
+              "basis": {
+                "enum": [
+                  "vendor_documented",
+                  "project_policy",
+                  "method_evidence"
+                ]
+              },
+              "source_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "validation_state": {
+      "type": "object",
+      "required": [
+        "knowledge_review",
+        "runtime_available",
+        "example_run",
+        "scientific_validation",
+        "evidence_paths"
+      ],
+      "properties": {
+        "knowledge_review": {
+          "enum": [
+            "assistant_source_checked_domain_review_pending",
+            "domain_reviewed"
+          ]
+        },
+        "runtime_available": {
+          "enum": [
+            "unknown",
+            "metadata_present",
+            "manifest_recorded",
+            "smoke_verified"
+          ]
+        },
+        "example_run": {
+          "enum": [
+            "not_run",
+            "passed",
+            "failed"
+          ]
+        },
+        "scientific_validation": {
+          "enum": [
+            "not_evaluated",
+            "artifact_checked",
+            "independently_recomputed"
+          ]
+        },
+        "evidence_paths": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "artifact": {
+      "type": "object",
+      "required": [
+        "id",
+        "kind",
+        "meaning",
+        "required_context"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "type": "string",
+          "minLength": 1
+        },
+        "meaning": {
+          "type": "string",
+          "minLength": 1
+        },
+        "required_context": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

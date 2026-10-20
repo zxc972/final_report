@@ -1,0 +1,346 @@
+[
+  {
+    "method_id": "method:v12:existing_curvature_sulc_profile",
+    "category": "inputs",
+    "model_quote": "read_geometry(filepath[, read_metadata, ...]) Read a triangular format Freesurfer surface mesh.",
+    "actual_original_quote": "read_geometry(filepath[, read_metadata, ...])\nRead a triangular format Freesurfer surface mesh.",
+    "source_id": "nibabel_fs",
+    "transform": "whitespace_only_original_span_reconstruction"
+  },
+  {
+    "method_id": "method:v12:existing_curvature_sulc_profile",
+    "category": "inputs",
+    "model_quote": "read_annot(filepath[, orig_ids]) Read in a Freesurfer annotation from a .annot file.",
+    "actual_original_quote": "read_annot(filepath[, orig_ids])\nRead in a Freesurfer annotation from a .annot file.",
+    "source_id": "nibabel_fs",
+    "transform": "whitespace_only_original_span_reconstruction"
+  },
+  {
+    "method_id": "method:v12:existing_curvature_sulc_profile",
+    "category": "conditions",
+    "model_quote": "This function reads in what Freesurfer internally calls “curv” file types, (e.g. ?h. curv, ?h.thickness)",
+    "actual_original_quote": "This function reads in what Freesurfer internally calls “curv” file types,\n(e.g. ?h. curv, ?h.thickness)",
+    "source_id": "nibabel_fs",
+    "transform": "whitespace_only_original_span_reconstruction"
+  },
+  {
+    "method_id": "method:v12:existing_curvature_sulc_profile",
+    "category": "conditions",
+    "model_quote": "curv ${SUBJECTS_DIR}/<subject name>/surf/rh.sulc",
+    "actual_original_quote": "curv\n${SUBJECTS_DIR}/<subject name>/surf/rh.sulc",
+    "source_id": "fs_morph",
+    "transform": "whitespace_only_original_span_reconstruction"
+  },
+  {
+    "method_id": "method:v12:existing_curvature_sulc_profile",
+    "category": "checks",
+    "model_quote": "curv ${SUBJECTS_DIR}/<subject name>/surf/rh.sulc",
+    "actual_original_quote": "curv\n${SUBJECTS_DIR}/<subject name>/surf/rh.sulc",
+    "source_id": "fs_morph",
+    "transform": "whitespace_only_original_span_reconstruction"
+  },
+  {
+    "method_id": "method:v12:existing_curvature_sulc_profile",
+    "category": "exceptions",
+    "model_quote": "curv ${SUBJECTS_DIR}/<subject name>/surf/rh.sulc",
+    "actual_original_quote": "curv\n${SUBJECTS_DIR}/<subject name>/surf/rh.sulc",
+    "source_id": "fs_morph",
+    "transform": "whitespace_only_original_span_reconstruction"
+  },
+  {
+    "method_id": "method:v12:existing_curvature_sulc_profile",
+    "category": "parameters",
+    "model_quote": "orig_idsbool Whether to return the vertex ids as stored in the annotation file or the positional colortable ids.",
+    "actual_original_quote": "orig_idsbool\nWhether to return the vertex ids as stored in the annotation\nfile or the positional colortable ids.",
+    "source_id": "nibabel_fs",
+    "transform": "whitespace_only_original_span_reconstruction"
+  },
+  {
+    "method_id": "method:v12:existing_curvature_sulc_profile",
+    "category": "parameters",
+    "model_quote": "read_metadatabool, optional If True, read and return metadata as key-value pairs.",
+    "actual_original_quote": "read_metadatabool, optional\nIf True, read and return metadata as key-value pairs.",
+    "source_id": "nibabel_fs",
+    "transform": "whitespace_only_original_span_reconstruction"
+  },
+  {
+    "method_id": "method:v12:existing_curvature_sulc_profile",
+    "category": "parameters",
+    "model_quote": "read_stampbool, optional Return the comment from the file",
+    "actual_original_quote": "read_stampbool, optional\nReturn the comment from the file",
+    "source_id": "nibabel_fs",
+    "transform": "whitespace_only_original_span_reconstruction"
+  },
+  {
+    "method_id": "method:v12:fsl_vbm",
+    "category": "steps",
+    "model_quote": "fslvbm_1_bet -b or fslvbm_1_bet -N",
+    "actual_original_quote": "fslvbm_1_bet -b\nor\nfslvbm_1_bet -N",
+    "source_id": "fsl_vbm",
+    "transform": "whitespace_only_original_span_reconstruction"
+  },
+  {
+    "method_id": "method:v12:fsl_vbm",
+    "category": "steps",
+    "model_quote": "fslvbm_2_template -a or fslvbm_2_template -n",
+    "actual_original_quote": "fslvbm_2_template -a\nor\nfslvbm_2_template -n",
+    "source_id": "fsl_vbm",
+    "transform": "whitespace_only_original_span_reconstruction"
+  },
+  {
+    "method_id": "method:v12:global_surface_folding",
+    "category": "conditions",
+    "model_quote": "The convex hull is computed using the Qhull library.",
+    "actual_original_quote": "The convex hull is computed using the\nQhull library.",
+    "source_id": "scipy_hull",
+    "transform": "whitespace_only_original_span_reconstruction"
+  },
+  {
+    "method_id": "method:v12:hcp_structural_pipeline",
+    "category": "conditions",
+    "model_quote": "虽然HCP官方文档没有说明，但是在实际测试中发现还需要安装如下软件： sudo apt-get install python-is-python3 sudo apt-get install python3-numpy",
+    "actual_original_quote": "虽然HCP官方文档没有说明，但是在实际测试中发现还需要安装如下软件：\n\f sudo apt-get install python-is-python3\n sudo apt-get install python3-numpy",
+    "source_id": "alex_hcp_pdf",
+    "transform": "whitespace_only_original_span_reconstruction"
+  },
+  {
+    "method_id": "method:v12:hcp_structural_pipeline",
+    "category": "steps",
+    "model_quote": "在FSL官网下载 fslinstaller.py 脚本，在命令行中运行脚本： python fslinstaller.py -d /home/alex/software/fsl",
+    "actual_original_quote": "在FSL官网下载 fslinstaller.py 脚本，在命令行中运行脚本：\n  python fslinstaller.py -d /home/alex/software/fsl",
+    "source_id": "alex_hcp_pdf",
+    "transform": "whitespace_only_original_span_reconstruction"
+  },
+  {
+    "method_id": "method:v12:hcp_structural_pipeline",
+    "category": "steps",
+    "model_quote": "在 .bashrc 文件中，添加如下代码，设置环境变量： export FREESURFER_HOME=/home/alex/software/freesurfer source $FREESURFER_HOME/SetUpFreeSurfer.sh",
+    "actual_original_quote": "在 .bashrc 文件中，添加如下代码，设置环境变量：\n export FREESURFER_HOME=/home/alex/software/freesurfer\n source $FREESURFER_HOME/SetUpFreeSurfer.sh",
+    "source_id": "alex_hcp_pdf",
+    "transform": "whitespace_only_original_span_reconstruction"
+  },
+  {
+    "method_id": "method:v12:hcp_structural_pipeline",
+    "category": "steps",
+    "model_quote": "修改好以后依次运行这三个脚本即可： ./PreFreeSurferPipelineBatch.sh ./FreeSurferPipelineBatch.sh ./PostFreeSurferPipelineBatch.sh",
+    "actual_original_quote": "修改好以后依次运行这三个脚本即可：\n ./PreFreeSurferPipelineBatch.sh\n ./FreeSurferPipelineBatch.sh\n ./PostFreeSurferPipelineBatch.sh",
+    "source_id": "alex_hcp_pdf",
+    "transform": "whitespace_only_original_span_reconstruction"
+  },
+  {
+    "method_id": "method:v12:hcp_structural_pipeline",
+    "category": "checks",
+    "model_quote": "虽然HCP官方文档没有说明，但是在实际测试中发现还需要安装如下软件： sudo apt-get install python-is-python3 sudo apt-get install python3-numpy",
+    "actual_original_quote": "虽然HCP官方文档没有说明，但是在实际测试中发现还需要安装如下软件：\n\f sudo apt-get install python-is-python3\n sudo apt-get install python3-numpy",
+    "source_id": "alex_hcp_pdf",
+    "transform": "whitespace_only_original_span_reconstruction"
+  },
+  {
+    "method_id": "method:v12:hcp_structural_pipeline",
+    "category": "exceptions",
+    "model_quote": "由于我初学HCP Pipelines，对处理细节还没有完全搞清楚。所以本文只涉及如何运行HCP Pipelines，不涉及具体原理以及生成的文件的含义等内容。",
+    "actual_original_quote": "由于我初学HCP Pipelines，对处理细节还没有完全搞清楚。所以本文只涉及如何运行HCP\nPipelines，不涉及具体原理以及生成的文件的含义等内容。",
+    "source_id": "alex_hcp_pdf",
+    "transform": "whitespace_only_original_span_reconstruction"
+  },
+  {
+    "method_id": "method:v12:local_gyrification",
+    "category": "steps",
+    "model_quote": "In freesurfer, use the -localGI flag of recon-all: recon-all -s <subj> -localGI",
+    "actual_original_quote": "In freesurfer, use the -localGI flag of recon-all:\nrecon-all -s <subj> -localGI",
+    "source_id": "fs_lgi",
+    "transform": "whitespace_only_original_span_reconstruction"
+  },
+  {
+    "method_id": "method:v12:local_gyrification",
+    "category": "steps",
+    "model_quote": "?h.pial-outer-main mris_smooth -nw -n 30 ?h.pial-outer-smoothed",
+    "actual_original_quote": "?h.pial-outer-main\nmris_smooth -nw -n 30\n?h.pial-outer-smoothed",
+    "source_id": "fs_lgi",
+    "transform": "whitespace_only_original_span_reconstruction"
+  },
+  {
+    "method_id": "method:v12:local_gyrification",
+    "category": "steps",
+    "model_quote": "?h.pial-outer-smoothed mris_convert -n (output normals as ascii) ?h.pial-outer-smoothed-normals.asc",
+    "actual_original_quote": "?h.pial-outer-smoothed\nmris_convert -n (output normals as ascii)\n?h.pial-outer-smoothed-normals.asc",
+    "source_id": "fs_lgi",
+    "transform": "whitespace_only_original_span_reconstruction"
+  },
+  {
+    "method_id": "method:v12:local_gyrification",
+    "category": "steps",
+    "model_quote": "?h.pial, ?h.pial-outer-smoothed find_corresponding_center_FSformat ?h.pial.*.center",
+    "actual_original_quote": "?h.pial, ?h.pial-outer-smoothed\nfind_corresponding_center_FSformat\n?h.pial.*.center",
+    "source_id": "fs_lgi",
+    "transform": "whitespace_only_original_span_reconstruction"
+  },
+  {
+    "method_id": "method:v12:local_gyrification",
+    "category": "steps",
+    "model_quote": "?h.pial, ?h.pial-outer-smoothed, ?h.pial-outer-smoothed.asc make_roi_paths ?h.pial.*.path",
+    "actual_original_quote": "?h.pial, ?h.pial-outer-smoothed, ?h.pial-outer-smoothed.asc\nmake_roi_paths\n?h.pial.*.path",
+    "source_id": "fs_lgi",
+    "transform": "whitespace_only_original_span_reconstruction"
+  },
+  {
+    "method_id": "method:v12:local_gyrification",
+    "category": "steps",
+    "model_quote": "?h.pial.*.path, ?h.pial.*.center mri_path2label ?h.pial.*.label",
+    "actual_original_quote": "?h.pial.*.path, ?h.pial.*.center\nmri_path2label\n?h.pial.*.label",
+    "source_id": "fs_lgi",
+    "transform": "whitespace_only_original_span_reconstruction"
+  },
+  {
+    "method_id": "method:v12:local_gyrification",
+    "category": "steps",
+    "model_quote": "?h.pial, ?h.pial-outer-smoothed, ?h.pial-outer-smoothed-normals.asc, ?h.pial.*.labels, ?h.pial-outer-smoothed-mesh compute_lgi ?h.pial_lgi.asc",
+    "actual_original_quote": "?h.pial, ?h.pial-outer-smoothed, ?h.pial-outer-smoothed-normals.asc, ?h.pial.*.labels, ?h.pial-outer-smoothed-mesh\ncompute_lgi\n?h.pial_lgi.asc",
+    "source_id": "fs_lgi",
+    "transform": "whitespace_only_original_span_reconstruction"
+  },
+  {
+    "method_id": "method:v12:local_gyrification",
+    "category": "outputs",
+    "model_quote": "It is also possible to generate statistics on ROIs, for example: mri_segstats --annot my_subject_id lh aparc --i $SUBJECTS_DIR/my_subject_id/surf/lh.pial_lgi --sum lh.aparc.pial_lgi.stats",
+    "actual_original_quote": "It is also possible to generate statistics on ROIs, for example:\nmri_segstats --annot my_subject_id lh aparc --i $SUBJECTS_DIR/my_subject_id/surf/lh.pial_lgi --sum lh.aparc.pial_lgi.stats",
+    "source_id": "fs_lgi",
+    "transform": "whitespace_only_original_span_reconstruction"
+  },
+  {
+    "method_id": "method:v12:nhp_macapype",
+    "category": "steps",
+    "model_quote": "The main file is located in workflows and is called segment_pnh.py and should be called like a python script: $ python workflows/segment_pnh.py",
+    "actual_original_quote": "The main file is located in workflows and is called segment_pnh.py and should be called like a python script:\n$ python workflows/segment_pnh.py",
+    "source_id": "macapype_commands",
+    "transform": "whitespace_only_original_span_reconstruction"
+  },
+  {
+    "method_id": "method:v12:nhp_macapype",
+    "category": "steps",
+    "model_quote": "-data : path to your data dataset (existing BIDS format directory) -out : path to the output results (an existing path) -soft : can be one of these : SPM or ANTS",
+    "actual_original_quote": "-data : path to your data dataset (existing BIDS format directory)\n-out : path to the output results (an existing path)\n-soft : can be one of these : SPM or ANTS",
+    "source_id": "macapype_commands",
+    "transform": "whitespace_only_original_span_reconstruction"
+  },
+  {
+    "method_id": "method:v12:nhp_macapype",
+    "category": "steps",
+    "model_quote": "-params : (mandatory if -species is omitted) a json file specifiying the global parameters of the analysis. See Parameters for more details -species : (mandatory if -params is omitted) followed the NHP species corresponding to the image, e.g. {macaque | marmo | baboon | chimp}",
+    "actual_original_quote": "-params : (mandatory if -species is omitted) a json file specifiying the global parameters of the analysis. See Parameters for more details\n-species : (mandatory if -params is omitted) followed the NHP species corresponding to the image, e.g. {macaque | marmo | baboon | chimp}",
+    "source_id": "macapype_commands",
+    "transform": "whitespace_only_original_span_reconstruction"
+  },
+  {
+    "method_id": "method:v12:nhp_macapype",
+    "category": "steps",
+    "model_quote": "-dt : specifies the datatype available to perform brain segmentation (can be “T1”, or “T1 T2”) Note : default is T1 if the attribute is omitted",
+    "actual_original_quote": "-dt : specifies the datatype available to perform brain segmentation (can be “T1”, or “T1 T2”)\nNote : default is T1 if the attribute is omitted",
+    "source_id": "macapype_commands",
+    "transform": "whitespace_only_original_span_reconstruction"
+  },
+  {
+    "method_id": "method:v12:nhp_macapype",
+    "category": "exceptions",
+    "model_quote": "_quick : will use hd-bet (Deep Learning) for brain extraction, for faster computation (by default atlas_brex is used) **NB: ** hd-bet requires a specific version of macapype/skullTo3d, not available by default",
+    "actual_original_quote": "_quick : will use hd-bet (Deep Learning) for brain extraction, for faster computation (by default atlas_brex is used)\n**NB: ** hd-bet requires a specific version of macapype/skullTo3d, not available by default",
+    "source_id": "macapype_commands",
+    "transform": "whitespace_only_original_span_reconstruction"
+  },
+  {
+    "method_id": "method:v12:nhp_macapype",
+    "category": "exceptions",
+    "model_quote": "This option should be used if the coregistration to template in preparation is not performed correctly: _robustreg (at the end) to have a more robust registration (in two steps)",
+    "actual_original_quote": "This option should be used if the coregistration to template in preparation is not performed correctly:\n_robustreg (at the end) to have a more robust registration (in two steps)",
+    "source_id": "macapype_commands",
+    "transform": "whitespace_only_original_span_reconstruction"
+  },
+  {
+    "method_id": "method:v12:nhp_macapype",
+    "category": "exceptions",
+    "model_quote": "NB : baboon0, baboon1, baboon2 baboon3 can be used for template Baba21 and matching ages",
+    "actual_original_quote": "NB : baboon0, baboon1, baboon2 baboon3 can be used for template Baba21\nand matching ages",
+    "source_id": "macapype_commands",
+    "transform": "whitespace_only_original_span_reconstruction"
+  },
+  {
+    "method_id": "method:v12:surface_annotation_roi",
+    "category": "inputs",
+    "model_quote": "An .annot file contains a sequence of vertices with a label (also known as an “annotation value”) associated with each vertex",
+    "actual_original_quote": "An .annot file contains a sequence of vertices with a label (also known\nas an “annotation value”) associated with each vertex",
+    "source_id": "nibabel_fs",
+    "transform": "whitespace_only_original_span_reconstruction"
+  },
+  {
+    "method_id": "method:v12:surface_annotation_roi",
+    "category": "inputs",
+    "model_quote": "This function reads in what Freesurfer internally calls “curv” file types, (e.g. ?h. curv, ?h.thickness)",
+    "actual_original_quote": "This function reads in what Freesurfer internally calls “curv” file types,\n(e.g. ?h. curv, ?h.thickness)",
+    "source_id": "nibabel_fs",
+    "transform": "whitespace_only_original_span_reconstruction"
+  },
+  {
+    "method_id": "method:v12:surface_annotation_roi",
+    "category": "conditions",
+    "model_quote": "Annotation file format versions 1 and 2 are supported, corresponding to the “old-style” and “new-style” color table layout.",
+    "actual_original_quote": "Annotation file format versions 1 and 2 are supported, corresponding to\nthe “old-style” and “new-style” color table layout.",
+    "source_id": "nibabel_fs",
+    "transform": "whitespace_only_original_span_reconstruction"
+  },
+  {
+    "method_id": "method:v12:surface_annotation_roi",
+    "category": "conditions",
+    "model_quote": "Note that the output color table ctab is in RGBT form, where T (transparency) is 255 - alpha.",
+    "actual_original_quote": "Note that the output color table ctab is in RGBT form, where T\n(transparency) is 255 - alpha.",
+    "source_id": "nibabel_fs",
+    "transform": "whitespace_only_original_span_reconstruction"
+  },
+  {
+    "method_id": "method:v12:surface_annotation_roi",
+    "category": "conditions",
+    "model_quote": "Surface morphometry values. Shape must be (N,), (N, 1), (1, N) or (N, 1, 1)",
+    "actual_original_quote": "Surface morphometry values. Shape must be (N,), (N, 1), (1, N) or (N,\n1, 1)",
+    "source_id": "nibabel_fs",
+    "transform": "whitespace_only_original_span_reconstruction"
+  },
+  {
+    "method_id": "method:v12:surface_annotation_roi",
+    "category": "exceptions",
+    "model_quote": "If a vertex does not belong to any label and orig_ids=False, its id will be set to -1.",
+    "actual_original_quote": "If a vertex does not belong\nto any label and orig_ids=False, its id will be set to -1.",
+    "source_id": "nibabel_fs",
+    "transform": "whitespace_only_original_span_reconstruction"
+  },
+  {
+    "method_id": "method:v12:surface_annotation_roi",
+    "category": "exceptions",
+    "model_quote": "Whether to return the vertex ids as stored in the annotation file or the positional colortable ids.",
+    "actual_original_quote": "Whether to return the vertex ids as stored in the annotation\nfile or the positional colortable ids.",
+    "source_id": "nibabel_fs",
+    "transform": "whitespace_only_original_span_reconstruction"
+  },
+  {
+    "method_id": "method:v12:surface_mesh_area",
+    "category": "steps",
+    "model_quote": "read_geometry(filepath[, read_metadata, ...]) Read a triangular format Freesurfer surface mesh.",
+    "actual_original_quote": "read_geometry(filepath[, read_metadata, ...])\nRead a triangular format Freesurfer surface mesh.",
+    "source_id": "nibabel_fs",
+    "transform": "whitespace_only_original_span_reconstruction"
+  },
+  {
+    "method_id": "method:v12:surface_mesh_area",
+    "category": "exceptions",
+    "model_quote": "Returns: area – Individual or summed area depending on sum argument",
+    "actual_original_quote": "Returns:\narea – Individual or summed area depending on sum argument",
+    "source_id": "trimesh_triangles",
+    "transform": "whitespace_only_original_span_reconstruction"
+  },
+  {
+    "method_id": "method:v12:surface_reconstruction_qc",
+    "category": "checks",
+    "model_quote": "Soft failures can be divided into the following categories: Skullstripping errors; Pial surface errors; Intensity normalization errors; Topological defects; and White matter segmentation errors.",
+    "actual_original_quote": "Soft failures can be divided into the following categories:\nSkullstripping errors;\nPial surface errors;\nIntensity normalization errors;\nTopological defects; and\nWhite matter segmentation errors.",
+    "source_id": "andy_failures",
+    "transform": "whitespace_only_original_span_reconstruction"
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "time": 1792511012.4100509,
+  "task_config_hashes": {
+    "monkey_fold_morphometry_autonomous_v1": "4f8e75d2cd02075827094816b5de250b724bc6df9446361f18d2af11e96e763f",
+    "crossspecies_global_folding_autonomous_v1": "9c284510a11cd351d65d230c42a278c7905791a8191b55e0eb3e30e24556fbbc"
+  },
+  "reference_contract_sha256": "83e8641b3940c48364817af0d74db9458ef6d35c82bc9f7b672bb55fb249761d",
+  "both_requests_frozen_before_results": true,
+  "external_targeted_feedback_during_trials": false
+}

@@ -1,0 +1,623 @@
+freesurfer — NiBabel 0.1.0.dev1+gabe5e8e0c documentation
+Skip to main content
+Back to top
+Ctrl+K
+We are rolling out a new website! Check out the new features and let us know what you think.
+NiBabel
+Manual
+Tutorials
+Developer guide
+DICOM concepts
+API
+Search
+Ctrl+K
+GitHub
+PyPI
+Mailing List
+License
+Community
+Search
+Ctrl+K
+Manual
+Tutorials
+Developer guide
+DICOM concepts
+API
+GitHub
+PyPI
+Mailing List
+License
+Community
+Section Navigation
+nibabel
+analyze
+spm2analyze
+spm99analyze
+cifti2
+gifti
+freesurfer
+minc1
+minc2
+nicom
+nifti1
+nifti2
+ecat
+parrec
+streamlines
+eulerangles
+funcs
+imageclasses
+imageglobals
+loadsave
+orientations
+quaternions
+spatialimages
+volumeutils
+arraywriters
+casting
+data
+environment
+arrayproxy
+affines
+batteryrunners
+data
+dft
+fileholders
+filename_parser
+fileslice
+onetime
+openers
+optpkg
+rstutils
+tmpdirs
+tripwire
+wrapstruct
+API Reference
+nibabel
+_compression
+_typing
+affines
+analyze
+arrayproxy
+arraywriters
+batteryrunners
+benchmarks
+brikhead
+caret
+casting
+cifti2
+cmdline
+data
+dataobj_images
+deprecated
+deprecator
+dft
+ecat
+environment
+eulerangles
+filebasedimages
+fileholders
+filename_parser
+fileslice
+fileutils
+freesurfer
+funcs
+gifti
+imageclasses
+imageglobals
+imagestats
+loadsave
+minc1
+minc2
+mriutils
+nicom
+nifti1
+nifti2
+onetime
+openers
+optpkg
+orientations
+parrec
+pointset
+processing
+pydicom_compat
+quaternions
+rstutils
+spaces
+spatialimages
+spm2analyze
+spm99analyze
+streamlines
+tmpdirs
+tripwire
+viewers
+volumeutils
+wrapstruct
+xmlutils
+API
+freesurfer
+freesurfer#
+Reading functions for freesurfer files
+Module: freesurfer.io#
+Read / write FreeSurfer geometry, morphometry, label, annotation formats
+read_annot(filepath[, orig_ids])
+Read in a Freesurfer annotation from a .annot file.
+read_geometry(filepath[, read_metadata, ...])
+Read a triangular format Freesurfer surface mesh.
+read_label(filepath[, read_scalars])
+Load in a Freesurfer .label file.
+read_morph_data(filepath)
+Read a Freesurfer morphometry data file.
+write_annot(filepath, labels, ctab, names[, ...])
+Write out a "new-style" Freesurfer annotation file.
+write_geometry(filepath, coords, faces[, ...])
+Write a triangular format Freesurfer surface mesh.
+write_morph_data(file_like, values[, fnum])
+Write Freesurfer morphometry data values to file-like file_like
+Module: freesurfer.mghformat#
+Header and image reading / writing functions for MGH image format
+Author: Krish Subramaniam
+MGHError
+Exception for MGH format related problems.
+MGHHeader([binaryblock, check])
+Class for MGH format header
+MGHImage(dataobj, affine[, header, extra, ...])
+Class for MGH format image
+read_annot#
+nibabel.freesurfer.io.read_annot(filepath, orig_ids=False)#
+Read in a Freesurfer annotation from a .annot file.
+An .annot file contains a sequence of vertices with a label (also known
+as an “annotation value”) associated with each vertex, and then a sequence
+of colors corresponding to each label.
+Annotation file format versions 1 and 2 are supported, corresponding to
+the “old-style” and “new-style” color table layout.
+Note that the output color table ctab is in RGBT form, where T
+(transparency) is 255 - alpha.
+See:
+https://surfer.nmr.mgh.harvard.edu/fswiki/LabelsClutsAnnotationFiles#Annotation
+https://github.com/freesurfer/freesurfer/blob/dev/matlab/read_annotation.m
+https://github.com/freesurfer/freesurfer/blob/8b88b34/utils/colortab.c
+Parameters:
+filepathstr
+Path to annotation file.
+orig_idsbool
+Whether to return the vertex ids as stored in the annotation
+file or the positional colortable ids. With orig_ids=False
+vertices with no id have an id set to -1.
+Returns:
+labelsndarray, shape (n_vertices,)
+Annotation id at each vertex. If a vertex does not belong
+to any label and orig_ids=False, its id will be set to -1.
+ctabndarray, shape (n_labels, 5)
+RGBT + label id colortable array.
+nameslist of bytes
+The names of the labels. The length of the list is n_labels.
+read_geometry#
+nibabel.freesurfer.io.read_geometry(filepath, read_metadata=False, read_stamp=False)#
+Read a triangular format Freesurfer surface mesh.
+Parameters:
+filepathstr
+Path to surface file.
+read_metadatabool, optional
+If True, read and return metadata as key-value pairs.
+Valid keys:
+‘head’ : array of int
+‘valid’ : str
+‘filename’ : str
+‘volume’ : array of int, shape (3,)
+‘voxelsize’ : array of float, shape (3,)
+‘xras’ : array of float, shape (3,)
+‘yras’ : array of float, shape (3,)
+‘zras’ : array of float, shape (3,)
+‘cras’ : array of float, shape (3,)
+read_stampbool, optional
+Return the comment from the file
+Returns:
+coordsnumpy array
+nvtx x 3 array of vertex (x, y, z) coordinates.
+facesnumpy array
+nfaces x 3 array of defining mesh triangles.
+volume_infoOrderedDict
+Returned only if read_metadata is True. Key-value pairs found in the
+geometry file.
+create_stampstr
+Returned only if read_stamp is True. The comment added by the
+program that saved the file.
+read_label#
+nibabel.freesurfer.io.read_label(filepath, read_scalars=False)#
+Load in a Freesurfer .label file.
+Parameters:
+filepathstr
+Path to label file.
+read_scalarsbool, optional
+If True, read and return scalars associated with each vertex.
+Returns:
+label_arraynumpy array
+Array with indices of vertices included in label.
+scalar_arraynumpy array (floats)
+Only returned if read_scalars is True. Array of scalar data for each
+vertex.
+read_morph_data#
+nibabel.freesurfer.io.read_morph_data(filepath)#
+Read a Freesurfer morphometry data file.
+This function reads in what Freesurfer internally calls “curv” file types,
+(e.g. ?h. curv, ?h.thickness), but as that has the potential to cause
+confusion where “curv” also refers to the surface curvature values,
+we refer to these files as “morphometry” files with PySurfer.
+Parameters:
+filepathstr
+Path to morphometry file
+Returns:
+curvnumpy array
+Vector representation of surface morpometry values
+write_annot#
+nibabel.freesurfer.io.write_annot(filepath, labels, ctab, names, fill_ctab=True)#
+Write out a “new-style” Freesurfer annotation file.
+Note that the color table ctab is in RGBT form, where T (transparency)
+is 255 - alpha.
+See:
+https://surfer.nmr.mgh.harvard.edu/fswiki/LabelsClutsAnnotationFiles#Annotation
+https://github.com/freesurfer/freesurfer/blob/dev/matlab/write_annotation.m
+https://github.com/freesurfer/freesurfer/blob/8b88b34/utils/colortab.c
+Parameters:
+filepathstr
+Path to annotation file to be written
+labelsndarray, shape (n_vertices,)
+Annotation id at each vertex.
+ctabndarray, shape (n_labels, 5)
+RGBT + label id colortable array.
+nameslist of str
+The names of the labels. The length of the list is n_labels.
+fill_ctab{True, False} optional
+If True, the annotation values for each vertex are automatically
+generated. In this case, the provided ctab may have shape
+(n_labels, 4) or (n_labels, 5) - if the latter, the final column is
+ignored.
+write_geometry#
+nibabel.freesurfer.io.write_geometry(filepath, coords, faces, create_stamp=None, volume_info=None)#
+Write a triangular format Freesurfer surface mesh.
+Parameters:
+filepathstr
+Path to surface file.
+coordsnumpy array
+nvtx x 3 array of vertex (x, y, z) coordinates.
+facesnumpy array
+nfaces x 3 array of defining mesh triangles.
+create_stampstr, optional
+User/time stamp (default: “created by <user> on <ctime>”)
+volume_infodict-like or None, optional
+Key-value pairs to encode at the end of the file.
+Valid keys:
+‘head’ : array of int
+‘valid’ : str
+‘filename’ : str
+‘volume’ : array of int, shape (3,)
+‘voxelsize’ : array of float, shape (3,)
+‘xras’ : array of float, shape (3,)
+‘yras’ : array of float, shape (3,)
+‘zras’ : array of float, shape (3,)
+‘cras’ : array of float, shape (3,)
+write_morph_data#
+nibabel.freesurfer.io.write_morph_data(file_like, values, fnum=0)#
+Write Freesurfer morphometry data values to file-like file_like
+Equivalent to FreeSurfer’s write_curv.m
+See also:
+http://www.grahamwideman.com/gw/brain/fs/surfacefileformats.htm#CurvNew
+Parameters:
+file_likefile-like
+String containing path of file to be written, or file-like object, open
+in binary write (‘wb’ mode, implementing the write method)
+valuesarray-like
+Surface morphometry values. Shape must be (N,), (N, 1), (1, N) or (N,
+1, 1)
+fnumint, optional
+Number of faces in the associated surface.
+MGHError#
+class nibabel.freesurfer.mghformat.MGHError#
+Bases: Exception
+Exception for MGH format related problems.
+To be raised whenever MGH is not happy, or we are not happy with
+MGH.
+__init__(*args, **kwargs)#
+MGHHeader#
+class nibabel.freesurfer.mghformat.MGHHeader(binaryblock=None, check=True)#
+Bases: LabeledWrapStruct, SpatialHeader
+Class for MGH format header
+The header also consists of the footer data which MGH places after the data
+chunk.
+Initialize header from binary data block
+Parameters:
+binaryblock{None, string} optional
+binary block to set into header. By default, None, in
+which case we insert the default empty header block
+checkbool, optional
+Whether to check content of header in initialization.
+Default is True.
+__init__(binaryblock=None, check=True)#
+Initialize header from binary data block
+Parameters:
+binaryblock{None, string} optional
+binary block to set into header. By default, None, in
+which case we insert the default empty header block
+checkbool, optional
+Whether to check content of header in initialization.
+Default is True.
+as_byteswapped(endianness=None)#
+Return new object with given endianness
+If big endian, returns a copy of the object. Otherwise raises ValueError.
+Parameters:
+endiannessNone or string, optional
+endian code to which to swap. None means swap from current
+endianness, and is the default
+Returns:
+wstrMGHHeader
+MGHHeader object
+static chk_version(hdr, fix=False)#
+copy()#
+Return copy of structure
+data_from_fileobj(fileobj)#
+Read data array from fileobj
+Parameters:
+fileobjfile-like
+Must be open, and implement read and seek methods
+Returns:
+arrndarray
+data array
+classmethod default_structarr(endianness=None)#
+Return header data for empty header
+Ignores byte order; always big endian
+classmethod diagnose_binaryblock(binaryblock, endianness=None)#
+Run checks over binary data, return string
+classmethod from_fileobj(fileobj, check=True)#
+classmethod for loading a MGH fileobject
+classmethod from_header(header=None, check=True)#
+Class method to create MGH header from another MGH header
+get_affine()#
+Get the affine transform from the header information.
+MGH format doesn’t store the transform directly. Instead it’s gleaned
+from the zooms ( delta ), direction cosines ( Mdc ), RAS centers (
+Pxyz_c ) and the dimensions.
+get_best_affine()#
+Get the affine transform from the header information.
+MGH format doesn’t store the transform directly. Instead it’s gleaned
+from the zooms ( delta ), direction cosines ( Mdc ), RAS centers (
+Pxyz_c ) and the dimensions.
+get_data_bytespervox()#
+Get the number of bytes per voxel of the data
+get_data_dtype()#
+Get numpy dtype for MGH data
+For examples see set_data_dtype
+get_data_offset()#
+Return offset into data file to read data
+get_data_shape()#
+Get shape of data
+get_data_size()#
+Get the number of bytes the data chunk occupies.
+get_footer_offset()#
+Return offset where the footer resides.
+Occurs immediately after the data chunk.
+get_ras2vox()#
+return the inverse get_affine()
+get_slope_inter()#
+MGH format does not do scaling?
+get_vox2ras()#
+return the get_affine()
+get_vox2ras_tkr()#
+Get the vox2ras-tkr transform. See “Torig” here:
+https://surfer.nmr.mgh.harvard.edu/fswiki/CoordinateSystems
+get_zooms()#
+Get zooms from header
+Returns the spacing of voxels in the x, y, and z dimensions.
+For four-dimensional files, a fourth zoom is included, equal to the
+repetition time (TR) in ms (see The MGH/MGZ Volume Format).
+To access only the spatial zooms, use hdr[‘delta’].
+Returns:
+ztuple
+tuple of header zoom values
+classmethod guessed_endian(mapping)#
+MGHHeader data must be big-endian
+set_data_dtype(datatype)#
+Set numpy dtype for data from code or dtype or type
+set_data_shape(shape)#
+Set shape of data
+Parameters:
+shapesequence
+sequence of integers specifying data array shape
+set_zooms(zooms)#
+Set zooms into header fields
+Sets the spacing of voxels in the x, y, and z dimensions.
+For four-dimensional files, a temporal zoom (repetition time, or TR, in
+ms) may be provided as a fourth sequence element.
+Parameters:
+zoomssequence
+sequence of floats specifying spatial and (optionally) temporal
+zooms
+template_dtype = dtype([('version', '>i4'), ('dims', '>i4', (4,)), ('type', '>i4'), ('dof', '>i4'), ('goodRASFlag', '>i2'), ('delta', '>f4', (3,)), ('Mdc', '>f4', (3, 3)), ('Pxyz_c', '>f4', (3,)), ('tr', '>f4'), ('flip_angle', '>f4'), ('te', '>f4'), ('ti', '>f4'), ('fov', '>f4')])#
+writeftr_to(fileobj)#
+Write footer to fileobj
+Footer data is located after the data chunk. So move there and write.
+Parameters:
+fileobjfile-like object
+Should implement write and seek method
+Returns:
+None
+writehdr_to(fileobj)#
+Write header to fileobj
+Write starts at the beginning.
+Parameters:
+fileobjfile-like object
+Should implement write and seek method
+Returns:
+None
+MGHImage#
+class nibabel.freesurfer.mghformat.MGHImage(dataobj, affine, header=None, extra=None, file_map=None)#
+Bases: SpatialImage, SerializableImage
+Class for MGH format image
+Initialize image
+The image is a combination of (array-like, affine matrix, header), with
+optional metadata in extra, and filename / file-like objects
+contained in the file_map mapping.
+Parameters:
+dataobjobject
+Object containing image data. It should be some object that returns an
+array from np.asanyarray. It should have a shape attribute
+or property
+affineNone or (4,4) array-like
+homogeneous affine giving relationship between voxel coordinates and
+world coordinates. Affine can also be None. In this case,
+obj.affine also returns None, and the affine as written to disk
+will depend on the file format.
+headerNone or mapping or header instance, optional
+metadata for this image format
+extraNone or mapping, optional
+metadata to associate with image that cannot be stored in the
+metadata of this image type
+file_mapmapping, optional
+mapping giving file information for this image format
+__init__(dataobj, affine, header=None, extra=None, file_map=None)#
+Initialize image
+The image is a combination of (array-like, affine matrix, header), with
+optional metadata in extra, and filename / file-like objects
+contained in the file_map mapping.
+Parameters:
+dataobjobject
+Object containing image data. It should be some object that returns an
+array from np.asanyarray. It should have a shape attribute
+or property
+affineNone or (4,4) array-like
+homogeneous affine giving relationship between voxel coordinates and
+world coordinates. Affine can also be None. In this case,
+obj.affine also returns None, and the affine as written to disk
+will depend on the file format.
+headerNone or mapping or header instance, optional
+metadata for this image format
+extraNone or mapping, optional
+metadata to associate with image that cannot be stored in the
+metadata of this image type
+file_mapmapping, optional
+mapping giving file information for this image format
+ImageArrayProxy#
+alias of ArrayProxy
+files_types = (('image', '.mgh'),)#
+classmethod filespec_to_file_map(filespec)#
+Make file_map for this class from filename filespec
+Class method
+Parameters:
+filespecstr or os.PathLike
+Filename that might be for this image file type.
+Returns:
+file_mapdict
+file_map dict with (key, value) pairs of (file_type,
+FileHolder instance), where file_type is a string giving the
+type of the contained file.
+Raises:
+ImageFileError
+if filespec is not recognizable as being a filename for this
+image type.
+classmethod from_file_map(file_map, *, mmap=True, keep_file_open=None)#
+Class method to create image from mapping in file_map
+Parameters:
+file_mapdict
+Mapping with (key, value) pairs of (file_type, FileHolder
+instance giving file-likes for each file needed for this image
+type.
+mmap{True, False, ‘c’, ‘r’}, optional, keyword only
+mmap controls the use of numpy memory mapping for reading image
+array data. If False, do not try numpy memmap for data array.
+If one of {‘c’, ‘r’}, try numpy memmap with mode=mmap. A
+mmap value of True gives the same behavior as mmap='c'. If
+image data file cannot be memory-mapped, ignore mmap value and
+read array from file.
+keep_file_open{ None, True, False }, optional, keyword only
+keep_file_open controls whether a new file handle is created
+every time the image is accessed, or a single file handle is
+created and used for the lifetime of this ArrayProxy. If
+True, a single file handle is created and used. If False,
+a new file handle is created every time the image is accessed.
+If file_map refers to an open file handle, this setting has no
+effect. The default value (None) will result in the value of
+nibabel.arrayproxy.KEEP_FILE_OPEN_DEFAULT being used.
+Returns:
+imgMGHImage instance
+header_class#
+alias of MGHHeader
+makeable = True#
+rw = True#
+to_file_map(file_map=None)#
+Write image to file_map or contained self.file_map
+Parameters:
+file_mapNone or mapping, optional
+files mapping. If None (default) use object’s file_map
+attribute instead
+valid_exts = ('.mgh', '.mgz')#
+previous
+gifti
+next
+minc1
+On this page
+Module: freesurfer.io
+Module: freesurfer.mghformat
+read_annot
+read_annot()
+read_geometry
+read_geometry()
+read_label
+read_label()
+read_morph_data
+read_morph_data()
+write_annot
+write_annot()
+write_geometry
+write_geometry()
+write_morph_data
+write_morph_data()
+MGHError
+MGHError
+MGHError.__init__()
+MGHHeader
+MGHHeader
+MGHHeader.__init__()
+MGHHeader.as_byteswapped()
+MGHHeader.chk_version()
+MGHHeader.copy()
+MGHHeader.data_from_fileobj()
+MGHHeader.default_structarr()
+MGHHeader.diagnose_binaryblock()
+MGHHeader.from_fileobj()
+MGHHeader.from_header()
+MGHHeader.get_affine()
+MGHHeader.get_best_affine()
+MGHHeader.get_data_bytespervox()
+MGHHeader.get_data_dtype()
+MGHHeader.get_data_offset()
+MGHHeader.get_data_shape()
+MGHHeader.get_data_size()
+MGHHeader.get_footer_offset()
+MGHHeader.get_ras2vox()
+MGHHeader.get_slope_inter()
+MGHHeader.get_vox2ras()
+MGHHeader.get_vox2ras_tkr()
+MGHHeader.get_zooms()
+MGHHeader.guessed_endian()
+MGHHeader.set_data_dtype()
+MGHHeader.set_data_shape()
+MGHHeader.set_zooms()
+MGHHeader.template_dtype
+MGHHeader.writeftr_to()
+MGHHeader.writehdr_to()
+MGHImage
+MGHImage
+MGHImage.__init__()
+MGHImage.ImageArrayProxy
+MGHImage.files_types
+MGHImage.filespec_to_file_map()
+MGHImage.from_file_map()
+MGHImage.header_class
+MGHImage.makeable
+MGHImage.rw
+MGHImage.to_file_map()
+MGHImage.valid_exts
+Show Source
+© Copyright 2006, NiBabel developers <neuroimaging@python.org>.
+Created using Sphinx 9.1.0.
+Built with the PyData Sphinx Theme 0.17.0.

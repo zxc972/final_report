@@ -1,0 +1,874 @@
+{
+  "version": "0.3-task-index",
+  "date": "2026-10-17",
+  "counts": {
+    "records": 27,
+    "analysis_tasks": 26,
+    "prerequisites": 1,
+    "within_species": 18,
+    "cross_species_analysis": 8
+  },
+  "taxonomy": [
+    {
+      "id": "metrics",
+      "label": "形态指标与相对扩张"
+    },
+    {
+      "id": "group",
+      "label": "组间差异"
+    },
+    {
+      "id": "asymmetry",
+      "label": "左右不对称"
+    },
+    {
+      "id": "morph_network",
+      "label": "形态网络"
+    },
+    {
+      "id": "topology_gradient",
+      "label": "网络拓扑与梯度"
+    },
+    {
+      "id": "spatial_biology",
+      "label": "空间关联与生物学解释"
+    },
+    {
+      "id": "allometry",
+      "label": "多物种尺度与折叠规律"
+    },
+    {
+      "id": "variability",
+      "label": "个体变异模式"
+    },
+    {
+      "id": "prerequisite",
+      "label": "跨物种可比性前置检查"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "H01",
+      "primary_type": "metrics",
+      "primary_type_label": "形态指标与相对扩张",
+      "secondary_types": [],
+      "title": "区域形态指标提取",
+      "scope": "within_species",
+      "species": [
+        "human"
+      ],
+      "track": "main",
+      "task": "发现被试与双侧stats → 读取厚度mm、面积mm2、体积mm3 → 按ID/半球/ROI组织长表",
+      "outputs": [
+        "metrics.tsv",
+        "qc.json"
+      ],
+      "sources": [
+        {
+          "id": "FSROI",
+          "title": "FreeSurfer Anatomical ROI V6",
+          "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/AnatomicalROIV6.0"
+        }
+      ],
+      "origin": "tutorial_replication",
+      "priority": 1,
+      "status": "specification_only_not_executed",
+      "source_record": "cases.json"
+    },
+    {
+      "id": "H02",
+      "primary_type": "group",
+      "primary_type_label": "组间差异",
+      "secondary_types": [],
+      "title": "ASD与对照皮层厚度差异",
+      "scope": "within_species",
+      "species": [
+        "human"
+      ],
+      "track": "main",
+      "task": "冻结原例子集/QC → 映射原308分区并提取厚度 → 按原方法协变量拟合组间模型 → 输出效应/不确定性/多重比较",
+      "outputs": [
+        "design.tsv",
+        "effects.tsv",
+        "effect_map",
+        "qc.json"
+      ],
+      "sources": [
+        {
+          "id": "ASD",
+          "title": "Romero-Garcia et al., Synaptic and transcriptionally downregulated genes are associated with cortical thickness differences in autism",
+          "url": "https://doi.org/10.1038/s41380-018-0023-7"
+        }
+      ],
+      "origin": "paper_replication_candidate",
+      "priority": 1,
+      "status": "specification_only_not_executed",
+      "source_record": "cases.json"
+    },
+    {
+      "id": "H03",
+      "primary_type": "asymmetry",
+      "primary_type_label": "左右不对称",
+      "secondary_types": [],
+      "title": "左右厚度与面积不对称",
+      "scope": "within_species",
+      "species": [
+        "human"
+      ],
+      "track": "main",
+      "task": "提取双侧同源ROI → 计算2*(L-R)/(L+R) → 配对检验、效应量与校正 → 对照文献方向但不强制阳性",
+      "outputs": [
+        "asymmetry.tsv",
+        "paired_stats.tsv"
+      ],
+      "sources": [
+        {
+          "id": "ENIGMA",
+          "title": "Kong et al. 2018, Mapping cortical brain asymmetry in 17,141 healthy individuals",
+          "url": "https://doi.org/10.1073/pnas.1718418115"
+        }
+      ],
+      "origin": "paper_method_transfer",
+      "priority": 1,
+      "status": "specification_only_not_executed",
+      "source_record": "cases.json"
+    },
+    {
+      "id": "H04",
+      "primary_type": "morph_network",
+      "primary_type_label": "形态网络",
+      "secondary_types": [],
+      "title": "五特征MIND网络",
+      "scope": "within_species",
+      "species": [
+        "human"
+      ],
+      "track": "main",
+      "task": "读取顶点CT/SA/Vol/MC/SD → 保留原论文标准化与无效顶点规则 → 按分区形成多维分布 → 作者实现计算区域MIND",
+      "outputs": [
+        "network.npy",
+        "roi_order.tsv",
+        "feature_qc.json"
+      ],
+      "sources": [
+        {
+          "id": "MIND",
+          "title": "Sebenius et al. 2023, Robust estimation of cortical similarity networks from brain MRI",
+          "url": "https://doi.org/10.1038/s41593-023-01376-7"
+        }
+      ],
+      "origin": "paper_replication_candidate",
+      "priority": 1,
+      "status": "specification_only_not_executed",
+      "source_record": "cases.json"
+    },
+    {
+      "id": "H05",
+      "primary_type": "topology_gradient",
+      "primary_type_label": "网络拓扑与梯度",
+      "secondary_types": [],
+      "title": "形态网络模块与枢纽",
+      "scope": "within_species",
+      "species": [
+        "human"
+      ],
+      "track": "main",
+      "task": "读取H04网络并排除自连接 → 预注册加权/阈值/密度设置 → 计算strength/聚类/效率/模块及随机对照 → 做阈值敏感性分析",
+      "outputs": [
+        "node_metrics.tsv",
+        "global_metrics.json",
+        "communities.tsv"
+      ],
+      "sources": [
+        {
+          "id": "MIND",
+          "title": "Sebenius et al. 2023, Robust estimation of cortical similarity networks from brain MRI",
+          "url": "https://doi.org/10.1038/s41593-023-01376-7"
+        },
+        {
+          "id": "MSN",
+          "title": "Seidlitz et al. 2018, Morphometric Similarity Networks Detect Microscale Cortical Organization and Predict Inter-Individual Cognitive Variation",
+          "url": "https://doi.org/10.1016/j.neuron.2017.11.039"
+        }
+      ],
+      "origin": "benchmark_adaptation",
+      "priority": 2,
+      "status": "specification_only_not_executed",
+      "source_record": "cases.json"
+    },
+    {
+      "id": "H06",
+      "primary_type": "topology_gradient",
+      "primary_type_label": "网络拓扑与梯度",
+      "secondary_types": [],
+      "title": "结构协方差与梯度",
+      "scope": "within_species",
+      "species": [
+        "human"
+      ],
+      "track": "main",
+      "task": "Schaefer-400厚度表 → 按作者预处理构建跨被试协方差 → 固定核/阈值后扩散嵌入 → 梯度对齐并评估稳定性",
+      "outputs": [
+        "covariance.npy",
+        "gradients.tsv",
+        "eigenvalues.tsv"
+      ],
+      "sources": [
+        {
+          "id": "VALK",
+          "title": "Valk et al. 2020, Shaping brain structure: Genetic and phylogenetic axes of macroscale organization of cortical thickness",
+          "url": "https://doi.org/10.1126/sciadv.abb3417"
+        }
+      ],
+      "origin": "paper_replication_candidate",
+      "priority": 1,
+      "status": "specification_only_not_executed",
+      "source_record": "cases.json"
+    },
+    {
+      "id": "H07",
+      "primary_type": "spatial_biology",
+      "primary_type_label": "空间关联与生物学解释",
+      "secondary_types": [],
+      "title": "厚度差异图的转录组关联",
+      "scope": "within_species",
+      "species": [
+        "human"
+      ],
+      "track": "main",
+      "task": "使用H02效应图 → 匹配AHBA donor/ROI及表达处理 → PLS与空间自相关感知的null → 基因排序、正确背景集合富集",
+      "outputs": [
+        "spatial_stats.json",
+        "gene_weights.tsv",
+        "enrichment.tsv"
+      ],
+      "sources": [
+        {
+          "id": "ASD",
+          "title": "Romero-Garcia et al., Synaptic and transcriptionally downregulated genes are associated with cortical thickness differences in autism",
+          "url": "https://doi.org/10.1038/s41380-018-0023-7"
+        }
+      ],
+      "origin": "paper_method_transfer",
+      "priority": 2,
+      "status": "specification_only_not_executed",
+      "source_record": "cases.json"
+    },
+    {
+      "id": "M01",
+      "primary_type": "metrics",
+      "primary_type_label": "形态指标与相对扩张",
+      "secondary_types": [],
+      "title": "猕猴表面指标提取",
+      "scope": "within_species",
+      "species": [
+        "macaque"
+      ],
+      "track": "main",
+      "task": "识别individual maps和dlabel → 核验物种/空间/尺度 → 分区汇总厚度/曲率/沟深及可用面积",
+      "outputs": [
+        "metrics.tsv",
+        "provenance.json"
+      ],
+      "sources": [
+        {
+          "id": "MIND",
+          "title": "Sebenius et al. 2023, Robust estimation of cortical similarity networks from brain MRI",
+          "url": "https://doi.org/10.1038/s41593-023-01376-7"
+        }
+      ],
+      "origin": "benchmark_adaptation",
+      "priority": 1,
+      "status": "specification_only_not_executed",
+      "source_record": "cases.json"
+    },
+    {
+      "id": "M02",
+      "primary_type": "group",
+      "primary_type_label": "组间差异",
+      "secondary_types": [],
+      "title": "年轻与年老猕猴厚度差异",
+      "scope": "within_species",
+      "species": [
+        "macaque"
+      ],
+      "track": "main",
+      "task": "按原例年龄/性别匹配子集 → 区域与顶点组间检验 → 置换校正与效应图 → 区分全脑与局部结论",
+      "outputs": [
+        "design.tsv",
+        "effects.tsv",
+        "corrected_map"
+      ],
+      "sources": [
+        {
+          "id": "MACAGE",
+          "title": "Age-Related Effects on Cortical Thickness Patterns of the Rhesus Monkey Brain",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4521210/"
+        }
+      ],
+      "origin": "paper_replication_candidate",
+      "priority": 3,
+      "status": "specification_only_not_executed",
+      "source_record": "cases.json"
+    },
+    {
+      "id": "M03",
+      "primary_type": "asymmetry",
+      "primary_type_label": "左右不对称",
+      "secondary_types": [],
+      "title": "猕猴左右不对称",
+      "scope": "within_species",
+      "species": [
+        "macaque"
+      ],
+      "track": "main",
+      "task": "选取原例年龄段并识别重复访视 → 核验左右同源映射 → 计算AI并配对检验 → 进行表面多重比较",
+      "outputs": [
+        "asymmetry_map",
+        "paired_stats.tsv",
+        "mapping_qc.json"
+      ],
+      "sources": [
+        {
+          "id": "MACAI",
+          "title": "Mapping hemispheric asymmetries of the macaque cerebral cortex during early brain development",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7267900/"
+        }
+      ],
+      "origin": "paper_replication_candidate",
+      "priority": 2,
+      "status": "specification_only_not_executed",
+      "source_record": "cases.json"
+    },
+    {
+      "id": "M04",
+      "primary_type": "morph_network",
+      "primary_type_label": "形态网络",
+      "secondary_types": [],
+      "title": "猕猴T1五特征MIND",
+      "scope": "within_species",
+      "species": [
+        "macaque"
+      ],
+      "track": "main",
+      "task": "提取五项形态特征并核验缩放 → 匹配猕猴分区与区域排除 → 计算每只猕猴MIND → 记录与原文六特征的区别",
+      "outputs": [
+        "networks",
+        "roi_order.tsv",
+        "feature_qc.json"
+      ],
+      "sources": [
+        {
+          "id": "MIND",
+          "title": "Sebenius et al. 2023, Robust estimation of cortical similarity networks from brain MRI",
+          "url": "https://doi.org/10.1038/s41593-023-01376-7"
+        }
+      ],
+      "origin": "benchmark_adaptation",
+      "priority": 1,
+      "status": "specification_only_not_executed",
+      "source_record": "cases.json"
+    },
+    {
+      "id": "M05",
+      "primary_type": "topology_gradient",
+      "primary_type_label": "网络拓扑与梯度",
+      "secondary_types": [],
+      "title": "PRIME-DE结构协方差梯度",
+      "scope": "within_species",
+      "species": [
+        "macaque"
+      ],
+      "track": "main",
+      "task": "冻结三站点原例子集 → 提取Markov分区厚度 → 协方差与扩散嵌入 → 比较前后/上下组织及bootstrap稳定性",
+      "outputs": [
+        "covariance.npy",
+        "gradients.tsv",
+        "stability.json"
+      ],
+      "sources": [
+        {
+          "id": "VALK",
+          "title": "Valk et al. 2020, Shaping brain structure: Genetic and phylogenetic axes of macroscale organization of cortical thickness",
+          "url": "https://doi.org/10.1126/sciadv.abb3417"
+        }
+      ],
+      "origin": "paper_replication_candidate",
+      "priority": 1,
+      "status": "specification_only_not_executed",
+      "source_record": "cases.json"
+    },
+    {
+      "id": "M06",
+      "primary_type": "topology_gradient",
+      "primary_type_label": "网络拓扑与梯度",
+      "secondary_types": [],
+      "title": "猕猴形态网络拓扑",
+      "scope": "within_species",
+      "species": [
+        "macaque"
+      ],
+      "track": "main",
+      "task": "读取M04网络 → 定义无向加权图和自环处理 → 计算模块/strength/效率 → 测试随机种子与密度稳定性",
+      "outputs": [
+        "node_metrics.tsv",
+        "global_metrics.json"
+      ],
+      "sources": [
+        {
+          "id": "MIND",
+          "title": "Sebenius et al. 2023, Robust estimation of cortical similarity networks from brain MRI",
+          "url": "https://doi.org/10.1038/s41593-023-01376-7"
+        },
+        {
+          "id": "MSN",
+          "title": "Seidlitz et al. 2018, Morphometric Similarity Networks Detect Microscale Cortical Organization and Predict Inter-Individual Cognitive Variation",
+          "url": "https://doi.org/10.1016/j.neuron.2017.11.039"
+        }
+      ],
+      "origin": "benchmark_adaptation",
+      "priority": 2,
+      "status": "specification_only_not_executed",
+      "source_record": "cases.json"
+    },
+    {
+      "id": "M07",
+      "primary_type": "spatial_biology",
+      "primary_type_label": "空间关联与生物学解释",
+      "secondary_types": [],
+      "title": "形态网络与示踪连接关联",
+      "scope": "within_species",
+      "species": [
+        "macaque"
+      ],
+      "track": "main",
+      "task": "匹配MRI与示踪分区 → 仅取有观测的示踪边 → 预注册有向到无向比较规则 → 估计关联及距离/空间约束null",
+      "outputs": [
+        "matched_edges.tsv",
+        "association.json",
+        "interpretation.md"
+      ],
+      "sources": [
+        {
+          "id": "MIND",
+          "title": "Sebenius et al. 2023, Robust estimation of cortical similarity networks from brain MRI",
+          "url": "https://doi.org/10.1038/s41593-023-01376-7"
+        }
+      ],
+      "origin": "benchmark_adaptation",
+      "priority": 2,
+      "status": "specification_only_not_executed",
+      "source_record": "cases.json"
+    },
+    {
+      "id": "S01",
+      "primary_type": "asymmetry",
+      "primary_type_label": "左右不对称",
+      "secondary_types": [],
+      "title": "狨猴半球体积不对称",
+      "scope": "within_species",
+      "species": [
+        "marmoset"
+      ],
+      "track": "extension",
+      "task": "核验作者数值表中被试/年龄/体积 → 明确原文百分比定义 → 重算个体与总体统计 → 描述小子集和原208只差异",
+      "outputs": [
+        "asymmetry.tsv",
+        "summary.json"
+      ],
+      "sources": [
+        {
+          "id": "MARAI",
+          "title": "Mundinano et al. 2026, Highly consistent anatomical asymmetry in a small primate brain",
+          "url": "https://doi.org/10.1038/s42003-026-10576-3"
+        }
+      ],
+      "origin": "paper_replication_candidate",
+      "priority": 1,
+      "status": "specification_only_not_executed",
+      "source_record": "cases.json"
+    },
+    {
+      "id": "S02",
+      "primary_type": "spatial_biology",
+      "primary_type_label": "空间关联与生物学解释",
+      "secondary_types": [
+        "morph_network"
+      ],
+      "title": "狨猴髓鞘相似网络与基因关联",
+      "scope": "within_species",
+      "species": [
+        "marmoset"
+      ],
+      "track": "extension",
+      "task": "从作者中间数据或T1/T2比值开始 → 构建单特征MIND → 计算节点指标 → 关联MBP及物种匹配表达",
+      "outputs": [
+        "network.npy",
+        "association.json",
+        "qc.json"
+      ],
+      "sources": [
+        {
+          "id": "MARMIND",
+          "title": "Hutchings et al. 2026, The cellular correlates and adolescent reorganisation of cortical myelination networks in the common marmoset",
+          "url": "https://doi.org/10.1038/s42003-026-10276-y"
+        }
+      ],
+      "origin": "paper_replication_candidate",
+      "priority": 3,
+      "status": "specification_only_not_executed",
+      "source_record": "cases.json"
+    },
+    {
+      "id": "G01",
+      "primary_type": "metrics",
+      "primary_type_label": "形态指标与相对扩张",
+      "secondary_types": [],
+      "title": "大猩猩个体体积与表面测量",
+      "scope": "within_species",
+      "species": [
+        "gorilla"
+      ],
+      "track": "extension",
+      "task": "按原始来源确认Gorilla个体并去重 → QC分割和曲面 → 提取可支持的体积/面积/折叠指标 → 与作者同个体测量对照",
+      "outputs": [
+        "individual_metrics.tsv",
+        "qc.json"
+      ],
+      "sources": [
+        {
+          "id": "FOLD",
+          "title": "Heuer et al. 2019, Evolution of neocortical folding: A phylogenetic comparative analysis of MRI from 34 primate species",
+          "url": "https://doi.org/10.1016/j.cortex.2019.04.011"
+        },
+        {
+          "id": "GORRILLING",
+          "title": "Rilling & Insel 1999, The primate neocortex in comparative perspective using MRI",
+          "url": "https://doi.org/10.1006/jhev.1999.0313"
+        }
+      ],
+      "origin": "paper_method_transfer",
+      "priority": 2,
+      "status": "specification_only_not_executed",
+      "source_record": "cases.json"
+    },
+    {
+      "id": "G02",
+      "primary_type": "asymmetry",
+      "primary_type_label": "左右不对称",
+      "secondary_types": [],
+      "title": "大猩猩左右形态描述",
+      "scope": "within_species",
+      "species": [
+        "gorilla"
+      ],
+      "track": "extension",
+      "task": "确认方向与双侧分割 → 只在有效同源区域计算左右差 → 报告个体AI与测量不确定性 → 不做无功效群体推断",
+      "outputs": [
+        "individual_asymmetry.tsv",
+        "limitations.md"
+      ],
+      "sources": [
+        {
+          "id": "GORRILLING",
+          "title": "Rilling & Insel 1999, The primate neocortex in comparative perspective using MRI",
+          "url": "https://doi.org/10.1006/jhev.1999.0313"
+        },
+        {
+          "id": "ENIGMA",
+          "title": "Kong et al. 2018, Mapping cortical brain asymmetry in 17,141 healthy individuals",
+          "url": "https://doi.org/10.1073/pnas.1718418115"
+        }
+      ],
+      "origin": "benchmark_adaptation",
+      "priority": 3,
+      "status": "specification_only_not_executed",
+      "source_record": "cases.json"
+    },
+    {
+      "id": "X00",
+      "primary_type": "prerequisite",
+      "primary_type_label": "跨物种可比性前置检查",
+      "secondary_types": [],
+      "title": "跨物种可比性与同源对应审计",
+      "scope": "prerequisite",
+      "species": [
+        "human",
+        "macaque"
+      ],
+      "track": "cross_species",
+      "task": "建立或核验有来源的同源ROI表/表面映射；允许一对多、无对应和低置信度项。",
+      "outputs": [
+        "mapping.tsv",
+        "mapping_qc.json"
+      ],
+      "sources": [
+        {
+          "id": "MSM",
+          "title": "Eichert et al. 2020: Cross-species cortical alignment identifies different types of anatomical reorganization in the primate temporal lobe",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7180052/"
+        },
+        {
+          "id": "PFC",
+          "title": "Donahue et al. 2018: Quantitative assessment of prefrontal cortex in humans relative to nonhuman primates",
+          "url": "https://doi.org/10.1073/pnas.1721653115"
+        }
+      ],
+      "origin": "prerequisite",
+      "priority": 1,
+      "status": "specification_only_not_executed",
+      "source_record": "cross_species/cases.json"
+    },
+    {
+      "id": "X01",
+      "primary_type": "metrics",
+      "primary_type_label": "形态指标与相对扩张",
+      "secondary_types": [
+        "group"
+      ],
+      "title": "同源脑区厚度、面积与体积比较",
+      "scope": "cross_species",
+      "species": [
+        "human",
+        "macaque"
+      ],
+      "track": "cross_species",
+      "task": "按同源ROI提取个体指标，分别报告原始值、相对量及适用的脑大小调整结果。",
+      "outputs": [
+        "regional_effects.tsv",
+        "design.tsv"
+      ],
+      "sources": [
+        {
+          "id": "PFC",
+          "title": "Donahue et al. 2018: Quantitative assessment of prefrontal cortex in humans relative to nonhuman primates",
+          "url": "https://doi.org/10.1073/pnas.1721653115"
+        }
+      ],
+      "origin": "paper_method_transfer",
+      "priority": 1,
+      "status": "specification_only_not_executed",
+      "source_record": "cross_species/cases.json"
+    },
+    {
+      "id": "X02",
+      "primary_type": "metrics",
+      "primary_type_label": "形态指标与相对扩张",
+      "secondary_types": [],
+      "title": "皮层相对扩张图",
+      "scope": "cross_species",
+      "species": [
+        "human",
+        "macaque"
+      ],
+      "track": "cross_species",
+      "task": "在已验证对应下比较局部面积占总皮层面积的比例，区分相对扩张与绝对面积差异。",
+      "outputs": [
+        "relative_expansion_map",
+        "distortion_qc.json"
+      ],
+      "sources": [
+        {
+          "id": "PFC",
+          "title": "Donahue et al. 2018: Quantitative assessment of prefrontal cortex in humans relative to nonhuman primates",
+          "url": "https://doi.org/10.1073/pnas.1721653115"
+        },
+        {
+          "id": "MSM",
+          "title": "Eichert et al. 2020: Cross-species cortical alignment identifies different types of anatomical reorganization in the primate temporal lobe",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7180052/"
+        }
+      ],
+      "origin": "paper_method_transfer",
+      "priority": 2,
+      "status": "specification_only_not_executed",
+      "source_record": "cross_species/cases.json"
+    },
+    {
+      "id": "X03",
+      "primary_type": "asymmetry",
+      "primary_type_label": "左右不对称",
+      "secondary_types": [],
+      "title": "左右不对称的物种差异",
+      "scope": "cross_species",
+      "species": [
+        "human",
+        "macaque"
+      ],
+      "track": "cross_species",
+      "task": "先物种内建立左右同源，再跨物种对应；比较AI或species×hemisphere交互。",
+      "outputs": [
+        "individual_AI.tsv",
+        "species_AI_effects.tsv"
+      ],
+      "sources": [
+        {
+          "id": "AI",
+          "title": "Xiang et al.: Comparison of Surface Area and Cortical Thickness Asymmetry in the Human and Chimpanzee Brain",
+          "url": "https://doi.org/10.1093/cercor/bhaa202"
+        }
+      ],
+      "origin": "paper_method_transfer",
+      "priority": 1,
+      "status": "specification_only_not_executed",
+      "source_record": "cross_species/cases.json"
+    },
+    {
+      "id": "X04",
+      "primary_type": "morph_network",
+      "primary_type_label": "形态网络",
+      "secondary_types": [
+        "topology_gradient"
+      ],
+      "title": "形态网络及拓扑的保守性/差异",
+      "scope": "cross_species",
+      "species": [
+        "human",
+        "macaque"
+      ],
+      "track": "cross_species",
+      "task": "统一五种T1特征和共同分区，比较MIND边、节点strength、模块和枢纽。",
+      "outputs": [
+        "network_similarity.json",
+        "node_differences.tsv",
+        "topology_sensitivity.json"
+      ],
+      "sources": [
+        {
+          "id": "MIND",
+          "title": "Sebenius et al. 2023: Robust estimation of cortical similarity networks from brain MRI",
+          "url": "https://doi.org/10.1038/s41593-023-01376-7"
+        }
+      ],
+      "origin": "benchmark_adaptation",
+      "priority": 2,
+      "status": "specification_only_not_executed",
+      "source_record": "cross_species/cases.json"
+    },
+    {
+      "id": "X05",
+      "primary_type": "topology_gradient",
+      "primary_type_label": "网络拓扑与梯度",
+      "secondary_types": [],
+      "title": "结构协方差梯度的跨物种对应",
+      "scope": "cross_species",
+      "species": [
+        "human",
+        "macaque"
+      ],
+      "track": "cross_species",
+      "task": "接H06与M05，投到经验证共同空间，匹配梯度子空间，比较空间相关、区域排序及分化。",
+      "outputs": [
+        "gradient_alignment.json",
+        "spatial_correlations.tsv",
+        "bootstrap_stability.json"
+      ],
+      "sources": [
+        {
+          "id": "VALK",
+          "title": "Valk et al. 2020: Shaping brain structure",
+          "url": "https://doi.org/10.1126/sciadv.abb3417"
+        }
+      ],
+      "origin": "paper_replication_candidate",
+      "priority": 1,
+      "status": "specification_only_not_executed",
+      "source_record": "cross_species/cases.json"
+    },
+    {
+      "id": "X06",
+      "primary_type": "allometry",
+      "primary_type_label": "多物种尺度与折叠规律",
+      "secondary_types": [],
+      "title": "多物种脑大小与折叠异速生长",
+      "scope": "cross_species",
+      "species": [
+        "human",
+        "macaque",
+        "marmoset",
+        "gorilla"
+      ],
+      "track": "cross_species",
+      "task": "计算体积/面积/折叠指标，扩充参考物种后拟合log-log及适用的系统发育模型；目标物种作为定位点。",
+      "outputs": [
+        "species_metrics.tsv",
+        "scaling_model.json"
+      ],
+      "sources": [
+        {
+          "id": "FOLD",
+          "title": "Heuer et al. 2019: Evolution of neocortical folding: A phylogenetic comparative analysis of MRI from 34 primate species",
+          "url": "https://doi.org/10.1016/j.cortex.2019.04.011"
+        }
+      ],
+      "origin": "paper_method_transfer",
+      "priority": 2,
+      "status": "specification_only_not_executed",
+      "source_record": "cross_species/cases.json"
+    },
+    {
+      "id": "X07",
+      "primary_type": "spatial_biology",
+      "primary_type_label": "空间关联与生物学解释",
+      "secondary_types": [],
+      "title": "跨物种差异图的空间关联与生物解释",
+      "scope": "cross_species",
+      "species": [
+        "human",
+        "macaque"
+      ],
+      "track": "cross_species",
+      "task": "将X02/X05差异图与独立皮层层级、细胞构筑、髓鞘或物种匹配表达关联。",
+      "outputs": [
+        "spatial_association.json",
+        "evidence_table.tsv",
+        "interpretation.md"
+      ],
+      "sources": [
+        {
+          "id": "VALK",
+          "title": "Valk et al. 2020: Shaping brain structure",
+          "url": "https://doi.org/10.1126/sciadv.abb3417"
+        },
+        {
+          "id": "MIND",
+          "title": "Sebenius et al. 2023: Robust estimation of cortical similarity networks from brain MRI",
+          "url": "https://doi.org/10.1038/s41593-023-01376-7"
+        }
+      ],
+      "origin": "benchmark_adaptation",
+      "priority": 3,
+      "status": "specification_only_not_executed",
+      "source_record": "cross_species/cases.json"
+    },
+    {
+      "id": "X08",
+      "primary_type": "variability",
+      "primary_type_label": "个体变异模式",
+      "secondary_types": [],
+      "title": "个体差异模式的跨物种比较",
+      "scope": "cross_species",
+      "species": [
+        "human",
+        "macaque"
+      ],
+      "track": "cross_species",
+      "task": "比较物种内厚度/面积变异图，再比较跨物种空间模式和与扩张的关系。",
+      "outputs": [
+        "within_species_variability.tsv",
+        "cross_species_comparison.json"
+      ],
+      "sources": [
+        {
+          "id": "VAR",
+          "title": "Croxson et al.: Structural Variability Across the Primate Brain: A Cross-Species Comparison",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6887925/"
+        }
+      ],
+      "origin": "benchmark_adaptation",
+      "priority": 3,
+      "status": "specification_only_not_executed",
+      "source_record": "cross_species/cases.json"
+    }
+  ]
+}

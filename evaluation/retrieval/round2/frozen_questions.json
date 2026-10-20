@@ -1,0 +1,87 @@
+[
+  {
+    "id": "X01",
+    "question": "Assume 5 controls and 7 patients all passed QC and remain in the FSL-VBM input directory. How many images from each group should build the template, does fslvbm_3_proc process only those selected images, what ordering must design.mat follow, and are its initial tstat maps already the final permutation p-value inference?",
+    "required_sources": [
+      "VBM_TEMPLATE",
+      "VBM_FINAL"
+    ],
+    "checks": [
+      "5+5 template; all 12 eligible GM inputs for proc",
+      "alphabetical concatenation matches design rows",
+      "initial tstat inference disabled; full randomise needed"
+    ],
+    "answerability": "supported_with_conditions"
+  },
+  {
+    "id": "X02",
+    "question": "In the randomise paired example, the first eight images are condition A and the next eight are condition B for the same subjects in the same order. How should exchangeability labels link observations, which command option supplies them, and what alternative analysis avoids using all 16 raw condition images in that paired design? Does the excerpt establish automatic restriction when the option is omitted?",
+    "required_sources": [
+      "STAT_BLOCK",
+      "STAT_PAIRED"
+    ],
+    "checks": [
+      "labels 1..8 repeated; within-subject A/B swaps",
+      "-e design.grp; not across subjects",
+      "within-subject differences then one-group test",
+      "if specified, not automatic guarantee"
+    ],
+    "answerability": "supported_with_conditions"
+  },
+  {
+    "id": "X03",
+    "question": "Can a significant voxelwise grey-matter result by itself be called proof of cortical thinning, and does the comparative cortical-myelin alignment finding establish that all white-matter terminations are explained by cortical expansion and relocation? Explain the limits of each claim.",
+    "required_sources": [
+      "VBM_LIMITS",
+      "CROSS_FINDING"
+    ],
+    "checks": [
+      "VBM ambiguity thickness/atrophy/folding or misregistration",
+      "specific expansion/relocation not universal",
+      "arcuate exception; middle/superior differ"
+    ],
+    "answerability": "supported_with_conditions"
+  },
+  {
+    "id": "X04",
+    "question": "In the pinned PREEMACS code, may I omit the optional fifth FS_LICENSE argument when the environment variable is also empty? How does the wrapper make a single T1 file compatible with M1 directory inputs, and what in M1 code confirms the input expectation?",
+    "required_sources": [
+      "WRAPPER_LICENSE",
+      "WRAPPER_BINDS",
+      "M1_INPUT_CODE"
+    ],
+    "checks": [
+      "empty license fails; optional argument not optional license",
+      "individual file binds to container directory",
+      "M1 cd path then glob .nii.gz",
+      "only pinned commit, installed unknown"
+    ],
+    "answerability": "supported_with_conditions"
+  },
+  {
+    "id": "X05",
+    "question": "A longitudinal FreeSurfer study includes a dropout with only one scan. Must that person always be excluded, can the cross-sectional output simply be mixed with the longitudinal outputs, and should other subjects change estimates compare against the within-subject template? State the documentation scope.",
+    "required_sources": [
+      "FS_SINGLE",
+      "LONG"
+    ],
+    "checks": [
+      "may include e.g. LME not universal permission",
+      "single-point base plus longitudinal stream",
+      "compare longitudinal outputs not template",
+      "historical FS versions, installed unknown"
+    ],
+    "answerability": "supported_with_conditions"
+  },
+  {
+    "id": "X06",
+    "question": "From these sources, report the exact numerical human-minus-macaque prefrontal cortical-thickness difference for our cohort and a validated numerical MRIQC exclusion cutoff for that same cohort.",
+    "required_sources": [],
+    "checks": [
+      "no cohort data, no numerical difference",
+      "no validated cutoff in these sources",
+      "do not substitute smoothing or resolution numbers"
+    ],
+    "answerability": "not_established"
+  }
+]

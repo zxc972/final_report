@@ -1,0 +1,1168 @@
+{
+  "schema_version": "primatex.analysis_knowledge_catalog.v1",
+  "created_date": "2026-10-15",
+  "status": "research_catalog_not_implementation",
+  "purpose": "比较官方教程知识提供给第四章分析Agent的形式，并建立候选能力目录；不执行分析、不宣称资源已安装。",
+  "scope_definitions": {
+    "proposal_core": "原方案的指标提取与群体统计所需候选软件/接口",
+    "analysis_extension": "本轮扩展研究的候选分析能力；不代表原方案已实现",
+    "supporting_standard": "支持身份、空间、数值、文件和追溯的基础软件或资源"
+  },
+  "availability_policy": "本文件没有对服务器现场安装状态作新检查，所有条目为unknown；应由独立runtime inventory记录实测版本/可运行性，本清单不得覆盖它。",
+  "review_depth_definitions": {
+    "official_page_opened_relevant_overview_not_full_api_audit": "已打开官方页面并查阅相关概述/示例；未全面审阅API或验证实现",
+    "official_search_excerpt_reviewed_not_full_page_audit": "本轮查阅官方搜索结果摘录；不是完整文档审查",
+    "primary_source_registered_not_reopened_in_this_pass": "登记作者/官方原始来源，本轮未重开或打开失败，待正式审查"
+  },
+  "provenance_inputs": [
+    "PrimateX研究方案.docx（2026-10-14）",
+    "第四章分析Agent知识组织与文献调研_20261014.md",
+    "results/featurize-20261009/morphokg_lab/docs/RESEARCH_PLAN.md",
+    "results/featurize-20261009/morphokg_lab/knowledge与skills、tests的只读审计",
+    "2026-10-15官方网页与作者仓库核验"
+  ],
+  "knowledge_policy": [
+    "原文和完整代码块作为版本化证据保存；文档内容不是运行指令。",
+    "技能/约束/关系均链接原文；抽取候选和语义审核通过分开标记。",
+    "软件用法、方法适用性、解剖映射、生物经验Claim分层；未知不等于满足或不满足。",
+    "教程示例不是固定分析模板；根据实际文件/变量选择方案并记录选择理由。",
+    "固定release/commit、来源hash和具体章节后才成为实验知识包；本清单URL本身不是冻结语料。",
+    "多种知识形式使用同一规范事实、代码和工具，不给图谱组额外领域事实或执行能力。"
+  ],
+  "software": [
+    {
+      "id": "nibabel",
+      "name": "NiBabel",
+      "scope": "proposal_core",
+      "capabilities": [
+        "读取NIfTI/GIFTI/CIFTI及FreeSurfer形态与annotation文件",
+        "检查affine、轴方向、单位和文件元数据"
+      ],
+      "input_requirements": [
+        "支持格式的原始文件及其header",
+        "明确空间、半球和文件来源；shape或顶点数量相等不能单独证明对应",
+        "聚合前确认mask、标签和数值数组一致"
+      ],
+      "official_sources": [
+        {
+          "url": "https://nipy.org/nibabel/coordinate_systems.html",
+          "title": "Coordinate systems and affines",
+          "review_depth": "official_page_opened_relevant_overview_not_full_api_audit"
+        },
+        {
+          "url": "https://nipy.org/nibabel/reference/nibabel.freesurfer.html",
+          "title": "NiBabel FreeSurfer API",
+          "review_depth": "primary_source_registered_not_reopened_in_this_pass"
+        }
+      ],
+      "tutorial_topics": [
+        "data/affine/header关系",
+        "NIfTI单位与qform/sform",
+        "read_morph_data/read_annot及未知标签语义",
+        "GIFTI/CIFTI轴与左右半球",
+        "延迟加载、dtype与有限值检查"
+      ],
+      "knowledge_form": [
+        "versioned_source_document_rag",
+        "on_demand_skill_with_source_links",
+        "reviewed_structured_conditions",
+        "source_bound_relationships"
+      ],
+      "availability": "unknown",
+      "notes": []
+    },
+    {
+      "id": "pandas",
+      "name": "pandas",
+      "scope": "proposal_core",
+      "capabilities": [
+        "读取并合并被试、表型和指标表",
+        "重复、缺失与列集合审计"
+      ],
+      "input_requirements": [
+        "显式subject/session/scan主键及数据字典",
+        "join基数与预期行集合",
+        "缺失值编码和分类变量定义"
+      ],
+      "official_sources": [
+        {
+          "url": "https://pandas.pydata.org/docs/user_guide/merging.html",
+          "title": "Merge, join, concatenate and compare",
+          "review_depth": "official_page_opened_relevant_overview_not_full_api_audit"
+        }
+      ],
+      "tutorial_topics": [
+        "merge(validate=...)与indicator",
+        "重复扫描与one-to-many风险",
+        "缺失及分类列",
+        "稳定行序与数值精度",
+        "长表/宽表转换"
+      ],
+      "knowledge_form": [
+        "versioned_source_document_rag",
+        "on_demand_skill_with_source_links",
+        "reviewed_structured_conditions",
+        "source_bound_relationships"
+      ],
+      "availability": "unknown",
+      "notes": []
+    },
+    {
+      "id": "numpy",
+      "name": "NumPy",
+      "scope": "supporting_standard",
+      "capabilities": [
+        "数组组织与数值运算",
+        "线性代数、mask及维度检查"
+      ],
+      "input_requirements": [
+        "明确每个轴的分析单位与顺序",
+        "有限值、dtype和广播规则",
+        "数值精度与线性代数容差"
+      ],
+      "official_sources": [
+        {
+          "url": "https://numpy.org/doc/stable/user/",
+          "title": "NumPy user guide",
+          "review_depth": "primary_source_registered_not_reopened_in_this_pass"
+        }
+      ],
+      "tutorial_topics": [
+        "subject×ROI与feature×subject轴约定",
+        "广播/索引",
+        "lstsq、rank、SVD",
+        "精度与随机种子"
+      ],
+      "knowledge_form": [
+        "versioned_source_document_rag",
+        "on_demand_skill_with_source_links",
+        "reviewed_structured_conditions"
+      ],
+      "availability": "unknown",
+      "notes": []
+    },
+    {
+      "id": "scipy",
+      "name": "SciPy",
+      "scope": "proposal_core",
+      "capabilities": [
+        "分布、统计检验与相关分析",
+        "稀疏/距离/线性代数基础"
+      ],
+      "input_requirements": [
+        "明确观测单位和独立性",
+        "检验假设、单双侧和NaN政策",
+        "置换可交换性及随机种子"
+      ],
+      "official_sources": [
+        {
+          "url": "https://docs.scipy.org/doc/scipy/reference/stats.html",
+          "title": "Statistical functions scipy.stats",
+          "review_depth": "official_page_opened_relevant_overview_not_full_api_audit"
+        }
+      ],
+      "tutorial_topics": [
+        "t分布与置信区间",
+        "相关/置换检验",
+        "NaN和常量输入",
+        "距离矩阵与稀疏矩阵",
+        "检验统计量与多重校正分离"
+      ],
+      "knowledge_form": [
+        "versioned_source_document_rag",
+        "on_demand_skill_with_source_links",
+        "reviewed_structured_conditions",
+        "source_bound_relationships"
+      ],
+      "availability": "unknown",
+      "notes": []
+    },
+    {
+      "id": "statsmodels",
+      "name": "statsmodels",
+      "scope": "proposal_core",
+      "capabilities": [
+        "ROI线性模型、设计诊断和效应估计",
+        "混合效应及可选非线性模型"
+      ],
+      "input_requirements": [
+        "被试与设计矩阵严格对齐",
+        "因变量/分类编码/estimand明确",
+        "满秩或逐contrast可估计性、残差自由度",
+        "重复测量有subject分组且模型可识别"
+      ],
+      "official_sources": [
+        {
+          "url": "https://www.statsmodels.org/stable/user-guide.html",
+          "title": "statsmodels User Guide",
+          "review_depth": "official_page_opened_relevant_overview_not_full_api_audit"
+        },
+        {
+          "url": "https://www.statsmodels.org/stable/mixed_linear.html",
+          "title": "Linear Mixed Effects Models",
+          "review_depth": "official_page_opened_relevant_overview_not_full_api_audit"
+        }
+      ],
+      "tutorial_topics": [
+        "OLS intercept与分类编码",
+        "rank/contrast/残差",
+        "效应、SE、CI及FDR家族",
+        "MixedLM与重复测量",
+        "GAM/样条与开发集冻结"
+      ],
+      "knowledge_form": [
+        "versioned_source_document_rag",
+        "on_demand_skill_with_source_links",
+        "reviewed_structured_conditions",
+        "source_bound_relationships"
+      ],
+      "availability": "unknown",
+      "notes": []
+    },
+    {
+      "id": "nilearn",
+      "name": "Nilearn",
+      "scope": "proposal_core",
+      "capabilities": [
+        "已预处理影像的群体GLM/VBM统计",
+        "mask、影像结果与表面/体积可视化"
+      ],
+      "input_requirements": [
+        "合适的组织图或分析图像，不能把原始T1强度当灰质体积",
+        "共同空间、mask与平滑政策",
+        "影像顺序与设计矩阵对齐",
+        "contrast与校正家族明确"
+      ],
+      "official_sources": [
+        {
+          "url": "https://nilearn.github.io/stable/glm/second_level_model.html",
+          "title": "Second level models",
+          "review_depth": "official_page_opened_relevant_overview_not_full_api_audit"
+        },
+        {
+          "url": "https://nilearn.github.io/stable/auto_examples/05_glm_second_level/plot_oasis.html",
+          "title": "Voxel-Based Morphometry on OASIS dataset",
+          "review_depth": "primary_source_registered_not_reopened_in_this_pass"
+        }
+      ],
+      "tutorial_topics": [
+        "SecondLevelModel输入与设计",
+        "VBM输入的预处理语义",
+        "contrast/阈值/校正",
+        "mask与空间检查",
+        "结果绘图和可追溯报告"
+      ],
+      "knowledge_form": [
+        "versioned_source_document_rag",
+        "on_demand_skill_with_source_links",
+        "reviewed_structured_conditions",
+        "source_bound_relationships"
+      ],
+      "availability": "unknown",
+      "notes": []
+    },
+    {
+      "id": "freesurfer_analysis",
+      "name": "FreeSurfer分析接口",
+      "scope": "proposal_core",
+      "capabilities": [
+        "stats表导出及区域厚度/面积/体积整理",
+        "表面/体积GLM与多重比较工作流"
+      ],
+      "input_requirements": [
+        "固定FreeSurfer版本与分区",
+        "subject目录及必要stats/表面文件完整",
+        "同一分区/指标及半球集合",
+        "GLM有共同空间、FSGD/设计及正确contrast"
+      ],
+      "official_sources": [
+        {
+          "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mri_glmfit",
+          "title": "mri_glmfit",
+          "review_depth": "official_search_excerpt_reviewed_not_full_page_audit"
+        },
+        {
+          "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/aparcstats2table",
+          "title": "aparcstats2table",
+          "review_depth": "primary_source_registered_not_reopened_in_this_pass"
+        },
+        {
+          "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/MultipleComparisonsV6.0Perm",
+          "title": "Multiple comparisons permutation tutorial",
+          "review_depth": "official_search_excerpt_reviewed_not_full_page_audit"
+        }
+      ],
+      "tutorial_topics": [
+        "aparcstats2table/asegstats2table",
+        "厚度与面积/体积的不同聚合",
+        "DOSS/DODS及contrast列序",
+        "mris_preproc与网格匹配",
+        "版本对应的mri_glmfit-sim置换"
+      ],
+      "knowledge_form": [
+        "versioned_source_document_rag",
+        "on_demand_skill_with_source_links",
+        "reviewed_structured_conditions",
+        "source_bound_relationships"
+      ],
+      "availability": "unknown",
+      "notes": []
+    },
+    {
+      "id": "brainstat",
+      "name": "BrainStat",
+      "scope": "proposal_core",
+      "capabilities": [
+        "表面/区域固定与混合效应模型",
+        "FDR/RFT及模型QC",
+        "基因、元分析和组织学context decoding"
+      ],
+      "input_requirements": [
+        "observation×vertex/parcel的数据和对齐表型",
+        "mask、surface及统计设计",
+        "RFT需要相应几何和模型假设",
+        "context decoding需匹配参考空间与来源"
+      ],
+      "official_sources": [
+        {
+          "url": "https://brainstat.readthedocs.io/en/latest/python/_autosummary/brainstat.stats.SLM.SLM.html",
+          "title": "SLM API",
+          "review_depth": "official_search_excerpt_reviewed_not_full_page_audit"
+        },
+        {
+          "url": "https://brainstat.readthedocs.io/en/master/python/do_not_delete_now/plot_tutorial_01_basics.html",
+          "title": "Tutorial 01 Linear Models",
+          "review_depth": "official_search_excerpt_reviewed_not_full_page_audit"
+        },
+        {
+          "url": "https://brainstat.readthedocs.io/en/master/python/tutorials/tutorial_2.html",
+          "title": "Context decoding tutorial",
+          "review_depth": "primary_source_registered_not_reopened_in_this_pass"
+        }
+      ],
+      "tutorial_topics": [
+        "FixedEffect/MixedEffect",
+        "contrast与双侧设置",
+        "FDR/RFT及残差QC",
+        "重复访问非独立",
+        "context decoding输入、相关与解释边界"
+      ],
+      "knowledge_form": [
+        "versioned_source_document_rag",
+        "on_demand_skill_with_source_links",
+        "reviewed_structured_conditions",
+        "source_bound_relationships"
+      ],
+      "availability": "unknown",
+      "notes": [
+        "网站版本标签可能不同；实施前固定与实际运行版本一致的文档快照。"
+      ]
+    },
+    {
+      "id": "mind",
+      "name": "MIND作者实现",
+      "scope": "analysis_extension",
+      "capabilities": [
+        "用脑区内多维顶点形态分布估计个体结构相似性网络"
+      ],
+      "input_requirements": [
+        "FreeSurfer顶点特征与.annot分区对应",
+        "声明CT/MC/Vol/SD/SA或其他特征集合",
+        "连续分布、重复值/零值和过滤政策明确",
+        "软件版本及分区命名兼容性核验"
+      ],
+      "official_sources": [
+        {
+          "url": "https://github.com/isebenius/MIND",
+          "title": "Official MIND implementation",
+          "review_depth": "official_page_opened_relevant_overview_not_full_api_audit"
+        }
+      ],
+      "tutorial_topics": [
+        "compute_MIND",
+        "特征缩写与原始文件",
+        "unknown标签适配",
+        "连续分布/重复值与resample",
+        "不能用区域均值替代分布",
+        "个体网络不等于群体协变/轴突连接"
+      ],
+      "knowledge_form": [
+        "versioned_source_document_rag",
+        "on_demand_skill_with_source_links",
+        "reviewed_structured_conditions",
+        "source_bound_relationships"
+      ],
+      "availability": "unknown",
+      "notes": [
+        "作者README的已测试版本/分区范围不能自动扩展至所有FreeSurfer版本或猕猴分区。"
+      ]
+    },
+    {
+      "id": "scn_method",
+      "name": "传统结构协变网络方法资源",
+      "scope": "analysis_extension",
+      "capabilities": [
+        "跨被试区域形态协变/相关网络及组层描述"
+      ],
+      "input_requirements": [
+        "多个独立被试的subject×region矩阵",
+        "共同区域定义和指标",
+        "明确组别、协变量残差化与缺失政策",
+        "残差非恒定；组比较另需有效推断设计"
+      ],
+      "official_sources": [
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4043276/",
+          "title": "Imaging structural co-variance between human brain regions",
+          "review_depth": "primary_source_registered_not_reopened_in_this_pass"
+        }
+      ],
+      "tutorial_topics": [
+        "群体与个体网络区别",
+        "协变量调整",
+        "协方差与相关",
+        "组间比较/自举的观察单位",
+        "统计协变的解释范围"
+      ],
+      "knowledge_form": [
+        "versioned_source_document_rag",
+        "on_demand_skill_with_source_links",
+        "reviewed_structured_conditions",
+        "source_bound_relationships"
+      ],
+      "availability": "unknown",
+      "notes": [
+        "这是方法来源项，不是已封装的软件；代码实现及适用性需另行审查。"
+      ]
+    },
+    {
+      "id": "msn_method",
+      "name": "Morphometric Similarity Networks方法资源",
+      "scope": "analysis_extension",
+      "capabilities": [
+        "用区域多特征形态轮廓构建相似性网络"
+      ],
+      "input_requirements": [
+        "多个具有明确含义和单位的区域特征",
+        "对应分区、特征缩放与标准化政策",
+        "特征数量、缺失和可靠性可评估"
+      ],
+      "official_sources": [
+        {
+          "url": "https://doi.org/10.1016/j.neuron.2017.11.039",
+          "title": "Morphometric Similarity Networks for In Vivo Mapping of Interareal Cortical Connectivity Reflect Cytoarchitecture and Gene Expression",
+          "review_depth": "primary_source_registered_not_reopened_in_this_pass"
+        }
+      ],
+      "tutorial_topics": [
+        "区域多特征与顶点分布方法区别",
+        "特征标准化",
+        "缺失与稳定性",
+        "形态相似性不能直接解释为实测纤维连接"
+      ],
+      "knowledge_form": [
+        "versioned_source_document_rag",
+        "on_demand_skill_with_source_links",
+        "reviewed_structured_conditions",
+        "source_bound_relationships"
+      ],
+      "availability": "unknown",
+      "notes": [
+        "方法论文已登记但本轮未重审完整方法；不得将该项直接提升为已验证实现。"
+      ]
+    },
+    {
+      "id": "brainspace",
+      "name": "BrainSpace",
+      "scope": "analysis_extension",
+      "capabilities": [
+        "DM/LE/PCA梯度与Procrustes对齐",
+        "spin、Moran和variogram空间null相关工作流"
+      ],
+      "input_requirements": [
+        "含义明确且标签顺序一致的输入矩阵",
+        "kernel、稀疏化、维数、随机种子声明",
+        "对齐需合法参考及共同节点",
+        "空间null需相应球面/几何或距离依据"
+      ],
+      "official_sources": [
+        {
+          "url": "https://brainspace.readthedocs.io/en/latest/python_doc/auto_examples/plot_tutorial2.html",
+          "title": "Customizing and aligning gradients",
+          "review_depth": "official_search_excerpt_reviewed_not_full_page_audit"
+        },
+        {
+          "url": "https://brainspace.readthedocs.io/en/latest/python_doc/auto_examples/plot_tutorial3.html",
+          "title": "Null models for gradient significance",
+          "review_depth": "official_page_opened_relevant_overview_not_full_api_audit"
+        }
+      ],
+      "tutorial_topics": [
+        "affinity/kernel/sparsity",
+        "DM/LE/PCA",
+        "符号、旋转与近简并子空间",
+        "Procrustes/joint embedding",
+        "spin/Moran/variogram及mask"
+      ],
+      "knowledge_form": [
+        "versioned_source_document_rag",
+        "on_demand_skill_with_source_links",
+        "reviewed_structured_conditions",
+        "source_bound_relationships"
+      ],
+      "availability": "unknown",
+      "notes": []
+    },
+    {
+      "id": "neuromaps",
+      "name": "neuromaps",
+      "scope": "analysis_extension",
+      "capabilities": [
+        "参考脑图查询、跨标准空间变换及脑图关联",
+        "空间null模型"
+      ],
+      "input_requirements": [
+        "脑图species/space/density/hemisphere/label对应",
+        "有效重采样映射和插值政策",
+        "共同mask及空间自相关处理",
+        "null数组与被随机化的第一个输入map对应"
+      ],
+      "official_sources": [
+        {
+          "url": "https://netneurolab.github.io/neuromaps/user_guide/comparisons.html",
+          "title": "Comparing brain maps",
+          "review_depth": "official_page_opened_relevant_overview_not_full_api_audit"
+        },
+        {
+          "url": "https://github.com/netneurolab/neuromaps/blob/main/docs/user_guide/nulls.rst",
+          "title": "Spatial nulls for significance testing",
+          "review_depth": "official_search_excerpt_reviewed_not_full_page_audit"
+        }
+      ],
+      "tutorial_topics": [
+        "resample_images与目标空间",
+        "连续图与标签插值区别",
+        "compare_images",
+        "null来源和位置参数对应",
+        "排列数与p值分辨率"
+      ],
+      "knowledge_form": [
+        "versioned_source_document_rag",
+        "on_demand_skill_with_source_links",
+        "reviewed_structured_conditions",
+        "source_bound_relationships"
+      ],
+      "availability": "unknown",
+      "notes": [
+        "提供某模板转换不等于证明跨物种同源；参考图适用人群/物种需独立核对。"
+      ]
+    },
+    {
+      "id": "brainsmash",
+      "name": "BrainSMASH",
+      "scope": "analysis_extension",
+      "capabilities": [
+        "为脑图关联生成保持空间自相关特征的surrogate maps"
+      ],
+      "input_requirements": [
+        "原始脑图及匹配的空间距离信息",
+        "mask/节点集合/距离定义一致",
+        "检查surrogate与原始variogram的匹配",
+        "声明随机种子及置换数"
+      ],
+      "official_sources": [
+        {
+          "url": "https://brainsmash.readthedocs.io/en/latest/",
+          "title": "BrainSMASH documentation",
+          "review_depth": "official_page_opened_relevant_overview_not_full_api_audit"
+        }
+      ],
+      "tutorial_topics": [
+        "Base/Sampled工作流",
+        "距离矩阵和几何",
+        "variogram匹配诊断",
+        "相关null检验",
+        "部分脑图与surface/volume区别"
+      ],
+      "knowledge_form": [
+        "versioned_source_document_rag",
+        "on_demand_skill_with_source_links",
+        "reviewed_structured_conditions",
+        "source_bound_relationships"
+      ],
+      "availability": "unknown",
+      "notes": []
+    },
+    {
+      "id": "bct",
+      "name": "Brain Connectivity Toolbox",
+      "scope": "analysis_extension",
+      "capabilities": [
+        "脑网络图论度量及网络随机化"
+      ],
+      "input_requirements": [
+        "明确有向/无向、加权/二值及有符号网络",
+        "输入矩阵满足具体函数条件",
+        "相似度转换距离、阈值和断连处理声明"
+      ],
+      "official_sources": [
+        {
+          "url": "https://sites.google.com/site/bctnet/",
+          "title": "Brain Connectivity Toolbox",
+          "review_depth": "official_search_excerpt_reviewed_not_full_page_audit"
+        },
+        {
+          "url": "https://sites.google.com/site/bctnet/all-functions",
+          "title": "All functions",
+          "review_depth": "official_search_excerpt_reviewed_not_full_page_audit"
+        }
+      ],
+      "tutorial_topics": [
+        "度/强度/路径/效率",
+        "clustering/modularity",
+        "signed网络",
+        "权重到长度转换",
+        "合适的null与参数稳定性"
+      ],
+      "knowledge_form": [
+        "versioned_source_document_rag",
+        "on_demand_skill_with_source_links",
+        "reviewed_structured_conditions",
+        "source_bound_relationships"
+      ],
+      "availability": "unknown",
+      "notes": [
+        "函数存在不代表会自动校验输入；原MATLAB实现与Python移植需分别固定版本。"
+      ]
+    },
+    {
+      "id": "netneurotools",
+      "name": "netneurotools",
+      "scope": "analysis_extension",
+      "capabilities": [
+        "网络构建、图度量、模块度和空间统计",
+        "分区/顶点映射及可视化辅助"
+      ],
+      "input_requirements": [
+        "矩阵、区域顺序和所选函数的网络类型正确",
+        "atlas/空间匹配",
+        "随机化约束和种子明确"
+      ],
+      "official_sources": [
+        {
+          "url": "https://netneurotools.readthedocs.io/en/latest/api.html",
+          "title": "Python Reference API",
+          "review_depth": "official_page_opened_relevant_overview_not_full_api_audit"
+        }
+      ],
+      "tutorial_topics": [
+        "metrics/modularity/networks",
+        "consensus与随机化",
+        "residualize",
+        "Moran's I及空间权重",
+        "vertices_to_parcels与CIFTI接口"
+      ],
+      "knowledge_form": [
+        "versioned_source_document_rag",
+        "on_demand_skill_with_source_links",
+        "reviewed_structured_conditions",
+        "source_bound_relationships"
+      ],
+      "availability": "unknown",
+      "notes": []
+    },
+    {
+      "id": "networkx",
+      "name": "NetworkX",
+      "scope": "supporting_standard",
+      "capabilities": [
+        "通用图结构及图算法",
+        "小型网络的独立参考计算"
+      ],
+      "input_requirements": [
+        "图方向、权重属性及零边语义明确",
+        "最短路径的weight表示距离而非未转换相似度",
+        "断连/负权等按算法支持处理"
+      ],
+      "official_sources": [
+        {
+          "url": "https://networkx.org/documentation/stable/reference/algorithms/shortest_paths.html",
+          "title": "Shortest Paths",
+          "review_depth": "official_page_opened_relevant_overview_not_full_api_audit"
+        }
+      ],
+      "tutorial_topics": [
+        "Graph/DiGraph",
+        "weight参数",
+        "distance与similarity",
+        "disconnected graph",
+        "小图解析验证"
+      ],
+      "knowledge_form": [
+        "versioned_source_document_rag",
+        "on_demand_skill_with_source_links",
+        "reviewed_structured_conditions",
+        "source_bound_relationships"
+      ],
+      "availability": "unknown",
+      "notes": []
+    },
+    {
+      "id": "abagen",
+      "name": "abagen",
+      "scope": "analysis_extension",
+      "capabilities": [
+        "将Allen Human Brain Atlas微阵列表达映射并聚合到分区",
+        "生成region×gene表达矩阵"
+      ],
+      "input_requirements": [
+        "合法atlas及区域元信息",
+        "AHBA donor资源与取样覆盖",
+        "probe选择、归一化/聚合及缺失政策",
+        "表达区域与影像区域一致"
+      ],
+      "official_sources": [
+        {
+          "url": "https://abagen.readthedocs.io/en/stable/",
+          "title": "abagen documentation",
+          "review_depth": "official_page_opened_relevant_overview_not_full_api_audit"
+        },
+        {
+          "url": "https://abagen.readthedocs.io/en/stable/user_guide/expression.html",
+          "title": "Parcellating expression data",
+          "review_depth": "official_search_excerpt_reviewed_not_full_page_audit"
+        },
+        {
+          "url": "https://abagen.readthedocs.io/en/stable/user_guide/probes.html",
+          "title": "Probe selection options",
+          "review_depth": "official_search_excerpt_reviewed_not_full_page_audit"
+        }
+      ],
+      "tutorial_topics": [
+        "atlas image/info",
+        "donor/probe与区域匹配",
+        "sample/gene normalization",
+        "region×gene输出",
+        "缺失脑区与跨donor可靠性"
+      ],
+      "knowledge_form": [
+        "versioned_source_document_rag",
+        "on_demand_skill_with_source_links",
+        "reviewed_structured_conditions",
+        "source_bound_relationships"
+      ],
+      "availability": "unknown",
+      "notes": [
+        "AHBA是人类参考表达；不得把其结果写成当前MRI受试者实测转录组或自动外推猕猴。"
+      ]
+    },
+    {
+      "id": "allen_human_brain_atlas",
+      "name": "Allen Human Brain Atlas资源",
+      "scope": "supporting_standard",
+      "capabilities": [
+        "参考人类脑组织基因表达与donor元数据"
+      ],
+      "input_requirements": [
+        "资源条款和具体数据版本",
+        "donor、左右覆盖与取样位置",
+        "基因标识映射及研究问题适配"
+      ],
+      "official_sources": [
+        {
+          "url": "https://human.brain-map.org/",
+          "title": "Allen Human Brain Atlas",
+          "review_depth": "primary_source_registered_not_reopened_in_this_pass"
+        }
+      ],
+      "tutorial_topics": [
+        "donor与采样元数据",
+        "microarray/RNA-seq区别",
+        "表达参考与个体MRI区别",
+        "下载版本与引用"
+      ],
+      "knowledge_form": [
+        "versioned_source_document_rag",
+        "source_bound_relationships",
+        "reviewed_structured_conditions"
+      ],
+      "availability": "unknown",
+      "notes": []
+    },
+    {
+      "id": "gseapy",
+      "name": "GSEApy",
+      "scope": "analysis_extension",
+      "capabilities": [
+        "基因集富集和预排序富集等下游分析"
+      ],
+      "input_requirements": [
+        "明确物种、基因ID、基因集版本及分析背景集合",
+        "有合理来源的排序/基因统计量",
+        "置换方式、重复与多重检验定义"
+      ],
+      "official_sources": [
+        {
+          "url": "https://gseapy.readthedocs.io/en/latest/",
+          "title": "GSEApy documentation",
+          "review_depth": "official_page_opened_relevant_overview_not_full_api_audit"
+        }
+      ],
+      "tutorial_topics": [
+        "enrichr/prerank等不同入口",
+        "gene ID/物种/背景",
+        "基因集版本",
+        "置换与FDR",
+        "空间影像-基因关联和富集分两步验证"
+      ],
+      "knowledge_form": [
+        "versioned_source_document_rag",
+        "on_demand_skill_with_source_links",
+        "reviewed_structured_conditions",
+        "source_bound_relationships"
+      ],
+      "availability": "unknown",
+      "notes": [
+        "候选扩展，当前未核验服务器资源；不把富集当作因果机制证明。"
+      ]
+    },
+    {
+      "id": "neurocombat",
+      "name": "neuroCombat作者实现",
+      "scope": "analysis_extension",
+      "capabilities": [
+        "多站点特征的ComBat校正并保留指定协变量效应"
+      ],
+      "input_requirements": [
+        "features×scans的数据轴及与covars样本对齐",
+        "batch字段、分类/连续协变量声明",
+        "缺失、单样本站点和混杂条件审查"
+      ],
+      "official_sources": [
+        {
+          "url": "https://github.com/Jfortin1/neuroCombat",
+          "title": "Official neuroCombat implementation",
+          "review_depth": "official_search_excerpt_reviewed_not_full_page_audit"
+        }
+      ],
+      "tutorial_topics": [
+        "dat/covars/batch_col",
+        "categorical_cols/continuous_cols",
+        "EB/parametric/mean_only/ref_batch",
+        "输出data/estimates/info",
+        "轴方向和不同历史fork区别"
+      ],
+      "knowledge_form": [
+        "versioned_source_document_rag",
+        "on_demand_skill_with_source_links",
+        "reviewed_structured_conditions",
+        "source_bound_relationships"
+      ],
+      "availability": "unknown",
+      "notes": []
+    },
+    {
+      "id": "neuroharmonize",
+      "name": "neuroHarmonize作者实现",
+      "scope": "analysis_extension",
+      "capabilities": [
+        "ComBat扩展、GAM非线性协变量及训练/应用分离",
+        "NIfTI和表格校正工作流"
+      ],
+      "input_requirements": [
+        "samples×features数据及一致顺序的covars",
+        "SITE列和声明保留变量",
+        "缺失值处理、站点支持和可估计性",
+        "learn/apply模型与年龄范围/knots适配"
+      ],
+      "official_sources": [
+        {
+          "url": "https://github.com/rpomponio/neuroHarmonize",
+          "title": "neuroHarmonize official repository",
+          "review_depth": "official_search_excerpt_reviewed_not_full_page_audit"
+        }
+      ],
+      "tutorial_topics": [
+        "harmonizationLearn/Apply",
+        "smooth_terms与bounds",
+        "training/holdout",
+        "表格与NIfTI路径",
+        "不能把ComBat当作不可识别设计的自动修复"
+      ],
+      "knowledge_form": [
+        "versioned_source_document_rag",
+        "on_demand_skill_with_source_links",
+        "reviewed_structured_conditions",
+        "source_bound_relationships"
+      ],
+      "availability": "unknown",
+      "notes": [
+        "官方README存在版本相关修复说明；知识库需冻结实际选择的release/commit，不能混用网页latest和运行环境。"
+      ]
+    },
+    {
+      "id": "scikit_learn",
+      "name": "scikit-learn",
+      "scope": "analysis_extension",
+      "capabilities": [
+        "PLS等多变量关联和预测基础",
+        "Pipeline、训练折内预处理及交叉验证"
+      ],
+      "input_requirements": [
+        "样本/特征轴与对应关系",
+        "独立或分组split及目标定义",
+        "训练折内缩放/选择",
+        "PLS分量数与预测/解释任务区分"
+      ],
+      "official_sources": [
+        {
+          "url": "https://scikit-learn.org/stable/modules/cross_decomposition.html",
+          "title": "Cross decomposition",
+          "review_depth": "official_page_opened_relevant_overview_not_full_api_audit"
+        },
+        {
+          "url": "https://scikit-learn.org/stable/modules/generated/sklearn.cross_decomposition.PLSRegression.html",
+          "title": "PLSRegression API",
+          "review_depth": "official_page_opened_relevant_overview_not_full_api_audit"
+        }
+      ],
+      "tutorial_topics": [
+        "PLSRegression/PLSCanonical区别",
+        "Pipeline/CV",
+        "标准化与数据泄漏",
+        "components/score/loadings",
+        "推断需另设置换/自举"
+      ],
+      "knowledge_form": [
+        "versioned_source_document_rag",
+        "on_demand_skill_with_source_links",
+        "reviewed_structured_conditions",
+        "source_bound_relationships"
+      ],
+      "availability": "unknown",
+      "notes": []
+    },
+    {
+      "id": "palm",
+      "name": "PALM",
+      "scope": "analysis_extension",
+      "capabilities": [
+        "影像/多变量GLM的置换推断"
+      ],
+      "input_requirements": [
+        "设计和contrast可估计",
+        "观测与影像一一对齐",
+        "符合研究设计的可交换块/方差组",
+        "mask、尾部、置换数和校正范围"
+      ],
+      "official_sources": [
+        {
+          "url": "https://fsl.fmrib.ox.ac.uk/fsl/docs/statistics/palm.html",
+          "title": "PALM official documentation",
+          "review_depth": "primary_source_registered_not_reopened_in_this_pass"
+        }
+      ],
+      "tutorial_topics": [
+        "设计/contrast",
+        "exchangeability blocks",
+        "重复测量置换",
+        "multiple contrasts/families",
+        "随机种子与p值分辨率"
+      ],
+      "knowledge_form": [
+        "versioned_source_document_rag",
+        "on_demand_skill_with_source_links",
+        "reviewed_structured_conditions",
+        "source_bound_relationships"
+      ],
+      "availability": "unknown",
+      "notes": [
+        "官方页面本轮打开失败，仅登记来源；实施前必须审阅正式文档/作者代码及实际版本。"
+      ]
+    },
+    {
+      "id": "workbench_analysis",
+      "name": "Connectome Workbench分析接口",
+      "scope": "supporting_standard",
+      "capabilities": [
+        "GIFTI/CIFTI操作、表面指标重采样和分区",
+        "surface/metric/label文件接口"
+      ],
+      "input_requirements": [
+        "对应球面和目标网格的配准证据",
+        "metric与label的数据类型区别",
+        "面积面/ROI及插值选项符合命令要求"
+      ],
+      "official_sources": [
+        {
+          "url": "https://www.humanconnectome.org/software/workbench-command/-metric-resample",
+          "title": "Workbench metric-resample command",
+          "review_depth": "official_page_opened_relevant_overview_not_full_api_audit"
+        },
+        {
+          "url": "https://www.humanconnectome.org/software/workbench-command",
+          "title": "Workbench command reference",
+          "review_depth": "primary_source_registered_not_reopened_in_this_pass"
+        }
+      ],
+      "tutorial_topics": [
+        "metric-resample/label-resample",
+        "ADAP_BARY_AREA及面积依据",
+        "CIFTI轴/brain models",
+        "medial wall",
+        "顶点数量不等于配准"
+      ],
+      "knowledge_form": [
+        "versioned_source_document_rag",
+        "on_demand_skill_with_source_links",
+        "reviewed_structured_conditions",
+        "source_bound_relationships"
+      ],
+      "availability": "unknown",
+      "notes": []
+    },
+    {
+      "id": "matplotlib",
+      "name": "Matplotlib",
+      "scope": "supporting_standard",
+      "capabilities": [
+        "基于实际数值生成统计图和结果图"
+      ],
+      "input_requirements": [
+        "实际分析产物与单位",
+        "轴/色标/图例及missing政策",
+        "图中样本范围与统计表一致"
+      ],
+      "official_sources": [
+        {
+          "url": "https://matplotlib.org/stable/users/index.html",
+          "title": "Matplotlib User Guide",
+          "review_depth": "primary_source_registered_not_reopened_in_this_pass"
+        }
+      ],
+      "tutorial_topics": [
+        "无显示环境保存图",
+        "误差条与CI",
+        "热图/色标",
+        "图中数据可追溯",
+        "确定性与图片有效性"
+      ],
+      "knowledge_form": [
+        "versioned_source_document_rag",
+        "on_demand_skill_with_source_links",
+        "reviewed_structured_conditions"
+      ],
+      "availability": "unknown",
+      "notes": []
+    },
+    {
+      "id": "bids",
+      "name": "BIDS与衍生物规范",
+      "scope": "supporting_standard",
+      "capabilities": [
+        "被试/会话/扫描及文件实体组织",
+        "记录空间、分区和衍生物来源"
+      ],
+      "input_requirements": [
+        "选择对应版本规范",
+        "原始与衍生物角色分开",
+        "侧车元数据和来源链"
+      ],
+      "official_sources": [
+        {
+          "url": "https://bids-specification.readthedocs.io/en/stable/",
+          "title": "BIDS specification",
+          "review_depth": "primary_source_registered_not_reopened_in_this_pass"
+        }
+      ],
+      "tutorial_topics": [
+        "subject/session/run实体",
+        "dataset_description/GeneratedBy",
+        "derivative空间/分区元数据",
+        "非BIDS目录不靠命名臆断身份"
+      ],
+      "knowledge_form": [
+        "versioned_source_document_rag",
+        "reviewed_structured_conditions",
+        "source_bound_relationships"
+      ],
+      "availability": "unknown",
+      "notes": []
+    },
+    {
+      "id": "pybids",
+      "name": "PyBIDS",
+      "scope": "supporting_standard",
+      "capabilities": [
+        "按BIDS实体查询影像和元数据",
+        "支持数据发现而非统计算法"
+      ],
+      "input_requirements": [
+        "与规范相容的数据目录及布局配置",
+        "原始/衍生物范围明确",
+        "查询结果身份核验"
+      ],
+      "official_sources": [
+        {
+          "url": "https://bids-standard.github.io/pybids/",
+          "title": "PyBIDS documentation",
+          "review_depth": "primary_source_registered_not_reopened_in_this_pass"
+        }
+      ],
+      "tutorial_topics": [
+        "BIDSLayout与query",
+        "derivatives scope",
+        "metadata/entity差异",
+        "多扫描匹配",
+        "无结果与不支持目录区分"
+      ],
+      "knowledge_form": [
+        "versioned_source_document_rag",
+        "on_demand_skill_with_source_links",
+        "reviewed_structured_conditions"
+      ],
+      "availability": "unknown",
+      "notes": []
+    },
+    {
+      "id": "nmt_charm_sarm",
+      "name": "NMT v2与CHARM/SARM资源",
+      "scope": "supporting_standard",
+      "capabilities": [
+        "猕猴模板及皮层/皮层下解剖标签与层级",
+        "为问题到标签映射提供候选解剖关系"
+      ],
+      "input_requirements": [
+        "物种、模板版本/变体/对称性和CHARM层级",
+        "标签表及变换/配准证据",
+        "实际指标处于对应空间"
+      ],
+      "official_sources": [
+        {
+          "url": "https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/nonhuman/macaque_tempatl/atlas_charm.html",
+          "title": "CHARM official documentation",
+          "review_depth": "primary_source_registered_not_reopened_in_this_pass"
+        },
+        {
+          "url": "https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/nonhuman/macaque_tempatl/atlas_sarm.html",
+          "title": "SARM official documentation",
+          "review_depth": "primary_source_registered_not_reopened_in_this_pass"
+        }
+      ],
+      "tutorial_topics": [
+        "层级与标签表",
+        "NMT变体/空间",
+        "半球与包含关系",
+        "模板映射证据",
+        "不凭名称推断跨物种同源"
+      ],
+      "knowledge_form": [
+        "versioned_source_document_rag",
+        "source_bound_relationships",
+        "reviewed_structured_conditions"
+      ],
+      "availability": "unknown",
+      "notes": []
+    }
+  ]
+}

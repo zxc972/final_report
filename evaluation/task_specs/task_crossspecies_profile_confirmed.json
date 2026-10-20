@@ -1,0 +1,20 @@
+{
+  "task_id": "crossspecies_geometry_profile_confirmed",
+  "subjects": [
+    "100610",
+    "101309",
+    "101410",
+    "KM002"
+  ],
+  "input_roots": [
+    "/data/xuancheng/human_fastsurfer/subjects/100610",
+    "/data/xuancheng/human_fastsurfer/subjects/101309",
+    "/data/xuancheng/human_fastsurfer/subjects/101410",
+    "/data/xuancheng/featurize_20261011/data/KM002/KM002",
+    "/data/xuancheng/agent_overnight_20261020/crossspecies_method_context"
+  ],
+  "message": "请自主完成四个已重建样本的white表面面积与左右不对称技术性对照。/inputs/0、1、2是开发组人脑100610、101309、101410，/inputs/3是猴脑KM002，/inputs/4是官方NiBabel/FreeSurfer文档、Kong等原论文和机械抽取的kong_source_navigation.json。先检索并读必要原文、检查实际文件/表面元数据，再本次自主生成新的Python分析代码并执行，不能调用过去任务的分析脚本或参考值。\n目标是8个white网格的完整三角面积、与cortex标签限定子集面积（仅三个顶点均在cortex中的三角形）、顶点数、面数、退化/非退化三角数；再按Kong原文选定并说明方向的归一化左右不对称公式，计算4个样本的完整/子集AI和图表。不要把退化数存入nondegenerate字段；两个面积口径不能混用。数值应来自本次读取网格和新代码真实执行。可以用成熟NiBabel/numpy等库。\n分开报告：几何计算完成、存储坐标/元数据单位、独立物理尺度是否确定、解剖QC是否完成、跨物种生物学可比性。文件头或体素边长相似只支持内部一致性，不能证明完整处理链或实际解剖位置；共同正比例缩放在AI中抵消也只是有前提的代数结论。KM002种属没有来源时保持monkey_unknown，不因软件模板或名称写成macaque。不要因缺少完整处理链而反复追查所有日志，缺项明确unknown并继续可行技术计算。三个人脑加一个猴脑仅描述，不检验物种显著性、不推断同源PFC或厚度差异。\n将必要检查组织在1–2个脚本中，随后生成计算模块和报告模块，避免一个write_code太长被截断；不要反复重启发现或探测/work。容器内程序使用/inputs/N和/work；用list_data(/work)查完整输出目录。输出analysis_plan.json、hemisphere_geometry.tsv（sample、hemisphere、full_white_area_mm2、cortex_area_mm2、n_vertices、n_faces、degenerate_tris、nondegenerate_tris）、area_asymmetry.tsv（sample、AI_full_white、AI_cortex_subset）、comparability.json、图表、report.md。若mm2仅为存储坐标解释要明确标注；引用卷页直接用原文元数据，不凭记忆。最后实际执行成功后调用finalize_artifacts，保留有意义的列/行/有限值/唯一键检查，不猜PNG尺寸和报告长度。不要自行宣称外部独立数值或专家QC已通过。不访问其他被试，不改原数据。",
+  "next_review": "Independent scalar raw-binary geometry reference; check all area/AI/count fields, evidence usage, semantics, receipts and immutable input hashes. Preserve old failed version and do not feed gold to generation.",
+  "predecessor_failure": "crossspecies_geometry_after_subscription_restore_20261020T040420_fdf792",
+  "purpose": "New autonomous geometry request after the independently verified volume task confirmed the non-thinking generation profile; not a rerun of the consumed three-human finalizer baseline"
+}

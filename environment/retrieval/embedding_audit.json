@@ -1,0 +1,494 @@
+[
+  {
+    "phase": "index",
+    "n": 10,
+    "token_lengths": [
+      30,
+      35,
+      25,
+      28,
+      27,
+      43,
+      26,
+      39,
+      40,
+      35
+    ]
+  },
+  {
+    "phase": "index",
+    "n": 8,
+    "token_lengths": [
+      29,
+      32,
+      24,
+      31,
+      26,
+      39,
+      30,
+      35
+    ]
+  },
+  {
+    "phase": "index",
+    "n": 2,
+    "token_lengths": [
+      198,
+      168
+    ]
+  },
+  {
+    "phase": "index",
+    "n": 5,
+    "token_lengths": [
+      44,
+      50,
+      26,
+      26,
+      30
+    ]
+  },
+  {
+    "phase": "index",
+    "n": 4,
+    "token_lengths": [
+      32,
+      35,
+      36,
+      31
+    ]
+  },
+  {
+    "phase": "index",
+    "n": 3,
+    "token_lengths": [
+      192,
+      323,
+      32
+    ]
+  },
+  {
+    "phase": "index",
+    "n": 7,
+    "token_lengths": [
+      41,
+      28,
+      35,
+      25,
+      37,
+      31,
+      19
+    ]
+  },
+  {
+    "phase": "index",
+    "n": 6,
+    "token_lengths": [
+      28,
+      38,
+      21,
+      26,
+      27,
+      43
+    ]
+  },
+  {
+    "phase": "index",
+    "n": 2,
+    "token_lengths": [
+      310,
+      14
+    ]
+  },
+  {
+    "phase": "index",
+    "n": 8,
+    "token_lengths": [
+      34,
+      30,
+      22,
+      34,
+      39,
+      39,
+      20,
+      17
+    ]
+  },
+  {
+    "phase": "index",
+    "n": 7,
+    "token_lengths": [
+      23,
+      28,
+      30,
+      32,
+      30,
+      23,
+      23
+    ]
+  },
+  {
+    "phase": "index",
+    "n": 1,
+    "token_lengths": [
+      190
+    ]
+  },
+  {
+    "phase": "index",
+    "n": 7,
+    "token_lengths": [
+      41,
+      59,
+      33,
+      32,
+      25,
+      47,
+      38
+    ]
+  },
+  {
+    "phase": "index",
+    "n": 6,
+    "token_lengths": [
+      31,
+      35,
+      36,
+      32,
+      27,
+      25
+    ]
+  },
+  {
+    "phase": "index",
+    "n": 2,
+    "token_lengths": [
+      274,
+      24
+    ]
+  },
+  {
+    "phase": "index",
+    "n": 10,
+    "token_lengths": [
+      30,
+      29,
+      28,
+      19,
+      20,
+      17,
+      32,
+      26,
+      26,
+      29
+    ]
+  },
+  {
+    "phase": "index",
+    "n": 4,
+    "token_lengths": [
+      25,
+      26,
+      24,
+      22
+    ]
+  },
+  {
+    "phase": "index",
+    "n": 10,
+    "token_lengths": [
+      49,
+      32,
+      40,
+      34,
+      32,
+      48,
+      28,
+      26,
+      48,
+      28
+    ]
+  },
+  {
+    "phase": "index",
+    "n": 1,
+    "token_lengths": [
+      49
+    ]
+  },
+  {
+    "phase": "index",
+    "n": 3,
+    "token_lengths": [
+      304,
+      282,
+      27
+    ]
+  },
+  {
+    "phase": "index",
+    "n": 10,
+    "token_lengths": [
+      69,
+      26,
+      89,
+      26,
+      24,
+      27,
+      36,
+      33,
+      33,
+      25
+    ]
+  },
+  {
+    "phase": "index",
+    "n": 10,
+    "token_lengths": [
+      27,
+      18,
+      24,
+      26,
+      27,
+      39,
+      20,
+      23,
+      28,
+      18
+    ]
+  },
+  {
+    "phase": "index",
+    "n": 2,
+    "token_lengths": [
+      30,
+      27
+    ]
+  },
+  {
+    "phase": "index",
+    "n": 10,
+    "token_lengths": [
+      32,
+      36,
+      34,
+      37,
+      23,
+      20,
+      21,
+      29,
+      23,
+      23
+    ]
+  },
+  {
+    "phase": "index",
+    "n": 8,
+    "token_lengths": [
+      33,
+      26,
+      35,
+      27,
+      29,
+      20,
+      17,
+      29
+    ]
+  },
+  {
+    "phase": "index",
+    "n": 1,
+    "token_lengths": [
+      207
+    ]
+  },
+  {
+    "phase": "index",
+    "n": 9,
+    "token_lengths": [
+      38,
+      26,
+      32,
+      40,
+      24,
+      29,
+      29,
+      27,
+      24
+    ]
+  },
+  {
+    "phase": "index",
+    "n": 7,
+    "token_lengths": [
+      26,
+      37,
+      24,
+      32,
+      35,
+      38,
+      46
+    ]
+  },
+  {
+    "phase": "index",
+    "n": 1,
+    "token_lengths": [
+      167
+    ]
+  },
+  {
+    "phase": "index",
+    "n": 8,
+    "token_lengths": [
+      47,
+      25,
+      37,
+      23,
+      25,
+      28,
+      23,
+      23
+    ]
+  },
+  {
+    "phase": "index",
+    "n": 6,
+    "token_lengths": [
+      33,
+      32,
+      34,
+      31,
+      32,
+      32
+    ]
+  },
+  {
+    "phase": "retrieve_R01_naive",
+    "n": 1,
+    "token_lengths": [
+      28
+    ]
+  },
+  {
+    "phase": "retrieve_R02_naive",
+    "n": 1,
+    "token_lengths": [
+      32
+    ]
+  },
+  {
+    "phase": "retrieve_R03_naive",
+    "n": 1,
+    "token_lengths": [
+      30
+    ]
+  },
+  {
+    "phase": "retrieve_R04_naive",
+    "n": 1,
+    "token_lengths": [
+      32
+    ]
+  },
+  {
+    "phase": "retrieve_R05_naive",
+    "n": 1,
+    "token_lengths": [
+      32
+    ]
+  },
+  {
+    "phase": "retrieve_R06_naive",
+    "n": 1,
+    "token_lengths": [
+      29
+    ]
+  },
+  {
+    "phase": "retrieve_R07_naive",
+    "n": 1,
+    "token_lengths": [
+      26
+    ]
+  },
+  {
+    "phase": "retrieve_R08_naive",
+    "n": 1,
+    "token_lengths": [
+      23
+    ]
+  },
+  {
+    "phase": "retrieve_R01_mix",
+    "n": 3,
+    "token_lengths": [
+      28,
+      8,
+      17
+    ]
+  },
+  {
+    "phase": "retrieve_R02_mix",
+    "n": 3,
+    "token_lengths": [
+      32,
+      18,
+      10
+    ]
+  },
+  {
+    "phase": "retrieve_R03_mix",
+    "n": 3,
+    "token_lengths": [
+      30,
+      9,
+      16
+    ]
+  },
+  {
+    "phase": "retrieve_R04_mix",
+    "n": 3,
+    "token_lengths": [
+      32,
+      8,
+      16
+    ]
+  },
+  {
+    "phase": "retrieve_R05_mix",
+    "n": 3,
+    "token_lengths": [
+      32,
+      14,
+      15
+    ]
+  },
+  {
+    "phase": "retrieve_R06_mix",
+    "n": 3,
+    "token_lengths": [
+      29,
+      4,
+      19
+    ]
+  },
+  {
+    "phase": "retrieve_R07_mix",
+    "n": 3,
+    "token_lengths": [
+      26,
+      4,
+      20
+    ]
+  },
+  {
+    "phase": "retrieve_R08_mix",
+    "n": 3,
+    "token_lengths": [
+      23,
+      5,
+      13
+    ]
+  }
+]

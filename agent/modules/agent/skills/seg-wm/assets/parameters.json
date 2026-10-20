@@ -1,0 +1,26 @@
+{
+  "type": "object",
+  "properties": {
+    "subjectId": {
+      "type": "string",
+      "description": "Subject ID used to name the output directory."
+    },
+    "workspaceDirectory": {
+      "type": "string",
+      "description": "Root workspace path where subject output lives."
+    },
+    "t1Path": {
+      "type": "string",
+      "description": "Input image path (.nii.gz) for WM segmentation."
+    },
+    "segSpecies": {
+      "type": "string",
+      "description": "Segmentation species (rhesus, cynomolgus, chimpanzee, marmoset, human)."
+    },
+    "modelDir": {
+      "type": "string",
+      "description": "Optional model directory override."
+    }
+  },
+  "required": ["subjectId", "workspaceDirectory", "t1Path", "segSpecies"]
+}

@@ -1,0 +1,16 @@
+{
+  "status": "pass",
+  "MNI152_2mm_files": [
+    "MNI152_T1_2mm.nii.gz",
+    "MNI152_T1_2mm_brain.nii.gz",
+    "MNI152_T1_2mm_brain_mask.nii.gz"
+  ],
+  "shape": [
+    91,
+    109,
+    91
+  ],
+  "finite_voxels": true,
+  "geometry_matches": true,
+  "fsaverage_white_surfaces_present": true
+}

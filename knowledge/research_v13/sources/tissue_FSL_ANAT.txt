@@ -1,0 +1,283 @@
+fsl_anat - FSL - FMRIB Software Library
+Skip to content
+FSL - FMRIB Software Library
+fsl_anat
+Initializing search
+FSL - FMRIB Software Library
+Installation
+Installation
+Linux
+macOS
+Windows
+Verify your installation
+Use FSL with Docker/Singularity
+Use FSL with conda
+Installing from source
+System configuration
+Troubleshooting
+Task fMRI
+Task fMRI
+FABBER
+FEAT
+FEAT
+User guide
+Output directory format
+Featquery
+Perfusion FMRI analysis
+Appendix A: Brief overview of GLM analysis
+Appendix B: Design matrix rules
+Appendix C: Group statistics
+FAQ
+FLOBS
+Physiological noise modelling (PNM)
+Psychophysiological interaction (PPI)
+Combining PNM and FIX in FEAT
+Resting state fMRI
+Resting state fMRI
+MELODIC
+Dual Regression
+FSLNets
+FIX
+FIX (old R/MATLAB version)
+Structural MRI
+Structural MRI
+BET
+BIANCA
+FAST
+FIRST
+fsl_anat
+fsl_anat
+Table of contents
+Usage
+Outputs
+Directory
+Original image
+Reorientation and Cropping
+Bias-correction
+Registration and Brain-Extraction
+Segmentation
+FSL-VBM
+lesion_filling
+MIST
+SIENA
+SIENA
+User Guide
+FAQ
+TRUENET
+Diffusion MRI
+Diffusion MRI
+TOPUP
+TOPUP
+Users guide
+Users guide
+Configuration files
+Frequently asked questions
+EDDY
+EDDY
+Users guide
+Frequently asked questions
+EDDY QC
+DTIFIT
+TBSS
+BedpostX
+ProbtrackX
+XTRACT
+fsl_streamlines
+AutoPTX
+Utilities
+FAQ
+Physiological MRI
+Physiological MRI
+BASIL
+VERBENA
+BayCEST
+Registration and preprocessing
+Registration and preprocessing
+FUGUE
+FLIRT
+FLIRT
+User Guide
+BBR
+FAQ
+StepByStep
+Schedule
+FNIRT
+FNIRT
+User Guide
+MMORF
+MCFLIRT
+epi_reg
+Motion outliers
+MSM
+newMSM
+newMSM
+Installation
+User Guide
+Tutorials
+SUSAN
+Statistics
+Statistics
+Common GLM design patterns
+Randomise
+PALM
+PALM
+User Guide
+Exchangeability Blocks
+Joint Inference
+Masks and Voxelwise regressors
+Faster Inference
+View Results
+Examples
+FAQ
+Cluster
+FDR
+mm
+SWE
+Other tools
+Other tools
+FLICA
+FSL-MRS
+fsl_sub
+POSSUM
+Command-line tools for FSL data sets
+FSLeyes
+FSL utilities
+FSL Python libraries
+Other topics
+Other topics
+Notes on image orientation
+Standard templates and atlases
+FSL XML atlas description file format
+FSL and BLAS
+Related Software
+FSL development
+FSL development
+FSL release history
+FSL release history
+6.0.7.23
+6.0.7.22
+6.0.7.21
+6.0.7.20
+6.0.7.19
+6.0.7.18
+6.0.7.17
+6.0.7.16
+6.0.7.15
+6.0.7.14
+6.0.7.13
+6.0.7.12
+6.0.7.11
+6.0.7.10
+6.0.7.9
+6.0.7.8
+6.0.7.6
+6.0.7.5
+6.0.7.4
+6.0.7.3
+6.0.7.2
+6.0.7.1
+6.0.7
+6.0.6.5
+6.0.6.4
+6.0.6.3
+6.0.6.1
+6.0.6
+6.0.5
+6.0.4
+6.0.3
+6.0.2
+Local development
+Management
+Management
+FSL releases
+FSL project releases
+FSL conda recipes
+The FSL build system
+CI infrastructure
+Contributors
+Support
+License
+Table of contents
+Usage
+Outputs
+Directory
+Original image
+Reorientation and Cropping
+Bias-correction
+Registration and Brain-Extraction
+Segmentation
+fsl_anat - Anatomical Processing Script
+This tool provides a general pipeline for processing anatomical images (e.g. T1-weighted scans).
+Most of the pipeline involves standard use of FSL tools, but the bias-field correction has been substantially improved, especially for strong bias-fields typical of multi-coil arrays and high-field scanners.
+The stages in the pipeline (in order) are:
+reorient the images to the standard (MNI) orientation using fslreorient2std
+automatically crop the image using robustfov
+bias-field correction (RF/B1-inhomogeneity-correction) using fast
+registration to standard space (linear and non-linear) using flirt and fnirt
+brain-extraction using fnirt (via registration) or bet
+tissue-type segmentation using fast
+subcortical structure segmentation using first
+The overall run-time is heavily dependent on the resolution of the image but anything between 30 and 90 minutes would be typical.
+Usage
+Various stages in the pipeline can be turned off. Currently not all combinations have been tested and so users are advised to only turn off the first few or last couple of stages currently.
+Usage: fsl_anat [options] -i <structural image>
+fsl_anat [options] -d <existing anat directory>
+Arguments (You may specify one or more of):
+-i <strucural image>         filename of input image (for one image only)
+-d <anat dir>                directory name for existing .anat directory where this script will be run in place
+-o <output directory>        basename of directory for output (default is input image basename followed by .anat)
+--clobber                    if .anat directory exist (as specified by -o or default from -i) then delete it and make a new one
+--strongbias                 used for images with very strong bias fields
+--weakbias                   used for images with smoother, more typical, bias fields (default setting)
+--noreorient                 turn off step that does reorientation 2 standard (fslreorient2std)
+--nocrop                     turn off step that does automated cropping (robustfov)
+--nobias                     turn off steps that do bias field correction (via FAST)
+--noreg                      turn off steps that do registration to standard (FLIRT and FNIRT)
+--nononlinreg                turn off step that does non-linear registration (FNIRT)
+--noseg                      turn off step that does tissue-type segmentation (FAST)
+--nosubcortseg               turn off step that does sub-cortical segmentation (FIRST)
+-s <value>                   specify the value for bias field smoothing (the -l option in FAST)
+-t <type>                    specify the type of image (choose one of T1 T2 PD - default is T1)
+--nosearch                   specify that linear registration uses the -nosearch option (FLIRT)
+--betfparam                  specify f parameter for BET (only used if not running non-linear reg and also wanting brain extraction done)
+--nocleanup                  do not remove intermediate files
+By default:
+the bias-field correction assumes that the field is "strong", typical of that arising from a multi-coil array or a high-field scanner. For images acquired using birdcage coils or on 1.5T scanners, the --weakbias option will be faster and may produce equally good results.
+the brain extraction is based on transforming a standard-space mask to the input image using the FNIRT (non-linear) registration, and does not use the BET tool for this (and consequently the --betfparam setting does not change the brain extraction in this FNIRT-based mode of operation)
+Using the -d option the script can be run again (with a subset of stages) to update an existing result.
+Outputs
+This section describes the main output files - it is not a complete list, but highlights the most important outputs.
+Directory
+The output directory will end with .anat and by default will have the same basename as the input image (and be in the same directory). If the -o option is used the directory name will use the specified name, followed by .anat
+Original image
+The specified input image is copied into the output directory and named T1, T2 or PD, depending on the setting of the -t option (default is T1).
+Reorientation and Cropping
+If run, the original image (we shall call it T1 from here on in as an example), will be replaced by the reoriented and/or cropped version. The original versions are saved as files: T1_orig and T1_fullfov.
+In addition, transformation files are provided to allow images to be moved between spaces: i.e. T1_orig2std.mat and T1_nonroi2roi.mat and their inverses and combinations.
+Bias-correction
+The bias-corrected version of the image is called T1_biascorr.
+Registration and Brain-Extraction
+The registration (to standard space) produces the following images that are in MNI space with a 2mm resolution:
+T1_to_MNI_lin (linear registration output)
+T1_to_MNI_nonlin (non-linear registration output)
+T1_to_MNI_nonlin_field (non-linear warp field)
+T1_to_MNI_nonlin_jac (Jacobian of the non-linear warp field)
+T1_vols.txt - a file containing a scaling factor and brain volumes, based on skull-contrained registration, suitable for head-size normalisation (as the scaling is based on the skull size, not the brain size)
+The brain-extraction produces:
+T1_biascorr_brain
+T1_biascorr_brain_mask
+Segmentation
+Tissue-type segmentation (done with FAST) produces:
+T1_biascorr - refined again in this stage
+T1_fast_pve_0, T1_fast_pve_1, T1_fast_pve_2 - partial volume segmentations (CSF, GM, WM respectively)
+T1_fast_pveseg - a summary image showing the tissue with the greatest partial volume fraction per voxel
+Subcortical segmentation (done with FIRST) produces:
+T1_subcort_seg - summary image of all subcortical segmentations
+all other outputs in the first_results subdirectory
+T1_first_all_fast_firstseg - same as T1_subcort_seg
+a host of other images relating to individual segmentations
+T1_biascorr_to_std_sub.mat (in the main anat directory) - a transformation matrix of the subcortical optimised MNI registration
+Maintained by the Analysis group at the Oxford Centre for Integrative Neuroimaging.
+See a problem? Get in touch (or fix it if you are in the OxCIN)!
+Made with
+Material for MkDocs

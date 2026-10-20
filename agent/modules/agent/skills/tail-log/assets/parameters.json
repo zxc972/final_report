@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "properties": {
+    "subjectId": {
+      "type": "string",
+      "description": "Subject folder name inside the workspace."
+    },
+    "workspaceDirectory": {
+      "type": "string",
+      "description": "Workspace root directory."
+    },
+    "logPath": {
+      "type": "string",
+      "description": "Log file path relative to the subject directory."
+    },
+    "lines": {
+      "type": "integer",
+      "description": "Number of lines to read from the end.",
+      "default": 10
+    }
+  },
+  "required": ["subjectId", "workspaceDirectory", "logPath"]
+}

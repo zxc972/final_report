@@ -1,0 +1,233 @@
+/*
+ * Copyright (C) 2026 Wang Zheng Lab, Peking University
+ *
+ * This file is part of PrimateX.
+ *
+ * PrimateX is free software: you can redistribute it and/or modify it under the
+ * terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, either version 3 of the License, or (at your option) any
+ * later version.
+ *
+ * PrimateX is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * If you use PrimateX in academic work, please cite:
+ * Xiaohui Yao*, Yichun Huang*, Kailong Cui*, ..., Shan Cong#, Zheng Wang#.
+ * Multi-agentic routing with PrimateX: standardized structural MRI analysis
+ * for non-human primates and humans.
+ *
+ * * Equal contribution.
+ * Correspondence (#): Shan Cong (shan.cong@hrbeu.edu.cn), Zheng Wang
+ * (zheng.wang@pku.edu.cn).
+ *
+ * See CITATION.cff for full citation details.
+ */
+
+/* Markdown 消息样式 */
+.markdown-message {
+  line-height: 1.6;
+}
+
+.markdown-message p {
+  margin: 0.5em 0;
+}
+
+.markdown-message p:first-child {
+  margin-top: 0;
+}
+
+.markdown-message p:last-child {
+  margin-bottom: 0;
+}
+
+/* 代码块样式 */
+.markdown-message pre {
+  margin: 1em 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background: #1f2937 !important;
+}
+
+.markdown-message pre code {
+  display: block;
+  padding: 0;
+  background: transparent !important;
+  color: #f3f4f6 !important;
+  font-size: 0.875em;
+  line-height: 1.6;
+  font-family: 'SF Mono', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
+}
+
+/* 代码块容器 */
+.markdown-message .code-block-container {
+  position: relative;
+  margin: 1.5em 0;
+}
+
+/* 代码块头部样式 */
+.code-block-header {
+  background: #374151;
+  border-bottom: 1px solid #4b5563;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.code-block-language {
+  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+  font-size: 0.8rem;
+  color: #d1d5db;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* 行内代码样式 */
+.markdown-message code {
+  background: #f1f5f9;
+  color: #334155;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-family: 'SF Mono', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
+  font-size: 0.9em;
+}
+
+/* 粗体样式 */
+.markdown-message strong {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+/* 斜体样式 */
+.markdown-message em {
+  font-style: italic;
+  color: #4b5563;
+}
+
+/* 列表样式 */
+.markdown-message ul,
+.markdown-message ol {
+  margin: 0.5em 0;
+  padding-left: 1.5em;
+}
+
+.markdown-message li {
+  margin: 0.25em 0;
+}
+
+/* 链接样式 */
+.markdown-message a {
+  color: #3b82f6;
+  text-decoration: underline;
+}
+
+.markdown-message a:hover {
+  color: #1d4ed8;
+}
+
+/* 引用样式 */
+.markdown-message blockquote {
+  border-left: 4px solid #e5e7eb;
+  padding-left: 1em;
+  margin: 1em 0;
+  color: #6b7280;
+  font-style: italic;
+}
+
+/* 表格样式 */
+.markdown-message table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1em 0;
+}
+
+.markdown-message th,
+.markdown-message td {
+  border: 1px solid #e5e7eb;
+  padding: 0.5em;
+  text-align: left;
+}
+
+.markdown-message th {
+  background: #f9fafb;
+  font-weight: 600;
+}
+
+/* 分隔线样式 */
+.markdown-message hr {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 1.5em 0;
+}
+
+/* 代码复制按钮样式 */
+.code-copy-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.markdown-message pre:hover .code-copy-button {
+  opacity: 1;
+}
+
+/* 响应式调整 */
+@media (max-width: 640px) {
+  .markdown-message pre {
+    margin: 0.5em -1em;
+    border-radius: 0;
+  }
+  
+  .markdown-message code {
+    font-size: 0.8em;
+  }
+}
+
+/* 流式响应时的光标闪烁效果 - ChatGPT 风格 */
+.streaming-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #374151;
+  border-radius: 50%;
+  margin-left: 4px;
+  animation: streamingPulse 1.2s ease-in-out infinite;
+}
+
+@keyframes streamingPulse {
+  0%, 100% { 
+    opacity: 1; 
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 0.4; 
+    transform: scale(0.8);
+  }
+}
+
+/* 更柔和的脉动效果 */
+.streaming-cursor-soft {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: #6b7280;
+  border-radius: 50%;
+  margin-left: 3px;
+  animation: softPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes softPulse {
+  0%, 100% { 
+    opacity: 0.8; 
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 0.3; 
+    transform: scale(0.9);
+  }
+}

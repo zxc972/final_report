@@ -1,0 +1,10 @@
+{
+  "type": "object",
+  "properties": {
+    "inputImage": {
+      "type": "string",
+      "description": "Path to a NIfTI image (.nii or .nii.gz)."
+    }
+  },
+  "required": ["inputImage"]
+}

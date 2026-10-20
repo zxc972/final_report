@@ -1,0 +1,280 @@
+{
+  "schema_version": "0.1.0",
+  "id": "workbench.metric.resample",
+  "name": "将表面连续指标重采样到目标网格",
+  "software_id": "workbench",
+  "task": "surface_metric_resampling",
+  "stage": "analysis",
+  "activation_status": "draft",
+  "version_binding": {
+    "runtime_target": "2.1.0",
+    "documentation_version": "Online wb_command help; version alignment pending",
+    "verified_compatible_versions": [],
+    "compatibility_status": "unknown"
+  },
+  "validation_state": {
+    "knowledge_review": "assistant_source_checked_domain_review_pending",
+    "runtime_available": "manifest_recorded",
+    "example_run": "not_run",
+    "scientific_validation": "not_evaluated",
+    "evidence_paths": []
+  },
+  "discovery": {
+    "summary": "在已经建立球面对应的网格之间重采样连续指标；选择面积校正并检查ROI范围。",
+    "aliases": [
+      "metric-resample",
+      "表面指标重采样"
+    ],
+    "tags": [
+      "surface",
+      "mesh",
+      "gifti",
+      "resampling"
+    ]
+  },
+  "inputs": [
+    {
+      "id": "metric",
+      "kind": "GIFTI metric",
+      "meaning": "源网格上的连续指标",
+      "required_context": [
+        "hemisphere",
+        "mesh_identity",
+        "vertex_count",
+        "units"
+      ]
+    },
+    {
+      "id": "spheres",
+      "kind": "registered source and target spheres",
+      "meaning": "具有配准对应关系的源/目标球面",
+      "required_context": [
+        "registration_provenance",
+        "source_mesh",
+        "target_mesh",
+        "hemisphere"
+      ]
+    },
+    {
+      "id": "area_information",
+      "kind": "anatomical surfaces or vertex-area metrics",
+      "meaning": "采用ADAP_BARY_AREA所需源/目标面积信息",
+      "required_context": [
+        "mesh_identity",
+        "source_and_target_pair"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "id": "resampled_metric",
+      "kind": "GIFTI metric",
+      "meaning": "目标网格上的连续指标；输出ROI可能需要再次限定",
+      "required_context": [
+        "target_mesh",
+        "hemisphere",
+        "units",
+        "roi_policy"
+      ]
+    }
+  ],
+  "invocation": {
+    "kind": "cli",
+    "entrypoint": "wb_command -metric-resample",
+    "parameter_schema": {
+      "type": "object",
+      "required": [
+        "metric",
+        "source_sphere",
+        "target_sphere",
+        "method",
+        "output"
+      ],
+      "properties": {
+        "metric": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_sphere": {
+          "type": "string",
+          "minLength": 1
+        },
+        "target_sphere": {
+          "type": "string",
+          "minLength": 1
+        },
+        "method": {
+          "enum": [
+            "ADAP_BARY_AREA",
+            "BARYCENTRIC"
+          ]
+        },
+        "output": {
+          "type": "string",
+          "minLength": 1
+        },
+        "area_surfs": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "area_metrics": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "method": {
+                "const": "ADAP_BARY_AREA"
+              }
+            },
+            "required": [
+              "method"
+            ]
+          },
+          "then": {
+            "oneOf": [
+              {
+                "required": [
+                  "area_surfs"
+                ],
+                "not": {
+                  "required": [
+                    "area_metrics"
+                  ]
+                }
+              },
+              {
+                "required": [
+                  "area_metrics"
+                ],
+                "not": {
+                  "required": [
+                    "area_surfs"
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "additionalProperties": false
+    },
+    "illustrative_example": "argv template: [wb_command, -metric-resample, <metric>, <current-sphere>, <new-sphere>, ADAP_BARY_AREA, <output>, -area-surfs, <current-anatomical-surface>, <new-anatomical-surface>]. All placeholders require data-bound validation.",
+    "example_status": "authored_not_executed"
+  },
+  "conditions": [
+    {
+      "id": "registered_spheres",
+      "statement": "源球面与目标球面必须具有配准对应；顶点数检查不能代替这个条件。",
+      "basis": "vendor_documented",
+      "source_ids": [
+        "wb_metric"
+      ],
+      "unknown_action": "inspect",
+      "check_implementation": null
+    },
+    {
+      "id": "area_choice",
+      "statement": "ADAP_BARY_AREA要求area-surfs或area-metrics恰选一项，并提供源和目标配对数据。",
+      "basis": "vendor_documented",
+      "source_ids": [
+        "wb_metric"
+      ],
+      "unknown_action": "inspect",
+      "check_implementation": null
+    },
+    {
+      "id": "continuous_metric",
+      "statement": "本能力针对连续metric；离散分区标签须另检索标签重采样操作。",
+      "basis": "project_policy",
+      "source_ids": [],
+      "unknown_action": "inspect",
+      "check_implementation": null
+    }
+  ],
+  "checks": [
+    {
+      "id": "target_topology",
+      "criterion": "产物顶点数和网格身份须对应目标球面。",
+      "basis": "project_policy",
+      "source_ids": [],
+      "check_implementation": null
+    },
+    {
+      "id": "roi_semantics",
+      "criterion": "current-roi遮罩输入，输出范围可能扩大；根据预先定义的分析mask政策检查。",
+      "basis": "vendor_documented",
+      "source_ids": [
+        "wb_metric"
+      ],
+      "check_implementation": null
+    },
+    {
+      "id": "constant_fixture",
+      "criterion": "未来用常值指标和已知网格检验数值行为，再验证真实空间对应；当前未运行。",
+      "basis": "project_policy",
+      "source_ids": [],
+      "check_implementation": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wb_metric",
+      "url": "https://www.humanconnectome.org/software/workbench-command/-metric-resample",
+      "section": "Required arguments; area options; method details",
+      "checked_on": "2026-10-15",
+      "summary": "规定球面对应、面积选项与输入ROI的含义。",
+      "snapshot_sha256": null,
+      "review": "section_reviewed"
+    }
+  ],
+  "views": {
+    "skill_outline": [
+      "先辨别连续指标与离散标签，确认源/目标网格和对应关系。",
+      "按方法选择必需参数，查询配套文档。",
+      "验证数值、目标网格和分析mask，并记录插值方法。"
+    ],
+    "relations": [
+      {
+        "subject": "workbench.metric.resample",
+        "predicate": "implemented_by",
+        "object": "workbench:-metric-resample",
+        "basis": "vendor_documented",
+        "source_ids": [
+          "wb_metric"
+        ]
+      },
+      {
+        "subject": "workbench.metric.resample",
+        "predicate": "requires",
+        "object": "registered_sphere_pair",
+        "basis": "vendor_documented",
+        "source_ids": [
+          "wb_metric"
+        ]
+      },
+      {
+        "subject": "workbench.metric.resample",
+        "predicate": "produces",
+        "object": "target_mesh:metric",
+        "basis": "vendor_documented",
+        "source_ids": [
+          "wb_metric"
+        ]
+      }
+    ]
+  }
+}

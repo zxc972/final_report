@@ -1,0 +1,110 @@
+Source: https://surfer.nmr.mgh.harvard.edu/fswiki/LabelsClutsAnnotationFiles?action=raw
+
+'''Index''' <<TableOfContents>>
+= Labels, Color Lookup Tables and Annotation Files =
+This page discusses the basic concepts of FreeSurfer files that relate to identifying regions-of-interest for surfaces and volumes, namely labels, so-called color lookup tables, and annotations.
+In each case, the concept is discussed first, followed by a description of the file that is used to capture data for each kind of concept, and the detailed format of that file. The detailed file description is useful in clarifying exactly what each concept refers to, and how one might expect to interact with it within tksurfer or tkmedit.
+= Label =
+A label is an integer value, or a name (depending on context) which can be associated with a vertex of a surface mesh, or with a voxel of an MRI volume, to indicate that it belongs to some region of interest. Vertices marked with the same label value are said to "belong to the same label". This could mark the vertices/voxels as part of an anatomical region, or as part of a region-of-interest for analysis.
+"Saving a label" refers to saving into a file the list of vertices marked by a single particular label value.
+Associating label values with vertices enables manipulating sets of vertices. In order to distinctly display these sets in tksurfer (or labeled locations in tkmedit), a color lookup table, translating label to color, is also required -- described below.
+== Label file ==
+A label file is a text file capturing a list of vertices belonging to a region, including their spatial positions(using R,A,S coordinates). A label file corresponds only to a single label, thus contains only a single list of vertices.
+Because both vertex number and corresponding position are listed, a label file can be used by either tksurfer or tkmedit to identify surface or volume locations belonging to the region.
+It should be noted that a label file's vertex numbers will apply to several surfaces of a subject: for example the white surface, the pial surface, the inflated surface and so on. However the R,A,S positions are those of a particular one of these surfaces, according to selections in effect when the label file was saved by tksurfer.
+Perhaps surprisingly, a label file contains neither the label code nor label name that it pertains to. Instead it is conventional to name the label file in a manner that indicates the label intended, though this naming convention has varied over the years. Examples:
+ * lh.cortex.label
+ * lh-avg_calcarine_sulcus.label.
+== Label file contents and format ==
+{{{#!ascii label , from subject
+1806
+7  -22.796  -66.405  -29.582 0.000000
+89  -22.273  -43.118  -24.069 0.000000
+138  -14.142  -81.495  -30.903 0.000000
+[...]
+}}}
+||'''Row''' ||'''Col1''' ||'''Col2''' ||'''Col3''' ||'''Col4''' ||'''Col5''' ||
+||1 ||Comment || || || || ||
+||2 ||Count of subsequent rows || || || || ||
+||3..end ||Vertex num ||R coord ||A coord ||S coord ||Don't know ||
+= Color Lookup Table =
+In FreeSurfer a "color lookup table" is a table cross-referencing:
+ * An integer label code (aka "structure number")
+ * A label caption
+ * A color, specified by Red, Green, Blue and Opacity values.
+Although called a "color lookup", in many usages it is the cross-reference to caption, or simply the list of captions, which a program uses.
+== Color Lookup Table file ==
+FreeSurfer is supplied with a standard color lookup table in the file FreeSurferColorLUT.txt, which needs to be loaded into tksurfer or tkmedit for some display situations, for example in order to color regions when showing labels.
+FreeSurferColorLUT.txt can be edited (probably not recommended), or other similar files can be prepared for purposes such as customizing the colors or working with additional regions.
+== Color Lookup Table file contents and format ==
+{{{
+#$Id: FreeSurferColorLUT.txt,v 1.38.2.1 2007/08/20 01:52:07 nicks Exp $
+#No. Label Name:                            R   G   B   A
+0   Unknown                                 0   0   0   0
+1   Left-Cerebral-Exterior                  205 62  78  0
+2   Left-Cerebral-White-Matter              245 245 245 0
+3   Left-Cerebral-Cortex                    205 62  78  0
+[...]
+}}}
+||'''Row''' ||'''Col1''' ||'''Col2''' ||'''Col3''' ||'''Col4''' ||'''Col5''' ||'''Col5''' ||
+||1 ||Comment (version info) || || || || || ||
+||2 ||Comment (col headings) || || || || || ||
+||3.. ||Label code ||Label name ||Red ||Green ||Blue ||Opacity ||
+= Annotation =
+In FreeSurfer jargon, "annotation" refers to a collection of labels (ie: sets of vertices marked by label values) and often an associated color table (recalling that a color table importantly includes cross-reference from label code to label name).
+== Annotation file ==
+At a broad-brush level, an annotation file amalgamates information from one or more label files, usually along with a color (and label-caption) lookup table. It thus represents a more-complete packaging of information that one would want to keep together when marking up regions on a surface (or in a volume).
+The programs [[mris_label2annot]] and [[mri_annotation2label]] are used to assemble and disassemble annotation files from/to label/CLUT files.
+It may be worth noting that a ''label'' file explicitly lists each vertex belonging to a single set, which may be a few vertices, or many.  Taken together, two or more label files could mention a particular vertex once, or never, or two or more times.
+By contrast, an annotation file's vertex data consists of a single list including all vertices, with exactly one entry for each vertex. (The annotation file format doesn't guarantee this, but it is implemented this way in MRISwriteAnnotation(). More on this below.)
+So, for example, when converting label files into an annotation file, if [[mris_label2annot]] encounters two or more label values for a vertex, only the last-encountered one is retained. (mris_label2annot does include a diagnostic option to help find multiply-labeled vertices).
+== Annotation file contents and format ==
+The annotation file is a binary file with the following format. (Verified by virtue of my writing code to extract the LUT information --GW)
+||'''Count''' ||'''Group''' ||'''Item''' ||'''Type''' ||'''Description''' ||
+||1 || ||vtxct ||int4 ||Vertex count. This should be the complete count of vertices for the surface to which the labels were associated ||
+||vtxct ||Vertex data ||vno ||int4 ||Vertex number, (0..vtxct-1) ||
+|| ||Vertex data ||label ||int4 ||Annotation value (see note below) ||
+||1 || ||tag ||int4 ||Tag "TAG_OLD_COLORTABLE" indicating a color table comes next ||
+||1 || ||ctabversion ||int4 ||>0 means "old format", <0 means "new format" (new shown below) ||
+||1 || ||maxstruc ||int4 ||Max structure index (could be more than actual entries, since some may be omitted) ||
+||1 || ||len ||int4 ||Length of subsequent string ||
+||1 || ||fname ||string ||File name ||
+||1 || ||num_entries ||int4 ||Count of LUT entries ||
+||num_entries ||LUT ||Label ||int4 ||Label number (also called "structure" number) ||
+|| ||LUT ||len ||int4 ||Length of subsequent string ||
+|| ||LUT ||labelname ||string ||Name of label (= structure name) ||
+|| ||LUT ||red ||int4 ||Red value 0..255 ||
+|| ||LUT ||green ||int4 ||Green value 0..255 ||
+|| ||LUT ||blue ||int4 ||Blue value 0..255 ||
+|| ||LUT ||transp ||int4 ||Transparency = 255-Alpha ||
+|| || || || || ||
+'''Notes: '''
+ * int4 values are 4-byte integers, in "Big-endian" order, that is high-order byte first. This is the reverse of the order commonly used in Intel-based computers.
+ * string values contain one byte per character, terminated with a zero byte (null). The preceding length count includes the terminating null.
+=== Annotation file design surprise ===
+As noted above, an annotation file seems like an amalgam of multiple label files plus a label-code/color/label-caption table ("ColorLUT"). One might therefore expect a couple of things about the per-vertex data:
+ * All vertices listed in order, each appearing only once.
+ * For each vertex, the label code.
+However, the design of this file format undermines both of those expectations.
+ * Each "row" stores a vertex number, which would seem redundant, but because it is present could potentially result in an annotation file listing the vertices out-of-order, and particular vertices more than once or not at all.  (I'm not sure that ever happens; reassuringly, the code for MRISwriteAnnotation() stores every vertex exactly once and in order of vertex-number. However, MRISreadAnnotation() ''does'' pay attention to vertex-number, and thus, without complaining, could load annotations with vertices out of order or duplicated).
+ * The more surprising feature is that each vertex item stores ''not'' the label code, but rather the "annotation value", which is the RGB value combined into a single 32-bit integer: annotation value = (B * 256^2) + (G  * 256) +  (R). This 32-bit integer is stored in the file in Big-endian order (as with all the int4 values), so the actual order of the colors in the file is ABGR.
+Code that loads an annotation file (eg: labl_import_annotation in tksurfer) has to compare annotation values to the color values in the ColorLUT part of the annotation file to discover what parcellation label code (ie: structure code) corresponds.
+The fact that the "ColorLUT" is called a "Color Lookup Table" in the first place asserts the idea that the label code is used to look up the color.  With the annotation file, the reverse is needed: the color has to be used to look up the label code.
+This has several awkward consequences:
+ * Every region that you wish to distinguish must have not only a unique label code ''but also a unique color''. It may be wise to maintain a single master ColorLUT file and enforce some discipline about how you choose label codes and colors to ensure no duplicates. (Revised ColorLUTs can be incorporated into an annotation using tksurfer File > Label > Load Color Table... I think.)
+ * It is conceivable to have an annotation file with vertices "colored" with annotation values that don't correspond to any label.
+Additionally, this confusion between the annotation of a vertex versus the label of a vertex extends to tksurfer. There, it is possible to recolor a region's vertices to match the vertices of another region. At that point, though the colors match, the vertices in the two regions retain their different labels. However, if this state of annotation is saved to a file, the per-vertex data saves the annotation values (ie: colors) only , and thus no longer distinguishes the two regions, which can be seen when the annotation file is reloaded into tksurfer.
+= Related terminology issues =
+The vocabulary in this area of FreeSurfer has not been tightly controlled, leading to confusion as to what different words actually refer to the same things, and instances where the same word refers to different things.
+ * "Annotation index" and "structure number" are sometimes used to refer to label number.
+ * "Parcellation" is the word usually used to refer to the labeling of the ''anatomical regions'' of cortical surface, whereas "segmentation" is usually used for the labelling of ''tissues'', for example in an MRI volume.  A surface parcellation (eg: aparc) is captured by attaching labels to vertices, and storing the result in either a set of label files, or more likely an annotation file. But an alternate approach taken by some programs is to capture the list of per-vertex labels in an array, and store that in a file whose format looks like FS's mgh MRI format. This is referred to as a "volume-encoded surface segmentation file". It's not volume data, and here the word "segmentation" is being used where the effect is elsewhere known as "parcellation".
+= Related pages =
+ * AnnotFiles : Some brief end-user notes on annotation files, plus MatLab and C developer notes.
+ * [[mris_label2annot]] : Documentation for the command-line program that amalgamates label files (plus optional color lookup table file) into a single annotation file.
+ * [[mri_annotation2label]] : Documentation for the command-line program that breaks an annotation file into individual label files
+ * EditingLabels : Pointers to a couple of pages about labels
+ * TkSurferGuide/TkSurferWorkingWithData/TkSurferLabel : Working with labels
+= Outstanding Issues =
+Not currently fully understood by me (GW, 2008-01-19) is the treatment of ''multiple'' labels-per-vertex in tksurfer.  Under certain conditions, vertices can acquire multiple label values (as judged by the control panel display of labels attached to vertex at cursor). However, I haven't got to the bottom of how to work with these (save, load, display, edit).
+= Document Author(s) =
+Graham Wideman (GrahamWideman)

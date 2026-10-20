@@ -1,0 +1,10 @@
+{
+  "time": 1792513221.3140185,
+  "config_sha256": "0c596021acdb0d7dfa5748d2d02e3cbf125b838e939e599a04b2b89d3884d694",
+  "public_request_unchanged": true,
+  "request_sha256": "1968431dcf7ecdca8a393318044a1fbc89e75837707fe4f3efc5bb891d67e6ec",
+  "old_analysis_code_or_output_mounted": false,
+  "private_reference_or_external_semantic_review_mounted": false,
+  "trial_scope": "Seen-request architectural regression, not blind new-task/data performance",
+  "original_budget_and_validator_unchanged": true
+}

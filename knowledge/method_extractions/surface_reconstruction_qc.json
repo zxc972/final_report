@@ -1,0 +1,224 @@
+{
+  "method_id": "surface_reconstruction_qc",
+  "name": "FreeSurfer Cortical Reconstruction Failure Mode Identification and QC Workflow",
+  "purpose": "Identify cortical reconstruction failures and determine appropriate quality control and repair stages in the FreeSurfer recon-all pipeline.",
+  "species_scope": "unspecified",
+  "software": [
+    "FreeSurfer",
+    "freeview",
+    "tkmedit",
+    "tksurfer"
+  ],
+  "inputs": [
+    {
+      "statement": "T1-weighted anatomical image(s) in DICOM or other native scanner format.",
+      "source_id": "fs_morph",
+      "quote": "the raw data from the scan must be converted into a format recognized by FreeSurfer",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Subject directory created via recon-all -i command.",
+      "source_id": "fs_morph",
+      "quote": "recon-all -i <path-to-first-structural> [-i <path-to-second-structural>] -s <subjid>",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Output volumes from recon-all processing, including T1.mgz, brainmask.mgz, and surface files.",
+      "source_id": "andy_failures",
+      "quote": "load the T1 and brainmask images as underlays in freeview, and overlay the white and pial surfaces",
+      "claim_type": "direct"
+    }
+  ],
+  "conditions": [
+    {
+      "statement": "Anatomical data should have good quality: strong contrast between tissue types, no movement, high resolution.",
+      "source_id": "andy_failures",
+      "quote": "If your anatomical data is of good quality - strong contrast between the tissue types, no movement, high resolution",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Soft failures occur when recon-all finishes without errors but output has obvious errors needing fixes.",
+      "source_id": "andy_failures",
+      "quote": "Soft Failures, on the other hand, occur when recon-all has finished without any errors - but upon closer observation of the output there are obvious errors",
+      "claim_type": "direct"
+    }
+  ],
+  "steps": [
+    {
+      "statement": "Run recon-all -autorecon1 and stop to check for problems with intensity normalization, talairach transformation, and skull stripping.",
+      "source_id": "fs_morph",
+      "quote": "recon-all -subjid <subject name> -autorecon1\nstop to check for problems with intensity normalization, talairach transformation and skull stripping",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Run recon-all -autorecon2 and stop to check final surfaces and make appropriate edits.",
+      "source_id": "fs_morph",
+      "quote": "recon-all -subjid <subject name> -autorecon2\nstop to check final surfaces and make appropriate edits",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "If the WM volume was edited, run recon-all -autorecon2-wm; if control points were added, run -autorecon2-cp; if the BRAIN volume was edited, run -autorecon2-pial.",
+      "source_id": "fs_morph",
+      "quote": "if:\nthe WM volume was edited: recon-all -subjid <subject name> -autorecon2-wm\ncontrol points were added: recon-all -subjid <subject name> -autorecon2-cp\nthe BRAIN volume was edited: recon-all -subjid <subject name> -autorecon2-pial",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Run recon-all -autorecon3 to complete the processing after any edits.",
+      "source_id": "fs_morph",
+      "quote": "recon-all -subjid <subject name> -autorecon3",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Load T1 and brainmask images as underlays in freeview, overlay white and pial surfaces for both hemispheres.",
+      "source_id": "andy_failures",
+      "quote": "freeview -v [subject]/mri/T1.mgz \\\n[subject]/mri/brainmask.mgz \\\n-f [subject]/surf/lh.pial:edgecolor=red \\\n[subject]/surf/lh.white:edgecolor=yellow \\\n[subject]/surf/rh.pial:edgecolor=red \\\n[subject]/surf/rh.white:edgecolor=yellow",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Visually inspect slices for anomalies, noting that anomalies resolving in adjacent slices may be projection artifacts and not require editing.",
+      "source_id": "andy_failures",
+      "quote": "If the anomaly resolves in the next slice or two, that is probably because the white matter is being projected in a direction orthogonal to the slice",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Ignore surfaces drawn in the medial wall near ventricles and corpus callosum, and near subcortical structures, as they are not used in final surface calculations.",
+      "source_id": "andy_failures",
+      "quote": "the surfaces drawn in the medial wall near the ventricles and corpus callosum, and the surfaces drawn near the subcortical structures, will not be used in the final surface calculations and can be ignored during editing.",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Perform manual edits using erasing voxels, filling voxels, adding control points, or cloning voxels as needed.",
+      "source_id": "andy_failures",
+      "quote": "Any other edits will be done with one or more of the following steps:\nErasing voxels;\nFilling voxels;\nAdding control points;\nCloning voxels.",
+      "claim_type": "direct"
+    }
+  ],
+  "checks": [
+    {
+      "statement": "Verify that surfaces follow the true boundaries of gray and white matter by visual inspection.",
+      "source_id": "fs_morph",
+      "quote": "Make sure that the surfaces follow the true boundaries of the top and bottom of the gray matter.",
+      "claim_type": "direct"
+    }
+  ],
+  "exceptions": [
+    {
+      "statement": "Small and infrequent discrepancies between FreeSurfer-drawn borders and actual gray/white borders should be left alone, as editing may worsen the problem.",
+      "source_id": "andy_failures",
+      "quote": "as long as the discrepancies are relatively small and infrequent, it’s best to leave them alone. In those cases, sometimes editing the surfaces can make the problem worse, not better.",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "White matter segmentation errors caused by lesions or gliomas are relatively uncommon in healthy subjects and are not covered in the tutorial.",
+      "source_id": "andy_failures",
+      "quote": "These are relatively uncommon in healthy subjects, and will not be covered in this course.",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Topological defects are very rare since FreeSurfer version 6.0 and are usually automatically fixed during recon-all.",
+      "source_id": "andy_failures",
+      "quote": "Since the release of FreeSurfer version 6.0 these types of errors are very rare, and they are usually automatically fixed during recon-all.",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "For populations where aseg tools are ineffective (e.g., monkey or newborn data), use the -noaseg flag to skip subcortical segmentation.",
+      "source_id": "fs_morph",
+      "quote": "If you are working with a population for which the aseg tools will not be effective, e.g., monkey data and newborn data, use the flag -noaseg.",
+      "claim_type": "direct"
+    }
+  ],
+  "outputs": [
+    {
+      "statement": "Corrected white matter surface (lh.white, rh.white) and pial surface (lh.pial, rh.pial) files.",
+      "source_id": "fs_morph",
+      "quote": "The surfaces representing the gray/white boundary are called lh.white and rh.white, and the surfaces representing the gray/CSF boundary are called lh.pial and rh.pial.",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Cortical thickness estimates stored in curv files lh.thickness and rh.thickness.",
+      "source_id": "fs_morph",
+      "quote": "The thickness estimates are stored in curv files called lh.thickness and rh.thickness.",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Spherical surfaces and registration files (lh.sphere, rh.sphere, lh.sphere.reg, rh.sphere.reg).",
+      "source_id": "fs_morph",
+      "quote": "Sphere Right/Left Hemisphere Surfaces: inflates right/left hemispheres to spheres and minimizes metric distortion",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Cortical parcellation annotation files (lh.aparc.annot, rh.aparc.annot) and statistics files (lh.aparc.stats, rh.aparc.stats).",
+      "source_id": "fs_morph",
+      "quote": "mris_register and mris_ca_label, which generate lh.aparc.annot or rh.aparc.annot as output",
+      "claim_type": "direct"
+    }
+  ],
+  "parameters": [
+    {
+      "statement": "Default white matter intensity value is 110; voxels darker than 90-95 may be marked as non-white.",
+      "source_id": "fs_morph",
+      "quote": "the default white matter value is 110, so if white matter voxels are darker than 90-95 they may be marked as non-white",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Control points placed at voxels with value less than 110 will increase white matter intensity in the region.",
+      "source_id": "fs_morph",
+      "quote": "the bias correction at a control point is estimated as 110 divided by the voxel value, so only control points placed at voxels less than 110 will increase the intensity",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "The topology correction time complexity scales with the square of the convex hull of the largest defect.",
+      "source_id": "fs_morph",
+      "quote": "The time complexity of the topology correction goes as the square of the convex hull of the largest defect",
+      "claim_type": "direct"
+    }
+  ],
+  "source_ids": [
+    "andy_failures",
+    "fs_morph"
+  ],
+  "source_extraction_http_id": 846,
+  "evidence_status": "AI_assisted_candidate_exact_quotes_checked_semantics_not_expert_reviewed",
+  "quarantined_claims": [
+    {
+      "category": "conditions",
+      "claim": {
+        "statement": "Recon-all may fail due to no write permission, insufficient disk space, or problems with the anatomical image such as too much motion.",
+        "source_id": "andy_failures",
+        "quote": "No write permission to the current disk; Insufficient disk space; Problems with the anatomical image, such as too much motion.",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "checks",
+      "claim": {
+        "statement": "Check for hard failures: recon-all exits prematurely due to write permission, disk space, or motion problems.",
+        "source_id": "andy_failures",
+        "quote": "Hard failures occur when recon-all exits its preprocessing stream due to one of these scenarios: No write permission... Insufficient disk space... Problems with the anatomical image",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "checks",
+      "claim": {
+        "statement": "Check for soft failures: large holes in white matter, pial surface errors, skullstripping errors, intensity normalization errors, topological defects, and white matter segmentation errors.",
+        "source_id": "andy_failures",
+        "quote": "Soft failures can be divided into the following categories: Skullstripping errors; Pial surface errors; Intensity normalization errors; Topological defects; and White matter segmentation errors.",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "checks",
+      "claim": {
+        "statement": "Check for topological defects such as holes or handles in the white matter surface.",
+        "source_id": "fs_morph",
+        "quote": "there are only two types of topological defects: holes (a perforation in the surface) and handles (an incorrect connection that overlaps the surface)",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    }
+  ]
+}

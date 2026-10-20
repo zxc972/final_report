@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "subjectId": {
+      "type": "string",
+      "description": "Subject ID used as FastSurfer --sid and output folder name."
+    },
+    "workspaceDirectory": {
+      "type": "string",
+      "description": "Root workspace path used as FastSurfer --sd output root."
+    },
+    "t1Path": {
+      "type": "string",
+      "description": "Path to human T1 input (.nii/.nii.gz) or a directory containing NIfTI images."
+    },
+    "species": {
+      "type": "string",
+      "description": "Optional. Should be Human when provided."
+    }
+  },
+  "required": ["subjectId", "workspaceDirectory", "t1Path"]
+}

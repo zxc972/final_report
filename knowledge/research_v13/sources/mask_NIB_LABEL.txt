@@ -1,0 +1,14 @@
+nibabel.freesurfer.io.read_label(filepath, read_scalars=False)#
+Load in a Freesurfer .label file.
+Parameters:
+filepathstr
+Path to label file.
+read_scalarsbool, optional
+If True, read and return scalars associated with each vertex.
+Returns:
+label_arraynumpy array
+Array with indices of vertices included in label.
+scalar_arraynumpy array (floats)
+Only returned if read_scalars is True.  Array of scalar data for each
+vertex.
+read_morph_data#

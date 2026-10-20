@@ -1,0 +1,212 @@
+{
+  "schema_version": "0.1.0",
+  "id": "pandas.subject_table.merge",
+  "name": "核对并合并被试指标与表型",
+  "software_id": "pandas",
+  "task": "align_subject_phenotype_tables",
+  "stage": "analysis",
+  "activation_status": "draft",
+  "version_binding": {
+    "runtime_target": "2.3.3",
+    "documentation_version": "pandas 2.3.3 versioned user guide",
+    "verified_compatible_versions": [],
+    "compatibility_status": "unknown"
+  },
+  "validation_state": {
+    "knowledge_review": "assistant_source_checked_domain_review_pending",
+    "runtime_available": "metadata_present",
+    "example_run": "not_run",
+    "scientific_validation": "not_evaluated",
+    "evidence_paths": []
+  },
+  "discovery": {
+    "summary": "按明确的被试/访视键对齐一行一次观察的宽指标表与表型，检查重复、缺失和合并损失。",
+    "aliases": [
+      "merge",
+      "表型对齐",
+      "被试匹配"
+    ],
+    "tags": [
+      "tabular",
+      "subject",
+      "phenotype",
+      "qc"
+    ]
+  },
+  "inputs": [
+    {
+      "id": "features",
+      "kind": "wide DataFrame",
+      "meaning": "每个观察一行的影像指标",
+      "required_context": [
+        "observation_unit",
+        "id_columns",
+        "identifier_encoding",
+        "visit_policy"
+      ]
+    },
+    {
+      "id": "phenotypes",
+      "kind": "DataFrame",
+      "meaning": "相同观察单位的表型表",
+      "required_context": [
+        "observation_unit",
+        "id_columns",
+        "missing_value_encoding"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "id": "merged_table",
+      "kind": "DataFrame",
+      "meaning": "观察单位对齐的指标和表型",
+      "required_context": [
+        "id_columns",
+        "row_count",
+        "inclusion_policy"
+      ]
+    },
+    {
+      "id": "join_audit",
+      "kind": "table",
+      "meaning": "重复键、未匹配和纳入变化报告",
+      "required_context": [
+        "left_only",
+        "right_only",
+        "duplicate_ids"
+      ]
+    }
+  ],
+  "invocation": {
+    "kind": "python_api",
+    "entrypoint": "pandas.DataFrame.merge",
+    "parameter_schema": {
+      "type": "object",
+      "required": [
+        "on",
+        "how",
+        "validate",
+        "indicator"
+      ],
+      "properties": {
+        "on": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "how": {
+          "const": "outer"
+        },
+        "validate": {
+          "const": "one_to_one"
+        },
+        "indicator": {
+          "const": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "illustrative_example": "audit = features.merge(phenotypes, on=resolved_key_columns, how='outer', validate='one_to_one', indicator=True)\n# Resolve missing keys and key semantics before merge. Inspect audit before applying the separately declared inclusion policy.",
+    "example_status": "authored_not_executed"
+  },
+  "conditions": [
+    {
+      "id": "scope",
+      "statement": "本卡仅适用于每个观察一行的两个表；长ROI表或多次访视需先选择合适的键和基数规则。",
+      "basis": "project_policy",
+      "source_ids": [],
+      "unknown_action": "inspect",
+      "check_implementation": null
+    },
+    {
+      "id": "unique_keys",
+      "statement": "one_to_one会检查双方键唯一性；多对多重复键可导致行数膨胀。",
+      "basis": "vendor_documented",
+      "source_ids": [
+        "pd_merge"
+      ],
+      "unknown_action": "inspect",
+      "check_implementation": null
+    },
+    {
+      "id": "missing_ids",
+      "statement": "先检查空ID和ID编码；不得把缺失ID或错误截取后的ID当成已匹配被试。",
+      "basis": "project_policy",
+      "source_ids": [],
+      "unknown_action": "inspect",
+      "check_implementation": null
+    }
+  ],
+  "checks": [
+    {
+      "id": "merge_indicator",
+      "criterion": "利用indicator审计left_only、right_only与both。",
+      "basis": "vendor_documented",
+      "source_ids": [
+        "pd_merge"
+      ],
+      "check_implementation": null
+    },
+    {
+      "id": "inclusion",
+      "criterion": "保留外连接审计，并根据分析合同决定纳入；不得静默丢失观察。",
+      "basis": "project_policy",
+      "source_ids": [],
+      "check_implementation": null
+    },
+    {
+      "id": "order",
+      "criterion": "构造模型矩阵前核对数值表与表型的ID顺序。",
+      "basis": "project_policy",
+      "source_ids": [],
+      "check_implementation": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "pd_merge",
+      "url": "https://pandas.pydata.org/pandas-docs/version/2.3.3/user_guide/merging.html",
+      "section": "Merge types; Merge key uniqueness; Merge result indicator",
+      "checked_on": "2026-10-15",
+      "summary": "说明合并基数、validate唯一性检查和indicator来源字段。",
+      "snapshot_sha256": null,
+      "review": "section_reviewed"
+    }
+  ],
+  "views": {
+    "skill_outline": [
+      "识别观察单位、被试和访视键，保留原始ID。",
+      "检查键的缺失、重复、编码与两表基数。",
+      "按参数合同生成合并代码，检查审计后应用纳入规则。"
+    ],
+    "relations": [
+      {
+        "subject": "pandas.subject_table.merge",
+        "predicate": "implemented_by",
+        "object": "pandas:DataFrame.merge",
+        "basis": "vendor_documented",
+        "source_ids": [
+          "pd_merge"
+        ]
+      },
+      {
+        "subject": "pandas.subject_table.merge",
+        "predicate": "requires",
+        "object": "tables:resolved_observation_keys",
+        "basis": "project_policy",
+        "source_ids": []
+      },
+      {
+        "subject": "pandas.subject_table.merge",
+        "predicate": "produces",
+        "object": "aligned_observation_table",
+        "basis": "project_policy",
+        "source_ids": []
+      }
+    ]
+  }
+}

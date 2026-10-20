@@ -1,0 +1,207 @@
+numpy.average — NumPy v2.5 Manual
+Skip to main content
+Back to top
+Ctrl+K
+User Guide
+API reference
+Building from source
+Development
+Release notes
+Learn
+NEPs
+Choose version
+GitHub
+User Guide
+API reference
+Building from source
+Development
+Release notes
+Learn
+NEPs
+Choose version
+GitHub
+Collapse Sidebar
+Expand Sidebar
+Section Navigation
+NumPy’s module structure
+Array objects
+Universal functions (ufunc)
+Routines and objects by topic
+Constants
+Array creation routines
+Array manipulation routines
+Bit-wise operations
+String functionality
+Datetime support functions
+Data type routines
+Mathematical functions with automatic domain
+Floating point error handling
+Exceptions and Warnings
+Discrete Fourier Transform
+Functional programming
+Input and output
+Indexing routines
+Linear algebra
+Logic functions
+Masked array operations
+Mathematical functions
+Miscellaneous routines
+Polynomials
+Random sampling
+Set routines
+Sorting, searching, and counting
+Statistics
+numpy.ptp
+numpy.percentile
+numpy.nanpercentile
+numpy.quantile
+numpy.nanquantile
+numpy.median
+numpy.average
+numpy.mean
+numpy.std
+numpy.var
+numpy.nanmedian
+numpy.nanmean
+numpy.nanstd
+numpy.nanvar
+numpy.corrcoef
+numpy.correlate
+numpy.cov
+numpy.histogram
+numpy.histogram2d
+numpy.histogramdd
+numpy.bincount
+numpy.histogram_bin_edges
+numpy.digitize
+Test support
+Window functions
+Typing (numpy.typing)
+NumPy C-API
+Array API standard compatibility
+CPU/SIMD optimizations
+Thread Safety
+Global Configuration Options
+NumPy security
+Testing guidelines
+Status of numpy.distutils and migration advice
+NumPy and SWIG
+NumPy reference
+Routines and objects by topic
+Statistics
+numpy.average
+numpy.average#
+numpy.average(a, axis=None, weights=None, returned=False, *, keepdims=<no value>)[source]#
+Compute the weighted average along the specified axis.
+Parameters:
+aarray_like
+Array containing data to be averaged. If a is not an array, a
+conversion is attempted.
+axisNone or int or tuple of ints, optional
+Axis or axes along which to average a. The default,
+axis=None, will average over all of the elements of the input array.
+If axis is negative it counts from the last to the first axis.
+If axis is a tuple of ints, averaging is performed on all of the axes
+specified in the tuple instead of a single axis or all the axes as
+before.
+weightsarray_like, optional
+An array of weights associated with the values in a. Each value in
+a contributes to the average according to its associated weight.
+The array of weights must be the same shape as a if no axis is
+specified, otherwise the weights must have dimensions and shape
+consistent with a along the specified axis.
+If weights=None, then all data in a are assumed to have a
+weight equal to one.
+The calculation is:
+avg = sum(a * weights) / sum(weights)
+where the sum is over all included elements.
+The only constraint on the values of weights is that sum(weights)
+must not be 0.
+returnedbool, optional
+Default is False. If True, the tuple (average, sum_of_weights)
+is returned, otherwise only the average is returned.
+If weights=None, sum_of_weights is equivalent to the number of
+elements over which the average is taken.
+keepdimsbool, optional
+If this is set to True, the axes which are reduced are left
+in the result as dimensions with size one. With this option,
+the result will broadcast correctly against the original a.
+Note: keepdims will not work with instances of numpy.matrix
+or other classes whose methods do not support keepdims.
+New in version 1.23.0.
+Returns:
+retval, [sum_of_weights]array_type or double
+Return the average along the specified axis. When returned is True,
+return a tuple with the average as the first element and the sum
+of the weights as the second element. sum_of_weights is of the
+same type as retval. The result dtype follows a general pattern.
+If weights is None, the result dtype will be that of a , or float64
+if a is integral. Otherwise, if weights is not None and a is non-
+integral, the result type will be the type of lowest precision capable of
+representing values of both a and weights. If a happens to be
+integral, the previous rules still applies but the result dtype will
+at least be float64.
+Raises:
+ZeroDivisionError
+When all weights along axis are zero. See numpy.ma.average for a
+version robust to this type of error.
+TypeError
+When weights does not have the same shape as a, and axis=None.
+ValueError
+When weights does not have dimensions and shape consistent with a
+along specified axis.
+See also
+mean
+ma.average
+average for masked arrays – useful if your data contains “missing” values
+numpy.result_type
+Returns the type that results from applying the numpy type promotion rules to the arguments.
+Examples
+Try it in your browser!
+>>> import numpy as np
+>>> data = np.arange(1, 5)
+>>> data
+array([1, 2, 3, 4])
+>>> np.average(data)
+2.5
+>>> np.average(np.arange(1, 11), weights=np.arange(10, 0, -1))
+4.0
+>>> data = np.arange(6).reshape((3, 2))
+>>> data
+array([[0, 1],
+[2, 3],
+[4, 5]])
+>>> np.average(data, axis=1, weights=[1./4, 3./4])
+array([0.75, 2.75, 4.75])
+>>> np.average(data, weights=[1./4, 3./4])
+Traceback (most recent call last):
+...
+TypeError: Axis must be specified when shapes of a and weights differ.
+With keepdims=True, the following result has shape (3, 1).
+>>> np.average(data, axis=1, keepdims=True)
+array([[0.5],
+[2.5],
+[4.5]])
+>>> data = np.arange(8).reshape((2, 2, 2))
+>>> data
+array([[[0, 1],
+[2, 3]],
+[[4, 5],
+[6, 7]]])
+>>> np.average(data, axis=(0, 1), weights=[[1./4, 3./4], [1., 1./2]])
+array([3.4, 4.4])
+>>> np.average(data, axis=0, weights=[[1./4, 3./4], [1., 1./2]])
+Traceback (most recent call last):
+...
+ValueError: Shape of weights must be consistent
+with shape of a along specified axis.
+Go BackOpen In Tab
+previous
+numpy.median
+next
+numpy.mean
+On this page
+average
+© Copyright 2008-2026, NumPy Developers.
+Created using Sphinx 7.2.6.
+Built with the PyData Sphinx Theme 0.17.1.

@@ -1,0 +1,234 @@
+{
+  "method_id": "global_surface_folding",
+  "name": "Global surface folding analysis via convex hull ratio, alpha hull, and coarse-grained fractal scaling",
+  "purpose": "Quantify global cortical gyrification as total pial surface area relative to a convex outer hull, and distinguish global hull ratio, alpha hull, FreeSurfer localGI, and anatomical inference, with source-stated comparability limitations.",
+  "species_scope": "Mammalian (primates and other mammals) as supported by sources; not universally validated across all species.",
+  "software": [
+    "FreeSurfer",
+    "SciPy",
+    "Qhull",
+    "ANTs",
+    "SPM",
+    "FSL",
+    "Matlab"
+  ],
+  "inputs": [
+    {
+      "statement": "Pial surface mesh of the cortical ribbon.",
+      "source_id": "comparative_folding",
+      "quote": "our proposed method requires the bounding pial and white matter surfaces of the cortical ribbon as input",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "White matter surface mesh of the cortical ribbon.",
+      "source_id": "comparative_folding",
+      "quote": "our proposed method requires the bounding pial and white matter surfaces of the cortical ribbon as input",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Point coordinates for convex hull computation.",
+      "source_id": "scipy_hull",
+      "quote": "Coordinates of points to construct a convex hull from",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Cortical thickness estimate (average) for scaling law.",
+      "source_id": "comparative_folding",
+      "quote": "we only had numerical values for the total and exposed surface area, as well a average cortical thickness estimates",
+      "claim_type": "direct"
+    }
+  ],
+  "conditions": [
+    {
+      "statement": "Analysis is hemisphere-based, not regionalised.",
+      "source_id": "comparative_folding",
+      "quote": "the analysis is always hemisphere-based, as in our previous work",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Coarse-graining erases morphological features smaller than the specified scale while preserving surface integrity.",
+      "source_id": "comparative_folding",
+      "quote": "removes morphological details smaller than a specified scale while preserving surface integrity",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Isometric rescaling is applied to leave dimensionless shape properties unaffected.",
+      "source_id": "comparative_folding",
+      "quote": "we apply an isometric rescaling process that leaves all dimensionless shape properties unaffected",
+      "claim_type": "direct"
+    }
+  ],
+  "steps": [
+    {
+      "statement": "Obtain pial and white matter surface meshes from MRI reconstructions.",
+      "source_id": "comparative_folding",
+      "quote": "We obtained these surfaces based on reconstructions from magnetic resonance imaging data in 11 different primate species.",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Segment the space between pial and white matter surfaces into a 3D grid of boxes of desired scale λ.",
+      "source_id": "comparative_folding",
+      "quote": "we then segment the space between the original pial and white matter surfaces into a 3D grid of boxes of the desired scale λ",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Apply isometric rescaling to coarse-grained outputs for analysis.",
+      "source_id": "comparative_folding",
+      "quote": "we apply an isometric rescaling process that leaves all dimensionless shape properties unaffected",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Compute total surface area At(λ) and exposed surface area Ae(λ) at each scale.",
+      "source_id": "comparative_folding",
+      "quote": "we compare the total surface area At(λ) as a function of scale λ",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Fit power law At(λ)T(λ)^(1/2) = k Ae(λ)^(5/4) to determine slope and offset.",
+      "source_id": "comparative_folding",
+      "quote": "all species followed a power law (linear regression R2>0.999 for all species); (ii) the slope of said power law is α=1.255",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Compute convex hull of pial surface points using scipy.spatial.ConvexHull.",
+      "source_id": "scipy_hull",
+      "quote": "class scipy.spatial.ConvexHull(points, incremental=False, qhull_options=None)",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Extract hull surface area from the convex hull object.",
+      "source_id": "scipy_hull",
+      "quote": "areafloat\nSurface area of the convex hull when input dimension > 2.",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Calculate gyrification index as ratio of total surface area to convex hull area.",
+      "source_id": "global_gyrification",
+      "quote": "The degree of folding is conventionally quantified by the gyrification index (GI), the ratio of the surface area to the area of the convex hull.",
+      "claim_type": "direct"
+    }
+  ],
+  "checks": [
+    {
+      "statement": "Quality check reconstructed surfaces by visual inspection.",
+      "source_id": "comparative_folding",
+      "quote": "These boundaries were then quality checked by visual inspection for particularly the young and old cohorts and manually corrected where needed.",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Verify that coarse-grained cortices follow the scaling law with high R².",
+      "source_id": "comparative_folding",
+      "quote": "all species followed a power law (linear regression R2>0.999 for all species)",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Check that K remains near-invariant across scales and species.",
+      "source_id": "comparative_folding",
+      "quote": "The variance in K across scales and all 11 species is <0.01",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Ensure convex hull computation does not raise QhullError.",
+      "source_id": "scipy_hull",
+      "quote": "QhullError\nRaised when Qhull encounters an error condition",
+      "claim_type": "direct"
+    }
+  ],
+  "exceptions": [
+    {
+      "statement": "Coarse-grained brain surfaces are algorithmic outputs and not to be directly likened to actual brain surfaces in terms of fold location or shape.",
+      "source_id": "comparative_folding",
+      "quote": "the coarse-grained brain surfaces are an output of our algorithm alone and not to be directly/naively likened to actual brain surfaces, e.g., in terms of the location or shape of the folds",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "The model cannot capture large-scale features such as the longitudinal fissure, sylvian fissure, and specific gyri and sulci.",
+      "source_id": "global_gyrification",
+      "quote": "The shape of the mammalian brain has a number of prominent large-scale features: the longitudinal fissure, the sylvian fissure, and many specific gyri and sulci with important functional correlates that we cannot capture with our minimal model.",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "The mechanical model uses simplified geometries and material properties; real tissues may have stress-dependent growth and stress relaxation.",
+      "source_id": "global_gyrification",
+      "quote": "Real brain tissues are known to change their growth rates in response to stress (20), and other mechanisms lead to relaxation of elastic stresses over time.",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "The scaling law is empirical and does not specify the actual cortical shape beyond a constraint binding three morphometric parameters.",
+      "source_id": "comparative_folding",
+      "quote": "this universality, presumed to be arising from universal physical principles and evolutionarily conserved biomechanics, says little about what that cortical shape actually is, beyond a constraint binding three morphometric parameters",
+      "claim_type": "direct"
+    }
+  ],
+  "outputs": [
+    {
+      "statement": "Gyrification index (GI) as ratio of surface area to convex hull area.",
+      "source_id": "global_gyrification",
+      "quote": "The degree of folding is conventionally quantified by the gyrification index (GI), the ratio of the surface area to the area of the convex hull.",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Fractal dimension df of the cortex, approximately 2.5.",
+      "source_id": "comparative_folding",
+      "quote": "they each approximate a fractal with fractal dimension df=2.5",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Universal scaling law parameters: slope α and offset k.",
+      "source_id": "comparative_folding",
+      "quote": "the slope of said power law is α=1.255 on a group level (CI: [1.254 1.256])",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Convex hull surface area and volume.",
+      "source_id": "scipy_hull",
+      "quote": "areafloat\nSurface area of the convex hull when input dimension > 2.",
+      "claim_type": "direct"
+    }
+  ],
+  "parameters": [
+    {
+      "statement": "Spatial scale λ (voxel size) for coarse-graining.",
+      "source_id": "comparative_folding",
+      "quote": "segment the space between the original pial and white matter surfaces into a 3D grid of boxes of the desired scale λ",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Cortical thickness T.",
+      "source_id": "comparative_folding",
+      "quote": "average cortical thickness T",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Tangential expansion ratio g (or g² for area expansion).",
+      "source_id": "global_gyrification",
+      "quote": "α controls the magnitude of expansion. Later on we denote g ≡ 1 + α ≈ g(0).",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Relative brain size R/T (brain radius to cortical thickness).",
+      "source_id": "global_gyrification",
+      "quote": "Our 3D model of the brain has three geometrical parameters, brain radius (size) R, cortical thickness T and the tangential expansion g2",
+      "claim_type": "direct"
+    }
+  ],
+  "source_ids": [
+    "global_gyrification",
+    "comparative_folding",
+    "scipy_hull"
+  ],
+  "source_extraction_http_id": 848,
+  "evidence_status": "AI_assisted_candidate_exact_quotes_checked_semantics_not_expert_reviewed",
+  "quarantined_claims": [
+    {
+      "category": "conditions",
+      "claim": {
+        "statement": "Convex hull computation uses Qhull library.",
+        "source_id": "scipy_hull",
+        "quote": "The convex hull is computed using the Qhull library.",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    }
+  ]
+}

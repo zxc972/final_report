@@ -1,0 +1,11 @@
+{
+  "status": "pass",
+  "synthetic_data_only": true,
+  "checks": [
+    "NIfTI read/write",
+    "Nilearn smoothing/resampling",
+    "SimpleITK image read",
+    "PyBIDS indexing",
+    "Nipype executes existing FSL fslmaths and checks output"
+  ]
+}

@@ -1,0 +1,1495 @@
+{
+  "schema_version": 1,
+  "audit_date_client": "2026-10-15",
+  "server": "xuancheng (192.168.2.110)",
+  "audit_mode": "read_only",
+  "scope": {
+    "repository": "/data/xuancheng/agent",
+    "environment": "/data/xuancheng/structural_env",
+    "additional_metadata_roots": [
+      "/data/software/anaconda3/lib/python3.11/site-packages",
+      "/data/xuancheng/t1_neurodiscovery/env/venv/lib/python3.11/site-packages"
+    ],
+    "checks": [
+      "Read deployment manifests and setup/source files.",
+      "Read Python distribution metadata with importlib.metadata without importing analysis packages.",
+      "Read two installed Node package.json files.",
+      "Bounded software-name directory search under /data/xuancheng at maximum depth 4; dataset/cache/Git paths excluded.",
+      "Check matlab/spm/spm12/cat12/octave command visibility on xuancheng SSH PATH.",
+      "Verified official documentation/tutorial entrypoints for the core structural pipeline and available Python/visualization ecosystem; reused previously reviewed official chapters with explicit review_depth."
+    ],
+    "excluded": [
+      "No full-server filesystem scan.",
+      "No .env, credentials, private token files, license contents or other-user task details read.",
+      "No image preprocessing, segmentation, statistics, package installation, GPU repair or server mutation performed."
+    ],
+    "limitations": [
+      "Deployment/smoke manifests are historical evidence, not fresh executable health checks.",
+      "Live package metadata confirms distribution presence/version, not successful imports or method correctness.",
+      "A not-found result applies only to the stated environments, PATH and bounded search.",
+      "Tutorial entrypoints were separately checked against official sources on 2026-10-15. entrypoint_verified means a named page or repository entry was checked; chapter_reviewed means only the named chapter/reference was inspected. This does not claim entire manuals were read or examples executed.",
+      "SCN, MSN and MIND refer to analysis methods; package installation alone does not implement their scientific contracts.",
+      "All inventory entries have documentation pointers. Review depths distinguish reopened entrypoints/sections from registered sources; this does not mean all tutorials were ingested or validated."
+    ]
+  },
+  "evidence_precedence": [
+    "live_distribution_or_node_metadata",
+    "deployment_manifest",
+    "live_source_calls",
+    "documentation_claim",
+    "bounded_negative_check"
+  ],
+  "software_count": 44,
+  "software": [
+    {
+      "id": "primatex",
+      "name": "PrimateX",
+      "stage": [
+        "orchestration",
+        "preprocessing",
+        "segmentation",
+        "reconstruction",
+        "conversion"
+      ],
+      "role": "Unified primx CLI and module-specific workflow wrappers.",
+      "evidence_kind": "artifact_filename_and_live_source",
+      "version": "1.7 (SIF label; repository release version unverified)",
+      "version_evidence_path": "/data/xuancheng/agent/PrimateX_1_7.sif",
+      "call_evidence_paths": [
+        "/data/xuancheng/agent/workflows/primx_cli/primx",
+        "/data/xuancheng/agent/README.md"
+      ],
+      "runtime_status": "artifact_present_and_code_integrated",
+      "tutorial_entrypoints": [
+        {
+          "url": "/data/xuancheng/agent/README.md",
+          "title": "PrimateX local deployment README (path confirmed by server source audit)",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "primx CLI",
+            "species workflows",
+            "deployment",
+            "local usage documentation"
+          ]
+        },
+        {
+          "url": "/data/xuancheng/agent/workflows/primx_cli/primx",
+          "title": "PrimateX local CLI source and help entrypoint (path confirmed by server source audit)",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "subcommands",
+            "arguments",
+            "workflow dispatch",
+            "help text"
+          ]
+        }
+      ],
+      "notes": "SIF is referenced by structural_env/images/primatex-legacy.sif; preserve it. A complete workflow was not run in this audit.",
+      "tutorial_review_note": "Local README and CLI source paths are confirmed by the read-only server source audit; public tutorial URL not guessed. This records documentation/help entrypoints and does not claim the complete local manual was reviewed or the CLI was freshly executed."
+    },
+    {
+      "id": "apptainer",
+      "name": "Apptainer",
+      "stage": [
+        "runtime"
+      ],
+      "role": "Execute isolated neuroimaging SIF images.",
+      "evidence_kind": "deployment_manifest",
+      "version": "1.4.5",
+      "version_evidence_path": "/data/xuancheng/structural_env/manifests/AFNI_C3D.json",
+      "call_evidence_paths": [
+        "/data/xuancheng/structural_env/bin/structural-env"
+      ],
+      "runtime_status": "installed_manifest",
+      "tutorial_entrypoints": [
+        {
+          "url": "https://apptainer.org/docs/user/1.4/quick_start.html",
+          "title": "Apptainer 1.4 User Guide: Quick Start",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "SIF execution",
+            "container CLI",
+            "runtime environment"
+          ]
+        }
+      ],
+      "notes": "Version comes from AFNI/C3D image runtime metadata; no processing jobs launched.",
+      "tutorial_review_note": "Official upstream entrypoint verified on 2026-10-15; review_depth applies only to the named page, not its linked manuals or all software capabilities. Current upstream documentation may differ from the audited installed version; no commands or images were run for tutorial verification."
+    },
+    {
+      "id": "fsl",
+      "name": "FSL",
+      "stage": [
+        "preprocessing",
+        "registration",
+        "masking",
+        "qc"
+      ],
+      "role": "Orientation, robust FOV, FLIRT/applywarp and image arithmetic.",
+      "evidence_kind": "deployment_manifest_and_source_calls",
+      "version": "6.0.7.8",
+      "version_evidence_path": "/data/xuancheng/structural_env/manifests/existing-references.json",
+      "call_evidence_paths": [
+        "/data/xuancheng/agent/modules/neuro_pipeline/Preprocess_1.sh",
+        "/data/xuancheng/agent/modules/neuro_pipeline/ACPC_Alignment.sh",
+        "/data/xuancheng/agent/modules/neuro_pipeline/Preprocess_3_1.sh"
+      ],
+      "runtime_status": "installed_in_referenced_legacy_image",
+      "tutorial_entrypoints": [
+        {
+          "url": "https://fsl.fmrib.ox.ac.uk/fsl/docs/registration/flirt/user_guide.html",
+          "title": "FSL FLIRT User Guide",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "affine registration",
+            "input/reference roles",
+            "transform application",
+            "convert_xfm"
+          ]
+        },
+        {
+          "url": "https://fsl.fmrib.ox.ac.uk/fsl/docs/registration/fnirt/user_guide.html",
+          "title": "FSL FNIRT User Guide",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "nonlinear registration",
+            "warp application",
+            "configuration"
+          ]
+        }
+      ],
+      "notes": "README's typical-container version 6.0.3 is older than the deployed-reference manifest. Real-subject accuracy is not established by installation.",
+      "tutorial_review_note": "Official upstream entrypoint verified on 2026-10-15; review_depth applies only to the named page, not its linked manuals or all software capabilities. Current upstream documentation may differ from the audited installed version; no commands or images were run for tutorial verification."
+    },
+    {
+      "id": "ants",
+      "name": "ANTs",
+      "stage": [
+        "preprocessing",
+        "registration"
+      ],
+      "role": "N4 bias correction, optional denoising, nonlinear template-to-subject registration.",
+      "evidence_kind": "deployment_manifest_and_source_calls",
+      "version": "2.4.3",
+      "version_evidence_path": "/data/xuancheng/structural_env/manifests/existing-references.json",
+      "call_evidence_paths": [
+        "/data/xuancheng/agent/modules/neuro_pipeline/Preprocess_1.sh",
+        "/data/xuancheng/agent/modules/neuro_pipeline/Preprocess_3_1.sh",
+        "/data/xuancheng/agent/modules/neuro_pipeline/pyscript/MarmosetPialRefinement.sh"
+      ],
+      "runtime_status": "installed_in_referenced_legacy_image",
+      "tutorial_entrypoints": [
+        {
+          "url": "https://github.com/ANTsX/ANTs/wiki/Anatomy-of-an-antsRegistration-call",
+          "title": "ANTs: Anatomy of an antsRegistration call",
+          "review_depth": "chapter_reviewed",
+          "topics": [
+            "fixed/moving spaces",
+            "registration stages",
+            "multi-resolution parameters",
+            "output transforms"
+          ]
+        }
+      ],
+      "notes": "integration-smoke.json records existing ANTs launcher pass; not a real-subject registration accuracy evaluation.",
+      "tutorial_review_note": "Official upstream entrypoint verified on 2026-10-15; review_depth applies only to the named page, not its linked manuals or all software capabilities. Current upstream documentation may differ from the audited installed version; no commands or images were run for tutorial verification."
+    },
+    {
+      "id": "freesurfer",
+      "name": "FreeSurfer",
+      "stage": [
+        "reconstruction",
+        "morphometry",
+        "registration",
+        "conversion"
+      ],
+      "role": "Autorecon, surface construction, cortical labels, thickness and anatomical statistics.",
+      "evidence_kind": "deployment_manifest_and_source_calls",
+      "version": "7.2.0",
+      "version_evidence_path": "/data/xuancheng/structural_env/manifests/existing-references.json",
+      "call_evidence_paths": [
+        "/data/xuancheng/agent/modules/neuro_pipeline/Preprocess_3_1.sh",
+        "/data/xuancheng/agent/modules/neuro_pipeline/Preprocess_3_2.sh",
+        "/data/xuancheng/agent/modules/neuro_pipeline/Rescale.sh",
+        "/data/xuancheng/agent/modules/neuro_pipeline/LabelResample.sh"
+      ],
+      "runtime_status": "installed_in_referenced_legacy_image",
+      "tutorial_entrypoints": [
+        {
+          "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/AnatomicalROI",
+          "title": "FreeSurfer Tutorial: Anatomical ROI",
+          "review_depth": "chapter_reviewed",
+          "topics": [
+            "aseg/aparc statistics",
+            "ROI tables",
+            "measure and atlas selection"
+          ]
+        },
+        {
+          "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/GroupAnalysis",
+          "title": "FreeSurfer Tutorial: Group Analysis",
+          "review_depth": "chapter_reviewed",
+          "topics": [
+            "surface common space",
+            "mris_preproc",
+            "FSGD subject order",
+            "GLM output semantics"
+          ]
+        }
+      ],
+      "notes": "Requires a runtime license. No license content inspected. Fake-1 mm reconstruction must be followed by species-specific rescale.",
+      "tutorial_review_note": "Official upstream entrypoint verified on 2026-10-15; review_depth applies only to the named page, not its linked manuals or all software capabilities. Current upstream documentation may differ from the audited installed version; no commands or images were run for tutorial verification."
+    },
+    {
+      "id": "workbench",
+      "name": "Connectome Workbench",
+      "stage": [
+        "surface_processing",
+        "conversion",
+        "visualization"
+      ],
+      "role": "GIFTI/CIFTI conversion, fs_LR resampling, surface and metric operations.",
+      "evidence_kind": "deployment_manifest_and_source_calls",
+      "version": "2.1.0",
+      "version_evidence_path": "/data/xuancheng/structural_env/manifests/existing-references.json",
+      "call_evidence_paths": [
+        "/data/xuancheng/agent/modules/neuro_pipeline/Freesurfer2CaretandRegister.sh",
+        "/data/xuancheng/agent/modules/neuro_pipeline/LabelResample.sh"
+      ],
+      "runtime_status": "installed_in_referenced_legacy_image",
+      "tutorial_entrypoints": [
+        {
+          "url": "https://www.humanconnectome.org/software/workbench-command/-metric-resample",
+          "title": "Workbench Command: -metric-resample",
+          "review_depth": "chapter_reviewed",
+          "topics": [
+            "metric and mesh resampling",
+            "registered spheres",
+            "area correction",
+            "ROI behavior"
+          ]
+        }
+      ],
+      "notes": "README's typical-container version 1.5.0 is stale relative to the manifest. Do not assume current upstream tutorial flags apply to this version.",
+      "tutorial_review_note": "Official upstream entrypoint verified on 2026-10-15; review_depth applies only to the named page, not its linked manuals or all software capabilities. Current upstream documentation may differ from the audited installed version; no commands or images were run for tutorial verification."
+    },
+    {
+      "id": "mrtrix",
+      "name": "MRtrix3",
+      "stage": [
+        "preprocessing",
+        "resampling"
+      ],
+      "role": "mrgrid species-resolution image resampling.",
+      "evidence_kind": "deployment_manifest_and_source_calls",
+      "version": "3.0.2",
+      "version_evidence_path": "/data/xuancheng/structural_env/manifests/existing-references.json",
+      "call_evidence_paths": [
+        "/data/xuancheng/agent/modules/neuro_pipeline/Preprocess_1.sh"
+      ],
+      "runtime_status": "installed_in_referenced_legacy_image",
+      "tutorial_entrypoints": [
+        {
+          "url": "https://mrtrix.readthedocs.io/en/latest/reference/commands/mrgrid.html",
+          "title": "MRtrix3 command reference: mrgrid",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "grid regridding",
+            "voxel spacing",
+            "interpolation",
+            "image cropping and padding"
+          ]
+        }
+      ],
+      "notes": "Preprocess_1.sh sets MRTRIX_BIN=mrgrid; diffusion functionality is outside this structural audit.",
+      "tutorial_review_note": "Official upstream entrypoint verified on 2026-10-15; review_depth applies only to the named page, not its linked manuals or all software capabilities. Current upstream documentation may differ from the audited installed version; no commands or images were run for tutorial verification. The attempted 3.0.2 command-page URL was not retrievable; the listed latest reference requires checking against installed 3.0.2 help."
+    },
+    {
+      "id": "dcm2niix",
+      "name": "dcm2niix",
+      "stage": [
+        "input_conversion"
+      ],
+      "role": "DICOM to NIfTI conversion where needed.",
+      "evidence_kind": "deployment_manifest",
+      "version": "1.0.20250505",
+      "version_evidence_path": "/data/xuancheng/structural_env/manifests/existing-references.json",
+      "call_evidence_paths": [],
+      "runtime_status": "installed_in_referenced_legacy_image",
+      "tutorial_entrypoints": [
+        {
+          "url": "https://github.com/rordenlab/dcm2niix",
+          "title": "dcm2niix official repository and CLI usage README",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "DICOM to NIfTI",
+            "BIDS JSON sidecars",
+            "conversion options",
+            "vendor metadata"
+          ]
+        }
+      ],
+      "notes": "Not a required step for already-NIfTI PRIME-DE/ABIDE inputs; current primx direct-call integration not found in the audited paths.",
+      "tutorial_review_note": "Official upstream entrypoint verified on 2026-10-15; review_depth applies only to the named page, not its linked manuals or all software capabilities. Current upstream documentation may differ from the audited installed version; no commands or images were run for tutorial verification."
+    },
+    {
+      "id": "nnunet",
+      "name": "nnU-Net v2",
+      "stage": [
+        "segmentation"
+      ],
+      "role": "PrimateX brain extraction and WM segmentation inference.",
+      "evidence_kind": "live_source_calls",
+      "version": null,
+      "version_evidence_path": null,
+      "call_evidence_paths": [
+        "/data/xuancheng/agent/modules/primx_seg/Inference.py",
+        "/data/xuancheng/agent/modules/primx_seg/nnunetv2",
+        "/data/xuancheng/agent/modules/primx_seg/bin/primx_seg_infer.sh"
+      ],
+      "runtime_status": "bundled_source_and_code_integrated_version_unverified",
+      "tutorial_entrypoints": [
+        {
+          "url": "https://github.com/MIC-DKFZ/nnUNet/blob/master/documentation/how_to_use_nnunet.md",
+          "title": "nnU-Net official documentation: How to use nnU-Net",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "data layout",
+            "planning and preprocessing",
+            "model training",
+            "inference"
+          ]
+        }
+      ],
+      "notes": "Bundled source exists but no checked pyproject/setup/version metadata establishes its exact release. Species checkpoints exist; this audit did not run inference.",
+      "tutorial_review_note": "Official upstream entrypoint verified on 2026-10-15; review_depth applies only to the named page, not its linked manuals or all software capabilities. Current upstream documentation may differ from the audited installed version; no commands or images were run for tutorial verification."
+    },
+    {
+      "id": "pytorch_legacy",
+      "name": "PyTorch (legacy PrimateX image)",
+      "stage": [
+        "segmentation"
+      ],
+      "role": "Tensor and CUDA runtime for learned segmentation.",
+      "evidence_kind": "deployment_manifest",
+      "version": "2.0.1",
+      "version_evidence_path": "/data/xuancheng/structural_env/manifests/existing-references.json",
+      "call_evidence_paths": [
+        "/data/xuancheng/agent/modules/primx_seg/Inference.py"
+      ],
+      "runtime_status": "installed_manifest",
+      "tutorial_entrypoints": [
+        {
+          "url": "https://docs.pytorch.org/tutorials/beginner/basics/intro.html",
+          "title": "PyTorch Tutorials: Learn the Basics",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "tensors",
+            "datasets and dataloaders",
+            "models",
+            "saving and loading"
+          ]
+        }
+      ],
+      "notes": "Do not infer GPU health or current CUDA availability from package installation; this audit did not test hardware.",
+      "tutorial_review_note": "Official upstream entrypoint verified on 2026-10-15; review_depth applies only to the named page, not its linked manuals or all software capabilities. Current upstream documentation may differ from the audited installed version; no commands or images were run for tutorial verification."
+    },
+    {
+      "id": "monai_legacy",
+      "name": "MONAI (legacy PrimateX image)",
+      "stage": [
+        "segmentation"
+      ],
+      "role": "Medical-imaging deep-learning runtime available in the legacy image.",
+      "evidence_kind": "deployment_manifest",
+      "version": "1.3.0",
+      "version_evidence_path": "/data/xuancheng/structural_env/manifests/existing-references.json",
+      "call_evidence_paths": [],
+      "runtime_status": "installed_manifest",
+      "tutorial_entrypoints": [
+        {
+          "url": "https://github.com/Project-MONAI/tutorials",
+          "title": "Project MONAI official tutorials repository",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "medical imaging transforms",
+            "segmentation",
+            "inference",
+            "tutorial notebooks"
+          ]
+        }
+      ],
+      "notes": "Installed dependency evidence; direct use by the audited primx steps was not independently established.",
+      "tutorial_review_note": "Official upstream entrypoint verified on 2026-10-15; review_depth applies only to the named page, not its linked manuals or all software capabilities. Current upstream documentation may differ from the audited installed version; no commands or images were run for tutorial verification. Version-pinned MONAI 1.3.0 documentation endpoints were not accessible through the browser; the verified official tutorials repository is current upstream and must be matched to MONAI 1.3.0 before use."
+    },
+    {
+      "id": "fastsurfer",
+      "name": "FastSurfer",
+      "stage": [
+        "human_segmentation",
+        "human_reconstruction"
+      ],
+      "role": "Human T1 segmentation and cortical reconstruction.",
+      "evidence_kind": "referenced_image_filename_and_live_source",
+      "version": "2.5.4 (cu118 SIF filename)",
+      "version_evidence_path": "/data/xuancheng/structural_env/manifests/existing-references.json",
+      "call_evidence_paths": [
+        "/data/xuancheng/agent/workflows/primx_cli/primx",
+        "/data/xuancheng/agent/.gitmodules"
+      ],
+      "runtime_status": "image_present_cli_wrapper_missing",
+      "tutorial_entrypoints": [
+        {
+          "url": "https://deep-mi.org/FastSurfer/stable/overview/QUICKSTART.html",
+          "title": "FastSurfer User Guide: Quick Start",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "T1 input",
+            "container invocation",
+            "segmentation flags",
+            "CPU/GPU runtime"
+          ]
+        },
+        {
+          "url": "https://deep-mi.org/FastSurfer/stable/overview/INSTALL.html",
+          "title": "FastSurfer User Guide: Installation and requirements",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "runtime requirements",
+            "container choices",
+            "FreeSurfer license requirements"
+          ]
+        }
+      ],
+      "notes": "Referenced image: /data/xuancheng/human_fastsurfer/containers/fastsurfer-cu118-v2.5.4.sif. Target modules/FastSurfer is an empty directory, while primx human fastsurfer calls modules/FastSurfer/bin/fastsurfer_human.sh; this CLI integration is currently incomplete.",
+      "tutorial_review_note": "Official upstream entrypoint verified on 2026-10-15; review_depth applies only to the named page, not its linked manuals or all software capabilities. Current upstream documentation may differ from the audited installed version; no commands or images were run for tutorial verification. The current quick start uses FastSurfer 2.6.0; the audited SIF filename indicates 2.5.4. Do not copy current container tags or flags without compatibility checking."
+    },
+    {
+      "id": "synthstrip",
+      "name": "SynthStrip",
+      "stage": [
+        "brain_extraction"
+      ],
+      "role": "CPU structural brain extraction alternative.",
+      "evidence_kind": "deployment_manifest_and_preserved_smoke",
+      "version": "source-cpu-cf4bccf",
+      "version_evidence_path": "/data/xuancheng/structural_env/manifests/SynthStrip.json",
+      "call_evidence_paths": [
+        "/data/xuancheng/structural_env/bin/structural-env"
+      ],
+      "runtime_status": "installed_and_synthetic_inference_verified",
+      "tutorial_entrypoints": [
+        {
+          "url": "https://surfer.nmr.mgh.harvard.edu/docs/synthstrip/",
+          "title": "SynthStrip official tool documentation and Usage",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "brain extraction",
+            "input/output flags",
+            "binary mask",
+            "CSF boundary options"
+          ]
+        }
+      ],
+      "notes": "Pinned upstream script commit cf4bccf24875a47245b4df9fc9372d0f1c3d784f. Not asserted identical to unavailable OCI tag 1.8; not automatically registered in Agent tools.",
+      "tutorial_review_note": "Official upstream entrypoint verified on 2026-10-15; review_depth applies only to the named page, not its linked manuals or all software capabilities. Current upstream documentation may differ from the audited installed version; no commands or images were run for tutorial verification."
+    },
+    {
+      "id": "afni",
+      "name": "AFNI",
+      "stage": [
+        "preprocessing",
+        "registration",
+        "qc",
+        "statistics"
+      ],
+      "role": "3dSkullStrip, 3dUnifize, 3dAllineate, 3dQwarp, @animal_warper, arithmetic and QC.",
+      "evidence_kind": "deployment_manifest_and_preserved_smoke",
+      "version": "26.3.02",
+      "version_evidence_path": "/data/xuancheng/structural_env/manifests/AFNI_C3D.json",
+      "call_evidence_paths": [
+        "/data/xuancheng/structural_env/bin/structural-env",
+        "/data/xuancheng/structural_env/tests/afni_c3d/smoke-summary.json"
+      ],
+      "runtime_status": "installed_and_synthetic_smoke_verified",
+      "tutorial_entrypoints": [
+        {
+          "url": "https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/nonhuman/main_toc.html",
+          "title": "AFNI Documentation: Non-human processing",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "NMT",
+            "CHARM/SARM",
+            "nonhuman processing",
+            "macaque demos"
+          ]
+        },
+        {
+          "url": "https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/nonhuman/macaque_demos/demo_task_fmri.html",
+          "title": "AFNI Macaque Demo: anatomical alignment with @animal_warper",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "animal_warper",
+            "subject/template registration",
+            "atlas mapping",
+            "QC"
+          ]
+        }
+      ],
+      "notes": "20 synthetic checks recorded. Real MRI @animal_warper and species QC not run. AFNI R-based statistics are not configured. Requires explicit cross-container orchestration.",
+      "tutorial_review_note": "Official upstream entrypoint verified on 2026-10-15; review_depth applies only to the named page, not its linked manuals or all software capabilities. Current upstream documentation may differ from the audited installed version; no commands or images were run for tutorial verification."
+    },
+    {
+      "id": "c3d",
+      "name": "Convert3D (C3D)",
+      "stage": [
+        "conversion",
+        "image_arithmetic",
+        "registration_transform"
+      ],
+      "role": "Image arithmetic and affine format conversion.",
+      "evidence_kind": "deployment_manifest_and_preserved_smoke",
+      "version": "1.4.4",
+      "version_evidence_path": "/data/xuancheng/structural_env/manifests/AFNI_C3D.json",
+      "call_evidence_paths": [
+        "/data/xuancheng/structural_env/bin/structural-env",
+        "/data/xuancheng/structural_env/tests/afni_c3d/smoke-summary.json"
+      ],
+      "runtime_status": "installed_and_synthetic_smoke_verified",
+      "tutorial_entrypoints": [
+        {
+          "url": "https://convert3d.readthedocs.io/en/latest/c3d.html",
+          "title": "Convert3D Documentation",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "stack-based CLI",
+            "image conversion",
+            "image arithmetic",
+            "resampling",
+            "coordinate frames"
+          ]
+        }
+      ],
+      "notes": "Official Experimental Linux distribution, commit ecdd33ef4fae481cd0bb5161062b54d1907d984b. GUI bundled but not validated.",
+      "tutorial_review_note": "Official upstream entrypoint verified on 2026-10-15; review_depth applies only to the named page, not its linked manuals or all software capabilities. Current upstream documentation may differ from the audited installed version; no commands or images were run for tutorial verification."
+    },
+    {
+      "id": "msm",
+      "name": "MSM / MSMSulc",
+      "stage": [
+        "surface_registration"
+      ],
+      "role": "Optional sulcal alignment for fs_LR resampling.",
+      "evidence_kind": "live_source_calls",
+      "version": null,
+      "version_evidence_path": null,
+      "call_evidence_paths": [
+        "/data/xuancheng/agent/modules/neuro_pipeline/Freesurfer2CaretandRegister.sh",
+        "/data/xuancheng/agent/modules/neuro_pipeline/MSMConfig"
+      ],
+      "runtime_status": "code_calls_present_runtime_version_unverified",
+      "tutorial_entrypoints": [
+        {
+          "url": "https://fsl.fmrib.ox.ac.uk/fsl/docs/registration/msm.html",
+          "title": "FSL MSM: Multimodal Surface Matching user guide",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "spherical surface registration",
+            "feature inputs",
+            "configuration",
+            "registered mesh outputs"
+          ]
+        },
+        {
+          "url": "https://fsl.fmrib.ox.ac.uk/fsl/docs/registration/newmsm/guide.html",
+          "title": "FSL newMSM User Guide",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "version-dependent MSM behavior",
+            "regularisation",
+            "configuration",
+            "newMSM differences"
+          ]
+        }
+      ],
+      "notes": "Optional -msmsulc branch invokes msm; bundled configs are present, but executable availability/version was not checked in this audit.",
+      "tutorial_review_note": "Official upstream entrypoint verified on 2026-10-15; review_depth applies only to the named page, not its linked manuals or all software capabilities. Current upstream documentation may differ from the audited installed version; no commands or images were run for tutorial verification. Both original MSM and newMSM documentation are listed because the executable version in this audit is unverified; this does not identify which implementation the pipeline uses."
+    },
+    {
+      "id": "python_analysis",
+      "name": "Python analysis runtime",
+      "stage": [
+        "analysis_runtime"
+      ],
+      "role": "Isolated Python environment executed inside the legacy SIF.",
+      "evidence_kind": "deployment_manifest",
+      "version": "3.10.19",
+      "version_evidence_path": "/data/xuancheng/structural_env/manifests/PythonAnalysis.json",
+      "call_evidence_paths": [
+        "/data/xuancheng/structural_env/bin/structural-env"
+      ],
+      "runtime_status": "installed_manifest",
+      "tutorial_entrypoints": [
+        {
+          "url": "https://docs.python.org/3.10/tutorial/",
+          "title": "The Python 3.10 Tutorial",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "modules",
+            "file IO",
+            "exceptions",
+            "environments"
+          ]
+        }
+      ],
+      "notes": "Use structural-env analysis. Invoking its Python directly on the host fails because its base /miniconda3 runtime is supplied by the SIF; this does not mean packages are missing.",
+      "tutorial_review_note": "Official upstream entrypoint verified on 2026-10-15; review_depth applies only to the named page, not its linked manuals or all software capabilities. Current upstream documentation may differ from the audited installed version; no commands or images were run for tutorial verification."
+    },
+    {
+      "id": "numpy",
+      "name": "NumPy",
+      "stage": [
+        "statistics",
+        "network",
+        "array_processing"
+      ],
+      "role": "Array algebra and numerical data representation.",
+      "evidence_kind": "live_distribution_metadata",
+      "version": "2.2.6",
+      "version_evidence_path": "/data/xuancheng/structural_env/runtime/python-analysis/lib/python3.10/site-packages",
+      "call_evidence_paths": [],
+      "runtime_status": "installed_in_analysis_environment",
+      "tutorial_entrypoints": [
+        {
+          "url": "https://numpy.org/doc/2.2/user/quickstart.html",
+          "title": "NumPy 2.2 quickstart",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "array shape and axes",
+            "indexing",
+            "vectorized operations",
+            "linear algebra"
+          ]
+        }
+      ],
+      "notes": "Host Python separately has NumPy 1.24.3; do not mix environments.",
+      "tutorial_review_note": "Official upstream entrypoint verified on 2026-10-15; review_depth applies only to the named page, not its linked manuals or all software capabilities. Current upstream documentation may differ from the audited installed version; no commands or images were run for tutorial verification."
+    },
+    {
+      "id": "scipy",
+      "name": "SciPy",
+      "stage": [
+        "statistics",
+        "network"
+      ],
+      "role": "Statistical distributions, numerical algorithms, sparse matrices and tests.",
+      "evidence_kind": "live_distribution_metadata",
+      "version": "1.15.3",
+      "version_evidence_path": "/data/xuancheng/structural_env/runtime/python-analysis/lib/python3.10/site-packages",
+      "call_evidence_paths": [],
+      "runtime_status": "installed_in_analysis_environment",
+      "tutorial_entrypoints": [
+        {
+          "url": "https://docs.scipy.org/doc/scipy/tutorial/index.html",
+          "title": "SciPy User Guide",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "statistics",
+            "numerical algorithms",
+            "sparse matrices",
+            "scientific computing"
+          ]
+        }
+      ],
+      "notes": "Host Python separately has SciPy 1.11.1. Synthetic morphokg demonstrations are not production validation.",
+      "tutorial_review_note": "Official upstream entrypoint verified on 2026-10-15; review_depth applies only to the named page, not its linked manuals or all software capabilities. Current upstream documentation may differ from the audited installed version; no commands or images were run for tutorial verification."
+    },
+    {
+      "id": "pandas",
+      "name": "pandas",
+      "stage": [
+        "cohort_management",
+        "statistics"
+      ],
+      "role": "Subject alignment, metadata and tabular input/output.",
+      "evidence_kind": "live_distribution_metadata",
+      "version": "2.3.3",
+      "version_evidence_path": "/data/xuancheng/structural_env/runtime/python-analysis/lib/python3.10/site-packages",
+      "call_evidence_paths": [],
+      "runtime_status": "installed_in_analysis_environment",
+      "tutorial_entrypoints": [
+        {
+          "url": "https://pandas.pydata.org/docs/getting_started/intro_tutorials/index.html",
+          "title": "pandas Getting started tutorials",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "tabular input/output",
+            "selection",
+            "joins",
+            "grouping"
+          ]
+        }
+      ],
+      "notes": "Host Python separately has pandas 2.0.3; row alignment and repeated-scan handling require explicit contracts.",
+      "tutorial_review_note": "Official upstream entrypoint verified on 2026-10-15; review_depth applies only to the named page, not its linked manuals or all software capabilities. Current upstream documentation may differ from the audited installed version; no commands or images were run for tutorial verification."
+    },
+    {
+      "id": "nibabel",
+      "name": "NiBabel",
+      "stage": [
+        "input_output",
+        "conversion",
+        "qc"
+      ],
+      "role": "NIfTI/MGZ/GIFTI/CIFTI I/O and geometry metadata.",
+      "evidence_kind": "live_distribution_metadata",
+      "version": "5.4.2",
+      "version_evidence_path": "/data/xuancheng/structural_env/runtime/python-analysis/lib/python3.10/site-packages",
+      "call_evidence_paths": [],
+      "runtime_status": "installed_in_analysis_environment",
+      "tutorial_entrypoints": [
+        {
+          "url": "https://nipy.org/nibabel/gettingstarted.html",
+          "title": "NiBabel Getting Started",
+          "review_depth": "chapter_reviewed",
+          "topics": [
+            "neuroimage load/save",
+            "header",
+            "dtype",
+            "units"
+          ]
+        },
+        {
+          "url": "https://nipy.org/nibabel/coordinate_systems.html",
+          "title": "NiBabel Coordinate systems and affines",
+          "review_depth": "chapter_reviewed",
+          "topics": [
+            "voxel/world coordinates",
+            "affine",
+            "RAS/LPS",
+            "reference space"
+          ]
+        }
+      ],
+      "notes": "Also present in t1_neurodiscovery's Python 3.11 venv; installation does not validate geometry decisions.",
+      "tutorial_review_note": "Official upstream entrypoint verified on 2026-10-15; review_depth applies only to the named page, not its linked manuals or all software capabilities. Current upstream documentation may differ from the audited installed version; no commands or images were run for tutorial verification."
+    },
+    {
+      "id": "nilearn",
+      "name": "Nilearn",
+      "stage": [
+        "statistics",
+        "roi_extraction",
+        "visualization"
+      ],
+      "role": "Neuroimaging masking, resampling, feature extraction, GLM and plotting.",
+      "evidence_kind": "live_distribution_metadata",
+      "version": "0.14.1",
+      "version_evidence_path": "/data/xuancheng/structural_env/runtime/python-analysis/lib/python3.10/site-packages",
+      "call_evidence_paths": [],
+      "runtime_status": "installed_in_analysis_environment",
+      "tutorial_entrypoints": [
+        {
+          "url": "https://nilearn.github.io/stable/auto_examples/01_plotting/plot_surf_atlas.html",
+          "title": "Nilearn: Loading and plotting of a cortical surface atlas",
+          "review_depth": "chapter_reviewed",
+          "topics": [
+            "SurfaceImage",
+            "mesh and labels",
+            "surface visualization",
+            "atlas lookup table"
+          ]
+        },
+        {
+          "url": "https://nilearn.github.io/stable/auto_examples/05_glm_second_level/plot_oasis.html",
+          "title": "Nilearn: Voxel-Based Morphometry on OASIS dataset",
+          "review_depth": "chapter_reviewed",
+          "topics": [
+            "preprocessed VBM inputs",
+            "design matrix",
+            "GLM APIs",
+            "maps and reports"
+          ]
+        }
+      ],
+      "notes": "Available in analysis environment; real-data statistical method adapters are not yet implemented in the Agent.",
+      "tutorial_review_note": "Official upstream entrypoint verified on 2026-10-15; review_depth applies only to the named page, not its linked manuals or all software capabilities. Current upstream documentation may differ from the audited installed version; no commands or images were run for tutorial verification."
+    },
+    {
+      "id": "nipype",
+      "name": "Nipype",
+      "stage": [
+        "orchestration"
+      ],
+      "role": "Python interfaces and workflow orchestration across imaging programs.",
+      "evidence_kind": "live_distribution_metadata",
+      "version": "1.11.0",
+      "version_evidence_path": "/data/xuancheng/structural_env/runtime/python-analysis/lib/python3.10/site-packages",
+      "call_evidence_paths": [],
+      "runtime_status": "installed_in_analysis_environment",
+      "tutorial_entrypoints": [
+        {
+          "url": "https://nipype.readthedocs.io/en/latest/devel/interface_specs.html",
+          "title": "Nipype Interface Specifications",
+          "review_depth": "chapter_reviewed",
+          "topics": [
+            "InputSpec/OutputSpec",
+            "parameter dependencies",
+            "version conditions",
+            "command generation"
+          ]
+        }
+      ],
+      "notes": "Availability of an interface does not imply its external executable exists; cross-container orchestration remains explicit.",
+      "tutorial_review_note": "Official upstream entrypoint verified on 2026-10-15; review_depth applies only to the named page, not its linked manuals or all software capabilities. Current upstream documentation may differ from the audited installed version; no commands or images were run for tutorial verification."
+    },
+    {
+      "id": "pybids",
+      "name": "PyBIDS",
+      "stage": [
+        "cohort_management",
+        "input_discovery"
+      ],
+      "role": "BIDS dataset indexing and metadata query.",
+      "evidence_kind": "live_distribution_metadata",
+      "version": "0.22.0",
+      "version_evidence_path": "/data/xuancheng/structural_env/runtime/python-analysis/lib/python3.10/site-packages",
+      "call_evidence_paths": [],
+      "runtime_status": "installed_in_analysis_environment",
+      "tutorial_entrypoints": [
+        {
+          "url": "https://bids-standard.github.io/pybids/",
+          "title": "PyBIDS official documentation and tutorial index",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "BIDSLayout",
+            "metadata query",
+            "dataset indexing",
+            "tutorials"
+          ]
+        }
+      ],
+      "notes": "BIDS completeness and individual dataset eligibility were not assessed in this software inventory.",
+      "tutorial_review_note": "Official upstream entrypoint verified on 2026-10-15; review_depth applies only to the named page, not its linked manuals or all software capabilities. Current upstream documentation may differ from the audited installed version; no commands or images were run for tutorial verification."
+    },
+    {
+      "id": "simpleitk",
+      "name": "SimpleITK",
+      "stage": [
+        "image_processing",
+        "registration",
+        "input_output"
+      ],
+      "role": "Image processing and spatial transformations in Python.",
+      "evidence_kind": "live_distribution_metadata",
+      "version": "2.5.6",
+      "version_evidence_path": "/data/xuancheng/structural_env/runtime/python-analysis/lib/python3.10/site-packages",
+      "call_evidence_paths": [],
+      "runtime_status": "installed_in_analysis_environment",
+      "tutorial_entrypoints": [
+        {
+          "url": "https://insightsoftwareconsortium.github.io/SimpleITK-Notebooks/",
+          "title": "SimpleITK Image-Analysis Notebooks",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "image basics",
+            "transforms and resampling",
+            "registration",
+            "segmentation evaluation"
+          ]
+        }
+      ],
+      "notes": "Version is both manifest-recorded and live distribution metadata-confirmed.",
+      "tutorial_review_note": "Official upstream entrypoint verified on 2026-10-15; review_depth applies only to the named page, not its linked manuals or all software capabilities. Current upstream documentation may differ from the audited installed version; no commands or images were run for tutorial verification."
+    },
+    {
+      "id": "scikit_learn",
+      "name": "scikit-learn",
+      "stage": [
+        "machine_learning",
+        "statistics"
+      ],
+      "role": "Preprocessing, dimensionality reduction and predictive models.",
+      "evidence_kind": "live_distribution_metadata",
+      "version": "1.7.2",
+      "version_evidence_path": "/data/xuancheng/structural_env/runtime/python-analysis/lib/python3.10/site-packages",
+      "call_evidence_paths": [],
+      "runtime_status": "installed_in_analysis_environment",
+      "tutorial_entrypoints": [
+        {
+          "url": "https://scikit-learn.org/1.7/user_guide.html",
+          "title": "scikit-learn 1.7 User Guide",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "estimators",
+            "preprocessing",
+            "pipelines",
+            "cross-validation",
+            "evaluation"
+          ]
+        }
+      ],
+      "notes": "Host Python separately has scikit-learn 1.3.0. No new prediction analysis was run.",
+      "tutorial_review_note": "Official upstream entrypoint verified on 2026-10-15; review_depth applies only to the named page, not its linked manuals or all software capabilities. Current upstream documentation may differ from the audited installed version; no commands or images were run for tutorial verification."
+    },
+    {
+      "id": "networkx",
+      "name": "NetworkX",
+      "stage": [
+        "network_analysis"
+      ],
+      "role": "Graph representation and network metrics.",
+      "evidence_kind": "live_distribution_metadata",
+      "version": "3.4.2",
+      "version_evidence_path": "/data/xuancheng/structural_env/runtime/python-analysis/lib/python3.10/site-packages",
+      "call_evidence_paths": [],
+      "runtime_status": "installed_in_analysis_environment",
+      "tutorial_entrypoints": [
+        {
+          "url": "https://networkx.org/documentation/stable/tutorial.html",
+          "title": "NetworkX Tutorial",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "graph types",
+            "nodes and edges",
+            "attributes",
+            "algorithms"
+          ]
+        }
+      ],
+      "notes": "Host Python separately has NetworkX 3.1. SCN/MSN/MIND are method contracts, not interchangeable NetworkX algorithms.",
+      "tutorial_review_note": "Official upstream entrypoint verified on 2026-10-15; review_depth applies only to the named page, not its linked manuals or all software capabilities. Current upstream documentation may differ from the audited installed version; no commands or images were run for tutorial verification."
+    },
+    {
+      "id": "matplotlib",
+      "name": "Matplotlib",
+      "stage": [
+        "visualization",
+        "reporting"
+      ],
+      "role": "Static numerical and scientific figures.",
+      "evidence_kind": "live_distribution_metadata",
+      "version": "3.10.9",
+      "version_evidence_path": "/data/xuancheng/structural_env/runtime/python-analysis/lib/python3.10/site-packages",
+      "call_evidence_paths": [],
+      "runtime_status": "installed_in_analysis_environment",
+      "tutorial_entrypoints": [
+        {
+          "url": "https://matplotlib.org/stable/users/explain/quick_start.html",
+          "title": "Matplotlib Quick start guide",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "figure and axes",
+            "plot types",
+            "labels",
+            "figure export"
+          ]
+        }
+      ],
+      "notes": "Host Python separately has Matplotlib 3.7.2.",
+      "tutorial_review_note": "Official upstream entrypoint verified on 2026-10-15; review_depth applies only to the named page, not its linked manuals or all software capabilities. Current upstream documentation may differ from the audited installed version; no commands or images were run for tutorial verification."
+    },
+    {
+      "id": "joblib",
+      "name": "joblib",
+      "stage": [
+        "parallelism",
+        "analysis_runtime"
+      ],
+      "role": "Caching and parallel execution for Python analyses.",
+      "evidence_kind": "live_distribution_metadata",
+      "version": "1.6.0",
+      "version_evidence_path": "/data/xuancheng/structural_env/runtime/python-analysis/lib/python3.10/site-packages",
+      "call_evidence_paths": [],
+      "runtime_status": "installed_in_analysis_environment",
+      "tutorial_entrypoints": [
+        {
+          "url": "https://joblib.readthedocs.io/en/stable/",
+          "title": "Joblib documentation",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "Parallel",
+            "Memory caching",
+            "backends",
+            "examples"
+          ]
+        }
+      ],
+      "notes": "Concurrency and memory limits still need task-level resource contracts.",
+      "tutorial_review_note": "Official upstream entrypoint verified on 2026-10-15; review_depth applies only to the named page, not its linked manuals or all software capabilities. Current upstream documentation may differ from the audited installed version; no commands or images were run for tutorial verification."
+    },
+    {
+      "id": "statsmodels_host",
+      "name": "statsmodels (host Python)",
+      "stage": [
+        "statistics"
+      ],
+      "role": "Linear/statistical model fitting in host Python.",
+      "evidence_kind": "live_distribution_metadata",
+      "version": "0.14.0",
+      "version_evidence_path": "/data/software/anaconda3/lib/python3.11/site-packages/statsmodels-0.14.0.dist-info",
+      "call_evidence_paths": [],
+      "runtime_status": "installed_on_host_not_in_analysis_environment",
+      "tutorial_entrypoints": [
+        {
+          "url": "https://www.statsmodels.org/v0.14.0/user-guide.html",
+          "title": "statsmodels 0.14.0 User Guide",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "model APIs",
+            "statistical inference",
+            "diagnostics",
+            "examples"
+          ]
+        }
+      ],
+      "notes": "Host executable is /data/software/anaconda3/bin/python3, Python 3.11.5. Not installed in structural_env Python 3.10 analysis environment. No Agent adapter or ABI compatibility across environments is asserted.",
+      "tutorial_review_note": "Official upstream entrypoint verified on 2026-10-15; review_depth applies only to the named page, not its linked manuals or all software capabilities. Current upstream documentation may differ from the audited installed version; no commands or images were run for tutorial verification."
+    },
+    {
+      "id": "seaborn_host",
+      "name": "seaborn (host Python)",
+      "stage": [
+        "visualization"
+      ],
+      "role": "Statistical plotting in host Python.",
+      "evidence_kind": "live_distribution_metadata",
+      "version": "0.12.2",
+      "version_evidence_path": "/data/software/anaconda3/lib/python3.11/site-packages/seaborn-0.12.2.dist-info",
+      "call_evidence_paths": [],
+      "runtime_status": "installed_on_host_not_in_analysis_environment",
+      "tutorial_entrypoints": [
+        {
+          "url": "https://seaborn.pydata.org/tutorial.html",
+          "title": "seaborn User guide and tutorial",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "statistical plots",
+            "data structures",
+            "figure-level and axes-level APIs"
+          ]
+        }
+      ],
+      "notes": "Not installed in the structural_env analysis environment.",
+      "tutorial_review_note": "Official upstream entrypoint verified on 2026-10-15; review_depth applies only to the named page, not its linked manuals or all software capabilities. Current upstream documentation may differ from the audited installed version; no commands or images were run for tutorial verification."
+    },
+    {
+      "id": "niivue",
+      "name": "NiiVue",
+      "stage": [
+        "visualization",
+        "qc",
+        "reporting"
+      ],
+      "role": "Browser MRI volume and surface visualization in PrimateX reports.",
+      "evidence_kind": "live_node_package_metadata_and_source",
+      "version": "0.62.1",
+      "version_evidence_path": "/data/xuancheng/agent/modules/gui/monkey-brain-frontend/node_modules/@niivue/niivue/package.json",
+      "call_evidence_paths": [
+        "/data/xuancheng/agent/modules/gui/monkey-brain-backend/scripts/generate_report.py",
+        "/data/xuancheng/agent/modules/gui/monkey-brain-backend/server.js"
+      ],
+      "runtime_status": "installed_node_dependency_and_code_integrated",
+      "tutorial_entrypoints": [
+        {
+          "url": "https://niivue.com/docs/",
+          "title": "NiiVue Getting started",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "browser neuroimage viewer",
+            "volume/surface display",
+            "API",
+            "examples"
+          ]
+        }
+      ],
+      "notes": "Backend serves the installed NiiVue bundle for HTML reports; visualization availability is not automatic QC approval.",
+      "tutorial_review_note": "Official upstream entrypoint verified on 2026-10-15; review_depth applies only to the named page, not its linked manuals or all software capabilities. Current upstream documentation may differ from the audited installed version; no commands or images were run for tutorial verification."
+    },
+    {
+      "id": "three",
+      "name": "Three.js",
+      "stage": [
+        "visualization"
+      ],
+      "role": "Browser 3D rendering dependency.",
+      "evidence_kind": "live_node_package_metadata",
+      "version": "0.158.0",
+      "version_evidence_path": "/data/xuancheng/agent/modules/gui/monkey-brain-frontend/node_modules/three/package.json",
+      "call_evidence_paths": [
+        "/data/xuancheng/agent/modules/gui/monkey-brain-frontend/package.json"
+      ],
+      "runtime_status": "installed_node_dependency",
+      "tutorial_entrypoints": [
+        {
+          "url": "https://threejs.org/manual/",
+          "title": "Three.js official manual entrypoint",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "3D scene rendering",
+            "camera",
+            "geometry",
+            "browser visualization"
+          ]
+        }
+      ],
+      "notes": "General rendering library; audited package metadata does not establish a validated analysis viewer for every output type.",
+      "tutorial_review_note": "Official upstream entrypoint verified on 2026-10-15; review_depth applies only to the named page, not its linked manuals or all software capabilities. Current upstream documentation may differ from the audited installed version; no commands or images were run for tutorial verification."
+    },
+    {
+      "id": "brainstat",
+      "name": "BrainStat",
+      "stage": [
+        "surface_statistics",
+        "statistics"
+      ],
+      "role": "Candidate surface/ROI statistical modeling and inference tutorials.",
+      "evidence_kind": "downloaded_upstream_revision_metadata",
+      "version": "0.6.0 (tutorial source revision; not installed)",
+      "version_evidence_path": "/data/xuancheng/t1_neurodiscovery/scripts/brainstat-revision.json",
+      "call_evidence_paths": [
+        "/data/xuancheng/t1_neurodiscovery/scripts/brainstat-tutorial.py"
+      ],
+      "runtime_status": "tutorial_source_present_installation_not_found_in_checked_environments",
+      "tutorial_entrypoints": [
+        {
+          "url": "https://brainstat.readthedocs.io/en/master/python/tutorials/tutorial_1.html",
+          "title": "BrainStat Python Tutorial 1: Statistics Module",
+          "review_depth": "chapter_reviewed",
+          "topics": [
+            "cortical thickness example",
+            "model APIs",
+            "residual QC",
+            "multiple comparisons",
+            "repeated measures"
+          ]
+        }
+      ],
+      "notes": "Source revision 310079f1df075487836983a7789dd506666adfbc records release 0.6.0. No distribution metadata in structural_env analysis, host Python or checked t1 venv. Downloaded tutorials are not installation evidence.",
+      "tutorial_review_note": "Official upstream entrypoint verified on 2026-10-15; review_depth applies only to the named page, not its linked manuals or all software capabilities. Current upstream documentation may differ from the audited installed version; no commands or images were run for tutorial verification."
+    },
+    {
+      "id": "spm",
+      "name": "SPM",
+      "stage": [
+        "vbm",
+        "statistics"
+      ],
+      "role": "Candidate voxel-based structural modeling and mass-univariate statistics.",
+      "evidence_kind": "bounded_negative_installation_check",
+      "version": null,
+      "version_evidence_path": null,
+      "call_evidence_paths": [],
+      "runtime_status": "candidate_not_found_in_audited_scope",
+      "tutorial_entrypoints": [
+        {
+          "url": "https://www.fil.ion.ucl.ac.uk/spm/docs/tutorials/",
+          "title": "SPM tutorials",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "VBM and model specification"
+          ]
+        }
+      ],
+      "notes": "No spm/spm12 command or matching directory found in the bounded /data/xuancheng depth-4 search; installation elsewhere is not ruled out.",
+      "tutorial_review_note": "Root verified official entrypoint on 2026-10-15. Detailed chapter extraction and runtime/version validation pending. VBM and model specification"
+    },
+    {
+      "id": "cat12",
+      "name": "CAT12",
+      "stage": [
+        "vbm",
+        "sbm",
+        "qc"
+      ],
+      "role": "Candidate structural segmentation, morphometry and QC workflow.",
+      "evidence_kind": "bounded_negative_installation_check",
+      "version": null,
+      "version_evidence_path": null,
+      "call_evidence_paths": [],
+      "runtime_status": "candidate_not_found_in_audited_scope",
+      "tutorial_entrypoints": [
+        {
+          "url": "https://neuro-jena.github.io/cat/",
+          "title": "CAT official documentation",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "VBM, surface and regional morphometry; current landing page is CAT26, not a pinned CAT12 manual"
+          ]
+        }
+      ],
+      "notes": "No cat12 command or matching directory found in the bounded search; MATLAB or standalone runtime requirements remain unverified.",
+      "tutorial_review_note": "Root verified official entrypoint on 2026-10-15. Detailed chapter extraction and runtime/version validation pending. VBM, surface and regional morphometry; current landing page is CAT26, not a pinned CAT12 manual"
+    },
+    {
+      "id": "matlab",
+      "name": "MATLAB",
+      "stage": [
+        "analysis_runtime"
+      ],
+      "role": "Potential SPM/CAT12 and MATLAB-toolbox runtime.",
+      "evidence_kind": "bounded_negative_installation_check",
+      "version": null,
+      "version_evidence_path": null,
+      "call_evidence_paths": [],
+      "runtime_status": "candidate_not_found_in_audited_scope",
+      "tutorial_entrypoints": [
+        {
+          "url": "https://www.mathworks.com/help/matlab/getting-started-with-matlab.html",
+          "title": "MATLAB getting started",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "Array language, functions and scripts; runtime compatibility remains unverified"
+          ]
+        }
+      ],
+      "notes": "No matlab command on the audited SSH PATH or matching directory in the bounded search; no license or system-wide installation check was performed.",
+      "tutorial_review_note": "Root verified official entrypoint on 2026-10-15. Detailed chapter extraction and runtime/version validation pending. Array language, functions and scripts; runtime compatibility remains unverified"
+    },
+    {
+      "id": "octave",
+      "name": "GNU Octave",
+      "stage": [
+        "analysis_runtime"
+      ],
+      "role": "Potential numerical runtime; compatibility is toolbox-specific.",
+      "evidence_kind": "bounded_negative_installation_check",
+      "version": null,
+      "version_evidence_path": null,
+      "call_evidence_paths": [],
+      "runtime_status": "candidate_not_found_in_audited_scope",
+      "tutorial_entrypoints": [
+        {
+          "url": "https://docs.octave.org/latest/",
+          "title": "GNU Octave manual",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "Numerical runtime; toolbox-specific compatibility must be verified"
+          ]
+        }
+      ],
+      "notes": "No octave command on the audited SSH PATH; this does not establish MATLAB toolbox compatibility.",
+      "tutorial_review_note": "Root verified official entrypoint on 2026-10-15. Detailed chapter extraction and runtime/version validation pending. Numerical runtime; toolbox-specific compatibility must be verified"
+    },
+    {
+      "id": "brainspace",
+      "name": "BrainSpace",
+      "stage": [
+        "network_analysis",
+        "gradients",
+        "spatial_nulls"
+      ],
+      "role": "Candidate gradient and spatial comparison tools.",
+      "evidence_kind": "bounded_negative_installation_check",
+      "version": null,
+      "version_evidence_path": null,
+      "call_evidence_paths": [],
+      "runtime_status": "candidate_not_found_in_audited_scope",
+      "tutorial_entrypoints": [
+        {
+          "url": "https://brainspace.readthedocs.io/en/latest/python_doc/auto_examples/plot_tutorial2.html",
+          "title": "Customizing and aligning gradients",
+          "review_depth": "official_search_excerpt_reviewed_not_full_page_audit",
+          "topics": [
+            "affinity/kernel/sparsity",
+            "DM/LE/PCA",
+            "符号、旋转与近简并子空间",
+            "Procrustes/joint embedding",
+            "spin/Moran/variogram及mask"
+          ]
+        },
+        {
+          "url": "https://brainspace.readthedocs.io/en/latest/python_doc/auto_examples/plot_tutorial3.html",
+          "title": "Null models for gradient significance",
+          "review_depth": "official_page_opened_relevant_overview_not_full_api_audit",
+          "topics": [
+            "affinity/kernel/sparsity",
+            "DM/LE/PCA",
+            "符号、旋转与近简并子空间",
+            "Procrustes/joint embedding",
+            "spin/Moran/variogram及mask"
+          ]
+        }
+      ],
+      "notes": "No distribution metadata in structural_env analysis or host Python. No installation elsewhere is ruled out.",
+      "tutorial_review_note": "Linked to analysis catalog research. Preserve each source review_depth; a registered source is not a complete tutorial audit."
+    },
+    {
+      "id": "surfplot",
+      "name": "surfplot",
+      "stage": [
+        "surface_visualization"
+      ],
+      "role": "Candidate surface plotting.",
+      "evidence_kind": "bounded_negative_installation_check",
+      "version": null,
+      "version_evidence_path": null,
+      "call_evidence_paths": [],
+      "runtime_status": "candidate_not_found_in_audited_scope",
+      "tutorial_entrypoints": [
+        {
+          "url": "https://surfplot.readthedocs.io/en/latest/",
+          "title": "surfplot documentation",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "Surface plotting and examples"
+          ]
+        }
+      ],
+      "notes": "No distribution metadata in structural_env analysis or host Python; not currently an installed analysis dependency.",
+      "tutorial_review_note": "Root verified official entrypoint on 2026-10-15. Detailed chapter extraction and runtime/version validation pending. Surface plotting and examples"
+    },
+    {
+      "id": "neuromaps",
+      "name": "neuromaps",
+      "stage": [
+        "mapping",
+        "spatial_nulls",
+        "cross_space_comparison"
+      ],
+      "role": "Candidate atlas-space transforms and spatial comparisons.",
+      "evidence_kind": "bounded_negative_installation_check",
+      "version": null,
+      "version_evidence_path": null,
+      "call_evidence_paths": [],
+      "runtime_status": "candidate_not_found_in_audited_scope",
+      "tutorial_entrypoints": [
+        {
+          "url": "https://netneurolab.github.io/neuromaps/user_guide/comparisons.html",
+          "title": "Comparing brain maps",
+          "review_depth": "official_page_opened_relevant_overview_not_full_api_audit",
+          "topics": [
+            "resample_images与目标空间",
+            "连续图与标签插值区别",
+            "compare_images",
+            "null来源和位置参数对应",
+            "排列数与p值分辨率"
+          ]
+        },
+        {
+          "url": "https://github.com/netneurolab/neuromaps/blob/main/docs/user_guide/nulls.rst",
+          "title": "Spatial nulls for significance testing",
+          "review_depth": "official_search_excerpt_reviewed_not_full_page_audit",
+          "topics": [
+            "resample_images与目标空间",
+            "连续图与标签插值区别",
+            "compare_images",
+            "null来源和位置参数对应",
+            "排列数与p值分辨率"
+          ]
+        }
+      ],
+      "notes": "No distribution metadata in structural_env analysis environment; not a validated cross-species mapping system.",
+      "tutorial_review_note": "Linked to analysis catalog research. Preserve each source review_depth; a registered source is not a complete tutorial audit."
+    },
+    {
+      "id": "abagen",
+      "name": "abagen",
+      "stage": [
+        "annotation",
+        "transcriptomics"
+      ],
+      "role": "Candidate brain gene-expression annotation.",
+      "evidence_kind": "bounded_negative_installation_check",
+      "version": null,
+      "version_evidence_path": null,
+      "call_evidence_paths": [],
+      "runtime_status": "candidate_not_found_in_audited_scope",
+      "tutorial_entrypoints": [
+        {
+          "url": "https://abagen.readthedocs.io/en/stable/",
+          "title": "abagen documentation",
+          "review_depth": "official_page_opened_relevant_overview_not_full_api_audit",
+          "topics": [
+            "atlas image/info",
+            "donor/probe与区域匹配",
+            "sample/gene normalization",
+            "region×gene输出",
+            "缺失脑区与跨donor可靠性"
+          ]
+        },
+        {
+          "url": "https://abagen.readthedocs.io/en/stable/user_guide/expression.html",
+          "title": "Parcellating expression data",
+          "review_depth": "official_search_excerpt_reviewed_not_full_page_audit",
+          "topics": [
+            "atlas image/info",
+            "donor/probe与区域匹配",
+            "sample/gene normalization",
+            "region×gene输出",
+            "缺失脑区与跨donor可靠性"
+          ]
+        },
+        {
+          "url": "https://abagen.readthedocs.io/en/stable/user_guide/probes.html",
+          "title": "Probe selection options",
+          "review_depth": "official_search_excerpt_reviewed_not_full_page_audit",
+          "topics": [
+            "atlas image/info",
+            "donor/probe与区域匹配",
+            "sample/gene normalization",
+            "region×gene输出",
+            "缺失脑区与跨donor可靠性"
+          ]
+        }
+      ],
+      "notes": "No distribution metadata in structural_env analysis environment. Beyond immediate structural pipeline needs.",
+      "tutorial_review_note": "Linked to analysis catalog research. Preserve each source review_depth; a registered source is not a complete tutorial audit."
+    },
+    {
+      "id": "bctpy",
+      "name": "bctpy",
+      "stage": [
+        "network_analysis"
+      ],
+      "role": "Candidate Brain Connectivity Toolbox Python network metrics.",
+      "evidence_kind": "bounded_negative_installation_check",
+      "version": null,
+      "version_evidence_path": null,
+      "call_evidence_paths": [],
+      "runtime_status": "candidate_not_found_in_audited_scope",
+      "tutorial_entrypoints": [
+        {
+          "url": "https://github.com/aestrivex/bctpy",
+          "title": "bctpy author repository",
+          "review_depth": "entrypoint_verified",
+          "topics": [
+            "Python network metrics; distinct implementation from MATLAB BCT"
+          ]
+        }
+      ],
+      "notes": "No distribution metadata in structural_env analysis or host Python; metric semantics and weighted/signed graph contracts need review.",
+      "tutorial_review_note": "Root verified official entrypoint on 2026-10-15. Detailed chapter extraction and runtime/version validation pending. Python network metrics; distinct implementation from MATLAB BCT"
+    },
+    {
+      "id": "mind",
+      "name": "MIND implementation",
+      "stage": [
+        "morphometric_network"
+      ],
+      "role": "Candidate individual morphometric inverse-divergence network construction.",
+      "evidence_kind": "bounded_negative_installation_check",
+      "version": null,
+      "version_evidence_path": null,
+      "call_evidence_paths": [],
+      "runtime_status": "candidate_not_found_in_audited_scope",
+      "tutorial_entrypoints": [
+        {
+          "url": "https://github.com/isebenius/MIND",
+          "title": "Official MIND implementation",
+          "review_depth": "official_page_opened_relevant_overview_not_full_api_audit",
+          "topics": [
+            "compute_MIND",
+            "特征缩写与原始文件",
+            "unknown标签适配",
+            "连续分布/重复值与resample",
+            "不能用区域均值替代分布",
+            "个体网络不等于群体协变/轴突连接"
+          ]
+        }
+      ],
+      "notes": "No MIND distribution metadata or matching local source directory found in the bounded search. MIND is a research method; a generic graph package does not supply its estimator.",
+      "tutorial_review_note": "Linked to analysis catalog research. Preserve each source review_depth; a registered source is not a complete tutorial audit."
+    }
+  ]
+}

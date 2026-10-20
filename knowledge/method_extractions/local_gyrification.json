@@ -1,0 +1,202 @@
+{
+  "method_id": "local_gyrification",
+  "name": "FreeSurfer Local Gyrification Index (lGI)",
+  "purpose": "Compute local gyrification index, a metric quantifying the amount of cortex buried within sulcal folds compared with outer visible cortex, at each vertex of the pial surface.",
+  "species_scope": "unspecified",
+  "software": [
+    "FreeSurfer",
+    "MATLAB",
+    "Image Processing Toolbox"
+  ],
+  "inputs": [
+    {
+      "statement": "The pial surface file (?h.pial) for the subject, produced by the recon-all -all stream.",
+      "source_id": "fs_lgi",
+      "quote": "usage of the -localGI feature assumes that a subject has already been processed by the freesurfer {{{recon-all -s <subjid> -all}}} stream, such that the ?h.pial surface files exist",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "The subject's surf directory containing the pial surface files.",
+      "source_id": "fs_lgi",
+      "quote": "such that the ?h.pial surface files exist in the subject's <subj>/surf directory",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "MATLAB with Image Processing Toolbox and $FREESURFER_HOME/matlab in the MATLAB path.",
+      "source_id": "fs_lgi",
+      "quote": "MATLAB is required to use the -localGI feature. Also, you will need their Image Processing Toolbox.",
+      "claim_type": "direct"
+    }
+  ],
+  "conditions": [
+    {
+      "statement": "The subject must have been processed with the full recon-all stream before using -localGI.",
+      "source_id": "fs_lgi",
+      "quote": "usage of the -localGI feature assumes that a subject has already been processed by the freesurfer {{{recon-all -s <subjid> -all}}} stream",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "MATLAB and its Image Processing Toolbox must be installed and accessible.",
+      "source_id": "fs_lgi",
+      "quote": "MATLAB is required to use the -localGI feature. Also, you will need their Image Processing Toolbox.",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "The MATLAB path must include $FREESURFER_HOME/matlab, set up in ~/matlab/startup.m.",
+      "source_id": "fs_lgi",
+      "quote": "You will also need $FREESURFER_HOME/matlab in your matlab path set up in your ~/matlab/starup.m script.",
+      "claim_type": "direct"
+    }
+  ],
+  "steps": [
+    {
+      "statement": "Create an outer smoothed surface by morphological closing of the pial surface using mris_fill and make_outer_surface with a spherical structural element.",
+      "source_id": "fs_lgi",
+      "quote": "an 'outer surface' surface file is created, called ?h.outer-pial-smoothed, which is basically an 'enveloped' version of the (pial) input. It is created by a morphological closing operation",
+      "claim_type": "direct"
+    }
+  ],
+  "checks": [
+    {
+      "statement": "Check for topological defects of the pial surface using mris_euler_number, as defects cause mris_compute_lgi to crash.",
+      "source_id": "fs_lgi",
+      "quote": "In case of topological defects of the pial surface (run mris_euler_number), mris_compute_lgi crashes.",
+      "claim_type": "direct"
+    }
+  ],
+  "exceptions": [
+    {
+      "statement": "If mris_compute_lgi crashes due to topological defects, simply relaunching it is usually sufficient to overcome the issue.",
+      "source_id": "fs_lgi",
+      "quote": "Usually, simply relaunching mris_compute_lgi is sufficient to overcome this issue.",
+      "claim_type": "direct"
+    }
+  ],
+  "outputs": [
+    {
+      "statement": "Files named lh.pial_lgi and rh.pial_lgi in the subject's surf directory, containing lGI values at each vertex of the pial surface.",
+      "source_id": "fs_lgi",
+      "quote": "This will produce files named lh.pial_lgi and rh.pial_lgi in the subjects surf directory.",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "The primary output file ?h.pial_lgi can be viewed as an overlay in tksurfer or freeview.",
+      "source_id": "fs_lgi",
+      "quote": "The primary output file is ?h.pial_lgi, which can be viewed as an overlay in tksurfer or freeview",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "The output can be used for vertex-wise analysis in QDEC after sampling to fsaverage.",
+      "source_id": "fs_lgi",
+      "quote": "To perform a vertex-wise analysis in QDEC of the lgi surface data, first sample the results to the average template subject 'fsaverage'",
+      "claim_type": "direct"
+    }
+  ],
+  "parameters": [
+    {
+      "statement": "Diameter of the structural element sphere used in morphological closing; decreasing below 10mm produces an outer surface entering sulci, increasing does not substantially affect morphology but increases computation time.",
+      "source_id": "fs_lgi",
+      "quote": "Decreasing the diameter of the se sphere below 10mm will produce an outer surface entering in the sulci. Increasing it does not substantially affect the morphology of the outer surfaces (but increase computation time!).",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Number of smoothing iterations for mris_smooth is set to 30.",
+      "source_id": "fs_lgi",
+      "quote": "mris_smooth -nw -n 30",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "The structural element size for make_outer_surface is set to 15.",
+      "source_id": "fs_lgi",
+      "quote": "make_outer_surface -se 15",
+      "claim_type": "direct"
+    }
+  ],
+  "source_ids": [
+    "fs_lgi"
+  ],
+  "source_extraction_http_id": 838,
+  "evidence_status": "AI_assisted_candidate_exact_quotes_checked_semantics_not_expert_reviewed",
+  "quarantined_claims": [
+    {
+      "category": "steps",
+      "claim": {
+        "statement": "Run recon-all with the -localGI flag to compute the local gyrification index.",
+        "source_id": "fs_lgi",
+        "quote": "In freesurfer, use the -localGI flag of recon-all: recon-all -s <subj> -localGI",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "steps",
+      "claim": {
+        "statement": "Extract the main component and smooth the outer surface using mris_extract_main_component and mris_smooth.",
+        "source_id": "fs_lgi",
+        "quote": "?h.pial-outer-main mris_smooth -nw -n 30 ?h.pial-outer-smoothed",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "steps",
+      "claim": {
+        "statement": "Convert the outer smoothed surface to ASCII normals using mris_convert.",
+        "source_id": "fs_lgi",
+        "quote": "?h.pial-outer-smoothed mris_convert -n (output normals as ascii) ?h.pial-outer-smoothed-normals.asc",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "steps",
+      "claim": {
+        "statement": "Find corresponding centers between pial and outer smoothed surfaces using find_corresponding_center_FSformat.",
+        "source_id": "fs_lgi",
+        "quote": "?h.pial, ?h.pial-outer-smoothed find_corresponding_center_FSformat ?h.pial.*.center",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "steps",
+      "claim": {
+        "statement": "Define circular regions of interest on the outer surface using make_roi_paths in MATLAB.",
+        "source_id": "fs_lgi",
+        "quote": "?h.pial, ?h.pial-outer-smoothed, ?h.pial-outer-smoothed.asc make_roi_paths ?h.pial.*.path",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "steps",
+      "claim": {
+        "statement": "Convert paths to labels using mri_path2label.",
+        "source_id": "fs_lgi",
+        "quote": "?h.pial.*.path, ?h.pial.*.center mri_path2label ?h.pial.*.label",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "steps",
+      "claim": {
+        "statement": "Compute lGI values using compute_lgi in MATLAB and convert the result to the final surface file with mris_convert.",
+        "source_id": "fs_lgi",
+        "quote": "?h.pial, ?h.pial-outer-smoothed, ?h.pial-outer-smoothed-normals.asc, ?h.pial.*.labels, ?h.pial-outer-smoothed-mesh compute_lgi ?h.pial_lgi.asc",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "outputs",
+      "claim": {
+        "statement": "ROI-based statistics can be generated using mri_segstats with the pial_lgi file.",
+        "source_id": "fs_lgi",
+        "quote": "It is also possible to generate statistics on ROIs, for example: mri_segstats --annot my_subject_id lh aparc --i $SUBJECTS_DIR/my_subject_id/surf/lh.pial_lgi --sum lh.aparc.pial_lgi.stats",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    }
+  ]
+}

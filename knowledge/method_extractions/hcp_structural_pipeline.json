@@ -1,0 +1,235 @@
+{
+  "method_id": "hcp_structural_pipeline",
+  "name": "HCP Pipelines structural preprocessing (T1/T2) workflow",
+  "purpose": "Run the three HCP Pipelines structural preprocessing stages (PreFreeSurfer, FreeSurfer, PostFreeSurfer) on HCP data using example batch scripts.",
+  "species_scope": "human (HCP Young Adult project data)",
+  "software": [
+    "HCP Pipelines 5.0.0",
+    "FSL 6.0.7.16",
+    "FreeSurfer 6.0",
+    "Connectome Workbench 2.0.1",
+    "MSM (msm_ubuntu_v3)",
+    "MATLAB Runtime R2022b"
+  ],
+  "inputs": [
+    {
+      "statement": "T1/T2 structural images are processed by the three structural batch scripts.",
+      "source_id": "alex_hcp_pdf",
+      "quote": "处理T1/T2结构像",
+      "claim_type": "direct"
+    }
+  ],
+  "conditions": [
+    {
+      "statement": "System: Ubuntu 22.04 LTS was used for testing.",
+      "source_id": "alex_hcp_pdf",
+      "quote": "我测试使用的系统是Ubuntu 22.04 LTS",
+      "claim_type": "direct"
+    }
+  ],
+  "steps": [],
+  "checks": [],
+  "exceptions": [
+    {
+      "statement": "On Ubuntu 22.04, freeview fails due to missing libpng12; a workaround installation is provided.",
+      "source_id": "alex_hcp_pdf",
+      "quote": "在Ubuntu 22.04系统中，由于缺乏 libpng12 这个库，导致 freeview 无法正常使用。",
+      "claim_type": "direct"
+    }
+  ],
+  "outputs": [
+    {
+      "statement": "The structural preprocessing produces processed structural data, but the tutorial does not describe the output files.",
+      "source_id": "alex_hcp_pdf",
+      "quote": "不涉及具体原理以及生成的文件的含义等内容。",
+      "claim_type": "direct"
+    }
+  ],
+  "parameters": [
+    {
+      "statement": "StudyFolder: path to the extracted example data, e.g., /home/alex/data/HcpPipelinesExampleDataGDC.",
+      "source_id": "alex_hcp_pdf",
+      "quote": "StudyFolder=\"/home/alex/data/HcpPipelinesExampleDataGDC\"",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Sessionlist: subject identifier, e.g., 100307.",
+      "source_id": "alex_hcp_pdf",
+      "quote": "Sessionlist=\"100307\"",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "EnvironmentScript: path to SetUpHCPPipeline.sh, e.g., /home/alex/software/HCPpipelines/Examples/Scripts/SetUpHCPPipeline.sh.",
+      "source_id": "alex_hcp_pdf",
+      "quote": "EnvironmentScript=\"/home/alex/software/HCPpipelines/Examples/Scripts/SetUpHCPPipeline.sh\"",
+      "claim_type": "direct"
+    }
+  ],
+  "source_ids": [
+    "alex_hcp_pdf"
+  ],
+  "source_extraction_http_id": 847,
+  "evidence_status": "AI_assisted_candidate_exact_quotes_checked_semantics_not_expert_reviewed",
+  "quarantined_claims": [
+    {
+      "category": "inputs",
+      "claim": {
+        "statement": "HCP example data for one subject, e.g., subject 100307, extracted to a study folder.",
+        "source_id": "alex_hcp_pdf",
+        "quote": "下载样例数据并解压缩，假设解压后的路径为： /home/alex/data/HcpPipelinesExampleDataGDC",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "conditions",
+      "claim": {
+        "statement": "HCP Pipelines version 5.0.0 was tested; a known bug in FieldMapPreprocessingAll.sh line 170 required a syntax fix.",
+        "source_id": "alex_hcp_pdf",
+        "quote": "我这里测试的版本是5.0.0。这个版本的FieldMapPreprocessingAll.sh 脚本已知有一个bug，在第170行有简单的语法错误，需要进行修正。",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "conditions",
+      "claim": {
+        "statement": "Additional software (python-is-python3 and python3-numpy) were required in practice though not in official docs.",
+        "source_id": "alex_hcp_pdf",
+        "quote": "虽然HCP官方文档没有说明，但是在实际测试中发现还需要安装如下软件： sudo apt-get install python-is-python3 sudo apt-get install python3-numpy",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "conditions",
+      "claim": {
+        "statement": "Memory requirement: 24G RAM for single-subject structural and functional data processing per official docs.",
+        "source_id": "alex_hcp_pdf",
+        "quote": "根据官方文档，HCP-Young Adult项目数据，单被试结构和功能像数据处理需要24G内存",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "steps",
+      "claim": {
+        "statement": "Install FSL 6.0.7.16 using fslinstaller.py with -d option for installation directory.",
+        "source_id": "alex_hcp_pdf",
+        "quote": "在FSL官网下载 fslinstaller.py 脚本，在命令行中运行脚本： python fslinstaller.py -d /home/alex/software/fsl",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "steps",
+      "claim": {
+        "statement": "Install FreeSurfer 6.0, set FREESURFER_HOME, source SetUpFreeSurfer.sh, and place license.txt in $FREESURFER_HOME.",
+        "source_id": "alex_hcp_pdf",
+        "quote": "在 .bashrc 文件中，添加如下代码，设置环境变量： export FREESURFER_HOME=/home/alex/software/freesurfer source $FREESURFER_HOME/SetUpFreeSurfer.sh",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "steps",
+      "claim": {
+        "statement": "Install Connectome Workbench 2.0.1 and add its bin_linux64 directory to PATH.",
+        "source_id": "alex_hcp_pdf",
+        "quote": "我这里安装的版本是2.0.1。将Connectome Workbench添加到路径变量中： export PATH=$PATH:/home/alex/software/workbench/bin_linux64",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "steps",
+      "claim": {
+        "statement": "Install MSM by downloading msm_ubuntu_v3 and creating a symlink named msm.",
+        "source_id": "alex_hcp_pdf",
+        "quote": "下载的文件名为 msm_ubuntu_v3 ... 并将该文件链接为 msm : cd /home/alex/software/MSM/ ln -s msm_ubuntu_v3 msm",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "steps",
+      "claim": {
+        "statement": "Install MATLAB Runtime R2022b and set LD_LIBRARY_PATH (though later update says not setting it still works).",
+        "source_id": "alex_hcp_pdf",
+        "quote": "安装MATLAB Runtime R2022b ... 安装完成以后，设置环境变量： export LD_LIBRARY_PATH=...",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "steps",
+      "claim": {
+        "statement": "Install HCP Pipelines 5.0.0 and edit SetUpHCPPipeline.sh to set HCPPIPEDIR, MSMBINDIR, MATLAB_COMPILER_RUNTIME, CARET7DIR, HCPCIFTIRWDIR.",
+        "source_id": "alex_hcp_pdf",
+        "quote": "在 SetUpHCPPipeline.sh 脚本中将相关环境变量修改为实际的路径，比如： export HCPPIPEDIR=/home/alex/software/HCPpipelines ...",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "steps",
+      "claim": {
+        "statement": "Copy the three structural batch scripts (PreFreeSurferPipelineBatch.sh, FreeSurferPipelineBatch.sh, PostFreeSurferPipelineBatch.sh) and modify StudyFolder, Sessionlist, EnvironmentScript.",
+        "source_id": "alex_hcp_pdf",
+        "quote": "将这三个脚本复制一份，在复制的脚本上进行修改。修改好以后依次运行这三个脚本即可： ./PreFreeSurferPipelineBatch.sh ./FreeSurferPipelineBatch.sh ./PostFreeSurferPipelineBatch.sh",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "steps",
+      "claim": {
+        "statement": "Run the three modified batch scripts in order.",
+        "source_id": "alex_hcp_pdf",
+        "quote": "修改好以后依次运行这三个脚本即可： ./PreFreeSurferPipelineBatch.sh ./FreeSurferPipelineBatch.sh ./PostFreeSurferPipelineBatch.sh",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "checks",
+      "claim": {
+        "statement": "Verify that the FieldMapPreprocessingAll.sh bug is fixed before running structural pipelines.",
+        "source_id": "alex_hcp_pdf",
+        "quote": "这个版本的FieldMapPreprocessingAll.sh 脚本已知有一个bug，在第170行有简单的语法错误，需要进行修正。",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "checks",
+      "claim": {
+        "statement": "Ensure python-is-python3 and python3-numpy are installed as they were required in testing.",
+        "source_id": "alex_hcp_pdf",
+        "quote": "虽然HCP官方文档没有说明，但是在实际测试中发现还需要安装如下软件： sudo apt-get install python-is-python3 sudo apt-get install python3-numpy",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "exceptions",
+      "claim": {
+        "statement": "The tutorial author notes incomplete understanding of processing details; the article only covers how to run the pipelines, not principles or file meanings.",
+        "source_id": "alex_hcp_pdf",
+        "quote": "由于我初学HCP Pipelines，对处理细节还没有完全搞清楚。所以本文只涉及如何运行HCP Pipelines，不涉及具体原理以及生成的文件的含义等内容。",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "exceptions",
+      "claim": {
+        "statement": "Setting LD_LIBRARY_PATH caused conflicts with system libraries; not setting it still allowed HCP Pipelines to work (update 2025-02-21).",
+        "source_id": "alex_hcp_pdf",
+        "quote": "更新 2025-02-21 使用过程中发现，设置环境变量 LD_LIBRARY_PATH 会导致和系统自带的库冲突。不设置该环境变量，HCP Pipelines仍然能够正常使用。",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    }
+  ]
+}

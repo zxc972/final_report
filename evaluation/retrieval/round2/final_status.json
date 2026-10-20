@@ -1,0 +1,16 @@
+{
+  "state": "experiments_and_review_complete",
+  "main_answers": 24,
+  "diagnostic_answers": 8,
+  "http_attempts": 57,
+  "known_tokens": 138536,
+  "unknown_usage_requests": 0,
+  "first_round_unchanged": true,
+  "product_agent_modified": false,
+  "image_subject_data_used": false,
+  "unresolved": [
+    "X05 evidence packing discards LONG",
+    "quotation spans and summary/unknown consistency",
+    "graph semantic review and runtime-version binding incomplete"
+  ]
+}

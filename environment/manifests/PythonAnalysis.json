@@ -1,0 +1,21 @@
+{
+  "status": "installed",
+  "mode": "isolated venv inside existing PrimateX SIF",
+  "python": "3.10.19 (main, Oct 21 2025, 16:43:05) [GCC 11.2.0]",
+  "base_image": "/data/xuancheng/agent/PrimateX_1_7.sif",
+  "environment": "/data/xuancheng/structural_env/runtime/python-analysis",
+  "packages": {
+    "nilearn": "0.14.1",
+    "nipype": "1.11.0",
+    "pybids": "0.22.0",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "pandas": "2.3.3",
+    "matplotlib": "3.10.9",
+    "scikit-learn": "1.7.2",
+    "nibabel": "5.4.2",
+    "SimpleITK": "2.5.6"
+  },
+  "source": "https://pypi.org/simple/",
+  "torch_monai_changed": false
+}

@@ -1,0 +1,175 @@
+FreeSurfer Tutorial #11: Region of Interest Analysis — Andy's Brain Book 1.0 documentation
+Andy's Brain Book
+1.0
+Install
+Overview
+Unix for Neuroimagers
+What is Unix?
+Unix Tutorial #1: Navigating the directory tree
+Unix Tutorial #2: Copying and Removing Files
+Unix Tutorial #3: Reading Text Files
+Unix Tutorial #4: Shells and Path Variables
+Unix Tutorial #5: For-Loops
+Unix Tutorial #6: Conditional Statements
+Unix Tutorial #7: Scripting
+Unix Tutorial #8: The Sed Command
+Unix Tutorial #9: Automating The Analysis
+fMRI Short Course with FSL
+Introduction
+fMRI Tutorial #1: Downloading the Data
+fMRI Tutorial #2: Overview of The Flanker Task
+fMRI Tutorial #3: Looking at the Data
+fMRI Tutorial #4: Preprocessing
+fMRI Tutorial #5: Statistics and Modeling
+fMRI Tutorial #6: Scripting
+fMRI Tutorial #7: 2nd-Level Analysis
+fMRI Tutorial #8: 3rd-Level Analysis
+fMRI Tutorial #9: ROI Analysis
+fMRI Tutorial #10: Summary
+fMRI Short Course: Appendices
+FreeSurfer
+FreeSurfer Short Course
+Overview
+FreeSurfer Tutorial #1: Basic Terms
+FreeSurfer Tutorial #2: How to Download and Install
+FreeSurfer Tutorial #3: Recon-all
+FreeSurfer Tutorial #4: Running recon-all in Parallel
+FreeSurfer Tutorial #5: Using the Open Science Grid
+FreeSurfer Tutorial #6: Freeview
+FreeSurfer Tutorial #7: The FSGD File
+FreeSurfer Tutorial #8: Group Analysis
+FreeSurfer Tutorial #9: Cluster Correction
+FreeSurfer Tutorial #10: Correlation Analysis
+FreeSurfer Tutorial #11: Region of Interest Analysis
+Overview
+Extracting data with asegstats2table and aparcstats2table
+Next Steps
+Video
+FreeSurfer Tutorial #12: Introduction to Failure Modes
+FreeSurfer Tutorial #13: SkullStripping and Pial Surface Errors
+FreeSurfer Tutorial #14: Control Points and Intensity Normalization
+Appendix A: Local Gyrification Index
+Appendix B: PETSurfer
+Appendix C: Annotating Anatomical Images with Freeview
+Appendix D: Segmenting Hippocampal, Amygdala, Brainstem, and Thalamus Subfields
+TRACULA Tutorial #1: Overview
+E-Prime
+Overview of E-Prime
+AFNI
+AFNI Overview
+SPM
+SPM Overview
+Functional Connectivity with the CONN Toolbox
+Functional Connectivity and the CONN Toolbox
+Parametric Modulation
+Parametric Modulation in SPM, FSL, and AFNI
+Finite Impulse Response (FIR) Models
+Finite Impulse Response (FIR)
+Scanner Harmonization
+Data harmonization for neuroscientific research: Theory, challenges, and applications.
+Image Visualization with MRIcroGL
+Image Visualization with MRIcroGL
+Introduction to the Human Connectome Project (HCP)
+Introduction to the Human Connectome Project
+fMRI Concepts
+Design Optimization
+Diffusion Analysis with MRtrix
+Introduction to MRtrix
+ASL Analysis
+fASL Tutorial #1: Background
+fASL Tutorial #2: Downloading and Installing
+fASL Tutorial #3: The N-Back Task
+fASL Tutorial #4: The GUI
+fASL Tutorial #5: Examining the Results
+fASL Tutorial #6: Quantification
+Frequently Asked Questions
+Frequently Asked Questions
+Statistics
+GIMME (Group Iterative Multiple Model Estimation)
+Open Science
+Open Science
+Advanced Normalization Tools (ANTs)
+Advanced Normalization Tools (ANTs)
+Tract-Based Spatial Statistics (TBSS)
+Introduction to Tract-Based Spatial Statistics (TBSS)
+Statistics for Neuroimagers
+Statistics for Neuroimagers
+Machine Learning for Neuroimagers
+Machine Learning for Neuroimagers
+Slicer
+Slicer Overview
+CAT12
+Voxel-Based Morphometry with CAT12
+Using the Supercomputer
+Introduction to Supercomputing
+Matlab for Neuroimagers
+Matlab for Neuroimagers
+ITK-Snap
+ITK-Snap_Overview
+Python for Neuroimagers
+Python for Neuroimagers
+Meta-Analysis for fMRI
+Meta-Analysis for Neuroimagers
+Introduction to Neurodesk
+Overview of Neurodesk
+Andy's Brain Book
+FreeSurfer Short Course
+FreeSurfer Tutorial #11: Region of Interest Analysis
+View page source
+FreeSurfer Tutorial #11: Region of Interest Analysis
+Overview
+In addition to creating a cortical surface and calculating structural measurements at each vertex, FreeSurfer parcellates and segments the brain - the parcellations outlining anatomically distinct regions of the cortex, and the segmentations dividing the sub-cortical nuclei into distinct structures. These parcellations are created along the lines of two atlases that come with FreeSurfer: The Destrieux atlas, and the Desikan-Killiany atlas.
+Within each subject’s stats directory, there is a table corresponding to the parcellations for each atlas. For example, the results for the parcellation of the left hemisphere are located in the file lh.aparc.annot for the Desikan-Killiany atlas, and in the file lh.aparc.a2009s.annot for the Destrieux atlas. The main difference between the two is that the Destrieux atlas contains more parcellations which can be used for finer-grained analyses.
+The Desikan-Killiany and Destrieux atlases placed side by side. Note that the Destrieux atlas contains more parcellations of the cortex.
+The segmentations, on the other hand, are contained within one file called aseg.stats. There are no separate segmentation files for each atlas.
+Extracting data with asegstats2table and aparcstats2table
+Both the command asegstats2table and aparcstats2table require a list of subjects and the structural measurement you wish to extract from the table.
+Let’s begin with asegstats2table. A typical command would look like this:
+asegstats2table --subjects sub-101 sub-103 --common-segs --meas volume --stats=aseg.stats --table=segstats.txt
+The --subjects option specifies a list of subject names;
+--common-segs signalizes to output segmentations common to all of the subjects - in other words, if one subject’s number of segmentations is different from the others, do not exit the command with errors;
+--meas indicates which structural measurement to extract from the table (“volume” is the default; alternatives are “mean” and “std”);
+--stats points to the stats file that the segmentation data will be extracted from; and
+--table writes the extracted measurement to a text file, organized by subject name.
+The command aparcstats2table requires similar arguments. Here is a typical command:
+aparcstats2table --subjects sub-101 sub-103 --hemi lh --meas thickness --parc=aparc --tablefile=aparc.txt
+In this command you can specify the hemisphere to analyze (--hemi), the measurement to extract (--meas, with the options of “thickness”, “volume”, “area”, and “meancurv”), and which atlas to use for parcellation (--parc; you can specify either “aparc”, the Desikan-Killinay atlas, or “aparc.a2009s”, the Destrieux atlas). The label for the output file is specified with the --tablefile option. Include as many subjects as you like in your analysis.
+Next Steps
+The output from these commands are tab-delimited text files that can be read into a spreadsheet like Excel, or a statistical software program such as R. You would perform the statistical tests just like you would any other t-test: Select the structural measurements from the groups you wish to compare, and then contrast the two groups against each other.
+Note
+In the future, I will add sections on how to resample a volumetric ROI to the surface, and then extract structural measurements from that ROI. The code below was created some time ago, but it should work for most purposes.
+#!/bin/tcsh
+setenv SUBJECTS_DIR `pwd`
+#Create 5mm sphere ROI with 3dUndump; ROI_file.txt contains x-, y-, and z-coordinates for center of sphere (e.g., 0 30 20)
+3dUndump -srad 5 -prefix S2.nii -master MNI_caez*+tlrc.HEAD -orient LPI -xyz ROI_file.txt
+#View in tkmedit
+tkmedit -f MNI_caez_N27.nii -overlay S2.nii -fthresh 0.5
+#Register anatomical template to fsaverage (FreeSurfer template)
+fslregister --s fsaverage --mov MNI_caez_N27.nii --reg tmp.dat
+#View ROI on fsaverage
+tkmedit fsaverage T1.mgz -overlay S2.nii -overlay-reg tmp.dat -fthresh 0.5 -surface lh.white -aux-surface rh.white
+#Map ROI to fsaverage surface
+mri_vol2surf --mov S2.nii \
+--reg tmp.dat \
+--projdist-max 0 1 0.1 \
+--interp nearest \
+--hemi lh \
+--out lh.fsaverage.S2.mgh \
+--noreshape
+#Check how well the ROI maps onto the inflated surface
+tksurfer fsaverage lh inflated -overlay lh.fsaverage.S2.mgh -fthresh 0.5
+Conversely, you may want to resample a surface ROI to a volume, and then extract data from it; for example, let’s say that we want to convert the superior temporal ROI created by FreeSurfer, to the individual subject’s volumetric space. First, create a registration file called register.dat with FreeSurfer’s tkregister2 command:
+tkregister2 --mov beta_0001.nii --s subject --noedit --regheader --reg register.dat
+Where “beta_0001.nii” is a beta map created in the subject’s native space, and “subject” is the name of the subject that has been preprocessed with recon-all.
+We then use the command mri_label2vol to convert the surface ROI to volumetric space:
+mri_label2vol --label lh.superiortemporal.label --temp beta_0001.nii --subject subject --hemi lh --fillthresh .9 --proj frac 0 1 .1 --reg register.dat --o $PWD/stgnew.nii
+In this case, we create a new file, stgnew.nii, which is the surface ROI converted to volumetric space.
+Video
+For a video overview of how to do region of interest analysis in FreeSurfer, click here.
+Previous
+Next
+© Copyright 2025, Andy Jahn
+.
+Built with Sphinx using a
+theme
+provided by Read the Docs.

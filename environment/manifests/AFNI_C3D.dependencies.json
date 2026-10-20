@@ -1,0 +1,54 @@
+{
+  "afni": {
+    "path": "/opt/afni/bin/afni",
+    "missing": []
+  },
+  "3dAllineate": {
+    "path": "/opt/afni/bin/3dAllineate",
+    "missing": []
+  },
+  "3dQwarp": {
+    "path": "/opt/afni/bin/3dQwarp",
+    "missing": []
+  },
+  "3dSkullStrip": {
+    "path": "/opt/afni/bin/3dSkullStrip",
+    "missing": []
+  },
+  "3dUnifize": {
+    "path": "/opt/afni/bin/3dUnifize",
+    "missing": []
+  },
+  "3dcalc": {
+    "path": "/opt/afni/bin/3dcalc",
+    "missing": []
+  },
+  "c3d": {
+    "path": "/opt/c3d/bin/c3d",
+    "missing": []
+  },
+  "c3d_affine_tool": {
+    "path": "/opt/c3d/bin/c3d_affine_tool",
+    "missing": []
+  },
+  "Xvfb": {
+    "path": "/usr/bin/Xvfb",
+    "missing": []
+  },
+  "xkbcomp": {
+    "path": "/usr/bin/xkbcomp",
+    "missing": []
+  },
+  "pnmtopng": {
+    "path": "/usr/bin/pnmtopng",
+    "missing": []
+  },
+  "pnmcat": {
+    "path": "/usr/bin/pnmcat",
+    "missing": []
+  },
+  "pnmcut": {
+    "path": "/usr/bin/pnmcut",
+    "missing": []
+  }
+}

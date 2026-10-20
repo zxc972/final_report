@@ -1,0 +1,26 @@
+{
+  "checked_on": "2026-10-15",
+  "status": "passed",
+  "checks": [
+    "All JSON files parse as UTF-8 without replacement characters",
+    "Draft 2020-12 knowledge schema valid",
+    "Three examples conform to schema",
+    "Example software IDs resolve in catalog",
+    "Condition/check/relation evidence IDs resolve within packages",
+    "Workbench parameter condition accepts one area option and rejects zero or two for ADAP_BARY_AREA",
+    "24 planned evaluation tasks present; none executed"
+  ],
+  "counts": {
+    "runtime_entries": 44,
+    "analysis_entries": 29,
+    "normalized_entries": 56,
+    "knowledge_examples": 3,
+    "evaluation_tasks_planned": 24
+  },
+  "limits": [
+    "No image/statistical execution",
+    "No LLM retrieval or representation comparison run",
+    "No claim of scientific validation",
+    "Source snapshots not archived in this research bundle"
+  ]
+}

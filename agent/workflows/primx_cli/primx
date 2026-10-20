@@ -1,0 +1,157 @@
+#!/usr/bin/env bash
+# Copyright (C) 2026 Wang Zheng Lab, Peking University
+#
+# This file is part of PrimateX.
+#
+# PrimateX is free software: you can redistribute it and/or modify it under the
+# terms of the GNU Affero General Public License as published by the Free
+# Software Foundation, either version 3 of the License, or (at your option) any
+# later version.
+#
+# PrimateX is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+# A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+# details.
+#
+# If you use PrimateX in academic work, please cite:
+# Xiaohui Yao*, Yichun Huang*, Kailong Cui*, ..., Shan Cong#, Zheng Wang#.
+# Multi-agentic routing with PrimateX: standardized structural MRI analysis
+# for non-human primates and humans.
+#
+# * Equal contribution.
+# Correspondence (#): Shan Cong (shan.cong@hrbeu.edu.cn), Zheng Wang
+# (zheng.wang@pku.edu.cn).
+#
+# See CITATION.cff for full citation details.
+
+set -euo pipefail
+
+SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
+REPO_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
+NEURO_DIR="$REPO_ROOT/modules/neuro_pipeline"
+SEG_DIR="$REPO_ROOT/modules/primx_seg"
+GUI_DIR="$REPO_ROOT/modules/gui"
+FASTSURFER_DIR="$REPO_ROOT/modules/FastSurfer"
+
+usage() {
+    cat <<'USAGE'
+Usage:
+    primx [--log_dir <dir>] <module> <command> [args...]
+
+Modules:
+    neuro   preprocess-1 | preprocess-3 | preprocess-3-1 | preprocess-3-2 | rescale | freesurfer2caret | acpc-align | label-resample | image-reorient
+    seg     brain | wm | router
+    human   fastsurfer
+    gui     install-deps | start
+    agent   start-agent-backend
+
+Examples:
+    primx neuro preprocess-1 -t1_path <dir> -out_path <dir> -species Macaque
+    primx seg brain -species cynomolgus -input_image <T1.nii.gz> -output_dir <dir> [-model_dir <models>]
+    primx human fastsurfer -t1_path <T1.nii.gz> -id <subject_id> -out_path <subject_output_dir> [-threads 4]
+    primx gui install-deps
+    primx gui start [--port 8080] [--pipeline-port 8000] [--agent-port 8100] [--token TOKEN] [--same-origin-api|--direct-api]
+    primx agent start-agent-backend
+
+Notes:
+    seg defaults -model_dir to modules/primx_seg/models when omitted.
+USAGE
+    exit 0
+}
+
+infer_out_path() {
+    local args=("$@")
+    local i
+    for ((i=0; i<${#args[@]}; i++)); do
+        case "${args[$i]}" in
+            -out_path|--out_path)
+                echo "${args[$((i+1))]}"
+                return 0
+                ;;
+        esac
+    done
+    return 1
+}
+
+LOG_DIR=""
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --log_dir) LOG_DIR="${2:?missing log dir}"; shift 2 ;;
+        -h|--help) usage ;;
+        *) break ;;
+    esac
+done
+
+[[ $# -lt 2 ]] && usage
+
+MODULE="$1"; COMMAND="$2"; shift 2
+
+OUT_PATH=""
+if OUT_PATH=$(infer_out_path "$@"); then
+    mkdir -p "$OUT_PATH/tmp" "$OUT_PATH/logs"
+    [[ -z "$LOG_DIR" ]] && LOG_DIR="$OUT_PATH/logs"
+fi
+
+if [[ -n "$LOG_DIR" ]]; then
+    mkdir -p "$LOG_DIR"
+    LOG_FILE="$LOG_DIR/${MODULE}_${COMMAND}.log"
+    exec > >(tee -a "$LOG_FILE") 2>&1
+fi
+
+case "$MODULE" in
+    neuro)
+        case "$COMMAND" in
+            preprocess-1) exec "$NEURO_DIR/bin/Preprocess_1.sh" "$@" ;;
+            preprocess-3) "$NEURO_DIR/bin/Preprocess_3_1.sh" "$@" && exec "$NEURO_DIR/bin/Preprocess_3_2.sh" "$@" ;;
+            preprocess-3-1) exec "$NEURO_DIR/bin/Preprocess_3_1.sh" "$@" ;;
+            preprocess-3-2) exec "$NEURO_DIR/bin/Preprocess_3_2.sh" "$@" ;;
+            rescale) exec "$NEURO_DIR/bin/Rescale.sh" "$@" ;;
+            freesurfer2caret) exec "$NEURO_DIR/bin/Freesurfer2CaretandRegister.sh" "$@" ;;
+            acpc-align) exec "$NEURO_DIR/bin/ACPC_Alignment.sh" "$@" ;;
+            label-resample) exec "$NEURO_DIR/bin/LabelResample.sh" "$@" ;;
+            image-reorient) exec python "$NEURO_DIR/Image_Reorient.py" "$@" ;;
+            *) usage ;;
+        esac
+        ;;
+    seg)
+        case "$COMMAND" in
+            brain|wm)
+                MODEL_DIR_ARG=""
+                for arg in "$@"; do
+                    if [[ "$arg" == "-model_dir" ]]; then
+                        MODEL_DIR_ARG="set"
+                        break
+                    fi
+                done
+                if [[ -z "$MODEL_DIR_ARG" ]]; then
+                    exec "$SEG_DIR/bin/primx_seg_infer.sh" -task "$COMMAND" -model_dir "$SEG_DIR/models" "$@"
+                fi
+                exec "$SEG_DIR/bin/primx_seg_infer.sh" -task "$COMMAND" "$@"
+                ;;
+            router) exec "$SEG_DIR/bin/primx_router.sh" "$@" ;;
+            *) usage ;;
+        esac
+        ;;
+    human)
+        case "$COMMAND" in
+            fastsurfer) exec "$FASTSURFER_DIR/bin/fastsurfer_human.sh" "$@" ;;
+            *) usage ;;
+        esac
+        ;;
+    gui)
+        case "$COMMAND" in
+            install-deps) exec "$GUI_DIR/bin/install-deps.sh" "$@" ;;
+            # start) exec "$GUI_DIR/bin/start.sh" "$@" ;;
+            # start-backend) exec "$GUI_DIR/bin/start-backend.sh" "$@" ;;
+            start) exec "$GUI_DIR/bin/start-stack.sh" "$@" ;;
+            *) usage ;;
+        esac
+        ;;
+    agent)
+        case "$COMMAND" in
+            start-agent-backend) exec "$REPO_ROOT/modules/agent/start-agent-backend.sh" "$@" ;;
+            *) usage ;;
+        esac
+        ;;
+    *) usage ;;
+esac

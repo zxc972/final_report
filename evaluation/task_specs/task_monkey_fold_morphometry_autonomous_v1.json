@@ -1,0 +1,23 @@
+{
+  "research_evidence_release": "research_evidence_v13",
+  "enable_background_jobs": false,
+  "include_predecessor_outputs": false,
+  "next_review": "After native termination, independently inspect generated source, actual tool/evidence/feedback trace, code/inputs/output hashes and frozen numeric contract. No external repair instructions during the run.",
+  "task_id": "monkey_fold_morphometry_autonomous_v1",
+  "subjects": [
+    "KM002"
+  ],
+  "input_roots": [
+    "/data/xuancheng/featurize_20261011/data/KM002/KM002"
+  ],
+  "required_artifacts": [
+    "analysis_plan.json",
+    "morphometry_summary.tsv",
+    "self_checks.json",
+    "repair_log.json",
+    "report.md",
+    "surface_maps.png",
+    "distributions.png"
+  ],
+  "message": "请自主分析KM002已有重建中的左右半球皮层表面积、曲率和脑沟形态分布，给出这个个体的左右描述性比较、表面图和分布图，保留完整顶点身份与结果以便追溯。也请判断现有条件能否计算真正的局部脑回化指数：可行才运行，缺少条件则明确记录并完成其他可行分析。\n先观察实际数据和软件，通过现有知识检索工具选择方法、检查适用条件和原文，然后自己生成完整的新分析代码并实际执行。根据真实错误反馈自主查证和纠错，记录实际自检及修复经过；不要等待外部人员根据结果给修改方案。没有出现错误就如实记录，不要制造或虚构修复。\nKM002的实际猴种与原始采集物理尺度尚未审核，不能凭文件名或标签推定。已有场量的算法、单位、平滑及空间出处要区分已知与未知，不把同名字段自动当成可比的物理距离。不更改原数据，不执行完整重建，不把工程检查称作专家解剖QC。\n请生成analysis_plan.json、morphometry_summary.tsv、self_checks.json、repair_log.json、report.md、surface_maps.png、distributions.png，并按实际产品要求提交可追溯的完整产物。仅使用批准的KM002，结果限于单个个体的描述分析。"
+}

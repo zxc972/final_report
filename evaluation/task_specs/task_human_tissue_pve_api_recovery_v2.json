@@ -1,0 +1,33 @@
+{
+  "task_id": "human_tissue_pve_api_recovery_v2",
+  "subjects": [
+    "100610",
+    "101309",
+    "101410"
+  ],
+  "input_roots": [
+    "/data/xuancheng/human_fastsurfer/subjects/100610",
+    "/data/xuancheng/human_fastsurfer/subjects/101309",
+    "/data/xuancheng/human_fastsurfer/subjects/101410"
+  ],
+  "required_artifacts": [
+    "analysis_plan.json",
+    "tissue_volumes.tsv",
+    "commands.json",
+    "qc_summary.json",
+    "software_outputs.json",
+    "report.md",
+    "fig_tissue_volumes.png",
+    "fig_tissue_qc.png"
+  ],
+  "message": "请根据这三个已重建人脑的真实数据状态，自主做一次原生空间的灰质、白质、脑脊液部分容积分割及组织体积分析。三个输入目录分别是100610、101309、101410。先检查现有T1及脑提取/预处理状态，通过研究知识和软件图工具检索并回读适用方法、参数、输入条件和例外；资料主要英文，可用规范英文方法/软件关键词。这里没有附现成教程目录或旧分析代码，你需要自己检索选择。基于证据和实际安装软件形成analysis_plan，然后本次自主生成Python组织成熟软件、真实执行、统计、质控图和报告。不能把读取原aseg/stats表冒充新分割，不自写替代分割算法，不重复皮层重建。\n实际对可用T1影像执行成熟组织部分容积分割，选择合适输入和参数，保留脑提取依据、图像对比度、affine/体素尺寸/单位、软件版本和每条命令的真实退出码/stdout/stderr。优先复用适合的已处理输入，避免无依据重复预处理；不为跑通而任意改图像空间或分辨率。本轮只求原生组织体积，不做头大小归一化、空间配准或组间推断。关键条件不满足则如实给出具体缺项及可执行准备，不能生成替身数据或宣称完成。\n每个样本输出CSF/GM/WM三类PVE图；按原始浮点部分容积值高精度求和并结合真实体素体积计算mm3，不能把硬阈值/二值计数当PVE组织体积。明确PVE文件索引与分割标签ID的区别和T1下组织名称来源。最终表保留至少6位小数，使用未舍入的数组值计算。核查PVE有限、取值范围、支持区和概率总和，并画基于正确空间/方向的MRI与组织图叠加；图仅供QC审阅，不冒充专家通过。n=3是描述性计算示范。\n输出analysis_plan.json、tissue_volumes.tsv（每个subject/tissue一行，含subject_id,tissue_name,pve_index,pve_sum_voxels,voxel_volume_mm3,pve_volume_mm3）、commands.json、qc_summary.json、software_outputs.json（真实图像路径/shape/hash/来源）、report.md、fig_tissue_volumes.png、fig_tissue_qc.png。8个必需文件均须在最终验证manifest中登记；NIfTI/MGH中间图像可真实生成并保留，但当前原生artifact校验器不支持影像kind，不能伪装为文本宣称影像已校验。按实际剩余预算分模块，先做小步软件可用性检查再执行三例。每个小问题最多两轮有据修复，失败应保留证据并换可行步骤，不能死磕。不要自行宣称外部独立核对/专家QC通过；不能访问或挂载其他被试。最后完整finalize_artifacts。\n本轮执行环境更新（真实产品限制，先用inspect_analysis_runtime核对）：上轮第507次HTTP的run_python请求timeout_seconds=1200，但旧产品仍暗中按120秒终止。新版本已移除这一静默截断，默认120仍保留；显式请求受服务器默认900秒上限和本轮总1500秒剩余时间共同约束，工具返回实际时限。请为成熟影像软件计算显式选择适合的时限和任务组织，按真实耗时分批或适度并行，保留每例真正完成的输出和退出码。不能把执行超时解释为需要修改生物学参数。诊断用降采样/裁剪图像不可替代本任务原生空间/原分辨率组织PVE；没有依据不重采样，也不把烟雾测试当三例结果。当前软件已能通过通用只读工具发现，不需再扫描无关深度学习依赖。仍须自行检索、回读方法和适用条件，检查原始数据、写本次新分析代码并真实执行，没有附旧分析脚本或私有核对器。全部8项产物和9行组织体积合同不变，科学范围仍是描述性原生组织分割，不宣称完整VBM、独立核对或专家QC通过。",
+  "api_entrypoint": true,
+  "provided_source_context_directory": false,
+  "research_evidence_release": "research_evidence_v5",
+  "next_review": "Actual authenticated API route and real provider, verify retrieval/read/plan/code/software chain. Independently decode final PVE images, preserve input hashes, verify tissue mapping, float64 sums/voxel units/volumes, probabilities/support and complete8 artifacts. Expert QC not implied. Do not expose private scorer/reference to generator.",
+  "model": "deepseek-v4-pro",
+  "recovery_round": 2,
+  "max_scientific_repair_rounds": 2,
+  "predecessor_failure": "human_tissue_pve_api_recovery_v1_20261020T074518_3cb268",
+  "include_predecessor_outputs": false
+}

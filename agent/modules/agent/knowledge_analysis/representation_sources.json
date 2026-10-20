@@ -1,0 +1,172 @@
+[
+  {
+    "id": "anthropic_agent_skills",
+    "title": "Agent Skills — Claude Platform Docs",
+    "url": "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview",
+    "kind": "official_documentation",
+    "checked_on": "2026-10-15",
+    "source_claim": [
+      "官方将 Skills 描述为包含指导、元数据和可选代码或参考资源的模块化能力。",
+      "官方采用渐进加载：启动时加载名称与描述；触发后加载 SKILL.md；需要时再读取参考文件或运行脚本。"
+    ],
+    "design_implication": [
+      "本项目建议：能力目录只暴露简短摘要，软件使用指导与详细官方资料按需加载。",
+      "本项目建议：将灵活操作指导、确定性校验脚本和事实参考分别保存，并通过能力 ID 关联。"
+    ],
+    "limits": [
+      "这是 Skills 机制的官方说明，不是脑影像实证研究；不能据此断言技能形式在本项目优于 RAG 或图谱。",
+      "指导文本本身不能保证参数、影像空间或科学分析正确。"
+    ]
+  },
+  {
+    "id": "mcp_tools_2025_11_25",
+    "title": "Tools — Model Context Protocol specification 2025-11-25",
+    "url": "https://modelcontextprotocol.io/specification/2025-11-25/server/tools",
+    "kind": "official_protocol_specification",
+    "checked_on": "2026-10-15",
+    "source_claim": [
+      "工具定义包含名称、说明和 JSON Schema inputSchema，可选提供 outputSchema；结果可以通过 structuredContent 返回结构化对象。",
+      "若提供输出 schema，服务端必须返回符合 schema 的结构化结果；客户端应验证该结果。工具执行错误与协议错误分别表示。"
+    ],
+    "design_implication": [
+      "本项目建议：用结构化合同描述可调用能力的必填参数、枚举、输入和输出，并使校验错误可反馈给 Agent。",
+      "本项目建议：对空间、物种、分区和数据语义增加领域校验，不将 JSON 类型校验当作科学有效性验证。"
+    ],
+    "limits": [
+      "协议规定工具通信格式，不规定神经影像方法选择、知识检索或解剖校验。",
+      "本条针对指定协议版本，不表示服务器当前已实现 MCP，也不要求把每个 CLI 或 Python 函数都包装成 MCP 工具。"
+    ]
+  },
+  {
+    "id": "mcp_resources_2025_11_25",
+    "title": "Resources — Model Context Protocol specification 2025-11-25",
+    "url": "https://modelcontextprotocol.io/specification/2025-11-25/server/resources",
+    "kind": "official_protocol_specification",
+    "checked_on": "2026-10-15",
+    "source_claim": [
+      "资源通过 URI 标识，可提供文件、数据库 schema 等模型上下文；协议支持资源列表、读取、参数化资源模板，以及可选更新订阅。",
+      "资源由宿主应用决定如何加入上下文，协议不强制某种交互或检索方式。"
+    ],
+    "design_implication": [
+      "本项目建议：把版本化官方教程、API 说明和能力合同作为可按 ID 获取的资源，检索只返回相关内容与出处。",
+      "本项目建议：将资源供应接口与 BM25、向量检索或图查询分开，便于替换检索策略。"
+    ],
+    "limits": [
+      "MCP Resources 不是现成的 RAG 系统或知识库，也不自动解决分段、排序、来源质量和版本匹配。"
+    ]
+  },
+  {
+    "id": "nipreps_skills_comm",
+    "title": "skills-comm — Neuroimaging community skills for LLM coding agents",
+    "url": "https://github.com/nipreps/skills-comm",
+    "kind": "official_community_repository",
+    "checked_on": "2026-10-15",
+    "source_claim": [
+      "NiPreps 社区仓库以 SKILL.md 和按需 references 编码神经影像工具的参数、操作顺序、质量控制和复现要求。",
+      "README 明确区分简短操作指导与长参考资料，并提供同一脑提取技能多轮改进的教学示例。"
+    ],
+    "design_implication": [
+      "本项目建议：以操作能力组织知识包，同一操作可以链接多个软件实现，详细参数和 QC 依据保留在参考资料中。",
+      "本项目建议：借鉴技能迭代与执行证据记录，不直接照搬其运行环境约定。"
+    ],
+    "limits": [
+      "这是社区实践资源，不是已验证覆盖全部神经影像软件的标准或本项目性能证明。",
+      "仓库主分支会变化，采用具体技能时应记录版本并检查本地环境差异。"
+    ]
+  },
+  {
+    "id": "ants_registration_anatomy",
+    "title": "Anatomy of an antsRegistration call — ANTsX/ANTs Wiki",
+    "url": "https://github.com/ANTsX/ANTs/wiki/Anatomy-of-an-antsRegistration-call",
+    "kind": "official_software_tutorial",
+    "checked_on": "2026-10-15",
+    "source_claim": [
+      "教程逐项解释 fixed/moving、配准阶段、相似性度量、多分辨率参数以及变换和重采样图像输出。",
+      "教程明确迭代层数须与 shrink factors 和 smoothing levels 对应，并说明输出插值选项只控制最终输出图像的重采样。"
+    ],
+    "design_implication": [
+      "本项目建议：从 CLI 教程抽取参数合同与跨参数约束，另外保存输入空间、变换方向和输出空间等语义关系。",
+      "本项目建议：保留示例上下文，不将教程中的迭代次数或配准方案自动设为所有数据的默认值。"
+    ],
+    "limits": [
+      "页面显示最后编辑于 2021 年；实际使用仍须核对服务器版本对应的 CLI 帮助。",
+      "命令符合教程不等于配准解剖质量已经通过验证。"
+    ]
+  },
+  {
+    "id": "workbench_metric_resample",
+    "title": "Workbench Command: -metric-resample",
+    "url": "https://www.humanconnectome.org/software/workbench-command/-metric-resample",
+    "kind": "official_software_command_reference",
+    "checked_on": "2026-10-15",
+    "source_claim": [
+      "命令要求输入 metric 及处于注册对应关系的 current/new sphere，并输出目标 mesh 上的 metric。",
+      "使用 ADAP_BARY_AREA 时必须恰选 area-surfs 或 area-metrics 之一；current-roi 只遮罩输入，输出可能略有扩张。"
+    ],
+    "design_implication": [
+      "本项目建议：在知识包中分别表达文件类型、mesh 对应、参数互斥和输出语义，而不只保存命令字符串。",
+      "本项目建议：把不能仅由 JSON 类型判断的 sphere 注册和 mesh 一致性列为领域前置校验。"
+    ],
+    "limits": [
+      "网页参考可能与服务器安装版本不同，需记录版本并核对实际帮助输出。",
+      "本页描述 metric 重采样，不能据此将同样条件泛化给 label、surface 或所有 CIFTI 操作。"
+    ]
+  },
+  {
+    "id": "boutiques_framework",
+    "title": "Boutiques: A descriptive command-line framework",
+    "url": "https://boutiques.github.io/",
+    "kind": "official_framework_documentation",
+    "checked_on": "2026-10-15",
+    "source_claim": [
+      "Boutiques 使用 JSON 描述命令行应用；schema 可包含输入、输出、错误码、输入组及容器信息。",
+      "官方工具支持 descriptor 及 invocation 的验证、模拟、执行、发布和评估，并说明可通过 Docker 或 Singularity 进行部署。"
+    ],
+    "design_implication": [
+      "本项目建议：优先调查是否已有可复用 descriptor，减少重新手写参数和输出合同。",
+      "本项目建议：以 descriptor 承载接口事实，在其旁补充教程证据、影像语义、使用条件和能力验证状态。"
+    ],
+    "limits": [
+      "首页提供框架能力说明，不证明任一现有 descriptor 对服务器具体版本完整或正确。",
+      "容器与接口验证不能替代影像质量、方法适用性和科学数值验证；本次未安装或运行 Boutiques。"
+    ]
+  },
+  {
+    "id": "nipype_interface_specs",
+    "title": "Interface Specifications — Nipype documentation",
+    "url": "https://nipype.readthedocs.io/en/latest/devel/interface_specs.html",
+    "kind": "official_framework_documentation",
+    "checked_on": "2026-10-15",
+    "source_claim": [
+      "每个 interface 定义 InputSpec 和 OutputSpec，Traits 及元数据用于输入类型和特殊条件验证。",
+      "文档列出 mandatory、exists、xor、requires、argstr、position、min_ver/max_ver、deprecated 等属性，并解释预期输出路径的收集。"
+    ],
+    "design_implication": [
+      "本项目建议：参考其对参数依赖、互斥、版本和输出的显式建模，并将可复用 interface 作为接口证据来源之一。",
+      "本项目建议：接口字段与运行日志可支持工具调用校验，但另需维护物种、空间、分区和解剖对应条件。"
+    ],
+    "limits": [
+      "该开发文档含较旧版本示例；使用具体 interface 时应核对当前安装包和底层软件版本。",
+      "已存在的文件和合法参数不保证文件语义或科学结果正确；本次未采用 Nipype 作为执行框架。"
+    ]
+  },
+  {
+    "id": "niwrap_styx_descriptors",
+    "title": "NiWrap — Modern Neuroimaging Made Simple",
+    "url": "https://github.com/styx-api/niwrap",
+    "kind": "official_project_repository",
+    "checked_on": "2026-10-15",
+    "source_claim": [
+      "NiWrap 仓库提供神经影像工具的结构化 descriptors，Styx 编译器将 Boutiques 格式描述编译为带类型的语言绑定，并返回组织好的输出路径。",
+      "README 列出 Python 和 TypeScript 用法及 Docker/Singularity 集成；R 标记为 coming soon，并明确 API coverage 不表示每个 descriptor 的完整性。"
+    ],
+    "design_implication": [
+      "本项目建议：把 descriptor 到 API 的生成作为减少 CLI 包装劳动的候选方式，先审核版本和字段覆盖，再决定是否复用。",
+      "本项目建议：将命令描述、生成 API 与 Agent 检索知识关联，不以包装器替代官方教程或领域前置条件。"
+    ],
+    "limits": [
+      "不能从仓库宣称推断其覆盖全部服务器命令或参数；默认工具版本也未必与服务器一致。",
+      "带类型 API 并不自动证明输入适配或数值正确；本次仅阅读仓库，未安装、执行或评测。"
+    ]
+  }
+]

@@ -1,0 +1,230 @@
+{
+  "method_id": "samseg_segmentation",
+  "name": "Sequence Adaptive Multimodal SEGmentation (SAMSEG)",
+  "purpose": "Robustly segment dozens of brain structures from head MRI scans without preprocessing, accepting multi-contrast data without prior assumptions on scanner or pulse sequences.",
+  "species_scope": "human (implied by brain MRI and MS context)",
+  "software": [
+    "FreeSurfer",
+    "run_samseg",
+    "run_samseg_long",
+    "mri_coreg",
+    "mri_vol2vol",
+    "mri_robust_template"
+  ],
+  "inputs": [
+    {
+      "statement": "One or more co-registered MRI volumes in Nifti (.nii/.nii.gz) or FreeSurfer (.mgz) format.",
+      "source_id": "fs_samseg",
+      "quote": "takes one or more co-registered MRI volumes as input",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "All input volumes must be co-registered with each other and have the same image grid size and voxel dimensions.",
+      "source_id": "fs_samseg",
+      "quote": "the only requirement is that all input volumes are co-registered with each other, and have the same image grid size and voxel dimensions",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "For multi-contrast data, it is recommended to select the contrast with the highest spatial resolution and reformat all other contrasts to that grid.",
+      "source_id": "fs_samseg",
+      "quote": "it is recommended to select the contrast with the highest spatial resolution (smallest voxel size) and reformat all other contrasts to that",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "For longitudinal processing, all time points must be co-registered and reformatted to the same image grid, using an unbiased reference template.",
+      "source_id": "fs_samseg",
+      "quote": "longitudinal SAMSEG expects all its input images to have been co-registered and reformatted to the same image grid beforehand",
+      "claim_type": "direct"
+    }
+  ],
+  "conditions": [
+    {
+      "statement": "Preprocessing with FreeSurfer is neither required nor recommended for basic SAMSEG.",
+      "source_id": "fs_samseg",
+      "quote": "Preprocessing of the scan(s) with FreeSurfer is neither required nor recommended",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "For multi-contrast input, all volumes must be co-registered and have the same image grid size and voxel dimensions.",
+      "source_id": "fs_samseg",
+      "quote": "all input volumes are co-registered with each other, and have the same image grid size and voxel dimensions",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "For longitudinal SAMSEG, the same combination of contrasts must be provided for each time point.",
+      "source_id": "fs_samseg",
+      "quote": "SAMSEG expects that the same combination of contrasts is provided for each time point",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "When using the lesion flag, the lesion-mask-pattern is optional but strongly recommended.",
+      "source_id": "fs_samseg",
+      "quote": "--lesion-mask-pattern <pattern> (optional but strongly recommended)",
+      "claim_type": "direct"
+    }
+  ],
+  "steps": [
+    {
+      "statement": "Run run_samseg with --input specifying one or more co-registered MRI volumes and --output specifying the output directory.",
+      "source_id": "fs_samseg",
+      "quote": "run_samseg --input <file> [<file> ...] --output <dir>",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Optionally set --threads to the number of CPU cores for faster run time.",
+      "source_id": "fs_samseg",
+      "quote": "Set the number of threads to the number of CPU cores on your computer to get the fastest run time",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Add --pallidum-separate if the input contrasts include those where the pallidum is clearly discernible, e.g., T2w or FLAIR.",
+      "source_id": "fs_samseg",
+      "quote": "if your combination of input volumes includes contrasts where the pallidum is clearly discernible (e.g., T2w or FLAIR) you should add this flag",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "For MS lesion segmentation, add --lesion and optionally --lesion-mask-pattern with one number per input contrast.",
+      "source_id": "fs_samseg",
+      "quote": "--lesion: is the flag to tell SAMSEG to segment white matter lesions",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "For longitudinal processing, first compute a robust average template using mri_robust_template, then run run_samseg_long with --timepoint for each time point.",
+      "source_id": "fs_samseg",
+      "quote": "mri_robust_template --mov tp0_t1.nii tp1_t1.nii tp2_t1.nii --template mean.mgz --satit --mapmov tp0_t1_reg.mgz tp1_t1_reg.mgz tp2_t1_reg.mgz",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "For multi-contrast longitudinal data, co-register each additional contrast to the corresponding reformatted T1w scan using mri_coreg and mri_vol2vol.",
+      "source_id": "fs_samseg",
+      "quote": "for each time additionally co-registering each FLAIR scan to the corresponding reformatted T1w scan",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "For longitudinal MS patients, add the same lesion flags as in cross-sectional processing.",
+      "source_id": "fs_samseg",
+      "quote": "Segmenting white matter lesions in MS with longitudinal SAMSEG is accomplished simply by adding the same flags as for the cross-sectional version",
+      "claim_type": "direct"
+    }
+  ],
+  "checks": [
+    {
+      "statement": "Verify that all input volumes are co-registered and have the same image grid size and voxel dimensions.",
+      "source_id": "fs_samseg",
+      "quote": "the only requirement is that all input volumes are co-registered with each other, and have the same image grid size and voxel dimensions",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "For longitudinal processing, ensure that the same combination of contrasts is provided for each time point.",
+      "source_id": "fs_samseg",
+      "quote": "SAMSEG expects that the same combination of contrasts is provided for each time point",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "When using the lesion flag, verify that the lesion-mask-pattern has one number for each input contrast.",
+      "source_id": "fs_samseg",
+      "quote": "The pattern is a sequence of numbers, one number for each input contrast",
+      "claim_type": "direct"
+    }
+  ],
+  "exceptions": [
+    {
+      "statement": "The pallidum is treated internally as a white matter structure by default because it typically cannot be discerned easily from white matter in T1w scans.",
+      "source_id": "fs_samseg",
+      "quote": "by default SAMSEG will treat the pallidum internally as a white matter structure, since it typically can't be discerned easily from white matter in T1w scans",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "The first time the MS lesion module is run, the user may be prompted to install Tensorflow.",
+      "source_id": "fs_samseg",
+      "quote": "The first time you run this module, you may be prompted to install Tensorflow",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "For longitudinal processing, simply reformatting all follow-up time points to the baseline scan would introduce a longitudinal processing bias.",
+      "source_id": "fs_samseg",
+      "quote": "simply reformatting all follow-up time points to the baseline scan would introduce a longitudinal processing bias",
+      "claim_type": "direct"
+    }
+  ],
+  "outputs": [
+    {
+      "statement": "seg.mgz: output segmentation volume where each voxel is assigned to one anatomical structure.",
+      "source_id": "fs_samseg",
+      "quote": "seg.mgz: is the output segmentation volume, where each voxel has been assigned to one anatomical structure",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "samseg.stats: contains the estimated volume in cubic mm for each segmented structure.",
+      "source_id": "fs_samseg",
+      "quote": "samseg.stats: contains the estimated volume (in cubic mm) for each segmented structure",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "mode0X_bias_corrected.mgz: the bias field corrected MRI volume corresponding to each input contrast.",
+      "source_id": "fs_samseg",
+      "quote": "mode0X_bias_corrected.mgz (with X=1,2,...): the bias field corrected MRI volume corresponding to each input contrast",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "mode0X_bias_field.mgz: the estimated bias field for each input contrast.",
+      "source_id": "fs_samseg",
+      "quote": "mode0X_bias_field.mgz (with X=1,2,...): the estimated bias field for each input contrast",
+      "claim_type": "direct"
+    }
+  ],
+  "parameters": [
+    {
+      "statement": "--threads: number of threads to be used by SAMSEG; default uses one thread.",
+      "source_id": "fs_samseg",
+      "quote": "<threads> (optional): is the number of threads to be used by SAMSEG (default uses one thread)",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "--pallidum-separate: optional flag to treat the pallidum as a separate structure when contrasts make it discernible.",
+      "source_id": "fs_samseg",
+      "quote": "--pallidum-separate (optional): by default SAMSEG will treat the pallidum internally as a white matter structure",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "--lesion-mask-pattern: optional but strongly recommended; a sequence of numbers, one per input contrast, indicating intensity constraints relative to cortical gray matter.",
+      "source_id": "fs_samseg",
+      "quote": "The pattern is a sequence of numbers, one number for each input contrast, with the following meaning: a value of \"-1\" or \"1\" indicates the voxels should be darker or brighter than cortical gray matter",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "--threshold: optional threshold applied to the probability of a voxel being lesion; default is 0.3 in the current implementation.",
+      "source_id": "fs_samseg",
+      "quote": "The default value (0.3 in the current implementation) will typically give reasonable results",
+      "claim_type": "direct"
+    }
+  ],
+  "source_ids": [
+    "fs_samseg",
+    "alex_samseg_pdf"
+  ],
+  "source_extraction_http_id": 845,
+  "evidence_status": "AI_assisted_candidate_exact_quotes_checked_semantics_not_expert_reviewed",
+  "quarantined_claims": [
+    {
+      "category": "steps",
+      "claim": {
+        "statement": "Optionally set --threshold to adjust the balance between false positive and false negative lesion detections.",
+        "source_id": "fs_samseg",
+        "quote": "you can tweak this value (between 0.0 and 1.0) to obtain a more fine-grained balance between false positive and false negative lesion detections",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "exceptions",
+      "claim": {
+        "statement": "The blog example is a single-subject test and does not constitute validation or general applicability.",
+        "source_id": "alex_samseg_pdf",
+        "quote": "注意这只是一个被试数据的结果",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    }
+  ]
+}

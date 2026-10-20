@@ -1,0 +1,143 @@
+CoordinateSystems - Free Surfer Wiki
+Search:
+Login
+CoordinateSystems
+FreeSurferWiki
+RecentChanges
+FindPage
+HelpContents
+CoordinateSystems
+Immutable Page
+Comments
+Discussion
+Info
+Attachments
+More Actions:
+Raw Text
+Print View
+Render as Docbook
+Delete Cache
+------------------------
+Check Spelling
+Like Pages
+Local Site Map
+------------------------
+Rename Page
+Delete Page
+------------------------
+Subscribe User
+------------------------
+Remove Spam
+Revert to this revision
+Package Pages
+Sync Pages
+------------------------
+Load
+Save
+SlideShow
+top
+FreeSurfer Coordinate Systems
+The "official" FreeSurfer Coordinate definitions can be found in the following power-points slides (SEE THESE FIRST):
+FS Coordinates (PowerPoint)
+or PDF:
+FS Coordinates (PDF)
+This also includes a little intro to Affine Transformations.
+See also: VOX2RAS(PDF)
+Transformations between Freesurfer Surfaces and TrackVis
+FreeSurferTrackVisTransforms
+Also see: TrackVis Transforms <--- !!!
+Matlab
+You can load an MRI volume into matlab with
+mri = MRIread('file.mgz'); % Can also read mgh, nii, nii.gz, img
+The mri structure will have several elements, including a 'vol' where the pixel data will be.  The voxel indices of the resulting volume will relate to the FreeSurfer voxel indices in freeview/tkmedit like:
+mri.vol(FSrow+1, FScol+1, FSslice+1) = mri(FScol,FSrow,FSslice)
+The mri.vox2ras matrix uses FS indices, ie, RAS = mri.vox2ras*[FScol FSrow FSslice 1]'
+Use Cases
+Below are several cases in which someone has a coordinate in one coordinate system and wants to transform it to some other coordinate system (eg, a point on the surface to MNI305 space). Each computation shows the matrices needed and how to get them as well as a check using tkmedit/tksurfer. The equations are based on those in FS Coordinates (PowerPoint). CRS is column-row-slice. RAS is right-anterior-superior.
+The checks assume you have run tkmedit and tksurfer in the following way:
+tkmedit subject orig.mgz -reg register.dat -ov mov.nii -surfs
+tksurfer subject lh inflated -reg register.dat -ov mov.nii
+Note on Talairach: FreeSurfer does not report true "Talairach" coordinates. The coordinates listed unter "Talairach" are actually based on Matthew Brett's 10/8/98 non-linear transform from MNI305 space (see http://www.mrc-cbu.cam.ac.uk/Imaging/mnispace.html). FreeSurfer also reports "Talairach MNI" coordinates. These are MNI305 space.
+Transforms within a subject's anatomical space
+1. I have a point on the surface and want to compute the CRS for voxel in the orig.mgz that corresponds to this point:
+VoxCRS = inv(Torig)*[tkrR tkrA tkrS 1]'
+where [tkrR tkrA tkrS] is the "Vertex RAS" as seen in the tksurfer Tools window (also output of mris_convert).  Torig is the Vox2tkrRAS matrix obtained from "mri_info --vox2ras-tkr orig.mgz" (note: this is the same for all orig volumes).
+Test: click on a point in tksurfer. Use "Vertex RAS" to compute Vox2CRS. Round Vox2CRS to the nearest integer.  Hit Save Point in tksurfer. In tkmedit, Goto Saved Point.  Compare VoxCRS to "Volume Index". Note: you may need to use the "Volume RAS" from tkmedit in the computation above to get an exact match.
+2. I have an RAS point on the surface (tkrR tkrA tkrS) ("Vertex RAS" from tksurfer) and want to compute the MNI305 RAS that corresponds to this point:
+MNI305RAS = TalXFM*Norig*inv(Torig)*[tkrR tkrA tkrS 1]'
+TalXFM: subject/orig/transforms/talairach.xfm Norig: mri_info --vox2ras orig.mgz  Torig: mri_info --vox2ras-tkr orig.mgz
+Test: click on a point in tksurfer. Use "Vertex RAS" to compute MNI305RAS. Compare MNI305RAS to "Vertex MNI Talairach". Also, hit Save Point in tksurfer. In tkmedit, Goto Saved Point, compare MNI305RAS to "MNI Coordinates". Note: you may need to use the "Volume RAS" from tkmedit in the computation above to get an exact match.
+3. I have a point on the surface ("Vertex RAS" in tksurfer) and want to compute the Scanner RAS in orig.mgz that corresponds to this point:
+ScannerRAS = Norig*inv(Torig)*[tkrR tkrA tkrS 1]'
+Norig: mri_info --vox2ras orig.mgz  Torig: mri_info --vox2ras-tkr orig.mgz
+Test: click on a point in tksurfer. Use "Vertex RAS" to compute ScannerRAS. Save Point. In tkmedit, Goto Saved Point, compare ScannerRAS to "Volume Scanner Coordinates".
+4. I have a CRS from a voxel in the orig.mgz volume and want to compute the RAS in surface space (tkrRAS) for this point:
+tkrRAS = Torig*[C R S 1]'
+Torig: mri_info --vox2ras-tkr orig.mgz
+Test: click on a point in tkmedit very close to the left hemi white surface. Use the "Volume index" to compute tkrRAS. Hit "Save Point" in tkmedit. In tksurfer, Goto Saved Point. Compare tkrRAS to "Vertex RAS". It might not be exactly the same because you might not have clicked exactly on a vertex in tkmedit.
+Transforms within subject across imaging modalities
+5. I have a point on the surface ("Vertex RAS") and want to compute the CRS for the corresponding voxel in my functional/diffusion/ASL/rawavg/etc "mov" volume:
+movCRS = inv(Tmov)*Reg*[tkrR tkrA tkrS 1]'
+Tmov:  mri_info --vox2ras-tkr mov.nii Reg: register.dat
+tkregister2 --mov mov.nii --reg register.dat
+Test: click on a point in tksurfer and hit Save Point. Compute movCRS using the "Vertex RAS". Round movCRS to the nearest integer. In tkmedit, Goto Saved Point.  Compare movCRS to "Functional Overlay Index Coordinates".
+6. I have a CRS from a voxel in my functional/diffusion/ASL/rawavg/etc "mov" volume and want to compute the CRS for the corresponding point in the orig.mgz:
+origCRS = inv(Torig) * Reg * Tmov * [movC movR movS 1]'
+Torig: mri_info --vox2ras-tkr orig.mgz  Tmov:  mri_info --vox2ras-tkr mov.nii Reg: register.dat
+tkregister2 --mov mov.nii --reg register.dat
+Test: click on a point in tkmedit very close to the left hemi white surface. Use the "Functional Overlay Index Coordinates" to compute origCRS (round to the nearest integer). Compare origCRS to the "Volume index".  Note: you may need to use the "Volume RAS" from tkmedit in the computation above to get an exact match.
+7. I have a CRS from a voxel in my functional/diffusion/ASL/rawavg/etc "mov" volume and want to compute the tkrRAS for the corresponding point on the surface:
+tkrRAS = inv(Reg) * Tmov * [movC movR movS 1]'
+Tmov:  mri_info --vox2ras-tkr mov.nii Reg: register.dat
+tkregister2 --mov mov.nii --reg register.dat
+Test: click on a point in tkmedit very close to the left hemi white surface. Use the "Functional Overlay Index Coordinates" to compute tkrRAS. Hit "Save Point" in tkmedit. In tksurfer, hit "Goto Saveed Point". Compare tkrRAS to "Vertex RAS". It might not be exactly the same because you might not have clicked exactly on a vertex in tkmedit.
+8. I have an RAS from a voxel in MNI305 space (fsaverage space) which I want to convert to MNI152 space. Create a vector of the MNI305 space point like v = [R A S 1]'. Multiply this vector by the matrix below (ie, M*v)
+0.9975   -0.0073    0.0176   -0.0429
+0.0146    1.0009   -0.0024    1.5496
+-0.0130   -0.0093    0.9971    1.1840
+Eg, if the RAS point is (10 -20 35), then v = [10 -20 35 1]', and M*v = [10.695 -18.409 36.137 1], so the RAS in MNI152 space would be  10.695 -18.409 36.137.
+The above matrix is V152*inv(T152)*R*T305*inv(V305), where V152 and V305 are the vox2ras matrices from the 152 and 305 spaces, T152 and T305 are the tkregister-vox2ras matrices from the 152 and 305 spaces,  and R is from  $FREESURFER_HOME/average/mni152.register.dat
+8b. I have an RAS from a voxel in MNI152 space  which I want to convert to MNI305 space (fsaverage space). Create a vector of the MNI152 space point like v = [R A S 1]'. Multiply this vector by the matrix below (ie, M*v)
+1.0022    0.0071   -0.0177    0.0528
+-0.0146    0.9990    0.0027   -1.5519
+0.0129    0.0094    1.0027   -1.2012
+Eg, if the RAS point is (10 -20 35), then v = [10 -20 35 1]', and M*v = [9.3131  -21.5849   33.8345 1], so the RAS in MNI305 space would be  9.3131  -21.5849   33.8345.
+The above matrix is inv(V152*inv(T152)*R*T305*inv(V305)), where V152 and V305 are the vox2ras matrices from the 152 and 305 spaces, T152 and T305 are the tkregister-vox2ras matrices from the 152 and 305 spaces,  and R is from  $FREESURFER_HOME/average/mni152.register.dat
+9. To convert a volume from fsaverage to mni152 space, you can use something like
+mri_vol2vol --reg $FREESURFER_HOME/average/mni152.register.dat --mov MNI152.nii.gz --targ orig.mgz --inv --o fsaverage.orig.mni152.mgz
+where MNI152.nii.gz is the template volume, either 1mm or 2mm. eg, $FSLDIR/data/standard/MNI152_T1_2mm.nii.gz
+To convert a segmentation to mni152, use something like
+mri_label2vol --reg $FREESURFER_HOME/average/mni152.register.dat --seg aparc+aseg.mgz --temp MNI152.nii.gz --o aparc+aseg.mni152.mgz
+CoordinateSystems  (last edited 2019-07-29 17:18:06 by 172)
+Immutable Page
+Comments
+Discussion
+Info
+Attachments
+More Actions:
+Raw Text
+Print View
+Render as Docbook
+Delete Cache
+------------------------
+Check Spelling
+Like Pages
+Local Site Map
+------------------------
+Rename Page
+Delete Page
+------------------------
+Subscribe User
+------------------------
+Remove Spam
+Revert to this revision
+Package Pages
+Sync Pages
+------------------------
+Load
+Save
+SlideShow
+MoinMoin Powered
+Python Powered
+GPL licensed
+Valid HTML 4.01

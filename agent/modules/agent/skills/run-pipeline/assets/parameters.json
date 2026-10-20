@@ -1,0 +1,97 @@
+{
+  "type": "object",
+  "properties": {
+    "subjectId": {
+      "type": "string",
+      "description": "Subject ID used to name the output directory."
+    },
+    "workspaceDirectory": {
+      "type": "string",
+      "description": "Root workspace path where subject output lives."
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "preprocess-1",
+          "seg-brain",
+          "acpc-align",
+          "seg-wm",
+          "preprocess-3",
+          "rescale",
+          "freesurfer2caret",
+          "fastsurfer"
+        ]
+      },
+      "description": "Ordered list of pipeline steps."
+    },
+    "t1Path": {
+      "type": "string",
+      "description": "Input T1 image path for preprocess/seg steps."
+    },
+    "species": {
+      "type": "string",
+      "description": "Species for neuro steps (Macaque, Chimpanzee, Marmoset), or Human when using fastsurfer."
+    },
+    "segSpecies": {
+      "type": "string",
+      "description": "Segmentation species (rhesus, cynomolgus, chimpanzee, marmoset, human)."
+    },
+    "modelDir": {
+      "type": "string",
+      "description": "Optional segmentation model directory override."
+    },
+    "brainSize": {
+      "type": "integer",
+      "description": "Brain size in mm for ACPC alignment."
+    },
+    "reference": {
+      "type": "string",
+      "description": "Reference image for ACPC alignment."
+    },
+    "lowResMesh": {
+      "type": "integer",
+      "description": "Low-resolution mesh size (default 32)."
+    },
+    "sphinx": {
+      "type": "boolean",
+      "description": "Reorient to sphinx position for preprocess-1."
+    },
+    "noStdOrient": {
+      "type": "boolean",
+      "description": "Skip standard orientation for preprocess-1."
+    },
+    "averageHcp": {
+      "type": "boolean",
+      "description": "Use HCP anatomical-average for preprocess-1."
+    },
+    "denoise": {
+      "type": "boolean",
+      "description": "Enable ANTs DenoiseImage for preprocess-1."
+    },
+    "keepTmp": {
+      "type": "boolean",
+      "description": "Keep temporary files for preprocess-1."
+    },
+    "withWm": {
+      "type": "boolean",
+      "description": "Apply ACPC transform to WM mask."
+    },
+    "inflateExtraScale": {
+      "type": "number",
+      "description": "Extra scale for freesurfer2caret inflation."
+    },
+    "msmsulc": {
+      "type": "boolean",
+      "description": "Enable MSM sulc registration in freesurfer2caret."
+    },
+    "threads": {
+      "type": "integer",
+      "enum": [1, 2, 3, 4],
+      "default": 2,
+      "description": "CPU threads used by supported Preprocess-3 commands. Maximum 4."
+    }
+  },
+  "required": ["subjectId", "workspaceDirectory", "steps"]
+}

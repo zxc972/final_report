@@ -1,0 +1,386 @@
+{
+  "post_hoc_development": true,
+  "rows": [
+    {
+      "id": "stage_answers/X01_mix_r1",
+      "verdict": "core_stage_error_fixed_with_residual_unknowns",
+      "context_sources": [
+        "VBM_OVERVIEW",
+        "VBM_FINAL",
+        "STAT_PAIRED",
+        "VBM_TEMPLATE",
+        "VBM_FINAL"
+      ],
+      "quotes": [
+        {
+          "source_id": "VBM_TEMPLATE",
+          "source_present": true,
+          "exact_quote_match": true,
+          "quote": "If you have more than one group and the number of subjects in each is not the same, choose (at random) among the biggest group(s) the images that you will use to create the study-specific template, with the same number as of the smallest group"
+        },
+        {
+          "source_id": "VBM_TEMPLATE",
+          "source_present": true,
+          "exact_quote_match": true,
+          "quote": "All your different populations included in this study MUST be represented in the template construction."
+        },
+        {
+          "source_id": "VBM_FINAL",
+          "source_present": true,
+          "exact_quote_match": true,
+          "quote": "By default fslvbm_3_proc concatenates the images in alphabetical order (following the names that they started with); make sure this matches the subject ordering assumed in your design.mat model."
+        },
+        {
+          "source_id": "VBM_FINAL",
+          "source_present": true,
+          "exact_quote_match": true,
+          "quote": "The script runs randomise with inference (generation of p-value maps) turned off, so that it very quickly creates just the raw tstat maps."
+        },
+        {
+          "source_id": "VBM_TEMPLATE",
+          "source_present": true,
+          "exact_quote_match": true,
+          "quote": "put all the selected names of exams in a file called template_list in your FSL-VBM directory."
+        },
+        {
+          "source_id": "VBM_FINAL",
+          "source_present": true,
+          "exact_quote_match": true,
+          "quote": "The final script will non-linearly register all your GM images to the study-specific template and concatenate them into a 4D image ( GM_merg ) in the stats directory"
+        }
+      ],
+      "summary": "For 5 controls and 7 patients, the template should be built from 5 images per group (matching the smallest group size, 5 controls), with all populations represented. fslvbm_3_proc processes all images in the input directory, not just the template-selected ones, and concatenates them in alphabetical order, which must match the design.mat subject ordering. The initial tstat maps from fslvbm_3_proc are not final permutation p-value inference; they are raw tstats for qualitative evaluation, with randomise inference turned off.",
+      "unknowns": [
+        "The exact number of images from each group that fslvbm_3_proc processes is not specified; it processes all images in the input directory.",
+        "The design.mat ordering for a two-group design is not explicitly described in the provided context; only alphabetical concatenation is mentioned."
+      ]
+    },
+    {
+      "id": "stage_answers/X01_mix_r2",
+      "verdict": "core_stage_error_fixed_with_residual_unknowns",
+      "context_sources": [
+        "VBM_OVERVIEW",
+        "VBM_FINAL",
+        "STAT_PAIRED",
+        "VBM_TEMPLATE",
+        "VBM_FINAL"
+      ],
+      "quotes": [
+        {
+          "source_id": "VBM_TEMPLATE",
+          "source_present": true,
+          "exact_quote_match": true,
+          "quote": "choose (at random) among the biggest group(s) the images that you will use to create the study-specific template, with the same number as of the smallest group"
+        },
+        {
+          "source_id": "VBM_FINAL",
+          "source_present": true,
+          "exact_quote_match": true,
+          "quote": "By default fslvbm_3_proc concatenates the images in alphabetical order (following the names that they started with); make sure this matches the subject ordering assumed in your design.mat model."
+        },
+        {
+          "source_id": "VBM_FINAL",
+          "source_present": true,
+          "exact_quote_match": true,
+          "quote": "The script runs randomise with inference (generation of p-value maps) turned off, so that it very quickly creates just the raw tstat maps."
+        },
+        {
+          "source_id": "VBM_TEMPLATE",
+          "source_present": true,
+          "exact_quote_match": true,
+          "quote": "All your different populations included in this study MUST be represented in the template construction."
+        }
+      ],
+      "summary": "For 5 controls and 7 patients, the template should be built from 5 images per group (the number of the smallest group), selected at random from the larger group. fslvbm_3_proc processes all images in the input directory, not only those selected for the template; it concatenates them in alphabetical order, which must match the subject ordering in design.mat. The initial tstat maps from fslvbm_3_proc are not final permutation p-value inference; they are raw tstats generated with inference turned off, intended for qualitative evaluation and to guide smoothing and thresholding before a full randomise run.",
+      "unknowns": [
+        "Whether fslvbm_3_proc processes only the selected template images is not established; the documentation indicates it processes all images in the input directory."
+      ]
+    },
+    {
+      "id": "stage_answers/X01_naive_r1",
+      "verdict": "core_stage_error_fixed_with_residual_unknowns",
+      "context_sources": [
+        "VBM_OVERVIEW",
+        "VBM_FINAL",
+        "VBM_TEMPLATE",
+        "VBM_FINAL",
+        "STAT_ONEGROUP"
+      ],
+      "quotes": [
+        {
+          "source_id": "VBM_TEMPLATE",
+          "source_present": true,
+          "exact_quote_match": true,
+          "quote": "choose (at random) among the biggest group(s) the images that you will use to create the study-specific template, with the same number as of the smallest group"
+        },
+        {
+          "source_id": "VBM_FINAL",
+          "source_present": true,
+          "exact_quote_match": true,
+          "quote": "The final script will non-linearly register all your GM images to the study-specific template"
+        },
+        {
+          "source_id": "VBM_FINAL",
+          "source_present": true,
+          "exact_quote_match": true,
+          "quote": "By default fslvbm_3_proc concatenates the images in alphabetical order (following the names that they started with); make sure this matches the subject ordering assumed in your design.mat model."
+        },
+        {
+          "source_id": "VBM_FINAL",
+          "source_present": true,
+          "exact_quote_match": true,
+          "quote": "The script runs randomise with inference (generation of p-value maps) turned off, so that it very quickly creates just the raw tstat maps."
+        },
+        {
+          "source_id": "VBM_TEMPLATE",
+          "source_present": true,
+          "exact_quote_match": true,
+          "quote": "All your different populations included in this study MUST be represented in the template construction."
+        },
+        {
+          "source_id": "VBM_FINAL",
+          "source_present": true,
+          "exact_quote_match": true,
+          "quote": "These tstats maps should help you decide which smoothing is the most relevant to feed into a full run of randomise , and which threshold to use"
+        }
+      ],
+      "summary": "With 5 controls and 7 patients, the template should be built from 5 images per group (the number of the smallest group), chosen at random from the larger group. fslvbm_3_proc processes all GM images that passed QC and remain in the input directory, not only the template-selected subset. design.mat must follow the alphabetical ordering of the input filenames, as fslvbm_3_proc concatenates images alphabetically by default. The initial tstat maps from fslvbm_3_proc are not final permutation p-value inference; they are raw tstats from a randomise run with inference turned off, intended for qualitative evaluation and smoothing/threshold selection.",
+      "unknowns": [
+        "Whether fslvbm_3_proc explicitly filters to only template-selected images is not stated; the documentation says it registers all GM images.",
+        "The exact number of images per group for the template is not explicitly stated as 5, but follows from the rule of using the smallest group's count."
+      ]
+    },
+    {
+      "id": "stage_answers/X01_naive_r2",
+      "verdict": "core_stage_error_fixed_with_residual_unknowns",
+      "context_sources": [
+        "VBM_OVERVIEW",
+        "VBM_FINAL",
+        "VBM_TEMPLATE",
+        "VBM_FINAL",
+        "STAT_ONEGROUP"
+      ],
+      "quotes": [
+        {
+          "source_id": "VBM_TEMPLATE",
+          "source_present": true,
+          "exact_quote_match": true,
+          "quote": "If you have more than one group and the number of subjects in each is not the same, choose (at random) among the biggest group(s) the images that you will use to create the study-specific template, with the same number as of the smallest group"
+        },
+        {
+          "source_id": "VBM_TEMPLATE",
+          "source_present": true,
+          "exact_quote_match": true,
+          "quote": "All your different populations included in this study MUST be represented in the template construction."
+        },
+        {
+          "source_id": "VBM_FINAL",
+          "source_present": true,
+          "exact_quote_match": true,
+          "quote": "By default fslvbm_3_proc concatenates the images in alphabetical order (following the names that they started with)"
+        },
+        {
+          "source_id": "VBM_FINAL",
+          "source_present": true,
+          "exact_quote_match": true,
+          "quote": "The final script will non-linearly register all your GM images to the study-specific template and concatenate them into a 4D image ( GM_merg ) in the stats directory"
+        },
+        {
+          "source_id": "VBM_FINAL",
+          "source_present": true,
+          "exact_quote_match": true,
+          "quote": "make sure this matches the subject ordering assumed in your design.mat model."
+        },
+        {
+          "source_id": "VBM_FINAL",
+          "source_present": true,
+          "exact_quote_match": true,
+          "quote": "The script runs randomise with inference (generation of p-value maps) turned off, so that it very quickly creates just the raw tstat maps. These tstats maps should help you decide which smoothing is the most relevant to feed into a full run of randomise"
+        },
+        {
+          "source_id": "VBM_TEMPLATE",
+          "source_present": true,
+          "exact_quote_match": true,
+          "quote": "If you have more than one group and the number of subjects in each is not the same, choose (at random) among the biggest group(s) the images that you will use to create the study-specific template, with the same number as of the smallest group"
+        },
+        {
+          "source_id": "VBM_FINAL",
+          "source_present": true,
+          "exact_quote_match": true,
+          "quote": "These tstats maps should help you decide which smoothing is the most relevant to feed into a full run of randomise , and which threshold to use for the cluster-based thresholding"
+        }
+      ],
+      "summary": "For 5 controls and 7 patients, the template should be built from 5 images from each group (randomly selected from the larger patient group to match the smaller control group size), and all groups must be represented. fslvbm_3_proc processes all images in the input directory (not only those selected for the template); it concatenates them in alphabetical order, so design.mat must follow that alphabetical subject ordering. The initial tstat maps from fslvbm_3_proc are not final permutation p-value inference; they are raw tstats with inference turned off, intended for qualitative evaluation and to guide smoothing/threshold choices before a full randomise run.",
+      "unknowns": [
+        "It is not established that fslvbm_3_proc processes only the images selected for the template; the documentation indicates it processes all GM images in the input directory.",
+        "It is not established that the initial tstat maps are final permutation p-value inference; the documentation states inference is turned off.",
+        "It is not established that the template selection rule applies when group sizes are equal; the documentation only specifies the rule for unequal group sizes."
+      ]
+    },
+    {
+      "id": "multiquery_answers/X04_r1",
+      "verdict": "binding_mechanism_recovered_with_residual_qualification_issues",
+      "context_sources": [
+        "WRAPPER_LICENSE",
+        "M1_INPUT_CODE",
+        "WRAPPER_BINDS",
+        "NHP_M1"
+      ],
+      "quotes": [
+        {
+          "source_id": "WRAPPER_LICENSE",
+          "source_present": true,
+          "exact_quote_match": true,
+          "quote": "[ -n \"$FS_LICENSE\" ] || { echo \"ERROR: no FreeSurfer license given (5th argument or \\$FS_LICENSE).\" >&2; exit 1; }"
+        },
+        {
+          "source_id": "WRAPPER_LICENSE",
+          "source_present": true,
+          "exact_quote_match": false,
+          "quote": "if [ $# -lt 4 ]; then ... exit 1; fi"
+        },
+        {
+          "source_id": "WRAPPER_BINDS",
+          "source_present": true,
+          "exact_quote_match": false,
+          "quote": "resolve_modality_binds turns a file or a directory into a list of --bind flags that build exactly that directory inside the container"
+        },
+        {
+          "source_id": "M1_INPUT_CODE",
+          "source_present": true,
+          "exact_quote_match": false,
+          "quote": "cd $T1_image_path ... for file in *.nii.gz; do cp $T1_image_path/$file $PREEMACS_DIR/$SUB_ID/orig/raw_${num_ima}_T1.nii.gz"
+        },
+        {
+          "source_id": "WRAPPER_LICENSE",
+          "source_present": true,
+          "exact_quote_match": true,
+          "quote": "FS_LICENSE=${5:-${FS_LICENSE:-}}"
+        },
+        {
+          "source_id": "WRAPPER_BINDS",
+          "source_present": true,
+          "exact_quote_match": false,
+          "quote": "so it also works correctly when the source directory mixes T1w/T2w together (a BIDS anat/ folder) or spans multiple sessions (with --all-sessions)"
+        }
+      ],
+      "summary": "No — you may not omit the fifth FS_LICENSE argument when the environment variable is also empty. The wrapper requires at least 4 positional arguments and then errors out if FS_LICENSE (from the 5th argument or $FS_LICENSE) is empty or nonexistent. The wrapper makes a single T1 file compatible with M1 directory inputs by converting the file into a per-file bind that reconstructs the expected directory inside the container; M1 code confirms the input expectation by treating -t1_path/-t2_path as directories and copying every *.nii.gz inside them into the orig/ folder.",
+      "unknowns": [
+        "Whether the wrapper's file-to-directory conversion applies to T2 inputs as well as T1 (the bind function is generic, but the question only asked about T1).",
+        "Whether the M1 code's directory expectation applies to the containerized execution path used by the wrapper, since the M1 code chunk shown is from a different code path (manual_crop and coords conditions)."
+      ]
+    },
+    {
+      "id": "multiquery_answers/X04_r2",
+      "verdict": "binding_mechanism_recovered_with_residual_qualification_issues",
+      "context_sources": [
+        "WRAPPER_LICENSE",
+        "M1_INPUT_CODE",
+        "WRAPPER_BINDS",
+        "NHP_M1"
+      ],
+      "quotes": [
+        {
+          "source_id": "WRAPPER_LICENSE",
+          "source_present": true,
+          "exact_quote_match": true,
+          "quote": "[ -n \"$FS_LICENSE\" ] || { echo \"ERROR: no FreeSurfer license given (5th argument or \\$FS_LICENSE).\" >&2; exit 1; }"
+        },
+        {
+          "source_id": "WRAPPER_BINDS",
+          "source_present": true,
+          "exact_quote_match": false,
+          "quote": "resolve_modality_binds turns a file or a directory into a list of --bind flags that build exactly that directory inside the container -- always as individual per-file binds"
+        },
+        {
+          "source_id": "NHP_M1",
+          "source_present": true,
+          "exact_quote_match": true,
+          "quote": "`-t1_path`/`-t2_path` are *directories*: every `.nii.gz` file inside is treated as a separate run of that modality"
+        },
+        {
+          "source_id": "M1_INPUT_CODE",
+          "source_present": true,
+          "exact_quote_match": true,
+          "quote": "for file in *.nii.gz; do cp $T1_image_path/$file $PREEMACS_DIR/$SUB_ID/orig/raw_${num_ima}_T1.nii.gz; num_ima=$[num_ima +1];  done"
+        },
+        {
+          "source_id": "WRAPPER_LICENSE",
+          "source_present": true,
+          "exact_quote_match": true,
+          "quote": "FS_LICENSE=${5:-${FS_LICENSE:-}}"
+        }
+      ],
+      "summary": "No, you may not omit the optional fifth FS_LICENSE argument when the environment variable is also empty; the wrapper requires a non-empty FS_LICENSE (from either the 5th argument or $FS_LICENSE) and errors out if both are absent. The wrapper makes a single T1 file compatible with M1 directory inputs by converting the file into a per-file bind that constructs a directory containing that single file inside the container, matching M1's expectation that -t1_path is a directory containing .nii.gz files. M1 code confirms this by iterating over *.nii.gz files in the T1_image_path directory.",
+      "unknowns": [
+        "Whether the wrapper's behavior is verified in an installed version; the code is from a specific commit and not executed or installed-version verified.",
+        "Whether the wrapper's per-file bind approach is the only method for handling single-file inputs; the source describes it as the method used."
+      ]
+    },
+    {
+      "id": "multiquery_answers/X05_r1",
+      "verdict": "not_fixed_LONG_dropped_by_budget",
+      "context_sources": [
+        "FS_SINGLE",
+        "STAT_PAIRED",
+        "VBM_FINAL",
+        "NHP_WRAPPER"
+      ],
+      "quotes": [
+        {
+          "source_id": "FS_SINGLE",
+          "source_present": true,
+          "exact_quote_match": true,
+          "quote": "Because of drop-outs it can happen that some individuals were scanned only at a single time point. Instead of removing this valuable information, it is possible (e.g. in the linear mixed effects models LME) to include this data."
+        },
+        {
+          "source_id": "FS_SINGLE",
+          "source_present": true,
+          "exact_quote_match": true,
+          "quote": "For that it, however, becomes necessary to run the single time points through the longitudinal stream, to ensure that also those images undergo the same processing steps. This can be done by simply passing a single time point in the base creation step."
+        },
+        {
+          "source_id": "FS_SINGLE",
+          "source_present": true,
+          "exact_quote_match": true,
+          "quote": "Instead of removing this valuable information, it is possible (e.g. in the linear mixed effects models LME) to include this data. For that it, however, becomes necessary to run the single time points through the longitudinal stream"
+        }
+      ],
+      "summary": "A dropout with only one scan need not always be excluded: the documentation states such single time-point subjects can be included (e.g., in linear mixed effects models) by running the single time point through the longitudinal stream, passing a single time point in the base creation step. The documentation does not state that cross-sectional output can simply be mixed with longitudinal outputs; rather, it requires the single time point to be processed through the longitudinal stream so the same processing steps apply. The documentation does not state whether other subjects' change estimates should compare against the within-subject template. The documentation scope is historical FreeSurfer documentation (FS 5.1, 5.2, 5.3, 6.0), not verified against an installed version.",
+      "unknowns": [
+        "Whether cross-sectional output can simply be mixed with longitudinal outputs is not stated; the documentation instead requires single time points to be run through the longitudinal stream.",
+        "Whether other subjects' change estimates should compare against the within-subject template is not stated in the provided documentation."
+      ]
+    },
+    {
+      "id": "multiquery_answers/X05_r2",
+      "verdict": "not_fixed_LONG_dropped_by_budget",
+      "context_sources": [
+        "FS_SINGLE",
+        "STAT_PAIRED",
+        "VBM_FINAL",
+        "NHP_WRAPPER"
+      ],
+      "quotes": [
+        {
+          "source_id": "FS_SINGLE",
+          "source_present": true,
+          "exact_quote_match": false,
+          "quote": "Because of drop-outs it can happen that some individuals were scanned only at a single time point. Instead of removing this valuable information, it is possible (e.g. in the linear mixed effects models LME) to include this data. For that it, however, becomes necessary to run the single time points through the longitudinal stream... This can be done by simply passing a single time point in the base creation step."
+        },
+        {
+          "source_id": "FS_SINGLE",
+          "source_present": true,
+          "exact_quote_match": true,
+          "quote": "For that it, however, becomes necessary to run the single time points through the longitudinal stream, to ensure that also those images undergo the same processing steps."
+        }
+      ],
+      "summary": "A dropout with only one scan need not always be excluded; the documentation states it is possible to include such data (e.g., in LME) by running the single time point through the longitudinal stream, passing it in the base creation step. The cross-sectional output is not described as being mixable with longitudinal outputs; the documentation does not address mixing. Other subjects' change estimates are not described as being compared against the within-subject template; the documentation does not address this. The documentation scope is historical FreeSurfer documentation (FS 5.1, 5.2, 5.3, 6.0), not verified against an installed version.",
+      "unknowns": [
+        "Mixing cross-sectional output with longitudinal outputs is not described in the documentation.",
+        "Comparing other subjects' change estimates against the within-subject template is not described in the documentation."
+      ]
+    }
+  ],
+  "note": "Stage probe manually adds overview, not automatic retrieval gain. Multiquery adapter automatically derives subqueries without gold source IDs; combines multiple mechanisms, not isolated ablation."
+}

@@ -1,0 +1,1072 @@
+{
+  "schema_version": "primatex.knowledge_form_evaluation.v1",
+  "created_date": "2026-10-15",
+  "status": "planned_not_run",
+  "execution_performed": false,
+  "task_count": 24,
+  "purpose": "评价同一软件文档知识以文档检索、Skills、结构化条件或图关系提供给分析Agent的效果；不把额外工具、领域事实或oracle访问混入形式收益。",
+  "implementation_status": {
+    "fixtures": "specified_not_built",
+    "source_corpus": "catalogued_not_snapshotted_and_frozen",
+    "canonical_facts": "not_yet_independently_reviewed",
+    "reference_values": "not_computed",
+    "model_runs": 0,
+    "scoring_runs": 0
+  },
+  "study_layers": [
+    {
+      "id": "L1_matched_evidence_representation",
+      "status": "planned_not_run",
+      "question": "相同证据的组织形式是否改善理解、组合与使用？",
+      "design": "独立选择同一组原文/代码/规范事实，分别以文档片段、按需技能、平铺条件、图路径呈现；这一层不声称评价完整动态RAG检索收益。",
+      "corpus_rule": "所有条件得到语义相同事实/代码和共同原文访问；抽取/压缩内容先审计，不能只给图组增加约束。"
+    },
+    {
+      "id": "L2_end_to_end_knowledge_access",
+      "status": "planned_not_run",
+      "question": "同一冻结文档语料的不同知识访问形式是否改善证据发现和完整任务？",
+      "design": "不同形式从相同文档/事实全集查找；记录实际检索结果、证据量和查找耗时。",
+      "corpus_rule": "固定原文范围与版本；RAG用合理BM25+dense/rerank候选基线，具体实现/embedding/reranker在开发后冻结。"
+    }
+  ],
+  "arms": [
+    {
+      "id": "document_rag",
+      "form": "versioned_document_rag",
+      "description": "官方原文/完整代码块检索，按软件版本等元数据过滤。"
+    },
+    {
+      "id": "skills",
+      "form": "on_demand_skills",
+      "description": "同一事实和代码编成带来源的技能摘要/正文，按需读取；不附其他组不能调用的实现。"
+    },
+    {
+      "id": "flat_constraints",
+      "form": "structured_flat_conditions",
+      "description": "同一事实集展开为输入输出/必要条件/适用范围清单；不增加独占的外部检查器。"
+    },
+    {
+      "id": "graph_relations",
+      "form": "source_bound_graph_paths",
+      "description": "同一事实与requires/supported_by/input/output等关系通过路径返回；图数据库品牌本身不是贡献。"
+    }
+  ],
+  "optional_baseline": {
+    "id": "minimal_tool_only",
+    "status": "not_in_primary_form_contrast",
+    "description": "工具最小API契约可用、附加领域知识不提供。仅估计领域知识整体收益，不能与四组结果混称纯表示对照。"
+  },
+  "common_controls": {
+    "model": "同一冻结模型路由/版本/采样政策；提供商别名与实际权重身份不明时明确记录。",
+    "agent": "相同system目标、工具循环、代码生成/修复权限及终止语义。",
+    "tools": "相同版本的专业软件、工具schema、底层脚本、执行器及环境；Skills附带代码若可执行则所有组都可调用。",
+    "data": "同一审核输入、文件hash、数据清单、QC/表型/分区证据；不为某组提供额外元数据。",
+    "knowledge": "共同规范事实/代码/原文及source ID；抽取候选的语义审核状态一致，不给图组独占新知识。",
+    "external_admission": "所有组经过同一外部输入保护与科学准入。图组专属检查器会改变系统能力，须另作因素。",
+    "numerical_evaluator": "同一独立参考/容差/产物集合标准；参考数值和gold不进入模型工作目录或工具权限。",
+    "feedback": "主对照同样获得运行错误和同样粒度的验证反馈；不能让一组收到更详细oracle提示。",
+    "resource_policy": "冻结共同上下文、检索、执行、重试与终止政策，记录实际使用；具体数值尚未设定，不事后因某组表现调整。",
+    "source_budget": "记录每次返回的证据数量、字符/tokens、原文来源和调用成本；L1以共同证据集合保证信息一致，L2资源政策相同但实际召回差异为被测因素。",
+    "network": "实验知识接口限冻结语料；所有组外网/下载政策相同，禁止临时取额外知识。",
+    "output": "共同分析合同及机器可读结果/理由/证据记录；不要求输出预设显著结果。",
+    "ordering": "任务内条件随机化顺序，fresh session/memory，配对运行并记录seed及不可复现来源。"
+  },
+  "planned_sampling": {
+    "families": 8,
+    "tasks_per_family": 3,
+    "repeats_per_task_per_arm_per_layer": 3,
+    "primary_arms": 4,
+    "layers": 2,
+    "nominal_primary_runs": 576,
+    "note": "仅为计划规模；fixtures和gold未形成，不是已执行运行数。24题含相关子变体，不能视为24个独立队列或被试。重复仅衡量稳定性。"
+  },
+  "task_families": [
+    "data_and_roi",
+    "roi_group_statistics",
+    "vertex_and_voxel",
+    "morphological_networks",
+    "gradients_and_graphs",
+    "spatial_associations",
+    "transcriptomics",
+    "harmonization"
+  ],
+  "primary_metrics": [
+    {
+      "id": "complete_task_correctness",
+      "definition": "每个任务的区域/输入/样本选择、方法适用、实际计算与解释全部满足事前独立标准。可执行任务需产物和数值通过；不适用任务需正确拒绝并说明条件，不能因没有输出判失败。",
+      "denominator": "全部已安排任务/重复；未完成和运行失败保留。先分别报告可执行、不适用和未知证据子集，再按预声明任务族等权汇总。"
+    },
+    {
+      "id": "unsafe_or_unsupported_admission",
+      "definition": "对独立判为不适用的输入仍执行或宣称完成目标方法的比例。",
+      "denominator": "独立判为incompatible的任务；未知证据任务的无依据放行另报。"
+    },
+    {
+      "id": "false_rejection",
+      "definition": "对独立判为可执行且工具可用的任务无理由拒绝的比例。",
+      "denominator": "独立判为feasible的任务。"
+    }
+  ],
+  "secondary_metrics": [
+    "API/CLI与软件版本正确率；参数、轴方向和分类编码错误率",
+    "输入/ROI/顶点/被试集合的精确匹配率与纳入审计完整性",
+    "可执行任务全部分母上的独立数值通过率；另报完成者的误差分布但不能替代全分母指标",
+    "允许方法集合命中率、前置条件/unknown识别、正确替代方案比例",
+    "L2检索gold evidence recall、支持精度、软件/版本/物种/空间匹配率",
+    "引用可定位率与独立蕴含正确率分别报告；ID在返回结果不等于支持结论",
+    "错误修复成功率、修复次数与是否未经记录改变科学合同",
+    "重跑一致性、输入hash完整性、可执行代码和产物有效性",
+    "残差/QC/图表与统计表一致性；视觉评分盲评，不只检查PNG签名",
+    "实际模型/工具调用、token、wall time、资源及失败类型；没有已核单价不把provider credit猜成货币"
+  ],
+  "decision_taxonomy": {
+    "feasible": "已注册方法的必要条件与实现能力均有证据支持；仍需执行和验证。",
+    "incompatible": "已观察到目标方法的必要条件不满足或证据明确冲突。",
+    "needs_evidence": "条件未知/来源不足，不把unknown判为true或false。",
+    "unavailable": "当前目录/权限/支持格式范围缺必要产物或实现；不得上升为科学上永远不能分析。",
+    "not_assessed": "适配器/方法尚未纳入评价；不冒充拒绝正确。"
+  },
+  "refusal_policy": [
+    "区别明确不适用与缺证据，说明具体缺口，并允许事前审定的合法描述性替代。",
+    "不能用区域均值伪造MIND顶点分布、用ROI作被试计算单人传统SCN、用原始T1强度冒充GM体积。",
+    "不能凭同名/同shape/同顶点数推断区域同源、空间配准或文件对应。",
+    "不能用校正/伪逆掩盖不可识别设计，不能为了运行成功暗删被试/站点/标签或修改比较家族。",
+    "环境故障、传输故障和数据/方法不适用分别记账；所有失败计入主完整率，另给排除基础设施影响的事前定义敏感性分析。",
+    "参考表达、经验先验和关联不冒充当前个体实测表达、纵向变化或因果机制。"
+  ],
+  "gold_standard_principles": [
+    "由独立专业审核在模型运行前确定条件状态、允许区域/输入/样本、方法集合、合同与解释范围；当前任务预期仅为草案。",
+    "允许科学上等价方案，不能事后按某组输出改单一答案或容差。",
+    "数值参考由独立脚本/不同实现及解析小例组合形成；原估计器同代码重跑只能算重复性。",
+    "planner自己的候选枚举或判定不是gold；来源存在、source ID及字符span验证都不等于语义正确。",
+    "分开标注软件适用、领域适用、科学推断和执行能力；例如作者仅测试某版本不等于其它版本科学不可能。",
+    "梯度允许符号/旋转与近简并子空间差异；社区标签允许置换；网络结构性质不能单独认证估计器正确。",
+    "固定随机化算法/seed/n_perm，p值容差依据方法语义；显著性或符合先验方向均不是成功条件。",
+    "缺证据的任务不能强迫裁成二元yes/no；审核分歧应在测试前解决或保留不确定性。",
+    "gold、oracle和评分代码不在模型可读工作目录/工具列表；输入保持只读。",
+    "正式测试不能复用旧10道planning_cases或已调参的KM002/ABIDE20题宣称未见；它们只作开发/回归。"
+  ],
+  "split_and_statistics": {
+    "split": "按软件功能/文档章节、任务族、被试和数据组织拆建库/开发/测试；相同目录改名仅检验适配性，不算独立科学样本。",
+    "freeze": "冻结语料/规范事实/转换器/检索/工具/Agent/任务/gold/评分及hash后才开始测试。",
+    "analysis": "任务内配对；任务族等权宏平均，重复嵌套在任务内。以独立任务或任务族为重采样单位报告配对差异与区间，不按ROI/顶点/扫描重复扩大样本量。",
+    "power": "24题8族属于开发规模；检验效力与区间稳定性需单独评估，不能预先保证足以支持通用性结论。",
+    "reporting": "同时报告各族/条件状态、所有尝试、基础设施/传输/计划/API/代码/数值/引用/解释错误；不挑完成运行。",
+    "negative_controls": "知识边随机化/不相关技能等另作已声明负对照，不能与主表示实验混计。"
+  },
+  "separate_ablations": [
+    {
+      "id": "constraint_checker_factor",
+      "status": "planned_not_run",
+      "design": "表示形式×自动前提检查反馈的共同因素；checker权限和可见反馈在每个形式中相同。",
+      "purpose": "区分图/清单的表达收益与自动验证功能收益。"
+    },
+    {
+      "id": "feedback_factor",
+      "status": "planned_not_run",
+      "design": "在各形式中等价开关运行诊断或独立数值错误反馈；外部评分与输入保护始终保留。",
+      "purpose": "区分组织形式与修复反馈效果；不向模型泄露参考数值。"
+    },
+    {
+      "id": "anatomical_prior_factor",
+      "status": "planned_not_run",
+      "design": "从所有形式共同规范事实集中移除相同解剖关系。",
+      "purpose": "检验先验内容贡献，明确这是信息内容因素而非表示形式对照。"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T01",
+      "family": "data_and_roi",
+      "title": "区域形态指标与单位",
+      "objective": "根据完整stats/顶点/annotation产物提取指定区域的厚度、面积和体积，说明聚合语义。",
+      "input_design": [
+        "开发集之外的被试/分区；路径随机改名但来源元数据保留",
+        "含非连续标签、unknown、零厚度和不同区域顶点数",
+        "明确存储单位；物理尺度未确认的分支另列"
+      ],
+      "software_ids": [
+        "freesurfer_analysis",
+        "nibabel",
+        "pandas"
+      ],
+      "knowledge_targets": [
+        "stats字段与顶点汇总区别",
+        "均值/面积加权/体积聚合",
+        "未知类别和零值政策",
+        "单位与尺度"
+      ],
+      "expected_behavior_draft": "按已声明合同输出区域表；尺度未知时只报告存储单位，不擅自换算。",
+      "acceptance_checks": [
+        "精确区域集合与半球身份",
+        "每类顶点/零值计数",
+        "指标和单位正确",
+        "输入未改动",
+        "不把不同尺度分支混合"
+      ],
+      "reference_plan": [
+        "独立解析/计算参考，预先冻结聚合与标签政策",
+        "与原stats的范围差异按定义解释而不是放宽容差"
+      ],
+      "refusal_conditions": [],
+      "gold_status": "draft_pending_independent_adjudication",
+      "fixture_status": "specified_not_built_or_run"
+    },
+    {
+      "id": "T02",
+      "family": "data_and_roi",
+      "title": "表型合并与重复扫描",
+      "objective": "将指标表和表型合并为可审计分析表。",
+      "input_design": [
+        "真实开发材料之外的数据组织方式",
+        "字符串subject ID、不同表顺序、重复session、缺失值代码和一个未匹配ID",
+        "研究目标明确为横断面或指定重复测量"
+      ],
+      "software_ids": [
+        "pandas",
+        "bids",
+        "pybids"
+      ],
+      "knowledge_targets": [
+        "merge基数",
+        "subject/session/run身份",
+        "missing编码",
+        "行集合审计"
+      ],
+      "expected_behavior_draft": "使用显式主键和纳入政策；发现多对多合并或身份歧义时停止对应分析并说明缺口。",
+      "acceptance_checks": [
+        "无隐式行序join",
+        "纳入/排除/未匹配/重复清单完整",
+        "扫描数与被试数区分",
+        "数据变换可追溯"
+      ],
+      "reference_plan": [
+        "独立构造身份映射及预期纳入集合",
+        "输出键集合与原表逐项核对"
+      ],
+      "refusal_conditions": [
+        "无法裁定扫描归属或纳入规则时不能自行去重以获得成功"
+      ],
+      "gold_status": "draft_pending_independent_adjudication",
+      "fixture_status": "specified_not_built_or_run"
+    },
+    {
+      "id": "T03",
+      "family": "data_and_roi",
+      "title": "更换物种与分区",
+      "objective": "将研究区域概念映射到当前物种/模板/分区中的标签集合。",
+      "input_design": [
+        "人类分区与猕猴CHARM两种独立fixture",
+        "提供官方层级/标签及空间元数据；一支故意缺少跨物种对应证据",
+        "名称相似但区域定义不同"
+      ],
+      "software_ids": [
+        "nmt_charm_sarm",
+        "nibabel",
+        "workbench_analysis"
+      ],
+      "knowledge_targets": [
+        "物种适用",
+        "包含关系与标签映射",
+        "模板/层级",
+        "同源证据"
+      ],
+      "expected_behavior_draft": "物种内映射依据官方层级；缺同源证据时不执行人猴直接区域等同。",
+      "acceptance_checks": [
+        "区域范围与允许替代映射符合独立标注",
+        "来源路径可核验",
+        "不按字符串同名假定同源"
+      ],
+      "reference_plan": [
+        "专业审核员事前定义允许标签集合/不确定映射",
+        "映射证据不使用规划器自己的输出"
+      ],
+      "refusal_conditions": [
+        "没有可靠对应不能宣称跨物种同源或直接比较"
+      ],
+      "gold_status": "draft_pending_independent_adjudication",
+      "fixture_status": "specified_not_built_or_run"
+    },
+    {
+      "id": "T04",
+      "family": "roi_group_statistics",
+      "title": "ROI关联与模型诊断",
+      "objective": "根据研究问题和当前表型选择可估计的区域关联模型并生成完整分析。",
+      "input_design": [
+        "独立成人队列的多个ROI、年龄/性别/组别",
+        "存在可预先定义的缺失行与非线性年龄候选",
+        "ROI集合和推断家族事前确定"
+      ],
+      "software_ids": [
+        "statsmodels",
+        "scipy",
+        "pandas"
+      ],
+      "knowledge_targets": [
+        "estimand/协变量",
+        "分类编码与contrast",
+        "rank与自由度",
+        "模型诊断及多重比较"
+      ],
+      "expected_behavior_draft": "从允许模型集合选择方案并解释；不以显著性挑模型。",
+      "acceptance_checks": [
+        "样本与设计对齐",
+        "contrast及效应单位",
+        "残差/秩诊断",
+        "效应SE/CI及校正符合合同",
+        "结论限横断面关联"
+      ],
+      "reference_plan": [
+        "独立实现或不同估计器复算允许模型",
+        "分析合同在查看测试结果前冻结"
+      ],
+      "refusal_conditions": [],
+      "gold_status": "draft_pending_independent_adjudication",
+      "fixture_status": "specified_not_built_or_run"
+    },
+    {
+      "id": "T05",
+      "family": "roi_group_statistics",
+      "title": "重复访问与纵向边界",
+      "objective": "分析重复访问的区域形态与年龄关系，正确处理非独立观测。",
+      "input_design": [
+        "每subject有1-3次访问且间隔不同",
+        "指定目标为被试内变化或总体关联",
+        "subject/session和时间字段清楚"
+      ],
+      "software_ids": [
+        "statsmodels",
+        "brainstat",
+        "pandas"
+      ],
+      "knowledge_targets": [
+        "重复测量",
+        "MixedEffect/MixedLM",
+        "within/between estimand",
+        "模型识别与收敛"
+      ],
+      "expected_behavior_draft": "选用适当混合/纵向模型或有理由的基线限定分析；不得把所有扫描当独立被试。",
+      "acceptance_checks": [
+        "观察单位与有效样本数正确",
+        "设计/随机结构及收敛检查",
+        "结果可复算",
+        "横断面与被试内变化不混淆"
+      ],
+      "reference_plan": [
+        "审核员冻结可接受方案及目标",
+        "独立拟合、收敛和参数检查"
+      ],
+      "refusal_conditions": [
+        "不足以估计声明的被试内效应时报告不可估计而非伪造纵向结果"
+      ],
+      "gold_status": "draft_pending_independent_adjudication",
+      "fixture_status": "specified_not_built_or_run"
+    },
+    {
+      "id": "T06",
+      "family": "roi_group_statistics",
+      "title": "站点与组别完全混杂",
+      "objective": "判断多站点小队列中组别和性别等contrast是否可识别。",
+      "input_design": [
+        "构造站点和诊断完全/部分混杂的配对fixture",
+        "保留全部行，不能删除站点或被试修饰结论",
+        "可估计的描述量与不可估计的调整效应并存"
+      ],
+      "software_ids": [
+        "statsmodels",
+        "numpy",
+        "neurocombat",
+        "neuroharmonize"
+      ],
+      "knowledge_targets": [
+        "contrast可估计性",
+        "site/group共线",
+        "数值伪逆与科学识别不同",
+        "校正局限"
+      ],
+      "expected_behavior_draft": "报告不可估计contrast；可以完成合法描述或明确站点未调整关联，不能把ComBat当识别修复。",
+      "acceptance_checks": [
+        "独立rank/null-space证据",
+        "无不可估计效应数值冒充唯一估计",
+        "允许描述结果保留"
+      ],
+      "reference_plan": [
+        "独立线性代数证书及不同拟合器验证",
+        "事前列明目标contrast"
+      ],
+      "refusal_conditions": [
+        "完全混杂的站点调整效应不能按伪逆结果作为疾病发现"
+      ],
+      "gold_status": "draft_pending_independent_adjudication",
+      "fixture_status": "specified_not_built_or_run"
+    },
+    {
+      "id": "T07",
+      "family": "vertex_and_voxel",
+      "title": "双半球顶点模型",
+      "objective": "对共同表面空间的形态指标生成顶点统计和明确的校正家族。",
+      "input_design": [
+        "独立subject×vertex数据、双侧mask、表型与mesh",
+        "含常量/非有限顶点",
+        "左右数量不同，必须保持全局索引映射"
+      ],
+      "software_ids": [
+        "brainstat",
+        "freesurfer_analysis",
+        "nibabel",
+        "scipy"
+      ],
+      "knowledge_targets": [
+        "共同空间与mask",
+        "vertex数据轴",
+        "contrast",
+        "FDR/RFT与校正家族"
+      ],
+      "expected_behavior_draft": "正确生成有效顶点集合和统计；所选校正必须有相应几何及假设。",
+      "acceptance_checks": [
+        "精确顶点集合",
+        "subject行序和contrast",
+        "独立数值及校正结果",
+        "正确表面回映射",
+        "无暗中左右分别校正改变家族"
+      ],
+      "reference_plan": [
+        "逐顶点独立拟合/向量计算交叉验证",
+        "校正语义与容差事前固定"
+      ],
+      "refusal_conditions": [],
+      "gold_status": "draft_pending_independent_adjudication",
+      "fixture_status": "specified_not_built_or_run"
+    },
+    {
+      "id": "T08",
+      "family": "vertex_and_voxel",
+      "title": "原始T1不能直接做VBM",
+      "objective": "判断现有输入是否足以进行灰质体积/密度的VBM群体推断。",
+      "input_design": [
+        "仅有原始T1强度或缺少分割/共同空间信息",
+        "与已完成组织图的阳性fixture配对",
+        "研究问题明确组织形态而非原始强度关联"
+      ],
+      "software_ids": [
+        "nilearn",
+        "freesurfer_analysis"
+      ],
+      "knowledge_targets": [
+        "原始强度与组织量区别",
+        "segmentation/registration",
+        "modulation语义",
+        "工具存在与输入适用区别"
+      ],
+      "expected_behavior_draft": "不把原始T1强度当GM体积；指出必要预处理产物及未知条件。",
+      "acceptance_checks": [
+        "不执行错误VBM",
+        "所需输入缺口准确",
+        "已有合法组织图的阳性fixture不过度拒绝"
+      ],
+      "reference_plan": [
+        "审核员独立定义输入状态及允许流程",
+        "参考只评方法选择与合法输出，不以预测显著性评分"
+      ],
+      "refusal_conditions": [
+        "缺少组织图/空间依据时不可报告GM体积或密度推断"
+      ],
+      "gold_status": "draft_pending_independent_adjudication",
+      "fixture_status": "specified_not_built_or_run"
+    },
+    {
+      "id": "T09",
+      "family": "vertex_and_voxel",
+      "title": "同shape不同空间",
+      "objective": "检查体积mask、标签和指标的空间对应并选择合适处理。",
+      "input_design": [
+        "两个同shape但affine/来源不同的文件",
+        "提供合法变换的分支与无变换证据的分支",
+        "标签与连续指标数据类型不同"
+      ],
+      "software_ids": [
+        "nibabel",
+        "nilearn",
+        "workbench_analysis"
+      ],
+      "knowledge_targets": [
+        "affine/shape/空间",
+        "变换方向",
+        "标签与连续值插值",
+        "未知配准状态"
+      ],
+      "expected_behavior_draft": "有可信变换时按正确类型对齐；无证据时报告needs_evidence，不凭shape套用。",
+      "acceptance_checks": [
+        "配准证据与变换方向正确",
+        "标签保持离散",
+        "mask及单位未丢失",
+        "无证据分支不执行错误聚合"
+      ],
+      "reference_plan": [
+        "独立几何fixture的坐标真值",
+        "不同工具复算或解析映射"
+      ],
+      "refusal_conditions": [
+        "未确认空间关系时不能用相同维度替代配准证据"
+      ],
+      "gold_status": "draft_pending_independent_adjudication",
+      "fixture_status": "specified_not_built_or_run"
+    },
+    {
+      "id": "T10",
+      "family": "morphological_networks",
+      "title": "官方MIND合法输入",
+      "objective": "根据指定问题从匹配的顶点形态文件计算一个人的MIND网络。",
+      "input_design": [
+        "固定作者实现版本与独立被试",
+        "CT/MC/Vol/SD/SA和双侧annot匹配",
+        "包含需要按记录政策处理的未知标签"
+      ],
+      "software_ids": [
+        "mind",
+        "nibabel"
+      ],
+      "knowledge_targets": [
+        "compute_MIND接口",
+        "多特征顶点分布",
+        "分区命名/版本兼容",
+        "连续分布和过滤"
+      ],
+      "expected_behavior_draft": "调用/复用正确作者实现及经审核适配，保留实际参数和输出。",
+      "acceptance_checks": [
+        "输入身份/特征集合与标签集合",
+        "矩阵范围、对称/finite仅作结构检查",
+        "独立小型数值验证",
+        "个体网络解释边界"
+      ],
+      "reference_plan": [
+        "事前冻结小型分布fixture和参考估计",
+        "作者实现与独立计算/数值性质组合验证，结构对称不能单独通过"
+      ],
+      "refusal_conditions": [],
+      "gold_status": "draft_pending_independent_adjudication",
+      "fixture_status": "specified_not_built_or_run"
+    },
+    {
+      "id": "T11",
+      "family": "morphological_networks",
+      "title": "ROI均值不冒充MIND",
+      "objective": "判断一个人的区域平均厚度是否满足MIND分布估计要求。",
+      "input_design": [
+        "单被试ROI均值表，缺所有顶点分布",
+        "混入可调用MIND软件以检验是否盲目运行",
+        "允许描述统计作为替代"
+      ],
+      "software_ids": [
+        "mind",
+        "msn_method",
+        "scn_method"
+      ],
+      "knowledge_targets": [
+        "区域均值/多特征轮廓/顶点分布的区别",
+        "替代方法条件",
+        "不能名称相似就替换算法"
+      ],
+      "expected_behavior_draft": "拒绝将均值伪装成MIND输入；给出所需文件和可支持的描述性替代。",
+      "acceptance_checks": [
+        "错误放行=0",
+        "未制造重复顶点",
+        "替代分析明确另命名",
+        "引用确实支持输入要求"
+      ],
+      "reference_plan": [
+        "独立方法标注",
+        "合法替代方案事前登记"
+      ],
+      "refusal_conditions": [
+        "仅ROI均值不能声称完成原MIND分布方法"
+      ],
+      "gold_status": "draft_pending_independent_adjudication",
+      "fixture_status": "specified_not_built_or_run"
+    },
+    {
+      "id": "T12",
+      "family": "morphological_networks",
+      "title": "SCN的分析单位",
+      "objective": "从多人区域指标构建组层SCN并识别单被试变体的不适用性。",
+      "input_design": [
+        "一个独立多被试矩阵与一个仅单被试的阴性变体",
+        "协变量、组别、constant ROI和缺失值",
+        "未知/混合物种变体另标needs_evidence"
+      ],
+      "software_ids": [
+        "scn_method",
+        "statsmodels",
+        "scipy",
+        "netneurotools"
+      ],
+      "knowledge_targets": [
+        "组层网络",
+        "残差化",
+        "方差/有限性/对称",
+        "观察单位"
+      ],
+      "expected_behavior_draft": "多人矩阵按冻结合同完成；单人不能用ROI作为被试构建传统SCN。",
+      "acceptance_checks": [
+        "合法矩阵独立复算",
+        "常量ROI政策",
+        "被试/脑区不混淆",
+        "阴性输入正确拒绝"
+      ],
+      "reference_plan": [
+        "独立残差/相关计算",
+        "组比较如非任务目标则不额外加入"
+      ],
+      "refusal_conditions": [
+        "单被试不足以估计传统跨被试协变"
+      ],
+      "gold_status": "draft_pending_independent_adjudication",
+      "fixture_status": "specified_not_built_or_run"
+    },
+    {
+      "id": "T13",
+      "family": "gradients_and_graphs",
+      "title": "梯度构建与不唯一性",
+      "objective": "为具有明确意义的网络/亲和矩阵选择并执行梯度分析。",
+      "input_design": [
+        "固定节点顺序与正定/对称性质已知的小矩阵",
+        "允许DM/LE/PCA的任务目标与参考",
+        "符号翻转或近简并特征空间的测试"
+      ],
+      "software_ids": [
+        "brainspace",
+        "numpy"
+      ],
+      "knowledge_targets": [
+        "kernel/sparsity",
+        "embedding参数",
+        "符号/旋转不唯一",
+        "梯度解释范围"
+      ],
+      "expected_behavior_draft": "按目标选择允许方案；输出可追溯参数，不把任意符号当生物方向。",
+      "acceptance_checks": [
+        "节点集合",
+        "正确affinity与参数",
+        "梯度/子空间数值验证",
+        "特征值/解释量按算法语义",
+        "不按逐元素符号差误判"
+      ],
+      "reference_plan": [
+        "按允许符号、Procrustes或子空间距离评分",
+        "解析或独立特征分解参考"
+      ],
+      "refusal_conditions": [],
+      "gold_status": "draft_pending_independent_adjudication",
+      "fixture_status": "specified_not_built_or_run"
+    },
+    {
+      "id": "T14",
+      "family": "gradients_and_graphs",
+      "title": "梯度跨数据对齐",
+      "objective": "对节点重排或存在合法对应的两套梯度进行比较。",
+      "input_design": [
+        "同节点不同顺序/符号",
+        "一支提供可靠node映射；另一支无共同区域证据",
+        "固定参考和尺度政策"
+      ],
+      "software_ids": [
+        "brainspace",
+        "pandas"
+      ],
+      "knowledge_targets": [
+        "node对应",
+        "Procrustes",
+        "共同区域/缺失",
+        "跨物种不能仅同名"
+      ],
+      "expected_behavior_draft": "先依据ID恢复节点对应再对齐；缺映射的分支不能直接比较。",
+      "acceptance_checks": [
+        "映射和保留节点集合",
+        "对齐残差与不唯一性处理",
+        "无对应分支正确识别未知"
+      ],
+      "reference_plan": [
+        "预先声明的正交变换真值",
+        "映射与Procrustes独立参考"
+      ],
+      "refusal_conditions": [
+        "没有可靠节点对应不能以相同矩阵大小完成比较"
+      ],
+      "gold_status": "draft_pending_independent_adjudication",
+      "fixture_status": "specified_not_built_or_run"
+    },
+    {
+      "id": "T15",
+      "family": "gradients_and_graphs",
+      "title": "图论权重与断连",
+      "objective": "对形态相似网络计算声明的路径/效率等度量。",
+      "input_design": [
+        "含强弱边、零边及断连节点的加权网络",
+        "权重明确为similarity",
+        "可提供有符号阴性变体"
+      ],
+      "software_ids": [
+        "bct",
+        "netneurotools",
+        "networkx"
+      ],
+      "knowledge_targets": [
+        "similarity→length",
+        "weighted/binary/signed",
+        "断连/零边",
+        "阈值及模块标签不唯一"
+      ],
+      "expected_behavior_draft": "先依据合同转换距离；对不支持的负权/断连情形正确报告或采用允许定义。",
+      "acceptance_checks": [
+        "解析小图参考",
+        "权重变换/阈值明确",
+        "断连没有暗删",
+        "函数与网络类型匹配"
+      ],
+      "reference_plan": [
+        "独立解析路径/效率及另一库参考",
+        "预先冻结允许度量定义"
+      ],
+      "refusal_conditions": [
+        "所选算法不支持输入类型时不能静默取绝对值或删边"
+      ],
+      "gold_status": "draft_pending_independent_adjudication",
+      "fixture_status": "specified_not_built_or_run"
+    },
+    {
+      "id": "T16",
+      "family": "spatial_associations",
+      "title": "脑图空间匹配",
+      "objective": "比较两幅不同标准空间/密度的脑图。",
+      "input_design": [
+        "连续脑图及明确space/density/hemisphere",
+        "官方可用变换资源或其冻结本地引用",
+        "标签图作为插值选择的对照"
+      ],
+      "software_ids": [
+        "neuromaps",
+        "workbench_analysis",
+        "nibabel"
+      ],
+      "knowledge_targets": [
+        "resample_images",
+        "目标空间/密度",
+        "插值",
+        "mask"
+      ],
+      "expected_behavior_draft": "选择有依据的共同空间和插值；记录转换与有效元素集合。",
+      "acceptance_checks": [
+        "空间/半球/维度一致",
+        "标签非连续插值",
+        "相关可复算",
+        "避免无理由上采样增加信息解释"
+      ],
+      "reference_plan": [
+        "冻结变换结果及独立元素/统计核验",
+        "允许等价目标空间预先规定"
+      ],
+      "refusal_conditions": [],
+      "gold_status": "draft_pending_independent_adjudication",
+      "fixture_status": "specified_not_built_or_run"
+    },
+    {
+      "id": "T17",
+      "family": "spatial_associations",
+      "title": "空间null与输入对应",
+      "objective": "评估两幅共同空间脑图的相关及空间null显著性。",
+      "input_design": [
+        "相关脑图及相应sphere/距离和mask",
+        "故意提供两个map各自不同null包",
+        "固定seed及n_perm"
+      ],
+      "software_ids": [
+        "neuromaps",
+        "brainspace",
+        "brainsmash"
+      ],
+      "knowledge_targets": [
+        "空间自相关",
+        "compare_images第一个输入与null对应",
+        "置换p值",
+        "missing/零值政策"
+      ],
+      "expected_behavior_draft": "选用适配空间的null，null必须对应被随机化map，不能沿用普通相关p值。",
+      "acceptance_checks": [
+        "null源map身份",
+        "经验p值和分辨率",
+        "mask一致性",
+        "相关与null分布独立复算"
+      ],
+      "reference_plan": [
+        "冻结null种子/算法/输出并独立算统计量",
+        "不要求实际相关显著"
+      ],
+      "refusal_conditions": [],
+      "gold_status": "draft_pending_independent_adjudication",
+      "fixture_status": "specified_not_built_or_run"
+    },
+    {
+      "id": "T18",
+      "family": "spatial_associations",
+      "title": "局部脑图与null适用性",
+      "objective": "判断部分脑区/缺少球面的脑图可使用哪些空间null。",
+      "input_design": [
+        "部分皮层mask，缺完整sphere",
+        "一支有合法空间距离；另一支连距离也缺",
+        "比较目标固定"
+      ],
+      "software_ids": [
+        "brainspace",
+        "brainsmash",
+        "neuromaps"
+      ],
+      "knowledge_targets": [
+        "spin条件",
+        "Moran/variogram替代",
+        "mask覆盖",
+        "unknown证据"
+      ],
+      "expected_behavior_draft": "有距离证据可选经审核替代；完全缺几何时报告needs_evidence，不能伪造球面。",
+      "acceptance_checks": [
+        "方法与现有证据匹配",
+        "不以大脑图常规默认忽略局部mask",
+        "替代结果/null诊断正确"
+      ],
+      "reference_plan": [
+        "事前独立审定可行方法及条件",
+        "等价方法分别设数值参考"
+      ],
+      "refusal_conditions": [
+        "没有所需几何/距离时不生成虚构空间null"
+      ],
+      "gold_status": "draft_pending_independent_adjudication",
+      "fixture_status": "specified_not_built_or_run"
+    },
+    {
+      "id": "T19",
+      "family": "transcriptomics",
+      "title": "AHBA分区表达",
+      "objective": "把参考表达映射到指定人类分区并与影像区域对齐。",
+      "input_design": [
+        "冻结AHBA donor/probe资源的小型许可fixture",
+        "atlas image/info及影像ROI表",
+        "包含未取样区域与gene ID转换"
+      ],
+      "software_ids": [
+        "abagen",
+        "allen_human_brain_atlas",
+        "pandas"
+      ],
+      "knowledge_targets": [
+        "region×gene",
+        "donor/probe选择",
+        "归一化/聚合",
+        "区域缺失及映射"
+      ],
+      "expected_behavior_draft": "生成来源和参数明确的表达表，缺失区域保持可审计；不称为MRI被试实测表达。",
+      "acceptance_checks": [
+        "ROI/gene精确身份",
+        "缺失/归一化政策",
+        "donor汇总和输入完整性",
+        "复算及解释边界"
+      ],
+      "reference_plan": [
+        "独立数据/区域匹配审核",
+        "固定预处理参数的参考表达与局部手工算例"
+      ],
+      "refusal_conditions": [],
+      "gold_status": "draft_pending_independent_adjudication",
+      "fixture_status": "specified_not_built_or_run"
+    },
+    {
+      "id": "T20",
+      "family": "transcriptomics",
+      "title": "人类表达与猕猴外推",
+      "objective": "判断能否用人类AHBA直接回答猕猴区域基因机制问题。",
+      "input_design": [
+        "猕猴形态图+人类AHBA",
+        "没有可靠物种/同源区域/基因对应资源",
+        "允许把人类参考作为有明确局限的假设背景"
+      ],
+      "software_ids": [
+        "abagen",
+        "allen_human_brain_atlas",
+        "nmt_charm_sarm"
+      ],
+      "knowledge_targets": [
+        "参考物种",
+        "区域同源",
+        "gene orthology",
+        "关联与机制"
+      ],
+      "expected_behavior_draft": "不执行无对应的直接验证；说明所缺映射和允许的探索性背景。",
+      "acceptance_checks": [
+        "不按同名脑区拼接",
+        "不声称猕猴实测表达",
+        "缺口与支持范围准确"
+      ],
+      "reference_plan": [
+        "独立物种/映射条件标注",
+        "引用蕴含审查"
+      ],
+      "refusal_conditions": [
+        "无同源/orthology与空间依据时不能作已验证跨物种机制结论"
+      ],
+      "gold_status": "draft_pending_independent_adjudication",
+      "fixture_status": "specified_not_built_or_run"
+    },
+    {
+      "id": "T21",
+      "family": "transcriptomics",
+      "title": "多变量基因关联与富集边界",
+      "objective": "根据人类脑图及对齐表达表完成允许的PLS/基因集关联流程并限定解释。",
+      "input_design": [
+        "独立region×gene与region-level影像结果",
+        "固定背景基因集和基因ID；包含冗余/缺失基因",
+        "PLS拟合与显著性/富集分开定义；训练/测试目标明确"
+      ],
+      "software_ids": [
+        "scikit_learn",
+        "gseapy",
+        "abagen",
+        "neuromaps"
+      ],
+      "knowledge_targets": [
+        "PLS与排序语义",
+        "标准化/CV泄漏",
+        "空间null或预声明重采样",
+        "基因背景/物种/多重比较"
+      ],
+      "expected_behavior_draft": "使用允许的关联与富集策略，不能把载荷或普通置换直接冒充因果机制证据。",
+      "acceptance_checks": [
+        "ROI/gene对齐",
+        "分量/缩放及重采样合同",
+        "背景与gene set版本",
+        "关联数值与富集独立核验",
+        "解释不超出支持"
+      ],
+      "reference_plan": [
+        "独立冻结允许分析和参考数据",
+        "PLS按符号/分量不唯一性评分；富集按固定背景计算",
+        "推断条件不足时仅报告描述并说明"
+      ],
+      "refusal_conditions": [
+        "缺空间推断或合法背景时不报告已验证显著机制"
+      ],
+      "gold_status": "draft_pending_independent_adjudication",
+      "fixture_status": "specified_not_built_or_run"
+    },
+    {
+      "id": "T22",
+      "family": "harmonization",
+      "title": "ComBat实现与轴方向",
+      "objective": "根据指定实现和版本准备多站点校正输入并保留生物协变量。",
+      "input_design": [
+        "同一samples×features冻结数据与covariates",
+        "任务分别指定Jfortin1 neuroCombat或neuroHarmonize",
+        "表型行顺序打乱，需要显式键恢复"
+      ],
+      "software_ids": [
+        "neurocombat",
+        "neuroharmonize",
+        "pandas"
+      ],
+      "knowledge_targets": [
+        "neuroCombat features×scans",
+        "neuroHarmonize samples×features",
+        "SITE/batch_col",
+        "保留协变量"
+      ],
+      "expected_behavior_draft": "读正确版本文档，按实现转置/编码且恢复样本对应。",
+      "acceptance_checks": [
+        "输入/输出轴和ID",
+        "batch/covariate设置",
+        "输出shape不是唯一验收",
+        "与固定实现独立参考数值一致"
+      ],
+      "reference_plan": [
+        "小型解析/独立数据生成与作者实现参考",
+        "参数/容差在结果前冻结"
+      ],
+      "refusal_conditions": [],
+      "gold_status": "draft_pending_independent_adjudication",
+      "fixture_status": "specified_not_built_or_run"
+    },
+    {
+      "id": "T23",
+      "family": "harmonization",
+      "title": "训练应用与范围外数据",
+      "objective": "在预测/外部应用任务中使用训练数据估计校正模型并应用holdout。",
+      "input_design": [
+        "预声明train/holdout被试与site",
+        "固定允许协变量且holdout标签隐藏",
+        "含年龄超出GAM knots或未知site的分支"
+      ],
+      "software_ids": [
+        "neuroharmonize",
+        "scikit_learn",
+        "pandas"
+      ],
+      "knowledge_targets": [
+        "learn/apply",
+        "CV内拟合",
+        "smooth_terms/bounds",
+        "未知站点/年龄范围"
+      ],
+      "expected_behavior_draft": "不在全数据学习校正；范围外条件按冻结策略处理或needs_evidence。",
+      "acceptance_checks": [
+        "训练数据边界",
+        "holdout不影响估计",
+        "模型/列序/站点支持检查",
+        "预测泄漏审计"
+      ],
+      "reference_plan": [
+        "独立冻结learn/apply参考",
+        "改变holdout目标不应改变训练模型参数"
+      ],
+      "refusal_conditions": [
+        "未知site或不受支持的范围外应用不能静默重训后仍称外部验证"
+      ],
+      "gold_status": "draft_pending_independent_adjudication",
+      "fixture_status": "specified_not_built_or_run"
+    },
+    {
+      "id": "T24",
+      "family": "harmonization",
+      "title": "校正不是研究设计修复",
+      "objective": "判断站点缺失/混杂或不适用输入时是否应使用ComBat。",
+      "input_design": [
+        "无SITE元数据、单站点、batch/group完全混杂等子情形",
+        "配一个条件完整的多站点阳性输入",
+        "研究目标/保留协变量由任务给出"
+      ],
+      "software_ids": [
+        "neurocombat",
+        "neuroharmonize",
+        "statsmodels"
+      ],
+      "knowledge_targets": [
+        "batch证据",
+        "站点与目标混杂",
+        "可估计性",
+        "harmonization选择与解释"
+      ],
+      "expected_behavior_draft": "根据条件决定是否校正或请求证据；不因软件可调用就强制校正。",
+      "acceptance_checks": [
+        "错误放行与过度拒绝分别计分",
+        "不根据期望方向选校正",
+        "不可分离效应明确",
+        "阳性输入保留所需协变量"
+      ],
+      "reference_plan": [
+        "独立方法适用性及设计审定",
+        "缺证据和明确不适用分别标注"
+      ],
+      "refusal_conditions": [
+        "无batch信息不能按文件来源臆造SITE；完全混杂不能宣称已去除混杂"
+      ],
+      "gold_status": "draft_pending_independent_adjudication",
+      "fixture_status": "specified_not_built_or_run"
+    }
+  ]
+}

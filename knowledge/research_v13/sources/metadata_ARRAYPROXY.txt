@@ -1,0 +1,158 @@
+class nibabel.arrayproxy.ArrayProxy(file_like, spec, *, mmap=True, order=None, keep_file_open=None)#
+Bases: ArrayLike
+Class to act as proxy for the array that can be read from a file
+The array proxy allows us to freeze the passed fileobj and header such that
+it returns the expected data array.
+This implementation assumes a contiguous array in the file object, with one
+of the numpy dtypes, starting at a given file position offset with
+single slope and intercept scaling to produce output values.
+The class __init__ requires a spec which defines how the data will be
+read and rescaled. The spec may be a tuple of length 2 - 5, containing the
+shape, storage dtype, offset, slope and intercept, or a header object
+with methods:
+get_data_shape
+get_data_dtype
+get_data_offset
+get_slope_inter
+A header should also have a ‘copy’ method.  This requirement will go away
+when the deprecated ‘header’ property goes away.
+This implementation allows us to deal with Analyze and its variants,
+including Nifti1, and with the MGH format.
+Other image types might need more specific classes to implement the API.
+See nibabel.minc1, nibabel.ecat and nibabel.parrec for
+examples.
+Initialize array proxy instance
+Parameters:
+file_likeobject
+File-like object or filename. If file-like object, should implement
+at least read and seek.
+specobject or tuple
+Tuple must have length 2-5, with the following values:
+shape: tuple - tuple of ints describing shape of data;
+storage_dtype: dtype specifier - dtype of array inside proxied
+file, or input to numpy.dtype to specify array dtype;
+offset: int - offset, in bytes, of data array from start of file
+(default: 0);
+slope: float - scaling factor for resulting data (default: 1.0);
+inter: float - intercept for rescaled data (default: 0.0).
+OR
+Header object implementing get_data_shape, get_data_dtype,
+get_data_offset, get_slope_inter
+mmap{True, False, ‘c’, ‘r’}, optional, keyword only
+mmap controls the use of numpy memory mapping for reading data.
+If False, do not try numpy memmap for data array.  If one of
+{‘c’, ‘r’}, try numpy memmap with mode=mmap.  A mmap value of
+True gives the same behavior as mmap='c'.  If file_like
+cannot be memory-mapped, ignore mmap value and read array from
+file.
+order{None, ‘F’, ‘C’}, optional, keyword only
+order controls the order of the data array layout. Fortran-style,
+column-major order may be indicated with ‘F’, and C-style, row-major
+order may be indicated with ‘C’. None gives the default order, that
+comes from the _default_order class variable.
+keep_file_open{ None, True, False }, optional, keyword only
+keep_file_open controls whether a new file handle is created
+every time the image is accessed, or a single file handle is
+created and used for the lifetime of this ArrayProxy. If
+True, a single file handle is created and used. If False,
+a new file handle is created every time the image is accessed.
+If file_like is an open file handle, this setting has no
+effect. The default value (None) will result in the value of
+KEEP_FILE_OPEN_DEFAULT being used.
+__init__(file_like, spec, *, mmap=True, order=None, keep_file_open=None)#
+Initialize array proxy instance
+Parameters:
+file_likeobject
+File-like object or filename. If file-like object, should implement
+at least read and seek.
+specobject or tuple
+Tuple must have length 2-5, with the following values:
+shape: tuple - tuple of ints describing shape of data;
+storage_dtype: dtype specifier - dtype of array inside proxied
+file, or input to numpy.dtype to specify array dtype;
+offset: int - offset, in bytes, of data array from start of file
+(default: 0);
+slope: float - scaling factor for resulting data (default: 1.0);
+inter: float - intercept for rescaled data (default: 0.0).
+OR
+Header object implementing get_data_shape, get_data_dtype,
+get_data_offset, get_slope_inter
+mmap{True, False, ‘c’, ‘r’}, optional, keyword only
+mmap controls the use of numpy memory mapping for reading data.
+If False, do not try numpy memmap for data array.  If one of
+{‘c’, ‘r’}, try numpy memmap with mode=mmap.  A mmap value of
+True gives the same behavior as mmap='c'.  If file_like
+cannot be memory-mapped, ignore mmap value and read array from
+file.
+order{None, ‘F’, ‘C’}, optional, keyword only
+order controls the order of the data array layout. Fortran-style,
+column-major order may be indicated with ‘F’, and C-style, row-major
+order may be indicated with ‘C’. None gives the default order, that
+comes from the _default_order class variable.
+keep_file_open{ None, True, False }, optional, keyword only
+keep_file_open controls whether a new file handle is created
+every time the image is accessed, or a single file handle is
+created and used for the lifetime of this ArrayProxy. If
+True, a single file handle is created and used. If False,
+a new file handle is created every time the image is accessed.
+If file_like is an open file handle, this setting has no
+effect. The default value (None) will result in the value of
+KEEP_FILE_OPEN_DEFAULT being used.
+copy() → Self#
+Create a new ArrayProxy for the same file and parameters
+If the proxied file is an open file handle, the new ArrayProxy
+will share a lock with the old one.
+property dtype#
+get_unscaled()#
+Read data from file
+This is an optional part of the proxy API
+property inter#
+property is_proxy#
+property ndim#
+property offset#
+reshape(shape)#
+Return an ArrayProxy with a new shape, without modifying data
+property shape#
+property slope#
+get_obj_dtype#
+nibabel.arrayproxy.get_obj_dtype(obj)#
+Get the effective dtype of an array-like object
+is_proxy#
+nibabel.arrayproxy.is_proxy(obj)#
+Return True if obj is an array proxy
+reshape_dataobj#
+nibabel.arrayproxy.reshape_dataobj(obj, shape)#
+Use obj reshape method if possible, else numpy reshape function
+previous
+environment
+next
+affines
+On this page
+ArrayLike
+ArrayLike
+ArrayLike.__init__()
+ArrayLike.ndim
+ArrayLike.shape
+ArrayProxy
+ArrayProxy
+ArrayProxy.__init__()
+ArrayProxy.copy()
+ArrayProxy.dtype
+ArrayProxy.get_unscaled()
+ArrayProxy.inter
+ArrayProxy.is_proxy
+ArrayProxy.ndim
+ArrayProxy.offset
+ArrayProxy.reshape()
+ArrayProxy.shape
+ArrayProxy.slope
+get_obj_dtype
+get_obj_dtype()
+is_proxy
+is_proxy()
+reshape_dataobj
+reshape_dataobj()
+Show Source
+© Copyright 2006, NiBabel developers <neuroimaging@python.org>.
+Created using Sphinx 9.1.0.
+Built with the PyData Sphinx Theme 0.17.0.

@@ -1,0 +1,338 @@
+trimesh.triangles - trimesh 5.1.1 documentation
+Contents
+Menu
+Expand
+Light mode
+Dark mode
+Auto light/dark, in light mode
+Auto light/dark, in dark mode
+Skip to content
+trimesh 5.1.1 documentation
+trimesh 5.1.1 documentation
+Github
+Installation
+Examples
+Nearest
+Texture
+Colors
+Ray
+Quick Start
+Shortest
+Section
+Curvature
+Geometry Formats
+Contributing
+Docker
+API Reference
+trimesh.exchange
+trimesh.exchange.gltf
+trimesh.exchange.gltf.extensions
+trimesh.exchange.binvox
+trimesh.exchange.cascade
+trimesh.exchange.common
+trimesh.exchange.dae
+trimesh.exchange.export
+trimesh.exchange.load
+trimesh.exchange.misc
+trimesh.exchange.obj
+trimesh.exchange.off
+trimesh.exchange.ply
+trimesh.exchange.stl
+trimesh.exchange.threedxml
+trimesh.exchange.threemf
+trimesh.exchange.urdf
+trimesh.exchange.xaml
+trimesh.exchange.xyz
+trimesh.interfaces
+trimesh.interfaces.blender
+trimesh.interfaces.generic
+trimesh.path
+trimesh.path.exchange
+trimesh.path.exchange.dxf
+trimesh.path.exchange.export
+trimesh.path.exchange.load
+trimesh.path.exchange.misc
+trimesh.path.exchange.svg_io
+trimesh.path.arc
+trimesh.path.creation
+trimesh.path.curve
+trimesh.path.entities
+trimesh.path.intersections
+trimesh.path.packing
+trimesh.path.path
+trimesh.path.polygons
+trimesh.path.raster
+trimesh.path.repair
+trimesh.path.segments
+trimesh.path.simplify
+trimesh.path.traversal
+trimesh.path.util
+trimesh.ray
+trimesh.ray.ray_pyembree
+trimesh.ray.ray_triangle
+trimesh.ray.ray_util
+trimesh.resources
+trimesh.scene
+trimesh.scene.cameras
+trimesh.scene.lighting
+trimesh.scene.scene
+trimesh.scene.transforms
+trimesh.viewer
+trimesh.viewer.notebook
+trimesh.viewer.trackball
+trimesh.viewer.windowed
+trimesh.visual
+trimesh.visual.base
+trimesh.visual.color
+trimesh.visual.gloss
+trimesh.visual.material
+trimesh.visual.objects
+trimesh.visual.texture
+trimesh.voxel
+trimesh.voxel.base
+trimesh.voxel.creation
+trimesh.voxel.encoding
+trimesh.voxel.morphology
+trimesh.voxel.ops
+trimesh.voxel.runlength
+trimesh.voxel.transforms
+trimesh.base
+trimesh.boolean
+trimesh.bounds
+trimesh.caching
+trimesh.collision
+trimesh.comparison
+trimesh.constants
+trimesh.convex
+trimesh.creation
+trimesh.curvature
+trimesh.decomposition
+trimesh.exceptions
+trimesh.geometry
+trimesh.graph
+trimesh.grouping
+trimesh.inertia
+trimesh.intersections
+trimesh.interval
+trimesh.iteration
+trimesh.nsphere
+trimesh.parent
+trimesh.permutate
+trimesh.points
+trimesh.poses
+trimesh.primitives
+trimesh.proximity
+trimesh.registration
+trimesh.remesh
+trimesh.rendering
+trimesh.repair
+trimesh.resolvers
+trimesh.sample
+trimesh.schemas
+trimesh.smoothing
+trimesh.transformations
+trimesh.triangles
+trimesh.typed
+trimesh.units
+trimesh.util
+trimesh.version
+Back to top
+View this page
+trimesh.triangles¶
+triangles.py¶
+Functions for dealing with triangle soups in (n, 3, 3) float form.
+class trimesh.triangles.MassProperties(density: float, mass: float, volume: float, center_mass: NDArray[numpy.float64], inertia: NDArray[numpy.float64] | None = None)¶
+Bases: object
+__init__(density: float, mass: float, volume: float, center_mass: NDArray[float64], inertia: NDArray[float64] | None = None) → None¶
+center_mass: NDArray[float64]¶
+density: float¶
+inertia: NDArray[float64] | None = None¶
+mass: float¶
+volume: float¶
+trimesh.triangles.all_coplanar(triangles)¶
+Check to see if a list of triangles are all coplanar
+Parameters:
+triangles ((n, 3, 3) float) – Vertices of triangles
+Returns:
+all_coplanar – True if all triangles are coplanar
+Return type:
+bool
+trimesh.triangles.angles(triangles)¶
+Calculates the angles of input triangles.
+Parameters:
+triangles ((n, 3, 3) float) – Vertex positions
+Returns:
+angles – Angles at vertex positions in radians
+Degenerate angles will be returned as zero
+Return type:
+(n, 3) float
+trimesh.triangles.any_coplanar(triangles)¶
+For a list of triangles if the FIRST triangle is coplanar
+with ANY of the following triangles, return True.
+Otherwise, return False.
+trimesh.triangles.area(triangles=None, crosses=None)¶
+Calculates the sum area of input triangles
+Parameters:
+triangles ((n, 3, 3) float) – Vertices of triangles
+crosses ((n, 3) float or None) – As a speedup don’t re- compute cross products
+sum (bool) – Return summed area or individual triangle area
+Returns:
+area – Individual or summed area depending on sum argument
+Return type:
+(n,) float or float
+trimesh.triangles.barycentric_to_points(triangles, barycentric)¶
+Convert a list of barycentric coordinates on a list of triangles
+to cartesian points.
+Parameters:
+triangles ((n, 3, 3) float) – Triangles in space
+barycentric ((n, 2) float) – Barycentric coordinates
+Returns:
+points – Points in space
+Return type:
+(m, 3) float
+trimesh.triangles.bounds_tree(triangles)¶
+Given a list of triangles, create an r-tree for broad- phase
+collision detection
+Parameters:
+triangles ((n, 3, 3) float) – Triangles in space
+Returns:
+tree – One node per triangle
+Return type:
+rtree.Rtree
+trimesh.triangles.closest_point(triangles, points)¶
+Return the closest point on the surface of each triangle for a
+list of corresponding points.
+Implements the method from “Real Time Collision Detection” and
+use the same variable names as “ClosestPtPointTriangle” to avoid
+being any more confusing.
+Parameters:
+triangles ((n, 3, 3) float) – Triangle vertices in space
+points ((n, 3) float) – Points in space
+Returns:
+closest – Point on each triangle closest to each point
+Return type:
+(n, 3) float
+trimesh.triangles.cross(triangles: NDArray) → NDArray¶
+Returns the cross product of two edges from input triangles
+Parameters:
+triangles ((n, 3, 3) float) – Vertices of triangles
+Returns:
+crosses – Cross product of two edge vectors
+Return type:
+(n, 3) float
+trimesh.triangles.extents(triangles, areas=None)¶
+Return the 2D bounding box size of each triangle.
+Parameters:
+triangles ((n, 3, 3) float) – Triangles in space
+areas ((n,) float) – Optional area of input triangles
+Returns:
+box – The size of each triangle’s 2D oriented bounding box
+Return type:
+(n, 2) float
+trimesh.triangles.mass_properties(triangles, crosses=None, density=None, center_mass=None, skip_inertia=False) → MassProperties¶
+Calculate the mass properties of a group of triangles.
+Implemented from:
+http://www.geometrictools.com/Documentation/PolyhedralMassProperties.pdf
+Parameters:
+triangles ((n, 3, 3) float) – Triangle vertices in space
+crosses ((n,) float) – Optional cross products of triangles
+density (float) – Optional override for density
+center_mass ((3,) float) – Optional override for center mass
+skip_inertia (bool) – if True will not return moments matrix
+Returns:
+info – Mass properties
+Return type:
+dict
+trimesh.triangles.nondegenerate(triangles, areas=None, height=None)¶
+Find all triangles which have an oriented bounding box
+where both of the two sides is larger than a specified height.
+Degenerate triangles can be when:
+1) Two of the three vertices are colocated
+2) All three vertices are unique but colinear
+Parameters:
+triangles ((n, 3, 3) float) – Triangles in space
+height (float) – Minimum edge length of a triangle to keep
+Returns:
+nondegenerate – True if a triangle meets required minimum height
+Return type:
+(n,) bool
+trimesh.triangles.normals(triangles=None, crosses=None)¶
+Calculates the normals of input triangles
+Parameters:
+triangles ((n, 3, 3) float) – Vertex positions
+crosses ((n, 3) float) – Cross products of edge vectors
+Returns:
+normals ((m, 3) float) – Normal vectors
+valid ((n,) bool) – Was the face nonzero area or not
+trimesh.triangles.points_to_barycentric(triangles, points, method='cramer')¶
+Find the barycentric coordinates of points relative to triangles.
+The Cramer’s rule solution implements:
+http://blackpawn.com/texts/pointinpoly
+The cross product solution implements:
+https://www.cs.ubc.ca/~heidrich/Papers/JGT.05.pdf
+Parameters:
+triangles ((n, 3, 2 | 3) float) – Triangles vertices in space
+points ((n, 2 | 3) float) – Point in space associated with a triangle
+method (str) –
+Which method to compute the barycentric coordinates with:
+’cross’: uses a method using cross products, roughly 2x slower but
+different numerical robustness properties
+anything else: uses a cramer’s rule solution
+Returns:
+barycentric – Barycentric coordinates of each point
+Return type:
+(n, 3) float
+trimesh.triangles.to_kwargs(triangles)¶
+Convert a list of triangles to the kwargs for the Trimesh
+constructor.
+Parameters:
+triangles ((n, 3, 3) float) – Triangles in space
+Returns:
+kwargs – Keyword arguments for the trimesh.Trimesh constructor
+Includes keys ‘vertices’ and ‘faces’
+Return type:
+dict
+Examples
+>>> mesh = trimesh.Trimesh(**trimesh.triangles.to_kwargs(triangles))
+trimesh.triangles.windings_aligned(triangles, normals_compare)¶
+Given a list of triangles and a list of normals determine if the
+two are aligned
+Parameters:
+triangles ((n, 3, 3) float) – Vertex locations in space
+normals_compare ((n, 3) float) – List of normals to compare
+Returns:
+aligned – Are normals aligned with triangles
+Return type:
+(n,) bool
+Next
+trimesh.typed
+Previous
+trimesh.transformations
+Copyright © 2022, Michael Dawson-Haggerty
+Made with Sphinx and @pradyunsg's
+Furo
+On this page
+trimesh.triangles
+triangles.py
+MassProperties
+MassProperties.__init__()
+MassProperties.center_mass
+MassProperties.density
+MassProperties.inertia
+MassProperties.mass
+MassProperties.volume
+all_coplanar()
+angles()
+any_coplanar()
+area()
+barycentric_to_points()
+bounds_tree()
+closest_point()
+cross()
+extents()
+mass_properties()
+nondegenerate()
+normals()
+points_to_barycentric()
+to_kwargs()
+windings_aligned()

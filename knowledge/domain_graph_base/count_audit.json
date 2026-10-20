@@ -1,0 +1,34 @@
+{
+  "node_count": 1837,
+  "edge_count": 6506,
+  "typed_nodes": {
+    "SourceDocument": 6,
+    "LabelVocabularyVersion": 2,
+    "LabelDefinition": 1791,
+    "MethodEntrypoint": 1,
+    "ParameterDefinition": 28,
+    "AtlasOrTemplateResource": 3,
+    "EvidenceFragment": 6
+  },
+  "alias_nodes": 0,
+  "parsed_label_rows_by_source": {
+    "freesurfer_v741_lut": 1475,
+    "fastsurfer_v254_lut": 1791
+  },
+  "distinct_numeric_ids_by_source": {
+    "freesurfer_v741_lut": 1475,
+    "fastsurfer_v254_lut": 1791
+  },
+  "canonical_label_definitions": 1791,
+  "label_definitions_shared_across_version_sources": 1425,
+  "duplicate_version_copies_not_counted_as_new_labels": 1425,
+  "quarantined": 50,
+  "quarantine_reasons": {
+    "reserved_or_unknown_label": 50
+  },
+  "dangling_edges": 0,
+  "graph_sha256": "a5d69e85cde31fc962dac619b23a7da2ac477a0dd7fab7cd92b75bb998f6f523",
+  "all_evidence_sha256_verified": true,
+  "biological_homology_edges": 0,
+  "count_notice": "Label definitions are source-backed vocabulary entities, not 1:1 independently reviewed brain-region concepts; evidence fragments, software bindings and aliases reported separately."
+}

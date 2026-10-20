@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "properties": {
+    "subjectId": {
+      "type": "string",
+      "description": "Subject folder name inside the workspace."
+    },
+    "workspaceDirectory": {
+      "type": "string",
+      "description": "Workspace root directory."
+    }
+  },
+  "required": ["subjectId"]
+}

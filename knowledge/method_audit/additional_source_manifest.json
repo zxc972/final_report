@@ -1,0 +1,38 @@
+[
+  {
+    "id": "global_gyrification",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4156754/",
+    "evidence_class": "primary_paper",
+    "attempts": [],
+    "status": "downloaded",
+    "resolved_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4156754/",
+    "raw_sha256": "46cc2516ff0d00c36e40d5330421421a63989db68ea60c6f5ec82997de092dce",
+    "text_sha256": "b8df71dba55af3a39c4031d7ff30cbb0df49c7d9797cc9711b7fbdf0ca0ccddc",
+    "text_chars": 46541,
+    "fetched_utc": "2026-10-20T15:33:08Z"
+  },
+  {
+    "id": "comparative_folding",
+    "url": "https://elifesciences.org/articles/92080",
+    "evidence_class": "primary_paper",
+    "attempts": [],
+    "status": "downloaded",
+    "resolved_url": "https://elifesciences.org/articles/92080",
+    "raw_sha256": "c247837ba8634ba8f735102c7553d5246a0e10f24ac2480f735acbd2d02d7649",
+    "text_sha256": "215871a9d8e222497d7c784d912a41e49d51624d7953283763ca7eaec66446e2",
+    "text_chars": 97644,
+    "fetched_utc": "2026-10-20T15:33:11Z"
+  },
+  {
+    "id": "scipy_hull",
+    "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.ConvexHull.html",
+    "evidence_class": "author_api",
+    "attempts": [],
+    "status": "downloaded",
+    "resolved_url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.ConvexHull.html",
+    "raw_sha256": "df101f63e0c311ddc7f2ba336da1dc903e56706ea122c6ce263fdfbbe1b6d2e1",
+    "text_sha256": "b6b5d60f04402accc694c3bf9222225be66e98c33304284f99f4306f66ded7d3",
+    "text_chars": 5592,
+    "fetched_utc": "2026-10-20T15:33:13Z"
+  }
+]

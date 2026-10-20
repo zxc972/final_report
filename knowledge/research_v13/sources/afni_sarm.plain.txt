@@ -1,0 +1,136 @@
+11.1.5. Macaque atlas: the SARM — AFNI, SUMA and FATCAT: v26.3.04
+Navigation
+index
+next
+previous
+AFNI, SUMA and FATCAT: v26.3.04 »
+11. Non-human processing »
+11.1. Macaque Templates and Atlases »
+11.1.5. Macaque atlas:  the SARM
+11.1.5. Macaque atlas:  the SARM¶
+Overview¶
+Here we present the Subcortical Atlas of the Rhesus Macaque
+(SARM).
+This atlas is defined in the coordinates/space of the NMT v2
+template, described here:
+Macaque template:  NMT v2 (current).
+Contents¶
+Digitized anatomical atlases are crucial for examining brain structure
+and the functional networks identified by magnetic resonance imaging
+(MRI). To aid in MRI data analysis, we created a complete parcellation
+of the rhesus macaque subcortex using high-resolution ex vivo structural
+imaging and histological data. The structural scan was warped to the NIMH
+Macaque Template (NMT v2), an in vivo population template, where the
+parcellation was refined to produce the Subcortical Atlas of the Rhesus
+Macaque (SARM). The NMT v2 has several forms and variants (based on
+symmetry/asymmetry, FOV and voxel size), and for each of these there is
+an accompanying SARM.
+Using an updated version of the Rhesus Monkey Brain in Stereotaxic
+Coordinates  (Paxinos et al., 2009; Paxinos et al., in preparation) for
+guidance, the SARM features 6 parcellation levels, arranged
+hierarchically from fine regions-of-interest (ROIs) to broader composite
+regions, suited for fMRI studies.
+The SARM is distributed as a single dataset with six sub-volumes. Note
+that for the purpose of using AFNI sub-brick selectors, SARM Level 1 is
+volume “[0]” and Level 6 is volume “[5]”, because AFNI (like Python and
+C) use zero-base counting.
+Note that the NMT v2.0 download also includes a CSV table file of the
+ROI labels, hierarchically organized. This can be viewed as a simple
+text file or within any spreadsheet software, such as shown in the
+following image.
+Example images¶
+The following images were made using the symmetric NMT v2 template (with
+“standard” spatial resolution = 0.25 mm, and FOV for the SARM atlas) and
+accompanying SARM.
+NMT underlay with the SARM (level 1) overlaid
+NMT underlay with the SARM (level 2) overlaid
+NMT underlay with the SARM (level 3) overlaid
+NMT underlay with the SARM (level 4) overlaid
+NMT underlay with the SARM (level 5) overlaid
+NMT underlay with the SARM (level 6) overlaid
+The script used to make these images with ``@chauffeur_afni`` is
+available here: do_view_sarm.tcsh.
+Download¶
+The SARM is distributed as part of the NMT v2 download using @Install_NMT
+(See the instructions for the NMT installation below).
+The SARM atlas is available only in the symmetric NMT space.
+To download and unpack the datasets together with the NMT template and atlases,
+please see these instructions...
+... here for the symmetric form:
+Download symmetric NMT v2 datasets
+You may download the SARM datasets separately, from the AFNI website
+using the links below.
+* (the plain Linux-y terminal way) copy+paste:
+curl -O https://afni.nimh.nih.gov/pub/dist/atlases/macaque/SARM/SARM.tgz
+tar -xvf SARM.tgz
+(the mouseclick+ way) click on this link,
+... and then unpack the zipped directory by either clicking on it
+or using the above tar command.
+AFNI environment variables¶
+The @Install_NMT script automatically adds AFNI environment variables to use
+the SARM atlas, but these can beThese variables can be configured in your .afnirc
+file in your home directory to take advantage of the SARM atlas for “whereami”,
+“Show atlas colors” and “Go to atlas location” in the AFNI GUI:
+AFNI_SUPP_ATLAS_DIR = directory_where_you_have_installed_atlas/SARM
+AFNI_ATLAS_COLORS = SARM
+AFNI_WHEREAMI_DEC_PLACES = 2
+Citation/questions¶
+If you make use of the SARM in your research, please cite:
+Hartig R, Glen D, Jung B, Logothetis NK, Paxinos G,
+Garza-Villarreal EA, Messinger A, Evrard C (2021). “Subcortical
+Atlas of the Rhesus Macaque (SARM) for Magnetic Resonance
+Imaging.” NeuroImage, submitted.
+https://www.biorxiv.org/content/10.1101/2020.09.16.300053v1
+For questions, comments and/or suggestions, contact:
+henry.evrard @ tuebingen.mpg.de
+renee.hartig @ tuebingen.mpg.de
+adam.messinger @ nih.gov
+glend @ mail.nih.gov
+Table of Contents
+1. Installation and Background
+2. Starting with AFNI
+3. Educational resources
+4. All program helps
+5. AFNI GUI (afni)
+6. SUMA GUI (suma)
+7. FATCAT
+8. NIFTI
+9. Statistics
+10. Templates & Atlases
+11. Non-human processing
+11.1. Macaque Templates and Atlases
+11.1.1. Macaque Atlas: D99 v2.0 (current)
+11.1.2. Macaque template:  NMT v2 (current)
+11.1.3. Macaque template:  NMT v1 (older)
+11.1.4. Macaque atlas:  the CHARM
+11.1.5. Macaque atlas:  the SARM
+Overview
+Contents
+Example images
+Download
+AFNI environment variables
+Citation/questions
+11.2. Macaque Demos
+11.3. Other templates and atlases
+12. Tutorials, Examples
+13. Demo Material
+14. Codex: AFNI Code Examples from publications
+15. Citations and Reference Works
+16. Developer Documentation
+17. Contributors
+18. Glossary
+19. Main AFNI pages
+This Page
+Show Source
+Quick search
+«
+hide menu
+menu
+sidebar
+»
+Accessibility
+Privacy Policy
+FOIA
+HHS Vulnerability Disclosure
+HHS
+NIMH/NIH

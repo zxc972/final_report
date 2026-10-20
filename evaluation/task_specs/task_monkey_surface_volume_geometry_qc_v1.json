@@ -1,0 +1,28 @@
+{
+  "task_id": "monkey_surface_volume_geometry_qc_v1",
+  "subjects": [
+    "KM002"
+  ],
+  "input_roots": [
+    "/data/xuancheng/featurize_20261011/data/KM002/KM002"
+  ],
+  "research_evidence_release": "research_evidence_v10",
+  "required_artifacts": [
+    "analysis_plan.json",
+    "surface_volume_qc.tsv",
+    "vertex_samples.tsv",
+    "surface_volume_details.json",
+    "provenance.json",
+    "report.md",
+    "fig_surface_volume_qc.png"
+  ],
+  "api_entrypoint": true,
+  "model": "deepseek-v4-pro",
+  "enable_background_jobs": false,
+  "include_predecessor_outputs": false,
+  "max_scientific_repair_rounds": 2,
+  "prepared_not_dispatched": true,
+  "dispatch_condition": "After current humanPVE job and independent review, or if that last bounded repair fails then switch to this distinct feasible task. Check actual active.lock and all jobs; no duplicate or concurrent paid writer. Do not repeat the consumed finalizer baseline.",
+  "message": "请检查KM002猴脑已有white/pial表面与orig/brainmask体积是否在几何坐标上相容，并生成可以人工查看的空间质控图和逐顶点采样结果。只用授权KM002根目录，不访问任何人脑/保留组，不重跑重建，不把标签名称当跨物种同源。当前物种仍monkey_unknown，且缺少scripts重建日志；不要从文件名推断已核对处理历史或采集物理尺度。\n\n先自主观察真实文件/头/表面metadata与软件，用研究知识和软件图工具检索、回读官方坐标/采样原文，再形成有依据的analysis_plan并自主生成新的完整分析代码。没有给你旧分析程序或私有评分器。v10有FreeSurfer坐标原文、mri_vol2surf及NiBabel read_geometry/get_vox2ras_tkr的类/函数文档；旧wiki参数须对照当前安装help。方法、变换与采样参数由你根据数据和原文确定，使用成熟实现，不凭空造一个坐标变换或换MNI模板。\n\n分别处理左右white/pial四份表面。核对三角索引、有限坐标、cortex标签与顶点数量，以及表面volume_info和实际体积header的尺寸、方向、中心/尺度关系。明确选择的surface RAS、scanner RAS与体素索引变换，别混淆get_vox2ras与get_vox2ras_tkr。若几何血缘缺证据，照实记录，可在明确FreeSurfer约定假设下执行条件性数值/可视化检查，不能自动判解剖QC合格。不要把white/pial对应顶点欧氏距离当成FreeSurfer官方thickness定义。\n\n采样应有实际依据，区分体积插值、坐标取整、边界与出界点；不能把出界或缺失变成正常零值。记录全部顶点的来源/索引、使用的坐标或体素位置、是否在体积范围内、脑掩膜采样值及有效/缺失标记，并汇总每份表面的覆盖/有限值/掩膜支持情况；不套用未经验证的人脑或猴脑排除阈值。若调用mri_vol2surf，牢记输出是顶点标量及其重排，输出header不能作为真实解剖体积空间。\n\n图必须真实将体积与表面绑定，标注半球、表面、切面/坐标约定、方向、颜色、假设与限制，不把数组切面伪称标准解剖切面。使用自己的数据而非默认模板；不得为追求好看改动源影像或表面。最终analysis_plan.json、surface_volume_qc.tsv（四份表面各一行）、vertex_samples.tsv（全部样本可独立复核，缺失明确）、surface_volume_details.json（实际完整变换/单位约定、metadata比对、方法和证据/缺项）、provenance.json（输入/输出完整hash、实际版本和真实命令若有；不编造执行退出码）、report.md、fig_surface_volume_qc.png。用原finalize_artifacts收尾，交付真实代码/执行与可读报告。这里只做可重复的几何/支持区条件性QC，不声称物种比较、专家判读或猴脑生理厚度已验证。",
+  "next_review": "Inspect actual source/coordinate assumption, original reads and generated new code. Independently decode4 meshes and orig/mask geometry; recompute actual transform/samples with correct rounding/boundary/NA semantics, source identities and4row/fullvertex tables. Actually view overlay and review applicability. Do not confuse mri_vol2surf scalar header with physical volume. Max2 grounded repairs; no hidden numerical gold exposed."
+}

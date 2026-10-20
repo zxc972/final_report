@@ -1,0 +1,42 @@
+{
+  "type": "object",
+  "properties": {
+    "subjectId": {
+      "type": "string",
+      "description": "Subject ID used to name the output directory."
+    },
+    "workspaceDirectory": {
+      "type": "string",
+      "description": "Root workspace path where subject output lives."
+    },
+    "t1Path": {
+      "type": "string",
+      "description": "Path to the T1 input image or folder."
+    },
+    "species": {
+      "type": "string",
+      "description": "Species for preprocessing (Macaque, Chimpanzee, Marmoset)."
+    },
+    "sphinx": {
+      "type": "boolean",
+      "description": "Reorient to sphinx position (NHP)."
+    },
+    "noStdOrient": {
+      "type": "boolean",
+      "description": "Skip standard LAS reorientation."
+    },
+    "averageHcp": {
+      "type": "boolean",
+      "description": "Use HCP anatomical-average instead of FS method."
+    },
+    "denoise": {
+      "type": "boolean",
+      "description": "Enable ANTs DenoiseImage."
+    },
+    "keepTmp": {
+      "type": "boolean",
+      "description": "Keep temporary files."
+    }
+  },
+  "required": ["subjectId", "workspaceDirectory", "t1Path", "species"]
+}

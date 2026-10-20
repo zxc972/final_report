@@ -1,0 +1,12 @@
+# Isolated service environment; scientific Python remains inside the SIF.
+fastapi==0.143.1
+uvicorn==0.54.0
+httpx==0.28.1
+pydantic==2.14.1
+PyYAML==6.0.3
+langchain==1.4.6
+langchain-openai==1.7.2
+langgraph==1.2.15
+langgraph-checkpoint-sqlite==3.1.2
+deepagents==0.7.25
+jsonschema==4.26.0

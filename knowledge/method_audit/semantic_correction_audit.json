@@ -1,0 +1,49 @@
+{
+  "time": 1792510913.6259625,
+  "release": "research_evidence_v13",
+  "method_cards": 13,
+  "new_method_nodes": 309,
+  "new_method_edges": 626,
+  "new_types": {
+    "SourceDocument": 26,
+    "AnalysisMethod": 13,
+    "InputRequirement": 36,
+    "ApplicabilityCondition": 38,
+    "AnalysisStep": 70,
+    "VerificationCheck": 28,
+    "MethodException": 30,
+    "OutputArtifact": 35,
+    "MethodParameter": 33
+  },
+  "total_mixed_nodes": 2239,
+  "total_edges": 7256,
+  "label_nodes": 1791,
+  "parent_snapshots": 81,
+  "unique_urls": 65,
+  "semantic_corrections": [
+    {
+      "id": "MF01",
+      "issue": "Global convex hull ratio, alpha hull and coarse-graining were conflated",
+      "action": "Separate two explicit methods; do not expose old combined recipe in active release"
+    },
+    {
+      "id": "MF02",
+      "issue": "Author study outcomes became generic verification checks",
+      "action": "Quarantine R2 and K outcome-derived QA assertions"
+    },
+    {
+      "id": "MF03",
+      "issue": "A sulc filename or binary format was treated as evidence of actual generator and physical definition",
+      "action": "Restrict active method to stored-field distribution analysis; require separate provenance"
+    },
+    {
+      "id": "MF04",
+      "issue": "Personal tutorial tested OS/version was liable to become a universal prerequisite",
+      "action": "Mark source-case conditions as non-universal context"
+    }
+  ],
+  "additional_quarantined_claims": 7,
+  "expert_review": false,
+  "native_index_changed": false,
+  "science_results_used_for_curation": false
+}

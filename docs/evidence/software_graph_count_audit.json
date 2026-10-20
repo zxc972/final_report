@@ -1,0 +1,26 @@
+{
+  "created": 1792434811.7958436,
+  "graph_sha256": "7c630412a617afc98bcf34b150fcf1326e5eb447d78bfc173f9902461b185820",
+  "total_nodes": 3415,
+  "type_counts": {
+    "SoftwareVersion": 1,
+    "SourceFile": 35,
+    "SoftwareFamily": 8,
+    "InputSpec": 203,
+    "InputParameter": 2310,
+    "OutputSpec": 179,
+    "OutputField": 446,
+    "SoftwareInterface": 233
+  },
+  "unique_ids": 3415,
+  "relation_count": 7638,
+  "undeclared_endpoint_relations": 0,
+  "input_output_field_context_nodes": 2756,
+  "unique_field_names_without_owner": 1934,
+  "distinct_literal_field_contract_signatures_without_owner": 2623,
+  "repeated_identical_literal_field_signatures_across_contexts": 133,
+  "aliases": 0,
+  "reviewed_domain_scientific_entities_in_this_layer": 0,
+  "counts_interpretation": "3,415 typed source graph nodes include interface specifications and parameter/output bindings. Different owner contexts can repeat identical literal fields. Do not report them as 3,415 unique scientific concepts or reviewed biological findings. Canonical semantic concept deduplication remains additional work; old reviewed release is separate.",
+  "source_parse_is_not_expert_review": true
+}

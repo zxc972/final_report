@@ -1,0 +1,20 @@
+PrimateX Notice
+
+Copyright (C) 2026 Wang Zheng Lab, Peking University.
+
+PrimateX-original source code is licensed under the GNU Affero General Public
+License v3.0 or later (AGPL-3.0-or-later), unless a file states otherwise.
+Third-party software, code, data, models, templates, and dependencies remain
+subject to their own license terms.
+
+If you use PrimateX in academic work, please cite:
+
+Xiaohui Yao*, Yichun Huang*, Kailong Cui*, ..., Shan Cong#, Zheng Wang#.
+Multi-agentic routing with PrimateX: standardized structural MRI analysis
+for non-human primates and humans.
+
+* Equal contribution.
+# Correspondence: Shan Cong (shan.cong@hrbeu.edu.cn), Zheng Wang
+  (zheng.wang@pku.edu.cn).
+
+See CITATION.cff for full citation details.

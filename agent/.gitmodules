@@ -1,0 +1,4 @@
+[submodule "modules/FastSurfer"]
+	path = modules/FastSurfer
+	url = https://github.com/Deep-MI/FastSurfer.git
+	branch = stable

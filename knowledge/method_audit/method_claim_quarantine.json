@@ -1,0 +1,530 @@
+[
+  {
+    "method_id": "method:v12:existing_curvature_sulc_profile",
+    "category": "inputs",
+    "claim": {
+      "statement": "FreeSurfer morphometry files (e.g., ?h.curv, ?h.sulc, ?h.thickness) containing per-vertex values.",
+      "source_id": "nibabel_fs",
+      "quote": "read_morph_data(filepath) ... Read a Freesurfer morphometry data file.",
+      "claim_type": "direct"
+    },
+    "reason": "exact_or_whitespace_equivalent_original_quote_missing"
+  },
+  {
+    "method_id": "method:v12:existing_curvature_sulc_profile",
+    "category": "conditions",
+    "claim": {
+      "statement": "Curvature and sulcal values are per-vertex and derived from the reconstructed surfaces after smoothing and topology correction.",
+      "source_id": "fs_morph",
+      "quote": "Resmooth RH/LH white matter: smooths rh.orig and lh.orig surfaces ... curv ... rh.curv ... rh.sulc",
+      "claim_type": "direct"
+    },
+    "reason": "exact_or_whitespace_equivalent_original_quote_missing"
+  },
+  {
+    "method_id": "method:v12:existing_curvature_sulc_profile",
+    "category": "steps",
+    "claim": {
+      "statement": "Load the FreeSurfer morphometry file using nibabel's read_morph_data to obtain per-vertex values.",
+      "source_id": "nibabel_fs",
+      "quote": "read_morph_data(filepath) ... Returns: curv numpy array Vector representation of surface morpometry values",
+      "claim_type": "direct"
+    },
+    "reason": "exact_or_whitespace_equivalent_original_quote_missing"
+  },
+  {
+    "method_id": "method:v12:existing_curvature_sulc_profile",
+    "category": "steps",
+    "claim": {
+      "statement": "Load the corresponding surface geometry with read_geometry to get vertex coordinates and faces.",
+      "source_id": "nibabel_fs",
+      "quote": "read_geometry(filepath[, read_metadata, ...]) ... Returns: coords numpy array nvtx x 3 array of vertex (x, y, z) coordinates. faces numpy array nfaces x 3 array of defining mesh triangles.",
+      "claim_type": "direct"
+    },
+    "reason": "exact_or_whitespace_equivalent_original_quote_missing"
+  },
+  {
+    "method_id": "method:v12:existing_curvature_sulc_profile",
+    "category": "steps",
+    "claim": {
+      "statement": "Optionally load annotation file with read_annot to associate vertices with cortical labels.",
+      "source_id": "nibabel_fs",
+      "quote": "read_annot(filepath[, orig_ids]) ... Returns: labels ndarray, shape (n_vertices,) Annotation id at each vertex.",
+      "claim_type": "direct"
+    },
+    "reason": "exact_or_whitespace_equivalent_original_quote_missing"
+  },
+  {
+    "method_id": "method:v12:existing_curvature_sulc_profile",
+    "category": "steps",
+    "claim": {
+      "statement": "Compute descriptive statistics (e.g., mean, standard deviation, percentiles) of the per-vertex curvature and sulcal values.",
+      "source_id": "comparative_curvature",
+      "quote": "we used our surface-based computational pipeline ... to analyze patterns of cortical thickness and folding with respect to size (total surface area), geometry (i.e. curvature, shape, and sulcal depth)",
+      "claim_type": "application_inference"
+    },
+    "reason": "exact_or_whitespace_equivalent_original_quote_missing"
+  },
+  {
+    "method_id": "method:v12:existing_curvature_sulc_profile",
+    "category": "checks",
+    "claim": {
+      "statement": "Verify that the morphometry file is in FreeSurfer 'curv' format and not another format.",
+      "source_id": "nibabel_fs",
+      "quote": "read_morph_data(filepath) ... This function reads in what Freesurfer internally calls “curv” file types",
+      "claim_type": "direct"
+    },
+    "reason": "exact_or_whitespace_equivalent_original_quote_missing"
+  },
+  {
+    "method_id": "method:v12:existing_curvature_sulc_profile",
+    "category": "exceptions",
+    "claim": {
+      "statement": "If the morphometry file is not in FreeSurfer 'curv' format, read_morph_data may fail or return incorrect values.",
+      "source_id": "nibabel_fs",
+      "quote": "read_morph_data(filepath) ... This function reads in what Freesurfer internally calls “curv” file types",
+      "claim_type": "direct"
+    },
+    "reason": "exact_or_whitespace_equivalent_original_quote_missing"
+  },
+  {
+    "method_id": "method:v12:existing_curvature_sulc_profile",
+    "category": "outputs",
+    "claim": {
+      "statement": "A vector of per-vertex morphometry values (e.g., curvature or sulcal depth) from the input file.",
+      "source_id": "nibabel_fs",
+      "quote": "Returns: curv numpy array Vector representation of surface morpometry values",
+      "claim_type": "direct"
+    },
+    "reason": "exact_or_whitespace_equivalent_original_quote_missing"
+  },
+  {
+    "method_id": "method:v12:existing_curvature_sulc_profile",
+    "category": "outputs",
+    "claim": {
+      "statement": "Vertex coordinates and face indices of the associated surface mesh.",
+      "source_id": "nibabel_fs",
+      "quote": "Returns: coords numpy array nvtx x 3 array of vertex (x, y, z) coordinates. faces numpy array nfaces x 3 array of defining mesh triangles.",
+      "claim_type": "direct"
+    },
+    "reason": "exact_or_whitespace_equivalent_original_quote_missing"
+  },
+  {
+    "method_id": "method:v12:fsl_vbm",
+    "category": "inputs",
+    "claim": {
+      "statement": "T1-weighted structural images, one per subject, placed in the FSL-VBM directory with unique names, preferably with prefixes corresponding to groups.",
+      "source_id": "fsl_vbm",
+      "quote": "Place all your T1-weighted data in your FSL-VBM directory... giving each subject's T1 image a different name, preferably with each prefix corresponding to each of your group",
+      "claim_type": "direct"
+    },
+    "reason": "exact_or_whitespace_equivalent_original_quote_missing"
+  },
+  {
+    "method_id": "method:v12:fsl_vbm",
+    "category": "conditions",
+    "claim": {
+      "statement": "The default fslvbm_3_proc concatenates images in alphabetical order, which must match the subject ordering in design.mat.",
+      "source_id": "fsl_vbm",
+      "quote": "By default fslvbm_3_proc concatenates the images in alphabetical order... make sure this matches the subject ordering assumed in your design.mat model.",
+      "claim_type": "direct"
+    },
+    "reason": "exact_or_whitespace_equivalent_original_quote_missing"
+  },
+  {
+    "method_id": "method:v12:fsl_vbm",
+    "category": "steps",
+    "claim": {
+      "statement": "Prepare T1-weighted images in the FSL-VBM directory and create template_list with equal numbers per group.",
+      "source_id": "fsl_vbm",
+      "quote": "Place all your T1-weighted data in your FSL-VBM directory... put all the selected names of exams in a file called template_list",
+      "claim_type": "direct"
+    },
+    "reason": "exact_or_whitespace_equivalent_original_quote_missing"
+  },
+  {
+    "method_id": "method:v12:fsl_vbm",
+    "category": "checks",
+    "claim": {
+      "statement": "Visually inspect all structural images using slicesdir to confirm they are as expected.",
+      "source_id": "fsl_vbm",
+      "quote": "slicesdir `imglob *`... Have a careful look.",
+      "claim_type": "direct"
+    },
+    "reason": "exact_or_whitespace_equivalent_original_quote_missing"
+  },
+  {
+    "method_id": "method:v12:fsl_vbm",
+    "category": "exceptions",
+    "claim": {
+      "statement": "If brain extraction results are poor, additional BET options can be added after -b or -N.",
+      "source_id": "fsl_vbm",
+      "quote": "If you do not get good results with either option... you can try adding other bet options after the -b or -N option.",
+      "claim_type": "direct"
+    },
+    "reason": "exact_or_whitespace_equivalent_original_quote_missing"
+  },
+  {
+    "method_id": "method:v12:fsl_vbm",
+    "category": "exceptions",
+    "claim": {
+      "statement": "If adding more subjects later, put new images in the top-level directory and re-run fslvbm_1_bet, updating template_list if necessary.",
+      "source_id": "fsl_vbm",
+      "quote": "If you later want to add more subjects to your analysis then just put the new subjects' images inside the toplevel directory... and re-run fslvbm_1_bet.",
+      "claim_type": "direct"
+    },
+    "reason": "exact_or_whitespace_equivalent_original_quote_missing"
+  },
+  {
+    "method_id": "method:v12:fsl_vbm",
+    "category": "exceptions",
+    "claim": {
+      "statement": "Interpretation of results has inherent limitations; differences may reflect gyrification patterns rather than true atrophy.",
+      "source_id": "fsl_vbm",
+      "quote": "It is sometimes not possible to determine if the results you may find are the consequence of an effective reduced thickness or atrophy... or rather an indirect reflection of a different gyrification pattern.",
+      "claim_type": "direct"
+    },
+    "reason": "exact_or_whitespace_equivalent_original_quote_missing"
+  },
+  {
+    "method_id": "method:v12:fsl_vbm",
+    "category": "outputs",
+    "claim": {
+      "statement": "Raw tstat maps from the initial GLM run for qualitative evaluation.",
+      "source_id": "fsl_vbm",
+      "quote": "The script runs randomise with inference... turned off, so that it very quickly creates just the raw tstat maps.",
+      "claim_type": "direct"
+    },
+    "reason": "exact_or_whitespace_equivalent_original_quote_missing"
+  },
+  {
+    "method_id": "method:v12:hcp_structural_pipeline",
+    "category": "inputs",
+    "claim": {
+      "statement": "HCP example data for one subject, e.g., subject 100307, extracted to a study folder.",
+      "source_id": "alex_hcp_pdf",
+      "quote": "下载样例数据并解压缩，假设解压后的路径为： /home/alex/data/HcpPipelinesExampleDataGDC",
+      "claim_type": "direct"
+    },
+    "reason": "exact_or_whitespace_equivalent_original_quote_missing"
+  },
+  {
+    "method_id": "method:v12:hcp_structural_pipeline",
+    "category": "conditions",
+    "claim": {
+      "statement": "HCP Pipelines version 5.0.0 was tested; a known bug in FieldMapPreprocessingAll.sh line 170 required a syntax fix.",
+      "source_id": "alex_hcp_pdf",
+      "quote": "我这里测试的版本是5.0.0。这个版本的FieldMapPreprocessingAll.sh 脚本已知有一个bug，在第170行有简单的语法错误，需要进行修正。",
+      "claim_type": "direct"
+    },
+    "reason": "exact_or_whitespace_equivalent_original_quote_missing"
+  },
+  {
+    "method_id": "method:v12:hcp_structural_pipeline",
+    "category": "conditions",
+    "claim": {
+      "statement": "Memory requirement: 24G RAM for single-subject structural and functional data processing per official docs.",
+      "source_id": "alex_hcp_pdf",
+      "quote": "根据官方文档，HCP-Young Adult项目数据，单被试结构和功能像数据处理需要24G内存",
+      "claim_type": "direct"
+    },
+    "reason": "exact_or_whitespace_equivalent_original_quote_missing"
+  },
+  {
+    "method_id": "method:v12:hcp_structural_pipeline",
+    "category": "steps",
+    "claim": {
+      "statement": "Install Connectome Workbench 2.0.1 and add its bin_linux64 directory to PATH.",
+      "source_id": "alex_hcp_pdf",
+      "quote": "我这里安装的版本是2.0.1。将Connectome Workbench添加到路径变量中： export PATH=$PATH:/home/alex/software/workbench/bin_linux64",
+      "claim_type": "direct"
+    },
+    "reason": "exact_or_whitespace_equivalent_original_quote_missing"
+  },
+  {
+    "method_id": "method:v12:hcp_structural_pipeline",
+    "category": "steps",
+    "claim": {
+      "statement": "Install MSM by downloading msm_ubuntu_v3 and creating a symlink named msm.",
+      "source_id": "alex_hcp_pdf",
+      "quote": "下载的文件名为 msm_ubuntu_v3 ... 并将该文件链接为 msm : cd /home/alex/software/MSM/ ln -s msm_ubuntu_v3 msm",
+      "claim_type": "direct"
+    },
+    "reason": "exact_or_whitespace_equivalent_original_quote_missing"
+  },
+  {
+    "method_id": "method:v12:hcp_structural_pipeline",
+    "category": "steps",
+    "claim": {
+      "statement": "Install MATLAB Runtime R2022b and set LD_LIBRARY_PATH (though later update says not setting it still works).",
+      "source_id": "alex_hcp_pdf",
+      "quote": "安装MATLAB Runtime R2022b ... 安装完成以后，设置环境变量： export LD_LIBRARY_PATH=...",
+      "claim_type": "direct"
+    },
+    "reason": "exact_or_whitespace_equivalent_original_quote_missing"
+  },
+  {
+    "method_id": "method:v12:hcp_structural_pipeline",
+    "category": "steps",
+    "claim": {
+      "statement": "Install HCP Pipelines 5.0.0 and edit SetUpHCPPipeline.sh to set HCPPIPEDIR, MSMBINDIR, MATLAB_COMPILER_RUNTIME, CARET7DIR, HCPCIFTIRWDIR.",
+      "source_id": "alex_hcp_pdf",
+      "quote": "在 SetUpHCPPipeline.sh 脚本中将相关环境变量修改为实际的路径，比如： export HCPPIPEDIR=/home/alex/software/HCPpipelines ...",
+      "claim_type": "direct"
+    },
+    "reason": "exact_or_whitespace_equivalent_original_quote_missing"
+  },
+  {
+    "method_id": "method:v12:hcp_structural_pipeline",
+    "category": "steps",
+    "claim": {
+      "statement": "Copy the three structural batch scripts (PreFreeSurferPipelineBatch.sh, FreeSurferPipelineBatch.sh, PostFreeSurferPipelineBatch.sh) and modify StudyFolder, Sessionlist, EnvironmentScript.",
+      "source_id": "alex_hcp_pdf",
+      "quote": "将这三个脚本复制一份，在复制的脚本上进行修改。修改好以后依次运行这三个脚本即可： ./PreFreeSurferPipelineBatch.sh ./FreeSurferPipelineBatch.sh ./PostFreeSurferPipelineBatch.sh",
+      "claim_type": "direct"
+    },
+    "reason": "exact_or_whitespace_equivalent_original_quote_missing"
+  },
+  {
+    "method_id": "method:v12:hcp_structural_pipeline",
+    "category": "checks",
+    "claim": {
+      "statement": "Verify that the FieldMapPreprocessingAll.sh bug is fixed before running structural pipelines.",
+      "source_id": "alex_hcp_pdf",
+      "quote": "这个版本的FieldMapPreprocessingAll.sh 脚本已知有一个bug，在第170行有简单的语法错误，需要进行修正。",
+      "claim_type": "direct"
+    },
+    "reason": "exact_or_whitespace_equivalent_original_quote_missing"
+  },
+  {
+    "method_id": "method:v12:hcp_structural_pipeline",
+    "category": "exceptions",
+    "claim": {
+      "statement": "Setting LD_LIBRARY_PATH caused conflicts with system libraries; not setting it still allowed HCP Pipelines to work (update 2025-02-21).",
+      "source_id": "alex_hcp_pdf",
+      "quote": "更新 2025-02-21 使用过程中发现，设置环境变量 LD_LIBRARY_PATH 会导致和系统自带的库冲突。不设置该环境变量，HCP Pipelines仍然能够正常使用。",
+      "claim_type": "direct"
+    },
+    "reason": "exact_or_whitespace_equivalent_original_quote_missing"
+  },
+  {
+    "method_id": "method:v12:macaque_civet",
+    "category": "inputs",
+    "claim": {
+      "statement": "NIMH Macaque Template (NMT) as the reference volumetric template for registration.",
+      "source_id": "civet_macaque",
+      "quote": "The NIMH Macaque Template (NMT) as the reference template",
+      "claim_type": "direct"
+    },
+    "reason": "exact_or_whitespace_equivalent_original_quote_missing"
+  },
+  {
+    "method_id": "method:v12:macaque_civet",
+    "category": "steps",
+    "claim": {
+      "statement": "Register the T1w scan to the NMT template using an affine transformation.",
+      "source_id": "civet_macaque",
+      "quote": "CIVET takes as input a T1w scan and registers if to standardized space, herein the NMT, using an affine transformation",
+      "claim_type": "direct"
+    },
+    "reason": "exact_or_whitespace_equivalent_original_quote_missing"
+  },
+  {
+    "method_id": "method:v12:macaque_civet",
+    "category": "steps",
+    "claim": {
+      "statement": "Correct for non-uniformities using N3 bias field correction with a user-specified spline distance.",
+      "source_id": "civet_macaque",
+      "quote": "corrected for non-uniformities using N3 bias field correction (Sled et al., 1998). The parametric spline distance must be entered by the user",
+      "claim_type": "direct"
+    },
+    "reason": "exact_or_whitespace_equivalent_original_quote_missing"
+  },
+  {
+    "method_id": "method:v12:macaque_civet",
+    "category": "steps",
+    "claim": {
+      "statement": "Extract white matter and pial surfaces using marching-cubes and CLASP algorithms, with per-vertex correspondence.",
+      "source_id": "civet_macaque",
+      "quote": "the white matter surfaces are extracted using a marching-cubes algorithm ... The pial surface is obtained by expanding the white matter surface radially outwards up to the pial boundary using the CLASP algorithm",
+      "claim_type": "direct"
+    },
+    "reason": "exact_or_whitespace_equivalent_original_quote_missing"
+  },
+  {
+    "method_id": "method:v12:macaque_civet",
+    "category": "checks",
+    "claim": {
+      "statement": "In case of registration failure, a custom brain mask can be supplied and its accuracy should be assessed by the user.",
+      "source_id": "civet_macaque",
+      "quote": "In the rare case when registration fails, a custom brain mask in native space can be supplied. The accuracy of such custom masks should be assessed by the user prior to processing.",
+      "claim_type": "direct"
+    },
+    "reason": "exact_or_whitespace_equivalent_original_quote_missing"
+  },
+  {
+    "method_id": "method:v12:macaque_civet",
+    "category": "outputs",
+    "claim": {
+      "statement": "White matter and pial cortical surfaces per hemisphere with per-vertex correspondence.",
+      "source_id": "civet_macaque",
+      "quote": "A white matter surface, per hemisphere, is fitted at the GM-WM boundary ... before being expanded to the pial surface",
+      "claim_type": "direct"
+    },
+    "reason": "exact_or_whitespace_equivalent_original_quote_missing"
+  },
+  {
+    "method_id": "method:v12:macaque_civet",
+    "category": "parameters",
+    "claim": {
+      "statement": "Surface resolution of 40,962 or 163,842 vertices.",
+      "source_id": "civet_macaque",
+      "quote": "Surface resolution: 40,962 or 163,842 vertices",
+      "claim_type": "direct"
+    },
+    "reason": "exact_or_whitespace_equivalent_original_quote_missing"
+  },
+  {
+    "method_id": "method:v12:macaque_civet",
+    "category": "parameters",
+    "claim": {
+      "statement": "Cortical thickness blurring fwhm of 8 mm for macaques.",
+      "source_id": "civet_macaque",
+      "quote": "Cortical thickness blurring: 8mm fwhm",
+      "claim_type": "direct"
+    },
+    "reason": "exact_or_whitespace_equivalent_original_quote_missing"
+  },
+  {
+    "method_id": "method:v12:nhp_macapype",
+    "category": "steps",
+    "claim": {
+      "statement": "Optionally use -mask to specify a precomputed binary mask file, skipping brain extraction; only works with -soft ANTS and the mask must be in the same space as the data.",
+      "source_id": "macapype_commands",
+      "quote": "-mask allows to specify a precomputed binary mask file (skipping brain extraction). ... Warning: the mask should be in the same space as the data. And only works with -soft ANTS so far",
+      "claim_type": "direct"
+    },
+    "reason": "exact_or_whitespace_equivalent_original_quote_missing"
+  },
+  {
+    "method_id": "method:v12:nhp_macapype",
+    "category": "parameters",
+    "claim": {
+      "statement": "The -nprocs parameter specifies the number of processes allocated by the parallel engine, typically equal to the number of subjects*session, default is 4 if unspecified.",
+      "source_id": "macapype_commands",
+      "quote": "-nprocs : an integer, to specifiy the number of processes that should be allocated by the parralel engine of macapype typically equals to the number of subjects*session (i.e. iterables). ... default = 4 if unspecified ; if is put to 1, then the sequential processing is used",
+      "claim_type": "direct"
+    },
+    "reason": "exact_or_whitespace_equivalent_original_quote_missing"
+  },
+  {
+    "method_id": "method:v12:samseg_segmentation",
+    "category": "steps",
+    "claim": {
+      "statement": "Optionally set --threshold to adjust the balance between false positive and false negative lesion detections.",
+      "source_id": "fs_samseg",
+      "quote": "you can tweak this value (between 0.0 and 1.0) to obtain a more fine-grained balance between false positive and false negative lesion detections",
+      "claim_type": "direct"
+    },
+    "reason": "exact_or_whitespace_equivalent_original_quote_missing"
+  },
+  {
+    "method_id": "method:v12:samseg_segmentation",
+    "category": "exceptions",
+    "claim": {
+      "statement": "The blog example is a single-subject test and does not constitute validation or general applicability.",
+      "source_id": "alex_samseg_pdf",
+      "quote": "注意这只是一个被试数据的结果",
+      "claim_type": "direct"
+    },
+    "reason": "exact_or_whitespace_equivalent_original_quote_missing"
+  },
+  {
+    "method_id": "method:v12:surface_mesh_area",
+    "category": "steps",
+    "claim": {
+      "statement": "Extract the vertex coordinates array (nvtx x 3) from the loaded mesh.",
+      "source_id": "nibabel_fs",
+      "quote": "coords numpy array nvtx x 3 array of vertex (x, y, z) coordinates.",
+      "claim_type": "direct"
+    },
+    "reason": "exact_or_whitespace_equivalent_original_quote_missing"
+  },
+  {
+    "method_id": "method:v12:surface_mesh_area",
+    "category": "steps",
+    "claim": {
+      "statement": "Extract the face array (nfaces x 3) defining mesh triangles.",
+      "source_id": "nibabel_fs",
+      "quote": "faces numpy array nfaces x 3 array of defining mesh triangles.",
+      "claim_type": "direct"
+    },
+    "reason": "exact_or_whitespace_equivalent_original_quote_missing"
+  },
+  {
+    "method_id": "method:v12:surface_mesh_area",
+    "category": "steps",
+    "claim": {
+      "statement": "Call trimesh.triangles.area with the triangle array to compute the summed area.",
+      "source_id": "trimesh_triangles",
+      "quote": "trimesh.triangles.area(triangles=None, crosses=None) Calculates the sum area of input triangles",
+      "claim_type": "direct"
+    },
+    "reason": "exact_or_whitespace_equivalent_original_quote_missing"
+  },
+  {
+    "method_id": "method:v12:surface_mesh_area",
+    "category": "outputs",
+    "claim": {
+      "statement": "The vertex coordinates array (nvtx x 3) from the mesh.",
+      "source_id": "nibabel_fs",
+      "quote": "coords numpy array nvtx x 3 array of vertex (x, y, z) coordinates.",
+      "claim_type": "direct"
+    },
+    "reason": "exact_or_whitespace_equivalent_original_quote_missing"
+  },
+  {
+    "method_id": "method:v12:surface_mesh_area",
+    "category": "outputs",
+    "claim": {
+      "statement": "The face array (nfaces x 3) defining mesh triangles.",
+      "source_id": "nibabel_fs",
+      "quote": "faces numpy array nfaces x 3 array of defining mesh triangles.",
+      "claim_type": "direct"
+    },
+    "reason": "exact_or_whitespace_equivalent_original_quote_missing"
+  },
+  {
+    "method_id": "method:v12:surface_reconstruction_qc",
+    "category": "conditions",
+    "claim": {
+      "statement": "Recon-all may fail due to no write permission, insufficient disk space, or problems with the anatomical image such as too much motion.",
+      "source_id": "andy_failures",
+      "quote": "No write permission to the current disk; Insufficient disk space; Problems with the anatomical image, such as too much motion.",
+      "claim_type": "direct"
+    },
+    "reason": "exact_or_whitespace_equivalent_original_quote_missing"
+  },
+  {
+    "method_id": "method:v12:surface_reconstruction_qc",
+    "category": "checks",
+    "claim": {
+      "statement": "Check for hard failures: recon-all exits prematurely due to write permission, disk space, or motion problems.",
+      "source_id": "andy_failures",
+      "quote": "Hard failures occur when recon-all exits its preprocessing stream due to one of these scenarios: No write permission... Insufficient disk space... Problems with the anatomical image",
+      "claim_type": "direct"
+    },
+    "reason": "exact_or_whitespace_equivalent_original_quote_missing"
+  },
+  {
+    "method_id": "method:v12:surface_reconstruction_qc",
+    "category": "checks",
+    "claim": {
+      "statement": "Check for topological defects such as holes or handles in the white matter surface.",
+      "source_id": "fs_morph",
+      "quote": "there are only two types of topological defects: holes (a perforation in the surface) and handles (an incorrect connection that overlaps the surface)",
+      "claim_type": "direct"
+    },
+    "reason": "exact_or_whitespace_equivalent_original_quote_missing"
+  }
+]

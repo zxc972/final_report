@@ -1,0 +1,10 @@
+{
+  "type": "object",
+  "properties": {
+    "taskId": {
+      "type": "string",
+      "description": "Pipeline task identifier."
+    }
+  },
+  "required": ["taskId"]
+}

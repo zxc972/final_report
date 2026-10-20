@@ -1,0 +1,28 @@
+{
+  "task_id": "monkey_surface_volume_geometry_qc_revision_v1",
+  "subjects": [
+    "KM002"
+  ],
+  "input_roots": [
+    "/data/xuancheng/featurize_20261011/data/KM002/KM002",
+    "/data/xuancheng/agent_overnight_20261020/api_workspaces/analysis-e2e-62186edbb8bd/output/.analysis_runs/e92256155d8edc1905a91c8aba843e11/a38c4b7c32fb449fadfc84aafd19963a"
+  ],
+  "research_evidence_release": "research_evidence_v11",
+  "required_artifacts": [
+    "analysis_plan.json",
+    "surface_volume_qc.tsv",
+    "vertex_samples.tsv",
+    "surface_volume_details.json",
+    "provenance.json",
+    "report.md",
+    "fig_surface_volume_qc.png"
+  ],
+  "model": "deepseek-v4-pro",
+  "enable_background_jobs": false,
+  "predecessor_run": "monkey_surface_volume_geometry_qc_v1_20261020T134226_161335",
+  "include_predecessor_outputs": true,
+  "repair_round": 1,
+  "max_scientific_repair_rounds": 2,
+  "message": "继续完成KM002表面—体积几何QC。上一轮是你自己生成并执行的成果，额外只读输入根提供它的工作目录供审查；不是私有标准答案或固定分析模板。请实际观察原数据/软件，检索并回读v11和相关官方原文，自主生成新的完整程序，在新工作目录计算并完成7项交付。不要import旧main执行冒充新程序；write_code是完整替换而非追加。未知物种仍monkey_unknown；不访问其他人脑、保留组或旧路径指向的非授权数据，也不重跑重建。\n\n本轮必须纠正这些实际任务偏差：\n1. 原要求全部顶点，你上一轮在main里用了range(0,nv,13)主动抽样。请实际读取四份mesh的nv，自行确定全顶点数量，每份每个顶点恰好一行，不按cortex或stride删减。cortex只作为显式成员字段；缺失/OOB明确NA，不能当正常零。全输出用流式写或合理内存组织，不能以文件规模为由缩成样本；工程限制并不要求抽样。\n2. 你因brainmask.mgz含0..129整数值就断言它是label/segmentation图，没有标签来源证据。v11新增FreeSurfer原文T1→skull stripping→brainmask以及与segmentation区分，NiBabel label索引语义。请真实回读，不把整数灰度当标签，保留来源/类型不确定性；记录原始强度样本和有依据的非背景支持定义，不无根据round成label或命名labeled tissue。支持数值可以复核，但不能由强度众数推出组织标签。\n3. 上轮figure按voxel axis0/1/2直接命名SAG(x)/COR(y)/AXI(z)，没有依据真实affine区分体素轴和world轴；还把各panel横纵轴统称vox coord0/1，未说明切片后保留的原轴。请观察actual orig/brainmask affine，查现有坐标和NiBabel orientation原文，再确定图注/方向。可以明确标为native voxel-axis C/R/S切片及实际保留轴、方向，而不是假装标准解剖面；不要凭数组轴号命名冠状或轴状。体积和表面必须绑定同一变换，不修改源影像/表面来美化。\n4. white平均强度较高只是描述，不能由此证明white包含于pial内、几何正确或解剖QC通过。报告只写本次确实检查的有限坐标/面索引/metadata/变换/支持数值和图，明确条件，不用均值替代containment或专家QC。\n\n四份表面同时检查有限性/三角索引、cortex索引、volume_info尺寸/spacing/方向/中心与实际orig/brainmask头是否匹配；嵌入旧filename不是处理日志，不越权追踪该路径。完整未舍入变换矩阵、所用坐标系和取整/插值/边界约定须落盘。tkrRAS/scannerRAS不能混；不把mri_vol2surf标量输出header当解剖体积，也不把white/pial顶点距离当FreeSurfer thickness。\n\n最终analysis_plan.json、surface_volume_qc.tsv（四表面各行）、vertex_samples.tsv（全顶点身份/坐标/体素位置/validity/原图与脑提取强度及支持/NA/cortex）、surface_volume_details.json、provenance.json、report.md、fig_surface_volume_qc.png。文件路径和实际值由你观察确定；不提供你私有验收数值。保留新生成源码、真实执行stdout/stderr/退出码、版本、输入/输出hash、实际检索原文。检查完整行数和图注后用原finalize_artifacts收尾；不能放宽原检查器、编造收据或只修改报告掩盖计算没改。",
+  "next_review": "Use unchanged private raw MGH/mesh reference and contract48a24d82b37a8fd8b730d2f638ff893f2fcd810c9b3b33f8e1074088abf6732c. Verify every vertex, declared real coordinate/rounding/interpolation, mask intensity/support semantics, full metadata, actual panel retained axes and source/receipt lineage. Do not expose gold. This is first task-level revision after initial completed but incomplete/semantic-failed output; max2."
+}

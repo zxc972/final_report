@@ -1,0 +1,170 @@
+FreeSurfer Tutorial #12: Introduction to Failure Modes — Andy's Brain Book 1.0 documentation
+Andy's Brain Book
+1.0
+Install
+Overview
+Unix for Neuroimagers
+What is Unix?
+Unix Tutorial #1: Navigating the directory tree
+Unix Tutorial #2: Copying and Removing Files
+Unix Tutorial #3: Reading Text Files
+Unix Tutorial #4: Shells and Path Variables
+Unix Tutorial #5: For-Loops
+Unix Tutorial #6: Conditional Statements
+Unix Tutorial #7: Scripting
+Unix Tutorial #8: The Sed Command
+Unix Tutorial #9: Automating The Analysis
+fMRI Short Course with FSL
+Introduction
+fMRI Tutorial #1: Downloading the Data
+fMRI Tutorial #2: Overview of The Flanker Task
+fMRI Tutorial #3: Looking at the Data
+fMRI Tutorial #4: Preprocessing
+fMRI Tutorial #5: Statistics and Modeling
+fMRI Tutorial #6: Scripting
+fMRI Tutorial #7: 2nd-Level Analysis
+fMRI Tutorial #8: 3rd-Level Analysis
+fMRI Tutorial #9: ROI Analysis
+fMRI Tutorial #10: Summary
+fMRI Short Course: Appendices
+FreeSurfer
+FreeSurfer Short Course
+Overview
+FreeSurfer Tutorial #1: Basic Terms
+FreeSurfer Tutorial #2: How to Download and Install
+FreeSurfer Tutorial #3: Recon-all
+FreeSurfer Tutorial #4: Running recon-all in Parallel
+FreeSurfer Tutorial #5: Using the Open Science Grid
+FreeSurfer Tutorial #6: Freeview
+FreeSurfer Tutorial #7: The FSGD File
+FreeSurfer Tutorial #8: Group Analysis
+FreeSurfer Tutorial #9: Cluster Correction
+FreeSurfer Tutorial #10: Correlation Analysis
+FreeSurfer Tutorial #11: Region of Interest Analysis
+FreeSurfer Tutorial #12: Introduction to Failure Modes
+Overview
+Hard Failures vs. Soft Failures
+Soft Failure Types
+Viewing the Other Errors
+Next Steps
+Video
+FreeSurfer Tutorial #13: SkullStripping and Pial Surface Errors
+FreeSurfer Tutorial #14: Control Points and Intensity Normalization
+Appendix A: Local Gyrification Index
+Appendix B: PETSurfer
+Appendix C: Annotating Anatomical Images with Freeview
+Appendix D: Segmenting Hippocampal, Amygdala, Brainstem, and Thalamus Subfields
+TRACULA Tutorial #1: Overview
+E-Prime
+Overview of E-Prime
+AFNI
+AFNI Overview
+SPM
+SPM Overview
+Functional Connectivity with the CONN Toolbox
+Functional Connectivity and the CONN Toolbox
+Parametric Modulation
+Parametric Modulation in SPM, FSL, and AFNI
+Finite Impulse Response (FIR) Models
+Finite Impulse Response (FIR)
+Scanner Harmonization
+Data harmonization for neuroscientific research: Theory, challenges, and applications.
+Image Visualization with MRIcroGL
+Image Visualization with MRIcroGL
+Introduction to the Human Connectome Project (HCP)
+Introduction to the Human Connectome Project
+fMRI Concepts
+Design Optimization
+Diffusion Analysis with MRtrix
+Introduction to MRtrix
+ASL Analysis
+fASL Tutorial #1: Background
+fASL Tutorial #2: Downloading and Installing
+fASL Tutorial #3: The N-Back Task
+fASL Tutorial #4: The GUI
+fASL Tutorial #5: Examining the Results
+fASL Tutorial #6: Quantification
+Frequently Asked Questions
+Frequently Asked Questions
+Statistics
+GIMME (Group Iterative Multiple Model Estimation)
+Open Science
+Open Science
+Advanced Normalization Tools (ANTs)
+Advanced Normalization Tools (ANTs)
+Tract-Based Spatial Statistics (TBSS)
+Introduction to Tract-Based Spatial Statistics (TBSS)
+Statistics for Neuroimagers
+Statistics for Neuroimagers
+Machine Learning for Neuroimagers
+Machine Learning for Neuroimagers
+Slicer
+Slicer Overview
+CAT12
+Voxel-Based Morphometry with CAT12
+Using the Supercomputer
+Introduction to Supercomputing
+Matlab for Neuroimagers
+Matlab for Neuroimagers
+ITK-Snap
+ITK-Snap_Overview
+Python for Neuroimagers
+Python for Neuroimagers
+Meta-Analysis for fMRI
+Meta-Analysis for Neuroimagers
+Introduction to Neurodesk
+Overview of Neurodesk
+Andy's Brain Book
+FreeSurfer Short Course
+FreeSurfer Tutorial #12: Introduction to Failure Modes
+View page source
+FreeSurfer Tutorial #12: Introduction to Failure Modes
+Overview
+If your anatomical data is of good quality - strong contrast between the tissue types, no movement, high resolution - then recon-all will likely run without errors, and will generate surfaces that accurately track the borders of the different tissue types. You may observe small discrepancies between the borders that are drawn by FreeSurfer, and the actual borders between the grey and white matter; but as long as the discrepancies are relatively small and infrequent, it’s best to leave them alone. In those cases, sometimes editing the surfaces can make the problem worse, not better.
+Nevertheless, for some subjects recon-all won’t be able to finish reconstructing the surfaces; or, if it does, sometimes the discrepancies are so large that manual edits are required. An example of one of these problems is the appearance of holes in the reconstructed white matter surface, which can throw off the calculations of nearby grey matter thickness and volume. These Failure Modes occur whenever there is an issue that either causes recon-all to exit prematurely, or which requires manual edits.
+Hard Failures vs. Soft Failures
+Failure modes can be divided into two categories: Hard Failures and Soft Failures. Hard failures occur when recon-all exits its preprocessing stream due to one of these scenarios:
+No write permission to the current disk (to fix this, see the help file for the chmod command);
+Insufficient disk space; or
+Problems with the anatomical image, such as too much motion.
+Scenarios 1 and 2 are easy enough to resolve, but 3 can be difficult and maybe even impossible to fix. It is best to prevent scenario 3 from happening by making sure the subject is still during the anatomical scan, and to check the slices as they are being acquired by the scanner.
+Soft Failures, on the other hand, occur when recon-all has finished without any errors - but upon closer observation of the output there are obvious errors that need to be fixed. These include large holes in the white matter (“white matter segmentation errors”) and large discrepancies between the border of the white and grey matter of the anatomical volume and the reconstructed surface (“pial surface errors”).
+Examples of white matter and pial surface errors.
+Soft Failure Types
+As soft failures are more common, you should be familiar with their different types. Soft failures can be divided into the following categories:
+Skullstripping errors;
+Pial surface errors;
+Intensity normalization errors;
+Topological defects; and
+White matter segmentation errors.
+A few words about the last two types of errors. Topological defects refer to either holes that are punched through the reconstructed white matter surface, or to false “handles” of grey matter that bridge gyri. These will appear in the white matter surfaces in the surf directory. Since the release of FreeSurfer version 6.0 these types of errors are very rare, and they are usually automatically fixed during recon-all. You can see how these defects are fixed by loading the files lh.smoothwm.nofix and lh.white into freeview and toggling between them.
+Example of topological defects in the white matter surface, which are usually corrected by recon-all.
+White matter segmentation errors, on the other hand, occur in the volume of the anatomical image (not in the reconstructed surface). These will look like the holes shown in the figure in the previous section above, and they are often caused by lesions or gliomas within the white matter. These are relatively uncommon in healthy subjects, and will not be covered in this course. For a walkthrough of how to fix these errors, see this FreeSurfer page.
+Viewing the Other Errors
+The remaining soft failures - skullstripping, pial surface, and intensity normalization errors - are the most common ones you will encounter, even in high-quality data. To begin looking for these errors, we will load the T1 and brainmask images as underlays in freeview, and overlay the white and pial surfaces for both hemispheres. Here is a sample command that you can use (replacing “[subject]” with the name of the subject you are looking at):
+freeview -v [subject]/mri/T1.mgz \
+[subject]/mri/brainmask.mgz \
+-f [subject]/surf/lh.pial:edgecolor=red \
+[subject]/surf/lh.white:edgecolor=yellow \
+[subject]/surf/rh.pial:edgecolor=red \
+[subject]/surf/rh.white:edgecolor=yellow
+This will draw the boundary of the pial surface in red and the white matter surface in yellow. After running the command, you should see something like this in freeview:
+While you are looking through the slices, note that although one slice may look wrong - for example, there seems to be an “island” of white matter inside a gyrus - remember that we are looking at a three-dimensional image through two-dimensional slices. If the anomaly resolves in the next slice or two, that is probably because the white matter is being projected in a direction orthogonal to the slice you are currently looking at.
+Example of two contiguous coronal slices. The white matter within the gyrus in slice A appears to be detached from the surrounding white matter; but the connection is resolved in slice B. In this case, no manual editing of this image is required.
+Also note that the surfaces drawn in the medial wall near the ventricles and corpus callosum, and the surfaces drawn near the subcortical structures, will not be used in the final surface calculations and can be ignored during editing.
+Next Steps
+Any other edits will be done with one or more of the following steps:
+Erasing voxels;
+Filling voxels;
+Adding control points;
+Cloning voxels.
+We will see how to use each of these tools, and when they are needed, in the next two chapters.
+Video
+For a video overview of failure modes, click here.
+Previous
+Next
+© Copyright 2025, Andy Jahn
+.
+Built with Sphinx using a
+theme
+provided by Read the Docs.

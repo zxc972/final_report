@@ -1,0 +1,15 @@
+{
+  "status": "available",
+  "downloaded_again": false,
+  "FSL_standard": {
+    "source_image": "/data/xuancheng/agent/PrimateX_1_7.sif",
+    "source_inside_container": "/opt/fsl-6.0.7.8/data/standard",
+    "copied_to": "/data/xuancheng/structural_env/templates/human/FSL_6.0.7.8_standard",
+    "official_license": "https://fsl.fmrib.ox.ac.uk/fsl/docs/license.html"
+  },
+  "fsaverage": {
+    "mode": "reference existing migrated template",
+    "path": "/data/xuancheng/structural_env/templates/human/fsaverage-existing",
+    "source": "/data/xuancheng/featurize_20261011/data/fastsurfer_public_20261010/native12/verified_fs16/opt/freesurfer/subjects/fsaverage"
+  }
+}

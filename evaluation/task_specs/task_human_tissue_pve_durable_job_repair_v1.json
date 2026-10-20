@@ -1,0 +1,37 @@
+{
+  "task_id": "human_tissue_pve_durable_job_repair_v1",
+  "subjects": [
+    "100610",
+    "101309",
+    "101410"
+  ],
+  "input_roots": [
+    "/data/xuancheng/human_fastsurfer/subjects/100610",
+    "/data/xuancheng/human_fastsurfer/subjects/101309",
+    "/data/xuancheng/human_fastsurfer/subjects/101410",
+    "/data/xuancheng/agent_overnight_20261020/api_workspaces/analysis-e2e-c22b0a35fb94/output/.analysis_runs/04f132495ce2da97c4d1710e593d194d/72d6b770943d476c906af69cf145059d"
+  ],
+  "required_artifacts": [
+    "analysis_plan.json",
+    "tissue_volumes.tsv",
+    "commands.json",
+    "qc_summary.json",
+    "software_outputs.json",
+    "report.md",
+    "fig_tissue_volumes.png",
+    "fig_tissue_qc.png"
+  ],
+  "message": "对开发组100610、101309、101410继续完成真实组织部分容积分割及CSF/GM/WM体积描述分析。只访问这三例输入和额外只读的你自身前一次分析工作目录；不可访问其他被试。保留原分辨率与提供的重建被试空间网格，不将orig.mgz这个名称直接宣称为未经处理的原始采集网格。不要重复表面重建，也不用旧aseg/stats表或旧计算结果冒充新分割。\n\n前一次是你生成的完整脚本，已经真实提交后台；独立工程预检复现了后处理的确定性问题，所以在昂贵分割进行中停止并保留记录。这是第一轮完整脚本修订。先检查实际数据、运行环境和你自身旧代码，按真实观察自主重新生成完整分析程序，不调用旧分析脚本替代新生成，也不读取任何私有评分器或参考答案。旧目录只是自身代码与失败证据，可见旧输出不等于本次计算完成。\n\n已确认的反馈供诊断：旧代码把hex颜色串传给imshow的cmap，Matplotlib3.10.9会报ValueError；旧函数对LIA数组imshow的行列方向标注互换；旧代码新建NIfTI时没有声明空间单位，实际保存的脑提取输入单位字段为unknown。不能据此推断尚未核验的FAST输出单位。旧程序在绘图之后才保存命令记录，如果后处理失败就丢失实际成功/失败收据；software_outputs也缺影像哈希/shape。旧概率总和只检查三类都正的交集，不能覆盖完整非空支持区。以上均是工程/元数据问题，不能靠改分割参数、舍弃异常体素或降低数值验收掩盖。\n\n通过研究知识图/原文和软件图工具检索并实际回读原文，核对FAST的T1组织索引、脑提取和偏置校正前提，以及绘图库的正确用法、NIfTI单位和affine。v8新增了官方Matplotlib3.10.9 imshow/ListedColormap和NIfTI格式原文，并有Nilearn绘图资料；是否适用仍要检查。不要凭nu文件名选择偏置开关，不为赶时间降采样、裁剪或改变科学参数。使用成熟影像软件作为底层工具，步骤组织、参数、统计、图表和报告代码由你在本任务中生成。\n\n完整程序必须在昂贵分割前完成一次真实的小型后处理预检：可设计明确自检开关，用单独命名的工程合成夹具走通相同绘图函数、方向标记、表格/JSON与报告输出路径；只测import或语法不够。夹具不能混入最终三例数据或被写成真实结果。验证模型生成程序的后处理能跑到结束，再调用submit_python_job一次。前台不启动完整三例分割，不用模型轮询等待，不调用finalize_artifacts把pending假称completed。后台有独立7200秒预算，保持只读输入/无网络/单进程8GB/单文件1GB；内部subprocess时限与预算相符，资源允许串行三例。申报全部八项最终产物及有意义约束，后台新/work必须自行生成所有最终文件。\n\n输入T1与mask必须检查shape和affine一致再组合。单位有真实来源才可标mm；保留转换依据及原始header状态，不以同尺寸或文件名假装有物理来源。每一真实命令开始就持久保存argv、时间、版本、输入哈希，并在该命令结束时立即保存真实returncode和完整stdout/stderr或独立日志路径/哈希；命令失败也须保留，不等绘图完成再写收据，不根据图像存在反推exit0。\n\n每例保留真实三张原分辨率PVE。明确T1下pve_index与CSF/GM/WM关系的原文依据；计算使用未舍入的PVE高精度求和乘实际体素体积，不能用硬阈值计数代替。保留有限值、概率范围、全支持区概率总和、非空每类与背景检查；有异常就诚实报告，不能用nansum隐藏后宣称all_finite。影像记录包含真实路径、SHA256、shape、affine、空间单位、体素体积和软件/命令关联。QC图遵循真实affine；如果只重排数组就不得假称已重采样为严格世界解剖切面。可以复用成熟Nilearn/NiBabel绘图方案，避免默认模板替换自己的数据；展示用重排不能更改分割/体积网格。\n\n最终八项：analysis_plan.json、tissue_volumes.tsv（九行；subject_id,tissue_name,pve_index,pve_sum_voxels,voxel_volume_mm3,pve_volume_mm3；至少六位小数）、commands.json、qc_summary.json、software_outputs.json、report.md、fig_tissue_volumes.png、fig_tissue_qc.png。影像中间产物真实保留，但不要伪装成文本宣称原产物校验器已经科学验证影像。分析计划和报告记录实际来源、适用性、局限，不能自称外部独立核对或专家解剖QC通过。本任务是三例已见数据描述性计算，不是盲测、完整VBM或组间推断。",
+  "api_entrypoint": true,
+  "provided_source_context_directory": false,
+  "research_evidence_release": "research_evidence_v8",
+  "next_review": "First repair: inspect actual model postprocessing fixture and full new generated source before allowing compute to finish; submitted!=computed. Poll authenticated job without provider calls. Oncompleted independently associate/decode9 PVE images, fullsupport/finite/range/units/geometry, original strict9row contract and all8outputs; inspect figures and actual per-command receipts. Max2 grounded background-script repairs, no approved-finalizer rerun or heldout.",
+  "model": "deepseek-v4-pro",
+  "max_scientific_repair_rounds": 2,
+  "include_predecessor_outputs": true,
+  "enable_background_jobs": true,
+  "scientific_contract_unchanged_sha256": "de3a5849a12156dc4b4028cfde6e5fd8eb2b4ec4cc9e94c21c3f923d09476093",
+  "dispatch_authorization": "User explicitly removed cumulative API ceiling for ongoing development2026-10-20. All usage/unknown costs retained. Original cancelled job retained; first evidence-based complete-script repair, not repeated approved finalizer trial.",
+  "predecessor_run": "human_tissue_pve_durable_job_v1_20261020T113301_f405ee",
+  "background_script_repair_round": 1
+}

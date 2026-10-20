@@ -1,0 +1,218 @@
+{
+  "schema_version": "0.1.0",
+  "id": "freesurfer.roi_thickness.export",
+  "name": "导出指定分区的皮层厚度",
+  "software_id": "freesurfer",
+  "task": "extract_roi_thickness",
+  "stage": "analysis",
+  "activation_status": "draft",
+  "version_binding": {
+    "runtime_target": "7.2.0",
+    "documentation_version": "FreeSurfer wiki; no release-pinned snapshot",
+    "verified_compatible_versions": [],
+    "compatibility_status": "unknown"
+  },
+  "validation_state": {
+    "knowledge_review": "assistant_source_checked_domain_review_pending",
+    "runtime_available": "manifest_recorded",
+    "example_run": "not_run",
+    "scientific_validation": "not_evaluated",
+    "evidence_paths": []
+  },
+  "discovery": {
+    "summary": "将被试的指定半球、分区 stats 汇总为厚度表；需要辨明指标和单位。",
+    "aliases": [
+      "aparcstats2table",
+      "区域厚度表"
+    ],
+    "tags": [
+      "structural_mri",
+      "roi",
+      "thickness",
+      "stats"
+    ]
+  },
+  "inputs": [
+    {
+      "id": "subject_stats",
+      "kind": "FreeSurfer aparc stats",
+      "meaning": "每名被试对应半球与分区的区域统计",
+      "required_context": [
+        "subject_id",
+        "hemisphere",
+        "parcellation",
+        "data_producer_version",
+        "species",
+        "scale_provenance",
+        "units"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "id": "thickness_table",
+      "kind": "tabular",
+      "meaning": "被试为行、分区为列的厚度数据；全局汇总列单独辨认",
+      "required_context": [
+        "subject_order",
+        "hemisphere",
+        "parcellation",
+        "metric",
+        "units"
+      ]
+    }
+  ],
+  "invocation": {
+    "kind": "cli",
+    "entrypoint": "aparcstats2table",
+    "parameter_schema": {
+      "type": "object",
+      "required": [
+        "subjects",
+        "hemi",
+        "parc",
+        "output"
+      ],
+      "properties": {
+        "subjects": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "hemi": {
+          "enum": [
+            "lh",
+            "rh"
+          ]
+        },
+        "parc": {
+          "type": "string",
+          "minLength": 1
+        },
+        "output": {
+          "type": "string",
+          "minLength": 1
+        },
+        "meas": {
+          "const": "thickness"
+        }
+      },
+      "additionalProperties": false
+    },
+    "illustrative_example": "SUBJECTS_DIR is supplied by the runtime adapter. argv template: [aparcstats2table, --subjects, <subject IDs as separate arguments>, --hemi, <lh|rh>, --parc, <parcellation>, --meas, thickness, --tablefile, <output.tsv>]. This is a parameter template, not an executable shell script.",
+    "example_status": "authored_not_executed"
+  },
+  "conditions": [
+    {
+      "id": "stats_exist",
+      "statement": "每个纳入被试均有匹配半球与分区的统计文件。",
+      "basis": "vendor_documented",
+      "source_ids": [
+        "fs_api"
+      ],
+      "unknown_action": "inspect",
+      "check_implementation": null
+    },
+    {
+      "id": "metric_explicit",
+      "statement": "本能力固定提取厚度；显式设置 --meas thickness，避免使用面积默认值。",
+      "basis": "vendor_documented",
+      "source_ids": [
+        "fs_api"
+      ],
+      "unknown_action": "inspect",
+      "check_implementation": null
+    },
+    {
+      "id": "scale_confirmed",
+      "statement": "PrimateX 产物需核对尺度变换和指标单位的来源；软件手册中厚度单位不能单独证明当前文件尺度正确。",
+      "basis": "project_policy",
+      "source_ids": [],
+      "unknown_action": "stop_and_report_gap",
+      "check_implementation": null
+    }
+  ],
+  "checks": [
+    {
+      "id": "subject_set",
+      "criterion": "输出被试集合与本次纳入清单一致；任何缺失须单独记录。",
+      "basis": "project_policy",
+      "source_ids": [],
+      "check_implementation": null
+    },
+    {
+      "id": "columns",
+      "criterion": "核对ROI列、半球和分区，并将全局汇总列与ROI列区分。",
+      "basis": "project_policy",
+      "source_ids": [],
+      "check_implementation": null
+    },
+    {
+      "id": "numeric_reference",
+      "criterion": "抽样将导出值与原始stats的厚度字段比对；不以预期生物学趋势评分。",
+      "basis": "project_policy",
+      "source_ids": [],
+      "check_implementation": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "fs_api",
+      "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/aparcstats2table",
+      "section": "Arguments and examples",
+      "checked_on": "2026-10-15",
+      "summary": "记录 subjects、hemi、parc、meas、tablefile；默认指标是area，厚度需指定thickness。",
+      "snapshot_sha256": null,
+      "review": "section_reviewed"
+    },
+    {
+      "id": "fs_roi",
+      "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/AnatomicalROI",
+      "section": "Cortical anatomical statistics",
+      "checked_on": "2026-10-15",
+      "summary": "解释分区统计及导出表格的用途。",
+      "snapshot_sha256": null,
+      "review": "section_reviewed"
+    }
+  ],
+  "views": {
+    "skill_outline": [
+      "先确定输入统计来源、物种、尺度、分区和半球。",
+      "查询对应版本参数并构造参数列表。",
+      "执行前登记被试集合和缺失处理。",
+      "执行后核对表头、被试和数值；保存来源。"
+    ],
+    "relations": [
+      {
+        "subject": "freesurfer.roi_thickness.export",
+        "predicate": "implemented_by",
+        "object": "freesurfer:aparcstats2table",
+        "basis": "vendor_documented",
+        "source_ids": [
+          "fs_api"
+        ]
+      },
+      {
+        "subject": "freesurfer.roi_thickness.export",
+        "predicate": "requires",
+        "object": "FreeSurfer:aparc.stats",
+        "basis": "vendor_documented",
+        "source_ids": [
+          "fs_api"
+        ]
+      },
+      {
+        "subject": "freesurfer.roi_thickness.export",
+        "predicate": "produces",
+        "object": "subject_by_roi:thickness",
+        "basis": "vendor_documented",
+        "source_ids": [
+          "fs_api"
+        ]
+      }
+    ]
+  }
+}

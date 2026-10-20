@@ -1,0 +1,130 @@
+class nibabel.freesurfer.mghformat.MGHHeader(binaryblock=None, check=True)#
+Bases: LabeledWrapStruct, SpatialHeader
+Class for MGH format header
+The header also consists of the footer data which MGH places after the data
+chunk.
+Initialize header from binary data block
+Parameters:
+binaryblock{None, string} optional
+binary block to set into header.  By default, None, in
+which case we insert the default empty header block
+checkbool, optional
+Whether to check content of header in initialization.
+Default is True.
+__init__(binaryblock=None, check=True)#
+Initialize header from binary data block
+Parameters:
+binaryblock{None, string} optional
+binary block to set into header.  By default, None, in
+which case we insert the default empty header block
+checkbool, optional
+Whether to check content of header in initialization.
+Default is True.
+as_byteswapped(endianness=None)#
+Return new object with given endianness
+If big endian, returns a copy of the object. Otherwise raises ValueError.
+Parameters:
+endiannessNone or string, optional
+endian code to which to swap.  None means swap from current
+endianness, and is the default
+Returns:
+wstrMGHHeader
+MGHHeader object
+static chk_version(hdr, fix=False)#
+copy()#
+Return copy of structure
+data_from_fileobj(fileobj)#
+Read data array from fileobj
+Parameters:
+fileobjfile-like
+Must be open, and implement read and seek methods
+Returns:
+arrndarray
+data array
+classmethod default_structarr(endianness=None)#
+Return header data for empty header
+Ignores byte order; always big endian
+classmethod diagnose_binaryblock(binaryblock, endianness=None)#
+Run checks over binary data, return string
+classmethod from_fileobj(fileobj, check=True)#
+classmethod for loading a MGH fileobject
+classmethod from_header(header=None, check=True)#
+Class method to create MGH header from another MGH header
+get_affine()#
+Get the affine transform from the header information.
+MGH format doesn’t store the transform directly. Instead it’s gleaned
+from the zooms ( delta ), direction cosines ( Mdc ), RAS centers (
+Pxyz_c ) and the dimensions.
+get_best_affine()#
+Get the affine transform from the header information.
+MGH format doesn’t store the transform directly. Instead it’s gleaned
+from the zooms ( delta ), direction cosines ( Mdc ), RAS centers (
+Pxyz_c ) and the dimensions.
+get_data_bytespervox()#
+Get the number of bytes per voxel of the data
+get_data_dtype()#
+Get numpy dtype for MGH data
+For examples see set_data_dtype
+get_data_offset()#
+Return offset into data file to read data
+get_data_shape()#
+Get shape of data
+get_data_size()#
+Get the number of bytes the data chunk occupies.
+get_footer_offset()#
+Return offset where the footer resides.
+Occurs immediately after the data chunk.
+get_ras2vox()#
+return the inverse get_affine()
+get_slope_inter()#
+MGH format does not do scaling?
+get_vox2ras()#
+return the get_affine()
+get_vox2ras_tkr()#
+Get the vox2ras-tkr transform. See “Torig” here:
+https://surfer.nmr.mgh.harvard.edu/fswiki/CoordinateSystems
+get_zooms()#
+Get zooms from header
+Returns the spacing of voxels in the x, y, and z dimensions.
+For four-dimensional files, a fourth zoom is included, equal to the
+repetition time (TR) in ms (see The MGH/MGZ Volume Format).
+To access only the spatial zooms, use hdr[‘delta’].
+Returns:
+ztuple
+tuple of header zoom values
+classmethod guessed_endian(mapping)#
+MGHHeader data must be big-endian
+set_data_dtype(datatype)#
+Set numpy dtype for data from code or dtype or type
+set_data_shape(shape)#
+Set shape of data
+Parameters:
+shapesequence
+sequence of integers specifying data array shape
+set_zooms(zooms)#
+Set zooms into header fields
+Sets the spacing of voxels in the x, y, and z dimensions.
+For four-dimensional files, a temporal zoom (repetition time, or TR, in
+ms) may be provided as a fourth sequence element.
+Parameters:
+zoomssequence
+sequence of floats specifying spatial and (optionally) temporal
+zooms
+template_dtype = dtype([('version', '>i4'), ('dims', '>i4', (4,)), ('type', '>i4'), ('dof', '>i4'), ('goodRASFlag', '>i2'), ('delta', '>f4', (3,)), ('Mdc', '>f4', (3, 3)), ('Pxyz_c', '>f4', (3,)), ('tr', '>f4'), ('flip_angle', '>f4'), ('te', '>f4'), ('ti', '>f4'), ('fov', '>f4')])#
+writeftr_to(fileobj)#
+Write footer to fileobj
+Footer data is located after the data chunk. So move there and write.
+Parameters:
+fileobjfile-like object
+Should implement write and seek method
+Returns:
+None
+writehdr_to(fileobj)#
+Write header to fileobj
+Write starts at the beginning.
+Parameters:
+fileobjfile-like object
+Should implement write and seek method
+Returns:
+None
+MGHImage#

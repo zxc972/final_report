@@ -1,0 +1,1721 @@
+{
+  "FSL-VBM Directory<SEP>Template List": {
+    "chunk_ids": [
+      "VBM_TEMPLATE-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427114,
+    "update_time": 1792427114,
+    "_id": "FSL-VBM Directory<SEP>Template List"
+  },
+  "Qcache<SEP>Recon-All": {
+    "chunk_ids": [
+      "SBM_CACHE-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427114,
+    "update_time": 1792427114,
+    "_id": "Qcache<SEP>Recon-All"
+  },
+  "T1 Images<SEP>Template List": {
+    "chunk_ids": [
+      "VBM_TEMPLATE-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427114,
+    "update_time": 1792427114,
+    "_id": "T1 Images<SEP>Template List"
+  },
+  "Fsaverage<SEP>Qcache": {
+    "chunk_ids": [
+      "SBM_CACHE-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427114,
+    "update_time": 1792427114,
+    "_id": "Fsaverage<SEP>Qcache"
+  },
+  "Study-Specific Template<SEP>T1 Images": {
+    "chunk_ids": [
+      "VBM_TEMPLATE-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427114,
+    "update_time": 1792427114,
+    "_id": "Study-Specific Template<SEP>T1 Images"
+  },
+  "FWHM<SEP>Qcache": {
+    "chunk_ids": [
+      "SBM_CACHE-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427114,
+    "update_time": 1792427114,
+    "_id": "FWHM<SEP>Qcache"
+  },
+  "FSL-VBM<SEP>Study-Specific Template": {
+    "chunk_ids": [
+      "VBM_TEMPLATE-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427114,
+    "update_time": 1792427114,
+    "_id": "FSL-VBM<SEP>Study-Specific Template"
+  },
+  "Qcache<SEP>Tutorial Data": {
+    "chunk_ids": [
+      "SBM_CACHE-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427114,
+    "update_time": 1792427114,
+    "_id": "Qcache<SEP>Tutorial Data"
+  },
+  "M3<SEP>Run Full Pipeline Script": {
+    "chunk_ids": [
+      "NHP_WRAPPER-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427120,
+    "update_time": 1792427120,
+    "_id": "M3<SEP>Run Full Pipeline Script"
+  },
+  "BIDS<SEP>Run Full Pipeline Script": {
+    "chunk_ids": [
+      "NHP_WRAPPER-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427120,
+    "update_time": 1792427120,
+    "_id": "BIDS<SEP>Run Full Pipeline Script"
+  },
+  "M3<SEP>run_full_pipeline.sh": {
+    "chunk_ids": [
+      "NHP_WRAPPER-chunk-001"
+    ],
+    "count": 1,
+    "create_time": 1792427120,
+    "update_time": 1792427120,
+    "_id": "M3<SEP>run_full_pipeline.sh"
+  },
+  "FreeSurfer License<SEP>Run Full Pipeline Script": {
+    "chunk_ids": [
+      "NHP_WRAPPER-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427120,
+    "update_time": 1792427120,
+    "_id": "FreeSurfer License<SEP>Run Full Pipeline Script"
+  },
+  "Exchangeability Blocks<SEP>Randomise": {
+    "chunk_ids": [
+      "STAT_BLOCK-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427122,
+    "update_time": 1792427122,
+    "_id": "Exchangeability Blocks<SEP>Randomise"
+  },
+  "Null-Hypothesis Exchangeability<SEP>Permutation Tests": {
+    "chunk_ids": [
+      "STAT_BLOCK-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427122,
+    "update_time": 1792427122,
+    "_id": "Null-Hypothesis Exchangeability<SEP>Permutation Tests"
+  },
+  "Guide<SEP>Repeated Measures": {
+    "chunk_ids": [
+      "STAT_BLOCK-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427122,
+    "update_time": 1792427122,
+    "_id": "Guide<SEP>Repeated Measures"
+  },
+  "Exchangeability Blocks<SEP>Group Labels": {
+    "chunk_ids": [
+      "STAT_BLOCK-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427122,
+    "update_time": 1792427122,
+    "_id": "Exchangeability Blocks<SEP>Group Labels"
+  },
+  "Randomise<SEP>Repeated Measures": {
+    "chunk_ids": [
+      "STAT_BLOCK-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427122,
+    "update_time": 1792427122,
+    "_id": "Randomise<SEP>Repeated Measures"
+  },
+  "Permutation Tests<SEP>Repeated Measures": {
+    "chunk_ids": [
+      "STAT_BLOCK-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427122,
+    "update_time": 1792427122,
+    "_id": "Permutation Tests<SEP>Repeated Measures"
+  },
+  "M1<SEP>PREEMACS": {
+    "chunk_ids": [
+      "NHP_M1-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427127,
+    "update_time": 1792427127,
+    "_id": "M1<SEP>PREEMACS"
+  },
+  "Apptainer<SEP>PREEMACS": {
+    "chunk_ids": [
+      "NHP_M1-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427127,
+    "update_time": 1792427127,
+    "_id": "Apptainer<SEP>PREEMACS"
+  },
+  "M1<SEP>t1_path": {
+    "chunk_ids": [
+      "NHP_M1-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427127,
+    "update_time": 1792427127,
+    "_id": "M1<SEP>t1_path"
+  },
+  "PREEMACS<SEP>preemacs.sif": {
+    "chunk_ids": [
+      "NHP_M1-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427127,
+    "update_time": 1792427127,
+    "_id": "PREEMACS<SEP>preemacs.sif"
+  },
+  "M1<SEP>t2_path": {
+    "chunk_ids": [
+      "NHP_M1-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427127,
+    "update_time": 1792427127,
+    "_id": "M1<SEP>t2_path"
+  },
+  "M1<SEP>out_path": {
+    "chunk_ids": [
+      "NHP_M1-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427127,
+    "update_time": 1792427127,
+    "_id": "M1<SEP>out_path"
+  },
+  "M1<SEP>SUB01": {
+    "chunk_ids": [
+      "NHP_M1-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427127,
+    "update_time": 1792427127,
+    "_id": "M1<SEP>SUB01"
+  },
+  "GenerateN4<SEP>M1": {
+    "chunk_ids": [
+      "NHP_N4-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427132,
+    "update_time": 1792427132,
+    "_id": "GenerateN4<SEP>M1"
+  },
+  "BM<SEP>GenerateN4": {
+    "chunk_ids": [
+      "NHP_N4-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427132,
+    "update_time": 1792427132,
+    "_id": "BM<SEP>GenerateN4"
+  },
+  "GenerateN4<SEP>N4 Bias-Field Correction": {
+    "chunk_ids": [
+      "NHP_N4-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427132,
+    "update_time": 1792427132,
+    "_id": "GenerateN4<SEP>N4 Bias-Field Correction"
+  },
+  "GenerateN4<SEP>Preemacs.Sif": {
+    "chunk_ids": [
+      "NHP_N4-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427132,
+    "update_time": 1792427132,
+    "_id": "GenerateN4<SEP>Preemacs.Sif"
+  },
+  "Apptainer<SEP>GenerateN4": {
+    "chunk_ids": [
+      "NHP_N4-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427132,
+    "update_time": 1792427132,
+    "_id": "Apptainer<SEP>GenerateN4"
+  },
+  "GenerateN4<SEP>SUB01": {
+    "chunk_ids": [
+      "NHP_N4-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427132,
+    "update_time": 1792427132,
+    "_id": "GenerateN4<SEP>SUB01"
+  },
+  "Computational neuroanatomy approach<SEP>Temporo-parietal cortex": {
+    "chunk_ids": [
+      "CROSS_FINDING-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427137,
+    "update_time": 1792427137,
+    "_id": "Computational neuroanatomy approach<SEP>Temporo-parietal cortex"
+  },
+  "Cortical myelin<SEP>Macaque": {
+    "chunk_ids": [
+      "CROSS_FINDING-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427137,
+    "update_time": 1792427137,
+    "_id": "Cortical myelin<SEP>Macaque"
+  },
+  "Temporo-parietal cortex<SEP>White matter tracts": {
+    "chunk_ids": [
+      "CROSS_FINDING-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427137,
+    "update_time": 1792427137,
+    "_id": "Temporo-parietal cortex<SEP>White matter tracts"
+  },
+  "Chimpanzee<SEP>Cortical myelin": {
+    "chunk_ids": [
+      "CROSS_FINDING-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427137,
+    "update_time": 1792427137,
+    "_id": "Chimpanzee<SEP>Cortical myelin"
+  },
+  "Arcuate fasciculus<SEP>Temporal lobe": {
+    "chunk_ids": [
+      "CROSS_FINDING-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427137,
+    "update_time": 1792427137,
+    "_id": "Arcuate fasciculus<SEP>Temporal lobe"
+  },
+  "Middle longitudinal fasciculus<SEP>Temporo-parietal cortex": {
+    "chunk_ids": [
+      "CROSS_FINDING-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427137,
+    "update_time": 1792427137,
+    "_id": "Middle longitudinal fasciculus<SEP>Temporo-parietal cortex"
+  },
+  "Cortical myelin<SEP>Human": {
+    "chunk_ids": [
+      "CROSS_FINDING-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427137,
+    "update_time": 1792427137,
+    "_id": "Cortical myelin<SEP>Human"
+  },
+  "Brain Organization<SEP>Cortical Organization": {
+    "chunk_ids": [
+      "CROSS_FINDING-chunk-001"
+    ],
+    "count": 1,
+    "create_time": 1792427137,
+    "update_time": 1792427137,
+    "_id": "Brain Organization<SEP>Cortical Organization"
+  },
+  "Superior longitudinal fasciculus<SEP>Temporo-parietal cortex": {
+    "chunk_ids": [
+      "CROSS_FINDING-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427137,
+    "update_time": 1792427137,
+    "_id": "Superior longitudinal fasciculus<SEP>Temporo-parietal cortex"
+  },
+  "Brain Organization<SEP>Comparative Hypotheses": {
+    "chunk_ids": [
+      "CROSS_FINDING-chunk-001"
+    ],
+    "count": 1,
+    "create_time": 1792427137,
+    "update_time": 1792427137,
+    "_id": "Brain Organization<SEP>Comparative Hypotheses"
+  },
+  "Arcuate fasciculus<SEP>Temporo-parietal cortex": {
+    "chunk_ids": [
+      "CROSS_FINDING-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427137,
+    "update_time": 1792427137,
+    "_id": "Arcuate fasciculus<SEP>Temporo-parietal cortex"
+  },
+  "Longitudinal Processing<SEP>Recon-All": {
+    "chunk_ids": [
+      "LONG-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427144,
+    "update_time": 1792427144,
+    "_id": "Longitudinal Processing<SEP>Recon-All"
+  },
+  "Norm.Mgz<SEP>Unbiased Template": {
+    "chunk_ids": [
+      "LONG-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427144,
+    "update_time": 1792427144,
+    "_id": "Norm.Mgz<SEP>Unbiased Template"
+  },
+  "Longitudinal Processing<SEP>SUBJECTS_DIR": {
+    "chunk_ids": [
+      "LONG-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427144,
+    "update_time": 1792427144,
+    "_id": "Longitudinal Processing<SEP>SUBJECTS_DIR"
+  },
+  "Recon-All<SEP>Unbiased Template": {
+    "chunk_ids": [
+      "LONG-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427144,
+    "update_time": 1792427144,
+    "_id": "Recon-All<SEP>Unbiased Template"
+  },
+  "FreeSurfer<SEP>Longitudinal Processing": {
+    "chunk_ids": [
+      "LONG-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427144,
+    "update_time": 1792427144,
+    "_id": "FreeSurfer<SEP>Longitudinal Processing"
+  },
+  "Template<SEP>Template ID": {
+    "chunk_ids": [
+      "LONG-chunk-001"
+    ],
+    "count": 1,
+    "create_time": 1792427144,
+    "update_time": 1792427144,
+    "_id": "Template<SEP>Template ID"
+  },
+  "Timepoint<SEP>Timepoint ID": {
+    "chunk_ids": [
+      "LONG-chunk-001"
+    ],
+    "count": 1,
+    "create_time": 1792427144,
+    "update_time": 1792427144,
+    "_id": "Timepoint<SEP>Timepoint ID"
+  },
+  "Longitudinal Processing<SEP>Recon-all": {
+    "chunk_ids": [
+      "LONG-chunk-001"
+    ],
+    "count": 1,
+    "create_time": 1792427144,
+    "update_time": 1792427144,
+    "_id": "Longitudinal Processing<SEP>Recon-all"
+  },
+  "Default Stream<SEP>Subject Data": {
+    "chunk_ids": [
+      "LONG-chunk-001"
+    ],
+    "count": 1,
+    "create_time": 1792427144,
+    "update_time": 1792427144,
+    "_id": "Default Stream<SEP>Subject Data"
+  },
+  "Longitudinal Processing<SEP>Template": {
+    "chunk_ids": [
+      "LONG-chunk-001"
+    ],
+    "count": 1,
+    "create_time": 1792427144,
+    "update_time": 1792427144,
+    "_id": "Longitudinal Processing<SEP>Template"
+  },
+  "Template<SEP>Template Comparison": {
+    "chunk_ids": [
+      "LONG-chunk-001"
+    ],
+    "count": 1,
+    "create_time": 1792427144,
+    "update_time": 1792427144,
+    "_id": "Template<SEP>Template Comparison"
+  },
+  "Longitudinal Processing<SEP>Timepoint": {
+    "chunk_ids": [
+      "LONG-chunk-001"
+    ],
+    "count": 1,
+    "create_time": 1792427144,
+    "update_time": 1792427144,
+    "_id": "Longitudinal Processing<SEP>Timepoint"
+  },
+  "Longitudinal Processing<SEP>Subject Data": {
+    "chunk_ids": [
+      "LONG-chunk-001"
+    ],
+    "count": 1,
+    "create_time": 1792427144,
+    "update_time": 1792427144,
+    "_id": "Longitudinal Processing<SEP>Subject Data"
+  },
+  "Blurry Guess<SEP>Longitudinal Runs": {
+    "chunk_ids": [
+      "LONG-chunk-002"
+    ],
+    "count": 1,
+    "create_time": 1792427144,
+    "update_time": 1792427144,
+    "_id": "Blurry Guess<SEP>Longitudinal Runs"
+  },
+  "Difference Calculation<SEP>Longitudinal Processing": {
+    "chunk_ids": [
+      "LONG-chunk-001"
+    ],
+    "count": 1,
+    "create_time": 1792427144,
+    "update_time": 1792427144,
+    "_id": "Difference Calculation<SEP>Longitudinal Processing"
+  },
+  "Cross Sectional Processing<SEP>Longitudinal Processing": {
+    "chunk_ids": [
+      "LONG-chunk-001"
+    ],
+    "count": 1,
+    "create_time": 1792427144,
+    "update_time": 1792427144,
+    "_id": "Cross Sectional Processing<SEP>Longitudinal Processing"
+  },
+  "Longitudinal Processing<SEP>Template Run": {
+    "chunk_ids": [
+      "LONG-chunk-001"
+    ],
+    "count": 1,
+    "create_time": 1792427144,
+    "update_time": 1792427144,
+    "_id": "Longitudinal Processing<SEP>Template Run"
+  },
+  "Longitudinal Processing<SEP>Longitudinal Run": {
+    "chunk_ids": [
+      "LONG-chunk-001"
+    ],
+    "count": 1,
+    "create_time": 1792427144,
+    "update_time": 1792427144,
+    "_id": "Longitudinal Processing<SEP>Longitudinal Run"
+  },
+  "Brain Mask<SEP>Subject Template": {
+    "chunk_ids": [
+      "PED-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427149,
+    "update_time": 1792427149,
+    "_id": "Brain Mask<SEP>Subject Template"
+  },
+  "Longitudinal Pipeline<SEP>Pediatric Data": {
+    "chunk_ids": [
+      "PED-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427149,
+    "update_time": 1792427149,
+    "_id": "Longitudinal Pipeline<SEP>Pediatric Data"
+  },
+  "Aseg.Stats<SEP>Cross Sectional Directories": {
+    "chunk_ids": [
+      "PED-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427149,
+    "update_time": 1792427149,
+    "_id": "Aseg.Stats<SEP>Cross Sectional Directories"
+  },
+  "Linear Talairach Map<SEP>Subject Template": {
+    "chunk_ids": [
+      "PED-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427149,
+    "update_time": 1792427149,
+    "_id": "Linear Talairach Map<SEP>Subject Template"
+  },
+  "Longitudinal Pipeline<SEP>Template/Base Image": {
+    "chunk_ids": [
+      "PED-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427149,
+    "update_time": 1792427149,
+    "_id": "Longitudinal Pipeline<SEP>Template/Base Image"
+  },
+  "Estimated Total Intracranial Volume (eTIV)<SEP>Subject Template": {
+    "chunk_ids": [
+      "PED-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427149,
+    "update_time": 1792427149,
+    "_id": "Estimated Total Intracranial Volume (eTIV)<SEP>Subject Template"
+  },
+  "Aseg.Stats<SEP>Estimated Total Intracranial Volume (eTIV)": {
+    "chunk_ids": [
+      "PED-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427149,
+    "update_time": 1792427149,
+    "_id": "Aseg.Stats<SEP>Estimated Total Intracranial Volume (eTIV)"
+  },
+  "Coefficient Of Joint Variation<SEP>Ganzetti2016": {
+    "chunk_ids": [
+      "QC_BODY-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427153,
+    "update_time": 1792427153,
+    "_id": "Coefficient Of Joint Variation<SEP>Ganzetti2016"
+  },
+  "Contrast-To-Noise Ratio<SEP>Magnota2006": {
+    "chunk_ids": [
+      "QC_BODY-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427153,
+    "update_time": 1792427153,
+    "_id": "Contrast-To-Noise Ratio<SEP>Magnota2006"
+  },
+  "Coefficient Of Joint Variation<SEP>INU Correction Algorithm": {
+    "chunk_ids": [
+      "QC_BODY-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427153,
+    "update_time": 1792427153,
+    "_id": "Coefficient Of Joint Variation<SEP>INU Correction Algorithm"
+  },
+  "Contrast-To-Noise Ratio<SEP>SNR Calculation": {
+    "chunk_ids": [
+      "QC_BODY-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427153,
+    "update_time": 1792427153,
+    "_id": "Contrast-To-Noise Ratio<SEP>SNR Calculation"
+  },
+  "Contrast-To-Noise Ratio<SEP>Gray Matter": {
+    "chunk_ids": [
+      "QC_BODY-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427153,
+    "update_time": 1792427153,
+    "_id": "Contrast-To-Noise Ratio<SEP>Gray Matter"
+  },
+  "Contrast-To-Noise Ratio<SEP>White Matter": {
+    "chunk_ids": [
+      "QC_BODY-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792427153,
+    "update_time": 1792427153,
+    "_id": "Contrast-To-Noise Ratio<SEP>White Matter"
+  },
+  "FSL-VBM<SEP>GM Images": {
+    "chunk_ids": [
+      "VBM_FINAL-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428582,
+    "update_time": 1792428582,
+    "_id": "FSL-VBM<SEP>GM Images"
+  },
+  "GM_mod_merg<SEP>GM_mod_merg_s3": {
+    "chunk_ids": [
+      "VBM_FINAL-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428582,
+    "update_time": 1792428582,
+    "_id": "GM_mod_merg<SEP>GM_mod_merg_s3"
+  },
+  "GM Images<SEP>Study-Specific Template": {
+    "chunk_ids": [
+      "VBM_FINAL-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428582,
+    "update_time": 1792428582,
+    "_id": "GM Images<SEP>Study-Specific Template"
+  },
+  "GM_mod_merg<SEP>Gaussian Kernels": {
+    "chunk_ids": [
+      "VBM_FINAL-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428582,
+    "update_time": 1792428582,
+    "_id": "GM_mod_merg<SEP>Gaussian Kernels"
+  },
+  "GM_mod_merg_s3<SEP>Permutation-Based Non-Parametric Inference": {
+    "chunk_ids": [
+      "VBM_FINAL-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428582,
+    "update_time": 1792428582,
+    "_id": "GM_mod_merg_s3<SEP>Permutation-Based Non-Parametric Inference"
+  },
+  "GM Images<SEP>GM_merg": {
+    "chunk_ids": [
+      "VBM_FINAL-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428582,
+    "update_time": 1792428582,
+    "_id": "GM Images<SEP>GM_merg"
+  },
+  "Permutation-Based Non-Parametric Inference<SEP>design.mat": {
+    "chunk_ids": [
+      "VBM_FINAL-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428582,
+    "update_time": 1792428582,
+    "_id": "Permutation-Based Non-Parametric Inference<SEP>design.mat"
+  },
+  "FSL-VBM<SEP>Good et al., 2001": {
+    "chunk_ids": [
+      "VBM_FINAL-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428582,
+    "update_time": 1792428582,
+    "_id": "FSL-VBM<SEP>Good et al., 2001"
+  },
+  "GM Images<SEP>Jacobian of the Warp Field": {
+    "chunk_ids": [
+      "VBM_FINAL-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428582,
+    "update_time": 1792428582,
+    "_id": "GM Images<SEP>Jacobian of the Warp Field"
+  },
+  "Randomise<SEP>Tstat Maps": {
+    "chunk_ids": [
+      "VBM_FINAL-chunk-001"
+    ],
+    "count": 1,
+    "create_time": 1792428582,
+    "update_time": 1792428582,
+    "_id": "Randomise<SEP>Tstat Maps"
+  },
+  "GM Images<SEP>GM_mod_merg": {
+    "chunk_ids": [
+      "VBM_FINAL-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428582,
+    "update_time": 1792428582,
+    "_id": "GM Images<SEP>GM_mod_merg"
+  },
+  "Permutation-Based Non-Parametric Inference<SEP>Randomise": {
+    "chunk_ids": [
+      "VBM_FINAL-chunk-001"
+    ],
+    "count": 1,
+    "create_time": 1792428582,
+    "update_time": 1792428582,
+    "_id": "Permutation-Based Non-Parametric Inference<SEP>Randomise"
+  },
+  "Design.mat<SEP>Randomise": {
+    "chunk_ids": [
+      "VBM_FINAL-chunk-001"
+    ],
+    "count": 1,
+    "create_time": 1792428582,
+    "update_time": 1792428582,
+    "_id": "Design.mat<SEP>Randomise"
+  },
+  "Cluster-Based Thresholding<SEP>Tstat Maps": {
+    "chunk_ids": [
+      "VBM_FINAL-chunk-001"
+    ],
+    "count": 1,
+    "create_time": 1792428582,
+    "update_time": 1792428582,
+    "_id": "Cluster-Based Thresholding<SEP>Tstat Maps"
+  },
+  "Design.con<SEP>Randomise": {
+    "chunk_ids": [
+      "VBM_FINAL-chunk-001"
+    ],
+    "count": 1,
+    "create_time": 1792428582,
+    "update_time": 1792428582,
+    "_id": "Design.con<SEP>Randomise"
+  },
+  "Cluster-Based Thresholding<SEP>TFCE": {
+    "chunk_ids": [
+      "VBM_FINAL-chunk-001"
+    ],
+    "count": 1,
+    "create_time": 1792428582,
+    "update_time": 1792428582,
+    "_id": "Cluster-Based Thresholding<SEP>TFCE"
+  },
+  "GM Mask<SEP>Randomise": {
+    "chunk_ids": [
+      "VBM_FINAL-chunk-001"
+    ],
+    "count": 1,
+    "create_time": 1792428582,
+    "update_time": 1792428582,
+    "_id": "GM Mask<SEP>Randomise"
+  },
+  "GM Mod Merg S3<SEP>Randomise": {
+    "chunk_ids": [
+      "VBM_FINAL-chunk-001"
+    ],
+    "count": 1,
+    "create_time": 1792428582,
+    "update_time": 1792428582,
+    "_id": "GM Mod Merg S3<SEP>Randomise"
+  },
+  "Fslvbm_3_Proc<SEP>GM Mod Merg S3": {
+    "chunk_ids": [
+      "VBM_FINAL-chunk-001"
+    ],
+    "count": 1,
+    "create_time": 1792428582,
+    "update_time": 1792428582,
+    "_id": "Fslvbm_3_Proc<SEP>GM Mod Merg S3"
+  },
+  "Grey Matter<SEP>Voxelwise Grey Matter Analysis": {
+    "chunk_ids": [
+      "VBM_LIMITS-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428586,
+    "update_time": 1792428586,
+    "_id": "Grey Matter<SEP>Voxelwise Grey Matter Analysis"
+  },
+  "Grey Matter Atrophy<SEP>Voxelwise Grey Matter Analysis": {
+    "chunk_ids": [
+      "VBM_LIMITS-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428586,
+    "update_time": 1792428586,
+    "_id": "Grey Matter Atrophy<SEP>Voxelwise Grey Matter Analysis"
+  },
+  "Gyrification Pattern<SEP>Voxelwise Grey Matter Analysis": {
+    "chunk_ids": [
+      "VBM_LIMITS-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428586,
+    "update_time": 1792428586,
+    "_id": "Gyrification Pattern<SEP>Voxelwise Grey Matter Analysis"
+  },
+  "Free-Form Deformation<SEP>Voxelwise Grey Matter Analysis": {
+    "chunk_ids": [
+      "VBM_LIMITS-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428586,
+    "update_time": 1792428586,
+    "_id": "Free-Form Deformation<SEP>Voxelwise Grey Matter Analysis"
+  },
+  "Non-Rigid Registration<SEP>Voxelwise Grey Matter Analysis": {
+    "chunk_ids": [
+      "VBM_LIMITS-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428586,
+    "update_time": 1792428586,
+    "_id": "Non-Rigid Registration<SEP>Voxelwise Grey Matter Analysis"
+  },
+  "Smoothing<SEP>Voxelwise Grey Matter Analysis": {
+    "chunk_ids": [
+      "VBM_LIMITS-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428586,
+    "update_time": 1792428586,
+    "_id": "Smoothing<SEP>Voxelwise Grey Matter Analysis"
+  },
+  "One-sample t-test<SEP>Randomise": {
+    "chunk_ids": [
+      "STAT_ONEGROUP-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428619,
+    "update_time": 1792428619,
+    "_id": "One-sample t-test<SEP>Randomise"
+  },
+  "4D image<SEP>Randomise": {
+    "chunk_ids": [
+      "STAT_ONEGROUP-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428619,
+    "update_time": 1792428619,
+    "_id": "4D image<SEP>Randomise"
+  },
+  "COPE<SEP>One-sample t-test": {
+    "chunk_ids": [
+      "STAT_ONEGROUP-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428619,
+    "update_time": 1792428619,
+    "_id": "COPE<SEP>One-sample t-test"
+  },
+  "Randomise<SEP>Variance smoothing": {
+    "chunk_ids": [
+      "STAT_ONEGROUP-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428619,
+    "update_time": 1792428619,
+    "_id": "Randomise<SEP>Variance smoothing"
+  },
+  "OneSamp4D<SEP>OneSampT": {
+    "chunk_ids": [
+      "STAT_ONEGROUP-chunk-001"
+    ],
+    "count": 1,
+    "create_time": 1792428619,
+    "update_time": 1792428619,
+    "_id": "OneSamp4D<SEP>OneSampT"
+  },
+  "FSL<SEP>Randomise": {
+    "chunk_ids": [
+      "STAT_ONEGROUP-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428619,
+    "update_time": 1792428619,
+    "_id": "FSL<SEP>Randomise"
+  },
+  "OneSamp4D<SEP>Variance Smoothing": {
+    "chunk_ids": [
+      "STAT_ONEGROUP-chunk-001"
+    ],
+    "count": 1,
+    "create_time": 1792428619,
+    "update_time": 1792428619,
+    "_id": "OneSamp4D<SEP>Variance Smoothing"
+  },
+  "FEAT FMRI analysis<SEP>FSL": {
+    "chunk_ids": [
+      "STAT_ONEGROUP-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428619,
+    "update_time": 1792428619,
+    "_id": "FEAT FMRI analysis<SEP>FSL"
+  },
+  "OneSamp4D<SEP>Randomise": {
+    "chunk_ids": [
+      "STAT_ONEGROUP-chunk-001"
+    ],
+    "count": 1,
+    "create_time": 1792428619,
+    "update_time": 1792428619,
+    "_id": "OneSamp4D<SEP>Randomise"
+  },
+  "COPE<SEP>FEAT FMRI analysis": {
+    "chunk_ids": [
+      "STAT_ONEGROUP-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428619,
+    "update_time": 1792428619,
+    "_id": "COPE<SEP>FEAT FMRI analysis"
+  },
+  "Group Of 8 Subjects<SEP>Two-Sample Paired T-test": {
+    "chunk_ids": [
+      "STAT_PAIRED-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428629,
+    "update_time": 1792428629,
+    "_id": "Group Of 8 Subjects<SEP>Two-Sample Paired T-test"
+  },
+  "Condition A<SEP>Two-Sample Paired T-test": {
+    "chunk_ids": [
+      "STAT_PAIRED-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428629,
+    "update_time": 1792428629,
+    "_id": "Condition A<SEP>Two-Sample Paired T-test"
+  },
+  "Condition B<SEP>Two-Sample Paired T-test": {
+    "chunk_ids": [
+      "STAT_PAIRED-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428629,
+    "update_time": 1792428629,
+    "_id": "Condition B<SEP>Two-Sample Paired T-test"
+  },
+  "Condition A<SEP>Group Of 8 Subjects": {
+    "chunk_ids": [
+      "STAT_PAIRED-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428629,
+    "update_time": 1792428629,
+    "_id": "Condition A<SEP>Group Of 8 Subjects"
+  },
+  "Design Matrix<SEP>Two-Sample Paired T-test": {
+    "chunk_ids": [
+      "STAT_PAIRED-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428629,
+    "update_time": 1792428629,
+    "_id": "Design Matrix<SEP>Two-Sample Paired T-test"
+  },
+  "Condition B<SEP>Group Of 8 Subjects": {
+    "chunk_ids": [
+      "STAT_PAIRED-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428629,
+    "update_time": 1792428629,
+    "_id": "Condition B<SEP>Group Of 8 Subjects"
+  },
+  "Group Difference<SEP>T-Contrast": {
+    "chunk_ids": [
+      "STAT_PAIRED-chunk-001"
+    ],
+    "count": 1,
+    "create_time": 1792428629,
+    "update_time": 1792428629,
+    "_id": "Group Difference<SEP>T-Contrast"
+  },
+  "GLM Guide<SEP>Two-Sample Paired T-test": {
+    "chunk_ids": [
+      "STAT_PAIRED-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428629,
+    "update_time": 1792428629,
+    "_id": "GLM Guide<SEP>Two-Sample Paired T-test"
+  },
+  "A-B Contrast<SEP>T-Contrast": {
+    "chunk_ids": [
+      "STAT_PAIRED-chunk-001"
+    ],
+    "count": 1,
+    "create_time": 1792428629,
+    "update_time": 1792428629,
+    "_id": "A-B Contrast<SEP>T-Contrast"
+  },
+  "Design Matrix<SEP>Group Difference": {
+    "chunk_ids": [
+      "STAT_PAIRED-chunk-001"
+    ],
+    "count": 1,
+    "create_time": 1792428629,
+    "update_time": 1792428629,
+    "_id": "Design Matrix<SEP>Group Difference"
+  },
+  "B-A Contrast<SEP>T-Contrast": {
+    "chunk_ids": [
+      "STAT_PAIRED-chunk-001"
+    ],
+    "count": 1,
+    "create_time": 1792428629,
+    "update_time": 1792428629,
+    "_id": "B-A Contrast<SEP>T-Contrast"
+  },
+  "Design Matrix<SEP>Subject Means": {
+    "chunk_ids": [
+      "STAT_PAIRED-chunk-001"
+    ],
+    "count": 1,
+    "create_time": 1792428629,
+    "update_time": 1792428629,
+    "_id": "Design Matrix<SEP>Subject Means"
+  },
+  "Exchangeability-Block Information<SEP>Subject": {
+    "chunk_ids": [
+      "STAT_PAIRED-chunk-002"
+    ],
+    "count": 1,
+    "create_time": 1792428629,
+    "update_time": 1792428629,
+    "_id": "Exchangeability-Block Information<SEP>Subject"
+  },
+  "Design<SEP>T-Contrast": {
+    "chunk_ids": [
+      "STAT_PAIRED-chunk-002"
+    ],
+    "count": 1,
+    "create_time": 1792428629,
+    "update_time": 1792428629,
+    "_id": "Design<SEP>T-Contrast"
+  },
+  "Condition A<SEP>Exchangeability-Block Information": {
+    "chunk_ids": [
+      "STAT_PAIRED-chunk-002"
+    ],
+    "count": 1,
+    "create_time": 1792428629,
+    "update_time": 1792428629,
+    "_id": "Condition A<SEP>Exchangeability-Block Information"
+  },
+  "GLM Gui<SEP>Group Column": {
+    "chunk_ids": [
+      "STAT_PAIRED-chunk-002"
+    ],
+    "count": 1,
+    "create_time": 1792428629,
+    "update_time": 1792428629,
+    "_id": "GLM Gui<SEP>Group Column"
+  },
+  "Condition B<SEP>Exchangeability-Block Information": {
+    "chunk_ids": [
+      "STAT_PAIRED-chunk-002"
+    ],
+    "count": 1,
+    "create_time": 1792428629,
+    "update_time": 1792428629,
+    "_id": "Condition B<SEP>Exchangeability-Block Information"
+  },
+  "Exchangeability-Block Information<SEP>Null Hypothesis": {
+    "chunk_ids": [
+      "STAT_PAIRED-chunk-002"
+    ],
+    "count": 1,
+    "create_time": 1792428629,
+    "update_time": 1792428629,
+    "_id": "Exchangeability-Block Information<SEP>Null Hypothesis"
+  },
+  "PairedT4D<SEP>Randomise": {
+    "chunk_ids": [
+      "STAT_PAIRED-chunk-002"
+    ],
+    "count": 1,
+    "create_time": 1792428629,
+    "update_time": 1792428629,
+    "_id": "PairedT4D<SEP>Randomise"
+  },
+  "Exchangeability-Block Information<SEP>GLM Gui": {
+    "chunk_ids": [
+      "STAT_PAIRED-chunk-002"
+    ],
+    "count": 1,
+    "create_time": 1792428629,
+    "update_time": 1792428629,
+    "_id": "Exchangeability-Block Information<SEP>GLM Gui"
+  },
+  "PairedT<SEP>Randomise": {
+    "chunk_ids": [
+      "STAT_PAIRED-chunk-002"
+    ],
+    "count": 1,
+    "create_time": 1792428629,
+    "update_time": 1792428629,
+    "_id": "PairedT<SEP>Randomise"
+  },
+  "Fslmaths<SEP>Paired Analysis": {
+    "chunk_ids": [
+      "STAT_PAIRED-chunk-002"
+    ],
+    "count": 1,
+    "create_time": 1792428629,
+    "update_time": 1792428629,
+    "_id": "Fslmaths<SEP>Paired Analysis"
+  },
+  "Design<SEP>Exchangeability-Block Information": {
+    "chunk_ids": [
+      "STAT_PAIRED-chunk-002"
+    ],
+    "count": 1,
+    "create_time": 1792428629,
+    "update_time": 1792428629,
+    "_id": "Design<SEP>Exchangeability-Block Information"
+  },
+  "Mask<SEP>Randomise": {
+    "chunk_ids": [
+      "STAT_PAIRED-chunk-002"
+    ],
+    "count": 1,
+    "create_time": 1792428629,
+    "update_time": 1792428629,
+    "_id": "Mask<SEP>Randomise"
+  },
+  "Paired Analysis<SEP>Randomise": {
+    "chunk_ids": [
+      "STAT_PAIRED-chunk-002"
+    ],
+    "count": 1,
+    "create_time": 1792428629,
+    "update_time": 1792428629,
+    "_id": "Paired Analysis<SEP>Randomise"
+  },
+  "Design<SEP>Randomise": {
+    "chunk_ids": [
+      "STAT_PAIRED-chunk-002"
+    ],
+    "count": 1,
+    "create_time": 1792428629,
+    "update_time": 1792428629,
+    "_id": "Design<SEP>Randomise"
+  },
+  "Paired Analysis<SEP>Within-Subject Differences": {
+    "chunk_ids": [
+      "STAT_PAIRED-chunk-003"
+    ],
+    "count": 1,
+    "create_time": 1792428629,
+    "update_time": 1792428629,
+    "_id": "Paired Analysis<SEP>Within-Subject Differences"
+  },
+  "Contrast<SEP>Design": {
+    "chunk_ids": [
+      "STAT_PAIRED-chunk-003"
+    ],
+    "count": 1,
+    "create_time": 1792428629,
+    "update_time": 1792428629,
+    "_id": "Contrast<SEP>Design"
+  },
+  "FSLMaths<SEP>Within-Subject Differences": {
+    "chunk_ids": [
+      "STAT_PAIRED-chunk-003"
+    ],
+    "count": 1,
+    "create_time": 1792428629,
+    "update_time": 1792428629,
+    "_id": "FSLMaths<SEP>Within-Subject Differences"
+  },
+  "Design<SEP>Group": {
+    "chunk_ids": [
+      "STAT_PAIRED-chunk-003"
+    ],
+    "count": 1,
+    "create_time": 1792428629,
+    "update_time": 1792428629,
+    "_id": "Design<SEP>Group"
+  },
+  "One-Group T-Test<SEP>Within-Subject Differences": {
+    "chunk_ids": [
+      "STAT_PAIRED-chunk-003"
+    ],
+    "count": 1,
+    "create_time": 1792428629,
+    "update_time": 1792428629,
+    "_id": "One-Group T-Test<SEP>Within-Subject Differences"
+  },
+  "Design<SEP>Mask": {
+    "chunk_ids": [
+      "STAT_PAIRED-chunk-003"
+    ],
+    "count": 1,
+    "create_time": 1792428629,
+    "update_time": 1792428629,
+    "_id": "Design<SEP>Mask"
+  },
+  "Linear Mixed Effects Models (LME)<SEP>Single Time-Point Subjects": {
+    "chunk_ids": [
+      "FS_SINGLE-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428638,
+    "update_time": 1792428638,
+    "_id": "Linear Mixed Effects Models (LME)<SEP>Single Time-Point Subjects"
+  },
+  "J.L. Bernal-Rusiel<SEP>Statistical Analysis of Longitudinal Neuroimage Data with Linear Mixed Effects Models": {
+    "chunk_ids": [
+      "FS_SINGLE-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428638,
+    "update_time": 1792428638,
+    "_id": "J.L. Bernal-Rusiel<SEP>Statistical Analysis of Longitudinal Neuroimage Data with Linear Mixed Effects Models"
+  },
+  "Longitudinal Stream<SEP>Single Time-Point Subjects": {
+    "chunk_ids": [
+      "FS_SINGLE-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428638,
+    "update_time": 1792428638,
+    "_id": "Longitudinal Stream<SEP>Single Time-Point Subjects"
+  },
+  "D.N. Greve<SEP>Statistical Analysis of Longitudinal Neuroimage Data with Linear Mixed Effects Models": {
+    "chunk_ids": [
+      "FS_SINGLE-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428638,
+    "update_time": 1792428638,
+    "_id": "D.N. Greve<SEP>Statistical Analysis of Longitudinal Neuroimage Data with Linear Mixed Effects Models"
+  },
+  "Base Creation Step<SEP>Longitudinal Stream": {
+    "chunk_ids": [
+      "FS_SINGLE-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428638,
+    "update_time": 1792428638,
+    "_id": "Base Creation Step<SEP>Longitudinal Stream"
+  },
+  "Linear Mixed Effects Models (LME)<SEP>Statistical Analysis of Longitudinal Neuroimage Data with Linear Mixed Effects Models": {
+    "chunk_ids": [
+      "FS_SINGLE-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428638,
+    "update_time": 1792428638,
+    "_id": "Linear Mixed Effects Models (LME)<SEP>Statistical Analysis of Longitudinal Neuroimage Data with Linear Mixed Effects Models"
+  },
+  "M. Reuter<SEP>Statistical Analysis of Longitudinal Neuroimage Data with Linear Mixed Effects Models": {
+    "chunk_ids": [
+      "FS_SINGLE-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428638,
+    "update_time": 1792428638,
+    "_id": "M. Reuter<SEP>Statistical Analysis of Longitudinal Neuroimage Data with Linear Mixed Effects Models"
+  },
+  "NeuroImage<SEP>Statistical Analysis of Longitudinal Neuroimage Data with Linear Mixed Effects Models": {
+    "chunk_ids": [
+      "FS_SINGLE-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428638,
+    "update_time": 1792428638,
+    "_id": "NeuroImage<SEP>Statistical Analysis of Longitudinal Neuroimage Data with Linear Mixed Effects Models"
+  },
+  "PREEMACS<SEP>run_full_pipeline.sh": {
+    "chunk_ids": [
+      "WRAPPER_LICENSE-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428649,
+    "update_time": 1792428649,
+    "_id": "PREEMACS<SEP>run_full_pipeline.sh"
+  },
+  "preemacs.sif<SEP>run_full_pipeline.sh": {
+    "chunk_ids": [
+      "WRAPPER_LICENSE-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428649,
+    "update_time": 1792428649,
+    "_id": "preemacs.sif<SEP>run_full_pipeline.sh"
+  },
+  "SUB_ID<SEP>run_full_pipeline.sh": {
+    "chunk_ids": [
+      "WRAPPER_LICENSE-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428649,
+    "update_time": 1792428649,
+    "_id": "SUB_ID<SEP>run_full_pipeline.sh"
+  },
+  "T1_PATH<SEP>run_full_pipeline.sh": {
+    "chunk_ids": [
+      "WRAPPER_LICENSE-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428649,
+    "update_time": 1792428649,
+    "_id": "T1_PATH<SEP>run_full_pipeline.sh"
+  },
+  "SIF<SEP>T1_INPUT": {
+    "chunk_ids": [
+      "WRAPPER_LICENSE-chunk-001"
+    ],
+    "count": 1,
+    "create_time": 1792428649,
+    "update_time": 1792428649,
+    "_id": "SIF<SEP>T1_INPUT"
+  },
+  "T2_PATH<SEP>run_full_pipeline.sh": {
+    "chunk_ids": [
+      "WRAPPER_LICENSE-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428649,
+    "update_time": 1792428649,
+    "_id": "T2_PATH<SEP>run_full_pipeline.sh"
+  },
+  "SIF<SEP>T2_INPUT": {
+    "chunk_ids": [
+      "WRAPPER_LICENSE-chunk-001"
+    ],
+    "count": 1,
+    "create_time": 1792428649,
+    "update_time": 1792428649,
+    "_id": "SIF<SEP>T2_INPUT"
+  },
+  "OUTPUT_DIR<SEP>run_full_pipeline.sh": {
+    "chunk_ids": [
+      "WRAPPER_LICENSE-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428649,
+    "update_time": 1792428649,
+    "_id": "OUTPUT_DIR<SEP>run_full_pipeline.sh"
+  },
+  "T1_INPUT<SEP>T2_INPUT": {
+    "chunk_ids": [
+      "WRAPPER_LICENSE-chunk-001"
+    ],
+    "count": 1,
+    "create_time": 1792428649,
+    "update_time": 1792428649,
+    "_id": "T1_INPUT<SEP>T2_INPUT"
+  },
+  "FS_LICENSE<SEP>run_full_pipeline.sh": {
+    "chunk_ids": [
+      "WRAPPER_LICENSE-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428649,
+    "update_time": 1792428649,
+    "_id": "FS_LICENSE<SEP>run_full_pipeline.sh"
+  },
+  "README.md<SEP>run_full_pipeline.sh": {
+    "chunk_ids": [
+      "WRAPPER_LICENSE-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428649,
+    "update_time": 1792428649,
+    "_id": "README.md<SEP>run_full_pipeline.sh"
+  },
+  "FS_LICENSE<SEP>SIF": {
+    "chunk_ids": [
+      "WRAPPER_LICENSE-chunk-001"
+    ],
+    "count": 1,
+    "create_time": 1792428649,
+    "update_time": 1792428649,
+    "_id": "FS_LICENSE<SEP>SIF"
+  },
+  "FS_LICENSE<SEP>T1_INPUT": {
+    "chunk_ids": [
+      "WRAPPER_LICENSE-chunk-001"
+    ],
+    "count": 1,
+    "create_time": 1792428649,
+    "update_time": 1792428649,
+    "_id": "FS_LICENSE<SEP>T1_INPUT"
+  },
+  "FS_LICENSE<SEP>T2_INPUT": {
+    "chunk_ids": [
+      "WRAPPER_LICENSE-chunk-001"
+    ],
+    "count": 1,
+    "create_time": 1792428649,
+    "update_time": 1792428649,
+    "_id": "FS_LICENSE<SEP>T2_INPUT"
+  },
+  "resolve_modality_binds<SEP>run_full_pipeline.sh": {
+    "chunk_ids": [
+      "WRAPPER_BINDS-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428673,
+    "update_time": 1792428673,
+    "_id": "resolve_modality_binds<SEP>run_full_pipeline.sh"
+  },
+  "Files<SEP>Input": {
+    "chunk_ids": [
+      "WRAPPER_BINDS-chunk-001"
+    ],
+    "count": 1,
+    "create_time": 1792428673,
+    "update_time": 1792428673,
+    "_id": "Files<SEP>Input"
+  },
+  "M1<SEP>resolve_modality_binds": {
+    "chunk_ids": [
+      "WRAPPER_BINDS-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428673,
+    "update_time": 1792428673,
+    "_id": "M1<SEP>resolve_modality_binds"
+  },
+  "Find<SEP>Recursive": {
+    "chunk_ids": [
+      "WRAPPER_BINDS-chunk-001"
+    ],
+    "count": 1,
+    "create_time": 1792428673,
+    "update_time": 1792428673,
+    "_id": "Find<SEP>Recursive"
+  },
+  "Files<SEP>Tag": {
+    "chunk_ids": [
+      "WRAPPER_BINDS-chunk-001"
+    ],
+    "count": 1,
+    "create_time": 1792428673,
+    "update_time": 1792428673,
+    "_id": "Files<SEP>Tag"
+  },
+  "--bind flags<SEP>resolve_modality_binds": {
+    "chunk_ids": [
+      "WRAPPER_BINDS-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428673,
+    "update_time": 1792428673,
+    "_id": "--bind flags<SEP>resolve_modality_binds"
+  },
+  "Files<SEP>Find": {
+    "chunk_ids": [
+      "WRAPPER_BINDS-chunk-001"
+    ],
+    "count": 1,
+    "create_time": 1792428673,
+    "update_time": 1792428673,
+    "_id": "Files<SEP>Find"
+  },
+  "BIDS<SEP>Tag": {
+    "chunk_ids": [
+      "WRAPPER_BINDS-chunk-001"
+    ],
+    "count": 1,
+    "create_time": 1792428673,
+    "update_time": 1792428673,
+    "_id": "BIDS<SEP>Tag"
+  },
+  "BIDS anat folder<SEP>resolve_modality_binds": {
+    "chunk_ids": [
+      "WRAPPER_BINDS-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428673,
+    "update_time": 1792428673,
+    "_id": "BIDS anat folder<SEP>resolve_modality_binds"
+  },
+  "Input Directory<SEP>Nifti Files": {
+    "chunk_ids": [
+      "WRAPPER_BINDS-chunk-002"
+    ],
+    "count": 1,
+    "create_time": 1792428673,
+    "update_time": 1792428673,
+    "_id": "Input Directory<SEP>Nifti Files"
+  },
+  "Files<SEP>Sort": {
+    "chunk_ids": [
+      "WRAPPER_BINDS-chunk-001"
+    ],
+    "count": 1,
+    "create_time": 1792428673,
+    "update_time": 1792428673,
+    "_id": "Files<SEP>Sort"
+  },
+  "Nifti Files<SEP>Tag": {
+    "chunk_ids": [
+      "WRAPPER_BINDS-chunk-002"
+    ],
+    "count": 1,
+    "create_time": 1792428673,
+    "update_time": 1792428673,
+    "_id": "Nifti Files<SEP>Tag"
+  },
+  "Input Directory<SEP>Recursive Search Flag": {
+    "chunk_ids": [
+      "WRAPPER_BINDS-chunk-002"
+    ],
+    "count": 1,
+    "create_time": 1792428673,
+    "update_time": 1792428673,
+    "_id": "Input Directory<SEP>Recursive Search Flag"
+  },
+  "Files<SEP>NIfTI": {
+    "chunk_ids": [
+      "WRAPPER_BINDS-chunk-001"
+    ],
+    "count": 1,
+    "create_time": 1792428673,
+    "update_time": 1792428673,
+    "_id": "Files<SEP>NIfTI"
+  },
+  "File Name<SEP>Seen Names List": {
+    "chunk_ids": [
+      "WRAPPER_BINDS-chunk-002"
+    ],
+    "count": 1,
+    "create_time": 1792428673,
+    "update_time": 1792428673,
+    "_id": "File Name<SEP>Seen Names List"
+  },
+  "Bind Mount Arguments<SEP>Nifti Files": {
+    "chunk_ids": [
+      "WRAPPER_BINDS-chunk-002"
+    ],
+    "count": 1,
+    "create_time": 1792428673,
+    "update_time": 1792428673,
+    "_id": "Bind Mount Arguments<SEP>Nifti Files"
+  },
+  "Bind Mount Arguments<SEP>Destination Directory": {
+    "chunk_ids": [
+      "WRAPPER_BINDS-chunk-002"
+    ],
+    "count": 1,
+    "create_time": 1792428673,
+    "update_time": 1792428673,
+    "_id": "Bind Mount Arguments<SEP>Destination Directory"
+  },
+  "Coords<SEP>Manual Crop": {
+    "chunk_ids": [
+      "M1_INPUT_CODE-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428682,
+    "update_time": 1792428682,
+    "_id": "Coords<SEP>Manual Crop"
+  },
+  "T1 Image File<SEP>T1 Image Path": {
+    "chunk_ids": [
+      "M1_INPUT_CODE-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428682,
+    "update_time": 1792428682,
+    "_id": "T1 Image File<SEP>T1 Image Path"
+  },
+  "T2 Image File<SEP>T2 Image Path": {
+    "chunk_ids": [
+      "M1_INPUT_CODE-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428682,
+    "update_time": 1792428682,
+    "_id": "T2 Image File<SEP>T2 Image Path"
+  },
+  "Orig Folder<SEP>T1 Image File": {
+    "chunk_ids": [
+      "M1_INPUT_CODE-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428682,
+    "update_time": 1792428682,
+    "_id": "Orig Folder<SEP>T1 Image File"
+  },
+  "PREEMACS Directory<SEP>Subject ID": {
+    "chunk_ids": [
+      "M1_INPUT_CODE-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428682,
+    "update_time": 1792428682,
+    "_id": "PREEMACS Directory<SEP>Subject ID"
+  },
+  "Num Ima<SEP>T1 Image File": {
+    "chunk_ids": [
+      "M1_INPUT_CODE-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428682,
+    "update_time": 1792428682,
+    "_id": "Num Ima<SEP>T1 Image File"
+  },
+  "Orig Folder<SEP>T2 Image File": {
+    "chunk_ids": [
+      "M1_INPUT_CODE-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428682,
+    "update_time": 1792428682,
+    "_id": "Orig Folder<SEP>T2 Image File"
+  },
+  "ACS_DIR<SEP>SUB_ID": {
+    "chunk_ids": [
+      "M1_INPUT_CODE-chunk-001"
+    ],
+    "count": 1,
+    "create_time": 1792428682,
+    "update_time": 1792428682,
+    "_id": "ACS_DIR<SEP>SUB_ID"
+  },
+  "Num Ima<SEP>T2 Image File": {
+    "chunk_ids": [
+      "M1_INPUT_CODE-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428682,
+    "update_time": 1792428682,
+    "_id": "Num Ima<SEP>T2 Image File"
+  },
+  "Orig Folder<SEP>Subject ID": {
+    "chunk_ids": [
+      "M1_INPUT_CODE-chunk-000"
+    ],
+    "count": 1,
+    "create_time": 1792428682,
+    "update_time": 1792428682,
+    "_id": "Orig Folder<SEP>Subject ID"
+  },
+  "num_ima<SEP>raw_${num_ima}_T2.nii.gz": {
+    "chunk_ids": [
+      "M1_INPUT_CODE-chunk-001"
+    ],
+    "count": 1,
+    "create_time": 1792428682,
+    "update_time": 1792428682,
+    "_id": "num_ima<SEP>raw_${num_ima}_T2.nii.gz"
+  },
+  "SUB_ID<SEP>raw_${num_ima}_T2.nii.gz": {
+    "chunk_ids": [
+      "M1_INPUT_CODE-chunk-001"
+    ],
+    "count": 1,
+    "create_time": 1792428682,
+    "update_time": 1792428682,
+    "_id": "SUB_ID<SEP>raw_${num_ima}_T2.nii.gz"
+  }
+}

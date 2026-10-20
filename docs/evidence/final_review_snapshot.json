@@ -1,0 +1,517 @@
+{
+  "created": 1792435653.5241966,
+  "runs": [
+    {
+      "run": "crossspecies_area_asymmetry_v1_20261019T182928_003aeb",
+      "status": "failed",
+      "model_calls": 39,
+      "tool_calls": 69,
+      "executions": 12,
+      "http_calls": 39,
+      "generated_write_code_calls": 13,
+      "receipts": [
+        {
+          "receipt_id": "91ce7e3e0d0c488b866d26cedd011541",
+          "script": "/work/write_manifest.py",
+          "exit_code": 0,
+          "status": "success",
+          "generated_code_hash_matches": true,
+          "model_write_http_ids": [
+            146
+          ],
+          "executed_script_sha256": "afda56832fc54682b8f1a9e3be9644ee051b14c11a95824f1cccf6b9f5a25738",
+          "script_changed_while_executing": false
+        },
+        {
+          "receipt_id": "68643277493b4f6dab727d8d351d2ae8",
+          "script": "/work/write_json.py",
+          "exit_code": 0,
+          "status": "success",
+          "generated_code_hash_matches": true,
+          "model_write_http_ids": [
+            141
+          ],
+          "executed_script_sha256": "665caf79784dabcb3c4fb1bf735cf96b5fc568bf697b16f915e3527faac73628",
+          "script_changed_while_executing": false
+        },
+        {
+          "receipt_id": "6cf71c4866014ab0861ca191788c2c75",
+          "script": "/work/analysis_main.py",
+          "exit_code": 0,
+          "status": "success",
+          "generated_code_hash_matches": true,
+          "model_write_http_ids": [
+            135
+          ],
+          "executed_script_sha256": "15e948764e1048a7720eca14090e5b48fc46ede8c593a649ebc39123aa158490",
+          "script_changed_while_executing": false
+        },
+        {
+          "receipt_id": "71f0571d51854bdda55bcf705eae8210",
+          "script": "/work/geom1.py",
+          "exit_code": 1,
+          "status": "failed",
+          "generated_code_hash_matches": true,
+          "model_write_http_ids": [
+            128
+          ],
+          "executed_script_sha256": "2f09091574fa60199a0eeef07edb74d5a0bc2a35f31f1d296755b7098c4dca0c",
+          "script_changed_while_executing": false
+        },
+        {
+          "receipt_id": "669265a33a2a454baf0084fdf5b8b1a8",
+          "script": "/work/inspect2.py",
+          "exit_code": 1,
+          "status": "failed",
+          "generated_code_hash_matches": true,
+          "model_write_http_ids": [
+            120
+          ],
+          "executed_script_sha256": "8e2ebe630bed6b0ab32f57e5db639f02e907fbd618a621b239b872ea56fc8f5e",
+          "script_changed_while_executing": false
+        },
+        {
+          "receipt_id": "2000bcdec25a452da9e7032346d9fd7d",
+          "script": "/work/inspect2.py",
+          "exit_code": 0,
+          "status": "success",
+          "generated_code_hash_matches": true,
+          "model_write_http_ids": [
+            122
+          ],
+          "executed_script_sha256": "37649dcb5d713195d222ac5a522c95624584413de74e2517aa8f5836c17e2d3e",
+          "script_changed_while_executing": false
+        },
+        {
+          "receipt_id": "c33d038f51364d47a4f139dfd565c3ef",
+          "script": "/work/analysis_charts.py",
+          "exit_code": 1,
+          "status": "failed",
+          "generated_code_hash_matches": true,
+          "model_write_http_ids": [
+            137
+          ],
+          "executed_script_sha256": "b108489c50e5edfaeb339449dcf94f9304c01c462a1feebd20a04e62823b1334",
+          "script_changed_while_executing": false
+        },
+        {
+          "receipt_id": "4d376a0a34984078837ffe999d603437",
+          "script": "/work/inspect.py",
+          "exit_code": 1,
+          "status": "failed",
+          "generated_code_hash_matches": true,
+          "model_write_http_ids": [
+            118
+          ],
+          "executed_script_sha256": "d876adbeb0f45480f556fff17f9ae7d64d57f04d316610f5dfe33e5af4f19802",
+          "script_changed_while_executing": false
+        },
+        {
+          "receipt_id": "0ec2247b1b53489186d65577d6714d2f",
+          "script": "/work/report.py",
+          "exit_code": 0,
+          "status": "success",
+          "generated_code_hash_matches": true,
+          "model_write_http_ids": [
+            144
+          ],
+          "executed_script_sha256": "f7a5fedf470f444a751a4508d71740b420c13cbed4a64240d711c10b839d155d",
+          "script_changed_while_executing": false
+        },
+        {
+          "receipt_id": "08ef64fa65df415aab220d6244417b28",
+          "script": "/work/geom1.py",
+          "exit_code": 0,
+          "status": "success",
+          "generated_code_hash_matches": true,
+          "model_write_http_ids": [
+            130
+          ],
+          "executed_script_sha256": "b197278b97ae78f25042a2adbe8ba75c1d690d522e28c6f4ec93ac77b7c23eeb",
+          "script_changed_while_executing": false
+        },
+        {
+          "receipt_id": "7405b0938d9b42a59984da9be1af86d3",
+          "script": "/work/analysis_charts.py",
+          "exit_code": 0,
+          "status": "success",
+          "generated_code_hash_matches": true,
+          "model_write_http_ids": [
+            139
+          ],
+          "executed_script_sha256": "1716686467404b4be7a9baf2305a729446cfb22093270c21b40aa4e291ac6543",
+          "script_changed_while_executing": false
+        },
+        {
+          "receipt_id": "6b3c65837d6049e8b0b2f16a07bc2406",
+          "script": "/work/geom1.py",
+          "exit_code": 1,
+          "status": "failed",
+          "generated_code_hash_matches": true,
+          "model_write_http_ids": [
+            126
+          ],
+          "executed_script_sha256": "ceb0ec4c0f25a4faad3d1a462eec48db4e355b49693ec5a4cd24f34617453fcc",
+          "script_changed_while_executing": false
+        }
+      ],
+      "all_receipt_scripts_match_model_code": true,
+      "workdir": "/data/xuancheng/agent_overnight_20261020/workspace/.analysis_runs/f06b222b2589ec454c9c86311cb8530c/89d324c3bcb841cd8a8f8bdf2a7c7749"
+    },
+    {
+      "run": "human_multimetric_v1_20261019T174306_15c0a8",
+      "status": "failed",
+      "model_calls": 18,
+      "tool_calls": 32,
+      "executions": 3,
+      "http_calls": 18,
+      "generated_write_code_calls": 4,
+      "receipts": [],
+      "all_receipt_scripts_match_model_code": null,
+      "workdir": "/data/xuancheng/agent_overnight_20261020/workspace/.analysis_runs/f24c088378dda636bba8baf125f92c87/a1b6da018c8342c68d4d4fa2920f01b2"
+    },
+    {
+      "run": "human_multimetric_v1_20261019T175848_36275e",
+      "status": "failed",
+      "model_calls": 28,
+      "tool_calls": 35,
+      "executions": 6,
+      "http_calls": 28,
+      "generated_write_code_calls": 9,
+      "receipts": [
+        {
+          "receipt_id": "d36a2cddd0e54b0a9191b31172cd866b",
+          "script": "/work/finalize.py",
+          "exit_code": 0,
+          "status": "success",
+          "generated_code_hash_matches": true,
+          "model_write_http_ids": [
+            39
+          ],
+          "executed_script_sha256": "9b38517dcb9e7636f9d898427d22376b5804976440957c9070019dfd021d8ea6",
+          "script_changed_while_executing": false
+        },
+        {
+          "receipt_id": "3c876f5639db4704806631c1a00e8ca6",
+          "script": "/work/scatter_fix.py",
+          "exit_code": 0,
+          "status": "success",
+          "generated_code_hash_matches": true,
+          "model_write_http_ids": [
+            35
+          ],
+          "executed_script_sha256": "281ec2f307d7def32033a1de76fb1475b6f2a89d4de386760ba4f09586989668",
+          "script_changed_while_executing": false
+        },
+        {
+          "receipt_id": "64107fb00a0e4d4b9b533e7c3e875901",
+          "script": "/work/charts_report.py",
+          "exit_code": 0,
+          "status": "success",
+          "generated_code_hash_matches": true,
+          "model_write_http_ids": [
+            33
+          ],
+          "executed_script_sha256": "f9a07db276fa68a86dec6a713697529c2c8019e70abdd30f81e1ce913ddebc6d",
+          "script_changed_while_executing": false
+        },
+        {
+          "receipt_id": "edb9949d065b48b5b5908650c261e285",
+          "script": "/work/extract_morphometry.py",
+          "exit_code": 0,
+          "status": "success",
+          "generated_code_hash_matches": true,
+          "model_write_http_ids": [
+            29
+          ],
+          "executed_script_sha256": "bb44e416a28ebbb0f9f8d3f70f89410a4904273491b4d0eda6f57de4b6e21625",
+          "script_changed_while_executing": false
+        },
+        {
+          "receipt_id": "63f84c296e6946158fd91882fa027445",
+          "script": "/work/verify_outputs.py",
+          "exit_code": 1,
+          "status": "failed",
+          "generated_code_hash_matches": true,
+          "model_write_http_ids": [
+            41
+          ],
+          "executed_script_sha256": "bb648a3c633d51d57f5fc68fe6264293c13b04f20b37370d8008b77614a445cb",
+          "script_changed_while_executing": false
+        },
+        {
+          "receipt_id": "466a6acd308d423899c0fd05c747f734",
+          "script": "/work/extract_morphometry.py",
+          "exit_code": 1,
+          "status": "failed",
+          "generated_code_hash_matches": true,
+          "model_write_http_ids": [
+            26
+          ],
+          "executed_script_sha256": "249df0d29e5c3fe2679c042a90359dd9dd1748da6418644567cf1816cee2f035",
+          "script_changed_while_executing": false
+        }
+      ],
+      "all_receipt_scripts_match_model_code": true,
+      "workdir": "/data/xuancheng/agent_overnight_20261020/workspace/.analysis_runs/2f33f7f03abf566dbe21fd440fb52aef/c2cee58f3681486daf6154f5eb2d016a"
+    },
+    {
+      "run": "human_multimetric_v2_20261019T180834_87922d",
+      "status": "failed",
+      "model_calls": 32,
+      "tool_calls": 45,
+      "executions": 8,
+      "http_calls": 32,
+      "generated_write_code_calls": 10,
+      "receipts": [
+        {
+          "receipt_id": "84f2af80be2c45859881f74915c10126",
+          "script": "/work/finalize.py",
+          "exit_code": 0,
+          "status": "success",
+          "generated_code_hash_matches": true,
+          "model_write_http_ids": [
+            61
+          ],
+          "executed_script_sha256": "61acb1066ae0835ac4043e45fb7648bf701530b3531dc7aef47c94af923ae637",
+          "script_changed_while_executing": false
+        },
+        {
+          "receipt_id": "f916e47275804086a9bb0bcd4e6c22a0",
+          "script": "/work/inspect_png.py",
+          "exit_code": 0,
+          "status": "success",
+          "generated_code_hash_matches": true,
+          "model_write_http_ids": [
+            73
+          ],
+          "executed_script_sha256": "485bcda3ee57b009f8a7398152deedd158dd65d7d4c46d35ffc5f65c56295b58",
+          "script_changed_while_executing": false
+        },
+        {
+          "receipt_id": "b26d5e7b77ab482886ce9592f3d68b22",
+          "script": "/work/rewrite_manifest_correct_shapes.py",
+          "exit_code": 0,
+          "status": "success",
+          "generated_code_hash_matches": true,
+          "model_write_http_ids": [
+            76
+          ],
+          "executed_script_sha256": "9c213fa5022e8f9920cfae143251e5d0236dc481cad59dc5943712c3997598ce",
+          "script_changed_while_executing": false
+        },
+        {
+          "receipt_id": "e14d2e06b227420b87dbf8521cccb0ee",
+          "script": "/work/write_manifest.py",
+          "exit_code": 0,
+          "status": "success",
+          "generated_code_hash_matches": true,
+          "model_write_http_ids": [
+            65
+          ],
+          "executed_script_sha256": "81a2fd72c7f310cd3d30f1d8f99e2cc36acb8949736ccd19ffeecb11c8c163fc",
+          "script_changed_while_executing": false
+        },
+        {
+          "receipt_id": "5e1979e15dd14c32aa8a3cf8cbf86a6b",
+          "script": "/work/run_analysis.py",
+          "exit_code": 1,
+          "status": "failed",
+          "generated_code_hash_matches": true,
+          "model_write_http_ids": [
+            56
+          ],
+          "executed_script_sha256": "1809ef0da995881fd3701b2a5bfed94c90b9bb171ffc01d1d1357b9295bc1643",
+          "script_changed_while_executing": false
+        },
+        {
+          "receipt_id": "92897faccadb43e9b4b177ccaf7a0e2d",
+          "script": "/work/inspect_data.py",
+          "exit_code": 0,
+          "status": "success",
+          "generated_code_hash_matches": true,
+          "model_write_http_ids": [
+            53
+          ],
+          "executed_script_sha256": "e0998b7972ecb5c58e5f1c823e9b775b7f25a9df83306f2e7a7c662a120acba2",
+          "script_changed_while_executing": false
+        },
+        {
+          "receipt_id": "31ddb3dc0ffb468987ca16e0f0e2ab7a",
+          "script": "/work/run_analysis.py",
+          "exit_code": 0,
+          "status": "success",
+          "generated_code_hash_matches": true,
+          "model_write_http_ids": [
+            58
+          ],
+          "executed_script_sha256": "fdbbaa8a2ff1915fdbf06f2181b8ac44cb5e180851f3e431cb32e057598b9155",
+          "script_changed_while_executing": false
+        },
+        {
+          "receipt_id": "025fe59f2824423b966b812f90a8380a",
+          "script": "/work/fix_and_manifest.py",
+          "exit_code": 0,
+          "status": "success",
+          "generated_code_hash_matches": true,
+          "model_write_http_ids": [
+            68
+          ],
+          "executed_script_sha256": "402d49c2710b9d54ee98f207978c2b032417b242bf3fd4b31f0d1aa0a9481da2",
+          "script_changed_while_executing": false
+        }
+      ],
+      "all_receipt_scripts_match_model_code": true,
+      "workdir": "/data/xuancheng/agent_overnight_20261020/workspace/.analysis_runs/2f3d18f79336de2da5bad4494cfddf82/08b2a8925b56484da429aec1a3ed3525"
+    },
+    {
+      "run": "monkey_surface_qc_v1_20261019T182053_d4a769",
+      "status": "failed",
+      "model_calls": 32,
+      "tool_calls": 60,
+      "executions": 9,
+      "http_calls": 32,
+      "generated_write_code_calls": 10,
+      "receipts": [
+        {
+          "receipt_id": "5af3b48acc544904994ace3a23de269d",
+          "script": "/work/step3_compute.py",
+          "exit_code": 1,
+          "status": "failed",
+          "generated_code_hash_matches": true,
+          "model_write_http_ids": [
+            98
+          ],
+          "executed_script_sha256": "07d5aa0c5393c39ad007988bc4b256754f3a4a871dc7220714d6a0fa065fedf0",
+          "script_changed_while_executing": false
+        },
+        {
+          "receipt_id": "d340b4e6f6e14b5cb3ce9fd80f00752b",
+          "script": "/work/step4_qc_json.py",
+          "exit_code": 0,
+          "status": "success",
+          "generated_code_hash_matches": true,
+          "model_write_http_ids": [
+            108
+          ],
+          "executed_script_sha256": "47ba5f305e9762e01276152bd2b178d4b3e7df1cecae35a05aafdde16736f333",
+          "script_changed_while_executing": false
+        },
+        {
+          "receipt_id": "29d21ed8b88046a6bb3f94366dcc7f95",
+          "script": "/work/step3b_debug_annot.py",
+          "exit_code": 0,
+          "status": "success",
+          "generated_code_hash_matches": true,
+          "model_write_http_ids": [
+            102
+          ],
+          "executed_script_sha256": "8694a05f85fab0e46785d176e9a6c06b144d1c42644ff61cc3fdea43fdca184a",
+          "script_changed_while_executing": false
+        },
+        {
+          "receipt_id": "52d054177cd04fbdb7319ef8ced7f2e3",
+          "script": "/work/step3c_roi_fixed.py",
+          "exit_code": 0,
+          "status": "success",
+          "generated_code_hash_matches": true,
+          "model_write_http_ids": [
+            104
+          ],
+          "executed_script_sha256": "9b2b61aa48076a8f238aa999c4bec3a1b964df28ca022cea4aea1647f79afac0",
+          "script_changed_while_executing": false
+        },
+        {
+          "receipt_id": "995e3b3506594962b4d5e029787b2159",
+          "script": "/work/step0_inspect.py",
+          "exit_code": 1,
+          "status": "failed",
+          "generated_code_hash_matches": true,
+          "model_write_http_ids": [
+            89
+          ],
+          "executed_script_sha256": "bb916ad421045fdab052c172d16b36002d1a50b0c65682483de3409dec633a2a",
+          "script_changed_while_executing": false
+        },
+        {
+          "receipt_id": "cd7b1f34f64f4561872e3956dfedbb4f",
+          "script": "/work/step3d_thickconv.py",
+          "exit_code": 0,
+          "status": "success",
+          "generated_code_hash_matches": true,
+          "model_write_http_ids": [
+            106
+          ],
+          "executed_script_sha256": "790619c95ccf7fdccaf89369f5de9a342386a207c6888ca051a82ff4e613dd29",
+          "script_changed_while_executing": false
+        },
+        {
+          "receipt_id": "4c183244cb2f4900886c83d6d835425a",
+          "script": "/work/step1_surf_inspect.py",
+          "exit_code": 0,
+          "status": "success",
+          "generated_code_hash_matches": true,
+          "model_write_http_ids": [
+            91
+          ],
+          "executed_script_sha256": "e42e81b64bb01811d55ff7de9e9eb46929dc96e7a666833c8ffa909656265a93",
+          "script_changed_while_executing": false
+        },
+        {
+          "receipt_id": "d972bccb894f46c586837322f0978383",
+          "script": "/work/step3_compute.py",
+          "exit_code": 0,
+          "status": "success",
+          "generated_code_hash_matches": true,
+          "model_write_http_ids": [
+            100
+          ],
+          "executed_script_sha256": "8c8bb3709827d9bfcde941cd3f85475b95418f1522d12fd8bb59e9df22202261",
+          "script_changed_while_executing": false
+        },
+        {
+          "receipt_id": "abda0b6bffcb449ba2dbc220c1e7bb2f",
+          "script": "/work/step2_plan.py",
+          "exit_code": 0,
+          "status": "success",
+          "generated_code_hash_matches": true,
+          "model_write_http_ids": [
+            96
+          ],
+          "executed_script_sha256": "3fe4b0eb9a51080e2852f87b4988be1df654ba6976e25df2a30d7f2fce956ec1",
+          "script_changed_while_executing": false
+        }
+      ],
+      "all_receipt_scripts_match_model_code": true,
+      "workdir": "/data/xuancheng/agent_overnight_20261020/workspace/.analysis_runs/da7c7c9784c474da5f41cb1958212850/3b7bf845ae3d4492914519d66fc8a50a"
+    }
+  ],
+  "budget": {
+    "ledger": {
+      "http_started": 149,
+      "limit": 600,
+      "known_input_tokens": 6403169,
+      "known_output_tokens": 110355,
+      "usage_unknown_requests": 0,
+      "parent_experiments": "retrieval rounds 61 and 57 remain separate and are not reset",
+      "phase": "autonomous_analysis_agent_20261020"
+    },
+    "audit_http_files": 149,
+    "status_codes": {
+      "200": 149
+    },
+    "usage_states": {
+      "reported": 149
+    },
+    "audit_known_input_tokens": 6403169,
+    "audit_known_output_tokens": 110355,
+    "started_vs_audit_match": true
+  },
+  "rejected_change": {
+    "action": "Add/install core artifact finalization tool",
+    "status": "automatic_approval_rejected_not_executed",
+    "reason": "Third repair of the same runtime/finalization problem exceeds the explicit two-repair limit",
+    "module_installed": false
+  },
+  "scope": "Read-only audit of actual evidence; failures retained; source values and verifiers not given to the generating model"
+}

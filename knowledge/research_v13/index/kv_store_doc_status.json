@@ -1,0 +1,682 @@
+{
+  "NHP_N4": {
+    "status": "processed",
+    "content_summary": "SOURCE_ID: NHP_N4\nSOURCE_URL: https://raw.githubusercontent.com/pGarciaS/PREEMACS/master/README.md\nSCOPE: Excerpt from the cited document; installed software version is not verified.\nHEADING: generateN4 module\n\n**3. `generateN4` — a second, independe...",
+    "content_length": 540,
+    "created_at": "2026-10-19T16:25:07.435152+00:00",
+    "updated_at": "2026-10-19T16:25:32.401116+00:00",
+    "file_path": "NHP_N4",
+    "track_id": "insert_20261020_002507_54fa3ae4",
+    "content_hash": "07f6dd10c69962f715aecd1b88dfbe11",
+    "metadata": {
+      "parse_start_time": 1792427107,
+      "parse_stage_skipped": true,
+      "parse_format": "raw",
+      "parse_engine": "legacy",
+      "analyzing_start_time": 1792427107,
+      "analyzing_stage_skipped": true,
+      "kg_write_state": "graph_mutation_started",
+      "process_start_time": 1792427122,
+      "process_end_time": 1792427132,
+      "chunk_method": "legacy_chunking_func",
+      "chunk_opts": "size=280, split_only=False, overlap=50"
+    },
+    "chunks_count": 1,
+    "chunks_list": [
+      "NHP_N4-chunk-000"
+    ]
+  },
+  "VBM_TEMPLATE": {
+    "status": "processed",
+    "content_summary": "SOURCE_ID: VBM_TEMPLATE\nSOURCE_URL: https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/fslvbm.html\nSCOPE: Excerpt from the cited document; installed software version is not verified.\nHEADING: FSL-VBM template_list\n\nIf you have more than one group and the...",
+    "content_length": 797,
+    "created_at": "2026-10-19T16:25:07.435092+00:00",
+    "updated_at": "2026-10-19T16:25:14.586791+00:00",
+    "file_path": "VBM_TEMPLATE",
+    "track_id": "insert_20261020_002507_54fa3ae4",
+    "content_hash": "e11fe235869b3134b7249eecca91b794",
+    "metadata": {
+      "parse_start_time": 1792427107,
+      "parse_stage_skipped": true,
+      "parse_format": "raw",
+      "parse_engine": "legacy",
+      "analyzing_start_time": 1792427107,
+      "analyzing_stage_skipped": true,
+      "kg_write_state": "graph_mutation_started",
+      "process_start_time": 1792427107,
+      "process_end_time": 1792427114,
+      "chunk_method": "legacy_chunking_func",
+      "chunk_opts": "size=280, split_only=False, overlap=50"
+    },
+    "chunks_count": 1,
+    "chunks_list": [
+      "VBM_TEMPLATE-chunk-000"
+    ]
+  },
+  "CROSS_FINDING": {
+    "status": "processed",
+    "content_summary": "SOURCE_ID: CROSS_FINDING\nSOURCE_URL: https://pmc.ncbi.nlm.nih.gov/articles/PMC7180052/\nSCOPE: Excerpt from the cited document; installed software version is not verified.\nHEADING: Abstract\n\nEvolutionary adaptations of temporo-parietal cortex are cons...",
+    "content_length": 1323,
+    "created_at": "2026-10-19T16:25:07.435161+00:00",
+    "updated_at": "2026-10-19T16:25:38.027052+00:00",
+    "file_path": "CROSS_FINDING",
+    "track_id": "insert_20261020_002507_54fa3ae4",
+    "content_hash": "d9492b97e50fee83d04d3a85bf98d1a9",
+    "metadata": {
+      "parse_start_time": 1792427107,
+      "parse_stage_skipped": true,
+      "parse_format": "raw",
+      "parse_engine": "legacy",
+      "analyzing_start_time": 1792427107,
+      "analyzing_stage_skipped": true,
+      "kg_write_state": "graph_mutation_started",
+      "process_start_time": 1792427128,
+      "process_end_time": 1792427138,
+      "chunk_method": "legacy_chunking_func",
+      "chunk_opts": "size=280, split_only=False, overlap=50"
+    },
+    "chunks_count": 2,
+    "chunks_list": [
+      "CROSS_FINDING-chunk-000",
+      "CROSS_FINDING-chunk-001"
+    ]
+  },
+  "LONG": {
+    "status": "processed",
+    "content_summary": "SOURCE_ID: LONG\nSOURCE_URL: https://surfer.nmr.mgh.harvard.edu/fswiki/LongitudinalProcessing\nSCOPE: Documentation titled FS 5.1, 5.2, 5.3 and 6.0; do not assume installed version\nHEADING: \n\nNote: All subjects and all time points are set up in a singl...",
+    "content_length": 1959,
+    "created_at": "2026-10-19T16:25:07.435173+00:00",
+    "updated_at": "2026-10-19T16:25:45.247590+00:00",
+    "file_path": "LONG",
+    "track_id": "insert_20261020_002507_54fa3ae4",
+    "content_hash": "db084b5f627cb24ed36c8903853c53f8",
+    "metadata": {
+      "parse_start_time": 1792427107,
+      "parse_stage_skipped": true,
+      "parse_format": "raw",
+      "parse_engine": "legacy",
+      "analyzing_start_time": 1792427107,
+      "analyzing_stage_skipped": true,
+      "kg_write_state": "graph_mutation_started",
+      "process_start_time": 1792427132,
+      "process_end_time": 1792427145,
+      "chunk_method": "legacy_chunking_func",
+      "chunk_opts": "size=280, split_only=False, overlap=50"
+    },
+    "chunks_count": 3,
+    "chunks_list": [
+      "LONG-chunk-000",
+      "LONG-chunk-001",
+      "LONG-chunk-002"
+    ]
+  },
+  "SBM_CACHE": {
+    "status": "processed",
+    "content_summary": "SOURCE_ID: SBM_CACHE\nSOURCE_URL: https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/GroupAnalysis\nSCOPE: Excerpt from the cited document; installed software version is not verified.\nHEADING: Previously Cached (qcached) Data\n\nWhen you run recon-all ...",
+    "content_length": 568,
+    "created_at": "2026-10-19T16:25:07.435116+00:00",
+    "updated_at": "2026-10-19T16:25:14.588871+00:00",
+    "file_path": "SBM_CACHE",
+    "track_id": "insert_20261020_002507_54fa3ae4",
+    "content_hash": "01b7d4c6c04f408b2ee093d4bbd0c845",
+    "metadata": {
+      "parse_start_time": 1792427107,
+      "parse_stage_skipped": true,
+      "parse_format": "raw",
+      "parse_engine": "legacy",
+      "analyzing_start_time": 1792427107,
+      "analyzing_stage_skipped": true,
+      "kg_write_state": "graph_mutation_started",
+      "process_start_time": 1792427107,
+      "process_end_time": 1792427114,
+      "chunk_method": "legacy_chunking_func",
+      "chunk_opts": "size=280, split_only=False, overlap=50"
+    },
+    "chunks_count": 1,
+    "chunks_list": [
+      "SBM_CACHE-chunk-000"
+    ]
+  },
+  "STAT_BLOCK": {
+    "status": "processed",
+    "content_summary": "SOURCE_ID: STAT_BLOCK\nSOURCE_URL: https://fsl.fmrib.ox.ac.uk/fsl/docs/statistics/randomise.html\nSCOPE: Excerpt from the cited document; installed software version is not verified.\nHEADING: Accounting for Repeated Measures\n\nPermutation tests do not ea...",
+    "content_length": 840,
+    "created_at": "2026-10-19T16:25:07.435126+00:00",
+    "updated_at": "2026-10-19T16:25:22.714833+00:00",
+    "file_path": "STAT_BLOCK",
+    "track_id": "insert_20261020_002507_54fa3ae4",
+    "content_hash": "f62430c65544456e6d10958b2fcf85b4",
+    "metadata": {
+      "parse_start_time": 1792427107,
+      "parse_stage_skipped": true,
+      "parse_format": "raw",
+      "parse_engine": "legacy",
+      "analyzing_start_time": 1792427107,
+      "analyzing_stage_skipped": true,
+      "kg_write_state": "graph_mutation_started",
+      "process_start_time": 1792427114,
+      "process_end_time": 1792427122,
+      "chunk_method": "legacy_chunking_func",
+      "chunk_opts": "size=280, split_only=False, overlap=50"
+    },
+    "chunks_count": 1,
+    "chunks_list": [
+      "STAT_BLOCK-chunk-000"
+    ]
+  },
+  "NHP_M1": {
+    "status": "processed",
+    "content_summary": "SOURCE_ID: NHP_M1\nSOURCE_URL: https://raw.githubusercontent.com/pGarciaS/PREEMACS/master/README.md\nSCOPE: Excerpt from the cited document; installed software version is not verified.\nHEADING: M1 module\n\n**1. `M1` — orientation, cropping, bias correct...",
+    "content_length": 824,
+    "created_at": "2026-10-19T16:25:07.435144+00:00",
+    "updated_at": "2026-10-19T16:25:28.122842+00:00",
+    "file_path": "NHP_M1",
+    "track_id": "insert_20261020_002507_54fa3ae4",
+    "content_hash": "545d0b0cda02b4b13fb91c3ebcfe5eeb",
+    "metadata": {
+      "parse_start_time": 1792427107,
+      "parse_stage_skipped": true,
+      "parse_format": "raw",
+      "parse_engine": "legacy",
+      "analyzing_start_time": 1792427107,
+      "analyzing_stage_skipped": true,
+      "kg_write_state": "graph_mutation_started",
+      "process_start_time": 1792427121,
+      "process_end_time": 1792427128,
+      "chunk_method": "legacy_chunking_func",
+      "chunk_opts": "size=280, split_only=False, overlap=50"
+    },
+    "chunks_count": 2,
+    "chunks_list": [
+      "NHP_M1-chunk-000",
+      "NHP_M1-chunk-001"
+    ]
+  },
+  "QC_BODY": {
+    "status": "processed",
+    "content_summary": "SOURCE_ID: QC_BODY\nSOURCE_URL: https://mriqc.readthedocs.io/en/stable/iqms/t1w.html\nSCOPE: Structural IQM documentation\nHEADING: \n\ncoefficient of joint variation ( CJV ): The cjv of GM and WM was proposed as objective function by [Ganzetti2016] for t...",
+    "content_length": 620,
+    "created_at": "2026-10-19T16:25:07.435195+00:00",
+    "updated_at": "2026-10-19T16:25:54.048155+00:00",
+    "file_path": "QC_BODY",
+    "track_id": "insert_20261020_002507_54fa3ae4",
+    "content_hash": "f31e5a0357b936d510c43091e19e05a4",
+    "metadata": {
+      "parse_start_time": 1792427107,
+      "parse_stage_skipped": true,
+      "parse_format": "raw",
+      "parse_engine": "legacy",
+      "analyzing_start_time": 1792427107,
+      "analyzing_stage_skipped": true,
+      "kg_write_state": "graph_mutation_started",
+      "process_start_time": 1792427145,
+      "process_end_time": 1792427154,
+      "chunk_method": "legacy_chunking_func",
+      "chunk_opts": "size=280, split_only=False, overlap=50"
+    },
+    "chunks_count": 1,
+    "chunks_list": [
+      "QC_BODY-chunk-000"
+    ]
+  },
+  "PED": {
+    "status": "processed",
+    "content_summary": "SOURCE_ID: PED\nSOURCE_URL: https://surfer.nmr.mgh.harvard.edu/fswiki/LongitudinalProcessing\nSCOPE: Same historical longitudinal documentation, special situations\nHEADING: \n\nSome results will not be initialized, but directly copied from the subject-te...",
+    "content_length": 958,
+    "created_at": "2026-10-19T16:25:07.435185+00:00",
+    "updated_at": "2026-10-19T16:25:49.585574+00:00",
+    "file_path": "PED",
+    "track_id": "insert_20261020_002507_54fa3ae4",
+    "content_hash": "cc24680e9f698f2ee18c8ea6c3adc2b6",
+    "metadata": {
+      "parse_start_time": 1792427107,
+      "parse_stage_skipped": true,
+      "parse_format": "raw",
+      "parse_engine": "legacy",
+      "analyzing_start_time": 1792427107,
+      "analyzing_stage_skipped": true,
+      "kg_write_state": "graph_mutation_started",
+      "process_start_time": 1792427138,
+      "process_end_time": 1792427149,
+      "chunk_method": "legacy_chunking_func",
+      "chunk_opts": "size=280, split_only=False, overlap=50"
+    },
+    "chunks_count": 1,
+    "chunks_list": [
+      "PED-chunk-000"
+    ]
+  },
+  "NHP_WRAPPER": {
+    "status": "processed",
+    "content_summary": "SOURCE_ID: NHP_WRAPPER\nSOURCE_URL: https://raw.githubusercontent.com/pGarciaS/PREEMACS/master/README.md\nSCOPE: Excerpt from the cited document; installed software version is not verified.\nHEADING: run_full_pipeline.sh interface\n\n./run_full_pipeline.s...",
+    "content_length": 921,
+    "created_at": "2026-10-19T16:25:07.435134+00:00",
+    "updated_at": "2026-10-19T16:25:21.100182+00:00",
+    "file_path": "NHP_WRAPPER",
+    "track_id": "insert_20261020_002507_54fa3ae4",
+    "content_hash": "9b40b8465683e178e32b83ced761aa3d",
+    "metadata": {
+      "parse_start_time": 1792427107,
+      "parse_stage_skipped": true,
+      "parse_format": "raw",
+      "parse_engine": "legacy",
+      "analyzing_start_time": 1792427107,
+      "analyzing_stage_skipped": true,
+      "kg_write_state": "graph_mutation_started",
+      "process_start_time": 1792427114,
+      "process_end_time": 1792427121,
+      "chunk_method": "legacy_chunking_func",
+      "chunk_opts": "size=280, split_only=False, overlap=50"
+    },
+    "chunks_count": 2,
+    "chunks_list": [
+      "NHP_WRAPPER-chunk-000",
+      "NHP_WRAPPER-chunk-001"
+    ]
+  },
+  "dup-919baa286446b5ed25f0c97277074107": {
+    "status": "failed",
+    "content_summary": "[DUPLICATE:filename] Original document: VBM_TEMPLATE",
+    "content_length": 797,
+    "chunks_count": 0,
+    "chunks_list": [],
+    "created_at": "2026-10-19T16:49:25.605721+00:00",
+    "updated_at": "2026-10-19T16:49:25.605728+00:00",
+    "file_path": "VBM_TEMPLATE",
+    "track_id": "insert_20261020_004925_c0ea85d5",
+    "error_msg": "File name already exists. Original doc_id: VBM_TEMPLATE, Status: processed",
+    "metadata": {
+      "is_duplicate": true,
+      "duplicate_kind": "filename",
+      "original_doc_id": "VBM_TEMPLATE",
+      "original_track_id": "insert_20261020_002507_54fa3ae4"
+    }
+  },
+  "dup-2e2b20ee6614e0e4849f2eb195a201de": {
+    "status": "failed",
+    "content_summary": "[DUPLICATE:filename] Original document: SBM_CACHE",
+    "content_length": 568,
+    "chunks_count": 0,
+    "chunks_list": [],
+    "created_at": "2026-10-19T16:49:25.605764+00:00",
+    "updated_at": "2026-10-19T16:49:25.605767+00:00",
+    "file_path": "SBM_CACHE",
+    "track_id": "insert_20261020_004925_c0ea85d5",
+    "error_msg": "File name already exists. Original doc_id: SBM_CACHE, Status: processed",
+    "metadata": {
+      "is_duplicate": true,
+      "duplicate_kind": "filename",
+      "original_doc_id": "SBM_CACHE",
+      "original_track_id": "insert_20261020_002507_54fa3ae4"
+    }
+  },
+  "dup-f0fce6314e3eb54f38eedd523095bff9": {
+    "status": "failed",
+    "content_summary": "[DUPLICATE:filename] Original document: QC_BODY",
+    "content_length": 620,
+    "chunks_count": 0,
+    "chunks_list": [],
+    "created_at": "2026-10-19T16:49:25.605798+00:00",
+    "updated_at": "2026-10-19T16:49:25.605801+00:00",
+    "file_path": "QC_BODY",
+    "track_id": "insert_20261020_004925_c0ea85d5",
+    "error_msg": "File name already exists. Original doc_id: QC_BODY, Status: processed",
+    "metadata": {
+      "is_duplicate": true,
+      "duplicate_kind": "filename",
+      "original_doc_id": "QC_BODY",
+      "original_track_id": "insert_20261020_002507_54fa3ae4"
+    }
+  },
+  "dup-b73ccf1b5934600c1b5fbd1c2586ce57": {
+    "status": "failed",
+    "content_summary": "[DUPLICATE:filename] Original document: PED",
+    "content_length": 958,
+    "chunks_count": 0,
+    "chunks_list": [],
+    "created_at": "2026-10-19T16:49:25.605831+00:00",
+    "updated_at": "2026-10-19T16:49:25.605833+00:00",
+    "file_path": "PED",
+    "track_id": "insert_20261020_004925_c0ea85d5",
+    "error_msg": "File name already exists. Original doc_id: PED, Status: processed",
+    "metadata": {
+      "is_duplicate": true,
+      "duplicate_kind": "filename",
+      "original_doc_id": "PED",
+      "original_track_id": "insert_20261020_002507_54fa3ae4"
+    }
+  },
+  "dup-b4c821818ecaadcd3527486f582cc9be": {
+    "status": "failed",
+    "content_summary": "[DUPLICATE:filename] Original document: NHP_WRAPPER",
+    "content_length": 921,
+    "chunks_count": 0,
+    "chunks_list": [],
+    "created_at": "2026-10-19T16:49:25.605861+00:00",
+    "updated_at": "2026-10-19T16:49:25.605864+00:00",
+    "file_path": "NHP_WRAPPER",
+    "track_id": "insert_20261020_004925_c0ea85d5",
+    "error_msg": "File name already exists. Original doc_id: NHP_WRAPPER, Status: processed",
+    "metadata": {
+      "is_duplicate": true,
+      "duplicate_kind": "filename",
+      "original_doc_id": "NHP_WRAPPER",
+      "original_track_id": "insert_20261020_002507_54fa3ae4"
+    }
+  },
+  "dup-c92ec72dabf4133964321446f61961c2": {
+    "status": "failed",
+    "content_summary": "[DUPLICATE:filename] Original document: NHP_M1",
+    "content_length": 824,
+    "chunks_count": 0,
+    "chunks_list": [],
+    "created_at": "2026-10-19T16:49:25.605891+00:00",
+    "updated_at": "2026-10-19T16:49:25.605893+00:00",
+    "file_path": "NHP_M1",
+    "track_id": "insert_20261020_004925_c0ea85d5",
+    "error_msg": "File name already exists. Original doc_id: NHP_M1, Status: processed",
+    "metadata": {
+      "is_duplicate": true,
+      "duplicate_kind": "filename",
+      "original_doc_id": "NHP_M1",
+      "original_track_id": "insert_20261020_002507_54fa3ae4"
+    }
+  },
+  "dup-c49276e10b61cb3a8c36a0885a1d17f2": {
+    "status": "failed",
+    "content_summary": "[DUPLICATE:filename] Original document: NHP_N4",
+    "content_length": 540,
+    "chunks_count": 0,
+    "chunks_list": [],
+    "created_at": "2026-10-19T16:49:25.605920+00:00",
+    "updated_at": "2026-10-19T16:49:25.605922+00:00",
+    "file_path": "NHP_N4",
+    "track_id": "insert_20261020_004925_c0ea85d5",
+    "error_msg": "File name already exists. Original doc_id: NHP_N4, Status: processed",
+    "metadata": {
+      "is_duplicate": true,
+      "duplicate_kind": "filename",
+      "original_doc_id": "NHP_N4",
+      "original_track_id": "insert_20261020_002507_54fa3ae4"
+    }
+  },
+  "dup-987f824bf7cd57ec12eb295361f517e6": {
+    "status": "failed",
+    "content_summary": "[DUPLICATE:filename] Original document: STAT_BLOCK",
+    "content_length": 840,
+    "chunks_count": 0,
+    "chunks_list": [],
+    "created_at": "2026-10-19T16:49:25.605948+00:00",
+    "updated_at": "2026-10-19T16:49:25.605951+00:00",
+    "file_path": "STAT_BLOCK",
+    "track_id": "insert_20261020_004925_c0ea85d5",
+    "error_msg": "File name already exists. Original doc_id: STAT_BLOCK, Status: processed",
+    "metadata": {
+      "is_duplicate": true,
+      "duplicate_kind": "filename",
+      "original_doc_id": "STAT_BLOCK",
+      "original_track_id": "insert_20261020_002507_54fa3ae4"
+    }
+  },
+  "dup-eb272e9a930f6acd5de42320534820c9": {
+    "status": "failed",
+    "content_summary": "[DUPLICATE:filename] Original document: LONG",
+    "content_length": 1959,
+    "chunks_count": 0,
+    "chunks_list": [],
+    "created_at": "2026-10-19T16:49:25.605977+00:00",
+    "updated_at": "2026-10-19T16:49:25.605980+00:00",
+    "file_path": "LONG",
+    "track_id": "insert_20261020_004925_c0ea85d5",
+    "error_msg": "File name already exists. Original doc_id: LONG, Status: processed",
+    "metadata": {
+      "is_duplicate": true,
+      "duplicate_kind": "filename",
+      "original_doc_id": "LONG",
+      "original_track_id": "insert_20261020_002507_54fa3ae4"
+    }
+  },
+  "dup-b65da7a97f7033f57356e5b50421ff16": {
+    "status": "failed",
+    "content_summary": "[DUPLICATE:filename] Original document: CROSS_FINDING",
+    "content_length": 1323,
+    "chunks_count": 0,
+    "chunks_list": [],
+    "created_at": "2026-10-19T16:49:25.606006+00:00",
+    "updated_at": "2026-10-19T16:49:25.606008+00:00",
+    "file_path": "CROSS_FINDING",
+    "track_id": "insert_20261020_004925_c0ea85d5",
+    "error_msg": "File name already exists. Original doc_id: CROSS_FINDING, Status: processed",
+    "metadata": {
+      "is_duplicate": true,
+      "duplicate_kind": "filename",
+      "original_doc_id": "CROSS_FINDING",
+      "original_track_id": "insert_20261020_002507_54fa3ae4"
+    }
+  },
+  "WRAPPER_LICENSE": {
+    "status": "processed",
+    "content_summary": "SOURCE_ID: WRAPPER_LICENSE\nSOURCE_URL: https://raw.githubusercontent.com/pGarciaS/PREEMACS/c57835c0223104072c4f4e2947a253f1826a27e0/run_full_pipeline.sh\nSCOPE: Code at PREEMACS commit c57835c0223104072c4f4e2947a253f1826a27e0, lines 57-77; not execute...",
+    "content_length": 1165,
+    "created_at": "2026-10-19T16:49:25.604394+00:00",
+    "updated_at": "2026-10-19T16:50:49.866479+00:00",
+    "file_path": "WRAPPER_LICENSE",
+    "track_id": "insert_20261020_004925_c0ea85d5",
+    "content_hash": "2da37c0988a0821185f03de8b43c2be8",
+    "metadata": {
+      "parse_start_time": 1792428565,
+      "parse_stage_skipped": true,
+      "parse_format": "raw",
+      "parse_engine": "legacy",
+      "analyzing_start_time": 1792428565,
+      "analyzing_stage_skipped": true,
+      "kg_write_state": "graph_mutation_started",
+      "process_start_time": 1792428629,
+      "process_end_time": 1792428649,
+      "chunk_method": "legacy_chunking_func",
+      "chunk_opts": "size=280, split_only=False, overlap=50"
+    },
+    "chunks_count": 2,
+    "chunks_list": [
+      "WRAPPER_LICENSE-chunk-000",
+      "WRAPPER_LICENSE-chunk-001"
+    ]
+  },
+  "FS_SINGLE": {
+    "status": "processed",
+    "content_summary": "SOURCE_ID: FS_SINGLE\nSOURCE_URL: https://surfer.nmr.mgh.harvard.edu/fswiki/LongitudinalProcessing\nSCOPE: Historical FreeSurfer documentation: FS 5.1, 5.2, 5.3, 6.0. Not verified against installed version.\nHEADING: Single timepoint dropouts and longit...",
+    "content_length": 960,
+    "created_at": "2026-10-19T16:49:25.604389+00:00",
+    "updated_at": "2026-10-19T16:50:39.155061+00:00",
+    "file_path": "FS_SINGLE",
+    "track_id": "insert_20261020_004925_c0ea85d5",
+    "content_hash": "76a4ce3f01cc529b5f2444f487bbf666",
+    "metadata": {
+      "parse_start_time": 1792428565,
+      "parse_stage_skipped": true,
+      "parse_format": "raw",
+      "parse_engine": "legacy",
+      "analyzing_start_time": 1792428565,
+      "analyzing_stage_skipped": true,
+      "kg_write_state": "graph_mutation_started",
+      "process_start_time": 1792428620,
+      "process_end_time": 1792428639,
+      "chunk_method": "legacy_chunking_func",
+      "chunk_opts": "size=280, split_only=False, overlap=50"
+    },
+    "chunks_count": 1,
+    "chunks_list": [
+      "FS_SINGLE-chunk-000"
+    ]
+  },
+  "VBM_LIMITS": {
+    "status": "processed",
+    "content_summary": "SOURCE_ID: VBM_LIMITS\nSOURCE_URL: https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/fslvbm.html\nSCOPE: Official documentation snapshot 2026-10-20; installed software version not verified.\nHEADING: Interpretation limits of voxelwise GM analysis\n\nPlease b...",
+    "content_length": 1009,
+    "created_at": "2026-10-19T16:49:25.604374+00:00",
+    "updated_at": "2026-10-19T16:49:46.928196+00:00",
+    "file_path": "VBM_LIMITS",
+    "track_id": "insert_20261020_004925_c0ea85d5",
+    "content_hash": "412080cef4f7867dd6f3d45e018ebdb1",
+    "metadata": {
+      "parse_start_time": 1792428565,
+      "parse_stage_skipped": true,
+      "parse_format": "raw",
+      "parse_engine": "legacy",
+      "analyzing_start_time": 1792428565,
+      "analyzing_stage_skipped": true,
+      "kg_write_state": "graph_mutation_started",
+      "process_start_time": 1792428565,
+      "process_end_time": 1792428586,
+      "chunk_method": "legacy_chunking_func",
+      "chunk_opts": "size=280, split_only=False, overlap=50"
+    },
+    "chunks_count": 1,
+    "chunks_list": [
+      "VBM_LIMITS-chunk-000"
+    ]
+  },
+  "STAT_ONEGROUP": {
+    "status": "processed",
+    "content_summary": "SOURCE_ID: STAT_ONEGROUP\nSOURCE_URL: https://fsl.fmrib.ox.ac.uk/fsl/docs/statistics/randomise.html\nSCOPE: Official documentation snapshot 2026-10-20; installed software version not verified.\nHEADING: One-sample testing\n\nOne-Sample T-test To perform a...",
+    "content_length": 1076,
+    "created_at": "2026-10-19T16:49:25.604385+00:00",
+    "updated_at": "2026-10-19T16:50:20.310252+00:00",
+    "file_path": "STAT_ONEGROUP",
+    "track_id": "insert_20261020_004925_c0ea85d5",
+    "content_hash": "4bdfc27b8cf107d8f5d236ee4656964f",
+    "metadata": {
+      "parse_start_time": 1792428565,
+      "parse_stage_skipped": true,
+      "parse_format": "raw",
+      "parse_engine": "legacy",
+      "analyzing_start_time": 1792428565,
+      "analyzing_stage_skipped": true,
+      "kg_write_state": "graph_mutation_started",
+      "process_start_time": 1792428586,
+      "process_end_time": 1792428620,
+      "chunk_method": "legacy_chunking_func",
+      "chunk_opts": "size=280, split_only=False, overlap=50"
+    },
+    "chunks_count": 2,
+    "chunks_list": [
+      "STAT_ONEGROUP-chunk-000",
+      "STAT_ONEGROUP-chunk-001"
+    ]
+  },
+  "WRAPPER_BINDS": {
+    "status": "processed",
+    "content_summary": "SOURCE_ID: WRAPPER_BINDS\nSOURCE_URL: https://raw.githubusercontent.com/pGarciaS/PREEMACS/c57835c0223104072c4f4e2947a253f1826a27e0/run_full_pipeline.sh\nSCOPE: Code at PREEMACS commit c57835c0223104072c4f4e2947a253f1826a27e0, lines 97-133; not executed...",
+    "content_length": 2006,
+    "created_at": "2026-10-19T16:49:25.604399+00:00",
+    "updated_at": "2026-10-19T16:51:14.173308+00:00",
+    "file_path": "WRAPPER_BINDS",
+    "track_id": "insert_20261020_004925_c0ea85d5",
+    "content_hash": "95ffb1c9447d813e765d8113f3f1a8cc",
+    "metadata": {
+      "parse_start_time": 1792428565,
+      "parse_stage_skipped": true,
+      "parse_format": "raw",
+      "parse_engine": "legacy",
+      "analyzing_start_time": 1792428565,
+      "analyzing_stage_skipped": true,
+      "kg_write_state": "graph_mutation_started",
+      "process_start_time": 1792428639,
+      "process_end_time": 1792428674,
+      "chunk_method": "legacy_chunking_func",
+      "chunk_opts": "size=280, split_only=False, overlap=50"
+    },
+    "chunks_count": 3,
+    "chunks_list": [
+      "WRAPPER_BINDS-chunk-000",
+      "WRAPPER_BINDS-chunk-001",
+      "WRAPPER_BINDS-chunk-002"
+    ]
+  },
+  "M1_INPUT_CODE": {
+    "status": "processed",
+    "content_summary": "SOURCE_ID: M1_INPUT_CODE\nSOURCE_URL: https://raw.githubusercontent.com/pGarciaS/PREEMACS/c57835c0223104072c4f4e2947a253f1826a27e0/Modules/M1.sh\nSCOPE: Code at PREEMACS commit c57835c0223104072c4f4e2947a253f1826a27e0, lines 181-192; not executed or in...",
+    "content_length": 772,
+    "created_at": "2026-10-19T16:49:25.604404+00:00",
+    "updated_at": "2026-10-19T16:51:22.707124+00:00",
+    "file_path": "M1_INPUT_CODE",
+    "track_id": "insert_20261020_004925_c0ea85d5",
+    "content_hash": "d99524d8f591c256db84f6358c71cba2",
+    "metadata": {
+      "parse_start_time": 1792428565,
+      "parse_stage_skipped": true,
+      "parse_format": "raw",
+      "parse_engine": "legacy",
+      "analyzing_start_time": 1792428565,
+      "analyzing_stage_skipped": true,
+      "kg_write_state": "graph_mutation_started",
+      "process_start_time": 1792428649,
+      "process_end_time": 1792428682,
+      "chunk_method": "legacy_chunking_func",
+      "chunk_opts": "size=280, split_only=False, overlap=50"
+    },
+    "chunks_count": 2,
+    "chunks_list": [
+      "M1_INPUT_CODE-chunk-000",
+      "M1_INPUT_CODE-chunk-001"
+    ]
+  },
+  "STAT_PAIRED": {
+    "status": "processed",
+    "content_summary": "SOURCE_ID: STAT_PAIRED\nSOURCE_URL: https://fsl.fmrib.ox.ac.uk/fsl/docs/statistics/randomise.html\nSCOPE: Official documentation snapshot 2026-10-20; installed software version not verified.\nHEADING: Paired design, labels, command and difference analys...",
+    "content_length": 2169,
+    "created_at": "2026-10-19T16:49:25.604379+00:00",
+    "updated_at": "2026-10-19T16:50:29.917002+00:00",
+    "file_path": "STAT_PAIRED",
+    "track_id": "insert_20261020_004925_c0ea85d5",
+    "content_hash": "381b9a4d988e0426f761e0131161a0ab",
+    "metadata": {
+      "parse_start_time": 1792428565,
+      "parse_stage_skipped": true,
+      "parse_format": "raw",
+      "parse_engine": "legacy",
+      "analyzing_start_time": 1792428565,
+      "analyzing_stage_skipped": true,
+      "kg_write_state": "graph_mutation_started",
+      "process_start_time": 1792428582,
+      "process_end_time": 1792428629,
+      "chunk_method": "legacy_chunking_func",
+      "chunk_opts": "size=280, split_only=False, overlap=50"
+    },
+    "chunks_count": 4,
+    "chunks_list": [
+      "STAT_PAIRED-chunk-000",
+      "STAT_PAIRED-chunk-001",
+      "STAT_PAIRED-chunk-002",
+      "STAT_PAIRED-chunk-003"
+    ]
+  },
+  "VBM_FINAL": {
+    "status": "processed",
+    "content_summary": "SOURCE_ID: VBM_FINAL\nSOURCE_URL: https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/fslvbm.html\nSCOPE: Official documentation snapshot 2026-10-20; installed software version not verified.\nHEADING: Processing GM, initial statistics and ordering\n\nThe final...",
+    "content_length": 1931,
+    "created_at": "2026-10-19T16:49:25.604369+00:00",
+    "updated_at": "2026-10-19T16:49:42.905094+00:00",
+    "file_path": "VBM_FINAL",
+    "track_id": "insert_20261020_004925_c0ea85d5",
+    "content_hash": "de0956409b9df7ac06b9b02d8f9ad089",
+    "metadata": {
+      "parse_start_time": 1792428565,
+      "parse_stage_skipped": true,
+      "parse_format": "raw",
+      "parse_engine": "legacy",
+      "analyzing_start_time": 1792428565,
+      "analyzing_stage_skipped": true,
+      "kg_write_state": "graph_mutation_started",
+      "process_start_time": 1792428565,
+      "process_end_time": 1792428582,
+      "chunk_method": "legacy_chunking_func",
+      "chunk_opts": "size=280, split_only=False, overlap=50"
+    },
+    "chunks_count": 2,
+    "chunks_list": [
+      "VBM_FINAL-chunk-000",
+      "VBM_FINAL-chunk-001"
+    ]
+  }
+}

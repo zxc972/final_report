@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "properties": {
+    "subjectId": {
+      "type": "string",
+      "description": "Subject ID used by FreeSurfer."
+    },
+    "workspaceDirectory": {
+      "type": "string",
+      "description": "Root workspace path where subject output lives."
+    },
+    "species": {
+      "type": "string",
+      "description": "Species (Macaque, Chimpanzee, Marmoset)."
+    },
+    "lowResMesh": {
+      "type": "integer",
+      "description": "Low-resolution mesh size (default 32)."
+    },
+    "inflateExtraScale": {
+      "type": "number",
+      "description": "Extra scale for inflation (default 1)."
+    },
+    "msmsulc": {
+      "type": "boolean",
+      "description": "Enable MSM sulc registration."
+    }
+  },
+  "required": ["subjectId", "workspaceDirectory", "species"]
+}

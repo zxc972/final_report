@@ -1,0 +1,249 @@
+{
+  "method_id": "macaque_civet",
+  "name": "CIVET-Macaque cortical surface reconstruction and quality controls",
+  "purpose": "Automated extraction of cortical surfaces and evaluation of cortical thickness from macaque T1-weighted MR images, with surface-based registration and quality controls.",
+  "species_scope": "Macaque (Macaca mulatta and Macaca fascicularis)",
+  "software": [
+    "CIVET",
+    "minctracc",
+    "N3",
+    "FSL bet",
+    "CLASP",
+    "ANTs",
+    "MINC toolkit"
+  ],
+  "inputs": [
+    {
+      "statement": "T1-weighted MR scan of a macaque brain as the primary input.",
+      "source_id": "civet_macaque",
+      "quote": "CIVET takes as input a T1w scan and registers if to standardized space, herein the NMT",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Optional T2-weighted or proton density scans for multimodal tissue classification.",
+      "source_id": "civet_macaque",
+      "quote": "with the possibility of a multimodal classification should T2-weighted and/or proton density scans be available",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "NMT brain mask and tissue priors for registration and classification.",
+      "source_id": "civet_macaque",
+      "quote": "Registration, using minctracc, proceeds by specifying the brain mask on the target image only, herein the NMT volume with its associated brain mask",
+      "claim_type": "direct"
+    }
+  ],
+  "conditions": [
+    {
+      "statement": "The pipeline is designed for macaque brains and uses a length scale of 0.4 relative to human brain size.",
+      "source_id": "civet_macaque",
+      "quote": "A length scale of 0.4 was derived from the cubic root of the macaque-to-human volume ratio",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Processing is performed in the NMT standardized space.",
+      "source_id": "civet_macaque",
+      "quote": "Processing is performed based on the NIMH Macaque Template (NMT), as the reference template",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "The pipeline requires T1w scans; T2-weighted or proton density scans are optional for multimodal classification.",
+      "source_id": "civet_macaque",
+      "quote": "relies on the T1w scan, with the possibility of a multimodal classification should T2-weighted and/or proton density scans be available",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "The NMT v2 is the current version of the template, with symmetric and asymmetric variants and multiple resolutions.",
+      "source_id": "nmt",
+      "quote": "The NMT v2 is the most current version of this dataset.",
+      "claim_type": "direct"
+    }
+  ],
+  "steps": [
+    {
+      "statement": "Resample the image into NMT space at 0.25 or 0.50 mm isotropic resolution.",
+      "source_id": "civet_macaque",
+      "quote": "The macaque brain is resampled in linear standardized space at the processing voxel resolution of 0.25 mm or 0.50 mm",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Mask the brain using FSL bet with intensities sampled within the template brain mask.",
+      "source_id": "civet_macaque",
+      "quote": "Brain-masking is based on extensions of FSL bet version 1 (Smith, 2002) and is applied in standardized space",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Classify the brain into CSF, gray matter, and white matter using an artificial neural network trained on tissue priors.",
+      "source_id": "civet_macaque",
+      "quote": "The brain is classified into cerebrospinal fluid, gray matter, and white matter using an artificial neural network (ANN) trained on the intensities of the tissue priors",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Mask blood vessels by detecting T1w hyperintensities with line morphology in sulci.",
+      "source_id": "civet_macaque",
+      "quote": "it is critical to identify T1w hyperintensities, commonly representing major blood vessels and erroneously segmented as white matter by the classifier",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Perform surface-based registration to the average surface template and resample cortical thickness maps.",
+      "source_id": "civet_macaque",
+      "quote": "Surface-based registration is performed and the cortical thickness maps are blurred and resampled at the common vertex locations of the template",
+      "claim_type": "direct"
+    }
+  ],
+  "checks": [
+    {
+      "statement": "Quality control includes visual inspection of brain masks and surfaces for accuracy.",
+      "source_id": "civet_macaque",
+      "quote": "The procedure proved to be very robust at extracting accurate masks on scans of individual subjects (see Fig. 2)",
+      "claim_type": "application_inference"
+    },
+    {
+      "statement": "The N3 spline distance should be empirically determined to ensure uniform gray and white matter intensities.",
+      "source_id": "civet_macaque",
+      "quote": "This value can be determined empirically such that the intensities for gray matter and white matter appear mostly uniform across the brain.",
+      "claim_type": "direct"
+    }
+  ],
+  "exceptions": [
+    {
+      "statement": "The pipeline is not validated for species other than macaques; adaptations for other primates would require appropriate length scales and templates.",
+      "source_id": "civet_macaque",
+      "quote": "Further adaptations of the pipeline to other non-human primate brains should be straightforward by introducing the appropriate length scales and supplying species specific templates.",
+      "claim_type": "application_inference"
+    },
+    {
+      "statement": "The NMT v2 is the current version; the paper describes NMT v1.2, so users should be aware of version differences.",
+      "source_id": "nmt",
+      "quote": "The NMT v2 is the most current version of this dataset.",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "The pipeline may require manual intervention for custom brain masks in rare registration failures.",
+      "source_id": "civet_macaque",
+      "quote": "In the rare case when registration fails, a custom brain mask in native space can be supplied.",
+      "claim_type": "direct"
+    }
+  ],
+  "outputs": [
+    {
+      "statement": "Cortical thickness maps calculated as the distance between the two cortical surfaces.",
+      "source_id": "civet_macaque",
+      "quote": "Cortical thickness is calculated as the distance between the two cortical surfaces.",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Surface-based registration results with resampled cortical thickness maps at template vertex locations.",
+      "source_id": "civet_macaque",
+      "quote": "Surface-based registration is performed and the cortical thickness maps are blurred and resampled at the common vertex locations of the template",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Outputs can be exported in NIfTI/GIfTI formats for integration with other tools.",
+      "source_id": "civet_macaque",
+      "quote": "Full compatibility exists to read input T1w scans in NIfTI format and to export the outputs in the commonly used NIfTI/GIfTI formats",
+      "claim_type": "direct"
+    }
+  ],
+  "parameters": [
+    {
+      "statement": "Length scale of 0.4 for all length-related parameters relative to human brain size.",
+      "source_id": "civet_macaque",
+      "quote": "A length scale of 0.4 was derived from the cubic root of the macaque-to-human volume ratio",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Processing voxel resolution of 0.25 mm or 0.50 mm.",
+      "source_id": "civet_macaque",
+      "quote": "The macaque brain is resampled in linear standardized space at the processing voxel resolution of 0.25 mm or 0.50 mm",
+      "claim_type": "direct"
+    }
+  ],
+  "source_ids": [
+    "civet_macaque",
+    "nmt"
+  ],
+  "source_extraction_http_id": 842,
+  "evidence_status": "AI_assisted_candidate_exact_quotes_checked_semantics_not_expert_reviewed",
+  "quarantined_claims": [
+    {
+      "category": "inputs",
+      "claim": {
+        "statement": "NIMH Macaque Template (NMT) as the reference volumetric template for registration.",
+        "source_id": "civet_macaque",
+        "quote": "The NIMH Macaque Template (NMT) as the reference template",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "steps",
+      "claim": {
+        "statement": "Register the T1w scan to the NMT template using an affine transformation.",
+        "source_id": "civet_macaque",
+        "quote": "CIVET takes as input a T1w scan and registers if to standardized space, herein the NMT, using an affine transformation",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "steps",
+      "claim": {
+        "statement": "Correct for non-uniformities using N3 bias field correction with a user-specified spline distance.",
+        "source_id": "civet_macaque",
+        "quote": "corrected for non-uniformities using N3 bias field correction (Sled et al., 1998). The parametric spline distance must be entered by the user",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "steps",
+      "claim": {
+        "statement": "Extract white matter and pial surfaces using marching-cubes and CLASP algorithms, with per-vertex correspondence.",
+        "source_id": "civet_macaque",
+        "quote": "the white matter surfaces are extracted using a marching-cubes algorithm ... The pial surface is obtained by expanding the white matter surface radially outwards up to the pial boundary using the CLASP algorithm",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "checks",
+      "claim": {
+        "statement": "In case of registration failure, a custom brain mask can be supplied and its accuracy should be assessed by the user.",
+        "source_id": "civet_macaque",
+        "quote": "In the rare case when registration fails, a custom brain mask in native space can be supplied. The accuracy of such custom masks should be assessed by the user prior to processing.",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "outputs",
+      "claim": {
+        "statement": "White matter and pial cortical surfaces per hemisphere with per-vertex correspondence.",
+        "source_id": "civet_macaque",
+        "quote": "A white matter surface, per hemisphere, is fitted at the GM-WM boundary ... before being expanded to the pial surface",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "parameters",
+      "claim": {
+        "statement": "Surface resolution of 40,962 or 163,842 vertices.",
+        "source_id": "civet_macaque",
+        "quote": "Surface resolution: 40,962 or 163,842 vertices",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "parameters",
+      "claim": {
+        "statement": "Cortical thickness blurring fwhm of 8 mm for macaques.",
+        "source_id": "civet_macaque",
+        "quote": "Cortical thickness blurring: 8mm fwhm",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    }
+  ]
+}

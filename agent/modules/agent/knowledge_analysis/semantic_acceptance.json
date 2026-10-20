@@ -1,0 +1,15 @@
+{
+  "release_id": "semantic-20261018-v1",
+  "canonical_bundle_sha256": "73ace28abb835d63c0fd22497a4178e4862a099f564d83bc92270aad16f8170f",
+  "regressions": {
+    "GQ01": true,
+    "GQ02": true,
+    "GQ03": true
+  },
+  "query_sha256": {
+    "GQ01": "bfeca5c7c80b9153ec7333cb24ce01f3fb42b8cdc0820585f18f61fdc8ae86cb",
+    "GQ02": "8d2f11e20731bdb5bc4203027dfe80f8bea08cf4ade67b941ba61b069cbd3b33",
+    "GQ03": "a068b44ed49ec0b82cb57eb5b39f51e1ec7d9537a8416c80c4cfcfbdb881fe00"
+  },
+  "scope": "Read-only evidence retrieval; known regressions; AI source review; not expert approval or execution authorization"
+}

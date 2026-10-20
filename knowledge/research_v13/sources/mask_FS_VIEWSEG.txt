@@ -1,0 +1,16 @@
+Visually check the cortical reconstruction output with tkmedit
+For each step so far, look at the output generated for the subject 'bert'.  As you are performing a cortical reconstruction, it is a good idea to visually examine your data for errors or defects that may have been generated in the reconstruction steps.  When using tkmedit, scroll through the volumes with the up and down arrow keys to visually inspect each slice.  For a reminder of which inputs and outputs are taken by each step in the reconstruction, refer to this guide First, set your subjects directory environment variable:
+cd $TUTORIAL_DATA/buckner_data/tutorial_subjs
+setenv SUBJECTS_DIR ${PWD}
+Data conversion
+Before preprocessing is done, data must be converted from native scanner format to mgz format.  The output of this step is the bert/mri/orig.mgz.  To open it in tkmedit:
+tkmedit bert orig.mgz
+Intensity normalization
+The intensity normalization step takes the bert/mri/orig volume as input and outputs the bert/mri/T1 volume.  Look at these volumes simultaneously to see the difference from the intensity normalization step.  Use Ctrl-1 and Ctrl-2 to switch between the volumes.
+tkmedit bert T1.mgz -aux orig.mgz
+Skull stripping
+The skull stripping step takes the bert/mri/T1 volume as input, strips off the skull, and outputs the bert/mri/brainmask volume.  Look at the T1 and brainmask volumes simultaneously with tkmedit.  Use Ctrl-1 and Ctrl-2 to switch between the volumes.
+tkmedit bert brainmask.mgz -aux T1.mgz
+Segmentation
+The segmentation step takes the /bert/mri/brainmask volume as input, removes the gray matter and CSF, and outputs the /bert/mri/wm volume.  Look at the brainmask and wm volumes simultaneously with tkmedit.  Use Ctrl-1 and Ctrl-2 to switch between the volumes.
+tkmedit bert wm.mgz -aux brainmask.mgz

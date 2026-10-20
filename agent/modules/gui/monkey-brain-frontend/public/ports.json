@@ -1,0 +1,6 @@
+{
+  "pipelinePort": "8000",
+  "agentPort": "8110",
+  "frontendPort": "8080",
+  "sameOriginApi": true
+}

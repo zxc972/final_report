@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "properties": {
+    "sampleId": {
+      "type": "string",
+      "description": "Sample subject name, as returned by list-samples."
+    },
+    "subjectId": {
+      "type": "string",
+      "description": "Subject ID to use in the user's own workspace. Defaults to sampleId if omitted."
+    }
+  },
+  "required": ["sampleId"]
+}

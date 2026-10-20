@@ -1,0 +1,256 @@
+{
+  "repo": "https://github.com/nipy/nipype",
+  "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+  "license_url": "https://github.com/nipy/nipype/blob/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/LICENSE",
+  "fetched_at": 1792432944.4064267,
+  "files": [
+    {
+      "path": "nipype/interfaces/ants/legacy.py",
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/ants/legacy.py",
+      "sha256": "b5bd3d1f3c04d77d14c77d03bb95f39b8ea36e0e841d379a9eccfde32d9e745e",
+      "bytes": 11701,
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722"
+    },
+    {
+      "path": "nipype/interfaces/ants/base.py",
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/ants/base.py",
+      "sha256": "d08f1c07228079c56b87a1f0bc0ba4a41f95a65fd2880e4ee8e493b5954c11a8",
+      "bytes": 4695,
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722"
+    },
+    {
+      "path": "nipype/interfaces/ants/resampling.py",
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/ants/resampling.py",
+      "sha256": "da08c6a559e3c27cc1a0889c929f233550770fd9d3c8ea356cfce1fea1b6f102",
+      "bytes": 23063,
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722"
+    },
+    {
+      "path": "nipype/interfaces/ants/registration.py",
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/ants/registration.py",
+      "sha256": "042cd3e8619ff0cb1aa6581c343bf97c058f046bd7dc05211b1e14d4740e0bbf",
+      "bytes": 81352,
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722"
+    },
+    {
+      "path": "nipype/interfaces/ants/utils.py",
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/ants/utils.py",
+      "sha256": "21f58a18b064d9f06f6bb350ee188945f014ec084808a29d04dcb8b11faa8e65",
+      "bytes": 28348,
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722"
+    },
+    {
+      "path": "nipype/interfaces/ants/segmentation.py",
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/ants/segmentation.py",
+      "sha256": "36cd0248dd3e6f20d13827f6d2301c69a4852169910407246b5ab015da25423c",
+      "bytes": 69015,
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722"
+    },
+    {
+      "path": "nipype/interfaces/ants/visualization.py",
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/ants/visualization.py",
+      "sha256": "37b28e2e093ef335249ffd13dcfa9e97842519b922d257655617acbdd691ddd8",
+      "bytes": 7108,
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722"
+    },
+    {
+      "path": "nipype/interfaces/freesurfer/longitudinal.py",
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/freesurfer/longitudinal.py",
+      "sha256": "34b24339ff3a634428346de4c1c4d21043b6b7f20027754c62ecab75bde58d30",
+      "bytes": 9737,
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722"
+    },
+    {
+      "path": "nipype/interfaces/freesurfer/base.py",
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/freesurfer/base.py",
+      "sha256": "c3e2f41f2fa0bd6ebdc81def17a2943131ba9d126edb2d4382d06d4423b9c6bc",
+      "bytes": 8189,
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722"
+    },
+    {
+      "path": "nipype/interfaces/freesurfer/petsurfer.py",
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/freesurfer/petsurfer.py",
+      "sha256": "3eb60e716939cbdaf840a31e2abc2d24e85a0dbeb182e20a69acccc5b376bbf2",
+      "bytes": 20939,
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722"
+    },
+    {
+      "path": "nipype/interfaces/freesurfer/model.py",
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/freesurfer/model.py",
+      "sha256": "17cf18dbce57c2fffebb5b259a9e03d618b57fb651afe926c91df3acebcd2a01",
+      "bytes": 62697,
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722"
+    },
+    {
+      "path": "nipype/interfaces/freesurfer/registration.py",
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/freesurfer/registration.py",
+      "sha256": "3acf9ff4526f93ba562ef43297e2e59aadd98363d54a04822bb5b7b752a8129f",
+      "bytes": 19982,
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722"
+    },
+    {
+      "path": "nipype/interfaces/brainsuite/brainsuite.py",
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/brainsuite/brainsuite.py",
+      "sha256": "5d4af981a1d502763dc6f16b115ce2d6c06baf24f0248158256c8e79e2d2ea2f",
+      "bytes": 75367,
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722"
+    },
+    {
+      "path": "nipype/interfaces/fsl/base.py",
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/fsl/base.py",
+      "sha256": "f0ae5abe7003a95d289af258c061c155b7e7338042d140ce470e3a3c96743357",
+      "bytes": 8013,
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722"
+    },
+    {
+      "path": "nipype/interfaces/fsl/maths.py",
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/fsl/maths.py",
+      "sha256": "e2d391706d995ad46793396ba06bcc83fd72dba7ba2936e8e9414d5eebe61485",
+      "bytes": 14681,
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722"
+    },
+    {
+      "path": "nipype/interfaces/freesurfer/utils.py",
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/freesurfer/utils.py",
+      "sha256": "1b813537dc633060764254c4bd2c31b4a43212debd3f630ae8231aa860477cb9",
+      "bytes": 138415,
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722"
+    },
+    {
+      "path": "nipype/interfaces/fsl/model.py",
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/fsl/model.py",
+      "sha256": "e6a28545e38f1fc036bc91a8bedd07ba55ddfc8a6e711ad16d004dc9edcf1d02",
+      "bytes": 90406,
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722"
+    },
+    {
+      "path": "nipype/interfaces/niftyreg/base.py",
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/niftyreg/base.py",
+      "sha256": "cac3042a67ba484bbb9eab799a9c8fdfc73d717ba264994195e366751eb71543",
+      "bytes": 4723,
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722"
+    },
+    {
+      "path": "nipype/interfaces/niftyreg/reg.py",
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/niftyreg/reg.py",
+      "sha256": "91fccc9f203fe9e78d1d75f9ca27a5ed2f9903c59ea9d9d0ab9712fec9e928ed",
+      "bytes": 15294,
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722"
+    },
+    {
+      "path": "nipype/interfaces/niftyreg/regutils.py",
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/niftyreg/regutils.py",
+      "sha256": "7a141523f4b4184dcdb8830fced2e1a61c733ea3bce6cc45c17a746197b53358",
+      "bytes": 27448,
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722"
+    },
+    {
+      "path": "nipype/interfaces/niftyseg/base.py",
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/niftyseg/base.py",
+      "sha256": "bf4a4050f9ff6db51ba842afca65da5549fc50703f6fa7934ff9ce2ba3d5881f",
+      "bytes": 1094,
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722"
+    },
+    {
+      "path": "nipype/interfaces/fsl/utils.py",
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/fsl/utils.py",
+      "sha256": "b66ac2aa9ac82070dff32ff4392f4b2858f58c015c8e299ff59645e9c7939477",
+      "bytes": 89934,
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722"
+    },
+    {
+      "path": "nipype/interfaces/niftyseg/em.py",
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/niftyseg/em.py",
+      "sha256": "a4c75d12a2309eb919562deab13ac234ae65591108d0a6853d50795213467cb4",
+      "bytes": 5080,
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722"
+    },
+    {
+      "path": "nipype/interfaces/niftyseg/label_fusion.py",
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/niftyseg/label_fusion.py",
+      "sha256": "29a5983ab9f88ad51cfab15076c5122d1e7027b9f0daf26ea855bb0a28567f55",
+      "bytes": 12484,
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722"
+    },
+    {
+      "path": "nipype/interfaces/niftyseg/lesions.py",
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/niftyseg/lesions.py",
+      "sha256": "1a2c0c62c9f8596ad701ba1ae4c6ddce4494a020586f934c784cfe9e946cc5a5",
+      "bytes": 3944,
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722"
+    },
+    {
+      "path": "nipype/interfaces/niftyseg/maths.py",
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/niftyseg/maths.py",
+      "sha256": "8dbb7d88b89e7a5914bd23359472d86d6bd2f31fe40a22097f7bc1e33a58b42d",
+      "bytes": 19298,
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722"
+    },
+    {
+      "path": "nipype/interfaces/niftyseg/patchmatch.py",
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/niftyseg/patchmatch.py",
+      "sha256": "d2218ca2b3ec0e06d7fae165424acdacce9053e83785e875ace438edbe76f9d7",
+      "bytes": 3384,
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722"
+    },
+    {
+      "path": "nipype/interfaces/niftyseg/stats.py",
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/niftyseg/stats.py",
+      "sha256": "10f0d5c08dad2d047ea8f308ad670d4ce17642d367eb79c2a4ca5e1dedfd22a2",
+      "bytes": 8072,
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722"
+    },
+    {
+      "path": "nipype/interfaces/spm/base.py",
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/spm/base.py",
+      "sha256": "8ac46452c918787e1f69821241ec96b51338b8e34311941c6ba54d5ae73ac6fc",
+      "bytes": 21267,
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722"
+    },
+    {
+      "path": "nipype/interfaces/spm/preprocess.py",
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/spm/preprocess.py",
+      "sha256": "6a187a2bc2329cbc31a6efe5763f554b57286741f153036887e617737d9c7bb0",
+      "bytes": 103225,
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722"
+    },
+    {
+      "path": "nipype/interfaces/spm/utils.py",
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/spm/utils.py",
+      "sha256": "7ba166873e80e54e2ee599f479e69b954e2d7745df5767416175d11dd1830826",
+      "bytes": 16087,
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722"
+    },
+    {
+      "path": "nipype/interfaces/workbench/base.py",
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/workbench/base.py",
+      "sha256": "965026050172d8e9b15baf0bd16fa8ba9046328cd41138aaea6ccacc2a2b979d",
+      "bytes": 1941,
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722"
+    },
+    {
+      "error": "URLError"
+    },
+    {
+      "path": "nipype/interfaces/workbench/cifti.py",
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/workbench/cifti.py",
+      "sha256": "71ebd01a4b48f9e501802cf53ba30a1d3d7edbf0f75df45d066d478d153ac61b",
+      "bytes": 5322,
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722"
+    },
+    {
+      "path": "nipype/interfaces/workbench/metric.py",
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/workbench/metric.py",
+      "sha256": "f15d9702d89732f40d6f2a510034e6943fa5c31b9c6b29642080615e117a41b0",
+      "bytes": 6683,
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722"
+    },
+    {
+      "path": "nipype/interfaces/freesurfer/preprocess.py",
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/freesurfer/preprocess.py",
+      "sha256": "241859b697f8a55b32b5db2ec1750ba196252145b21e3a7c00b9bdc2296f8fb2",
+      "bytes": 119307,
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722"
+    }
+  ]
+}

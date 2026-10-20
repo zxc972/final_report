@@ -1,0 +1,200 @@
+{
+  "method_id": "surface_mesh_area",
+  "name": "Native triangular mesh area quantification",
+  "purpose": "Quantify the geometric surface area of existing native triangular white/pial meshes, distinguishing it from software-reported ROI area or local gyrification.",
+  "species_scope": "unspecified",
+  "software": [
+    "trimesh",
+    "nibabel",
+    "FreeSurfer"
+  ],
+  "inputs": [
+    {
+      "statement": "A FreeSurfer surface mesh file in triangular format, e.g., white or pial surface.",
+      "source_id": "nibabel_fs",
+      "quote": "Read a triangular format Freesurfer surface mesh.",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Vertex coordinates array (nvtx x 3) from the surface mesh.",
+      "source_id": "nibabel_fs",
+      "quote": "nvtx x 3 array of vertex (x, y, z) coordinates.",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Face array (nfaces x 3) defining mesh triangles.",
+      "source_id": "nibabel_fs",
+      "quote": "nfaces x 3 array of defining mesh triangles.",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Triangle vertices in (n, 3, 3) float form for area computation.",
+      "source_id": "trimesh_triangles",
+      "quote": "Functions for dealing with triangle soups in (n, 3, 3) float form.",
+      "claim_type": "direct"
+    }
+  ],
+  "conditions": [
+    {
+      "statement": "The mesh must be in triangular format as read by nibabel's read_geometry.",
+      "source_id": "nibabel_fs",
+      "quote": "Read a triangular format Freesurfer surface mesh.",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Triangle vertices must be provided as an (n, 3, 3) float array for area calculation.",
+      "source_id": "trimesh_triangles",
+      "quote": "triangles ((n, 3, 3) float) – Vertices of triangles",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "The area function computes the sum area of input triangles.",
+      "source_id": "trimesh_triangles",
+      "quote": "Calculates the sum area of input triangles",
+      "claim_type": "direct"
+    }
+  ],
+  "steps": [
+    {
+      "statement": "Convert the vertex and face arrays into a triangle soup of shape (n, 3, 3) float, where each triangle is defined by its three vertices.",
+      "source_id": "trimesh_triangles",
+      "quote": "Functions for dealing with triangle soups in (n, 3, 3) float form.",
+      "claim_type": "application_inference"
+    },
+    {
+      "statement": "Interpret the returned summed area as the geometric surface area of the mesh.",
+      "source_id": "trimesh_triangles",
+      "quote": "area – Individual or summed area depending on sum argument",
+      "claim_type": "direct"
+    }
+  ],
+  "checks": [
+    {
+      "statement": "Verify that the mesh is in triangular format as expected by read_geometry.",
+      "source_id": "nibabel_fs",
+      "quote": "Read a triangular format Freesurfer surface mesh.",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Ensure the triangle array is in (n, 3, 3) float form before calling area.",
+      "source_id": "trimesh_triangles",
+      "quote": "triangles ((n, 3, 3) float) – Vertices of triangles",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Confirm that the area function returns the summed area, not individual triangle areas, when the sum argument is used.",
+      "source_id": "trimesh_triangles",
+      "quote": "sum (bool) – Return summed area or individual triangle area",
+      "claim_type": "direct"
+    }
+  ],
+  "exceptions": [
+    {
+      "statement": "The area function may accept precomputed cross products as a speedup, but this is optional.",
+      "source_id": "trimesh_triangles",
+      "quote": "crosses ((n, 3) float or None) – As a speedup don’t re- compute cross products",
+      "claim_type": "direct"
+    }
+  ],
+  "outputs": [
+    {
+      "statement": "A float value representing the summed geometric area of the mesh triangles.",
+      "source_id": "trimesh_triangles",
+      "quote": "area – Individual or summed area depending on sum argument",
+      "claim_type": "direct"
+    }
+  ],
+  "parameters": [
+    {
+      "statement": "The sum argument controls whether the area function returns summed area or individual triangle areas.",
+      "source_id": "trimesh_triangles",
+      "quote": "sum (bool) – Return summed area or individual triangle area",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "The crosses argument can be provided as a speedup to avoid recomputing cross products.",
+      "source_id": "trimesh_triangles",
+      "quote": "crosses ((n, 3) float or None) – As a speedup don’t re- compute cross products",
+      "claim_type": "direct"
+    }
+  ],
+  "source_ids": [
+    "trimesh_triangles",
+    "nibabel_fs",
+    "fs_parcstats"
+  ],
+  "source_extraction_http_id": 836,
+  "evidence_status": "AI_assisted_candidate_exact_quotes_checked_semantics_not_expert_reviewed",
+  "quarantined_claims": [
+    {
+      "category": "steps",
+      "claim": {
+        "statement": "Load the surface mesh using nibabel.freesurfer.io.read_geometry to obtain vertex coordinates and face definitions.",
+        "source_id": "nibabel_fs",
+        "quote": "read_geometry(filepath[, read_metadata, ...]) Read a triangular format Freesurfer surface mesh.",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "steps",
+      "claim": {
+        "statement": "Extract the vertex coordinates array (nvtx x 3) from the loaded mesh.",
+        "source_id": "nibabel_fs",
+        "quote": "coords numpy array nvtx x 3 array of vertex (x, y, z) coordinates.",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "steps",
+      "claim": {
+        "statement": "Extract the face array (nfaces x 3) defining mesh triangles.",
+        "source_id": "nibabel_fs",
+        "quote": "faces numpy array nfaces x 3 array of defining mesh triangles.",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "steps",
+      "claim": {
+        "statement": "Call trimesh.triangles.area with the triangle array to compute the summed area.",
+        "source_id": "trimesh_triangles",
+        "quote": "trimesh.triangles.area(triangles=None, crosses=None) Calculates the sum area of input triangles",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "exceptions",
+      "claim": {
+        "statement": "The area function can return either summed area or individual triangle areas depending on the sum argument.",
+        "source_id": "trimesh_triangles",
+        "quote": "Returns: area – Individual or summed area depending on sum argument",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "outputs",
+      "claim": {
+        "statement": "The vertex coordinates array (nvtx x 3) from the mesh.",
+        "source_id": "nibabel_fs",
+        "quote": "coords numpy array nvtx x 3 array of vertex (x, y, z) coordinates.",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "outputs",
+      "claim": {
+        "statement": "The face array (nfaces x 3) defining mesh triangles.",
+        "source_id": "nibabel_fs",
+        "quote": "faces numpy array nfaces x 3 array of defining mesh triangles.",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    }
+  ]
+}

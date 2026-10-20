@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "subjectId": {
+      "type": "string",
+      "description": "Subject folder name inside the workspace."
+    },
+    "workspaceDirectory": {
+      "type": "string",
+      "description": "Workspace root directory."
+    },
+    "subPath": {
+      "type": "string",
+      "description": "Optional subfolder under the subject directory to tree from."
+    },
+    "maxDepth": {
+      "type": "integer",
+      "description": "Maximum directory depth to render (default 3)."
+    }
+  },
+  "required": ["subjectId", "workspaceDirectory"]
+}

@@ -1,0 +1,151 @@
+Samseg - Free Surfer Wiki
+Search:
+Login
+Samseg
+FreeSurferWiki
+RecentChanges
+FindPage
+HelpContents
+Samseg
+Immutable Page
+Comments
+Discussion
+Info
+Attachments
+More Actions:
+Raw Text
+Print View
+Render as Docbook
+Delete Cache
+------------------------
+Check Spelling
+Like Pages
+Local Site Map
+------------------------
+Rename Page
+Delete Page
+------------------------
+Subscribe User
+------------------------
+Remove Spam
+Revert to this revision
+Package Pages
+Sync Pages
+------------------------
+Load
+Save
+SlideShow
+Samseg (cross-sectional, longitudinal, MS lesions)
+This functionality is available in FreeSurfer 7.2, with gradual improvements appearing in the development version.
+Author: Koen Van Leemput
+E-mail: koen [at] nmr.mgh.harvard.edu
+Rather than directly contacting the author, please post your questions on this module to the FreeSurfer mailing list at freesurfer [at] nmr.mgh.harvard.edu
+If you use these tools in your analysis, please cite:
+Cross-sectional: Fast and sequence-adaptive whole-brain segmentation using parametric Bayesian modeling. O. Puonti, J.E. Iglesias, K. Van Leemput. NeuroImage, 143, 235-249, 2016.
+MS lesions: A Contrast-Adaptive Method for Simultaneous Whole-Brain and Lesion Segmentation in Multiple Sclerosis. S. Cerri, O. Puonti, D.S. Meier, J. Wuerfel, M. Mühlau, H.R. Siebner, K. Van Leemput. NeuroImage, 225, 117471, 2021.
+Longitudinal: An Open-Source Tool for Longitudinal Whole-Brain and White Matter Lesion Segmentation. S. Cerri, D.N. Greve, A. Hoopes, H. Lundell, H.R. Siebner, M. Mühlau, K. Van Leemput. NeuroImage: Clinical, 38, 103354, 2023.
+See also: ThalamicNuclei, HippocampalSubfieldsAndNucleiOfAmygdala, BrainstemSubstructures
+Contents
+General description
+Basic SAMSEG (cross-sectional processing)
+SAMSEG in multiple sclerosis (cross-sectional processing)
+Longitudinal processing with SAMSEG
+1. General description
+Sequence Adaptive Multimodal SEGmentation (SAMSEG) is a tool to robustly segment dozens of brain structures from head MRI scans without preprocessing. The characteristic property of SAMSEG is that it accepts multi-contrast MRI data without prior assumptions on the specific type of scanner or pulse sequences used. Dedicated versions to handle longitudinal data, or to segment white matter lesions in multiple sclerosis (MS) patients are also available.
+The figure below illustrates a typical SAMSEG segmentation result on a T1w-FLAIR scan of a MS patient:
+2. Basic SAMSEG (cross-sectional processing)
+In its most basic form SAMSEG takes one or more co-registered MRI volumes as input, and produces an output segmentation in around 10 min on a good desktop computer (with multi-threading enabled). Preprocessing of the scan(s) with FreeSurfer is neither required nor recommended (e.g., no reformatting to 1mm isotropic resolution, no bias field correction and no skull stripping is needed nor recommended). The command line is:
+run_samseg --input <file> [<file> ...] --output <dir> [--threads <threads>] [--pallidum-separate]
+where:
+<file>: is the path to the input volume(s) in Nifti (.nii/.nii.gz) or FreeSurfer (.mgz) file format. If you have more than one contrast (e.g., both T1w and T2w) you can simply list all the input contrasts you want to use -- the only requirement is that all input volumes are co-registered with each other, and have the same image grid size and voxel dimensions (see below for instructions on how to do that with FreeSurfer).
+<dir>: is the path to the output directory where the results will be saved. If this directory doesn't exist, it will be created automatically.
+<threads> (optional): is the number of threads to be used by SAMSEG (default uses one thread). Set the number of threads to the number of CPU cores on your computer to get the fastest run time.
+--pallidum-separate (optional): by default SAMSEG will treat the pallidum internally as a white matter structure, since it typically can't be discerned easily from white matter in T1w scans. However, if your combination of input volumes includes contrasts where the pallidum is clearly discernible (e.g., T2w or FLAIR) you should add this flag to your command line.
+The output will consist of the following set of files, which can be found under the specified <dir> directory:
+seg.mgz: is the output segmentation volume, where each voxel has been assigned to one anatomical structure. This file is similar to the "aseg.mgz" file produced by the standard volumetric stream in FreeSurfer: the correspondence between structure numbers and neuroanatomical labels is according to $FREESURFER_HOME/FreeSurferColorLUT.txt.
+samseg.stats: contains the estimated volume (in cubic mm) for each segmented structure. These volumes will be very close (but not identical to) the number of voxels assigned to each structure in "seg.mgz" -- the reason for the discrepancy is that "seg.mgz" is computed in a winner-takes-all fashion, ignoring the uncertainty about the underlying voxel assignments (and therefore yielding slightly less accurate volume estimates).
+mode0X_bias_corrected.mgz (with X=1,2,...): the bias field corrected MRI volume corresponding to each input contrast.
+mode0X_bias_field.mgz (with X=1,2,...): the estimated bias field for each input contrast.
+Running
+run_samseg --help
+will display instructions for using more advanced options, including the ability to save the full probabilistic ("soft") segmentations and skipping the initial subject-to-atlas affine registration step.
+Examples:
+Segment a single T1w scan using a single CPU core (e.g., for running on a cluster):
+run_samseg --input /home/username/data/t1.nii --output /home/username/data/samsegOutput/
+Segment a single T1w scan with 8 CPU cores:
+run_samseg --input /home/username/data/t1.nii --output /home/username/data/samsegOutput/ --threads 8
+Segment a subject with both T1w and a FLAIR scan (provided both scans are co-registered and have the same image grid size and voxel resolution -- see below) using 4 threads:
+run_samseg --input /home/username/data/t1.nii /home/username/data/flair.nii --pallidum-separate --output /home/username/data/samsegOutput/ --threads 4
+Co-registering multi-contrast data:
+When giving multi-contrast data as input, SAMSEG expects that all contrasts have already been co-registered and reformatted to the same image grid. To avoid loss of information, it is recommended to select the contrast with the highest spatial resolution (smallest voxel size) and reformat all other contrasts to that.
+FreeSurfer comes with a set of tools to perform accurate inter-modality co-registration and reformatting. For instance, given a 1x1x1mm3 T1w scan "t1.nii" and a 1x1x3mm3 FLAIR "flair.nii", coregistering and reformatting the FLAIR to the T1w can be accomplished using:
+mri_coreg --mov flair.nii --ref t1.nii --reg flairToT1.lta
+mri_vol2vol --mov flair.nii --reg flairToT1.lta --o flair_reg.nii --targ t1.nii
+(See mri_coreg and mri_vol2vol for the full documentation of these tools.)
+SAMSEG can then be called using e.g.,
+run_samseg --input t1.nii flair_reg.nii --pallidum-separate --output samsegOutput/
+3. SAMSEG in multiple sclerosis (cross-sectional processing)
+SAMSEG comes with a dedicated extension to explicitly segment white matter lesions in multiple sclerosis patients. To use it, you need to invoke SAMSEG with the following additional flags:
+--lesion: is the flag to tell SAMSEG to segment white matter lesions.
+--lesion-mask-pattern <pattern> (optional but strongly recommended): only considers voxels as candidate lesions if their (possibly multi-contrast) intensity satisfies certain constraints compared to the intensity of cortical gray matter. The pattern is a sequence of numbers, one number for each input contrast, with the following meaning: a value of "-1" or "1" indicates the voxels should be darker or brighter than cortical gray matter, respectively, whereas a value of "0" means that no intensity constraint is applied to the corresponding input contrast. Typically "0" would be used for T1w scans, and "1" for T2w/FLAIR scans.
+--threshold <threshold> (optional): is the threshold applied to the probability of a voxel being lesion in order to assign it to lesion (or some other structure) in "seg.mgz". The default value (0.3 in the current implementation) will typically give reasonable results, but you can tweak this value (between 0.0 and 1.0) to obtain a more fine-grained balance between false positive (low threshold value) and false negative (high threshold value) lesion detections.
+When doing a study comparing MS patients with controls, you should use the same SAMSEG command to process both patient groups -- SAMSEG with the lesion flag enabled should work robustly even in subjects with no white matter lesions.
+The first time you run this module, you may be prompted to install Tensorflow. Simply follow the instructions on the screen to install the CPU or GPU version. If you have a compatible GPU, you can install the GPU version for faster processing, but this requires installing additional libraries (GPU driver, Cuda, CuDNN). These libraries are generally required for a GPU, and are not specific for this tool.
+Examples:
+Segment an MS subject with both a T1w and a FLAIR scan (provided both scans are co-registered and have the same image grid size and voxel resolution -- see above) using a single core:
+run_samseg --input /home/username/data/t1.nii /home/username/data/flair.nii --pallidum-separate --lesion --lesion-mask-pattern 0 1 --output /home/username/data/samsegOutput/
+Segment an MS subject with a T1w, a FLAIR and a PDw scan (provided all scans are co-registered and have the same image grid size and voxel resolution -- see above) using 8 CPU cores and a lesion threshold of 0.7:
+run_samseg --input /home/username/data/t1.nii /home/username/data/flair.nii /home/username/data/pd.nii --pallidum-separate --lesion --lesion-mask-pattern 0 1 0 --threshold 0.7 --output /home/username/data/samsegOutput/ --threads 8
+4. Longitudinal processing with SAMSEG
+A special version of SAMSEG is available for processing longitudinal scans, i.e., repeated scans of the same subject taken at subsequent time points. In contrast to the cross-sectional setting where each image is treated independently, longitudinal SAMSEG exploits the fact that all images belong to the same subject to produce more consistent segmentations, which should make it easier to detect group differences in temporal trajectories of brain morphology.
+Longitudinal SAMSEG is very generally applicable, as it does not make any prior assumptions on the scanner, the MRI protocol, or the number and timing of longitudinal follow-up scans. An example longitudinal segmentation is shown in the figure below (six time points, labeled as tp1 ... tp6):
+Preprocessing and invoking longitudinal SAMSEG: As in the cross-sectional version, longitudinal SAMSEG expects all its input images to have been co-registered and reformatted to the same image grid beforehand. However, in longitudinal processing, special attention should be paid to avoid biases resulting from not treating all time points in exactly the same way (e.g., simply reformatting all follow-up time points to the baseline scan would introduce a longitudinal processing bias). Given e.g., a longitudinal T1w scan acquired at three time points, with respective file names "tp0_t1.nii", "tp1_t1.nii" and "tp2_t1.nii", the following FreeSurfer command will compute a robust representation of the average subject anatomy over time, and use that as an unbiased reference to register all time points to:
+mri_robust_template --mov tp0_t1.nii tp1_t1.nii tp2_t1.nii --template mean.mgz --satit --mapmov tp0_t1_reg.mgz tp1_t1_reg.mgz tp2_t1_reg.mgz
+(See mri_robust_template for the full documentation of this tool.) The resulting files "tp0_t1_reg.mgz", "tp1_t1_reg.mgz" and "tp2_t1_reg.mgz" can now be used to invoke longitudinal SAMSEG as follows:
+run_samseg_long --timepoint tp0_t1_reg.mgz --timepoint tp1_t1_reg.mgz --timepoint tp2_t1_reg.mgz --output outputDir/
+This will create three subdirectories in the output directory named "timepoint0", "timepoint1" and "timepoint2" with the same structure as the one obtained with cross-sectional SAMSEG.
+Similar advanced options are available for the longitudinal SAMSEG as for the cross-section version; more instructions are provided by typing:
+run_samseg_long --help
+Longitudinal SAMSEG with multi-contrast data
+Taking the same example above (longitudinal T1w scan taken at three time points) but with additional FLAIR scans named "tp0_flair.nii", "tp1_flair.nii" and "tp2_flair.nii", preprocessing would proceed as described above (i.e., generating "tp0_t1_reg.mgz", "tp1_t1_reg.mgz" and "tp2_t1_reg.mgz"), but then for each time additionally co-registering each FLAIR scan to the corresponding reformatted T1w scan. For example, for the first time point this can be accomplished by using:
+mri_coreg --mov tp0_flair.nii --ref tp0_t1_reg.mgz --reg tp0_FLAIRtoT1.lta
+mri_vol2vol --mov tp0_flair.nii --reg tp0_FLAIRtoT1.lta --o tp0_flair_reg.mgz --targ tp0_t1_reg.mgz
+SAMSEG is then invoked by simply listing the reformatted FLAIR as an additional contrast for each time point:
+run_samseg_long --timepoint tp0_t1_reg.mgz tp0_flair_reg.mgz --timepoint tp1_t1_reg.mgz tp1_flair_reg.mgz --timepoint tp2_t1_reg.mgz tp2_flair_reg.mgz --output outputDir/
+In the above it is assumed that the T1w scans have a higher spatial resolution than the FLAIR. If this is not the case in your data, it is recommended to swap the role of FLAIR and T1 in the preprocessing.
+If additional contrasts are available, these can simply be appended to the input lists after applying the same co-registration steps. Note that SAMSEG expects that the same combination of contrasts is provided for each time point, though.
+Longitudinal SAMSEG for MS patients
+Segmenting white matter lesions in MS with longitudinal SAMSEG is accomplished simply by adding the same flags as for the cross-sectional version (see section 3 above).
+Samseg (last edited 2025-04-10 02:53:01 by StefanoCerri)
+Immutable Page
+Comments
+Discussion
+Info
+Attachments
+More Actions:
+Raw Text
+Print View
+Render as Docbook
+Delete Cache
+------------------------
+Check Spelling
+Like Pages
+Local Site Map
+------------------------
+Rename Page
+Delete Page
+------------------------
+Subscribe User
+------------------------
+Remove Spam
+Revert to this revision
+Package Pages
+Sync Pages
+------------------------
+Load
+Save
+SlideShow
+MoinMoin Powered
+Python Powered
+GPL licensed
+Valid HTML 4.01

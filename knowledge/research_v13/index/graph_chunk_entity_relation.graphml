@@ -1,0 +1,3484 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d13" for="edge" attr.name="truncate" attr.type="string" />
+  <key id="d12" for="edge" attr.name="created_at" attr.type="long" />
+  <key id="d11" for="edge" attr.name="file_path" attr.type="string" />
+  <key id="d10" for="edge" attr.name="source_id" attr.type="string" />
+  <key id="d9" for="edge" attr.name="keywords" attr.type="string" />
+  <key id="d8" for="edge" attr.name="description" attr.type="string" />
+  <key id="d7" for="edge" attr.name="weight" attr.type="double" />
+  <key id="d6" for="node" attr.name="truncate" attr.type="string" />
+  <key id="d5" for="node" attr.name="created_at" attr.type="long" />
+  <key id="d4" for="node" attr.name="file_path" attr.type="string" />
+  <key id="d3" for="node" attr.name="source_id" attr.type="string" />
+  <key id="d2" for="node" attr.name="description" attr.type="string" />
+  <key id="d1" for="node" attr.name="entity_type" attr.type="string" />
+  <key id="d0" for="node" attr.name="entity_id" attr.type="string" />
+  <graph edgedefault="undirected">
+    <node id="FSL-VBM">
+      <data key="d0">FSL-VBM</data>
+      <data key="d1">method</data>
+      <data key="d2">A voxel-based morphometry analysis method implemented in FSL, used for structural brain imaging studies.&lt;SEP&gt;A voxel-based morphometry protocol implemented in FSL for processing structural brain images, including registration, modulation, smoothing, and statistical analysis.</data>
+      <data key="d3">VBM_TEMPLATE-chunk-000&lt;SEP&gt;VBM_FINAL-chunk-000</data>
+      <data key="d4">VBM_TEMPLATE&lt;SEP&gt;VBM_FINAL</data>
+      <data key="d5">1792428582</data>
+      <data key="d6" />
+    </node>
+    <node id="Template List">
+      <data key="d0">Template List</data>
+      <data key="d1">data</data>
+      <data key="d2">A file named template_list in the FSL-VBM directory containing the names of selected T1 images used to build a study-specific template.</data>
+      <data key="d3">VBM_TEMPLATE-chunk-000</data>
+      <data key="d4">VBM_TEMPLATE</data>
+      <data key="d5">1792427114</data>
+      <data key="d6" />
+    </node>
+    <node id="T1 Images">
+      <data key="d0">T1 Images</data>
+      <data key="d1">data</data>
+      <data key="d2">Structural T1-weighted magnetic resonance images selected from study groups to construct the study-specific template.</data>
+      <data key="d3">VBM_TEMPLATE-chunk-000</data>
+      <data key="d4">VBM_TEMPLATE</data>
+      <data key="d5">1792427114</data>
+      <data key="d6" />
+    </node>
+    <node id="Study-Specific Template">
+      <data key="d0">Study-Specific Template</data>
+      <data key="d1">artifact</data>
+      <data key="d2">A template image created from selected T1 images to represent the study population, used for unbiased analysis.&lt;SEP&gt;A template created from the study's own data to which all grey matter images are non-linearly registered.</data>
+      <data key="d3">VBM_TEMPLATE-chunk-000&lt;SEP&gt;VBM_FINAL-chunk-000</data>
+      <data key="d4">VBM_TEMPLATE&lt;SEP&gt;VBM_FINAL</data>
+      <data key="d5">1792428582</data>
+      <data key="d6" />
+    </node>
+    <node id="FSL-VBM Directory">
+      <data key="d0">FSL-VBM Directory</data>
+      <data key="d1">location</data>
+      <data key="d2">The directory where the template_list file is placed for the FSL-VBM analysis.</data>
+      <data key="d3">VBM_TEMPLATE-chunk-000</data>
+      <data key="d4">VBM_TEMPLATE</data>
+      <data key="d5">1792427114</data>
+      <data key="d6" />
+    </node>
+    <node id="Recon-All">
+      <data key="d0">Recon-All</data>
+      <data key="d1">method</data>
+      <data key="d2">A software tool that processes brain imaging data, capable of resampling data onto an average subject and smoothing it at various FWHM values when run with the -qcache option.&lt;SEP&gt;A processing workflow used in FreeSurfer for cross-sectional and longitudinal analysis of neuroimaging data.</data>
+      <data key="d3">SBM_CACHE-chunk-000&lt;SEP&gt;LONG-chunk-000</data>
+      <data key="d4">SBM_CACHE&lt;SEP&gt;LONG</data>
+      <data key="d5">1792427144</data>
+      <data key="d6" />
+    </node>
+    <node id="Fsaverage">
+      <data key="d0">Fsaverage</data>
+      <data key="d1">concept</data>
+      <data key="d2">The average subject template used by recon-all for resampling data during qcache processing.</data>
+      <data key="d3">SBM_CACHE-chunk-000</data>
+      <data key="d4">SBM_CACHE</data>
+      <data key="d5">1792427114</data>
+      <data key="d6" />
+    </node>
+    <node id="FWHM">
+      <data key="d0">FWHM</data>
+      <data key="d1">concept</data>
+      <data key="d2">Full-width/half-max values, typically 0, 5, 10, 15, 20, and 25mm, used for smoothing data in the qcache processing.&lt;SEP&gt;Full Width at Half Maximum, a measure of the width of a smoothing kernel used in image processing, with values ranging from 4.6mm to 9mm in the context.</data>
+      <data key="d3">SBM_CACHE-chunk-000&lt;SEP&gt;VBM_FINAL-chunk-001</data>
+      <data key="d4">SBM_CACHE&lt;SEP&gt;VBM_FINAL</data>
+      <data key="d5">1792428582</data>
+      <data key="d6" />
+    </node>
+    <node id="Qcache">
+      <data key="d0">Qcache</data>
+      <data key="d1">method</data>
+      <data key="d2">An option in recon-all that resamples data onto the average subject and smooths it at various FWHM values, caching the results to speed later processing.</data>
+      <data key="d3">SBM_CACHE-chunk-000</data>
+      <data key="d4">SBM_CACHE</data>
+      <data key="d5">1792427114</data>
+      <data key="d6" />
+    </node>
+    <node id="Tutorial Data">
+      <data key="d0">Tutorial Data</data>
+      <data key="d1">data</data>
+      <data key="d2">The dataset used in the tutorial, which was processed with the -qcache option, so the FWHM values are already cached.</data>
+      <data key="d3">SBM_CACHE-chunk-000</data>
+      <data key="d4">SBM_CACHE</data>
+      <data key="d5">1792427114</data>
+      <data key="d6" />
+    </node>
+    <node id="Run Full Pipeline Script">
+      <data key="d0">Run Full Pipeline Script</data>
+      <data key="d1">artifact</data>
+      <data key="d2">A shell script that processes neuroimaging data for a subject, taking subject ID, T1 and T2 paths, output directory, and an optional FreeSurfer license as arguments.</data>
+      <data key="d3">NHP_WRAPPER-chunk-000</data>
+      <data key="d4">NHP_WRAPPER</data>
+      <data key="d5">1792427120</data>
+      <data key="d6" />
+    </node>
+    <node id="M3">
+      <data key="d0">M3</data>
+      <data key="d1">method</data>
+      <data key="d2">A dominant component or entity referenced in the input text, likely a model or module that dominates the context.&lt;SEP&gt;A processing step within the pipeline that dominates the total runtime, taking the majority of the 2-3 hours.</data>
+      <data key="d3">NHP_WRAPPER-chunk-000&lt;SEP&gt;NHP_WRAPPER-chunk-001</data>
+      <data key="d4">NHP_WRAPPER</data>
+      <data key="d5">1792427120</data>
+      <data key="d6" />
+    </node>
+    <node id="BIDS">
+      <data key="d0">BIDS</data>
+      <data key="d1">concept</data>
+      <data key="d2">A standard for organizing neuroimaging data, referenced as a folder structure that the script can accept as input.&lt;SEP&gt;Brain Imaging Data Structure, a standard for organizing neuroimaging data and file naming.</data>
+      <data key="d3">NHP_WRAPPER-chunk-000&lt;SEP&gt;WRAPPER_BINDS-chunk-001</data>
+      <data key="d4">NHP_WRAPPER&lt;SEP&gt;WRAPPER_BINDS</data>
+      <data key="d5">1792428673</data>
+      <data key="d6" />
+    </node>
+    <node id="FreeSurfer License">
+      <data key="d0">FreeSurfer License</data>
+      <data key="d1">artifact</data>
+      <data key="d2">An optional license file required for FreeSurfer processing, passed as the fifth argument to the script.</data>
+      <data key="d3">NHP_WRAPPER-chunk-000</data>
+      <data key="d4">NHP_WRAPPER</data>
+      <data key="d5">1792427120</data>
+      <data key="d6" />
+    </node>
+    <node id="run_full_pipeline.sh">
+      <data key="d0">run_full_pipeline.sh</data>
+      <data key="d1">content</data>
+      <data key="d2">A shell script that can be executed with the -h flag to display full usage notes and additional examples.&lt;SEP&gt;A shell script that serves as the wrapper for the PREEMACS pipeline. It validates command-line arguments, checks for required files, and invokes the pipeline.&lt;SEP&gt;A shell script in the PREEMACS repository that contains the resolve_modality_binds function implementation.</data>
+      <data key="d3">NHP_WRAPPER-chunk-001&lt;SEP&gt;WRAPPER_LICENSE-chunk-000&lt;SEP&gt;WRAPPER_BINDS-chunk-000</data>
+      <data key="d4">NHP_WRAPPER&lt;SEP&gt;WRAPPER_LICENSE&lt;SEP&gt;WRAPPER_BINDS</data>
+      <data key="d5">1792428673</data>
+      <data key="d6" />
+    </node>
+    <node id="Randomise">
+      <data key="d0">Randomise</data>
+      <data key="d1">method</data>
+      <data key="d2">A software tool that allows the definition of exchangeability blocks for permutation tests, as specified by the group_labels option, to accommodate repeated measures in multisubject analyses.&lt;SEP&gt;A software tool that runs permutation-based non-parametric inference, generating tstat maps and p-value maps.&lt;SEP&gt;A nonparametric permutation testing tool within FSL for statistical analysis of neuroimaging data, used for one-sample t-tests.&lt;SEP&gt;A tool that performs permutation-based inference, automatically selecting one-sample mode for appropriate design/contrast combinations.&lt;SEP&gt;A command in FSL used to run permutation-based inference, invoked with options -i PairedT4D -o PairedT -d design.mat -t design.con -e design.grp -m mask -T.</data>
+      <data key="d3">STAT_BLOCK-chunk-000&lt;SEP&gt;VBM_FINAL-chunk-001&lt;SEP&gt;STAT_ONEGROUP-chunk-000&lt;SEP&gt;STAT_ONEGROUP-chunk-001&lt;SEP&gt;STAT_PAIRED-chunk-002</data>
+      <data key="d4">STAT_BLOCK&lt;SEP&gt;VBM_FINAL&lt;SEP&gt;STAT_ONEGROUP&lt;SEP&gt;STAT_PAIRED</data>
+      <data key="d5">1792428629</data>
+      <data key="d6" />
+    </node>
+    <node id="Permutation Tests">
+      <data key="d0">Permutation Tests</data>
+      <data key="d1">method</data>
+      <data key="d2">Statistical tests that do not easily accommodate correlated datasets because such dependence violates null-hypothesis exchangeability.</data>
+      <data key="d3">STAT_BLOCK-chunk-000</data>
+      <data key="d4">STAT_BLOCK</data>
+      <data key="d5">1792427122</data>
+      <data key="d6" />
+    </node>
+    <node id="Exchangeability Blocks">
+      <data key="d0">Exchangeability Blocks</data>
+      <data key="d1">concept</data>
+      <data key="d2">Groups defined by the group_labels option in randomise, within which observations are permuted; only observations with the same group label are exchanged.</data>
+      <data key="d3">STAT_BLOCK-chunk-000</data>
+      <data key="d4">STAT_BLOCK</data>
+      <data key="d5">1792427122</data>
+      <data key="d6" />
+    </node>
+    <node id="Group Labels">
+      <data key="d0">Group Labels</data>
+      <data key="d1">data</data>
+      <data key="d2">Labels specified via the group_labels option that define exchangeability blocks for permutation in randomise.</data>
+      <data key="d3">STAT_BLOCK-chunk-000</data>
+      <data key="d4">STAT_BLOCK</data>
+      <data key="d5">1792427122</data>
+      <data key="d6" />
+    </node>
+    <node id="Repeated Measures">
+      <data key="d0">Repeated Measures</data>
+      <data key="d1">concept</data>
+      <data key="d2">A case in multisubject analysis where there is more than one measurement per subject, which can sometimes be accommodated by permutation tests using exchangeability blocks.</data>
+      <data key="d3">STAT_BLOCK-chunk-000</data>
+      <data key="d4">STAT_BLOCK</data>
+      <data key="d5">1792427122</data>
+      <data key="d6" />
+    </node>
+    <node id="Null-Hypothesis Exchangeability">
+      <data key="d0">Null-Hypothesis Exchangeability</data>
+      <data key="d1">concept</data>
+      <data key="d2">A principle in permutation testing that is violated by correlated datasets, such as temporally smooth timeseries.</data>
+      <data key="d3">STAT_BLOCK-chunk-000</data>
+      <data key="d4">STAT_BLOCK</data>
+      <data key="d5">1792427122</data>
+      <data key="d6" />
+    </node>
+    <node id="Guide">
+      <data key="d0">Guide</data>
+      <data key="d1">content</data>
+      <data key="d2">A document referenced in the source that contains a repeated measures example for more detail.</data>
+      <data key="d3">STAT_BLOCK-chunk-000</data>
+      <data key="d4">STAT_BLOCK</data>
+      <data key="d5">1792427122</data>
+      <data key="d6" />
+    </node>
+    <node id="M1">
+      <data key="d0">M1</data>
+      <data key="d1">concept</data>
+      <data key="d2">A module in the PREEMACS software that performs orientation, cropping, bias correction, averaging, and skull-stripping on neuroimaging data.&lt;SEP&gt;A prior processing step that produces a conformed T1 image used as input for the generateN4 module.&lt;SEP&gt;A modality or pipeline component whose -t1_path and -t2_path parameters must be directories, with each *.nii.gz file inside treated as a run and averaged together.</data>
+      <data key="d3">NHP_M1-chunk-000&lt;SEP&gt;NHP_N4-chunk-000&lt;SEP&gt;WRAPPER_BINDS-chunk-000</data>
+      <data key="d4">NHP_M1&lt;SEP&gt;NHP_N4&lt;SEP&gt;WRAPPER_BINDS</data>
+      <data key="d5">1792428673</data>
+      <data key="d6" />
+    </node>
+    <node id="PREEMACS">
+      <data key="d0">PREEMACS</data>
+      <data key="d1">artifact</data>
+      <data key="d2">A software tool that includes the M1 module and is run using Apptainer with a preemacs.sif image.&lt;SEP&gt;A software pipeline that processes T1 and T2 input images and produces output in a specified directory. The code is located at commit c57835c0223104072c4f4e2947a253f1826a27e0.&lt;SEP&gt;A software project or pipeline whose code is referenced at commit c57835c0223104072c4f4e2947a253f1826a27e0, specifically the run_full_pipeline.sh script.</data>
+      <data key="d3">NHP_M1-chunk-000&lt;SEP&gt;WRAPPER_LICENSE-chunk-000&lt;SEP&gt;WRAPPER_BINDS-chunk-000</data>
+      <data key="d4">NHP_M1&lt;SEP&gt;WRAPPER_LICENSE&lt;SEP&gt;WRAPPER_BINDS</data>
+      <data key="d5">1792428673</data>
+      <data key="d6" />
+    </node>
+    <node id="Apptainer">
+      <data key="d0">Apptainer</data>
+      <data key="d1">artifact</data>
+      <data key="d2">A container runtime used to execute the PREEMACS software with the M1 module.&lt;SEP&gt;A container runtime used to execute the generateN4 module with the preemacs.sif image.</data>
+      <data key="d3">NHP_M1-chunk-000&lt;SEP&gt;NHP_N4-chunk-000</data>
+      <data key="d4">NHP_M1&lt;SEP&gt;NHP_N4</data>
+      <data key="d5">1792427132</data>
+      <data key="d6" />
+    </node>
+    <node id="preemacs.sif">
+      <data key="d0">preemacs.sif</data>
+      <data key="d1">artifact</data>
+      <data key="d2">A Singularity Image Format file that contains the PREEMACS software and is used with Apptainer to run the M1 module.&lt;SEP&gt;A Singularity image file required by the PREEMACS pipeline. The script checks for its existence and errors if it is not found.</data>
+      <data key="d3">NHP_M1-chunk-000&lt;SEP&gt;WRAPPER_LICENSE-chunk-000</data>
+      <data key="d4">NHP_M1&lt;SEP&gt;WRAPPER_LICENSE</data>
+      <data key="d5">1792428649</data>
+      <data key="d6" />
+    </node>
+    <node id="t1_path">
+      <data key="d0">t1_path</data>
+      <data key="d1">concept</data>
+      <data key="d2">A parameter in the M1 module that specifies a directory containing T1-weighted .nii.gz files, each treated as a separate run and averaged together.</data>
+      <data key="d3">NHP_M1-chunk-000</data>
+      <data key="d4">NHP_M1</data>
+      <data key="d5">1792427127</data>
+      <data key="d6" />
+    </node>
+    <node id="t2_path">
+      <data key="d0">t2_path</data>
+      <data key="d1">concept</data>
+      <data key="d2">A parameter in the M1 module that specifies a directory containing T2-weighted .nii.gz files, each treated as a separate run and averaged together.</data>
+      <data key="d3">NHP_M1-chunk-000</data>
+      <data key="d4">NHP_M1</data>
+      <data key="d5">1792427127</data>
+      <data key="d6" />
+    </node>
+    <node id="out_path">
+      <data key="d0">out_path</data>
+      <data key="d1">concept</data>
+      <data key="d2">A parameter in the M1 module that specifies the output directory for processed results.</data>
+      <data key="d3">NHP_M1-chunk-000</data>
+      <data key="d4">NHP_M1</data>
+      <data key="d5">1792427127</data>
+      <data key="d6" />
+    </node>
+    <node id="SUB01">
+      <data key="d0">SUB01</data>
+      <data key="d1">data</data>
+      <data key="d2">An example subject identifier used in the M1 module command.&lt;SEP&gt;An identifier for a subject whose data is processed by the generateN4 module.</data>
+      <data key="d3">NHP_M1-chunk-000&lt;SEP&gt;NHP_N4-chunk-000</data>
+      <data key="d4">NHP_M1&lt;SEP&gt;NHP_N4</data>
+      <data key="d5">1792427132</data>
+      <data key="d6" />
+    </node>
+    <node id="GenerateN4">
+      <data key="d0">GenerateN4</data>
+      <data key="d1">method</data>
+      <data key="d2">A second, independent N4 bias-field correction pass that runs on M1's conformed T1 image, sharing a voxel grid with BM's brain mask.</data>
+      <data key="d3">NHP_N4-chunk-000</data>
+      <data key="d4">NHP_N4</data>
+      <data key="d5">1792427132</data>
+      <data key="d6" />
+    </node>
+    <node id="BM">
+      <data key="d0">BM</data>
+      <data key="d1">method</data>
+      <data key="d2">A brain-masking step that produces a brain mask sharing a voxel grid with the conformed T1 image used by generateN4.</data>
+      <data key="d3">NHP_N4-chunk-000</data>
+      <data key="d4">NHP_N4</data>
+      <data key="d5">1792427132</data>
+      <data key="d6" />
+    </node>
+    <node id="N4 Bias-Field Correction">
+      <data key="d0">N4 Bias-Field Correction</data>
+      <data key="d1">concept</data>
+      <data key="d2">A technique for correcting intensity inhomogeneity in MRI images, applied independently in the generateN4 module.</data>
+      <data key="d3">NHP_N4-chunk-000</data>
+      <data key="d4">NHP_N4</data>
+      <data key="d5">1792427132</data>
+      <data key="d6" />
+    </node>
+    <node id="Preemacs.Sif">
+      <data key="d0">Preemacs.Sif</data>
+      <data key="d1">artifact</data>
+      <data key="d2">A software container image used to run the generateN4 module via Apptainer.</data>
+      <data key="d3">NHP_N4-chunk-000</data>
+      <data key="d4">NHP_N4</data>
+      <data key="d5">1792427132</data>
+      <data key="d6" />
+    </node>
+    <node id="Temporo-parietal cortex">
+      <data key="d0">Temporo-parietal cortex</data>
+      <data key="d1">concept</data>
+      <data key="d2">A region of the brain considered critical for human specialization, subject to evolutionary adaptations affecting local expansion and connectivity.</data>
+      <data key="d3">CROSS_FINDING-chunk-000</data>
+      <data key="d4">CROSS_FINDING</data>
+      <data key="d5">1792427137</data>
+      <data key="d6" />
+    </node>
+    <node id="Computational neuroanatomy approach">
+      <data key="d0">Computational neuroanatomy approach</data>
+      <data key="d1">method</data>
+      <data key="d2">A method used to distinguish different types of changes in brain architecture, including local expansion and connectivity changes.</data>
+      <data key="d3">CROSS_FINDING-chunk-000</data>
+      <data key="d4">CROSS_FINDING</data>
+      <data key="d5">1792427137</data>
+      <data key="d6" />
+    </node>
+    <node id="Cortical myelin">
+      <data key="d0">Cortical myelin</data>
+      <data key="d1">concept</data>
+      <data key="d2">A feature of the cortex used as a basis for between-species alignment to predict changes in connectivity patterns.</data>
+      <data key="d3">CROSS_FINDING-chunk-000</data>
+      <data key="d4">CROSS_FINDING</data>
+      <data key="d5">1792427137</data>
+      <data key="d6" />
+    </node>
+    <node id="Macaque">
+      <data key="d0">Macaque</data>
+      <data key="d1">creature</data>
+      <data key="d2">A primate species included in the study of connectivity patterns and brain architecture.</data>
+      <data key="d3">CROSS_FINDING-chunk-000</data>
+      <data key="d4">CROSS_FINDING</data>
+      <data key="d5">1792427137</data>
+      <data key="d6" />
+    </node>
+    <node id="Chimpanzee">
+      <data key="d0">Chimpanzee</data>
+      <data key="d1">creature</data>
+      <data key="d2">A primate species included in the study of connectivity patterns and brain architecture.</data>
+      <data key="d3">CROSS_FINDING-chunk-000</data>
+      <data key="d4">CROSS_FINDING</data>
+      <data key="d5">1792427137</data>
+      <data key="d6" />
+    </node>
+    <node id="Human">
+      <data key="d0">Human</data>
+      <data key="d1">creature</data>
+      <data key="d2">A primate species included in the study of connectivity patterns and brain architecture.</data>
+      <data key="d3">CROSS_FINDING-chunk-000</data>
+      <data key="d4">CROSS_FINDING</data>
+      <data key="d5">1792427137</data>
+      <data key="d6" />
+    </node>
+    <node id="White matter tracts">
+      <data key="d0">White matter tracts</data>
+      <data key="d1">concept</data>
+      <data key="d2">Neural pathways in the brain whose terminations in temporo-parietal cortex can be predicted by expansion and relocation of brain areas.</data>
+      <data key="d3">CROSS_FINDING-chunk-000</data>
+      <data key="d4">CROSS_FINDING</data>
+      <data key="d5">1792427137</data>
+      <data key="d6" />
+    </node>
+    <node id="Middle longitudinal fasciculus">
+      <data key="d0">Middle longitudinal fasciculus</data>
+      <data key="d1">concept</data>
+      <data key="d2">A white matter tract whose terminations can be predicted by expansion and relocation of brain areas.</data>
+      <data key="d3">CROSS_FINDING-chunk-000</data>
+      <data key="d4">CROSS_FINDING</data>
+      <data key="d5">1792427137</data>
+      <data key="d6" />
+    </node>
+    <node id="Superior longitudinal fasciculus">
+      <data key="d0">Superior longitudinal fasciculus</data>
+      <data key="d1">concept</data>
+      <data key="d2">A white matter tract whose terminations can be predicted by expansion and relocation of brain areas.</data>
+      <data key="d3">CROSS_FINDING-chunk-000</data>
+      <data key="d4">CROSS_FINDING</data>
+      <data key="d5">1792427137</data>
+      <data key="d6" />
+    </node>
+    <node id="Arcuate fasciculus">
+      <data key="d0">Arcuate fasciculus</data>
+      <data key="d1">concept</data>
+      <data key="d2">A white matter tract that underwent additional evolutionary modifications affecting temporal lobe connectivity, not predicted by expansion and relocation.</data>
+      <data key="d3">CROSS_FINDING-chunk-000</data>
+      <data key="d4">CROSS_FINDING</data>
+      <data key="d5">1792427137</data>
+      <data key="d6" />
+    </node>
+    <node id="Temporal lobe">
+      <data key="d0">Temporal lobe</data>
+      <data key="d1">concept</data>
+      <data key="d2">A brain region whose connectivity pattern is affected by additional evolutionary modifications to the arcuate fasciculus.</data>
+      <data key="d3">CROSS_FINDING-chunk-000</data>
+      <data key="d4">CROSS_FINDING</data>
+      <data key="d5">1792427137</data>
+      <data key="d6" />
+    </node>
+    <node id="Cortical Organization">
+      <data key="d0">Cortical Organization</data>
+      <data key="d1">concept</data>
+      <data key="d2">The structural and functional arrangement of the cerebral cortex, which is a subject of comparative study across species.</data>
+      <data key="d3">CROSS_FINDING-chunk-001</data>
+      <data key="d4">CROSS_FINDING</data>
+      <data key="d5">1792427137</data>
+      <data key="d6" />
+    </node>
+    <node id="Comparative Hypotheses">
+      <data key="d0">Comparative Hypotheses</data>
+      <data key="d1">concept</data>
+      <data key="d2">Scientific propositions that compare brain organization across different species to test evolutionary and functional relationships.</data>
+      <data key="d3">CROSS_FINDING-chunk-001</data>
+      <data key="d4">CROSS_FINDING</data>
+      <data key="d5">1792427137</data>
+      <data key="d6" />
+    </node>
+    <node id="Brain Organization">
+      <data key="d0">Brain Organization</data>
+      <data key="d1">concept</data>
+      <data key="d2">The overall structural and functional arrangement of the brain, which is the focus of comparative studies.</data>
+      <data key="d3">CROSS_FINDING-chunk-001</data>
+      <data key="d4">CROSS_FINDING</data>
+      <data key="d5">1792427137</data>
+      <data key="d6" />
+    </node>
+    <node id="SUBJECTS_DIR">
+      <data key="d0">SUBJECTS_DIR</data>
+      <data key="d1">concept</data>
+      <data key="d2">A directory that contains all subjects, time points, base, and longitudinal runs for a given processing setup.</data>
+      <data key="d3">LONG-chunk-000</data>
+      <data key="d4">LONG</data>
+      <data key="d5">1792427144</data>
+      <data key="d6" />
+    </node>
+    <node id="Longitudinal Processing">
+      <data key="d0">Longitudinal Processing</data>
+      <data key="d1">method</data>
+      <data key="d2">A FreeSurfer processing approach that involves cross-sectional processing of time points, creation of an unbiased template, and longitudinal processing of each time point.&lt;SEP&gt;A processing scheme coded in the recon-all script via the '-long' flag, which processes all timepoints of a subject and produces output data with names containing '&lt;tpNid&gt;.long.&lt;templateid&gt;'.</data>
+      <data key="d3">LONG-chunk-000&lt;SEP&gt;LONG-chunk-001</data>
+      <data key="d4">LONG</data>
+      <data key="d5">1792427144</data>
+      <data key="d6" />
+    </node>
+    <node id="Unbiased Template">
+      <data key="d0">Unbiased Template</data>
+      <data key="d1">artifact</data>
+      <data key="d2">An average template created from all time points of a subject, used as a base for longitudinal processing.</data>
+      <data key="d3">LONG-chunk-000</data>
+      <data key="d4">LONG</data>
+      <data key="d5">1792427144</data>
+      <data key="d6" />
+    </node>
+    <node id="FreeSurfer">
+      <data key="d0">FreeSurfer</data>
+      <data key="d1">organization</data>
+      <data key="d2">An open-source software suite for processing and analyzing brain MRI images, referenced in the documentation.&lt;SEP&gt;A software package for the analysis and visualization of structural and functional neuroimaging data, developed at the Martinos Center for Biomedical Imaging. The documentation describes its longitudinal processing stream.</data>
+      <data key="d3">LONG-chunk-000&lt;SEP&gt;FS_SINGLE-chunk-000</data>
+      <data key="d4">LONG&lt;SEP&gt;FS_SINGLE</data>
+      <data key="d5">1792428638</data>
+      <data key="d6" />
+    </node>
+    <node id="Norm.Mgz">
+      <data key="d0">Norm.Mgz</data>
+      <data key="d1">data</data>
+      <data key="d2">A file format containing normalized brain images, required to be available before creating the unbiased template.</data>
+      <data key="d3">LONG-chunk-000</data>
+      <data key="d4">LONG</data>
+      <data key="d5">1792427144</data>
+      <data key="d6" />
+    </node>
+    <node id="Recon-all">
+      <data key="d0">Recon-all</data>
+      <data key="d1">artifact</data>
+      <data key="d2">A script that codes the longitudinal processing scheme via the '-long' flag and is used to process timepoints and templates in the longitudinal pipeline.</data>
+      <data key="d3">LONG-chunk-001</data>
+      <data key="d4">LONG</data>
+      <data key="d5">1792427144</data>
+      <data key="d6" />
+    </node>
+    <node id="Template">
+      <data key="d0">Template</data>
+      <data key="d1">concept</data>
+      <data key="d2">A directory created in $SUBJECTS_DIR, identified by a template ID, used as a reference for longitudinal processing of each timepoint of a subject.</data>
+      <data key="d3">LONG-chunk-001</data>
+      <data key="d4">LONG</data>
+      <data key="d5">1792427144</data>
+      <data key="d6" />
+    </node>
+    <node id="Timepoint">
+      <data key="d0">Timepoint</data>
+      <data key="d1">concept</data>
+      <data key="d2">A specific timepoint of a subject, identified by a timepoint ID, that can be processed longitudinally using the '-long' flag.</data>
+      <data key="d3">LONG-chunk-001</data>
+      <data key="d4">LONG</data>
+      <data key="d5">1792427144</data>
+      <data key="d6" />
+    </node>
+    <node id="Subject">
+      <data key="d0">Subject</data>
+      <data key="d1">concept</data>
+      <data key="d2">An individual whose timepoints are processed longitudinally, with the template used for initialization of the longitudinal runs.&lt;SEP&gt;An individual participant in the study; each subject has a different mean value, so data cannot be exchanged between subjects.</data>
+      <data key="d3">LONG-chunk-001&lt;SEP&gt;STAT_PAIRED-chunk-002</data>
+      <data key="d4">LONG&lt;SEP&gt;STAT_PAIRED</data>
+      <data key="d5">1792428629</data>
+      <data key="d6" />
+    </node>
+    <node id="Cross Sectional Processing">
+      <data key="d0">Cross Sectional Processing</data>
+      <data key="d1">method</data>
+      <data key="d2">A processing approach that is slower than longitudinal processing and is used for initial runs before the template and longitudinal steps.</data>
+      <data key="d3">LONG-chunk-001</data>
+      <data key="d4">LONG</data>
+      <data key="d5">1792427144</data>
+      <data key="d6" />
+    </node>
+    <node id="Template Run">
+      <data key="d0">Template Run</data>
+      <data key="d1">method</data>
+      <data key="d2">A processing run that creates the template and is slower than longitudinal processing.</data>
+      <data key="d3">LONG-chunk-001</data>
+      <data key="d4">LONG</data>
+      <data key="d5">1792427144</data>
+      <data key="d6" />
+    </node>
+    <node id="Longitudinal Run">
+      <data key="d0">Longitudinal Run</data>
+      <data key="d1">method</data>
+      <data key="d2">A processing run that uses the template for initialization and is faster than cross sectional or template runs.</data>
+      <data key="d3">LONG-chunk-001</data>
+      <data key="d4">LONG</data>
+      <data key="d5">1792427144</data>
+      <data key="d6" />
+    </node>
+    <node id="Template ID">
+      <data key="d0">Template ID</data>
+      <data key="d1">data</data>
+      <data key="d2">An identifier for the template that is passed to the longitudinal processing of each timepoint of a subject.</data>
+      <data key="d3">LONG-chunk-001</data>
+      <data key="d4">LONG</data>
+      <data key="d5">1792427144</data>
+      <data key="d6" />
+    </node>
+    <node id="Timepoint ID">
+      <data key="d0">Timepoint ID</data>
+      <data key="d1">data</data>
+      <data key="d2">An identifier for a timepoint of a subject, used in the '-long' processing command.</data>
+      <data key="d3">LONG-chunk-001</data>
+      <data key="d4">LONG</data>
+      <data key="d5">1792427144</data>
+      <data key="d6" />
+    </node>
+    <node id="Subject Data">
+      <data key="d0">Subject Data</data>
+      <data key="d1">data</data>
+      <data key="d2">Output data produced by the longitudinal processing step, containing '&lt;tpNid&gt;.long.&lt;templateid&gt;' in the name to distinguish from the default stream.</data>
+      <data key="d3">LONG-chunk-001</data>
+      <data key="d4">LONG</data>
+      <data key="d5">1792427144</data>
+      <data key="d6" />
+    </node>
+    <node id="Default Stream">
+      <data key="d0">Default Stream</data>
+      <data key="d1">concept</data>
+      <data key="d2">The standard processing output that is distinguished from the longitudinal output by the naming convention.</data>
+      <data key="d3">LONG-chunk-001</data>
+      <data key="d4">LONG</data>
+      <data key="d5">1792427144</data>
+      <data key="d6" />
+    </node>
+    <node id="Difference Calculation">
+      <data key="d0">Difference Calculation</data>
+      <data key="d1">method</data>
+      <data key="d2">A step to compare results from step 3 by calculating differences between longitudinal outputs of different timepoints.</data>
+      <data key="d3">LONG-chunk-001</data>
+      <data key="d4">LONG</data>
+      <data key="d5">1792427144</data>
+      <data key="d6" />
+    </node>
+    <node id="Template Comparison">
+      <data key="d0">Template Comparison</data>
+      <data key="d1">method</data>
+      <data key="d2">A comparison that should not be done against the template, as it is a blurry guess used only for initialization.</data>
+      <data key="d3">LONG-chunk-001</data>
+      <data key="d4">LONG</data>
+      <data key="d5">1792427144</data>
+      <data key="d6" />
+    </node>
+    <node id="Initialization">
+      <data key="d0">Initialization</data>
+      <data key="d1">concept</data>
+      <data key="d2">The use of the template as a starting point for the longitudinal runs.</data>
+      <data key="d3">LONG-chunk-001</data>
+      <data key="d4">LONG</data>
+      <data key="d5">1792427144</data>
+      <data key="d6" />
+    </node>
+    <node id="Blurry Guess">
+      <data key="d0">Blurry Guess</data>
+      <data key="d1">concept</data>
+      <data key="d2">An imprecise or approximate estimation of the locations of things within a specific subject, used solely for initializing longitudinal runs.</data>
+      <data key="d3">LONG-chunk-002</data>
+      <data key="d4">LONG</data>
+      <data key="d5">1792427144</data>
+      <data key="d6" />
+    </node>
+    <node id="Longitudinal Runs">
+      <data key="d0">Longitudinal Runs</data>
+      <data key="d1">method</data>
+      <data key="d2">A procedure or workflow that involves running analyses or simulations over time, which requires an initial guess for initialization.</data>
+      <data key="d3">LONG-chunk-002</data>
+      <data key="d4">LONG</data>
+      <data key="d5">1792427144</data>
+      <data key="d6" />
+    </node>
+    <node id="Subject Template">
+      <data key="d0">Subject Template</data>
+      <data key="d1">artifact</data>
+      <data key="d2">A template image used in longitudinal processing from which certain results are directly copied, including the brain mask, linear Talairach map, and estimated total intracranial volume.</data>
+      <data key="d3">PED-chunk-000</data>
+      <data key="d4">PED</data>
+      <data key="d5">1792427149</data>
+      <data key="d6" />
+    </node>
+    <node id="Brain Mask">
+      <data key="d0">Brain Mask</data>
+      <data key="d1">artifact</data>
+      <data key="d2">A result that is directly copied from the subject-template in longitudinal processing, representing the brain region of interest.</data>
+      <data key="d3">PED-chunk-000</data>
+      <data key="d4">PED</data>
+      <data key="d5">1792427149</data>
+      <data key="d6" />
+    </node>
+    <node id="Linear Talairach Map">
+      <data key="d0">Linear Talairach Map</data>
+      <data key="d1">artifact</data>
+      <data key="d2">A result that is directly copied from the subject-template in longitudinal processing, providing a linear transformation to Talairach space.</data>
+      <data key="d3">PED-chunk-000</data>
+      <data key="d4">PED</data>
+      <data key="d5">1792427149</data>
+      <data key="d6" />
+    </node>
+    <node id="Estimated Total Intracranial Volume (eTIV)">
+      <data key="d0">Estimated Total Intracranial Volume (eTIV)</data>
+      <data key="d1">data</data>
+      <data key="d2">A measure of total intracranial volume that is directly copied from the subject-template and assumed to be fixed across time in longitudinal processing.</data>
+      <data key="d3">PED-chunk-000</data>
+      <data key="d4">PED</data>
+      <data key="d5">1792427149</data>
+      <data key="d6" />
+    </node>
+    <node id="Pediatric Data">
+      <data key="d0">Pediatric Data</data>
+      <data key="d1">data</data>
+      <data key="d2">Data from pediatric subjects that violates the fixed head size assumption in longitudinal processing due to substantial growth.</data>
+      <data key="d3">PED-chunk-000</data>
+      <data key="d4">PED</data>
+      <data key="d5">1792427149</data>
+      <data key="d6" />
+    </node>
+    <node id="Longitudinal Pipeline">
+      <data key="d0">Longitudinal Pipeline</data>
+      <data key="d1">method</data>
+      <data key="d2">A processing pipeline that may fail in the presence of substantial longitudinal growth, but is robust with respect to limited head size differences.</data>
+      <data key="d3">PED-chunk-000</data>
+      <data key="d4">PED</data>
+      <data key="d5">1792427149</data>
+      <data key="d6" />
+    </node>
+    <node id="Template/Base Image">
+      <data key="d0">Template/Base Image</data>
+      <data key="d1">artifact</data>
+      <data key="d2">An image used in longitudinal processing that should be checked for skull strip errors and meaningful surfaces, especially in pediatric data.</data>
+      <data key="d3">PED-chunk-000</data>
+      <data key="d4">PED</data>
+      <data key="d5">1792427149</data>
+      <data key="d6" />
+    </node>
+    <node id="Cross Sectional Directories">
+      <data key="d0">Cross Sectional Directories</data>
+      <data key="d1">location</data>
+      <data key="d2">Directories containing aseg.stats data from which eTIV measures for each time point can be read.</data>
+      <data key="d3">PED-chunk-000</data>
+      <data key="d4">PED</data>
+      <data key="d5">1792427149</data>
+      <data key="d6" />
+    </node>
+    <node id="Aseg.Stats">
+      <data key="d0">Aseg.Stats</data>
+      <data key="d1">data</data>
+      <data key="d2">Statistical data files in cross sectional directories that contain eTIV measures for each time point.</data>
+      <data key="d3">PED-chunk-000</data>
+      <data key="d4">PED</data>
+      <data key="d5">1792427149</data>
+      <data key="d6" />
+    </node>
+    <node id="Coefficient Of Joint Variation">
+      <data key="d0">Coefficient Of Joint Variation</data>
+      <data key="d1">concept</data>
+      <data key="d2">A metric proposed by Ganzetti2016 as an objective function for the optimization of INU correction algorithms, where higher values indicate heavy head motion and large INU artifacts, and lower values are better.</data>
+      <data key="d3">QC_BODY-chunk-000</data>
+      <data key="d4">QC_BODY</data>
+      <data key="d5">1792427153</data>
+      <data key="d6" />
+    </node>
+    <node id="Ganzetti2016">
+      <data key="d0">Ganzetti2016</data>
+      <data key="d1">content</data>
+      <data key="d2">A publication referenced as the source proposing the coefficient of joint variation for INU correction optimization.</data>
+      <data key="d3">QC_BODY-chunk-000</data>
+      <data key="d4">QC_BODY</data>
+      <data key="d5">1792427153</data>
+      <data key="d6" />
+    </node>
+    <node id="Contrast-To-Noise Ratio">
+      <data key="d0">Contrast-To-Noise Ratio</data>
+      <data key="d1">concept</data>
+      <data key="d2">An extension of the SNR calculation to evaluate how separated the tissue distributions of gray matter and white matter are, where higher values indicate better quality.</data>
+      <data key="d3">QC_BODY-chunk-000</data>
+      <data key="d4">QC_BODY</data>
+      <data key="d5">1792427153</data>
+      <data key="d6" />
+    </node>
+    <node id="Magnota2006">
+      <data key="d0">Magnota2006</data>
+      <data key="d1">content</data>
+      <data key="d2">A publication referenced as the source for the contrast-to-noise ratio metric.</data>
+      <data key="d3">QC_BODY-chunk-000</data>
+      <data key="d4">QC_BODY</data>
+      <data key="d5">1792427153</data>
+      <data key="d6" />
+    </node>
+    <node id="INU Correction Algorithm">
+      <data key="d0">INU Correction Algorithm</data>
+      <data key="d1">method</data>
+      <data key="d2">Algorithms for intensity non-uniformity correction, optimized using the coefficient of joint variation.</data>
+      <data key="d3">QC_BODY-chunk-000</data>
+      <data key="d4">QC_BODY</data>
+      <data key="d5">1792427153</data>
+      <data key="d6" />
+    </node>
+    <node id="SNR Calculation">
+      <data key="d0">SNR Calculation</data>
+      <data key="d1">method</data>
+      <data key="d2">Signal-to-noise ratio calculation, extended by the contrast-to-noise ratio to evaluate tissue distribution separation.</data>
+      <data key="d3">QC_BODY-chunk-000</data>
+      <data key="d4">QC_BODY</data>
+      <data key="d5">1792427153</data>
+      <data key="d6" />
+    </node>
+    <node id="Gray Matter">
+      <data key="d0">Gray Matter</data>
+      <data key="d1">concept</data>
+      <data key="d2">A tissue type in the brain whose distribution is evaluated by the contrast-to-noise ratio.</data>
+      <data key="d3">QC_BODY-chunk-000</data>
+      <data key="d4">QC_BODY</data>
+      <data key="d5">1792427153</data>
+      <data key="d6" />
+    </node>
+    <node id="White Matter">
+      <data key="d0">White Matter</data>
+      <data key="d1">concept</data>
+      <data key="d2">A tissue type in the brain whose distribution is evaluated by the contrast-to-noise ratio.</data>
+      <data key="d3">QC_BODY-chunk-000</data>
+      <data key="d4">QC_BODY</data>
+      <data key="d5">1792427153</data>
+      <data key="d6" />
+    </node>
+    <node id="GM Images">
+      <data key="d0">GM Images</data>
+      <data key="d1">data</data>
+      <data key="d2">Grey matter images that are non-linearly registered to a study-specific template and concatenated into 4D images as part of the FSL-VBM processing.</data>
+      <data key="d3">VBM_FINAL-chunk-000</data>
+      <data key="d4">VBM_FINAL</data>
+      <data key="d5">1792428582</data>
+      <data key="d6" />
+    </node>
+    <node id="GM_merg">
+      <data key="d0">GM_merg</data>
+      <data key="d1">data</data>
+      <data key="d2">A 4D image in the stats directory formed by concatenating all non-linearly registered grey matter images.</data>
+      <data key="d3">VBM_FINAL-chunk-000</data>
+      <data key="d4">VBM_FINAL</data>
+      <data key="d5">1792428582</data>
+      <data key="d6" />
+    </node>
+    <node id="GM_mod_merg">
+      <data key="d0">GM_mod_merg</data>
+      <data key="d1">data</data>
+      <data key="d2">A 4D image in the stats directory formed by concatenating all modulated registered grey matter images.</data>
+      <data key="d3">VBM_FINAL-chunk-000</data>
+      <data key="d4">VBM_FINAL</data>
+      <data key="d5">1792428582</data>
+      <data key="d6" />
+    </node>
+    <node id="GM_mod_merg_s3">
+      <data key="d0">GM_mod_merg_s3</data>
+      <data key="d1">data</data>
+      <data key="d2">A smoothed version of the modulated merged grey matter image, smoothed with a Gaussian kernel of sigma 3 mm.</data>
+      <data key="d3">VBM_FINAL-chunk-000</data>
+      <data key="d4">VBM_FINAL</data>
+      <data key="d5">1792428582</data>
+      <data key="d6" />
+    </node>
+    <node id="Jacobian of the Warp Field">
+      <data key="d0">Jacobian of the Warp Field</data>
+      <data key="d1">concept</data>
+      <data key="d2">A measure of local contraction or enlargement from the non-linear transformation, used to modulate grey matter images to compensate for volume changes.</data>
+      <data key="d3">VBM_FINAL-chunk-000</data>
+      <data key="d4">VBM_FINAL</data>
+      <data key="d5">1792428582</data>
+      <data key="d6" />
+    </node>
+    <node id="Gaussian Kernels">
+      <data key="d0">Gaussian Kernels</data>
+      <data key="d1">method</data>
+      <data key="d2">Smoothing kernels with sigma values of 2, 3, and 4 mm, corresponding to FWHM values from approximately 4.6 mm to 9 mm, applied to the modulated merged grey matter image.</data>
+      <data key="d3">VBM_FINAL-chunk-000</data>
+      <data key="d4">VBM_FINAL</data>
+      <data key="d5">1792428582</data>
+      <data key="d6" />
+    </node>
+    <node id="Permutation-Based Non-Parametric Inference">
+      <data key="d0">Permutation-Based Non-Parametric Inference</data>
+      <data key="d1">method</data>
+      <data key="d2">A statistical inference approach that uses permutations to test hypotheses without relying on parametric assumptions, applied to the smoothed data using design.mat.&lt;SEP&gt;A statistical inference method that uses permutations to generate p-value maps without relying on parametric assumptions.</data>
+      <data key="d3">VBM_FINAL-chunk-000&lt;SEP&gt;VBM_FINAL-chunk-001</data>
+      <data key="d4">VBM_FINAL</data>
+      <data key="d5">1792428582</data>
+      <data key="d6" />
+    </node>
+    <node id="design.mat">
+      <data key="d0">design.mat</data>
+      <data key="d1">data</data>
+      <data key="d2">A design matrix file used for the permutation-based non-parametric inference in the FSL-VBM analysis.</data>
+      <data key="d3">VBM_FINAL-chunk-000</data>
+      <data key="d4">VBM_FINAL</data>
+      <data key="d5">1792428582</data>
+      <data key="d6" />
+    </node>
+    <node id="Good et al., 2001">
+      <data key="d0">Good et al., 2001</data>
+      <data key="d1">content</data>
+      <data key="d2">A publication referenced for the modulation method that multiplies each voxel of registered grey matter images by the Jacobian of the warp field.</data>
+      <data key="d3">VBM_FINAL-chunk-000</data>
+      <data key="d4">VBM_FINAL</data>
+      <data key="d5">1792428582</data>
+      <data key="d6" />
+    </node>
+    <node id="Design.mat">
+      <data key="d0">Design.mat</data>
+      <data key="d1">data</data>
+      <data key="d2">A design matrix file supplied by the user, used as input for the inference procedure.</data>
+      <data key="d3">VBM_FINAL-chunk-001</data>
+      <data key="d4">VBM_FINAL</data>
+      <data key="d5">1792428582</data>
+      <data key="d6" />
+    </node>
+    <node id="Design.con">
+      <data key="d0">Design.con</data>
+      <data key="d1">data</data>
+      <data key="d2">A contrast matrix file supplied by the user, used as input for the inference procedure.</data>
+      <data key="d3">VBM_FINAL-chunk-001</data>
+      <data key="d4">VBM_FINAL</data>
+      <data key="d5">1792428582</data>
+      <data key="d6" />
+    </node>
+    <node id="GM Mask">
+      <data key="d0">GM Mask</data>
+      <data key="d1">data</data>
+      <data key="d2">A mask of gray matter used to restrict the analysis to relevant brain regions.</data>
+      <data key="d3">VBM_FINAL-chunk-001</data>
+      <data key="d4">VBM_FINAL</data>
+      <data key="d5">1792428582</data>
+      <data key="d6" />
+    </node>
+    <node id="GM Mod Merg S3">
+      <data key="d0">GM Mod Merg S3</data>
+      <data key="d1">data</data>
+      <data key="d2">A 4D multi-subject concatenated processed data file, e.g., GM_mod_merg_s3, used as input for the inference.</data>
+      <data key="d3">VBM_FINAL-chunk-001</data>
+      <data key="d4">VBM_FINAL</data>
+      <data key="d5">1792428582</data>
+      <data key="d6" />
+    </node>
+    <node id="Tstat Maps">
+      <data key="d0">Tstat Maps</data>
+      <data key="d1">data</data>
+      <data key="d2">Raw t-statistic maps generated by randomise with inference turned off, used to decide on smoothing and thresholding.</data>
+      <data key="d3">VBM_FINAL-chunk-001</data>
+      <data key="d4">VBM_FINAL</data>
+      <data key="d5">1792428582</data>
+      <data key="d6" />
+    </node>
+    <node id="Cluster-Based Thresholding">
+      <data key="d0">Cluster-Based Thresholding</data>
+      <data key="d1">method</data>
+      <data key="d2">A thresholding technique using clusters, activated via the -c option in randomise.</data>
+      <data key="d3">VBM_FINAL-chunk-001</data>
+      <data key="d4">VBM_FINAL</data>
+      <data key="d5">1792428582</data>
+      <data key="d6" />
+    </node>
+    <node id="TFCE">
+      <data key="d0">TFCE</data>
+      <data key="d1">method</data>
+      <data key="d2">Threshold-Free Cluster Enhancement, a recommended alternative to cluster-based thresholding, activated via the -T option.</data>
+      <data key="d3">VBM_FINAL-chunk-001</data>
+      <data key="d4">VBM_FINAL</data>
+      <data key="d5">1792428582</data>
+      <data key="d6" />
+    </node>
+    <node id="Fslvbm_3_Proc">
+      <data key="d0">Fslvbm_3_Proc</data>
+      <data key="d1">artifact</data>
+      <data key="d2">A script that concatenates images in alphabetical order by default, which may affect subject ordering.</data>
+      <data key="d3">VBM_FINAL-chunk-001</data>
+      <data key="d4">VBM_FINAL</data>
+      <data key="d5">1792428582</data>
+      <data key="d6" />
+    </node>
+    <node id="Voxelwise Grey Matter Analysis">
+      <data key="d0">Voxelwise Grey Matter Analysis</data>
+      <data key="d1">method</data>
+      <data key="d2">A voxel-based analysis method used to examine grey matter distribution, with inherent interpretation limitations.</data>
+      <data key="d3">VBM_LIMITS-chunk-000</data>
+      <data key="d4">VBM_LIMITS</data>
+      <data key="d5">1792428586</data>
+      <data key="d6" />
+    </node>
+    <node id="Grey Matter">
+      <data key="d0">Grey Matter</data>
+      <data key="d1">concept</data>
+      <data key="d2">The brain tissue whose distribution is analyzed in voxelwise analysis, subject to interpretation limitations.</data>
+      <data key="d3">VBM_LIMITS-chunk-000</data>
+      <data key="d4">VBM_LIMITS</data>
+      <data key="d5">1792428586</data>
+      <data key="d6" />
+    </node>
+    <node id="Grey Matter Atrophy">
+      <data key="d0">Grey Matter Atrophy</data>
+      <data key="d1">concept</data>
+      <data key="d2">A possible cause of reduced grey matter, which may be difficult to distinguish from other factors in analysis.</data>
+      <data key="d3">VBM_LIMITS-chunk-000</data>
+      <data key="d4">VBM_LIMITS</data>
+      <data key="d5">1792428586</data>
+      <data key="d6" />
+    </node>
+    <node id="Gyrification Pattern">
+      <data key="d0">Gyrification Pattern</data>
+      <data key="d1">concept</data>
+      <data key="d2">The folding pattern of the brain's gyri and sulci, which can influence grey matter distribution results.</data>
+      <data key="d3">VBM_LIMITS-chunk-000</data>
+      <data key="d4">VBM_LIMITS</data>
+      <data key="d5">1792428586</data>
+      <data key="d6" />
+    </node>
+    <node id="Free-Form Deformation">
+      <data key="d0">Free-Form Deformation</data>
+      <data key="d1">method</data>
+      <data key="d2">A non-rigid registration technique used in the analysis, with 20 mm initial control point spacing.</data>
+      <data key="d3">VBM_LIMITS-chunk-000</data>
+      <data key="d4">VBM_LIMITS</data>
+      <data key="d5">1792428586</data>
+      <data key="d6" />
+    </node>
+    <node id="Non-Rigid Registration">
+      <data key="d0">Non-Rigid Registration</data>
+      <data key="d1">method</data>
+      <data key="d2">A registration approach whose degrees of freedom theoretically affect the continuum of analysis results.</data>
+      <data key="d3">VBM_LIMITS-chunk-000</data>
+      <data key="d4">VBM_LIMITS</data>
+      <data key="d5">1792428586</data>
+      <data key="d6" />
+    </node>
+    <node id="Smoothing">
+      <data key="d0">Smoothing</data>
+      <data key="d1">method</data>
+      <data key="d2">A processing step whose amount influences the continuum of results in the analysis.</data>
+      <data key="d3">VBM_LIMITS-chunk-000</data>
+      <data key="d4">VBM_LIMITS</data>
+      <data key="d5">1792428586</data>
+      <data key="d6" />
+    </node>
+    <node id="One-sample t-test">
+      <data key="d0">One-sample t-test</data>
+      <data key="d1">method</data>
+      <data key="d2">A statistical test used to determine whether the mean of a single group differs from zero, applied here to COPEs from FEAT FMRI analysis.</data>
+      <data key="d3">STAT_ONEGROUP-chunk-000</data>
+      <data key="d4">STAT_ONEGROUP</data>
+      <data key="d5">1792428619</data>
+      <data key="d6" />
+    </node>
+    <node id="FEAT FMRI analysis">
+      <data key="d0">FEAT FMRI analysis</data>
+      <data key="d1">method</data>
+      <data key="d2">A FMRI analysis pipeline in FSL that produces COPE (contrast of parameter estimates) images for statistical testing.</data>
+      <data key="d3">STAT_ONEGROUP-chunk-000</data>
+      <data key="d4">STAT_ONEGROUP</data>
+      <data key="d5">1792428619</data>
+      <data key="d6" />
+    </node>
+    <node id="COPE">
+      <data key="d0">COPE</data>
+      <data key="d1">data</data>
+      <data key="d2">Contrast of parameter estimates images created by FEAT FMRI analysis, used as input for the one-sample t-test.</data>
+      <data key="d3">STAT_ONEGROUP-chunk-000</data>
+      <data key="d4">STAT_ONEGROUP</data>
+      <data key="d5">1792428619</data>
+      <data key="d6" />
+    </node>
+    <node id="4D image">
+      <data key="d0">4D image</data>
+      <data key="d1">data</data>
+      <data key="d2">A four-dimensional image file combining all subject images, used as input to randomise for the one-sample t-test.</data>
+      <data key="d3">STAT_ONEGROUP-chunk-000</data>
+      <data key="d4">STAT_ONEGROUP</data>
+      <data key="d5">1792428619</data>
+      <data key="d6" />
+    </node>
+    <node id="Variance smoothing">
+      <data key="d0">Variance smoothing</data>
+      <data key="d1">method</data>
+      <data key="d2">A technique applied in randomise to increase statistical power when the number of subjects is small, using a sigma of 5mm.</data>
+      <data key="d3">STAT_ONEGROUP-chunk-000</data>
+      <data key="d4">STAT_ONEGROUP</data>
+      <data key="d5">1792428619</data>
+      <data key="d6" />
+    </node>
+    <node id="FSL">
+      <data key="d0">FSL</data>
+      <data key="d1">organization</data>
+      <data key="d2">FMRIB Software Library, a software package providing tools for brain imaging analysis, including randomise and FEAT.</data>
+      <data key="d3">STAT_ONEGROUP-chunk-000</data>
+      <data key="d4">STAT_ONEGROUP</data>
+      <data key="d5">1792428619</data>
+      <data key="d6" />
+    </node>
+    <node id="OneSamp4D">
+      <data key="d0">OneSamp4D</data>
+      <data key="d1">artifact</data>
+      <data key="d2">A command-line tool used for processing 4D data, likely part of FSL, invoked with options for variance smoothing.</data>
+      <data key="d3">STAT_ONEGROUP-chunk-001</data>
+      <data key="d4">STAT_ONEGROUP</data>
+      <data key="d5">1792428619</data>
+      <data key="d6" />
+    </node>
+    <node id="OneSampT">
+      <data key="d0">OneSampT</data>
+      <data key="d1">artifact</data>
+      <data key="d2">An output file or dataset generated by OneSamp4D, representing the result of the processing.</data>
+      <data key="d3">STAT_ONEGROUP-chunk-001</data>
+      <data key="d4">STAT_ONEGROUP</data>
+      <data key="d5">1792428619</data>
+      <data key="d6" />
+    </node>
+    <node id="Variance Smoothing">
+      <data key="d0">Variance Smoothing</data>
+      <data key="d1">method</data>
+      <data key="d2">A technique applied with a sigma of 5mm to smooth variance in the data.</data>
+      <data key="d3">STAT_ONEGROUP-chunk-001</data>
+      <data key="d4">STAT_ONEGROUP</data>
+      <data key="d5">1792428619</data>
+      <data key="d6" />
+    </node>
+    <node id="Two-Sample Paired T-test">
+      <data key="d0">Two-Sample Paired T-test</data>
+      <data key="d1">method</data>
+      <data key="d2">A statistical method for comparing two related groups, used here to analyze paired group differences in neuroimaging data.</data>
+      <data key="d3">STAT_PAIRED-chunk-000</data>
+      <data key="d4">STAT_PAIRED</data>
+      <data key="d5">1792428629</data>
+      <data key="d6" />
+    </node>
+    <node id="GLM Guide">
+      <data key="d0">GLM Guide</data>
+      <data key="d1">content</data>
+      <data key="d2">A guide that provides setup instructions for general linear model analyses, referenced as the basis for the paired design example.</data>
+      <data key="d3">STAT_PAIRED-chunk-000</data>
+      <data key="d4">STAT_PAIRED</data>
+      <data key="d5">1792428629</data>
+      <data key="d6" />
+    </node>
+    <node id="Group Of 8 Subjects">
+      <data key="d0">Group Of 8 Subjects</data>
+      <data key="d1">other</data>
+      <data key="d2">A group of eight subjects scanned under two different conditions, A and B, in the paired design example.</data>
+      <data key="d3">STAT_PAIRED-chunk-000</data>
+      <data key="d4">STAT_PAIRED</data>
+      <data key="d5">1792428629</data>
+      <data key="d6" />
+    </node>
+    <node id="Condition A">
+      <data key="d0">Condition A</data>
+      <data key="d1">concept</data>
+      <data key="d2">The first condition in the paired design, entered as the first 8 inputs in the analysis.&lt;SEP&gt;One of the two conditions being compared in the paired analysis; data from condition A can be exchanged with condition B within the same subject.</data>
+      <data key="d3">STAT_PAIRED-chunk-000&lt;SEP&gt;STAT_PAIRED-chunk-002</data>
+      <data key="d4">STAT_PAIRED</data>
+      <data key="d5">1792428629</data>
+      <data key="d6" />
+    </node>
+    <node id="Condition B">
+      <data key="d0">Condition B</data>
+      <data key="d1">concept</data>
+      <data key="d2">The second condition in the paired design, entered as the second 8 inputs in the analysis.&lt;SEP&gt;The other condition being compared in the paired analysis; data from condition B can be exchanged with condition A within the same subject.</data>
+      <data key="d3">STAT_PAIRED-chunk-000&lt;SEP&gt;STAT_PAIRED-chunk-002</data>
+      <data key="d4">STAT_PAIRED</data>
+      <data key="d5">1792428629</data>
+      <data key="d6" />
+    </node>
+    <node id="Design Matrix">
+      <data key="d0">Design Matrix</data>
+      <data key="d1">data</data>
+      <data key="d2">A matrix (design.mat) representing the experimental design, with columns for the mean and condition differences, used in the paired t-test.&lt;SEP&gt;A matrix with 9 columns where the first column models group difference and columns 2 to 9 model individual subject means.</data>
+      <data key="d3">STAT_PAIRED-chunk-000&lt;SEP&gt;STAT_PAIRED-chunk-001</data>
+      <data key="d4">STAT_PAIRED</data>
+      <data key="d5">1792428629</data>
+      <data key="d6" />
+    </node>
+    <node id="Group Difference">
+      <data key="d0">Group Difference</data>
+      <data key="d1">concept</data>
+      <data key="d2">The difference between groups A and B, modelled by the first column of the design matrix.</data>
+      <data key="d3">STAT_PAIRED-chunk-001</data>
+      <data key="d4">STAT_PAIRED</data>
+      <data key="d5">1792428629</data>
+      <data key="d6" />
+    </node>
+    <node id="Subject Means">
+      <data key="d0">Subject Means</data>
+      <data key="d1">concept</data>
+      <data key="d2">Individual subject means modelled by columns 2 to 9 of the design matrix.</data>
+      <data key="d3">STAT_PAIRED-chunk-001</data>
+      <data key="d4">STAT_PAIRED</data>
+      <data key="d5">1792428629</data>
+      <data key="d6" />
+    </node>
+    <node id="T-Contrast">
+      <data key="d0">T-Contrast</data>
+      <data key="d1">concept</data>
+      <data key="d2">A contrast vector used to test group differences, with examples for A-B and B-A.&lt;SEP&gt;A contrast vector in design.con that specifies the group difference A-B as 1 0 0 0 0 0 0 0 0, and B-A by replacing 1 with -1.</data>
+      <data key="d3">STAT_PAIRED-chunk-001&lt;SEP&gt;STAT_PAIRED-chunk-002</data>
+      <data key="d4">STAT_PAIRED</data>
+      <data key="d5">1792428629</data>
+      <data key="d6" />
+    </node>
+    <node id="A-B Contrast">
+      <data key="d0">A-B Contrast</data>
+      <data key="d1">data</data>
+      <data key="d2">The t-contrast vector for the group difference A-B, given as 1 0 0 0 0 0 0 0 0.</data>
+      <data key="d3">STAT_PAIRED-chunk-001</data>
+      <data key="d4">STAT_PAIRED</data>
+      <data key="d5">1792428629</data>
+      <data key="d6" />
+    </node>
+    <node id="B-A Contrast">
+      <data key="d0">B-A Contrast</data>
+      <data key="d1">data</data>
+      <data key="d2">The t-contrast vector for the group difference B-A, mentioned as the reverse of the A-B contrast.</data>
+      <data key="d3">STAT_PAIRED-chunk-001</data>
+      <data key="d4">STAT_PAIRED</data>
+      <data key="d5">1792428629</data>
+      <data key="d6" />
+    </node>
+    <node id="Design">
+      <data key="d0">Design</data>
+      <data key="d1">artifact</data>
+      <data key="d2">A set of design files (design.mat, design.con, design.grp) used in the FSL randomise analysis to model the group difference between conditions A and B.&lt;SEP&gt;A design matrix file used in statistical analysis, specified by the -t option.</data>
+      <data key="d3">STAT_PAIRED-chunk-002&lt;SEP&gt;STAT_PAIRED-chunk-003</data>
+      <data key="d4">STAT_PAIRED</data>
+      <data key="d5">1792428629</data>
+      <data key="d6" />
+    </node>
+    <node id="Exchangeability-Block Information">
+      <data key="d0">Exchangeability-Block Information</data>
+      <data key="d1">data</data>
+      <data key="d2">A file (design.grp) that specifies which data can be exchanged, containing eight blocks with values 1 2 3 4 5 6 7 8 1 2 3 4 5 6 7 8, indicating that only conditions A and B within the same subject can be exchanged.</data>
+      <data key="d3">STAT_PAIRED-chunk-002</data>
+      <data key="d4">STAT_PAIRED</data>
+      <data key="d5">1792428629</data>
+      <data key="d6" />
+    </node>
+    <node id="GLM Gui">
+      <data key="d0">GLM Gui</data>
+      <data key="d1">artifact</data>
+      <data key="d2">A graphical user interface in FSL where the exchangeability-block information can be entered via the 'Group' column.</data>
+      <data key="d3">STAT_PAIRED-chunk-002</data>
+      <data key="d4">STAT_PAIRED</data>
+      <data key="d5">1792428629</data>
+      <data key="d6" />
+    </node>
+    <node id="Group Column">
+      <data key="d0">Group Column</data>
+      <data key="d1">concept</data>
+      <data key="d2">A column in the GLM Gui used to enter exchangeability-block information.</data>
+      <data key="d3">STAT_PAIRED-chunk-002</data>
+      <data key="d4">STAT_PAIRED</data>
+      <data key="d5">1792428629</data>
+      <data key="d6" />
+    </node>
+    <node id="Null Hypothesis">
+      <data key="d0">Null Hypothesis</data>
+      <data key="d1">concept</data>
+      <data key="d2">The hypothesis that there is no difference between conditions A and B, which justifies exchanging data within subjects.</data>
+      <data key="d3">STAT_PAIRED-chunk-002</data>
+      <data key="d4">STAT_PAIRED</data>
+      <data key="d5">1792428629</data>
+      <data key="d6" />
+    </node>
+    <node id="PairedT4D">
+      <data key="d0">PairedT4D</data>
+      <data key="d1">data</data>
+      <data key="d2">The input 4D image file for the randomise command, containing the paired data.</data>
+      <data key="d3">STAT_PAIRED-chunk-002</data>
+      <data key="d4">STAT_PAIRED</data>
+      <data key="d5">1792428629</data>
+      <data key="d6" />
+    </node>
+    <node id="PairedT">
+      <data key="d0">PairedT</data>
+      <data key="d1">data</data>
+      <data key="d2">The output file name for the randomise command, storing the results of the paired analysis.</data>
+      <data key="d3">STAT_PAIRED-chunk-002</data>
+      <data key="d4">STAT_PAIRED</data>
+      <data key="d5">1792428629</data>
+      <data key="d6" />
+    </node>
+    <node id="Mask">
+      <data key="d0">Mask</data>
+      <data key="d1">data</data>
+      <data key="d2">A mask file used in the randomise command to restrict the analysis to specific voxels.&lt;SEP&gt;A mask file used in statistical analysis, specified by the -m option.</data>
+      <data key="d3">STAT_PAIRED-chunk-002&lt;SEP&gt;STAT_PAIRED-chunk-003</data>
+      <data key="d4">STAT_PAIRED</data>
+      <data key="d5">1792428629</data>
+      <data key="d6" />
+    </node>
+    <node id="Fslmaths">
+      <data key="d0">Fslmaths</data>
+      <data key="d1">method</data>
+      <data key="d2">A tool in FSL that can be used to calculate within-subject difference values as an alternative approach to paired analysis.</data>
+      <data key="d3">STAT_PAIRED-chunk-002</data>
+      <data key="d4">STAT_PAIRED</data>
+      <data key="d5">1792428629</data>
+      <data key="d6" />
+    </node>
+    <node id="Paired Analysis">
+      <data key="d0">Paired Analysis</data>
+      <data key="d1">method</data>
+      <data key="d2">A statistical analysis method for paired data, performed either via randomise with design files or by calculating within-subject differences using fslmaths.&lt;SEP&gt;A statistical method for comparing paired data, often used in neuroimaging.</data>
+      <data key="d3">STAT_PAIRED-chunk-002&lt;SEP&gt;STAT_PAIRED-chunk-003</data>
+      <data key="d4">STAT_PAIRED</data>
+      <data key="d5">1792428629</data>
+      <data key="d6" />
+    </node>
+    <node id="Contrast">
+      <data key="d0">Contrast</data>
+      <data key="d1">artifact</data>
+      <data key="d2">A contrast matrix file used in statistical analysis, specified by the -c option.</data>
+      <data key="d3">STAT_PAIRED-chunk-003</data>
+      <data key="d4">STAT_PAIRED</data>
+      <data key="d5">1792428629</data>
+      <data key="d6" />
+    </node>
+    <node id="Group">
+      <data key="d0">Group</data>
+      <data key="d1">artifact</data>
+      <data key="d2">A group file used in statistical analysis, specified by the -e option.</data>
+      <data key="d3">STAT_PAIRED-chunk-003</data>
+      <data key="d4">STAT_PAIRED</data>
+      <data key="d5">1792428629</data>
+      <data key="d6" />
+    </node>
+    <node id="Within-Subject Differences">
+      <data key="d0">Within-Subject Differences</data>
+      <data key="d1">data</data>
+      <data key="d2">Difference values calculated within each subject, used for paired analysis.</data>
+      <data key="d3">STAT_PAIRED-chunk-003</data>
+      <data key="d4">STAT_PAIRED</data>
+      <data key="d5">1792428629</data>
+      <data key="d6" />
+    </node>
+    <node id="FSLMaths">
+      <data key="d0">FSLMaths</data>
+      <data key="d1">artifact</data>
+      <data key="d2">A tool in FSL for mathematical operations on images, used to calculate within-subject differences.</data>
+      <data key="d3">STAT_PAIRED-chunk-003</data>
+      <data key="d4">STAT_PAIRED</data>
+      <data key="d5">1792428629</data>
+      <data key="d6" />
+    </node>
+    <node id="One-Group T-Test">
+      <data key="d0">One-Group T-Test</data>
+      <data key="d1">method</data>
+      <data key="d2">A statistical test comparing the mean of a single group to a known value, applied to within-subject differences.</data>
+      <data key="d3">STAT_PAIRED-chunk-003</data>
+      <data key="d4">STAT_PAIRED</data>
+      <data key="d5">1792428629</data>
+      <data key="d6" />
+    </node>
+    <node id="Longitudinal Stream">
+      <data key="d0">Longitudinal Stream</data>
+      <data key="d1">method</data>
+      <data key="d2">A processing pipeline in FreeSurfer that processes multiple time-point images of the same subject in a consistent manner, including the creation of a base template and subsequent processing steps.</data>
+      <data key="d3">FS_SINGLE-chunk-000</data>
+      <data key="d4">FS_SINGLE</data>
+      <data key="d5">1792428638</data>
+      <data key="d6" />
+    </node>
+    <node id="Linear Mixed Effects Models (LME)">
+      <data key="d0">Linear Mixed Effects Models (LME)</data>
+      <data key="d1">method</data>
+      <data key="d2">Statistical models used to analyze longitudinal neuroimaging data, capable of including subjects with only a single time point.</data>
+      <data key="d3">FS_SINGLE-chunk-000</data>
+      <data key="d4">FS_SINGLE</data>
+      <data key="d5">1792428638</data>
+      <data key="d6" />
+    </node>
+    <node id="Single Time-Point Subjects">
+      <data key="d0">Single Time-Point Subjects</data>
+      <data key="d1">concept</data>
+      <data key="d2">Individuals who were scanned only at a single time point in a longitudinal study, often due to dropouts, but whose data can still be included in analyses.</data>
+      <data key="d3">FS_SINGLE-chunk-000</data>
+      <data key="d4">FS_SINGLE</data>
+      <data key="d5">1792428638</data>
+      <data key="d6" />
+    </node>
+    <node id="Base Creation Step">
+      <data key="d0">Base Creation Step</data>
+      <data key="d1">method</data>
+      <data key="d2">A step in the FreeSurfer longitudinal stream where a base template is created, which can be done with a single time point to process such data through the stream.</data>
+      <data key="d3">FS_SINGLE-chunk-000</data>
+      <data key="d4">FS_SINGLE</data>
+      <data key="d5">1792428638</data>
+      <data key="d6" />
+    </node>
+    <node id="Statistical Analysis of Longitudinal Neuroimage Data with Linear Mixed Effects Models">
+      <data key="d0">Statistical Analysis of Longitudinal Neuroimage Data with Linear Mixed Effects Models</data>
+      <data key="d1">content</data>
+      <data key="d2">A scientific article by J.L. Bernal-Rusiel, D.N. Greve, M. Reuter et al., published in NeuroImage 66:249-260, 2012, discussing the use of linear mixed effects models for longitudinal neuroimaging data.</data>
+      <data key="d3">FS_SINGLE-chunk-000</data>
+      <data key="d4">FS_SINGLE</data>
+      <data key="d5">1792428638</data>
+      <data key="d6" />
+    </node>
+    <node id="J.L. Bernal-Rusiel">
+      <data key="d0">J.L. Bernal-Rusiel</data>
+      <data key="d1">person</data>
+      <data key="d2">An author of the article on statistical analysis of longitudinal neuroimage data with linear mixed effects models.</data>
+      <data key="d3">FS_SINGLE-chunk-000</data>
+      <data key="d4">FS_SINGLE</data>
+      <data key="d5">1792428638</data>
+      <data key="d6" />
+    </node>
+    <node id="D.N. Greve">
+      <data key="d0">D.N. Greve</data>
+      <data key="d1">person</data>
+      <data key="d2">An author of the article on statistical analysis of longitudinal neuroimage data with linear mixed effects models.</data>
+      <data key="d3">FS_SINGLE-chunk-000</data>
+      <data key="d4">FS_SINGLE</data>
+      <data key="d5">1792428638</data>
+      <data key="d6" />
+    </node>
+    <node id="M. Reuter">
+      <data key="d0">M. Reuter</data>
+      <data key="d1">person</data>
+      <data key="d2">An author of the article on statistical analysis of longitudinal neuroimage data with linear mixed effects models.</data>
+      <data key="d3">FS_SINGLE-chunk-000</data>
+      <data key="d4">FS_SINGLE</data>
+      <data key="d5">1792428638</data>
+      <data key="d6" />
+    </node>
+    <node id="NeuroImage">
+      <data key="d0">NeuroImage</data>
+      <data key="d1">content</data>
+      <data key="d2">A scientific journal in which the article on linear mixed effects models for longitudinal neuroimaging data was published.</data>
+      <data key="d3">FS_SINGLE-chunk-000</data>
+      <data key="d4">FS_SINGLE</data>
+      <data key="d5">1792428638</data>
+      <data key="d6" />
+    </node>
+    <node id="SUB_ID">
+      <data key="d0">SUB_ID</data>
+      <data key="d1">other</data>
+      <data key="d2">A subject identifier passed as the first command-line argument to the wrapper script.&lt;SEP&gt;A variable representing a subject identifier used in the file path.</data>
+      <data key="d3">WRAPPER_LICENSE-chunk-000&lt;SEP&gt;M1_INPUT_CODE-chunk-001</data>
+      <data key="d4">WRAPPER_LICENSE&lt;SEP&gt;M1_INPUT_CODE</data>
+      <data key="d5">1792428682</data>
+      <data key="d6" />
+    </node>
+    <node id="T1_PATH">
+      <data key="d0">T1_PATH</data>
+      <data key="d1">data</data>
+      <data key="d2">Path to the T1 input image, passed as the second command-line argument.</data>
+      <data key="d3">WRAPPER_LICENSE-chunk-000</data>
+      <data key="d4">WRAPPER_LICENSE</data>
+      <data key="d5">1792428649</data>
+      <data key="d6" />
+    </node>
+    <node id="T2_PATH">
+      <data key="d0">T2_PATH</data>
+      <data key="d1">data</data>
+      <data key="d2">Path to the T2 input image, passed as the third command-line argument.</data>
+      <data key="d3">WRAPPER_LICENSE-chunk-000</data>
+      <data key="d4">WRAPPER_LICENSE</data>
+      <data key="d5">1792428649</data>
+      <data key="d6" />
+    </node>
+    <node id="OUTPUT_DIR">
+      <data key="d0">OUTPUT_DIR</data>
+      <data key="d1">data</data>
+      <data key="d2">Path to the output directory, passed as the fourth command-line argument.</data>
+      <data key="d3">WRAPPER_LICENSE-chunk-000</data>
+      <data key="d4">WRAPPER_LICENSE</data>
+      <data key="d5">1792428649</data>
+      <data key="d6" />
+    </node>
+    <node id="FS_LICENSE">
+      <data key="d0">FS_LICENSE</data>
+      <data key="d1">data</data>
+      <data key="d2">Optional FreeSurfer license file path, passed as the fifth command-line argument or taken from the environment variable FS_LICENSE.&lt;SEP&gt;A FreeSurfer license file. The script checks that the variable is non-empty and that the file exists, exiting with an error otherwise.</data>
+      <data key="d3">WRAPPER_LICENSE-chunk-000&lt;SEP&gt;WRAPPER_LICENSE-chunk-001</data>
+      <data key="d4">WRAPPER_LICENSE</data>
+      <data key="d5">1792428649</data>
+      <data key="d6" />
+    </node>
+    <node id="README.md">
+      <data key="d0">README.md</data>
+      <data key="d1">content</data>
+      <data key="d2">Documentation file referenced by the wrapper script, instructing users on how to build the preemacs.sif image.</data>
+      <data key="d3">WRAPPER_LICENSE-chunk-000</data>
+      <data key="d4">WRAPPER_LICENSE</data>
+      <data key="d5">1792428649</data>
+      <data key="d6" />
+    </node>
+    <node id="SIF">
+      <data key="d0">SIF</data>
+      <data key="d1">artifact</data>
+      <data key="d2">A Singularity Image File that is expected to exist before the script proceeds. The script checks for its presence and exits with an error if it is not found.</data>
+      <data key="d3">WRAPPER_LICENSE-chunk-001</data>
+      <data key="d4">WRAPPER_LICENSE</data>
+      <data key="d5">1792428649</data>
+      <data key="d6" />
+    </node>
+    <node id="T1_INPUT">
+      <data key="d0">T1_INPUT</data>
+      <data key="d1">data</data>
+      <data key="d2">A file path variable representing the T1-weighted input image. The script verifies that the file exists and exits with an error if it does not.</data>
+      <data key="d3">WRAPPER_LICENSE-chunk-001</data>
+      <data key="d4">WRAPPER_LICENSE</data>
+      <data key="d5">1792428649</data>
+      <data key="d6" />
+    </node>
+    <node id="T2_INPUT">
+      <data key="d0">T2_INPUT</data>
+      <data key="d1">data</data>
+      <data key="d2">A file path variable representing the T2-weighted input image. The script verifies that the file exists and exits with an error if it does not.</data>
+      <data key="d3">WRAPPER_LICENSE-chunk-001</data>
+      <data key="d4">WRAPPER_LICENSE</data>
+      <data key="d5">1792428649</data>
+      <data key="d6" />
+    </node>
+    <node id="resolve_modality_binds">
+      <data key="d0">resolve_modality_binds</data>
+      <data key="d1">method</data>
+      <data key="d2">A shell function in the PREEMACS run_full_pipeline.sh script that converts a file or directory into a list of --bind flags for container execution, always creating individual per-file binds rather than binding the whole host directory.</data>
+      <data key="d3">WRAPPER_BINDS-chunk-000</data>
+      <data key="d4">WRAPPER_BINDS</data>
+      <data key="d5">1792428673</data>
+      <data key="d6" />
+    </node>
+    <node id="BIDS anat folder">
+      <data key="d0">BIDS anat folder</data>
+      <data key="d1">location</data>
+      <data key="d2">A directory structure following the BIDS standard that can contain both T1w and T2w files mixed together, which resolve_modality_binds handles correctly.</data>
+      <data key="d3">WRAPPER_BINDS-chunk-000</data>
+      <data key="d4">WRAPPER_BINDS</data>
+      <data key="d5">1792428673</data>
+      <data key="d6" />
+    </node>
+    <node id="--bind flags">
+      <data key="d0">--bind flags</data>
+      <data key="d1">concept</data>
+      <data key="d2">Container execution flags that build a directory inside the container, generated by resolve_modality_binds as individual per-file binds.</data>
+      <data key="d3">WRAPPER_BINDS-chunk-000</data>
+      <data key="d4">WRAPPER_BINDS</data>
+      <data key="d5">1792428673</data>
+      <data key="d6" />
+    </node>
+    <node id="Input">
+      <data key="d0">Input</data>
+      <data key="d1">other</data>
+      <data key="d2">A file or directory path provided as the first argument to the script, used to locate .nii.gz files.</data>
+      <data key="d3">WRAPPER_BINDS-chunk-001</data>
+      <data key="d4">WRAPPER_BINDS</data>
+      <data key="d5">1792428673</data>
+      <data key="d6" />
+    </node>
+    <node id="Tag">
+      <data key="d0">Tag</data>
+      <data key="d1">other</data>
+      <data key="d2">A string used to match BIDS-suffix filenames within the input directory.&lt;SEP&gt;A label used to identify a group of .nii.gz files within the input directory. The script reports an error if no files are found for the tag.</data>
+      <data key="d3">WRAPPER_BINDS-chunk-001&lt;SEP&gt;WRAPPER_BINDS-chunk-002</data>
+      <data key="d4">WRAPPER_BINDS</data>
+      <data key="d5">1792428673</data>
+      <data key="d6" />
+    </node>
+    <node id="Destination">
+      <data key="d0">Destination</data>
+      <data key="d1">other</data>
+      <data key="d2">A path provided as the third argument, presumably the target location for output.</data>
+      <data key="d3">WRAPPER_BINDS-chunk-001</data>
+      <data key="d4">WRAPPER_BINDS</data>
+      <data key="d5">1792428673</data>
+      <data key="d6" />
+    </node>
+    <node id="Recursive">
+      <data key="d0">Recursive</data>
+      <data key="d1">other</data>
+      <data key="d2">A flag indicating whether to search subdirectories recursively for .nii.gz files.</data>
+      <data key="d3">WRAPPER_BINDS-chunk-001</data>
+      <data key="d4">WRAPPER_BINDS</data>
+      <data key="d5">1792428673</data>
+      <data key="d6" />
+    </node>
+    <node id="Files">
+      <data key="d0">Files</data>
+      <data key="d1">data</data>
+      <data key="d2">An array variable that accumulates the list of .nii.gz file paths found by the script.</data>
+      <data key="d3">WRAPPER_BINDS-chunk-001</data>
+      <data key="d4">WRAPPER_BINDS</data>
+      <data key="d5">1792428673</data>
+      <data key="d6" />
+    </node>
+    <node id="Find">
+      <data key="d0">Find</data>
+      <data key="d1">method</data>
+      <data key="d2">A command-line utility used to search for files matching the tag and .nii.gz extension.</data>
+      <data key="d3">WRAPPER_BINDS-chunk-001</data>
+      <data key="d4">WRAPPER_BINDS</data>
+      <data key="d5">1792428673</data>
+      <data key="d6" />
+    </node>
+    <node id="Sort">
+      <data key="d0">Sort</data>
+      <data key="d1">method</data>
+      <data key="d2">A command-line utility used to sort the list of found files.</data>
+      <data key="d3">WRAPPER_BINDS-chunk-001</data>
+      <data key="d4">WRAPPER_BINDS</data>
+      <data key="d5">1792428673</data>
+      <data key="d6" />
+    </node>
+    <node id="NIfTI">
+      <data key="d0">NIfTI</data>
+      <data key="d1">concept</data>
+      <data key="d2">Neuroimaging Informatics Technology Initiative, a file format for medical imaging data.</data>
+      <data key="d3">WRAPPER_BINDS-chunk-001</data>
+      <data key="d4">WRAPPER_BINDS</data>
+      <data key="d5">1792428673</data>
+      <data key="d6" />
+    </node>
+    <node id="Input Directory">
+      <data key="d0">Input Directory</data>
+      <data key="d1">location</data>
+      <data key="d2">A directory path provided as input to a shell script, expected to contain .nii.gz files. The script checks for its existence and errors if it is not a file or directory.</data>
+      <data key="d3">WRAPPER_BINDS-chunk-002</data>
+      <data key="d4">WRAPPER_BINDS</data>
+      <data key="d5">1792428673</data>
+      <data key="d6" />
+    </node>
+    <node id="Nifti Files">
+      <data key="d0">Nifti Files</data>
+      <data key="d1">data</data>
+      <data key="d2">Files with the .nii.gz extension, representing neuroimaging data in NIfTI format, that are searched for within the input directory.</data>
+      <data key="d3">WRAPPER_BINDS-chunk-002</data>
+      <data key="d4">WRAPPER_BINDS</data>
+      <data key="d5">1792428673</data>
+      <data key="d6" />
+    </node>
+    <node id="Recursive Search Flag">
+      <data key="d0">Recursive Search Flag</data>
+      <data key="d1">concept</data>
+      <data key="d2">A flag indicating whether the search for .nii.gz files should be performed recursively through subdirectories. When set, the error message notes that a recursive search was performed.</data>
+      <data key="d3">WRAPPER_BINDS-chunk-002</data>
+      <data key="d4">WRAPPER_BINDS</data>
+      <data key="d5">1792428673</data>
+      <data key="d6" />
+    </node>
+    <node id="Bind Mount Arguments">
+      <data key="d0">Bind Mount Arguments</data>
+      <data key="d1">artifact</data>
+      <data key="d2">A list of --bind arguments generated by the script, each mapping a source file to a destination path within a container, used for mounting files.</data>
+      <data key="d3">WRAPPER_BINDS-chunk-002</data>
+      <data key="d4">WRAPPER_BINDS</data>
+      <data key="d5">1792428673</data>
+      <data key="d6" />
+    </node>
+    <node id="Destination Directory">
+      <data key="d0">Destination Directory</data>
+      <data key="d1">location</data>
+      <data key="d2">The target directory path within a container where the .nii.gz files are bound, referenced as $dest in the script.</data>
+      <data key="d3">WRAPPER_BINDS-chunk-002</data>
+      <data key="d4">WRAPPER_BINDS</data>
+      <data key="d5">1792428673</data>
+      <data key="d6" />
+    </node>
+    <node id="File Name">
+      <data key="d0">File Name</data>
+      <data key="d1">concept</data>
+      <data key="d2">The base name of a file, used to generate unique names for bind mounts. If a name is already seen, a numeric prefix is added to ensure uniqueness.</data>
+      <data key="d3">WRAPPER_BINDS-chunk-002</data>
+      <data key="d4">WRAPPER_BINDS</data>
+      <data key="d5">1792428673</data>
+      <data key="d6" />
+    </node>
+    <node id="Seen Names List">
+      <data key="d0">Seen Names List</data>
+      <data key="d1">data</data>
+      <data key="d2">An array that tracks file names already used in bind mount arguments to prevent duplicate names.</data>
+      <data key="d3">WRAPPER_BINDS-chunk-002</data>
+      <data key="d4">WRAPPER_BINDS</data>
+      <data key="d5">1792428673</data>
+      <data key="d6" />
+    </node>
+    <node id="Manual Crop">
+      <data key="d0">Manual Crop</data>
+      <data key="d1">concept</data>
+      <data key="d2">A condition variable in the PREEMACS script that, when set to 1, indicates manual cropping is enabled.</data>
+      <data key="d3">M1_INPUT_CODE-chunk-000</data>
+      <data key="d4">M1_INPUT_CODE</data>
+      <data key="d5">1792428682</data>
+      <data key="d6" />
+    </node>
+    <node id="Coords">
+      <data key="d0">Coords</data>
+      <data key="d1">concept</data>
+      <data key="d2">A condition variable in the PREEMACS script that, when set to 1, indicates coordinate information is available.</data>
+      <data key="d3">M1_INPUT_CODE-chunk-000</data>
+      <data key="d4">M1_INPUT_CODE</data>
+      <data key="d5">1792428682</data>
+      <data key="d6" />
+    </node>
+    <node id="T1 Image Path">
+      <data key="d0">T1 Image Path</data>
+      <data key="d1">data</data>
+      <data key="d2">A variable in the PREEMACS script that stores the file path to the T1-weighted image directory.</data>
+      <data key="d3">M1_INPUT_CODE-chunk-000</data>
+      <data key="d4">M1_INPUT_CODE</data>
+      <data key="d5">1792428682</data>
+      <data key="d6" />
+    </node>
+    <node id="T2 Image Path">
+      <data key="d0">T2 Image Path</data>
+      <data key="d1">data</data>
+      <data key="d2">A variable in the PREEMACS script that stores the file path to the T2-weighted image directory.</data>
+      <data key="d3">M1_INPUT_CODE-chunk-000</data>
+      <data key="d4">M1_INPUT_CODE</data>
+      <data key="d5">1792428682</data>
+      <data key="d6" />
+    </node>
+    <node id="PREEMACS Directory">
+      <data key="d0">PREEMACS Directory</data>
+      <data key="d1">data</data>
+      <data key="d2">A variable in the PREEMACS script that stores the base directory path for the PREEMACS installation.</data>
+      <data key="d3">M1_INPUT_CODE-chunk-000</data>
+      <data key="d4">M1_INPUT_CODE</data>
+      <data key="d5">1792428682</data>
+      <data key="d6" />
+    </node>
+    <node id="Subject ID">
+      <data key="d0">Subject ID</data>
+      <data key="d1">data</data>
+      <data key="d2">A variable in the PREEMACS script that stores the identifier for the current subject being processed.</data>
+      <data key="d3">M1_INPUT_CODE-chunk-000</data>
+      <data key="d4">M1_INPUT_CODE</data>
+      <data key="d5">1792428682</data>
+      <data key="d6" />
+    </node>
+    <node id="Num Ima">
+      <data key="d0">Num Ima</data>
+      <data key="d1">data</data>
+      <data key="d2">A counter variable in the PREEMACS script that tracks the number of images copied, starting at 1 and incrementing with each file.</data>
+      <data key="d3">M1_INPUT_CODE-chunk-000</data>
+      <data key="d4">M1_INPUT_CODE</data>
+      <data key="d5">1792428682</data>
+      <data key="d6" />
+    </node>
+    <node id="T1 Image File">
+      <data key="d0">T1 Image File</data>
+      <data key="d1">artifact</data>
+      <data key="d2">A file with a .nii.gz extension in the T1 image directory that is copied to the orig folder.</data>
+      <data key="d3">M1_INPUT_CODE-chunk-000</data>
+      <data key="d4">M1_INPUT_CODE</data>
+      <data key="d5">1792428682</data>
+      <data key="d6" />
+    </node>
+    <node id="T2 Image File">
+      <data key="d0">T2 Image File</data>
+      <data key="d1">artifact</data>
+      <data key="d2">A file with a .nii.gz extension in the T2 image directory that is copied to the orig folder.</data>
+      <data key="d3">M1_INPUT_CODE-chunk-000</data>
+      <data key="d4">M1_INPUT_CODE</data>
+      <data key="d5">1792428682</data>
+      <data key="d6" />
+    </node>
+    <node id="Orig Folder">
+      <data key="d0">Orig Folder</data>
+      <data key="d1">location</data>
+      <data key="d2">A directory within the subject's PREEMACS folder where raw T1 and T2 images are stored.</data>
+      <data key="d3">M1_INPUT_CODE-chunk-000</data>
+      <data key="d4">M1_INPUT_CODE</data>
+      <data key="d5">1792428682</data>
+      <data key="d6" />
+    </node>
+    <node id="ACS_DIR">
+      <data key="d0">ACS_DIR</data>
+      <data key="d1">other</data>
+      <data key="d2">A directory path variable used in a shell script to store the base directory for ACS-related data.</data>
+      <data key="d3">M1_INPUT_CODE-chunk-001</data>
+      <data key="d4">M1_INPUT_CODE</data>
+      <data key="d5">1792428682</data>
+      <data key="d6" />
+    </node>
+    <node id="num_ima">
+      <data key="d0">num_ima</data>
+      <data key="d1">other</data>
+      <data key="d2">A counter variable used to track the image number in a loop.</data>
+      <data key="d3">M1_INPUT_CODE-chunk-001</data>
+      <data key="d4">M1_INPUT_CODE</data>
+      <data key="d5">1792428682</data>
+      <data key="d6" />
+    </node>
+    <node id="raw_${num_ima}_T2.nii.gz">
+      <data key="d0">raw_${num_ima}_T2.nii.gz</data>
+      <data key="d1">data</data>
+      <data key="d2">A file name pattern for raw T2-weighted NIfTI image files, where the number is substituted by the counter variable.</data>
+      <data key="d3">M1_INPUT_CODE-chunk-001</data>
+      <data key="d4">M1_INPUT_CODE</data>
+      <data key="d5">1792428682</data>
+      <data key="d6" />
+    </node>
+    <edge source="FSL-VBM" target="Study-Specific Template">
+      <data key="d7">1.0</data>
+      <data key="d8">The study-specific template is used in FSL-VBM analysis.</data>
+      <data key="d9">analysis,used in</data>
+      <data key="d10">VBM_TEMPLATE-chunk-000</data>
+      <data key="d11">VBM_TEMPLATE</data>
+      <data key="d12">1792427114</data>
+      <data key="d13" />
+    </edge>
+    <edge source="FSL-VBM" target="GM Images">
+      <data key="d7">1.0</data>
+      <data key="d8">FSL-VBM processes grey matter images by non-linearly registering them to a study-specific template.</data>
+      <data key="d9">processing,registration</data>
+      <data key="d10">VBM_FINAL-chunk-000</data>
+      <data key="d11">VBM_FINAL</data>
+      <data key="d12">1792428582</data>
+      <data key="d13" />
+    </edge>
+    <edge source="FSL-VBM" target="Good et al., 2001">
+      <data key="d7">1.0</data>
+      <data key="d8">FSL-VBM references Good et al., 2001 for the modulation method using the Jacobian of the warp field.</data>
+      <data key="d9">modulation method,reference</data>
+      <data key="d10">VBM_FINAL-chunk-000</data>
+      <data key="d11">VBM_FINAL</data>
+      <data key="d12">1792428582</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Template List" target="FSL-VBM Directory">
+      <data key="d7">1.0</data>
+      <data key="d8">The template_list file is placed in the FSL-VBM directory.</data>
+      <data key="d9">placement,storage</data>
+      <data key="d10">VBM_TEMPLATE-chunk-000</data>
+      <data key="d11">VBM_TEMPLATE</data>
+      <data key="d12">1792427114</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Template List" target="T1 Images">
+      <data key="d7">1.0</data>
+      <data key="d8">The template_list file contains the names of selected T1 images.</data>
+      <data key="d9">contains,selection</data>
+      <data key="d10">VBM_TEMPLATE-chunk-000</data>
+      <data key="d11">VBM_TEMPLATE</data>
+      <data key="d12">1792427114</data>
+      <data key="d13" />
+    </edge>
+    <edge source="T1 Images" target="Study-Specific Template">
+      <data key="d7">1.0</data>
+      <data key="d8">Selected T1 images are used to create the study-specific template.</data>
+      <data key="d9">construction,creation</data>
+      <data key="d10">VBM_TEMPLATE-chunk-000</data>
+      <data key="d11">VBM_TEMPLATE</data>
+      <data key="d12">1792427114</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Study-Specific Template" target="GM Images">
+      <data key="d7">1.0</data>
+      <data key="d8">Grey matter images are non-linearly registered to the study-specific template.</data>
+      <data key="d9">alignment,registration</data>
+      <data key="d10">VBM_FINAL-chunk-000</data>
+      <data key="d11">VBM_FINAL</data>
+      <data key="d12">1792428582</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Recon-All" target="Qcache">
+      <data key="d7">1.0</data>
+      <data key="d8">Recon-All can be run with the -qcache option to resample and smooth data.</data>
+      <data key="d9">option,processing</data>
+      <data key="d10">SBM_CACHE-chunk-000</data>
+      <data key="d11">SBM_CACHE</data>
+      <data key="d12">1792427114</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Recon-All" target="Longitudinal Processing">
+      <data key="d7">1.0</data>
+      <data key="d8">Longitudinal processing relies on the recon-all workflow for cross-sectional and template processing steps.</data>
+      <data key="d9">uses,workflow</data>
+      <data key="d10">LONG-chunk-000</data>
+      <data key="d11">LONG</data>
+      <data key="d12">1792427144</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Recon-All" target="Unbiased Template">
+      <data key="d7">1.0</data>
+      <data key="d8">The unbiased template is created and processed using the recon-all workflow with the -base flag.</data>
+      <data key="d9">created by,processing</data>
+      <data key="d10">LONG-chunk-000</data>
+      <data key="d11">LONG</data>
+      <data key="d12">1792427144</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Fsaverage" target="Qcache">
+      <data key="d7">1.0</data>
+      <data key="d8">The qcache option resamples data onto the average subject called fsaverage.</data>
+      <data key="d9">resampling,target</data>
+      <data key="d10">SBM_CACHE-chunk-000</data>
+      <data key="d11">SBM_CACHE</data>
+      <data key="d12">1792427114</data>
+      <data key="d13" />
+    </edge>
+    <edge source="FWHM" target="Qcache">
+      <data key="d7">1.0</data>
+      <data key="d8">The qcache option smooths data at various FWHM values, typically 0, 5, 10, 15, 20, and 25mm.</data>
+      <data key="d9">smoothing,values</data>
+      <data key="d10">SBM_CACHE-chunk-000</data>
+      <data key="d11">SBM_CACHE</data>
+      <data key="d12">1792427114</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Qcache" target="Tutorial Data">
+      <data key="d7">1.0</data>
+      <data key="d8">The tutorial data was processed with the -qcache option, so the FWHM values are already cached.</data>
+      <data key="d9">cached,processed</data>
+      <data key="d10">SBM_CACHE-chunk-000</data>
+      <data key="d11">SBM_CACHE</data>
+      <data key="d12">1792427114</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Run Full Pipeline Script" target="M3">
+      <data key="d7">1.0</data>
+      <data key="d8">The script includes the M3 processing step, which dominates the total runtime of the pipeline.</data>
+      <data key="d9">pipeline,processing step,runtime</data>
+      <data key="d10">NHP_WRAPPER-chunk-000</data>
+      <data key="d11">NHP_WRAPPER</data>
+      <data key="d12">1792427120</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Run Full Pipeline Script" target="BIDS">
+      <data key="d7">1.0</data>
+      <data key="d8">The script accepts a BIDS folder as input, auto-separating T1 and T2 files by filename.</data>
+      <data key="d9">compatibility,data organization,input</data>
+      <data key="d10">NHP_WRAPPER-chunk-000</data>
+      <data key="d11">NHP_WRAPPER</data>
+      <data key="d12">1792427120</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Run Full Pipeline Script" target="FreeSurfer License">
+      <data key="d7">1.0</data>
+      <data key="d8">The script optionally takes a FreeSurfer license file as an argument for processing.</data>
+      <data key="d9">dependency,optional argument</data>
+      <data key="d10">NHP_WRAPPER-chunk-000</data>
+      <data key="d11">NHP_WRAPPER</data>
+      <data key="d12">1792427120</data>
+      <data key="d13" />
+    </edge>
+    <edge source="M3" target="run_full_pipeline.sh">
+      <data key="d7">1.0</data>
+      <data key="d8">The script run_full_pipeline.sh provides usage notes and examples that may relate to the dominant entity M3.</data>
+      <data key="d9">documentation,usage</data>
+      <data key="d10">NHP_WRAPPER-chunk-001</data>
+      <data key="d11">NHP_WRAPPER</data>
+      <data key="d12">1792427120</data>
+      <data key="d13" />
+    </edge>
+    <edge source="BIDS" target="Tag">
+      <data key="d7">1.0</data>
+      <data key="d8">The Tag is used to match BIDS-suffix filenames within the input directory.</data>
+      <data key="d9">matching,naming convention</data>
+      <data key="d10">WRAPPER_BINDS-chunk-001</data>
+      <data key="d11">WRAPPER_BINDS</data>
+      <data key="d12">1792428673</data>
+      <data key="d13" />
+    </edge>
+    <edge source="run_full_pipeline.sh" target="PREEMACS">
+      <data key="d7">1.0</data>
+      <data key="d8">run_full_pipeline.sh is the wrapper script that executes the PREEMACS pipeline.</data>
+      <data key="d9">execution,pipeline,wrapper</data>
+      <data key="d10">WRAPPER_LICENSE-chunk-000</data>
+      <data key="d11">WRAPPER_LICENSE</data>
+      <data key="d12">1792428649</data>
+      <data key="d13" />
+    </edge>
+    <edge source="run_full_pipeline.sh" target="preemacs.sif">
+      <data key="d7">1.0</data>
+      <data key="d8">The wrapper script checks for the existence of preemacs.sif and errors if it is missing.</data>
+      <data key="d9">check,dependency,required file</data>
+      <data key="d10">WRAPPER_LICENSE-chunk-000</data>
+      <data key="d11">WRAPPER_LICENSE</data>
+      <data key="d12">1792428649</data>
+      <data key="d13" />
+    </edge>
+    <edge source="run_full_pipeline.sh" target="SUB_ID">
+      <data key="d7">1.0</data>
+      <data key="d8">The wrapper script accepts SUB_ID as the first command-line argument.</data>
+      <data key="d9">argument,input,subject identifier</data>
+      <data key="d10">WRAPPER_LICENSE-chunk-000</data>
+      <data key="d11">WRAPPER_LICENSE</data>
+      <data key="d12">1792428649</data>
+      <data key="d13" />
+    </edge>
+    <edge source="run_full_pipeline.sh" target="T1_PATH">
+      <data key="d7">1.0</data>
+      <data key="d8">The wrapper script accepts T1_PATH as the second command-line argument.</data>
+      <data key="d9">T1 image,argument,input</data>
+      <data key="d10">WRAPPER_LICENSE-chunk-000</data>
+      <data key="d11">WRAPPER_LICENSE</data>
+      <data key="d12">1792428649</data>
+      <data key="d13" />
+    </edge>
+    <edge source="run_full_pipeline.sh" target="T2_PATH">
+      <data key="d7">1.0</data>
+      <data key="d8">The wrapper script accepts T2_PATH as the third command-line argument.</data>
+      <data key="d9">T2 image,argument,input</data>
+      <data key="d10">WRAPPER_LICENSE-chunk-000</data>
+      <data key="d11">WRAPPER_LICENSE</data>
+      <data key="d12">1792428649</data>
+      <data key="d13" />
+    </edge>
+    <edge source="run_full_pipeline.sh" target="OUTPUT_DIR">
+      <data key="d7">1.0</data>
+      <data key="d8">The wrapper script accepts OUTPUT_DIR as the fourth command-line argument.</data>
+      <data key="d9">argument,output directory</data>
+      <data key="d10">WRAPPER_LICENSE-chunk-000</data>
+      <data key="d11">WRAPPER_LICENSE</data>
+      <data key="d12">1792428649</data>
+      <data key="d13" />
+    </edge>
+    <edge source="run_full_pipeline.sh" target="FS_LICENSE">
+      <data key="d7">1.0</data>
+      <data key="d8">The wrapper script accepts FS_LICENSE as an optional fifth command-line argument or from the environment.</data>
+      <data key="d9">argument,license,optional</data>
+      <data key="d10">WRAPPER_LICENSE-chunk-000</data>
+      <data key="d11">WRAPPER_LICENSE</data>
+      <data key="d12">1792428649</data>
+      <data key="d13" />
+    </edge>
+    <edge source="run_full_pipeline.sh" target="README.md">
+      <data key="d7">1.0</data>
+      <data key="d8">The wrapper script references README.md for instructions on building preemacs.sif.</data>
+      <data key="d9">build instructions,documentation,reference</data>
+      <data key="d10">WRAPPER_LICENSE-chunk-000</data>
+      <data key="d11">WRAPPER_LICENSE</data>
+      <data key="d12">1792428649</data>
+      <data key="d13" />
+    </edge>
+    <edge source="run_full_pipeline.sh" target="resolve_modality_binds">
+      <data key="d7">1.0</data>
+      <data key="d8">resolve_modality_binds is a function implemented within the run_full_pipeline.sh script of the PREEMACS project.</data>
+      <data key="d9">contained in,implementation</data>
+      <data key="d10">WRAPPER_BINDS-chunk-000</data>
+      <data key="d11">WRAPPER_BINDS</data>
+      <data key="d12">1792428673</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Randomise" target="Exchangeability Blocks">
+      <data key="d7">1.0</data>
+      <data key="d8">Randomise allows the definition of exchangeability blocks for permutation tests.</data>
+      <data key="d9">allows definition,permutation</data>
+      <data key="d10">STAT_BLOCK-chunk-000</data>
+      <data key="d11">STAT_BLOCK</data>
+      <data key="d12">1792427122</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Randomise" target="Repeated Measures">
+      <data key="d7">1.0</data>
+      <data key="d8">Randomise accommodates repeated measures by allowing the definition of exchangeability blocks.</data>
+      <data key="d9">accommodates,exchangeability blocks</data>
+      <data key="d10">STAT_BLOCK-chunk-000</data>
+      <data key="d11">STAT_BLOCK</data>
+      <data key="d12">1792427122</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Randomise" target="Tstat Maps">
+      <data key="d7">1.0</data>
+      <data key="d8">Randomise generates raw tstat maps when inference is turned off.</data>
+      <data key="d9">generates</data>
+      <data key="d10">VBM_FINAL-chunk-001</data>
+      <data key="d11">VBM_FINAL</data>
+      <data key="d12">1792428582</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Randomise" target="Permutation-Based Non-Parametric Inference">
+      <data key="d7">1.0</data>
+      <data key="d8">Randomise runs permutation-based non-parametric inference to generate statistical maps.</data>
+      <data key="d9">implements,runs</data>
+      <data key="d10">VBM_FINAL-chunk-001</data>
+      <data key="d11">VBM_FINAL</data>
+      <data key="d12">1792428582</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Randomise" target="Design.mat">
+      <data key="d7">1.0</data>
+      <data key="d8">Design.mat is supplied as input to the randomise procedure.</data>
+      <data key="d9">input,supplied</data>
+      <data key="d10">VBM_FINAL-chunk-001</data>
+      <data key="d11">VBM_FINAL</data>
+      <data key="d12">1792428582</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Randomise" target="Design.con">
+      <data key="d7">1.0</data>
+      <data key="d8">Design.con is supplied as input to the randomise procedure.</data>
+      <data key="d9">input,supplied</data>
+      <data key="d10">VBM_FINAL-chunk-001</data>
+      <data key="d11">VBM_FINAL</data>
+      <data key="d12">1792428582</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Randomise" target="GM Mask">
+      <data key="d7">1.0</data>
+      <data key="d8">GM Mask is used as a mask input for the randomise procedure.</data>
+      <data key="d9">input,mask</data>
+      <data key="d10">VBM_FINAL-chunk-001</data>
+      <data key="d11">VBM_FINAL</data>
+      <data key="d12">1792428582</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Randomise" target="GM Mod Merg S3">
+      <data key="d7">1.0</data>
+      <data key="d8">GM Mod Merg S3 is the 4D multi-subject concatenated processed data used as input.</data>
+      <data key="d9">data,input</data>
+      <data key="d10">VBM_FINAL-chunk-001</data>
+      <data key="d11">VBM_FINAL</data>
+      <data key="d12">1792428582</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Randomise" target="One-sample t-test">
+      <data key="d7">1.0</data>
+      <data key="d8">Randomise performs the nonparametric one-sample t-test on input images.</data>
+      <data key="d9">implements,performs</data>
+      <data key="d10">STAT_ONEGROUP-chunk-000</data>
+      <data key="d11">STAT_ONEGROUP</data>
+      <data key="d12">1792428619</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Randomise" target="4D image">
+      <data key="d7">1.0</data>
+      <data key="d8">Randomise uses a 4D image of all subject images as input for the one-sample t-test.</data>
+      <data key="d9">input,uses</data>
+      <data key="d10">STAT_ONEGROUP-chunk-000</data>
+      <data key="d11">STAT_ONEGROUP</data>
+      <data key="d12">1792428619</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Randomise" target="Variance smoothing">
+      <data key="d7">1.0</data>
+      <data key="d8">Randomise can apply variance smoothing with a sigma of 5mm to increase power for small sample sizes.</data>
+      <data key="d9">applies,uses</data>
+      <data key="d10">STAT_ONEGROUP-chunk-000</data>
+      <data key="d11">STAT_ONEGROUP</data>
+      <data key="d12">1792428619</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Randomise" target="FSL">
+      <data key="d7">1.0</data>
+      <data key="d8">Randomise is a tool within the FSL software library.</data>
+      <data key="d9">part of</data>
+      <data key="d10">STAT_ONEGROUP-chunk-000</data>
+      <data key="d11">STAT_ONEGROUP</data>
+      <data key="d12">1792428619</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Randomise" target="OneSamp4D">
+      <data key="d7">1.0</data>
+      <data key="d8">Randomise is noted as an alternative tool that automatically selects one-sample mode for appropriate design/contrast combinations, similar to OneSamp4D's functionality.</data>
+      <data key="d9">alternative,related</data>
+      <data key="d10">STAT_ONEGROUP-chunk-001</data>
+      <data key="d11">STAT_ONEGROUP</data>
+      <data key="d12">1792428619</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Randomise" target="PairedT4D">
+      <data key="d7">1.0</data>
+      <data key="d8">Randomise takes PairedT4D as the input 4D image file.</data>
+      <data key="d9">data,input</data>
+      <data key="d10">STAT_PAIRED-chunk-002</data>
+      <data key="d11">STAT_PAIRED</data>
+      <data key="d12">1792428629</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Randomise" target="PairedT">
+      <data key="d7">1.0</data>
+      <data key="d8">Randomise produces PairedT as the output file for the paired analysis.</data>
+      <data key="d9">output,result</data>
+      <data key="d10">STAT_PAIRED-chunk-002</data>
+      <data key="d11">STAT_PAIRED</data>
+      <data key="d12">1792428629</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Randomise" target="Mask">
+      <data key="d7">1.0</data>
+      <data key="d8">Randomise uses the Mask file to restrict the analysis to specific voxels.</data>
+      <data key="d9">mask,uses</data>
+      <data key="d10">STAT_PAIRED-chunk-002</data>
+      <data key="d11">STAT_PAIRED</data>
+      <data key="d12">1792428629</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Randomise" target="Paired Analysis">
+      <data key="d7">1.0</data>
+      <data key="d8">Randomise is a method used to perform Paired Analysis with design files.</data>
+      <data key="d9">implementation,method</data>
+      <data key="d10">STAT_PAIRED-chunk-002</data>
+      <data key="d11">STAT_PAIRED</data>
+      <data key="d12">1792428629</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Randomise" target="Design">
+      <data key="d7">1.0</data>
+      <data key="d8">Randomise uses the design files (design.mat, design.con, design.grp) to perform the paired analysis.</data>
+      <data key="d9">design files,uses</data>
+      <data key="d10">STAT_PAIRED-chunk-002</data>
+      <data key="d11">STAT_PAIRED</data>
+      <data key="d12">1792428629</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Permutation Tests" target="Null-Hypothesis Exchangeability">
+      <data key="d7">1.0</data>
+      <data key="d8">Permutation tests do not easily accommodate correlated datasets because such dependence violates null-hypothesis exchangeability.</data>
+      <data key="d9">dependence,violates</data>
+      <data key="d10">STAT_BLOCK-chunk-000</data>
+      <data key="d11">STAT_BLOCK</data>
+      <data key="d12">1792427122</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Permutation Tests" target="Repeated Measures">
+      <data key="d7">1.0</data>
+      <data key="d8">Repeated measures, or more than one measurement per subject in a multisubject analysis, can sometimes be accommodated by permutation tests.</data>
+      <data key="d9">accommodated,multisubject analysis</data>
+      <data key="d10">STAT_BLOCK-chunk-000</data>
+      <data key="d11">STAT_BLOCK</data>
+      <data key="d12">1792427122</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Exchangeability Blocks" target="Group Labels">
+      <data key="d7">1.0</data>
+      <data key="d8">Exchangeability blocks are specified by the group_labels option.</data>
+      <data key="d9">group_labels option,specified by</data>
+      <data key="d10">STAT_BLOCK-chunk-000</data>
+      <data key="d11">STAT_BLOCK</data>
+      <data key="d12">1792427122</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Repeated Measures" target="Guide">
+      <data key="d7">1.0</data>
+      <data key="d8">The Guide contains a repeated measures example for more detail.</data>
+      <data key="d9">contains example,more detail</data>
+      <data key="d10">STAT_BLOCK-chunk-000</data>
+      <data key="d11">STAT_BLOCK</data>
+      <data key="d12">1792427122</data>
+      <data key="d13" />
+    </edge>
+    <edge source="M1" target="PREEMACS">
+      <data key="d7">1.0</data>
+      <data key="d8">M1 is a module within the PREEMACS software.</data>
+      <data key="d9">module,part of,software</data>
+      <data key="d10">NHP_M1-chunk-000</data>
+      <data key="d11">NHP_M1</data>
+      <data key="d12">1792427127</data>
+      <data key="d13" />
+    </edge>
+    <edge source="M1" target="t1_path">
+      <data key="d7">1.0</data>
+      <data key="d8">M1 uses the t1_path parameter to specify the directory of T1-weighted runs.</data>
+      <data key="d9">input directory,parameter</data>
+      <data key="d10">NHP_M1-chunk-000</data>
+      <data key="d11">NHP_M1</data>
+      <data key="d12">1792427127</data>
+      <data key="d13" />
+    </edge>
+    <edge source="M1" target="t2_path">
+      <data key="d7">1.0</data>
+      <data key="d8">M1 uses the t2_path parameter to specify the directory of T2-weighted runs.</data>
+      <data key="d9">input directory,parameter</data>
+      <data key="d10">NHP_M1-chunk-000</data>
+      <data key="d11">NHP_M1</data>
+      <data key="d12">1792427127</data>
+      <data key="d13" />
+    </edge>
+    <edge source="M1" target="out_path">
+      <data key="d7">1.0</data>
+      <data key="d8">M1 uses the out_path parameter to specify the output directory.</data>
+      <data key="d9">output directory,parameter</data>
+      <data key="d10">NHP_M1-chunk-000</data>
+      <data key="d11">NHP_M1</data>
+      <data key="d12">1792427127</data>
+      <data key="d13" />
+    </edge>
+    <edge source="M1" target="SUB01">
+      <data key="d7">1.0</data>
+      <data key="d8">M1 is run with the subject identifier SUB01.</data>
+      <data key="d9">parameter,subject identifier</data>
+      <data key="d10">NHP_M1-chunk-000</data>
+      <data key="d11">NHP_M1</data>
+      <data key="d12">1792427127</data>
+      <data key="d13" />
+    </edge>
+    <edge source="M1" target="GenerateN4">
+      <data key="d7">1.0</data>
+      <data key="d8">GenerateN4 runs on the conformed T1 image produced by M1, using it as input.</data>
+      <data key="d9">dependency,input,processing</data>
+      <data key="d10">NHP_N4-chunk-000</data>
+      <data key="d11">NHP_N4</data>
+      <data key="d12">1792427132</data>
+      <data key="d13" />
+    </edge>
+    <edge source="M1" target="resolve_modality_binds">
+      <data key="d7">1.0</data>
+      <data key="d8">resolve_modality_binds processes the -t1_path and -t2_path inputs of M1, which must be directories containing *.nii.gz files.</data>
+      <data key="d9">handles,input paths</data>
+      <data key="d10">WRAPPER_BINDS-chunk-000</data>
+      <data key="d11">WRAPPER_BINDS</data>
+      <data key="d12">1792428673</data>
+      <data key="d13" />
+    </edge>
+    <edge source="PREEMACS" target="Apptainer">
+      <data key="d7">1.0</data>
+      <data key="d8">PREEMACS is executed using the Apptainer container runtime.</data>
+      <data key="d9">container runtime,run with</data>
+      <data key="d10">NHP_M1-chunk-000</data>
+      <data key="d11">NHP_M1</data>
+      <data key="d12">1792427127</data>
+      <data key="d13" />
+    </edge>
+    <edge source="PREEMACS" target="preemacs.sif">
+      <data key="d7">1.0</data>
+      <data key="d8">PREEMACS is packaged in the preemacs.sif image file.</data>
+      <data key="d9">image file,packaged in</data>
+      <data key="d10">NHP_M1-chunk-000</data>
+      <data key="d11">NHP_M1</data>
+      <data key="d12">1792427127</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Apptainer" target="GenerateN4">
+      <data key="d7">1.0</data>
+      <data key="d8">GenerateN4 is executed via the Apptainer runtime.</data>
+      <data key="d9">container,execution,runtime</data>
+      <data key="d10">NHP_N4-chunk-000</data>
+      <data key="d11">NHP_N4</data>
+      <data key="d12">1792427132</data>
+      <data key="d13" />
+    </edge>
+    <edge source="SUB01" target="GenerateN4">
+      <data key="d7">1.0</data>
+      <data key="d8">GenerateN4 processes data for the subject identified as SUB01.</data>
+      <data key="d9">data,processing,subject</data>
+      <data key="d10">NHP_N4-chunk-000</data>
+      <data key="d11">NHP_N4</data>
+      <data key="d12">1792427132</data>
+      <data key="d13" />
+    </edge>
+    <edge source="GenerateN4" target="BM">
+      <data key="d7">1.0</data>
+      <data key="d8">GenerateN4 shares a voxel grid with the brain mask produced by BM, ensuring spatial alignment.</data>
+      <data key="d9">alignment,dependency,voxel grid</data>
+      <data key="d10">NHP_N4-chunk-000</data>
+      <data key="d11">NHP_N4</data>
+      <data key="d12">1792427132</data>
+      <data key="d13" />
+    </edge>
+    <edge source="GenerateN4" target="N4 Bias-Field Correction">
+      <data key="d7">1.0</data>
+      <data key="d8">GenerateN4 performs an independent N4 bias-field correction pass, applying the N4 technique.</data>
+      <data key="d9">correction,implements,technique</data>
+      <data key="d10">NHP_N4-chunk-000</data>
+      <data key="d11">NHP_N4</data>
+      <data key="d12">1792427132</data>
+      <data key="d13" />
+    </edge>
+    <edge source="GenerateN4" target="Preemacs.Sif">
+      <data key="d7">1.0</data>
+      <data key="d8">GenerateN4 is run using the preemacs.sif container image.</data>
+      <data key="d9">container,execution,software</data>
+      <data key="d10">NHP_N4-chunk-000</data>
+      <data key="d11">NHP_N4</data>
+      <data key="d12">1792427132</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Temporo-parietal cortex" target="Computational neuroanatomy approach">
+      <data key="d7">1.0</data>
+      <data key="d8">The computational neuroanatomy approach is used to distinguish different types of changes in brain architecture in the temporo-parietal cortex.</data>
+      <data key="d9">analysis,brain architecture</data>
+      <data key="d10">CROSS_FINDING-chunk-000</data>
+      <data key="d11">CROSS_FINDING</data>
+      <data key="d12">1792427137</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Temporo-parietal cortex" target="White matter tracts">
+      <data key="d7">1.0</data>
+      <data key="d8">Expansion and relocation of brain areas can predict terminations of several white matter tracts in temporo-parietal cortex.</data>
+      <data key="d9">prediction,terminations</data>
+      <data key="d10">CROSS_FINDING-chunk-000</data>
+      <data key="d11">CROSS_FINDING</data>
+      <data key="d12">1792427137</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Temporo-parietal cortex" target="Middle longitudinal fasciculus">
+      <data key="d7">1.0</data>
+      <data key="d8">Terminations of the middle longitudinal fasciculus in temporo-parietal cortex can be predicted by expansion and relocation of brain areas.</data>
+      <data key="d9">prediction,terminations</data>
+      <data key="d10">CROSS_FINDING-chunk-000</data>
+      <data key="d11">CROSS_FINDING</data>
+      <data key="d12">1792427137</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Temporo-parietal cortex" target="Superior longitudinal fasciculus">
+      <data key="d7">1.0</data>
+      <data key="d8">Terminations of the superior longitudinal fasciculus in temporo-parietal cortex can be predicted by expansion and relocation of brain areas.</data>
+      <data key="d9">prediction,terminations</data>
+      <data key="d10">CROSS_FINDING-chunk-000</data>
+      <data key="d11">CROSS_FINDING</data>
+      <data key="d12">1792427137</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Temporo-parietal cortex" target="Arcuate fasciculus">
+      <data key="d7">1.0</data>
+      <data key="d8">Terminations of the arcuate fasciculus in temporo-parietal cortex are not predicted by expansion and relocation of brain areas.</data>
+      <data key="d9">not predicted,terminations</data>
+      <data key="d10">CROSS_FINDING-chunk-000</data>
+      <data key="d11">CROSS_FINDING</data>
+      <data key="d12">1792427137</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Cortical myelin" target="Macaque">
+      <data key="d7">1.0</data>
+      <data key="d8">Cortical myelin-based alignment is used to predict connectivity patterns in macaque.</data>
+      <data key="d9">alignment,prediction</data>
+      <data key="d10">CROSS_FINDING-chunk-000</data>
+      <data key="d11">CROSS_FINDING</data>
+      <data key="d12">1792427137</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Cortical myelin" target="Chimpanzee">
+      <data key="d7">1.0</data>
+      <data key="d8">Cortical myelin-based alignment is used to predict connectivity patterns in chimpanzee.</data>
+      <data key="d9">alignment,prediction</data>
+      <data key="d10">CROSS_FINDING-chunk-000</data>
+      <data key="d11">CROSS_FINDING</data>
+      <data key="d12">1792427137</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Cortical myelin" target="Human">
+      <data key="d7">1.0</data>
+      <data key="d8">Cortical myelin-based alignment is used to predict connectivity patterns in human.</data>
+      <data key="d9">alignment,prediction</data>
+      <data key="d10">CROSS_FINDING-chunk-000</data>
+      <data key="d11">CROSS_FINDING</data>
+      <data key="d12">1792427137</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Arcuate fasciculus" target="Temporal lobe">
+      <data key="d7">1.0</data>
+      <data key="d8">The arcuate fasciculus underwent additional evolutionary modifications affecting the temporal lobe connectivity pattern.</data>
+      <data key="d9">connectivity,evolutionary modifications</data>
+      <data key="d10">CROSS_FINDING-chunk-000</data>
+      <data key="d11">CROSS_FINDING</data>
+      <data key="d12">1792427137</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Cortical Organization" target="Brain Organization">
+      <data key="d7">1.0</data>
+      <data key="d8">Cortical organization is a component of the broader brain organization.</data>
+      <data key="d9">part of,structural relationship</data>
+      <data key="d10">CROSS_FINDING-chunk-001</data>
+      <data key="d11">CROSS_FINDING</data>
+      <data key="d12">1792427137</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Comparative Hypotheses" target="Brain Organization">
+      <data key="d7">1.0</data>
+      <data key="d8">Comparative hypotheses are used to test and evaluate brain organization across species.</data>
+      <data key="d9">comparison,testing</data>
+      <data key="d10">CROSS_FINDING-chunk-001</data>
+      <data key="d11">CROSS_FINDING</data>
+      <data key="d12">1792427137</data>
+      <data key="d13" />
+    </edge>
+    <edge source="SUBJECTS_DIR" target="Longitudinal Processing">
+      <data key="d7">1.0</data>
+      <data key="d8">Longitudinal processing sets up all subjects and time points in a single SUBJECTS_DIR, which also contains base and longitudinal runs.</data>
+      <data key="d9">directory,uses</data>
+      <data key="d10">LONG-chunk-000</data>
+      <data key="d11">LONG</data>
+      <data key="d12">1792427144</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Longitudinal Processing" target="FreeSurfer">
+      <data key="d7">1.0</data>
+      <data key="d8">FreeSurfer provides the longitudinal processing method described in the documentation.</data>
+      <data key="d9">method,provides</data>
+      <data key="d10">LONG-chunk-000</data>
+      <data key="d11">LONG</data>
+      <data key="d12">1792427144</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Longitudinal Processing" target="Recon-all">
+      <data key="d7">1.0</data>
+      <data key="d8">Recon-all script codes the longitudinal processing scheme via the '-long' flag.</data>
+      <data key="d9">codes,implements</data>
+      <data key="d10">LONG-chunk-001</data>
+      <data key="d11">LONG</data>
+      <data key="d12">1792427144</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Longitudinal Processing" target="Template">
+      <data key="d7">1.0</data>
+      <data key="d8">The template is used for the initialization of the longitudinal runs.</data>
+      <data key="d9">initialization,used for</data>
+      <data key="d10">LONG-chunk-001</data>
+      <data key="d11">LONG</data>
+      <data key="d12">1792427144</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Longitudinal Processing" target="Timepoint">
+      <data key="d7">1.0</data>
+      <data key="d8">Each timepoint of a subject is processed longitudinally using the '-long' flag.</data>
+      <data key="d9">processed by</data>
+      <data key="d10">LONG-chunk-001</data>
+      <data key="d11">LONG</data>
+      <data key="d12">1792427144</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Longitudinal Processing" target="Subject Data">
+      <data key="d7">1.0</data>
+      <data key="d8">The longitudinal processing step produces output subject data containing '&lt;tpNid&gt;.long.&lt;templateid&gt;' in the name.</data>
+      <data key="d9">produces</data>
+      <data key="d10">LONG-chunk-001</data>
+      <data key="d11">LONG</data>
+      <data key="d12">1792427144</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Longitudinal Processing" target="Difference Calculation">
+      <data key="d7">1.0</data>
+      <data key="d8">The difference calculation compares results from the longitudinal processing step by calculating differences between outputs of different timepoints.</data>
+      <data key="d9">compares results of</data>
+      <data key="d10">LONG-chunk-001</data>
+      <data key="d11">LONG</data>
+      <data key="d12">1792427144</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Longitudinal Processing" target="Cross Sectional Processing">
+      <data key="d7">1.0</data>
+      <data key="d8">Cross sectional processing runs are slower than longitudinal processing runs.</data>
+      <data key="d9">slower than</data>
+      <data key="d10">LONG-chunk-001</data>
+      <data key="d11">LONG</data>
+      <data key="d12">1792427144</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Longitudinal Processing" target="Template Run">
+      <data key="d7">1.0</data>
+      <data key="d8">Template runs are slower than longitudinal processing runs.</data>
+      <data key="d9">slower than</data>
+      <data key="d10">LONG-chunk-001</data>
+      <data key="d11">LONG</data>
+      <data key="d12">1792427144</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Longitudinal Processing" target="Longitudinal Run">
+      <data key="d7">1.0</data>
+      <data key="d8">A longitudinal run is a type of longitudinal processing that is faster than cross sectional or template runs.</data>
+      <data key="d9">is a type of</data>
+      <data key="d10">LONG-chunk-001</data>
+      <data key="d11">LONG</data>
+      <data key="d12">1792427144</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Unbiased Template" target="Norm.Mgz">
+      <data key="d7">1.0</data>
+      <data key="d8">Creation of the unbiased template requires norm.mgz files from cross-sectional processing of individual time points.</data>
+      <data key="d9">input,requires</data>
+      <data key="d10">LONG-chunk-000</data>
+      <data key="d11">LONG</data>
+      <data key="d12">1792427144</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Template" target="Template ID">
+      <data key="d7">1.0</data>
+      <data key="d8">The template ID identifies the template directory created in $SUBJECTS_DIR.</data>
+      <data key="d9">identifies</data>
+      <data key="d10">LONG-chunk-001</data>
+      <data key="d11">LONG</data>
+      <data key="d12">1792427144</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Template" target="Template Comparison">
+      <data key="d7">1.0</data>
+      <data key="d8">The template comparison should not be done against the template because it is a blurry guess used only for initialization.</data>
+      <data key="d9">should not be done against</data>
+      <data key="d10">LONG-chunk-001</data>
+      <data key="d11">LONG</data>
+      <data key="d12">1792427144</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Timepoint" target="Timepoint ID">
+      <data key="d7">1.0</data>
+      <data key="d8">The timepoint ID identifies a specific timepoint of a subject.</data>
+      <data key="d9">identifies</data>
+      <data key="d10">LONG-chunk-001</data>
+      <data key="d11">LONG</data>
+      <data key="d12">1792427144</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Subject" target="Exchangeability-Block Information">
+      <data key="d7">1.0</data>
+      <data key="d8">The Exchangeability-Block Information specifies that only conditions A and B within the same subject can be exchanged, because each subject could have a different mean value.</data>
+      <data key="d9">constrains,exchangeability</data>
+      <data key="d10">STAT_PAIRED-chunk-002</data>
+      <data key="d11">STAT_PAIRED</data>
+      <data key="d12">1792428629</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Subject Data" target="Default Stream">
+      <data key="d7">1.0</data>
+      <data key="d8">The subject data naming convention helps distinguish the longitudinal output from the default stream.</data>
+      <data key="d9">distinguished from</data>
+      <data key="d10">LONG-chunk-001</data>
+      <data key="d11">LONG</data>
+      <data key="d12">1792427144</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Blurry Guess" target="Longitudinal Runs">
+      <data key="d7">1.0</data>
+      <data key="d8">The blurry guess is used only for the initialization of the longitudinal runs.</data>
+      <data key="d9">initialization,usage</data>
+      <data key="d10">LONG-chunk-002</data>
+      <data key="d11">LONG</data>
+      <data key="d12">1792427144</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Subject Template" target="Brain Mask">
+      <data key="d7">1.0</data>
+      <data key="d8">The brain mask is directly copied from the subject-template in longitudinal processing.</data>
+      <data key="d9">copied from,initialization</data>
+      <data key="d10">PED-chunk-000</data>
+      <data key="d11">PED</data>
+      <data key="d12">1792427149</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Subject Template" target="Linear Talairach Map">
+      <data key="d7">1.0</data>
+      <data key="d8">The linear Talairach map is directly copied from the subject-template in longitudinal processing.</data>
+      <data key="d9">copied from,initialization</data>
+      <data key="d10">PED-chunk-000</data>
+      <data key="d11">PED</data>
+      <data key="d12">1792427149</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Subject Template" target="Estimated Total Intracranial Volume (eTIV)">
+      <data key="d7">1.0</data>
+      <data key="d8">The estimated total intracranial volume is directly copied from the subject-template in longitudinal processing.</data>
+      <data key="d9">copied from,initialization</data>
+      <data key="d10">PED-chunk-000</data>
+      <data key="d11">PED</data>
+      <data key="d12">1792427149</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Estimated Total Intracranial Volume (eTIV)" target="Aseg.Stats">
+      <data key="d7">1.0</data>
+      <data key="d8">To get eTIV measures for each time point, read that data from the aseg.stats in the cross sectional directories.</data>
+      <data key="d9">read eTIV measures</data>
+      <data key="d10">PED-chunk-000</data>
+      <data key="d11">PED</data>
+      <data key="d12">1792427149</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Pediatric Data" target="Longitudinal Pipeline">
+      <data key="d7">1.0</data>
+      <data key="d8">Pediatric data violates the fixed head size assumption, which may cause the longitudinal pipeline to fail in the presence of substantial growth.</data>
+      <data key="d9">may fail,violates assumption</data>
+      <data key="d10">PED-chunk-000</data>
+      <data key="d11">PED</data>
+      <data key="d12">1792427149</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Longitudinal Pipeline" target="Template/Base Image">
+      <data key="d7">1.0</data>
+      <data key="d8">In pediatric data, it is essential to check the template/base image for skull strip errors and meaningful surfaces.</data>
+      <data key="d9">check for errors,surfaces</data>
+      <data key="d10">PED-chunk-000</data>
+      <data key="d11">PED</data>
+      <data key="d12">1792427149</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Cross Sectional Directories" target="Aseg.Stats">
+      <data key="d7">1.0</data>
+      <data key="d8">Cross sectional directories contain aseg.stats data files.</data>
+      <data key="d9">contains data</data>
+      <data key="d10">PED-chunk-000</data>
+      <data key="d11">PED</data>
+      <data key="d12">1792427149</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Coefficient Of Joint Variation" target="Ganzetti2016">
+      <data key="d7">1.0</data>
+      <data key="d8">The coefficient of joint variation was proposed by Ganzetti2016 as an objective function.</data>
+      <data key="d9">proposed by,source</data>
+      <data key="d10">QC_BODY-chunk-000</data>
+      <data key="d11">QC_BODY</data>
+      <data key="d12">1792427153</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Coefficient Of Joint Variation" target="INU Correction Algorithm">
+      <data key="d7">1.0</data>
+      <data key="d8">The coefficient of joint variation is used as an objective function for optimizing INU correction algorithms.</data>
+      <data key="d9">objective function,optimization</data>
+      <data key="d10">QC_BODY-chunk-000</data>
+      <data key="d11">QC_BODY</data>
+      <data key="d12">1792427153</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Contrast-To-Noise Ratio" target="Magnota2006">
+      <data key="d7">1.0</data>
+      <data key="d8">The contrast-to-noise ratio is sourced from Magnota2006.</data>
+      <data key="d9">referenced,source</data>
+      <data key="d10">QC_BODY-chunk-000</data>
+      <data key="d11">QC_BODY</data>
+      <data key="d12">1792427153</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Contrast-To-Noise Ratio" target="SNR Calculation">
+      <data key="d7">1.0</data>
+      <data key="d8">The contrast-to-noise ratio is an extension of the SNR calculation.</data>
+      <data key="d9">based on,extension</data>
+      <data key="d10">QC_BODY-chunk-000</data>
+      <data key="d11">QC_BODY</data>
+      <data key="d12">1792427153</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Contrast-To-Noise Ratio" target="Gray Matter">
+      <data key="d7">1.0</data>
+      <data key="d8">The contrast-to-noise ratio evaluates the separation of gray matter tissue distribution.</data>
+      <data key="d9">evaluates,tissue distribution</data>
+      <data key="d10">QC_BODY-chunk-000</data>
+      <data key="d11">QC_BODY</data>
+      <data key="d12">1792427153</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Contrast-To-Noise Ratio" target="White Matter">
+      <data key="d7">1.0</data>
+      <data key="d8">The contrast-to-noise ratio evaluates the separation of white matter tissue distribution.</data>
+      <data key="d9">evaluates,tissue distribution</data>
+      <data key="d10">QC_BODY-chunk-000</data>
+      <data key="d11">QC_BODY</data>
+      <data key="d12">1792427153</data>
+      <data key="d13" />
+    </edge>
+    <edge source="GM Images" target="GM_merg">
+      <data key="d7">1.0</data>
+      <data key="d8">All registered grey matter images are concatenated into the 4D image GM_merg in the stats directory.</data>
+      <data key="d9">4D image,concatenation</data>
+      <data key="d10">VBM_FINAL-chunk-000</data>
+      <data key="d11">VBM_FINAL</data>
+      <data key="d12">1792428582</data>
+      <data key="d13" />
+    </edge>
+    <edge source="GM Images" target="Jacobian of the Warp Field">
+      <data key="d7">1.0</data>
+      <data key="d8">Each voxel of each registered grey matter image is multiplied by the Jacobian of the warp field to compensate for contraction or enlargement.</data>
+      <data key="d9">compensation,modulation</data>
+      <data key="d10">VBM_FINAL-chunk-000</data>
+      <data key="d11">VBM_FINAL</data>
+      <data key="d12">1792428582</data>
+      <data key="d13" />
+    </edge>
+    <edge source="GM Images" target="GM_mod_merg">
+      <data key="d7">1.0</data>
+      <data key="d8">All modulated registered grey matter images are concatenated into the 4D image GM_mod_merg in the stats directory.</data>
+      <data key="d9">concatenation,modulation</data>
+      <data key="d10">VBM_FINAL-chunk-000</data>
+      <data key="d11">VBM_FINAL</data>
+      <data key="d12">1792428582</data>
+      <data key="d13" />
+    </edge>
+    <edge source="GM_mod_merg" target="GM_mod_merg_s3">
+      <data key="d7">1.0</data>
+      <data key="d8">GM_mod_merg is smoothed with Gaussian kernels, producing versions such as GM_mod_merg_s3.</data>
+      <data key="d9">Gaussian kernel,smoothing</data>
+      <data key="d10">VBM_FINAL-chunk-000</data>
+      <data key="d11">VBM_FINAL</data>
+      <data key="d12">1792428582</data>
+      <data key="d13" />
+    </edge>
+    <edge source="GM_mod_merg" target="Gaussian Kernels">
+      <data key="d7">1.0</data>
+      <data key="d8">GM_mod_merg is smoothed by a range of Gaussian kernels with sigma values of 2, 3, and 4 mm.</data>
+      <data key="d9">filtering,smoothing</data>
+      <data key="d10">VBM_FINAL-chunk-000</data>
+      <data key="d11">VBM_FINAL</data>
+      <data key="d12">1792428582</data>
+      <data key="d13" />
+    </edge>
+    <edge source="GM_mod_merg_s3" target="Permutation-Based Non-Parametric Inference">
+      <data key="d7">1.0</data>
+      <data key="d8">The smoothed image GM_mod_merg_s3 is used as input for permutation-based non-parametric inference.</data>
+      <data key="d9">input,statistical analysis</data>
+      <data key="d10">VBM_FINAL-chunk-000</data>
+      <data key="d11">VBM_FINAL</data>
+      <data key="d12">1792428582</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Permutation-Based Non-Parametric Inference" target="design.mat">
+      <data key="d7">1.0</data>
+      <data key="d8">Permutation-based non-parametric inference uses the design.mat file for the statistical model.</data>
+      <data key="d9">design matrix,statistical model</data>
+      <data key="d10">VBM_FINAL-chunk-000</data>
+      <data key="d11">VBM_FINAL</data>
+      <data key="d12">1792428582</data>
+      <data key="d13" />
+    </edge>
+    <edge source="GM Mod Merg S3" target="Fslvbm_3_Proc">
+      <data key="d7">1.0</data>
+      <data key="d8">Fslvbm_3_Proc concatenates images to produce the processed data file.</data>
+      <data key="d9">concatenates,processes</data>
+      <data key="d10">VBM_FINAL-chunk-001</data>
+      <data key="d11">VBM_FINAL</data>
+      <data key="d12">1792428582</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Tstat Maps" target="Cluster-Based Thresholding">
+      <data key="d7">1.0</data>
+      <data key="d8">Tstat maps help decide which threshold to use for cluster-based thresholding.</data>
+      <data key="d9">decision,informs</data>
+      <data key="d10">VBM_FINAL-chunk-001</data>
+      <data key="d11">VBM_FINAL</data>
+      <data key="d12">1792428582</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Cluster-Based Thresholding" target="TFCE">
+      <data key="d7">1.0</data>
+      <data key="d8">TFCE is recommended as an alternative to cluster-based thresholding.</data>
+      <data key="d9">alternative,recommended</data>
+      <data key="d10">VBM_FINAL-chunk-001</data>
+      <data key="d11">VBM_FINAL</data>
+      <data key="d12">1792428582</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Voxelwise Grey Matter Analysis" target="Grey Matter">
+      <data key="d7">1.0</data>
+      <data key="d8">Voxelwise Grey Matter Analysis examines the distribution of Grey Matter in the brain.</data>
+      <data key="d9">analysis,distribution</data>
+      <data key="d10">VBM_LIMITS-chunk-000</data>
+      <data key="d11">VBM_LIMITS</data>
+      <data key="d12">1792428586</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Voxelwise Grey Matter Analysis" target="Grey Matter Atrophy">
+      <data key="d7">1.0</data>
+      <data key="d8">The analysis results may reflect Grey Matter Atrophy, but this is not always determinable.</data>
+      <data key="d9">interpretation,limitation</data>
+      <data key="d10">VBM_LIMITS-chunk-000</data>
+      <data key="d11">VBM_LIMITS</data>
+      <data key="d12">1792428586</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Voxelwise Grey Matter Analysis" target="Gyrification Pattern">
+      <data key="d7">1.0</data>
+      <data key="d8">Differences in Gyrification Pattern can indirectly affect the grey matter distribution results of the analysis.</data>
+      <data key="d9">interpretation,limitation</data>
+      <data key="d10">VBM_LIMITS-chunk-000</data>
+      <data key="d11">VBM_LIMITS</data>
+      <data key="d12">1792428586</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Voxelwise Grey Matter Analysis" target="Free-Form Deformation">
+      <data key="d7">1.0</data>
+      <data key="d8">The analysis uses Free-Form Deformation with 20 mm initial control point spacing as part of its methodology.</data>
+      <data key="d9">parameter,registration</data>
+      <data key="d10">VBM_LIMITS-chunk-000</data>
+      <data key="d11">VBM_LIMITS</data>
+      <data key="d12">1792428586</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Voxelwise Grey Matter Analysis" target="Non-Rigid Registration">
+      <data key="d7">1.0</data>
+      <data key="d8">The analysis results theoretically depend on the degrees of freedom of the Non-Rigid Registration used.</data>
+      <data key="d9">degrees of freedom,registration</data>
+      <data key="d10">VBM_LIMITS-chunk-000</data>
+      <data key="d11">VBM_LIMITS</data>
+      <data key="d12">1792428586</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Voxelwise Grey Matter Analysis" target="Smoothing">
+      <data key="d7">1.0</data>
+      <data key="d8">The amount of Smoothing applied influences the continuum of results in the analysis.</data>
+      <data key="d9">parameter,processing</data>
+      <data key="d10">VBM_LIMITS-chunk-000</data>
+      <data key="d11">VBM_LIMITS</data>
+      <data key="d12">1792428586</data>
+      <data key="d13" />
+    </edge>
+    <edge source="One-sample t-test" target="COPE">
+      <data key="d7">1.0</data>
+      <data key="d8">The one-sample t-test is applied to COPEs created by FEAT FMRI analysis.</data>
+      <data key="d9">applied to,input</data>
+      <data key="d10">STAT_ONEGROUP-chunk-000</data>
+      <data key="d11">STAT_ONEGROUP</data>
+      <data key="d12">1792428619</data>
+      <data key="d13" />
+    </edge>
+    <edge source="FEAT FMRI analysis" target="FSL">
+      <data key="d7">1.0</data>
+      <data key="d8">FEAT FMRI analysis is a pipeline within the FSL software library.</data>
+      <data key="d9">part of</data>
+      <data key="d10">STAT_ONEGROUP-chunk-000</data>
+      <data key="d11">STAT_ONEGROUP</data>
+      <data key="d12">1792428619</data>
+      <data key="d13" />
+    </edge>
+    <edge source="FEAT FMRI analysis" target="COPE">
+      <data key="d7">1.0</data>
+      <data key="d8">COPEs are created by FEAT FMRI analysis.</data>
+      <data key="d9">created by</data>
+      <data key="d10">STAT_ONEGROUP-chunk-000</data>
+      <data key="d11">STAT_ONEGROUP</data>
+      <data key="d12">1792428619</data>
+      <data key="d13" />
+    </edge>
+    <edge source="OneSamp4D" target="OneSampT">
+      <data key="d7">1.0</data>
+      <data key="d8">OneSamp4D processes data and produces the output file OneSampT.</data>
+      <data key="d9">generation,output</data>
+      <data key="d10">STAT_ONEGROUP-chunk-001</data>
+      <data key="d11">STAT_ONEGROUP</data>
+      <data key="d12">1792428619</data>
+      <data key="d13" />
+    </edge>
+    <edge source="OneSamp4D" target="Variance Smoothing">
+      <data key="d7">1.0</data>
+      <data key="d8">OneSamp4D applies variance smoothing with a sigma of 5mm.</data>
+      <data key="d9">applies,technique</data>
+      <data key="d10">STAT_ONEGROUP-chunk-001</data>
+      <data key="d11">STAT_ONEGROUP</data>
+      <data key="d12">1792428619</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Two-Sample Paired T-test" target="Group Of 8 Subjects">
+      <data key="d7">1.0</data>
+      <data key="d8">The Two-Sample Paired T-test is applied to the group of 8 subjects to analyze paired group differences.</data>
+      <data key="d9">analysis,applies to</data>
+      <data key="d10">STAT_PAIRED-chunk-000</data>
+      <data key="d11">STAT_PAIRED</data>
+      <data key="d12">1792428629</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Two-Sample Paired T-test" target="Condition A">
+      <data key="d7">1.0</data>
+      <data key="d8">The Two-Sample Paired T-test compares Condition A, entered as the first 8 inputs, against Condition B.</data>
+      <data key="d9">compares,input</data>
+      <data key="d10">STAT_PAIRED-chunk-000</data>
+      <data key="d11">STAT_PAIRED</data>
+      <data key="d12">1792428629</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Two-Sample Paired T-test" target="Condition B">
+      <data key="d7">1.0</data>
+      <data key="d8">The Two-Sample Paired T-test compares Condition B, entered as the second 8 inputs, against Condition A.</data>
+      <data key="d9">compares,input</data>
+      <data key="d10">STAT_PAIRED-chunk-000</data>
+      <data key="d11">STAT_PAIRED</data>
+      <data key="d12">1792428629</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Two-Sample Paired T-test" target="Design Matrix">
+      <data key="d7">1.0</data>
+      <data key="d8">The Two-Sample Paired T-test uses the Design Matrix (design.mat) to model the paired design.</data>
+      <data key="d9">design,uses</data>
+      <data key="d10">STAT_PAIRED-chunk-000</data>
+      <data key="d11">STAT_PAIRED</data>
+      <data key="d12">1792428629</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Two-Sample Paired T-test" target="GLM Guide">
+      <data key="d7">1.0</data>
+      <data key="d8">The GLM Guide provides the setup that the Two-Sample Paired T-test follows.</data>
+      <data key="d9">provides setup,reference</data>
+      <data key="d10">STAT_PAIRED-chunk-000</data>
+      <data key="d11">STAT_PAIRED</data>
+      <data key="d12">1792428629</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Group Of 8 Subjects" target="Condition A">
+      <data key="d7">1.0</data>
+      <data key="d8">The group of 8 subjects is scanned under Condition A, which is entered as the first 8 inputs.</data>
+      <data key="d9">condition,scanned under</data>
+      <data key="d10">STAT_PAIRED-chunk-000</data>
+      <data key="d11">STAT_PAIRED</data>
+      <data key="d12">1792428629</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Group Of 8 Subjects" target="Condition B">
+      <data key="d7">1.0</data>
+      <data key="d8">The group of 8 subjects is scanned under Condition B, which is entered as the second 8 inputs.</data>
+      <data key="d9">condition,scanned under</data>
+      <data key="d10">STAT_PAIRED-chunk-000</data>
+      <data key="d11">STAT_PAIRED</data>
+      <data key="d12">1792428629</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Condition A" target="Exchangeability-Block Information">
+      <data key="d7">1.0</data>
+      <data key="d8">The Exchangeability-Block Information allows data from Condition A to be exchanged with Condition B within the same subject.</data>
+      <data key="d9">allows exchange,within subject</data>
+      <data key="d10">STAT_PAIRED-chunk-002</data>
+      <data key="d11">STAT_PAIRED</data>
+      <data key="d12">1792428629</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Condition B" target="Exchangeability-Block Information">
+      <data key="d7">1.0</data>
+      <data key="d8">The Exchangeability-Block Information allows data from Condition B to be exchanged with Condition A within the same subject.</data>
+      <data key="d9">allows exchange,within subject</data>
+      <data key="d10">STAT_PAIRED-chunk-002</data>
+      <data key="d11">STAT_PAIRED</data>
+      <data key="d12">1792428629</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Design Matrix" target="Group Difference">
+      <data key="d7">1.0</data>
+      <data key="d8">The first column of the design matrix models the group difference.</data>
+      <data key="d9">first column,modelling</data>
+      <data key="d10">STAT_PAIRED-chunk-001</data>
+      <data key="d11">STAT_PAIRED</data>
+      <data key="d12">1792428629</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Design Matrix" target="Subject Means">
+      <data key="d7">1.0</data>
+      <data key="d8">Columns 2 to 9 of the design matrix model the individual subject means.</data>
+      <data key="d9">columns 2 to 9,modelling</data>
+      <data key="d10">STAT_PAIRED-chunk-001</data>
+      <data key="d11">STAT_PAIRED</data>
+      <data key="d12">1792428629</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Group Difference" target="T-Contrast">
+      <data key="d7">1.0</data>
+      <data key="d8">The t-contrast is used to test the group difference.</data>
+      <data key="d9">contrast,testing</data>
+      <data key="d10">STAT_PAIRED-chunk-001</data>
+      <data key="d11">STAT_PAIRED</data>
+      <data key="d12">1792428629</data>
+      <data key="d13" />
+    </edge>
+    <edge source="T-Contrast" target="A-B Contrast">
+      <data key="d7">1.0</data>
+      <data key="d8">The A-B contrast is an example of a t-contrast for the group difference A-B.</data>
+      <data key="d9">contrast vector,example</data>
+      <data key="d10">STAT_PAIRED-chunk-001</data>
+      <data key="d11">STAT_PAIRED</data>
+      <data key="d12">1792428629</data>
+      <data key="d13" />
+    </edge>
+    <edge source="T-Contrast" target="B-A Contrast">
+      <data key="d7">1.0</data>
+      <data key="d8">The B-A contrast is another example of a t-contrast for the group difference B-A.</data>
+      <data key="d9">contrast vector,example</data>
+      <data key="d10">STAT_PAIRED-chunk-001</data>
+      <data key="d11">STAT_PAIRED</data>
+      <data key="d12">1792428629</data>
+      <data key="d13" />
+    </edge>
+    <edge source="T-Contrast" target="Design">
+      <data key="d7">1.0</data>
+      <data key="d8">The Design includes the T-Contrast in design.con, which specifies the group difference A-B as 1 0 0 0 0 0 0 0 0 and B-A by replacing 1 with -1.</data>
+      <data key="d9">contains,contrast specification</data>
+      <data key="d10">STAT_PAIRED-chunk-002</data>
+      <data key="d11">STAT_PAIRED</data>
+      <data key="d12">1792428629</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Design" target="Exchangeability-Block Information">
+      <data key="d7">1.0</data>
+      <data key="d8">The Design includes the Exchangeability-Block Information in design.grp, which specifies which data can be exchanged.</data>
+      <data key="d9">block specification,contains</data>
+      <data key="d10">STAT_PAIRED-chunk-002</data>
+      <data key="d11">STAT_PAIRED</data>
+      <data key="d12">1792428629</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Design" target="Contrast">
+      <data key="d7">1.0</data>
+      <data key="d8">The design matrix and contrast matrix are used together in statistical analysis to define the model and contrasts.</data>
+      <data key="d9">contrast matrix,design matrix,statistical analysis</data>
+      <data key="d10">STAT_PAIRED-chunk-003</data>
+      <data key="d11">STAT_PAIRED</data>
+      <data key="d12">1792428629</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Design" target="Group">
+      <data key="d7">1.0</data>
+      <data key="d8">The design matrix and group file are used together to specify the experimental design and grouping.</data>
+      <data key="d9">design matrix,group file,statistical analysis</data>
+      <data key="d10">STAT_PAIRED-chunk-003</data>
+      <data key="d11">STAT_PAIRED</data>
+      <data key="d12">1792428629</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Design" target="Mask">
+      <data key="d7">1.0</data>
+      <data key="d8">The design matrix and mask are used together to restrict the analysis to a specific region of interest.</data>
+      <data key="d9">design matrix,mask,statistical analysis</data>
+      <data key="d10">STAT_PAIRED-chunk-003</data>
+      <data key="d11">STAT_PAIRED</data>
+      <data key="d12">1792428629</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Exchangeability-Block Information" target="Null Hypothesis">
+      <data key="d7">1.0</data>
+      <data key="d8">The Null Hypothesis that there is no difference between A and B justifies the exchangeability of data within subjects, as specified in the Exchangeability-Block Information.</data>
+      <data key="d9">exchangeability,justifies</data>
+      <data key="d10">STAT_PAIRED-chunk-002</data>
+      <data key="d11">STAT_PAIRED</data>
+      <data key="d12">1792428629</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Exchangeability-Block Information" target="GLM Gui">
+      <data key="d7">1.0</data>
+      <data key="d8">The Exchangeability-Block Information can be entered via the Group column in the GLM Gui, or created independently as a text file.</data>
+      <data key="d9">entry,input method</data>
+      <data key="d10">STAT_PAIRED-chunk-002</data>
+      <data key="d11">STAT_PAIRED</data>
+      <data key="d12">1792428629</data>
+      <data key="d13" />
+    </edge>
+    <edge source="GLM Gui" target="Group Column">
+      <data key="d7">1.0</data>
+      <data key="d8">The Group Column is a part of the GLM Gui used to enter exchangeability-block information.</data>
+      <data key="d9">interface,part of</data>
+      <data key="d10">STAT_PAIRED-chunk-002</data>
+      <data key="d11">STAT_PAIRED</data>
+      <data key="d12">1792428629</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Fslmaths" target="Paired Analysis">
+      <data key="d7">1.0</data>
+      <data key="d8">Fslmaths provides an alternative way to perform Paired Analysis by calculating within-subject difference values initially.</data>
+      <data key="d9">alternative method,calculation</data>
+      <data key="d10">STAT_PAIRED-chunk-002</data>
+      <data key="d11">STAT_PAIRED</data>
+      <data key="d12">1792428629</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Paired Analysis" target="Within-Subject Differences">
+      <data key="d7">1.0</data>
+      <data key="d8">Paired analysis can be performed by calculating within-subject differences.</data>
+      <data key="d9">paired analysis,within-subject differences</data>
+      <data key="d10">STAT_PAIRED-chunk-003</data>
+      <data key="d11">STAT_PAIRED</data>
+      <data key="d12">1792428629</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Within-Subject Differences" target="FSLMaths">
+      <data key="d7">1.0</data>
+      <data key="d8">Within-subject differences can be calculated using FSLMaths.</data>
+      <data key="d9">FSLMaths,calculation,within-subject differences</data>
+      <data key="d10">STAT_PAIRED-chunk-003</data>
+      <data key="d11">STAT_PAIRED</data>
+      <data key="d12">1792428629</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Within-Subject Differences" target="One-Group T-Test">
+      <data key="d7">1.0</data>
+      <data key="d8">A one-group t-test is applied to within-subject differences across subjects.</data>
+      <data key="d9">one-group t-test,statistical test,within-subject differences</data>
+      <data key="d10">STAT_PAIRED-chunk-003</data>
+      <data key="d11">STAT_PAIRED</data>
+      <data key="d12">1792428629</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Longitudinal Stream" target="Single Time-Point Subjects">
+      <data key="d7">1.0</data>
+      <data key="d8">Single time-point subjects need to be run through the longitudinal stream to ensure their images undergo the same processing steps as other subjects.</data>
+      <data key="d9">processing,requirement</data>
+      <data key="d10">FS_SINGLE-chunk-000</data>
+      <data key="d11">FS_SINGLE</data>
+      <data key="d12">1792428638</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Longitudinal Stream" target="Base Creation Step">
+      <data key="d7">1.0</data>
+      <data key="d8">The longitudinal stream includes a base creation step, which can be performed with a single time point to process such data.</data>
+      <data key="d9">includes,processing</data>
+      <data key="d10">FS_SINGLE-chunk-000</data>
+      <data key="d11">FS_SINGLE</data>
+      <data key="d12">1792428638</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Linear Mixed Effects Models (LME)" target="Single Time-Point Subjects">
+      <data key="d7">1.0</data>
+      <data key="d8">Single time-point subjects can be included in linear mixed effects models to utilize their data despite having only one scan.</data>
+      <data key="d9">analysis,inclusion</data>
+      <data key="d10">FS_SINGLE-chunk-000</data>
+      <data key="d11">FS_SINGLE</data>
+      <data key="d12">1792428638</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Linear Mixed Effects Models (LME)" target="Statistical Analysis of Longitudinal Neuroimage Data with Linear Mixed Effects Models">
+      <data key="d7">1.0</data>
+      <data key="d8">The article discusses the application of linear mixed effects models to longitudinal neuroimaging data, providing a basis for including single time-point subjects.</data>
+      <data key="d9">application,discusses</data>
+      <data key="d10">FS_SINGLE-chunk-000</data>
+      <data key="d11">FS_SINGLE</data>
+      <data key="d12">1792428638</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Statistical Analysis of Longitudinal Neuroimage Data with Linear Mixed Effects Models" target="J.L. Bernal-Rusiel">
+      <data key="d7">1.0</data>
+      <data key="d8">J.L. Bernal-Rusiel is an author of the article.</data>
+      <data key="d9">authorship</data>
+      <data key="d10">FS_SINGLE-chunk-000</data>
+      <data key="d11">FS_SINGLE</data>
+      <data key="d12">1792428638</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Statistical Analysis of Longitudinal Neuroimage Data with Linear Mixed Effects Models" target="D.N. Greve">
+      <data key="d7">1.0</data>
+      <data key="d8">D.N. Greve is an author of the article.</data>
+      <data key="d9">authorship</data>
+      <data key="d10">FS_SINGLE-chunk-000</data>
+      <data key="d11">FS_SINGLE</data>
+      <data key="d12">1792428638</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Statistical Analysis of Longitudinal Neuroimage Data with Linear Mixed Effects Models" target="M. Reuter">
+      <data key="d7">1.0</data>
+      <data key="d8">M. Reuter is an author of the article.</data>
+      <data key="d9">authorship</data>
+      <data key="d10">FS_SINGLE-chunk-000</data>
+      <data key="d11">FS_SINGLE</data>
+      <data key="d12">1792428638</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Statistical Analysis of Longitudinal Neuroimage Data with Linear Mixed Effects Models" target="NeuroImage">
+      <data key="d7">1.0</data>
+      <data key="d8">The article was published in the journal NeuroImage.</data>
+      <data key="d9">published in</data>
+      <data key="d10">FS_SINGLE-chunk-000</data>
+      <data key="d11">FS_SINGLE</data>
+      <data key="d12">1792428638</data>
+      <data key="d13" />
+    </edge>
+    <edge source="SUB_ID" target="ACS_DIR">
+      <data key="d7">1.0</data>
+      <data key="d8">ACS_DIR is the base directory and SUB_ID is a subdirectory within it.</data>
+      <data key="d9">path construction</data>
+      <data key="d10">M1_INPUT_CODE-chunk-001</data>
+      <data key="d11">M1_INPUT_CODE</data>
+      <data key="d12">1792428682</data>
+      <data key="d13" />
+    </edge>
+    <edge source="SUB_ID" target="raw_${num_ima}_T2.nii.gz">
+      <data key="d7">1.0</data>
+      <data key="d8">The raw T2 image file is located within the subject's directory.</data>
+      <data key="d9">file location</data>
+      <data key="d10">M1_INPUT_CODE-chunk-001</data>
+      <data key="d11">M1_INPUT_CODE</data>
+      <data key="d12">1792428682</data>
+      <data key="d13" />
+    </edge>
+    <edge source="FS_LICENSE" target="SIF">
+      <data key="d7">1.0</data>
+      <data key="d8">The script validates the existence of both SIF and FS_LICENSE before proceeding, treating them as required inputs.</data>
+      <data key="d9">dependency,validation</data>
+      <data key="d10">WRAPPER_LICENSE-chunk-001</data>
+      <data key="d11">WRAPPER_LICENSE</data>
+      <data key="d12">1792428649</data>
+      <data key="d13" />
+    </edge>
+    <edge source="FS_LICENSE" target="T1_INPUT">
+      <data key="d7">1.0</data>
+      <data key="d8">Both T1_INPUT and FS_LICENSE are required inputs that must exist for the script to run successfully.</data>
+      <data key="d9">input,validation</data>
+      <data key="d10">WRAPPER_LICENSE-chunk-001</data>
+      <data key="d11">WRAPPER_LICENSE</data>
+      <data key="d12">1792428649</data>
+      <data key="d13" />
+    </edge>
+    <edge source="FS_LICENSE" target="T2_INPUT">
+      <data key="d7">1.0</data>
+      <data key="d8">Both T2_INPUT and FS_LICENSE are required inputs that must exist for the script to run successfully.</data>
+      <data key="d9">input,validation</data>
+      <data key="d10">WRAPPER_LICENSE-chunk-001</data>
+      <data key="d11">WRAPPER_LICENSE</data>
+      <data key="d12">1792428649</data>
+      <data key="d13" />
+    </edge>
+    <edge source="SIF" target="T1_INPUT">
+      <data key="d7">1.0</data>
+      <data key="d8">The script validates the existence of both SIF and T1_INPUT before proceeding, treating them as required inputs.</data>
+      <data key="d9">dependency,validation</data>
+      <data key="d10">WRAPPER_LICENSE-chunk-001</data>
+      <data key="d11">WRAPPER_LICENSE</data>
+      <data key="d12">1792428649</data>
+      <data key="d13" />
+    </edge>
+    <edge source="SIF" target="T2_INPUT">
+      <data key="d7">1.0</data>
+      <data key="d8">The script validates the existence of both SIF and T2_INPUT before proceeding, treating them as required inputs.</data>
+      <data key="d9">dependency,validation</data>
+      <data key="d10">WRAPPER_LICENSE-chunk-001</data>
+      <data key="d11">WRAPPER_LICENSE</data>
+      <data key="d12">1792428649</data>
+      <data key="d13" />
+    </edge>
+    <edge source="T1_INPUT" target="T2_INPUT">
+      <data key="d7">1.0</data>
+      <data key="d8">Both T1_INPUT and T2_INPUT are input files that must exist for the script to run successfully.</data>
+      <data key="d9">input,validation</data>
+      <data key="d10">WRAPPER_LICENSE-chunk-001</data>
+      <data key="d11">WRAPPER_LICENSE</data>
+      <data key="d12">1792428649</data>
+      <data key="d13" />
+    </edge>
+    <edge source="resolve_modality_binds" target="--bind flags">
+      <data key="d7">1.0</data>
+      <data key="d8">resolve_modality_binds generates a list of --bind flags that build the specified directory inside the container, always as individual per-file binds.</data>
+      <data key="d9">generates,produces</data>
+      <data key="d10">WRAPPER_BINDS-chunk-000</data>
+      <data key="d11">WRAPPER_BINDS</data>
+      <data key="d12">1792428673</data>
+      <data key="d13" />
+    </edge>
+    <edge source="resolve_modality_binds" target="BIDS anat folder">
+      <data key="d7">1.0</data>
+      <data key="d8">resolve_modality_binds correctly handles a BIDS anat folder that mixes T1w and T2w files together by creating per-file binds.</data>
+      <data key="d9">handles,supports</data>
+      <data key="d10">WRAPPER_BINDS-chunk-000</data>
+      <data key="d11">WRAPPER_BINDS</data>
+      <data key="d12">1792428673</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Input" target="Files">
+      <data key="d7">1.0</data>
+      <data key="d8">The Input path is used to locate files, which are added to the Files array.</data>
+      <data key="d9">accumulation,file discovery</data>
+      <data key="d10">WRAPPER_BINDS-chunk-001</data>
+      <data key="d11">WRAPPER_BINDS</data>
+      <data key="d12">1792428673</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Tag" target="Files">
+      <data key="d7">1.0</data>
+      <data key="d8">The Tag is used to filter filenames, selecting only those containing the tag.</data>
+      <data key="d9">filename matching,filtering</data>
+      <data key="d10">WRAPPER_BINDS-chunk-001</data>
+      <data key="d11">WRAPPER_BINDS</data>
+      <data key="d12">1792428673</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Tag" target="Nifti Files">
+      <data key="d7">1.0</data>
+      <data key="d8">Nifti files are grouped and identified by a tag, and the script checks for the presence of files associated with the tag.</data>
+      <data key="d9">associated with,grouped by</data>
+      <data key="d10">WRAPPER_BINDS-chunk-002</data>
+      <data key="d11">WRAPPER_BINDS</data>
+      <data key="d12">1792428673</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Recursive" target="Find">
+      <data key="d7">1.0</data>
+      <data key="d8">The Recursive flag determines whether Find searches subdirectories or only the top level.</data>
+      <data key="d9">configuration,search depth</data>
+      <data key="d10">WRAPPER_BINDS-chunk-001</data>
+      <data key="d11">WRAPPER_BINDS</data>
+      <data key="d12">1792428673</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Files" target="Find">
+      <data key="d7">1.0</data>
+      <data key="d8">Find locates .nii.gz files and its output is added to the Files array.</data>
+      <data key="d9">file discovery,output</data>
+      <data key="d10">WRAPPER_BINDS-chunk-001</data>
+      <data key="d11">WRAPPER_BINDS</data>
+      <data key="d12">1792428673</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Files" target="Sort">
+      <data key="d7">1.0</data>
+      <data key="d8">Sort orders the discovered files before they are added to the Files array.</data>
+      <data key="d9">ordering,processing</data>
+      <data key="d10">WRAPPER_BINDS-chunk-001</data>
+      <data key="d11">WRAPPER_BINDS</data>
+      <data key="d12">1792428673</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Files" target="NIfTI">
+      <data key="d7">1.0</data>
+      <data key="d8">Files are selected based on the .nii.gz extension, which is the NIfTI compressed format.</data>
+      <data key="d9">extension,file format</data>
+      <data key="d10">WRAPPER_BINDS-chunk-001</data>
+      <data key="d11">WRAPPER_BINDS</data>
+      <data key="d12">1792428673</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Input Directory" target="Nifti Files">
+      <data key="d7">1.0</data>
+      <data key="d8">The input directory is searched for .nii.gz files, and an error is raised if none are found.</data>
+      <data key="d9">contains,search</data>
+      <data key="d10">WRAPPER_BINDS-chunk-002</data>
+      <data key="d11">WRAPPER_BINDS</data>
+      <data key="d12">1792428673</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Input Directory" target="Recursive Search Flag">
+      <data key="d7">1.0</data>
+      <data key="d8">The recursive search flag determines whether the input directory is searched recursively for .nii.gz files.</data>
+      <data key="d9">affects,modifies search</data>
+      <data key="d10">WRAPPER_BINDS-chunk-002</data>
+      <data key="d11">WRAPPER_BINDS</data>
+      <data key="d12">1792428673</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Nifti Files" target="Bind Mount Arguments">
+      <data key="d7">1.0</data>
+      <data key="d8">Each Nifti file is mapped to a bind mount argument that binds the file to a destination path.</data>
+      <data key="d9">generates,maps to</data>
+      <data key="d10">WRAPPER_BINDS-chunk-002</data>
+      <data key="d11">WRAPPER_BINDS</data>
+      <data key="d12">1792428673</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Bind Mount Arguments" target="Destination Directory">
+      <data key="d7">1.0</data>
+      <data key="d8">The bind mount arguments specify a destination directory where the files are mounted.</data>
+      <data key="d9">mounts to,targets</data>
+      <data key="d10">WRAPPER_BINDS-chunk-002</data>
+      <data key="d11">WRAPPER_BINDS</data>
+      <data key="d12">1792428673</data>
+      <data key="d13" />
+    </edge>
+    <edge source="File Name" target="Seen Names List">
+      <data key="d7">1.0</data>
+      <data key="d8">File names are checked against the seen names list to ensure uniqueness, and a numeric prefix is added if a name is already present.</data>
+      <data key="d9">checked against,uniqueness</data>
+      <data key="d10">WRAPPER_BINDS-chunk-002</data>
+      <data key="d11">WRAPPER_BINDS</data>
+      <data key="d12">1792428673</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Manual Crop" target="Coords">
+      <data key="d7">1.0</data>
+      <data key="d8">The script checks if both Manual Crop and Coords are set to 1 to proceed with the image copying block.</data>
+      <data key="d9">condition,conjunction</data>
+      <data key="d10">M1_INPUT_CODE-chunk-000</data>
+      <data key="d11">M1_INPUT_CODE</data>
+      <data key="d12">1792428682</data>
+      <data key="d13" />
+    </edge>
+    <edge source="T1 Image Path" target="T1 Image File">
+      <data key="d7">1.0</data>
+      <data key="d8">The T1 Image Path directory contains T1 Image Files with .nii.gz extension that are iterated over.</data>
+      <data key="d9">contains,directory</data>
+      <data key="d10">M1_INPUT_CODE-chunk-000</data>
+      <data key="d11">M1_INPUT_CODE</data>
+      <data key="d12">1792428682</data>
+      <data key="d13" />
+    </edge>
+    <edge source="T2 Image Path" target="T2 Image File">
+      <data key="d7">1.0</data>
+      <data key="d8">The T2 Image Path directory contains T2 Image Files with .nii.gz extension that are iterated over.</data>
+      <data key="d9">contains,directory</data>
+      <data key="d10">M1_INPUT_CODE-chunk-000</data>
+      <data key="d11">M1_INPUT_CODE</data>
+      <data key="d12">1792428682</data>
+      <data key="d13" />
+    </edge>
+    <edge source="PREEMACS Directory" target="Subject ID">
+      <data key="d7">1.0</data>
+      <data key="d8">The PREEMACS Directory combined with Subject ID forms the path to the subject's folder where the Orig Folder resides.</data>
+      <data key="d9">path,subject folder</data>
+      <data key="d10">M1_INPUT_CODE-chunk-000</data>
+      <data key="d11">M1_INPUT_CODE</data>
+      <data key="d12">1792428682</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Subject ID" target="Orig Folder">
+      <data key="d7">1.0</data>
+      <data key="d8">The Subject ID folder contains the Orig Folder where raw images are stored.</data>
+      <data key="d9">contains,directory</data>
+      <data key="d10">M1_INPUT_CODE-chunk-000</data>
+      <data key="d11">M1_INPUT_CODE</data>
+      <data key="d12">1792428682</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Num Ima" target="T1 Image File">
+      <data key="d7">1.0</data>
+      <data key="d8">The Num Ima counter is used to generate the sequential filename for each copied T1 Image File.</data>
+      <data key="d9">counter,naming</data>
+      <data key="d10">M1_INPUT_CODE-chunk-000</data>
+      <data key="d11">M1_INPUT_CODE</data>
+      <data key="d12">1792428682</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Num Ima" target="T2 Image File">
+      <data key="d7">1.0</data>
+      <data key="d8">The Num Ima counter is used to generate the sequential filename for each copied T2 Image File.</data>
+      <data key="d9">counter,naming</data>
+      <data key="d10">M1_INPUT_CODE-chunk-000</data>
+      <data key="d11">M1_INPUT_CODE</data>
+      <data key="d12">1792428682</data>
+      <data key="d13" />
+    </edge>
+    <edge source="T1 Image File" target="Orig Folder">
+      <data key="d7">1.0</data>
+      <data key="d8">Each T1 Image File is copied to the Orig Folder with a new name raw_${num_ima}_T1.nii.gz.</data>
+      <data key="d9">copy,destination</data>
+      <data key="d10">M1_INPUT_CODE-chunk-000</data>
+      <data key="d11">M1_INPUT_CODE</data>
+      <data key="d12">1792428682</data>
+      <data key="d13" />
+    </edge>
+    <edge source="T2 Image File" target="Orig Folder">
+      <data key="d7">1.0</data>
+      <data key="d8">Each T2 Image File is copied to the Orig Folder with a new name raw_${num_ima}_T2.nii.gz.</data>
+      <data key="d9">copy,destination</data>
+      <data key="d10">M1_INPUT_CODE-chunk-000</data>
+      <data key="d11">M1_INPUT_CODE</data>
+      <data key="d12">1792428682</data>
+      <data key="d13" />
+    </edge>
+    <edge source="num_ima" target="raw_${num_ima}_T2.nii.gz">
+      <data key="d7">1.0</data>
+      <data key="d8">The counter variable num_ima is used to generate the file name for the raw T2 image.</data>
+      <data key="d9">file naming</data>
+      <data key="d10">M1_INPUT_CODE-chunk-001</data>
+      <data key="d11">M1_INPUT_CODE</data>
+      <data key="d12">1792428682</data>
+      <data key="d13" />
+    </edge>
+  </graph>
+</graphml>

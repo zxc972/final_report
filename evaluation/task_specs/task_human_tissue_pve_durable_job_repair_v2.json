@@ -1,0 +1,38 @@
+{
+  "task_id": "human_tissue_pve_durable_job_repair_v2",
+  "subjects": [
+    "100610",
+    "101309",
+    "101410"
+  ],
+  "input_roots": [
+    "/data/xuancheng/human_fastsurfer/subjects/100610",
+    "/data/xuancheng/human_fastsurfer/subjects/101309",
+    "/data/xuancheng/human_fastsurfer/subjects/101410",
+    "/data/xuancheng/agent_overnight_20261020/api_workspaces/analysis-e2e-cc2efd2f23d8/output/.analysis_runs/9c243e16054ceda0c2d29aa4d7be2a04/522aa9ebc72e4a1ba4116bf2434111e9"
+  ],
+  "required_artifacts": [
+    "analysis_plan.json",
+    "tissue_volumes.tsv",
+    "commands.json",
+    "qc_summary.json",
+    "software_outputs.json",
+    "report.md",
+    "fig_tissue_volumes.png",
+    "fig_tissue_qc.png"
+  ],
+  "message": "继续三例100610、101309、101410的真实组织部分容积分割及CSF/GM/WM体积描述分析。这是第二轮、也是本小问题最后一轮针对性修订。只读输入为这三例和你自己前一次完整工作目录；保留组禁止访问。前次没有三例成功结果，job已停止，不可把旧合成夹具、micro分割或旧脚本调用当新三例分析。\n\n前次你已回读FAST、Matplotlib、格式资料并生成main_analysis.py。它的完整后处理自检还漏了一段：独立在同一Nibabel5.4.2容器里对真正NIfTI复现，image_meta调用img.dataobj.get_data_dtype()会AttributeError，因为ArrayProxy无此方法；官方SpatialImage和ArrayProxy的API归属现已补入知识v9，可检索并回读。图中行列仍反着标：旧代码d0来自保留的第一数组轴，d1来自第二轴，却标rows->d1/cols->d0；imshow第一维是行、第二维列。请自己检查并修正实现，不仅修改报告表述。合成图中标题还截断，图例/方向必须可读。\n\n先检查真实运行政策和你的前次代码、元数据探测与工程micro源码，针对错误检索/回读官方API与方向原文，不必从头堆无关文献或重写全部说明。沿成熟FSL FAST主干，自主生成修订的完整代码。write_code会替换整个文件而非追加；大程序也可按完整模块组织，但必须保留实际完整源码和修订轨迹。不能由调用旧main_analysis.py替代新修订。若采用你自己生成的补丁工具，保留变更前后完整文件、补丁和真实执行收据，不隐去修改来源。\n\n提交昂贵计算前，必须在真实容器用清晰标记的纯合成小型影像走通同一实现的FAST调用→实际image_meta→PVE质控/求和→表格/JSON/报告/两张图完整路径，验证原来未覆盖的元数据段。不能只测import、编译、单独图函数或另写一个永远成功的fixture报告。所有工程输出独立目录并以fixture_等前缀标明，避免混入最终真实交付；不能缩小/裁剪实际三例来充当最终分析。检查修改后的最终代码确实经过该路径测试，再提交一次submit_python_job；不要把合成数据当成三例成果或自称私有独立核对通过。\n\n实际三例必须保留提供的FastSurfer重建被试空间网格和原分辨率，不称未经处理原始采集空间，不重复皮层重建，不以已有aseg/stats代替新FAST分割。T1/mask要核对shape、完整affine与支持区；预处理/脑提取/偏置开关依据实际数据与原文，不能只看nu文件名。单位明确区分MGH格式/软件约定与已审查的采集物理来源；只有来源依据才标mm，NIfTI保存后读回核验单位、几何。可以通过官方资料、现有软件help或实际源代码核对格式约定，不能从一个数字或文件名捏造物理来源。\n\n每条真实CLI开始即写可恢复journal，结束立即持久保存实际argv、时间、版本、returncode、完整stdout/stderr或日志路径与SHA256、输入哈希；不根据输出文件存在反推exit0，也不等图完成再写。记录每张真实PVE的SHA256、shape、未截断affine、单位和命令关联。全部有限值、各组织非空、概率范围、全图正支持区的和及背景/脑mask支持区要真实检查；不能用忽略NaN的求和隐藏异常，异常未解决就标失败/不确定。PVE组织索引与CSF/GM/WM来自T1原文；按未舍入PVE高精度求和乘实际体素体积，不用硬阈值计数。QC图按实际affine标方向；工程方向检查必须使用与图像一致的affine，不把另一affine强贴在数组上。不能把最接近轴方向宣称严格世界坐标切面或解剖QC合格。\n\n完整新程序提交后台7200秒；前台只探测/预检，不跑完整三例、不循环模型等待。每进程8GB、每文件1GB、无网络，输入只读；不降分辨率、裁剪、变空间或生物学参数以追求跑通。八项最终文件：analysis_plan.json、tissue_volumes.tsv（九行，每subject/tissue一行；subject_id,tissue_name,pve_index,pve_sum_voxels,voxel_volume_mm3,pve_volume_mm3，至少六位小数）、commands.json、qc_summary.json、software_outputs.json、report.md、fig_tissue_volumes.png、fig_tissue_qc.png。真实三例九张PVE与命令日志必须保留，影像不伪装成文本产物。报告区分提交、实际计算、工程自测、未经外部数值核对和专家解剖QC的边界；不作完整VBM、盲测、同源或组间结论。若再遇同一问题无法解决，如实报告并留下可恢复状态，不进入第三轮小问题空转。",
+  "api_entrypoint": true,
+  "provided_source_context_directory": false,
+  "research_evidence_release": "research_evidence_v9",
+  "next_review": "Second/last PVE background-script repair. Verify actual full engineering image→FAST→image_meta→all writers path and correct affine/array captions; no fixture contamination. Submit once only; actual job7200. Poll without provider. When completed associate9 actual PVEs from commands, independent stdlib decoding/original strict contract/fullsupport/units/geometry/real8outputs/figure review. No third same-problem loop if fails; switch independent feasible structural/monkey task, preserve evidence and usage.",
+  "model": "deepseek-v4-pro",
+  "max_scientific_repair_rounds": 2,
+  "include_predecessor_outputs": true,
+  "enable_background_jobs": true,
+  "scientific_contract_unchanged_sha256": "de3a5849a12156dc4b4028cfde6e5fd8eb2b4ec4cc9e94c21c3f923d09476093",
+  "dispatch_authorization": "Explicit user authorization for uncapped ongoing development, preserving cumulative usage. Second and last evidence-based background-script repair; not finalizer baseline repeat.",
+  "predecessor_run": "human_tissue_pve_durable_job_repair_v1_20261020T120607_11997c",
+  "background_script_repair_round": 2,
+  "no_more_automatic_same_issue_retries": true
+}

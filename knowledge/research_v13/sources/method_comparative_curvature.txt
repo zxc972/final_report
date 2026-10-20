@@ -1,0 +1,765 @@
+Systematic cortical thickness and curvature patterns in primates - PMC
+Skip to main content
+An official website of the United States government
+Here's how you know
+Here's how you know
+Official websites use .gov
+A
+.gov website belongs to an official
+government organization in the United States.
+Secure .gov websites use HTTPS
+A lock (
+Lock
+Locked padlock icon
+) or https:// means you've safely
+connected to the .gov website. Share sensitive
+information only on official, secure websites.
+Search
+Log in
+Dashboard
+Publications
+Account settings
+Log out
+Search…
+Search NCBI
+Primary site navigation
+Search
+Logged in as:
+Dashboard
+Publications
+Account settings
+Log in
+Search PMC Full-Text Archive
+Search in PMC
+Journal List
+User Guide
+PERMALINK
+Copy
+As a library, NLM provides access to scientific literature. Inclusion in an NLM database does not imply endorsement of, or agreement with,
+the contents by NLM or the National Institutes of Health.
+Learn more:
+PMC Disclaimer
+|
+PMC Copyright Notice
+Neuroimage. Author manuscript; available in PMC: 2023 Sep 1.
+Published in final edited form as: Neuroimage. 2023 Jul 27;278:120283. doi: 10.1016/j.neuroimage.2023.120283
+Search in PMC
+Search in PubMed
+View in NLM Catalog
+Add to search
+Systematic cortical thickness and curvature patterns in primates
+Nagehan Demirci
+Nagehan Demirci
+aBioengineering Graduate Program, University of Notre Dame, Notre Dame, IN 46556, USA
+Find articles by Nagehan Demirci
+a, Mia E Hoffman
+Mia E Hoffman
+bDepartment of Mechanical Engineering, University of Washington, Seattle, WA 98195, USA
+cDepartment of Aerospace and Mechanical Engineering, University of Notre Dame, Notre Dame, IN 46556, USA
+Find articles by Mia E Hoffman
+b,c, Maria A Holland
+Maria A Holland
+aBioengineering Graduate Program, University of Notre Dame, Notre Dame, IN 46556, USA
+cDepartment of Aerospace and Mechanical Engineering, University of Notre Dame, Notre Dame, IN 46556, USA
+Find articles by Maria A Holland
+a,c,*
+Author information
+Article notes
+Copyright and License information
+aBioengineering Graduate Program, University of Notre Dame, Notre Dame, IN 46556, USA
+bDepartment of Mechanical Engineering, University of Washington, Seattle, WA 98195, USA
+cDepartment of Aerospace and Mechanical Engineering, University of Notre Dame, Notre Dame, IN 46556, USA
+*
+Corresponding author at: Department of Aerospace and Mechanical Engineering, University of Notre Dame, Notre Dame, IN 46556, USA. maria-holland@nd.edu (M.A. Holland).
+Issue date 2023 Sep.
+This is an open access article under the CC BY license (http://creativecommons.org/licenses/by/4.0/).
+PMC Copyright notice
+PMCID: PMC10443624 NIHMSID: NIHMS1924378 PMID: 37516374
+The publisher's version of this article is available at Neuroimage
+Abstract
+Humans are known to have significant and consistent differences in thickness throughout the cortex, with thick outer gyral folds and thin inner sulcal folds. Our previous work has suggested a mechanical basis for this thickness pattern, with the forces generated during cortical folding leading to thick gyri and thin sulci, and shown that cortical thickness varies along a gyral–sulcal spectrum in humans. While other primate species are expected to exhibit similar patterns of cortical thickness, it is currently unknown how these patterns scale across different sizes, forms, and foldedness. Among primates, brains vary enormously from roughly the size of a grape to the size of a grapefruit, and from nearly smooth to dramatically folded; of these, human brains are the largest and most folded. These variations in size and form make comparative neuroanatomy a rich resource for investigating common trends that transcend differences between species. In this study, we examine 12 primate species in order to cover a wide range of sizes and forms, and investigate the scaling of their cortical thickness relative to the surface geometry. The 12 species were selected due to the public availability of either reconstructed surfaces and/or population templates. After obtaining or reconstructing 3D surfaces from publicly available neuroimaging data, we used our surface-based computational pipeline (https://github.com/mholla/curveball) to analyze patterns of cortical thickness and folding with respect to size (total surface area), geometry (i.e. curvature, shape, and sulcal depth), and foldedness (gyrification). In all 12 species, we found consistent cortical thickness variations along a gyral–sulcal spectrum, with convex shapes thicker than concave shapes and saddle shapes in between. Furthermore, we saw an increasing thickness difference between gyri and sulci as brain size increases. Our results suggest a systematic folding mechanism relating local cortical thickness to geometry. Finally, all of our reconstructed surfaces and morphometry data are available for future research in comparative neuroanatomy.
+Keywords: Cortical thickness, Curvature, Shape index, Cortical folding, Primates, Sulcal depth
+1. Introduction
+The folded cortical surface of the human brain has attracted the interest of researchers from diverse disciplines for many decades. Some of the earliest histological measurements of cortical thickness revealed consistent patterns — gyri are thicker than sulci (Bok, 1929, 1960; Brodmann, 1908; Brodmann and Gary, 2006; Economo and Triarhou, 2009; Welker, 1990). Korbinian Brodmann (1868–1918), for example, worked extensively on human brain mapping, comparative neuroanatomy, and the evolution of the cortex among different species. He investigated the regional and global cortical thickness variations throughout ontogeny and phylogeny, both within individuals and across species. He observed that homologous regions tend to be thick or thin across species (Brodmann and Gary, 2006). Later, Constantin von Economo (1876–1931) and George Koskinas (1885–1975) substantially improved the measurement of cortical thickness by cutting histological slices of the brain perpendicularly to the axes of gyri and sulci (Economo and Triarhou, 2009). In their data, they noted the gradual decrease of cortical thickness from the top of gyri to lateral walls and to the sulcal valleys (Economo and Triarhou, 2009).
+Subsequent researchers attempted to uncover the explanation why. Siegfried Bok (1892–1964) explained the variation in cortical thickness as the consequence of relative volume preservation in cortical layers throughout the folds of the brain (Bok, 1929; Consolini et al., 2022). Much later, Welker (1990) proposed that gyral crowns are thicker than sulcal fundi because of the variations of neuronal differentiation and arborization: the neurons and their neuropils occupy space dispersely and elongate radially in gyri, whereas they reside compactly and elongate longitudinally in sulci (Welker, 1990; Bok, 1929; Cowan, 1979; Razavi et al., 2017). Additional research has shown that there are significantly more neurons in gyri than sulci (Razavi et al., 2017; Hilgetag and Barbas, 2005), and that intracortical axons appear to proliferate more in gyri compared to sulci (Zhang et al., 2017; Razavi et al., 2017; Xu et al., 2010; Chen et al., 2013b). Although these explanations give the impression that consistent variations of cortical thickness are the consequence of neuronal differences between gyri and sulci, they might as well be the cause. As Bok hypothesized, neurons might sense the environmental cues and alter their density, orientation, and shape due to the change of curvature throughout the in-and-out folds of the cortex via mechanosignaling to fulfill the volume-constancy principle (Bok, 1929).
+More recently, magnetic resonance (MR) images have allowed for the analysis of cortical thickness in vivo. With the advancements in automated neuroimaging pipelines, the complex 3-D morphology of the cortex can be extracted, allowing us to quantify cortical thickness through surface-based (Fischl and Dale, 2000; Dahnke et al., 2013; Kabani et al., 2001; Lerch and Evans, 2005; Hayashi et al., 2021) or voxel-based methods (Scott et al., 2009; Hutton et al., 2008). Cortical thickness estimations from these pipelines have been validated against estimations from histology studies (Cardinale et al., 2014; Rosas et al., 2002) or with other pipelines (Kharabian Masouleh et al., 2020; Velázquez et al., 2021; Tustison et al., 2014), encouraging wide acceptance and usage. Many recent studies utilizing these algorithms have also found consistent gyral–sulcal thickness differences (Holland et al., 2018; Wang et al., 2021; Fischl and Dale, 2000; Zhang et al., 2017; Lin et al., 2021).
+While some studies have shown that thickness differences can determine the position of cortical folds (Zhang et al., 2016), our previous work has also shown the opposite: that the buckling of a thin layer on a soft substrate necessarily bifurcates into thick peaks and thin valleys (Holland et al., 2018). In theoretical, computational, and experimental studies, this was shown to be a universal phenomenon of bilayered instabilities, resulting from the physical forces experienced during buckling. (While the stimulus for this buckling is still not completely understood, it is believed to result from residual stresses arising from differential growth in the cortex (Richman et al., 1975; Bayly et al., 2013), likely driven by heterogeneous gene expression in the subplate (Ronan and Fletcher, 2015), potentially alongside tension generated by axon tracts in the underlying white matter (Van Essen, 1997; Xu et al., 2010).) From our previous work, gyral–sulcal thickness differences are predicted to increase with 1) increasing foldedness, 2) increasing cortical thickness, and 3) decreasing gray-white matter stiffness ratio (Holland et al., 2018). However, it is not the case that physical forces alone are responsible for thickness differences. Simulations of cortical folding with preferential growth in gyri turned out to best reproduce the patterns of thickness seen in the brain (Wang et al., 2021), suggesting that increased growth in gyri serves to further exaggerate thickness differences.
+In our recent study in humans, we expanded the investigation of cortical thickness, generally studied in a gyral–sulcal binary, to include lateral walls and saddle shapes. We demonstrated a strong correlation between cortical thickness and geometrical shape, with thickness decreasing along a gyral–sulcal spectrum — consistently thickest for convex shapes, thinnest for concave shapes, and in the middle for saddle shapes (Demirci and Holland, 2022). For our shape analysis, we utilized dimensionless shape index, introduced by Koenderink and van Doorn (1992), which varies from −1 to 1. Shape index is a very useful measure in characterizing complex patterns of cortical folds. With a single measure, local shape is conveniently extracted at each point of the cortex. This presents itself as a methodological advantage both in terms of easing morphometric calculations and eliminating the need for segmenting complex structures, for example, sulci fundi and gyral crests. In this study, we follow a similar approach and use shape index as the primary measure of curvature.
+Now, we are interested in exploring this finding to see if human brains are an exception, or if the same phenomenon can be observed in other primate species. Primate species brains span a huge range of forms, sizes, and degrees of foldedness. In early development, the cortex is smooth for all species, but at later stages of ontogeny, cortices of different species exhibit different forms and patterns (Welker, 1990; Hayashi et al., 2021; Essen et al., 2019). This variation in size and form among related species offers a rich testing ground for theories of neurodevelopment. Based on our previous work, we hypothesize that the mechanical forces that emerge during the development of the brain, together with other cellular and genetic determinants, lead to this systematic morphological trait of the cortex, and therefore that the distribution of cortical thickness along the gyral–sulcal spectrum will be similar to what we have observed in humans.
+To that end, we aim to investigate the relationship between cortical morphology and cortical thickness in a variety of primate species. Additionally, we analyze the changes in cortical morphology with respect to age in several species, to determine if the changes seen in aging humans are present for other primates. However, investigating primate brains is challenging for a number of reasons; including the lack of available imaging data (both in the diversity of species and the number of specimens); the lack of standardization in data acquisition and scanning protocols; and the lack of software for the reconstruction of cortical surfaces.
+First of all, it is challenging to obtain images of non-human primate species. It is, fortunately, fairly straightforward to access thousands of human brain MR images and multiple population templates, for example from ABIDE (Autism Brain Imaging Data Exchange) (Di Martino et al., 2014) and the Human Connectome Project (Glasser et al., 2016). However, the availability of non-human primate data is much more limited, particularly for those species who are less commonly used as laboratory research animals. The PRIMatE Resource Exchange (Milham et al., 2018) and the National Chimpanzee Brain Resource (NCBR) (https://www.chimpanzeebrain.org) are both valuable data repositories that share macaque and chimpanzee neuroimaging data, with many specimens available for each species. But for many other species, fewer specimens have been scanned and made available (for example, the marmoset Liu et al., 2021; Hayashi et al., 2021), and for yet others of the 350 extant primate species, no images are publicly available.
+Secondly, the diversity of sizes and forms among primate brains has led to a range of neuroimaging protocols and hardware, which are far less standardized than human neuroimaging (Autio et al., 2021; Milham et al., 2022). For example, ultra high field scanners (7T) require narrower bore sizes and constrain the RF coil size. These non-standard RF coils might be susceptible to intensity bias fields and distortion (Autio et al., 2021; Milham et al., 2018). Total head size of the species is another concern for inter-species heterogeneity that requires optimized and adjusted field-of-view to improve spatial resolution. Subject motion also impacts the image quality, with awake subject scanning protocols more prone to motion artifacts and reduced image quality. Additionally, non-standard image resolution and tissue-contrast between white and gray matter complicate important procedures such as brain extraction, image registration, and tissue segmentation. For example, humans are typically scanned with 1 mm isotropic resolution, but for brains of other sizes, the rule is to have an isotropic spatial resolution of half the minimum cortical thickness (Autio et al., 2021).
+Finally, the lack of software packages for the reconstruction of cortical surfaces in non-human primates poses a significant challenge. Detailed analysis of cortical morphology requires reconstructed surfaces (both the outer pial surface and, for cortical thickness measurements, the surface at the interface of the white and gray matter). These surfaces must be created via brain extraction and tissue segmentation. Many automated pipelines such as Freesurfer (Fischl, 2012) and BrainVisa (Cointepas et al., 2001), are optimized for humans and often fail to process non-human brains. To address this, researchers have to either adapt existing tools, optimized for human brains, to the analysis of non-human brains, or develop new tools. These attempts have resulted in numerous customized solutions for a single species, with more generalized solutions that are applicable to a range of non-human primate species (Messinger et al., 2021), but these products are still evolving.
+Generally, the segmentation approaches being developed fall into one of two main categories: template-based and intensity-based methods. A template-based approach requires a population-averaged, single-animal template which serves as a representative brain of that population, providing a common framework for individual subject scans, which are then aligned to the template through linear and non-linear registration algorithms (Chumchob and Ke, 2009; Zhang et al., 2001). Templates can be very efficient; after aligning the individual image, the remaining steps of skull-stripping and tissue segmentation are more straightforward, minimizing the need for tedious, time-consuming manual interventions. Unfortunately, templates are costly to produce, requiring high-resolution and ideally in vivo scans from multiple subjects, and are thus only available for a handful of the species most commonly used in research.
+Intensity-based approaches, on the other hand, rely on the intensity contrast between different tissue types to delineate their locations. Although a population template is not required for this approach, multiple parameters need to be optimized for each non-human species, which is done through tedious trial and error. While recent advances have yielded more sensitive segmentation (Gulban et al., 2018), these approaches are not fully automatized.
+Given these challenges, we identified 12 primate species for study (Fig. 1). Their brains range dramatically in size from the smallest, Senegal galago, about the size of a grape, to the largest, humans, about the size of a grapefruit (Fig. 1). We selected these species because they cover a wide range of size and form; represent two suborders (simians and prosimians), seven families, and eleven genera within the primate order (from left to right in Fig. 1: Galago, Aotus, Pithecia, Sapajus, Macaca, Colobus, Lagothrix, Lophocebus, Pan, Pan, Gorilla, Homo); and, conveniently, have either reconstructed surfaces and/or population templates publicly available. Then, by using our surface-based, open-source computational pipeline (Demirci and Holland, 2022) (https://github.com/mholla/curveball), we analyzed the patterns of cortical thickness and folding for each species with respect to size (surface area), geometry (curvature, shape, and sulcal depth), and degree of foldedness (gyrification).
+Fig. 1.
+Open in a new tab
+The primate species investigated in this study. Each species is listed by its common name, and is accompanied by a picture and a coronal MR slice, both shown not to scale, and a reconstructed cortical surface, shown to scale. Total surface area (SA) and cerebral volume (V) are listed below. Species are arranged in order of increasing surface area with the exception of the wooly monkey, which is shifted two species to the left to demonstrate the phylogenetic classification. Surface area spans two orders of magnitude, with species distributed unevenly along that axis; therefore, to facilitate analysis, we divided them into four groups (small, medium, large, and x-large) based on natural breaks in the distribution of their surface areas. The night monkey, colobus, and gray-cheeked mangabey images are copyright 2009 Marie Hale (https://flickr.com/photos/15016964@N02/5568808375), 2018 Eric Kilby (https://www.flickr.com/photos/ekilby/26790822947), and 2012 Joe McKenna (https://www.flickr.com/photos/jpmckenna/8183556861), respectively, and are adapted under a Creative Commons Attribution 2.0 Generic License.
+2. Methods
+In this study, we used publicly available neuroimaging resources and automated processing pipelines to analyze 595 brains from 12 species (Table 1). Among these species, surface area spans two orders of magnitude, with species distributed unevenly along that axis; therefore, to facilitate analysis, we divided them into four groups (small, medium, large, and x-large) based on natural breaks in the distribution of their surface areas. We first created or obtained reconstructed cortical surfaces for each species, including a template-based approach for the rhesus macaque and chimpanzee; an intensity-based approach for the bonobo and gorilla (Mangin et al., 1998); and acquiring preprocessed surfaces for humans (Cameron et al., 2013) and the rest of the species (Bryant et al., 2021; Ardesch et al., 2021a). With these surfaces, we then used our existing open-source computational pipeline (Demirci and Holland, 2022) to analyze patterns of brain morphology. All scripts generated for this study, including code sufficient to reproduce all figures, are available at https://github.com/mholla/NIMG23. Additionally, the data for all 595 subjects of all 12 species are available at doi.org/10.5281/zenodo.7574350, including the pial, white, and alpha surfaces, as well as cortical thickness, area, sulcal depth, curvature, and shape index at each vertex.
+Table 1.
+Primate species used in this study along with their total number subjects, age-span, and status during scan. Scanning parameters for each species, processing tool(s), and resources are also listed. All images are T1-weighted. (PM: Postmortem, IV: In-vivo, NCBR: National Chimpanzee Brain Resource, PBB: Primate Brain Bank, CAT: Computational Anatomy Toolbox, SPM: Statistical Parametric Mapping, PRIME-DE: Primate Data Exchange, *See Demirci and Holland (2022) for details).
+Common name
+Scientific name
+N
+Gender
+Age
+Subject
+Scan parameters
+Processing
+Source
+M:F
+[years]
+Status
+Strength
+Voxel size [mm3]
+Tools(s)
+Senegal galago
+Galago senegalensis
+1
+M
+20.9
+PM
+7T
+0.3 × 0.3 × 0.3
+Freesurfer
+PBB
+Night monkey
+Aotus lemurinus
+1
+M
+15.3
+PM
+7T
+0.4 × 0.4 × 0.4
+Freesurfer
+PBB
+White-faced saki
+Pithecia pithecia
+1
+M
+4.0
+PM
+7T
+0.6 × 0.6 × 0.3
+Freesurfer
+PBB
+Tufted capuchin
+Sapajus apella
+1
+M
+22.0
+PM
+7T
+0.6 × 0.6 × 0.6
+Freesurfer
+PBB
+Rhesus macaque
+Macaca mulatta
+31
+29:2
+2.7–8.0
+IV
+3T
+See Table 2
+ANTs, AFN
+PRIME-DE
+Black-white colobus
+Colobus guereza
+1
+M
+23.7
+PM
+7T
+0.6 × 0.6 × 0.6
+Freesurfer
+PBB
+Wooly monkey
+Lagothrix lagotricha
+1
+F
+8.0
+PM
+7T
+0.6 × 0.6 × 0.6
+Freesurfer
+PBB
+Gray-cheeked mangabey
+Lophocebus albigena
+1
+F
+27.0
+PM
+7T
+0.6 × 0.6 × 0.6
+Freesurfer
+PBB
+Chimpanzee
+Pan troglodytes
+54
+19:35
+8.0–53.0
+IV
+3T
+0.6 × 0.6 × 0.6
+CAT, SPM
+NCBR
+Bonobo
+Pan paniscus
+1
+M
+8.0
+IV
+1.5T
+0.7 × 0.7 × 0.7
+BrainVisa
+NCBR
+Gorilla
+Gorilla gorilla
+1
+M
+8.0
+IV
+1.5T
+0.7 × 0.7 × 0.7
+BrainVisa
+NCBR
+Human
+Homo Sapiens
+501
+414:87
+7.0–56.0
+IV
+3T
+Varies per site*
+Freesurfer
+ABIDE-I
+Open in a new tab
+2.1. Preprocessing details
+2.1.1. Rhesus macaque
+We obtained MR images of captive rhesus macaques from the publicly available PRIMatE Data Exchange (PRIME-DE) repository. These data come from multiple sites, which represents a challenge because different equipment and data acquisition protocols yield variations in data quality. Because of this, we specifically selected data acquired from the same brand of scanner (Siemens), with the same magnetic strength (3T) and pulse sequence (T1-weighted), and same subject scanning procedure (anesthetized). Additionally, we eliminated the sites with large surface errors from our analysis (Garcia-Saldivar et al., 2021) and restricted the age-span of subjects between 2.4 to 8 years. This resulted in the inclusion of 31 individuals (Table 1). Despite our selective use of only the most comparable data from the large PRIME-DE dataset, there are still slight differences in the data acquisition parameters (Table 2). Unregulated and non-harmonized data acquisition from multiple sites might lead to differences in cortical surface quality, which is especially important for comparative neuroanatomy studies (Hayashi et al., 2021). Data standardization and harmonization of public datasets are key to enable reproducibility of studies, so that multi-site bias can be reduced (Chen et al., 2014). Recently, several data acquisition and imaging protocols have been suggested to accelerate non-human primate neuroimaging progress (Milham et al., 2020). For example, (Autio et al., 2020) suggested using a specific type of receiver coil (24-ch radio-frequency (RF) receiving head coil) and following a specified image acquisition protocols for in vivo macaque imaging studies. Furthermore, a recent large exploratory study investigated the scanning-induced image variabilities and suggested a surface-based correction method for evaluating confounding effects (Chen et al., 2014). The study found that the variations in scanner and field strengths cause the most inconsistencies among the images, which we kept the same in this study.
+Table 2.
+PRIMatE Data Exchange (PRIME-DE) MRI×data ×acquisition details of rhesus macaque species for each site. (SP: Siemens Prisma, STT: Siemens Tim Trio).
+Site
+N
+Voxel size [mm3]
+Scan parameters
+Scanner
+TR
+TE
+TI
+Flip angle
+[ms]
+[ms]
+[ms]
+[°]
+AMU
+4
+0.8 × 0.8 × 0.8
+2900
+2.04
+1000
+8
+SP
+ECNU(C)
+10
+0.75 × 0.75 × 0.8*
+2200
+2.69–3.71
+–
+7–9
+STT
+ECNU(K)
+4
+0.8 × 0.8 × 1.0
+3000
+77.00
+900
+15
+STT
+ION
+4
+0.5 × 0.5 × 0.5
+2500
+3.12
+1100
+9
+STT
+NKI
+2
+0.5 × 0.5 × 0.5
+2500
+3.87
+1200
+8
+STT
+Princeton
+2
+0.5 × 0.5 × 0.5
+2700
+2.32
+850
+9
+SP
+Rockefeller
+5
+0.5 × 0.5 × 0.5
+2300
+2.95
+1100
+8
+STT
+Open in a new tab
+*
+Resolution was listed as 0.6 × 0.6 × 0.6, 0.75 × 0.75 × 0.8.
+We followed a template-based approach for processing the rhesus macaque scans, using the publicly available NMT (National Institute of Mental Health Macaque Template) template and accompanying single-subject bash scripts (Seidlitz et al., 2018). NMT is a high-resolution (0.25 mm isotropic) in vivo population-average template built from 31 rhesus macaques between the ages of 3.2 and 13.2 years, with three-class (white matter, gray matter, and CSF) tissue probability maps to show the probability of each voxel belonging to each specific tissue type.
+Using the bash scripts with slight changes in parameters and optional arguments where necessary, we ran the tools ANTs (Avants et al., 2011) and AFNI (Cox, 1996; Cox and Hyde, 1997) for processing individual rhesus macaque scans. Each individual scan was bias corrected, aligned, and registered to the NMT template both linearly and non-linearly (Fig. 2A). Using the NMT tissue prior masks, subject masks were generated in the template space, which were then transformed back to the native space for further analysis. ANTs was used for bias-field correction (N4BiasFieldCorrection), brain extraction (antsBrainExtraction), and tissue segmentation (antsAtroposN4) (Fig. 2B); and AFNI for image registration (align_epi_anat.py) and surface reconstruction (IsoSurf) (Fig. 2C–D).
+Fig. 2.
+Open in a new tab
+Preprocessing steps of the rhesus macaque, chimpanzee, and bonobo scans. Rhesus macaque scans from PRIME-DE were aligned to the NMT template and bias-field inhomogeneities were corrected (A) before 3-class tissue segmentation (B) and the reconstruction of pial (C) and white (D) surfaces using AFNI. Chimpanzee scans from NCBR were aligned to the Juna-Chimp template, bias-field corrected, and skull-stripped (F) before 3-class tissue segmentation (G) and reconstruction of pial (H) and white (I) surfaces using SPM and CAT. A bonobo scan from NCBR was bias-corrected, anatomically aligned, and skull-stripped (K) before 3-class tissue segmentation (L) and reconstruction of pial (M) and white (N) surfaces using BrainVisa Morphologist toolbox. The rightmost column shows the surface boundary estimations overlaid on top of MR slices for each species (E,J,O). Note that the segmentation of rhesus-macaque and chimpanzee subjects rely on the NMT and Juna-Chimp templates and species-specific segmentation methods, resulting in slight differences. For instance, the medial thalamus and lateral ventricles are within the inner compartment of the white matter surface in chimpanzees (J) but not in rhesus macaques (E) and the bonobo (O). However, this does not affect our cortical thickness estimations as thickness values that are less than 0.5 mm, including along the medial wall, are set to zero.
+AFNI’s IsoSurf uses the Lewiner’s marching cubes algorithm to create an isosurface from the input volume (Lewiner et al., 2003). After smoothing the initial surface using Laplacian and Taubin smoothing algorithms (Ohtake et al., 2001), topological defects were observed on pial and white surfaces. We used Freesurfer’s mris_fix_topology algorithm to automatically fix topological deformities such as gyral handles and sulcal holes. This algorithm ensures spherical topology of each cortical surface (pial and white), in which Euler’s number is 2. However, if the algorithm fails to fix all the defects, we intervened manually and corrected the segmentation volumes using ITK-SNAP http://www.itksnap.org/ (Yushkevich et al., 2006). More advanced topology correction algorithms might yield better outcomes for the estimation of the white surface, such as the HCP-NHP pipeline (Autio et al., 2020) or Topofit, which employs machine learning algorithms (Hoopes et al., 2022).
+2.1.2. Chimpanzee
+We obtained 54 MR images of chimpanzee brains from the NCBR (supported by NIH grant NS092988) (Table 1). All the chimpanzees are from Yerkes National Primate Research Center (YNPRC) at Emory University Institutional Animal Care; 18 of them are mother-reared, 23 of them are nursery-reared, and the rest are wild (NCBR). All of the images were acquired at 3T and had been previously bias-corrected, denoised, and skull-stripped (Fig. 2F).
+We followed a template-based approach for processing the chimpanzee brain scans, using the publicly available T1-weighted Juna-Chimp template and the accompanying structural processing pipeline and MATLAB SPM (Statistical Parametric Mapping) batch scripts (Vickery et al., 2020). This is a 1 mm-resolution in vivo population-average template built from 223 chimpanzee brains between the ages of 9 and 54 years, with three-class tissue probability maps (Vickery et al., 2020).
+We used SPM12 (Ashburner, 2009), and the toolbox CAT12 (Computational Anatomy Toolbox) (Gaser and Dahnke, 2019), both run inside MatlabR2019b©, for processing individual chimpanzee scans. We registered each individual scan to the template by manually setting the stereotaxic origin at the anterior commisure to (0,0,0) x-y-z coordinates within SPM (Fig. 2F). Tissue segmentation (Fig. 2G) and white and pial surface reconstruction (Fig. 2H–I) were then performed using the same toolbox. We would like to note that the gyri on the top of the chimpanzee brain appears slightly thinner than other areas (temporal or frontal), likely due to a bias of MR signals (F, J).
+2.1.3. Bonobo and gorilla
+We obtained MR images of one bonobo and one gorilla from the NCBR dataset, which were living in captivity. Both were T1 weighted images acquired at 1.5T (Table 1) (Rilling and Insel, 1999).
+We followed an intensity-based approach for processing the bonobo and gorilla scans, using BrainVisa Morphologist toolbox (Cointepas et al., 2001) for skull-stripping, segmentation, and surface reconstruction. BrainVisa offers significant advantages as a fast automated processing pipeline with minimal manual interventions, an intuitive graphical user interface, and modular structure, and powerful and robust topological correction algorithms for surface reconstruction. Unfortunately, it is optimized for human brains (Rivière et al., 2009; Fischer et al., 2012) and only for T1-weighted images. Because of this, it is challenging to process non-human brains, especially the small brains, as manipulation of the original scan size distorts the spatial resolution. However, as bonobo and gorilla brains are relatively close in size to human brains, the software can be fine-tuned to account for their anatomical differences with humans.
+The pipeline begins with the manual selection of four anatomical points. After inhomogeneity normalization (Mangin, 2000) (Fig. 2K), the tissue intensities are estimated (Mangin et al., 1998). Next, the hemispheres are split and the cerebellum and brain stem are removed. Finally, the gray and white matter are segmented (Fig. 2L) and the pial and white surfaces are reconstructed (Fig. 2M–N). As these images were acquired at 1.5T, they have slightly lower image quality, signal-to-noise ratio, and gray/white contrast. This results in small impurities in the segmentation, which is reflected on the reconstructed surface especially around sub-cortical regions. This might slightly impact our cortical thickness estimations in this region.
+2.1.4. Humans
+We obtained preprocessed cortical surface reconstructions of 501 typical human brains from the publicly available multi-site neuroimaging data shared by the Autism Brain Imaging Data Exchange (ABIDE-I) repository (Di Martino et al., 2014; Cameron et al., 2013). While 573 subjects are available in the database, we excluded 72 subjects based on scan quality (Pardoe et al., 2016), as in our previous work (Demirci and Holland, 2022). MRI data acquisition parameters and scanner types varied between sites, but all scans were acquired at 3T. Detailed information regarding the functional and anatomical scan parameters of each site can be found in the supplementary information of Di Martino et al. (2014).
+2.1.5. Remaining species
+Each of the remaining seven non-human primate species were originally obtained from the Netherlands Institute of Neuroscience Primate Brain Bank (PBB; http://www.primatebrainbank.org/); all of the animals were living in captivity in Dutch zoos and primate centers. We obtained the preprocessed cortical surface reconstructions of each specimen from Bryant et al. (2021), who produced these surfaces using Freesurfer, FSL, ANTs, and MATLAB with manual corrections where necessary (Ardesch et al., 2021b). For the tissue segmentation of the smallest brain samples, a three-step registration was used by Bryant et al. (2021), first registering the image to a macaque template, then to a chimpanzee template, and lastly to the human Talairach space, before warping back to the initial native space (Ardesch et al., 2021b).
+2.2. Processing pipeline
+From the triangulated surface meshes produced by the workflows above, we used our open-source computational pipeline (Demirci and Holland, 2022) (Fig. 3) to calculate cortical thickness, curvature (Gaussian and mean), shape (shape index), sulcal depth, and surface area at each point of the pial surface for both hemispheres. The total number of points varies for each species (see Supp. Table 1). The vertex densities for each species are carefully determined in order to prevent over/undersampling. We calculated the vertex density for each species by dividing the total surface area by the total number of vertices and taking the square root. Then, The resolutions are ~ 2 mm, ~ 1.5 mm, ~ 1 mm, and ~ 0.5 mm for x-large, large, medium, and small species, respectively (for full data see Supp. Table 1). The resolution increases as size gets smaller, in order not to under-sample the smaller sized species. Based on this analysis, our species-specific meshes approximate the spacing and resolution of the corresponding MR images.
+Fig. 3.
+Open in a new tab
+Our open-source, surface-based, brain morphology pipeline (https://github.com/mholla/curveball). The pipeline works with triangulated pial and white surfaces. First, the surface mesh is normalized (A) and smoothed (B). Then the local shape is extracted by calculating curvature and shape index at each point (C). Additionally, cortical thickness, sulcal depth, and surface area are measured (D). Full details of the pipeline can be found in Demirci and Holland (2022).
+The full details of the pipeline are explained elsewhere (Demirci and Holland, 2022), but in brief, it starts by normalizing (Fig. 3A) and smoothing (Fig. 3B) the mesh to increase robustness, reduce single vertex errors, and obtain mesh elements of approximately equal size. Both Laplacian and Taubin smoothing algorithms are applied only to an extent, in which over-smoothing and shrinkage of the surface is avoided (Demirci and Holland, 2022). We employed both of the surface denoising algorithms because, in our experience, Taubin smoothing itself is not sufficient to remove the single-vertex errors for robust and accurate morphometric calculations. We also used Laplacian smoothing with caution as it can change the shape of the surface drastically by shrinking it, especially at higher iterations; Taubin smoothing, on the other hand, preserves the overall geometry of the surface by first shrinking the surface, and then inflating it back with a greater magnitude compared to the initial scaling parameter. We also ensured that the normalized and smoothed pial and white surfaces have very similar total number of vertices by utilizing mesh decimation and/or subdivision with a preset target number of triangles.
+Then, using the principles of discrete geometry, intrinsic and extrinsic curvatures (Gaussian and mean curvature, respectively) are calculated. These curvatures are then used to determine the local shape via the shape index (Koenderink and van Doorn, 1992), which is a non-dimensional measure that characterizes the local shape as a single scalar between −1 and 1. This corresponds to a perfect cup and cap, respectively, with additional shapes in between (Fig. 3C). Shape index has been used previously to analyze the structure of the cortex (Hu et al., 2013; Shimony et al., 2016; Kim et al., 2016), although not as frequently as other surface measures, such as Gaussian, mean, and principal curvatures. We also note that estimation of the shape index is highly dependent on the spatial resolution of the data acquisition and the accuracy of the cortical reconstruction as true with any other measure, which is why normalization and smoothing of the surface are critical.
+Next, we calculate the local cortical thickness and sulcal depth as linear Euclidean distances between the closest points on different surfaces. Cortical thickness is the average distance between points on pial and white surfaces (that is, the average of the distance from a point on the white surface to the closest point on the pial surface, and the distance from that point back to the nearest point on the white surface). Sulcal depth is the distance between points on the pial surface and an alpha surface that tightly wraps the cortex (Demirci and Holland, 2022) (Fig. 3D). Alpha values to generate alpha surfaces for each species varies and the values are correlated with size of the species (see Supp. Table 1). The alpha values were chosen manually as the minimum alpha value that tightly wraps the whole cortical surface. All local surface measures are smoothed by applying two iterations of weighted-averaging, and then they are averaged to yield the average cortical thickness and the folding amplitude (average sulcal depth). The pial and alpha surface areas are also calculated, as the sum of each triangular element area on the respective surface. From these, the dimensionless gyrification index (GI) can be found; GI quantifies the degree of foldedness as the ratio between the total and exposed surface areas (pial and alpha, respectively) (Zilles et al., 1989). We also calculated the total cerebral volume for each species using our pipeline. Finally, we calculate the cortical thickness ratio, defined as the ratio between the average thickness of all convex points to all concave points.
+3. Results
+3.1. Validation of calculations
+To validate our calculations, we collected cortical thickness and GI values from the literature (Table 3) and compared them to our own (Fig. 4). In some cases, global values were found in the literature and a comparison was straightforward. However, these values were not available for some species, especially those that are not common research models (Fig. 4, top left). In the event that we could not find global data for a species, we first looked for regional data and, if found, took its average to obtain an estimate of the global value (Fig. 4, top left).
+Table 3.
+Sources for cortical thickness values used for comparison in Fig. 4. Global data (●) were collected when available; if not, regional data (▲) were averaged to get a global estimate. When neither were available, a methodological comparison was conducted comparing results for the same specimen from our computational pipeline to Freesurfer’s surface-based morphometry approach (■).
+Species
+Source
+■
+Senegal galago
+Bryant et al. (2021)
+■
+Night monkey
+Bryant et al. (2021)
+■
+White-faced saki
+Bryant et al. (2021)
+●
+Tufted capuchin
+Herculano-Houzel et al. (2008), Herculano-Houzel (2015)
+●
+Rhesus macaque
+Hofman (1985), Bourgeois et al. (1994), Koo et al. (2012), Herculano-Houzel (2015), Lepage et al. (2021), Hayashi et al. (2021)
+■
+Black-white colobus
+Bryant et al. (2021)
+■
+Wooly monkey
+Bryant et al. (2021)
+■
+Gray-cheeked mangabey
+Bryant et al. (2021)
+●
+Chimpanzee
+Donahue et al. (2018), Xiang et al. (2020), Autrey et al. (2014), Hopkins et al. (2019)
+▲
+Bonobo
+Hopkins et al. (2015)
+▲
+Gorilla
+Hutsler et al. (2005)
+●
+Human
+Hofman (1985), Herculano-Houzel (2015), Donahue et al. (2018), Xiang et al. (2020), Fischl and Dale (2000), Hurtz et al. (2014)
+Open in a new tab
+Fig. 4.
+Open in a new tab
+Comparison of our global cortical thickness (top) and gyrification index (GI, bottom) values with data collected from literature for the 12 species investigated. The dashed lines represent unity. Global data (●) were collected when available; if not, regional data (▲) were averaged to get a global estimate. Error bars represent the cumulative standard deviation of all standard deviations collected from each publication. A methodological comparison was also conducted comparing results for the same specimen from our computational pipeline to Freesurfer’s and CAT12’s surface-based morphometry approach (humans and chimpanzees respectively) and ANT’s volumetric cortical thickness algorithm (rhesus macaques) (■). Sources for cortical thickness data are listed in Table 3; all GI values were found in Zilles et al. (2013). The full cortical thickness data represented in this figure is available on Github (https://github.com/mholla/NIMG23).
+Additionally, we compared our results to those obtained from a different method on the same surfaces (Fig. 4, top right). We include these comparisons, in which the same subject is compared to itself via different methods, as an evaluation of our computational method. For example, we compared our cortical thickness findings for seven species from Bryant et al. (2021) to their results from Freesurfer. Moreover, we compared our cortical thickness data of rhesus macaque subjects against volumetric cortical thickness data obtained by ANTs’s KellyKapowski algorithm, which is outputted by the pipeline provided by Seidlitz et al. (2018). We also compared our chimpanzee results against surface-based cortical thickness data obtained through CAT12. The slight differences between the results (Fig. 4, top right) might be due to the additional smoothing and normalization by our pipeline (Clarkson et al., 2011), which is indispensable for robust and accurate curvature measurements.
+The strong alignment of our values with previously reported data supports our computational pipeline and calculations. However, the alignment of prior global thickness with our calculations does not speak directly to the accuracy of our thickness comparisons between gyri and sulci within each species. Unfortunately, as this is the first study to investigate gyral and sulcal thickness differences in non-human primates, this type of validation is not possible due to lack of data.
+3.2. Relationships between cortical thickness and shape
+To understand the relationship between cortical thickness and shape, we next investigated the cortical thickness distribution for points of a given shape. Here we consider the nine distinguishable shapes distinguished by the scale-invariant shape index (Koenderink and van Doorn, 1992): cup, trough, rut, saddle rut, saddle, saddle ridge, ridge, dome, and cap, with shape index values ranging from −1 to 1. When we considered the distribution of shape index in each species, we noticed that increases in size and the degree of foldedness lead to sulcal invaginations and an increase in the frequency of concave points (Supp. Fig. 1). After separating all points with respect to their shapes using the shape index, we extracted the cortical thickness of all points corresponding to each particular shape, aggregated them among all subjects, and plotted them as a kernel density estimation (Fig. 5). Here, we depict only one species from each group (small, medium, large, and x-large), but these results are similar for all of the species we investigated (Supp. Fig. 2). In each case, cortical thickness has a unimodal distribution and varies along a gyral–sulcal spectrum from the convex cap shape, which is the thickest, to the concave cup shape, which is the thinnest. Additionally, we demonstrated the same trend in each subset of the ABIDE dataset for humans, confirming the site independence (Supp. Fig. 3). The non-human primates show very similar trends to those previously seen in human brains (Demirci and Holland, 2022), although the difference between cup and cap shapes seems to be smaller for smaller and less folded brains.
+Fig. 5.
+Open in a new tab
+Correlation of cortical thickness with cortical geometry. Top: shape index is overlaid onto the pial surface of a representative small (white-faced saki), medium (rhesus macaque), large (chimpanzee), and x-large (human) brain. Middle: Inflated pial surfaces with shape index overlaid. Bottom: Cortical thickness kernel density distribution profiles with respect to local shape, aggregated for N = 1 white faced saki, N = 31 rhesus macaques, N = 54 chimpanzees, and N = 501 humans, are shown. Cortical thickness decreases consistently from convex to saddle to concave shape.
+To investigate similar trends in all 12 species, we considered a more simplified set of shapes, consisting of convex (cap, dome, and ridge, with −1 < SI < −0.375), saddle (saddle ridge, saddle, and saddle rut, with −0.375 < SI < 0.375), and concave (rut, trough, cup, with 0.375 < SI <1) shapes. After separating all points with respect to these three shapes using the shape index, we extracted the cortical thickness of all points corresponding to each particular shape, aggregated them among all subjects, and plotted the average thickness (Fig. 6). When multiple subjects were available, we also calculated the standard deviation of subject averages, while for single subjects we calculated the variation within the subject.
+Fig. 6.
+Open in a new tab
+Average cortical thickness of all concave, saddle, and convex shaped points in 12 primate species with respect to total cortical surface area of each species. Cortical thickness is greatest for convex shapes, smallest for concave shapes, and in the middle for saddle shapes for all species. N = 31, N = 54, and N = 501 for rhesus macaques, chimpanzees, and humans respectively. Error bars represent one standard deviation. For species with single subjects, gray error bars represent variation within subjects. For species with multiple subjects, black error bars represent variation across subjects.
+Across the range of species, we found three general trends. First of all, cortical thickness tends to increase as surface area increases, which has long been known (Hofman, 1985). This is not strictly always true; in particular the rhesus macaque appears to be unexpectedly thick. However, note that the species are not equally distributed along the range of surface areas; the differences within groups (< 100 cm2) are much smaller than the differences between groups (> 100 cm2). Secondly, for every species, the average cortical thickness always increases from concave to saddle to convex shapes (Fig. 6). Finally, there appears to be a general trend for the thickness difference between concave and saddle shapes, and between saddle and convex shapes, to increase along with increases in surface area. For instance, in the Senegal galago the thicknesses are barely different (p = 0.01, d = 0.04 and p < 10−3, d = 0.11 for concave-saddle and convex-saddle comparison, respectively), while in the great apes (large and x-large groups) the differences are much more significant (p = 10−10, d ≈ 0.60 for both concave-saddle and convex-saddle comparison).
+We also remark that the location of these shapes throughout the cortex are highly consistent (Fig. 7). Convex points are more superficially located, concave points reside deeper, and saddle points are located mostly in between for each species. In addition, the average distance between gyri and sulci increases in tandem with size. These analyses shows that, there is a strong relationship between cortical thickness, folding amplitude, and shape of the cortex globally. Another important remark is the differences in variation of cortical thickness and folding amplitude within and across subjects of the same species. As expected, local variations of the measures within a single subject are much higher than the variations of average measurements across subjects of the same population. Average cortical thickness and folding amplitude corresponding to three shapes vary less compared to the variation across subjects of a single population. As an example, the standard deviation of local cortical thickness for a single chimpanzee subject (or all local values for the whole population) yields ~ 0.5 mm, however the standard deviation of average cortical thickness across all subjects within the chimpanzee population is only ~ 0.1 mm.
+Fig. 7.
+Open in a new tab
+Average sulcal depth of all concave, saddle, and convex shaped points of the cortex with respect to total cortical surface area of each species. Convex points are clustered on gyral ridges, concave points on sulcal valleys, and saddle points in the middle. N = 31, N = 54, and N = 501 for rhesus macaques, chimpanzees, and humans respectively. Error bars represent one standard deviation. For species with single subjects, gray error bars represent variation within subjects. For species with multiple subjects, black error bars represent variation across subjects.
+3.3. Intraspecies variations in brain morphology
+To understand the extent of variations between individuals, we analyzed intraspecies differences in average cortical thickness (Fig. 8A), folding amplitude (Fig. 8B), total surface area (Fig. 8C), cortical thickness ratio (Fig. 8D), and GI (Fig. 8E). Average values (± standard deviation) for all subjects from each species are also shown (Fig. 8F). This was possible only for the three species for which we had multiple subjects: N=31 macaques, N=54 chimpanzees, and N=501 humans. Overall, we observed that humans appear to have the largest variation between subjects, particularly in the average cortical thickness; this could be a result of the significant age range in the subject pool, from 7 to 56 years, during which cortical thickness evolves significantly.
+Fig. 8.
+Open in a new tab
+Intraspecies variability of A) average cortical thickness, B) folding amplitude, C) total surface area, D) cortical thickness ratio, and E) gyrification index, for N=31 rhesus macaques, N=54 chimpanzees, and N=501 humans. Average values (± standard deviation) for all subjects from each species are listed in F.
+3.4. Interspecies variations in brain morphology
+In order to better understand changes in brain morphology across primate brains of different forms and sizes, we determined the allometric scaling of several anatomical parameters against total surface area, including average cortical thickness, folding amplitude, brain volume, GI, and exposed (i.e. alpha) surface area (Fig. 9). We considered log–log relationships for the dimensioned quantities (cortical thickness, folding amplitude, exposed surface area, and brain volume) and semilog relationships for the dimensionless quantity of gyrification index. Additionally, for the dimensioned quantities, we compared their scaling against the expected relationship in the case of isometric scaling or geometric similarity (dashed, light-gray lines in Fig. 9), in which lengths would scale with the 1/2 power of total surface area, surface area would scale linearly (first power), and total brain volume should scale with 3/2 power (Im et al., 2008).
+Fig. 9.
+Open in a new tab
+Allometric scaling relationships of measures of brain morphology with surface area. Data from 12 primate species are shown for cortical thickness (A), folding amplitude (B), exposed surface area (C), gyrification index (D), and volume (E). A power regression was performed, and the line of best fit is shown, with the slope and correlation values listed (F). Additionally, for dimensioned quantities, the predicted relationship in the case of isometric scaling is indicated with gray dotted lines for comparison.
+All the investigated quantities correlate significantly with total surface area, increasing as the surface area increases. However, the amount of increase differs by several orders of magnitude: surface area increases by more than 100 fold between the smallest and largest species, but cortical thickness increases only by threefold (Fig. 9A) and folding amplitude by sevenfold (Fig. 9B). In comparisons with isometric scaling relationships, cortical thickness, volume, and exposed surface area scale slower than expected, while folding amplitude is surprisingly very similar to isometric scaling. Additionally, volume, gyrification index, folding amplitude, and exposed surface area are very strongly correlated with total surface area (R2 ≥ 0.97), while cortical thickness does not have as strong a correlation (R2 = 0.87). This might represent an indirect interaction between the two.
+We also investigated the correlation of convex–concave cortical thickness ratio with other parameters of brain morphology (Fig. 10). Cortical thickness ratio was observed to increase with surface area, cortical thickness, and foldedness (GI). Similar to cortical thickness, cortical thickness ratio also has an indirect relation to the increase in surface area.
+Fig. 10.
+Open in a new tab
+Cortical thickness ratio correlates significantly with increase in total surface area (left), average cortical thickness (middle), and foldedness (GI) (right).
+3.5. Atrophy of cortex with age
+Atrophy of the cortex as a function of age is well-known for humans (Salat et al., 2004; Buckner et al., 2004; Hurtz et al., 2014; Fjell et al., 2015; Amlien et al., 2016). Here, we investigated the atrophy of cortical thickness with aging for both chimpanzees and humans. Additionally, we analyzed the variation of cortical thickness ratio for both chimpanzees and humans with respect to aging to observe any significant correlations. Aging analysis was not possible for rhesus macaques as age information of subjects are not publicly available for all sites.
+Our results demonstrate cortical thinning in both species (p ≪ 10−10 for humans and p < 10−5 for chimpanzees, Fig. 11, top) similar to earlier studies (Amlien et al., 2016; Vickery et al., 2020) . Therefore, chimpanzees – humans’ closest relative – exhibit age-related cortical atrophy similar to humans that might be due to similar evolutionary patterns (Vickery et al., 2020). However, the thickness ratio does not seem to change systematically with age (Fig. 11, middle). This suggests that the cortical thickness of gyri and sulci both decrease proportionately during aging for these species. We also plotted the average sulcal depth across age and found a significant decrease (Fig. 11, bottom), (p < 10−13 for humans and p < 0.005 for chimpanzees), suggesting that cortical atrophy causes a decrease in depth (Yun et al., 2013).
+Fig. 11.
+Open in a new tab
+Changes in cortical thickness, cortical thickness ratio, and sulcal depth with respect to aging for humans and chimpanzees. Top: Atrophy of the cortex with aging for both species. Middle: Cortical thickness ratio does not change considerably with age. Bottom: Cortical atrophy causes sulcal shallowing for both species.
+4. Discussion
+4.1. Primate brains change form as they increase in size
+If all brains were geometrically similar (with size changing isometrically between them without changes in form), then all brains would be smooth like those of tarsiers and lemurs, and humans would have a thicker cortex (Fig. 9A). Instead, brains change in form as they change in size — this is true both for individual humans (Im et al., 2008), and across different species (Hayashi et al., 2021; Hofman, 2014). Larger brains tend to be gyrencephalic or folded (Mota and Herculano-Houzel, 2015; Zilles et al., 2013; Hofman, 1985; Rogers et al., 2010; Tallinen et al., 2014), and the larger they are, the more folded they tend to be — although interestingly, there are a few notable exceptions to this, such as the manatee, koala, and beaver, that require further investigation (Welker, 1990; Toro and Burnod, 2005). Conversely, cortical thickness varies much less than would be expected in isometric scaling (Hofman, 1985). Our results in 12 primate species closely follow these previous studies (Zilles et al., 2013; Hofman, 1985, 1988b; Rilling and Insel, 1999; Mota and Herculano-Houzel, 2015; Herculano-Houzel et al., 2008), showing increases in cortical thickness, folding amplitude, gyrification index, and brain volume with increasing surface area, without the scaling needed to maintain geometric similarity (Fig. 9). Similar observations portray the increase in degree of foldedness during human (Armstrong et al., 1995) and monkey ontogeny (Sawada et al., 2012).
+4.2. Primates experience cortical atrophy and sulcal shallowing due to aging
+We demonstrated significant cortical atrophy and sulcal shallowing for both chimpanzees (aged between 8–53) and humans (aged between 7–56) across age from childhood to late adulthood. Among the chimpanzees, 40% are older than 19 years old and 15% are younger than 11 years old. Among our human subjects, 25% are older than 22 years old and 36% are younger than 13 years of age. Therefore the chimpanzees represent an elderly population compared to the humans. (While the two neurodevelopmental timelines do not correspond exactly, they are close; a 13 year old human translates to a 11 year old chimpanzee, and a 22 year old human translates to a 19 year old chimpanzee (Charvet, 2021).) Despite these differences, global thinning of the cortex is common for both species (Fig. 11, top), similar to findings of Vickery et al. (2020) and contrary to Autrey et al. (2014) and Sherwood et al. (2011), in which they found no change in thickness. Our detailed analysis results suggest cortical thinning of chimpanzee brain at later stages of life, however significant thinning is present for both younger and elderly human populations starting at age 7. Local investigation of cortical atrophy reveals a proportional decline of cortical thickness at both gyri and sulci, such that cortical thickness ratio does not change much with age (Fig. 11, middle). In addition to atrophy of the cortex, we observed significant decrease of average sulcal depth (folding amplitude) for both species (Fig. 11, bottom).
+4.3. Non-isometric scaling of surface area with volume leads to gyrification
+Exposed surface area is observed to grow more slowly than total surface area (Fig. 9E), indicating an increase in folding. Exposed surface area increases significantly slower than predicted by isometric scaling; the 0.82 power between exposed and total surface area corresponds to a 1/0.82 = 1.22 power between total and exposed surface area, which is very close to the 1.25 reported previously (Hofman, 1988a) This can also be seen in the gyrification index, which would be one for a completely smooth brain. Instead, it is greater than one for all primate species (Fig. 9D), and increases with surface area, as found before (Pillay and Manger, 2007; Zilles et al., 1989; Tallinen et al., 2014; Essen et al., 2019).
+Similarly, brain volume scales significantly slower than predicted by geometric similarity (Fig. 9C) (Hofman, 2012; Toro and Burnod, 2005); the 1.16 power between volume and surface area corresponds to a 1/1.16 = 0.86 power between surface area and volume, which is very close to the 0.9 reported previously (Hofman, 1988a).
+The strength of the power law relationships suggests that geometrical quantities might depend on the overall size of the cortex, which could be the driving factor of gyrification (Herculano-Houzel, 2015; Essen et al., 2019).
+4.4. Folding amplitude scales isometrically, but cortical thickness does not
+Folding amplitude increases with surface area (Fig. 9B), as found before (Hopkins et al., 2014), and its scaling is not significantly different than the predicted isometric relationship (Fig. 9B). This has also been shown in a study of only humans (Im et al., 2008), although it is important to note that the rules that govern scaling within a species might be different than those that govern relationships between species. Interestingly, we demonstrated the isometric scaling of folding amplitude contrary to stable folding wavelengths among different sized brains (Heuer et al., 2019).
+We note that our measures of folding amplitude are lower than the previously published folding depth values from (Heuer et al., 2019). We believe this difference is due to the different methods utilized. Heuer et al. (2019) used a global approximation to calculate the folding depth, by measuring the sulcal volume from a convex hull, divided by folding length. On the other hand, we employed a more local approach, calculating the sulcal depth of each point on the cerebral surface, evaluated relative to the alpha surface, and averaging all the values. In our experience, the alpha surface method yields a more accurate estimation of the depth than the convex hull, as it wraps the cerebral surface more tightly, outlining the concave medial temporal lobe and inferior medial regions without extending into the sulcal valleys. A convex hull, on the other hand, is similar to an alpha surface with higher alpha parameter; it does not fully outline the major curves of the cortex (see Fig. 5 in Demirci and Holland, 2022). Therefore, a convex hull might yield higher values of depth as it fails to capture the complex form of the brain.
+Cortical thickness also increases significantly with increases in surface area, but its slope is significantly less than predicted (Fig. 9A) (Hofman, 1988b). This result supports previous findings that, cortical thickness correlates negatively with the degree of folding (Mota and Herculano-Houzel, 2015; Welker, 1990; Zilles et al., 2013; Hofman, 1985; Zilles et al., 1989; Toro and Burnod, 2005). For example, it has been shown in chimpanzees that increased foldedness (deeper sulci) in one hemisphere correlates with increased surface area and decreased cortical thickness (Hopkins et al., 2015); increased white matter surface area in one hemisphere is similarly associated with lower cortical thickness (Hopkins and Avants, 2013). Together, this suggests that an increase in total surface area leads to greater folding amplitude, but also to decreased cortical thickness in order to balance the total amount of gray matter occupied in constrained cranial volume for individuals within species.
+Another factor could be that thinner cortices are easier to fold; this is true both regionally and globally. In humans, thinner regions have been found to be more folded than thicker regions (Van Essen et al., 2018). Moreover, polymicrogyric (highly folded) cortices tend to be thinner, and lissencephalic (smooth) cortices thicker than typical brains (Llinares-Benadero and Borrell, 2019).
+4.5. Cortical thickness ratio agrees with predictions from computational models of cortical folding
+In silico models of the growth and folding of the cortex have revealed fundamental aspects of gyrification, including the consistent placement of certain folds (Tallinen et al., 2016; Toro, 2012; Razavi et al., 2015) and the generation of heterogeneous patterns of stress throughout gyri and sulci (Foubet et al., 2019). These studies have also been extended to comparative neuroanatomy, for instance showing that cortical thickness, surface area, and the degree of folding are related by universal scaling laws that transcend differences among species and individuals (Prothero, 1999; De Lussanet, 2013; Mota and Herculano-Houzel, 2015; Wang et al., 2019). Here, we have looked for the scaling laws that govern the thickness ratio (defined here as the ratio of average thicknesses between convex and concave points). For example, thickness ratio significantly increases with surface area (Fig. 10A), although it has a lower correlation and smaller range (from ~1.05 for the Senegal galago to ~1.3 for humans) than other measures of brain morphology we considered (Fig. 9).
+Previous work has shown that patterns of thick gyri and thin sulci naturally emerge through the process of cortical folding (Holland et al., 2018; Wang et al., 2021; Toro and Burnod, 2005). From our previous work, gyral–sulcal thickness differences are predicted to increase with (1) increasing foldedness, (2) increasing cortical thickness, and (3) decreasing gray-white matter stiffness ratio (Holland et al., 2018). While an investigation of tissue properties is outside the scope of this paper, we can test the first two predictions. Indeed, we do see a general increasing trend in the thickness ratio with both average cortical thickness and foldedness (quantified by GI) (Fig. 10B–C). These predictions were based on simulations of homogeneous growth, but preferential growth in gyri and sulci can further affect the evolution of cortical thickness in those regions (Wang et al., 2021).
+4.6. Cortical thickness varies along a gyral–sulcal spectrum within and across primate species
+Our investigation into cortical thickness patterns in 12 primate species shows that the cortex follows similar patterns throughout the folds of each brain and in each species, with thicker convex folds and thinner concave folds. For this study, we used shape index, a dimensionless measure introduced by (Koenderink and van Doorn, 1992) that describes the shape of a surface with a value between −1 and 1. Shape index, assigns a single scalar value to the local shape, passing from cups (which are concave in all orientations) to ruts (concave in one direction and flat in another), to saddles (concave in one direction and convex in another), to ridges (convex in one direction and flat in another), to caps (convex in all orientations) (Fig. 5). Thus, it describes shapes in a smooth spectrum from the most concave to the most convex. This quantity offers advantages over other measures of curvature; for example, the dimensionless nature of shape index makes it ideal for investigating different-sized cortices. Furthermore, only shape index has a bimodal distribution, which provides valuable information about patterns of cortical folding (See Supp. Fig. 1).
+Convex shapes are frequently thought of as gyri – and, conversely, concave shapes as sulci – but in reality these are descriptors from two separate domains (Demirci and Holland, 2022). Gyri, sulci, and sulcal walls are anatomical terms that describe gross morphological features of the brain. Concave, convex, and saddle shapes, on the other hand, are geometrical terms that define local shape. Geometry does not correspond exactly to anatomy; while some combinations are more common than others, it is possible to find convex, concave, and saddle shapes in any anatomical category (Demirci and Holland, 2022). For example, in our previous study we showed that there are convex shapes in the depth of sulci that have a higher thickness than the rest of the sulcus (Demirci and Holland, 2022). In this study, we used geometry for the analysis of cortical morphology across a diverse collection of species. This approach does not require detailed segmentation of anatomical gyri and sulci by trained comparative neuroanatomists and/or brain atlases for parcellation of the cortex. By using shape index, we divided the cortex into 9 minor and 3 major shapes. Our findings provide substantial insights into understanding the consistent shape and thickness correlations of the cortex. Similar to our previous study of only humans (Demirci and Holland, 2022), our results here indicate a strong correlation between cortical thickness and shape for each of the species we investigated, despite large variations in gyrification and size of the brains. Our observations showed a well-organized and consistent variation of cortical thickness in a gyral–sulcal spectrum, both within and across species. Specifically, we observed that convex shapes throughout the cortex are consistently the thickest, concave shapes are the thinnest, and saddle shapes lie in the middle (Fig. 5). Additionally, we showed that not only geometry but also the depth of each point consistently correlate with cortical thickness. This local correlation analysis and the calculated Pearson’s r values can be found in the supplementary document (Supp. Figs. 4–5).
+Moreover, as our previous work has shown that physical forces involved in cortical folding contribute to the pattern of thick peaks and thin valleys, the local shape would likely be a better indicator of the local mechanical state than the neighboring anatomical features.
+4.7. Physical forces potentially explain consistent variations of cortical thickness
+Cortical folds have consistent patterns across individuals of the same population or even across species, as we have shown in this study, which provides evidence for a principal mechanism of folding. We believe that the forces that come into play during folding generate a mechanically favorable state that might also be the most geometrically efficient (Mota et al., 2019). Therefore, cortical folding might represent a physical phenomenon governed by physical and geometrical constraints (Heuer et al., 2019; Budday et al., 2015).
+However, it is not plausible to completely ignore the genetic determinants that play a key role in cerebral evolution (Geschwind and Rakic, 2013; Llinares-Benadero and Borrell, 2019), for instance in the difference between gyrencephalic and lissencephalic species. During development, radial glial cells provide a substrate and pathway for neuronal migration from the proliferative ventricular zone towards the cortical plate or pial surface (Rakic and Swaab, 1988; Cowan, 1979). The division of the subventricular zone into inner and outer parts is linked to gyrencephaly of the cortex, with intermediate progenitor cells more abundant in the latter (Reillo et al., 2010). The abundant progenitor cells, associated with genes such as TRNP1 and CDH1, cause further abundance of basal radial glial cells (bRGC) which have basal processes extending to the pial surface but not necessarily to the ventricular surface (Penisson et al., 2019). The abundance of bRGCs causes tangential dispersion through intercalation between classical apical radial glial cells (Reillo et al., 2010), resulting in gyrification (Ronan and Fletcher, 2015). Curved trajectories of bRGCs leads to tangential expansion of the cortical surface area at the expense of a thicker cortex; if the proliferation of bRGCs is reduced, the cortex will be abnormally thick (Reillo et al., 2010). Simply by changing the expression levels of certain genes associated with cellular proliferation, such as FGF1, gyrification can be triggered in the normally-lissencephalic mouse cortex (Shinmyo et al., 2022). Therefore, gene expression controls proliferation and migration of neural cells, which trigger tangential expansion, which generates physical forces, which lead to cortical folding.
+Tangential expansion is the principal, generalized mechanism of cortical folding (Ronan and Fletcher, 2015; Chavoshnejad et al., 2021). But why are gyri thicker than sulci? When considering the development of heterogeneous thickness patterns, cytoarchitecture may play a role. Cytoarchitectural differences between locations may cause non-uniform tangential expansion (Toro and Burnod, 2005). For example, the patterns of radial glial cells allow greater migration of neurons into gyri (Borrell, 2018; Penisson et al., 2019).
+Furthermore, different stresses in gyri and sulci could contribute to thickness differences. Tissue-cut experiments show significant radial axonal tension and compression in developing gyri and sulci, respectively (Xu et al., 2010). Axons are capable of elongating and growing along their longitudinal axis under stretch (Holland et al., 2015) and shrinking when compressed, acting as a viscoelastic solid attempting to maintain a desired level of tension (Bray, 1984; Lamoureux et al., 2010). Axonal elongation in gyri (Holland et al., 2015) could lead to increased thickness, while compression, or shortening, of axons in sulci could contribute to reduced thickness. Mechanical tension is also the regulator for axonal wiring patterns; when there is no tension, e.g. in sulci, neuronal arborization diminishes and the axonal branches retract (Anava et al., 2009), potentially leading to further thinning.
+Finally, there is a strong positive correlation between axonal fiber density and cortical thickness (Li et al., 2015). Fiber connections in convex gyri are significantly denser than the ones in concave sulci (Nie et al., 2012; Chavoshnejad et al., 2021), which could further contribute to thickness differences. Moreover, it is well-known that axonal connectivity is more elaborate, and axonal connections more dense, in higher-order species (Chen et al., 2013b; Groden et al., 2020). The increasing density of axonal connections in larger brains might additionally explain the progressive increase in cortical thickness ratio among the primate species we have investigated in this study.
+4.8. Limitations and further considerations
+This is the first comprehensive study that demonstrates the gradual and consistent variation of cortical thickness from sulcal fundi to gyral crowns for 12 different primate species including humans. Despite this significant advance, there are some limitations that will require further efforts to address. First of all, we analyzed only 12 species, three of which (macaques, chimpanzees, and humans) were represented by tens or hundreds of subjects, and the remaining nine species with only a single specimen. Our results are consistent across both the individuals examined and the totality of the species considered. However, in the future, a larger study (considering both more species and more individuals) could prove even more conclusive. Unfortunately, while collaborative data-sharing initiatives for comparative neuroanatomy studies are growing, there are still significant limitations to the availability of non-human subjects, both in terms of the species and the number of specimens of a single species (Neff, 2020). Macaques and chimpanzees are the most abundant species available (Milham et al., 2018; NCBR). While other species can be found, the available images are either postmortem ex vivo scans or only a single specimen has been scanned (e.g. Kaas and van Eden, 2011). Similarly, our validation of measurements were limited by the results available in literature (Fig. 4), particularly for less common species.
+Moreover, for the species with multiple subjects (macaques, chimpanzees, and humans) their ages span a wide range. Some of the subjects in this study are not yet adults while others would be considered by primatologists as senile. For example, macaques reach puberty around 2.5 to 4.5 years, sexual maturity at 3 years, and adulthood at 8 years. Average cortical thickness decreases with age and cortical atrophy is present during normal aging for humans (Hurtz et al., 2014; Fjell et al., 2015; Minkova et al., 2017), rhesus macaques (Koo et al., 2012), and chimpanzees (Vickery et al., 2020). Our age and atrophy analysis include only humans and chimpanzees but not rhesus macaques, due to limited public information of age of rhesus macaques during scanning. However, earlier studies strongly suggest cortical atrophy of rhesus macaques with respect to aging (Amlien et al., 2016; Chen et al., 2013a)
+Besides age differences, we note that some species were imaged postmortem, while the rest of the species (rhesus macaque, chimpanzee, bonobo, gorilla, and human) were imaged in vivo. By collecting data from both types of species we aimed to maximize our number of species and the range of brain sizes and forms. Unfortunately, the brain is known to reduce its volume ex vivo due to prolonged hours of formalin fixation (Calabrese et al., 2015). For instance, one study found a volume reduction of 3.3% after a 70-day fixation in 10% formalin (Schulz et al., 2011). This volume reduction might help explain why we observed a slightly thicker cortex for rhesus macaques compared to their neighbors (Fig. 6), as rhesus macaques are imaged in vivo while the others were imaged postmortem.
+Secondly, we obtained MRIs of various non-human primate species (macaques, chimpanzees, bonobo, and gorilla) from different public resources. Public repositories are very valuable in that they allow many researchers from outside the imaging community to access and utilize those resources in their studies. However, while minimal data standardization practices have been established for human imaging in order to enable large collaborative projects between laboratories, nothing similar has been agreed upon for non-human primate imaging research around the world. Different laboratories often use different protocols, with different image acquisition parameters and image resolutions (Table 1, Table 2) (Autio et al., 2021) (see Section 1). Recently, minimum specifications were recommended for non-human primate imaging studies, in order to improve robustness and reproducibility of studies (Autio et al., 2021), including a minimum scanner strength of 3T. Unfortunately, some of our species (bonobo and gorilla) were acquired at 1.5T, which can lead to segmentation errors and affect the reconstructed surface quality.
+Standardization and harmonization of non-human primate data acquisition and imaging protocols are important for comparative non-human primate studies but also challenging due to necessary customization of hardware to compensate for differences in head size and improve signal-to-noise ratio (Hayashi et al., 2021; Autio et al., 2021; Pomponio et al., 2020; Ose et al., 2022). One solution for harmonized data acquisition is to adjust the voxel resolution to the thinnest parts of the cortex to alleviate partial volume effects and harmonize the differences, for example in cortical thickness across species (Hayashi et al., 2021), but this requires development of species-specific receiver coils (Autio et al., 2020).
+Another approach, often used in studies of human subjects, involves advanced statistical methods to remove sources of variability, including data acquisition protocols and hardware, from multi-site large datasets (Pomponio et al., 2020; Koike et al., 2021). These statistical approaches include adjustment of mean and variance of imaging measurements across sites for robust predictions (Pomponio et al., 2020) and the traveling subject approach, in which multiple subjects travel to multiple sites to estimate and quantify the variability between sites (Koike et al., 2021; Yamashita et al., 2019). We did not perform statistical data harmonization in this study, as harmonization protocols are most relevant for big (>1k) neuroimaging multi-site studies. Here, the only species that were imaged at multiple sites were humans and macaques. For humans, we relied on existing standardization and quality analysis of the ABIDE project (Pardoe et al., 2016). For macaques, only certain sites were included based on similarity in subjects, imaging hardware, and protocols. In the future, standardization of data acquisition protocols for non-human primate imaging datasets, potentially via a variation of the traveling subject approach, would be invaluable assets for multi-site comparative neuroanatomy imaging studies.
+In general, estimation of surface measures (cortical thickness, sulcal depth, curvature, shape index, etc.) depends on data acquisition parameters, image resolution, and the accuracy of cortical surface reconstructions. The differences between the image acquisition parameters, resolution, and the processing pipelines might develop slight variations between measures for the same subject, which would be hard to detect unless an exactly similar method (for both image acquisition and processing) is employed (Dias et al., 2022; Velázquez et al., 2021).
+Third, we adopted species-specific solutions for preprocessing MR images. While human MR images are commonly preprocessed by benchmarked pipelines such as Freesurfer (https://surfer.nmr.mgh.harvard.edu), there is no consensus as to the optimal tool to preprocess MR images of various non-human primate species. Therefore, custom preprocessing pipelines are developed to tackle size, form, and tissue contrast differences between species.
+These pipelines are mostly species-specific, hindering their use for other species, and highly customized, creating a barrier to reproducibility. In the future, a more general, one-size-fits-all preprocessing pipeline – from skull-stripping to surface generation – could potentially address these challenges and enable the expansion of this study to additional species with MR images but no population template available.
+In general, the biggest limitation of this study is this non-unified approach, from the image acquisition using different parameters (Table 2), to the sourcing of images from various public resources, to the different processing approaches that were unique for each species (Table 1). Therefore, although in some senses this non-unified approach is a weakness of the study, it also increases our confidence in our results. Although we collected the images from different resources and employed different processing tools, our findings point us to the consistent structure of the cortex; there is strong correlation between thickness and shape in each of our 12 species.
+Finally, cortical thickness, sulcal depth, and gyrification are known to vary in different regions of the brain. Similar to most comparative studies (e.g. Hofman, 1985), we presented our allometric scaling findings based on global averages considering the whole brain (Fig. 9). However, we predict that more interesting results could be found by performing regional comparisons between corresponding areas of brains of different primate species.
+5. Conclusion
+In summary, this study demonstrates that consistent cortical thickness patterns can be found across 12 different primate species with varying forms and sizes. Similar to human brains (Demirci and Holland, 2022), cortical thickness patterns are strongly consistent in non-human primates. For each species, the cortex is thickest at convex points (generally gyri), thinner at saddle shapes (generally lateral bends in sulcal walls) and thinnest at concave shapes (generally sulci). Furthermore, the variation of cortical thickness and folding patterns (folding amplitude and gyrification) are strongly correlated with size, which recapitulates the mathematical models developed in previous studies that simulate growth and development of the cortex.
+Because of this, we hypothesize that the mechanical forces generated during growth and development of the cortex strongly affect the resulting cortical morphology and its relationship with cortical thickness through a principal mechanism of cortical folding. While there are likely genetic and other factors that also influence cortical thickness (Wang et al., 2021), they seem to work alongside mechanical forces to produce consistent cortical thickness patterns both within and between species (Van Essen et al., 2018). This interpretation implies that patterns of cortical thickness are a natural consequence of cortical folding rather than the cause (Mota and Herculano-Houzel, 2012), although mechanical models and computer simulations show that variations in initial thickness strongly affect the bending resistance of the cortex (Holland et al., 2018; Toro and Burnod, 2005; Tallinen et al., 2014).
+To the best of our knowledge, this is the first comprehensive study of local cortical thickness variations in non-human primate species. Our results demonstrate the gradual and consistent variation of cortical thickness from sulcal fundi to gyral crowns for 12 different primate species including humans. Our findings provide more insight into our understanding of well-characterized patterns of the cortex. We also hypothesize that our findings might hold across mammalia. In order to test this, future work should expand on this study to include more mammalian species. Additionally, questions remain about the functional implications of these cortical thickness patterns, which could potentially shed light on cases of disordered folding in humans. To encourage future contributions to these topics from other researchers in diverse disciplines, we have made all of the surfaces, scripts, and data from this work publicly available.
+Supplementary Material
+1
+NIHMS1924378-supplement-1.pdf (6MB, pdf)
+Acknowledgments
+MAH and ND acknowledges support from the National Science Foundation (NSF) under Grant nos. IIS 1850102 and CMMI 2144412.
+National Chimpanzee Brain Resource funding acknowledgments: Support was provided by the National Institutes of Health (NIH), USA under Grant No. NS092988.
+ABIDE-I funding acknowledgments: Primary support for the work by Adriana Di Martino was provided by the (NIMH K23MH087770) and the Leon Levy Foundation. Primary support for the work by Michael P. Milham and the INDI team was provided by gifts from Joseph P. Healy and the Stavros Niarchos Foundation to the Child Mind Institute, as well as by an NIMH award to MPM (NIMH R03MH096321).
+Footnotes
+CRediT authorship contribution statement
+Nagehan Demirci: Writing – original draft, Methodology, Software, Validation, Formal analysis, Investigation, Resources, Writing – review & editing. Mia E. Hoffman: Resources, Writing – review & editing. Maria A. Holland: Conceptualization, Writing – review & editing, Supervision, Funding acquisition.
+Declaration of competing interest
+The authors declare that they have no conflict of interest.
+Appendix A. Supplementary data
+Supplementary material related to this article can be found online at https://doi.org/10.1016/j.neuroimage.2023.120283.
+Data availability
+The human imaging data used in the preparation of this article was obtained from the preprocessed neuroimaging data of Autism Brain Imaging Data Exchange I (ABIDE I) repository which is an international neuroimaging data-sharing initiative. The data was obtained from the website https://fcon_1000.projects.nitrc.org/indi/abide/abide_I.html. The preprocessed surfaces was obtained from http://preprocessed-connectomes-project.org/abide/ (Cameron et al. 2013).
+The macaque imaging data was obtained from the publicly available PRIMatE Data Exchange (PRIME-DE) repository. The data was obtained from the website https://fcon_1000.projects.nitrc.org/indi/indiPRIME.html. We used publicly available codes to process the rhesus macaque imaging data (https://github.com/jms290/NMT/tree/master/NMT_v1.3).
+The chimpanzee, bonobo, and gorilla imaging data was obtained from the publicly available National Chimpanzee Brain Resource (NCBR) repository. The data was obtained from the website https://www.chimpanzeebrain.org. We used publicly available codes to process the chimpanzee imaging data (https://github.com/viko18/JunaChimp).
+The preprocessed surfaces for the remaining 7 species was obtained from doi.org/10.5281/ZENODO.5044936.
+All further analyses and visualization were performed by our publicly available computational pipeline (https://github.com/mholla/curveball).
+All scripts generated for this study, including code sufficient to reproduce all figures, are available at https://github.com/mholla/NIMG23. Additionally, the data for all 595 subjects of all 12 species are available at doi.org/10.5281/zenodo.7574350, including the pial, white, and alpha surfaces, as well as cortical thickness, area, sulcal depth, and curvature at each vertex.
+References
+Amlien IK, Fjell AM, Tamnes CK, Grydeland H, Krogsrud SK, Chaplin TA, Rosa MGP, Walhovd KB, 2016. Organizing principles of human cortical development—Thickness and area from 4 to 30 years: Insights from comparative primate neuroanatomy. Cerebral Cortex (ISSN: 1047–3211) 26 (1), 257–267. 10.1093/cercor/bhu214. [DOI] [PubMed] [Google Scholar]
+Anava S, Greenbaum A, Ben Jacob E, Hanein Y, Ayali A, 2009. The regulative role of neurite mechanical tension in network development. Biophys. J (ISSN: 1542–0086) 96 (4), 1661–1670. 10.1016/j.bpj.2008.10.058. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Ardesch DJ, Bryant KL, Roumazeilles L, Scholtens LH, Khrapitchev AA, Tendler BC, Wu W, Miller KL, Sallet J, van den Heuvel MP, Mars RB, 2021a. Primate Brain Bank MRI. Zenodo, 10.5281/ZENODO.5044936. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Ardesch DJ, Scholtens LH, de Lange SC, Roumazeilles L, Khrapitchev AA, Preuss TM, Rilling JK, Mars RB, van den Heuvel MP, 2021b. Scaling principles of white matter connectivity in the human and nonhuman primate brain. Cerebral Cortex (ISSN: 1047–3211) 10.1093/cercor/bhab384. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Armstrong E, Schleicher A, Omran H, Curtis M, Zilles K, 1995. The ontogeny of human gyrification. Cerebral Cortex
+5 (1), 56–63. 10.1093/cercor/5.1.56, ISSN: 1047–3211, 1460–2199. [DOI] [PubMed] [Google Scholar]
+Ashburner J, 2009. Computational anatomy with the SPM software. Magn. Reson. Imaging (ISSN: 0730725X) 27 (8), 1163–1174. 10.1016/j.mri.2009.01.006. [DOI] [PubMed] [Google Scholar]
+Autio JA, Glasser MF, Ose T, Donahue CJ, Bastiani M, Ohno M, Kawabata Y, Urushibata Y, Murata K, Nishigori K, Yamaguchi M, Hori Y, Yoshida A, Go Y, Coalson TS, Jbabdi S, Sotiropoulos SN, Kennedy H, Smith S, Van Essen DC, Hayashi T, 2020. Towards HCP-style macaque connectomes: 24-channel 3T multi-array coil, MRI sequences and preprocessing. NeuroImage (ISSN: 10538119) 215, 116800. 10.1016/j.neuroimage.2020.116800. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Autio JA, Zhu Q, Li X, Glasser MF, Schwiedrzik CM, Fair DA, Zimmermann J, Yacoub E, Menon RS, Van Essen DC, Hayashi T, Russ B, Vanduffel W, 2021. Minimal specifications for non-human primate MRI: Challenges in standardizing and harmonizing data collection. NeuroImage (ISSN: 10538119) 236, 118082. 10.1016/j.neuroimage.2021.118082. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Autrey MM, Reamer LA, Mareno MC, Sherwood CC, Herndon JG, Preuss T, Schapiro SJ, Hopkins WD, 2014. Age-related effects in the neocortical organization of chimpanzees: Gray and white matter volume, cortical thickness, and gyrification. NeuroImage (ISSN: 1053–8119) 101, 59–67. 10.1016/j.neuroimage.2014.06.053. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Avants BB, Tustison NJ, Wu J, Cook PA, Gee JC, 2011. An open source multivariate framework for n-tissue segmentation with evaluation on public data. Neuroinformatics
+9 (4), 381–400. 10.1007/s12021-011-9109-y, ISSN: 1539–2791, 1559–0089. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Bayly PV, Okamoto RJ, Xu G, Shi Y, Taber LA, 2013. A cortical folding model incorporating stress-dependent growth explains gyral wavelengths and stress patterns in the developing brain. Phys. Biol (ISSN: 1478–3975) 10 (1), 016005. 10.1088/1478-3975/10/1/016005. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Bok ST, 1929. Der Einfluß der in den Furchen Und Windungen Auftretenden Krümmungen der Groß Shirnrinde Auf Die Rindenarchitektur.
+Bok ST, 1960. Quantitative analysis of the morphological elements of the cerebral cortex. In: Structure and Function of the Cerebral Cortex. Elsevier. [Google Scholar]
+Borrell V, 2018. How cells fold the cerebral cortex. J. Neurosci
+38 (4), 776–783, DOI: 10/gf432g. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Bourgeois J-P, Goldman-Rakic PS, Rakic P, 1994. Synaptogenesis in the prefrontal cortex of rhesus monkeys. Cerebral Cortex
+4 (1), 78–96. 10.1093/cercor/4.1.78, ISSN: 1047–3211, 1460–2199. [DOI] [PubMed] [Google Scholar]
+Bray D, 1984. Axonal growth in response to experimentally applied mechanical tension. Dev. Biol (ISSN: 00121606) 102 (2), 379–389. 10.1016/0012-1606(84)90202-1. [DOI] [PubMed] [Google Scholar]
+Brodmann K, 1908. Über rindenmessungen. Zentralblatt Nervenheilkunde Psychiatrie
+31, 781–798. [Google Scholar]
+Brodmann K, Gary LJ, 2006. Brodmann’s Localisation in the Cerebral Cortex: The Principles of Comparative Localisation in the Cerebral Cortex Based on Cytoarchitectonics. Springer, ISBN: 978–0-387–26917-7. [Google Scholar]
+Bryant KL, Ardesch DJ, Roumazeilles L, Scholtens LH, Khrapitchev AA, Tendler BC, Wu W, Miller KL, Sallet J, van den Heuvel MP, Mars RB, 2021. Diffusion MRI data, sulcal anatomy, and tractography for eight species from the primate brain bank. Brain Struct. Funct
+226 (8), 2497–2509. 10.1007/s00429-021-02268-x, ISSN: 1863–2653, 1863–2661. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Buckner RL, Head D, Parker J, Fotenos AF, Marcus D, Morris JC, Snyder AZ, 2004. A unified approach for morphometric and functional data analysis in young, old, and demented adults using automated atlas-based head size normalization: reliability and validation against manual measurement of total intracranial volume. NeuroImage
+23 (2), 724–738, DOI: 10/drzh79. [DOI] [PubMed] [Google Scholar]
+Budday S, Steinmann P, Goriely A, Kuhl E, 2015. Size and curvature regulate pattern selection in the mammalian brain. Extreme Mech. Lett (ISSN: 23524316) 4, 193–198. 10.1016/j.eml.2015.07.004. [DOI] [Google Scholar]
+Calabrese E, Badea A, Coe CL, Lubach GR, Shi Y, Styner MA, Johnson GA, 2015. A diffusion tensor MRI atlas of the postmortem rhesus macaque brain. NeuroImage (ISSN: 1053–8119) 117, 408–416. 10.1016/j.neuroimage.2015.05.072. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Cameron C, Yassine B, Carlton C, Francois C, Alan E, András J, Budhachandra K, John L, Qingyang L, Michael M, Chaogan Y, Pierre B, 2013. The neuro bureau preprocessing initiative: open sharing of preprocessed neuroimaging data and derivatives. Front. Neuroinform (ISSN: 1662–5196) 7, 10.3389/conf.fninf.2013.09.00041. [DOI] [Google Scholar]
+Cardinale F, Chinnici G, Bramerio M, Mai R, Sartori I, Cossu M, Lo Russo G, Castana L, Colombo N, Caborni C, De Momi E, Ferrigno G, 2014. Validation of FreeSurfer-estimated brain cortical thickness: Comparison with histologic measurements. Neuroinformatics
+12 (4), 535–542. 10.1007/s12021-014-9229-2, ISSN: 1539–2791, 1559–0089. [DOI] [PubMed] [Google Scholar]
+Charvet CJ, 2021. Cutting across structural and transcriptomic scales translates time across the lifespan in humans and chimpanzees. Proc. R. Soc. B: Biol. Sci
+288 (1944), 20202987. 10.1098/rspb.2020.2987. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Chavoshnejad P, Li X, Zhang S, Dai W, Vasung L, Liu T, Zhang T, Wang X, Razavi MJ, 2021. Role of axonal fibers in the cortical folding patterns: A tale of variability and regularity. Brain Multiphys. (ISSN: 2666–5220) 2, 100029. 10.1016/j.brain.2021.100029. [DOI] [Google Scholar]
+Chen X, Errangi B, Li L, Glasser MF, Westlye LT, Fjell AM, Walhovd KB, Hu X, Herndon JG, Preuss TM, Rilling JK, 2013a. Brain aging in humans, chimpanzees (pan troglodytes), and rhesus macaques (macaca mulatta): magnetic resonance imaging studies of macro- and microstructural changes. Neurobiol. Aging (ISSN: 0197–4580) 34 (10), 2248–2260. 10.1016/j.neurobiolaging.2013.03.028. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Chen J, Liu J, Calhoun VD, Arias-Vasquez A, Zwiers MP, Gupta CN, Franke B, Turner JA, 2014. Exploration of scanning effects in multi-site structural MRI studies. J. Neurosci. Methods (ISSN: 0165–0270) 230, 37–50. 10.1016/j.jneumeth.2014.04.023. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Chen H, Zhang T, Guo L, Li K, Yu X, Li L, Hu X, Han J, Hu X, Liu T, 2013b. Coevolution of gyral folding and structural connection patterns in primate brains. Cerebral Cortex (ISSN: 1047–3211) 23 (5), 1208–1217. 10.1093/cercor/bhs113. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Chumchob N, Ke C, 2009. A robust affine image registration method. International Journal of Numerical Analysis & Modeling (ISSN: 17055105) 6 (2), 311–334. [Google Scholar]
+Clarkson MJ, Cardoso MJ, Ridgway GR, Modat M, Leung KK, Rohrer JD, Fox NC, Ourselin S, 2011. A comparison of voxel and surface based cortical thickness estimation methods. NeuroImage (ISSN: 10538119) 57 (3), 856–865. 10.1016/j.neuroimage.2011.05.053. [DOI] [PubMed] [Google Scholar]
+Cointepas Y, Mangin J-F, Garnero L, Poline J-B, Benali H, 2001. BrainVISA: Software platform for visualization and analysis of multi-modality brain data. NeuroImage (ISSN: 10538119) 13 (6), 98. 10.1016/S1053-8119(01)91441-7. [DOI] [Google Scholar]
+Consolini J, Demirci N, Fulwider A, Hutsler JJ, Holland MA, 2022. Bok’s equi-volume principle: Translation, historical context, and a modern perspective. Brain Multiphysics (ISSN: 2666–5220) 3, 100057. 10.1016/j.brain.2022.100057. [DOI] [Google Scholar]
+Cowan WM, 1979. The development of the brain. Sci. Am
+23. [PubMed] [Google Scholar]
+Cox RW, 1996. AFNI: software for analysis and visualization of functional magnetic resonance neuroimages. Comput. Biomed. Res. Int. J (ISSN: 0010–4809) 29 (3), 162–173. 10.1006/cbmr.1996.0014. [DOI] [PubMed] [Google Scholar]
+Cox RW, Hyde JS, 1997. Software tools for analysis and visualization of fMRI data. NMR Biomed. (ISSN: 1099–1492) 10 (4), 171–178. 10.1002/(SICI)1099-1492(199706/08)10:4/5<171::AID-NBM453>3.0.CO;2-L, _eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1002/%28SICI%291099-1492%28199706/08%2910%3A4/5%3C171%3A%3AAID-{NBM}453%3E3.0.CO%3B2-L. [DOI] [PubMed] [Google Scholar]
+Dahnke R, Yotter RA, Gaser C, 2013. Cortical thickness and central surface estimation. NeuroImage (ISSN: 10538119) 65, 336–348. 10.1016/j.neuroimage.2012.09.050. [DOI] [PubMed] [Google Scholar]
+De Lussanet MHE, 2013. The human and mammalian cerebrum scale by computational power and information resistance. arXiv
+preprint. [Google Scholar]
+Demirci N, Holland MA, 2022. Cortical thickness systematically varies with curvature and depth in healthy human brains. Hum. Brain Mapp (ISSN: 1097–0193) 43 (6), 10.1002/hbm.25776, _eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1002/hbm.25776. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Di Martino A, Yan C-G, Li Q, Denio E, Castellanos FX, Alaerts K, Anderson JS, Assaf M, Bookheimer SY, Dapretto M, Deen B, Delmonte S, Dinstein I, Ertl-Wagner B, Fair DA, Gallagher L, Kennedy DP, Keown CL, Keysers C, Lainhart JE, Lord C, Luna B, Menon V, Minshew NJ, Monk CS, Mueller S, Müller R-A, Nebel MB, Nigg JT, O’Hearn K, Pelphrey KA, Peltier SJ, Rudie JD, Sunaert S, Thioux M, Tyszka JM, Uddin LQ, Verhoeven JS, Wenderoth N, Wiggins JL, Mostofsky SH, Milham MP, 2014. The autism brain imaging data exchange: towards a large-scale evaluation of the intrinsic brain architecture in autism. Mol. Psychiatry
+19 (6), 659–667, ISSN: 1359–4184, 1476–5578, DOI: 10/f55pnf. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Dias M.d.F.M., Carvalho P, Castelo-Branco M, Valente Duarte J, 2022. Cortical thickness in brain imaging studies using FreeSurfer and CAT12: A matter of reproducibility. Neuroimage: Reports (ISSN: 2666–9560) 2 (4), 100137. 10.1016/j.ynirp.2022.100137. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Donahue CJ, Glasser MF, Preuss TM, Rilling JK, Essen DCV, 2018. Quantitative assessment of prefrontal cortex in humans relative to nonhuman primates. Proc. Natl. Acad. Sci
+115 (22), E5183–E5192. 10.1073/pnas.1721653115, ISSN: 0027–8424, 1091–6490. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Economo C, Triarhou LC, 2009. Cellular Structure of the Human Cerebral Cortex, New English ed ocn316421285, Karger, ISBN: 978–3-8055–9061-7, OCLC. [Google Scholar]
+Essen DCV, Donahue CJ, Coalson TS, Kennedy H, Hayashi T, Glasser MF, 2019. Cerebral cortical folding, parcellation, and connectivity in humans, nonhuman primates, and mice. Proc. Natl. Acad. Sci
+116 (52), 26173–26180. 10.1073/pnas.1902299116, ISBN: 9781902299112 Publisher: National Academy of Sciences Section: Colloquium Paper, ISSN: 0027–8424, 1091–6490. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Fischer C, Operto G, Laguitton S, Perrot M, Denghien I, Rivière D, Mangin J, 2012. Morphologist 2012: the new morphological pipeline of BrainVISA. Proc. HBM [Google Scholar]
+Fischl B, 2012. FreeSurfer. NeuroImage (ISSN: 10538119) 62 (2), 774–781. 10.1016/j.neuroimage.2012.01.021. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Fischl B, Dale AM, 2000. Measuring the thickness of the human cerebral cortex from magnetic resonance images. Proc. Natl. Acad. Sci
+97 (20), 11050–11055, ISSN: 0027–8424, 1091–6490, DOI: 10/bx28mc. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Fjell AM, Grydeland H, Krogsrud SK, Amlien I, Rohani DA, Ferschmann L, Storsve AB, Tamnes CK, Sala-Llonch R, Due-Tønnessen P, Bjørnerud A, Sølsnes AE, Håberg AK, Skranes J, Bartsch H, Chen C-H, Thompson WK, Panizzon MS, Kremen WS, Dale AM, Walhovd KB, 2015. Development and aging of cortical thickness correspond to genetic organization patterns. Proc. Natl. Acad. Sci. USA (ISSN: 0027–8424) 112 (50), 15462–15467. 10.1073/pnas.1508831112. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Foubet O, Trejo M, Toro R, 2019. Mechanical morphogenesis and the development of neocortical organisation. Cortex
+118, 315–326. 10.1016/j.cortex.2018.03.005. [DOI] [PubMed] [Google Scholar]
+Garcia-Saldivar P, Garimella A, Garza-Villarreal EA, Mendez FA, Concha L, Merchant H, 2021. PREEMACS: Pipeline for preprocessing and extraction of the macaque brain surface. NeuroImage (ISSN: 10538119) 227, 117671. 10.1016/j.neuroimage.2020.117671. [DOI] [PubMed] [Google Scholar]
+Gaser C, Dahnke R, 2019. Computational Anatomy Toolbox CAT12. Zenodo, 10.5281/ZENODO.2573966. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Geschwind DH, Rakic P, 2013. Cortical evolution: Judge the brain by its cover. Neuron (ISSN: 08966273) 80 (3), 633–647. 10.1016/j.neuron.2013.10.045. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Glasser MF, Smith SM, Marcus DS, Andersson JLR, Auerbach EJ, Behrens TEJ, Coalson TS, Harms MP, Jenkinson M, Moeller S, Robinson EC, Sotiropoulos SN, Xu J, Yacoub E, Ugurbil K, Van Essen DC, 2016. The human connectome project’s neuroimaging approach. Nature Neurosci. (ISSN: 1097–6256, 1546–1726) 19 (9), 1175–1187. 10.1038/nn.4361. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Groden M, Weigand M, Triesch J, Jedlicka P, Cuntz H, 2020. A model of brain folding based on strong local and weak long-range connectivity requirements. Cerebral Cortex (ISSN: 1047–3211) 30 (4), 2434–2451. 10.1093/cercor/bhz249. [DOI] [PubMed] [Google Scholar]
+Gulban OF, Schneider M, Marquardt I, Haast RAM, Martino FD, 2018. A scalable method to improve gray matter segmentation at ultra high field MRI. PLoS One (ISSN: 1932–6203) 13 (6), e0198335. 10.1371/journal.pone.0198335,Publisher: Public Library of Science. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Hayashi T, Hou Y, Glasser MF, Autio JA, Knoblauch K, Inoue-Murayama M, Coalson T, Yacoub E, Smith S, Kennedy H, Van Essen DC, 2021. The nonhuman primate neuroimaging and neuroanatomy project. NeuroImage (ISSN: 10538119) 229, 117726. 10.1016/j.neuroimage.2021.117726. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Herculano-Houzel S, 2015. Decreasing sleep requirement with increasing numbers of neurons as a driver for bigger brains and bodies in mammalian evolution. Proc. R. Soc. B: Biol. Sci
+282 (1816), 20151853. 10.1098/rspb.2015.1853,Publisher: Royal Society. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Herculano-Houzel S, Collins CE, Wong P, Kaas JH, Lent R, 2008. The basic nonuniformity of the cerebral cortex. Proc. Natl. Acad. Sci
+105 (34), 12593–12598. 10.1073/pnas.0805417105, ISSN: 0027–8424, 1091–6490. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Heuer K, Gulban OF, Bazin P-L, Osoianu A, Valabregue R, Santin M, Herbin M, Toro R, 2019. Evolution of neocortical folding: A phylogenetic comparative analysis of MRI from 34 primate species. Cortex (ISSN: 00109452) 118, 275–291. 10.1016/j.cortex.2019.04.011. [DOI] [PubMed] [Google Scholar]
+Hilgetag CC, Barbas H, 2005. Developmental mechanics of the primate cerebral cortex. Anat. Embryol
+210 (5), 411–417. 10.1007/s00429-005-0041-5, ISSN: 0340–2061, 1432–0568. [DOI] [PubMed] [Google Scholar]
+Hofman MA, 1985. Size and shape of the cerebral cortex in mammals (Part 1 of 2). Brain, Behav. Evol (ISSN: 0006–8977) 27 (1), 28–40. 10.1159/000118718. [DOI] [PubMed] [Google Scholar]
+Hofman MA, 1988a. On the evolution and geometry of the brain in mammals. Prog. Neurobiol
+32 (2), 137–158. 10.1016/0301-0082(89)90013-0. [DOI] [PubMed] [Google Scholar]
+Hofman MA, 1988b. Size and shape of the cerebral cortex in mammals (Part 2 of 2). Brain, Behav. Evol
+32 (1), 17–26. 10.1159/000116529. [DOI] [PubMed] [Google Scholar]
+Hofman MA, 2012. Chapter 18 - Design principles of the human brain: An evolutionary perspective. In: Hofman MA, Falk D (Eds.), Progress in Brain Research. In: Evolution of the Primate Brain, vol. 195, Elsevier, pp. 373–390. 10.1016/B978-0-444-53860-4.00018-0. [DOI] [PubMed] [Google Scholar]
+Hofman MA, 2014. Evolution of the human brain: when bigger is better. Front. Neuroanat (ISSN: 1662–5129) 8, 10.3389/fnana.2014.00015. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Holland MA, Budday S, Goriely A, Kuhl E, 2018. Symmetry breaking in wrinkling patterns: gyri are universally thicker than sulci. Phys. Rev. Lett (ISSN: 0031–9007) 121 (22), 228002. [DOI] [PubMed] [Google Scholar]
+Holland MA, Miller KE, Kuhl E, 2015. Emerging brain morphologies from axonal elongation. Ann. Biomed. Eng (ISSN: 0090–6964) 43 (7), 1640–1653. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Hoopes A, Iglesias JE, Fischl B, Greve D, Dalca AV, 2022. TopoFit: rapid reconstruction of topologically-correct cortical surfaces. Proceedings of machine learning research (ISSN: 2640–3498) 172, 508–520. [PMC free article] [PubMed] [Google Scholar]
+Hopkins WD, Avants BB, 2013. Regional and hemispheric variation in cortical thickness in chimpanzees (Pan troglodytes). J. Neurosci
+33 (12), 5241–5248. 10.1523/JNEUROSCI.2996-12.2013, Publisher: Society for Neuroscience Section: Articles, ISSN: 0270–6474, 1529–2401. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Hopkins WD, Li X, Roberts N, 2019. More intelligent chimpanzees (pan troglodytes) have larger brains and increased cortical thickness. Intelligence in non human animals, Intelligence (ISSN: 0160–2896) Intelligence in non human animals, 74, 18–24. 10.1016/j.intell.2018.11.002, [DOI] [Google Scholar]
+Hopkins WD, Meguerditchian A, Coulon O, Bogart S, Mangin J-F, Sherwood CC, Grabowski MW, Bennett AJ, Pierre PJ, Fears S, Woods R, Hof PR, Vauclair J, 2014. Evolution of the central sulcus morphology in primates. Brain, Behav. Evol
+84 (1), 19–30. 10.1159/000362431, ISSN: 0006–8977, 1421–9743. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Hopkins WD, Schaeffer J, Russell JL, Bogart SL, Meguerditchian A, Coulon O, 2015. A comparative assessment of handedness and its potential neuroanatomical correlates in chimpanzees (Pan troglodytes) and bonobos (Pan paniscus). Behaviour
+152 (3), 461–492. 10.1163/1568539X-00003204, ISSN: 0005–7959, 1568–539X. [DOI] [Google Scholar]
+Hu H-H, Chen H-Y, Hung C-I, Guo W-Y, Wu Y-T, 2013. Shape and curvedness analysis of brain morphology using human fetal magnetic resonance images in utero. Brain Struct. Funct
+218 (6), 1451–1462, DOI: 10/f5dvhg. [DOI] [PubMed] [Google Scholar]
+Hurtz S, Woo E, Kebets V, Green AE, Zoumalan C, Wang B, Ringman JM, Thompson PM, Apostolova LG, 2014. Age effects on cortical thickness in cognitively normal elderly individuals. Dementia Geriatric Cogn. Disord. Extra (ISSN: 1664–5464) 4 (2), 221–227. 10.1159/000362872,Publisher: Karger Publishers. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Hutsler JJ, Lee D-G, Porter KK, 2005. Comparative analysis of cortical layering and supragranular layer enlargement in rodent carnivore and primate species. Brain Res. (ISSN: 0006–8993) 1052 (1), 71–81. 10.1016/j.brainres.2005.06.015. [DOI] [PubMed] [Google Scholar]
+Hutton C, De Vita E, Ashburner J, Deichmann R, Turner R, 2008. Voxel-based cortical thickness measurements in MRI. NeuroImage (ISSN: 10538119) 40 (4), 1701–1710. 10.1016/j.neuroimage.2008.01.027. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Im K, Lee J-M, Lyttelton O, Kim SH, Evans AC, Kim SI, 2008. Brain size and cortical structure in the adult human brain. Cerebral Cortex
+18 (9), 2181–2191. 10.1093/cercor/bhm244, ISSN: 1047–3211, 1460–2199. [DOI] [PubMed] [Google Scholar]
+Kaas JH, van Eden CG, 2011. Brain banks provide a valuable resource for comparative studies. Brain, Behav. Evol
+77 (2), 65–66. 10.1159/000324526. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Kabani N, Le Goualher G, MacDonald D, Evans AC, 2001. Measurement of cortical thickness using an automated 3-D algorithm: A validation study. NeuroImage (ISSN: 10538119) 13 (2), 375–380. 10.1006/nimg.2000.0652. [DOI] [PubMed] [Google Scholar]
+Kharabian Masouleh S, Eickhoff SB, Zeighami Y, Lewis LB, Dahnke R, Gaser C, Chouinard-Decorte F, Lepage C, Scholtens LH, Hoffstaedter F, Glahn DC, Blangero J, Evans AC, Genon S, Valk SL, 2020. Influence of processing pipeline on cortical thickness measurement. Cerebral Cortex
+30 (9), 5014–5027. 10.1093/cercor/bhaa097, ISSN: 1047–3211, 1460–2199. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Kim SH, Lyu I, Fonov VS, Vachet C, Hazlett HC, Smith RG, Piven J, Dager SR, Mckinstry RC, Pruett JR, Evans AC, Collins DL, Botteron KN, Schultz RT, Gerig G, Styner MA, 2016. Development of cortical shape in the human brain from 6 to 24months of age via a novel measure of shape complexity. NeuroImage (ISSN: 10538119) 135, 163–176. 10.1016/j.neuroimage.2016.04.053. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Koenderink JJ, van Doorn AJ, 1992. Surface shape and curvature scales. Image Vis. Comput (ISSN: 02628856) 10 (8), 557–564, DOI: 10/ch28tk. [Google Scholar]
+Koike S, Tanaka SC, Okada T, Aso T, Yamashita A, Yamashita O, Asano M, Maikusa N, Morita K, Okada N, Fukunaga M, Uematsu A, Togo H, Miyazaki A, Murata K, Urushibata Y, Autio J, Ose T, Yoshimoto J, Araki T, Glasser MF, Van Essen DC, Maruyama M, Sadato N, Kawato M, Kasai K, Okamoto Y, Hanakawa T, Hayashi T, 2021. Brain/MINDS beyond human brain MRI project: A protocol for multi-level harmonization across brain disorders throughout the lifespan. NeuroImage: Clin (ISSN: 2213–1582) 30, 102600. 10.1016/j.nicl.2021.102600. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Koo B-B, Schettler SP, Murray DE, Lee J-M, Killiany RJ, Rosene DL, Kim D-S, Ronen I, 2012. Age-related effects on cortical thickness patterns of the rhesus monkey brain. Neurobiol. Aging (ISSN: 0197–4580) 33 (1), 200.e23–200.e31. 10.1016/j.neurobiolaging.2010.07.010. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Lamoureux P, Heidemann SR, Martzke NR, Miller KE, 2010. Growth and elongation within and along the axon. Dev. Neurobiol (ISSN: 19328451) 70 (3), 135–149, DOI: 10/dzzxpb. [DOI] [PubMed] [Google Scholar]
+Lepage C, Wagstyl K, Jung B, Seidlitz J, Sponheim C, Ungerleider L, Wang X, Evans AC, Messinger A, 2021. CIVET-macaque: An automated pipeline for MRI-based cortical surface generation and cortical thickness in macaques. NeuroImage (ISSN: 1053–8119) 227, 117622. 10.1016/j.neuroimage.2020.117622. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Lerch JP, Evans AC, 2005. Cortical thickness analysis examined through power analysis and a population simulation. NeuroImage (ISSN: 10538119) 24 (1), 163–173. 10.1016/j.neuroimage.2004.07.045. [DOI] [PubMed] [Google Scholar]
+Lewiner T, Lopes H, Vieira AW, Tavares G, 2003. Efficient implementation of marching cubes’ cases with topological guarantees. J. Graph. Tools (ISSN: 1086–7651) 8 (2), 1–15. 10.1080/10867651.2003.10487582, Publisher: Taylor & Francis;
+_eprint: 10.1080/10867651.2003.10487582. [DOI] [Google Scholar]
+Li G, Liu T, Ni D, Lin W, Gilmore JH, Shen D, 2015. Spatiotemporal patterns of cortical fiber density in developing infants, and their relationship with cortical thickness. Hum. Brain Mapp
+36 (12), 5183–5195. 10.1002/hbm.23003, ISSN: 1065–9471, 1097–0193. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Lin H-Y, Huang C-C, Chou K-H, Yang AC, Lo C-YZ, Tsai S-J, Lin C-P, 2021. Differential patterns of gyral and sulcal morphological changes during normal aging process. Front. Aging Neurosci (ISSN: 1663–4365) 13, 625931. 10.3389/fnagi.2021.625931. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Liu C, Yen CC-C, Szczupak D, Tian X, Glen D, Silva AC, 2021. Marmoset brain mapping V3: Population multi-modal standard volumetric and surface-based templates. NeuroImage (ISSN: 10538119) 226, 117620. 10.1016/j.neuroimage.2020.117620. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Llinares-Benadero C, Borrell V, 2019. Deconstructing cortical folding: genetic, cellular and mechanical determinants. Nat. Rev. Neurosci
+20 (3), 161–176. 10.1038/s41583-018-0112-2, ISSN: 1471–003X, 1471–0048. [DOI] [PubMed] [Google Scholar]
+Mangin J-F, 2000. Entropy minimization for automatic correction of intensity nonuniformity. In: Proceedings IEEE Workshop on Mathematical Methods in Biomedical Image Analysis. MMBIA-2000 (Cat. No.PR00737). pp. 162–169. 10.1109/MMBIA.2000.852374. [DOI] [Google Scholar]
+Mangin JF, Coulon O, Frouin V, 1998. Robust brain segmentation using histogram scale-space analysis and mathematical morphology. In: Wells WM, Colchester A, Delp S (Eds.), Medical Image Computing and Computer-Assisted Intervention — MICCAI’98, Vol. 1496. Lecture Notes in Computer Science, Springer;
+Berlin Heidelberg, pp. 1230–1241. 10.1007/BFb0056313, Series Title. [DOI] [Google Scholar]
+Messinger A, Sirmpilatze N, Heuer K, Loh KK, Mars RB, Sein J, Xu T, Glen D, Jung B, Seidlitz J, Taylor P, Toro R, Garza-Villarreal EA, Sponheim C, Wang X, Benn RA, Cagna B, Dadarwal R, Evrard HC, Garcia-Saldivar P, Giavasis S, Hartig R, Lepage C, Liu C, Majka P, Merchant H, Milham MP, Rosa MG, Tasserie J, Uhrig L, Margulies DS, Klink PC, 2021. A collaborative resource platform for non-human primate neuroimaging. NeuroImage (ISSN: 10538119) 226, 117519. 10.1016/j.neuroimage.2020.117519. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Milham MP, Ai L, Koo B, Xu T, Amiez C, Balezeau F, Baxter MG, Blezer EL, Brochier T, Chen A, Croxson PL, Damatac CG, Dehaene S, Everling S, Fair DA, Fleysher L, Freiwald W, Froudist-Walsh S, Griffiths TD, Guedj C, Hadj-Bouziane F, Ben Hamed S, Harel N, Hiba B, Jarraya B, Jung B, Kastner S, Klink PC, Kwok SC, Laland KN, Leopold DA, Lindenfors P, Mars RB, Menon RS, Messinger A, Meunier M, Mok K, Morrison JH, Nacef J, Nagy J, Rios MO, Petkov CI, Pinsk M, Poirier C, Procyk E, Rajimehr R, Reader SM, Roelfsema PR, Rudko DA, Rushworth MF, Russ BE, Sallet J, Schmid MC, Schwiedrzik CM, Seidlitz J, Sein J, Shmuel A, Sullivan EL, Ungerleider L, Thiele A, Todorov OS, Tsao D, Wang Z, Wilson CR, Yacoub E, Ye FQ, Zarco W, Zhou Y. d., Margulies DS, Schroeder CE, 2018. An open resource for non-human primate imaging. Neuron (ISSN: 08966273) 100 (1), 61–74.e2. 10.1016/j.neuron.2018.08.039. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Milham M, Petkov C, Belin P, Ben Hamed S, Evrard H, Fair D, Fox A, Froudist-Walsh S, Hayashi T, Kastner S, Klink C, Majka P, Mars R, Messinger A, Poirier C, Schroeder C, Shmuel A, Silva AC, Vanduffel W, Van Essen DC, Wang Z, Roe AW, Wilke M, Xu T, Aarabi MH, Adolphs R, Ahuja A, Alvand A, Amiez C, Autio J, Azadi R, Baeg E, Bai R, Bao P, Basso M, Behel AK, Bennett Y, Bernhardt B, Biswal B, Boopathy S, Boretius S, Borra E, Boshra R, Buffalo E, Cao L, Cavanaugh J, Ce-line A, Chavez G, Chen LM, Chen X, Cheng L, Chouinard-Decorte F, Clavagnier S, Cléry J, Colcombe SJ, Conway B, Cordeau M, Coulon O, Cui Y, Dadarwal R, Dahnke R, Desrochers T, Deying L, Dougherty K, Doyle H, Drzewiecki CM, Duyck M, Arachchi WE, Elorette C, Essamlali A, Evans A, Fajardo A, Figueroa H, Franco A, Freches G, Frey S, Friedrich P, Fujimoto A, Fukunaga M, Gacoin M, Gallardo G, Gao L, Gao Y, Garside D, Garza-Villarreal EA, Gaudet-Trafit M, Gerbella M, Giavasis S, Glen D, Ribeiro Gomes AR, Torrecilla SG, Gozzi A, Gulli R, Haber S, Hadj-Bouziane F, Fujimoto SH, Hawrylycz M, He Q, He Y, Heuer K, Hiba B, Hoffstaedter F, Hong S-J, Hori Y, Hou Y, Howard A, de la Iglesia-Vaya M, Ikeda T, Jankovic-Rapan L, Jaramillo J, Jedema HP, Jin H, Jiang M, Jung B, Kagan I, Kahn I, Kiar G, Kikuchi Y, Kilavik B, Kimura N, Klatzmann U, Kwok SC, Lai H-Y, Lamberton F, Lehman J, Li P, Li X, Li X, Liang Z, Liston C, Little R, Liu C, Liu N, Liu X, Liu X, Lu H, Loh KK, Madan C, Magrou L, Margulies D, Mathilda F, Mejia S, Meng Y, Menon R, Meunier D, Mitchell A, Mitchell A, Murphy A, Mvula T, Ortiz-Rios M, Ortuzar Martinez DE, Pagani M, Palomero-Gallagher N, Pareek V, Perkins P, Ponce F, Postans M, Pouget P, Qian M, Ramirez JB, Raven E, Restrepo I, Rima S, Rockland K, Rodriguez NY, Roger E, Hortelano ER, Rosa M, Rossi A, Rudebeck P, Russ B, Sakai T, Saleem KS, Sallet J, Sawiak S, Schaeffer D, Schwiedrzik CM, Seidlitz J, Sein J, Sharma J, Shen K, Sheng W. a., Shi NS, Shim WM, Simone L, Sirmpilatze N, Sivan V, Song X, Tanenbaum A, Tasserie J, Taylor P, Tian X, Toro R, Trambaiolli L, Upright N, Vezoli J, Vickery S, Villalon J, Wang X, Wang Y, Weiss AR, Wilson C, Wong T-Y, Woo C-W, Wu B, Xiao D, Xu AG, Xu D, Xufeng Z, Yacoub E, Ye N, Ying Z, Yokoyama C, Yu X, Yue S, Yuheng L, Yumeng X, Zaldivar D, Zhang S, Zhao Y, Zuo Z, 2022. Toward next-generation primate neuroscience: A collaboration-based strategic plan for integrative neuroimaging. Neuron
+110 (1), 16–20. 10.1016/j.neuron.2021.10.015. [DOI] [PubMed] [Google Scholar]
+Milham M, Petkov CI, Margulies DS, Schroeder CE, Basso MA, Belin P, Fair DA, Fox A, Kastner S, Mars RB, Messinger A, Poirier C, Vanduffel W, Van Essen DC, Alvand A, Becker Y, Ben Hamed S, Benn A, Bodin C, Boretius S, Cagna B, Coulon O, El-Gohary SH, Evrard H, Forkel SJ, Friedrich P, Froudist-Walsh S, Garza-Villarreal EA, Gao Y, Gozzi A, Grigis A, Hartig R, Hayashi T, Heuer K, Howells H, Ardesch DJ, Jarraya B, Jarrett W, Jedema HP, Kagan I, Kelly C, Kennedy H, Klink PC, Kwok SC, Leech R, Liu X, Madan C, Madushanka W, Majka P, Mallon A-M, Marche K, Meguerditchian A, Menon RS, Merchant H, Mitchell A, Nenning K-H, Nikolaidis A, Ortiz-Rios M, Pagani M, Pareek V, Prescott M, Procyk E, Rajimehr R, Rautu I-S, Raz A, Roe AW, Rossi-Pool R, Roumazeilles L, Sakai T, Sallet J, a Saldivar PG, Sato C, Sawiak S, Schiffer M, Schwiedrzik CM, Seidlitz J, Sein J, ming Shen Z, Shmuel A, Silva AC, Simone L, Sirmpilatze N, Sliwa J, Smallwood J, Tasserie J, Thiebaut de Schotten M, Toro R, Trapeau R, Uhrig L, Vezoli J, Wang Z, Wells S, Williams B, Xu T, Xu AG, Yacoub E, Zhan M, Ai L, Amiez C, Balezeau F, Baxter MG, Blezer EL, Brochier T, Chen A, Croxson PL, Damatac CG, Dehaene S, Everling S, Fleysher L, Freiwald W, Griffiths TD, Guedj C, Hadj-Bouziane F, Harel N, Hiba B, Jung B, Koo B, Laland KN, Leopold DA, Lindenfors P, Meunier M, Mok K, Morrison JH, Nacef J, Nagy J, Pinsk M, Reader SM, Roelfsema PR, Rudko DA, Rushworth MF, Russ BE, Schmid MC, Sullivan EL, Thiele A, Todorov OS, Tsao D, Ungerleider L, Wilson CR, Ye FQ, Zarco W, di Zhou Y, 2020. Accelerating the evolution of nonhuman primate neuroimaging. Neuron (ISSN: 0896–6273) 105 (4), 600–603. 10.1016/j.neuron.2019.12.023. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Minkova L, Habich A, Peter J, Kaller CP, Eickhoff SB, Klöppel S, 2017. Gray matter asymmetries in aging and neurodegeneration: A review and meta-analysis. Hum. Brain Mapp
+38 (12), 5890–5904. 10.1002/hbm.23772. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Mota B, Dos Santos SE, Ventura-Antunes L, Jardim-Messeder D, Neves K, Kazu RS, Noctor S, Lambert K, Bertelsen MF, Manger PR, Sherwood CC, Kaas JH, Herculano-Houzel S, 2019. White matter volume and white/gray matter ratio in mammalian species as a consequence of the universal scaling of cortical folding. Proc. Natl. Acad. Sci. USA (ISSN: 0027–8424) 116 (30), 15253–15261, Publisher: National Academy of Sciences. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Mota B, Herculano-Houzel S, 2012. How the cortex gets its folds: An inside-out, connectivity-driven model for the scaling of mammalian cortical folding. Front. Neuroanat (ISSN: 1662–5129) 6. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Mota B, Herculano-Houzel S, 2015. Cortical folding scales universally with surface area and thickness, not number of neurons. Science
+349 (6243), 74–77. 10.1126/science.aaa9101, ISSN: 0036–8075, 1095–9203. [DOI] [PubMed] [Google Scholar]
+NCBR, National Chimpanzee Brain Resource, https://www.chimpanzeebrain.org/.
+Neff EP, 2020. Nonhuman primate neuroimaging opens up. Lab Animal (ISSN: 1548–4475) 49 (5), 139–143. 10.1038/s41684-020-0531-3, Number: 5 Publisher: Nature Publishing Group. [DOI] [PubMed] [Google Scholar]
+Nie J, Guo L, Li K, Wang Y, Chen G, Li L, Chen H, Deng F, Jiang X, Zhang T, Huang L, Faraco C, Zhang D, Guo C, Yap P-T, Hu X, Li G, Lv J, Yuan Y, Zhu D, Han J, Sabatinelli D, Zhao Q, Miller LS, Xu B, Shen P, Platt S, Shen D, Hu X, Liu T, 2012. Axonal fiber terminations concentrate on gyri. Cerebral Cortex
+22 (12), 2831–2839. 10.1093/cercor/bhr361, ISSN: 1460–2199, 1047–3211. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Ohtake Y, Belyaev A, Bogaevski I, 2001. Mesh regularization and adaptive smoothing. Comput. Aided Des (ISSN: 00104485) 33 (11), 789–800. 10.1016/S0010-4485(01)00095-1. [DOI] [Google Scholar]
+Ose T, Autio JA, Ohno M, Frey S, Uematsu A, Kawasaki A, Takeda C, Hori Y, Nishigori K, Nakako T, Yokoyama C, Nagata H, Yamamori T, Van Essen DC, Glasser MF, Watabe H, Hayashi T, 2022. Anatomical variability, multi-modal coordinate systems, and precision targeting in the marmoset brain. NeuroImage (ISSN: 1053–8119) 250, 118965. 10.1016/j.neuroimage.2022.118965. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Pardoe HR, Kucharsky Hiess R, Kuzniecky R, 2016. Motion and morphometry in clinical and nonclinical populations. NeuroImage
+135, 177–185. 10.1016/j.neuroimage.2016.05.005. [DOI] [PubMed] [Google Scholar]
+Penisson M, Ladewig J, Belvindrah R, Francis F, 2019. Genes and mechanisms involved in the generation and amplification of basal radial glial cells. Front. Cell. Neurosci (ISSN: 1662–5102) 13, 381. 10.3389/fncel.2019.00381. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Pillay P, Manger PR, 2007. Order-specific quantitative patterns of cortical gyrification. Eur. J. Neurosci (ISSN: 1460–9568) 25 (9), 2705–2712. 10.1111/j.1460-9568.2007.05524.x, _eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1111/j.1460-9568.2007.05524.x. [DOI] [PubMed] [Google Scholar]
+Pomponio R, Erus G, Habes M, Doshi J, Srinivasan D, Mamourian E, Bashyam V, Nasrallah IM, Satterthwaite TD, Fan Y, Launer LJ, Masters CL, Maruff P, Zhuo C, Völzke H, Johnson SC, Fripp J, Koutsouleris N, Wolf DH, Gur R, Gur R, Morris J, Albert MS, Grabe HJ, Resnick SM, Bryan RN, Wolk DA, Shinohara RT, Shou H, Davatzikos C, 2020. Harmonization of large MRI datasets for the analysis of brain imaging patterns throughout the lifespan. NeuroImage (ISSN: 1053–8119) 208, 116450. 10.1016/j.neuroimage.2019.116450. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Prothero J, 1999. Small brain, large brain – A quest for nature’s scale-up rules. J. Hirnforsch
+39 (3), 335–347. [PubMed] [Google Scholar]
+Rakic P, Swaab D, 1988. Defects of neuronal migration and the pathogenesis of cortical malformations. In: Progress in Brain Research, Vol. 73. Elsevier, ISBN: 978–0-444–80970-4, pp. 15–37. 10.1016/S0079-6123(08)60494-X. [DOI] [PubMed] [Google Scholar]
+Razavi MJ, Zhang T, Chen H, Li Y, Platt S, Zhao Y, Guo L, Hu X, Wang X, Liu T, 2017. Radial structure scaffolds convolution patterns of developing cerebral cortex. Front. Comput. Neurosci (ISSN: 1662–5188) 11, 76. 10.3389/fncom.2017.00076. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Razavi MJ, Zhang T, Liu T, Wang X, 2015. Cortical folding pattern and its consistency induced by biological growth. Sci. Rep
+5 (1), 14477. 10.1038/srep14477. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Reillo I, de Juan Romero C, García-Cabezas MÁ, Borrell V, 2010. A role for intermediate radial glia in the tangential expansion of the mammalian cerebral cortex. Cerebral Cortex (ISSN: 1047–3211) 21 (7), 1674–1694. 10.1093/cercor/bhq238, _eprint: https://academic.oup.com/cercor/article-pdf/21/7/1674/17305273/bhq238.pdf. [DOI] [PubMed] [Google Scholar]
+Richman DP, Stewart RM, Hutchinson JW, Caviness VS Jr., 1975. Mechanical model of brain convolutional development. Science
+189 (4196), 18–21, DOI:10/c88cwr. [DOI] [PubMed] [Google Scholar]
+Rilling JK, Insel TR, 1999. The primate neocortex in comparative perspective using magnetic resonance imaging. J. Hum. Evol (ISSN: 0047–2484) 37 (2), 191–223. 10.1006/jhev.1999.0313. [DOI] [PubMed] [Google Scholar]
+Rivière D, Geffroy D, Denghien I, Souedet N, Cointepas Y, 2009. Brainvisa: an extensible software environment for sharing multimodal neuroimaging data and processing tools. NeuroImage (ISSN: 1053–8119) 47, S163. 10.1016/S1053-8119(09)71720-3, Organization for Hum. Brain Mapp. 2009 Annual Meeting. [DOI] [Google Scholar]
+Rogers J, Kochunov P, Zilles K, Shelledy W, Lancaster J, Thompson P, Duggirala R, Blangero J, Fox PT, Glahn DC, 2010. On the genetic architecture of cortical folding and brain volume in primates. NeuroImage (ISSN: 1053–8119) 53 (3), 1103–1108. 10.1016/j.neuroimage.2010.02.020. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Ronan L, Fletcher PC, 2015. From genes to folds: A review of cortical gyrification theory. Brain Struct. Funct
+220 (5), 2475–2483. 10.1007/s00429-014-0961-z, ISSN: 1863–2653, 1863–2661. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Rosas HD, Liu AK, Hersch S, Glessner M, Ferrante RJ, Salat DH, van der Kouwe A, Jenkins BG, Dale AM, Fischl B, 2002. Regional and progressive thinning of the cortical ribbon in Huntington’s disease. Neurology
+58 (5), 695–701. 10.1212/WNL.58.5.695, ISSN: 0028–3878, 1526–632X. [DOI] [PubMed] [Google Scholar]
+Salat DH, Buckner RL, Snyder AZ, Greve DN, Desikan RSR, Busa E, Morris JC, Dale AM, Fischl B, 2004. Thinning of the cerebral cortex in aging. Cerebral Cortex (New York, N.Y.: 1991) (ISSN: 1047–3211) 14 (7), 721–730, DOI:10/bhdznf. [DOI] [PubMed] [Google Scholar]
+Sawada K, Fukunishi K, Kashima M, Saito S, Sakata-Haga H, Aoki I, Fukui Y, 2012. Fetal gyrification in cynomolgus monkeys: A concept of developmental stages of gyrification. Anat. Rec (ISSN: 1932–8494) 295 (7), 1065–1074. 10.1002/ar.22478, _eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1002/ar.22478. [DOI] [PubMed] [Google Scholar]
+Schulz G, Crooijmans HJ, Germann M, Scheffler K, Müller-Gerbl M, Müller B, 2011. Three-dimensional strain fields in human brain resulting from formalin fixation. J. Neurosci. Methods (ISSN: 0165–0270) 202 (1), 17–27. 10.1016/j.jneumeth.2011.08.031. [DOI] [PubMed] [Google Scholar]
+Scott M, Bromiley P, Thacker N, Hutchinson C, Jackson A, 2009. A fast, model-independent method for cerebral cortical thickness estimation using MRI. Med. Image Anal (ISSN: 13618415) 13 (2), 269–285. 10.1016/j.media.2008.10.006. [DOI] [PubMed] [Google Scholar]
+Seidlitz J, Sponheim C, Glen D, Ye FQ, Saleem KS, Leopold DA, Ungerleider L, Messinger A, 2018. A population MRI brain template and analysis tools for the macaque. NeuroImage (ISSN: 10538119) 170, 121–131. 10.1016/j.neuroimage.2017.04.063. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Sherwood CC, Gordon AD, Allen JS, Phillips KA, Erwin JM, Hof PR, Hopkins WD, 2011. Aging of the cerebral cortex differs between humans and chimpanzees. Proc. Natl. Acad. Sci
+108 (32), 13029–13034. 10.1073/pnas.1016709108, Company: National Academy of Sciences Distributor: National Academy of Sciences Institution: National Academy of Sciences Label: National Academy of Sciences Publisher: Proceedings of the National Academy of Sciences. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Shimony JS, Smyser CD, Wideman G, Alexopoulos D, Hill J, Harwell J, Dierker D, Van Essen DC, Inder TE, Neil JJ, 2016. Comparison of cortical folding measures for evaluation of developing human brain. NeuroImage (ISSN: 10538119) 125, 780–790. 10.1016/j.neuroimage.2015.11.001, Citation Key Alias: shimonyComparisonCorticalFolding2016a. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Shinmyo Y, Saito K, Hamabe-Horiike T, Kameya N, Ando A, Kawasaki K, Duong TAD, Sakashita M, Roboon J, Hattori T, Kannon T, Hosomichi K, Slezak M, Holt MG, Tajima A, Hori O, Kawasaki H, 2022. Localized astro-genesis regulates gyrification of the cerebral cortex. Sci. Adv (ISSN: 2375–2548) 8 (10), eabi5209. 10.1126/sciadv.abi5209. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Tallinen T, Chung JY, Biggins JS, Mahadevan L, 2014. Gyrification from constrained cortical expansion. Proc. Natl. Acad. Sci
+111 (35), 12667–12672, DOI:10/f6fvd6. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Tallinen T, Chung JY, Rousseau F, Girard N, Lefèvre J, Mahadevan L, 2016. On the growth and form of cortical convolutions. Nat. Phys
+12 (6), 588–593. 10.1038/nphys3632, ISSN: 1745–2473, 1745–2481. [DOI] [Google Scholar]
+Toro R, 2012. On the possible shapes of the brain. Evol. Biol
+39 (4), 600–612. 10.1007/s11692-012-9201-8. [DOI] [Google Scholar]
+Toro R, Burnod Y, 2005. A morphogenetic model for the development of cortical convolutions. Cerebral Cortex
+15 (12), 1900–1913. 10.1093/cercor/bhi068, ISSN: 1460–2199, 1047–3211. [DOI] [PubMed] [Google Scholar]
+Tustison NJ, Cook PA, Klein A, Song G, Das SR, Duda JT, Kandel BM, van Strien N, Stone JR, Gee JC, Avants BB, 2014. Large-scale evaluation of ANTs and FreeSurfer cortical thickness measurements. NeuroImage (ISSN: 10538119) 99, 166–179. 10.1016/j.neuroimage.2014.05.044. [DOI] [PubMed] [Google Scholar]
+Van Essen DC, 1997. A tension-based theory of morphogenesis and compact wiring in the central nervous system. Nature
+385 (6614), 313–318, DOI: 10/d5j9zx. [DOI] [PubMed] [Google Scholar]
+Van Essen DC, Donahue CJ, Glasser MF, 2018. Development and evolution of cerebral and cerebellar cortex. Brain, Behav. Evol
+91 (3), 158–169. 10.1159/000489943, ISSN: 0006–8977, 1421–9743. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Velázquez J, Mateos J, Pasaye EH, Barrios FA, Marquez-Flores JA, 2021. Cortical thickness estimation: A comparison of FreeSurfer and three voxel-based methods in a test–retest analysis and a clinical application. Brain Topogr. 34 (4), 430–441. 10.1007/s10548-021-00852-2, ISSN: 0896–0267, 1573–6792. [DOI] [PubMed] [Google Scholar]
+Vickery S, Hopkins WD, Sherwood CC, Schapiro SJ, Latzman RD, Caspers S, Gaser C, Eickhoff SB, Dahnke R, Hoffstaedter F, 2020. Chimpanzee brain morphometry utilizing standardized MRI preprocessing and macroanatomical annotations. eLife (ISSN: 2050–084X) 9, e60136. 10.7554/eLife.60136. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Wang S, Demirci N, Holland MA, 2021. Numerical investigation of biomechanically coupled growth in cortical folding. Biomech. Model. Mechanobiol (ISSN: 1617–7940) 20 (2), 555–567. 10.1007/s10237-020-01400-w. [DOI] [PubMed] [Google Scholar]
+Wang Y, Necus J, Rodriguez LP, Taylor PN, Mota B, 2019. Human cortical folding across regions within individual brains follows universal scaling law. Commun. Biol
+2 (1), 191. 10.1038/s42003-019-0421-7. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Welker W, 1990. Why does cerebral cortex fissure and fold? In: Jones EG, Peters A (Eds.), Cerebral Cortex. vol. 8B, Springer;
+US, pp. 3–136. 10.1007/978-1-4615-3824-0_1. [DOI] [Google Scholar]
+Xiang L, Crow TJ, Hopkins WD, Roberts N, 2020. Comparison of surface area and cortical thickness asymmetry in the human and chimpanzee brain. Cerebral Cortex (ISSN: 1047–3211) bhaa202.
+10.1093/cercor/bhaa202. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Xu G, Knutsen AK, Dikranian K, Kroenke CD, Bayly PV, Taber LA, 2010. Axons pull on the brain, but tension does not drive cortical folding. J. Biomech. Eng (ISSN: 01480731) 132 (7), 071013, DOI: 10/dm2c3z. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Yamashita A, Yahata N, Itahashi T, Lisi G, Yamada T, Ichikawa N, Takamura M, Yoshihara Y, Kunimatsu A, Okada N, Yamagata H, Matsuo K, Hashimoto R, Okada G, Sakai Y, Morimoto J, Narumoto J, Shimada Y, Kasai K, Kato N, Takahashi H, Okamoto Y, Tanaka SC, Kawato M, Yamashita O, Imamizu H, 2019. Harmonization of resting-state functional MRI data across multiple imaging sites via the separation of site differences into sampling bias and measurement bias. In: Macleod MR (Ed.), PLoS Biol (ISSN: 1545–7885) 17 (4), e3000042. 10.1371/journal.pbio.3000042. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Yun HJ, Im K, Yang J-J, Yoon U, Lee J-M, 2013. Automated sulcal depth measurement on cortical surface reflecting geometrical properties of sulci. In: Draganski B (Ed.), PLoS One (ISSN: 1932–6203) 8 (2), e55977. 10.1371/journal.pone.0055977. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Yushkevich PA, Piven J, Cody Hazlett H, Gimpel Smith R, Ho S, Gee JC, Gerig G, 2006. User-guided 3D active contour segmentation of anatomical structures: Significantly improved efficiency and reliability. Neuroimage
+31 (3), 1116–1128. [DOI] [PubMed] [Google Scholar]
+Zhang Y, Brady M, Smith S, 2001. Segmentation of brain MR images through a hidden Markov random field model and the expectation-maximization algorithm. IEEE Trans. Med. Imag (ISSN: 1558–254X) 20 (1), 45–57. 10.1109/42.906424, Conference Name: IEEE Transactions on Medical Imaging. [DOI] [PubMed] [Google Scholar]
+Zhang T, Razavi MJ, Chen H, Li Y, Li X, Li L, Guo L, Hu X, Liu T, Wang X, 2017. Mechanisms of circumferential gyral convolution in primate brains. J. Comput. Neurosci
+42 (3), 217–229. 10.1007/s10827-017-0637-9, ISSN: 0929–5313, 1573–6873. [DOI] [PubMed] [Google Scholar]
+Zhang T, Razavi MJ, Li X, Chen H, Liu T, Wang X, 2016. Mechanism of consistent gyrus formation: An experimental and computational study. Sci. Rep
+6 (1), 37272, DOI: 10/f9cs2h. [DOI] [PMC free article] [PubMed] [Google Scholar]
+Zilles K, Armstrong E, Moser KH, Schleicher A, Stephan H, 1989. Gyrification in the cerebral cortex of primates. Brain, Behav. Evol
+34 (3), 143–150. 10.1159/000116500, ISSN: 0006–8977, 1421–9743. [DOI] [PubMed] [Google Scholar]
+Zilles K, Palomero-Gallagher N, Amunts K, 2013. Development of cortical folding during evolution and ontogeny. Trends Neurosci. (ISSN: 01662236) 36 (5), 275–284. 10.1016/j.tins.2013.01.006. [DOI] [PubMed] [Google Scholar]
+Associated Data
+This section collects any data citations, data availability statements, or supplementary materials included in this article.
+Supplementary Materials
+1
+NIHMS1924378-supplement-1.pdf (6MB, pdf)
+Data Availability Statement
+The human imaging data used in the preparation of this article was obtained from the preprocessed neuroimaging data of Autism Brain Imaging Data Exchange I (ABIDE I) repository which is an international neuroimaging data-sharing initiative. The data was obtained from the website https://fcon_1000.projects.nitrc.org/indi/abide/abide_I.html. The preprocessed surfaces was obtained from http://preprocessed-connectomes-project.org/abide/ (Cameron et al. 2013).
+The macaque imaging data was obtained from the publicly available PRIMatE Data Exchange (PRIME-DE) repository. The data was obtained from the website https://fcon_1000.projects.nitrc.org/indi/indiPRIME.html. We used publicly available codes to process the rhesus macaque imaging data (https://github.com/jms290/NMT/tree/master/NMT_v1.3).
+The chimpanzee, bonobo, and gorilla imaging data was obtained from the publicly available National Chimpanzee Brain Resource (NCBR) repository. The data was obtained from the website https://www.chimpanzeebrain.org. We used publicly available codes to process the chimpanzee imaging data (https://github.com/viko18/JunaChimp).
+The preprocessed surfaces for the remaining 7 species was obtained from doi.org/10.5281/ZENODO.5044936.
+All further analyses and visualization were performed by our publicly available computational pipeline (https://github.com/mholla/curveball).
+All scripts generated for this study, including code sufficient to reproduce all figures, are available at https://github.com/mholla/NIMG23. Additionally, the data for all 595 subjects of all 12 species are available at doi.org/10.5281/zenodo.7574350, including the pial, white, and alpha surfaces, as well as cortical thickness, area, sulcal depth, and curvature at each vertex.
+ACTIONS
+View on publisher site
+PDF (2.6 MB)
+Cite
+Collections
+Permalink
+PERMALINK
+Copy
+RESOURCES
+Similar articles
+Cited by other articles
+Links to NCBI Databases
+Cite
+Copy
+Download .nbib
+.nbib
+Format:
+AMA
+APA
+MLA
+NLM
+Add to Collections
+Create a new collection
+Add to an existing collection
+Name your collection
+*
+Choose a collection
+Unable to load your collection due to an error
+Please try again
+Add
+Cancel
+Follow NCBI
+NCBI on X (formerly known as Twitter)
+NCBI on Facebook
+NCBI on LinkedIn
+NCBI on GitHub
+NCBI RSS feed
+Connect with NLM
+NLM on X (formerly known as Twitter)
+NLM on Facebook
+NLM on YouTube
+National Library of Medicine
+8600 Rockville Pike
+Bethesda, MD 20894
+Web Policies
+FOIA
+HHS Vulnerability Disclosure
+Help
+Accessibility
+Careers
+NLM
+NIH
+HHS
+USA.gov
+Back to Top

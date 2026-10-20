@@ -1,0 +1,513 @@
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>11.1.2. Macaque template: NMT v2 (current) &#8212; AFNI, SUMA and FATCAT: v26.3.04</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/cloud.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/table_styling.css" />
+    <link rel="stylesheet" href="../../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../../local_PT_sans" type="text/css" />
+    
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+
+    
+    
+     
+        <script src="../../_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="../../_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="../../_static/cloud.js"></script>
+    
+
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="11.1.3. Macaque template: NMT v1 (older)" href="template_nmtv1.html" />
+    <link rel="prev" title="11.1.1. Macaque Atlas: D99 v2.0 (current)" href="atlas_d99v2.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="template_nmtv1.html" title="11.1.3. Macaque template: NMT v1 (older)"
+             accesskey="N">next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="atlas_d99v2.html" title="11.1.1. Macaque Atlas: D99 v2.0 (current)"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
+    <li><a href="../../index.html">AFNI, SUMA and FATCAT: v26.3.04</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../main_toc.html" ><span class="section-number">11. </span>Non-human processing</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="main_toc.html" accesskey="U"><span class="section-number">11.1. </span><strong>Macaque Templates and Atlases</strong></a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">11.1.2. </span><strong>Macaque template:  NMT v2 (current)</strong></a></li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="macaque-template-nmt-v2-current">
+<span id="nh-macaque-template-nmtv2"></span><h1><span class="section-number">11.1.2. </span><strong>Macaque template:  NMT v2 (current)</strong><a class="headerlink" href="#macaque-template-nmt-v2-current" title="Permalink to this heading">¶</a></h1>
+<nav class="contents local" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#overview" id="id2">Overview</a></p></li>
+<li><p><a class="reference internal" href="#id1" id="id3">Contents</a></p></li>
+<li><p><a class="reference internal" href="#example-images" id="id4">Example images</a></p></li>
+<li><p><a class="reference internal" href="#download-symmetric-nmt-v2-datasets" id="id5">Download symmetric NMT v2 datasets</a></p></li>
+<li><p><a class="reference internal" href="#download-asymmetric-nmt-v2-datasets" id="id6">Download asymmetric NMT v2 datasets</a></p></li>
+<li><p><a class="reference internal" href="#citation-questions" id="id7">Citation/questions</a></p></li>
+</ul>
+</nav>
+<section id="overview">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading">¶</a></h2>
+<p>Here we present the NIMH Macaque Template (NMT), version 2.0. This is
+a group template from 31 macaques with surfaces and a 5-class tissue
+segmentation.</p>
+<p>The NMT v2 is the most current version of this dataset.</p>
+<p>Be sure to also check out the accompanying <em>CHARM (Cortical Hierarchy
+Atlas of the Rhesus Macaque)</em> dataset, described
+<a class="reference internal" href="atlas_charm.html#nh-macaque-atlas-charm"><span class="std std-ref">here</span></a>.</p>
+</section>
+<section id="id1">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Contents</a><a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
+<p>There are both symmetric and asymmetric “variants” for the NMT v2.</p>
+<p>Additionally, for each variant there are sets of data with different
+spatial resolution and FOV:</p>
+<ul class="simple">
+<li><p>the “standard” NMT has 0.25 mm isotropic voxels and a
+“brain-focused” FOV,</p></li>
+<li><p>the “low-res” NMT has 0.5 mm isotropic voxels and a “brain-focused”
+FOV,</p></li>
+<li><p>the “full-head” NMT has 0.25 mm isotropic voxels and a larger FOV,
+encompassing more non-brain material.</p></li>
+</ul>
+<p>An example of the contents in the download of the symmetric NMT v2
+(which is essentially mirrored in the asymmetric version) is provided
+here:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 80.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>NMT v2 contents</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>NMT_v2.0_sym/</strong></p></td>
+<td><p>directory of the “standard” NMT files (i.e., standard spatial
+resolution of 0.25 mm iso voxels and brain-focused FOV)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>NMT_v2.0_sym_05mm/</strong></p></td>
+<td><p>directory of the “low-res” NMT files (0.5 mm iso voxels; lower
+spatial resolution but still useful, if not preferred, for some
+analysis cases like in standard FMRI processing)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>NMT_v2.0_sym_fh/</strong></p></td>
+<td><p>directory of the “full head” NMT files (i.e., 0.25 mm iso
+voxels but a larger FOV, more non-brain material), which may be
+useful for some alignment cases</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>NMT_v2.0_sym_surfaces/</strong></p></td>
+<td><p>directory of GIFTI surfaces of many of the tissue/segmentation
+regions</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>CustomAtlases.niml</strong></p></td>
+<td><p>atlas description text file for AFNI</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>NMT_changelog.txt</strong></p></td>
+<td><p>text file of changes and updates to the distributed datasets</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>NMT_v2.0_sym_env.csh</strong></p></td>
+<td><p>script to set AFNI environment variables for AFNI to use
+atlases and make AFNI more monkey friendly.  <strong>Note:</strong> running
+this script will change your default atlases for <code class="docutils literal notranslate"><span class="pre">whereami</span></code>
+functionality, so if you also do human studies, be aware that
+you might have to change some environment settings again later.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>supplemental_CHARM/</strong></p></td>
+<td><p>directory of tables of CHARM ROI index/label definitions and more</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>supplemental_D99/</strong></p></td>
+<td><p>directory of a table of D99 ROI index/label definitions</p></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>An example of the contents of the “standard” NMT directory
+<strong>NMT_v2.0_sym/</strong>, above are as follows (within similar sets of data
+in the “low-res” and “full-head” directories):</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 80.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>NMT_v2.0_sym/ contents</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>CHARM_in_NMT_v2.0_sym.nii.gz</strong></p></td>
+<td><p>hierarchical atlas (6 levels) in NMT v2 space</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>D99_atlas_in_NMT_v2.0_sym.nii.gz</strong></p></td>
+<td><p>D99 atlas in NMT v2 space</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>NMT_v2.0_sym_brainmask.nii.gz</strong></p></td>
+<td><p>binary brain mask (including cerebellum)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>NMT_v2.0_sym_GM_cortical_mask.nii.gz</strong></p></td>
+<td><p>binary mask of cortical GM</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>NMT_v2.0_sym.nii.gz</strong></p></td>
+<td><p>the NMT v2 template, with non-brain material surrounding</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>NMT_v2.0_sym_segmentation.nii.gz</strong></p></td>
+<td><p>tissue segmentation of the whole brain</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>NMT_v2.0_sym_SS.nii.gz</strong></p></td>
+<td><p>the NMT itself, skullstripped, not stirred</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>supplemental_CHARM/</strong></p></td>
+<td><p>the CHARM atlas levels as individual volumetric files</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>supplemental_masks/</strong></p></td>
+<td><p>masks of “other” things (cerebellum, ventricles, L-R hemispheres)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="example-images">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Example images</a><a class="headerlink" href="#example-images" title="Permalink to this heading">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 100.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Full NMT with brainmask</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><img alt="../../_images/img_nmt2.0sym_brainmask.axi.png" src="../../_images/img_nmt2.0sym_brainmask.axi.png" />
+</td>
+</tr>
+<tr class="row-odd"><td><img alt="../../_images/img_nmt2.0sym_brainmask.cor.png" src="../../_images/img_nmt2.0sym_brainmask.cor.png" />
+</td>
+</tr>
+<tr class="row-even"><td><img alt="../../_images/img_nmt2.0sym_brainmask.sag.png" src="../../_images/img_nmt2.0sym_brainmask.sag.png" />
+</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 100.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Skull-stripped NMT with 5-tissue segmentation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><img alt="../../_images/img_nmt2.0symss_segmentation.axi.png" src="../../_images/img_nmt2.0symss_segmentation.axi.png" />
+</td>
+</tr>
+<tr class="row-odd"><td><img alt="../../_images/img_nmt2.0symss_segmentation.cor.png" src="../../_images/img_nmt2.0symss_segmentation.cor.png" />
+</td>
+</tr>
+<tr class="row-even"><td><img alt="../../_images/img_nmt2.0symss_segmentation.sag.png" src="../../_images/img_nmt2.0symss_segmentation.sag.png" />
+</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 100.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Skull-stripped NMT with the CHARM (level 2)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><img alt="../../_images/img_nmt2.0symss_charmL2.axi1.png" src="../../_images/img_nmt2.0symss_charmL2.axi1.png" />
+</td>
+</tr>
+<tr class="row-odd"><td><img alt="../../_images/img_nmt2.0symss_charmL2.cor1.png" src="../../_images/img_nmt2.0symss_charmL2.cor1.png" />
+</td>
+</tr>
+<tr class="row-even"><td><img alt="../../_images/img_nmt2.0symss_charmL2.sag1.png" src="../../_images/img_nmt2.0symss_charmL2.sag1.png" />
+</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 100.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Skull-stripped NMT with the CHARM (level 5)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><img alt="../../_images/img_nmt2.0symss_charmL5.axi1.png" src="../../_images/img_nmt2.0symss_charmL5.axi1.png" />
+</td>
+</tr>
+<tr class="row-odd"><td><img alt="../../_images/img_nmt2.0symss_charmL5.cor1.png" src="../../_images/img_nmt2.0symss_charmL5.cor1.png" />
+</td>
+</tr>
+<tr class="row-even"><td><img alt="../../_images/img_nmt2.0symss_charmL5.sag1.png" src="../../_images/img_nmt2.0symss_charmL5.sag1.png" />
+</td>
+</tr>
+</tbody>
+</table>
+<p><em>The script used to make these images with ``&#64;chauffeur_afni`` is
+available here:</em> <a class="reference download internal" download="" href="../../_downloads/febca47bb888c59614bfd7e9527ed788/do_view_nmt_v2.0_sym.tcsh"><code class="xref download docutils literal notranslate"><span class="pre">do_view_nmt_v2.0_sym.tcsh</span></code></a>.</p>
+</section>
+<section id="download-symmetric-nmt-v2-datasets">
+<span id="nh-macaque-template-nmtv2-sym-dl"></span><h2><a class="toc-backref" href="#id5" role="doc-backlink">Download symmetric NMT v2 datasets</a><a class="headerlink" href="#download-symmetric-nmt-v2-datasets" title="Permalink to this heading">¶</a></h2>
+<p>You can download and unpack the <strong>symmetric variant/form</strong> of the NMT
+v2 in any of the following ways:</p>
+<ul>
+<li><p><em>(the AFNI way)</em> <strong>copy+paste</strong>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>@Install_NMT -nmt_ver 2.0 -sym sym
+</pre></div>
+</div>
+</li>
+<li><p><em>(the plain Linux-y terminal way)</em> <strong>copy+paste</strong>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>curl -O https://afni.nimh.nih.gov/pub/dist/atlases/macaque/nmt/NMT_v2.0_sym.tgz
+tar -xvf NMT_v2.0_sym.tgz
+</pre></div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line"><em>(the mouseclick+ way)</em> <strong>click on</strong> <a class="reference external" href="https://afni.nimh.nih.gov/pub/dist/atlases/macaque/nmt/NMT_v2.0_sym.tgz">this link</a>,</div>
+<div class="line">... and then unpack the zipped directory by either clicking on it
+or using the above <code class="docutils literal notranslate"><span class="pre">tar</span></code> command.</div>
+</div>
+</li>
+</ul>
+</section>
+<section id="download-asymmetric-nmt-v2-datasets">
+<span id="nh-macaque-template-nmtv2-asym-dl"></span><h2><a class="toc-backref" href="#id6" role="doc-backlink">Download asymmetric NMT v2 datasets</a><a class="headerlink" href="#download-asymmetric-nmt-v2-datasets" title="Permalink to this heading">¶</a></h2>
+<p>You can download and unpack the <strong>asymmetric variant/form</strong> of the NMT
+v2 in any of the following ways:</p>
+<ul>
+<li><p><em>(the AFNI way)</em> <strong>copy+paste</strong>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>@Install_NMT -nmt_ver 2.0 -sym asym
+</pre></div>
+</div>
+</li>
+<li><p><em>(the Linux-y terminal way)</em> <strong>copy+paste</strong>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>curl -O https://afni.nimh.nih.gov/pub/dist/atlases/macaque/nmt/NMT_v2.0_asym.tgz
+tar -xvf NMT_v2.0_asym.tgz
+</pre></div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line"><em>(the mouseclick+ way)</em> <strong>click on</strong> <a class="reference external" href="https://afni.nimh.nih.gov/pub/dist/atlases/macaque/nmt/NMT_v2.0_asym.tgz">this link</a>,</div>
+<div class="line">... and then unpack the zipped directory by either clicking on it
+or using the above <code class="docutils literal notranslate"><span class="pre">tar</span></code> command.</div>
+</div>
+</li>
+</ul>
+</section>
+<section id="citation-questions">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Citation/questions</a><a class="headerlink" href="#citation-questions" title="Permalink to this heading">¶</a></h2>
+<p>If you make use of the NMT v2 template or accompanying data in your
+research, please cite:</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">Jung B, Taylor PA, Seidlitz PA, Sponheim C, Glen DR, Messinger A
+(2020).  “A Comprehensive Macaque FMRI Pipeline and Hierarchical
+Atlas.”  NeuroImage, submitted.</div>
+<div class="line"><a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/33789138/">https://pubmed.ncbi.nlm.nih.gov/33789138/</a></div>
+</div>
+<div class="line-block">
+<div class="line">Seidlitz J, Sponheim C, Glen DR, Ye FQ, Saleem KS, Leopold DA,
+Ungerleider L, Messinger A (2018). “A Population MRI Brain Template
+and Analysis Tools for the Macaque.” NeuroImage 170: 121–31.</div>
+<div class="line"><a class="reference external" href="https://doi.org/10.1016/j.neuroimage.2017.04.063">https://doi.org/10.1016/j.neuroimage.2017.04.063</a>.</div>
+</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">For questions, comments and/or suggestions, contact:</div>
+<div class="line"><strong>Adam.Messinger &#64; nih.gov</strong></div>
+<div class="line"><strong>benjamin.jung &#64; nih.gov</strong></div>
+<div class="line"><strong>glend &#64; mail.nih.gov</strong></div>
+</div>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+        <p class="logo"><a href="../../index.html" title="index">
+          <img class="logo" src="../../_static/AFNISUMA.jpg" alt="Logo"/>
+        </a></p>
+<div class="sphinx-toc sphinxglobaltoc">
+<h3><a href="../../index.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../background_install/main_toc.html">1. Installation and Background</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../starting/intro.html">2. Starting with AFNI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../educational/main_toc.html">3. Educational resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programs/main_toc.html">4. All program helps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../afniandafni/main_toc.html">5. AFNI GUI (afni)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../SUMA/main_toc.html">6. SUMA GUI (suma)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../FATCAT/main_toc.html">7. FATCAT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../nifti/main_toc.html">8. NIFTI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../statistics/main_toc.html">9. Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../template_atlas/main_toc.html">10. Templates &amp; Atlases</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../main_toc.html">11. Non-human processing</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="main_toc.html">11.1. <strong>Macaque Templates and Atlases</strong></a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="atlas_d99v2.html">11.1.1. <strong>Macaque Atlas: D99 v2.0 (current)</strong></a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">11.1.2. <strong>Macaque template:  NMT v2 (current)</strong></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Contents</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-images">Example images</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#download-symmetric-nmt-v2-datasets">Download symmetric NMT v2 datasets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#download-asymmetric-nmt-v2-datasets">Download asymmetric NMT v2 datasets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#citation-questions">Citation/questions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="template_nmtv1.html">11.1.3. <strong>Macaque template:  NMT v1 (older)</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="atlas_charm.html">11.1.4. <strong>Macaque atlas:  the CHARM</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="atlas_sarm.html">11.1.5. <strong>Macaque atlas:  the SARM</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../macaque_demos/main_toc.html">11.2. <strong>Macaque Demos</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../other_tas.html">11.3. Other templates and atlases</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/main_toc.html">12. Tutorials, Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../demos/main_toc.html">13. Demo Material</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../codex/main_toc.html">14. Codex: AFNI Code Examples from publications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../published/main_toc.html">15. Citations and Reference Works</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devdocs/main_toc.html">16. Developer Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributors/main_toc.html">17. Contributors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">18. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../afni_home.html">19. Main AFNI pages</a></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/nonhuman/macaque_tempatl/template_nmtv2.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div><!--
+    Input google search, via sphinx doc help:
+    https://www.sphinx-doc.org/en/master/faq.html?highlight=google%20search
+
+    This search is specifically just for within the HTML doc pages:
+    https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/*
+--> 
+
+<div>
+   <h3>Quick search</h3>
+   <script>
+      (function() {
+         var cx = '007649239105213158971:bzabqvf3hhs';
+         var gcse = document.createElement('script');
+         gcse.type = 'text/javascript';
+         gcse.async = true;
+         gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+         var s = document.getElementsByTagName('script')[0];
+         s.parentNode.insertBefore(gcse, s);
+      })();
+   </script>
+  <gcse:search></gcse:search>
+</div> 
+
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+<div class="footer" role="contentinfo">
+<a href="https://www.nimh.nih.gov/site-info/accessibility"
+   target="_blank">Accessibility</a>
+&nbsp;
+<a href="https://www.hhs.gov/web/policies-and-standards/hhs-web-policies/privacy/index.html"
+   target="_blank">Privacy Policy</a>
+&nbsp;
+<a href="https://www.nih.gov/institutes-nih/nih-office-director/office-communications-public-liaison/freedom-information-act-office"
+   target="_blank">FOIA</a>
+&nbsp;
+<a href="https://www.hhs.gov/vulnerability-disclosure-policy/index.html"
+   target="_blank">HHS Vulnerability Disclosure</a>
+&nbsp;
+<a href="https://www.hhs.gov/"
+   target="_blank">HHS</a>
+&nbsp;
+<a href="https://www.nimh.nih.gov/" 
+   target="_blank">NIMH/NIH</a>
+</div>
+
+  </body>
+</html>

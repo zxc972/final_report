@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-13T04:07:42.425172+00:00",
+  "status": "deployed_and_smoke_verified",
+  "server": "xuancheng@192.168.2.110",
+  "root": "/data/xuancheng/structural_env",
+  "container_runtime": "Apptainer 1.4.5-2.el9",
+  "activate": "/data/xuancheng/structural_env/activate.sh",
+  "launcher": "/data/xuancheng/structural_env/bin/structural-env",
+  "new_components": [
+    "AFNI 26.3.02",
+    "Convert3D 1.4.4",
+    "SynthStrip fixed official source cf4bccf CPU build",
+    "Nilearn 0.14.1",
+    "Nipype 1.11.0",
+    "PyBIDS 0.22.0",
+    "NMT v2.0 symmetric with CHARM/SARM",
+    "MBMv3 volumetric template distribution"
+  ],
+  "reused": [
+    "PrimateX_1_7.sif",
+    "FastSurfer cu118 existing SIF",
+    "existing PrimateX model directories",
+    "existing FSL MNI standard templates",
+    "existing migrated fsaverage"
+  ],
+  "components": [
+    {
+      "path": "/data/xuancheng/structural_env/manifests/existing-references.json",
+      "bytes": 629,
+      "sha256": "8e0c5d0fe59d401a06d16a45d3f74248e076a032d96168472ece359429b065e6"
+    },
+    {
+      "path": "/data/xuancheng/structural_env/manifests/PythonAnalysis.json",
+      "bytes": 623,
+      "sha256": "2d96c4a20360b00bb6ed0c0c6e8a63e33b452e344487a589b5b753f3b7e60f1e"
+    },
+    {
+      "path": "/data/xuancheng/structural_env/manifests/python-smoke.json",
+      "bytes": 246,
+      "sha256": "7002897c4aff28bb0c7abc4ac6d6a4e66e90e20f623ef04ed420375508ec35f1"
+    },
+    {
+      "path": "/data/xuancheng/structural_env/manifests/HumanTemplates.json",
+      "bytes": 667,
+      "sha256": "dad18fa2adcd15b6ffb90367b92281b19c9c84dc0c50fa6f3c8afde9dbaf5d94"
+    },
+    {
+      "path": "/data/xuancheng/structural_env/manifests/human-template-smoke.json",
+      "bytes": 291,
+      "sha256": "13b9a4fa4bf06f02d51042bcc5c8839267b39c01a9a1966ae89aae34570277fb"
+    },
+    {
+      "path": "/data/xuancheng/structural_env/manifests/structural_templates_20261013.json",
+      "bytes": 464600,
+      "sha256": "2bb84d782d86fb0290da09dfacdf4d2c5db1d19ecfb837ddfe942864d591c094"
+    },
+    {
+      "path": "/data/xuancheng/structural_env/manifests/AFNI_C3D.json",
+      "bytes": 16956,
+      "sha256": "843821bf7dbc166a470e7acb3e3b22c7ceec6b6801760027e37331f919995671"
+    },
+    {
+      "path": "/data/xuancheng/structural_env/manifests/SynthStrip.json",
+      "bytes": 160490,
+      "sha256": "afd013d5c1a8d3acd37118b36efa763d90fc0b7fd01dbfd30e5f258317277655"
+    },
+    {
+      "path": "/data/xuancheng/structural_env/manifests/integration-smoke.json",
+      "bytes": 458,
+      "sha256": "d53d1a1a4f63254f950e52001aa118d5588eb54a286076b488c0a1568b3a5e36"
+    }
+  ],
+  "summary_validation": {
+    "python_dependency_and_functional_checks": "pass",
+    "nonhuman_template_nifti_full_reads": "128/128 pass",
+    "nonhuman_template_geometry_pairs": "13/13 pass",
+    "human_MNI_2mm_geometry_and_finite_data": "pass",
+    "synthstrip_main_and_no_csf_inference": "both exit 0; shape/affine/binary nonempty mask verified",
+    "launcher_and_AFNI_C3D_image_arithmetic": "pass",
+    "real_subject_pipeline_accuracy": "not tested in this deployment"
+  },
+  "limitations": [
+    "SynthStrip is a fixed official source CPU build; OCI tag 1.8 was unavailable and identity to that OCI image is not asserted.",
+    "AFNI R-dependent statistics are not configured.",
+    "Nipype analysis container and standalone AFNI/C3D/SynthStrip images require explicit cross-container orchestration.",
+    "Existing images/models/fsaverage are absolute path references; preserve referenced resources when migrating.",
+    "Tools were not automatically added to the PrimateX Agent registry."
+  ],
+  "license_key_handling": "existing FreeSurfer key read-only runtime bind; not embedded in new images",
+  "disk_free_bytes": 3134146002944
+}

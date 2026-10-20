@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd -P)"
+MODULE_DIR="$(cd "$SCRIPT_DIR/.." && pwd -P)"
+
+exec bash "$MODULE_DIR/Preprocess_1.sh" "$@"

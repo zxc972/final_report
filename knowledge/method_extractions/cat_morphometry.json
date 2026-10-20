@@ -1,0 +1,133 @@
+{
+  "method_id": "cat_morphometry",
+  "name": "CAT structural MRI VBM and SBM analysis",
+  "purpose": "Measure brain structure in T1-weighted MRI scans at voxel, region, and cortical surface levels, including thickness and folding, with quality control and statistics built in.",
+  "species_scope": "human",
+  "software": [
+    "CAT",
+    "SPM",
+    "MATLAB"
+  ],
+  "inputs": [
+    {
+      "statement": "T1-weighted MRI scans, single scans, longitudinal series or BIDS datasets",
+      "source_id": "cat",
+      "quote": "T1-weighted MRI\nSingle scans, longitudinal series or BIDS datasets",
+      "claim_type": "direct"
+    }
+  ],
+  "conditions": [
+    {
+      "statement": "For MATLAB users, SPM12 or newer and MATLAB R2020a or newer are required; no additional MATLAB toolboxes are needed.",
+      "source_id": "cat",
+      "quote": "SPM12 or newer\nMATLAB R2020a or newer (Windows: R2022a, Apple Silicon: R2023b)\nNo additional MATLAB toolboxes",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Standalone version runs with MATLAB Runtime R2023b and is mainly intended for scripted, headless use on servers and clusters; some features like parallelization and interactive help are not available.",
+      "source_id": "cat",
+      "quote": "Runs with the free MATLAB Runtime R2023b (v232) and is mainly intended for scripted, headless use on servers and clusters. Some features, such as parallelization and the interactive help, are not available.",
+      "claim_type": "direct"
+    }
+  ],
+  "steps": [
+    {
+      "statement": "Install CAT by copying it into SPM's toolbox folder, or use the standalone version without MATLAB.",
+      "source_id": "cat",
+      "quote": "Copy CAT into SPM’s toolbox folder, or use the standalone version without MATLAB.",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Preprocess: select T1 images or a BIDS dataset and run Segment; CAT processes subjects in parallel.",
+      "source_id": "cat",
+      "quote": "Select your T1 images or a BIDS dataset and run Segment. CAT processes subjects in parallel.",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Check quality: review each scan's report and rating, and check sample homogeneity to catch outliers.",
+      "source_id": "cat",
+      "quote": "Review each scan’s report and rating, and check sample homogeneity to catch outliers.",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Analyze: run voxel-, ROI- or surface-based statistics and show results on slices or on the cortical surface.",
+      "source_id": "cat",
+      "quote": "Run voxel-, ROI- or surface-based statistics and show results on slices or on the cortical surface.",
+      "claim_type": "direct"
+    }
+  ],
+  "checks": [
+    {
+      "statement": "Every scan gets a one-page report with tissue volumes, surface measures and image-quality ratings; noise, bias and resolution are combined into a grade from A (excellent) to F (failed).",
+      "source_id": "cat",
+      "quote": "Every scan gets a one-page report with tissue volumes, surface measures and image-quality ratings. Noise, bias and resolution are combined into one grade from A (excellent) to F (failed)",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "A sample homogeneity check flags outliers before statistics.",
+      "source_id": "cat",
+      "quote": "Sample homogeneity check flags outliers before statistics",
+      "claim_type": "direct"
+    }
+  ],
+  "exceptions": [
+    {
+      "statement": "The standalone version lacks some features such as parallelization and interactive help.",
+      "source_id": "cat",
+      "quote": "Some features, such as parallelization and the interactive help, are not available.",
+      "claim_type": "direct"
+    }
+  ],
+  "outputs": [
+    {
+      "statement": "Voxel-based morphometry outputs modulated tissue maps ready for statistics in SPM, total intracranial volume (TIV) and global tissue volumes.",
+      "source_id": "cat",
+      "quote": "Modulated tissue maps, ready for statistics in SPM\nTotal intracranial volume (TIV) and global tissue volumes",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Region-based morphometry outputs regional tissue volumes and regional surface values (thickness, folding or mapped data), ready to export as CSV.",
+      "source_id": "cat",
+      "quote": "you get regional tissue volumes and regional surface values (thickness, folding or mapped data), ready to export as CSV.",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Surface-based morphometry outputs cortical thickness, folding measures (gyrification, sulcal depth, cortical complexity), and surface area.",
+      "source_id": "cat",
+      "quote": "Cortical thickness\nFolding: gyrification, sulcal depth and cortical complexity (fractal dimension)\nNew Surface area",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Quality control outputs an automatic quality rating (SIQR) for every scan and a sample homogeneity check.",
+      "source_id": "cat",
+      "quote": "Automatic quality rating (SIQR) for every scan\nSample homogeneity check flags outliers before statistics",
+      "claim_type": "direct"
+    }
+  ],
+  "parameters": [
+    {
+      "statement": "Registration can use Dartel or Geodesic Shooting to templates in MNI152NLin2009cAsym space.",
+      "source_id": "cat",
+      "quote": "Dartel (Ashburner 2007) or Geodesic Shooting (Ashburner 2011) to templates in MNI152NLin2009cAsym space.",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Spherical registration to standard 164k or 32k (HCP) meshes is available for group statistics.",
+      "source_id": "cat",
+      "quote": "Spherical registration to standard 164k or 32k (HCP) meshes for group statistics",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Surface mapping can sample at chosen cortical depths (equi-distance or equi-volume).",
+      "source_id": "cat",
+      "quote": "Sampling at chosen cortical depths (equi-distance or equi-volume)",
+      "claim_type": "direct"
+    }
+  ],
+  "source_ids": [
+    "cat"
+  ],
+  "source_extraction_http_id": 840,
+  "evidence_status": "AI_assisted_candidate_exact_quotes_checked_semantics_not_expert_reviewed",
+  "quarantined_claims": []
+}

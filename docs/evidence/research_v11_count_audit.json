@@ -1,0 +1,22 @@
+{
+  "time": 1792504858.6594157,
+  "release": "research_evidence_v11",
+  "parents": 55,
+  "unique_urls": 43,
+  "domain_nodes": 1930,
+  "domain_edges": 6630,
+  "new_nodes": 7,
+  "new_edges": 11,
+  "new_types": {
+    "SourceDocument": 1,
+    "ArtifactType": 1,
+    "ApplicabilityCondition": 5
+  },
+  "new_unique_urls": 1,
+  "new_parent_sections": 2,
+  "evidence_hashes_match": true,
+  "candidate_application_inference_explicit": true,
+  "active_v10_unchanged": true,
+  "native_LLM_reindex": false,
+  "provider_calls": 0
+}

@@ -1,0 +1,270 @@
+{
+  "method_id": "fsl_vbm",
+  "name": "FSL-VBM",
+  "purpose": "Voxel-wise investigation of local grey matter volume/topography differences between populations or related to a clinical score, following the optimised VBM protocol.",
+  "species_scope": "human",
+  "software": [
+    "FSL",
+    "FNIRT",
+    "FAST",
+    "BET",
+    "randomise",
+    "fslmaths",
+    "fsleyes",
+    "slicesdir",
+    "imglob"
+  ],
+  "inputs": [
+    {
+      "statement": "A template_list file containing the names of selected T1 images to be used for template construction, with equal numbers from each group.",
+      "source_id": "fsl_vbm",
+      "quote": "put all the selected names of exams in a file called template_list in your FSL-VBM directory",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "design.mat and design.con files specifying the cross-subject statistical model, with row order matching the image order from imglob.",
+      "source_id": "fsl_vbm",
+      "quote": "create your design.mat and design.con in your FSL-VBM directory; see the randomise manual",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "A GM mask (GM_mask) and the 4D multi-subject concatenated processed data (e.g., GM_mod_merg_s3) for running randomise.",
+      "source_id": "fsl_vbm",
+      "quote": "a mask of the GM (GM_mask) and the 4D multi-subject concatenated processed data (e.g. GM_mod_merg_s3)",
+      "claim_type": "direct"
+    }
+  ],
+  "conditions": [
+    {
+      "statement": "All different populations included in the study must be represented in the template construction.",
+      "source_id": "fsl_vbm",
+      "quote": "All your different populations included in this study MUST be represented in the template construction.",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Use the same number of subjects from each group in the template construction to avoid bias in non-linear registration.",
+      "source_id": "fsl_vbm",
+      "quote": "You should use the same number of subjects from each in the construction of the study-specific template.",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "The order of rows in design.mat must match the order of images when doing imglob * in the FSL-VBM directory.",
+      "source_id": "fsl_vbm",
+      "quote": "The order of the rows in your design.mat model MUST match the order of your images when doing an imglob * command",
+      "claim_type": "direct"
+    }
+  ],
+  "steps": [
+    {
+      "statement": "Run fslvbm_3_proc to non-linearly register all GM images to the template, modulate, smooth, and run an initial GLM for qualitative evaluation.",
+      "source_id": "fsl_vbm",
+      "quote": "fslvbm_3_proc",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Choose the most appropriate smoothing (e.g., sigma=3mm) and optionally apply a different smoothing with fslmaths.",
+      "source_id": "fsl_vbm",
+      "quote": "fslmaths GM_mod_merg -s 3.5 GM_mod_merg_s3.5",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Run randomise with TFCE or cluster-based thresholding for permutation-based inference.",
+      "source_id": "fsl_vbm",
+      "quote": "randomise -i GM_mod_merg_s3 -m GM_mask -o fslvbm -d design.mat -t design.con -T -n 5000",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Display results in FSLView/FSLeyes overlaid on the MNI152 template or template_GM.",
+      "source_id": "fsl_vbm",
+      "quote": "fsleyes $FSLDIR/data/standard/MNI152_T1_2mm fslvbm_tfce_corrp_tstat1 -cm red-yellow -dr 0.949 1",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "For cluster-based results, threshold corrected p-value maps at 0.95 and mask the tstat map before display.",
+      "source_id": "fsl_vbm",
+      "quote": "fslmaths fslvbm_clustere_corrp_tstat1 -thr 0.95 -bin mask_pcorrected",
+      "claim_type": "direct"
+    }
+  ],
+  "checks": [
+    {
+      "statement": "Check brain-extracted images (*_brain.*) in the struc directory after fslvbm_1_bet.",
+      "source_id": "fsl_vbm",
+      "quote": "CHECKING the brain images (*_brain.*) in your struc directory",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Check the template_GM_4D image in struc with the movie loop in fsleyes after template creation.",
+      "source_id": "fsl_vbm",
+      "quote": "CHECK the template_GM_4D image in struc with the movie loop in fsleyes.",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Check the 4D image of modulated registered GM images (GM_mod_merg) using the movie loop in fsleyes after fslvbm_3_proc.",
+      "source_id": "fsl_vbm",
+      "quote": "final CHECK of the 4D image of modulated registered GM images GM_mod_merg using the movie loop in fsleyes.",
+      "claim_type": "direct"
+    }
+  ],
+  "exceptions": [
+    {
+      "statement": "FSL-VBM v1.1 analysis is not compatible with an older analysis due to the switch from IRTK to FNIRT.",
+      "source_id": "fsl_vbm",
+      "quote": "An FSL-VBM v1.1 analysis is not compatible with an older analysis.",
+      "claim_type": "direct"
+    }
+  ],
+  "outputs": [
+    {
+      "statement": "Study-specific symmetric grey matter template (template_GM) at 2x2x2mm3 resolution in standard space.",
+      "source_id": "fsl_vbm",
+      "quote": "final symmetric, study-specific \"non-linear\" GM template at 2x2x2mm3 resolution in standard space.",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "4D image of modulated registered GM images (GM_mod_merg) in the stats directory.",
+      "source_id": "fsl_vbm",
+      "quote": "All the modulated registered GM images are concatenated into a 4D image in the stats directory (GM_mod_merg)",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Smoothed modulated GM images (e.g., GM_mod_merg_s3) for various Gaussian kernels.",
+      "source_id": "fsl_vbm",
+      "quote": "smoothed (GM_mod_merg_s3 for instance) by a range of Gaussian kernels; sigma = 2, 3, 4mm",
+      "claim_type": "direct"
+    }
+  ],
+  "parameters": [
+    {
+      "statement": "Smoothing kernel sigma values of 2, 3, and 4 mm are applied by default in fslvbm_3_proc.",
+      "source_id": "fsl_vbm",
+      "quote": "sigma = 2, 3, 4mm, i.e., approximately from FWHM = 2x2.3 = 4.6mm to FWHM = 9mm.",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Non-linear registration uses free-form deformation with 20 mm initial control point spacing.",
+      "source_id": "fsl_vbm",
+      "quote": "free-form deformation with 20 mm initial control point spacing",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "For TFCE-based randomise, a typical number of permutations is 5000.",
+      "source_id": "fsl_vbm",
+      "quote": "randomise -i GM_mod_merg_s3 -m GM_mask -o fslvbm -d design.mat -t design.con -T -n 5000",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "For cluster-based thresholding, a typical cluster-forming threshold is t > 2.3.",
+      "source_id": "fsl_vbm",
+      "quote": "threshold (e.g. t > 2.3) for the cluster-based correction",
+      "claim_type": "direct"
+    }
+  ],
+  "source_ids": [
+    "fsl_vbm"
+  ],
+  "source_extraction_http_id": 839,
+  "evidence_status": "AI_assisted_candidate_exact_quotes_checked_semantics_not_expert_reviewed",
+  "quarantined_claims": [
+    {
+      "category": "inputs",
+      "claim": {
+        "statement": "T1-weighted structural images, one per subject, placed in the FSL-VBM directory with unique names, preferably with prefixes corresponding to groups.",
+        "source_id": "fsl_vbm",
+        "quote": "Place all your T1-weighted data in your FSL-VBM directory... giving each subject's T1 image a different name, preferably with each prefix corresponding to each of your group",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "conditions",
+      "claim": {
+        "statement": "The default fslvbm_3_proc concatenates images in alphabetical order, which must match the subject ordering in design.mat.",
+        "source_id": "fsl_vbm",
+        "quote": "By default fslvbm_3_proc concatenates the images in alphabetical order... make sure this matches the subject ordering assumed in your design.mat model.",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "steps",
+      "claim": {
+        "statement": "Prepare T1-weighted images in the FSL-VBM directory and create template_list with equal numbers per group.",
+        "source_id": "fsl_vbm",
+        "quote": "Place all your T1-weighted data in your FSL-VBM directory... put all the selected names of exams in a file called template_list",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "steps",
+      "claim": {
+        "statement": "Run fslvbm_1_bet with -b or -N option to perform brain extraction on all T1 images.",
+        "source_id": "fsl_vbm",
+        "quote": "fslvbm_1_bet -b or fslvbm_1_bet -N",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "steps",
+      "claim": {
+        "statement": "Run fslvbm_2_template with -a or -n option to create the study-specific symmetric grey matter template.",
+        "source_id": "fsl_vbm",
+        "quote": "fslvbm_2_template -a or fslvbm_2_template -n",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "checks",
+      "claim": {
+        "statement": "Visually inspect all structural images using slicesdir to confirm they are as expected.",
+        "source_id": "fsl_vbm",
+        "quote": "slicesdir `imglob *`... Have a careful look.",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "exceptions",
+      "claim": {
+        "statement": "If brain extraction results are poor, additional BET options can be added after -b or -N.",
+        "source_id": "fsl_vbm",
+        "quote": "If you do not get good results with either option... you can try adding other bet options after the -b or -N option.",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "exceptions",
+      "claim": {
+        "statement": "If adding more subjects later, put new images in the top-level directory and re-run fslvbm_1_bet, updating template_list if necessary.",
+        "source_id": "fsl_vbm",
+        "quote": "If you later want to add more subjects to your analysis then just put the new subjects' images inside the toplevel directory... and re-run fslvbm_1_bet.",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "exceptions",
+      "claim": {
+        "statement": "Interpretation of results has inherent limitations; differences may reflect gyrification patterns rather than true atrophy.",
+        "source_id": "fsl_vbm",
+        "quote": "It is sometimes not possible to determine if the results you may find are the consequence of an effective reduced thickness or atrophy... or rather an indirect reflection of a different gyrification pattern.",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "outputs",
+      "claim": {
+        "statement": "Raw tstat maps from the initial GLM run for qualitative evaluation.",
+        "source_id": "fsl_vbm",
+        "quote": "The script runs randomise with inference... turned off, so that it very quickly creates just the raw tstat maps.",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    }
+  ]
+}

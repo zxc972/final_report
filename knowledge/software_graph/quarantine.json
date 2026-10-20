@@ -1,0 +1,744 @@
+[
+  {
+    "source": "symbol:nipype/interfaces/ants/utils.py:ImageMath",
+    "relation": "RETURNS_SPEC",
+    "target": "symbol:nipype/interfaces/ants/utils.py:ImageMathOuputSpec",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/ants/utils.py",
+      "sha256": "21f58a18b064d9f06f6bb350ee188945f014ec084808a29d04dcb8b11faa8e65",
+      "path": "nipype/interfaces/ants/utils.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 130,
+      "line_end": 219
+    }
+  },
+  {
+    "source": "field:nipype/interfaces/ants/utils.py:AIInputSpec.principal_axes",
+    "relation": "EXCLUSIVE_WITH",
+    "target": "field:nipype/interfaces/ants/utils.py:AIInputSpec.blobs",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/ants/utils.py",
+      "sha256": "21f58a18b064d9f06f6bb350ee188945f014ec084808a29d04dcb8b11faa8e65",
+      "path": "nipype/interfaces/ants/utils.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 440,
+      "line_end": 446
+    }
+  },
+  {
+    "source": "symbol:nipype/interfaces/ants/utils.py:AI",
+    "relation": "RETURNS_SPEC",
+    "target": "symbol:nipype/interfaces/ants/utils.py:AIOuputSpec",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/ants/utils.py",
+      "sha256": "21f58a18b064d9f06f6bb350ee188945f014ec084808a29d04dcb8b11faa8e65",
+      "path": "nipype/interfaces/ants/utils.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 481,
+      "line_end": 539
+    }
+  },
+  {
+    "source": "symbol:nipype/interfaces/freesurfer/base.py:FSCommand",
+    "relation": "ACCEPTS_SPEC",
+    "target": "symbol:nipype/interfaces/freesurfer/base.py:FSTraitedSpec",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/freesurfer/base.py",
+      "sha256": "c3e2f41f2fa0bd6ebdc81def17a2943131ba9d126edb2d4382d06d4423b9c6bc",
+      "path": "nipype/interfaces/freesurfer/base.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 119,
+      "line_end": 181
+    }
+  },
+  {
+    "source": "symbol:nipype/interfaces/freesurfer/base.py:FSCommandOpenMP",
+    "relation": "ACCEPTS_SPEC",
+    "target": "symbol:nipype/interfaces/freesurfer/base.py:FSTraitedSpecOpenMP",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/freesurfer/base.py",
+      "sha256": "c3e2f41f2fa0bd6ebdc81def17a2943131ba9d126edb2d4382d06d4423b9c6bc",
+      "path": "nipype/interfaces/freesurfer/base.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 233,
+      "line_end": 265
+    }
+  },
+  {
+    "source": "field:nipype/interfaces/freesurfer/petsurfer.py:GTMPVCInputSpec.rbv",
+    "relation": "REQUIRES_PARAMETER",
+    "target": "field:nipype/interfaces/freesurfer/petsurfer.py:GTMPVCInputSpec.subjects_dir",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/freesurfer/petsurfer.py",
+      "sha256": "3eb60e716939cbdaf840a31e2abc2d24e85a0dbeb182e20a69acccc5b376bbf2",
+      "path": "nipype/interfaces/freesurfer/petsurfer.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 284,
+      "line_end": 288
+    }
+  },
+  {
+    "source": "field:nipype/interfaces/freesurfer/model.py:MRISPreprocReconAllInputSpec.surf_measure_file",
+    "relation": "EXCLUSIVE_WITH",
+    "target": "field:nipype/interfaces/freesurfer/model.py:MRISPreprocReconAllInputSpec.surf_measure",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/freesurfer/model.py",
+      "sha256": "17cf18dbce57c2fffebb5b259a9e03d618b57fb651afe926c91df3acebcd2a01",
+      "path": "nipype/interfaces/freesurfer/model.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 151,
+      "line_end": 156
+    }
+  },
+  {
+    "source": "field:nipype/interfaces/freesurfer/model.py:MRISPreprocReconAllInputSpec.surf_measure_file",
+    "relation": "EXCLUSIVE_WITH",
+    "target": "field:nipype/interfaces/freesurfer/model.py:MRISPreprocReconAllInputSpec.surf_area",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/freesurfer/model.py",
+      "sha256": "17cf18dbce57c2fffebb5b259a9e03d618b57fb651afe926c91df3acebcd2a01",
+      "path": "nipype/interfaces/freesurfer/model.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 151,
+      "line_end": 156
+    }
+  },
+  {
+    "source": "field:nipype/interfaces/freesurfer/model.py:MRISPreprocReconAllInputSpec.subject_id",
+    "relation": "EXCLUSIVE_WITH",
+    "target": "field:nipype/interfaces/freesurfer/model.py:MRISPreprocReconAllInputSpec.subjects",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/freesurfer/model.py",
+      "sha256": "17cf18dbce57c2fffebb5b259a9e03d618b57fb651afe926c91df3acebcd2a01",
+      "path": "nipype/interfaces/freesurfer/model.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 169,
+      "line_end": 175
+    }
+  },
+  {
+    "source": "field:nipype/interfaces/freesurfer/model.py:MRISPreprocReconAllInputSpec.subject_id",
+    "relation": "EXCLUSIVE_WITH",
+    "target": "field:nipype/interfaces/freesurfer/model.py:MRISPreprocReconAllInputSpec.fsgd_file",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/freesurfer/model.py",
+      "sha256": "17cf18dbce57c2fffebb5b259a9e03d618b57fb651afe926c91df3acebcd2a01",
+      "path": "nipype/interfaces/freesurfer/model.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 169,
+      "line_end": 175
+    }
+  },
+  {
+    "source": "field:nipype/interfaces/freesurfer/model.py:MRISPreprocReconAllInputSpec.subject_id",
+    "relation": "EXCLUSIVE_WITH",
+    "target": "field:nipype/interfaces/freesurfer/model.py:MRISPreprocReconAllInputSpec.subject_file",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/freesurfer/model.py",
+      "sha256": "17cf18dbce57c2fffebb5b259a9e03d618b57fb651afe926c91df3acebcd2a01",
+      "path": "nipype/interfaces/freesurfer/model.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 169,
+      "line_end": 175
+    }
+  },
+  {
+    "source": "field:nipype/interfaces/freesurfer/model.py:GLMFitInputSpec.no_prune",
+    "relation": "EXCLUSIVE_WITH",
+    "target": "field:nipype/interfaces/freesurfer/model.py:GLMFitInputSpec.prunethresh",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/freesurfer/model.py",
+      "sha256": "17cf18dbce57c2fffebb5b259a9e03d618b57fb651afe926c91df3acebcd2a01",
+      "path": "nipype/interfaces/freesurfer/model.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 340,
+      "line_end": 342
+    }
+  },
+  {
+    "source": "field:nipype/interfaces/freesurfer/model.py:GLMFitInputSpec.prune_thresh",
+    "relation": "EXCLUSIVE_WITH",
+    "target": "field:nipype/interfaces/freesurfer/model.py:GLMFitInputSpec.noprune",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/freesurfer/model.py",
+      "sha256": "17cf18dbce57c2fffebb5b259a9e03d618b57fb651afe926c91df3acebcd2a01",
+      "path": "nipype/interfaces/freesurfer/model.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 343,
+      "line_end": 347
+    }
+  },
+  {
+    "source": "symbol:nipype/interfaces/fsl/maths.py:MathsCommand",
+    "relation": "ACCEPTS_SPEC",
+    "target": "symbol:nipype/interfaces/fsl/maths.py:MathsInput",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/fsl/maths.py",
+      "sha256": "e2d391706d995ad46793396ba06bcc83fd72dba7ba2936e8e9414d5eebe61485",
+      "path": "nipype/interfaces/fsl/maths.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 45,
+      "line_end": 64
+    }
+  },
+  {
+    "source": "symbol:nipype/interfaces/fsl/maths.py:MathsCommand",
+    "relation": "RETURNS_SPEC",
+    "target": "symbol:nipype/interfaces/fsl/maths.py:MathsOutput",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/fsl/maths.py",
+      "sha256": "e2d391706d995ad46793396ba06bcc83fd72dba7ba2936e8e9414d5eebe61485",
+      "path": "nipype/interfaces/fsl/maths.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 45,
+      "line_end": 64
+    }
+  },
+  {
+    "source": "symbol:nipype/interfaces/fsl/maths.py:ChangeDataType",
+    "relation": "ACCEPTS_SPEC",
+    "target": "symbol:nipype/interfaces/fsl/maths.py:ChangeDataTypeInput",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/fsl/maths.py",
+      "sha256": "e2d391706d995ad46793396ba06bcc83fd72dba7ba2936e8e9414d5eebe61485",
+      "path": "nipype/interfaces/fsl/maths.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 74,
+      "line_end": 78
+    }
+  },
+  {
+    "source": "symbol:nipype/interfaces/fsl/maths.py:StdImage",
+    "relation": "ACCEPTS_SPEC",
+    "target": "symbol:nipype/interfaces/fsl/maths.py:StdImageInput",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/fsl/maths.py",
+      "sha256": "e2d391706d995ad46793396ba06bcc83fd72dba7ba2936e8e9414d5eebe61485",
+      "path": "nipype/interfaces/fsl/maths.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 136,
+      "line_end": 142
+    }
+  },
+  {
+    "source": "symbol:nipype/interfaces/fsl/maths.py:MeanImage",
+    "relation": "ACCEPTS_SPEC",
+    "target": "symbol:nipype/interfaces/fsl/maths.py:MeanImageInput",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/fsl/maths.py",
+      "sha256": "e2d391706d995ad46793396ba06bcc83fd72dba7ba2936e8e9414d5eebe61485",
+      "path": "nipype/interfaces/fsl/maths.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 158,
+      "line_end": 162
+    }
+  },
+  {
+    "source": "symbol:nipype/interfaces/fsl/maths.py:MaxImage",
+    "relation": "ACCEPTS_SPEC",
+    "target": "symbol:nipype/interfaces/fsl/maths.py:MaxImageInput",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/fsl/maths.py",
+      "sha256": "e2d391706d995ad46793396ba06bcc83fd72dba7ba2936e8e9414d5eebe61485",
+      "path": "nipype/interfaces/fsl/maths.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 178,
+      "line_end": 193
+    }
+  },
+  {
+    "source": "symbol:nipype/interfaces/fsl/maths.py:PercentileImage",
+    "relation": "ACCEPTS_SPEC",
+    "target": "symbol:nipype/interfaces/fsl/maths.py:PercentileImageInput",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/fsl/maths.py",
+      "sha256": "e2d391706d995ad46793396ba06bcc83fd72dba7ba2936e8e9414d5eebe61485",
+      "path": "nipype/interfaces/fsl/maths.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 216,
+      "line_end": 232
+    }
+  },
+  {
+    "source": "symbol:nipype/interfaces/fsl/maths.py:MaxnImage",
+    "relation": "ACCEPTS_SPEC",
+    "target": "symbol:nipype/interfaces/fsl/maths.py:MaxnImageInput",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/fsl/maths.py",
+      "sha256": "e2d391706d995ad46793396ba06bcc83fd72dba7ba2936e8e9414d5eebe61485",
+      "path": "nipype/interfaces/fsl/maths.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 248,
+      "line_end": 255
+    }
+  },
+  {
+    "source": "symbol:nipype/interfaces/fsl/maths.py:MinImage",
+    "relation": "ACCEPTS_SPEC",
+    "target": "symbol:nipype/interfaces/fsl/maths.py:MinImageInput",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/fsl/maths.py",
+      "sha256": "e2d391706d995ad46793396ba06bcc83fd72dba7ba2936e8e9414d5eebe61485",
+      "path": "nipype/interfaces/fsl/maths.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 271,
+      "line_end": 275
+    }
+  },
+  {
+    "source": "symbol:nipype/interfaces/fsl/maths.py:MedianImage",
+    "relation": "ACCEPTS_SPEC",
+    "target": "symbol:nipype/interfaces/fsl/maths.py:MedianImageInput",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/fsl/maths.py",
+      "sha256": "e2d391706d995ad46793396ba06bcc83fd72dba7ba2936e8e9414d5eebe61485",
+      "path": "nipype/interfaces/fsl/maths.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 291,
+      "line_end": 295
+    }
+  },
+  {
+    "source": "symbol:nipype/interfaces/fsl/maths.py:AR1Image",
+    "relation": "ACCEPTS_SPEC",
+    "target": "symbol:nipype/interfaces/fsl/maths.py:AR1ImageInput",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/fsl/maths.py",
+      "sha256": "e2d391706d995ad46793396ba06bcc83fd72dba7ba2936e8e9414d5eebe61485",
+      "path": "nipype/interfaces/fsl/maths.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 311,
+      "line_end": 318
+    }
+  },
+  {
+    "source": "symbol:nipype/interfaces/fsl/maths.py:IsotropicSmooth",
+    "relation": "ACCEPTS_SPEC",
+    "target": "symbol:nipype/interfaces/fsl/maths.py:IsotropicSmoothInput",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/fsl/maths.py",
+      "sha256": "e2d391706d995ad46793396ba06bcc83fd72dba7ba2936e8e9414d5eebe61485",
+      "path": "nipype/interfaces/fsl/maths.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 338,
+      "line_end": 348
+    }
+  },
+  {
+    "source": "symbol:nipype/interfaces/fsl/maths.py:ApplyMask",
+    "relation": "ACCEPTS_SPEC",
+    "target": "symbol:nipype/interfaces/fsl/maths.py:ApplyMaskInput",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/fsl/maths.py",
+      "sha256": "e2d391706d995ad46793396ba06bcc83fd72dba7ba2936e8e9414d5eebe61485",
+      "path": "nipype/interfaces/fsl/maths.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 361,
+      "line_end": 365
+    }
+  },
+  {
+    "source": "symbol:nipype/interfaces/fsl/maths.py:DilateImage",
+    "relation": "ACCEPTS_SPEC",
+    "target": "symbol:nipype/interfaces/fsl/maths.py:DilateInput",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/fsl/maths.py",
+      "sha256": "e2d391706d995ad46793396ba06bcc83fd72dba7ba2936e8e9414d5eebe61485",
+      "path": "nipype/interfaces/fsl/maths.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 408,
+      "line_end": 417
+    }
+  },
+  {
+    "source": "symbol:nipype/interfaces/fsl/maths.py:ErodeImage",
+    "relation": "ACCEPTS_SPEC",
+    "target": "symbol:nipype/interfaces/fsl/maths.py:ErodeInput",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/fsl/maths.py",
+      "sha256": "e2d391706d995ad46793396ba06bcc83fd72dba7ba2936e8e9414d5eebe61485",
+      "path": "nipype/interfaces/fsl/maths.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 430,
+      "line_end": 441
+    }
+  },
+  {
+    "source": "symbol:nipype/interfaces/fsl/maths.py:SpatialFilter",
+    "relation": "ACCEPTS_SPEC",
+    "target": "symbol:nipype/interfaces/fsl/maths.py:SpatialFilterInput",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/fsl/maths.py",
+      "sha256": "e2d391706d995ad46793396ba06bcc83fd72dba7ba2936e8e9414d5eebe61485",
+      "path": "nipype/interfaces/fsl/maths.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 456,
+      "line_end": 460
+    }
+  },
+  {
+    "source": "symbol:nipype/interfaces/fsl/maths.py:UnaryMaths",
+    "relation": "ACCEPTS_SPEC",
+    "target": "symbol:nipype/interfaces/fsl/maths.py:UnaryMathsInput",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/fsl/maths.py",
+      "sha256": "e2d391706d995ad46793396ba06bcc83fd72dba7ba2936e8e9414d5eebe61485",
+      "path": "nipype/interfaces/fsl/maths.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 495,
+      "line_end": 502
+    }
+  },
+  {
+    "source": "symbol:nipype/interfaces/fsl/maths.py:BinaryMaths",
+    "relation": "ACCEPTS_SPEC",
+    "target": "symbol:nipype/interfaces/fsl/maths.py:BinaryMathsInput",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/fsl/maths.py",
+      "sha256": "e2d391706d995ad46793396ba06bcc83fd72dba7ba2936e8e9414d5eebe61485",
+      "path": "nipype/interfaces/fsl/maths.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 536,
+      "line_end": 542
+    }
+  },
+  {
+    "source": "symbol:nipype/interfaces/fsl/maths.py:MultiImageMaths",
+    "relation": "ACCEPTS_SPEC",
+    "target": "symbol:nipype/interfaces/fsl/maths.py:MultiImageMathsInput",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/fsl/maths.py",
+      "sha256": "e2d391706d995ad46793396ba06bcc83fd72dba7ba2936e8e9414d5eebe61485",
+      "path": "nipype/interfaces/fsl/maths.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 559,
+      "line_end": 580
+    }
+  },
+  {
+    "source": "symbol:nipype/interfaces/fsl/maths.py:TemporalFilter",
+    "relation": "ACCEPTS_SPEC",
+    "target": "symbol:nipype/interfaces/fsl/maths.py:TemporalFilterInput",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/fsl/maths.py",
+      "sha256": "e2d391706d995ad46793396ba06bcc83fd72dba7ba2936e8e9414d5eebe61485",
+      "path": "nipype/interfaces/fsl/maths.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 600,
+      "line_end": 607
+    }
+  },
+  {
+    "source": "symbol:nipype/interfaces/freesurfer/utils.py:TalairachQC",
+    "relation": "RETURNS_SPEC",
+    "target": "symbol:nipype/interfaces/freesurfer/utils.py:FSScriptOutputSpec",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/freesurfer/utils.py",
+      "sha256": "1b813537dc633060764254c4bd2c31b4a43212debd3f630ae8231aa860477cb9",
+      "path": "nipype/interfaces/freesurfer/utils.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 2198,
+      "line_end": 2212
+    }
+  },
+  {
+    "source": "field:nipype/interfaces/freesurfer/utils.py:ParcellationStatsInputSpec.in_label",
+    "relation": "EXCLUSIVE_WITH",
+    "target": "field:nipype/interfaces/freesurfer/utils.py:ParcellationStatsInputSpec.in_annotatoin",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/freesurfer/utils.py",
+      "sha256": "1b813537dc633060764254c4bd2c31b4a43212debd3f630ae8231aa860477cb9",
+      "path": "nipype/interfaces/freesurfer/utils.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 3410,
+      "line_end": 3415
+    }
+  },
+  {
+    "source": "symbol:nipype/interfaces/fsl/utils.py:SigLoss",
+    "relation": "RETURNS_SPEC",
+    "target": "symbol:nipype/interfaces/fsl/utils.py:SigLossOuputSpec",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/fsl/utils.py",
+      "sha256": "b66ac2aa9ac82070dff32ff4392f4b2858f58c015c8e299ff59645e9c7939477",
+      "path": "nipype/interfaces/fsl/utils.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 1722,
+      "line_end": 1752
+    }
+  },
+  {
+    "source": "symbol:nipype/interfaces/fsl/utils.py:Complex",
+    "relation": "RETURNS_SPEC",
+    "target": "symbol:nipype/interfaces/fsl/utils.py:ComplexOuputSpec",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/fsl/utils.py",
+      "sha256": "b66ac2aa9ac82070dff32ff4392f4b2858f58c015c8e299ff59645e9c7939477",
+      "path": "nipype/interfaces/fsl/utils.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 2001,
+      "line_end": 2072
+    }
+  },
+  {
+    "source": "symbol:nipype/interfaces/niftyseg/label_fusion.py:LabelFusion",
+    "relation": "ACCEPTS_SPEC",
+    "target": "symbol:nipype/interfaces/niftyseg/label_fusion.py:LabelFusionInput",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/niftyseg/label_fusion.py",
+      "sha256": "29a5983ab9f88ad51cfab15076c5122d1e7027b9f0daf26ea855bb0a28567f55",
+      "path": "nipype/interfaces/niftyseg/label_fusion.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 126,
+      "line_end": 288
+    }
+  },
+  {
+    "source": "symbol:nipype/interfaces/niftyseg/label_fusion.py:LabelFusion",
+    "relation": "RETURNS_SPEC",
+    "target": "symbol:nipype/interfaces/niftyseg/label_fusion.py:LabelFusionOutput",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/niftyseg/label_fusion.py",
+      "sha256": "29a5983ab9f88ad51cfab15076c5122d1e7027b9f0daf26ea855bb0a28567f55",
+      "path": "nipype/interfaces/niftyseg/label_fusion.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 126,
+      "line_end": 288
+    }
+  },
+  {
+    "source": "symbol:nipype/interfaces/niftyseg/maths.py:MathsCommand",
+    "relation": "ACCEPTS_SPEC",
+    "target": "symbol:nipype/interfaces/niftyseg/maths.py:MathsInput",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/niftyseg/maths.py",
+      "sha256": "8dbb7d88b89e7a5914bd23359472d86d6bd2f31fe40a22097f7bc1e33a58b42d",
+      "path": "nipype/interfaces/niftyseg/maths.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 61,
+      "line_end": 92
+    }
+  },
+  {
+    "source": "symbol:nipype/interfaces/niftyseg/maths.py:MathsCommand",
+    "relation": "RETURNS_SPEC",
+    "target": "symbol:nipype/interfaces/niftyseg/maths.py:MathsOutput",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/niftyseg/maths.py",
+      "sha256": "8dbb7d88b89e7a5914bd23359472d86d6bd2f31fe40a22097f7bc1e33a58b42d",
+      "path": "nipype/interfaces/niftyseg/maths.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 61,
+      "line_end": 92
+    }
+  },
+  {
+    "source": "symbol:nipype/interfaces/niftyseg/maths.py:UnaryMaths",
+    "relation": "ACCEPTS_SPEC",
+    "target": "symbol:nipype/interfaces/niftyseg/maths.py:UnaryMathsInput",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/niftyseg/maths.py",
+      "sha256": "8dbb7d88b89e7a5914bd23359472d86d6bd2f31fe40a22097f7bc1e33a58b42d",
+      "path": "nipype/interfaces/niftyseg/maths.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 156,
+      "line_end": 209
+    }
+  },
+  {
+    "source": "symbol:nipype/interfaces/niftyseg/maths.py:BinaryMaths",
+    "relation": "ACCEPTS_SPEC",
+    "target": "symbol:nipype/interfaces/niftyseg/maths.py:BinaryMathsInput",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/niftyseg/maths.py",
+      "sha256": "8dbb7d88b89e7a5914bd23359472d86d6bd2f31fe40a22097f7bc1e33a58b42d",
+      "path": "nipype/interfaces/niftyseg/maths.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 295,
+      "line_end": 384
+    }
+  },
+  {
+    "source": "symbol:nipype/interfaces/niftyseg/maths.py:BinaryMathsInteger",
+    "relation": "ACCEPTS_SPEC",
+    "target": "symbol:nipype/interfaces/niftyseg/maths.py:BinaryMathsInputInteger",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/niftyseg/maths.py",
+      "sha256": "8dbb7d88b89e7a5914bd23359472d86d6bd2f31fe40a22097f7bc1e33a58b42d",
+      "path": "nipype/interfaces/niftyseg/maths.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 421,
+      "line_end": 460
+    }
+  },
+  {
+    "source": "symbol:nipype/interfaces/niftyseg/maths.py:TupleMaths",
+    "relation": "ACCEPTS_SPEC",
+    "target": "symbol:nipype/interfaces/niftyseg/maths.py:TupleMathsInput",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/niftyseg/maths.py",
+      "sha256": "8dbb7d88b89e7a5914bd23359472d86d6bd2f31fe40a22097f7bc1e33a58b42d",
+      "path": "nipype/interfaces/niftyseg/maths.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 512,
+      "line_end": 557
+    }
+  },
+  {
+    "source": "symbol:nipype/interfaces/niftyseg/maths.py:Merge",
+    "relation": "ACCEPTS_SPEC",
+    "target": "symbol:nipype/interfaces/niftyseg/maths.py:MergeInput",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/niftyseg/maths.py",
+      "sha256": "8dbb7d88b89e7a5914bd23359472d86d6bd2f31fe40a22097f7bc1e33a58b42d",
+      "path": "nipype/interfaces/niftyseg/maths.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 573,
+      "line_end": 603
+    }
+  },
+  {
+    "source": "symbol:nipype/interfaces/niftyseg/stats.py:StatsCommand",
+    "relation": "ACCEPTS_SPEC",
+    "target": "symbol:nipype/interfaces/niftyseg/stats.py:StatsInput",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/niftyseg/stats.py",
+      "sha256": "10f0d5c08dad2d047ea8f308ad670d4ce17642d367eb79c2a4ca5e1dedfd22a2",
+      "path": "nipype/interfaces/niftyseg/stats.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 40,
+      "line_end": 78
+    }
+  },
+  {
+    "source": "symbol:nipype/interfaces/niftyseg/stats.py:StatsCommand",
+    "relation": "RETURNS_SPEC",
+    "target": "symbol:nipype/interfaces/niftyseg/stats.py:StatsOutput",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/niftyseg/stats.py",
+      "sha256": "10f0d5c08dad2d047ea8f308ad670d4ce17642d367eb79c2a4ca5e1dedfd22a2",
+      "path": "nipype/interfaces/niftyseg/stats.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 40,
+      "line_end": 78
+    }
+  },
+  {
+    "source": "symbol:nipype/interfaces/niftyseg/stats.py:UnaryStats",
+    "relation": "ACCEPTS_SPEC",
+    "target": "symbol:nipype/interfaces/niftyseg/stats.py:UnaryStatsInput",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/niftyseg/stats.py",
+      "sha256": "10f0d5c08dad2d047ea8f308ad670d4ce17642d367eb79c2a4ca5e1dedfd22a2",
+      "path": "nipype/interfaces/niftyseg/stats.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 132,
+      "line_end": 170
+    }
+  },
+  {
+    "source": "symbol:nipype/interfaces/niftyseg/stats.py:BinaryStats",
+    "relation": "ACCEPTS_SPEC",
+    "target": "symbol:nipype/interfaces/niftyseg/stats.py:BinaryStatsInput",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/niftyseg/stats.py",
+      "sha256": "10f0d5c08dad2d047ea8f308ad670d4ce17642d367eb79c2a4ca5e1dedfd22a2",
+      "path": "nipype/interfaces/niftyseg/stats.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 225,
+      "line_end": 263
+    }
+  },
+  {
+    "source": "symbol:nipype/interfaces/spm/preprocess.py:VBMSegment",
+    "relation": "RETURNS_SPEC",
+    "target": "symbol:nipype/interfaces/spm/preprocess.py:VBMSegmentOuputSpec",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/spm/preprocess.py",
+      "sha256": "6a187a2bc2329cbc31a6efe5763f554b57286741f153036887e617737d9c7bb0",
+      "path": "nipype/interfaces/spm/preprocess.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 2871,
+      "line_end": 3023
+    }
+  },
+  {
+    "source": "symbol:nipype/interfaces/spm/utils.py:ApplyInverseDeformation",
+    "relation": "ACCEPTS_SPEC",
+    "target": "symbol:nipype/interfaces/spm/utils.py:ApplyInverseDeformationInput",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/spm/utils.py",
+      "sha256": "7ba166873e80e54e2ee599f479e69b954e2d7745df5767416175d11dd1830826",
+      "path": "nipype/interfaces/spm/utils.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 305,
+      "line_end": 344
+    }
+  },
+  {
+    "source": "symbol:nipype/interfaces/spm/utils.py:ApplyInverseDeformation",
+    "relation": "RETURNS_SPEC",
+    "target": "symbol:nipype/interfaces/spm/utils.py:ApplyInverseDeformationOutput",
+    "reason": "undeclared endpoint",
+    "evidence": {
+      "url": "https://raw.githubusercontent.com/nipy/nipype/6e28627d3a616b61bcbbe7040f698b0e5a2c5722/nipype/interfaces/spm/utils.py",
+      "sha256": "7ba166873e80e54e2ee599f479e69b954e2d7745df5767416175d11dd1830826",
+      "path": "nipype/interfaces/spm/utils.py",
+      "commit": "6e28627d3a616b61bcbbe7040f698b0e5a2c5722",
+      "line_start": 305,
+      "line_end": 344
+    }
+  }
+]

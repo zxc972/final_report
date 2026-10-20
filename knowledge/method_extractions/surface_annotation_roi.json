@@ -1,0 +1,203 @@
+{
+  "method_id": "surface_annotation_roi",
+  "name": "Surface annotation-based region-of-interest morphometry extraction",
+  "purpose": "Read FreeSurfer surface annotations, label files and morphometry (curv-type) data to obtain per-vertex labels and regional surface measurements for ROI analysis.",
+  "species_scope": "unspecified",
+  "software": [
+    "NiBabel",
+    "FreeSurfer"
+  ],
+  "inputs": [
+    {
+      "statement": "Optionally a FreeSurfer .label file giving vertex indices, with optional per-vertex scalars.",
+      "source_id": "nibabel_fs",
+      "quote": "Load in a Freesurfer .label file.",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Optionally a triangular surface mesh geometry file supplying vertex coordinates and faces.",
+      "source_id": "nibabel_fs",
+      "quote": "Read a triangular format Freesurfer surface mesh.",
+      "claim_type": "direct"
+    }
+  ],
+  "conditions": [],
+  "steps": [
+    {
+      "statement": "Read the annotation file to obtain the label id at each vertex, the color table and the label names.",
+      "source_id": "nibabel_fs",
+      "quote": "Read in a Freesurfer annotation from a .annot file.",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Read the morphometry file to obtain the vector of surface morphometry values.",
+      "source_id": "nibabel_fs",
+      "quote": "Vector representation of surface morpometry values",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Optionally read the label file to obtain vertex indices included in the label, and scalars if requested.",
+      "source_id": "nibabel_fs",
+      "quote": "Array with indices of vertices included in label.",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Optionally read the surface geometry to obtain vertex coordinates and mesh faces.",
+      "source_id": "nibabel_fs",
+      "quote": "nvtx x 3 array of vertex (x, y, z) coordinates.",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Combine per-vertex annotation labels with per-vertex morphometry values to summarise measurements within each annotated region.",
+      "source_id": "nibabel_fs",
+      "quote": "Annotation id at each vertex.",
+      "claim_type": "application_inference"
+    }
+  ],
+  "checks": [
+    {
+      "statement": "Verify that the number of morphometry values matches the number of vertices in the annotation.",
+      "source_id": "nibabel_fs",
+      "quote": "labelsndarray, shape (n_vertices,)",
+      "claim_type": "application_inference"
+    },
+    {
+      "statement": "Confirm the length of the label names list equals the number of labels in the color table.",
+      "source_id": "nibabel_fs",
+      "quote": "The names of the labels. The length of the list is n_labels.",
+      "claim_type": "direct"
+    }
+  ],
+  "exceptions": [],
+  "outputs": [
+    {
+      "statement": "Per-vertex annotation id array of shape (n_vertices,).",
+      "source_id": "nibabel_fs",
+      "quote": "Annotation id at each vertex.",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Color table array of shape (n_labels, 5) in RGBT plus label id form.",
+      "source_id": "nibabel_fs",
+      "quote": "RGBT + label id colortable array.",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "List of label names with length equal to the number of labels.",
+      "source_id": "nibabel_fs",
+      "quote": "The names of the labels.",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Vector of surface morphometry values read from the morphometry file.",
+      "source_id": "nibabel_fs",
+      "quote": "Vector representation of surface morpometry values",
+      "claim_type": "direct"
+    }
+  ],
+  "parameters": [
+    {
+      "statement": "orig_ids flag controlling whether stored vertex ids or positional color table ids are returned.",
+      "source_id": "nibabel_fs",
+      "quote": "orig_idsbool",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "read_scalars flag controlling whether per-vertex scalars are read and returned from a label file.",
+      "source_id": "nibabel_fs",
+      "quote": "read_scalarsbool, optional",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "read_metadata flag controlling whether geometry metadata key-value pairs are read and returned.",
+      "source_id": "nibabel_fs",
+      "quote": "read_metadatabool, optional",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "read_stamp flag controlling whether the file comment stamp is returned.",
+      "source_id": "nibabel_fs",
+      "quote": "read_stampbool, optional",
+      "claim_type": "direct"
+    }
+  ],
+  "source_ids": [
+    "nibabel_fs",
+    "andy_roi",
+    "fs_parcstats"
+  ],
+  "source_extraction_http_id": 837,
+  "evidence_status": "AI_assisted_candidate_exact_quotes_checked_semantics_not_expert_reviewed",
+  "quarantined_claims": [
+    {
+      "category": "inputs",
+      "claim": {
+        "statement": "A FreeSurfer annotation (.annot) file containing a label value per vertex plus a color table.",
+        "source_id": "nibabel_fs",
+        "quote": "An .annot file contains a sequence of vertices with a label (also known as an “annotation value”) associated with each vertex",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "inputs",
+      "claim": {
+        "statement": "A FreeSurfer morphometry file (curv-type, e.g. ?h.curv, ?h.thickness) holding one value per vertex.",
+        "source_id": "nibabel_fs",
+        "quote": "This function reads in what Freesurfer internally calls “curv” file types, (e.g. ?h. curv, ?h.thickness)",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "conditions",
+      "claim": {
+        "statement": "Annotation file format versions 1 and 2 are supported, corresponding to old-style and new-style color table layouts.",
+        "source_id": "nibabel_fs",
+        "quote": "Annotation file format versions 1 and 2 are supported, corresponding to the “old-style” and “new-style” color table layout.",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "conditions",
+      "claim": {
+        "statement": "The returned color table is in RGBT form, where transparency T is 255 minus alpha.",
+        "source_id": "nibabel_fs",
+        "quote": "Note that the output color table ctab is in RGBT form, where T (transparency) is 255 - alpha.",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "conditions",
+      "claim": {
+        "statement": "Morphometry values written must have shape (N,), (N, 1), (1, N) or (N, 1, 1).",
+        "source_id": "nibabel_fs",
+        "quote": "Surface morphometry values. Shape must be (N,), (N, 1), (1, N) or (N, 1, 1)",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "exceptions",
+      "claim": {
+        "statement": "With orig_ids=False, vertices that belong to no label are assigned an id of -1.",
+        "source_id": "nibabel_fs",
+        "quote": "If a vertex does not belong to any label and orig_ids=False, its id will be set to -1.",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "exceptions",
+      "claim": {
+        "statement": "With orig_ids=True, vertex ids are returned as stored in the annotation file rather than positional color table ids.",
+        "source_id": "nibabel_fs",
+        "quote": "Whether to return the vertex ids as stored in the annotation file or the positional colortable ids.",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    }
+  ]
+}

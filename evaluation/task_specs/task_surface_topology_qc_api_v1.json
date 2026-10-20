@@ -1,0 +1,26 @@
+{
+  "task_id": "surface_topology_qc_api_v1",
+  "subjects": [
+    "100610",
+    "101309",
+    "101410",
+    "KM002"
+  ],
+  "input_roots": [
+    "/data/xuancheng/human_fastsurfer/subjects/100610",
+    "/data/xuancheng/human_fastsurfer/subjects/101309",
+    "/data/xuancheng/human_fastsurfer/subjects/101410",
+    "/data/xuancheng/featurize_20261011/data/KM002/KM002"
+  ],
+  "required_artifacts": [
+    "analysis_plan.json",
+    "topology_qc.tsv",
+    "software_commands.json",
+    "qc_applicability.json",
+    "fig_topology_qc.png",
+    "report.md"
+  ],
+  "research_evidence_release": "research_evidence_v7",
+  "message": "请对三个人脑100610、101309、101410以及猴脑KM002现有表面重建做一次可追溯的拓扑质控。KM002确切物种未知，保留monkey_unknown。本轮只读已有表面，不做重建，不推断人猴同源区域或物种差异。先检查软件/数据状态，用研究图和原文联合检索工具查找Euler质控、处理阶段、阈值适用条件，并实际回读所用原文；新QC材料在本任务配置的候选知识包内，不是附在数据目录中的固定代码。\n请自主选择可用输入和成熟软件（可实际调用FreeSurfer的mris_euler_number等），生成本次新Python来组织真实命令、记录退出码/stdout/stderr、提取数值、作图和报告。对于可用的orig.nofix、orig、white分清处理阶段与指标含义；猴脑缺少某阶段时保留缺失，不用另一表面的数字冒充。只处理这四个输入目录，不访问其他被试。保留源文件哈希、软件版本、明确的节点/来源引用和读原文证据。纸面阈值能否用于本批数据必须检查适用性，不能从单个数字直接宣称解剖QC通过。\n输出analysis_plan.json、topology_qc.tsv（含subject_id,species,hemi,surface_name,source_relpath,source_sha256,vertices,edges,faces,euler，按实际存在文件一行一源）、software_commands.json、qc_applicability.json、fig_topology_qc.png、report.md，全部6个文件登记校验。表面文件不能伪装为已通过原生影像kind校验。结果是描述性计算与适用性审查，不能声称独立数值或专家盲审已经通过。每个小问题最多两轮有据修正，之后记录并换可行步骤；不复制现成旧分析脚本冒充新代码。",
+  "next_review": "Independently compare raw standard-library triangle topology reference after generation; integers exact, all20 actual surfaces. Verify processing-state/log provenance and source originals really read, distinguish final corrected topology from initial QC, unknown monkey species and missing orig.nofix. No universal threshold or expert pass. Preserve actualAPI/code/CLI receipts and source hashes."
+}

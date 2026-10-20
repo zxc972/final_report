@@ -1,0 +1,26 @@
+[
+  {
+    "id": "numpy_average",
+    "url": "https://numpy.org/doc/stable/reference/generated/numpy.average.html",
+    "evidence_class": "author_api",
+    "attempts": [],
+    "status": "downloaded",
+    "resolved_url": "https://numpy.org/doc/stable/reference/generated/numpy.average.html",
+    "raw_sha256": "2b7f8bd11163b4fd0944d86ea9725d0e7efdde74661675fbe4ed4b9a5b08e824",
+    "text_sha256": "82e2a7be4ccff4490788953cfa61566ac3e1075c2984facdb73cb3719bfbf651",
+    "text_chars": 5845,
+    "fetched_utc": "2026-10-20T15:40:28Z"
+  },
+  {
+    "id": "numpy_histogram",
+    "url": "https://numpy.org/doc/stable/reference/generated/numpy.histogram.html",
+    "evidence_class": "author_api",
+    "attempts": [],
+    "status": "downloaded",
+    "resolved_url": "https://numpy.org/doc/stable/reference/generated/numpy.histogram.html",
+    "raw_sha256": "0cf4cfa5a633a6f3fe3d802ff466c58eef554e48df7b9c12736d76f6c2ca317e",
+    "text_sha256": "9a8a86e1de85bee141bac0c1da21f94030d056c092491a32726c7959709db6f8",
+    "text_chars": 5234,
+    "fetched_utc": "2026-10-20T15:40:31Z"
+  }
+]

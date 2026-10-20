@@ -1,0 +1,34 @@
+{
+  "task_id": "human_tissue_pve_durable_job_v1",
+  "subjects": [
+    "100610",
+    "101309",
+    "101410"
+  ],
+  "input_roots": [
+    "/data/xuancheng/human_fastsurfer/subjects/100610",
+    "/data/xuancheng/human_fastsurfer/subjects/101309",
+    "/data/xuancheng/human_fastsurfer/subjects/101410"
+  ],
+  "required_artifacts": [
+    "analysis_plan.json",
+    "tissue_volumes.tsv",
+    "commands.json",
+    "qc_summary.json",
+    "software_outputs.json",
+    "report.md",
+    "fig_tissue_volumes.png",
+    "fig_tissue_qc.png"
+  ],
+  "message": "请对开发组100610、101309、101410做一次真实原生空间组织部分容积分割及CSF/GM/WM体积分析。只允许这三个输入目录；不要访问其他被试，也不重复皮层重建或把原aseg/stats表冒充新分割。\n\n先检查实际数据、脑提取/预处理状态、安装软件和inspect_analysis_runtime返回的执行政策。通过研究知识与软件图检索并实际回读原文，核对方法、参数、适用条件与例外；资料以英文为主，可用规范英文检索。候选材料有来源与版本，不能据节点名代替适用性判断。没有给你旧分析脚本、固定答案或私有评分器。\n\n根据观察形成有来源依据的方案，自主生成本次新的完整Python，组织成熟组织部分容积分割软件、组织体积求和、统计、质控图和报告。软件可使用实际已安装的成熟实现；不能自行编造分割算法、数据、引用或结果。脑提取/偏置校正应由真实输入和原文支持，不能只因文件名nu就决定某参数。核对正确环境和显式软件路径，不把默认PATH找不到软件当成未安装。\n\n这是显式后台计算模式实测，不是第三轮前台超时重试。前台只进行必要探测、资料回读与完整代码准备，仍受原1500秒和调用/执行次数限制；不要在前台再次启动完整分割。完整脚本准备好后调用submit_python_job一次，显式申报所有八项最终文件及有意义的约束，后台预算最多7200秒。输入只读、单进程地址空间8GB、单文件1GB、无网络。根据真实资源选择有依据的串行或有限并行；内部subprocess时限要与后台预算相符，不沿用先前失败的任意短截断。不得为了时限降采样、裁剪、变空间或改变生物学参数。\n\n后台使用新的/work，保留当前生成的中间准备文件和相同/inputs映射；申报的最终文件及旧manifest不继承。因此完整代码必须自行生成所有最终内容，包括analysis_plan和report。后台工人按同一原产物检查器生成机械元数据并核验；前台提交后返回pending，不调用finalize_artifacts假称后台已经完成，不循环调用模型等待，不重复投递。\n\n每例真实保留CSF/GM/WM三张原生空间、原分辨率PVE图，明确T1下PVE索引与组织名称的原文依据，区分索引和分割标签ID。按未舍入的实际浮点部分容积值高精度求和乘真实体素体积得到mm3，不能用硬阈值计数替代PVE体积。表中至少保留六位小数。核查有限值、范围、非空支持区及概率总和，保留输入来源、哈希、shape、affine、单位、软件版本及真实命令退出码/stdout/stderr。QC叠加图必须遵守实际affine与方向，不能把数组切面直接假称标准解剖方向。\n\n最终八项文件：analysis_plan.json、tissue_volumes.tsv（每个subject/tissue一行，共九行，含subject_id,tissue_name,pve_index,pve_sum_voxels,voxel_volume_mm3,pve_volume_mm3）、commands.json、qc_summary.json、software_outputs.json、report.md、fig_tissue_volumes.png、fig_tissue_qc.png。NIfTI/MGH中间图像应真实保留，但原生artifact校验器不支持影像kind，不得伪装成文本宣称影像已校验。\n\n关键条件不满足时如实记录缺项和可执行准备，不能用替身结果。每个小问题最多两轮有据修正，不死磕。本任务是已见三例的描述性计算示范，不做组间推断、头大小归一化或完整VBM，不自称已通过外部独立数值或专家解剖QC。",
+  "api_entrypoint": true,
+  "provided_source_context_directory": false,
+  "research_evidence_release": "research_evidence_v5",
+  "next_review": "First submitted is not computed. Poll authenticated job status without provider requests; preserve worker/input/source/output hashes and real exit/stdout/stderr, then independently decode9 full-size native-space PVE images, map tissue classes from actual commands/evidence, verify nonempty support/finite/range/mass, original strict sums/volumes and complete8 artifacts. Inspect affine-aware QC; no expert/clinical or fullVBM claim.",
+  "model": "deepseek-v4-pro",
+  "max_scientific_repair_rounds": 2,
+  "include_predecessor_outputs": false,
+  "enable_background_jobs": true,
+  "scientific_contract_unchanged_sha256": "de3a5849a12156dc4b4028cfde6e5fd8eb2b4ec4cc9e94c21c3f923d09476093",
+  "dispatch_authorization": "APPROVED: user replied追加额度 to recommended150; cumulative cap750, all existing600 requests/tokens/unknown usage retained. See audit/provider_allowance_extension_600_to_750_20261020.json."
+}

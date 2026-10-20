@@ -1,0 +1,264 @@
+{
+  "method_id": "nhp_macapype",
+  "name": "Macapype NHP anatomical processing pipeline",
+  "purpose": "Process nonhuman primate (NHP) brain MRI data in BIDS format, including data preparation, brain extraction, and brain segmentation, with optional template-based processing and derivatives output.",
+  "species_scope": "macaque, marmoset, baboon, chimpanzee (as supported by -species option)",
+  "software": [
+    "Macapype",
+    "skullTo3d",
+    "SPM",
+    "ANTs",
+    "FSL",
+    "hd-bet"
+  ],
+  "inputs": [
+    {
+      "statement": "Input data must be in BIDS format, with T1w and T2w images expected.",
+      "source_id": "macapype_commands",
+      "quote": "All the data have to be in BIDS format to run properly",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "T1 weighted images are expected with the _T1w BIDS extension.",
+      "source_id": "macapype_commands",
+      "quote": "_T1w (BIDS) extension is expected for T1 weighted images",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "T2 weighted images are expected with the _T2w BIDS extension.",
+      "source_id": "macapype_commands",
+      "quote": "_T2w (BIDS) extension is expected for T2 weighted images",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "All files with the same extension (T1w or T2w) will be aligned to the first one and averaged.",
+      "source_id": "macapype_commands",
+      "quote": "All files with the same extension (T1w or T2w) will be aligned to the first one and averaged",
+      "claim_type": "direct"
+    }
+  ],
+  "conditions": [
+    {
+      "statement": "The -data parameter must point to an existing BIDS format directory.",
+      "source_id": "macapype_commands",
+      "quote": "-data : path to your data dataset (existing BIDS format directory)",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "The -out parameter must point to an existing output path.",
+      "source_id": "macapype_commands",
+      "quote": "-out : path to the output results (an existing path)",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "The -soft parameter must be either SPM or ANTS, with SPM requiring a specific version of macapype/skullTo3d not available by default.",
+      "source_id": "macapype_commands",
+      "quote": "-soft : can be one of these : SPM or ANTS ( NB: SPM requires a specific version of macapype/skullTo3d, not available by default)",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Either -params or -species must be provided; -params is mandatory if -species is omitted, and vice versa.",
+      "source_id": "macapype_commands",
+      "quote": "-params : (mandatory if -species is omitted) a json file specifiying the global parameters of the analysis.",
+      "claim_type": "direct"
+    }
+  ],
+  "steps": [
+    {
+      "statement": "Optionally use -deriv to create a derivatives directory with important files named following BIDS derivatives convention.",
+      "source_id": "macapype_commands",
+      "quote": "-deriv : creates a derivatives directory, with all important files, properly named following BIDS derivatives convertion.",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Optionally use -padback to export most important files in native (original) space.",
+      "source_id": "macapype_commands",
+      "quote": "-padback : exports most important files in native (original) space",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Optionally specify a subset of the BIDS dataset using -sub, -ses, -acq, -rec, and control parallelism with -nprocs.",
+      "source_id": "macapype_commands",
+      "quote": "-sub (-subjects), -ses (-sessions), -acq (-acquisions), -rec (-reconstructions) allows to specifiy a subset of the BIDS dataset respectively to a range of subjects, session, acquision types and reconstruction types.",
+      "claim_type": "direct"
+    }
+  ],
+  "checks": [
+    {
+      "statement": "The -test option can be used to check if the full pipeline is coherent, generating only graph.dot and graph.png.",
+      "source_id": "macapype_commands",
+      "quote": "_test : (at the end) to check if the full pipeline is coherent (will only generate the graph.dot and graph.png)",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "The -prep option performs only data preparation, without brain extraction and segmentation.",
+      "source_id": "macapype_commands",
+      "quote": "_prep (at the end) will perform data preparation (no brain extraction and segmentation)",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "The -noseg option performs data preparation and brain extraction, but no segmentation.",
+      "source_id": "macapype_commands",
+      "quote": "_noseg (at the end) will perform data preparation and brain extraction (no segmentation)",
+      "claim_type": "direct"
+    }
+  ],
+  "exceptions": [
+    {
+      "statement": "The _4animal option uses bet4animal (FSL) for brain extraction, for faster computation; by default atlas_brex is used.",
+      "source_id": "macapype_commands",
+      "quote": "_4animal : will use bet4animal (FSL) for brain extraction, for faster computation (by default atlas_brex is used)",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "The marmoT2 species option can be used for segmenting from the T2w image; by default, T1w is used for marmo.",
+      "source_id": "macapype_commands",
+      "quote": "NB : marmoT2 can be used for segmenting from the T2w image (by default, T1w is used for marmo)",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "Some templates are available in downgraded versions (e.g., baboon1_0p6, macaque_0p5) showing significant decrease in processing time with low reduction in quality, but not all combinations are available.",
+      "source_id": "macapype_commands",
+      "quote": "NB : some templates are available in downgraded versions: baboon1_0p6, baboon2_0p6 baboon3_0p6 and macaque_0p5 and show significant decrease in processing time with low redection in quality. However, not all combinations are available",
+      "claim_type": "direct"
+    }
+  ],
+  "outputs": [
+    {
+      "statement": "The pipeline can create a derivatives directory with all important files, properly named following BIDS derivatives convention.",
+      "source_id": "macapype_commands",
+      "quote": "-deriv : creates a derivatives directory, with all important files, properly named following BIDS derivatives convertion.",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "The pipeline can export most important files in native (original) space using -padback.",
+      "source_id": "macapype_commands",
+      "quote": "-padback : exports most important files in native (original) space",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "The -test option generates graph.dot and graph.png files to check pipeline coherence.",
+      "source_id": "macapype_commands",
+      "quote": "_test : (at the end) to check if the full pipeline is coherent (will only generate the graph.dot and graph.png)",
+      "claim_type": "direct"
+    }
+  ],
+  "parameters": [
+    {
+      "statement": "The -indiv or -indiv_params parameter allows a JSON file to overwrite default parameters for specific subjects/sessions.",
+      "source_id": "macapype_commands",
+      "quote": "-indiv or -indiv_params : a json file overwriting the default parameters (both macapype default and parameters specified in -params json file) for specific subjects/sessions.",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "The -params parameter specifies a JSON file with global parameters of the analysis, mandatory if -species is omitted.",
+      "source_id": "macapype_commands",
+      "quote": "-params : (mandatory if -species is omitted) a json file specifiying the global parameters of the analysis.",
+      "claim_type": "direct"
+    },
+    {
+      "statement": "The -species parameter specifies the NHP species corresponding to the image, e.g., macaque, marmo, baboon, chimp; mandatory if -params is omitted.",
+      "source_id": "macapype_commands",
+      "quote": "-species : (mandatory if -params is omitted) followed the NHP species corresponding to the image, e.g. {macaque | marmo | baboon | chimp}",
+      "claim_type": "direct"
+    }
+  ],
+  "source_ids": [
+    "macapype_commands",
+    "nmt"
+  ],
+  "source_extraction_http_id": 841,
+  "evidence_status": "AI_assisted_candidate_exact_quotes_checked_semantics_not_expert_reviewed",
+  "quarantined_claims": [
+    {
+      "category": "steps",
+      "claim": {
+        "statement": "Run the main script segment_pnh.py as a Python script, or use the segment_pnh command if installed via pypi or container.",
+        "source_id": "macapype_commands",
+        "quote": "The main file is located in workflows and is called segment_pnh.py and should be called like a python script: $ python workflows/segment_pnh.py",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "steps",
+      "claim": {
+        "statement": "Specify the input data directory, output directory, and software choice (SPM or ANTS) as mandatory command line parameters.",
+        "source_id": "macapype_commands",
+        "quote": "-data : path to your data dataset (existing BIDS format directory) -out : path to the output results (an existing path) -soft : can be one of these : SPM or ANTS",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "steps",
+      "claim": {
+        "statement": "Provide either a -params JSON file with global parameters or a -species option specifying the NHP species (e.g., macaque, marmo, baboon, chimp).",
+        "source_id": "macapype_commands",
+        "quote": "-params : (mandatory if -species is omitted) a json file specifiying the global parameters of the analysis. See Parameters for more details -species : (mandatory if -params is omitted) followed the NHP species corresponding to the image, e.g. {macaque | marmo | baboon | chimp}",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "steps",
+      "claim": {
+        "statement": "Optionally specify the datatype for brain segmentation using -dt, which can be 'T1' or 'T1 T2'; default is T1 if omitted.",
+        "source_id": "macapype_commands",
+        "quote": "-dt : specifies the datatype available to perform brain segmentation (can be “T1”, or “T1 T2”) Note : default is T1 if the attribute is omitted",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "steps",
+      "claim": {
+        "statement": "Optionally use -mask to specify a precomputed binary mask file, skipping brain extraction; only works with -soft ANTS and the mask must be in the same space as the data.",
+        "source_id": "macapype_commands",
+        "quote": "-mask allows to specify a precomputed binary mask file (skipping brain extraction). ... Warning: the mask should be in the same space as the data. And only works with -soft ANTS so far",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "exceptions",
+      "claim": {
+        "statement": "The _quick option uses hd-bet (Deep Learning) for brain extraction, for faster computation; hd-bet requires a specific version of macapype/skullTo3d not available by default.",
+        "source_id": "macapype_commands",
+        "quote": "_quick : will use hd-bet (Deep Learning) for brain extraction, for faster computation (by default atlas_brex is used) **NB: ** hd-bet requires a specific version of macapype/skullTo3d, not available by default",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "exceptions",
+      "claim": {
+        "statement": "The _robustreg option should be used if coregistration to template in preparation is not performed correctly, providing a more robust registration in two steps.",
+        "source_id": "macapype_commands",
+        "quote": "This option should be used if the coregistration to template in preparation is not performed correctly: _robustreg (at the end) to have a more robust registration (in two steps)",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "exceptions",
+      "claim": {
+        "statement": "Baboon templates baboon0, baboon1, baboon2, baboon3 can be used for template Baba21 and matching ages.",
+        "source_id": "macapype_commands",
+        "quote": "NB : baboon0, baboon1, baboon2 baboon3 can be used for template Baba21 and matching ages",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    },
+    {
+      "category": "parameters",
+      "claim": {
+        "statement": "The -nprocs parameter specifies the number of processes allocated by the parallel engine, typically equal to the number of subjects*session, default is 4 if unspecified.",
+        "source_id": "macapype_commands",
+        "quote": "-nprocs : an integer, to specifiy the number of processes that should be allocated by the parralel engine of macapype typically equals to the number of subjects*session (i.e. iterables). ... default = 4 if unspecified ; if is put to 1, then the sequential processing is used",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_source_span_not_supported"
+    }
+  ]
+}

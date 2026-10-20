@@ -1,0 +1,52 @@
+{
+  "scope": "Targeted audit of retrieval-relevant issues; not exhaustive semantic validation of all 73 edges.",
+  "casefold_alias_collisions": {
+    "recon-all": [
+      "Recon-All",
+      "Recon-all"
+    ],
+    "preemacs.sif": [
+      "preemacs.sif",
+      "Preemacs.Sif"
+    ]
+  },
+  "findings": [
+    {
+      "id": "GS1",
+      "edge": [
+        "Randomise",
+        "Repeated Measures"
+      ],
+      "issue": "accommodates repeated measures omits sometimes and applicability scope",
+      "reference": "STAT_BLOCK",
+      "action": "preserve modality and conditions in an assertion attached to its source; do not treat this edge alone as executable permission"
+    },
+    {
+      "id": "GS2",
+      "edge": [
+        "Exchangeability Blocks",
+        "Group Labels"
+      ],
+      "issue": "relation identifies group_labels but has no explicit if-specified activation field",
+      "reference": "STAT_BLOCK",
+      "action": "return condition and source paragraph together"
+    },
+    {
+      "id": "GS3",
+      "edge": [
+        "Temporo-parietal cortex",
+        "Arcuate fasciculus"
+      ],
+      "issue": "negative finding retained correctly in description, not in a typed polarity field",
+      "reference": "CROSS_FINDING",
+      "action": "keep evidence paragraph and structured polarity for downstream use"
+    },
+    {
+      "id": "GS4",
+      "entity": "SUB01 and command-path artifacts",
+      "issue": "example identifiers entered graph; 86 entities are not 86 validated domain concepts",
+      "reference": "NHP_M1",
+      "action": "tag example_literal vs reusable entity and filter in execution suggestions"
+    }
+  ]
+}

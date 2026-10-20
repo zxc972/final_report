@@ -1,0 +1,10 @@
+{
+  "type": "object",
+  "properties": {
+    "workspaceDirectory": {
+      "type": "string",
+      "description": "Workspace root directory. If omitted, the default test workspace is used."
+    }
+  },
+  "required": []
+}

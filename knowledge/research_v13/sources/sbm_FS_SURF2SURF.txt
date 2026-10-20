@@ -1,0 +1,154 @@
+mri_surf2surf - Free Surfer Wiki
+Search:
+Login
+mri_surf2surf
+FreeSurferWiki
+RecentChanges
+FindPage
+HelpContents
+mri_surf2surf
+Immutable Page
+Comments
+Discussion
+Info
+Attachments
+More Actions:
+Raw Text
+Print View
+Render as Docbook
+Delete Cache
+------------------------
+Check Spelling
+Like Pages
+Local Site Map
+------------------------
+Rename Page
+Delete Page
+------------------------
+Subscribe User
+------------------------
+Remove Spam
+Revert to this revision
+Package Pages
+Sync Pages
+------------------------
+Load
+Save
+SlideShow
+Index
+Contents
+Name
+Synopsis
+Arguments
+Required Flagged Arguments
+Optional Flagged Arguments
+Outputs
+Description
+Examples
+Example 1
+Example 2
+Bugs
+See also
+Links
+Methods Description
+References
+Reporting Bugs
+Author/s
+Name
+mri_surf2surf- resamples one CorticalSurface onto another
+Synopsis
+mri_surf2surf --srcsubject <source subject name> --srcsurfval <sourcefile> --trgsubject <target suhject name> --trgsurfval <target file> --hemi <hemifield> [options]
+Arguments
+Required Flagged Arguments
+--srcsubject <source subject name>
+Name of source subject
+As found in $SUBJECTS_DIR or ico for icosahedron.  The input data must have been sampled onto this subject's surface (eg, using mri_vol2surf)
+--srcsurfval <sourcefile>
+Name of file where the data on the source surface is located.
+--trgsubject <target subject name>
+name of target subject as found in $SUBJECTS_DIR or ico for icosahedron.
+--trgsurfval <targetfile>
+Name of file where the data on the target surface will be stored.
+BUG ALERT: for trg_type w or paint, use the full path.
+--hemi <hemifield>
+(lh or rh)
+Optional Flagged Arguments
+--src_type <typestring>
+Format type string
+Can be either curv (for FreeSurfer curvature file), paint or w (for FreeSurfer paint files), or anything accepted by mri_convert. If no type string  is given, then the type is determined from the sourcefile (if possible). If curv is used, then the curvature file will be looked for in $SUBJECTS_DIR/srcsubject/surf/hemi.sourcefile.
+--trgicoorder <n>
+Icosahedron order number
+This specifies the size of the icosahedron according to the formula #vertices=10*4^n+2. In general, it is best to use the largest size available.
+--trg_type <typestring>
+Format type string.
+Can be paint or w (for FreeSurfer paint files) or anything accepted by mri_convert. Output can also be stored in curv format. If no type string  is given, then the type is determined from the sourcefile (if possible). If using paint or w, see also --frame.
+--surfreg <registration_surface>
+If the source and target subjects are not the same, this surface is used to register the two surfaces. sphere.reg is used as the default. Do not change this unless you know what you're doing.
+--mapmethod <methodname>
+Method used to map from the vertices in one subject to those of another.
+Legal values are: nnfr (neighest-neighbor, forward and reverse) and nnf (neighest-neighbor, forward only). Default is nnfr. The mapping is done in the following way. For each vertex on the target surface, the closest vertex in the source surface is found, based on the distance in the registration space (this is the forward map). If nnf is chosen, then the the value at the target vertex is set to that of the closest source vertex. This, however, can leave some source vertices unrepresented in target (ie, 'holes'). If nnfr is chosen, then each hole is assigned to the closest target vertex. If a target vertex has multiple source vertices, then the source values are averaged together. It does not seem to make much difference.
+--nsmooth-in <niterations>, --nsmooth-out <niterations> [note: same as --smooth]
+Number of smoothing iterations.
+Each iteration consists of averaging eeach vertex with its neighbors. When only smoothing is desired, just set the source and target subjects to the same subject. --smooth-in smoothes the input surface values prior to any resampling. --smooth-out smoothes after any resampling.
+--frame <framenumber>
+When using paint/w output format, this specifies which frame to output. This format can store only one frame. The frame number is zero-based (default is 0).
+--noreshape
+By default, mri_surf2surf will save the output as multiple 'slices'; has no effect for paint/w output format. For ico, the output will appear to be a 'volume' with Nv/R colums, 1 row, R slices and Nf frames, where Nv is the number of vertices on the surface. For icosahedrons, R=6. For others, R will be the prime factor of Nv closest to 6. Reshaping is for logistical purposes (eg, in the analyze format the size of a dimension cannot exceed 2^15). Use this flag to prevent this behavior. This has no effect when the output type is paint.
+Outputs
+??
+Description
+mri_surf2surf resamples one CorticalSurface onto another. The source and target subjects can be any subject in $SUBJECTS_DIR and/or the icosahedron (ico). The source and target file formats can be anything supported by mri_convert. The source format can also be a curvature file or a paint (.w) file. The user also has the option of smoothing on the surface.
+Examples
+Example 1
+mri_surf2surf --hemi lh --srcsubject bert --srcsurfval thickness --src_type curv --trgsubject ico --trgicoorder 7 --trgsurfval bert-thickness-lh.img --trg_type analyze4d
+Resample a subject's thickness of the left cortical hemisphere on to a 7th order icosahedron and save in analyze4d format
+Example 2
+mri_surf2surf --hemi rh --srcsubject ico --srcsurfval icodata-rh --src_type bfloat --trgsubject bert --trgsurfval ./bert-ico-rh.w --trg_type paint
+Resample data on the icosahedron to the right hemisphere of subject bert. Save in paint so that it can be viewed as an overlay in tksurfer. The source data is stored in bfloat format (ie, icodata_000.bfloat, ...)
+Bugs
+When the output format is paint, the output file must be specified with a partial path (eg, ./data-lh.w) or else the output will be written into the subject's anatomical directory.
+See also
+mris_convert
+Links
+FreeSurfer, FsFast
+Methods Description
+??
+References
+Fischl B, Sereno MI, Tootell RB, Dale AM. High-resolution intersubject averaging and a coordinate system for the cortical surface. Human Brain Mapping. 1999;8(4):272–284.
+Reporting Bugs
+Report bugs to <analysis-bugs@nmr.mgh.harvard.edu>
+Author/s
+BruceFishl
+mri_surf2surf  (last edited 2019-07-30 17:30:54 by BramDiamond)
+Immutable Page
+Comments
+Discussion
+Info
+Attachments
+More Actions:
+Raw Text
+Print View
+Render as Docbook
+Delete Cache
+------------------------
+Check Spelling
+Like Pages
+Local Site Map
+------------------------
+Rename Page
+Delete Page
+------------------------
+Subscribe User
+------------------------
+Remove Spam
+Revert to this revision
+Package Pages
+Sync Pages
+------------------------
+Load
+Save
+SlideShow
+MoinMoin Powered
+Python Powered
+GPL licensed
+Valid HTML 4.01

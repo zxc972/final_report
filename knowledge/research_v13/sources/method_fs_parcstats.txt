@@ -1,0 +1,86 @@
+parcstats - Free Surfer Wiki
+Search:
+Login
+parcstats
+FreeSurferWiki
+RecentChanges
+FindPage
+HelpContents
+parcstats
+Immutable Page
+Comments
+Discussion
+Info
+Attachments
+More Actions:
+Raw Text
+Print View
+Render as Docbook
+Delete Cache
+------------------------
+Check Spelling
+Like Pages
+Local Site Map
+------------------------
+Rename Page
+Delete Page
+------------------------
+Subscribe User
+------------------------
+Remove Spam
+Revert to this revision
+Package Pages
+Sync Pages
+------------------------
+Load
+Save
+SlideShow
+Parcellation Statistics (-<no>parcstats, -<no>parcstats2)
+Runs mris_anatomical_stats to create a summary table of cortical parcellation statistics for each structure, including
+structure name
+number of vertices
+total surface area (mm^2)
+total gray matter volume (mm^3)
+average cortical thickness (mm)
+standard error of cortical thicknessr (mm)
+integrated rectified mean curvature
+integrated rectified Gaussian curvature
+folding index
+intrinsic curvature index.
+For -parcstats, the file is saved in stats/?h.aparc.stats.
+For -parcstats2, the file is saved in stats/?h.aparc.a2005s.stats.
+Programs
+mris_anatomical_stats
+parcstats (last edited 2009-06-03 17:12:53 by MartinReuter)
+Immutable Page
+Comments
+Discussion
+Info
+Attachments
+More Actions:
+Raw Text
+Print View
+Render as Docbook
+Delete Cache
+------------------------
+Check Spelling
+Like Pages
+Local Site Map
+------------------------
+Rename Page
+Delete Page
+------------------------
+Subscribe User
+------------------------
+Remove Spam
+Revert to this revision
+Package Pages
+Sync Pages
+------------------------
+Load
+Save
+SlideShow
+MoinMoin Powered
+Python Powered
+GPL licensed
+Valid HTML 4.01

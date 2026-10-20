@@ -1,0 +1,308 @@
+{
+  "NHP_N4": {
+    "content": "SOURCE_ID: NHP_N4\nSOURCE_URL: https://raw.githubusercontent.com/pGarciaS/PREEMACS/master/README.md\nSCOPE: Excerpt from the cited document; installed software version is not verified.\nHEADING: generateN4 module\n\n**3. `generateN4` — a second, independent N4 bias-field correction pass** Runs on M1's conformed T1 (not the raw scan) so it shares a voxel grid with BM's brain mask. ```bash apptainer run --app generateN4 preemacs.sif \\ --bind /path/to/outputs:/data/out \\ -dataDir /data/out -maskDir /data/out -id SUB01 -outDir /data/out/N4 ```",
+    "file_path": "NHP_N4",
+    "parse_format": "raw",
+    "content_hash": "07f6dd10c69962f715aecd1b88dfbe11",
+    "chunk_options": {
+      "chunk_token_size": 280,
+      "fixed_token": {
+        "split_by_character": null,
+        "split_by_character_only": false,
+        "chunk_overlap_token_size": 50
+      }
+    },
+    "create_time": 1792427107,
+    "update_time": 1792427107,
+    "_id": "NHP_N4"
+  },
+  "VBM_TEMPLATE": {
+    "content": "SOURCE_ID: VBM_TEMPLATE\nSOURCE_URL: https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/fslvbm.html\nSCOPE: Excerpt from the cited document; installed software version is not verified.\nHEADING: FSL-VBM template_list\n\nIf you have more than one group and the number of subjects in each is not the same, choose (at random) among the biggest group(s) the images that you will use to create the study-specific template, with the same number as of the smallest group (in order to create an unbiased template - see below for further explanation). Once you've chosen which T1 images to keep to build the template, put all the selected names of exams in a file called template_list in your FSL-VBM directory. All your different populations included in this study MUST be represented in the template construction.",
+    "file_path": "VBM_TEMPLATE",
+    "parse_format": "raw",
+    "content_hash": "e11fe235869b3134b7249eecca91b794",
+    "chunk_options": {
+      "chunk_token_size": 280,
+      "fixed_token": {
+        "split_by_character": null,
+        "split_by_character_only": false,
+        "chunk_overlap_token_size": 50
+      }
+    },
+    "create_time": 1792427107,
+    "update_time": 1792427107,
+    "_id": "VBM_TEMPLATE"
+  },
+  "CROSS_FINDING": {
+    "content": "SOURCE_ID: CROSS_FINDING\nSOURCE_URL: https://pmc.ncbi.nlm.nih.gov/articles/PMC7180052/\nSCOPE: Excerpt from the cited document; installed software version is not verified.\nHEADING: Abstract\n\nEvolutionary adaptations of temporo-parietal cortex are considered to be a critical specialization of the human brain. Cortical adaptations, however, can affect different aspects of brain architecture, including local expansion of the cortical sheet or changes in connectivity between cortical areas. We distinguish different types of changes in brain architecture using a computational neuroanatomy approach. We investigate the extent to which between-species alignment, based on cortical myelin, can predict changes in connectivity patterns across macaque, chimpanzee, and human. We show that expansion and relocation of brain areas can predict terminations of several white matter tracts in temporo-parietal cortex, including the middle and superior longitudinal fasciculus, but not the arcuate fasciculus. This demonstrates that the arcuate fasciculus underwent additional evolutionary modifications affecting the temporal lobe connectivity pattern. This approach can flexibly be extended to include other features of cortical organization and other species, allowing direct tests of comparative hypotheses of brain organization.",
+    "file_path": "CROSS_FINDING",
+    "parse_format": "raw",
+    "content_hash": "d9492b97e50fee83d04d3a85bf98d1a9",
+    "chunk_options": {
+      "chunk_token_size": 280,
+      "fixed_token": {
+        "split_by_character": null,
+        "split_by_character_only": false,
+        "chunk_overlap_token_size": 50
+      }
+    },
+    "create_time": 1792427107,
+    "update_time": 1792427107,
+    "_id": "CROSS_FINDING"
+  },
+  "LONG": {
+    "content": "SOURCE_ID: LONG\nSOURCE_URL: https://surfer.nmr.mgh.harvard.edu/fswiki/LongitudinalProcessing\nSCOPE: Documentation titled FS 5.1, 5.2, 5.3 and 6.0; do not assume installed version\nHEADING: \n\nNote: All subjects and all time points are set up in a single SUBJECTS_DIR, which will also contain the base and the longitudinal runs after processing. Step 1. cross-sectionally process all time points with the default workflow (tpN is one of the timepoints): recon-all -all -s <tpNid> -i path_to_tpN_dcm Step 2. create an unbiased template from all time points for each subject and process it with recon-all: recon-all -base <templateid> -tp <tp1id> -tp <tp2id> ... -all can be started once all norm.mgz files are available from the cross sectional processing of the individual timepoint (step 1). The <templateid> represents a new average template for this subject and the name needs to be chosen by the user. A directory with this name will be created in $SUBJECTS_DIR. This <templateid> needs to be passed to the longitudinal processing of each timepoint of this subject below (step 3). Note, the '...' means that more timepoints can be used as \"-tp <tpNid>\". It is possible to pass only a single time point (e.g. for subjects that dropped out, see below). Step 3. \"-long\" longitudinally process all timepoints: recon-all -long <tpNid> <templateid> -all The longitudinal processing scheme is coded in the recon-all script via the \"-long\" flag. These runs will be much faster than the cross sectional or template runs above. This step produces output subject data containing <tpNid>.long.<templateid> in the name (to help distinguish from the default stream). Step 4. Compare results from step 3: E.g. calculate differences between <tp1id>.long.<templateid> and <tp2id>.long.<templateid>. Do not compare to the template, as that is merely a blurry guess of where things are located in the specific subject, used only for the initialization of the longitudinal runs.",
+    "file_path": "LONG",
+    "parse_format": "raw",
+    "content_hash": "db084b5f627cb24ed36c8903853c53f8",
+    "chunk_options": {
+      "chunk_token_size": 280,
+      "fixed_token": {
+        "split_by_character": null,
+        "split_by_character_only": false,
+        "chunk_overlap_token_size": 50
+      }
+    },
+    "create_time": 1792427107,
+    "update_time": 1792427107,
+    "_id": "LONG"
+  },
+  "SBM_CACHE": {
+    "content": "SOURCE_ID: SBM_CACHE\nSOURCE_URL: https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/GroupAnalysis\nSCOPE: Excerpt from the cited document; installed software version is not verified.\nHEADING: Previously Cached (qcached) Data\n\nWhen you run recon-all with the -qcache option, recon-all will resample data onto the average subject (called fsaverage) and smooth it at various FWHM (full-width/half-max) values, usually 0, 5, 10, 15, 20, and 25mm. This can speed later processing. The data for this tutorial was ran with the -qcache option, so the FWHM are already cached.",
+    "file_path": "SBM_CACHE",
+    "parse_format": "raw",
+    "content_hash": "01b7d4c6c04f408b2ee093d4bbd0c845",
+    "chunk_options": {
+      "chunk_token_size": 280,
+      "fixed_token": {
+        "split_by_character": null,
+        "split_by_character_only": false,
+        "chunk_overlap_token_size": 50
+      }
+    },
+    "create_time": 1792427107,
+    "update_time": 1792427107,
+    "_id": "SBM_CACHE"
+  },
+  "STAT_BLOCK": {
+    "content": "SOURCE_ID: STAT_BLOCK\nSOURCE_URL: https://fsl.fmrib.ox.ac.uk/fsl/docs/statistics/randomise.html\nSCOPE: Excerpt from the cited document; installed software version is not verified.\nHEADING: Accounting for Repeated Measures\n\nPermutation tests do not easily accommodate correlated datasets (e.g., temporally smooth timeseries), as such dependence violates null-hypothesis exchangeability. However, the case of \"repeated measurements\", or more than one measurement per subject in a multisubject analysis, can sometimes be accommodated. randomise allows the definition of exchangeability blocks, as specified by the group_labels option. If specfied, the program will only permute observations within block, i.e., only observations with the same group label will be exchanged. See the repeated measures example in the Guide below for more detail.",
+    "file_path": "STAT_BLOCK",
+    "parse_format": "raw",
+    "content_hash": "f62430c65544456e6d10958b2fcf85b4",
+    "chunk_options": {
+      "chunk_token_size": 280,
+      "fixed_token": {
+        "split_by_character": null,
+        "split_by_character_only": false,
+        "chunk_overlap_token_size": 50
+      }
+    },
+    "create_time": 1792427107,
+    "update_time": 1792427107,
+    "_id": "STAT_BLOCK"
+  },
+  "NHP_M1": {
+    "content": "SOURCE_ID: NHP_M1\nSOURCE_URL: https://raw.githubusercontent.com/pGarciaS/PREEMACS/master/README.md\nSCOPE: Excerpt from the cited document; installed software version is not verified.\nHEADING: M1 module\n\n**1. `M1` — orientation, cropping, bias correction, averaging, skull-stripping** `-t1_path`/`-t2_path` are *directories*: every `.nii.gz` file inside is treated as a separate run of that modality and averaged together (put a single file in each if you only have one run per modality). ```bash apptainer run --app M1 preemacs.sif \\ --bind /path/to/license.txt:/opt/freesurfer/license.txt --env FS_LICENSE=/opt/freesurfer/license.txt \\ --bind /path/to/t1_runs:/data/in_t1 \\ --bind /path/to/t2_runs:/data/in_t2 \\ --bind /path/to/outputs:/data/out \\ -id SUB01 -t1_path /data/in_t1 -t2_path /data/in_t2 -out_path /data/out ```",
+    "file_path": "NHP_M1",
+    "parse_format": "raw",
+    "content_hash": "545d0b0cda02b4b13fb91c3ebcfe5eeb",
+    "chunk_options": {
+      "chunk_token_size": 280,
+      "fixed_token": {
+        "split_by_character": null,
+        "split_by_character_only": false,
+        "chunk_overlap_token_size": 50
+      }
+    },
+    "create_time": 1792427107,
+    "update_time": 1792427107,
+    "_id": "NHP_M1"
+  },
+  "QC_BODY": {
+    "content": "SOURCE_ID: QC_BODY\nSOURCE_URL: https://mriqc.readthedocs.io/en/stable/iqms/t1w.html\nSCOPE: Structural IQM documentation\nHEADING: \n\ncoefficient of joint variation ( CJV ): The cjv of GM and WM was proposed as objective function by [Ganzetti2016] for the optimization of INU correction algorithms. Higher values are related to the presence of heavy head motion and large INU artifacts. Lower values are better. cnr() – contrast-to-noise ratio ( CNR ): The cnr [Magnota2006] , is an extension of the SNR calculation to evaluate how separated the tissue distributions of GM and WM are. Higher values indicate better quality.",
+    "file_path": "QC_BODY",
+    "parse_format": "raw",
+    "content_hash": "f31e5a0357b936d510c43091e19e05a4",
+    "chunk_options": {
+      "chunk_token_size": 280,
+      "fixed_token": {
+        "split_by_character": null,
+        "split_by_character_only": false,
+        "chunk_overlap_token_size": 50
+      }
+    },
+    "create_time": 1792427107,
+    "update_time": 1792427107,
+    "_id": "QC_BODY"
+  },
+  "PED": {
+    "content": "SOURCE_ID: PED\nSOURCE_URL: https://surfer.nmr.mgh.harvard.edu/fswiki/LongitudinalProcessing\nSCOPE: Same historical longitudinal documentation, special situations\nHEADING: \n\nSome results will not be initialized, but directly copied from the subject-template (brain mask, linear Talairach map, estimated total intracranial volume eTIV ). The assumption is that head size does not change across time. Special situations: Pediatric data violates the fixed head size assumption. In the presence of substantial longitudinal growth, the current pipeline may fail. Yet we have found that it is very robust with respect to limited head size differences. In this type of data it is essential to check the template/base image for skull strip errors and meaningful surfaces. Also the eTIV is fixed across time in the final longitudinal directories. In order to get eTIV measures for each time point, read that data from the aseg.stats in the cross sectional directories.",
+    "file_path": "PED",
+    "parse_format": "raw",
+    "content_hash": "cc24680e9f698f2ee18c8ea6c3adc2b6",
+    "chunk_options": {
+      "chunk_token_size": 280,
+      "fixed_token": {
+        "split_by_character": null,
+        "split_by_character_only": false,
+        "chunk_overlap_token_size": 50
+      }
+    },
+    "create_time": 1792427107,
+    "update_time": 1792427107,
+    "_id": "PED"
+  },
+  "NHP_WRAPPER": {
+    "content": "SOURCE_ID: NHP_WRAPPER\nSOURCE_URL: https://raw.githubusercontent.com/pGarciaS/PREEMACS/master/README.md\nSCOPE: Excerpt from the cited document; installed software version is not verified.\nHEADING: run_full_pipeline.sh interface\n\n./run_full_pipeline.sh SUB_ID T1_PATH T2_PATH OUTPUT_DIR [FS_LICENSE] ``` ```bash ./run_full_pipeline.sh sub-01 \\ /data/raw/sub-01_T1w.nii.gz /data/raw/sub-01_T2w.nii.gz \\ /data/results/sub-01 ~/licenses/freesurfer_license.txt ``` `T1_PATH`/`T2_PATH` can be a single file or a directory — including a BIDS `anat/` folder mixing both modalities, which it auto-separates by filename (`*T1w*`/`*T2w*`). Point both at a subject's top-level BIDS folder and add `--all-sessions` to average every run across every session; omit it to only use the one directory you pointed at. Takes 2–3 hours end to end, dominated by `M3`. Run `./run_full_pipeline.sh -h` for the full usage notes and more examples.",
+    "file_path": "NHP_WRAPPER",
+    "parse_format": "raw",
+    "content_hash": "9b40b8465683e178e32b83ced761aa3d",
+    "chunk_options": {
+      "chunk_token_size": 280,
+      "fixed_token": {
+        "split_by_character": null,
+        "split_by_character_only": false,
+        "chunk_overlap_token_size": 50
+      }
+    },
+    "create_time": 1792427107,
+    "update_time": 1792427107,
+    "_id": "NHP_WRAPPER"
+  },
+  "WRAPPER_LICENSE": {
+    "content": "SOURCE_ID: WRAPPER_LICENSE\nSOURCE_URL: https://raw.githubusercontent.com/pGarciaS/PREEMACS/c57835c0223104072c4f4e2947a253f1826a27e0/run_full_pipeline.sh\nSCOPE: Code at PREEMACS commit c57835c0223104072c4f4e2947a253f1826a27e0, lines 57-77; not executed or installed-version verified.\nHEADING: Wrapper argument, input and license checks\n\n\nif [ $# -lt 4 ]; then\n\techo \"Usage: $(basename \"$0\") [--all-sessions] SUB_ID T1_PATH T2_PATH OUTPUT_DIR [FS_LICENSE]\" >&2\n\techo \"Run with -h for full usage notes and examples.\" >&2\n\texit 1\nfi\n\nREPO=\"$(cd \"$(dirname \"${BASH_SOURCE[0]}\")\" && pwd)\"\nSIF=$REPO/preemacs.sif\n\nID=$1\nT1_INPUT=$2\nT2_INPUT=$3\nOUTPUT_DIR=$4\nFS_LICENSE=${5:-${FS_LICENSE:-}}\n\n[ -e \"$SIF\" ] || { echo \"ERROR: $SIF not found -- build it first (see README.md).\" >&2; exit 1; }\n[ -e \"$T1_INPUT\" ] || { echo \"ERROR: T1_PATH does not exist: $T1_INPUT\" >&2; exit 1; }\n[ -e \"$T2_INPUT\" ] || { echo \"ERROR: T2_PATH does not exist: $T2_INPUT\" >&2; exit 1; }\n[ -n \"$FS_LICENSE\" ] || { echo \"ERROR: no FreeSurfer license given (5th argument or \\$FS_LICENSE).\" >&2; exit 1; }\n[ -e \"$FS_LICENSE\" ] || { echo \"ERROR: FS_LICENSE does not exist: $FS_LICENSE\" >&2; exit 1; }",
+    "file_path": "WRAPPER_LICENSE",
+    "parse_format": "raw",
+    "content_hash": "2da37c0988a0821185f03de8b43c2be8",
+    "chunk_options": {
+      "chunk_token_size": 280,
+      "fixed_token": {
+        "split_by_character": null,
+        "split_by_character_only": false,
+        "chunk_overlap_token_size": 50
+      }
+    },
+    "create_time": 1792428565,
+    "update_time": 1792428565,
+    "_id": "WRAPPER_LICENSE"
+  },
+  "FS_SINGLE": {
+    "content": "SOURCE_ID: FS_SINGLE\nSOURCE_URL: https://surfer.nmr.mgh.harvard.edu/fswiki/LongitudinalProcessing\nSCOPE: Historical FreeSurfer documentation: FS 5.1, 5.2, 5.3, 6.0. Not verified against installed version.\nHEADING: Single timepoint dropouts and longitudinal stream\n\nSingle time-point subjects : Because of drop-outs it can happen that some individuals were scanned only at a single time point. Instead of removing this valuable information, it is possible (e.g. in the linear mixed effects models LME) to include this data. For that it, however, becomes necessary to run the single time points through the longitudinal stream, to ensure that also those images undergo the same processing steps. This can be done by simply passing a single time point in the base creation step. See \"Statistical Analysis of Longitudinal Neuroimage Data with Linear Mixed Effects Models. J.L.Bernal-Rusiel, D.N.Greve, M.Reuter et al. NeuroImage 66:249-260, 2012\" for a discussion.",
+    "file_path": "FS_SINGLE",
+    "parse_format": "raw",
+    "content_hash": "76a4ce3f01cc529b5f2444f487bbf666",
+    "chunk_options": {
+      "chunk_token_size": 280,
+      "fixed_token": {
+        "split_by_character": null,
+        "split_by_character_only": false,
+        "chunk_overlap_token_size": 50
+      }
+    },
+    "create_time": 1792428565,
+    "update_time": 1792428565,
+    "_id": "FS_SINGLE"
+  },
+  "VBM_LIMITS": {
+    "content": "SOURCE_ID: VBM_LIMITS\nSOURCE_URL: https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/fslvbm.html\nSCOPE: Official documentation snapshot 2026-10-20; installed software version not verified.\nHEADING: Interpretation limits of voxelwise GM analysis\n\nPlease bear in mind that the interpretation of the results you may obtain with such voxel-wise analysis has inherent limitations, however. It is sometimes not possible to determine if the results you may find are the consequence of an effective reduced thickness or atrophy in the grey matter, or rather an indirect reflection of a different gyrification pattern. Indeed, it might be possible that a misalignment of the gyri/sulci or even different folding patterns may lead to the difference of grey matter distribution that you have found. Moreover, there is theoretically a continuum of results dependent on the degrees of freedom of the non-rigid registration used (here free-form deformation with 20 mm initial control point spacing) and the amount of smoothing.",
+    "file_path": "VBM_LIMITS",
+    "parse_format": "raw",
+    "content_hash": "412080cef4f7867dd6f3d45e018ebdb1",
+    "chunk_options": {
+      "chunk_token_size": 280,
+      "fixed_token": {
+        "split_by_character": null,
+        "split_by_character_only": false,
+        "chunk_overlap_token_size": 50
+      }
+    },
+    "create_time": 1792428565,
+    "update_time": 1792428565,
+    "_id": "VBM_LIMITS"
+  },
+  "STAT_ONEGROUP": {
+    "content": "SOURCE_ID: STAT_ONEGROUP\nSOURCE_URL: https://fsl.fmrib.ox.ac.uk/fsl/docs/statistics/randomise.html\nSCOPE: Official documentation snapshot 2026-10-20; installed software version not verified.\nHEADING: One-sample testing\n\nOne-Sample T-test To perform a nonparametric 1-sample t-test (e.g., on COPEs created by FEAT FMRI analysis), create a 4D image of all of the images. There should be no repeated measures, i.e., there should only be one image per subject. Because this is a single group simple design you don't need a design matrix or contrasts. Just use: randomise -i OneSamp4D -o OneSampT -1 -T Note you do not need the -D option (as the mean is in the model), and omit the -n option, so that 5000 permutations will be performed. If you have fewer than 20 subjects (approx. 20 DF), then you will usually see an increase in power by using variance smoothing, as in randomise -i OneSamp4D -o OneSampT -1 -v 5 -T which does variance smoothing with a sigma of 5mm. Note also that randomise will automatically select one-sample mode for appropriate design/contrast combinations.",
+    "file_path": "STAT_ONEGROUP",
+    "parse_format": "raw",
+    "content_hash": "4bdfc27b8cf107d8f5d236ee4656964f",
+    "chunk_options": {
+      "chunk_token_size": 280,
+      "fixed_token": {
+        "split_by_character": null,
+        "split_by_character_only": false,
+        "chunk_overlap_token_size": 50
+      }
+    },
+    "create_time": 1792428565,
+    "update_time": 1792428565,
+    "_id": "STAT_ONEGROUP"
+  },
+  "WRAPPER_BINDS": {
+    "content": "SOURCE_ID: WRAPPER_BINDS\nSOURCE_URL: https://raw.githubusercontent.com/pGarciaS/PREEMACS/c57835c0223104072c4f4e2947a253f1826a27e0/run_full_pipeline.sh\nSCOPE: Code at PREEMACS commit c57835c0223104072c4f4e2947a253f1826a27e0, lines 97-133; not executed or installed-version verified.\nHEADING: resolve_modality_binds implementation\n\n# M1's -t1_path/-t2_path must be DIRECTORIES (every *.nii.gz inside is one run,\n# averaged together). resolve_modality_binds turns a file or a directory into a\n# list of --bind flags that build exactly that directory inside the container --\n# always as individual per-file binds (never the whole host directory at once),\n# so it also works correctly when the source directory mixes T1w/T2w together\n# (a BIDS anat/ folder) or spans multiple sessions (with --all-sessions).\nresolve_modality_binds() {\n\tlocal input=$1 tag=$2 dest=$3 recursive=$4\n\tlocal -a files=()\n\tif [ -f \"$input\" ]; then\n\t\tfiles=(\"$input\")\n\telif [ -d \"$input\" ]; then\n\t\tlocal -a maxd=(); [ \"$recursive\" = 1 ] || maxd=(-maxdepth 1)\n\t\twhile IFS= read -r -d '' f; do files+=(\"$f\"); done < <(find \"$input\" \"${maxd[@]}\" -iname \"*${tag}*.nii.gz\" -print0 | sort -z)\n\t\tif [ ${#files[@]} -eq 0 ]; then\n\t\t\t# No BIDS-suffix match: fall back to every .nii.gz found (a directory\n\t\t\t# the caller already pre-separated by modality, with arbitrary names).\n\t\t\twhile IFS= read -r -d '' f; do files+=(\"$f\"); done < <(find \"$input\" \"${maxd[@]}\" -iname \"*.nii.gz\" -print0 | sort -z)\n\t\tfi\n\telse\n\t\techo \"ERROR: not a file or directory: $input\" >&2\n\t\texit 1\n\tfi\n\tif [ ${#files[@]} -eq 0 ]; then\n\t\techo \"ERROR: no .nii.gz files found for $tag under: $input$( [ \"$recursive\" = 1 ] && echo ' (searched recursively)' )\" >&2\n\t\texit 1\n\tfi\n\tlocal -a binds=() seen=()\n\tlocal f base name\n\tfor f in \"${files[@]}\"; do\n\t\tbase=$(basename \"$f\"); name=$base; local i=1\n\t\twhile [[ \" ${seen[*]-} \" == *\" $name \"* ]]; do name=\"${i}_${base}\"; i=$((i+1)); done\n\t\tseen+=(\"$name\")\n\t\tbinds+=(--bind \"$f\":\"$dest/$name\")\n\tdone\n\tprintf '%s\\n' \"${binds[@]}\"\n}",
+    "file_path": "WRAPPER_BINDS",
+    "parse_format": "raw",
+    "content_hash": "95ffb1c9447d813e765d8113f3f1a8cc",
+    "chunk_options": {
+      "chunk_token_size": 280,
+      "fixed_token": {
+        "split_by_character": null,
+        "split_by_character_only": false,
+        "chunk_overlap_token_size": 50
+      }
+    },
+    "create_time": 1792428565,
+    "update_time": 1792428565,
+    "_id": "WRAPPER_BINDS"
+  },
+  "M1_INPUT_CODE": {
+    "content": "SOURCE_ID: M1_INPUT_CODE\nSOURCE_URL: https://raw.githubusercontent.com/pGarciaS/PREEMACS/c57835c0223104072c4f4e2947a253f1826a27e0/Modules/M1.sh\nSCOPE: Code at PREEMACS commit c57835c0223104072c4f4e2947a253f1826a27e0, lines 181-192; not executed or installed-version verified.\nHEADING: M1 cd and glob input runs\n\n#-----------------------------------------------------------------------------------------#\n\nif [[ $manual_crop -eq 1 && $coords -eq 1 ]]; then\n\ncd $T1_image_path\nnum_ima=1\nfor file in *.nii.gz; do cp $T1_image_path/$file $PREEMACS_DIR/$SUB_ID/orig/raw_${num_ima}_T1.nii.gz; num_ima=$[num_ima +1];  done\n\n#if T2\ncd $T2_image_path\nfor file in *.nii.gz; do cp $T2_image_path/$file $PREEMACS_DIR/$SUB_ID/orig/raw_${num_ima}_T2.nii.gz; num_ima=$[num_ima +1 ]; done",
+    "file_path": "M1_INPUT_CODE",
+    "parse_format": "raw",
+    "content_hash": "d99524d8f591c256db84f6358c71cba2",
+    "chunk_options": {
+      "chunk_token_size": 280,
+      "fixed_token": {
+        "split_by_character": null,
+        "split_by_character_only": false,
+        "chunk_overlap_token_size": 50
+      }
+    },
+    "create_time": 1792428565,
+    "update_time": 1792428565,
+    "_id": "M1_INPUT_CODE"
+  },
+  "STAT_PAIRED": {
+    "content": "SOURCE_ID: STAT_PAIRED\nSOURCE_URL: https://fsl.fmrib.ox.ac.uk/fsl/docs/statistics/randomise.html\nSCOPE: Official documentation snapshot 2026-10-20; installed software version not verified.\nHEADING: Paired design, labels, command and difference analysis\n\nTwo-Sample Paired T-test (Paired Group Difference) We will follow the setup in the GLM guide where we have a group of 8 subjects scanned under two different conditions, A and B. Condition A will be entered as the first 8 inputs, and condition B as the second 8 inputs, with the subjects in the same order in each case (ordering is, naturally, very important). The design matrix ( design.mat ) looks like 1 1 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 1 -1 1 0 0 0 0 0 0 0 -1 0 1 0 0 0 0 0 0 -1 0 0 1 0 0 0 0 0 -1 0 0 0 1 0 0 0 0 -1 0 0 0 0 1 0 0 0 -1 0 0 0 0 0 1 0 0 -1 0 0 0 0 0 0 1 0 -1 0 0 0 0 0 0 0 1 where the first column models the group difference, and the individual subject means are modelled by columns 2 to 9. The t-contrast ( design.con ) for the group difference, A-B, is simply 1 0 0 0 0 0 0 0 0 and for B-A, just replace 1 with -1 in this contrast. The exchangeability-block information ( design.grp ) can be entered via the \"Group\" column in the GLM Gui (alternatively, it can be created independently as a simple text file). The values in this file need to specify which data can be exchanged, that is, only condition A and B within the same subject (since the null hypothesis is that there is no difference between A and B, but each subject could have a different mean value and so we cannot exchange between subjects). Therefore there are eight different blocks and the file looks like 1 2 3 4 5 6 7 8 1 2 3 4 5 6 7 8 Once you have set up these design files you can run: randomise -i PairedT4D -o PairedT -d design.mat -t design.con -e design.grp -m mask -T Note that a completely alternative way to do a paired analysis is to calculate the difference values within-subject initially (e.g., using fslmaths ) and then do a simple one-group t-test (across subjects) on these within-subject differences.",
+    "file_path": "STAT_PAIRED",
+    "parse_format": "raw",
+    "content_hash": "381b9a4d988e0426f761e0131161a0ab",
+    "chunk_options": {
+      "chunk_token_size": 280,
+      "fixed_token": {
+        "split_by_character": null,
+        "split_by_character_only": false,
+        "chunk_overlap_token_size": 50
+      }
+    },
+    "create_time": 1792428565,
+    "update_time": 1792428565,
+    "_id": "STAT_PAIRED"
+  },
+  "VBM_FINAL": {
+    "content": "SOURCE_ID: VBM_FINAL\nSOURCE_URL: https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/fslvbm.html\nSCOPE: Official documentation snapshot 2026-10-20; installed software version not verified.\nHEADING: Processing GM, initial statistics and ordering\n\nThe final script will non-linearly register all your GM images to the study-specific template and concatenate them into a 4D image ( GM_merg ) in the stats directory in your working FSL-VBM directory. The FSL-VBM protocol also introduces a compensation (or \"modulation\") for the contraction/enlargement due to the non-linear component of the transformation: each voxel of each registered grey matter image is multiplied by the Jacobian of the warp field (see Good et al., 2001 ). All the modulated registered GM images are concatenated into a 4D image in the stats directory ( GM_mod_merg ) and then smoothed ( GM_mod_merg_s3 for instance) by a range of Gaussian kernels; sigma = 2, 3, 4mm, i.e., approximately from FWHM = 2x2.3 = 4.6mm to FWHM = 9mm. Finally, this last step gets everything ready for you to run permutation-based non-parametric inference using the design.mat and design.con which you supplied, a mask of the GM ( GM_mask ) and the 4D multi-subject concatenated processed data (e.g. GM_mod_merg_s3 ). The script runs randomise with inference (generation of p-value maps) turned off, so that it very quickly creates just the raw tstat maps. These tstats maps should help you decide which smoothing is the most relevant to feed into a full run of randomise , and which threshold to use for the cluster-based thresholding (option -c in the randomise command); however, in general we would recommend using the TFCE option ( -T ) instead of the cluster-based thresholding. WARNING!!! By default fslvbm_3_proc concatenates the images in alphabetical order (following the names that they started with); make sure this matches the subject ordering assumed in your design.mat model.",
+    "file_path": "VBM_FINAL",
+    "parse_format": "raw",
+    "content_hash": "de0956409b9df7ac06b9b02d8f9ad089",
+    "chunk_options": {
+      "chunk_token_size": 280,
+      "fixed_token": {
+        "split_by_character": null,
+        "split_by_character_only": false,
+        "chunk_overlap_token_size": 50
+      }
+    },
+    "create_time": 1792428565,
+    "update_time": 1792428565,
+    "_id": "VBM_FINAL"
+  }
+}

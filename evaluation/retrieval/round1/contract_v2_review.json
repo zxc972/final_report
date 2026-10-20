@@ -1,0 +1,175 @@
+{
+  "post_hoc_development_only": true,
+  "same_retrieval_context": true,
+  "reviewer": "Codex AI-assisted, not expert blind review",
+  "rows": [
+    {
+      "id": "R02_mix",
+      "verdict": "core_input_contract_improved",
+      "note": "首句明确 No，区分 wrapper 文件输入与 M1 目录输入；不再添加必填参数和许可证要求。not_established 中对文件输入的措辞仍宜区分已知文档契约与未测运行时容错。",
+      "quote_checks": [
+        {
+          "section": "established",
+          "entry": 1,
+          "source_id": "NHP_WRAPPER",
+          "exact_quote_match": true
+        },
+        {
+          "section": "established",
+          "entry": 2,
+          "source_id": "NHP_M1",
+          "exact_quote_match": true
+        },
+        {
+          "section": "established",
+          "entry": 3,
+          "source_id": "NHP_M1",
+          "exact_quote_match": true
+        }
+      ],
+      "summary": "No — the input contracts differ. run_full_pipeline.sh accepts a single T1 file (or a directory) for T1_PATH, but the M1 module's -t1_path parameter is a directory: every .nii.gz inside is treated as a separate run and averaged. Passing a single file directly to M1 is not supported by the documented contract; the README says to put a single file in the directory if you have only one run per modality. Evidence about run_full_pipeline.sh accepting a single file does not establish that M1 accepts one, and no source states M1 accepts a single file directly."
+    },
+    {
+      "id": "R02_naive",
+      "verdict": "core_input_contract_improved",
+      "note": "首句明确 No，区分 wrapper 文件输入与 M1 目录输入；不再添加必填参数和许可证要求。not_established 中对文件输入的措辞仍宜区分已知文档契约与未测运行时容错。",
+      "quote_checks": [
+        {
+          "section": "established",
+          "entry": 1,
+          "source_id": "NHP_M1",
+          "exact_quote_match": true
+        },
+        {
+          "section": "established",
+          "entry": 2,
+          "source_id": "NHP_WRAPPER",
+          "exact_quote_match": true
+        },
+        {
+          "section": "conditions",
+          "entry": 1,
+          "source_id": "NHP_M1",
+          "exact_quote_match": true
+        }
+      ],
+      "summary": "No. PREEMACS M1 requires a directory for -t1_path/-t2_path (every .nii.gz inside is treated as a separate run and averaged), whereas run_full_pipeline.sh accepts a single file or a directory for T1_PATH/T2_PATH. Passing a single T1 file directly to M1 is not supported by its documented input contract."
+    },
+    {
+      "id": "R05_mix",
+      "verdict": "scope_improved",
+      "note": "不再声称所有受试者已实际进入最终分析；保留模板步骤的有限结论。最终队列/质控纳入策略仍需后续步骤原文。",
+      "quote_checks": [
+        {
+          "section": "established",
+          "entry": 1,
+          "source_id": "VBM_TEMPLATE",
+          "exact_quote_match": true
+        },
+        {
+          "section": "established",
+          "entry": 2,
+          "source_id": "VBM_TEMPLATE",
+          "exact_quote_match": true
+        },
+        {
+          "section": "conditions",
+          "entry": 1,
+          "source_id": "VBM_TEMPLATE",
+          "exact_quote_match": true
+        }
+      ],
+      "summary": "For FSL-VBM with unequal group sizes, the subset that needs balancing is the images used to create the study-specific template: you must randomly select from the biggest group(s) the same number of images as the smallest group. This balancing applies only to template construction, not to the final analysis; the source does not state that other subjects must be discarded from the final analysis."
+    },
+    {
+      "id": "R05_naive",
+      "verdict": "scope_improved",
+      "note": "不再声称所有受试者已实际进入最终分析；保留模板步骤的有限结论。最终队列/质控纳入策略仍需后续步骤原文。",
+      "quote_checks": [
+        {
+          "section": "established",
+          "entry": 1,
+          "source_id": "VBM_TEMPLATE",
+          "exact_quote_match": true
+        },
+        {
+          "section": "established",
+          "entry": 2,
+          "source_id": "VBM_TEMPLATE",
+          "exact_quote_match": true
+        },
+        {
+          "section": "conditions",
+          "entry": 1,
+          "source_id": "VBM_TEMPLATE",
+          "exact_quote_match": true
+        }
+      ],
+      "summary": "For FSL-VBM with unequal group sizes, you balance only the subset used to build the study-specific template: randomly select from the biggest group(s) the same number of images as in the smallest group. This balancing applies solely to template construction, not to the final group analysis, so it does not require discarding other subjects from the final analysis."
+    },
+    {
+      "id": "R07_mix",
+      "verdict": "partially_improved",
+      "note": "恢复 not easily 和 sometimes，但摘要仍未明确 if specified；尤其不能解释为软件自动禁止未配置的重复测量置换。",
+      "quote_checks": [
+        {
+          "section": "established",
+          "entry": 1,
+          "source_id": "STAT_BLOCK",
+          "exact_quote_match": true
+        },
+        {
+          "section": "established",
+          "entry": 2,
+          "source_id": "STAT_BLOCK",
+          "exact_quote_match": true
+        },
+        {
+          "section": "established",
+          "entry": 3,
+          "source_id": "STAT_BLOCK",
+          "exact_quote_match": true
+        },
+        {
+          "section": "conditions",
+          "entry": 1,
+          "source_id": "STAT_BLOCK",
+          "exact_quote_match": true
+        }
+      ],
+      "summary": "No, randomise does not permit unrestricted permutations for repeated measurements. It restricts permutations to within exchangeability blocks defined by the group_labels option, so only observations sharing the same group label are exchanged. This accommodation is only sometimes possible, and correlated datasets generally violate null-hypothesis exchangeability."
+    },
+    {
+      "id": "R07_naive",
+      "verdict": "partially_improved",
+      "note": "恢复 not easily 和 sometimes，但摘要仍未明确 if specified；尤其不能解释为软件自动禁止未配置的重复测量置换。",
+      "quote_checks": [
+        {
+          "section": "established",
+          "entry": 1,
+          "source_id": "STAT_BLOCK",
+          "exact_quote_match": true
+        },
+        {
+          "section": "established",
+          "entry": 2,
+          "source_id": "STAT_BLOCK",
+          "exact_quote_match": true
+        },
+        {
+          "section": "established",
+          "entry": 3,
+          "source_id": "STAT_BLOCK",
+          "exact_quote_match": true
+        },
+        {
+          "section": "conditions",
+          "entry": 1,
+          "source_id": "STAT_BLOCK",
+          "exact_quote_match": true
+        }
+      ],
+      "summary": "No, randomise does not permit unrestricted permutations for repeated measurements. It allows the definition of exchangeability blocks via the group_labels option, so that only observations with the same group label are permuted within block. The applicability limitation is that permutation tests do not easily accommodate correlated datasets (e.g., temporally smooth timeseries) because such dependence violates null-hypothesis exchangeability; repeated measurements can sometimes be accommodated, but only with this block-based restriction."
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "subjectId": {
+      "type": "string",
+      "description": "Subject ID used by FreeSurfer."
+    },
+    "workspaceDirectory": {
+      "type": "string",
+      "description": "Root workspace path where subject output lives."
+    },
+    "species": {
+      "type": "string",
+      "description": "Species (Macaque, Chimpanzee, Marmoset)."
+    },
+    "threads": {
+      "type": "integer",
+      "enum": [1, 2, 3, 4],
+      "default": 2,
+      "description": "CPU threads used by supported Preprocess-3 commands. Maximum 4."
+    }
+  },
+  "required": ["subjectId", "workspaceDirectory", "species"]
+}
