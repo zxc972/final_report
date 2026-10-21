@@ -1,0 +1,17 @@
+{
+  "model_calls": 30,
+  "tool_calls": 60,
+  "executions": 8,
+  "wall_seconds": 1200,
+  "repair_rounds": 3,
+  "comparison_profiles": [
+    "legacy_v13",
+    "no_knowledge",
+    "text_retrieval",
+    "text_plus_rules",
+    "method_graph",
+    "method_graph_gated",
+    "product_graph_planner"
+  ],
+  "scope": "Development experiment configuration only; original service constants unchanged"
+}

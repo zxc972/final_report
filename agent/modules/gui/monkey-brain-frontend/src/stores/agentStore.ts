@@ -40,8 +40,11 @@ interface AgentState {
   searchQuery: string;
   filteredMessages: Message[];
   streamingMessageId: string | null;
+  /** Text to place in the composer, e.g. from a suggested prompt. */
+  draft: string | null;
   
   // Actions
+  setDraft: (draft: string | null) => void;
   addMessage: (message: Omit<Message, 'id' | 'timestamp'>) => void;
   updateStreamingMessage: (messageId: string, content: string) => void;
   setStreamingMessageId: (messageId: string | null) => void;
@@ -58,6 +61,13 @@ interface AgentState {
   initializeAgentService: () => void;
 }
 
+/** The UI history ID and server conversation ID are intentionally distinct. */
+export function restoreSavedConversation(conversation: Conversation | null): void {
+  const fromPlan = conversation?.messages.find((message) => message.metadata?.analysis)?.metadata?.analysis?.conversationId;
+  const backendId = conversation?.context.backendConversationId ?? fromPlan ?? null;
+  agentService.restoreConversation(backendId, conversation?.messages ?? []);
+}
+
 export const useAgentStore = create<AgentState>()(
   persist(
     (set, get) => ({
@@ -69,6 +79,9 @@ export const useAgentStore = create<AgentState>()(
       searchQuery: '',
       filteredMessages: [],
       streamingMessageId: null,
+      draft: null,
+
+      setDraft: (draft) => set({ draft }),
 
       updateStreamingMessage: (messageId, content) => {
         set((state) => {
@@ -149,6 +162,7 @@ export const useAgentStore = create<AgentState>()(
 
         const conversationToSave = {
           ...state.currentConversation,
+          context: { ...state.currentConversation.context, backendConversationId: agentService.getConversationId() ?? state.currentConversation.context.backendConversationId },
           messages: [...state.messages], // Create a copy to avoid reference issues
           updatedAt: new Date(),
         };
@@ -165,7 +179,7 @@ export const useAgentStore = create<AgentState>()(
           : [...state.conversationHistory, conversationToSave];
 
         // Only update history, don't touch current conversation or messages
-        set({ conversationHistory: updatedHistory });
+        set({ conversationHistory: updatedHistory, currentConversation: conversationToSave });
       },
 
       loadConversation: (conversationId) => {
@@ -175,6 +189,7 @@ export const useAgentStore = create<AgentState>()(
         );
 
         if (conversation) {
+          restoreSavedConversation(conversation);
           set({
             currentConversation: conversation,
             messages: conversation.messages,
@@ -287,6 +302,9 @@ export const useAgentStore = create<AgentState>()(
     }),
     {
       name: 'agent-store',
+      onRehydrateStorage: () => (state) => {
+        restoreSavedConversation(state?.currentConversation ?? null);
+      },
       partialize: (state) => ({
         conversationHistory: state.conversationHistory,
         currentConversation: state.currentConversation,

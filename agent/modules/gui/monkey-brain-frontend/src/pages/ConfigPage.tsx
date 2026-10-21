@@ -26,27 +26,27 @@
  */
 
 import React from 'react';
-import { Card, Divider } from 'antd';
+import { Card } from 'antd';
 import { ParameterForm } from '../components/Config';
 import ApiKeyConfig from '../components/Agent/ApiKeyConfig';
+import { PageContainer, PageHeader } from '../components/Layout/Page';
 
 const ConfigPage: React.FC = () => {
   return (
-    <div className="h-full overflow-y-auto">
-      <div className="p-6 space-y-6 min-h-full">
-        {/* API Key Configuration */}
-        <Card title="🔑 AI Assistant Configuration" className="shadow-sm">
+    <PageContainer>
+      <PageHeader
+        title="Settings"
+        description="Choose the assistant model and set your user, workspace and processing defaults."
+      />
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+        <Card title="Assistant model">
           <ApiKeyConfig />
         </Card>
-        
-        <Divider />
-        
-        {/* System Parameters */}
-        <Card title="⚙️ System Parameter Configuration" className="shadow-sm">
+        <Card title="User, workspace and processing">
           <ParameterForm />
         </Card>
       </div>
-    </div>
+    </PageContainer>
   );
 };
 

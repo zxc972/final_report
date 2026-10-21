@@ -31,7 +31,7 @@ import BrainSegmentationPipeline from '../components/Visualization/BrainSegmenta
 const VisualizationPage: React.FC = () => {
 
   return (
-    <div className="h-full bg-gray-50">
+    <div className="h-full" style={{ minHeight: 0 }}>
       <BrainSegmentationPipeline className="h-full" />
     </div>
   );

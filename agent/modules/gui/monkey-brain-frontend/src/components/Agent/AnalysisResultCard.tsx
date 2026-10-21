@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Button, Tag, message } from 'antd';
+import { Button, message } from 'antd';
+import { DownloadOutlined } from '@ant-design/icons';
 import { AnalysisResultInfo } from '../../utils/analysisResult';
 import { agentService } from '../../services/agentService';
 
@@ -44,23 +45,31 @@ export default function AnalysisResultCard({ result }: { result: AnalysisResultI
     catch (error) { message.error(error instanceof Error ? error.message : 'Could not download this analysis file.'); }
     finally { setDownloading(null); }
   };
-  return <section className="mt-4 rounded border border-gray-200 p-3" aria-label="Analysis results">
-    <div className="mb-2"><Tag color={finished ? 'green' : failed ? 'red' : 'blue'}>{label}</Tag>
-      <Tag>{live.fileChecksPassed ? 'File checks passed' : 'File checks incomplete'}</Tag></div>
-    <p className="text-xs text-gray-600">Numerical review: {live.numericalReview === 'not_performed' ? 'not run' : live.numericalReview}.
-      {' '}File checks do not establish anatomical or scientific validity.</p>
-    {job && <div className="my-2 text-sm" aria-label="Background computation">
-      <p>Background job: {job.status}{job.timeoutSeconds ? ' (limit ' + job.timeoutSeconds + ' seconds)' : ''}</p>
-      {job.message && <p className="text-xs">{job.message}</p>}
-      <Button size="small" loading={updating} onClick={() => control(false)}>Refresh computation</Button>
-      {pending && <Button size="small" danger disabled={updating} onClick={() => control(true)}>Cancel computation</Button>}
-      {pollError && <p role="alert" className="text-xs text-red-600">{pollError}</p>}
-    </div>}
-    {live.files.length > 0 ? <ul className="mt-2 space-y-1">{live.files.map(file => <li key={file.path} className="flex items-center gap-2 text-sm">
-      <span className="min-w-0 flex-1 break-all">{file.path}</span><Tag>{file.kind}</Tag>
-      <Button size="small" aria-label={'Download ' + file.path} loading={downloading === file.path}
-        disabled={!live.userId || !live.workspaceDirectory || (downloading !== null && downloading !== file.path)}
-        onClick={() => download(file.path)}>Download</Button>
-    </li>)}</ul> : <p className="text-sm mt-2">No output files are attached to this run.</p>}
+  const statusClass = finished ? 'is-ok' : failed ? 'is-err' : 'is-run';
+  return <section className="px-result" aria-label="Analysis results">
+    <div className="px-result-head">
+      <span className={'px-tag ' + statusClass}>{label}</span>
+      <span className={'px-tag ' + (live.fileChecksPassed ? 'is-ok' : 'is-warn')}>{live.fileChecksPassed ? 'File checks passed' : 'File checks incomplete'}</span>
+      <span className="px-tag">Numerical review: {live.numericalReview === 'not_performed' ? 'not run' : live.numericalReview}</span>
+    </div>
+    <div className="px-result-body">
+      <p className="px-result-note">File checks do not establish anatomical or scientific validity.</p>
+      {job && <div className="mb-2" aria-label="Background computation">
+        <div className="flex items-center gap-2 flex-wrap">
+          <span>Background job: {job.status}{job.timeoutSeconds ? ' (limit ' + job.timeoutSeconds + ' seconds)' : ''}</span>
+          <Button size="small" loading={updating} onClick={() => control(false)}>Refresh computation</Button>
+          {pending && <Button size="small" danger disabled={updating} onClick={() => control(true)}>Cancel computation</Button>}
+        </div>
+        {job.message && <p className="text-xs px-secondary" style={{ margin: '4px 0 0' }}>{job.message}</p>}
+        {pollError && <p role="alert" className="text-xs" style={{ color: 'var(--px-err)', margin: '4px 0 0' }}>{pollError}</p>}
+      </div>}
+      {live.files.length > 0 ? <ul className="px-files">{live.files.map(file => <li key={file.path}>
+        <span className="px-file-name px-mono" title={file.path}>{file.path}</span>
+        <span className="px-file-kind">{file.kind}</span>
+        <Button size="small" type="text" icon={<DownloadOutlined />} aria-label={'Download ' + file.path} loading={downloading === file.path}
+          disabled={!live.userId || !live.workspaceDirectory || (downloading !== null && downloading !== file.path)}
+          onClick={() => download(file.path)} />
+      </li>)}</ul> : <p className="px-muted" style={{ margin: 0 }}>No output files are attached to this run.</p>}
+    </div>
   </section>;
 }

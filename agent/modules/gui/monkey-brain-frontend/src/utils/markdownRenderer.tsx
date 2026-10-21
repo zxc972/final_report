@@ -121,9 +121,7 @@ export const renderMarkdown = (content: string, isStreaming?: boolean): JSX.Elem
     if (matchStart > lastIndex) {
       const textBefore = content.slice(lastIndex, matchStart);
       parts.push(
-        <span key={`text-${lastIndex}`}>
-          {renderInlineMarkdown(textBefore)}
-        </span>
+        <div key={`text-${lastIndex}`}>{renderMarkdownBlocks(textBefore)}</div>
       );
     }
 
@@ -170,9 +168,7 @@ export const renderMarkdown = (content: string, isStreaming?: boolean): JSX.Elem
   if (lastIndex < content.length) {
     const textAfter = content.slice(lastIndex);
     parts.push(
-      <span key={`text-${lastIndex}`}>
-        {renderInlineMarkdown(textAfter)}
-      </span>
+      <div key={`text-${lastIndex}`}>{renderMarkdownBlocks(textAfter)}</div>
     );
   }
 
@@ -301,3 +297,66 @@ const formatTextStyles = (text: string, key: number): JSX.Element => {
 export const formatNewlines = (text: string): string => {
   return text.replace(/\n/g, '\n');
 };
+
+/** Split Markdown rows without treating escaped/code-span pipes as separators. */
+export function splitTableRow(line: string): string[] {
+  const cells: string[] = [];
+  let cell = '';
+  let code = false;
+  const input = line.trim().replace(/^\|/, '').replace(/(?<!\\)\|$/, '');
+  for (let index = 0; index < input.length; index += 1) {
+    const char = input[index];
+    if (char === '\\' && input[index + 1] === '|') {
+      cell += '|';
+      index += 1;
+    } else if (char === '`') {
+      code = !code;
+      cell += char;
+    } else if (char === '|' && !code) {
+      cells.push(cell.trim());
+      cell = '';
+    } else {
+      cell += char;
+    }
+  }
+  cells.push(cell.trim());
+  return cells;
+}
+
+/** Safe React table rendering; raw HTML is always text, never injected. */
+function renderMarkdownBlocks(text: string): JSX.Element {
+  const lines = text.split('\n');
+  const blocks: React.ReactNode[] = [];
+  let index = 0;
+  let plain: string[] = [];
+  const flush = () => {
+    if (plain.length) blocks.push(<div key={`plain-${index}`}>{renderInlineMarkdown(plain.join('\n'))}</div>);
+    plain = [];
+  };
+  while (index < lines.length) {
+    const header = splitTableRow(lines[index]);
+    const separator = index + 1 < lines.length ? splitTableRow(lines[index + 1]) : [];
+    if (header.length > 1 && separator.length === header.length && separator.every((cell) => /^:?-{3,}:?$/.test(cell))) {
+      flush();
+      index += 2;
+      const rows: string[][] = [];
+      while (index < lines.length && lines[index].includes('|') && lines[index].trim()) {
+        const row = splitTableRow(lines[index]);
+        if (row.length !== header.length) break;
+        rows.push(row);
+        index += 1;
+      }
+      blocks.push(<div className="overflow-x-auto my-3" key={`table-${index}`}>
+        <table className="w-full border-collapse text-sm">
+          <thead><tr>{header.map((cell, col) => <th className="border px-3 py-2 text-left" key={col}>{renderInlineMarkdown(cell)}</th>)}</tr></thead>
+          <tbody>{rows.map((row, rowIndex) => <tr key={rowIndex}>{row.map((cell, col) => <td className="border px-3 py-2" key={col}>{renderInlineMarkdown(cell)}</td>)}</tr>)}</tbody>
+        </table>
+      </div>);
+    } else {
+      plain.push(lines[index]);
+      index += 1;
+    }
+  }
+  flush();
+  return <>{blocks}</>;
+}

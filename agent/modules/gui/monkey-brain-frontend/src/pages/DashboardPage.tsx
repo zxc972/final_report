@@ -25,108 +25,153 @@
  * See CITATION.cff for full citation details.
  */
 
-import React from 'react';
-import { Card, Button, Space, Typography } from 'antd';
-import { MessageOutlined, PlayCircleOutlined, ScissorOutlined, SettingOutlined } from '@ant-design/icons';
+import React, { useEffect, useState } from 'react';
+import { Button, Empty } from 'antd';
+import {
+  MessageOutlined,
+  NodeIndexOutlined,
+  EyeOutlined,
+  PlayCircleOutlined,
+} from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
 import { buildPathWithToken } from '../services/accessToken';
+import { agentService } from '../services/agentService';
+import { useConfigStore } from '../stores/configStore';
+import { usePipelineStore } from '../stores/pipelineStore';
+import { PageContainer, PageHeader } from '../components/Layout/Page';
+import { PipelineTask } from '../types/pipeline';
 
-const { Title, Text } = Typography;
 const DEMO_VIDEO_URL = 'https://youtu.be/GWcAMWuRSlk';
+
+const STATUS_CLASS: Record<PipelineTask['status'], string> = {
+  pending: '',
+  running: 'is-run',
+  completed: 'is-ok',
+  failed: 'is-err',
+  cancelled: 'is-warn',
+};
+
+const relativeTime = (iso?: string): string => {
+  if (!iso) return '';
+  const diff = (Date.now() - new Date(iso).getTime()) / 1000;
+  if (!Number.isFinite(diff)) return '';
+  if (diff < 60) return 'just now';
+  if (diff < 3600) return `${Math.floor(diff / 60)} min ago`;
+  if (diff < 86400) return `${Math.floor(diff / 3600)} h ago`;
+  return new Date(iso).toLocaleDateString();
+};
 
 const DashboardPage: React.FC = () => {
   const navigate = useNavigate();
+  const { config } = useConfigStore();
+  const tasks = usePipelineStore((state) => state.tasks);
+  const [modelName, setModelName] = useState(() => agentService.getModel());
+
+  useEffect(() => {
+    const id = setInterval(() => setModelName(agentService.getModel()), 3000);
+    return () => clearInterval(id);
+  }, []);
+
+  const go = (path: string) => navigate(buildPathWithToken(path));
+  const recent = [...tasks]
+    .sort((a, b) => (b.updatedAt || b.createdAt).localeCompare(a.updatedAt || a.createdAt))
+    .slice(0, 6);
+
+  const features = [
+    {
+      key: 'agent',
+      icon: <MessageOutlined />,
+      title: 'Assistant',
+      text: 'Ask in natural language to preprocess scans or analyse existing reconstructions. Every step is shown as it runs.',
+    },
+    {
+      key: 'pipeline',
+      icon: <NodeIndexOutlined />,
+      title: 'Pipeline',
+      text: 'Choose steps and parameters for skull stripping, segmentation and cortical surface reconstruction.',
+    },
+    {
+      key: 'visualization',
+      icon: <EyeOutlined />,
+      title: 'Visualization',
+      text: 'Browse outputs, overlay segmentations and inspect cortical surfaces.',
+    },
+  ];
 
   return (
-    <div className="space-y-6">
-      {/* Welcome */}
-      <div className="text-center mb-8">
-        <Title level={2}>🧠 PrimateX</Title>
-        <Text className="text-lg text-gray-600">
-          Welcome! Choose a feature to get started
-        </Text>
-        <div className="mt-4">
-          <Button
-            icon={<PlayCircleOutlined />}
-            href={DEMO_VIDEO_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Watch Demo
-          </Button>
+    <PageContainer>
+      <PageHeader
+        title="Overview"
+        description="Preprocess primate T1 scans and run knowledge-guided morphometry analyses."
+        actions={(
+          <>
+            <Button icon={<PlayCircleOutlined />} href={DEMO_VIDEO_URL} target="_blank" rel="noopener noreferrer">
+              Watch demo
+            </Button>
+            <Button type="primary" onClick={() => go('/agent')}>Open assistant</Button>
+          </>
+        )}
+      />
+
+      <div className="px-status-strip" aria-label="Setup status">
+        <div>
+          <div className="px-status-label">User ID</div>
+          <div className="px-status-value">
+            <span className={`px-dot ${config?.userId ? 'is-ok' : 'is-err'}`} />
+            {config?.userId || <Button type="link" size="small" style={{ padding: 0 }} onClick={() => go('/config')}>Set in Settings</Button>}
+          </div>
+        </div>
+        <div>
+          <div className="px-status-label">Workspace</div>
+          <div className="px-status-value px-mono" title={config?.workspaceDirectory || ''}>
+            {config?.workspaceDirectory || <Button type="link" size="small" style={{ padding: 0 }} onClick={() => go('/config')}>Set in Settings</Button>}
+          </div>
+        </div>
+        <div>
+          <div className="px-status-label">Model</div>
+          <div className="px-status-value">
+            <span className={`px-dot ${modelName ? 'is-ok' : 'is-err'}`} />
+            {modelName || <Button type="link" size="small" style={{ padding: 0 }} onClick={() => go('/config')}>Choose in Settings</Button>}
+          </div>
         </div>
       </div>
 
-      {/* Feature Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <Card 
-          hoverable
-          className="text-center"
-          onClick={() => navigate(buildPathWithToken('/agent'))}
-        >
-          <div className="p-4">
-            <MessageOutlined className="text-4xl text-blue-500 mb-4" />
-            <Title level={4}>Workflow Assistant</Title>
-            <Text className="text-gray-600">
-              Chat with the assistant for T1 preprocessing and cortical reconstruction guidance
-            </Text>
-          </div>
-        </Card>
-
-        <Card 
-          hoverable
-          className="text-center"
-          onClick={() => navigate(buildPathWithToken('/segmentation'))}
-        >
-          <div className="p-4">
-            <ScissorOutlined className="text-4xl text-green-500 mb-4" />
-            <Title level={4}>Task Management</Title>
-            <Text className="text-gray-600">
-              Manage and monitor pipeline tasks
-            </Text>
-          </div>
-        </Card>
-
-        <Card 
-          hoverable
-          className="text-center"
-          onClick={() => navigate(buildPathWithToken('/config'))}
-        >
-          <div className="p-4">
-            <SettingOutlined className="text-4xl text-orange-500 mb-4" />
-            <Title level={4}>Parameter Settings</Title>
-            <Text className="text-gray-600">
-              Configure workspace and pipeline settings
-            </Text>
-          </div>
-        </Card>
+      <div className="px-grid-3">
+        {features.map((feature) => (
+          <button key={feature.key} type="button" className="px-card px-card-action" onClick={() => go(`/${feature.key}`)}>
+            <div className="px-card-icon">{feature.icon}</div>
+            <h3>{feature.title}</h3>
+            <p>{feature.text}</p>
+          </button>
+        ))}
       </div>
 
-      {/* Quick Actions */}
-      <Card title="Quick Actions">
-        <Space wrap>
-          <Button 
-            type="primary" 
-            icon={<MessageOutlined />}
-            onClick={() => navigate(buildPathWithToken('/agent'))}
-          >
-            Start Chat
-          </Button>
-          <Button 
-            icon={<ScissorOutlined />}
-            onClick={() => navigate(buildPathWithToken('/segmentation'))}
-          >
-            New Task
-          </Button>
-          <Button 
-            icon={<SettingOutlined />}
-            onClick={() => navigate(buildPathWithToken('/config'))}
-          >
-            System Settings
-          </Button>
-        </Space>
-      </Card>
-    </div>
+      <div className="px-section-title">Recent pipeline tasks</div>
+      {recent.length === 0 ? (
+        <div className="px-card">
+          <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description="No tasks submitted from this browser yet." />
+        </div>
+      ) : (
+        <div className="px-card" style={{ padding: 0, overflow: 'hidden' }}>
+          <table className="px-table">
+            <thead>
+              <tr><th>Subject</th><th>Species</th><th>Steps</th><th>Status</th><th>Updated</th></tr>
+            </thead>
+            <tbody>
+              {recent.map((task) => (
+                <tr key={task.taskId} onClick={() => go('/segmentation')} style={{ cursor: 'pointer' }}>
+                  <td className="px-mono">{task.subjectId}</td>
+                  <td>{task.species}</td>
+                  <td className="px-secondary">{task.steps.join(' → ')}</td>
+                  <td><span className={`px-tag ${STATUS_CLASS[task.status] ?? ''}`}>{task.status}</span></td>
+                  <td className="px-muted">{relativeTime(task.updatedAt || task.createdAt)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </PageContainer>
   );
 };
 

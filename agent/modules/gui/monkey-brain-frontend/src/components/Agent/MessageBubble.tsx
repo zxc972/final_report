@@ -26,12 +26,13 @@
  */
 
 import React from 'react';
-import { Avatar, Button, Tag } from 'antd';
-import { UserOutlined, RobotOutlined, InfoCircleOutlined } from '@ant-design/icons';
+import { errorSummary } from '../../utils/errorSummary';
+import { Button, Tag } from 'antd';
 import { Message } from '../../types/agent';
 import { useAgentStore } from '../../stores/agentStore';
 import { renderMarkdown } from '../../utils/markdownRenderer';
 import AnalysisResultCard from './AnalysisResultCard';
+import { agentService, messageMetadataFrom } from '../../services/agentService';
 
 interface MessageBubbleProps {
   message: Message;
@@ -43,26 +44,6 @@ const MessageBubble: React.FC<MessageBubbleProps> = ({ message }) => {
   const { streamingMessageId } = useAgentStore();
   const isStreaming = streamingMessageId === message.id;
   
-  const getAvatar = () => {
-    if (isUser) {
-      return <Avatar size="small" icon={<UserOutlined />} className="bg-blue-500" />;
-    } else if (isSystem) {
-      return <Avatar size="small" icon={<InfoCircleOutlined />} className="bg-orange-500" />;
-    } else {
-      return <Avatar size="small" icon={<RobotOutlined />} className="bg-green-500" />;
-    }
-  };
-
-  const getBubbleStyle = () => {
-    if (isUser) {
-      return 'bg-gradient-to-r from-blue-500 to-purple-600 text-white ml-auto shadow-lg';
-    } else if (isSystem) {
-      return 'bg-orange-50 text-orange-800 border border-orange-200 shadow-sm';
-    } else {
-      return 'bg-white text-gray-800 border border-gray-200 shadow-sm';
-    }
-  };
-
   const handleActionClick = async (action: any) => {
     if (action.type === 'suggestion' && action.data?.suggestion) {
       const { addMessage, updateStreamingMessage, setStreamingMessageId } = useAgentStore.getState();
@@ -90,7 +71,7 @@ const MessageBubble: React.FC<MessageBubbleProps> = ({ message }) => {
         setStreamingMessageId(messageId);
 
         // Send the message with streaming output
-        const { agentService } = await import('../../services/agentService');
+        useAgentStore.getState().updateConversationContext({ backendConversationId: agentService.ensureConversationId() });
         const response = await agentService.sendMessage(action.data.suggestion, undefined, (streamContent) => {
           // Update streaming message content in real time
           updateStreamingMessage(messageId, streamContent);
@@ -100,12 +81,11 @@ const MessageBubble: React.FC<MessageBubbleProps> = ({ message }) => {
         updateStreamingMessage(messageId, response.message);
         
         // Update metadata (if any)
-        if (response.metadata?.actions || response.metadata?.analysis) {
+        const keptMetadata = messageMetadataFrom(response.metadata);
+        if (keptMetadata) {
           const state = useAgentStore.getState();
-          const updatedMessages = state.messages.map(msg => 
-            msg.id === messageId 
-              ? { ...msg, content: response.message, metadata: { actions: response.metadata?.actions || [], analysis: response.metadata?.analysis } }
-              : msg
+          const updatedMessages = state.messages.map(msg =>
+            msg.id === messageId ? { ...msg, content: response.message, metadata: keptMetadata } : msg
           );
           useAgentStore.setState({ messages: updatedMessages });
         }
@@ -126,22 +106,17 @@ const MessageBubble: React.FC<MessageBubbleProps> = ({ message }) => {
     if (!message.metadata?.actions?.length) return null;
 
     return (
-      <div className="mt-4 space-y-2">
-        <div className="text-xs text-gray-500 mb-3">💡 Suggested questions:</div>
-        <div className="flex flex-wrap gap-2">
-          {message.metadata.actions.map((action) => (
-            <button
-              key={action.id}
-              onClick={() => handleActionClick(action)}
-              className="px-4 py-2 bg-gradient-to-r from-gray-50 to-white border-2 border-gray-200 
-                         rounded-full text-sm text-gray-700 hover:from-blue-500 hover:to-purple-600 
-                         hover:text-white hover:border-transparent transition-all duration-300 
-                         transform hover:scale-105 shadow-sm hover:shadow-md"
-            >
-              {action.label}
-            </button>
-          ))}
-        </div>
+      <div className="px-suggestions" aria-label="Suggested follow-ups">
+        {message.metadata.actions.map((action) => (
+          <button
+            key={action.id}
+            type="button"
+            onClick={() => handleActionClick(action)}
+            className="px-suggestion"
+          >
+            {action.label}
+          </button>
+        ))}
       </div>
     );
   };
@@ -170,46 +145,40 @@ const MessageBubble: React.FC<MessageBubbleProps> = ({ message }) => {
     );
   };
 
-  return (
-    <div className={`flex ${isUser ? 'justify-end' : 'justify-start'} items-start space-x-3 mb-6`}>
-      {!isUser && (
-        <div className="flex-shrink-0 mt-1">
-          {getAvatar()}
-        </div>
-      )}
-      
-      <div className={`max-w-4xl ${isUser ? 'order-1' : ''}`}>
-        <div className={`rounded-2xl px-4 py-3 ${getBubbleStyle()}`}>
-          {/* Message content */}
-          <div className="break-words">
-            {isUser || isSystem ? (
-              // User and system messages are displayed as plain text
-              <div className="whitespace-pre-wrap">
-                {message.content}
-              </div>
-            ) : (
-              // AI messages are rendered as Markdown
-              <div className="markdown-message">
-                {renderMarkdown(message.content, isStreaming)}
-              </div>
-            )}
-          </div>
-          
-          {!isUser && !isSystem && message.metadata?.analysis && <AnalysisResultCard result={message.metadata.analysis} />}
+  const failureSummary = errorSummary(message.content, message.metadata?.analysis?.status);
+  const fullContent = <div className="markdown-message">{renderMarkdown(message.content, isStreaming)}</div>;
+  const displayContent = failureSummary
+    ? <details className="px-error-details"><summary>{failureSummary}</summary>{fullContent}</details>
+    : fullContent;
 
-          {/* Actions */}
-          {renderActions()}
-          
-          {/* Attachments */}
-          {renderAttachments()}
-        </div>
+  if (isUser) {
+    return <div className="px-msg-user">{message.content}</div>;
+  }
+
+  if (isSystem) {
+    return <div className="px-msg-system">{failureSummary ? displayContent : message.content}</div>;
+  }
+
+  const isThinking = isStreaming && (message.content === 'Thinking...' || !message.content.trim());
+
+  return (
+    <div className="px-msg-agent">
+      <div className="px-msg-avatar" aria-hidden="true">PX</div>
+      <div className="px-msg-body">
+        {message.metadata?.route && (
+          <span className="px-route" title={message.metadata.routeReason || undefined}>
+            {message.metadata.route === 'analysis' ? 'Analysis' : 'Preprocessing'}
+          </span>
+        )}
+        {isThinking ? (
+          <span className="px-working"><span className="px-spin" />Working… progress is shown in Run details</span>
+        ) : (
+          displayContent
+        )}
+        {message.metadata?.analysis && <AnalysisResultCard result={message.metadata.analysis} />}
+        {renderActions()}
+        {renderAttachments()}
       </div>
-      
-      {isUser && (
-        <div className="flex-shrink-0 mt-1 order-2">
-          {getAvatar()}
-        </div>
-      )}
     </div>
   );
 };

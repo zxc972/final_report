@@ -1,0 +1,166 @@
+{
+  "schema_version": "primatex.pipeline_dependencies.v1",
+  "cost_policy": "Number of steps; not measured runtime",
+  "execution_allowed": false,
+  "steps": [
+    {
+      "id": "preprocess-3",
+      "inputs": [
+        "t1_volume",
+        "brainmask",
+        "wm_segmentation",
+        "aseg_presurf"
+      ],
+      "outputs": [
+        "surface",
+        "pial_surface",
+        "white_surface",
+        "surface_metric",
+        "annotation",
+        "cortex_label",
+        "registration_surface"
+      ],
+      "input_space": "native_inputs",
+      "output_space": "1mm_working",
+      "cost": 1,
+      "source": [
+        {
+          "path": "modules/neuro_pipeline/Preprocess_3_1.sh",
+          "sha256": "cfe98d654adc97adb092cccda4ef42254ec3346b9a68e9b62562eaff17699316",
+          "line_start": 160,
+          "line_end": 173,
+          "text_sha256": "8fc3ebfcb6a0d127d256536e65d4d368085c0bc5e3d77d4dbfba2f16ee377126"
+        },
+        {
+          "path": "modules/neuro_pipeline/Preprocess_3_1.sh",
+          "sha256": "cfe98d654adc97adb092cccda4ef42254ec3346b9a68e9b62562eaff17699316",
+          "line_start": 180,
+          "line_end": 207,
+          "text_sha256": "a85e919cb3002267ae64a36d8d73fb525ee23b04708cb10c5d03a2b95456a7ef"
+        },
+        {
+          "path": "modules/neuro_pipeline/Preprocess_3_1.sh",
+          "sha256": "cfe98d654adc97adb092cccda4ef42254ec3346b9a68e9b62562eaff17699316",
+          "line_start": 220,
+          "line_end": 227,
+          "text_sha256": "f70e49ac094d09e7adc1fe965c0b0bcde09b647670a4a24a592b4514d3f5577c"
+        },
+        {
+          "path": "modules/neuro_pipeline/Preprocess_3_2.sh",
+          "sha256": "8beaa070043c44553ed2f6326a1f712fd8e3e5d9bcfc3231daf52bd6e99e958f",
+          "line_start": 167,
+          "line_end": 205,
+          "text_sha256": "d5ee1ac5748eed9d323c09095066a7575393d5118df2707ea72822c5f26f77ab"
+        },
+        {
+          "path": "modules/neuro_pipeline/Preprocess_3_2.sh",
+          "sha256": "8beaa070043c44553ed2f6326a1f712fd8e3e5d9bcfc3231daf52bd6e99e958f",
+          "line_start": 234,
+          "line_end": 295,
+          "text_sha256": "068a03cfcfe98d3a0542d99e30b2f3e3224b18461c43177ec7157b936fa21389"
+        },
+        {
+          "path": "modules/neuro_pipeline/Preprocess_3_2.sh",
+          "sha256": "8beaa070043c44553ed2f6326a1f712fd8e3e5d9bcfc3231daf52bd6e99e958f",
+          "line_start": 320,
+          "line_end": 316,
+          "text_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        }
+      ],
+      "limitations": "Fake-1mm reconstruction products; native scale requires a separate rescale step. Species-specific parameters, priors and QC are not inferred."
+    },
+    {
+      "id": "rescale",
+      "inputs": [
+        "surface",
+        "pial_surface",
+        "white_surface",
+        "surface_metric",
+        "annotation",
+        "cortex_label",
+        "registration_surface"
+      ],
+      "outputs": [
+        "surface",
+        "pial_surface",
+        "white_surface",
+        "surface_metric",
+        "annotation",
+        "cortex_label",
+        "registration_surface"
+      ],
+      "input_space": "1mm_working",
+      "output_space": "native",
+      "cost": 1,
+      "source": [
+        {
+          "path": "modules/neuro_pipeline/Rescale.sh",
+          "sha256": "5da24157b913dc931f36fd748dff40003e4016321c8c04c3609dbff452a44f52",
+          "line_start": 28,
+          "line_end": 46,
+          "text_sha256": "db41c48aa67bad62be6309aa2797b9cd35dc3b80c6e9ce0caf21c0fc604d42ae"
+        },
+        {
+          "path": "modules/neuro_pipeline/Rescale.sh",
+          "sha256": "5da24157b913dc931f36fd748dff40003e4016321c8c04c3609dbff452a44f52",
+          "line_start": 120,
+          "line_end": 143,
+          "text_sha256": "5f235e44ee47cb33ff9eceb7131f8f5b428fe1153afecfceb3eb37e70e64f0c4"
+        },
+        {
+          "path": "modules/neuro_pipeline/Rescale.sh",
+          "sha256": "5da24157b913dc931f36fd748dff40003e4016321c8c04c3609dbff452a44f52",
+          "line_start": 155,
+          "line_end": 195,
+          "text_sha256": "1664fa5fa1dce4d749cd774dfa0e52786bc6165bf50bb728e1fb15db5cd5b3af"
+        }
+      ],
+      "limitations": "This original script moves directories; planning only. No source-data mutation is permitted by this development instance."
+    },
+    {
+      "id": "freesurfer2caret",
+      "inputs": [
+        "surface",
+        "pial_surface",
+        "white_surface",
+        "surface_metric",
+        "annotation",
+        "registration_surface"
+      ],
+      "outputs": [
+        "surface",
+        "surface_metric",
+        "annotation",
+        "cortex_label",
+        "registration_surface"
+      ],
+      "input_space": "native",
+      "output_space": "fsLR_32k",
+      "cost": 1,
+      "source": [
+        {
+          "path": "modules/neuro_pipeline/Freesurfer2CaretandRegister.sh",
+          "sha256": "1747b92a44cfe6110edd295ce65c5f7d329ba7048c58b00165349b172c078ad9",
+          "line_start": 28,
+          "line_end": 67,
+          "text_sha256": "b0aba4a292dca04d1024d2bf61fd5222aef786c06bcfe18386a40ee33a476b8a"
+        },
+        {
+          "path": "modules/neuro_pipeline/Freesurfer2CaretandRegister.sh",
+          "sha256": "1747b92a44cfe6110edd295ce65c5f7d329ba7048c58b00165349b172c078ad9",
+          "line_start": 290,
+          "line_end": 351,
+          "text_sha256": "1fe36539bffd15938afae35b27fd8c518dce33a0e57024395fc26e31bf7fc79b"
+        },
+        {
+          "path": "modules/neuro_pipeline/Freesurfer2CaretandRegister.sh",
+          "sha256": "1747b92a44cfe6110edd295ce65c5f7d329ba7048c58b00165349b172c078ad9",
+          "line_start": 472,
+          "line_end": 555,
+          "text_sha256": "1a44f2e4b23749cedcd113fe95b70c193c937c1ad9c2333e9d2c42713f59299d"
+        }
+      ],
+      "limitations": "Species standard mesh and Workbench required. Equal vertex counts do not establish homology; no common template is invented."
+    }
+  ]
+}

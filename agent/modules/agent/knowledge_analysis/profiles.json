@@ -1,0 +1,76 @@
+{
+  "legacy_v13": {
+    "exposed_tools": [
+      "search_method_knowledge",
+      "search_knowledge",
+      "read_knowledge",
+      "search_software_graph",
+      "read_software_graph",
+      "search_research_knowledge",
+      "read_research_knowledge",
+      "search_analysis_methods",
+      "read_analysis_method",
+      "check_method_requirements"
+    ],
+    "include_domain_rules": true,
+    "allowed_evidence_kinds": [
+      "source_text",
+      "software_contract",
+      "method"
+    ]
+  },
+  "no_knowledge": {
+    "exposed_tools": [],
+    "include_domain_rules": false,
+    "allowed_evidence_kinds": []
+  },
+  "text_retrieval": {
+    "exposed_tools": [
+      "search_evidence",
+      "read_evidence"
+    ],
+    "include_domain_rules": false,
+    "allowed_evidence_kinds": [
+      "source_text"
+    ]
+  },
+  "text_plus_rules": {
+    "exposed_tools": [
+      "search_evidence",
+      "read_evidence"
+    ],
+    "include_domain_rules": true,
+    "allowed_evidence_kinds": [
+      "source_text"
+    ]
+  },
+  "method_graph": {
+    "exposed_tools": [
+      "search_evidence",
+      "read_evidence",
+      "search_analysis_methods",
+      "read_analysis_method",
+      "check_method_requirements",
+      "read_operations"
+    ],
+    "include_domain_rules": true,
+    "allowed_evidence_kinds": [
+      "source_text",
+      "software_contract",
+      "method"
+    ]
+  },
+  "product_graph_planner": {
+    "exposed_tools": [
+      "search_evidence",
+      "read_evidence",
+      "read_operations"
+    ],
+    "include_domain_rules": true,
+    "allowed_evidence_kinds": [
+      "source_text",
+      "software_contract",
+      "method"
+    ]
+  }
+}

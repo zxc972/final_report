@@ -2,7 +2,7 @@
 
 ## 快照来源
 
-本次导出自服务器 /data/xuancheng/，核心代码为 agent/，最新研究知识为 agent_overnight_20261020/research_evidence_v13/。源目录没有 Git 历史；每个原始文件在 SNAPSHOT_MANIFEST.json 中记录来源与 SHA-256。
+本次导出自服务器 /data/xuancheng/，核心代码为 agent/，最新研究知识为 agent_overnight_20261020/research_evidence_v13/。初始源目录没有 Git 历史；后续开发已在独立工作树记录版本。逐文件来源与摘要在 SNAPSHOT_MANIFEST.json，第一至第七轮源码与验证边界见 [开发同步说明](DEVELOPMENT_ROUNDS_20261021.md)。
 
 发布时只读取服务器文件，没有停止或修改正在进行的开发。源文件导出后又逐一核对一次，确认该次快照内未发生并发变化。仓库不是服务器工作目录的自动镜像。2026-10-21 的增量同步保留初始快照时间，并在来源清单中记录各文件的新旧摘要；见 [本次同步与验证](SYNC_20261021.md)。
 
@@ -47,7 +47,7 @@ knowledge/method_audit/release_audit.json 是 v12 的历史抽取审计；当前
 
 ## 公开脱敏
 
-公开版本已移除前端页面、旧启动脚本与原项目 README 中的固定访问令牌。启动脚本在未通过环境变量或参数提供令牌时，为本次启动生成随机令牌。上述 3 个源文件作了访问令牌脱敏，原始摘要保存在 source_sha256，发布摘要为 sha256；详情见 SNAPSHOT_MANIFEST.json 的 publication_redactions。服务器原文件未被修改。
+公开版本已移除前端页面、旧启动脚本与原项目 README 中的固定访问令牌。启动脚本在未通过环境变量或参数提供令牌时，为本次启动生成随机令牌。早期 3 处访问令牌脱敏记录保留在历史；当前 App.tsx 已替换为本身不含令牌提示的受审版本，其余脱敏文件继续保留原始和发布摘要；详情见 SNAPSHOT_MANIFEST.json 的 publication_redactions。服务器原文件未被修改。
 
 ## 图谱无损归档
 
@@ -56,3 +56,7 @@ knowledge/method_audit/release_audit.json 是 v12 的历史抽取审计；当前
 ## 跨环境部署验收状态
 
 目录迁移冒烟测试已确认方法图谱可以加载、搜索和回读；原文联合检索仍受旧 Python、worker 模型及 tokenizer 路径约束。执行器的 SIF、科学 Python 运行时和授权文件也沿用原服务器默认路径，启动脚本的镜像环境变量并未完整传入该执行器。当前不能仅凭克隆与安装后端依赖就宣称全链路可用。后续应统一这些配置、准备外部依赖，并在干净 Linux 环境验证真实 API、隔离执行、前端与下载流程。此次同步未修改服务器服务或这些运行时默认值。
+
+## 今日开发配置
+
+默认 AGENT_KNOWLEDGE_PROFILE 仍为 legacy_v13；新配置、计划门、操作库、前端事件及未通过项见 [今日开发同步](DEVELOPMENT_ROUNDS_20261021.md)。本次不是自动部署，原后端进程尚未加载新代码。

@@ -1,0 +1,46 @@
+{
+  "source_path": "results/real-t1-validated-20261009/runs/real_t1_20261009/comparison_audit.json",
+  "source_sha256": "aa6c1030f1b8e3e51e70ed176608553c6b578f72c9449dd2e4aecabdc2dbe2eb",
+  "cases": [
+    {
+      "version": "matched_v2",
+      "mode": "kg",
+      "rep": 1,
+      "submitted": true,
+      "validation_passed": false,
+      "end_to_end_pass": false,
+      "failure": null,
+      "failed_checks": [
+        "exact_parcels"
+      ],
+      "extra_labels": [
+        "lh/",
+        "rh/"
+      ],
+      "calls": 6,
+      "completion_tokens": 3606,
+      "prompt_tokens": 33398,
+      "code_sha256": "f17b0ae931bd1396d469ef044545ac60c0b88aa1c9359194f6c79ad2d5d1e04f"
+    },
+    {
+      "version": "matched_v2",
+      "mode": "kg",
+      "rep": 2,
+      "submitted": true,
+      "validation_passed": false,
+      "end_to_end_pass": false,
+      "failure": null,
+      "failed_checks": [
+        "exact_parcels"
+      ],
+      "extra_labels": [
+        "lh/label_-1",
+        "rh/label_-1"
+      ],
+      "calls": 5,
+      "completion_tokens": 2429,
+      "prompt_tokens": 24015,
+      "code_sha256": "0ddb06101f2dd42d71341fc1d165ded94239e8e25c9b17e03d4d69549f4f1ae9"
+    }
+  ]
+}

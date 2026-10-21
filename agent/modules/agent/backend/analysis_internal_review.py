@@ -102,7 +102,7 @@ def collect_context(workdir:Path,request:str,validation:dict,method_reader:Calla
         if p.is_symlink():raise ValueError('Invalid feedback source')
         records.append(json.loads(p.read_text()))
     records.sort(key=lambda r:(r['time'],r['id']))
-    relevant=[r for r in records if r.get('kind')=='observation'and(r.get('failed')or r.get('tool')in ['inspect_analysis_runtime','check_method_requirements','read_analysis_method'])]
+    relevant=[r for r in records if r.get('kind')=='observation'and(r.get('failed')or r.get('tool')in ['inspect_analysis_runtime','check_method_requirements','read_analysis_method','read_evidence'])]
     for r in relevant[-16:]:
         observations.append({'id':r['id'],'tool':r['tool'],'failed':r['failed'],
                              'arguments':_preview(r['arguments'],400),'result':_preview(r['result'],800)})

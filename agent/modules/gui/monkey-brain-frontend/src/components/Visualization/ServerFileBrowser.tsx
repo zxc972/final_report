@@ -286,7 +286,7 @@ const ServerFileBrowser: React.FC<ServerFileBrowserProps> = ({
       </Spin>
       
       <div className="mt-3 text-xs text-gray-500">
-        💡 Click to select a file, double-click to load immediately. Or click "Load All" to load all NIfTI files in current folder.
+        Click to select a file, double-click to load immediately. Or click "Load All" to load all NIfTI files in current folder.
       </div>
     </Modal>
   );

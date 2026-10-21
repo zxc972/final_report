@@ -1,0 +1,230 @@
+{
+  "schema_version": "primatex.lobar_mapping.v1",
+  "definition": "FreeSurfer --lobesStrict, not --lobes or --lobesStrictPHCG",
+  "sources": [
+    {
+      "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mri_annotation2label"
+    },
+    {
+      "url": "https://github.com/freesurfer/freesurfer/blob/621781f8fcc9e2d4a3cd07efbebc67358d2576e3/utils/annotation.cpp#L987-L1080"
+    },
+    {
+      "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/CorticalParcellation"
+    },
+    {
+      "url": "https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/nonhuman/macaque_tempatl/atlas_charm.html"
+    }
+  ],
+  "records": [
+    {
+      "atlas": "DK",
+      "species_declared_required": "human",
+      "region": "frontal",
+      "labels": [
+        "caudalmiddlefrontal",
+        "superiorfrontal",
+        "rostralmiddlefrontal",
+        "parsopercularis",
+        "parstriangularis",
+        "parsorbitalis",
+        "lateralorbitofrontal",
+        "medialorbitofrontal",
+        "paracentral",
+        "frontalpole",
+        "precentral"
+      ],
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mri_annotation2label",
+      "author_code_url": "https://github.com/freesurfer/freesurfer/blob/621781f8fcc9e2d4a3cd07efbebc67358d2576e3/utils/annotation.cpp#L987-L1080",
+      "source_code_sha256": "9deda502bb50c7e9c9ef1f7a807a7d5b4e30e7e294b93c43851f0a5cb1906739",
+      "rule": "--lobesStrict (type 1); insula is retained unmerged",
+      "adaptation": "Direct official strict name sets; insula retained"
+    },
+    {
+      "atlas": "DK",
+      "species_declared_required": "human",
+      "region": "temporal",
+      "labels": [
+        "superiortemporal",
+        "entorhinal",
+        "temporalpole",
+        "fusiform",
+        "inferiortemporal",
+        "middletemporal",
+        "parahippocampal",
+        "bankssts",
+        "transversetemporal"
+      ],
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mri_annotation2label",
+      "author_code_url": "https://github.com/freesurfer/freesurfer/blob/621781f8fcc9e2d4a3cd07efbebc67358d2576e3/utils/annotation.cpp#L987-L1080",
+      "source_code_sha256": "9deda502bb50c7e9c9ef1f7a807a7d5b4e30e7e294b93c43851f0a5cb1906739",
+      "rule": "--lobesStrict (type 1); insula is retained unmerged",
+      "adaptation": "Direct official strict name sets; insula retained"
+    },
+    {
+      "atlas": "DK",
+      "species_declared_required": "human",
+      "region": "parietal",
+      "labels": [
+        "supramarginal",
+        "inferiorparietal",
+        "superiorparietal",
+        "precuneus",
+        "postcentral"
+      ],
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mri_annotation2label",
+      "author_code_url": "https://github.com/freesurfer/freesurfer/blob/621781f8fcc9e2d4a3cd07efbebc67358d2576e3/utils/annotation.cpp#L987-L1080",
+      "source_code_sha256": "9deda502bb50c7e9c9ef1f7a807a7d5b4e30e7e294b93c43851f0a5cb1906739",
+      "rule": "--lobesStrict (type 1); insula is retained unmerged",
+      "adaptation": "Direct official strict name sets; insula retained"
+    },
+    {
+      "atlas": "DK",
+      "species_declared_required": "human",
+      "region": "occipital",
+      "labels": [
+        "pericalcarine",
+        "cuneus",
+        "lingual",
+        "lateraloccipital"
+      ],
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mri_annotation2label",
+      "author_code_url": "https://github.com/freesurfer/freesurfer/blob/621781f8fcc9e2d4a3cd07efbebc67358d2576e3/utils/annotation.cpp#L987-L1080",
+      "source_code_sha256": "9deda502bb50c7e9c9ef1f7a807a7d5b4e30e7e294b93c43851f0a5cb1906739",
+      "rule": "--lobesStrict (type 1); insula is retained unmerged",
+      "adaptation": "Direct official strict name sets; insula retained"
+    },
+    {
+      "atlas": "DK",
+      "species_declared_required": "human",
+      "region": "cingulate",
+      "labels": [
+        "isthmuscingulate",
+        "posteriorcingulate",
+        "caudalanteriorcingulate",
+        "rostralanteriorcingulate"
+      ],
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mri_annotation2label",
+      "author_code_url": "https://github.com/freesurfer/freesurfer/blob/621781f8fcc9e2d4a3cd07efbebc67358d2576e3/utils/annotation.cpp#L987-L1080",
+      "source_code_sha256": "9deda502bb50c7e9c9ef1f7a807a7d5b4e30e7e294b93c43851f0a5cb1906739",
+      "rule": "--lobesStrict (type 1); insula is retained unmerged",
+      "adaptation": "Direct official strict name sets; insula retained"
+    },
+    {
+      "atlas": "DK",
+      "species_declared_required": "human",
+      "region": "insula",
+      "labels": [
+        "insula"
+      ],
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mri_annotation2label",
+      "author_code_url": "https://github.com/freesurfer/freesurfer/blob/621781f8fcc9e2d4a3cd07efbebc67358d2576e3/utils/annotation.cpp#L987-L1080",
+      "source_code_sha256": "9deda502bb50c7e9c9ef1f7a807a7d5b4e30e7e294b93c43851f0a5cb1906739",
+      "rule": "--lobesStrict (type 1); insula is retained unmerged",
+      "adaptation": "Direct official strict name sets; insula retained"
+    },
+    {
+      "atlas": "DKT",
+      "species_declared_required": "human",
+      "region": "frontal",
+      "labels": [
+        "caudalmiddlefrontal",
+        "superiorfrontal",
+        "rostralmiddlefrontal",
+        "parsopercularis",
+        "parstriangularis",
+        "parsorbitalis",
+        "lateralorbitofrontal",
+        "medialorbitofrontal",
+        "paracentral",
+        "precentral"
+      ],
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mri_annotation2label",
+      "author_code_url": "https://github.com/freesurfer/freesurfer/blob/621781f8fcc9e2d4a3cd07efbebc67358d2576e3/utils/annotation.cpp#L987-L1080",
+      "source_code_sha256": "9deda502bb50c7e9c9ef1f7a807a7d5b4e30e7e294b93c43851f0a5cb1906739",
+      "rule": "--lobesStrict (type 1); insula is retained unmerged",
+      "adaptation": "Intersect the official strict-name rule with the explicitly identified DKT31 protocol; three DK-only labels absent by protocol. Not a claim that the unmodified CLI supports DKT."
+    },
+    {
+      "atlas": "DKT",
+      "species_declared_required": "human",
+      "region": "temporal",
+      "labels": [
+        "superiortemporal",
+        "entorhinal",
+        "fusiform",
+        "inferiortemporal",
+        "middletemporal",
+        "parahippocampal",
+        "transversetemporal"
+      ],
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mri_annotation2label",
+      "author_code_url": "https://github.com/freesurfer/freesurfer/blob/621781f8fcc9e2d4a3cd07efbebc67358d2576e3/utils/annotation.cpp#L987-L1080",
+      "source_code_sha256": "9deda502bb50c7e9c9ef1f7a807a7d5b4e30e7e294b93c43851f0a5cb1906739",
+      "rule": "--lobesStrict (type 1); insula is retained unmerged",
+      "adaptation": "Intersect the official strict-name rule with the explicitly identified DKT31 protocol; three DK-only labels absent by protocol. Not a claim that the unmodified CLI supports DKT."
+    },
+    {
+      "atlas": "DKT",
+      "species_declared_required": "human",
+      "region": "parietal",
+      "labels": [
+        "supramarginal",
+        "inferiorparietal",
+        "superiorparietal",
+        "precuneus",
+        "postcentral"
+      ],
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mri_annotation2label",
+      "author_code_url": "https://github.com/freesurfer/freesurfer/blob/621781f8fcc9e2d4a3cd07efbebc67358d2576e3/utils/annotation.cpp#L987-L1080",
+      "source_code_sha256": "9deda502bb50c7e9c9ef1f7a807a7d5b4e30e7e294b93c43851f0a5cb1906739",
+      "rule": "--lobesStrict (type 1); insula is retained unmerged",
+      "adaptation": "Intersect the official strict-name rule with the explicitly identified DKT31 protocol; three DK-only labels absent by protocol. Not a claim that the unmodified CLI supports DKT."
+    },
+    {
+      "atlas": "DKT",
+      "species_declared_required": "human",
+      "region": "occipital",
+      "labels": [
+        "pericalcarine",
+        "cuneus",
+        "lingual",
+        "lateraloccipital"
+      ],
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mri_annotation2label",
+      "author_code_url": "https://github.com/freesurfer/freesurfer/blob/621781f8fcc9e2d4a3cd07efbebc67358d2576e3/utils/annotation.cpp#L987-L1080",
+      "source_code_sha256": "9deda502bb50c7e9c9ef1f7a807a7d5b4e30e7e294b93c43851f0a5cb1906739",
+      "rule": "--lobesStrict (type 1); insula is retained unmerged",
+      "adaptation": "Intersect the official strict-name rule with the explicitly identified DKT31 protocol; three DK-only labels absent by protocol. Not a claim that the unmodified CLI supports DKT."
+    },
+    {
+      "atlas": "DKT",
+      "species_declared_required": "human",
+      "region": "cingulate",
+      "labels": [
+        "isthmuscingulate",
+        "posteriorcingulate",
+        "caudalanteriorcingulate",
+        "rostralanteriorcingulate"
+      ],
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mri_annotation2label",
+      "author_code_url": "https://github.com/freesurfer/freesurfer/blob/621781f8fcc9e2d4a3cd07efbebc67358d2576e3/utils/annotation.cpp#L987-L1080",
+      "source_code_sha256": "9deda502bb50c7e9c9ef1f7a807a7d5b4e30e7e294b93c43851f0a5cb1906739",
+      "rule": "--lobesStrict (type 1); insula is retained unmerged",
+      "adaptation": "Intersect the official strict-name rule with the explicitly identified DKT31 protocol; three DK-only labels absent by protocol. Not a claim that the unmodified CLI supports DKT."
+    },
+    {
+      "atlas": "DKT",
+      "species_declared_required": "human",
+      "region": "insula",
+      "labels": [
+        "insula"
+      ],
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mri_annotation2label",
+      "author_code_url": "https://github.com/freesurfer/freesurfer/blob/621781f8fcc9e2d4a3cd07efbebc67358d2576e3/utils/annotation.cpp#L987-L1080",
+      "source_code_sha256": "9deda502bb50c7e9c9ef1f7a807a7d5b4e30e7e294b93c43851f0a5cb1906739",
+      "rule": "--lobesStrict (type 1); insula is retained unmerged",
+      "adaptation": "Intersect the official strict-name rule with the explicitly identified DKT31 protocol; three DK-only labels absent by protocol. Not a claim that the unmodified CLI supports DKT."
+    }
+  ],
+  "nonhuman_policy": "No transfer of human DK/DKT lobes. Require CHARM labels on the analysed mesh/space and explicit correspondence; report missing products otherwise."
+}

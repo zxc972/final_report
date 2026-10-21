@@ -25,14 +25,17 @@
  * See CITATION.cff for full citation details.
  */
 
-import { AgentResponse, AgentUpdate, ConversationContext } from '../types/agent';
+import { AgentResponse, AgentUpdate, ConversationContext, MessageMetadata } from '../types/agent';
 import { getResolvedAccessToken } from './accessToken';
 import { AnalysisResultInfo, parseAnalysisResult } from '../utils/analysisResult';
 import { resolveAgentBaseUrl } from '../utils/runtimePorts';
+import { ConversationProcess } from '../types/process';
+import { parseConversationProcess } from '../utils/processEvents';
 import { isUserSessionAuthError, notifyUserSessionExpired, useConfigStore } from '../stores/configStore';
 
 export type Provider = 'platform' | 'custom';
-export type AgentMode = 'pipeline' | 'analysis';
+/** 'auto' lets the backend route each request to preprocessing or analysis. */
+export type AgentMode = 'auto' | 'pipeline' | 'analysis';
 export interface PlatformModel { id: string; label: string }
 
 type ChatRole = 'user' | 'assistant' | 'system';
@@ -46,13 +49,27 @@ interface RecentUploadInfo {
   uploadedAt: string;
 }
 
+/**
+ * Fields from a chat response that are kept on the agent message: suggested
+ * actions, the analysis result and which agent the backend routed to.
+ * Returns undefined when there is nothing to keep.
+ */
+export function messageMetadataFrom(metadata: Record<string, any> | undefined): MessageMetadata | undefined {
+  if (!metadata) return undefined;
+  const routeValue = metadata.route ?? metadata.mode;
+  const route = routeValue === 'pipeline' || routeValue === 'analysis' ? routeValue : undefined;
+  const routeReason = typeof metadata.routeReason === 'string' ? metadata.routeReason.slice(0, 300) : undefined;
+  if (!metadata.actions && !metadata.analysis && !route) return undefined;
+  return { actions: metadata.actions || [], analysis: metadata.analysis, route, routeReason };
+}
+
 class AgentService {
   private updateCallbacks: ((update: AgentUpdate) => void)[] = [];
   private apiKey: string = '';
   private baseUrl: string = '';
   private model: string = '';
   private provider: Provider = 'platform';
-  private mode: AgentMode = localStorage.getItem('agent_mode') === 'analysis' ? 'analysis' : 'pipeline';
+  private mode: AgentMode = 'auto';
   private conversationId: string | null = null;
   private chatHistory: Array<{role: ChatRole, content: string}> = [];
   private readonly MAX_HISTORY = 12;
@@ -122,10 +139,78 @@ class AgentService {
 
   getMode(): AgentMode { return this.mode; }
 
+  /**
+   * Force a specific agent (tests and controlled experiments). The GUI uses
+   * 'auto'; switching between explicit modes starts a new backend context.
+   */
   setMode(mode: AgentMode): void {
-    if (mode !== this.mode) this.clearChatHistory();
+    if (mode !== this.mode && mode !== 'auto' && this.mode !== 'auto') this.clearChatHistory();
     this.mode = mode;
-    localStorage.setItem('agent_mode', mode);
+  }
+
+  /** Current backend conversation ID, or null before the first message. */
+  getConversationId(): string | null { return this.conversationId; }
+
+  /** Restore an actual backend ID and message context when opening saved history. */
+  restoreConversation(conversationId: string | null, messages: Array<{ type: string; content: string }> = []): void {
+    if (conversationId !== null && !/^[a-zA-Z0-9_-]{1,256}$/.test(conversationId)) {
+      throw new Error('Invalid saved backend conversation ID');
+    }
+    this.conversationId = conversationId;
+    this.chatHistory = messages
+      .filter((message) => message.type === 'user' || message.type === 'agent')
+      .map((message) => ({ role: message.type === 'user' ? 'user' as const : 'assistant' as const, content: message.content }))
+      .slice(-this.MAX_HISTORY);
+  }
+
+  /**
+   * Create the conversation ID on the client before the first request so the
+   * process panel can poll for events while that request is still running.
+   */
+  ensureConversationId(): string {
+    if (!this.conversationId) {
+      const bytes = new Uint8Array(16);
+      if (typeof crypto !== 'undefined' && typeof crypto.getRandomValues === 'function') {
+        crypto.getRandomValues(bytes);
+      } else {
+        for (let i = 0; i < bytes.length; i += 1) bytes[i] = Math.floor(Math.random() * 256);
+      }
+      this.conversationId = 'conv_' + Array.from(bytes, (b) => b.toString(16).padStart(2, '0')).join('');
+    }
+    return this.conversationId;
+  }
+
+  /**
+   * Fetch recorded process events for a conversation from
+   * GET /api/agent/analysis/{conversationId}/events (data profile, checks,
+   * sealed plan, tool calls, executions). Returns { available: false } when
+   * the server or the active knowledge profile does not record events, so
+   * callers can fall back to request-level status.
+   */
+  async getConversationProcess(conversationId: string, after = 0): Promise<ConversationProcess> {
+    const unavailable: ConversationProcess = { available: false, status: 'idle', events: [], outputs: [], nextAfter: after };
+    const { config, userToken } = useConfigStore.getState();
+    if (!conversationId || !config?.userId || !config.workspaceDirectory || !userToken) return unavailable;
+    const workspace = config.workspaceDirectory.replace(/\/$/, '') + '/' + config.userId + '/output';
+    if (!this.agentBaseUrl) this.agentBaseUrl = await resolveAgentBaseUrl();
+    const headers: Record<string, string> = { 'X-User-Token': userToken };
+    const access = getResolvedAccessToken(); if (access) headers.Authorization = 'Bearer ' + access;
+    const params = new URLSearchParams({ userId: config.userId, workspaceDirectory: workspace, after: String(after) });
+    const response = await fetch(
+      this.agentBaseUrl + '/api/agent/analysis/' + encodeURIComponent(conversationId) + '/events?' + params,
+      { headers },
+    );
+    if (response.status === 404 || response.status === 405) return unavailable;
+    let body: any = {};
+    try { body = await response.json(); } catch { body = {}; }
+    if (!response.ok) {
+      const error = typeof body.detail === 'string' ? body.detail.slice(0, 500) : 'Could not load the run progress.';
+      if (response.status === 401 && isUserSessionAuthError(error)) notifyUserSessionExpired(error);
+      throw new Error(error);
+    }
+    const refreshed = response.headers.get('X-User-Token');
+    if (refreshed) useConfigStore.getState().refreshUserToken(refreshed);
+    return parseConversationProcess(body);
   }
 
   /** Fetch the platform's available model list (id/label only — the server never sends its API key). */
@@ -201,7 +286,7 @@ class AgentService {
       provider: this.provider,
       model: this.model,
       ...(this.provider === 'custom' ? { apiKey: this.apiKey, baseUrl: this.baseUrl || undefined } : {}),
-      conversationId: this.conversationId,
+      conversationId: this.ensureConversationId(),
       history: this.chatHistory,
       context: this.buildContext(context),
     };

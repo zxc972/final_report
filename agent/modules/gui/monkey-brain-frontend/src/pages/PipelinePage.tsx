@@ -63,6 +63,7 @@ import { resolvePipelineBaseUrl } from '../utils/runtimePorts';
 import { getResolvedAccessToken, buildPathWithToken } from '../services/accessToken';
 import { SAFE_SUBJECT_ID_HELP, safeSubjectIdRule } from '../utils/idValidation';
 import { useNavigate } from 'react-router-dom';
+import { PageHeader } from '../components/Layout/Page';
 
 const { Option } = Select;
 
@@ -667,17 +668,17 @@ const PipelinePage: React.FC = () => {
         step must replace its own FreeSurfer directories or rerun-specific logs.
       </p>
     </Modal>
-    <div className="h-full p-6 overflow-y-auto">
-      <div className="max-w-6xl mx-auto">
-        <div className="mb-6">
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">Pipeline Orchestration</h1>
-          <p className="text-gray-600">
-            For advanced parallel usage and detailed documentation, please visit the: <br />
-            <a href="https://github.com/YCHuang0610/PrimateX" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">
-          PrimateX GitHub repository
-        </a>.
-          </p>
-        </div>
+    <div className="px-page">
+      <div className="px-page-inner">
+        <PageHeader
+          title="Pipeline"
+          description={(
+            <>
+              Run PrimateX preprocessing and reconstruction steps for one subject. For batch usage see the{' '}
+              <a href="https://github.com/YCHuang0610/PrimateX" target="_blank" rel="noopener noreferrer">PrimateX repository</a>.
+            </>
+          )}
+        />
 
         <Alert
           message="Output directory rule"

@@ -37,14 +37,21 @@ async def call_chat_completions(
     model: str,
     messages: List[Dict[str, Any]],
     tools: List[Dict[str, Any]],
+    *,
+    response_format: Dict[str, Any] | None = None,
+    temperature: float | None = None,
 ) -> Dict[str, Any]:
     """Call an OpenAI-compatible /chat/completions endpoint (DeepSeek, modelverse.cn, OpenAI, etc.)."""
     payload = {
         "model": model,
         "messages": messages,
-        "tools": tools,
-        "tool_choice": "auto",
     }
+    if tools or response_format is None:
+        payload.update({"tools": tools, "tool_choice": "auto"})
+    if response_format is not None:
+        payload["response_format"] = response_format
+    if temperature is not None:
+        payload["temperature"] = temperature
     headers = {"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"}
     url = base_url.rstrip("/") + "/chat/completions"
     async with httpx.AsyncClient(timeout=90) as client:

@@ -1,0 +1,200 @@
+{
+  "schema_version": "primatex.constraint_probes.v1",
+  "constraints": [
+    {
+      "id": "software_available",
+      "applies_to": [
+        "*"
+      ],
+      "severity": "hard",
+      "probe": {
+        "checker": "software_available",
+        "parameters": {
+          "method_commands": {
+            "method:v12:local_gyrification": [
+              "matlab",
+              "recon-all"
+            ],
+            "method:v12:fsl_vbm": [
+              "fslvbm_1_bet",
+              "randomise"
+            ],
+            "method:v12:samseg_segmentation": [
+              "run_samseg"
+            ],
+            "method:v12:cat_morphometry": [
+              "matlab"
+            ],
+            "method:v12:existing_curvature_sulc_profile": [
+              "python:nibabel"
+            ],
+            "method:v12:hcp_structural_pipeline": [
+              "python:nibabel"
+            ],
+            "method:v12:macaque_civet": [
+              "python:nibabel"
+            ],
+            "method:v12:nhp_macapype": [
+              "python:nibabel"
+            ],
+            "method:v12:surface_annotation_roi": [
+              "python:nibabel"
+            ],
+            "method:v12:surface_mesh_area": [
+              "python:nibabel"
+            ],
+            "method:v12:surface_reconstruction_qc": [
+              "python:nibabel"
+            ],
+            "method:v13:global_convex_hull_gyrification": [
+              "python:nibabel",
+              "python:scipy"
+            ],
+            "method:v13:coarse_grained_fractal_scaling": [
+              "python:nibabel"
+            ]
+          },
+          "lgi_matlab_health": "Image Processing Toolbox and FreeSurfer MATLAB functions"
+        }
+      },
+      "pass_rule": "All registered commands resolve and fixed help/health invocation exits zero in the analysis container. Missing mapping is unverified, not installation proof.",
+      "on_fail": "block",
+      "source": [
+        {
+          "method_fact_id": "method-fact:a57a64d55b4ab23e45cfbb8d",
+          "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/LGI"
+        }
+      ]
+    },
+    {
+      "id": "recon_complete",
+      "applies_to": [
+        "method:v12:local_gyrification",
+        "method:v12:surface_annotation_roi",
+        "method:v12:surface_mesh_area",
+        "complete_recon"
+      ],
+      "severity": "hard",
+      "probe": {
+        "checker": "recon_complete",
+        "parameters": {}
+      },
+      "pass_rule": "Every selected reconstruction has recon-all.done and readable log with zero unreviewed FATAL lines. ERROR counts remain disclosed.",
+      "on_fail": "block",
+      "source": [
+        {
+          "method_fact_id": "method-fact:d4f50f947f3e85a0aec16506",
+          "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/LGI"
+        },
+        {
+          "method_fact_id": "method-fact:88a7331bf51d3a379e11279f",
+          "note": "Completion is not anatomical QC."
+        }
+      ]
+    },
+    {
+      "id": "unassigned_labels_excluded",
+      "applies_to": [
+        "method:v12:surface_annotation_roi",
+        "roi",
+        "crossspecies"
+      ],
+      "severity": "hard",
+      "probe": {
+        "checker": "unassigned_labels_excluded",
+        "parameters": {}
+      },
+      "pass_rule": "If observed -1 or unknown labels exist, explicit plan exclusions include each affected value/name. An unreadable requested annotation blocks.",
+      "on_fail": "revise",
+      "source": [
+        {
+          "type": "observed_failure",
+          "path": "matched_v2_failure_provenance.json",
+          "sha256": "5cf7cd0def7bacadc800629fb795d867e36934e528c7522485b9f05c95770bd2",
+          "case": "matched_v2/kg/rep2: extra lh/label_-1 and rh/label_-1; exact_parcels failed"
+        },
+        {
+          "url": "https://nipy.org/nibabel/reference/nibabel.freesurfer.html#read-annot",
+          "note": "orig_ids=False assigns -1 to unlabeled vertices."
+        }
+      ]
+    },
+    {
+      "id": "mesh_label_match",
+      "applies_to": [
+        "method:v12:surface_annotation_roi",
+        "roi",
+        "crossspecies"
+      ],
+      "severity": "hard",
+      "probe": {
+        "checker": "mesh_label_match",
+        "parameters": {}
+      },
+      "pass_rule": "Explicit label-to-surface bindings have equal cardinality and a profiled registration/provenance record, with declared mesh/space origin. Length equality alone is insufficient.",
+      "on_fail": "revise",
+      "source": [
+        {
+          "method_fact_id": "method-fact:1c150a35562383188f51cb4a",
+          "url": "https://nipy.org/nibabel/reference/nibabel.freesurfer.html"
+        },
+        {
+          "type": "implementation_policy",
+          "note": "Space/provenance requirement specified in chapter-four experimental protocol; not a claim of automatic anatomical registration validation."
+        }
+      ]
+    },
+    {
+      "id": "scale_consistent",
+      "applies_to": [
+        "*"
+      ],
+      "severity": "hard",
+      "probe": {
+        "checker": "scale_consistent",
+        "parameters": {
+          "physical_scale_unverified_severity": "soft"
+        }
+      },
+      "pass_rule": "No pooled measures from conflicting units/transforms or identified scaled copies; within-input/dimensionless comparisons explicitly scoped. Unverified physical scale emits a separate soft warning.",
+      "on_fail": "revise",
+      "source": [
+        {
+          "url": "https://nipy.org/nibabel/nifti_images.html",
+          "note": "Header zooms, units and selected affine require explicit interpretation; resolution difference alone is not physical scale misuse."
+        },
+        {
+          "type": "implementation_policy",
+          "note": "Cross-species calibration and no-scale-mixing rule are project requirements."
+        }
+      ]
+    },
+    {
+      "id": "group_inference_sample",
+      "applies_to": [
+        "group_stats",
+        "group_inference",
+        "crossspecies"
+      ],
+      "severity": "hard",
+      "probe": {
+        "checker": "group_inference_sample",
+        "parameters": {
+          "minimum_independent_subjects": 2
+        }
+      },
+      "pass_rule": "For requested inference: explicit subject metadata deduplicated by participant ID, each declared group >=2, positive residual design degrees of freedom. Repeated scans are not independent subjects. This minimum is not a power calculation.",
+      "on_fail": "block",
+      "source": [
+        {
+          "url": "https://fsl.fmrib.ox.ac.uk/fsl/docs/statistics/glm.html",
+          "note": "GLM design/exchangeability context; >=2 is this project minimum, not a universal sufficient sample size."
+        },
+        {
+          "method_fact_id": "method-fact:c627a0c4dd572b15e8235d82",
+          "note": "Source method requires cross-subject design matrix and contrast."
+        }
+      ]
+    }
+  ]
+}

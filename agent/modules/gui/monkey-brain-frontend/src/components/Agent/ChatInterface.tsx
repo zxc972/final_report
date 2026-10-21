@@ -26,16 +26,53 @@
  */
 
 import React, { useEffect, useRef, useState } from 'react';
-import { Button, Space } from 'antd';
-import { HistoryOutlined, SearchOutlined, ReloadOutlined } from '@ant-design/icons';
+import { Button, Tooltip } from 'antd';
+import {
+  HistoryOutlined,
+  SearchOutlined,
+  PlusOutlined,
+  ProfileOutlined,
+  SettingOutlined,
+  UserOutlined,
+  KeyOutlined,
+} from '@ant-design/icons';
+import { useNavigate } from 'react-router-dom';
 import { useAgentStore } from '../../stores/agentStore';
 import { useConfigStore } from '../../stores/configStore';
+import { agentService } from '../../services/agentService';
+import { buildPathWithToken } from '../../services/accessToken';
 import MessageBubble from './MessageBubble.tsx';
 import InputArea from './InputArea.tsx';
 import ConversationHistory from './ConversationHistory';
 import MessageSearch from './MessageSearch';
+import ProcessPanel from './ProcessPanel';
+
+/** Generic starting points; the assistant decides whether each needs preprocessing or analysis. */
+const PROMPTS: string[] = [
+  'Show me the sample subjects available on this server',
+  'Preprocess and reconstruct the cortical surface for the T1 I just uploaded',
+  'Summarise regional cortical thickness for each subject in my workspace',
+  'Compare left and right hemisphere surface area across subjects',
+  'Check whether a local gyrification index can be computed for my data',
+  'Check the status of my running tasks',
+];
 
 const ChatInterface: React.FC = () => {
+  const navigate = useNavigate();
+  const { setDraft } = useAgentStore();
+  const [showPanel, setShowPanel] = useState(true);
+  const [backendConversationId, setBackendConversationId] = useState<string | null>(() => agentService.getConversationId());
+
+  // agentService owns the backend conversation ID (created on first send,
+  // cleared on reset or mode switch); mirror it for the process panel.
+  useEffect(() => {
+    const id = setInterval(() => {
+      const current = agentService.getConversationId();
+      setBackendConversationId((previous) => (previous === current ? previous : current));
+    }, 1000);
+    return () => clearInterval(id);
+  }, []);
+
   const {
     messages,
     isLoading,
@@ -198,190 +235,120 @@ const ChatInterface: React.FC = () => {
     });
   };
 
-  return (
-    <div className="h-full w-full flex flex-col bg-white relative">
-      {/* Header */}
-      <div className="flex-shrink-0 px-6 py-4 border-b bg-gradient-to-r from-blue-600 to-purple-600 text-white">
-        <div className="flex items-center justify-between">
-          <h2 className="text-xl font-bold flex items-center">
-            🧠 PrimateX Assistant
-          </h2>
-          <div className="flex items-center space-x-4">
-            {/* Action Buttons */}
-            <Space>
-              <Button
-                type="text"
-                icon={<HistoryOutlined />}
-                onClick={() => setShowHistory(true)}
-                title="Conversation History"
-                disabled={!isConfigured}
-              />
-              <Button
-                type="text"
-                icon={<SearchOutlined />}
-                onClick={() => setShowSearch(true)}
-                title="Search Messages"
-                disabled={!isConfigured}
-              />
-              <Button
-                type="text"
-                icon={<ReloadOutlined />}
-                onClick={handleResetChat}
-                title="Reset Conversation"
-                disabled={!isConfigured}
-              />
-            </Space>
-            
-            {/* Connection Status */}
-            <div className="flex items-center space-x-2">
-              <div 
-                className={`w-2 h-2 rounded-full ${
-                  isConnected && isConfigured ? 'bg-green-400' : 'bg-red-400'
-                }`}
-              />
-              <span className="text-sm text-white">
-                {isConnected && isConfigured ? 'Connected' : 'Disconnected'}
-              </span>
-            </div>
+  const requestActive = isLoading || streamingMessageId !== null;
+  const firstUserMessage = messages.find((m) => m.type === 'user')?.content ?? '';
+  const subtitle = firstUserMessage.length > 60 ? firstUserMessage.slice(0, 60) + '…' : firstUserMessage;
+  const ready = isConfigured && hasUserId;
+
+  const applyPrompt = (prompt: string) => setDraft(prompt);
+
+  const renderBlocker = (icon: React.ReactNode, title: string, text: string, showButton = true) => (
+    <div className="px-blocker">
+      <span className="px-blocker-icon">{icon}</span>
+      <h2>{title}</h2>
+      <p>{text}</p>
+      {showButton && (
+        <Button type="primary" icon={<SettingOutlined />} onClick={() => navigate(buildPathWithToken('/config'))}>
+          Open Settings
+        </Button>
+      )}
+    </div>
+  );
+
+  const renderBody = () => {
+    if (isCheckingApiKey) {
+      return (
+        <div className="px-blocker">
+          <span className="px-spin" style={{ width: 20, height: 20 }} />
+          <h2>Connecting…</h2>
+          <p>Checking the assistant configuration.</p>
+        </div>
+      );
+    }
+    if (!hasUserId) {
+      return renderBlocker(<UserOutlined />, 'Set your User ID first',
+        'Outputs are stored under your own workspace directory, so the assistant needs a verified User ID.');
+    }
+    if (!isConfigured) {
+      return renderBlocker(<KeyOutlined />, 'Choose a model first',
+        'Pick a built-in platform model, or enter your own API key, base URL and model name in Settings.');
+    }
+    if (messages.length === 0) {
+      return (
+        <div className="px-empty">
+          <h2>What would you like to do?</h2>
+          <p>Ask in plain language. The assistant decides whether a request needs PrimateX preprocessing or new analysis code, and shows every step it takes in Run details.</p>
+          <div className="px-empty-groups">
+            {PROMPTS.map((item) => (
+              <button key={item} type="button" className="px-empty-prompt" onClick={() => applyPrompt(item)}>
+                {item}
+              </button>
+            ))}
           </div>
         </div>
+      );
+    }
+    return (
+      <div className="px-thread">
+        {messages.map((message) => (
+          <MessageBubble key={message.id} message={message} />
+        ))}
+        <div ref={messagesEndRef} />
+      </div>
+    );
+  };
+
+  return (
+    <div className="px-main" style={{ height: '100%' }}>
+      <div className="px-topbar">
+        <h1>Assistant</h1>
+        {subtitle && <span className="px-topbar-sub" title={firstUserMessage}>{subtitle}</span>}
+        <div className="px-spacer" />
+        <Tooltip title="Conversation history">
+          <Button type="text" icon={<HistoryOutlined />} aria-label="Conversation history" onClick={() => setShowHistory(true)} disabled={!isConfigured} />
+        </Tooltip>
+        <Tooltip title="Search messages">
+          <Button type="text" icon={<SearchOutlined />} aria-label="Search messages" onClick={() => setShowSearch(true)} disabled={!isConfigured} />
+        </Tooltip>
+        <Tooltip title="New conversation">
+          <Button type="text" icon={<PlusOutlined />} aria-label="New conversation" onClick={handleResetChat} disabled={!isConfigured || requestActive} />
+        </Tooltip>
+        <Tooltip title={showPanel ? 'Hide run details' : 'Show run details'}>
+          <Button
+            type={showPanel ? 'default' : 'text'}
+            icon={<ProfileOutlined />}
+            aria-label={showPanel ? 'Hide run details' : 'Show run details'}
+            aria-pressed={showPanel}
+            onClick={() => setShowPanel((v) => !v)}
+          />
+        </Tooltip>
+        <span className="px-chip" title={isConnected && isConfigured ? 'Connected' : 'Disconnected'}>
+          <span className={`px-dot ${isConnected && isConfigured ? 'is-ok' : 'is-err'}`} />
+          {isConnected && isConfigured ? 'Connected' : 'Disconnected'}
+        </span>
       </div>
 
-      {/* Messages Area - Scrollable */}
-      <div 
-        ref={messagesContainerRef}
-        className="flex-1 overflow-y-auto bg-white"
-        onScroll={handleScroll}
-        style={{ 
-          minHeight: 0,
-          maxHeight: 'calc(100vh - 200px)' // Ensure a clear maximum height
-        }}
-      >
-        <div className="max-w-4xl mx-auto px-4 py-6 space-y-6 min-h-full flex flex-col">
-          {isCheckingApiKey ? (
-            <div className="flex-1 flex items-center justify-center">
-              <div className="text-center text-gray-500">
-                <div className="mb-6">
-                  <div className="text-6xl mb-4">🔄</div>
-                  <div className="text-2xl font-bold text-gray-700 mb-2">Initializing...</div>
-                  <div className="text-lg text-gray-600">
-                    Checking API key configuration
-                  </div>
-                </div>
-              </div>
-            </div>
-          ) : !hasUserId ? (
-            <div className="flex-1 flex items-center justify-center">
-              <div className="text-center text-gray-500">
-                <div className="mb-6">
-                  <div className="text-6xl mb-4">👤</div>
-                  <div className="text-2xl font-bold text-gray-700 mb-2">Please set a User ID first</div>
-                  <div className="text-lg text-gray-600 mb-6">
-                    Go to the Configuration page and set your User ID before using the Workflow Assistant.
-                  </div>
-                </div>
-                <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-6 max-w-lg mx-auto">
-                  <div className="text-sm text-gray-600">
-                    A User ID is required so that pipeline outputs are stored under your own directory and tasks can be tracked correctly.
-                  </div>
-                </div>
-              </div>
-            </div>
-          ) : !isConfigured ? (
-            <div className="flex-1 flex items-center justify-center">
-              <div className="text-center text-gray-500">
-                <div className="mb-6">
-                  <div className="text-6xl mb-4">🔑</div>
-                  <div className="text-2xl font-bold text-gray-700 mb-2">Please choose a model first</div>
-                  <div className="text-lg text-gray-600 mb-6">
-                    Go to the Configuration page and either pick a built-in platform model, or enter your own API key.
-                  </div>
-                </div>
-
-                <div className="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-2xl p-6 max-w-lg mx-auto">
-                  <div className="text-sm font-semibold text-gray-700 mb-3">📝 Two ways to get started:</div>
-                  <div className="text-sm text-gray-600 space-y-2">
-                    <div>1. Pick a model from the built-in platform list (no key needed)</div>
-                    <div>2. Or enter your own API key, base URL, and model name</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ) : messages.length === 0 ? (
-            <div className="flex-1 flex items-center justify-center">
-              <div className="text-center text-gray-500">
-                <div className="mb-6">
-                  <div className="text-6xl mb-4">🧠</div>
-                  <div className="text-2xl font-bold text-gray-700 mb-2">Welcome to the PrimateX preprocessing and cortical reconstruction workflow</div>
-                  <div className="text-lg text-gray-600 mb-6">
-                    You can use natural language to interact with me to accomplish brain segmentation tasks.
-                  </div>
-                </div>
-                
-                <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-6 max-w-2xl mx-auto">
-                  <div className="text-sm font-semibold text-gray-700 mb-4">💡 You can try asking:</div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
-                    <div className="bg-white rounded-lg p-3 shadow-sm border border-gray-200">
-                      "How do I start brain segmentation?"
-                    </div>
-                    <div className="bg-white rounded-lg p-3 shadow-sm border border-gray-200">
-                      "Load my MRI data"
-                    </div>
-                    <div className="bg-white rounded-lg p-3 shadow-sm border border-gray-200">
-                      "Show me the segmentation results"
-                    </div>
-                    <div className="bg-white rounded-lg p-3 shadow-sm border border-gray-200">
-                      "What features does this system provide?"
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ) : (
-            <>
-              <div className="space-y-6">
-                {messages.map((message) => (
-                  <MessageBubble key={message.id} message={message} />
-                ))}
-                
-                {/* Loading indicator */}
-                {isLoading && (
-                  <div className="flex justify-start">
-                    <div className="bg-gray-100 rounded-lg px-4 py-2 max-w-xs">
-                      <div className="flex space-x-1">
-                        <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
-                        <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                        <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
-                      </div>
-                    </div>
-                  </div>
-                )}
-                
-                <div ref={messagesEndRef} />
-              </div>
-            </>
-          )}
-        </div>
+      <div className={`px-workarea${showPanel ? '' : ' is-panel-hidden'}`}>
+        <section className="px-chat" aria-label="Conversation">
+          <div ref={messagesContainerRef} className="px-messages" onScroll={handleScroll}>
+            {renderBody()}
+          </div>
+          <div className="px-composer">
+            <InputArea disabled={!ready} />
+          </div>
+        </section>
+        {showPanel && (
+          <ProcessPanel
+            conversationId={backendConversationId}
+            active={requestActive}
+            messages={messages}
+            onClose={() => setShowPanel(false)}
+          />
+        )}
       </div>
 
-      {/* Input Area - Fixed at bottom */}
-      <div className="flex-shrink-0 border-t bg-white shadow-lg">
-        <div className="max-w-4xl mx-auto">
-          <InputArea disabled={!isConfigured || !hasUserId} />
-        </div>
-      </div>
-
-      {/* Message Search Overlay */}
-      <MessageSearch 
-        visible={showSearch} 
-        onClose={() => setShowSearch(false)} 
-      />
-
-      {/* Conversation History Drawer */}
-      <ConversationHistory
-        visible={showHistory}
-        onClose={() => setShowHistory(false)}
-      />
+      <MessageSearch visible={showSearch} onClose={() => setShowSearch(false)} />
+      <ConversationHistory visible={showHistory} onClose={() => setShowHistory(false)} />
     </div>
   );
 };

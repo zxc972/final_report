@@ -40,7 +40,7 @@ const AgentPage: React.FC = () => {
   }, [initializeAgentService, currentConversation, createNewConversation]);
 
   return (
-    <div className="h-full w-full">
+    <div className="h-full w-full" style={{ display: 'flex', flexDirection: 'column', minHeight: 0 }}>
       <ChatInterface />
     </div>
   );

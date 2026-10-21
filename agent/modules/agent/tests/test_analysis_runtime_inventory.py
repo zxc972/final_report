@@ -19,7 +19,7 @@ def test_inventory_is_confined_without_real_study_mounts_and_not_a_computation(t
  assert not o['study_inputs_mounted_for_inventory'];cmd,kw=calls[-1]
  assert not any(str(e.input_roots[0])in x for x in cmd);assert not any('/inputs/'in x for x in cmd)
  assert '--containall'in cmd and '--net'in cmd and 'none'in cmd and '--cleanenv'in cmd
- assert kw['timeout_seconds']==30;assert set(kw['env'])=={'PATH','LANG','HOME'}
+ assert kw['timeout_seconds']==180;assert set(kw['env'])=={'PATH','LANG','HOME'}
  assert not list(e.workdir.glob('.runtime-inventory-*'))
 def test_isolation_failure_never_runs_inventory(tmp_path):
  calls=[]

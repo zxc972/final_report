@@ -403,7 +403,7 @@ const EnhancedNiiVueViewer: React.FC<EnhancedNiiVueViewerProps> = ({
         {!hasImageData && (
           <div className="absolute inset-0 flex items-center justify-center bg-gray-50">
             <div className="text-gray-500 text-center">
-              <div className="text-4xl mb-3">🧠</div>
+              <div className="px-blocker-icon" style={{ marginBottom: 12 }}>◎</div>
               <div className="font-medium text-gray-600">No image loaded</div>
             </div>
           </div>

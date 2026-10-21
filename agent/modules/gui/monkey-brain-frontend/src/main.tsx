@@ -31,12 +31,13 @@ import { BrowserRouter } from 'react-router-dom';
 import { ConfigProvider } from 'antd';
 import enUS from 'antd/locale/en_US';
 import App from './App.tsx';
+import { appTheme } from './theme';
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <BrowserRouter>
-      <ConfigProvider locale={enUS}>
+      <ConfigProvider locale={enUS} theme={appTheme}>
         <App />
       </ConfigProvider>
     </BrowserRouter>

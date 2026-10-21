@@ -231,6 +231,8 @@ class SandboxExecutor:
             "AGENT_ANALYSIS_MEMORY_BYTES", DEFAULT_MEMORY_BYTES)
         self.file_size_limit_bytes = _configured_limit(file_size_limit_bytes,
             "AGENT_ANALYSIS_FILE_BYTES", DEFAULT_FILE_BYTES)
+        self.operations_source = None
+        self.operations_sha256 = None
         self._runner = command_runner or _run_bounded
         self._platform = platform_name or sys.platform
         # Validate bind grammar before creating anything.
@@ -239,6 +241,18 @@ class SandboxExecutor:
         self.workdir.mkdir(parents=True, exist_ok=True)
         if not self.workdir.is_dir():
             raise ValueError("workdir must be a directory")
+
+    def enable_operations(self, source: Path, sha256: str) -> None:
+        """Trusted host-only configuration; never accepts model arguments."""
+        import hashlib
+        source = _absolute_path(source)
+        if (not source.is_file() or source.suffix != ".py"
+                or not 0 < source.stat().st_size <= 96_000
+                or _overlap(source, self.workdir)
+                or hashlib.sha256(source.read_bytes()).hexdigest() != sha256):
+            raise ValueError("Invalid read-only operation asset")
+        self.operations_source = source
+        self.operations_sha256 = sha256
 
     def _validate_license(self) -> None:
         path = self.fs_license_file
@@ -260,10 +274,11 @@ class SandboxExecutor:
         return {"PATH": "/usr/bin:/bin", "LANG": "C.UTF-8", "HOME": "/tmp"}
 
     def _command(self, workdir: Path, inputs: list[Path], python_args: list[str], *,
-                 frozen_source: Path | None = None, frozen_target: str | None = None) -> list[str]:
+                 frozen_source: Path | None = None, frozen_target: str | None = None,
+                 work_read_only: bool = False) -> list[str]:
         command = [self.apptainer_binary, "exec", "--cleanenv", "--containall", "--no-home",
                    "--no-mount", "bind-paths,hostfs,cwd,tmp", "--net", "--network", "none",
-                   "--pwd", "/work", "--bind", _mount_spec(workdir, "/work", "rw"),
+                   "--pwd", "/work", "--bind", _mount_spec(workdir, "/work", "ro" if work_read_only else "rw"),
                    "--bind", _mount_spec(self.runtime_env, "/opt/analysis", "ro")]
         self._validate_license()
         if self.fs_license_file is not None:
@@ -279,12 +294,23 @@ class SandboxExecutor:
                     or any(c in frozen_target for c in "\\:,\n\r\x00")):
                 raise ValueError("Invalid trusted frozen Python source binding")
             command.extend(["--bind", _mount_spec(snapshot, frozen_target, "ro")])
+        launcher = _LIMIT_LAUNCHER
+        if self.operations_source is not None:
+            import hashlib
+            if hashlib.sha256(self.operations_source.read_bytes()).hexdigest() != self.operations_sha256:
+                raise ValueError("Operation library changed after run initialization")
+            command.extend(["--bind", _mount_spec(self.operations_source, "/opt/primatex_ops.py", "ro")])
+            trusted = ("import hashlib, pathlib\n"
+                       "assert hashlib.sha256(pathlib.Path('/opt/primatex_ops.py').read_bytes()).hexdigest() == "
+                       + repr(self.operations_sha256) + "\n"
+                       "sys.path.insert(0, '/opt')\n")
+            launcher = launcher.replace('arguments = sys.argv[3:]', trusted + 'arguments = sys.argv[3:]')
         command.extend([str(self.runtime_image), "/usr/bin/env", "-i", "HOME=/work",
                         "TMPDIR=/work", "MPLCONFIGDIR=/work/.mpl-cache", "LANG=C.UTF-8",
                         "PATH=/opt/analysis/bin:/miniconda3/bin:/usr/bin:/bin",
                         "OMP_NUM_THREADS=1", "OPENBLAS_NUM_THREADS=1",
                         *(["FS_LICENSE=" + CONTAINER_FS_LICENSE] if self.fs_license_file is not None else []),
-                        "/opt/analysis/bin/python", "-I", "-B", "-c", _LIMIT_LAUNCHER,
+                        "/opt/analysis/bin/python", "-I", "-B", "-c", launcher,
                         str(self.memory_limit_bytes), str(self.file_size_limit_bytes), *python_args])
         return command
 
@@ -355,7 +381,7 @@ class SandboxExecutor:
         try:
             with tempfile.TemporaryDirectory(prefix=".runtime-inventory-", dir=self.workdir) as folder:
                 work = Path(folder)
-                result = self._invoke(self._command(work, [], ["-c", _runtime_inventory_code()]), 30)
+                result = self._invoke(self._command(work, [], ["-c", _runtime_inventory_code()]), 180)
             if result.get("timed_out") or result.get("exit_code") != 0:
                 return {"status": "error", "reason": "Runtime inventory did not finish",
                         "execution": result}
@@ -367,14 +393,14 @@ class SandboxExecutor:
                 return {"status": "error", "reason": "Invalid runtime inventory response"}
             return {"status": "ok", "inventory": inventory, "backend": self.backend,
                     "isolation_verified": True, "study_inputs_mounted_for_inventory": False,
-                    "analysis_performed": False, "command_execution_verified": False,
+                    "analysis_performed": False, "command_execution_verified": any(row.get("executed") for row in inventory.get("commands", {}).values()),
                     "input_mapping": capability.get("input_mapping", []),
-                    "interpretation": "Installed file/package metadata only; verify CLI help, dependencies and scientific input conditions before analysis."}
+                    "interpretation": "Fixed command help/version probes and package metadata; scientific input applicability is not verified."}
         except (OSError, ValueError, TypeError, KeyError) as exc:
             return {"status": "error", "reason": str(exc)[:1000]}
 
     def run(self, script_path: Path, timeout_seconds: int = 120, *,
-            frozen_source: Path | None = None) -> dict[str, Any]:
+            frozen_source: Path | None = None, work_read_only: bool = False) -> dict[str, Any]:
         maximum = 86400 if frozen_source is not None else 3600
         if type(timeout_seconds) is not int or not 1 <= timeout_seconds <= maximum:
             raise ValueError(f"timeout_seconds must be an integer between 1 and {maximum}")
@@ -397,7 +423,8 @@ class SandboxExecutor:
         target = "/work/" + script.relative_to(self.workdir).as_posix()
         result = self._invoke(self._command(self.workdir, self.input_roots, [target],
                                            frozen_source=frozen_source,
-                                           frozen_target=target if frozen_source is not None else None), timeout_seconds)
+                                           frozen_target=target if frozen_source is not None else None,
+                                           work_read_only=work_read_only), timeout_seconds)
         status = "timeout" if result.get("timed_out") else ("success" if result.get("exit_code") == 0 else "failed")
         return {"status": status, "exit_code": result.get("exit_code"), "stdout": result["stdout"],
                 "stderr": result["stderr"], "stdout_truncated": result["stdout_truncated"],
@@ -472,7 +499,13 @@ print({PROBE_MARKER!r} + json.dumps(checks))
 
 def _runtime_inventory_code() -> str:
     # Fixed metadata probes; never user arguments, provider credentials or data.
-    return r'''import sys, os, json, shutil, glob
+    if __package__:
+        from .analysis_software import PROBE_SOURCE
+    else:
+        # Standalone executor security tests load this file without a package.
+        import runpy
+        PROBE_SOURCE = runpy.run_path(str(Path(__file__).with_name("analysis_software.py")))["PROBE_SOURCE"]
+    return PROBE_SOURCE + r'''import sys, os, json, shutil, glob
 from pathlib import Path
 from importlib import metadata
 packages = {}
@@ -480,7 +513,7 @@ for name in ("numpy", "scipy", "nibabel", "nilearn", "pandas", "matplotlib", "Pi
     try: packages[name] = {"installed": True, "version": metadata.version(name)}
     except metadata.PackageNotFoundError: packages[name] = {"installed": False}
 commands = {}
-names = ("fast", "bet", "fslstats", "fslmaths", "flirt", "fnirt", "randomise", "fslvbm_1_bet", "mri_surf2surf", "mris_preproc", "mris_anatomical_stats", "mri_segstats", "recon-all", "antsRegistration", "antsApplyTransforms", "wb_command", "mrconvert")
+names = ("fast", "bet", "fslstats", "fslmaths", "flirt", "fnirt", "randomise", "fslvbm_1_bet", "mri_surf2surf", "mris_preproc", "mris_anatomical_stats", "mri_segstats", "recon-all", "matlab", "mris_info", "mris_compute_lgi", "antsRegistration", "antsApplyTransforms", "wb_command", "mrconvert")
 patterns = ("/opt/fsl*/share/fsl/bin/{name}", "/opt/fsl*/bin/{name}", "/opt/freesurfer*/bin/{name}", "/opt/ants*/bin/{name}", "/opt/ants*/{name}", "/opt/workbench/bin_linux64/{name}", "/opt/mrtrix*/bin/{name}")
 for name in names:
     on_path = shutil.which(name)
@@ -488,7 +521,17 @@ for name in names:
     for pattern in patterns:
         found.extend(sorted(glob.glob(pattern.format(name=name)))[:8])
     paths = sorted(set(p for p in found if p and Path(p).is_file() and os.access(p, os.X_OK)))[:12]
-    commands[name] = {"default_path_resolution": on_path, "executable_locations": paths, "executed": False}
+    row = probe_command(name)
+    # Inventory is a compact discovery view. The prerequisite probe retains
+    # its own longer command evidence. Keep this JSON below the transport cap.
+    commands[name] = {key: row.get(key) for key in ("command", "executed", "exit_code", "executable", "accepted_nonzero_version_exit")}
+    commands[name]["executable_locations"] = row.get("locations", [])[:3]
+    commands[name]["default_path_resolution"] = row.get("default_path_resolution")
+    commands[name]["argv"] = row.get("argv", [])
+    commands[name]["stdout_excerpt"] = row.get("stdout", "")[:120]
+    commands[name]["stderr_excerpt"] = row.get("stderr", "")[:120]
+    commands[name]["excerpt_truncated"] = len(row.get("stdout", "")) > 120 or len(row.get("stderr", "")) > 120
+    commands[name]["location_count"] = len(row.get("locations", []))
 versions = []
 for pattern in ("/opt/fsl*/etc/fslversion", "/opt/freesurfer*/build-stamp.txt"):
     for name in sorted(glob.glob(pattern))[:8]:

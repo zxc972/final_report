@@ -42,7 +42,7 @@ class Skill:
 
 class AgentChatRequest(BaseModel):
     message: str
-    mode: Literal["pipeline", "analysis"] = "pipeline"
+    mode: Literal["auto", "pipeline", "analysis"] = "pipeline"
     resume: bool = False
     input_roots: Optional[List[str]] = Field(default=None, alias="inputRoots")
     # "platform": use the server's own API key (model must be one of platform_models.json).

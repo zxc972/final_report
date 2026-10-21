@@ -332,6 +332,24 @@ class KnowledgeStore:
             raise ValueError("Candidate research evidence release not configured")
         return retriever.read(source_id, start_char, max_chars)
 
+    def search_research_text(self, query: str, limit: int = 5) -> dict[str, Any]:
+        """Search registered original parents without any graph retrieval route."""
+        retriever = self._research_retriever()
+        if retriever is None:
+            return {
+                "status": "unavailable", "sources": [], "executable": False,
+                "reason": "Candidate research evidence release not configured",
+            }
+        return retriever.search_text(query, limit)
+
+    def read_research_text(
+        self, source_id: str, start_char: int = 0, max_chars: int = 8000,
+    ) -> dict[str, Any]:
+        retriever = self._research_retriever()
+        if retriever is None:
+            raise ValueError("Candidate research evidence release not configured")
+        return retriever.read_text(source_id, start_char, max_chars)
+
     def search_source_graph(self, query: str, limit: int = 5) -> dict[str, Any]:
         if self._source_graph is None:
             return {"status": "unavailable", "results": [], "executable": False,

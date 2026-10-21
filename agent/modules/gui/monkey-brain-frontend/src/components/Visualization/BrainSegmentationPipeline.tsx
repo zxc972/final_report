@@ -770,11 +770,12 @@ const BrainSegmentationPipeline: React.FC<BrainSegmentationPipelineProps> = ({
   const loadedSurfaceCount = Object.keys(loadedSurfaces).length;
 
   return (
-    <div className={`h-full flex bg-gray-50 ${className}`}>
+    <div className={`h-full flex ${className}`} style={{ background: 'var(--px-bg)' }}>
       {/* Left control panel */}
-      <div className="w-80 bg-white border-r border-gray-200 p-4 overflow-y-auto shadow-sm">
-        <div className="mb-6">
-          <h2 className="text-xl font-bold text-gray-800 mb-2">🧠 PrimateX</h2>
+      <div className="w-80 p-4 overflow-y-auto" style={{ background: 'var(--px-surface)', borderRight: '1px solid var(--px-border)' }}>
+        <div className="mb-5">
+          <h1 className="px-page-title" style={{ fontSize: 18 }}>Visualization</h1>
+          <p className="px-page-desc" style={{ fontSize: 13 }}>Load volumes or surfaces and inspect overlays.</p>
         </div>
 
         {/* File operations */}
@@ -1083,7 +1084,7 @@ const BrainSegmentationPipeline: React.FC<BrainSegmentationPipelineProps> = ({
 
                     {surfaceFiles.length === 0 && (
                       <div className="mt-4 p-3 bg-yellow-50 border border-yellow-200 rounded text-xs text-yellow-700">
-                        💡 Browse server files and select a subject folder with HCP_Style_Dir to load surfaces
+                        Browse server files and select a subject folder with HCP_Style_Dir to load surfaces
                       </div>
                     )}
                   </div>
@@ -1182,7 +1183,7 @@ const BrainSegmentationPipeline: React.FC<BrainSegmentationPipelineProps> = ({
                 </>
               ) : (
                 <>
-                  <div className="text-5xl mb-4">🧠</div>
+                  <div className="px-blocker-icon" style={{ marginBottom: 12 }}>◎</div>
                   <h3 className="text-lg font-semibold text-gray-700 mb-2">
                     Image not loaded
                   </h3>

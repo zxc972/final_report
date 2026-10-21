@@ -36,6 +36,9 @@ export interface Message {
 
 export interface MessageMetadata {
   analysis?: AnalysisResultInfo;
+  /** Which agent the backend routed this request to. */
+  route?: 'pipeline' | 'analysis';
+  routeReason?: string;
   taskId?: string;
   attachments?: Attachment[];
   actions?: Action[];

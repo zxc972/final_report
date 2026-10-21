@@ -51,6 +51,7 @@ import { useConfigStore } from '../stores/configStore';
 import { pipelineService } from '../services/pipelineService';
 import { PipelineTask, PipelineStep, WorkspaceSubject } from '../types/pipeline';
 import { buildPathWithToken } from '../services/accessToken';
+import { PageHeader } from '../components/Layout/Page';
 
 // ---------- types ----------
 
@@ -632,16 +633,12 @@ const SegmentationPage: React.FC = () => {
         )}
       </Modal>
 
-      <div className="h-full p-6 overflow-y-auto">
-        <div className="max-w-7xl mx-auto">
-          {/* Header */}
-          <div className="mb-6 flex items-start justify-between flex-wrap gap-4">
-            <div>
-              <h1 className="text-2xl font-bold text-gray-900 mb-2">Task Management</h1>
-              <p className="text-gray-600">
-                Unified view of pipeline tasks (in-memory) and filesystem subjects for your workspace.
-              </p>
-            </div>
+      <div className="px-page">
+        <div className="px-page-inner">
+          <PageHeader
+            title="Tasks"
+            description="Pipeline tasks and subjects found in your workspace."
+            actions={(
             <Space>
               <Badge count={runningCount} overflowCount={99} color="blue" offset={[-4, 4]}>
                 <Tag color="blue">Running</Tag>
@@ -665,7 +662,8 @@ const SegmentationPage: React.FC = () => {
                 Refresh
               </Button>
             </Space>
-          </div>
+            )}
+          />
 
           {/* User ID warning */}
           {!userId && (

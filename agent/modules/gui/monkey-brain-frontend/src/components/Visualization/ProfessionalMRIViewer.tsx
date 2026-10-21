@@ -488,7 +488,7 @@ const ProfessionalMRIViewer: React.FC<ProfessionalMRIViewerProps> = ({
           {!imageData && !isLoading && (
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
               <div className="text-gray-400 text-center border-2 border-dashed border-gray-600 rounded-lg p-8 m-4">
-                <div className="text-6xl mb-4">🧠</div>
+                <div className="px-blocker-icon" style={{ marginBottom: 12 }}>◎</div>
                 <div className="text-lg mb-2">Professional MRI viewer</div>
                 <div className="text-sm">High-quality visualization of NIfTI medical imaging</div>
                 <div className="text-xs mt-4 text-gray-500">

@@ -89,9 +89,9 @@ function App() {
     return (
       <div className="h-screen w-screen flex items-center justify-center bg-slate-50">
         <div className="max-w-xl text-center bg-white border border-slate-200 rounded-2xl p-10 shadow-sm">
-          <div className="text-4xl mb-4">🔒</div>
-          <h1 className="text-2xl font-bold text-slate-800 mb-3">
-            Access Token Required
+          <div className="px-brand-mark" style={{ width: 40, height: 40, fontSize: 15, margin: '0 auto 16px' }}>PX</div>
+          <h1 className="text-2xl font-semibold text-slate-800 mb-3">
+            Access token required
           </h1>
           <p className="text-slate-600 mb-6">
             This UI is gated by a one-time token. Launch the stack and open the URL that includes
@@ -108,7 +108,7 @@ function App() {
               />
               <button
                 type="submit"
-                className="w-full rounded-lg bg-slate-900 px-4 py-2 text-white font-medium hover:bg-slate-800"
+                className="w-full rounded-lg px-4 py-2 text-white font-medium border-0 cursor-pointer" style={{ background: 'var(--px-primary)' }}
               >
                 Unlock
               </button>

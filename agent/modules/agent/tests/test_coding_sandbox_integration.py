@@ -224,6 +224,24 @@ class CodingSandboxIntegrationTests(unittest.TestCase):
                 base_url="https://example.invalid/v1", api_key="unused-test-sentinel",
                 model_factory=lambda **kwargs: model,
             )
+            class SyntheticReviewer:
+                """Protocol-valid review stub; numerical acceptance remains external."""
+
+                def __init__(self):
+                    self.calls = 0
+
+                def invoke(self, messages):
+                    self.calls += 1
+                    return AIMessage(content=json.dumps({
+                        "decision": "pass",
+                        "findings": [],
+                        "limitations": [
+                            "Scripted software integration review only; not scientific validation."
+                        ],
+                    }))
+
+            reviewer = SyntheticReviewer()
+            tools._internal_review_model = reviewer
             checker = validation.ArtifactValidator(reference_manifest=reference_manifest)
             graph = agent._build_graph(coding_agent, tools, checker, InMemorySaver())
             result = graph.invoke({
@@ -237,6 +255,8 @@ class CodingSandboxIntegrationTests(unittest.TestCase):
             }, {"configurable": {"thread_id": "deterministic-synthetic-csv"}, "recursion_limit": 20})
 
             self.assertEqual(result["status"], "completed", result)
+            self.assertEqual(reviewer.calls, 1)
+            self.assertTrue(result["validation"]["internal_review"]["protocol_valid"])
             self.assertEqual(tools.executions, 1)
             self.assertEqual(result["execution"]["backend"], "apptainer")
             self.assertEqual(result["execution"]["status"], "success")

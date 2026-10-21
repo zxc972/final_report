@@ -168,7 +168,7 @@ const ApiKeyConfig: React.FC<ApiKeyConfigProps> = ({ onApiKeySet }) => {
   }, [platformModels, savedConfig]);
 
   return (
-    <div className="p-4 bg-gradient-to-r from-blue-50 to-purple-50 border-b">
+    <div>
       <Space direction="vertical" className="w-full">
         {!isConfigured && (
           <Alert
@@ -263,7 +263,7 @@ const ApiKeyConfig: React.FC<ApiKeyConfigProps> = ({ onApiKeySet }) => {
             />
             <div className="text-xs text-gray-500">
               <Text type="secondary">
-                💡 Your API Key is stored in the local browser and sent to the agent backend only when needed. Any OpenAI-compatible endpoint works (OpenAI, DeepSeek, self-hosted, etc.).
+                Your API key is stored in the local browser and sent to the agent backend only when needed. Any OpenAI-compatible endpoint works (OpenAI, DeepSeek, self-hosted, etc.).
               </Text>
             </div>
           </>

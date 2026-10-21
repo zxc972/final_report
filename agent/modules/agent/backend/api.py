@@ -45,6 +45,8 @@ from .analysis_artifacts import AnalysisFileRequest, read_analysis_file, list_ge
 from pydantic import ValidationError
 
 from .llm import call_chat_completions
+from .agent_router import route_message
+from .agent_chat_state import ChatSession, conversation_turn
 from .models import AgentChatRequest, AgentChatResponse
 from .skills import (
     deferred_action_result,
@@ -165,6 +167,9 @@ def require_user_token(token: Optional[str], user_id: str, user_dir: str) -> boo
 
 def build_app() -> FastAPI:
     """Create the FastAPI app with routes and middleware."""
+    from .analysis_knowledge_profiles import load_knowledge_profile
+
+    load_knowledge_profile()  # Invalid experiment names must fail before serving requests.
     app = FastAPI(title="PrimateX Agent Backend", version="0.1.0")
     app.add_middleware(
         CORSMiddleware,
@@ -413,6 +418,32 @@ def build_app() -> FastAPI:
             "X-Content-SHA256": hashlib.sha256(data).hexdigest(),
         })
 
+    @app.get("/api/agent/analysis/process-capabilities")
+    async def analysis_process_capabilities(request: Request) -> Dict[str, Any]:
+        require_token(request)
+        from .analysis_knowledge_profiles import load_knowledge_profile
+        profile = load_knowledge_profile()
+        return {"enabled": profile.name in {"method_graph", "method_graph_gated", "product_graph_planner"}}
+
+    @app.get("/api/agent/analysis/{conversation_id}/events")
+    async def analysis_process_events(conversation_id: str, request: Request) -> Dict[str, Any]:
+        require_token(request)
+        user_id = require_safe_user_id(request.query_params.get("userId"))
+        try:
+            workspace = analysis_workspace(request.query_params.get("workspaceDirectory") or "", user_id)
+        except ValueError as exc:
+            raise HTTPException(status_code=400, detail=str(exc))
+        record = _read_auth_record(str(workspace.parent))
+        if not record or not verify_user_token(request_user_token(request), user_id, record.get("salt")):
+            raise HTTPException(status_code=401, detail="Please verify your User ID first on the Configuration page")
+        request.state.refreshed_user_token = sign_user_token(user_id, record["salt"])
+        try:
+            after = int(request.query_params.get("after", "0"))
+            from .analysis_events import events_for_conversation
+            return events_for_conversation(workspace, user_id, conversation_id, after)
+        except ValueError as exc:
+            raise HTTPException(status_code=400, detail=str(exc))
+
     @app.post("/api/agent/analysis", response_model=AgentChatResponse, response_model_by_alias=True)
     async def analysis_chat(payload: AgentChatRequest, request: Request) -> AgentChatResponse:
         require_token(request)
@@ -448,7 +479,8 @@ def build_app() -> FastAPI:
                 workspace=workspace, conversation_id=conv_id, model=model,
                 base_url=base_url, api_key=api_key, input_roots=input_roots, resume=payload.resume,
                 threads=max(1, min(int(context.get("threads", 2)), 4)),
-                required_artifacts=context.get("requiredArtifacts"))
+                required_artifacts=context.get("requiredArtifacts"),
+                **getattr(request.state, "auto_analysis_arguments", {}))
         except ImportError:
             raise HTTPException(status_code=503, detail="Analysis dependencies unavailable; use the coding environment")
         except ValueError as exc:
@@ -457,13 +489,17 @@ def build_app() -> FastAPI:
             raise HTTPException(status_code=500, detail="Analysis run failed; its checkpoint and artifacts are retained for diagnosis")
         result["generated_scripts"] = list_generated_scripts(workspace, user_id, conv_id, result.get("run_id", ""))
         return AgentChatResponse(message=result.get("message", "Analysis run finished"),
-            conversationId=conv_id, metadata={"mode": "analysis", **{k:v for k,v in result.items() if k != "message"}})
+            conversationId=conv_id, metadata={
+                "mode": "analysis",
+                **{key: value for key, value in result.items() if key not in {"message", "metadata"}},
+                **result.get("metadata", {}),
+                "route": "analysis", "routeReason": "Explicit analysis mode",
+            })
 
-    @app.post("/api/agent/chat", response_model=AgentChatResponse, response_model_by_alias=True)
-    async def agent_chat(payload: AgentChatRequest, request: Request) -> AgentChatResponse:
+    async def pipeline_chat(payload: AgentChatRequest, request: Request,
+                            session: ChatSession | None = None) -> AgentChatResponse:
         require_token(request)
-        if payload.mode == "analysis":
-            return await analysis_chat(payload, request)
+        owns_session = False
 
         if payload.provider == "platform":
             if not PLATFORM_API_KEY:
@@ -571,6 +607,14 @@ def build_app() -> FastAPI:
                     raise HTTPException(status_code=400, detail=str(exc))
             system_message["content"] += f"\n\nContext: {json.dumps(public_context(payload.context), ensure_ascii=False)}"
 
+        if session is None and data_tools is not None:
+            session = ChatSession(output, context_user_id,
+                                  payload.conversation_id or f"conv_{uuid.uuid4().hex}",
+                                  api_key, 64)
+            session.load_history(payload.history)
+            session.start("pipeline", "Explicit preprocessing mode", automatic=False)
+            owns_session = True
+
         tools = [*tools, *data_specs]
 
         messages: List[Dict[str, Any]] = [system_message]
@@ -578,14 +622,16 @@ def build_app() -> FastAPI:
             messages.extend(payload.history)
         messages.append({"role": "user", "content": payload.message})
 
-        conv_id = payload.conversation_id or f"conv_{uuid.uuid4().hex[:8]}"
+        conv_id = (session.conversation_id if session is not None else
+                   payload.conversation_id or f"conv_{uuid.uuid4().hex[:8]}")
         all_tool_results: List[Dict[str, Any]] = []
         loaded_skills: set[str] = set()
         final_text = ""
         hit_limit = False
         completed = False
-        budgeted_iterations = 0
-        total_iterations = 0
+        precharged = session.budget.view()["router_calls"] if session else 0
+        budgeted_iterations = precharged
+        total_iterations = precharged
         max_total_iterations = MAX_AGENT_ITERS + len(skills)
         wrap_requested = False
 
@@ -594,7 +640,17 @@ def build_app() -> FastAPI:
             and total_iterations < max_total_iterations
         ):
             total_iterations += 1
-            response = await call_chat_completions(base_url, api_key, model, messages, tools)
+            attempt = session.budget.reserve("pipeline") if session else None
+            try:
+                response = await call_chat_completions(base_url, api_key, model, messages, tools)
+            except Exception:
+                if session:
+                    session.budget.finish(attempt, None, "call_failed")
+                    if owns_session:
+                        session.complete(payload.message, "Preprocessing request failed", "failed")
+                raise
+            if session:
+                session.budget.finish(attempt, response.get("usage"), "response_received")
             choice = response.get("choices", [{}])[0]
             model_message = choice.get("message", {})
             tool_calls = model_message.get("tool_calls") or []
@@ -631,7 +687,7 @@ def build_app() -> FastAPI:
                     ),
                 ]
 
-            for call in tool_calls:
+            def process_tool_call(call):
                 tool_name = call.get("function", {}).get("name")
                 call_id = call.get("id", "")
 
@@ -651,8 +707,7 @@ def build_app() -> FastAPI:
                             print(f"[agent][skill] loaded trusted instructions for {skill_name}")
                     else:
                         result = deferred_action_result(tool_name or "unknown")
-                    messages.append(_tool_result(call_id, result))
-                    continue
+                    return result
 
                 if tool_name == "load-skill":
                     if call_id in load_errors:
@@ -664,8 +719,7 @@ def build_app() -> FastAPI:
                             skills_by_name[skill_name],
                             already_loaded=True,
                         )
-                    messages.append(_tool_result(call_id, result))
-                    continue
+                    return result
 
                 if tool_name in skills_by_name and tool_name not in loaded_skills:
                     result = {
@@ -675,8 +729,7 @@ def build_app() -> FastAPI:
                         ),
                         "executed": False,
                     }
-                    messages.append(_tool_result(call_id, result))
-                    continue
+                    return result
 
                 raw_args = call.get("function", {}).get("arguments", "{}")
                 try:
@@ -685,8 +738,7 @@ def build_app() -> FastAPI:
                     print(f"[agent][tool-error] {tool_name}: invalid arguments: {exc}")
                     result: Dict[str, Any] = {"error": f"Invalid tool arguments: {exc}"}
                     all_tool_results.append(result)
-                    messages.append(_tool_result(call.get("id", ""), result))
-                    continue
+                    return result
 
                 try:
                     if tool_name in DATA_TOOL_NAMES:
@@ -708,8 +760,20 @@ def build_app() -> FastAPI:
                     print(f"[agent][tool-error] {tool_name}: {error_message}")
                     result = {"error": error_message}
                 all_tool_results.append(result)
-                messages.append(_tool_result(call.get("id", ""), result))
+                return result
 
+
+            for call in tool_calls:
+                name = call.get("function", {}).get("name") or "unknown"
+                try:
+                    observed_args = json.loads(call.get("function", {}).get("arguments", "{}"))
+                    if not isinstance(observed_args, dict):
+                        observed_args = {}
+                except (ValueError, TypeError):
+                    observed_args = {}
+                result = (session.events.call_tool(name, observed_args, lambda: process_tool_call(call), tool_call_id=call.get("id"))
+                          if session else process_tool_call(call))
+                messages.append(_tool_result(call.get("id", ""), result))
             if not newly_loaded:
                 budgeted_iterations += 1
 
@@ -757,10 +821,16 @@ def build_app() -> FastAPI:
         else:
             message = "No response from model."
 
+        budget = None
+        if owns_session:
+            session.events.node("report", lambda state: {"status": "failed" if hit_limit else "completed"}, "Preparing preprocessing response")({})
+            budget = session.complete(payload.message, message, "failed" if hit_limit else "completed")
         return AgentChatResponse(
             message=message,
             conversationId=conv_id,
             metadata={
+                "route": "pipeline", "routeReason": "Explicit preprocessing mode",
+                **({"requestBudget": budget} if budget else {}),
                 "tools": all_tool_results,
                 "disclosedSkills": sorted(loaded_skills),
                 "loadedSkills": sorted(loaded_skills),
@@ -769,6 +839,139 @@ def build_app() -> FastAPI:
                 "hitIterationLimit": hit_limit,
             },
         )
+
+    @app.post(
+        "/api/agent/chat", response_model=AgentChatResponse, response_model_by_alias=True
+    )
+    async def agent_chat(payload: AgentChatRequest, request: Request) -> AgentChatResponse:
+        require_token(request)
+        if payload.mode == "analysis":
+            return await analysis_chat(payload, request)
+        if payload.mode == "pipeline":
+            return await pipeline_chat(payload, request)
+
+        # Authenticate ownership and provider settings before any paid routing call.
+        context = payload.context or {}
+        user_id = require_safe_user_id(context.get("userId"))
+        try:
+            workspace = analysis_workspace(context.get("workspaceDirectory") or "", user_id)
+        except ValueError as exc:
+            raise HTTPException(status_code=400, detail=str(exc))
+        auth = _read_auth_record(str(workspace.parent))
+        if not auth or not verify_user_token(
+            context.get("userToken"), user_id, auth.get("salt")
+        ):
+            raise HTTPException(
+                status_code=401,
+                detail="Please verify your User ID first on the Configuration page",
+            )
+        request.state.refreshed_user_token = sign_user_token(user_id, auth["salt"])
+        if payload.provider == "platform":
+            if not PLATFORM_API_KEY or payload.model not in {
+                row.get("id") for row in load_platform_models()
+            }:
+                raise HTTPException(
+                    status_code=400, detail="Configure a valid platform model"
+                )
+            base_url, api_key, model = (
+                PLATFORM_API_BASE_URL,
+                PLATFORM_API_KEY,
+                payload.model,
+            )
+        elif payload.provider == "custom" and payload.api_key and payload.model:
+            base_url, api_key, model = (
+                payload.base_url or DEFAULT_CUSTOM_BASE_URL,
+                payload.api_key,
+                payload.model,
+            )
+        else:
+            raise HTTPException(
+                status_code=400,
+                detail="Configure a platform model or custom provider credentials",
+            )
+        conv_id = payload.conversation_id or f"conv_{uuid.uuid4().hex}"
+        async with conversation_turn(workspace, user_id, conv_id):
+            try:
+                session = ChatSession(workspace, user_id, conv_id, api_key, 64)
+            except ValueError as exc:
+                raise HTTPException(status_code=400, detail=str(exc))
+            history = session.load_history(payload.history)
+            decision = await route_message(
+                message=payload.message,
+                history=history,
+                recent_upload=public_context(context).get("recentUpload"),
+                previous_route=session.prior_route(),
+                base_url=base_url,
+                api_key=api_key,
+                model=model,
+                caller=call_chat_completions,
+                budget=session.budget,
+            )
+            session.start(decision["route"], decision["reason"], automatic=True)
+            if decision.get("reason_truncated"):
+                session.events.append("route", "warn", "Router reason truncated",
+                                      {"reason": "reason truncated", "route": decision["route"]})
+            routed = payload.model_copy(
+                update={"conversation_id": conv_id, "history": history}
+            )
+            try:
+                with session.activate():
+                    if decision["route"] == "analysis":
+                        request.state.auto_analysis_arguments = {
+                            "conversation_history": history,
+                            "router_model_calls": 1,
+                        }
+                        response = await analysis_chat(routed, request)
+                    else:
+                        response = await pipeline_chat(routed, request, session)
+            except Exception:
+                session.store.save(
+                    "request",
+                    {
+                        "request_id": session.request_id,
+                        "route": decision["route"],
+                        "status": "failed",
+                        "budget": session.budget.view(),
+                    },
+                )
+                raise
+            status = response.metadata.get("status", "completed")
+            if response.metadata.get("hitIterationLimit"):
+                status = "failed"
+            # The analysis ledger includes the precharged route call. Its other model
+            # usages are not exposed by the legacy SDK path, and remain unknown here.
+            analysis_calls = (
+                max(
+                    0,
+                    (
+                        response.metadata.get(
+                            "request_model_calls", response.metadata.get("model_calls")
+                        )
+                        or 1
+                    )
+                    - 1,
+                )
+                if decision["route"] == "analysis"
+                else 0
+            )
+            if decision["route"] == "pipeline":
+                session.events.node(
+                    "report",
+                    lambda state: {"status": status},
+                    "Preparing preprocessing response",
+                )({})
+            budget = session.complete(
+                payload.message, response.message, status, analysis_calls
+            )
+            response.metadata.update(
+                {
+                    "route": decision["route"],
+                    "routeReason": decision["reason"],
+                    "routing": {"fallback": decision["fallback"], "modelCalls": 1},
+                    "requestBudget": budget,
+                }
+            )
+            return response
 
     return app
 
