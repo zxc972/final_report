@@ -6,8 +6,8 @@
   "research_release": "research_evidence_v13",
   "source_root": "/data/xuancheng",
   "source_unchanged_check": true,
-  "source_files": 916,
-  "source_bytes": 33260623,
+  "source_files": 918,
+  "source_bytes": 33264736,
   "excluded_classes": [
     "credentials and .env",
     "FreeSurfer license",
@@ -182,8 +182,8 @@
       "mode": "100644",
       "source_bytes": 104358,
       "source_sha256": "b2171b50bb407ffaf19bdcf6b860fe5ced996e1095e58f1e2bc705b8b592a515",
-      "bytes": 104358,
-      "sha256": "b2171b50bb407ffaf19bdcf6b860fe5ced996e1095e58f1e2bc705b8b592a515",
+      "bytes": 104524,
+      "sha256": "c5d62cbde49c2a26c1d5a7f88aa43b7b983cce356f61f888bbd0eac206b002ec",
       "synced_at": "2026-10-22",
       "previous_source": {
         "source": "/data/xuancheng/agent_round7_trial_20261021/offline_followup_review/backend/analysis_agent.py",
@@ -220,8 +220,8 @@
       "source_head": "75143b21bc459c6f6e951891356ebf9e4e10169d",
       "source_bytes": 1020,
       "source_sha256": "992338d506cc8c6d55d11f0763b684c58636ac5b93045a1179aca61e42c02746",
-      "bytes": 1020,
-      "sha256": "992338d506cc8c6d55d11f0763b684c58636ac5b93045a1179aca61e42c02746",
+      "bytes": 1298,
+      "sha256": "536c1efe12da10c40707c345dc3521175ec6289187c9dc343d022c07563458ab",
       "mode": "100644",
       "synced_at": "2026-10-22"
     },
@@ -337,8 +337,8 @@
       "mode": "100644",
       "source_bytes": 3322,
       "source_sha256": "118b0470c6cc5518be93371fdb7109baf1475de923b8fb30d73d83bf3e3b2419",
-      "bytes": 3322,
-      "sha256": "118b0470c6cc5518be93371fdb7109baf1475de923b8fb30d73d83bf3e3b2419",
+      "bytes": 3376,
+      "sha256": "6b1f4ac22e4e3cdb886b01974e7af140ecd163f9cfcff47b35529456c0eb3947",
       "synced_at": "2026-10-22"
     },
     {
@@ -441,6 +441,13 @@
       "sha256": "f20b3166f5349431b6307838efda8f088abd8d4275467400bba2b79f637e6235",
       "mode": "100644",
       "synced_at": "2026-10-22"
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_input_links.py",
+      "source": "/data/xuancheng/agent_v1/round14/agent/modules/agent/backend/analysis_input_links.py",
+      "bytes": 526,
+      "sha256": "8b61b494f2f274e0733a2ac379c3e9a1f4c35167492d31d15a5e90846e348748",
+      "mode": "100644"
     },
     {
       "path": "agent/modules/agent/backend/analysis_inspection.py",
@@ -683,8 +690,8 @@
       "mode": "100644",
       "source_bytes": 39057,
       "source_sha256": "a56be13c699988d561eeb82b52715be4a20c8ac992f9af2a33fa49394dcf7f7f",
-      "bytes": 39057,
-      "sha256": "a56be13c699988d561eeb82b52715be4a20c8ac992f9af2a33fa49394dcf7f7f",
+      "bytes": 39293,
+      "sha256": "7fc1ae27478810328a990ad741dbe19ab7173d03a2d8af3607b05b73fa6124e3",
       "synced_at": "2026-10-22",
       "previous_source": {
         "source": "/data/xuancheng/agent_round7_trial_20261021/offline_followup_review/backend/analysis_product_planner.py",
@@ -717,8 +724,8 @@
       "mode": "100644",
       "source_bytes": 22067,
       "source_sha256": "7eac0e5e6212c2a6ba21be768144582f41c1e2f83ae1505995e1f6954b44eb1a",
-      "bytes": 22067,
-      "sha256": "7eac0e5e6212c2a6ba21be768144582f41c1e2f83ae1505995e1f6954b44eb1a",
+      "bytes": 23086,
+      "sha256": "ceba97bc6b34c4021f66462c014733c758b7ba2f53a3927d38c805fac992d7b1",
       "synced_at": "2026-10-22",
       "previous_source": {
         "source": "/data/xuancheng/agent_round7_trial_20261021/offline_followup_review/backend/analysis_profile_worker.py",
@@ -3357,6 +3364,13 @@
       "sha256": "eb510aad26ba3302072c39572c60ef278aabcac6d2a3a12680b694e845e93da6",
       "mode": "100644",
       "synced_at": "2026-10-22"
+    },
+    {
+      "path": "agent/modules/agent/tests/test_round14_fastsurfer_layout.py",
+      "source": "/data/xuancheng/agent_v1/round14/agent/modules/agent/tests/test_round14_fastsurfer_layout.py",
+      "bytes": 1834,
+      "sha256": "629404c7af50e5b8b98df3c3fdc34fa92e469845cef12e597980ccde3a8f3247",
+      "mode": "100644"
     },
     {
       "path": "agent/modules/agent/tests/test_round14_group_stats.py",
@@ -8334,5 +8348,5 @@
       "full_cross_environment_deployment_verified": false
     }
   ],
-  "updated_at": "2026-10-22T17:31:53.291534+00:00"
+  "updated_at": "2026-10-22T17:35:42.536634+00:00"
 }

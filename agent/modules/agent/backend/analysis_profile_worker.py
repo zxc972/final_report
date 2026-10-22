@@ -108,6 +108,15 @@ def profile_file(path):
         ),
     }
     try:
+        resolved = path.resolve(strict=True)
+        # The sandbox exposes one registered subject per /inputs/N root.
+        if str(path).startswith("/inputs/"):
+            root = Path(*path.parts[:3])
+            if not resolved.is_relative_to(root):
+                raise ValueError("Input link escapes registered subject root")
+        if path.is_symlink():
+            item["link"] = field({"original": str(path), "target": str(path.readlink()),
+                                  "resolved": str(resolved)}, path, "subject-local symlink resolution")
         sha, method = file_hash(path)
         item["sha256"] = field(sha, path, method)
         item["size_bytes"] = field(path.stat().st_size, path, "stat.st_size")
@@ -320,8 +329,9 @@ def profile_file(path):
                 )
         if path.parent.name in {"mri", "surf", "label", "stats", "scripts"}:
             scripts = path.parent.parent / "scripts"
-            done = scripts / "recon-all.done"
-            log = scripts / "recon-all.log"
+            fastsurfer = (scripts / "recon-surf.done").is_file()
+            done = scripts / ("recon-surf.done" if fastsurfer else "recon-all.done")
+            log = scripts / ("recon-surf.log" if fastsurfer else "recon-all.log")
             fatal, error = [], []
             known = log.is_file()
             if known:
@@ -333,6 +343,9 @@ def profile_file(path):
                             error.append(number)
             details = {
                 "done": field(done.is_file(), done, "Path.is_file"),
+                "pipeline": field("FastSurfer" if fastsurfer else "FreeSurfer", done, "observed completion-marker convention"),
+                "completion_marker": field(done.name, done, "actual adjacent marker filename"),
+                "log_name": field(log.name, log, "pipeline-specific adjacent log"),
                 "fatal_count": field(
                     len(fatal) if known else None,
                     log,

@@ -21,6 +21,8 @@ def explicit_species(request):
 
 def mapped_path(tools, raw):
     path = tools.resolve(raw)
+    if raw.startswith("/inputs/"):
+        return raw
     if path.is_relative_to(tools.workdir):
         return "/work/" + path.relative_to(tools.workdir).as_posix()
     for index, root in enumerate(tools.input_roots):

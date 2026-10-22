@@ -352,6 +352,9 @@ class AnalysisTools:
                 raise ValueError("Registered source directories are read-only")
             return candidate
         candidate = root / relative
+        if root != self.workdir and candidate.exists():
+            from .analysis_input_links import resolve_input
+            return resolve_input(candidate, root)
         _no_links(candidate, root)
         resolved = candidate.resolve()
         if not _inside(resolved, root):

@@ -14,6 +14,10 @@ def mappings():
 
 
 def identify(stem):
+    if stem == "aparc.DKTatlas.mapped":
+        base = next(dict(row) for row in mappings() if row["canonical_name"] == "DKT")
+        return {**base, "file_stem": stem,
+                "source_url": "https://github.com/Deep-MI/FastSurfer/blob/v2.4.2/recon_surf/recon-surf.sh"}
     return next((dict(row) for row in mappings() if row["file_stem"] == stem), None)
 
 

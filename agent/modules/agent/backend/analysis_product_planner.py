@@ -200,7 +200,12 @@ def discover_paths(entries):
             if not folder.is_dir() or folder.is_symlink():
                 continue
             for path in sorted(folder.iterdir()):
-                if path.is_symlink() or not path.is_file():
+                if not path.is_file():
+                    continue
+                from .analysis_input_links import resolve_input
+                try:
+                    resolve_input(path, root)
+                except (ValueError, OSError, RuntimeError):
                     continue
                 if directory == "surf" and not re.fullmatch(r"[lr]h\.(white|pial|sphere\.reg|thickness|curv|sulc|area|volume|lgi)", path.name):
                     continue
@@ -225,7 +230,7 @@ def ensure_profile(tools, paths):
         target = tools.resolve(path)
         stamps.append([path, *file_hash(target)])
         scripts = target.parent.parent / "scripts"
-        for name in ("recon-all.done", "recon-all.log"):
+        for name in ("recon-all.done", "recon-all.log", "recon-surf.done", "recon-surf.log"):
             adjacent = scripts / name
             if adjacent.is_file() and not adjacent.is_symlink():
                 stamps.append([str(adjacent), *file_hash(adjacent)])
