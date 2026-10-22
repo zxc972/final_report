@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 import re
 import uuid
@@ -45,6 +46,8 @@ def profile_data(tools, paths):
 
     request = {
         "paths": mapped,
+        "tables": getattr(tools, "participants_tables", []),
+        "registered_ids": [r["subject_id"] for r in json.loads(Path(os.environ["AGENT_DATA_CATALOG"]).read_text()).get("roots", [])] if os.environ.get("AGENT_DATA_CATALOG") else [],
         "declared_species": explicit_species(getattr(tools, "task_request", "")),
         "request_id": uuid.uuid4().hex,
     }

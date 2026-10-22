@@ -36,6 +36,7 @@ def file_format(path):
         (".annot", "annot"),
         (".stats", "stats"),
         (".tsv", "tsv"),
+        (".csv", "csv"),
         (".label", "label"),
     ):
         if name.endswith(suffix):
@@ -300,33 +301,11 @@ def profile_file(path):
                     "finite_count": field(int(np.isfinite(labels).sum()), path, "actual GIFTI finite count"),
                     "units": field(None, path, "No physical unit verification", "Unknown acquisition scale"),
                 }, path, "GIFTI continuous metric array")
-        elif kind in ("stats", "tsv"):
-            with path.open(encoding="utf-8", errors="replace") as stream:
-                rows = (
-                    list(csv.DictReader(stream, delimiter="\t"))
-                    if kind == "tsv"
-                    else []
-                )
-            if kind == "tsv":
-                with path.open(encoding="utf-8", errors="replace") as stream:
-                    columns = next(csv.reader(stream, delimiter="\t"), [])
-                item["table"] = field({
-                    "columns": field(columns, path, "TSV header"),
-                    "row_count": field(len(rows), path, "TSV data row count"),
-                    "nonempty_columns": field({key: bool(rows) and all(row.get(key) not in (None, "") for row in rows) for key in columns}, path, "actual TSV cells; rank not inferred"),
-                }, path, "csv.DictReader")
-            if rows and any(
-                "participant_id" in row or "subject_id" in row for row in rows
-            ):
-                ids = sorted(
-                    {row.get("participant_id") or row.get("subject_id") for row in rows}
-                    - {None, ""}
-                )
-                item["subject"] = field(
-                    ids,
-                    path,
-                    "TSV explicit participant_id/subject_id deduplicated; scans are not subjects",
-                )
+        elif kind in ("tsv", "csv"):
+            metadata = table_metadata(path)
+            item["table"] = field({key: field(val, path, "bounded TSV/CSV observation") for key, val in metadata.items()}, path, "csv.DictReader")
+            ids = metadata.get("subject_ids", [])
+            item["subject"] = field(ids, path, "explicit participant table ID column")
         if path.parent.name in {"mri", "surf", "label", "stats", "scripts"}:
             scripts = path.parent.parent / "scripts"
             fastsurfer = (scripts / "recon-surf.done").is_file()
@@ -511,9 +490,52 @@ def build_profile(paths, declaration=None):
     }
 
 
+def table_metadata(path, id_column=None, registered_ids=()):
+    import math
+    path = Path(path)
+    with path.open(encoding="utf-8-sig", newline="") as stream:
+        reader = csv.DictReader(stream, delimiter="\t" if path.suffix.lower() == ".tsv" else ",")
+        columns = reader.fieldnames or []
+        if len(columns) != len(set(columns)) or any(not c or not c.strip() for c in columns):
+            raise ValueError("Participant table columns must be unique and nonempty")
+        rows = list(reader)
+    if len(rows) > 100000 or len(columns) > 256:
+        raise ValueError("Participant table exceeds bounds")
+    def present(v):
+        return v is not None and str(v).strip().lower() not in {"", "na", "n/a", "nan"}
+    nonempty = {c: sum(present(r.get(c)) for r in rows) for c in columns}
+    kinds, levels = {}, {}
+    for c in columns:
+        cells = [r[c].strip() for r in rows if present(r.get(c))]
+        try:
+            numeric = bool(cells) and all(math.isfinite(float(v)) for v in cells)
+        except (ValueError, TypeError):
+            numeric = False
+        kinds[c] = "numeric" if numeric and c not in {id_column, "participant_id", "subject_id"} else "categorical"
+        if kinds[c] == "categorical":
+            levels[c] = {v: cells.count(v) for v in sorted(set(cells))}
+    explicit_id_column = id_column is not None
+    id_column = id_column or next((c for c in ("participant_id", "subject_id") if c in columns), None)
+    ids = [r.get(id_column, "").strip() for r in rows] if id_column else []
+    if explicit_id_column and (id_column not in columns or any(not s for s in ids) or len(ids) != len(set(ids))):
+        raise ValueError("Participant IDs must be present and unique: " + id_column)
+    registered = set(registered_ids)
+    return {"columns": columns, "row_count": len(rows), "nonempty_counts": nonempty,
+            "nonempty_columns": {c: bool(rows) and n == len(rows) for c,n in nonempty.items()},
+            "column_types": kinds, "levels": levels, "id_column": id_column,
+            "subject_ids": sorted(set(ids) - {""}), "matched_count": len(set(ids) & registered),
+            "unmatched_ids": sorted(set(ids) - registered), "registered_without_row": sorted(registered - set(ids))}
+
+
 def main(request):
     """Arguments are embedded by the host in the frozen program, never /work JSON."""
     profile = build_profile(request["paths"], request.get("declared_species"))
+    for item in profile["files"]:
+        for declaration in request.get("tables", []):
+            if value(item["path"]) == declaration["mapped_path"]:
+                metadata = table_metadata(Path(declaration["mapped_path"]), declaration["id_column"], request.get("registered_ids", []))
+                item["table"] = field({k: field(v, declaration["mapped_path"], "registered participant table") for k,v in metadata.items()}, declaration["mapped_path"], "csv.DictReader")
+                item["subject"] = field(metadata["subject_ids"], declaration["mapped_path"], "registered id_column")
     profile["request_id"] = request["request_id"]
     Path("/work/data_profile.json").write_text(
         json.dumps(profile, ensure_ascii=False, allow_nan=False), encoding="utf-8"

@@ -273,6 +273,9 @@ class AnalysisTools:
                        "started_time": time.time()}
             if self.control_store.read("context.json") is None:
                 self.control_store.create("context.json", context)
+        if self.control_store is not None and self.knowledge_profile.name == "product_graph_planner":
+            from .analysis_participants import register_tables
+            register_tables(self)
         if ledger:
             self._load_budget(ledger.snapshot())
         self.session = None

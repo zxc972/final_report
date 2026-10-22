@@ -54,7 +54,7 @@ def classify(record):
         return "type:Label.Cortex" if "cortex" in stem else "type:Label"
     if fmt == "stats":
         return "type:StatsTable.Aseg" if "aseg" in stem else "type:StatsTable.Aparc"
-    if fmt == "tsv":
+    if fmt in {"tsv", "csv"}:
         return "type:SubjectTable.Participants"
     if fmt in {"nifti", "mgz"}:
         if stem in {"brainmask.mgz", "brainmask.nii.gz"}:
@@ -182,6 +182,7 @@ def _import_profile(store, profile, registry, *, activity_id=None):
                 len(set(observed.get("subject") or [])) if fmt == "tsv" else None
             ),
             "nonempty_columns": (observed.get("table") or {}).get("nonempty_columns"),
+            "column_types": (observed.get("table") or {}).get("column_types"),
         }
         if fmt == "annot":
             from .analysis_atlas_identity import identify

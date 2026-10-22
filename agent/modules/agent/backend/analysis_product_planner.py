@@ -169,6 +169,8 @@ def registered_roots(tools, intent):
         catalogue = json.loads(path.read_text())["roots"]
     entries = []
     for index, root in enumerate(tools.input_roots):
+        if index in {row["index"] for row in getattr(tools, "participants_tables", [])}:
+            continue
         matches = [row for row in catalogue if Path(row["path"]).resolve() == root]
         entry = matches[0] if matches else {"subject_id": root.name, "species_declared": None, "source": "approved root registration; species unavailable"}
         entries.append({**entry, "index": index, "root": root})
@@ -386,7 +388,8 @@ def plan_analysis(tools, raw):
     if error:
         return error
     entries = registered_roots(tools, intent)
-    paths = discover_paths(entries)
+    from .analysis_participants import table_paths
+    paths = discover_paths(entries) + table_paths(tools, entries)
     profile, cached = ensure_profile(tools, paths)
     requirements, req_sha = load_knowledge("method_requirements", tools)
     dependencies, dep_sha = load_knowledge("pipeline_dependencies", tools)

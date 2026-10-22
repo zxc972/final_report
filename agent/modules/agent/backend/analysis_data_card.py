@@ -80,6 +80,9 @@ def summarize(profile, entries, runtime):
     lines.append(
         "Full: /work/data_card.json; /work/data_profile.json. Completion/QC not certified. Read this first; Planning permits 4 supplementary read_file/ls calls, then plan_analysis. Inventory-only requests need no analysis plan or execution."
     )
+    tables = [{"path": _value(f["path"]), "columns": _value(_value(f.get("table", {})).get("columns", {})) or []} for f in profile.get("files", []) if _value(f.get("format")) in {"tsv", "csv"}]
+    table_line = "Participant tables/model columns: " + ("; ".join(t["path"] + ": " + ",".join(t["columns"]) for t in tables) or "none registered")
+    lines.insert(-2, table_line)
     text = "\n".join(lines)
     if len(text) > 1500:
         # Keep all subjects and missing prerequisites; details stay in the full card.
@@ -91,9 +94,12 @@ def summarize(profile, entries, runtime):
                 f"missing ROI={','.join(r['missing_roi_inputs']) or 'none'}; read errors={r['read_errors']}"
                 for r in rows
             ]
-            + lines[-2:]
+            + lines[-3:]
         )
-        text = "\n".join(lines)
+        tables = [{"path": _value(f["path"]), "columns": _value(_value(f.get("table", {})).get("columns", {})) or []} for f in profile.get("files", []) if _value(f.get("format")) in {"tsv", "csv"}]
+    table_line = "Participant tables/model columns: " + ("; ".join(t["path"] + ": " + ",".join(t["columns"]) for t in tables) or "none registered")
+    lines.insert(-2, table_line)
+    text = "\n".join(lines)
     if len(text) > 1500:
         raise ValueError(
             "Data card cannot represent the registered scope within 1500 characters"
@@ -101,6 +107,7 @@ def summarize(profile, entries, runtime):
     return {
         "schema": "primatex.data_card.v1",
         "subjects": rows,
+        "participants_tables": tables,
         "software": commands,
         "summary": text,
         "profile_ref": "/work/data_profile.json",
@@ -159,7 +166,8 @@ def prepare_data_card(tools, request):
     )
 
     def profile_probe():
-        profile, cached = ensure_profile(tools, discover_paths(entries))
+        from .analysis_participants import table_paths
+        profile, cached = ensure_profile(tools, discover_paths(entries) + table_paths(tools, entries))
         return {
             "status": "ok",
             "profile": profile["record"],
