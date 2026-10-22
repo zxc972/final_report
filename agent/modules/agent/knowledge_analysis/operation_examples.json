@@ -1,0 +1,273 @@
+{
+  "schema": "primatex.synthetic_operation_examples.v1",
+  "synthetic_only": true,
+  "library_sha256": "f2f86392868c798afc9dc0b66f9b0244610708930c832328be8785e6a6681106",
+  "examples": {
+    "read_surface": {
+      "python_type": "tuple",
+      "items": [
+        {
+          "python_type": "numpy.ndarray",
+          "dtype": "float64",
+          "shape": [
+            4,
+            3
+          ],
+          "example": [
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "python_type": "numpy.ndarray",
+          "dtype": "int64",
+          "shape": [
+            4,
+            3
+          ],
+          "example": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              3,
+              1
+            ],
+            [
+              0,
+              2,
+              3
+            ],
+            [
+              1,
+              3,
+              2
+            ]
+          ]
+        }
+      ]
+    },
+    "read_surface_metric": {
+      "python_type": "numpy.ndarray",
+      "dtype": "float64",
+      "shape": [
+        4
+      ],
+      "example": [
+        0.0,
+        2.0,
+        4.0,
+        6.0
+      ]
+    },
+    "read_annotation": {
+      "python_type": "tuple",
+      "items": [
+        {
+          "python_type": "numpy.ndarray",
+          "dtype": "int64",
+          "shape": [
+            4
+          ],
+          "example": [
+            -1,
+            1,
+            1,
+            2
+          ]
+        },
+        [
+          "unknown",
+          "one",
+          "two"
+        ],
+        {
+          "python_type": "numpy.ndarray",
+          "dtype": ">i4",
+          "shape": [
+            3,
+            5
+          ],
+          "example": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              20,
+              30,
+              40,
+              0,
+              2629140
+            ],
+            [
+              50,
+              60,
+              70,
+              0,
+              4602930
+            ]
+          ]
+        }
+      ]
+    },
+    "read_label": {
+      "python_type": "numpy.ndarray",
+      "dtype": "int64",
+      "shape": [
+        4
+      ],
+      "example": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "read_label_gifti": {
+      "python_type": "tuple",
+      "items": [
+        {
+          "python_type": "numpy.ndarray",
+          "dtype": "int64",
+          "shape": [
+            4
+          ],
+          "example": [
+            0,
+            1,
+            1,
+            2
+          ]
+        },
+        {
+          "0": "unknown",
+          "1": "one",
+          "2": "two"
+        }
+      ]
+    },
+    "vertex_area": {
+      "python_type": "numpy.ndarray",
+      "dtype": "float64",
+      "shape": [
+        4
+      ],
+      "example": [
+        0.5,
+        0.6220084679281461,
+        0.6220084679281461,
+        0.6220084679281461
+      ]
+    },
+    "parcel_summary": [
+      {
+        "label_key": 1,
+        "name": "one",
+        "vertex_count": 2,
+        "mean": 3.0,
+        "std_population": 1.0,
+        "median": 3.0,
+        "zero_count": 0,
+        "weight_sum": 2.0
+      },
+      {
+        "label_key": 2,
+        "name": "two",
+        "vertex_count": 1,
+        "mean": 6.0,
+        "std_population": 0.0,
+        "median": 6.0,
+        "zero_count": 0,
+        "weight_sum": 1.0
+      }
+    ],
+    "read_stats_table": {
+      "columns": [
+        "StructName",
+        "ThickAvg"
+      ],
+      "rows": [
+        {
+          "StructName": "one",
+          "ThickAvg": "2.5"
+        }
+      ],
+      "measures": [],
+      "source": "/work/fixture.stats",
+      "units": "Per source headers; no conversion"
+    },
+    "convex_hull_area_ratio": {
+      "surface_area": 2.3660254037844384,
+      "hull_area": 2.366025403784439,
+      "area_ratio": 0.9999999999999998,
+      "area_units": "squared stored-coordinate units; physical scale unverified",
+      "ratio_units": "dimensionless",
+      "is_local_gyrification_index": false
+    },
+    "nifti_info": {
+      "shape": [
+        2,
+        3,
+        4
+      ],
+      "voxel_size": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "voxel_size_units": "mm",
+      "affine": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "physical_scale_verified": false
+    }
+  }
+}

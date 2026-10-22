@@ -275,6 +275,13 @@ class AnalysisTools:
                 self.control_store.create("context.json", context)
         if ledger:
             self._load_budget(ledger.snapshot())
+        self.session = None
+        self.model_context = None
+        if self.knowledge_profile.name == "product_graph_planner":
+            from .analysis_session import AnalysisSession
+            from .analysis_context import ModelContext
+            self.session = AnalysisSession(self)
+            self.model_context = ModelContext(self)
 
     def _load_budget(self, values: dict[str, Any]) -> None:
         for key in ("deadline", "tool_calls", "model_calls", "executions"):
@@ -282,9 +289,16 @@ class AnalysisTools:
 
     def _tick(self, *, model: bool = False) -> None:
         with self._lock:
+            phase = None
+            if model and self.session is not None:
+                from .analysis_planning_budget import before_reserve
+                phase = before_reserve(self)
             if self.ledger:
                 self._load_budget(self.ledger.reserve("model_calls" if model else "tool_calls",
                                                      MAX_MODEL_CALLS if model else MAX_TOOL_CALLS))
+                if phase is not None:
+                    from .analysis_planning_budget import after_reserve
+                    after_reserve(self, phase)
                 return
             if time.time() >= self.deadline:
                 raise BudgetExceeded("Analysis wall-clock budget exhausted")
@@ -292,6 +306,9 @@ class AnalysisTools:
                 if self.model_calls >= MAX_MODEL_CALLS:
                     raise BudgetExceeded("Analysis model-call budget exhausted")
                 self.model_calls += 1
+                if phase is not None:
+                    from .analysis_planning_budget import after_reserve
+                    after_reserve(self, phase)
             else:
                 if self.tool_calls >= MAX_TOOL_CALLS:
                     raise BudgetExceeded("Analysis tool-call budget exhausted")
@@ -303,9 +320,11 @@ class AnalysisTools:
             result = operation()
             if not isinstance(result, dict):
                 result = {"status": "ok", "result": result}
-            return _safe(result, self.secret)
         except Exception as exc:
-            return {"status": "error", "error": _safe(str(exc), self.secret)}
+            result = {"status": "error", "error": _safe(str(exc), self.secret)}
+        if self.session is not None:
+            result["state"] = self.session.state()
+        return _safe(result, self.secret)
 
     def resolve(self, path: str, *, writable: bool = False) -> Path:
         if not path or "\\" in path or ":" in path or "\x00" in path:
@@ -339,7 +358,7 @@ class AnalysisTools:
             raise ValueError("Resolved path escaped its root")
         return candidate
 
-    def read_operations(self) -> dict[str, Any]:
+    def read_operations(self, function: str | None = None) -> dict[str, Any]:
         """Read signatures, return formats and units for the read-only primatex_ops library.
 
         Use these mature functions in NEW code you write. They are building
@@ -347,7 +366,13 @@ class AnalysisTools:
         """
         def operation():
             from .analysis_operations import operations_manifest
-            return {"status": "ok", **operations_manifest()}
+            manifest = operations_manifest()
+            if function is not None:
+                selected = [row for row in manifest["functions"] if row["name"] == function]
+                if not selected:
+                    raise ValueError("Unknown operation function: " + str(function))
+                manifest["functions"] = selected
+            return {"status": "ok", **manifest}
         return self._call(operation)
 
     def plan_analysis(self, intent: AnalysisIntent) -> dict[str, Any]:
@@ -450,7 +475,11 @@ class AnalysisTools:
             root = configured_research_root()
             if not root:
                 raise ValueError("Method graph release is not configured")
-            self._method_graph_store = MethodGraph(Path(root))
+            unified = None
+            if self.control_store is not None:
+                from .analysis_unified_runtime import repository_for
+                unified = repository_for(self)
+            self._method_graph_store = MethodGraph(Path(root), unified_store=unified)
         return self._method_graph_store
 
     def search_analysis_methods(self, query: str, limit: int = 5) -> dict[str, Any]:
@@ -664,8 +693,13 @@ class AnalysisTools:
                 raise ValueError("Python source is too large")
             compile(code, path, "exec")
             with self._execution_lock:
+                mapped = "/work/" + target.relative_to(self.workdir).as_posix()
+                if self.session is not None:
+                    self.session.guard_write(mapped)
                 target.parent.mkdir(parents=True, exist_ok=True)
                 _write_regular(target, self.workdir, code)
+                if self.session is not None:
+                    self.session.wrote_code(mapped)
             return {"status": "written", "path": "/work/" + target.relative_to(
                 self.workdir).as_posix(), "syntax_valid": True}
         return self._call(operation)
@@ -680,56 +714,72 @@ class AnalysisTools:
         changes no output data, reads no gold values and certifies no science.
         """
         def operation() -> dict[str, Any]:
-            from .analysis_finalization import derive_manifest
-            from .analysis_validation import ArtifactValidator, MANIFEST_NAME
-            with self._execution_lock:
-                # Every new finalization attempt invalidates its predecessor,
-                # including requests rejected before a new manifest is written.
-                old_manifest = self.workdir / MANIFEST_NAME
-                _no_links(old_manifest, self.workdir)
-                if old_manifest.exists():
-                    old_manifest.rename(self.workdir / (".previous-finalization-" + uuid.uuid4().hex + ".json"))
-                rid = self.last_execution.get("receipt_id")
-                if (self.last_execution.get("status") != "success"
-                        or self.last_execution.get("exit_code") != 0
-                        or not isinstance(rid, str) or len(rid) != 32
-                        or any(c not in "0123456789abcdef" for c in rid)):
-                    raise ValueError("A real successful execution receipt is required")
-                eroot = self.workdir.parent / ".execution_receipts" / self.workdir.name
-                _no_links(eroot, self.workdir.parent)
-                eraw = _read_regular(eroot / (rid + ".json"), eroot, 512 * 1024 + 1)
-                if len(eraw) > 512 * 1024:
-                    raise ValueError("Execution receipt exceeds bounds")
-                executed = json.loads(eraw)
-                if (executed.get("receipt_id") != rid
-                        or executed.get("schema_version") != "primatex.execution_receipt.v1"
-                        or executed.get("result", {}).get("status") != "success"
-                        or executed.get("result", {}).get("exit_code") != 0
-                        or executed.get("script_sha256_before") != executed.get("script_sha256_after")):
-                    raise ValueError("Execution receipt is not a consistent successful run")
-                script = self.resolve(executed["script"], writable=True)
-                if hashlib.sha256(_read_regular(script, self.workdir, MAX_CODE_BYTES)).hexdigest() != executed["script_sha256_after"]:
-                    raise ValueError("Executed script changed after its receipt; execute it again")
-                manifest, observations = derive_manifest(self.workdir, artifacts)
-                content = json.dumps(manifest, ensure_ascii=False, indent=2)
-                _write_regular(self.workdir / MANIFEST_NAME, self.workdir, content)
-                checked = ArtifactValidator().validate(self.workdir)
-                fid = uuid.uuid4().hex
-                froot = self.workdir.parent / ".artifact_receipts" / self.workdir.name
-                _no_links(froot, self.workdir.parent)
-                froot.mkdir(parents=True, exist_ok=True)
-                receipt = {"schema_version": "primatex.artifact_receipt.v1", "receipt_id": fid,
-                           "timestamp": time.time(), "execution_receipt_id": rid,
-                           "manifest_sha256": hashlib.sha256(content.encode()).hexdigest(),
-                           "supplied_constraints": artifacts, "observations": observations,
-                           "validation": checked}
-                _write_regular(froot / (fid + ".json"), froot, json.dumps(receipt, ensure_ascii=False))
-                return {"status": "finalized" if checked.get("valid") else "artifact_contract_failed",
-                        "artifact_receipt_id": fid, "manifest_sha256": receipt["manifest_sha256"],
-                        "last_execution_receipt_id": rid, "observations": observations,
-                        "validation": checked, "independent_numeric_status": "not_configured",
-                        "scientific_status": "not_evaluated"}
+            if self.session is not None:
+                if (self.session.record.get("review_pending")
+                        and self.last_execution.get("receipt_id") == self.session.record.get("rejected_execution_receipt_id")):
+                    raise ValueError("Review repair requires revising and executing the sealed script before finalization")
+                cached = self.session.existing_receipt()
+                if cached is not None:
+                    return cached
+                _, missing = self.session.artifact_contract()
+                if missing:
+                    raise ValueError("; ".join(missing))
+                if self.session.state()["phase"] == "executed_failed":
+                    detail = "; ".join(self.session.record.get("missing", []))
+                    raise ValueError(detail + "; repair outputs and execute the sealed script again before finalization")
+            return self._finalize_artifacts_impl(artifacts)
         return self._call(operation)
+
+    def _finalize_artifacts_impl(self, artifacts: list[dict[str, Any]]) -> dict[str, Any]:
+        from .analysis_finalization import derive_manifest
+        from .analysis_validation import ArtifactValidator, MANIFEST_NAME
+        with self._execution_lock:
+            # Every new finalization attempt invalidates its predecessor,
+            # including requests rejected before a new manifest is written.
+            old_manifest = self.workdir / MANIFEST_NAME
+            _no_links(old_manifest, self.workdir)
+            if old_manifest.exists():
+                old_manifest.rename(self.workdir / (".previous-finalization-" + uuid.uuid4().hex + ".json"))
+            rid = self.last_execution.get("receipt_id")
+            if (self.last_execution.get("status") != "success"
+                    or self.last_execution.get("exit_code") != 0
+                    or not isinstance(rid, str) or len(rid) != 32
+                    or any(c not in "0123456789abcdef" for c in rid)):
+                raise ValueError("A real successful execution receipt is required")
+            eroot = self.workdir.parent / ".execution_receipts" / self.workdir.name
+            _no_links(eroot, self.workdir.parent)
+            eraw = _read_regular(eroot / (rid + ".json"), eroot, 512 * 1024 + 1)
+            if len(eraw) > 512 * 1024:
+                raise ValueError("Execution receipt exceeds bounds")
+            executed = json.loads(eraw)
+            if (executed.get("receipt_id") != rid
+                    or executed.get("schema_version") != "primatex.execution_receipt.v1"
+                    or executed.get("result", {}).get("status") != "success"
+                    or executed.get("result", {}).get("exit_code") != 0
+                    or executed.get("script_sha256_before") != executed.get("script_sha256_after")):
+                raise ValueError("Execution receipt is not a consistent successful run")
+            script = self.resolve(executed["script"], writable=True)
+            if hashlib.sha256(_read_regular(script, self.workdir, MAX_CODE_BYTES)).hexdigest() != executed["script_sha256_after"]:
+                raise ValueError("Executed script changed after its receipt; execute it again")
+            manifest, observations = derive_manifest(self.workdir, artifacts)
+            content = json.dumps(manifest, ensure_ascii=False, indent=2)
+            _write_regular(self.workdir / MANIFEST_NAME, self.workdir, content)
+            checked = ArtifactValidator().validate(self.workdir)
+            fid = uuid.uuid4().hex
+            froot = self.workdir.parent / ".artifact_receipts" / self.workdir.name
+            _no_links(froot, self.workdir.parent)
+            froot.mkdir(parents=True, exist_ok=True)
+            receipt = {"schema_version": "primatex.artifact_receipt.v1", "receipt_id": fid,
+                       "timestamp": time.time(), "execution_receipt_id": rid,
+                       "manifest_sha256": hashlib.sha256(content.encode()).hexdigest(),
+                       "supplied_constraints": artifacts, "observations": observations,
+                       "validation": checked}
+            _write_regular(froot / (fid + ".json"), froot, json.dumps(receipt, ensure_ascii=False))
+            return {"status": "finalized" if checked.get("valid") else "artifact_contract_failed",
+                    "artifact_receipt_id": fid, "manifest_sha256": receipt["manifest_sha256"],
+                    "last_execution_receipt_id": rid, "observations": observations,
+                    "validation": checked, "independent_numeric_status": "not_configured",
+                    "scientific_status": "not_evaluated"}
 
     def submit_python_job(self, path: str, artifacts: list[dict[str, Any]],
                           timeout_seconds: int = 7200) -> dict[str, Any]:
@@ -766,7 +816,7 @@ class AnalysisTools:
                 return receipt
         return self._call(operation)
 
-    def run_python(self, path: str, timeout_seconds: int = 120) -> dict[str, Any]:
+    def run_python(self, path: str | None = None, timeout_seconds: int = 120) -> dict[str, Any]:
         """Execute generated Python in isolation, with an explicit bounded timeout.
 
         Defaults to120 seconds. Request a suitable timeout for long mature CLI
@@ -783,7 +833,8 @@ class AnalysisTools:
                 return execute()
 
         def execute() -> dict[str, Any]:
-            script = self.resolve(path, writable=True)
+            selected_path = self.session.execution_path(path) if self.session is not None else path
+            script = self.resolve(selected_path, writable=True)
             if script.suffix != ".py" or not script.is_file():
                 raise ValueError("Expected an existing /work Python script")
             gate = {"allowed": True, "read_only": False}
@@ -852,6 +903,8 @@ class AnalysisTools:
             _write_regular(receipt_root / (receipt_id + ".json"), receipt_root,
                            json.dumps(receipt, ensure_ascii=False))
             self.last_execution["receipt_id"] = receipt_id
+            if self.session is not None:
+                self.session.after_execution()
             return self.last_execution
         return self._call(operation)
 
@@ -878,8 +931,26 @@ def _build_coding_agent(tools: AnalysisTools, *, model: str, base_url: str,
         """
 
     class BudgetMiddleware(AgentMiddleware):
-        def before_model(self, state: Any, runtime: Any) -> None:
+        def wrap_model_call(self, request: Any, handler: Callable[..., Any]) -> Any:
+            # A resumed failed model node skips its completed before_model node.
+            # Reserve at each real model invocation instead of that checkpoint.
+            from .analysis_call_context import model_source
             tools._tick(model=True)
+            with model_source("coding.model"):
+                return self._invoke_model(request, handler)
+
+        def _invoke_model(self, request: Any, handler: Callable[..., Any]) -> Any:
+            if tools.model_context is None:
+                return handler(request)
+            view = tools.model_context.messages(request.messages)
+            active = request.override(messages=view)
+            if tools.session is not None:
+                from .analysis_phase_tools import restrict_request, call_with_phase_choice
+                active = restrict_request(tools, active)
+                from .analysis_transport import model_deadline
+                with model_deadline(tools.deadline):
+                    return call_with_phase_choice(tools, active, handler)
+            return handler(active)
 
         def wrap_tool_call(self, request: Any, handler: Callable[..., Any]) -> Any:
             if request.tool_call["name"] not in allowed_tool_names:
@@ -887,18 +958,91 @@ def _build_coding_agent(tools: AnalysisTools, *, model: str, base_url: str,
                     tools.events.append("review", "failed", "Tool blocked by active profile",
                                         {"tool": request.tool_call["name"],
                                          "reason": "Tool is outside the filtered approved registry"})
-                return ToolMessage(content="Tool disabled: use only approved analysis tools. "
-                                   "Subagents, host shells and virtual file writes are disabled.",
-                                   tool_call_id=request.tool_call["id"], status="error")
-            response = (tools.events.call_tool(request.tool_call["name"], request.tool_call.get("args", {}),
-                                               lambda: handler(request), tool_call_id=request.tool_call["id"])
-                        if tools.events is not None else handler(request))
+                reason = (
+                    "Tool disabled: use only approved analysis tools. "
+                    "Subagents, host shells and virtual file writes are disabled."
+                )
+                if tools.session is not None:
+                    tools._tick()
+                    return ToolMessage(
+                        content=json.dumps({"status": "error", "error": reason,
+                                            "state": tools.session.state()}, ensure_ascii=False),
+                        tool_call_id=request.tool_call["id"], status="error",
+                    )
+                return ToolMessage(content=reason, tool_call_id=request.tool_call["id"], status="error")
+            from pydantic import ValidationError
+            from langgraph.prebuilt.tool_node import ToolInvocationError
+
+            def invoke_validated():
+                if tools.session is not None:
+                    from .analysis_phase_tools import phase_tools, read_error_allowed
+                    name = request.tool_call["name"]
+                    phase = tools.session.state()["phase"]
+                    permitted = name in phase_tools(tools.session, allowed_tool_names)
+                    if phase == "executed_failed" and name == "read_file" and getattr(tools, "execution_required", True):
+                        permitted = permitted and read_error_allowed(tools, request.tool_call.get("args", {}))
+                    if not permitted:
+                        tools._tick()
+                        return ToolMessage(content=json.dumps({
+                            "status": "blocked", "error": "Tool unavailable in phase " + phase,
+                            "available_tools": sorted(phase_tools(tools.session, allowed_tool_names)),
+                            "state": tools.session.state(),
+                        }), tool_call_id=request.tool_call["id"], status="error")
+                # ToolNode may turn validation errors into plain ToolMessages
+                # before returning to middleware. Validate the same registered
+                # Pydantic schema here so this failure has structured state.
+                schema = getattr(getattr(request, "tool", None), "args_schema", None)
+                if tools.session is not None and hasattr(schema, "model_validate"):
+                    schema.model_validate(request.tool_call.get("args", {}))
+                if tools.session is not None:
+                    from .analysis_planning_tools import reserve_action
+                    reserve_action(tools, request.tool_call["name"])
+                return handler(request)
+
+            try:
+                response = (
+                    tools.events.call_tool(
+                        request.tool_call["name"], request.tool_call.get("args", {}),
+                        invoke_validated, tool_call_id=request.tool_call["id"],
+                    ) if tools.events is not None else invoke_validated()
+                )
+            except (ToolInvocationError, ValidationError) as exc:
+                if tools.session is not None and request.tool_call["name"] == "commit_plan":
+                    tools.session.record["commit_argument_error"] = True
+                if tools.session is None:
+                    raise
+                # Schema rejection happens before the tool function can reserve
+                # its budget or append state. Count that actual failed attempt.
+                tools._tick()
+                response = ToolMessage(
+                    content=json.dumps({
+                        "status": "error", "argument_validation_failed": True,
+                        "error": _safe(str(exc), tools.secret),
+                    }, ensure_ascii=False),
+                    tool_call_id=request.tool_call["id"], status="error",
+                )
             if isinstance(response, ToolMessage) and isinstance(response.content, str):
                 try:
                     payload = json.loads(response.content)
                 except (ValueError, TypeError):
                     payload = None
+                if tools.session is not None and not isinstance(payload, dict):
+                    payload = {
+                        "status": "error" if response.status == "error" else "ok",
+                        "message": _safe(response.content, tools.secret),
+                    }
+                if isinstance(payload, dict) and tools.session is not None:
+                    if request.tool_call["name"] == "commit_plan":
+                        tools.session.record["commit_argument_error"] = payload.get("status") not in {"committed", "ok"}
+                    payload["state"] = tools.session.state()
+                    response.content = json.dumps(payload, ensure_ascii=False)
                 if isinstance(payload, dict):
+                    if (tools.session is not None and getattr(tools, "execution_required", True) is False
+                            and request.tool_call["name"] in {"ls", "read_file"}):
+                        tools.control_store.save("inspection_observation", {
+                            "tool": request.tool_call["name"], "arguments": request.tool_call.get("args", {}),
+                            "result": _safe(payload, tools.secret),
+                        })
                     observation = tools.feedback_journal.observe(
                         request.tool_call["name"], request.tool_call.get("args", {}),
                         _safe(payload, tools.secret))
@@ -908,6 +1052,9 @@ def _build_coding_agent(tools: AnalysisTools, *, model: str, base_url: str,
                             payload["reflection_required"] = True
                             payload["feedback_scope"] = "Actual tool failure; diagnose with record_analysis_reflection and check your hypothesis. No external fix or expected values supplied."
                         response.content = json.dumps(payload, ensure_ascii=False)
+                    if tools.model_context is not None:
+                        payload = tools.model_context.offload(request.tool_call["name"], payload)
+                        response = response.model_copy(update={"content": json.dumps(payload, ensure_ascii=False)})
             return response
 
     functions = [tools.search_method_knowledge, tools.search_knowledge, tools.read_knowledge,
@@ -921,12 +1068,37 @@ def _build_coding_agent(tools: AnalysisTools, *, model: str, base_url: str,
     if os.environ.get("ANALYSIS_ENABLE_BACKGROUND_JOBS", "0") == "1":
         functions.append(tools.submit_python_job)
     profile = tools.knowledge_profile
+    if profile.name != "product_graph_planner":
+        def run_python(path: str, timeout_seconds: int = 120) -> dict[str, Any]:
+            return tools.run_python(path, timeout_seconds)
+        run_python.__doc__ = AnalysisTools.run_python.__doc__
+        functions = [run_python if fn.__name__ == "run_python" else fn for fn in functions]
     functions.extend([tools.search_evidence, tools.read_evidence])
     if profile.name in {"method_graph", "method_graph_gated", "product_graph_planner"}:
         functions.append(tools.read_operations)
     if profile.name in {"method_graph", "method_graph_gated"}:
         functions.extend([tools.profile_data, tools.compile_constraints, tools.commit_plan])
     if profile.name == "product_graph_planner":
+        def record_analysis_reflection(observation_id: str, hypothesis: str = "", next_check: str = "") -> dict[str, Any]:
+            """Inspect an actual failed observation. observation_id is the only required argument.
+
+            Optionally record a substantive hypothesis and falsifiable next check.
+            Acknowledging an error is not evidence that the error was corrected.
+            """
+            def operation():
+                if hypothesis or next_check:
+                    return tools.feedback_journal.reflect(observation_id, hypothesis, next_check)
+                original = tools.feedback_journal._read(observation_id)
+                if original.get("kind") != "observation" or not original.get("failed"):
+                    raise ValueError("observation_id must reference an actual failed observation")
+                tools.feedback_journal._write("reflection_acknowledgement", {
+                    "observation_id": observation_id, "authorship": "analysis_agent_model",
+                    "verification_status": "acknowledged_not_corrected",
+                })
+                return {"status": "ok", "observation_id": observation_id,
+                        "observation": original["result"], "next": "Inspect the error, edit the sealed script and run it again"}
+            return tools._call(operation)
+        functions = [record_analysis_reflection if fn.__name__ == "record_analysis_reflection" else fn for fn in functions]
         def commit_plan(candidate_id: str, rationale: str, code_path: str) -> dict[str, Any]:
             """Seal one feasible plan_analysis candidate; explain your choice in 1-2 sentences.
 
@@ -938,6 +1110,35 @@ def _build_coding_agent(tools: AnalysisTools, *, model: str, base_url: str,
                 with tools._execution_lock:
                     return commit_candidate(tools, candidate_id, rationale, code_path)
             return tools._call(operation)
+        from .analysis_crossspecies import enabled as cross_enabled
+        if cross_enabled(tools):
+            def commit_plan(candidate_id: str, rationale: str, code_path: str,
+                            success_criteria: str, failure_criteria: str, species: list[str],
+                            scale_status: str, homology_evidence: list[str] | None = None) -> dict[str, Any]:
+                """Seal the candidate with your nonempty success/failure standards and explicit species/scale declarations.
+
+                Cross-species comparisons also require sourced homology references.
+                Declarations cannot override observed hard checks.
+                """
+                commitment = {"success_criteria": success_criteria, "failure_criteria": failure_criteria,
+                              "species": species, "scale_status": scale_status,
+                              "homology_evidence": homology_evidence or []}
+                def operation():
+                    from .analysis_product_planner import commit_candidate
+                    with tools._execution_lock:
+                        return commit_candidate(tools, candidate_id, rationale, code_path, commitment)
+                return tools._call(operation)
+
+            def submit_conclusion(text: str, claim_scope: str, direction: str | None = None) -> dict[str, Any]:
+                """Submit your conclusion for deterministic typed-claim review; rewrite when verdict is revised."""
+                from .analysis_crossspecies import submit_conclusion as submit
+                def operation():
+                    result = submit(tools, text, claim_scope, direction)
+                    card = result["conclusion_card"]
+                    return {"status": result["status"], "must_rewrite": card["must_rewrite"],
+                            "supported_rewrite_scope": card["supported_rewrite_scope"]}
+                return tools._call(operation)
+            functions.append(submit_conclusion)
         functions.extend([tools.plan_analysis, commit_plan])
     functions = filter_functions(functions, profile)
     allowed_tool_names = frozenset(function.__name__ for function in functions)
@@ -1029,6 +1230,21 @@ def _build_graph(coding_agent: Any, tools: AnalysisTools, validator: Any,
         if tools.control_store is not None:
             tools.task_request = state["request"]
         request = state["request"]
+        tools.execution_required = state.get("execution_required", True)
+        if tools.session is not None:
+            from .analysis_data_card import prepare_data_card
+            try:
+                card = prepare_data_card(tools, request)
+                request = card["summary"] + "\n\nUSER REQUEST:\n" + request
+            except Exception as exc:
+                # Failed metadata discovery is observable, never invented success.
+                notice = _safe(str(exc), tools.secret, 400)
+                tools.control_store.save("data_card_failure", {"reason": notice})
+                tools.events.append("data", "warn", "Data card unavailable; inspect inputs", {"reason": notice})
+                request = "DATA CARD unavailable: " + notice + "\nInspect approved inputs, then plan.\n" + request
+        if tools.session is not None and not tools.execution_required:
+            from .analysis_inspection import instructions
+            request += "\n\n" + instructions(tools)
         if required:
             request += "\nMandatory final artifact names from the caller task contract: " + json.dumps(required)
         request += ("\n\nValidation feedback to repair:\n" + feedback
@@ -1043,6 +1259,7 @@ def _build_graph(coding_agent: Any, tools: AnalysisTools, validator: Any,
                      "Validation feedback to repair:\n" + feedback}]
                     if has_context and feedback else
                     list(state.get("history", [])) + [{"role": "user", "content": request}])
+        limited_failure = False
         try:
             # Resume an interrupted inner step without appending a human message
             # between an AI tool call and its pending tool response.
@@ -1057,12 +1274,19 @@ def _build_graph(coding_agent: Any, tools: AnalysisTools, validator: Any,
             error = ""
         except Exception as exc:
             text, error = "", _safe(str(exc), tools.secret, 2000)
+            from .analysis_transport import RateLimited, AuthenticationFailed
+            limited_failure = isinstance(exc, RateLimited)
+            auth_failure = isinstance(exc, AuthenticationFailed)
         execution = dict(tools.last_execution)
         if tools.executions == before:
             execution = {"status": "not_executed", "error": "No Python execution in this iteration"}
         if error:
             execution = {**execution, "agent_error": error}
-        if tools.control_store is not None and execution.get("status") != "success":
+            if limited_failure:
+                execution["environment_rate_limited"] = True
+            if auth_failure:
+                execution["environment_auth_failed"] = True
+        if tools.control_store is not None and execution.get("status") != "success" and not execution.get("environment_rate_limited") and not execution.get("environment_auth_failed"):
             constraints = tools.control_store.latest("constraints")
             if constraints and constraints["record"]["summary"]["block"]:
                 execution = {**execution, "status": "blocked",
@@ -1079,6 +1303,12 @@ def _build_graph(coding_agent: Any, tools: AnalysisTools, validator: Any,
                 "metadata": dict(tools.knowledge_metadata)}
 
     def validate(state: AnalysisState) -> dict[str, Any]:
+        if state.get("execution", {}).get("environment_auth_failed"):
+            return {"validation": {"valid": False, "passed": False, "scope": "environment_auth_failed",
+                                   "scientific_status": "not_evaluated", "errors": ["Upstream permission denied; no retry"]}}
+        if state.get("execution", {}).get("environment_rate_limited"):
+            return {"validation": {"valid": False, "passed": False, "scope": "environment_rate_limited",
+                                   "scientific_status": "not_evaluated", "errors": ["Upstream 429 retries exhausted; no model-failure verdict"]}}
         if (tools.control_store is not None and state.get("execution", {}).get("status") == "blocked"
                 and state.get("execution", {}).get("constraints_sha256")):
             return {"validation": {"valid": False, "passed": False,
@@ -1096,12 +1326,15 @@ def _build_graph(coding_agent: Any, tools: AnalysisTools, validator: Any,
             return {"validation": {"valid": passed, "passed": passed,
                 "scope": "pipeline_submission", "scientific_status": "not_evaluated",
                 "errors": [] if passed else ["Pipeline queue submission failed"]}}
-        if (state.get("execution_required", True) is False
+        if (tools.session is None and state.get("execution_required", True) is False
                 and state.get("navigation_calls", 0) and not tools.executions
                 and not state.get("execution", {}).get("agent_error")
                 and state.get("draft_message")):
             return {"validation": {"valid": True, "passed": True, "scope": "data_inspection",
                 "scientific_status": "not_evaluated", "errors": []}}
+        if tools.session is not None and state.get("execution_required", True) is False:
+            from .analysis_inspection import validate as validate_inspection
+            return {"validation": validate_inspection(tools, state.get("draft_message", ""))}
         try:
             result = dict(validator.validate(tools.workdir))
         except Exception as exc:
@@ -1120,6 +1353,14 @@ def _build_graph(coding_agent: Any, tools: AnalysisTools, validator: Any,
                 + json.dumps({"missing": coverage["missing"], "ambiguous": coverage["ambiguous"]})]
         result.setdefault("scientific_status", "not_evaluated")
         result.setdefault("independent_numeric_status", "not_configured")
+        if tools.session is not None:
+            from .analysis_output_contract import current_summary as public_summary
+            public = public_summary(tools)
+            result["public_output_contract"] = public
+            if public["status"] == "fail":
+                result["valid"] = result["passed"] = False
+                result["errors"] = list(result.get("errors", [])) + [
+                    error for item in public.get("files", []) for error in item["errors"]]
         if (result.get("valid") is True and result.get("passed", True) is True
                 and getattr(tools, "_internal_review_model", None) is not None):
             from .analysis_internal_review import run_review
@@ -1130,25 +1371,71 @@ def _build_graph(coding_agent: Any, tools: AnalysisTools, validator: Any,
                 if ("read_analysis_method" in tools.knowledge_profile.exposed_tools
                         and configured_research_root()):
                     method_reader = lambda method_id: tools._method_graph().read(method_id)
+                evidence_card = None
+                if tools.session is not None:
+                    from .analysis_review_evidence import build_evidence_card
+                    evidence_card = build_evidence_card(tools, result)
                 review = run_review(
                     tools.workdir, state["request"], result,
                     model=tools._internal_review_model,
                     reserve=lambda: tools._tick(model=True),
-                    method_reader=method_reader)
+                    method_reader=method_reader, register_execution_receipts=tools.session is not None,
+                    deadline=tools.deadline, evidence_card=evidence_card)
             except Exception as exc:
-                review = {"decision": "insufficient_evidence", "protocol_valid": False,
+                from .analysis_transport import TransportExhausted, AuthenticationFailed
+                unavailable = isinstance(exc, TransportExhausted)
+                review = {"decision": "unreviewed" if unavailable else "insufficient_evidence",
+                          "status": "unreviewed" if unavailable else "invalid",
+                          "transport_exhausted": unavailable, "protocol_valid": False,
                           "findings": [], "limitations": [
                               "Internal review unavailable: " + _safe(str(exc), tools.secret, 1000)],
                           "scope": "AI consistency review not completed; outputs and original structural checks retained"}
+                if isinstance(exc, AuthenticationFailed):
+                    review["transport"] = {"upstream_status": exc.status_code, "failure_kind": "environment_auth_failed"}
             result["internal_review"] = _safe(review, tools.secret)
+            if review.get("transport_exhausted") and review.get("transport", {}).get("upstream_status") in {401, 403}:
+                result["scope"] = "environment_auth_failed"
+            if review.get("transport_exhausted") and review.get("transport", {}).get("upstream_status") == 429:
+                result["scope"] = "environment_rate_limited"
             if review.get("decision") != "pass":
                 result["valid"] = result["passed"] = False
                 result["errors"] = list(result.get("errors", [])) + [
                     "Internal Agent consistency review: " + json.dumps(review, ensure_ascii=False)]
+        if tools.session is not None:
+            from .analysis_independent_numeric import current_summary
+            numeric = current_summary(tools)
+            result["independent_numeric_status"] = numeric["status"]
+            result["independent_numeric"] = numeric
+            if numeric["status"] == "fail":
+                result["valid"] = result["passed"] = False
+            review = result.get("internal_review", {})
+            if review.get("decision") == "revise" and review.get("protocol_valid") is True:
+                # Reopen the phase even if the outer-round limit is now reached.
+                # Only public/source review feedback is made visible to the model.
+                tools.session.review_failed(result)
         return {"validation": _safe(result, tools.secret),
                 "model_calls": tools.model_calls, "tool_calls": tools.tool_calls}
 
     def route(state: AnalysisState) -> str:
+        validation = state.get("validation", {})
+        if validation.get("scope") in {"environment_rate_limited", "environment_auth_failed"}:
+            return "report"
+        repair_available = (state["iterations"] < MAX_ROUNDS
+                            and tools.model_calls < MAX_MODEL_CALLS
+                            and tools.executions < MAX_EXECUTIONS
+                            and tools.tool_calls < MAX_TOOL_CALLS)
+        if tools.session is not None:
+            from .analysis_planning_budget import planning_limit
+            if (tools.session.state()["phase"] in {"unplanned", "planned"}
+                    and tools.session.record.get("planning_model_calls", 0) >= planning_limit(MAX_MODEL_CALLS)):
+                return "report"
+            review = validation.get("internal_review", {})
+            public_failed = validation.get("public_output_contract", {}).get("status") == "fail"
+            revision = review.get("decision") == "revise" and review.get("protocol_valid") is True
+            if public_failed or revision:
+                return "repair" if repair_available else "report"
+        if validation.get("independent_numeric_status") == "fail":
+            return "report"
         if state.get("validation", {}).get("internal_review", {}).get("protocol_valid") is False:
             return "report"
         if state.get("analysis_jobs"):
@@ -1163,8 +1450,13 @@ def _build_graph(coding_agent: Any, tools: AnalysisTools, validator: Any,
                              and tools.tool_calls < MAX_TOOL_CALLS) else "report"
 
     def repair(state: AnalysisState) -> dict[str, Any]:
-        observation = tools.feedback_journal.observe("graph_validate", {}, state["validation"])
-        return {"feedback": json.dumps({"validation": state["validation"],
+        from .analysis_independent_numeric import public_model_validation
+        model_validation = (public_model_validation(state["validation"])
+                            if tools.session is not None else state["validation"])
+        if tools.session is not None and state.get("execution_required", True):
+            tools.session.review_failed(model_validation)
+        observation = tools.feedback_journal.observe("graph_validate", {}, model_validation)
+        return {"feedback": json.dumps({"validation": model_validation,
                                         "execution": state.get("execution"),
                                         "feedback_observation_id": observation["id"] if observation else None,
                                         "next": "Form and test your own diagnosis; consult method/source evidence as needed. No external solution or reference answer is supplied."},
@@ -1184,14 +1476,26 @@ def _build_graph(coding_agent: Any, tools: AnalysisTools, validator: Any,
         elif passed and validation.get("scope") == "data_inspection":
             status = "inspected"
             message = "已读取实际数据目录。"
+            if tools.session is not None:
+                from .analysis_inspection import render
+                message = render(validation)
         if validation.get("scope") == "analysis_job_submission":
             status = "submitted" if all(x.get("status") not in ("failed", "unknown_after_worker_exit")
                 for x in state.get("analysis_jobs", [])) else "failed"
             message = "已提交独立后台计算。请以作业完成记录、产物检查和后续数值核对为准；提交不等于分析完成。"
+        if tools.session is not None and validation.get("internal_review", {}).get("decision") == "unreviewed":
+            status = "incomplete_review"
+            message = "Execution and output records are retained; internal review is unfinished after bounded attempts. Agent text below is an unreviewed draft."
         if validation.get("scope") == "method_constraint_block":
             status = "blocked"
             message = "方法前提未满足，分析已阻断。请换用满足条件的方法、补充缺失前提，或终止并报告缺项。尚未通过执行或科学验证。"
-        if state.get("draft_message"):
+        if validation.get("independent_numeric_status") == "fail":
+            status = "blocked"
+            message = "The host independent comparison did not pass. See the result card; reference values are not exposed to the Agent."
+        if validation.get("scope") == "environment_rate_limited":
+            status = "environment_rate_limited"
+            message = "Upstream rate limit persisted after bounded retries. This run is incomplete; no ability verdict was assigned."
+        if state.get("draft_message") and validation.get("scope") != "data_inspection":
             message += "\n\n" + state["draft_message"]
         if not passed:
             message += "\n\n" + json.dumps(validation.get("errors", []), ensure_ascii=False)
@@ -1220,6 +1524,10 @@ def _build_graph(coding_agent: Any, tools: AnalysisTools, validator: Any,
                 message += "\n\n计划封存记录：\n" + "\n".join(
                     f"v{item['version']}：{item['revision_reason']}（SHA-256 {item['sha256']}）"
                     for item in versions)
+        if validation.get("scope") == "environment_auth_failed":
+            from .analysis_transport import AUTH_FAILURE_MESSAGE
+            status = "environment_auth_failed"
+            message = AUTH_FAILURE_MESSAGE
         history = (list(state.get("history", [])) + [
             {"role": "user", "content": state["request"]},
             {"role": "assistant", "content": message}])[-12:]
@@ -1274,8 +1582,8 @@ def _run_sync(*, message: str, user_id: str, workspace: Path, conversation_id: s
 
     if type(execution_required) is not bool:
         raise ValueError("execution_required must be an explicit boolean")
-    if type(router_model_calls) is not int or router_model_calls not in {0, 1}:
-        raise ValueError("Expected zero or one precharged router call")
+    if type(router_model_calls) is not int or router_model_calls not in {0, 1, 2}:
+        raise ValueError("Expected zero, one or two precharged router calls")
     required_artifacts = _required_artifact_contract(required_artifacts)
     knowledge_profile = load_knowledge_profile()
     conversation_dir, checkpoint, thread_id = _paths(workspace, user_id, conversation_id)
@@ -1326,6 +1634,11 @@ def _run_sync(*, message: str, user_id: str, workspace: Path, conversation_id: s
         tools = AnalysisTools(workdir, input_roots, executor, KnowledgeStore(), api_key, ledger,
                               workspace=workspace, threads=threads,
                               knowledge_profile=knowledge_profile)
+        tools.execution_required = execution_required
+        from .agent_chat_state import ACTIVE_CHAT
+        active_chat = ACTIVE_CHAT.get()
+        if active_chat is not None and tools.session is not None:
+            active_chat.analysis_tools = tools
         coding_agent = _build_coding_agent(tools, model=model, base_url=base_url,
                                            api_key=api_key, model_factory=model_factory)
         graph = _build_graph(coding_agent, tools, ArtifactValidator(), checkpointer)
@@ -1363,6 +1676,52 @@ def _run_sync(*, message: str, user_id: str, workspace: Path, conversation_id: s
         if router_model_calls:
             response["model_calls"] = ledger.snapshot()["model_calls"]
             response["request_model_calls"] = response["model_calls"] - model_calls_before_request
+        tools.report_execution = result.get("execution", {})
+        from .analysis_crossspecies import enabled as cross_enabled
+        if cross_enabled(tools):
+            card = tools.control_store.latest("conclusion")
+            if (card is None or card["record"].get("analysis_execution_receipt_id") != tools.last_execution.get("receipt_id")):
+                from .analysis_crossspecies import submit_conclusion
+                submit_conclusion(tools, result.get("draft_message") or "No Agent conclusion was submitted.", "unclassified")
+                card = tools.control_store.latest("conclusion")
+            response["conclusion_card"] = card["record"]
+        elif tools.session is not None:
+            from .analysis_independent_numeric import result_card
+            response["conclusion_card"] = result_card(tools, result.get("draft_message", ""))
+            from .analysis_overall_status import finalize_card
+            response["conclusion_card"] = finalize_card(
+                response["conclusion_card"], result.get("validation", {}), result["status"],
+                result.get("execution", {}), tools.session.state()["phase"])
+            card = response["conclusion_card"]
+            saved_plan = tools.control_store.latest("plan")
+            card["plan_sha256"] = saved_plan["sha256"] if saved_plan else None
+            card["analysis_execution_receipt_id"] = tools.last_execution.get("receipt_id")
+            tools.control_store.save("product_conclusion", card)
+        if tools.session is not None:
+            # Persist the same overall decision for POST and incremental event views.
+            from .analysis_overall_status import finalize_card
+            if cross_enabled(tools):
+                response["conclusion_card"] = finalize_card(
+                    response["conclusion_card"], result.get("validation", {}), result["status"],
+                    result.get("execution", {}), tools.session.state()["phase"])
+            response["overall_status"] = response["conclusion_card"]["overall_status"]
+            response["component_statuses"] = response["conclusion_card"]["component_statuses"]
+            tools.control_store.save("overall_result", {
+                "overall_status": response["overall_status"],
+                "component_statuses": response["component_statuses"], "native_status": result["status"],
+            })
+            from .analysis_planning_budget import planning_limit, EXECUTION_RESERVE
+            response["phase_budget"] = {
+                "planning_model_calls": tools.session.record.get("planning_model_calls", 0),
+                "postseal_model_calls": tools.session.record.get("postseal_model_calls", 0),
+                "planning_limit": planning_limit(MAX_MODEL_CALLS),
+                "execution_reserve": EXECUTION_RESERVE,
+                "model_calls_by_phase": tools.session.record.get("model_calls_by_phase", {}),
+                "planning_includes_precharged_router_calls": True,
+            }
+        if tools.session is not None:
+            from .analysis_failure_classification import classify
+            response["failure_classification"] = classify({**response, "route": "analysis"})
         response["tools"] = result.get("pipeline_tasks", [])
         response["output_directory"] = workdir.relative_to(workspace.resolve()).as_posix()
         return _safe(response, api_key)

@@ -39,6 +39,8 @@ export interface MessageMetadata {
   /** Which agent the backend routed this request to. */
   route?: 'pipeline' | 'analysis';
   routeReason?: string;
+  /** Model ids observed in the provider ledger, never the current Settings value. */
+  usedModels?: string[];
   taskId?: string;
   attachments?: Attachment[];
   actions?: Action[];

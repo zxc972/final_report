@@ -304,7 +304,13 @@ def compile_constraints(
         raise ValueError(
             "Selected profile contains unreadable inputs; inspect null fields and revise data"
         )
-    mapping, sha = load_mapping()
+    from .analysis_unified_runtime import repository_for
+    from .analysis_template_bindings import probe_result, environment_for
+    from .analysis_condition_templates import evaluate
+    repository = repository_for(tools)
+    mapping_document, sha = repository.document("constraint_probes")
+    mapping = mapping_document["constraints"]
+    definitions, template_sha = repository.document("condition_templates")
     rows = []
     derived_categories = set()
     if any(value(item["format"]) in ("annot", "label.gii") for item in files):
@@ -333,7 +339,9 @@ def compile_constraints(
                 ):
                     commands = requested or ["python:json"]
             if commands:
-                passed, observed = software_observation(tools, commands, method_id)
+                _, observation = software_observation(tools, commands, method_id)
+                passed, observed = probe_result(checker, files, plan_context, parameters,
+                    definitions=definitions, software_record=(commands, observation))
             else:
                 passed, observed = False, {
                     "mapped_commands": [],
@@ -353,7 +361,8 @@ def compile_constraints(
                         "inference": True,
                     },
                 }
-            passed, observed = CHECKERS[checker](files, context, parameters)
+            passed, observed = probe_result(checker, files, context, parameters,
+                                            definitions=definitions)
         # Historical generic recon rules also covered pure derivative readers.
         # The method's actual input facts do not require reconstructing the source
         # again. Retain missing history as a warning, never as completed recon.
@@ -427,6 +436,23 @@ def compile_constraints(
                 "on_fail": "warn_and_disclose",
             }
         )
+    templated_ids = set()
+    environment = environment_for(files, plan_context, {})
+    for instance in definitions["extra_method_conditions"]:
+        if instance["method_id"] != method_id:
+            continue
+        result = evaluate(instance, environment)
+        declared = declarations.get(instance["id"])
+        rows.append({
+            "constraint_id": instance["id"], "severity": instance.get("severity", "hard"),
+            "template": instance["template"], "verdict": result["verdict"],
+            "tool_observed": {**result, "evidence_ref": f"data_profile.v{saved['version']:06d}.json"},
+            "model_declared": declared, "agreement": None if declared is None else declared == result["verdict"],
+            "conflict": declared is not None and declared != result["verdict"],
+            "source": instance.get("source", []),
+            "on_fail": "warn_and_disclose" if instance["template"] == "advisory" else "block",
+        })
+        templated_ids.update(source["method_fact_id"] for source in instance.get("source", []) if "method_fact_id" in source)
     unmapped = []
     if not method_id.startswith("self:"):
         method = tools._method_graph().read(method_id)["method"]
@@ -437,7 +463,7 @@ def compile_constraints(
             if "method_fact_id" in source
         }
         for condition in method.get("conditions", []) + method.get("inputs", []):
-            if condition["id"] not in mapped_ids:
+            if condition["id"] not in mapped_ids | templated_ids:
                 unmapped.append(
                     {
                         "condition_id": condition["id"],
@@ -447,6 +473,10 @@ def compile_constraints(
                         "trust": "model-declared only; no executable probe mapping",
                     }
                 )
+    from .analysis_crossspecies import enabled as cross_enabled
+    if cross_enabled(tools):
+        from .analysis_crossspecies import observed_environment, evaluate_policy
+        rows.extend(evaluate_policy(observed_environment(tools, plan_context), repository))
     record = {
         "schema_version": "primatex.constraints.v1",
         "method_id": method_id,
@@ -456,6 +486,8 @@ def compile_constraints(
         "profile_version": saved["version"],
         "plan_context_sha256": digest(plan_core(plan_context)),
         "mapping_sha256": sha,
+        "condition_templates_sha256": template_sha,
+        "knowledge_store_sha256": repository.knowledge_digest(),
         "rows": rows,
         "unmapped_conditions": unmapped,
         "summary": {

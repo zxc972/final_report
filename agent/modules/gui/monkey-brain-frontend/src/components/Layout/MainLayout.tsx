@@ -141,6 +141,11 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
     );
   };
 
+  const messages = useAgentStore((state) => state.messages);
+  const hasHistory = messages.some((entry) => entry.type === 'agent');
+  const recordedModels = [...messages].reverse().find((entry) => entry.type === 'agent')?.metadata?.usedModels;
+  const displayedModel = selectedKey === 'agent' && hasHistory
+    ? (recordedModels?.length ? recordedModels.join(', ') : 'not recorded') : modelName;
   const agentReady = isConnected && !!modelName;
 
   return (
@@ -183,7 +188,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
           </div>
           <div className="px-account-row">
             <span>Model</span>
-            <b title={modelName}>{modelName || 'not set'}</b>
+            <b title={displayedModel}>{displayedModel || 'not set'}</b>
           </div>
           <div className="px-account-row">
             <span>Assistant</span>

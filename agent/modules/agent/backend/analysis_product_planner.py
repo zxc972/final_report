@@ -41,7 +41,10 @@ class AnalysisIntent(BaseModel):
     required_inputs: list[StrictStr] | None = Field(default=None, max_length=16)
 
 
-def load_knowledge(name):
+def load_knowledge(name, tools=None):
+    if tools is not None:
+        from .analysis_unified_runtime import repository_for
+        return repository_for(tools).document(name)
     path = KNOWLEDGE / (name + ".json")
     raw = path.read_bytes()
     expected = path.with_suffix(".sha256").read_text().split()[0]
@@ -329,7 +332,7 @@ def _candidate(tools, spec, method, entries, files, atlas_name, intent, domain, 
                     keys = value(detail.get("label_keys")) or list(range(len(value(detail["label_names"]))))
                     counts = value(detail.get("cortex_retained_label_counts")) or value(detail.get("label_vertex_counts")) or {}
                     from .analysis_lobar_mapping import resolve_lobes
-                    requested, lobe_evidence, lobe_error = resolve_lobes(entry, atlas_name, intent.regions, value(detail["label_names"]))
+                    requested, lobe_evidence, lobe_error = resolve_lobes(entry, atlas_name, intent.regions, value(detail["label_names"]), tools=tools)
                     selected, evidence, unresolved = resolve_regions(value(detail["label_names"]), keys, counts, requested, domain)
                     evidence.extend(lobe_evidence)
                     if lobe_error:
@@ -347,6 +350,13 @@ def _candidate(tools, spec, method, entries, files, atlas_name, intent, domain, 
     if method["id"].endswith("global_convex_hull_gyrification"):
         notice.append("Global full-pial-area / same-surface 3D convex-hull area is a descriptive alternative, not local gyrification index (lGI)")
     context = {"question": "Describe requested stored products with " + method["name"], "data": {"files": [value(f["path"]) for f in chosen], "subjects": [e["subject_id"] for e in entries], "profile_sha256": profile["sha256"], "profile_ref": f"data_profile.v{profile['version']:06d}.json", "species_declared": intent.species, "species_verified": None}, "atlas": atlas, "method": {"method_id": method["id"], "name": method["name"], "reason": "Candidate for declared measures and comparison; selected by Agent at commitment"}, "outputs": ["summary.csv", "summary.json", "report.md"], "code_path": "/work/analysis.py", "analysis_scope": {"inference": intent.comparison in {"group", "correlation"}, "scale_policy": "dimensionless_per_input" if method["id"].endswith("global_convex_hull_gyrification") else "within_input_only", "comparison": intent.comparison, "labels": labels, "notices": notice}}
+    if atlas_name:
+        from .analysis_atlas_identity import identify
+        identity = identify(atlas_name)
+        if identity:
+            context["atlas"].update(canonical_name=identity["canonical_name"],
+                                    official_name=identity["official_name"],
+                                    naming_source=identity["source_url"], filename_stem=atlas_name)
     if method["id"].startswith("self:"):
         context["method"]["required_software"] = []
     return context, sorted(missing), mapping, missing_scopes
@@ -373,12 +383,18 @@ def plan_analysis(tools, raw):
     entries = registered_roots(tools, intent)
     paths = discover_paths(entries)
     profile, cached = ensure_profile(tools, paths)
-    requirements, req_sha = load_knowledge("method_requirements")
-    dependencies, dep_sha = load_knowledge("pipeline_dependencies")
+    requirements, req_sha = load_knowledge("method_requirements", tools)
+    dependencies, dep_sha = load_knowledge("pipeline_dependencies", tools)
     graph = tools._method_graph()
-    domain_path = graph.root / "domain_graph.json"
-    domain = json.loads(domain_path.read_bytes()) if domain_path.is_file() else {"nodes": []}
-    domain_sha = hashlib.sha256(domain_path.read_bytes()).hexdigest() if domain_path.is_file() else None
+    from .analysis_unified_runtime import repository_for
+    repository = repository_for(tools)
+    try:
+        domain, domain_sha = repository.document("domain_graph")
+    except ValueError:
+        domain, domain_sha = {"nodes": []}, None
+    from .analysis_product_instances import import_profile
+    registry = [{**{key: val for key, val in entry.items() if key != "root"}, "path": str(entry["root"]), "input_index": entry["index"]} for entry in entries]
+    import_profile(repository, profile["record"], registry)
     files = [f for f in profile["record"]["files"] if not f.get("read_error")]
     requested_atlas = None
     resolution = None
@@ -395,6 +411,34 @@ def plan_analysis(tools, raw):
                           "source_paths": [value(f["path"]) for f in files
                                            if Path(value(f["path"])).name.endswith('.'+requested_atlas+'.annot')]}
             intent = intent.model_copy(update={"regions": "all regions"})
+    from .analysis_atlas_identity import requested as requested_family, identify
+    requested_name = requested_family(intent.regions, getattr(tools, "task_request", ""))
+    matching_families = [name for name in sorted(known_atlases)
+                         if identify(name) and identify(name)["canonical_name"] == requested_name]
+    missing_atlas = requested_name and not matching_families
+    if requested_name and matching_families:
+        requested_atlas = matching_families[0]
+        resolution = {"original_regions": intent.regions, "effective_regions": "all regions",
+                      "atlas": requested_atlas, "canonical_name": requested_name,
+                      "basis": "Explicit requested atlas; exact source-backed filename mapping"}
+        intent = intent.model_copy(update={"regions": "all regions"})
+    if missing_atlas:
+        available = sorted({identify(name)["canonical_name"] for name in known_atlases if identify(name)})
+        reason = "Missing " + requested_name + "; available " + (", ".join(available) or "no registered named parcellation")
+        row = {"constraint_id": "requested_atlas_present", "severity": "hard", "verdict": "block",
+               "tool_observed": {"reason": reason, "requested": requested_name, "available": available,
+                                 "evidence_ref": "data_profile.v%06d.json" % profile["version"]},
+               "source": [{"path": "knowledge_analysis/atlas_identifiers_r13.json"}]}
+        check = {"method_id": "data:requested_atlas", "rows": [row],
+                 "summary": {"pass": 0, "warn": 0, "block": 1}, "unmapped_conditions": []}
+        saved_check = tools.control_store.save("constraints", check)
+        result = {"status": "blocked", "candidates": [], "needs_preprocessing": [],
+                  "infeasible": [{"reason": reason, "blocked_constraints": [row]}],
+                  "requested_atlas": requested_name, "available_atlases": available,
+                  "constraints_sha256": saved_check["sha256"],
+                  "next_steps": ["Ask the user to select an available atlas or provide the requested atlas; do not substitute"]}
+        tools.control_store.save("planning_result", result)
+        return result
     measures = {normal_measure(m) for m in intent.measures}
     specs = [s for s in requirements["methods"] if s["method_id"] != "self:*" and measures <= set(s["measures"]) and intent.comparison in s["comparisons"]]
     region_tokens = [intent.regions] if isinstance(intent.regions, str) else intent.regions
@@ -430,6 +474,13 @@ def plan_analysis(tools, raw):
             constraints = compile_constraints(tools, method["id"], "group_inference" if intent.comparison in {"group", "correlation"} else "descriptive", context, product_contract=spec)
             item["conditions"] = constraints["summary"]
             item["blocked_constraints"] = [row for row in constraints["rows"] if row["verdict"] == "block"]
+            if item["blocked_constraints"]:
+                tools.control_store.save("planning_failure", {
+                    "constraints_sha256": constraints["constraints_sha256"],
+                    "plan_context": context,
+                    "method_id": method["id"],
+                    "reason": "Observed failed candidate prerequisites",
+                })
             unrepairable = [row for row in item["blocked_constraints"]
                             if row["constraint_id"] not in {"recon_complete", "mesh_label_match", "product_metric_mesh_identity"}]
             if unrepairable or (item["blocked_constraints"] and not missing):
@@ -462,6 +513,9 @@ def plan_analysis(tools, raw):
             tools.control_store.save(candidate_id, record)
             summary = {"candidate_id": candidate_id, "method": item["method"], "atlas": {k: context["atlas"][k] for k in ["name", "version", "space", "applicable", "reason"]}, "space": "native_stored", "file_count": len(context["data"]["files"]), "subjects": context["data"]["subjects"], "label_counts": {key: len(group["labels"]) for key, group in context["analysis_scope"]["labels"].items()}, "conditions": constraints["summary"], "must_disclose": context["analysis_scope"]["notices"], "protected_ref": candidate_id, "mapping_source_count": len(mapping)}
             summary["operations"] = operations
+            from .analysis_asymmetry_contract import applies as asymmetry_applies, definition as asymmetry_definition
+            if asymmetry_applies(context):
+                summary["asymmetry_contract"] = asymmetry_definition()
             output["candidates"].append(summary)
     if not specs:
         output["infeasible"].append({"reason": "No registered method matches the requested measures and comparison"})
@@ -474,7 +528,7 @@ def plan_analysis(tools, raw):
     return output
 
 
-def commit_candidate(tools, candidate_id, rationale, code_path):
+def commit_candidate(tools, candidate_id, rationale, code_path, commitment=None):
     from .analysis_constraints import compile_constraints
     from .analysis_plans import commit_plan
     if not isinstance(candidate_id, str) or not re.fullmatch(r"candidate_[a-f0-9]{24}", candidate_id):
@@ -486,21 +540,44 @@ def commit_candidate(tools, candidate_id, rationale, code_path):
     if not saved or not profile or saved["record"]["profile_sha256"] != profile["sha256"]:
         return {"status": "blocked", "reason": "Candidate missing or profile changed; call plan_analysis again"}
     record = saved["record"]
-    if (record["method_requirements_sha256"] != load_knowledge("method_requirements")[1]
-            or record["pipeline_dependencies_sha256"] != load_knowledge("pipeline_dependencies")[1]):
+    if (record["method_requirements_sha256"] != load_knowledge("method_requirements", tools)[1]
+            or record["pipeline_dependencies_sha256"] != load_knowledge("pipeline_dependencies", tools)[1]):
         return {"status": "blocked", "reason": "Requirements changed; call plan_analysis again"}
+    if not isinstance(code_path, str) or len(json.dumps(code_path)) > 240:
+        raise ValueError("code_path must be a bounded /work Python path")
+    original_code_path = code_path
+    from .analysis_plans import _work_path
+    if not code_path.startswith("/"):
+        code_path = "/work/" + code_path
+    code_path = _work_path(code_path)
     context = copy.deepcopy(record["plan"])
     context["code_path"] = code_path
     context["candidate_id"] = candidate_id
     context["selection_rationale"] = rationale
     context["revision_reason"] = rationale
     context["analysis_scope"]["mapping_evidence_ref"] = candidate_id
+    from .analysis_crossspecies import enabled as cross_enabled, validate_commitment
+    if cross_enabled(tools):
+        checked_commitment = validate_commitment(commitment, context)
+        context.update(checked_commitment)
+        context["analysis_scope"]["commitment"] = checked_commitment
+
     from .analysis_operations import execution_bundle
     bundle = execution_bundle(context)
+    if cross_enabled(tools):
+        bundle["commitment"] = checked_commitment
     context["analysis_scope"]["operations_sha256"] = bundle["operations"]["library"]["sha256"]
     # Bind operations to the sealed core before the final, authoritative checks.
     checks = compile_constraints(tools, context["method"]["method_id"], "group_inference" if context["analysis_scope"]["inference"] else "descriptive", context, product_contract=record["product_contract"])
     context["constraints"] = {"version": checks["version"], "sha256": checks["constraints_sha256"]}
+    # Reject an oversized execution card before sealing, while replanning tools
+    # are still available. Never commit a plan the model cannot receive intact.
+    previous_plan = tools.control_store.latest("plan")
+    next_version = previous_plan["version"] + 1 if previous_plan else 1
+    draft_bundle = {**bundle, "label_sets_ref": {"path": f"/work/label_sets.v{next_version:06d}.json"},
+                    "bundle_ref": f"/work/execution_bundle.v{next_version:06d}.json"}
+    from .analysis_execution_card import execution_card
+    execution_card({"plan": context, "execution_bundle": draft_bundle, "version": next_version})
     result = commit_plan(tools, context)
     if result.get("status") == "committed":
         label_path = f"/work/label_sets.v{result['version']:06d}.json"
@@ -511,8 +588,17 @@ def commit_candidate(tools, candidate_id, rationale, code_path):
         target.write_bytes(raw)
         bundle["label_sets_ref"] = {"path": label_path, "sha256": hashlib.sha256(raw).hexdigest()}
         bundle["must_disclose"] += result["must_disclose"]
+        bundle_path = f"/work/execution_bundle.v{result['version']:06d}.json"
+        bundle["bundle_ref"] = bundle_path
+        bundle_copy = {key: val for key, val in bundle.items() if key != "label_sets"}
+        from .analysis_agent import _write_regular
+        _write_regular(tools.resolve(bundle_path, writable=True), tools.workdir,
+                       json.dumps(bundle_copy, ensure_ascii=False, indent=2))
         tools.control_store.save("execution_bundle", {"plan_sha256": result["plan_sha256"], **bundle})
         result["execution_bundle"] = bundle
+        if original_code_path != code_path:
+            result["path_normalization"] = {"original": original_code_path, "code_path": code_path,
+                                            "notice": "Relative code_path resolved beneath /work"}
     if result.get("status") == "committed" and not context["method"]["method_id"].startswith("self:"):
         result["method_evidence"] = method_evidence_view(tools._method_graph(), {"id": context["method"]["method_id"], "name": context["method"]["name"]})
     return result

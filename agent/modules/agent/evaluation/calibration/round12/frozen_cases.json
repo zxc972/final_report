@@ -1,0 +1,1790 @@
+{
+  "schema": "primatex.e3_calibration.v1",
+  "frozen_time": 1792638899.8797793,
+  "labels": {
+    "invalid": "Must not accept unqualified output or prohibited operation",
+    "valid": "No false block for this isolated criterion",
+    "warning": "Retain an explicit warning/qualified or deferred scope"
+  },
+  "scope": "Known-development regression calibration, not a blind or expert-labelled benchmark; historical and synthetic strata reported separately.",
+  "api_requests": 0,
+  "cases": [
+    {
+      "id": "H01",
+      "origin": "historical_real_trace",
+      "round": 6,
+      "case": "P1_1",
+      "error_type": "handwritten_binary_reader",
+      "original_detection_layer": "execution",
+      "expected": "invalid",
+      "operation": "feedback_observation",
+      "payload": {
+        "result": {
+          "status": "failed",
+          "exit_code": 1,
+          "stdout": "modules available: {'numpy': True, 'nibabel': True, 'pandas': True}\n",
+          "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 13, in <module>\n  File \"/miniconda3/lib/python3.10/runpy.py\", line 289, in run_path\n    return _run_module_code(code, init_globals, run_name,\n  File \"/miniconda3/lib/python3.10/runpy.py\", line 96, in _run_module_code\n    _run_code(code, mod_globals, init_globals,\n  File \"/miniconda3/lib/python3.10/runpy.py\", line 86, in _run_code\n    exec(code, run_globals)\n  File \"/work/analysis.py\", line 117, in <module>\n    r = analyze_hemi(hemi)\n  File \"/work/analysis.py\", line 75, in analyze_hemi\n    thick = read_curv(os.path.join(BASE, \"surf\", \"%s.thickness\" % hemi))\n  File \"/work/analysis.py\", line 26, in read_curv\n    raise ValueError(\"Unsupported curv file type %d for %s\" % (filetype, path))\nValueError: Unsupported curv file type 16777215 for /inputs/0/surf/lh.thickness\n",
+          "stdout_truncated": false,
+          "stderr_truncated": false,
+          "backend": "apptainer",
+          "resource_limits": {
+            "address_space_bytes": 8589934592,
+            "max_file_size_bytes": 1073741824,
+            "scope": "per_process_address_space_and_per_file_not_aggregate_quota"
+          },
+          "artifacts": [
+            "constraints.json",
+            "data_profile.json",
+            "probe.py"
+          ],
+          "plan_gate": {
+            "allowed": true,
+            "read_only": false,
+            "plan_version": 1,
+            "plan_sha256": "11f82acc9755ee1a2882cda07e54dc13e4faa903128f48e5e16548ea2d011d00"
+          },
+          "execution_limits": {
+            "requested_timeout_seconds": 120,
+            "effective_timeout_seconds": 120,
+            "server_maximum_seconds": 900,
+            "remaining_run_seconds_before_execution": 681
+          },
+          "receipt_id": "0619703ec28a40bda74be6ae46930703"
+        }
+      },
+      "sources": [
+        {
+          "path": "/data/xuancheng/agent_round6_trial_20261021/trials/P1_1/trace.jsonl",
+          "sha256": "42eb801a641042c16600503d01980524c1abe26800e65ff4f28375d0d2be0c51",
+          "line": 120
+        }
+      ],
+      "notes": "Replays the actual runtime observation; does not execute the old parser or measure new detection ability."
+    },
+    {
+      "id": "H02",
+      "origin": "historical_real_trace",
+      "round": 8,
+      "case": "R8_P1_1",
+      "error_type": "sealed_without_code",
+      "original_detection_layer": "not_stopped_until_budget",
+      "expected": "invalid",
+      "operation": "phase_gate",
+      "payload": {
+        "phase": "sealed",
+        "tool": "read_file"
+      },
+      "sources": [
+        {
+          "path": "/data/xuancheng/agent_round8_trial_20261021/trials/R8_P1_1/trace.jsonl",
+          "sha256": "290f45de3b859661c5b65b40f848a42e89d478680ae8eb4d8e4d26f817e0f830"
+        }
+      ],
+      "notes": "The current phase gate is actively evaluated; the original trace contained no write_code/run_python after commitment."
+    },
+    {
+      "id": "H03",
+      "origin": "historical_real_trace",
+      "round": 11,
+      "case": "R11B_P1_1",
+      "error_type": "sealed_script_path_drift",
+      "original_detection_layer": "execution_gate",
+      "expected": "invalid",
+      "operation": "path_guard",
+      "payload": {
+        "sealed": "/work/aparc_thickness_summary.py",
+        "attempted": "/work/analysis.py"
+      },
+      "sources": [
+        {
+          "path": "/data/xuancheng/agent_round11_trial_20261022/trials/R11B_P1_1/trace.jsonl",
+          "sha256": "2630b3bc5b10bddd3de9ac031328831de8900a6bcc79331b938667f82fd04bec",
+          "line": 150
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "H04",
+      "origin": "historical_real_trace",
+      "round": 7,
+      "case": "P1_1",
+      "error_type": "operation_return_field_misuse",
+      "original_detection_layer": "execution",
+      "expected": "invalid",
+      "operation": "feedback_observation",
+      "payload": {
+        "result": {
+          "status": "failed",
+          "exit_code": 1,
+          "stdout": "",
+          "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 16, in <module>\n  File \"/miniconda3/lib/python3.10/runpy.py\", line 289, in run_path\n    return _run_module_code(code, init_globals, run_name,\n  File \"/miniconda3/lib/python3.10/runpy.py\", line 96, in _run_module_code\n    _run_code(code, mod_globals, init_globals,\n  File \"/miniconda3/lib/python3.10/runpy.py\", line 86, in _run_code\n    exec(code, run_globals)\n  File \"/work/aparc_thickness.py\", line 52, in <module>\n    \"label_key\": row[\"key\"],\nKeyError: 'key'\n",
+          "stdout_truncated": false,
+          "stderr_truncated": false,
+          "backend": "apptainer",
+          "resource_limits": {
+            "address_space_bytes": 8589934592,
+            "max_file_size_bytes": 1073741824,
+            "scope": "per_process_address_space_and_per_file_not_aggregate_quota"
+          },
+          "artifacts": [
+            "constraints.json",
+            "data_profile.json",
+            "label_sets.v000001.json"
+          ],
+          "plan_gate": {
+            "allowed": true,
+            "read_only": false,
+            "plan_version": 1,
+            "plan_sha256": "e50c6f6a348a4edc86c045d10dcb5e6f1c49bf7ec10e0d005fd66135776a6838"
+          },
+          "execution_limits": {
+            "requested_timeout_seconds": 120,
+            "effective_timeout_seconds": 120,
+            "server_maximum_seconds": 1200,
+            "remaining_run_seconds_before_execution": 916
+          },
+          "receipt_id": "3f724b17b95c4df18f8d67d434acfb5f"
+        }
+      },
+      "sources": [
+        {
+          "path": "/data/xuancheng/agent_round7_trial_20261021/trials/P1_1/trace.jsonl",
+          "sha256": "4ccfac74ca0611815e18b8674862b5716a175fb5a3d7e6ea76f7de7fde4c56f1",
+          "line": 124
+        }
+      ],
+      "notes": "Actual KeyError from the generated script; retrospective observation replay, not fresh code execution."
+    },
+    {
+      "id": "H05",
+      "origin": "historical_real_trace",
+      "round": 9,
+      "case": "R9_P1_1",
+      "error_type": "rounded_output",
+      "original_detection_layer": "external_independent_numeric",
+      "expected": "invalid",
+      "operation": "precision",
+      "payload": {
+        "csv": "subject,hemisphere,metric,label_key,name,vertex_count,mean,std_population,median,zero_count,units\nKM002,lh,thickness,1,bankssts,475,1.508838,0.224057,1.527382,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,lh,thickness,2,caudalanteriorcingulate,229,2.050700,0.387852,2.141890,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,lh,thickness,3,caudalmiddlefrontal,1473,1.101651,0.807105,0.793922,2,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,lh,thickness,5,cuneus,564,1.220466,0.317963,1.275956,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,lh,thickness,6,entorhinal,181,1.100761,0.517239,1.025481,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,lh,thickness,7,fusiform,2780,1.656139,0.682815,1.834471,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,lh,thickness,8,inferiorparietal,2925,1.220089,0.354531,1.181601,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,lh,thickness,9,inferiortemporal,1966,1.654606,0.519569,1.799093,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,lh,thickness,10,isthmuscingulate,223,1.988422,0.677810,2.158652,3,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,lh,thickness,11,lateraloccipital,2754,1.203714,0.384414,1.160327,1,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,lh,thickness,12,lateralorbitofrontal,1111,1.679737,0.581138,1.699587,1,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,lh,thickness,13,lingual,1057,1.496523,0.287157,1.469440,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,lh,thickness,14,medialorbitofrontal,895,1.565049,0.658064,1.599233,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,lh,thickness,15,middletemporal,1497,1.684982,0.253937,1.671378,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,lh,thickness,17,paracentral,740,1.753824,0.353273,1.800943,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,lh,thickness,18,parsopercularis,962,2.108365,0.364013,2.082721,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,lh,thickness,19,parsorbitalis,354,1.660778,0.713158,1.852315,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,lh,thickness,20,parstriangularis,798,2.181305,0.589502,2.337422,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,lh,thickness,21,pericalcarine,511,1.538428,0.356775,1.572679,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,lh,thickness,22,postcentral,2635,1.534098,0.368917,1.491584,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,lh,thickness,23,posteriorcingulate,491,1.988831,0.342393,2.013819,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,lh,thickness,24,precentral,2769,1.399034,0.490297,1.455733,1,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,lh,thickness,25,precuneus,2012,1.215390,0.469150,1.093279,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,lh,thickness,26,rostralanteriorcingulate,231,1.797618,0.900565,1.999317,17,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,lh,thickness,27,rostralmiddlefrontal,3442,2.069056,0.455889,2.079170,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,lh,thickness,28,superiorfrontal,3975,2.220692,0.430500,2.331294,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,lh,thickness,29,superiorparietal,3416,1.186253,0.332919,1.167294,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,lh,thickness,30,superiortemporal,2234,1.834210,0.428929,1.827231,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,lh,thickness,31,supramarginal,2039,1.204142,0.372665,1.164855,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,lh,thickness,32,frontalpole,264,1.327285,0.406064,1.299016,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,lh,thickness,33,temporalpole,353,0.843850,0.391109,0.729455,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,lh,thickness,34,transversetemporal,284,1.435392,0.171201,1.454097,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,lh,thickness,35,insula,1990,0.986247,0.498704,0.945146,70,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,rh,thickness,1,bankssts,514,1.639064,0.179782,1.623102,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,rh,thickness,2,caudalanteriorcingulate,281,2.015409,0.356197,2.064455,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,rh,thickness,3,caudalmiddlefrontal,1530,1.130970,0.814458,0.862088,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,rh,thickness,5,cuneus,734,1.158763,0.336282,1.139777,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,rh,thickness,6,entorhinal,376,1.074309,0.441688,1.071714,11,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,rh,thickness,7,fusiform,1991,1.755267,0.746638,1.831824,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,rh,thickness,8,inferiorparietal,3238,1.171800,0.336284,1.129896,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,rh,thickness,9,inferiortemporal,1735,1.789967,0.609013,1.992294,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,rh,thickness,10,isthmuscingulate,280,1.723000,0.654196,1.829514,6,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,rh,thickness,11,lateraloccipital,2796,1.239100,0.350212,1.256899,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,rh,thickness,12,lateralorbitofrontal,1058,1.600795,0.611038,1.671606,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,rh,thickness,13,lingual,1013,1.436176,0.371415,1.432859,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,rh,thickness,14,medialorbitofrontal,1015,1.459792,0.699656,1.399242,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,rh,thickness,15,middletemporal,1769,1.658723,0.314128,1.699020,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,rh,thickness,17,paracentral,939,1.818051,0.359902,1.848481,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,rh,thickness,18,parsopercularis,939,1.722684,0.418299,1.763808,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,rh,thickness,19,parsorbitalis,369,2.553638,0.257205,2.547754,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,rh,thickness,20,parstriangularis,998,2.256614,0.305825,2.268302,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,rh,thickness,21,pericalcarine,538,1.302433,0.271364,1.283324,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,rh,thickness,22,postcentral,2329,1.553604,0.331375,1.518845,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,rh,thickness,23,posteriorcingulate,553,1.934069,0.259850,1.974816,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,rh,thickness,24,precentral,2696,1.470968,0.411531,1.535400,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,rh,thickness,25,precuneus,2389,1.107828,0.347891,1.076554,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,rh,thickness,26,rostralanteriorcingulate,161,2.089966,0.811989,2.386198,5,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,rh,thickness,27,rostralmiddlefrontal,3594,2.003399,0.497433,1.958704,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,rh,thickness,28,superiorfrontal,3724,2.203097,0.383799,2.265982,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,rh,thickness,29,superiorparietal,3414,1.098171,0.340165,1.057053,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,rh,thickness,30,superiortemporal,2580,1.935089,0.468468,1.903400,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,rh,thickness,31,supramarginal,1817,1.202868,0.426676,1.163331,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,rh,thickness,32,frontalpole,325,1.343153,0.458443,1.418120,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,rh,thickness,33,temporalpole,318,0.734964,0.263890,0.714412,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,rh,thickness,34,transversetemporal,266,1.530326,0.221736,1.481416,0,mm (stored FreeSurfer convention; physical scale unverified)\nKM002,rh,thickness,35,insula,2046,0.962900,0.473005,0.885580,14,mm (stored FreeSurfer convention; physical scale unverified)\n"
+      },
+      "sources": [
+        {
+          "path": "/data/xuancheng/agent_round9_trial_20261021/workspace/round9-trial/output/.analysis_runs/b1f9d618f26a81dd20217c1d108cc402/53009dcb3b8247c8956f739340ad69fb/summary.csv",
+          "sha256": "19ba3316cdfb8a03e4fc4667dcb63ceea7a8c8064277595709aa270404f39754"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "H06",
+      "origin": "historical_real_trace",
+      "round": 10,
+      "case": "R10_P1_1",
+      "error_type": "metric_identifier_mismatch",
+      "original_detection_layer": "external_identity_check",
+      "expected": "invalid",
+      "operation": "public_contract",
+      "payload": {
+        "csv": "subject,hemisphere,metric,label_key,name,vertex_count,mean,std_population,median,zero_count,units\nKM002,lh,cortical_thickness,1,bankssts,475,1.508838152885437,0.2240567268738331,1.5273818969726562,0,stored_mm_nominal\nKM002,lh,cortical_thickness,2,caudalanteriorcingulate,229,2.0506996915850575,0.38785224891662695,2.1418895721435547,0,stored_mm_nominal\nKM002,lh,cortical_thickness,3,caudalmiddlefrontal,1473,1.1016505450536342,0.8071054407785943,0.793922483921051,2,stored_mm_nominal\nKM002,lh,cortical_thickness,5,cuneus,564,1.22046595077354,0.31796307831475623,1.275955855846405,0,stored_mm_nominal\nKM002,lh,cortical_thickness,6,entorhinal,181,1.1007611468352008,0.5172390297541453,1.0254814624786377,0,stored_mm_nominal\nKM002,lh,cortical_thickness,7,fusiform,2780,1.6561385587929822,0.6828152678873759,1.8344711065292358,0,stored_mm_nominal\nKM002,lh,cortical_thickness,8,inferiorparietal,2925,1.220088681379954,0.35453079726347514,1.18160080909729,0,stored_mm_nominal\nKM002,lh,cortical_thickness,9,inferiortemporal,1966,1.6546055313620418,0.5195692181032583,1.7990928888320923,0,stored_mm_nominal\nKM002,lh,cortical_thickness,10,isthmuscingulate,223,1.9884220257468288,0.6778104861048267,2.1586523056030273,3,stored_mm_nominal\nKM002,lh,cortical_thickness,11,lateraloccipital,2754,1.2037139268742147,0.3844143607883857,1.1603270173072815,1,stored_mm_nominal\nKM002,lh,cortical_thickness,12,lateralorbitofrontal,1111,1.6797371924620936,0.5811384102367815,1.699587345123291,1,stored_mm_nominal\nKM002,lh,cortical_thickness,13,lingual,1057,1.4965228161500554,0.28715733782377995,1.469440221786499,0,stored_mm_nominal\nKM002,lh,cortical_thickness,14,medialorbitofrontal,895,1.5650494036061804,0.6580638481813145,1.5992331504821777,0,stored_mm_nominal\nKM002,lh,cortical_thickness,15,middletemporal,1497,1.6849817798069182,0.25393746767497255,1.6713778972625732,0,stored_mm_nominal\nKM002,lh,cortical_thickness,17,paracentral,740,1.7538240290171392,0.3532729969995187,1.8009432554244995,0,stored_mm_nominal\nKM002,lh,cortical_thickness,18,parsopercularis,962,2.108365335236468,0.3640134733709428,2.08272123336792,0,stored_mm_nominal\nKM002,lh,cortical_thickness,19,parsorbitalis,354,1.6607776164671795,0.7131579190955758,1.8523146510124207,0,stored_mm_nominal\nKM002,lh,cortical_thickness,20,parstriangularis,798,2.181305179470464,0.5895016723196765,2.337422013282776,0,stored_mm_nominal\nKM002,lh,cortical_thickness,21,pericalcarine,511,1.5384284975244107,0.35677545770077357,1.5726792812347412,0,stored_mm_nominal\nKM002,lh,cortical_thickness,22,postcentral,2635,1.534098379480771,0.3689172532677786,1.4915835857391357,0,stored_mm_nominal\nKM002,lh,cortical_thickness,23,posteriorcingulate,491,1.9888311396305527,0.3423929838188135,2.0138189792633057,0,stored_mm_nominal\nKM002,lh,cortical_thickness,24,precentral,2769,1.3990344547190017,0.4902965302148337,1.455733299255371,1,stored_mm_nominal\nKM002,lh,cortical_thickness,25,precuneus,2012,1.2153899511896356,0.4691503595935646,1.0932790040969849,0,stored_mm_nominal\nKM002,lh,cortical_thickness,26,rostralanteriorcingulate,231,1.7976181170383057,0.9005653983058934,1.9993174076080322,17,stored_mm_nominal\nKM002,lh,cortical_thickness,27,rostralmiddlefrontal,3442,2.0690562419597662,0.4558894038253777,2.079169988632202,0,stored_mm_nominal\nKM002,lh,cortical_thickness,28,superiorfrontal,3975,2.220692415447355,0.4304997842612233,2.331294059753418,0,stored_mm_nominal\nKM002,lh,cortical_thickness,29,superiorparietal,3416,1.1862525871804364,0.33291854989291264,1.1672937273979187,0,stored_mm_nominal\nKM002,lh,cortical_thickness,30,superiortemporal,2234,1.8342104298308586,0.4289289005709012,1.8272305130958557,0,stored_mm_nominal\nKM002,lh,cortical_thickness,31,supramarginal,2039,1.2041420337030149,0.37266504204431367,1.1648545265197754,0,stored_mm_nominal\nKM002,lh,cortical_thickness,32,frontalpole,264,1.3272846688826878,0.4060638130997067,1.2990160584449768,0,stored_mm_nominal\nKM002,lh,cortical_thickness,33,temporalpole,353,0.8438501743858327,0.39110900380217695,0.7294548749923706,0,stored_mm_nominal\nKM002,lh,cortical_thickness,34,transversetemporal,284,1.4353918021833394,0.17120071491216057,1.4540969729423523,0,stored_mm_nominal\nKM002,lh,cortical_thickness,35,insula,1990,0.9862471220294136,0.498703751434032,0.9451455473899841,70,stored_mm_nominal\nKM002,rh,cortical_thickness,1,bankssts,514,1.6390635245968859,0.17978158744707431,1.6231015920639038,0,stored_mm_nominal\nKM002,rh,cortical_thickness,2,caudalanteriorcingulate,281,2.0154087636818665,0.3561974300341837,2.064455032348633,0,stored_mm_nominal\nKM002,rh,cortical_thickness,3,caudalmiddlefrontal,1530,1.1309703196112821,0.8144580590689954,0.8620878458023071,0,stored_mm_nominal\nKM002,rh,cortical_thickness,5,cuneus,734,1.1587634754115943,0.3362820647125018,1.1397771835327148,0,stored_mm_nominal\nKM002,rh,cortical_thickness,6,entorhinal,376,1.0743088838347095,0.44168827653348425,1.0717135071754456,11,stored_mm_nominal\nKM002,rh,cortical_thickness,7,fusiform,1991,1.7552671813593625,0.7466382418165199,1.8318240642547607,0,stored_mm_nominal\nKM002,rh,cortical_thickness,8,inferiorparietal,3238,1.1718002292865437,0.3362838256578507,1.1298961639404297,0,stored_mm_nominal\nKM002,rh,cortical_thickness,9,inferiortemporal,1735,1.7899665790693218,0.6090131209277012,1.9922940731048584,0,stored_mm_nominal\nKM002,rh,cortical_thickness,10,isthmuscingulate,280,1.7229997117604527,0.6541961624048899,1.8295137286186218,6,stored_mm_nominal\nKM002,rh,cortical_thickness,11,lateraloccipital,2796,1.2390995602708348,0.35021150544404756,1.256899118423462,0,stored_mm_nominal\nKM002,rh,cortical_thickness,12,lateralorbitofrontal,1058,1.6007949287645757,0.6110382638448344,1.671606421470642,0,stored_mm_nominal\nKM002,rh,cortical_thickness,13,lingual,1013,1.4361755929129734,0.3714146171094857,1.432858943939209,0,stored_mm_nominal\nKM002,rh,cortical_thickness,14,medialorbitofrontal,1015,1.459791737824238,0.6996563403698647,1.3992422819137573,0,stored_mm_nominal\nKM002,rh,cortical_thickness,15,middletemporal,1769,1.6587234614864454,0.3141283015474368,1.6990195512771606,0,stored_mm_nominal\nKM002,rh,cortical_thickness,17,paracentral,939,1.8180513601587476,0.35990180642045705,1.848481297492981,0,stored_mm_nominal\nKM002,rh,cortical_thickness,18,parsopercularis,939,1.7226841595734017,0.41829879615370275,1.763808250427246,0,stored_mm_nominal\nKM002,rh,cortical_thickness,19,parsorbitalis,369,2.5536384840967856,0.2572053523851998,2.5477538108825684,0,stored_mm_nominal\nKM002,rh,cortical_thickness,20,parstriangularis,998,2.256614453090217,0.305824676785145,2.268302321434021,0,stored_mm_nominal\nKM002,rh,cortical_thickness,21,pericalcarine,538,1.3024330707509277,0.2713635838312615,1.283323585987091,0,stored_mm_nominal\nKM002,rh,cortical_thickness,22,postcentral,2329,1.5536036113394642,0.3313754145214822,1.5188448429107666,0,stored_mm_nominal\nKM002,rh,cortical_thickness,23,posteriorcingulate,553,1.9340692805985213,0.2598495581284347,1.974815845489502,0,stored_mm_nominal\nKM002,rh,cortical_thickness,24,precentral,2696,1.470968204365286,0.4115310210477158,1.5354000926017761,0,stored_mm_nominal\nKM002,rh,cortical_thickness,25,precuneus,2389,1.1078277280286746,0.3478907748539115,1.0765540599822998,0,stored_mm_nominal\nKM002,rh,cortical_thickness,26,rostralanteriorcingulate,161,2.0899663356520373,0.8119891091234787,2.386197566986084,5,stored_mm_nominal\nKM002,rh,cortical_thickness,27,rostralmiddlefrontal,3594,2.003399165955662,0.4974330658166215,1.9587042331695557,0,stored_mm_nominal\nKM002,rh,cortical_thickness,28,superiorfrontal,3724,2.2030969859610057,0.38379939814331726,2.2659817934036255,0,stored_mm_nominal\nKM002,rh,cortical_thickness,29,superiorparietal,3414,1.0981711110282377,0.3401651557071234,1.05705326795578,0,stored_mm_nominal\nKM002,rh,cortical_thickness,30,superiortemporal,2580,1.935088652164437,0.4684681571505672,1.9033998847007751,0,stored_mm_nominal\nKM002,rh,cortical_thickness,31,supramarginal,1817,1.2028683773357263,0.4266762867753132,1.1633312702178955,0,stored_mm_nominal\nKM002,rh,cortical_thickness,32,frontalpole,325,1.3431530287632576,0.45844298754649027,1.4181197881698608,0,stored_mm_nominal\nKM002,rh,cortical_thickness,33,temporalpole,318,0.7349635616132298,0.2638902227402863,0.7144122421741486,0,stored_mm_nominal\nKM002,rh,cortical_thickness,34,transversetemporal,266,1.5303258582165367,0.2217363458176286,1.4814156293869019,0,stored_mm_nominal\nKM002,rh,cortical_thickness,35,insula,2046,0.9629001467691721,0.4730048964337316,0.8855797648429871,14,stored_mm_nominal\n"
+      },
+      "sources": [
+        {
+          "path": "/data/xuancheng/agent_round10_trial_20261021/workspace/round10-trial/output/.analysis_runs/07b315895df2d9b6efb4bdbf602e0d8c/4c87d410f7c84c8d96fa6889b7b1d635/summary.csv",
+          "sha256": "29f2c3cac0f5964bebd3eaef6f61deea9c1e07389ff26901c182b9e82e820d28"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "H07",
+      "origin": "historical_real_trace",
+      "round": 11,
+      "case": "R11B_P1_1",
+      "error_type": "label_sets_structure_misread",
+      "original_detection_layer": "execution",
+      "expected": "invalid",
+      "operation": "feedback_observation",
+      "payload": {
+        "result": {
+          "status": "ok",
+          "candidates": [
+            {
+              "candidate_id": "candidate_dab788972292d6650c6b754e",
+              "method": {
+                "method_id": "method:v12:surface_annotation_roi",
+                "name": "Surface annotation-based region-of-interest morphometry extraction",
+                "evidence_id": "method:method:v12:surface_annotation_roi",
+                "source_reads": [
+                  {
+                    "id": "source_text:METHOD_SOURCE_nibabel_fs",
+                    "source_url": "https://nipy.org/nibabel/reference/nibabel.freesurfer.html"
+                  },
+                  {
+                    "id": "source_text:METHOD_SOURCE_andy_roi",
+                    "source_url": "https://andysbrainbook.readthedocs.io/en/latest/FreeSurfer/FS_ShortCourse/FS_11_ROIAnalysis.html"
+                  },
+                  {
+                    "id": "source_text:METHOD_SOURCE_fs_parcstats",
+                    "source_url": "https://www.freesurfer.net/fswiki/parcstats"
+                  }
+                ]
+              },
+              "atlas": {
+                "name": "aparc",
+                "version": "input annotation fingerprint; acquisition release unknown",
+                "space": "native_stored",
+                "applicable": true,
+                "reason": null
+              },
+              "space": "native_stored",
+              "file_count": 10,
+              "subjects": [
+                "KM002"
+              ],
+              "label_counts": {
+                "KM002/lh": 33,
+                "KM002/rh": 33
+              },
+              "conditions": {
+                "pass": 8,
+                "warn": 5,
+                "block": 0
+              },
+              "must_disclose": [
+                "Species is user/registration-declared only; not independently verified",
+                "Stored coordinates/values; no verified acquisition-scale or expert anatomical-QC claim"
+              ],
+              "protected_ref": "candidate_dab788972292d6650c6b754e",
+              "mapping_source_count": 66,
+              "operations": {
+                "library": {
+                  "module": "primatex_ops",
+                  "version": "1.0.0",
+                  "sha256": "f2f86392868c798afc9dc0b66f9b0244610708930c832328be8785e6a6681106",
+                  "read_only": true,
+                  "import_statement": "import primatex_ops as ops",
+                  "scope": "Mature format readers and basic operations; Agent writes the complete analysis program"
+                },
+                "calls": [
+                  {
+                    "function": "read_annotation",
+                    "inputs": {
+                      "path": "/inputs/0/label/lh.aparc.annot"
+                    },
+                    "scope": "KM002/lh",
+                    "note": "Returns positional label keys, decoded names, RGBT table; -1 is unassigned",
+                    "returns_example": {
+                      "python_type": "tuple",
+                      "items": [
+                        {
+                          "python_type": "numpy.ndarray",
+                          "dtype": "int64",
+                          "shape": [
+                            4
+                          ],
+                          "example": [
+                            -1,
+                            1,
+                            1,
+                            2
+                          ]
+                        },
+                        [
+                          "unknown",
+                          "one",
+                          "two"
+                        ],
+                        {
+                          "python_type": "numpy.ndarray",
+                          "dtype": ">i4",
+                          "shape": [
+                            3,
+                            5
+                          ],
+                          "example": [
+                            [
+                              0,
+                              0,
+                              0,
+                              0,
+                              0
+                            ],
+                            [
+                              20,
+                              30,
+                              40,
+                              0,
+                              2629140
+                            ],
+                            [
+                              50,
+                              60,
+                              70,
+                              0,
+                              4602930
+                            ]
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "function": "read_label",
+                    "inputs": {
+                      "path": "/inputs/0/label/lh.cortex.label"
+                    },
+                    "scope": "KM002/lh",
+                    "note": "Returns cortex vertex indices; pass as mask to parcel_summary",
+                    "returns_example": {
+                      "python_type": "numpy.ndarray",
+                      "dtype": "int64",
+                      "shape": [
+                        4
+                      ],
+                      "example": [
+                        0,
+                        1,
+                        2,
+                        3
+                      ]
+                    }
+                  },
+                  {
+                    "function": "read_surface_metric",
+                    "inputs": {
+                      "path": "/inputs/0/surf/lh.thickness"
+                    },
+                    "scope": "KM002/lh",
+                    "note": "Stored values, no rescaling",
+                    "returns_example": {
+                      "python_type": "numpy.ndarray",
+                      "dtype": "float64",
+                      "shape": [
+                        4
+                      ],
+                      "example": [
+                        0.0,
+                        2.0,
+                        4.0,
+                        6.0
+                      ]
+                    }
+                  },
+                  {
+                    "function": "parcel_summary",
+                    "inputs": {
+                      "metric_path": "/inputs/0/surf/lh.thickness",
+                      "annotation_path": "/inputs/0/label/lh.aparc.annot",
+                      "label_set_scope": "KM002/lh",
+                      "mask_path": "/inputs/0/label/lh.cortex.label",
+                      "weights": null
+                    },
+                    "scope": "KM002/lh",
+                    "note": "Use the reader return arrays and label_sets JSON group.labels; unweighted means, population SD",
+                    "returns_example": [
+                      {
+                        "label_key": 1,
+                        "name": "one",
+                        "vertex_count": 2,
+                        "mean": 3.0,
+                        "std_population": 1.0,
+                        "median": 3.0,
+                        "zero_count": 0,
+                        "weight_sum": 2.0
+                      },
+                      {
+                        "label_key": 2,
+                        "name": "two",
+                        "vertex_count": 1,
+                        "mean": 6.0,
+                        "std_population": 0.0,
+                        "median": 6.0,
+                        "zero_count": 0,
+                        "weight_sum": 1.0
+                      }
+                    ]
+                  },
+                  {
+                    "function": "read_annotation",
+                    "inputs": {
+                      "path": "/inputs/0/label/rh.aparc.annot"
+                    },
+                    "scope": "KM002/rh",
+                    "note": "Returns positional label keys, decoded names, RGBT table; -1 is unassigned",
+                    "returns_example": {
+                      "python_type": "tuple",
+                      "items": [
+                        {
+                          "python_type": "numpy.ndarray",
+                          "dtype": "int64",
+                          "shape": [
+                            4
+                          ],
+                          "example": [
+                            -1,
+                            1,
+                            1,
+                            2
+                          ]
+                        },
+                        [
+                          "unknown",
+                          "one",
+                          "two"
+                        ],
+                        {
+                          "python_type": "numpy.ndarray",
+                          "dtype": ">i4",
+                          "shape": [
+                            3,
+                            5
+                          ],
+                          "example": [
+                            [
+                              0,
+                              0,
+                              0,
+                              0,
+                              0
+                            ],
+                            [
+                              20,
+                              30,
+                              40,
+                              0,
+                              2629140
+                            ],
+                            [
+                              50,
+                              60,
+                              70,
+                              0,
+                              4602930
+                            ]
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "function": "read_label",
+                    "inputs": {
+                      "path": "/inputs/0/label/rh.cortex.label"
+                    },
+                    "scope": "KM002/rh",
+                    "note": "Returns cortex vertex indices; pass as mask to parcel_summary",
+                    "returns_example": {
+                      "python_type": "numpy.ndarray",
+                      "dtype": "int64",
+                      "shape": [
+                        4
+                      ],
+                      "example": [
+                        0,
+                        1,
+                        2,
+                        3
+                      ]
+                    }
+                  },
+                  {
+                    "function": "read_surface_metric",
+                    "inputs": {
+                      "path": "/inputs/0/surf/rh.thickness"
+                    },
+                    "scope": "KM002/rh",
+                    "note": "Stored values, no rescaling",
+                    "returns_example": {
+                      "python_type": "numpy.ndarray",
+                      "dtype": "float64",
+                      "shape": [
+                        4
+                      ],
+                      "example": [
+                        0.0,
+                        2.0,
+                        4.0,
+                        6.0
+                      ]
+                    }
+                  },
+                  {
+                    "function": "parcel_summary",
+                    "inputs": {
+                      "metric_path": "/inputs/0/surf/rh.thickness",
+                      "annotation_path": "/inputs/0/label/rh.aparc.annot",
+                      "label_set_scope": "KM002/rh",
+                      "mask_path": "/inputs/0/label/rh.cortex.label",
+                      "weights": null
+                    },
+                    "scope": "KM002/rh",
+                    "note": "Use the reader return arrays and label_sets JSON group.labels; unweighted means, population SD",
+                    "returns_example": [
+                      {
+                        "label_key": 1,
+                        "name": "one",
+                        "vertex_count": 2,
+                        "mean": 3.0,
+                        "std_population": 1.0,
+                        "median": 3.0,
+                        "zero_count": 0,
+                        "weight_sum": 2.0
+                      },
+                      {
+                        "label_key": 2,
+                        "name": "two",
+                        "vertex_count": 1,
+                        "mean": 6.0,
+                        "std_population": 0.0,
+                        "median": 6.0,
+                        "zero_count": 0,
+                        "weight_sum": 1.0
+                      }
+                    ]
+                  }
+                ],
+                "custom_method_help": "read_operations returns all signatures and unit/return-value conventions"
+              }
+            }
+          ],
+          "needs_preprocessing": [],
+          "infeasible": [
+            {
+              "operations": {
+                "library": {
+                  "module": "primatex_ops",
+                  "version": "1.0.0",
+                  "sha256": "f2f86392868c798afc9dc0b66f9b0244610708930c832328be8785e6a6681106",
+                  "read_only": true,
+                  "import_statement": "import primatex_ops as ops",
+                  "scope": "Mature format readers and basic operations; Agent writes the complete analysis program"
+                },
+                "calls": [
+                  {
+                    "function": "nifti_info",
+                    "inputs": {
+                      "path": "/inputs/0/mri/orig.mgz"
+                    },
+                    "scope": "/inputs/0/mri/orig.mgz",
+                    "note": "",
+                    "returns_example": {
+                      "shape": [
+                        2,
+                        3,
+                        4
+                      ],
+                      "voxel_size": [
+                        1.0,
+                        1.0,
+                        1.0
+                      ],
+                      "voxel_size_units": "mm",
+                      "affine": [
+                        [
+                          1.0,
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          1.0,
+                          0.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          1.0,
+                          0.0
+                        ],
+                        [
+                          0.0,
+                          0.0,
+                          0.0,
+                          1.0
+                        ]
+                      ],
+                      "physical_scale_verified": false
+                    }
+                  }
+                ],
+                "custom_method_help": "read_operations returns all signatures and unit/return-value conventions"
+              },
+              "method": {
+                "method_id": "method:v12:macaque_civet",
+                "name": "CIVET-Macaque cortical surface reconstruction and quality controls",
+                "evidence_id": "method:method:v12:macaque_civet",
+                "source_reads": [
+                  {
+                    "id": "source_text:METHOD_SOURCE_civet_macaque",
+                    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7615896/"
+                  },
+                  {
+                    "id": "source_text:METHOD_SOURCE_nmt",
+                    "source_url": "https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/nonhuman/macaque_tempatl/template_nmtv2.html"
+                  }
+                ]
+              },
+              "atlas": {
+                "name": "not applicable",
+                "applicable": false
+              },
+              "space": "native",
+              "missing_products": [
+                "template",
+                "tissue_priors"
+              ],
+              "conditions": {
+                "pass": 3,
+                "warn": 1,
+                "block": 0
+              },
+              "blocked_constraints": [],
+              "reason": "Missing or unsupported product/space/complete method recipe"
+            }
+          ],
+          "profile_cached": false,
+          "profile_ref": "data_profile.v000001.json",
+          "method_requirements_sha256": "ce6fe723b2b8773ba6d974c77becf40d30f17418a320f5731bee034a96ab5a1b",
+          "pipeline_dependencies_sha256": "558d0988c23f9eaa135cc5443b3ae0f244168700d3e8183ee55aa69c442847ed",
+          "domain_graph_sha256": "935083bd126a63cf2478315e7ec2f814676a5b871a677c4538666d86456e2877",
+          "input_file_count": 22,
+          "intent_resolution": {
+            "original_regions": "aparc",
+            "effective_regions": "all regions",
+            "atlas": "aparc",
+            "basis": "Exact registered annotation name, not an inferred anatomical group",
+            "source_paths": [
+              "/inputs/0/label/lh.aparc.annot",
+              "/inputs/0/label/rh.aparc.annot"
+            ]
+          },
+          "protected_ref": "planning_result.v000001.json",
+          "state": {
+            "phase": "planned",
+            "code_path": null,
+            "exit_code": null,
+            "outputs_complete": false,
+            "next": "Select a candidate and call commit_plan"
+          }
+        }
+      },
+      "sources": [
+        {
+          "path": "/data/xuancheng/agent_round11_trial_20261022/trials/R11B_P1_1/trace.jsonl",
+          "sha256": "2630b3bc5b10bddd3de9ac031328831de8900a6bcc79331b938667f82fd04bec",
+          "line": 64
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "H08",
+      "origin": "historical_real_trace",
+      "round": 10,
+      "case": "R10_P1_1",
+      "error_type": "mixed_vertex_coverage_counts",
+      "original_detection_layer": "internal_review",
+      "expected": "invalid",
+      "operation": "semantic_review",
+      "payload": {
+        "report": "# Cortical thickness per aparc region - KM002 (macaque, native stored scale)\n\nCortex-restricted vertices covered: 95955 (lh 47670, rh 48341).\n\n| hemisphere | region | vertex_count | mean_thickness | std_population | median |\n|---|---|---|---|---|---|\n| lh | bankssts | 475 | 1.50884 | 0.224057 | 1.52738 |\n| lh | caudalanteriorcingulate | 229 | 2.0507 | 0.387852 | 2.14189 |\n| lh | caudalmiddlefrontal | 1473 | 1.10165 | 0.807105 | 0.793922 |\n| lh | cuneus | 564 | 1.22047 | 0.317963 | 1.27596 |\n| lh | entorhinal | 181 | 1.10076 | 0.517239 | 1.02548 |\n| lh | fusiform | 2780 | 1.65614 | 0.682815 | 1.83447 |\n| lh | inferiorparietal | 2925 | 1.22009 | 0.354531 | 1.1816 |\n| lh | inferiortemporal | 1966 | 1.65461 | 0.519569 | 1.79909 |\n| lh | isthmuscingulate | 223 | 1.98842 | 0.67781 | 2.15865 |\n| lh | lateraloccipital | 2754 | 1.20371 | 0.384414 | 1.16033 |\n| lh | lateralorbitofrontal | 1111 | 1.67974 | 0.581138 | 1.69959 |\n| lh | lingual | 1057 | 1.49652 | 0.287157 | 1.46944 |\n| lh | medialorbitofrontal | 895 | 1.56505 | 0.658064 | 1.59923 |\n| lh | middletemporal | 1497 | 1.68498 | 0.253937 | 1.67138 |\n| lh | paracentral | 740 | 1.75382 | 0.353273 | 1.80094 |\n| lh | parsopercularis | 962 | 2.10837 | 0.364013 | 2.08272 |\n| lh | parsorbitalis | 354 | 1.66078 | 0.713158 | 1.85231 |\n| lh | parstriangularis | 798 | 2.18131 | 0.589502 | 2.33742 |\n| lh | pericalcarine | 511 | 1.53843 | 0.356775 | 1.57268 |\n| lh | postcentral | 2635 | 1.5341 | 0.368917 | 1.49158 |\n| lh | posteriorcingulate | 491 | 1.98883 | 0.342393 | 2.01382 |\n| lh | precentral | 2769 | 1.39903 | 0.490297 | 1.45573 |\n| lh | precuneus | 2012 | 1.21539 | 0.46915 | 1.09328 |\n| lh | rostralanteriorcingulate | 231 | 1.79762 | 0.900565 | 1.99932 |\n| lh | rostralmiddlefrontal | 3442 | 2.06906 | 0.455889 | 2.07917 |\n| lh | superiorfrontal | 3975 | 2.22069 | 0.4305 | 2.33129 |\n| lh | superiorparietal | 3416 | 1.18625 | 0.332919 | 1.16729 |\n| lh | superiortemporal | 2234 | 1.83421 | 0.428929 | 1.82723 |\n| lh | supramarginal | 2039 | 1.20414 | 0.372665 | 1.16485 |\n| lh | frontalpole | 264 | 1.32728 | 0.406064 | 1.29902 |\n| lh | temporalpole | 353 | 0.84385 | 0.391109 | 0.729455 |\n| lh | transversetemporal | 284 | 1.43539 | 0.171201 | 1.4541 |\n| lh | insula | 1990 | 0.986247 | 0.498704 | 0.945146 |\n| rh | bankssts | 514 | 1.63906 | 0.179782 | 1.6231 |\n| rh | caudalanteriorcingulate | 281 | 2.01541 | 0.356197 | 2.06446 |\n| rh | caudalmiddlefrontal | 1530 | 1.13097 | 0.814458 | 0.862088 |\n| rh | cuneus | 734 | 1.15876 | 0.336282 | 1.13978 |\n| rh | entorhinal | 376 | 1.07431 | 0.441688 | 1.07171 |\n| rh | fusiform | 1991 | 1.75527 | 0.746638 | 1.83182 |\n| rh | inferiorparietal | 3238 | 1.1718 | 0.336284 | 1.1299 |\n| rh | inferiortemporal | 1735 | 1.78997 | 0.609013 | 1.99229 |\n| rh | isthmuscingulate | 280 | 1.723 | 0.654196 | 1.82951 |\n| rh | lateraloccipital | 2796 | 1.2391 | 0.350212 | 1.2569 |\n| rh | lateralorbitofrontal | 1058 | 1.60079 | 0.611038 | 1.67161 |\n| rh | lingual | 1013 | 1.43618 | 0.371415 | 1.43286 |\n| rh | medialorbitofrontal | 1015 | 1.45979 | 0.699656 | 1.39924 |\n| rh | middletemporal | 1769 | 1.65872 | 0.314128 | 1.69902 |\n| rh | paracentral | 939 | 1.81805 | 0.359902 | 1.84848 |\n| rh | parsopercularis | 939 | 1.72268 | 0.418299 | 1.76381 |\n| rh | parsorbitalis | 369 | 2.55364 | 0.257205 | 2.54775 |\n| rh | parstriangularis | 998 | 2.25661 | 0.305825 | 2.2683 |\n| rh | pericalcarine | 538 | 1.30243 | 0.271364 | 1.28332 |\n| rh | postcentral | 2329 | 1.5536 | 0.331375 | 1.51884 |\n| rh | posteriorcingulate | 553 | 1.93407 | 0.25985 | 1.97482 |\n| rh | precentral | 2696 | 1.47097 | 0.411531 | 1.5354 |\n| rh | precuneus | 2389 | 1.10783 | 0.347891 | 1.07655 |\n| rh | rostralanteriorcingulate | 161 | 2.08997 | 0.811989 | 2.3862 |\n| rh | rostralmiddlefrontal | 3594 | 2.0034 | 0.497433 | 1.9587 |\n| rh | superiorfrontal | 3724 | 2.2031 | 0.383799 | 2.26598 |\n| rh | superiorparietal | 3414 | 1.09817 | 0.340165 | 1.05705 |\n| rh | superiortemporal | 2580 | 1.93509 | 0.468468 | 1.9034 |\n| rh | supramarginal | 1817 | 1.20287 | 0.426676 | 1.16333 |\n| rh | frontalpole | 325 | 1.34315 | 0.458443 | 1.41812 |\n| rh | temporalpole | 318 | 0.734964 | 0.26389 | 0.714412 |\n| rh | transversetemporal | 266 | 1.53033 | 0.221736 | 1.48142 |\n| rh | insula | 2046 | 0.9629 | 0.473005 | 0.88558 |\n\nUnits: stored FreeSurfer thickness scale, nominally mm (software convention); no conversion applied.\nLimitations: see summary.json; species declared by registration only; scale/history not independently verified.",
+        "historical_findings": [
+          {
+            "severity": "blocking",
+            "claim": "report.md states 'Cortex-restricted vertices covered: 95955 (lh 47670, rh 48341)'.",
+            "observation": "The parenthetical values sum to 96011, not 95955 (47670+48341=96011). self_checks.json reports coverage_discrepancy per_hemi of -40 (lh) and -16 (rh), which implies the actual covered parcel-vertex sums per hemisphere are 47630 (lh) and 48325 (rh), totaling 95955. The numbers 47670/48341 are the cortex.label mask sizes, not the covered counts, so the report conflates two different quantities and is internally inconsistent.",
+            "evidence_files": [
+              "report.md",
+              "self_checks.json",
+              "9c8bfb19b1f34c4f84579796a70f9c83"
+            ],
+            "question": "What are the actual per-hemisphere covered vertex counts, and should report.md present 47630/48325 as covered counts, or explicitly label 47670/48341 as the cortex-mask sizes separate from the covered total?"
+          },
+          {
+            "severity": "blocking",
+            "claim": "self_checks.json 'finite_check' states 'all mean/std/median finite; zero_count==0 in all cortex parcels'.",
+            "observation": "summary.csv from the successful run shows lh caudalmiddlefrontal has zero_count=2, and the per-scope checks record thickness_min=0.0 for both hemispheres. The claim 'zero_count==0 in all cortex parcels' is therefore directly contradicted by the executed run's own generated data.",
+            "evidence_files": [
+              "self_checks.json",
+              "summary.csv",
+              "aparc_thickness_summary.py"
+            ],
+            "question": "Does any row of summary.csv have zero_count != 0 (e.g., lh caudalmiddlefrontal=2), and if so, should the finite_check text be corrected to match the actual zero-count values?"
+          },
+          {
+            "severity": "warning",
+            "claim": "summary.json methods state 'FreeSurfer stats headers declare thickness unit mm (software convention)'.",
+            "observation": "No FreeSurfer stats header or other source document is supplied as evidence; the analysis only reads .thickness files via ops.read_surface_metric. The mm unit is an assumed software convention (the limitations text itself says scale is not verified), so the 'headers declare' phrasing overstates provenance.",
+            "evidence_files": [
+              "aparc_thickness_summary.py",
+              "3ea80cf31378436dbb59210789cda43c"
+            ],
+            "question": "Is there a supplied source that actually declares the mm unit for these stored .thickness files, or should the methods text be revised to state the unit is an unverified FreeSurfer convention?"
+          },
+          {
+            "severity": "warning",
+            "claim": "report.md and summary.json limitations state cortex restriction relies on stored cortex.label files and annotation coverage, without mentioning vertices that are inside the cortex mask but lack an aparc label.",
+            "observation": "The checks show 40 (lh) and 16 (rh) vertices inside the cortex mask have unassigned annotation labels (labels<0) and are therefore excluded from all parcels; this -56 vertex coverage discrepancy is only visible in self_checks.json, not in report.md or in the limitations listed in summary.json.",
+            "evidence_files": [
+              "self_checks.json",
+              "report.md"
+            ],
+            "question": "Should the limitations text explicitly state that 56 cortex-masked vertices (40 lh, 16 rh) have no aparc label and are excluded from the per-region vertex counts?"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "path": "/data/xuancheng/agent_round10_trial_20261021/trials/R10_P1_1/agent_response.json",
+          "sha256": "2a5b865a58f546105e643beb81a327aab6888e45dc702ff7658b8465bd49584b"
+        }
+      ],
+      "notes": "Semantic judgment is not run in this API-free baseline; prior findings are provenance only, never an oracle for the detector."
+    },
+    {
+      "id": "H09",
+      "origin": "historical_real_trace",
+      "round": 11,
+      "case": "R11B_P2_2",
+      "error_type": "relative_code_path_rejected",
+      "original_detection_layer": "commit_plan",
+      "expected": "valid",
+      "operation": "normalize_path",
+      "payload": {
+        "path": "km002_folding_descriptive.py"
+      },
+      "sources": [
+        {
+          "path": "/data/xuancheng/agent_round11_trial_20261022/trials/R11B_P2_2/trace.jsonl",
+          "sha256": "c6423c41fdfdb4d02cc38b7eb01f6731d437e0db14d9634f64c7af89651a48fd"
+        }
+      ],
+      "notes": "A bounded relative path is a valid normalizable request under Round 12; original rejection was a harness problem."
+    },
+    {
+      "id": "H10",
+      "origin": "historical_real_trace",
+      "round": 9,
+      "case": "R9_FLASH_P1_1",
+      "error_type": "router_invalid_json",
+      "original_detection_layer": "route_fallback_to_pipeline",
+      "expected": "invalid",
+      "operation": "route_json",
+      "payload": {
+        "content": "{\"route\":\"analysis\",\"reason\":\"Requests regional cortical thickness summary statistics on an existing macaque reconstruction, not preprocessing.\"}.\"}"
+      },
+      "sources": [
+        {
+          "path": "/data/xuancheng/agent_round9_trial_20261021/trials/R9_FLASH_P1_1/http_001.json",
+          "sha256": "ce34210eef88fc388965da3adc483b7efd60d6a8fa0a5a444da464bd80fc9965"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "H11",
+      "origin": "historical_real_trace",
+      "round": 11,
+      "case": "R11B_FLASH_P1_1",
+      "error_type": "review_invalid_json",
+      "original_detection_layer": "internal_review_protocol",
+      "expected": "invalid",
+      "operation": "review_json",
+      "payload": {
+        "content": "read the whole thing. the run holds.\n\ngood stuff first. cortex restriction is real — intersection of aparc keys > 0 and the stored cortex label set, not just a filter on the annotation. native scale kept, no rescaling. units stated as FreeSurfer convention with the caveat that physical scale isn't verified. limitations are honest about the single-subject scope and the unknown atlas version. the timeout fix is clean — you caught your own O(N^2) and vectorized it. self-checks are thorough: vertex recount, sum-to-restricted-set, finiteness. zero failed.\n\nnow the smells.\n\none: zero thickness vertices. lh has 95, rh has 36. you count them in mean, std, median as literal 0.0. the report doesn't mention this. if those are fill values or unmeasured vertices, the region means are dragged down, especially small parcels. zero_count is in the csv but not in the report table. that's hiding a bias in plain sight. fix: either surface zero_count in the report table or state plainly in limitations that exact zeros are retained as stored and may bias means downward.\n\ntwo: the region moments are a black box. `ops.parcel_summary` gives you mean, std, median. you independently recount vertex counts, good. but you never independently recompute the moments. the ThickAvg crosscheck helps, but it's the same pipeline output — not independent. either compute moments directly from `metric[sel]` with numpy and assert they match `parcel_summary` for all 66 rows, or say in the report that region moments are trusted from the provided op without independent verification.\n\nthree: the repair log asserts the O(N^2) hypothesis caused the timeout, but there's no profile or timing trace showing the old code's hotspot. it resolved, so it's fine, but the log is a hypothesis, not evidence. minor.\n\nwant me to patch analysis.py to compute moments independently and surface the zero-thickness handling? or are you good with the disclosure route?"
+      },
+      "sources": [
+        {
+          "path": "/data/xuancheng/agent_round12_trial_20261022/cohort_b/backend_review/tests/fixtures/round11_flash_invalid_review.json",
+          "sha256": "d426ce589bbcef9530b4293e7a59c3793b3328cd84163e45c3128657a16a5813"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "H12",
+      "origin": "historical_real_trace",
+      "round": 11,
+      "case": "R11B_P2_1",
+      "error_type": "incomplete_hard_block_disclosure",
+      "original_detection_layer": "not_detected_by_original_review",
+      "expected": "invalid",
+      "operation": "semantic_review",
+      "payload": {
+        "report": "# Macaque KM002 - descriptive gyrification analysis\n\n## Requested method: true local gyrification index (lGI)\n**Status: NOT COMPUTED - missing prerequisite.**\nThe registered FreeSurfer local gyrification index method (Schaer et al. 2008, FreeSurfer `-localGI`) lists\nMATLAB and the Image Processing Toolbox as required software. The runtime inventory shows MATLAB is **not installed**\n(matlab: executable=false, 0 locations). FreeSurfer 7.2.0's `mris_compute_lgi` binary is present, but the registered\nmethod's prerequisite set is unmet, so a true local gyrification index cannot be produced in this environment.\n\n## Completed: global pial-to-convex-hull area ratio (related descriptive analysis)\nWhole-hemisphere folding descriptor computed on the stored pial surfaces (native space, units as stored).\n\n| subject | hemisphere | surface_area | hull_area | area_ratio |\n|---|---|---|---|---|\n| KM002 | lh | 10694.2 | 6048.95 | 1.76795 |\n| KM002 | rh | 10764.6 | 6066.6 | 1.77441 |\n\narea_units: squared stored-coordinate units; physical scale unverified\nratio is dimensionless (unitless).\nis_local_gyrification_index returned by ops: False\n\n## Disclosures\n- Descriptive global folding metric only; NOT a local gyrification index, no per-vertex values.\n- Stored/software units used as stored; reconstruction scale/history not independently verified; no rescaling done.\n- Plan version v000001, candidate_8c76b55da17b2cece9432807.\n",
+        "hard_blocks": [
+          "software_available",
+          "recon_complete"
+        ]
+      },
+      "sources": [
+        {
+          "path": "/data/xuancheng/agent_round11_trial_20261022/workspace/round11b-trial/output/.analysis_runs/fc6d647119c0f5b6a5747eb69b6c5344/30c00b45fddc4e63aafb447ebbcbc5a8/report.md",
+          "sha256": "8eec09c29b47d92f8ea9752f22222a4bf90ef4ff2d216e2852693c63ebb4df6b"
+        }
+      ],
+      "notes": "The old report has a generic reconstruction-history limitation but does not explicitly disclose the blocked completion prerequisite. No offline keyword rule is substituted for semantic review."
+    },
+    {
+      "id": "S01",
+      "origin": "synthetic",
+      "round": null,
+      "case": "S01",
+      "error_type": "species_atlas_mismatch",
+      "original_detection_layer": null,
+      "expected": "invalid",
+      "operation": "cross_template",
+      "payload": {
+        "template": "species_atlas",
+        "environment": {
+          "species": [
+            "macaque"
+          ],
+          "atlas": {
+            "name": "DK"
+          }
+        }
+      },
+      "sources": [
+        {
+          "document": "第四章提纲_参考BrainResearcher与NEURA_20261021.docx",
+          "section": "3.4, fourth section E3"
+        },
+        {
+          "path": "/data/xuancheng/agent_round12_trial_20261022/cohort_b/backend_review/knowledge_analysis/cross_species_rules.json",
+          "sha256": "174ee798338d805a129d0d2a99ae1f0d9a2e13ddefbd363ecd886a3508645002"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "S02",
+      "origin": "synthetic",
+      "round": null,
+      "case": "S02",
+      "error_type": "species_atlas_mismatch",
+      "original_detection_layer": null,
+      "expected": "invalid",
+      "operation": "cross_template",
+      "payload": {
+        "template": "species_atlas",
+        "environment": {
+          "species": [
+            "human"
+          ],
+          "atlas": {
+            "name": "CHARM"
+          }
+        }
+      },
+      "sources": [
+        {
+          "document": "第四章提纲_参考BrainResearcher与NEURA_20261021.docx",
+          "section": "3.4, fourth section E3"
+        },
+        {
+          "path": "/data/xuancheng/agent_round12_trial_20261022/cohort_b/backend_review/knowledge_analysis/cross_species_rules.json",
+          "sha256": "174ee798338d805a129d0d2a99ae1f0d9a2e13ddefbd363ecd886a3508645002"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "S03",
+      "origin": "synthetic",
+      "round": null,
+      "case": "S03",
+      "error_type": "species_atlas_mismatch",
+      "original_detection_layer": null,
+      "expected": "valid",
+      "operation": "cross_template",
+      "payload": {
+        "template": "species_atlas",
+        "environment": {
+          "species": [
+            "human"
+          ],
+          "atlas": {
+            "name": "DK"
+          }
+        }
+      },
+      "sources": [
+        {
+          "document": "第四章提纲_参考BrainResearcher与NEURA_20261021.docx",
+          "section": "3.4, fourth section E3"
+        },
+        {
+          "path": "/data/xuancheng/agent_round12_trial_20261022/cohort_b/backend_review/knowledge_analysis/cross_species_rules.json",
+          "sha256": "174ee798338d805a129d0d2a99ae1f0d9a2e13ddefbd363ecd886a3508645002"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "S04",
+      "origin": "synthetic",
+      "round": null,
+      "case": "S04",
+      "error_type": "missing_scale_conversion",
+      "original_detection_layer": null,
+      "expected": "invalid",
+      "operation": "cross_template",
+      "payload": {
+        "template": "scale_check",
+        "environment": {
+          "scale": {
+            "host_verified": true,
+            "rescaled": true,
+            "k": 2
+          },
+          "measurements": [
+            {
+              "metric": "surface_area",
+              "stored_value": 600,
+              "value": 600
+            }
+          ]
+        }
+      },
+      "sources": [
+        {
+          "document": "第四章提纲_参考BrainResearcher与NEURA_20261021.docx",
+          "section": "3.4, fourth section E3"
+        },
+        {
+          "path": "/data/xuancheng/agent_round12_trial_20261022/cohort_b/backend_review/knowledge_analysis/cross_species_rules.json",
+          "sha256": "174ee798338d805a129d0d2a99ae1f0d9a2e13ddefbd363ecd886a3508645002"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "S05",
+      "origin": "synthetic",
+      "round": null,
+      "case": "S05",
+      "error_type": "missing_scale_conversion",
+      "original_detection_layer": null,
+      "expected": "warning",
+      "operation": "cross_template",
+      "payload": {
+        "template": "scale_check",
+        "environment": {
+          "scale": {
+            "host_verified": false
+          },
+          "scale_check_required": true
+        }
+      },
+      "sources": [
+        {
+          "document": "第四章提纲_参考BrainResearcher与NEURA_20261021.docx",
+          "section": "3.4, fourth section E3"
+        },
+        {
+          "path": "/data/xuancheng/agent_round12_trial_20261022/cohort_b/backend_review/knowledge_analysis/cross_species_rules.json",
+          "sha256": "174ee798338d805a129d0d2a99ae1f0d9a2e13ddefbd363ecd886a3508645002"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "S06",
+      "origin": "synthetic",
+      "round": null,
+      "case": "S06",
+      "error_type": "missing_scale_conversion",
+      "original_detection_layer": null,
+      "expected": "valid",
+      "operation": "cross_template",
+      "payload": {
+        "template": "scale_check",
+        "environment": {
+          "scale": {
+            "host_verified": true,
+            "rescaled": true,
+            "k": 2
+          },
+          "measurements": [
+            {
+              "metric": "surface_area",
+              "stored_value": 600,
+              "value": 150
+            }
+          ]
+        }
+      },
+      "sources": [
+        {
+          "document": "第四章提纲_参考BrainResearcher与NEURA_20261021.docx",
+          "section": "3.4, fourth section E3"
+        },
+        {
+          "path": "/data/xuancheng/agent_round12_trial_20261022/cohort_b/backend_review/knowledge_analysis/cross_species_rules.json",
+          "sha256": "174ee798338d805a129d0d2a99ae1f0d9a2e13ddefbd363ecd886a3508645002"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "S07",
+      "origin": "synthetic",
+      "round": null,
+      "case": "S07",
+      "error_type": "missing_homology",
+      "original_detection_layer": null,
+      "expected": "invalid",
+      "operation": "cross_template",
+      "payload": {
+        "template": "homology_evidence",
+        "environment": {
+          "cross_species": true,
+          "homology": []
+        }
+      },
+      "sources": [
+        {
+          "document": "第四章提纲_参考BrainResearcher与NEURA_20261021.docx",
+          "section": "3.4, fourth section E3"
+        },
+        {
+          "path": "/data/xuancheng/agent_round12_trial_20261022/cohort_b/backend_review/knowledge_analysis/cross_species_rules.json",
+          "sha256": "174ee798338d805a129d0d2a99ae1f0d9a2e13ddefbd363ecd886a3508645002"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "S08",
+      "origin": "synthetic",
+      "round": null,
+      "case": "S08",
+      "error_type": "missing_homology",
+      "original_detection_layer": null,
+      "expected": "invalid",
+      "operation": "cross_template",
+      "payload": {
+        "template": "homology_evidence",
+        "environment": {
+          "cross_species": true,
+          "homology": [
+            {
+              "kind": "cited_correspondence",
+              "source_url": "https://example.invalid/synthetic-correspondence",
+              "mapping_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "scope_matches": true,
+              "host_verified": false
+            }
+          ]
+        }
+      },
+      "sources": [
+        {
+          "document": "第四章提纲_参考BrainResearcher与NEURA_20261021.docx",
+          "section": "3.4, fourth section E3"
+        },
+        {
+          "path": "/data/xuancheng/agent_round12_trial_20261022/cohort_b/backend_review/knowledge_analysis/cross_species_rules.json",
+          "sha256": "174ee798338d805a129d0d2a99ae1f0d9a2e13ddefbd363ecd886a3508645002"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "S09",
+      "origin": "synthetic",
+      "round": null,
+      "case": "S09",
+      "error_type": "missing_homology",
+      "original_detection_layer": null,
+      "expected": "valid",
+      "operation": "cross_template",
+      "payload": {
+        "template": "homology_evidence",
+        "environment": {
+          "cross_species": true,
+          "homology": [
+            {
+              "kind": "cited_correspondence",
+              "source_url": "https://example.invalid/synthetic-correspondence",
+              "mapping_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "scope_matches": true,
+              "host_verified": true
+            }
+          ]
+        }
+      },
+      "sources": [
+        {
+          "document": "第四章提纲_参考BrainResearcher与NEURA_20261021.docx",
+          "section": "3.4, fourth section E3"
+        },
+        {
+          "path": "/data/xuancheng/agent_round12_trial_20261022/cohort_b/backend_review/knowledge_analysis/cross_species_rules.json",
+          "sha256": "174ee798338d805a129d0d2a99ae1f0d9a2e13ddefbd363ecd886a3508645002"
+        }
+      ],
+      "notes": "Synthetic authenticated fixture only; the placeholder URL is not real scientific homology evidence."
+    },
+    {
+      "id": "S10",
+      "origin": "synthetic",
+      "round": null,
+      "case": "S10",
+      "error_type": "absolute_crossspecies_measure",
+      "original_detection_layer": null,
+      "expected": "warning",
+      "operation": "cross_template",
+      "payload": {
+        "template": "cross_species_measure",
+        "environment": {
+          "cross_species": true,
+          "species": [
+            "human",
+            "macaque"
+          ],
+          "measure_kind": "absolute"
+        }
+      },
+      "sources": [
+        {
+          "document": "第四章提纲_参考BrainResearcher与NEURA_20261021.docx",
+          "section": "3.4, fourth section E3"
+        },
+        {
+          "path": "/data/xuancheng/agent_round12_trial_20261022/cohort_b/backend_review/knowledge_analysis/cross_species_rules.json",
+          "sha256": "174ee798338d805a129d0d2a99ae1f0d9a2e13ddefbd363ecd886a3508645002"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "S11",
+      "origin": "synthetic",
+      "round": null,
+      "case": "S11",
+      "error_type": "absolute_crossspecies_measure",
+      "original_detection_layer": null,
+      "expected": "invalid",
+      "operation": "cross_template",
+      "payload": {
+        "template": "cross_species_measure",
+        "environment": {
+          "cross_species": true,
+          "species": [
+            "human",
+            "macaque"
+          ],
+          "measure_kind": "loglog_residual"
+        }
+      },
+      "sources": [
+        {
+          "document": "第四章提纲_参考BrainResearcher与NEURA_20261021.docx",
+          "section": "3.4, fourth section E3"
+        },
+        {
+          "path": "/data/xuancheng/agent_round12_trial_20261022/cohort_b/backend_review/knowledge_analysis/cross_species_rules.json",
+          "sha256": "174ee798338d805a129d0d2a99ae1f0d9a2e13ddefbd363ecd886a3508645002"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "S12",
+      "origin": "synthetic",
+      "round": null,
+      "case": "S12",
+      "error_type": "absolute_crossspecies_measure",
+      "original_detection_layer": null,
+      "expected": "valid",
+      "operation": "cross_template",
+      "payload": {
+        "template": "cross_species_measure",
+        "environment": {
+          "cross_species": true,
+          "species": [
+            "human",
+            "macaque"
+          ],
+          "measure_kind": "ratio",
+          "normalization_ref": "synthetic-per-input-cortex"
+        }
+      },
+      "sources": [
+        {
+          "document": "第四章提纲_参考BrainResearcher与NEURA_20261021.docx",
+          "section": "3.4, fourth section E3"
+        },
+        {
+          "path": "/data/xuancheng/agent_round12_trial_20261022/cohort_b/backend_review/knowledge_analysis/cross_species_rules.json",
+          "sha256": "174ee798338d805a129d0d2a99ae1f0d9a2e13ddefbd363ecd886a3508645002"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "S13",
+      "origin": "synthetic",
+      "round": null,
+      "case": "S13",
+      "error_type": "underpowered_negative_result",
+      "original_detection_layer": null,
+      "expected": "warning",
+      "operation": "cross_template",
+      "payload": {
+        "template": "min_detectable_effect",
+        "environment": {
+          "group_inference": true,
+          "negative_result": true,
+          "groups": {
+            "A": [
+              "a0",
+              "a1",
+              "a2",
+              "a3",
+              "a4"
+            ],
+            "B": [
+              "b0",
+              "b1",
+              "b2",
+              "b3",
+              "b4"
+            ]
+          }
+        }
+      },
+      "sources": [
+        {
+          "document": "第四章提纲_参考BrainResearcher与NEURA_20261021.docx",
+          "section": "3.4, fourth section E3"
+        },
+        {
+          "path": "/data/xuancheng/agent_round12_trial_20261022/cohort_b/backend_review/knowledge_analysis/cross_species_rules.json",
+          "sha256": "174ee798338d805a129d0d2a99ae1f0d9a2e13ddefbd363ecd886a3508645002"
+        }
+      ],
+      "notes": "Warnings require deferred negative claims at conclusion level; a warning is not support for a no-difference claim."
+    },
+    {
+      "id": "S14",
+      "origin": "synthetic",
+      "round": null,
+      "case": "S14",
+      "error_type": "underpowered_negative_result",
+      "original_detection_layer": null,
+      "expected": "warning",
+      "operation": "cross_template",
+      "payload": {
+        "template": "min_detectable_effect",
+        "environment": {
+          "group_inference": true,
+          "negative_result": true,
+          "groups": {
+            "A": [
+              "a0",
+              "a1",
+              "a2",
+              "a3",
+              "a4",
+              "a5",
+              "a6",
+              "a7",
+              "a8",
+              "a9"
+            ],
+            "B": [
+              "b0",
+              "b1",
+              "b2",
+              "b3",
+              "b4",
+              "b5",
+              "b6",
+              "b7",
+              "b8",
+              "b9"
+            ]
+          }
+        }
+      },
+      "sources": [
+        {
+          "document": "第四章提纲_参考BrainResearcher与NEURA_20261021.docx",
+          "section": "3.4, fourth section E3"
+        },
+        {
+          "path": "/data/xuancheng/agent_round12_trial_20261022/cohort_b/backend_review/knowledge_analysis/cross_species_rules.json",
+          "sha256": "174ee798338d805a129d0d2a99ae1f0d9a2e13ddefbd363ecd886a3508645002"
+        }
+      ],
+      "notes": "Warnings require deferred negative claims at conclusion level; a warning is not support for a no-difference claim."
+    },
+    {
+      "id": "S15",
+      "origin": "synthetic",
+      "round": null,
+      "case": "S15",
+      "error_type": "underpowered_negative_result",
+      "original_detection_layer": null,
+      "expected": "valid",
+      "operation": "cross_template",
+      "payload": {
+        "template": "min_detectable_effect",
+        "environment": {
+          "group_inference": true,
+          "negative_result": true,
+          "groups": {
+            "A": [
+              "a0",
+              "a1",
+              "a2",
+              "a3",
+              "a4",
+              "a5",
+              "a6",
+              "a7",
+              "a8",
+              "a9",
+              "a10",
+              "a11",
+              "a12",
+              "a13",
+              "a14",
+              "a15",
+              "a16",
+              "a17",
+              "a18",
+              "a19",
+              "a20",
+              "a21",
+              "a22",
+              "a23",
+              "a24",
+              "a25",
+              "a26",
+              "a27",
+              "a28",
+              "a29",
+              "a30",
+              "a31",
+              "a32",
+              "a33",
+              "a34",
+              "a35",
+              "a36",
+              "a37",
+              "a38",
+              "a39",
+              "a40",
+              "a41",
+              "a42",
+              "a43",
+              "a44",
+              "a45",
+              "a46",
+              "a47",
+              "a48",
+              "a49",
+              "a50",
+              "a51",
+              "a52",
+              "a53",
+              "a54",
+              "a55",
+              "a56",
+              "a57",
+              "a58",
+              "a59",
+              "a60",
+              "a61",
+              "a62",
+              "a63",
+              "a64",
+              "a65",
+              "a66",
+              "a67",
+              "a68",
+              "a69",
+              "a70",
+              "a71",
+              "a72",
+              "a73",
+              "a74",
+              "a75",
+              "a76",
+              "a77",
+              "a78",
+              "a79",
+              "a80",
+              "a81",
+              "a82",
+              "a83",
+              "a84",
+              "a85",
+              "a86",
+              "a87",
+              "a88",
+              "a89",
+              "a90",
+              "a91",
+              "a92",
+              "a93",
+              "a94",
+              "a95",
+              "a96",
+              "a97",
+              "a98",
+              "a99"
+            ],
+            "B": [
+              "b0",
+              "b1",
+              "b2",
+              "b3",
+              "b4",
+              "b5",
+              "b6",
+              "b7",
+              "b8",
+              "b9",
+              "b10",
+              "b11",
+              "b12",
+              "b13",
+              "b14",
+              "b15",
+              "b16",
+              "b17",
+              "b18",
+              "b19",
+              "b20",
+              "b21",
+              "b22",
+              "b23",
+              "b24",
+              "b25",
+              "b26",
+              "b27",
+              "b28",
+              "b29",
+              "b30",
+              "b31",
+              "b32",
+              "b33",
+              "b34",
+              "b35",
+              "b36",
+              "b37",
+              "b38",
+              "b39",
+              "b40",
+              "b41",
+              "b42",
+              "b43",
+              "b44",
+              "b45",
+              "b46",
+              "b47",
+              "b48",
+              "b49",
+              "b50",
+              "b51",
+              "b52",
+              "b53",
+              "b54",
+              "b55",
+              "b56",
+              "b57",
+              "b58",
+              "b59",
+              "b60",
+              "b61",
+              "b62",
+              "b63",
+              "b64",
+              "b65",
+              "b66",
+              "b67",
+              "b68",
+              "b69",
+              "b70",
+              "b71",
+              "b72",
+              "b73",
+              "b74",
+              "b75",
+              "b76",
+              "b77",
+              "b78",
+              "b79",
+              "b80",
+              "b81",
+              "b82",
+              "b83",
+              "b84",
+              "b85",
+              "b86",
+              "b87",
+              "b88",
+              "b89",
+              "b90",
+              "b91",
+              "b92",
+              "b93",
+              "b94",
+              "b95",
+              "b96",
+              "b97",
+              "b98",
+              "b99"
+            ]
+          }
+        }
+      },
+      "sources": [
+        {
+          "document": "第四章提纲_参考BrainResearcher与NEURA_20261021.docx",
+          "section": "3.4, fourth section E3"
+        },
+        {
+          "path": "/data/xuancheng/agent_round12_trial_20261022/cohort_b/backend_review/knowledge_analysis/cross_species_rules.json",
+          "sha256": "174ee798338d805a129d0d2a99ae1f0d9a2e13ddefbd363ecd886a3508645002"
+        }
+      ],
+      "notes": "Warnings require deferred negative claims at conclusion level; a warning is not support for a no-difference claim."
+    },
+    {
+      "id": "S16",
+      "origin": "synthetic",
+      "round": null,
+      "case": "S16",
+      "error_type": "missing_asymmetry_flip",
+      "original_detection_layer": null,
+      "expected": "warning",
+      "operation": "cross_template",
+      "payload": {
+        "template": "asymmetry_flip",
+        "environment": {
+          "asymmetry": true,
+          "bias_checks": []
+        }
+      },
+      "sources": [
+        {
+          "document": "第四章提纲_参考BrainResearcher与NEURA_20261021.docx",
+          "section": "3.4, fourth section E3"
+        },
+        {
+          "path": "/data/xuancheng/agent_round12_trial_20261022/cohort_b/backend_review/knowledge_analysis/cross_species_rules.json",
+          "sha256": "174ee798338d805a129d0d2a99ae1f0d9a2e13ddefbd363ecd886a3508645002"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "S17",
+      "origin": "synthetic",
+      "round": null,
+      "case": "S17",
+      "error_type": "missing_asymmetry_flip",
+      "original_detection_layer": null,
+      "expected": "warning",
+      "operation": "cross_template",
+      "payload": {
+        "template": "asymmetry_flip",
+        "environment": {
+          "asymmetry": true,
+          "bias_checks": [
+            {
+              "kind": "flip_test",
+              "host_verified": false,
+              "passed": true,
+              "evidence_ref": "model-declaration"
+            }
+          ]
+        }
+      },
+      "sources": [
+        {
+          "document": "第四章提纲_参考BrainResearcher与NEURA_20261021.docx",
+          "section": "3.4, fourth section E3"
+        },
+        {
+          "path": "/data/xuancheng/agent_round12_trial_20261022/cohort_b/backend_review/knowledge_analysis/cross_species_rules.json",
+          "sha256": "174ee798338d805a129d0d2a99ae1f0d9a2e13ddefbd363ecd886a3508645002"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "S18",
+      "origin": "synthetic",
+      "round": null,
+      "case": "S18",
+      "error_type": "missing_asymmetry_flip",
+      "original_detection_layer": null,
+      "expected": "valid",
+      "operation": "cross_template",
+      "payload": {
+        "template": "asymmetry_flip",
+        "environment": {
+          "asymmetry": true,
+          "bias_checks": [
+            {
+              "kind": "flip_test",
+              "host_verified": true,
+              "passed": true,
+              "evidence_ref": "synthetic-host-receipt"
+            }
+          ]
+        }
+      },
+      "sources": [
+        {
+          "document": "第四章提纲_参考BrainResearcher与NEURA_20261021.docx",
+          "section": "3.4, fourth section E3"
+        },
+        {
+          "path": "/data/xuancheng/agent_round12_trial_20261022/cohort_b/backend_review/knowledge_analysis/cross_species_rules.json",
+          "sha256": "174ee798338d805a129d0d2a99ae1f0d9a2e13ddefbd363ecd886a3508645002"
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "S19",
+      "origin": "synthetic",
+      "case": "S19",
+      "error_type": "mixed_coordinate_space",
+      "expected": "invalid",
+      "operation": "attr_equal",
+      "payload": {
+        "parameters": {
+          "slots": [
+            "left",
+            "right"
+          ],
+          "attribute": "space"
+        },
+        "environment": {
+          "slots": {
+            "left": [
+              {
+                "id": "left",
+                "attributes": {
+                  "space": "native"
+                }
+              }
+            ],
+            "right": [
+              {
+                "id": "right",
+                "attributes": {
+                  "space": "fsLR_32k"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "sources": [
+        {
+          "path": "/data/xuancheng/agent_round12_trial_20261022/cohort_b/backend_review/knowledge_analysis/condition_templates.json",
+          "sha256": "455a5dde88ca2c29dbcfd3c8c462270159503d6a8cd1b6176219746108dd26d0"
+        }
+      ]
+    },
+    {
+      "id": "S20",
+      "origin": "synthetic",
+      "case": "S20",
+      "error_type": "mixed_coordinate_space",
+      "expected": "valid",
+      "operation": "attr_equal",
+      "payload": {
+        "parameters": {
+          "slots": [
+            "left",
+            "right"
+          ],
+          "attribute": "space"
+        },
+        "environment": {
+          "slots": {
+            "left": [
+              {
+                "id": "left",
+                "attributes": {
+                  "space": "native"
+                }
+              }
+            ],
+            "right": [
+              {
+                "id": "right",
+                "attributes": {
+                  "space": "native"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "sources": [
+        {
+          "path": "/data/xuancheng/agent_round12_trial_20261022/cohort_b/backend_review/knowledge_analysis/condition_templates.json",
+          "sha256": "455a5dde88ca2c29dbcfd3c8c462270159503d6a8cd1b6176219746108dd26d0"
+        }
+      ]
+    },
+    {
+      "id": "S21",
+      "origin": "synthetic",
+      "case": "S21",
+      "error_type": "mixed_coordinate_space",
+      "expected": "invalid",
+      "operation": "attr_equal",
+      "payload": {
+        "parameters": {
+          "slots": [
+            "left",
+            "right"
+          ],
+          "attribute": "space"
+        },
+        "environment": {
+          "slots": {
+            "left": [
+              {
+                "id": "left",
+                "attributes": {
+                  "space": null
+                }
+              }
+            ],
+            "right": [
+              {
+                "id": "right",
+                "attributes": {
+                  "space": "native"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "sources": [
+        {
+          "path": "/data/xuancheng/agent_round12_trial_20261022/cohort_b/backend_review/knowledge_analysis/condition_templates.json",
+          "sha256": "455a5dde88ca2c29dbcfd3c8c462270159503d6a8cd1b6176219746108dd26d0"
+        }
+      ]
+    }
+  ]
+}

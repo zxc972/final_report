@@ -99,12 +99,35 @@ class RequestBudget:
         self.limit = limit
         self.records = []
 
-    def reserve(self, phase):
-        if len(self.records) >= self.limit:
+    def reserve(self, phase, *, retry_of=None, source_node=None):
+        logical_id = None
+        if retry_of is not None:
+            previous = next((row for row in self.records if row["id"] == retry_of), None)
+            if previous is None or previous["phase"] != phase:
+                raise ValueError("Retry must bind an existing same-phase HTTP attempt")
+            logical_id = previous.get("logical_id", previous["id"])
+            attempts = sum(row.get("logical_id", row["id"]) == logical_id for row in self.records)
+            if attempts >= 4 or previous["status"] not in {"call_failed", "transport_failed"}:
+                raise RuntimeError("Invalid or exhausted transport retry")
+        elif len({row.get("logical_id", row["id"]) for row in self.records}) >= self.limit:
             raise RuntimeError("Chat request model-call budget exhausted")
+        tools = getattr(self.session, "analysis_tools", None)
+        if phase == "analysis" and retry_of is None and tools is not None:
+            expected = len({row.get("logical_id", row["id"]) for row in self.records}) + 1
+            # Normal coding/review wrappers reserve first. Framework-internal
+            # direct model calls still pass this provider boundary and are not free.
+            if tools.model_calls < expected:
+                tools._tick(model=True)
+            if tools.model_calls != expected:
+                raise RuntimeError("Graph and native logical model counters disagree before HTTP")
+        attempt_id = uuid.uuid4().hex
         record = {
-            "id": uuid.uuid4().hex,
+            "id": attempt_id,
+            "logical_id": logical_id or attempt_id,
+            "retry_of": retry_of,
             "phase": phase,
+            "source_node": source_node or ("router" if phase == "router" else "analysis.direct"),
+            "analysis_phase": tools.session.state()["phase"] if tools is not None and tools.session is not None else phase,
             "status": "started",
             "request_id": self.session.request_id,
             "time": time.time(),
@@ -114,9 +137,12 @@ class RequestBudget:
         self.session.store.save("model_charge", record)
         return record["id"]
 
-    def finish(self, attempt_id, usage, status):
+    def finish(self, attempt_id, usage, status, *, model=None):
         row = next(item for item in self.records if item["id"] == attempt_id)
         row["status"] = status
+        if isinstance(model, str) and 1 <= len(model) <= 200 and not any(ord(c) < 32 for c in model):
+            row["model"] = model
+            row["model_source"] = "provider_response"
         if isinstance(usage, dict):
             row["usage"] = {
                 key: usage[key]
@@ -127,10 +153,21 @@ class RequestBudget:
 
     def view(self, unmetered_analysis_calls=0):
         summary = usage_summary(self.records)
-        summary["unknown_usage_calls"] += unmetered_analysis_calls
+        groups = {}
+        for row in self.records:
+            groups.setdefault(row.get("logical_id", row["id"]), row["phase"])
+        metered = sum(phase == "analysis" for phase in groups.values())
+        unmetered = max(0, unmetered_analysis_calls - metered)
+        summary["unknown_usage_calls"] += unmetered
         return {
-            "model_calls": len(self.records) + unmetered_analysis_calls,
-            "router_calls": sum(row["phase"] == "router" for row in self.records),
+            "model_calls": len(groups) + unmetered,
+            "http_attempts": len(self.records),
+            "models": list(dict.fromkeys(row["model"] for row in self.records if row.get("model_source") == "provider_response")),
+            "model_source": "provider_response" if any(row.get("model_source") == "provider_response" for row in self.records) else "unavailable",
+            "retry_http_attempts": sum(row.get("retry_of") is not None for row in self.records),
+            "unmetered_logical_calls": unmetered,
+            "router_calls": sum(phase == "router" for phase in groups.values()),
+            "router_http_attempts": sum(row["phase"] == "router" for row in self.records),
             "limit": self.limit,
             **summary,
         }
@@ -222,7 +259,7 @@ class ChatSession:
             row["stage"], row["status"], row["title"], row["detail"], row["refs"]
         )
 
-    def complete(self, message, response, status, analysis_calls=0):
+    def complete(self, message, response, status, analysis_calls=0, *, overall_status=None, component_statuses=None):
         history = self.history + [
             {"role": "user", "content": message},
             {"role": "assistant", "content": response},
@@ -237,6 +274,8 @@ class ChatSession:
                 "route": self.route,
                 "finished_time": time.time(),
                 "budget": budget,
+                **({"overall_status": overall_status, "component_statuses": component_statuses}
+                   if overall_status is not None else {}),
             },
         )
         return budget
@@ -284,7 +323,11 @@ def conversation_events(workspace, user_id, conversation_id, after):
                     return None
     view = log.view(after)
     view["status"] = record.get("status", "running")
+    if record.get("overall_status"):
+        view["overall_status"] = record["overall_status"]
+        view["component_statuses"] = record.get("component_statuses", {})
     view["run_id"] = record.get("request_id")
+    view["models"] = record.get("budget", {}).get("models", [])
     link = store.latest("analysis_link")
     if link and link["record"]["request_id"] == record.get("request_id"):
         source = checked(Path(link["record"]["root"]))

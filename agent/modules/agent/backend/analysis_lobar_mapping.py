@@ -5,7 +5,7 @@ import re
 from .analysis_product_planner import load_knowledge
 
 
-def resolve_lobes(entry, atlas_name, regions, names):
+def resolve_lobes(entry, atlas_name, regions, names, tools=None):
     tokens = [regions] if isinstance(regions, str) else regions
     aliases = {
         name + suffix: name
@@ -58,7 +58,7 @@ def resolve_lobes(entry, atlas_name, regions, names):
             [],
             "No sourced human lobar mapping for this explicit annotation protocol",
         )
-    mapping, sha = load_knowledge("lobar_mapping")
+    mapping, sha = load_knowledge("lobar_mapping", tools)
     expanded, evidence = [], []
     for token, lobe in zip(tokens, requested):
         if lobe is None:

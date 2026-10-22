@@ -19,9 +19,10 @@ def ready(tmp_path, monkeypatch, name="method_graph_gated"):
     monkeypatch.setattr(
         c,
         "software_observation",
-        lambda *args: (
+        lambda tools, commands, method_id: (
             True,
-            {"scope": "synthetic availability fixture for plan tests"},
+            {"commands": [{"command": command, "executable": True, "exit_code": 0} for command in commands],
+             "scope": "synthetic availability observations for plan tests"},
         ),
     )
     observed = tools.input_roots[0] / "lh.pial"

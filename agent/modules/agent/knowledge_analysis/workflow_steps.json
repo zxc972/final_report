@@ -1,0 +1,3293 @@
+{
+  "schema": "primatex.typed_workflow_steps.v1",
+  "source_document": {
+    "document": "第四章知识图谱设计与算法_20261021.docx",
+    "sha256": "8457b5c6ca6a90a57cc65940c79e5d57e1af5f939a5b8d79f4512b7f7359014d",
+    "sections": [
+      "3.2",
+      "4.3",
+      "4.4"
+    ]
+  },
+  "declared_primx_branches": 13,
+  "steps": [
+    {
+      "id": "preprocess-1",
+      "command": "primx neuro preprocess-1",
+      "inputs": [
+        {
+          "type": "type:Volume.T1",
+          "attributes": {
+            "subject": {
+              "binding": "subject",
+              "required": true,
+              "basis": "Explicit registered subject; never pathname species inference"
+            },
+            "species": {
+              "in": [
+                "macaque",
+                "marmoset",
+                "chimpanzee"
+              ],
+              "trust": "Explicit declaration; verified status retained separately"
+            },
+            "scale_status": {
+              "binding": "source_scale",
+              "unknown": "warn_and_disclose",
+              "mixing": "block_without_explicit_conversion"
+            },
+            "space": {
+              "binding": "volume_space",
+              "required": true,
+              "source": "Trusted input metadata or explicit verified processing history"
+            }
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "type": "type:Volume.T1",
+          "path_patterns": [
+            "T1.nii.gz"
+          ],
+          "attribute_rules": {
+            "subject": {
+              "inherit": "source.subject"
+            }
+          }
+        }
+      ],
+      "software": [
+        "mri_convert",
+        "N4BiasFieldCorrection",
+        "fslreorient2std"
+      ],
+      "species_allowed": [
+        "macaque",
+        "marmoset",
+        "chimpanzee"
+      ],
+      "source": [
+        {
+          "path": "workflows/primx_cli/primx",
+          "sha256": "5a227bcabce4e5f581c197a5a5fe99307daf56d480083a211a91f79bcd4e4e2b",
+          "line_count": 157,
+          "anchors": [
+            {
+              "line": 42,
+              "text": "    neuro   preprocess-1 | preprocess-3 | preprocess-3-1 | preprocess-3-2 | rescale | freesurfer2caret | acpc-align | label-resample | image-reorient"
+            },
+            {
+              "line": 49,
+              "text": "    primx neuro preprocess-1 -t1_path <dir> -out_path <dir> -species Macaque"
+            },
+            {
+              "line": 104,
+              "text": "            preprocess-1) exec \"$NEURO_DIR/bin/Preprocess_1.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 105,
+              "text": "            preprocess-3) \"$NEURO_DIR/bin/Preprocess_3_1.sh\" \"$@\" && exec \"$NEURO_DIR/bin/Preprocess_3_2.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 106,
+              "text": "            preprocess-3-1) exec \"$NEURO_DIR/bin/Preprocess_3_1.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 107,
+              "text": "            preprocess-3-2) exec \"$NEURO_DIR/bin/Preprocess_3_2.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 108,
+              "text": "            rescale) exec \"$NEURO_DIR/bin/Rescale.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 109,
+              "text": "            freesurfer2caret) exec \"$NEURO_DIR/bin/Freesurfer2CaretandRegister.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 110,
+              "text": "            acpc-align) exec \"$NEURO_DIR/bin/ACPC_Alignment.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 111,
+              "text": "            label-resample) exec \"$NEURO_DIR/bin/LabelResample.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 112,
+              "text": "            image-reorient) exec python \"$NEURO_DIR/Image_Reorient.py\" \"$@\" ;;"
+            },
+            {
+              "line": 131,
+              "text": "            router) exec \"$SEG_DIR/bin/primx_router.sh\" \"$@\" ;;"
+            }
+          ],
+          "review_status": "Source-inspected declaration; no pipeline execution in Round 8"
+        },
+        {
+          "path": "modules/neuro_pipeline/Preprocess_1.sh",
+          "sha256": "2c0e1123915cabf3cbcd190163dced73ed4b2f33b72ab3766b27afdb74479e6b",
+          "line_count": 260,
+          "anchors": [
+            {
+              "line": 37,
+              "text": "#  Usage :  ./Preprocess_1.sh -t1_path <dir or .nii/nii.gz file> -out_path <dir> [options]"
+            },
+            {
+              "line": 94,
+              "text": "# Support: a folder of runs OR a single .nii/.nii.gz file"
+            },
+            {
+              "line": 103,
+              "text": "        *.nii|*.nii.gz) ;;"
+            },
+            {
+              "line": 104,
+              "text": "        *) err \"-t1_path must be a directory or a .nii/.nii.gz file (got: $T1_INPUT)\" ;;"
+            },
+            {
+              "line": 121,
+              "text": "    macaque|cynomolgus|rhesus)  VOXEL_SIZE=0.5 ;;"
+            },
+            {
+              "line": 122,
+              "text": "    chimpanzee)                 VOXEL_SIZE=0.8 ;;"
+            },
+            {
+              "line": 123,
+              "text": "    marmoset)                   VOXEL_SIZE=0.2 ;;"
+            },
+            {
+              "line": 126,
+              "text": "log \"Species: $SPECIES, Voxel size: ${VOXEL_SIZE}mm\""
+            },
+            {
+              "line": 151,
+              "text": "    dest=\"$ORIG_DIR/raw_${idx}_T1.nii.gz\""
+            },
+            {
+              "line": 152,
+              "text": "    if [[ \"$fn\" == *.nii ]]; then"
+            },
+            {
+              "line": 161,
+              "text": "    for fn in *.nii.gz *.nii; do"
+            },
+            {
+              "line": 162,
+              "text": "        dest=\"$ORIG_DIR/raw_${idx}_T1.nii.gz\""
+            }
+          ],
+          "review_status": "Source-inspected declaration; no pipeline execution in Round 8"
+        }
+      ],
+      "cost": {
+        "unit": "step_count",
+        "value": 1,
+        "measured_runtime": null
+      },
+      "execution_allowed_in_this_round": false,
+      "generation_provenance": "Existing-file presence does not establish this step ran",
+      "optional_software": [
+        "DenoiseImage",
+        "mri_motion_correct.fsl"
+      ],
+      "requires_execution_parameters": [
+        "species",
+        "input_path",
+        "output_path"
+      ],
+      "input_attribute_contract_source": {
+        "document": "第四章知识图谱设计与算法_20261021.docx",
+        "sha256": "8457b5c6ca6a90a57cc65940c79e5d57e1af5f939a5b8d79f4512b7f7359014d",
+        "sections": [
+          "3.1",
+          "3.2",
+          "3.3"
+        ],
+        "scope": "Design binding contracts; not claims these attributes were observed or all prerequisites have been tested"
+      }
+    },
+    {
+      "id": "seg-brain",
+      "command": "primx seg brain",
+      "inputs": [
+        {
+          "type": "type:Volume.T1",
+          "attributes": {
+            "subject": {
+              "binding": "subject",
+              "required": true,
+              "basis": "Explicit registered subject; never pathname species inference"
+            },
+            "species": {
+              "in": [
+                "human",
+                "macaque",
+                "marmoset",
+                "chimpanzee"
+              ],
+              "trust": "Explicit declaration; verified status retained separately"
+            },
+            "scale_status": {
+              "binding": "source_scale",
+              "unknown": "warn_and_disclose",
+              "mixing": "block_without_explicit_conversion"
+            },
+            "space": {
+              "binding": "volume_space",
+              "required": true,
+              "source": "Trusted input metadata or explicit verified processing history"
+            }
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "type": "type:Volume.BrainMask",
+          "path_patterns": [
+            "brain_mask.nii.gz"
+          ],
+          "attribute_rules": {}
+        },
+        {
+          "type": "type:Volume.T1",
+          "path_patterns": [
+            "brain.nii.gz"
+          ],
+          "attribute_rules": {}
+        }
+      ],
+      "software": [
+        "python3",
+        "fslmaths"
+      ],
+      "species_allowed": [
+        "human",
+        "macaque",
+        "marmoset",
+        "chimpanzee"
+      ],
+      "source": [
+        {
+          "path": "workflows/primx_cli/primx",
+          "sha256": "5a227bcabce4e5f581c197a5a5fe99307daf56d480083a211a91f79bcd4e4e2b",
+          "line_count": 157,
+          "anchors": [
+            {
+              "line": 42,
+              "text": "    neuro   preprocess-1 | preprocess-3 | preprocess-3-1 | preprocess-3-2 | rescale | freesurfer2caret | acpc-align | label-resample | image-reorient"
+            },
+            {
+              "line": 49,
+              "text": "    primx neuro preprocess-1 -t1_path <dir> -out_path <dir> -species Macaque"
+            },
+            {
+              "line": 104,
+              "text": "            preprocess-1) exec \"$NEURO_DIR/bin/Preprocess_1.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 105,
+              "text": "            preprocess-3) \"$NEURO_DIR/bin/Preprocess_3_1.sh\" \"$@\" && exec \"$NEURO_DIR/bin/Preprocess_3_2.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 106,
+              "text": "            preprocess-3-1) exec \"$NEURO_DIR/bin/Preprocess_3_1.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 107,
+              "text": "            preprocess-3-2) exec \"$NEURO_DIR/bin/Preprocess_3_2.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 108,
+              "text": "            rescale) exec \"$NEURO_DIR/bin/Rescale.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 109,
+              "text": "            freesurfer2caret) exec \"$NEURO_DIR/bin/Freesurfer2CaretandRegister.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 110,
+              "text": "            acpc-align) exec \"$NEURO_DIR/bin/ACPC_Alignment.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 111,
+              "text": "            label-resample) exec \"$NEURO_DIR/bin/LabelResample.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 112,
+              "text": "            image-reorient) exec python \"$NEURO_DIR/Image_Reorient.py\" \"$@\" ;;"
+            },
+            {
+              "line": 131,
+              "text": "            router) exec \"$SEG_DIR/bin/primx_router.sh\" \"$@\" ;;"
+            }
+          ],
+          "review_status": "Source-inspected declaration; no pipeline execution in Round 8"
+        },
+        {
+          "path": "modules/primx_seg/bin/primx_seg_infer.sh",
+          "sha256": "14a0f72e81b6b53d051a9d8fac60086c71cb5cee1f632175b81bb5f477a9aa02",
+          "line_count": 86,
+          "anchors": [
+            {
+              "line": 77,
+              "text": "    MASK=\"${OUTPUT_DIR}/brain_mask.nii.gz\""
+            },
+            {
+              "line": 79,
+              "text": "        echo \"[WARN] brain_mask.nii.gz not found (${MASK}), skipping fslmaths masking.\" >&2"
+            },
+            {
+              "line": 83,
+              "text": "    # Output brain.nii.gz to the same output directory as the mask"
+            },
+            {
+              "line": 84,
+              "text": "    echo \"[INFO] Using fslmaths with brain_mask to generate brain.nii.gz ...\""
+            },
+            {
+              "line": 85,
+              "text": "    fslmaths \"${INPUT_IMAGE}\" -mas \"${MASK}\" \"${OUTPUT_DIR}/brain.nii.gz\""
+            }
+          ],
+          "review_status": "Source-inspected declaration; no pipeline execution in Round 8"
+        }
+      ],
+      "cost": {
+        "unit": "step_count",
+        "value": 1,
+        "measured_runtime": null
+      },
+      "execution_allowed_in_this_round": false,
+      "generation_provenance": "Existing-file presence does not establish this step ran",
+      "requires_assets": [
+        "Compatible trained segmentation model"
+      ],
+      "input_attribute_contract_source": {
+        "document": "第四章知识图谱设计与算法_20261021.docx",
+        "sha256": "8457b5c6ca6a90a57cc65940c79e5d57e1af5f939a5b8d79f4512b7f7359014d",
+        "sections": [
+          "3.1",
+          "3.2",
+          "3.3"
+        ],
+        "scope": "Design binding contracts; not claims these attributes were observed or all prerequisites have been tested"
+      }
+    },
+    {
+      "id": "acpc-align",
+      "command": "primx neuro acpc-align",
+      "inputs": [
+        {
+          "type": "type:Volume.T1",
+          "attributes": {
+            "subject": {
+              "binding": "subject",
+              "required": true,
+              "basis": "Explicit registered subject; never pathname species inference"
+            },
+            "species": {
+              "in": [
+                "macaque",
+                "marmoset",
+                "chimpanzee"
+              ],
+              "trust": "Explicit declaration; verified status retained separately"
+            },
+            "scale_status": {
+              "binding": "source_scale",
+              "unknown": "warn_and_disclose",
+              "mixing": "block_without_explicit_conversion"
+            },
+            "space": {
+              "binding": "volume_space",
+              "required": true,
+              "source": "Trusted input metadata or explicit verified processing history"
+            }
+          }
+        },
+        {
+          "type": "type:Volume.BrainMask",
+          "attributes": {
+            "subject": {
+              "binding": "subject",
+              "required": true,
+              "basis": "Explicit registered subject; never pathname species inference"
+            },
+            "species": {
+              "in": [
+                "macaque",
+                "marmoset",
+                "chimpanzee"
+              ],
+              "trust": "Explicit declaration; verified status retained separately"
+            },
+            "scale_status": {
+              "binding": "source_scale",
+              "unknown": "warn_and_disclose",
+              "mixing": "block_without_explicit_conversion"
+            },
+            "space": {
+              "binding": "volume_space",
+              "required": true,
+              "source": "Trusted input metadata or explicit verified processing history"
+            }
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "type": "type:Volume.T1",
+          "path_patterns": [
+            "ACPCAlignment/*.nii.gz"
+          ],
+          "attribute_rules": {}
+        },
+        {
+          "type": "type:Transform.Affine",
+          "path_patterns": [
+            "ACPCAlignment/*.mat"
+          ],
+          "attribute_rules": {}
+        }
+      ],
+      "software": [
+        "flirt",
+        "applywarp",
+        "mri_convert"
+      ],
+      "species_allowed": [
+        "macaque",
+        "marmoset",
+        "chimpanzee"
+      ],
+      "source": [
+        {
+          "path": "workflows/primx_cli/primx",
+          "sha256": "5a227bcabce4e5f581c197a5a5fe99307daf56d480083a211a91f79bcd4e4e2b",
+          "line_count": 157,
+          "anchors": [
+            {
+              "line": 42,
+              "text": "    neuro   preprocess-1 | preprocess-3 | preprocess-3-1 | preprocess-3-2 | rescale | freesurfer2caret | acpc-align | label-resample | image-reorient"
+            },
+            {
+              "line": 49,
+              "text": "    primx neuro preprocess-1 -t1_path <dir> -out_path <dir> -species Macaque"
+            },
+            {
+              "line": 104,
+              "text": "            preprocess-1) exec \"$NEURO_DIR/bin/Preprocess_1.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 105,
+              "text": "            preprocess-3) \"$NEURO_DIR/bin/Preprocess_3_1.sh\" \"$@\" && exec \"$NEURO_DIR/bin/Preprocess_3_2.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 106,
+              "text": "            preprocess-3-1) exec \"$NEURO_DIR/bin/Preprocess_3_1.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 107,
+              "text": "            preprocess-3-2) exec \"$NEURO_DIR/bin/Preprocess_3_2.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 108,
+              "text": "            rescale) exec \"$NEURO_DIR/bin/Rescale.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 109,
+              "text": "            freesurfer2caret) exec \"$NEURO_DIR/bin/Freesurfer2CaretandRegister.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 110,
+              "text": "            acpc-align) exec \"$NEURO_DIR/bin/ACPC_Alignment.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 111,
+              "text": "            label-resample) exec \"$NEURO_DIR/bin/LabelResample.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 112,
+              "text": "            image-reorient) exec python \"$NEURO_DIR/Image_Reorient.py\" \"$@\" ;;"
+            },
+            {
+              "line": 131,
+              "text": "            router) exec \"$SEG_DIR/bin/primx_router.sh\" \"$@\" ;;"
+            }
+          ],
+          "review_status": "Source-inspected declaration; no pipeline execution in Round 8"
+        },
+        {
+          "path": "modules/neuro_pipeline/ACPC_Alignment.sh",
+          "sha256": "e19e435edf9c97ba7f4fa16d44d8a6c0d5bd8d04c57d7b7867f88c8f8c946dd9",
+          "line_count": 203,
+          "anchors": [
+            {
+              "line": 47,
+              "text": "#                       T1.nii.gz            (raw T1)"
+            },
+            {
+              "line": 48,
+              "text": "#                       brain_mask.nii.gz    (binary mask)"
+            },
+            {
+              "line": 58,
+              "text": "#      -with_wm      Also transform  wm.nii.gz  if present"
+            },
+            {
+              "line": 106,
+              "text": "            REFERENCE=\"$TEMPLATE_DIR/Macaque/NMT_brain_05.nii.gz\""
+            },
+            {
+              "line": 109,
+              "text": "            REFERENCE=\"$TEMPLATE_DIR/Chimpanzee/ChimpYerkes29_T1w_0.8mm_brain.nii.gz\""
+            },
+            {
+              "line": 112,
+              "text": "            REFERENCE=\"$TEMPLATE_DIR/Marmoset/RIKENMarmoset15_AverageT1w_restore_dedrift_brain.nii.gz\""
+            },
+            {
+              "line": 126,
+              "text": "T1_IMG=\"$JOB_DIR/T1.nii.gz\""
+            },
+            {
+              "line": 127,
+              "text": "MASK_IMG=\"$JOB_DIR/brain_mask.nii.gz\""
+            },
+            {
+              "line": 128,
+              "text": "[[ -f $T1_IMG && -f $MASK_IMG ]] || err \"T1.nii.gz or brain_mask.nii.gz not found in $JOB_DIR\""
+            },
+            {
+              "line": 139,
+              "text": "cp \"$T1_IMG\"        \"$RAW_BAK/T1.nii.gz\""
+            },
+            {
+              "line": 140,
+              "text": "fslmaths \"$T1_IMG\" -mas \"$MASK_IMG\" \"$RAW_BAK/brain.nii.gz\""
+            },
+            {
+              "line": 141,
+              "text": "cp \"$MASK_IMG\"      \"$RAW_BAK/brain_mask.nii.gz\""
+            }
+          ],
+          "review_status": "Source-inspected declaration; no pipeline execution in Round 8"
+        }
+      ],
+      "cost": {
+        "unit": "step_count",
+        "value": 1,
+        "measured_runtime": null
+      },
+      "execution_allowed_in_this_round": false,
+      "generation_provenance": "Existing-file presence does not establish this step ran",
+      "property_limits": "AC-PC alignment does not establish MNI/NMT atlas space or cross-species homology",
+      "input_attribute_contract_source": {
+        "document": "第四章知识图谱设计与算法_20261021.docx",
+        "sha256": "8457b5c6ca6a90a57cc65940c79e5d57e1af5f939a5b8d79f4512b7f7359014d",
+        "sections": [
+          "3.1",
+          "3.2",
+          "3.3"
+        ],
+        "scope": "Design binding contracts; not claims these attributes were observed or all prerequisites have been tested"
+      }
+    },
+    {
+      "id": "seg-wm",
+      "command": "primx seg wm",
+      "inputs": [
+        {
+          "type": "type:Volume.T1",
+          "attributes": {
+            "subject": {
+              "binding": "subject",
+              "required": true,
+              "basis": "Explicit registered subject; never pathname species inference"
+            },
+            "species": {
+              "in": [
+                "human",
+                "macaque",
+                "marmoset",
+                "chimpanzee"
+              ],
+              "trust": "Explicit declaration; verified status retained separately"
+            },
+            "scale_status": {
+              "binding": "source_scale",
+              "unknown": "warn_and_disclose",
+              "mixing": "block_without_explicit_conversion"
+            },
+            "space": {
+              "binding": "volume_space",
+              "required": true,
+              "source": "Trusted input metadata or explicit verified processing history"
+            }
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "type": "type:Volume",
+          "path_patterns": [
+            "wm.nii.gz"
+          ],
+          "attribute_rules": {
+            "subject": {
+              "inherit": "source.subject"
+            }
+          }
+        }
+      ],
+      "software": [
+        "python3"
+      ],
+      "species_allowed": [
+        "human",
+        "macaque",
+        "marmoset",
+        "chimpanzee"
+      ],
+      "source": [
+        {
+          "path": "workflows/primx_cli/primx",
+          "sha256": "5a227bcabce4e5f581c197a5a5fe99307daf56d480083a211a91f79bcd4e4e2b",
+          "line_count": 157,
+          "anchors": [
+            {
+              "line": 42,
+              "text": "    neuro   preprocess-1 | preprocess-3 | preprocess-3-1 | preprocess-3-2 | rescale | freesurfer2caret | acpc-align | label-resample | image-reorient"
+            },
+            {
+              "line": 49,
+              "text": "    primx neuro preprocess-1 -t1_path <dir> -out_path <dir> -species Macaque"
+            },
+            {
+              "line": 104,
+              "text": "            preprocess-1) exec \"$NEURO_DIR/bin/Preprocess_1.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 105,
+              "text": "            preprocess-3) \"$NEURO_DIR/bin/Preprocess_3_1.sh\" \"$@\" && exec \"$NEURO_DIR/bin/Preprocess_3_2.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 106,
+              "text": "            preprocess-3-1) exec \"$NEURO_DIR/bin/Preprocess_3_1.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 107,
+              "text": "            preprocess-3-2) exec \"$NEURO_DIR/bin/Preprocess_3_2.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 108,
+              "text": "            rescale) exec \"$NEURO_DIR/bin/Rescale.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 109,
+              "text": "            freesurfer2caret) exec \"$NEURO_DIR/bin/Freesurfer2CaretandRegister.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 110,
+              "text": "            acpc-align) exec \"$NEURO_DIR/bin/ACPC_Alignment.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 111,
+              "text": "            label-resample) exec \"$NEURO_DIR/bin/LabelResample.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 112,
+              "text": "            image-reorient) exec python \"$NEURO_DIR/Image_Reorient.py\" \"$@\" ;;"
+            },
+            {
+              "line": 131,
+              "text": "            router) exec \"$SEG_DIR/bin/primx_router.sh\" \"$@\" ;;"
+            }
+          ],
+          "review_status": "Source-inspected declaration; no pipeline execution in Round 8"
+        },
+        {
+          "path": "modules/primx_seg/bin/primx_seg_infer.sh",
+          "sha256": "14a0f72e81b6b53d051a9d8fac60086c71cb5cee1f632175b81bb5f477a9aa02",
+          "line_count": 86,
+          "anchors": [
+            {
+              "line": 77,
+              "text": "    MASK=\"${OUTPUT_DIR}/brain_mask.nii.gz\""
+            },
+            {
+              "line": 79,
+              "text": "        echo \"[WARN] brain_mask.nii.gz not found (${MASK}), skipping fslmaths masking.\" >&2"
+            },
+            {
+              "line": 83,
+              "text": "    # Output brain.nii.gz to the same output directory as the mask"
+            },
+            {
+              "line": 84,
+              "text": "    echo \"[INFO] Using fslmaths with brain_mask to generate brain.nii.gz ...\""
+            },
+            {
+              "line": 85,
+              "text": "    fslmaths \"${INPUT_IMAGE}\" -mas \"${MASK}\" \"${OUTPUT_DIR}/brain.nii.gz\""
+            }
+          ],
+          "review_status": "Source-inspected declaration; no pipeline execution in Round 8"
+        }
+      ],
+      "cost": {
+        "unit": "step_count",
+        "value": 1,
+        "measured_runtime": null
+      },
+      "execution_allowed_in_this_round": false,
+      "generation_provenance": "Existing-file presence does not establish this step ran",
+      "requires_assets": [
+        "Compatible trained WM model"
+      ],
+      "input_attribute_contract_source": {
+        "document": "第四章知识图谱设计与算法_20261021.docx",
+        "sha256": "8457b5c6ca6a90a57cc65940c79e5d57e1af5f939a5b8d79f4512b7f7359014d",
+        "sections": [
+          "3.1",
+          "3.2",
+          "3.3"
+        ],
+        "scope": "Design binding contracts; not claims these attributes were observed or all prerequisites have been tested"
+      }
+    },
+    {
+      "id": "seg-router",
+      "command": "primx seg router",
+      "inputs": [
+        {
+          "type": "type:Volume.T1",
+          "attributes": {
+            "subject": {
+              "binding": "subject",
+              "required": true,
+              "basis": "Explicit registered subject; never pathname species inference"
+            },
+            "species": {
+              "in": [
+                "human",
+                "macaque",
+                "marmoset",
+                "chimpanzee"
+              ],
+              "trust": "Explicit declaration; verified status retained separately"
+            },
+            "scale_status": {
+              "binding": "source_scale",
+              "unknown": "warn_and_disclose",
+              "mixing": "block_without_explicit_conversion"
+            },
+            "space": {
+              "binding": "volume_space",
+              "required": true,
+              "source": "Trusted input metadata or explicit verified processing history"
+            }
+          }
+        }
+      ],
+      "outputs": [],
+      "software": [
+        "python3"
+      ],
+      "species_allowed": [
+        "human",
+        "macaque",
+        "marmoset",
+        "chimpanzee"
+      ],
+      "source": [
+        {
+          "path": "workflows/primx_cli/primx",
+          "sha256": "5a227bcabce4e5f581c197a5a5fe99307daf56d480083a211a91f79bcd4e4e2b",
+          "line_count": 157,
+          "anchors": [
+            {
+              "line": 42,
+              "text": "    neuro   preprocess-1 | preprocess-3 | preprocess-3-1 | preprocess-3-2 | rescale | freesurfer2caret | acpc-align | label-resample | image-reorient"
+            },
+            {
+              "line": 49,
+              "text": "    primx neuro preprocess-1 -t1_path <dir> -out_path <dir> -species Macaque"
+            },
+            {
+              "line": 104,
+              "text": "            preprocess-1) exec \"$NEURO_DIR/bin/Preprocess_1.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 105,
+              "text": "            preprocess-3) \"$NEURO_DIR/bin/Preprocess_3_1.sh\" \"$@\" && exec \"$NEURO_DIR/bin/Preprocess_3_2.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 106,
+              "text": "            preprocess-3-1) exec \"$NEURO_DIR/bin/Preprocess_3_1.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 107,
+              "text": "            preprocess-3-2) exec \"$NEURO_DIR/bin/Preprocess_3_2.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 108,
+              "text": "            rescale) exec \"$NEURO_DIR/bin/Rescale.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 109,
+              "text": "            freesurfer2caret) exec \"$NEURO_DIR/bin/Freesurfer2CaretandRegister.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 110,
+              "text": "            acpc-align) exec \"$NEURO_DIR/bin/ACPC_Alignment.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 111,
+              "text": "            label-resample) exec \"$NEURO_DIR/bin/LabelResample.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 112,
+              "text": "            image-reorient) exec python \"$NEURO_DIR/Image_Reorient.py\" \"$@\" ;;"
+            },
+            {
+              "line": 131,
+              "text": "            router) exec \"$SEG_DIR/bin/primx_router.sh\" \"$@\" ;;"
+            }
+          ],
+          "review_status": "Source-inspected declaration; no pipeline execution in Round 8"
+        },
+        {
+          "path": "modules/primx_seg/bin/primx_router.sh",
+          "sha256": "4029230cf452acda8732bbc4344db69ae3d0232dfa849f41f1f2a19a22519fcf",
+          "line_count": 42,
+          "anchors": [],
+          "review_status": "Source-inspected declaration; no pipeline execution in Round 8"
+        }
+      ],
+      "cost": {
+        "unit": "step_count",
+        "value": 1,
+        "measured_runtime": null
+      },
+      "execution_allowed_in_this_round": false,
+      "generation_provenance": "Existing-file presence does not establish this step ran",
+      "nonfile_outputs": [
+        {
+          "kind": "routing_decision",
+          "trust": "Model prediction; not verified species metadata"
+        }
+      ],
+      "input_attribute_contract_source": {
+        "document": "第四章知识图谱设计与算法_20261021.docx",
+        "sha256": "8457b5c6ca6a90a57cc65940c79e5d57e1af5f939a5b8d79f4512b7f7359014d",
+        "sections": [
+          "3.1",
+          "3.2",
+          "3.3"
+        ],
+        "scope": "Design binding contracts; not claims these attributes were observed or all prerequisites have been tested"
+      }
+    },
+    {
+      "id": "preprocess-3-1",
+      "command": "primx neuro preprocess-3-1",
+      "inputs": [
+        {
+          "type": "type:Volume.T1",
+          "attributes": {
+            "subject": {
+              "binding": "subject",
+              "required": true,
+              "basis": "Explicit registered subject; never pathname species inference"
+            },
+            "species": {
+              "in": [
+                "macaque",
+                "marmoset",
+                "chimpanzee"
+              ],
+              "trust": "Explicit declaration; verified status retained separately"
+            },
+            "scale_status": {
+              "binding": "source_scale",
+              "unknown": "warn_and_disclose",
+              "mixing": "block_without_explicit_conversion"
+            },
+            "space": {
+              "binding": "volume_space",
+              "required": true,
+              "source": "Trusted input metadata or explicit verified processing history"
+            }
+          }
+        },
+        {
+          "type": "type:Volume.BrainMask",
+          "attributes": {
+            "subject": {
+              "binding": "subject",
+              "required": true,
+              "basis": "Explicit registered subject; never pathname species inference"
+            },
+            "species": {
+              "in": [
+                "macaque",
+                "marmoset",
+                "chimpanzee"
+              ],
+              "trust": "Explicit declaration; verified status retained separately"
+            },
+            "scale_status": {
+              "binding": "source_scale",
+              "unknown": "warn_and_disclose",
+              "mixing": "block_without_explicit_conversion"
+            },
+            "space": {
+              "binding": "volume_space",
+              "required": true,
+              "source": "Trusted input metadata or explicit verified processing history"
+            }
+          }
+        },
+        {
+          "type": "type:Volume",
+          "attributes": {
+            "subject": {
+              "binding": "subject",
+              "required": true,
+              "basis": "Explicit registered subject; never pathname species inference"
+            },
+            "species": {
+              "in": [
+                "macaque",
+                "marmoset",
+                "chimpanzee"
+              ],
+              "trust": "Explicit declaration; verified status retained separately"
+            },
+            "scale_status": {
+              "binding": "source_scale",
+              "unknown": "warn_and_disclose",
+              "mixing": "block_without_explicit_conversion"
+            },
+            "space": {
+              "binding": "volume_space",
+              "required": true,
+              "source": "Trusted input metadata or explicit verified processing history"
+            }
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "type": "type:Volume.T1",
+          "path_patterns": [
+            "mri/orig.mgz",
+            "mri/brainmask.mgz"
+          ],
+          "attribute_rules": {}
+        },
+        {
+          "type": "type:Volume.Aseg",
+          "path_patterns": [
+            "mri/aseg.presurf.mgz"
+          ],
+          "attribute_rules": {}
+        },
+        {
+          "type": "type:Volume",
+          "path_patterns": [
+            "mri/wm.mgz"
+          ],
+          "attribute_rules": {}
+        }
+      ],
+      "software": [
+        "recon-all",
+        "mri_convert",
+        "mri_mask",
+        "antsApplyTransforms"
+      ],
+      "species_allowed": [
+        "macaque",
+        "marmoset",
+        "chimpanzee"
+      ],
+      "source": [
+        {
+          "path": "workflows/primx_cli/primx",
+          "sha256": "5a227bcabce4e5f581c197a5a5fe99307daf56d480083a211a91f79bcd4e4e2b",
+          "line_count": 157,
+          "anchors": [
+            {
+              "line": 42,
+              "text": "    neuro   preprocess-1 | preprocess-3 | preprocess-3-1 | preprocess-3-2 | rescale | freesurfer2caret | acpc-align | label-resample | image-reorient"
+            },
+            {
+              "line": 49,
+              "text": "    primx neuro preprocess-1 -t1_path <dir> -out_path <dir> -species Macaque"
+            },
+            {
+              "line": 104,
+              "text": "            preprocess-1) exec \"$NEURO_DIR/bin/Preprocess_1.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 105,
+              "text": "            preprocess-3) \"$NEURO_DIR/bin/Preprocess_3_1.sh\" \"$@\" && exec \"$NEURO_DIR/bin/Preprocess_3_2.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 106,
+              "text": "            preprocess-3-1) exec \"$NEURO_DIR/bin/Preprocess_3_1.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 107,
+              "text": "            preprocess-3-2) exec \"$NEURO_DIR/bin/Preprocess_3_2.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 108,
+              "text": "            rescale) exec \"$NEURO_DIR/bin/Rescale.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 109,
+              "text": "            freesurfer2caret) exec \"$NEURO_DIR/bin/Freesurfer2CaretandRegister.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 110,
+              "text": "            acpc-align) exec \"$NEURO_DIR/bin/ACPC_Alignment.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 111,
+              "text": "            label-resample) exec \"$NEURO_DIR/bin/LabelResample.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 112,
+              "text": "            image-reorient) exec python \"$NEURO_DIR/Image_Reorient.py\" \"$@\" ;;"
+            },
+            {
+              "line": 131,
+              "text": "            router) exec \"$SEG_DIR/bin/primx_router.sh\" \"$@\" ;;"
+            }
+          ],
+          "review_status": "Source-inspected declaration; no pipeline execution in Round 8"
+        },
+        {
+          "path": "modules/neuro_pipeline/Preprocess_3_1.sh",
+          "sha256": "cfe98d654adc97adb092cccda4ef42254ec3346b9a68e9b62562eaff17699316",
+          "line_count": 567,
+          "anchors": [
+            {
+              "line": 39,
+              "text": "#   7.  Generate brain.finalsurfs and wm.mgz from the final aseg"
+            },
+            {
+              "line": 124,
+              "text": "    Macaque)     VOXEL_SIZE=0.5 ;;"
+            },
+            {
+              "line": 125,
+              "text": "    Chimpanzee)  VOXEL_SIZE=0.8 ;;"
+            },
+            {
+              "line": 126,
+              "text": "    Marmoset)    VOXEL_SIZE=0.2 ;;"
+            },
+            {
+              "line": 129,
+              "text": "log \"Species: $SPECIES, Voxel size: ${VOXEL_SIZE}mm\""
+            },
+            {
+              "line": 130,
+              "text": "VOXEL_SIZE=$(printf \"%smm\" \"${VOXEL_SIZE//.}\") # -> 05mm, 08mm, 02mm"
+            },
+            {
+              "line": 143,
+              "text": "T1_RAW=\"$JOB_DIR/T1.nii.gz\""
+            },
+            {
+              "line": 144,
+              "text": "MASK_DL=\"$JOB_DIR/brain_mask.nii.gz\""
+            },
+            {
+              "line": 145,
+              "text": "[[ -f $T1_RAW && -f $MASK_DL ]] || err \"T1.nii.gz or brain_mask.nii.gz missing in $JOB_DIR\""
+            },
+            {
+              "line": 147,
+              "text": "export SUBJECTS_DIR=\"$JOB_DIR\"   # FreeSurfer expects this"
+            },
+            {
+              "line": 148,
+              "text": "FS_SUB_DIR=\"$SUBJECTS_DIR/$SUB_ID\""
+            },
+            {
+              "line": 153,
+              "text": "log \"SUBJECTS_DIR = $SUBJECTS_DIR\""
+            }
+          ],
+          "review_status": "Source-inspected declaration; no pipeline execution in Round 8"
+        }
+      ],
+      "cost": {
+        "unit": "step_count",
+        "value": 1,
+        "measured_runtime": null
+      },
+      "execution_allowed_in_this_round": false,
+      "generation_provenance": "Existing-file presence does not establish this step ran",
+      "output_working_scale": "1mm working copy; not physical acquisition calibration",
+      "input_attribute_contract_source": {
+        "document": "第四章知识图谱设计与算法_20261021.docx",
+        "sha256": "8457b5c6ca6a90a57cc65940c79e5d57e1af5f939a5b8d79f4512b7f7359014d",
+        "sections": [
+          "3.1",
+          "3.2",
+          "3.3"
+        ],
+        "scope": "Design binding contracts; not claims these attributes were observed or all prerequisites have been tested"
+      }
+    },
+    {
+      "id": "preprocess-3-2",
+      "command": "primx neuro preprocess-3-2",
+      "inputs": [
+        {
+          "type": "type:Volume.T1",
+          "attributes": {
+            "subject": {
+              "binding": "subject",
+              "required": true,
+              "basis": "Explicit registered subject; never pathname species inference"
+            },
+            "species": {
+              "in": [
+                "macaque",
+                "marmoset",
+                "chimpanzee"
+              ],
+              "trust": "Explicit declaration; verified status retained separately"
+            },
+            "scale_status": {
+              "binding": "source_scale",
+              "unknown": "warn_and_disclose",
+              "mixing": "block_without_explicit_conversion"
+            },
+            "space": {
+              "binding": "volume_space",
+              "required": true,
+              "source": "Trusted input metadata or explicit verified processing history"
+            }
+          }
+        },
+        {
+          "type": "type:Volume.Aseg",
+          "attributes": {
+            "subject": {
+              "binding": "subject",
+              "required": true,
+              "basis": "Explicit registered subject; never pathname species inference"
+            },
+            "species": {
+              "in": [
+                "macaque",
+                "marmoset",
+                "chimpanzee"
+              ],
+              "trust": "Explicit declaration; verified status retained separately"
+            },
+            "scale_status": {
+              "binding": "source_scale",
+              "unknown": "warn_and_disclose",
+              "mixing": "block_without_explicit_conversion"
+            },
+            "space": {
+              "binding": "volume_space",
+              "required": true,
+              "source": "Trusted input metadata or explicit verified processing history"
+            }
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "type": "type:Surface.White",
+          "path_patterns": [
+            "surf/{hemi}.white"
+          ],
+          "attribute_rules": {}
+        },
+        {
+          "type": "type:Surface.Pial",
+          "path_patterns": [
+            "surf/{hemi}.pial"
+          ],
+          "attribute_rules": {}
+        },
+        {
+          "type": "type:Surface.SphereReg",
+          "path_patterns": [
+            "surf/{hemi}.sphere.reg"
+          ],
+          "attribute_rules": {}
+        },
+        {
+          "type": "type:SurfaceMetric.Thickness",
+          "path_patterns": [
+            "surf/{hemi}.thickness"
+          ],
+          "attribute_rules": {}
+        },
+        {
+          "type": "type:SurfaceMetric.Sulc",
+          "path_patterns": [
+            "surf/{hemi}.sulc"
+          ],
+          "attribute_rules": {}
+        },
+        {
+          "type": "type:SurfaceMetric.Curvature",
+          "path_patterns": [
+            "surf/{hemi}.curv"
+          ],
+          "attribute_rules": {}
+        },
+        {
+          "type": "type:Annotation.AparcDK",
+          "path_patterns": [
+            "label/{hemi}.aparc.annot"
+          ],
+          "attribute_rules": {}
+        },
+        {
+          "type": "type:Label.Cortex",
+          "path_patterns": [
+            "label/{hemi}.cortex.label"
+          ],
+          "attribute_rules": {}
+        },
+        {
+          "type": "type:StatsTable.Aparc",
+          "path_patterns": [
+            "stats/{hemi}.aparc.stats"
+          ],
+          "attribute_rules": {}
+        }
+      ],
+      "software": [
+        "recon-all",
+        "mris_register"
+      ],
+      "species_allowed": [
+        "macaque",
+        "marmoset",
+        "chimpanzee"
+      ],
+      "source": [
+        {
+          "path": "workflows/primx_cli/primx",
+          "sha256": "5a227bcabce4e5f581c197a5a5fe99307daf56d480083a211a91f79bcd4e4e2b",
+          "line_count": 157,
+          "anchors": [
+            {
+              "line": 42,
+              "text": "    neuro   preprocess-1 | preprocess-3 | preprocess-3-1 | preprocess-3-2 | rescale | freesurfer2caret | acpc-align | label-resample | image-reorient"
+            },
+            {
+              "line": 49,
+              "text": "    primx neuro preprocess-1 -t1_path <dir> -out_path <dir> -species Macaque"
+            },
+            {
+              "line": 104,
+              "text": "            preprocess-1) exec \"$NEURO_DIR/bin/Preprocess_1.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 105,
+              "text": "            preprocess-3) \"$NEURO_DIR/bin/Preprocess_3_1.sh\" \"$@\" && exec \"$NEURO_DIR/bin/Preprocess_3_2.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 106,
+              "text": "            preprocess-3-1) exec \"$NEURO_DIR/bin/Preprocess_3_1.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 107,
+              "text": "            preprocess-3-2) exec \"$NEURO_DIR/bin/Preprocess_3_2.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 108,
+              "text": "            rescale) exec \"$NEURO_DIR/bin/Rescale.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 109,
+              "text": "            freesurfer2caret) exec \"$NEURO_DIR/bin/Freesurfer2CaretandRegister.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 110,
+              "text": "            acpc-align) exec \"$NEURO_DIR/bin/ACPC_Alignment.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 111,
+              "text": "            label-resample) exec \"$NEURO_DIR/bin/LabelResample.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 112,
+              "text": "            image-reorient) exec python \"$NEURO_DIR/Image_Reorient.py\" \"$@\" ;;"
+            },
+            {
+              "line": 131,
+              "text": "            router) exec \"$SEG_DIR/bin/primx_router.sh\" \"$@\" ;;"
+            }
+          ],
+          "review_status": "Source-inspected declaration; no pipeline execution in Round 8"
+        },
+        {
+          "path": "modules/neuro_pipeline/Preprocess_3_2.sh",
+          "sha256": "8beaa070043c44553ed2f6326a1f712fd8e3e5d9bcfc3231daf52bd6e99e958f",
+          "line_count": 316,
+          "anchors": [
+            {
+              "line": 121,
+              "text": "export SUBJECTS_DIR=\"$JOB_DIR\"       # FS root"
+            },
+            {
+              "line": 122,
+              "text": "FS_SUB_DIR=\"$SUBJECTS_DIR/$SUB_ID\""
+            },
+            {
+              "line": 127,
+              "text": "log \"SUBJECTS_DIR = $SUBJECTS_DIR\""
+            },
+            {
+              "line": 136,
+              "text": "ASEG=\"$FS_MRI_DIR/aseg.presurf.mgz\""
+            },
+            {
+              "line": 137,
+              "text": "WM=\"$FS_MRI_DIR/wm.mgz\""
+            },
+            {
+              "line": 138,
+              "text": "NORM=\"$FS_MRI_DIR/norm.mgz\""
+            },
+            {
+              "line": 139,
+              "text": "FILL=\"$FS_MRI_DIR/filled.mgz\" # later generated"
+            },
+            {
+              "line": 140,
+              "text": "[[ -f $ASEG ]] || err \"aseg.presurf.mgz not found in $FS_MRI_DIR\""
+            },
+            {
+              "line": 141,
+              "text": "[[ -f $WM ]]   || err \"wm.mgz not found in $FS_MRI_DIR\""
+            },
+            {
+              "line": 142,
+              "text": "[[ -f $NORM ]] || err \"norm.mgz not found in $FS_MRI_DIR\""
+            },
+            {
+              "line": 150,
+              "text": "CC_SEED_MASK=\"$JOB_DIR/tmp/${SUB_ID}.cc_central.seed.nii.gz\""
+            },
+            {
+              "line": 167,
+              "text": "mri_pretess \"$FILL\" 255 \"$NORM\" \"$FS_MRI_DIR/filled-pretess255.mgz\""
+            }
+          ],
+          "review_status": "Source-inspected declaration; no pipeline execution in Round 8"
+        }
+      ],
+      "cost": {
+        "unit": "step_count",
+        "value": 1,
+        "measured_runtime": null
+      },
+      "execution_allowed_in_this_round": false,
+      "generation_provenance": "Existing-file presence does not establish this step ran",
+      "output_working_scale": "Subject reconstruction topology; do not infer physical scale from directory",
+      "input_attribute_contract_source": {
+        "document": "第四章知识图谱设计与算法_20261021.docx",
+        "sha256": "8457b5c6ca6a90a57cc65940c79e5d57e1af5f939a5b8d79f4512b7f7359014d",
+        "sections": [
+          "3.1",
+          "3.2",
+          "3.3"
+        ],
+        "scope": "Design binding contracts; not claims these attributes were observed or all prerequisites have been tested"
+      }
+    },
+    {
+      "id": "preprocess-3",
+      "command": "primx neuro preprocess-3",
+      "inputs": [
+        {
+          "type": "type:Volume.T1",
+          "attributes": {
+            "subject": {
+              "binding": "subject",
+              "required": true,
+              "basis": "Explicit registered subject; never pathname species inference"
+            },
+            "species": {
+              "in": [
+                "macaque",
+                "marmoset",
+                "chimpanzee"
+              ],
+              "trust": "Explicit declaration; verified status retained separately"
+            },
+            "scale_status": {
+              "binding": "source_scale",
+              "unknown": "warn_and_disclose",
+              "mixing": "block_without_explicit_conversion"
+            },
+            "space": {
+              "binding": "volume_space",
+              "required": true,
+              "source": "Trusted input metadata or explicit verified processing history"
+            }
+          }
+        },
+        {
+          "type": "type:Volume.BrainMask",
+          "attributes": {
+            "subject": {
+              "binding": "subject",
+              "required": true,
+              "basis": "Explicit registered subject; never pathname species inference"
+            },
+            "species": {
+              "in": [
+                "macaque",
+                "marmoset",
+                "chimpanzee"
+              ],
+              "trust": "Explicit declaration; verified status retained separately"
+            },
+            "scale_status": {
+              "binding": "source_scale",
+              "unknown": "warn_and_disclose",
+              "mixing": "block_without_explicit_conversion"
+            },
+            "space": {
+              "binding": "volume_space",
+              "required": true,
+              "source": "Trusted input metadata or explicit verified processing history"
+            }
+          }
+        },
+        {
+          "type": "type:Volume",
+          "attributes": {
+            "subject": {
+              "binding": "subject",
+              "required": true,
+              "basis": "Explicit registered subject; never pathname species inference"
+            },
+            "species": {
+              "in": [
+                "macaque",
+                "marmoset",
+                "chimpanzee"
+              ],
+              "trust": "Explicit declaration; verified status retained separately"
+            },
+            "scale_status": {
+              "binding": "source_scale",
+              "unknown": "warn_and_disclose",
+              "mixing": "block_without_explicit_conversion"
+            },
+            "space": {
+              "binding": "volume_space",
+              "required": true,
+              "source": "Trusted input metadata or explicit verified processing history"
+            }
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "type": "type:Volume.T1",
+          "path_patterns": [
+            "mri/orig.mgz",
+            "mri/brainmask.mgz"
+          ],
+          "attribute_rules": {}
+        },
+        {
+          "type": "type:Volume.Aseg",
+          "path_patterns": [
+            "mri/aseg.presurf.mgz"
+          ],
+          "attribute_rules": {}
+        },
+        {
+          "type": "type:Volume",
+          "path_patterns": [
+            "mri/wm.mgz"
+          ],
+          "attribute_rules": {}
+        },
+        {
+          "type": "type:Surface.White",
+          "path_patterns": [
+            "surf/{hemi}.white"
+          ],
+          "attribute_rules": {}
+        },
+        {
+          "type": "type:Surface.Pial",
+          "path_patterns": [
+            "surf/{hemi}.pial"
+          ],
+          "attribute_rules": {}
+        },
+        {
+          "type": "type:Surface.SphereReg",
+          "path_patterns": [
+            "surf/{hemi}.sphere.reg"
+          ],
+          "attribute_rules": {}
+        },
+        {
+          "type": "type:SurfaceMetric.Thickness",
+          "path_patterns": [
+            "surf/{hemi}.thickness"
+          ],
+          "attribute_rules": {}
+        },
+        {
+          "type": "type:SurfaceMetric.Sulc",
+          "path_patterns": [
+            "surf/{hemi}.sulc"
+          ],
+          "attribute_rules": {}
+        },
+        {
+          "type": "type:SurfaceMetric.Curvature",
+          "path_patterns": [
+            "surf/{hemi}.curv"
+          ],
+          "attribute_rules": {}
+        },
+        {
+          "type": "type:Annotation.AparcDK",
+          "path_patterns": [
+            "label/{hemi}.aparc.annot"
+          ],
+          "attribute_rules": {}
+        },
+        {
+          "type": "type:Label.Cortex",
+          "path_patterns": [
+            "label/{hemi}.cortex.label"
+          ],
+          "attribute_rules": {}
+        },
+        {
+          "type": "type:StatsTable.Aparc",
+          "path_patterns": [
+            "stats/{hemi}.aparc.stats"
+          ],
+          "attribute_rules": {}
+        }
+      ],
+      "software": [
+        "recon-all",
+        "mri_convert",
+        "antsApplyTransforms"
+      ],
+      "species_allowed": [
+        "macaque",
+        "marmoset",
+        "chimpanzee"
+      ],
+      "source": [
+        {
+          "path": "workflows/primx_cli/primx",
+          "sha256": "5a227bcabce4e5f581c197a5a5fe99307daf56d480083a211a91f79bcd4e4e2b",
+          "line_count": 157,
+          "anchors": [
+            {
+              "line": 42,
+              "text": "    neuro   preprocess-1 | preprocess-3 | preprocess-3-1 | preprocess-3-2 | rescale | freesurfer2caret | acpc-align | label-resample | image-reorient"
+            },
+            {
+              "line": 49,
+              "text": "    primx neuro preprocess-1 -t1_path <dir> -out_path <dir> -species Macaque"
+            },
+            {
+              "line": 104,
+              "text": "            preprocess-1) exec \"$NEURO_DIR/bin/Preprocess_1.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 105,
+              "text": "            preprocess-3) \"$NEURO_DIR/bin/Preprocess_3_1.sh\" \"$@\" && exec \"$NEURO_DIR/bin/Preprocess_3_2.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 106,
+              "text": "            preprocess-3-1) exec \"$NEURO_DIR/bin/Preprocess_3_1.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 107,
+              "text": "            preprocess-3-2) exec \"$NEURO_DIR/bin/Preprocess_3_2.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 108,
+              "text": "            rescale) exec \"$NEURO_DIR/bin/Rescale.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 109,
+              "text": "            freesurfer2caret) exec \"$NEURO_DIR/bin/Freesurfer2CaretandRegister.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 110,
+              "text": "            acpc-align) exec \"$NEURO_DIR/bin/ACPC_Alignment.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 111,
+              "text": "            label-resample) exec \"$NEURO_DIR/bin/LabelResample.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 112,
+              "text": "            image-reorient) exec python \"$NEURO_DIR/Image_Reorient.py\" \"$@\" ;;"
+            },
+            {
+              "line": 131,
+              "text": "            router) exec \"$SEG_DIR/bin/primx_router.sh\" \"$@\" ;;"
+            }
+          ],
+          "review_status": "Source-inspected declaration; no pipeline execution in Round 8"
+        },
+        {
+          "path": "modules/neuro_pipeline/Preprocess_3_1.sh",
+          "sha256": "cfe98d654adc97adb092cccda4ef42254ec3346b9a68e9b62562eaff17699316",
+          "line_count": 567,
+          "anchors": [
+            {
+              "line": 39,
+              "text": "#   7.  Generate brain.finalsurfs and wm.mgz from the final aseg"
+            },
+            {
+              "line": 124,
+              "text": "    Macaque)     VOXEL_SIZE=0.5 ;;"
+            },
+            {
+              "line": 125,
+              "text": "    Chimpanzee)  VOXEL_SIZE=0.8 ;;"
+            },
+            {
+              "line": 126,
+              "text": "    Marmoset)    VOXEL_SIZE=0.2 ;;"
+            },
+            {
+              "line": 129,
+              "text": "log \"Species: $SPECIES, Voxel size: ${VOXEL_SIZE}mm\""
+            },
+            {
+              "line": 130,
+              "text": "VOXEL_SIZE=$(printf \"%smm\" \"${VOXEL_SIZE//.}\") # -> 05mm, 08mm, 02mm"
+            },
+            {
+              "line": 143,
+              "text": "T1_RAW=\"$JOB_DIR/T1.nii.gz\""
+            },
+            {
+              "line": 144,
+              "text": "MASK_DL=\"$JOB_DIR/brain_mask.nii.gz\""
+            },
+            {
+              "line": 145,
+              "text": "[[ -f $T1_RAW && -f $MASK_DL ]] || err \"T1.nii.gz or brain_mask.nii.gz missing in $JOB_DIR\""
+            },
+            {
+              "line": 147,
+              "text": "export SUBJECTS_DIR=\"$JOB_DIR\"   # FreeSurfer expects this"
+            },
+            {
+              "line": 148,
+              "text": "FS_SUB_DIR=\"$SUBJECTS_DIR/$SUB_ID\""
+            },
+            {
+              "line": 153,
+              "text": "log \"SUBJECTS_DIR = $SUBJECTS_DIR\""
+            }
+          ],
+          "review_status": "Source-inspected declaration; no pipeline execution in Round 8"
+        },
+        {
+          "path": "modules/neuro_pipeline/Preprocess_3_2.sh",
+          "sha256": "8beaa070043c44553ed2f6326a1f712fd8e3e5d9bcfc3231daf52bd6e99e958f",
+          "line_count": 316,
+          "anchors": [
+            {
+              "line": 121,
+              "text": "export SUBJECTS_DIR=\"$JOB_DIR\"       # FS root"
+            },
+            {
+              "line": 122,
+              "text": "FS_SUB_DIR=\"$SUBJECTS_DIR/$SUB_ID\""
+            },
+            {
+              "line": 127,
+              "text": "log \"SUBJECTS_DIR = $SUBJECTS_DIR\""
+            },
+            {
+              "line": 136,
+              "text": "ASEG=\"$FS_MRI_DIR/aseg.presurf.mgz\""
+            },
+            {
+              "line": 137,
+              "text": "WM=\"$FS_MRI_DIR/wm.mgz\""
+            },
+            {
+              "line": 138,
+              "text": "NORM=\"$FS_MRI_DIR/norm.mgz\""
+            },
+            {
+              "line": 139,
+              "text": "FILL=\"$FS_MRI_DIR/filled.mgz\" # later generated"
+            },
+            {
+              "line": 140,
+              "text": "[[ -f $ASEG ]] || err \"aseg.presurf.mgz not found in $FS_MRI_DIR\""
+            },
+            {
+              "line": 141,
+              "text": "[[ -f $WM ]]   || err \"wm.mgz not found in $FS_MRI_DIR\""
+            },
+            {
+              "line": 142,
+              "text": "[[ -f $NORM ]] || err \"norm.mgz not found in $FS_MRI_DIR\""
+            },
+            {
+              "line": 150,
+              "text": "CC_SEED_MASK=\"$JOB_DIR/tmp/${SUB_ID}.cc_central.seed.nii.gz\""
+            },
+            {
+              "line": 167,
+              "text": "mri_pretess \"$FILL\" 255 \"$NORM\" \"$FS_MRI_DIR/filled-pretess255.mgz\""
+            }
+          ],
+          "review_status": "Source-inspected declaration; no pipeline execution in Round 8"
+        }
+      ],
+      "cost": {
+        "unit": "step_count",
+        "value": 1,
+        "measured_runtime": null
+      },
+      "execution_allowed_in_this_round": false,
+      "generation_provenance": "Existing-file presence does not establish this step ran",
+      "composition": [
+        "preprocess-3-1",
+        "preprocess-3-2"
+      ],
+      "input_attribute_contract_source": {
+        "document": "第四章知识图谱设计与算法_20261021.docx",
+        "sha256": "8457b5c6ca6a90a57cc65940c79e5d57e1af5f939a5b8d79f4512b7f7359014d",
+        "sections": [
+          "3.1",
+          "3.2",
+          "3.3"
+        ],
+        "scope": "Design binding contracts; not claims these attributes were observed or all prerequisites have been tested"
+      }
+    },
+    {
+      "id": "rescale",
+      "command": "primx neuro rescale",
+      "inputs": [
+        {
+          "type": "type:Surface.White",
+          "attributes": {
+            "subject": {
+              "binding": "subject",
+              "required": true,
+              "basis": "Explicit registered subject; never pathname species inference"
+            },
+            "species": {
+              "in": [
+                "macaque",
+                "marmoset",
+                "chimpanzee"
+              ],
+              "trust": "Explicit declaration; verified status retained separately"
+            },
+            "scale_status": {
+              "binding": "source_scale",
+              "unknown": "warn_and_disclose",
+              "mixing": "block_without_explicit_conversion"
+            },
+            "hemisphere": {
+              "in": [
+                "lh",
+                "rh"
+              ],
+              "binding": "hemisphere",
+              "scope": "one hemisphere per binding"
+            },
+            "mesh": {
+              "binding": "hemisphere_mesh",
+              "source": "Actual parsed cardinality",
+              "unknown": "block"
+            },
+            "space": {
+              "binding": "source_space",
+              "required": true,
+              "unknown": "block_for_processing_not_provenance_assumption"
+            }
+          }
+        },
+        {
+          "type": "type:Surface.Pial",
+          "attributes": {
+            "subject": {
+              "binding": "subject",
+              "required": true,
+              "basis": "Explicit registered subject; never pathname species inference"
+            },
+            "species": {
+              "in": [
+                "macaque",
+                "marmoset",
+                "chimpanzee"
+              ],
+              "trust": "Explicit declaration; verified status retained separately"
+            },
+            "scale_status": {
+              "binding": "source_scale",
+              "unknown": "warn_and_disclose",
+              "mixing": "block_without_explicit_conversion"
+            },
+            "hemisphere": {
+              "in": [
+                "lh",
+                "rh"
+              ],
+              "binding": "hemisphere",
+              "scope": "one hemisphere per binding"
+            },
+            "mesh": {
+              "binding": "hemisphere_mesh",
+              "source": "Actual parsed cardinality",
+              "unknown": "block"
+            },
+            "space": {
+              "binding": "source_space",
+              "required": true,
+              "unknown": "block_for_processing_not_provenance_assumption"
+            }
+          }
+        },
+        {
+          "type": "type:Volume.T1",
+          "attributes": {
+            "subject": {
+              "binding": "subject",
+              "required": true,
+              "basis": "Explicit registered subject; never pathname species inference"
+            },
+            "species": {
+              "in": [
+                "macaque",
+                "marmoset",
+                "chimpanzee"
+              ],
+              "trust": "Explicit declaration; verified status retained separately"
+            },
+            "scale_status": {
+              "binding": "source_scale",
+              "unknown": "warn_and_disclose",
+              "mixing": "block_without_explicit_conversion"
+            },
+            "space": {
+              "binding": "volume_space",
+              "required": true,
+              "source": "Trusted input metadata or explicit verified processing history"
+            }
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "type": "type:Surface.White",
+          "path_patterns": [
+            "surf/{hemi}.white"
+          ],
+          "attribute_rules": {
+            "subject": {
+              "inherit": "source.subject"
+            },
+            "hemisphere": {
+              "inherit": "source.hemisphere"
+            },
+            "scale_status": {
+              "object": {
+                "rescaled": {
+                  "constant": true
+                },
+                "factor": {
+                  "parameter": "scale_factor"
+                },
+                "verified": {
+                  "constant": false
+                },
+                "basis": {
+                  "constant": "Declared executed-step parameter; validate against actual output before promotion"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "type:Surface.Pial",
+          "path_patterns": [
+            "surf/{hemi}.pial"
+          ],
+          "attribute_rules": {
+            "subject": {
+              "inherit": "source.subject"
+            },
+            "hemisphere": {
+              "inherit": "source.hemisphere"
+            },
+            "scale_status": {
+              "object": {
+                "rescaled": {
+                  "constant": true
+                },
+                "factor": {
+                  "parameter": "scale_factor"
+                },
+                "verified": {
+                  "constant": false
+                },
+                "basis": {
+                  "constant": "Declared executed-step parameter; validate against actual output before promotion"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "type:Volume.T1",
+          "path_patterns": [
+            "mri/orig.mgz"
+          ],
+          "attribute_rules": {
+            "subject": {
+              "inherit": "source.subject"
+            },
+            "hemisphere": {
+              "inherit": "source.hemisphere"
+            },
+            "scale_status": {
+              "object": {
+                "rescaled": {
+                  "constant": true
+                },
+                "factor": {
+                  "parameter": "scale_factor"
+                },
+                "verified": {
+                  "constant": false
+                },
+                "basis": {
+                  "constant": "Declared executed-step parameter; validate against actual output before promotion"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "type:SurfaceMetric.Thickness",
+          "path_patterns": [
+            "surf/{hemi}.thickness"
+          ],
+          "attribute_rules": {
+            "subject": {
+              "inherit": "source.subject"
+            },
+            "hemisphere": {
+              "inherit": "source.hemisphere"
+            },
+            "scale_status": {
+              "object": {
+                "rescaled": {
+                  "constant": true
+                },
+                "factor": {
+                  "parameter": "scale_factor"
+                },
+                "verified": {
+                  "constant": false
+                },
+                "basis": {
+                  "constant": "Declared executed-step parameter; validate against actual output before promotion"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "type:StatsTable.Aparc",
+          "path_patterns": [
+            "stats/{hemi}.aparc.stats",
+            "stats/{hemi}.aparc.a2009s.stats"
+          ],
+          "attribute_rules": {
+            "subject": {
+              "inherit": "source.subject"
+            },
+            "hemisphere": {
+              "inherit": "source.hemisphere"
+            },
+            "scale_status": {
+              "object": {
+                "rescaled": {
+                  "constant": true
+                },
+                "factor": {
+                  "parameter": "scale_factor"
+                },
+                "verified": {
+                  "constant": false
+                },
+                "basis": {
+                  "constant": "Declared executed-step parameter; validate against actual output before promotion"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "software": [
+        "mri_convert",
+        "mri_surf2surf",
+        "mris_thickness",
+        "mris_anatomical_stats"
+      ],
+      "species_allowed": [
+        "macaque",
+        "marmoset",
+        "chimpanzee"
+      ],
+      "source": [
+        {
+          "path": "workflows/primx_cli/primx",
+          "sha256": "5a227bcabce4e5f581c197a5a5fe99307daf56d480083a211a91f79bcd4e4e2b",
+          "line_count": 157,
+          "anchors": [
+            {
+              "line": 42,
+              "text": "    neuro   preprocess-1 | preprocess-3 | preprocess-3-1 | preprocess-3-2 | rescale | freesurfer2caret | acpc-align | label-resample | image-reorient"
+            },
+            {
+              "line": 49,
+              "text": "    primx neuro preprocess-1 -t1_path <dir> -out_path <dir> -species Macaque"
+            },
+            {
+              "line": 104,
+              "text": "            preprocess-1) exec \"$NEURO_DIR/bin/Preprocess_1.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 105,
+              "text": "            preprocess-3) \"$NEURO_DIR/bin/Preprocess_3_1.sh\" \"$@\" && exec \"$NEURO_DIR/bin/Preprocess_3_2.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 106,
+              "text": "            preprocess-3-1) exec \"$NEURO_DIR/bin/Preprocess_3_1.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 107,
+              "text": "            preprocess-3-2) exec \"$NEURO_DIR/bin/Preprocess_3_2.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 108,
+              "text": "            rescale) exec \"$NEURO_DIR/bin/Rescale.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 109,
+              "text": "            freesurfer2caret) exec \"$NEURO_DIR/bin/Freesurfer2CaretandRegister.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 110,
+              "text": "            acpc-align) exec \"$NEURO_DIR/bin/ACPC_Alignment.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 111,
+              "text": "            label-resample) exec \"$NEURO_DIR/bin/LabelResample.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 112,
+              "text": "            image-reorient) exec python \"$NEURO_DIR/Image_Reorient.py\" \"$@\" ;;"
+            },
+            {
+              "line": 131,
+              "text": "            router) exec \"$SEG_DIR/bin/primx_router.sh\" \"$@\" ;;"
+            }
+          ],
+          "review_status": "Source-inspected declaration; no pipeline execution in Round 8"
+        },
+        {
+          "path": "modules/neuro_pipeline/Rescale.sh",
+          "sha256": "5da24157b913dc931f36fd748dff40003e4016321c8c04c3609dbff452a44f52",
+          "line_count": 195,
+          "anchors": [
+            {
+              "line": 49,
+              "text": "#           # SUBJECTS_DIR (OUT_PATH/SUB_ID) must point to 1‑mm pipeline folder"
+            },
+            {
+              "line": 98,
+              "text": "    Macaque)     VOXEL_SIZE=0.5 ;;"
+            },
+            {
+              "line": 99,
+              "text": "    Chimpanzee)  VOXEL_SIZE=0.8 ;;"
+            },
+            {
+              "line": 100,
+              "text": "    Marmoset)    VOXEL_SIZE=0.2 ;;"
+            },
+            {
+              "line": 103,
+              "text": "log \"Species: $SPECIES, Voxel size: ${VOXEL_SIZE}mm\""
+            },
+            {
+              "line": 104,
+              "text": "VOXEL_SIZE=$(printf \"%smm\" \"${VOXEL_SIZE//.}\") # -> 05mm, 08mm, 02mm"
+            },
+            {
+              "line": 134,
+              "text": "log \"[1] Rescale MRI volumes to ${VOXEL_SIZE}\""
+            },
+            {
+              "line": 137,
+              "text": "    SRC_MGZ=\"$ORIG_SUB_DIR/mri/${vol}.mgz\""
+            },
+            {
+              "line": 139,
+              "text": "    tmp_nii=\"$ORIG_SUB_DIR/mri/${vol}.nii.gz\""
+            },
+            {
+              "line": 141,
+              "text": "    python3 \"$PY_UTIL\" \"$ORIG_SUB_DIR/mri\" \"${vol}.nii.gz\" \"${VOXEL_SIZE}\" \"$vol\"   # → ${vol}_${VOXEL_SIZE}.nii.gz"
+            },
+            {
+              "line": 142,
+              "text": "    mv \"$ORIG_SUB_DIR/mri/${vol}_${VOXEL_SIZE}.nii.gz\" \"$NEW_SUB_DIR/mri/${vol}.nii.gz\""
+            },
+            {
+              "line": 143,
+              "text": "    mri_convert \"$NEW_SUB_DIR/mri/${vol}.nii.gz\" \"$NEW_SUB_DIR/mri/${vol}.mgz\""
+            }
+          ],
+          "review_status": "Source-inspected declaration; no pipeline execution in Round 8"
+        }
+      ],
+      "cost": {
+        "unit": "step_count",
+        "value": 1,
+        "measured_runtime": null
+      },
+      "execution_allowed_in_this_round": false,
+      "generation_provenance": "Existing-file presence does not establish this step ran",
+      "requires_execution_parameters": [
+        "scale_factor",
+        "species"
+      ],
+      "default_parameters": {
+        "scale_factor": null
+      },
+      "notes": "Script copies sphere/curv/sulc/labels but recomputes thickness/statistics; do not claim all copied metrics were numerically rescaled.",
+      "input_attribute_contract_source": {
+        "document": "第四章知识图谱设计与算法_20261021.docx",
+        "sha256": "8457b5c6ca6a90a57cc65940c79e5d57e1af5f939a5b8d79f4512b7f7359014d",
+        "sections": [
+          "3.1",
+          "3.2",
+          "3.3"
+        ],
+        "scope": "Design binding contracts; not claims these attributes were observed or all prerequisites have been tested"
+      }
+    },
+    {
+      "id": "freesurfer2caret",
+      "command": "primx neuro freesurfer2caret",
+      "inputs": [
+        {
+          "type": "type:Surface.White",
+          "attributes": {
+            "subject": {
+              "binding": "subject",
+              "required": true,
+              "basis": "Explicit registered subject; never pathname species inference"
+            },
+            "species": {
+              "in": [
+                "macaque",
+                "marmoset",
+                "chimpanzee"
+              ],
+              "trust": "Explicit declaration; verified status retained separately"
+            },
+            "scale_status": {
+              "binding": "source_scale",
+              "unknown": "warn_and_disclose",
+              "mixing": "block_without_explicit_conversion"
+            },
+            "hemisphere": {
+              "in": [
+                "lh",
+                "rh"
+              ],
+              "binding": "hemisphere",
+              "scope": "one hemisphere per binding"
+            },
+            "mesh": {
+              "binding": "hemisphere_mesh",
+              "source": "Actual parsed cardinality",
+              "unknown": "block"
+            },
+            "space": {
+              "binding": "source_space",
+              "required": true,
+              "unknown": "block_for_processing_not_provenance_assumption"
+            }
+          }
+        },
+        {
+          "type": "type:Surface.Pial",
+          "attributes": {
+            "subject": {
+              "binding": "subject",
+              "required": true,
+              "basis": "Explicit registered subject; never pathname species inference"
+            },
+            "species": {
+              "in": [
+                "macaque",
+                "marmoset",
+                "chimpanzee"
+              ],
+              "trust": "Explicit declaration; verified status retained separately"
+            },
+            "scale_status": {
+              "binding": "source_scale",
+              "unknown": "warn_and_disclose",
+              "mixing": "block_without_explicit_conversion"
+            },
+            "hemisphere": {
+              "in": [
+                "lh",
+                "rh"
+              ],
+              "binding": "hemisphere",
+              "scope": "one hemisphere per binding"
+            },
+            "mesh": {
+              "binding": "hemisphere_mesh",
+              "source": "Actual parsed cardinality",
+              "unknown": "block"
+            },
+            "space": {
+              "binding": "source_space",
+              "required": true,
+              "unknown": "block_for_processing_not_provenance_assumption"
+            }
+          }
+        },
+        {
+          "type": "type:Surface.SphereReg",
+          "attributes": {
+            "subject": {
+              "binding": "subject",
+              "required": true,
+              "basis": "Explicit registered subject; never pathname species inference"
+            },
+            "species": {
+              "in": [
+                "macaque",
+                "marmoset",
+                "chimpanzee"
+              ],
+              "trust": "Explicit declaration; verified status retained separately"
+            },
+            "scale_status": {
+              "binding": "source_scale",
+              "unknown": "warn_and_disclose",
+              "mixing": "block_without_explicit_conversion"
+            },
+            "hemisphere": {
+              "in": [
+                "lh",
+                "rh"
+              ],
+              "binding": "hemisphere",
+              "scope": "one hemisphere per binding"
+            },
+            "mesh": {
+              "binding": "hemisphere_mesh",
+              "source": "Actual parsed cardinality",
+              "unknown": "block"
+            },
+            "space": {
+              "binding": "source_space",
+              "required": true,
+              "unknown": "block_for_processing_not_provenance_assumption"
+            }
+          }
+        },
+        {
+          "type": "type:SurfaceMetric",
+          "attributes": {
+            "subject": {
+              "binding": "subject",
+              "required": true,
+              "basis": "Explicit registered subject; never pathname species inference"
+            },
+            "species": {
+              "in": [
+                "macaque",
+                "marmoset",
+                "chimpanzee"
+              ],
+              "trust": "Explicit declaration; verified status retained separately"
+            },
+            "scale_status": {
+              "binding": "source_scale",
+              "unknown": "warn_and_disclose",
+              "mixing": "block_without_explicit_conversion"
+            },
+            "hemisphere": {
+              "in": [
+                "lh",
+                "rh"
+              ],
+              "binding": "hemisphere",
+              "scope": "one hemisphere per binding"
+            },
+            "mesh": {
+              "binding": "hemisphere_mesh",
+              "source": "Actual parsed cardinality",
+              "unknown": "block"
+            },
+            "space": {
+              "binding": "source_space",
+              "required": true,
+              "unknown": "block_for_processing_not_provenance_assumption"
+            }
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "type": "type:Surface",
+          "path_patterns": [
+            "HCP_Style_Dir/fsaverage_LR32k/{subject}.{H}.{surface}.32k_fs_LR.surf.gii"
+          ],
+          "attribute_rules": {
+            "subject": {
+              "inherit": "source.subject"
+            },
+            "hemisphere": {
+              "inherit": "source.hemisphere"
+            },
+            "space": {
+              "constant": "fsLR_32k"
+            },
+            "mesh": {
+              "constant": 32492
+            },
+            "scale_status": {
+              "inherit": "source.scale_status"
+            }
+          },
+          "expansions": {
+            "surface": [
+              "white",
+              "pial",
+              "midthickness",
+              "inflated",
+              "very_inflated"
+            ]
+          },
+          "enabled_when": {
+            "parameter": "low_res_mesh",
+            "equals": 32
+          }
+        },
+        {
+          "type": "type:SurfaceMetric",
+          "path_patterns": [
+            "HCP_Style_Dir/fsaverage_LR32k/{subject}.{H}.{metric}.32k_fs_LR.shape.gii"
+          ],
+          "attribute_rules": {
+            "subject": {
+              "inherit": "source.subject"
+            },
+            "hemisphere": {
+              "inherit": "source.hemisphere"
+            },
+            "space": {
+              "constant": "fsLR_32k"
+            },
+            "mesh": {
+              "constant": 32492
+            },
+            "scale_status": {
+              "inherit": "source.scale_status"
+            }
+          },
+          "expansions": {
+            "metric": [
+              "sulc",
+              "curvature",
+              "thickness",
+              "ArealDistortion_FS"
+            ]
+          },
+          "enabled_when": {
+            "parameter": "low_res_mesh",
+            "equals": 32
+          }
+        },
+        {
+          "type": "type:Annotation",
+          "path_patterns": [
+            "HCP_Style_Dir/fsaverage_LR32k/{subject}.{H}.{atlas_name}.32k_fs_LR.label.gii"
+          ],
+          "attribute_rules": {
+            "subject": {
+              "inherit": "source.subject"
+            },
+            "hemisphere": {
+              "inherit": "source.hemisphere"
+            },
+            "space": {
+              "constant": "fsLR_32k"
+            },
+            "mesh": {
+              "constant": 32492
+            },
+            "scale_status": {
+              "inherit": "source.scale_status"
+            }
+          },
+          "requires_parameters": [
+            "atlas_name"
+          ]
+        },
+        {
+          "type": "type:SurfaceMetric",
+          "path_patterns": [
+            "HCP_Style_Dir/fsaverage_LR32k/{subject}.thickness.32k_fs_LR.dscalar.nii"
+          ],
+          "attribute_rules": {
+            "subject": {
+              "inherit": "source.subject"
+            },
+            "hemisphere": {
+              "inherit": "source.hemisphere"
+            },
+            "space": {
+              "constant": "fsLR_32k"
+            },
+            "mesh": {
+              "constant": 32492
+            },
+            "scale_status": {
+              "inherit": "source.scale_status"
+            }
+          },
+          "notes": "CIFTI full-mesh counts must come from BrainModelAxis; scalar-vector length is not mesh size"
+        }
+      ],
+      "software": [
+        "wb_command",
+        "mris_convert",
+        "mri_convert"
+      ],
+      "species_allowed": [
+        "macaque",
+        "marmoset",
+        "chimpanzee"
+      ],
+      "source": [
+        {
+          "path": "workflows/primx_cli/primx",
+          "sha256": "5a227bcabce4e5f581c197a5a5fe99307daf56d480083a211a91f79bcd4e4e2b",
+          "line_count": 157,
+          "anchors": [
+            {
+              "line": 42,
+              "text": "    neuro   preprocess-1 | preprocess-3 | preprocess-3-1 | preprocess-3-2 | rescale | freesurfer2caret | acpc-align | label-resample | image-reorient"
+            },
+            {
+              "line": 49,
+              "text": "    primx neuro preprocess-1 -t1_path <dir> -out_path <dir> -species Macaque"
+            },
+            {
+              "line": 104,
+              "text": "            preprocess-1) exec \"$NEURO_DIR/bin/Preprocess_1.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 105,
+              "text": "            preprocess-3) \"$NEURO_DIR/bin/Preprocess_3_1.sh\" \"$@\" && exec \"$NEURO_DIR/bin/Preprocess_3_2.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 106,
+              "text": "            preprocess-3-1) exec \"$NEURO_DIR/bin/Preprocess_3_1.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 107,
+              "text": "            preprocess-3-2) exec \"$NEURO_DIR/bin/Preprocess_3_2.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 108,
+              "text": "            rescale) exec \"$NEURO_DIR/bin/Rescale.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 109,
+              "text": "            freesurfer2caret) exec \"$NEURO_DIR/bin/Freesurfer2CaretandRegister.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 110,
+              "text": "            acpc-align) exec \"$NEURO_DIR/bin/ACPC_Alignment.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 111,
+              "text": "            label-resample) exec \"$NEURO_DIR/bin/LabelResample.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 112,
+              "text": "            image-reorient) exec python \"$NEURO_DIR/Image_Reorient.py\" \"$@\" ;;"
+            },
+            {
+              "line": 131,
+              "text": "            router) exec \"$SEG_DIR/bin/primx_router.sh\" \"$@\" ;;"
+            }
+          ],
+          "review_status": "Source-inspected declaration; no pipeline execution in Round 8"
+        },
+        {
+          "path": "modules/neuro_pipeline/Freesurfer2CaretandRegister.sh",
+          "sha256": "1747b92a44cfe6110edd295ce65c5f7d329ba7048c58b00165349b172c078ad9",
+          "line_count": 599,
+          "anchors": [
+            {
+              "line": 75,
+              "text": "LOW_MESH=32"
+            },
+            {
+              "line": 87,
+              "text": "\t\t-LowResMesh) LOW_MESH=\"${2}\";          shift 2 ;;"
+            },
+            {
+              "line": 124,
+              "text": "SUBJECTS_DIR=\"$OUT_DIR/\"           # FS subject root"
+            },
+            {
+              "line": 125,
+              "text": "export SUBJECTS_DIR"
+            },
+            {
+              "line": 126,
+              "text": "FS_SUB=\"$SUBJECTS_DIR/$SUB_ID\""
+            },
+            {
+              "line": 132,
+              "text": "mkdir -p \"$ATLAS_DIR\"/{fsaverage,fsaverage_LR${LOW_MESH}k} \"$NATIVE_DIR\""
+            },
+            {
+              "line": 136,
+              "text": "log \"LowResMesh    : ${LOW_MESH}k\""
+            },
+            {
+              "line": 139,
+              "text": "\twarn \"Native-only mode: fs_LR/${LOW_MESH}k resampling and CIFTI outputs will be skipped.\""
+            },
+            {
+              "line": 144,
+              "text": "cr=$(mri_info \"$OUT_DIR/T1.nii.gz\" | grep \"c_r\" | cut -d \"=\" -f 5 | sed s/\" \"/\"\"/g)"
+            },
+            {
+              "line": 145,
+              "text": "ca=$(mri_info \"$OUT_DIR/T1.nii.gz\" | grep \"c_a\" | cut -d \"=\" -f 5 | sed s/\" \"/\"\"/g)"
+            },
+            {
+              "line": 146,
+              "text": "cs=$(mri_info \"$OUT_DIR/T1.nii.gz\" | grep \"c_s\" | cut -d \"=\" -f 5 | sed s/\" \"/\"\"/g)"
+            },
+            {
+              "line": 173,
+              "text": "\t\tout=\"$NATIVE_DIR/$SUB_ID.$H.$surf.native.surf.gii\""
+            }
+          ],
+          "review_status": "Source-inspected declaration; no pipeline execution in Round 8"
+        }
+      ],
+      "cost": {
+        "unit": "step_count",
+        "value": 1,
+        "measured_runtime": null
+      },
+      "execution_allowed_in_this_round": false,
+      "generation_provenance": "Existing-file presence does not establish this step ran",
+      "default_parameters": {
+        "low_res_mesh": 32
+      },
+      "other_variants": "Native, fsaverage and high-resolution outputs also occur; the explicit propagated target here is the document's low-resolution 32k branch.",
+      "requires_assets": [
+        "Matching fs_LR standard meshes; registration resources"
+      ],
+      "input_attribute_contract_source": {
+        "document": "第四章知识图谱设计与算法_20261021.docx",
+        "sha256": "8457b5c6ca6a90a57cc65940c79e5d57e1af5f939a5b8d79f4512b7f7359014d",
+        "sections": [
+          "3.1",
+          "3.2",
+          "3.3"
+        ],
+        "scope": "Design binding contracts; not claims these attributes were observed or all prerequisites have been tested"
+      }
+    },
+    {
+      "id": "label-resample",
+      "command": "primx neuro label-resample",
+      "inputs": [
+        {
+          "type": "type:Annotation",
+          "attributes": {
+            "space": "fsLR_32k",
+            "subject": {
+              "binding": "subject",
+              "required": true,
+              "basis": "Explicit registered subject; never pathname species inference"
+            },
+            "species": {
+              "in": [
+                "macaque",
+                "marmoset",
+                "chimpanzee"
+              ],
+              "trust": "Explicit declaration; verified status retained separately"
+            },
+            "scale_status": {
+              "binding": "source_scale",
+              "unknown": "warn_and_disclose",
+              "mixing": "block_without_explicit_conversion"
+            },
+            "hemisphere": {
+              "in": [
+                "lh",
+                "rh"
+              ],
+              "binding": "hemisphere",
+              "scope": "one hemisphere per binding"
+            },
+            "mesh": {
+              "binding": "hemisphere_mesh",
+              "source": "Actual parsed cardinality",
+              "unknown": "block"
+            }
+          }
+        },
+        {
+          "type": "type:Surface.SphereReg",
+          "attributes": {
+            "subject": {
+              "binding": "subject",
+              "required": true,
+              "basis": "Explicit registered subject; never pathname species inference"
+            },
+            "species": {
+              "in": [
+                "macaque",
+                "marmoset",
+                "chimpanzee"
+              ],
+              "trust": "Explicit declaration; verified status retained separately"
+            },
+            "scale_status": {
+              "binding": "source_scale",
+              "unknown": "warn_and_disclose",
+              "mixing": "block_without_explicit_conversion"
+            },
+            "hemisphere": {
+              "in": [
+                "lh",
+                "rh"
+              ],
+              "binding": "hemisphere",
+              "scope": "one hemisphere per binding"
+            },
+            "mesh": {
+              "binding": "hemisphere_mesh",
+              "source": "Actual parsed cardinality",
+              "unknown": "block"
+            },
+            "space": {
+              "binding": "source_space",
+              "required": true,
+              "unknown": "block_for_processing_not_provenance_assumption"
+            }
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "type": "type:Annotation",
+          "path_patterns": [
+            "label/{hemi}.{atlas_name}.annot"
+          ],
+          "attribute_rules": {
+            "subject": {
+              "inherit": "source.subject"
+            },
+            "hemisphere": {
+              "inherit": "source.hemisphere"
+            }
+          },
+          "requires_parameters": [
+            "atlas_name"
+          ]
+        }
+      ],
+      "software": [
+        "wb_command",
+        "mris_convert",
+        "python3"
+      ],
+      "species_allowed": [
+        "macaque",
+        "marmoset",
+        "chimpanzee"
+      ],
+      "source": [
+        {
+          "path": "workflows/primx_cli/primx",
+          "sha256": "5a227bcabce4e5f581c197a5a5fe99307daf56d480083a211a91f79bcd4e4e2b",
+          "line_count": 157,
+          "anchors": [
+            {
+              "line": 42,
+              "text": "    neuro   preprocess-1 | preprocess-3 | preprocess-3-1 | preprocess-3-2 | rescale | freesurfer2caret | acpc-align | label-resample | image-reorient"
+            },
+            {
+              "line": 49,
+              "text": "    primx neuro preprocess-1 -t1_path <dir> -out_path <dir> -species Macaque"
+            },
+            {
+              "line": 104,
+              "text": "            preprocess-1) exec \"$NEURO_DIR/bin/Preprocess_1.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 105,
+              "text": "            preprocess-3) \"$NEURO_DIR/bin/Preprocess_3_1.sh\" \"$@\" && exec \"$NEURO_DIR/bin/Preprocess_3_2.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 106,
+              "text": "            preprocess-3-1) exec \"$NEURO_DIR/bin/Preprocess_3_1.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 107,
+              "text": "            preprocess-3-2) exec \"$NEURO_DIR/bin/Preprocess_3_2.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 108,
+              "text": "            rescale) exec \"$NEURO_DIR/bin/Rescale.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 109,
+              "text": "            freesurfer2caret) exec \"$NEURO_DIR/bin/Freesurfer2CaretandRegister.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 110,
+              "text": "            acpc-align) exec \"$NEURO_DIR/bin/ACPC_Alignment.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 111,
+              "text": "            label-resample) exec \"$NEURO_DIR/bin/LabelResample.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 112,
+              "text": "            image-reorient) exec python \"$NEURO_DIR/Image_Reorient.py\" \"$@\" ;;"
+            },
+            {
+              "line": 131,
+              "text": "            router) exec \"$SEG_DIR/bin/primx_router.sh\" \"$@\" ;;"
+            }
+          ],
+          "review_status": "Source-inspected declaration; no pipeline execution in Round 8"
+        },
+        {
+          "path": "modules/neuro_pipeline/LabelResample.sh",
+          "sha256": "e497532c339e0c9d1f1f7117b8597b091b5bde3280c712b408453bcfb817dc92",
+          "line_count": 169,
+          "anchors": [
+            {
+              "line": 49,
+              "text": "#         -left_label <LEFT_HEMI_LABEL.gii> \\"
+            },
+            {
+              "line": 50,
+              "text": "#         -right_label <RIGHT_HEMI_LABEL.gii> \\"
+            },
+            {
+              "line": 91,
+              "text": "if [[ ! \"$LEFT_LABEL\" =~ \\.gii$ ]] || [[ ! \"$RIGHT_LABEL\" =~ \\.gii$ ]]; then"
+            },
+            {
+              "line": 92,
+              "text": "    err \"Both left and right labels must be in .gii format\""
+            },
+            {
+              "line": 108,
+              "text": "SUBJECTS_DIR=\"$OUT_DIR/\"           # FS subject root"
+            },
+            {
+              "line": 109,
+              "text": "export SUBJECTS_DIR"
+            },
+            {
+              "line": 110,
+              "text": "FS_SUB=\"$SUBJECTS_DIR/$SUB_ID\""
+            },
+            {
+              "line": 136,
+              "text": "        OUT_SPH_REG=\"$NATIVE_DIR/$SUB_ID.$H.sphere.MSMSulc.native.surf.gii\""
+            },
+            {
+              "line": 139,
+              "text": "        OUT_SPH_REG=\"$NATIVE_DIR/$SUB_ID.$H.sphere.reg.reg_LR.native.surf.gii\""
+            },
+            {
+              "line": 142,
+              "text": "\tATLAS_SPH=\"$SURF_ATLAS/$H.sphere.${RES}k_fs_LR.surf.gii\""
+            },
+            {
+              "line": 154,
+              "text": "        \"$NATIVE_DIR/tmp_parcellation.${H}.native.label.gii\""
+            },
+            {
+              "line": 158,
+              "text": "    mris_convert --annot \"$NATIVE_DIR/tmp_parcellation.${H}.native.label.gii\" \\"
+            }
+          ],
+          "review_status": "Source-inspected declaration; no pipeline execution in Round 8"
+        }
+      ],
+      "cost": {
+        "unit": "step_count",
+        "value": 1,
+        "measured_runtime": null
+      },
+      "execution_allowed_in_this_round": false,
+      "generation_provenance": "Existing-file presence does not establish this step ran",
+      "requires_execution_parameters": [
+        "atlas_name"
+      ],
+      "notes": "Script's species spelling rules differ from case-insensitive branches; do not infer atlas identity from generic aparc filenames.",
+      "input_attribute_contract_source": {
+        "document": "第四章知识图谱设计与算法_20261021.docx",
+        "sha256": "8457b5c6ca6a90a57cc65940c79e5d57e1af5f939a5b8d79f4512b7f7359014d",
+        "sections": [
+          "3.1",
+          "3.2",
+          "3.3"
+        ],
+        "scope": "Design binding contracts; not claims these attributes were observed or all prerequisites have been tested"
+      }
+    },
+    {
+      "id": "image-reorient",
+      "command": "primx neuro image-reorient",
+      "inputs": [
+        {
+          "type": "type:Volume.T1",
+          "attributes": {
+            "subject": {
+              "binding": "subject",
+              "required": true,
+              "basis": "Explicit registered subject; never pathname species inference"
+            },
+            "species": {
+              "in": [
+                "human",
+                "macaque",
+                "marmoset",
+                "chimpanzee"
+              ],
+              "trust": "Explicit declaration; verified status retained separately"
+            },
+            "scale_status": {
+              "binding": "source_scale",
+              "unknown": "warn_and_disclose",
+              "mixing": "block_without_explicit_conversion"
+            },
+            "space": {
+              "binding": "volume_space",
+              "required": true,
+              "source": "Trusted input metadata or explicit verified processing history"
+            }
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "type": "type:Volume.T1",
+          "path_patterns": [],
+          "attribute_rules": {
+            "subject": {
+              "inherit": "source.subject"
+            }
+          },
+          "requires_parameters": [
+            "output_path"
+          ]
+        }
+      ],
+      "software": [
+        "python3"
+      ],
+      "species_allowed": [
+        "human",
+        "macaque",
+        "marmoset",
+        "chimpanzee"
+      ],
+      "source": [
+        {
+          "path": "workflows/primx_cli/primx",
+          "sha256": "5a227bcabce4e5f581c197a5a5fe99307daf56d480083a211a91f79bcd4e4e2b",
+          "line_count": 157,
+          "anchors": [
+            {
+              "line": 42,
+              "text": "    neuro   preprocess-1 | preprocess-3 | preprocess-3-1 | preprocess-3-2 | rescale | freesurfer2caret | acpc-align | label-resample | image-reorient"
+            },
+            {
+              "line": 49,
+              "text": "    primx neuro preprocess-1 -t1_path <dir> -out_path <dir> -species Macaque"
+            },
+            {
+              "line": 104,
+              "text": "            preprocess-1) exec \"$NEURO_DIR/bin/Preprocess_1.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 105,
+              "text": "            preprocess-3) \"$NEURO_DIR/bin/Preprocess_3_1.sh\" \"$@\" && exec \"$NEURO_DIR/bin/Preprocess_3_2.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 106,
+              "text": "            preprocess-3-1) exec \"$NEURO_DIR/bin/Preprocess_3_1.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 107,
+              "text": "            preprocess-3-2) exec \"$NEURO_DIR/bin/Preprocess_3_2.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 108,
+              "text": "            rescale) exec \"$NEURO_DIR/bin/Rescale.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 109,
+              "text": "            freesurfer2caret) exec \"$NEURO_DIR/bin/Freesurfer2CaretandRegister.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 110,
+              "text": "            acpc-align) exec \"$NEURO_DIR/bin/ACPC_Alignment.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 111,
+              "text": "            label-resample) exec \"$NEURO_DIR/bin/LabelResample.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 112,
+              "text": "            image-reorient) exec python \"$NEURO_DIR/Image_Reorient.py\" \"$@\" ;;"
+            },
+            {
+              "line": 131,
+              "text": "            router) exec \"$SEG_DIR/bin/primx_router.sh\" \"$@\" ;;"
+            }
+          ],
+          "review_status": "Source-inspected declaration; no pipeline execution in Round 8"
+        },
+        {
+          "path": "modules/neuro_pipeline/Image_Reorient.py",
+          "sha256": "4a24daa13bde69ca238d5c2a3a048acb6a93c4094d502f7a9023f6d067066407",
+          "line_count": 109,
+          "anchors": [
+            {
+              "line": 32,
+              "text": "# usage: python Reorient_position.py InputFileName.nii.gz OutputFileName.nii.gz init_axcodes(eg: LPI) final_axcodes(eg: LSP)"
+            },
+            {
+              "line": 83,
+              "text": "    print(\"usage: python3 Reorient_position.py InputFileName.nii.gz OutputFileName.nii.gz init_axcodes(eg: LPI) final_axcodes(eg: LSP)\")"
+            }
+          ],
+          "review_status": "Source-inspected declaration; no pipeline execution in Round 8"
+        }
+      ],
+      "cost": {
+        "unit": "step_count",
+        "value": 1,
+        "measured_runtime": null
+      },
+      "execution_allowed_in_this_round": false,
+      "generation_provenance": "Existing-file presence does not establish this step ran",
+      "implementation_issue": "Source changes affine/qform/sform but does not permute image array.",
+      "eligible_for_planning": false,
+      "requires_execution_parameters": [
+        "input_path",
+        "output_path",
+        "initial_axcodes",
+        "final_axcodes"
+      ],
+      "input_attribute_contract_source": {
+        "document": "第四章知识图谱设计与算法_20261021.docx",
+        "sha256": "8457b5c6ca6a90a57cc65940c79e5d57e1af5f939a5b8d79f4512b7f7359014d",
+        "sections": [
+          "3.1",
+          "3.2",
+          "3.3"
+        ],
+        "scope": "Design binding contracts; not claims these attributes were observed or all prerequisites have been tested"
+      }
+    },
+    {
+      "id": "fastsurfer",
+      "command": "primx human fastsurfer",
+      "inputs": [
+        {
+          "type": "type:Volume.T1",
+          "attributes": {
+            "subject": {
+              "binding": "subject",
+              "required": true,
+              "basis": "Explicit registered subject; never pathname species inference"
+            },
+            "species": {
+              "in": [
+                "human"
+              ],
+              "trust": "Explicit declaration; verified status retained separately"
+            },
+            "scale_status": {
+              "binding": "source_scale",
+              "unknown": "warn_and_disclose",
+              "mixing": "block_without_explicit_conversion"
+            },
+            "space": {
+              "binding": "volume_space",
+              "required": true,
+              "source": "Trusted input metadata or explicit verified processing history"
+            }
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "type": "type:Surface.White",
+          "path_patterns": [
+            "surf/{hemi}.white"
+          ],
+          "attribute_rules": {}
+        },
+        {
+          "type": "type:Surface.Pial",
+          "path_patterns": [
+            "surf/{hemi}.pial"
+          ],
+          "attribute_rules": {}
+        },
+        {
+          "type": "type:SurfaceMetric.Thickness",
+          "path_patterns": [
+            "surf/{hemi}.thickness"
+          ],
+          "attribute_rules": {}
+        },
+        {
+          "type": "type:Annotation.AparcDKT",
+          "path_patterns": [
+            "label/{hemi}.aparc.DKTatlas.annot"
+          ],
+          "attribute_rules": {}
+        }
+      ],
+      "software": [
+        "run_fastsurfer.sh"
+      ],
+      "species_allowed": [
+        "human"
+      ],
+      "source": [
+        {
+          "path": "workflows/primx_cli/primx",
+          "sha256": "5a227bcabce4e5f581c197a5a5fe99307daf56d480083a211a91f79bcd4e4e2b",
+          "line_count": 157,
+          "anchors": [
+            {
+              "line": 42,
+              "text": "    neuro   preprocess-1 | preprocess-3 | preprocess-3-1 | preprocess-3-2 | rescale | freesurfer2caret | acpc-align | label-resample | image-reorient"
+            },
+            {
+              "line": 49,
+              "text": "    primx neuro preprocess-1 -t1_path <dir> -out_path <dir> -species Macaque"
+            },
+            {
+              "line": 104,
+              "text": "            preprocess-1) exec \"$NEURO_DIR/bin/Preprocess_1.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 105,
+              "text": "            preprocess-3) \"$NEURO_DIR/bin/Preprocess_3_1.sh\" \"$@\" && exec \"$NEURO_DIR/bin/Preprocess_3_2.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 106,
+              "text": "            preprocess-3-1) exec \"$NEURO_DIR/bin/Preprocess_3_1.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 107,
+              "text": "            preprocess-3-2) exec \"$NEURO_DIR/bin/Preprocess_3_2.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 108,
+              "text": "            rescale) exec \"$NEURO_DIR/bin/Rescale.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 109,
+              "text": "            freesurfer2caret) exec \"$NEURO_DIR/bin/Freesurfer2CaretandRegister.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 110,
+              "text": "            acpc-align) exec \"$NEURO_DIR/bin/ACPC_Alignment.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 111,
+              "text": "            label-resample) exec \"$NEURO_DIR/bin/LabelResample.sh\" \"$@\" ;;"
+            },
+            {
+              "line": 112,
+              "text": "            image-reorient) exec python \"$NEURO_DIR/Image_Reorient.py\" \"$@\" ;;"
+            },
+            {
+              "line": 131,
+              "text": "            router) exec \"$SEG_DIR/bin/primx_router.sh\" \"$@\" ;;"
+            }
+          ],
+          "review_status": "Source-inspected declaration; no pipeline execution in Round 8"
+        },
+        {
+          "url": "https://deep-mi.org/FastSurfer/stable/overview/OUTPUT_FILES.html",
+          "kind": "official_output_documentation"
+        }
+      ],
+      "implementation_status": "CLI advertises modules/fastsurfer/bin/fastsurfer_human.sh but that wrapper is missing in this server source",
+      "eligible_for_planning": false,
+      "execution_allowed_in_this_round": false,
+      "cost": {
+        "unit": "step_count",
+        "value": 1,
+        "measured_runtime": null
+      },
+      "input_attribute_contract_source": {
+        "document": "第四章知识图谱设计与算法_20261021.docx",
+        "sha256": "8457b5c6ca6a90a57cc65940c79e5d57e1af5f939a5b8d79f4512b7f7359014d",
+        "sections": [
+          "3.1",
+          "3.2",
+          "3.3"
+        ],
+        "scope": "Design binding contracts; not claims these attributes were observed or all prerequisites have been tested"
+      }
+    },
+    {
+      "id": "mris_compute_lgi",
+      "command": "recon-all -localGI",
+      "inputs": [
+        {
+          "type": "type:Surface.Pial",
+          "attributes": {
+            "subject": {
+              "binding": "subject",
+              "required": true,
+              "basis": "Explicit registered subject; never pathname species inference"
+            },
+            "species": {
+              "in": null,
+              "trust": "Explicit declaration; verified status retained separately"
+            },
+            "scale_status": {
+              "binding": "source_scale",
+              "unknown": "warn_and_disclose",
+              "mixing": "block_without_explicit_conversion"
+            },
+            "hemisphere": {
+              "in": [
+                "lh",
+                "rh"
+              ],
+              "binding": "hemisphere",
+              "scope": "one hemisphere per binding"
+            },
+            "mesh": {
+              "binding": "hemisphere_mesh",
+              "source": "Actual parsed cardinality",
+              "unknown": "block"
+            },
+            "space": {
+              "binding": "source_space",
+              "required": true,
+              "unknown": "block_for_processing_not_provenance_assumption"
+            }
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "type": "type:SurfaceMetric.LGI",
+          "path_patterns": [
+            "surf/{hemi}.pial_lgi"
+          ],
+          "attribute_rules": {}
+        }
+      ],
+      "software": [
+        "mris_compute_lgi",
+        "matlab"
+      ],
+      "species_allowed": null,
+      "source": [
+        {
+          "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/LGI",
+          "kind": "official_software_documentation"
+        }
+      ],
+      "origin": "Supplementary FreeSurfer method dependency, not a primx CLI branch",
+      "execution_allowed_in_this_round": false,
+      "cost": {
+        "unit": "step_count",
+        "value": 1,
+        "measured_runtime": null
+      },
+      "input_attribute_contract_source": {
+        "document": "第四章知识图谱设计与算法_20261021.docx",
+        "sha256": "8457b5c6ca6a90a57cc65940c79e5d57e1af5f939a5b8d79f4512b7f7359014d",
+        "sections": [
+          "3.1",
+          "3.2",
+          "3.3"
+        ],
+        "scope": "Design binding contracts; not claims these attributes were observed or all prerequisites have been tested"
+      }
+    }
+  ],
+  "coverage_scope": "All 13 scientific primx CLI dispatch branches plus the lGI supplementary dependency. Output families are source-backed declarations; wildcard/path-parameter ambiguity is reported, never treated as execution proof.",
+  "cost_policy": "Step count only; no runtime measured because this round never executes preprocessing."
+}

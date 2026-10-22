@@ -32,6 +32,6 @@ def coding_model_options(model: str, base_url: str) -> dict:
     }
     # This provider/model combination was tested with real calls. Do not send a
     # provider-specific extension to unverified providers or unrelated models.
-    if confirmed:
-        options['extra_body'] = {'thinking': {'type': 'disabled'}}
+    # The confirmed gateway rejects the thinking extension. Omit it before
+    # the first HTTP request; no compatibility retry is needed for this field.
     return options

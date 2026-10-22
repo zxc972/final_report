@@ -1,0 +1,708 @@
+{
+  "schema": "primatex.product_types.v1",
+  "source": {
+    "document": "第四章知识图谱设计与算法_20261021.docx",
+    "sha256": "8457b5c6ca6a90a57cc65940c79e5d57e1af5f939a5b8d79f4512b7f7359014d",
+    "sections": [
+      "3.1",
+      "3.2",
+      "3.3",
+      "4.3"
+    ]
+  },
+  "properties": {
+    "subject": {
+      "type": "string",
+      "nullable": true,
+      "trust": "authenticated registration or explicit subject table"
+    },
+    "species": {
+      "type": "enum",
+      "values": [
+        "human",
+        "macaque",
+        "marmoset",
+        "chimpanzee",
+        "monkey_unknown",
+        "unknown"
+      ],
+      "nullable": true,
+      "declared_and_verified_separate": true,
+      "no_filename_inference": true
+    },
+    "hemisphere": {
+      "type": "enum",
+      "values": [
+        "lh",
+        "rh",
+        "bilateral",
+        "unknown"
+      ],
+      "nullable": true,
+      "source_required": true
+    },
+    "space": {
+      "type": "enum",
+      "values": [
+        "native",
+        "fsaverage",
+        "fsLR_32k",
+        "fsLR_164k",
+        "MNI152",
+        "NMT_v2",
+        "Yerkes19"
+      ],
+      "nullable": true,
+      "unknown_is_not_native": true
+    },
+    "mesh": {
+      "type": "integer",
+      "minimum": 1,
+      "nullable": true,
+      "meaning": "Full-mesh vertex count read from geometry/metric/annotation; cortex label length is not mesh size"
+    },
+    "atlas": {
+      "type": "string",
+      "nullable": true,
+      "label_id_scheme_must_be_explicit": true
+    },
+    "label_table": {
+      "type": "array",
+      "items": "string",
+      "nullable": true
+    },
+    "measure": {
+      "type": "string",
+      "nullable": true
+    },
+    "unit": {
+      "type": "string",
+      "nullable": true,
+      "software_convention_and_physical_verification_separate": true
+    },
+    "voxel_size": {
+      "type": "array",
+      "items": "number",
+      "length": 3,
+      "nullable": true
+    },
+    "scale_status": {
+      "type": "object",
+      "fields": {
+        "rescaled": "boolean|null",
+        "factor": "number|null",
+        "basis": "string",
+        "verified": "boolean"
+      },
+      "nullable": true
+    },
+    "columns": {
+      "type": "array",
+      "items": "string",
+      "nullable": true
+    },
+    "n_subjects": {
+      "type": "integer",
+      "minimum": 0,
+      "nullable": true,
+      "distinct_subjects_not_scans": true
+    },
+    "from_space": {
+      "type": "enum",
+      "values": [
+        "native",
+        "fsaverage",
+        "fsLR_32k",
+        "fsLR_164k",
+        "MNI152",
+        "NMT_v2",
+        "Yerkes19"
+      ],
+      "nullable": true
+    },
+    "to_space": {
+      "type": "enum",
+      "values": [
+        "native",
+        "fsaverage",
+        "fsLR_32k",
+        "fsLR_164k",
+        "MNI152",
+        "NMT_v2",
+        "Yerkes19"
+      ],
+      "nullable": true
+    },
+    "vector_ndim": {
+      "type": "integer",
+      "minimum": 0,
+      "nullable": true
+    },
+    "face_width": {
+      "type": "integer",
+      "minimum": 1,
+      "nullable": true
+    },
+    "nonempty_columns": {
+      "type": "object",
+      "nullable": true,
+      "meaning": "observed nonempty cells per TSV column"
+    }
+  },
+  "types": [
+    {
+      "id": "type:Product",
+      "parent": null,
+      "attributes": [],
+      "description": "Source-bound analysis data product"
+    },
+    {
+      "id": "type:Volume",
+      "parent": "type:Product",
+      "attributes": [
+        "subject",
+        "species",
+        "space",
+        "voxel_size",
+        "scale_status",
+        "unit"
+      ]
+    },
+    {
+      "id": "type:Volume.T1",
+      "parent": "type:Volume",
+      "attributes": [
+        "subject",
+        "species",
+        "space",
+        "voxel_size",
+        "scale_status",
+        "unit"
+      ]
+    },
+    {
+      "id": "type:Volume.T2",
+      "parent": "type:Volume",
+      "attributes": [
+        "subject",
+        "species",
+        "space",
+        "voxel_size",
+        "scale_status",
+        "unit"
+      ]
+    },
+    {
+      "id": "type:Volume.BrainMask",
+      "parent": "type:Volume",
+      "attributes": [
+        "subject",
+        "species",
+        "space",
+        "voxel_size",
+        "scale_status",
+        "unit"
+      ]
+    },
+    {
+      "id": "type:Volume.Aseg",
+      "parent": "type:Volume",
+      "attributes": [
+        "subject",
+        "species",
+        "space",
+        "voxel_size",
+        "scale_status",
+        "unit"
+      ]
+    },
+    {
+      "id": "type:Volume.TissuePVE",
+      "parent": "type:Volume",
+      "attributes": [
+        "subject",
+        "species",
+        "space",
+        "voxel_size",
+        "scale_status",
+        "unit"
+      ]
+    },
+    {
+      "id": "type:Volume.GM4D",
+      "parent": "type:Volume",
+      "attributes": [
+        "subject",
+        "species",
+        "space",
+        "voxel_size",
+        "scale_status",
+        "unit"
+      ]
+    },
+    {
+      "id": "type:Volume.GMMask",
+      "parent": "type:Volume",
+      "attributes": [
+        "subject",
+        "species",
+        "space",
+        "voxel_size",
+        "scale_status",
+        "unit"
+      ]
+    },
+    {
+      "id": "type:Surface",
+      "parent": "type:Product",
+      "attributes": [
+        "subject",
+        "species",
+        "hemisphere",
+        "space",
+        "mesh",
+        "scale_status",
+        "unit"
+      ]
+    },
+    {
+      "id": "type:Surface.White",
+      "parent": "type:Surface",
+      "attributes": [
+        "subject",
+        "species",
+        "hemisphere",
+        "space",
+        "mesh",
+        "scale_status",
+        "unit"
+      ]
+    },
+    {
+      "id": "type:Surface.Pial",
+      "parent": "type:Surface",
+      "attributes": [
+        "subject",
+        "species",
+        "hemisphere",
+        "space",
+        "mesh",
+        "scale_status",
+        "unit"
+      ]
+    },
+    {
+      "id": "type:Surface.Sphere",
+      "parent": "type:Surface",
+      "attributes": [
+        "subject",
+        "species",
+        "hemisphere",
+        "space",
+        "mesh",
+        "scale_status",
+        "unit"
+      ]
+    },
+    {
+      "id": "type:Surface.SphereReg",
+      "parent": "type:Surface",
+      "attributes": [
+        "subject",
+        "species",
+        "hemisphere",
+        "space",
+        "mesh",
+        "scale_status",
+        "unit"
+      ]
+    },
+    {
+      "id": "type:Surface.Inflated",
+      "parent": "type:Surface",
+      "attributes": [
+        "subject",
+        "species",
+        "hemisphere",
+        "space",
+        "mesh",
+        "scale_status",
+        "unit"
+      ]
+    },
+    {
+      "id": "type:Surface.Midthickness",
+      "parent": "type:Surface",
+      "attributes": [
+        "subject",
+        "species",
+        "hemisphere",
+        "space",
+        "mesh",
+        "scale_status",
+        "unit"
+      ]
+    },
+    {
+      "id": "type:SurfaceMetric",
+      "parent": "type:Product",
+      "attributes": [
+        "subject",
+        "species",
+        "hemisphere",
+        "space",
+        "mesh",
+        "measure",
+        "unit",
+        "scale_status"
+      ]
+    },
+    {
+      "id": "type:SurfaceMetric.Thickness",
+      "parent": "type:SurfaceMetric",
+      "attributes": [
+        "subject",
+        "species",
+        "hemisphere",
+        "space",
+        "mesh",
+        "measure",
+        "unit",
+        "scale_status"
+      ]
+    },
+    {
+      "id": "type:SurfaceMetric.Area",
+      "parent": "type:SurfaceMetric",
+      "attributes": [
+        "subject",
+        "species",
+        "hemisphere",
+        "space",
+        "mesh",
+        "measure",
+        "unit",
+        "scale_status"
+      ]
+    },
+    {
+      "id": "type:SurfaceMetric.Curvature",
+      "parent": "type:SurfaceMetric",
+      "attributes": [
+        "subject",
+        "species",
+        "hemisphere",
+        "space",
+        "mesh",
+        "measure",
+        "unit",
+        "scale_status"
+      ]
+    },
+    {
+      "id": "type:SurfaceMetric.Sulc",
+      "parent": "type:SurfaceMetric",
+      "attributes": [
+        "subject",
+        "species",
+        "hemisphere",
+        "space",
+        "mesh",
+        "measure",
+        "unit",
+        "scale_status"
+      ]
+    },
+    {
+      "id": "type:SurfaceMetric.LGI",
+      "parent": "type:SurfaceMetric",
+      "attributes": [
+        "subject",
+        "species",
+        "hemisphere",
+        "space",
+        "mesh",
+        "measure",
+        "unit",
+        "scale_status"
+      ]
+    },
+    {
+      "id": "type:Annotation",
+      "parent": "type:Product",
+      "attributes": [
+        "subject",
+        "species",
+        "hemisphere",
+        "space",
+        "mesh",
+        "atlas",
+        "label_table"
+      ]
+    },
+    {
+      "id": "type:Annotation.AparcDK",
+      "parent": "type:Annotation",
+      "attributes": [
+        "subject",
+        "species",
+        "hemisphere",
+        "space",
+        "mesh",
+        "atlas",
+        "label_table"
+      ]
+    },
+    {
+      "id": "type:Annotation.AparcDKT",
+      "parent": "type:Annotation",
+      "attributes": [
+        "subject",
+        "species",
+        "hemisphere",
+        "space",
+        "mesh",
+        "atlas",
+        "label_table"
+      ]
+    },
+    {
+      "id": "type:Annotation.AparcA2009s",
+      "parent": "type:Annotation",
+      "attributes": [
+        "subject",
+        "species",
+        "hemisphere",
+        "space",
+        "mesh",
+        "atlas",
+        "label_table"
+      ]
+    },
+    {
+      "id": "type:Annotation.CHARM",
+      "parent": "type:Annotation",
+      "attributes": [
+        "subject",
+        "species",
+        "hemisphere",
+        "space",
+        "mesh",
+        "atlas",
+        "label_table"
+      ]
+    },
+    {
+      "id": "type:Annotation.D99",
+      "parent": "type:Annotation",
+      "attributes": [
+        "subject",
+        "species",
+        "hemisphere",
+        "space",
+        "mesh",
+        "atlas",
+        "label_table"
+      ]
+    },
+    {
+      "id": "type:Label",
+      "parent": "type:Product",
+      "attributes": [
+        "subject",
+        "species",
+        "hemisphere",
+        "space",
+        "mesh"
+      ]
+    },
+    {
+      "id": "type:Label.Cortex",
+      "parent": "type:Label",
+      "attributes": [
+        "subject",
+        "species",
+        "hemisphere",
+        "space",
+        "mesh"
+      ]
+    },
+    {
+      "id": "type:Label.MedialWall",
+      "parent": "type:Label",
+      "attributes": [
+        "subject",
+        "species",
+        "hemisphere",
+        "space",
+        "mesh"
+      ]
+    },
+    {
+      "id": "type:StatsTable",
+      "parent": "type:Product",
+      "attributes": [
+        "subject",
+        "species",
+        "hemisphere",
+        "atlas",
+        "columns"
+      ]
+    },
+    {
+      "id": "type:StatsTable.Aparc",
+      "parent": "type:StatsTable",
+      "attributes": [
+        "subject",
+        "species",
+        "hemisphere",
+        "atlas",
+        "columns"
+      ]
+    },
+    {
+      "id": "type:StatsTable.Aseg",
+      "parent": "type:StatsTable",
+      "attributes": [
+        "subject",
+        "species",
+        "hemisphere",
+        "atlas",
+        "columns"
+      ]
+    },
+    {
+      "id": "type:StatsTable.DesignMatrix",
+      "parent": "type:StatsTable",
+      "attributes": [
+        "subject",
+        "species",
+        "hemisphere",
+        "atlas",
+        "columns"
+      ]
+    },
+    {
+      "id": "type:StatsTable.ContrastMatrix",
+      "parent": "type:StatsTable",
+      "attributes": [
+        "subject",
+        "species",
+        "hemisphere",
+        "atlas",
+        "columns"
+      ]
+    },
+    {
+      "id": "type:Transform",
+      "parent": "type:Product",
+      "attributes": [
+        "subject",
+        "species",
+        "from_space",
+        "to_space"
+      ]
+    },
+    {
+      "id": "type:Transform.SphericalRegistration",
+      "parent": "type:Transform",
+      "attributes": [
+        "subject",
+        "species",
+        "from_space",
+        "to_space"
+      ]
+    },
+    {
+      "id": "type:Transform.Deformation",
+      "parent": "type:Transform",
+      "attributes": [
+        "subject",
+        "species",
+        "from_space",
+        "to_space"
+      ]
+    },
+    {
+      "id": "type:Transform.Affine",
+      "parent": "type:Transform",
+      "attributes": [
+        "subject",
+        "species",
+        "from_space",
+        "to_space"
+      ]
+    },
+    {
+      "id": "type:SubjectTable",
+      "parent": "type:Product",
+      "attributes": [
+        "columns",
+        "n_subjects"
+      ]
+    },
+    {
+      "id": "type:SubjectTable.Participants",
+      "parent": "type:SubjectTable",
+      "attributes": [
+        "columns",
+        "n_subjects"
+      ]
+    },
+    {
+      "id": "type:Volume.TissuePVE.CSF",
+      "parent": "type:Volume.TissuePVE",
+      "attributes": [
+        "subject",
+        "species",
+        "space",
+        "voxel_size",
+        "scale_status",
+        "unit"
+      ]
+    },
+    {
+      "id": "type:Volume.TissuePVE.GM",
+      "parent": "type:Volume.TissuePVE",
+      "attributes": [
+        "subject",
+        "species",
+        "space",
+        "voxel_size",
+        "scale_status",
+        "unit"
+      ]
+    },
+    {
+      "id": "type:Volume.TissuePVE.WM",
+      "parent": "type:Volume.TissuePVE",
+      "attributes": [
+        "subject",
+        "species",
+        "space",
+        "voxel_size",
+        "scale_status",
+        "unit"
+      ]
+    },
+    {
+      "id": "type:Volume.BrainExtractedT1",
+      "parent": "type:Volume.T1",
+      "description": "FreeSurfer brainmask skull-stripped intensity image; not a binary mask",
+      "source": {
+        "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/ViewSegOutput",
+        "classification_trust": "Documented product-name convention, not verified execution provenance"
+      }
+    }
+  ],
+  "space_aliases": {
+    "native_stored": {
+      "value": "native",
+      "trust": "plan declaration only; not independent space verification"
+    }
+  },
+  "special_roles": {
+    "sphere.reg": "Primary Surface.SphereReg plus Transform.SphericalRegistration role; do not confuse a surface map with a voxel deformation"
+  },
+  "matching": "Subtype ancestry plus observed properties; unknown attributes stay null"
+}

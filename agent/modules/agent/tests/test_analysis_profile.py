@@ -10,7 +10,7 @@ profile = import_module(agent.__package__ + '.analysis_profile')
 def test_confirmed_deepseek_profile():
     with patch.dict(os.environ, {}, clear=True):
         opts = profile.coding_model_options('deepseek-v4-pro','https://inferaiapi.com/v1')
-    assert opts == {'timeout':150,'max_retries':0,'max_tokens':20000,'extra_body':{'thinking':{'type':'disabled'}}}
+    assert opts == {'timeout':150,'max_retries':0,'max_tokens':20000}
 
 
 @pytest.mark.parametrize('url,model',[
@@ -51,5 +51,5 @@ def test_actual_coding_builder_passes_profile_to_model(tmp_path):
         raise StopCapture()
     with patch.dict(os.environ,{},clear=True),pytest.raises(StopCapture):
         agent._build_coding_agent(tools,model='deepseek-v4-pro',base_url='https://inferaiapi.com/v1',api_key='not-in-state',model_factory=capture)
-    assert seen['max_tokens']==20000 and seen['extra_body']=={'thinking':{'type':'disabled'}}
+    assert seen['max_tokens']==20000 and 'extra_body' not in seen
     assert seen['timeout']==150 and agent.MAX_MODEL_CALLS==64 and agent.MAX_EXECUTIONS==24

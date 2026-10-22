@@ -50,6 +50,9 @@ def commit_plan(tools, plan):
     ):
         if key not in plan:
             raise ValueError("Missing required plan field: " + key)
+    from .analysis_crossspecies import enabled as cross_enabled, validate_commitment
+    if cross_enabled(tools):
+        validate_commitment(plan.get("analysis_scope", {}).get("commitment"), plan)
     _required_text(plan["question"], "question")
     if "\n" in plan["question"]:
         raise ValueError("question must be one line")

@@ -1,0 +1,36 @@
+{
+  "schema": "primatex.atlas_identifiers.v1",
+  "scope": "File naming conventions identify the reported parcellation family, not subject species, atlas release, mesh correspondence or homology",
+  "mappings": [
+    {
+      "file_stem": "aparc",
+      "canonical_name": "DK",
+      "official_name": "Desikan-Killiany",
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/CorticalParcellation"
+    },
+    {
+      "file_stem": "aparc.DKTatlas",
+      "canonical_name": "DKT",
+      "official_name": "Desikan-Killiany-Tourville",
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/CorticalParcellation"
+    },
+    {
+      "file_stem": "aparc.DKTatlas40",
+      "canonical_name": "DKT",
+      "official_name": "Desikan-Killiany-Tourville",
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/CorticalParcellation"
+    },
+    {
+      "file_stem": "aparc.DKTatlas.mapped",
+      "canonical_name": "DKT",
+      "official_name": "Desikan-Killiany-Tourville, FastSurfer surface-mapped output",
+      "source_url": "https://deep-mi.org/FastSurfer/dev/overview/OUTPUT_FILES.html"
+    },
+    {
+      "file_stem": "aparc.a2009s",
+      "canonical_name": "Destrieux",
+      "official_name": "Destrieux",
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/CorticalParcellation"
+    }
+  ]
+}

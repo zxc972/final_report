@@ -1,0 +1,38 @@
+[
+  {
+    "path": "experiments/round12/budget_policy.py",
+    "before_sha256": "a5fc1e8632a880479b8b017d25970b0c9019cbf13e2776b6328021767b504e66",
+    "after_sha256": "c6d2b8f5ca2a48f4e21c8319d89543861571cebeea13f98c2fb2452399f58d6f",
+    "ast_identical": true
+  },
+  {
+    "path": "experiments/round12/dev_server.py",
+    "before_sha256": "1d825df76a5058eba7206404786393bc0e6a7427cb6ffb8a8417111118f9aac8",
+    "after_sha256": "9223a3d74df8268edc0f79f2ef53ed7c5b5c7b34910f416f369e9fc26e5dd310",
+    "ast_identical": true
+  },
+  {
+    "path": "experiments/round12/private_review.py",
+    "before_sha256": "b5eb36830a1560266ae01ce3a3d7b47ff946e5462f20ecffb99abe936fc242e2",
+    "after_sha256": "f32af6c855354e460f22ed1fe18a655c16383ccb1f44299378fe07543c1d487b",
+    "ast_identical": true
+  },
+  {
+    "path": "experiments/round12/run_eight_trials.py",
+    "before_sha256": "2042a7e71f6ae3dfa2e6942aa8682b2b1970873d7048859a157b84afa5800c15",
+    "after_sha256": "7ddec926224b30bf9a7e864623ceb4c6a8cf30a26d0d347c51ef2cf94046a345",
+    "ast_identical": true
+  },
+  {
+    "path": "evaluation/calibration/round12/evaluate.py",
+    "before_sha256": "0df0a02d3ebf507f9b3dceaf276db61648e034519f434a5fb1b84b2fefb7be5f",
+    "after_sha256": "1b3f68c3c926f16f89e48dd731163f1b6e2dbd14d4b6985b145038c43fb2f6bb",
+    "ast_identical": true
+  },
+  {
+    "path": "tests/test_round12_experiment_guard.py",
+    "before_sha256": "d71b5702070fa5e5685255a34bce2fb74dbf0534c7a342b968e4771adef3ebe9",
+    "after_sha256": "939a796efe9ace5fd2448648c0bf340c7b0e73796ae1bdd009ad93841ebe3856",
+    "ast_identical": true
+  }
+]

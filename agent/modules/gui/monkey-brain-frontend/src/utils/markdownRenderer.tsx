@@ -353,7 +353,14 @@ function renderMarkdownBlocks(text: string): JSX.Element {
         </table>
       </div>);
     } else {
-      plain.push(lines[index]);
+      const heading = /^(#{1,6})\s+(.+?)\s*#*\s*$/.exec(lines[index]);
+      if (heading) {
+        flush();
+        const tag = `h${heading[1].length}`;
+        blocks.push(React.createElement(tag, { key: `heading-${index}` }, renderInlineMarkdown(heading[2])));
+      } else {
+        plain.push(lines[index]);
+      }
       index += 1;
     }
   }

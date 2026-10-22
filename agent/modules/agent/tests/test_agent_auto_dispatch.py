@@ -243,16 +243,16 @@ def test_auth_is_checked_before_paid_routing(setup_api):
     assert not calls and runner.call_count == 0
 
 
-def test_fallback_uses_protected_last_route(setup_api):
+def test_failed_route_does_not_reuse_protected_last_route(setup_api):
     client, payload, choices, _, calls, runner, identity, _ = setup_api
-    choices[:] = ["analysis", {"choices": [{"message": {"content": "invalid"}}]}]
+    choices[:] = ["analysis", {"choices": [{"message": {"content": "invalid"}}]}, {"choices": [{"message": {"content": "invalid"}}]}]
     assert client.post("/api/agent/chat", json=payload).status_code == 200
     result = client.post("/api/agent/chat", json=payload)
     assert result.status_code == 200
-    assert result.json()["metadata"]["route"] == "analysis"
-    assert result.json()["metadata"]["routing"]["fallback"] is True
-    assert "previous route" in result.json()["metadata"]["routeReason"]
-    assert runner.call_count == 2
+    assert result.json()["metadata"]["route"] is None
+    assert result.json()["metadata"]["routing"]["parseStatus"] == "route_failed"
+    assert result.json()["metadata"]["requestBudget"]["model_calls"] == 2
+    assert runner.call_count == 1
 
 
 def test_conversation_owner_and_workspace_are_isolated(tmp_path, monkeypatch):

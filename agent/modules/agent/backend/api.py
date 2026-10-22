@@ -642,15 +642,14 @@ def build_app() -> FastAPI:
             total_iterations += 1
             attempt = session.budget.reserve("pipeline") if session else None
             try:
-                response = await call_chat_completions(base_url, api_key, model, messages, tools)
+                from .analysis_transport import metered_async_call
+                response = await metered_async_call(
+                    lambda: call_chat_completions(base_url, api_key, model, messages, tools),
+                    session.budget if session else None, "pipeline", attempt)
             except Exception:
-                if session:
-                    session.budget.finish(attempt, None, "call_failed")
-                    if owns_session:
-                        session.complete(payload.message, "Preprocessing request failed", "failed")
+                if session and owns_session:
+                    session.complete(payload.message, "Preprocessing request failed", "failed")
                 raise
-            if session:
-                session.budget.finish(attempt, response.get("usage"), "response_received")
             choice = response.get("choices", [{}])[0]
             model_message = choice.get("message", {})
             tool_calls = model_message.get("tool_calls") or []
@@ -892,7 +891,9 @@ def build_app() -> FastAPI:
         conv_id = payload.conversation_id or f"conv_{uuid.uuid4().hex}"
         async with conversation_turn(workspace, user_id, conv_id):
             try:
-                session = ChatSession(workspace, user_id, conv_id, api_key, 64)
+                from .analysis_profile import bounded_setting
+                request_limit = bounded_setting("ANALYSIS_MAX_MODEL_CALLS", 64, 1, 128)
+                session = ChatSession(workspace, user_id, conv_id, api_key, request_limit)
             except ValueError as exc:
                 raise HTTPException(status_code=400, detail=str(exc))
             history = session.load_history(payload.history)
@@ -907,23 +908,70 @@ def build_app() -> FastAPI:
                 caller=call_chat_completions,
                 budget=session.budget,
             )
+            if decision["route"] is None:
+                auth_failed = decision.get("failure_kind") == "environment_auth_failed"
+                session.events.append(
+                    "other", "failed", "Analysis service unavailable" if auth_failed else "Unable to route request",
+                    {"event": "environment_auth_failed" if auth_failed else "route_failed", "parse_status": decision["parse_status"],
+                     "attempts": decision["model_calls"], "reason": decision["failure"],
+                     **({"failure_kind": decision["failure_kind"]} if decision.get("failure_kind") else {})},
+                )
+                rate_limited = decision.get("failure_kind") == "environment_rate_limited"
+                terminal_status = ("environment_auth_failed" if auth_failed else
+                                   "environment_rate_limited" if rate_limited else "route_failed")
+                reply = "I could not determine the task type. Please clarify whether you want to inspect data, analyse existing results, or preprocess new images."
+                if rate_limited:
+                    reply = "Upstream rate limit retries exhausted. No task was dispatched; please retry later."
+                if auth_failed:
+                    from .analysis_transport import AUTH_FAILURE_MESSAGE
+                    reply = AUTH_FAILURE_MESSAGE
+                budget = session.complete(payload.message, reply, terminal_status)
+                return AgentChatResponse(message=reply, conversationId=conv_id, metadata={
+                    "status": terminal_status, "route": None,
+                    "routing": {"fallback": False, "modelCalls": decision["model_calls"],
+                                "parseStatus": decision["parse_status"],
+                                **({"failureKind": decision["failure_kind"], "upstreamStatus": decision.get("upstream_status")}
+                                   if decision.get("failure_kind") else {})}, "requestBudget": budget,
+                })
             session.start(decision["route"], decision["reason"], automatic=True)
+            if decision.get("warnings") or decision["parse_status"] == "retry_success":
+                session.events.append(
+                    "other", "warn" if decision.get("warnings") else "done",
+                    "Router JSON recovered" if decision.get("warnings") else "Router decision parsed",
+                    {"parse_status": decision["parse_status"],
+                     "warnings": decision.get("warnings", []), "attempts": decision["model_calls"],
+                     "json_constraint": decision["json_constraint"]},
+                )
             if decision.get("reason_truncated"):
-                session.events.append("route", "warn", "Router reason truncated",
+                session.events.append("other", "warn", "Router reason truncated",
                                       {"reason": "reason truncated", "route": decision["route"]})
             routed = payload.model_copy(
                 update={"conversation_id": conv_id, "history": history}
             )
+            from .analysis_transport import AuthenticationFailed, AUTH_FAILURE_MESSAGE
             try:
                 with session.activate():
                     if decision["route"] == "analysis":
                         request.state.auto_analysis_arguments = {
                             "conversation_history": history,
-                            "router_model_calls": 1,
+                            "router_model_calls": decision["model_calls"],
+                            "execution_required": decision["task_kind"] != "data_inspection",
                         }
                         response = await analysis_chat(routed, request)
                     else:
                         response = await pipeline_chat(routed, request, session)
+            except AuthenticationFailed as exc:
+                session.events.append("other", "failed", "Analysis service unavailable", {
+                    "event": "environment_auth_failed", "upstream_status": exc.status_code,
+                    "reason": "Upstream permission denied; no retry", "route": decision["route"],
+                })
+                budget = session.complete(payload.message, AUTH_FAILURE_MESSAGE, "environment_auth_failed")
+                return AgentChatResponse(message=AUTH_FAILURE_MESSAGE, conversationId=conv_id, metadata={
+                    "status": "environment_auth_failed", "route": decision["route"],
+                    "routing": {"modelCalls": decision["model_calls"], "parseStatus": decision["parse_status"],
+                                "failureKind": "environment_auth_failed", "upstreamStatus": exc.status_code},
+                    "requestBudget": budget,
+                })
             except Exception:
                 session.store.save(
                     "request",
@@ -938,8 +986,8 @@ def build_app() -> FastAPI:
             status = response.metadata.get("status", "completed")
             if response.metadata.get("hitIterationLimit"):
                 status = "failed"
-            # The analysis ledger includes the precharged route call. Its other model
-            # usages are not exposed by the legacy SDK path, and remain unknown here.
+            # The SDK provider meters analysis HTTP usages into this session.
+            # Logical calls without transport records remain explicitly unknown.
             analysis_calls = (
                 max(
                     0,
@@ -949,7 +997,7 @@ def build_app() -> FastAPI:
                         )
                         or 1
                     )
-                    - 1,
+                    - decision["model_calls"],
                 )
                 if decision["route"] == "analysis"
                 else 0
@@ -960,14 +1008,18 @@ def build_app() -> FastAPI:
                     lambda state: {"status": status},
                     "Preparing preprocessing response",
                 )({})
+            overall = {key: response.metadata[key] for key in ("overall_status", "component_statuses")
+                       if key in response.metadata}
             budget = session.complete(
-                payload.message, response.message, status, analysis_calls
+                payload.message, response.message, status, analysis_calls, **overall
             )
             response.metadata.update(
                 {
                     "route": decision["route"],
                     "routeReason": decision["reason"],
-                    "routing": {"fallback": decision["fallback"], "modelCalls": 1},
+                    "task_kind": decision["task_kind"],
+                    "routing": {"fallback": decision["fallback"], "modelCalls": decision["model_calls"],
+                                "parseStatus": decision["parse_status"], "warnings": decision.get("warnings", [])},
                     "requestBudget": budget,
                 }
             )

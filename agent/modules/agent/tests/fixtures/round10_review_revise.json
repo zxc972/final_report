@@ -1,0 +1,61 @@
+{
+  "source_response_sha256": "2a5b865a58f546105e643beb81a327aab6888e45dc702ff7658b8465bd49584b",
+  "scope": "Replay of actual R10_P1_1 AI review, not fresh scientific evidence or a private reference",
+  "response": {
+    "decision": "revise",
+    "findings": [
+      {
+        "severity": "blocking",
+        "claim": "report.md states 'Cortex-restricted vertices covered: 95955 (lh 47670, rh 48341)'.",
+        "observation": "The parenthetical values sum to 96011, not 95955 (47670+48341=96011). self_checks.json reports coverage_discrepancy per_hemi of -40 (lh) and -16 (rh), which implies the actual covered parcel-vertex sums per hemisphere are 47630 (lh) and 48325 (rh), totaling 95955. The numbers 47670/48341 are the cortex.label mask sizes, not the covered counts, so the report conflates two different quantities and is internally inconsistent.",
+        "evidence_files": [
+          "report.md",
+          "self_checks.json",
+          "9c8bfb19b1f34c4f84579796a70f9c83"
+        ],
+        "question": "What are the actual per-hemisphere covered vertex counts, and should report.md present 47630/48325 as covered counts, or explicitly label 47670/48341 as the cortex-mask sizes separate from the covered total?"
+      },
+      {
+        "severity": "blocking",
+        "claim": "self_checks.json 'finite_check' states 'all mean/std/median finite; zero_count==0 in all cortex parcels'.",
+        "observation": "summary.csv from the successful run shows lh caudalmiddlefrontal has zero_count=2, and the per-scope checks record thickness_min=0.0 for both hemispheres. The claim 'zero_count==0 in all cortex parcels' is therefore directly contradicted by the executed run's own generated data.",
+        "evidence_files": [
+          "self_checks.json",
+          "summary.csv",
+          "aparc_thickness_summary.py"
+        ],
+        "question": "Does any row of summary.csv have zero_count != 0 (e.g., lh caudalmiddlefrontal=2), and if so, should the finite_check text be corrected to match the actual zero-count values?"
+      },
+      {
+        "severity": "warning",
+        "claim": "summary.json methods state 'FreeSurfer stats headers declare thickness unit mm (software convention)'.",
+        "observation": "No FreeSurfer stats header or other source document is supplied as evidence; the analysis only reads .thickness files via ops.read_surface_metric. The mm unit is an assumed software convention (the limitations text itself says scale is not verified), so the 'headers declare' phrasing overstates provenance.",
+        "evidence_files": [
+          "aparc_thickness_summary.py",
+          "3ea80cf31378436dbb59210789cda43c"
+        ],
+        "question": "Is there a supplied source that actually declares the mm unit for these stored .thickness files, or should the methods text be revised to state the unit is an unverified FreeSurfer convention?"
+      },
+      {
+        "severity": "warning",
+        "claim": "report.md and summary.json limitations state cortex restriction relies on stored cortex.label files and annotation coverage, without mentioning vertices that are inside the cortex mask but lack an aparc label.",
+        "observation": "The checks show 40 (lh) and 16 (rh) vertices inside the cortex mask have unassigned annotation labels (labels<0) and are therefore excluded from all parcels; this -56 vertex coverage discrepancy is only visible in self_checks.json, not in report.md or in the limitations listed in summary.json.",
+        "evidence_files": [
+          "self_checks.json",
+          "report.md"
+        ],
+        "question": "Should the limitations text explicitly state that 56 cortex-masked vertices (40 lh, 16 rh) have no aparc label and are excluded from the per-region vertex counts?"
+      }
+    ],
+    "limitations": [
+      "summary.csv was provided only as header and sample rows; full numeric validation of all 66 rows was not possible in this review.",
+      "Full content of label_sets.v000001.json was not available (read_file attempts were blocked); handling of exclude_keys/exclude_names in the label sets could not be independently verified.",
+      "The mm unit reflects a FreeSurfer software convention and is not validated against any external physical calibration or acquisition metadata.",
+      "This review did not re-run the analysis independently and did not inspect any surface/PNG visuals; it only cross-checks the supplied code, receipts, and generated documents."
+    ],
+    "protocol_valid": true,
+    "review_id": "83b2aac6ee0745deab83f69261b443cf",
+    "context_sha256": "f933136aab795291b93d4c2735bae67f6f1b2520bef479667be98e2276c84bf8",
+    "scope": "AI-assisted source/code/output consistency only; not independent numerical validity, image visual review or expert QC."
+  }
+}

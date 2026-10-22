@@ -1,0 +1,43 @@
+{
+  "schema": "primatex.round12.protocol.v1",
+  "user_authorized_maximum_runs": 8,
+  "scheduled_maximum_runs": 7,
+  "profiles": "product_graph_planner",
+  "mode": "auto",
+  "budget": {
+    "logical_model_calls_per_run": 30,
+    "tool_calls": 60,
+    "executions": 8,
+    "seconds": 1200,
+    "outer_rounds": 3,
+    "logical_batch": 240,
+    "physical_batch": 720
+  },
+  "case_order": [
+    "R12B_P1_1",
+    "R12B_P1_2",
+    "R12B_P2_1",
+    "R12B_P3_1",
+    "R12B_H1_1",
+    "R12B_FLASH_P1_1",
+    "R12B_FLASH_P1_2"
+  ],
+  "C_on": [
+    "R12B_H1_1"
+  ],
+  "C_off": [
+    "R12B_P1_1",
+    "R12B_P1_2",
+    "R12B_P2_1",
+    "R12B_P3_1",
+    "R12B_FLASH_P1_1",
+    "R12B_FLASH_P1_2"
+  ],
+  "H2": "Not dispatched: actual 100610 has DKT mapped, not requested DK; independent readers succeed but requested DK reference is unavailable",
+  "stop": "Same eligible terminal root cause twice per model; transport excluded; hard safety stop halts all",
+  "truth_visibility": "Independent references and acceptance implementation remain host-only; no prewritten scientific code supplied",
+  "request_texts": "Frozen exactly in dev_server.py and run_eight_trials.py; H1 root restricted to 100610",
+  "units": "Stored values and software conventions separate; physical scale/species verification remain unknown",
+  "protected_files": 101,
+  "setup_failure_record": "../audit/zero_http_setup_failure.json; no actual requests sent by the predecessor"
+}

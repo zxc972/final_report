@@ -1,0 +1,435 @@
+{
+  "schema": "primatex.condition_templates.v1",
+  "source": {
+    "document": "第四章知识图谱设计与算法_20261021.docx",
+    "sha256": "8457b5c6ca6a90a57cc65940c79e5d57e1af5f939a5b8d79f4512b7f7359014d",
+    "section": "3.3"
+  },
+  "template_names": [
+    "product_present",
+    "attr_equal",
+    "attr_in",
+    "label_policy",
+    "cardinality",
+    "design_variable",
+    "software",
+    "provenance",
+    "advisory"
+  ],
+  "legacy_probe_groups": {
+    "software_available": {
+      "scope": "Registered software commands must actually execute in the sandbox",
+      "root": [
+        {
+          "id": "software_available:commands",
+          "template": "software",
+          "parameters": {
+            "commands": []
+          },
+          "severity": "hard",
+          "source": [
+            {
+              "method_fact_id": "method-fact:a57a64d55b4ab23e45cfbb8d",
+              "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/LGI"
+            }
+          ]
+        }
+      ]
+    },
+    "recon_complete": {
+      "scope": "Done marker and readable zero-FATAL log; not expert anatomical QC",
+      "root": [
+        {
+          "id": "recon_complete:observations",
+          "template": "provenance",
+          "parameters": {
+            "evidence_ref": "objects.reconstructions",
+            "required_values": {
+              "done": true,
+              "fatal_count": 0
+            },
+            "allow_empty": false,
+            "scope": "Completion marker/log observations; model explanations cannot waive FATAL"
+          },
+          "severity": "hard",
+          "source": [
+            {
+              "method_fact_id": "method-fact:d4f50f947f3e85a0aec16506",
+              "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/LGI"
+            },
+            {
+              "method_fact_id": "method-fact:88a7331bf51d3a379e11279f",
+              "note": "Completion is not anatomical QC."
+            }
+          ]
+        }
+      ]
+    },
+    "unassigned_labels_excluded": {
+      "scope": "Legacy declaration guard; retained-set enforcement is available in the generic label_policy template",
+      "root": [
+        {
+          "id": "unassigned_labels_excluded:policy",
+          "template": "label_policy",
+          "parameters": {
+            "slot": "annotations",
+            "exclusions_ref": "plan.atlas.exclude_labels",
+            "allow_absent": true,
+            "require_nonempty": false
+          },
+          "severity": "hard",
+          "source": [
+            {
+              "type": "observed_failure",
+              "path": "matched_v2_failure_provenance.json",
+              "sha256": "5cf7cd0def7bacadc800629fb795d867e36934e528c7522485b9f05c95770bd2",
+              "case": "matched_v2/kg/rep2: extra lh/label_-1 and rh/label_-1; exact_parcels failed"
+            },
+            {
+              "url": "https://nipy.org/nibabel/reference/nibabel.freesurfer.html#read-annot",
+              "note": "orig_ids=False assigns -1 to unlabeled vertices."
+            }
+          ]
+        }
+      ]
+    },
+    "mesh_label_match": {
+      "scope": "Actual geometry/annotation cardinality plus explicit origin/space and observed reference fingerprint",
+      "root": [
+        {
+          "id": "mesh_label_match:required_annotation",
+          "template": "product_present",
+          "parameters": {
+            "slot": "annotations",
+            "type": "type:Annotation"
+          },
+          "severity": "hard",
+          "source": [
+            {
+              "method_fact_id": "method-fact:1c150a35562383188f51cb4a",
+              "url": "https://nipy.org/nibabel/reference/nibabel.freesurfer.html"
+            },
+            {
+              "type": "implementation_policy",
+              "note": "Space/provenance requirement specified in chapter-four experimental protocol; not a claim of automatic anatomical registration validation."
+            }
+          ],
+          "when": {
+            "path": "plan.method.method_id",
+            "in": [
+              "method:v12:surface_annotation_roi"
+            ]
+          }
+        }
+      ],
+      "each_annotation": [
+        {
+          "id": "mesh_label_match:one_binding",
+          "template": "cardinality",
+          "parameters": {
+            "object": "objects.matching_bindings",
+            "minimum": 1,
+            "maximum": 1,
+            "distinct": false
+          },
+          "severity": "hard",
+          "source": [
+            {
+              "method_fact_id": "method-fact:1c150a35562383188f51cb4a",
+              "url": "https://nipy.org/nibabel/reference/nibabel.freesurfer.html"
+            },
+            {
+              "type": "implementation_policy",
+              "note": "Space/provenance requirement specified in chapter-four experimental protocol; not a claim of automatic anatomical registration validation."
+            }
+          ]
+        },
+        {
+          "id": "mesh_label_match:surface_present",
+          "template": "product_present",
+          "parameters": {
+            "slot": "surface",
+            "type": "type:Surface"
+          },
+          "severity": "hard",
+          "source": [
+            {
+              "method_fact_id": "method-fact:1c150a35562383188f51cb4a",
+              "url": "https://nipy.org/nibabel/reference/nibabel.freesurfer.html"
+            },
+            {
+              "type": "implementation_policy",
+              "note": "Space/provenance requirement specified in chapter-four experimental protocol; not a claim of automatic anatomical registration validation."
+            }
+          ]
+        },
+        {
+          "id": "mesh_label_match:mesh",
+          "template": "attr_equal",
+          "parameters": {
+            "slots": [
+              "surface",
+              "annotation"
+            ],
+            "attribute": "mesh"
+          },
+          "severity": "hard",
+          "source": [
+            {
+              "method_fact_id": "method-fact:1c150a35562383188f51cb4a",
+              "url": "https://nipy.org/nibabel/reference/nibabel.freesurfer.html"
+            },
+            {
+              "type": "implementation_policy",
+              "note": "Space/provenance requirement specified in chapter-four experimental protocol; not a claim of automatic anatomical registration validation."
+            }
+          ]
+        },
+        {
+          "id": "mesh_label_match:provenance",
+          "template": "provenance",
+          "parameters": {
+            "evidence_ref": "objects.binding_provenance",
+            "required_values": {
+              "declared_origin_and_space": true
+            },
+            "nonempty_fields": [
+              "registration_sha256"
+            ],
+            "scope": "Fingerprint and recorded origin/space; equality does not establish anatomical correspondence"
+          },
+          "severity": "hard",
+          "source": [
+            {
+              "method_fact_id": "method-fact:1c150a35562383188f51cb4a",
+              "url": "https://nipy.org/nibabel/reference/nibabel.freesurfer.html"
+            },
+            {
+              "type": "implementation_policy",
+              "note": "Space/provenance requirement specified in chapter-four experimental protocol; not a claim of automatic anatomical registration validation."
+            }
+          ]
+        }
+      ]
+    },
+    "scale_consistent": {
+      "scope": "Preserves explicit scale/conversion guards; filename tags are weak conventions, not verified physical scaling",
+      "root": [
+        {
+          "id": "scale_consistent:coded_affine",
+          "template": "provenance",
+          "parameters": {
+            "evidence_ref": "objects.qforms",
+            "required_values": {
+              "conflict": false
+            },
+            "allow_empty": true
+          },
+          "severity": "hard",
+          "source": [
+            {
+              "url": "https://nipy.org/nibabel/nifti_images.html",
+              "note": "Header zooms, units and selected affine require explicit interpretation; resolution difference alone is not physical scale misuse."
+            },
+            {
+              "type": "implementation_policy",
+              "note": "Cross-species calibration and no-scale-mixing rule are project requirements."
+            }
+          ]
+        },
+        {
+          "id": "scale_consistent:units",
+          "template": "attr_equal",
+          "parameters": {
+            "slots": [
+              "volume_units"
+            ],
+            "attribute": "unit",
+            "allow_empty": true
+          },
+          "severity": "hard",
+          "source": [
+            {
+              "url": "https://nipy.org/nibabel/nifti_images.html",
+              "note": "Header zooms, units and selected affine require explicit interpretation; resolution difference alone is not physical scale misuse."
+            },
+            {
+              "type": "implementation_policy",
+              "note": "Cross-species calibration and no-scale-mixing rule are project requirements."
+            }
+          ],
+          "when": {
+            "path": "objects.unit_conversion_supplied",
+            "equals": false
+          }
+        },
+        {
+          "id": "scale_consistent:scales",
+          "template": "attr_equal",
+          "parameters": {
+            "slots": [
+              "named_scales"
+            ],
+            "attribute": "scale_marker",
+            "allow_empty": true
+          },
+          "severity": "hard",
+          "source": [
+            {
+              "url": "https://nipy.org/nibabel/nifti_images.html",
+              "note": "Header zooms, units and selected affine require explicit interpretation; resolution difference alone is not physical scale misuse."
+            },
+            {
+              "type": "implementation_policy",
+              "note": "Cross-species calibration and no-scale-mixing rule are project requirements."
+            }
+          ],
+          "when": {
+            "path": "objects.separate_scales",
+            "equals": false
+          }
+        }
+      ]
+    },
+    "group_inference_sample": {
+      "scope": "Distinct observed table subjects, declared group membership and declared residual degrees of freedom; not power/rank validation",
+      "root": [
+        {
+          "id": "group_inference_sample:cardinality",
+          "template": "cardinality",
+          "parameters": {
+            "object": "objects.groups",
+            "groups": true,
+            "observed_ids": "objects.subject_ids",
+            "minimum": 2,
+            "design_size": "plan.analysis_scope.design_columns",
+            "when": "plan.analysis_scope.inference"
+          },
+          "severity": "hard",
+          "source": [
+            {
+              "url": "https://fsl.fmrib.ox.ac.uk/fsl/docs/statistics/glm.html",
+              "note": "GLM design/exchangeability context; >=2 is this project minimum, not a universal sufficient sample size."
+            },
+            {
+              "method_fact_id": "method-fact:c627a0c4dd572b15e8235d82",
+              "note": "Source method requires cross-subject design matrix and contrast."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "extra_method_conditions": [
+    {
+      "id": "condition:method-fact:63efa81b48f41daf378e19a6",
+      "method_id": "method:v12:surface_annotation_roi",
+      "template": "advisory",
+      "parameters": {
+        "text": "Reader support for annotation formats 1 and 2 is a software API capability statement; current profile does not independently inspect both layouts.",
+        "reason_not_executable": "Import success or current-file parsing does not test both historical format versions."
+      },
+      "severity": "soft",
+      "source": [
+        {
+          "method_fact_id": "method-fact:63efa81b48f41daf378e19a6"
+        }
+      ],
+      "classification_reason": "Library capability; not promoted from successful import to a universal data prerequisite"
+    },
+    {
+      "id": "condition:method-fact:0b90a4102963b2f8bab017ef",
+      "method_id": "method:v12:surface_annotation_roi",
+      "template": "advisory",
+      "parameters": {
+        "text": "The NiBabel color-table return is documented as RGBT; preserve that API convention.",
+        "reason_not_executable": "A five-column array alone cannot empirically establish transparency-versus-alpha semantics."
+      },
+      "severity": "soft",
+      "source": [
+        {
+          "method_fact_id": "method-fact:0b90a4102963b2f8bab017ef"
+        }
+      ],
+      "classification_reason": "Software return contract stays a disclosure, not fabricated file-level validation"
+    },
+    {
+      "id": "condition:method-fact:44c05d9e9a8e92569b91a711",
+      "method_id": "method:v12:surface_annotation_roi",
+      "template": "advisory",
+      "parameters": {
+        "text": "Supported shapes for write_morph_data are not an execution prerequisite of this read-only summary.",
+        "status": "not_applicable",
+        "reason_not_executable": "The selected recipe does not write morphometry files."
+      },
+      "severity": "soft",
+      "source": [
+        {
+          "method_fact_id": "method-fact:44c05d9e9a8e92569b91a711"
+        }
+      ],
+      "classification_reason": "Write-API constraint is not applicable to a reader-only method"
+    },
+    {
+      "id": "condition:method-fact:11bed30ee564aa991d4926ed",
+      "method_id": "method:v12:surface_annotation_roi",
+      "template": "attr_in",
+      "parameters": {
+        "slot": "metrics",
+        "attribute": "vector_ndim",
+        "values": [
+          1
+        ]
+      },
+      "severity": "hard",
+      "source": [
+        {
+          "method_fact_id": "method-fact:11bed30ee564aa991d4926ed"
+        }
+      ],
+      "classification_reason": "Observed metric vector dimensionality; mesh identity remains a separate condition"
+    },
+    {
+      "id": "condition:method-fact:3b74adb32cb4a1624251c912",
+      "method_id": "method:v12:surface_annotation_roi",
+      "template": "product_present",
+      "parameters": {
+        "slot": "labels",
+        "type": "type:Label",
+        "optional": true
+      },
+      "severity": "hard",
+      "source": [
+        {
+          "method_fact_id": "method-fact:3b74adb32cb4a1624251c912"
+        }
+      ],
+      "classification_reason": "Optional label input, when present, is read by the actual profile parser; mesh membership is checked separately"
+    },
+    {
+      "id": "condition:method-fact:6845313ae380dd39c60d3d96",
+      "method_id": "method:v12:surface_annotation_roi",
+      "template": "attr_in",
+      "parameters": {
+        "slot": "surfaces",
+        "attribute": "face_width",
+        "values": [
+          3
+        ],
+        "optional": true
+      },
+      "severity": "hard",
+      "source": [
+        {
+          "method_fact_id": "method-fact:6845313ae380dd39c60d3d96"
+        }
+      ],
+      "classification_reason": "Actual triangular face width, not an anatomy/QC approval"
+    }
+  ],
+  "legacy_scope_notes": [
+    "The legacy unassigned-label guard checks declarations only; generic label_policy defaults to require a nonempty retained set.",
+    "Filename-based scale convention guards remain explicitly weak evidence; unknown physical calibration remains a warning.",
+    "Reconstruction completion and observed registration fingerprints do not prove anatomical correctness."
+  ]
+}

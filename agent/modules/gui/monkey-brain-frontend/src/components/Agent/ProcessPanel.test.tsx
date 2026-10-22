@@ -60,3 +60,13 @@ it('labels preprocessing completion as a finished reply', async () => {
   expect(await screen.findByText('Reply finished')).toBeTruthy();
   expect(screen.queryByText('Completed')).toBeNull();
 });
+
+
+it('labels an offline placeholder as Reply finished', async () => {
+  vi.mocked(agentService.getConversationProcess).mockResolvedValue({available: false, status: 'idle', events: [], outputs: [], nextAfter: 0});
+  const {parseAnalysisResult} = await import('../../utils/analysisResult');
+  const analysis = parseAnalysisResult({mode: 'analysis', run_id: 'a'.repeat(32), status: 'not_executed_offline_fixture', executions: 0}, 'offline')!;
+  render(<ProcessPanel conversationId="offline" active={false} messages={[userMessage, {...userMessage, id: 'answer', type: 'agent', metadata: {analysis}}]} />);
+  expect(await screen.findByText('Reply finished')).toBeTruthy();
+  expect(screen.queryByText('Completed')).toBeNull();
+});

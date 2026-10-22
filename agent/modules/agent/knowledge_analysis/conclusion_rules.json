@@ -1,0 +1,131 @@
+{
+  "schema": "primatex.conclusion_rules.v1",
+  "source": {
+    "document": "第四章提纲_参考BrainResearcher与NEURA_20261021.docx",
+    "sha256": "fae1e06aa28671e4daa195d5c1c0456c73d11281fd53d0181fe74d466efeeb7c",
+    "section": "3.4,3.7",
+    "authority": "User-approved project policy; not a universal scientific prohibition"
+  },
+  "rules": [
+    {
+      "id": "conclusion:mandatory_failure",
+      "any": [
+        "mandatory_failure"
+      ],
+      "verdict": "blocked",
+      "reason": "A mandatory executed check failed",
+      "supported_scope": "No validated result claim"
+    },
+    {
+      "id": "conclusion:contradiction",
+      "any": [
+        "opposite_direction"
+      ],
+      "verdict": "rejected",
+      "reason": "Verified result contradicts the structured claim direction",
+      "supported_scope": "Report the verified direction"
+    },
+    {
+      "id": "conclusion:missing_evidence",
+      "any": [
+        "missing_homology",
+        "underpowered_negative",
+        "missing_admission_evidence"
+      ],
+      "verdict": "deferred",
+      "reason": "Evidence or sensitivity is insufficient",
+      "supported_scope": "Report missing evidence or d_min; do not claim no difference"
+    },
+    {
+      "id": "conclusion:other_hard_block",
+      "any": [
+        "other_hard_block"
+      ],
+      "verdict": "blocked",
+      "reason": "A hard applicability condition failed",
+      "supported_scope": "Report prerequisites; no production conclusion"
+    },
+    {
+      "id": "conclusion:missing_checks",
+      "any": [
+        "missing_required_evidence"
+      ],
+      "verdict": "deferred",
+      "reason": "Required independent evidence is unavailable",
+      "supported_scope": "Report independent checks still needed"
+    },
+    {
+      "id": "conclusion:overclaim",
+      "any": [
+        "overclaim"
+      ],
+      "verdict": "revised",
+      "reason": "Claim exceeds checked scope; Agent must rewrite",
+      "supported_scope": "Use only allowed_scopes and qualified warnings"
+    },
+    {
+      "id": "conclusion:qualified",
+      "any": [
+        "has_warnings",
+        "qualified_ceiling"
+      ],
+      "verdict": "qualified",
+      "reason": "Warnings limit the interpretation",
+      "supported_scope": "Describe supplied observations with all listed qualifications"
+    },
+    {
+      "id": "conclusion:accepted",
+      "all": [
+        "all_required_pass"
+      ],
+      "verdict": "accepted",
+      "reason": "All registered mandatory checks passed within scope",
+      "supported_scope": "Checked scope only; not expert QC"
+    },
+    {
+      "id": "conclusion:default",
+      "all": [],
+      "verdict": "deferred",
+      "reason": "Required checks are incomplete",
+      "supported_scope": "Report checks still needed"
+    }
+  ],
+  "limitations": [
+    "Deterministic rules assess typed claims and observed checks; arbitrary natural-language semantic entailment is not certified.",
+    "AI-assisted source review is not expert review; these synthetic cases are known regressions, not blind validation."
+  ],
+  "scope_rules": [
+    {
+      "scope": "supplied_descriptive",
+      "comparisons": [
+        "*"
+      ]
+    },
+    {
+      "scope": "group_inference",
+      "comparisons": [
+        "group",
+        "correlation"
+      ],
+      "no_hard_block": true
+    },
+    {
+      "scope": "hemispheric_asymmetry",
+      "comparisons": [
+        "asymmetry"
+      ],
+      "no_hard_block": true
+    },
+    {
+      "scope": "cross_species_comparison",
+      "comparisons": [
+        "cross_species"
+      ],
+      "no_hard_block": true,
+      "required_pass": [
+        "cross:homology_evidence",
+        "cross:species_atlas"
+      ]
+    }
+  ]
+}

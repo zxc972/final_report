@@ -81,7 +81,7 @@ export interface PlanBasis {
   codePath?: string;
 }
 
-export type ProcessRunStatus = 'idle' | 'running' | 'completed' | 'failed' | 'blocked';
+export type ProcessRunStatus = 'idle' | 'running' | 'completed' | 'failed' | 'blocked' | 'warning' | 'incomplete_review' | 'deferred' | 'qualified' | 'accepted';
 
 export interface ProcessOutput {
   path: string;

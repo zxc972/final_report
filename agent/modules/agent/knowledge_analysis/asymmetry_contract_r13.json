@@ -1,0 +1,14 @@
+{
+  "schema": "primatex.paired_asymmetry.v1",
+  "formula": "2*(L-R)/(L+R)",
+  "column": "asymmetry_index",
+  "pairing": "same declared atlas family, subject, metric and exact parcel name; both hemispheres required",
+  "serialization": "same signed L-minus-R pair index on both hemisphere summary rows; one unique index per pair",
+  "zero_denominator": "block and report undefined; never substitute zero",
+  "scope": "single-subject descriptive values; no population inference; absence of flip/symmetric-template check must be disclosed",
+  "source": {
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5984496/",
+    "doi": "10.1073/pnas.1718418115",
+    "scope": "Borrow asymmetry-index definition only; DKT single-subject task is not a reproduction of the DK population study"
+  }
+}

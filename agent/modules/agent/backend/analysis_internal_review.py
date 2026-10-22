@@ -53,7 +53,7 @@ def _preview(value:Any,limit:int)->dict:
     return {'json_preview':text[:limit],'original_characters':len(text),
             'sha256':hashlib.sha256(text.encode()).hexdigest(),'truncated':len(text)>limit}
 
-def collect_context(workdir:Path,request:str,validation:dict,method_reader:Callable|None=None):
+def collect_context(workdir:Path,request:str,validation:dict,method_reader:Callable|None=None, register_execution_receipts:bool=False):
     root=Path(workdir).resolve(strict=True);files={};executions=[];observations=[];knowledge=[]
     receipt_root=root.parent/'.execution_receipts'/root.name
     receipt_records=[]
@@ -118,6 +118,10 @@ def collect_context(workdir:Path,request:str,validation:dict,method_reader:Calla
                     fields={k:m.get(k)for k in ['name','scope_note','inputs','conditions','steps','checks','exceptions']}
                     knowledge.append({'id':mid,'method_evidence':_preview(fields,4000),'sources':value.get('source_evidence',[])[:12]})
     registered=set(files)|{r['id']for r in observations}|{m['id']for m in knowledge}
+    # Actual protected execution receipts are part of the supplied context and
+    # are valid evidence identities, just like protected tool observations.
+    if register_execution_receipts:
+        registered.update(e['receipt_id'] for e in executions)
     for m in knowledge:registered.update(s['source_id']for s in m.get('sources',[]))
     context={'task':request[:6000],'task_truncated':len(request)>6000,'files':files,'actual_execution_receipts':executions,
              'actual_observations':observations,'method_source_evidence':knowledge,'registered_evidence_ids':sorted(registered),
@@ -135,23 +139,62 @@ def collect_context(workdir:Path,request:str,validation:dict,method_reader:Calla
     if len(json.dumps(context,ensure_ascii=False))>180000:raise ValueError('Internal review context exceeds supported bound')
     return context,registered
 
-def run_review(workdir:Path,request:str,validation:dict,model:Any,reserve:Callable,method_reader:Callable|None=None):
-    context,registered=collect_context(workdir,request,validation,method_reader)
-    reserve()
-    response=model.invoke([{'role':'system','content':REVIEW_PROMPT},{'role':'user','content':json.dumps(context,ensure_ascii=False)}])
-    raw=getattr(response,'content','')
-    root=workdir.parent/'.analysis_reviews'/workdir.name
-    current=workdir.parent
-    for part in ['.analysis_reviews',workdir.name]:
-        current=current/part
-        if current.is_symlink():raise ValueError('Review record cannot use symlinks')
-        current.mkdir(exist_ok=True)
-    rid=uuid.uuid4().hex;record={'schema':'primatex.internal_review.v1','id':rid,'time':time.time(),'context_sha256':hashlib.sha256(json.dumps(context,sort_keys=True,ensure_ascii=False).encode()).hexdigest(),'raw_model_content':raw}
-    try:review=parse_review(raw,registered);record['review']=review
-    except Exception as exc:
-        record['review']={'decision':'insufficient_evidence','findings':[],'limitations':['Internal review response failed strict validation: '+type(exc).__name__]};record['protocol_error']=str(exc)
-    path=root/(rid+'.json')
-    fd=os.open(path,os.O_WRONLY|os.O_CREAT|os.O_EXCL|getattr(os,'O_NOFOLLOW',0),0o600)
-    with os.fdopen(fd,'w')as f:json.dump(record,f,ensure_ascii=False,indent=2)
-    return {**record['review'],'protocol_valid':'protocol_error' not in record,'review_id':rid,'context_sha256':record['context_sha256'],'scope':'AI-assisted source/code/output consistency only; not independent numerical validity, image visual review or expert QC.'}
+def run_review(workdir: Path, request: str, validation: dict, model: Any,
+               reserve: Callable, method_reader: Callable | None = None,
+               register_execution_receipts: bool = False, deadline: float | None = None,
+               evidence_card: dict | None = None):
+    if evidence_card is not None:
+        from .analysis_review_protocol import run_structured_review
+        return run_structured_review(workdir, request, validation, model, reserve,
+                                     method_reader, register_execution_receipts,
+                                     deadline, evidence_card)
+    from .analysis_transport import model_deadline, TransportExhausted
 
+    context, registered = collect_context(workdir, request, validation, method_reader, register_execution_receipts)
+    reserve()
+    raw = ""
+    transport = None
+    try:
+        with model_deadline(deadline):
+            response = model.invoke([
+                {"role": "system", "content": REVIEW_PROMPT},
+                {"role": "user", "content": json.dumps(context, ensure_ascii=False)},
+            ])
+        raw = getattr(response, "content", "")
+    except TransportExhausted as error:
+        transport = {"attempts": error.attempts, "upstream_status": error.status_code,
+                     "reason": error.reason}
+    root = workdir.parent / ".analysis_reviews" / workdir.name
+    current = workdir.parent
+    for part in [".analysis_reviews", workdir.name]:
+        current = current / part
+        if current.is_symlink():
+            raise ValueError("Review record cannot use symlinks")
+        current.mkdir(exist_ok=True)
+    rid = uuid.uuid4().hex
+    record = {
+        "schema": "primatex.internal_review.v1", "id": rid, "time": time.time(),
+        "context_sha256": hashlib.sha256(json.dumps(context, sort_keys=True, ensure_ascii=False).encode()).hexdigest(),
+        "raw_model_content": raw,
+    }
+    if transport is not None:
+        record["transport"] = transport
+        record["review"] = {"decision": "unreviewed", "findings": [],
+                            "limitations": ["Upstream review unavailable after bounded transport retries"]}
+    else:
+        try:
+            record["review"] = parse_review(raw, registered)
+        except Exception as error:
+            record["review"] = {"decision": "insufficient_evidence", "findings": [],
+                                "limitations": ["Internal review response failed strict validation: " + type(error).__name__]}
+            record["protocol_error"] = str(error)
+    descriptor = os.open(root/(rid+".json"), os.O_WRONLY | os.O_CREAT | os.O_EXCL | getattr(os,"O_NOFOLLOW",0), 0o600)
+    with os.fdopen(descriptor, "w") as stream:
+        json.dump(record, stream, ensure_ascii=False, indent=2)
+    return {
+        **record["review"], "status": "unreviewed" if transport is not None else "reviewed" if "protocol_error" not in record else "invalid",
+        "protocol_valid": transport is None and "protocol_error" not in record,
+        "transport_exhausted": transport is not None,
+        "transport": transport, "review_id": rid, "context_sha256": record["context_sha256"],
+        "scope": "AI-assisted source/code/output consistency only; not independent numerical validity, image visual review or expert QC.",
+    }

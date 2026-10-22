@@ -13,7 +13,7 @@ from modules.agent.backend.agent_chat_state import ChatSession
 def response(route="analysis", reason="Measure existing reconstructed outputs."):
     return {
         "choices": [
-            {"message": {"content": json.dumps({"route": route, "reason": reason})}}
+            {"message": {"content": json.dumps({"route": route, "reason": reason, "task_kind": "preprocessing" if route == "pipeline" else "analysis_compute"})}}
         ],
         "usage": {"prompt_tokens": 11, "completion_tokens": 7, "total_tokens": 18},
     }
@@ -78,14 +78,13 @@ def test_single_structured_call_is_reserved_before_model(route, tmp_path, monkey
     "content",
     [
         "not-json",
-        '```json\n{"route":"analysis","reason":"Measure."}\n```',
         '{"route":"shell","reason":"Do things."}',
         '{"route":"analysis","reason":"中文"}',
         json.dumps({"route": "analysis", "reason": "x" * 1801}),
         '{"route":"analysis","reason":"Measure.","extra":true}',
     ],
 )
-def test_invalid_json_or_schema_uses_previous_or_preprocessing(
+def test_invalid_json_or_schema_never_dispatches(
     content, previous, tmp_path, monkeypatch
 ):
     s = session(tmp_path, monkeypatch)
@@ -94,12 +93,12 @@ def test_invalid_json_or_schema_uses_previous_or_preprocessing(
         return {"choices": [{"message": {"content": content}}]}
 
     result = invoke(model, s.budget, previous)
-    assert result["route"] == (previous or "pipeline")
-    assert result["fallback"] is True and result["reason"].startswith("Fallback:")
+    assert result["route"] is None
+    assert result["fallback"] is False and result["parse_status"] == "route_failed"
     assert len(result["reason"]) <= 120
     assert (
-        s.budget.view()["model_calls"] == 1
-        and s.budget.view()["unknown_usage_calls"] == 1
+        s.budget.view()["model_calls"] == 2
+        and s.budget.view()["unknown_usage_calls"] == 2
     )
     assert s.budget.view()["cost"] is None
 
@@ -114,9 +113,9 @@ def test_failed_model_call_is_charged_and_does_not_leak_exception(
         raise RuntimeError("fixture-private-value")
 
     result = invoke(model, s.budget, previous)
-    assert result["route"] == (previous or "pipeline") and result["fallback"]
+    assert result["route"] is None and result["parse_status"] == "route_failed"
     assert "fixture-private-value" not in json.dumps(result)
-    assert s.budget.view()["unknown_usage_calls"] == 1
+    assert s.budget.view()["unknown_usage_calls"] == 2
 
 
 def test_mixed_request_policy_requires_preprocessing_then_a_later_request(
@@ -165,7 +164,7 @@ def test_malformed_provider_shapes_fall_back(raw, tmp_path, monkeypatch):
         return raw
 
     result = invoke(model, s.budget)
-    assert result["route"] == "pipeline" and result["fallback"]
+    assert result["route"] is None and result["parse_status"] == "route_failed"
 
 
 def test_structured_transport_uses_temperature_zero_without_tool_choice(monkeypatch):

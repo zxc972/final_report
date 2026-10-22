@@ -8,7 +8,7 @@ beforeEach(() => { cleanup(); vi.clearAllMocks(); });
 describe('analysis file card', () => {
   it('separates computation and file checks from independent numerical review', async () => {
     render(<AnalysisResultCard result={result} />);
-    expect(screen.getByText('Computation finished')).toBeTruthy(); expect(screen.getByText(/Numerical review: not run/)).toBeTruthy();
+    expect(screen.getByText('Computation finished')).toBeTruthy(); expect(screen.getByText(/Independent check: not assessed/)).toBeTruthy();
     fireEvent.click(screen.getByRole('button', { name: 'Download report.md' }));
     await waitFor(() => expect(agentService.downloadAnalysisFile).toHaveBeenCalledWith(result, 'report.md'));
   });
@@ -27,7 +27,7 @@ it('refreshes a submitted job into actual file-checked completion', async () => 
   expect(screen.queryByText('Computation finished')).toBeNull();
   fireEvent.click(screen.getByRole('button', { name: 'Refresh computation' }));
   await waitFor(() => expect(screen.getByText('Computation finished')).toBeTruthy());
-  expect(screen.getByText(/Numerical review: not run/)).toBeTruthy();
+  expect(screen.getByText(/Independent check: not assessed/)).toBeTruthy();
 });
 it('offers a real cancellation action and shows cancelled without completion', async () => {
   const pending = { ...result, status: 'submitted', executions: 0, files: [], fileChecksPassed: false,

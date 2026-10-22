@@ -1,0 +1,195 @@
+{
+  "schema": "primatex.cross_species_rules.v1",
+  "source": {
+    "document": "第四章提纲_参考BrainResearcher与NEURA_20261021.docx",
+    "sha256": "fae1e06aa28671e4daa195d5c1c0456c73d11281fd53d0181fe74d466efeeb7c",
+    "section": "3.4,3.7",
+    "authority": "User-approved project policy; not a universal scientific prohibition"
+  },
+  "templates": [
+    {
+      "id": "cross:species_atlas",
+      "template": "species_atlas",
+      "severity": "hard",
+      "applies_to": "all",
+      "parameters": {
+        "allowed": {
+          "human": [
+            "DK",
+            "DKT",
+            "Destrieux"
+          ],
+          "macaque": [
+            "CHARM",
+            "SARM",
+            "D99"
+          ]
+        },
+        "aliases": {
+          "aparc": "DK",
+          "aparc.DKTatlas": "DKT",
+          "aparc.a2009s": "Destrieux"
+        },
+        "tissue": {
+          "SARM": "subcortical",
+          "CHARM": "cortical"
+        }
+      },
+      "source": [
+        {
+          "url": "https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/nonhuman/macaque_tempatl/atlas_charm.html",
+          "scope": "CHARM macaque six-level hierarchy"
+        },
+        {
+          "url": "https://surfer.nmr.mgh.harvard.edu/ftp/articles/desikan06-parcellation.pdf",
+          "scope": "Human DK atlas"
+        },
+        {
+          "url": "https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/nonhuman/macaque_tempatl/atlas_sarm.html",
+          "scope": "SARM is the Subcortical Atlas of the Rhesus Macaque; it cannot fill a cortical atlas slot"
+        }
+      ]
+    },
+    {
+      "id": "cross:homology_evidence",
+      "template": "homology_evidence",
+      "severity": "hard",
+      "applies_to": "cross_species",
+      "parameters": {
+        "required_kinds": [
+          "cited_correspondence",
+          "cross_species_registration"
+        ]
+      },
+      "source": [
+        {
+          "document": "第四章提纲_参考BrainResearcher与NEURA_20261021.docx",
+          "sha256": "fae1e06aa28671e4daa195d5c1c0456c73d11281fd53d0181fe74d466efeeb7c",
+          "section": "3.4,3.7",
+          "authority": "User-approved project policy; not a universal scientific prohibition"
+        }
+      ]
+    },
+    {
+      "id": "cross:scale_check",
+      "template": "scale_check",
+      "severity": "hard",
+      "applies_to": "all",
+      "parameters": {
+        "powers": {
+          "thickness": 1,
+          "surface_area": 2,
+          "brain_volume": 3
+        },
+        "rtol": 1e-07,
+        "atol": 1e-09
+      },
+      "source": [
+        {
+          "document": "第四章提纲_参考BrainResearcher与NEURA_20261021.docx",
+          "sha256": "fae1e06aa28671e4daa195d5c1c0456c73d11281fd53d0181fe74d466efeeb7c",
+          "section": "3.4,3.7",
+          "authority": "User-approved project policy; not a universal scientific prohibition"
+        }
+      ]
+    },
+    {
+      "id": "cross:plausibility",
+      "template": "plausibility",
+      "severity": "soft",
+      "applies_to": "all",
+      "parameters": {
+        "sigma_threshold": 3,
+        "relative_threshold": 0.5
+      },
+      "source": [
+        {
+          "id": "source:Autio2020",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7116593/",
+          "doi": "10.1016/j.neuroimage.2020.116800",
+          "title": "Towards HCP-Style Macaque Connectomes",
+          "review_status": "AI source-locator checked; not expert normative review"
+        },
+        {
+          "document": "第四章提纲_参考BrainResearcher与NEURA_20261021.docx",
+          "sha256": "fae1e06aa28671e4daa195d5c1c0456c73d11281fd53d0181fe74d466efeeb7c",
+          "section": "3.4,3.7",
+          "authority": "User-approved project policy; not a universal scientific prohibition"
+        }
+      ]
+    },
+    {
+      "id": "cross:asymmetry_flip",
+      "template": "asymmetry_flip",
+      "severity": "soft",
+      "applies_to": "asymmetry",
+      "parameters": {
+        "alternatives": [
+          "flip_test",
+          "symmetric_template_and_atlas",
+          "vertexwise_symmetric"
+        ]
+      },
+      "source": [
+        {
+          "id": "source:Liu2025",
+          "url": "https://sites.bu.edu/cnrlab/files/2025/08/Liu-Choi-Perrachione-2025-Brain-Structure-Function.pdf",
+          "doi": "10.1007/s00429-025-02989-3",
+          "locator": "Abstract and symmetric-atlas/vertex-wise methods",
+          "scope": "Human surface-area parcellation asymmetry; transfer to other species is conservative project policy"
+        },
+        {
+          "document": "第四章提纲_参考BrainResearcher与NEURA_20261021.docx",
+          "sha256": "fae1e06aa28671e4daa195d5c1c0456c73d11281fd53d0181fe74d466efeeb7c",
+          "section": "3.4,3.7",
+          "authority": "User-approved project policy; not a universal scientific prohibition"
+        }
+      ]
+    },
+    {
+      "id": "cross:cross_species_measure",
+      "template": "cross_species_measure",
+      "severity": "soft",
+      "applies_to": "cross_species",
+      "parameters": {
+        "two_species_allowed": [
+          "ratio"
+        ],
+        "minimum_species_loglog": 3,
+        "absolute": [
+          "absolute_thickness",
+          "absolute_area"
+        ]
+      },
+      "source": [
+        {
+          "document": "第四章提纲_参考BrainResearcher与NEURA_20261021.docx",
+          "sha256": "fae1e06aa28671e4daa195d5c1c0456c73d11281fd53d0181fe74d466efeeb7c",
+          "section": "3.4,3.7",
+          "authority": "User-approved project policy; not a universal scientific prohibition"
+        }
+      ]
+    },
+    {
+      "id": "cross:min_detectable_effect",
+      "template": "min_detectable_effect",
+      "severity": "soft",
+      "applies_to": "group_inference",
+      "parameters": {
+        "alpha": 0.05,
+        "power": 0.8,
+        "defer_threshold": 0.8
+      },
+      "source": [
+        {
+          "document": "第四章提纲_参考BrainResearcher与NEURA_20261021.docx",
+          "sha256": "fae1e06aa28671e4daa195d5c1c0456c73d11281fd53d0181fe74d466efeeb7c",
+          "section": "3.4,3.7",
+          "authority": "User-approved project policy; not a universal scientific prohibition"
+        }
+      ]
+    }
+  ],
+  "activation": "AGENT_CROSSSPECIES_RULES=1; product_graph_planner only; this round offline only",
+  "precedence": "Tool observations override model declarations; missing mandatory evidence never becomes pass"
+}

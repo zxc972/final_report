@@ -85,6 +85,7 @@ def tool_stage(name):
     if name in KNOWLEDGE_TOOLS:
         return "knowledge"
     return {
+        "submit_conclusion": "result",
         "compile_constraints": "constraints",
         "commit_plan": "plan",
         "plan_analysis": "plan",
@@ -411,7 +412,8 @@ class AnalysisEvents:
                 status = (
                     "blocked"
                     if result.get("status") == "blocked"
-                    else "failed" if result.get("status") == "failed" else "done"
+                    else "failed" if result.get("status") == "failed"
+                    else "warn" if result.get("status") == "incomplete_review" else "done"
                 )
             end_title = title
             if name == "validate":
@@ -543,4 +545,8 @@ def events_for_conversation(workspace, user_id, conversation_id, after=0):
             "run_id": None,
         }
     _, store = max(candidates, key=lambda item: item[0])
-    return AnalysisEvents(store).view(after)
+    view = AnalysisEvents(store).view(after)
+    overall = store.latest("overall_result")
+    if overall:
+        view.update(overall["record"])
+    return view

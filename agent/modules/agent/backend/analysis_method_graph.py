@@ -15,7 +15,8 @@ def tokens(text):
         if k in text:text+=' '+v
     return set(re.findall(r'[a-z0-9_.-]+|[\u3400-\u9fff]{2}',text))
 class MethodGraph:
-    def __init__(self,root:Path):
+    def __init__(self,root:Path,unified_store=None):
+        self.unified_store=unified_store
         original=Path(root)
         if original.is_symlink():raise ValueError('Method graph root must not be a symlink')
         self.root=original.resolve(strict=True)
@@ -32,9 +33,14 @@ class MethodGraph:
         if len(raw)>limit:raise ValueError('Method release exceeds bounds')
         return raw
     def _load(self):
-        raw=self._read('method_graph.json',8*1024*1024)
-        if hashlib.sha256(raw).hexdigest()!=self.digest:raise ValueError('Method graph digest mismatch')
-        obj=json.loads(raw)
+        if self.unified_store is None:
+            raw=self._read('method_graph.json',8*1024*1024)
+            if hashlib.sha256(raw).hexdigest()!=self.digest:raise ValueError('Method graph digest mismatch')
+            obj=json.loads(raw)
+        else:
+            obj, registered_digest=self.unified_store.document('method_graph')
+            if registered_digest != self.digest:
+                raise ValueError('Unified method graph release mismatch')
         if obj.get('schema')!='primatex.method_graph.v1':raise ValueError('Unknown method graph schema')
         cards=obj.get('methods',[])
         if not isinstance(cards,list)or len(cards)>256:raise ValueError('Invalid method catalogue')

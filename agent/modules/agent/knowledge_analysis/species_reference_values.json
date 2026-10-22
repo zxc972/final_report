@@ -1,0 +1,135 @@
+{
+  "schema": "primatex.species_reference_values.v1",
+  "source": {
+    "document": "第四章提纲_参考BrainResearcher与NEURA_20261021.docx",
+    "sha256": "fae1e06aa28671e4daa195d5c1c0456c73d11281fd53d0181fe74d466efeeb7c",
+    "section": "3.4,3.7",
+    "authority": "User-approved project policy; not a universal scientific prohibition"
+  },
+  "references": [
+    {
+      "id": "reference:macaque:thickness",
+      "species": "macaque",
+      "metric": "thickness",
+      "mean": 2.1,
+      "unit": "mm",
+      "scope": "whole_cortex_mean",
+      "sd": null,
+      "sd_scope": null,
+      "source": {
+        "id": "source:Autio2020",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7116593/",
+        "doi": "10.1016/j.neuroimage.2020.116800",
+        "title": "Towards HCP-Style Macaque Connectomes",
+        "review_status": "AI source-locator checked; not expert normative review",
+        "locator": "Results, cortical thickness, Figure4 histograms; N=12 across three macaque species"
+      },
+      "usage": "Coarse plausibility warning, not a biological acceptance interval",
+      "reported_spread": 0.54,
+      "reported_spread_interpretation": "Distribution/aggregation scope not established as between-subject SD of whole-cortex means; not used for subject-level z scores"
+    },
+    {
+      "id": "reference:human:thickness",
+      "species": "human",
+      "metric": "thickness",
+      "mean": 2.6,
+      "unit": "mm",
+      "scope": "whole_cortex_mean",
+      "sd": null,
+      "sd_scope": null,
+      "source": {
+        "id": "source:Autio2020",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7116593/",
+        "doi": "10.1016/j.neuroimage.2020.116800",
+        "title": "Towards HCP-Style Macaque Connectomes",
+        "review_status": "AI source-locator checked; not expert normative review",
+        "locator": "Introduction; cites Donahue2018/Glasser2016b"
+      },
+      "usage": "Coarse plausibility warning, not a biological acceptance interval"
+    },
+    {
+      "id": "reference:macaque:surface_area",
+      "species": "macaque",
+      "metric": "surface_area",
+      "mean": 10100,
+      "unit": "mm2",
+      "scope": "per_hemisphere",
+      "sd": null,
+      "sd_scope": null,
+      "source": {
+        "id": "source:Autio2020",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7116593/",
+        "doi": "10.1016/j.neuroimage.2020.116800",
+        "title": "Towards HCP-Style Macaque Connectomes",
+        "review_status": "AI source-locator checked; not expert normative review",
+        "locator": "Discussion, approximately 10100 per hemisphere"
+      },
+      "usage": "Coarse plausibility warning, not a biological acceptance interval"
+    },
+    {
+      "id": "reference:human:surface_area",
+      "species": "human",
+      "metric": "surface_area",
+      "mean": 88200,
+      "unit": "mm2",
+      "scope": "per_hemisphere",
+      "sd": null,
+      "sd_scope": null,
+      "source": {
+        "id": "source:Autio2020",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7116593/",
+        "doi": "10.1016/j.neuroimage.2020.116800",
+        "title": "Towards HCP-Style Macaque Connectomes",
+        "review_status": "AI source-locator checked; not expert normative review",
+        "locator": "Discussion, approximately 88200 per hemisphere"
+      },
+      "usage": "Coarse plausibility warning, not a biological acceptance interval"
+    },
+    {
+      "id": "reference:macaque:brain_volume",
+      "species": "macaque",
+      "metric": "brain_volume",
+      "mean": 100,
+      "unit": "cm3",
+      "scope": "whole_brain",
+      "sd": null,
+      "sd_scope": null,
+      "source": {
+        "id": "source:Autio2020",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7116593/",
+        "doi": "10.1016/j.neuroimage.2020.116800",
+        "title": "Towards HCP-Style Macaque Connectomes",
+        "review_status": "AI source-locator checked; not expert normative review",
+        "locator": "Discussion, approximate brain volume ratio"
+      },
+      "usage": "Coarse plausibility warning, not a biological acceptance interval"
+    },
+    {
+      "id": "reference:human:brain_volume",
+      "species": "human",
+      "metric": "brain_volume",
+      "mean": 1200,
+      "unit": "cm3",
+      "scope": "whole_brain",
+      "sd": null,
+      "sd_scope": null,
+      "source": {
+        "id": "source:Autio2020",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7116593/",
+        "doi": "10.1016/j.neuroimage.2020.116800",
+        "title": "Towards HCP-Style Macaque Connectomes",
+        "review_status": "AI source-locator checked; not expert normative review",
+        "locator": "Discussion, approximate brain volume ratio"
+      },
+      "usage": "Coarse plausibility warning, not a biological acceptance interval"
+    }
+  ],
+  "sigma_threshold": 3,
+  "relative_threshold": 0.5,
+  "threshold_authority": "Project heuristic; sensitivity analysis remains necessary",
+  "notes": [
+    "SARM is subcortical and cannot substitute a cortical CHARM parcellation.",
+    "Do not apply global reference values to a single ROI.",
+    "Stored-scale measurements cannot be checked against physical references without a verified scale/units conversion."
+  ]
+}

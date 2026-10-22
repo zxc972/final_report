@@ -1,0 +1,23 @@
+{
+  "round": 13,
+  "max_cases": 8,
+  "model_calls_per_run": 30,
+  "tools_per_run": 60,
+  "executions_per_run": 8,
+  "wall_seconds": 1200,
+  "outer_rounds": 3,
+  "batch_logical_cap": 240,
+  "batch_http_cap": 960,
+  "rate_limit_retries": 3,
+  "other_transport_retries": 2,
+  "environment_pause_seconds": 300,
+  "consecutive_environment_stop": 2,
+  "source_backend": "8141741",
+  "source_frontend": "e448b6a",
+  "human_tasks": [
+    "计算该被试左右半球各 DKT 分区的平均皮层厚度",
+    "比较该被试左右半球 DKT 分区皮层厚度的不对称"
+  ],
+  "scope": "Known development regressions, not blind evaluation; no deployment, original service restart, heldout inputs or preprocessing submission",
+  "source_freeze": "Before first paid request, do not edit product source during the cohort"
+}

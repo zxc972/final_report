@@ -59,8 +59,11 @@ export function messageMetadataFrom(metadata: Record<string, any> | undefined): 
   const routeValue = metadata.route ?? metadata.mode;
   const route = routeValue === 'pipeline' || routeValue === 'analysis' ? routeValue : undefined;
   const routeReason = typeof metadata.routeReason === 'string' ? metadata.routeReason.slice(0, 300) : undefined;
-  if (!metadata.actions && !metadata.analysis && !route) return undefined;
-  return { actions: metadata.actions || [], analysis: metadata.analysis, route, routeReason };
+  const usedModels = metadata.requestBudget?.model_source === 'provider_response'
+    && Array.isArray(metadata.requestBudget.models)
+    ? metadata.requestBudget.models.filter((value: unknown) => typeof value === 'string' && value.length <= 200) : [];
+  if (!metadata.actions && !metadata.analysis && !route && !usedModels.length) return undefined;
+  return { actions: metadata.actions || [], analysis: metadata.analysis, route, routeReason, usedModels };
 }
 
 class AgentService {

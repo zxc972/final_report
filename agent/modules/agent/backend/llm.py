@@ -46,7 +46,7 @@ async def call_chat_completions(
         "model": model,
         "messages": messages,
     }
-    if tools or response_format is None:
+    if tools:
         payload.update({"tools": tools, "tool_choice": "auto"})
     if response_format is not None:
         payload["response_format"] = response_format
@@ -57,5 +57,6 @@ async def call_chat_completions(
     async with httpx.AsyncClient(timeout=90) as client:
         response = await client.post(url, json=payload, headers=headers)
     if response.status_code >= 400:
-        raise HTTPException(status_code=502, detail=f"LLM API error: {response.status_code} {response.text}")
+        raise HTTPException(status_code=502, detail=f"LLM API error: {response.status_code} {response.text}",
+                            headers={"Retry-After": response.headers["Retry-After"]} if "Retry-After" in response.headers else None)
     return response.json()

@@ -3,6 +3,7 @@
 from __future__ import annotations
 import ast
 import hashlib
+import json
 from pathlib import Path
 
 SOURCE = Path(__file__).with_name("primatex_ops.py")
@@ -23,6 +24,22 @@ FUNCTIONS = (
 def operations_manifest():
     raw = SOURCE.read_bytes()
     tree = ast.parse(raw.decode("utf-8-sig"))
+    example_path = (
+        SOURCE.parent.parent / "knowledge_analysis" / "operation_examples.json"
+    )
+    raw_examples = example_path.read_bytes()
+    expected = example_path.with_suffix(".sha256").read_text().strip()
+    if hashlib.sha256(raw_examples).hexdigest() != expected:
+        raise ValueError("Synthetic operation examples digest mismatch")
+    example_payload = json.loads(raw_examples)
+    if (
+        example_payload.get("synthetic_only") is not True
+        or example_payload.get("library_sha256") != hashlib.sha256(raw).hexdigest()
+    ):
+        raise ValueError("Operation examples are not bound to this library")
+    examples = example_payload["examples"]
+    if set(examples) != set(FUNCTIONS):
+        raise ValueError("Operation examples do not cover every public function")
     functions = []
     for node in tree.body:
         if isinstance(node, ast.FunctionDef) and node.name in FUNCTIONS:
@@ -31,6 +48,8 @@ def operations_manifest():
                     "name": node.name,
                     "signature": node.name + "(" + ast.unparse(node.args) + ")",
                     "description": ast.get_docstring(node),
+                    "returns_example": examples[node.name],
+                    "example_scope": "Actual synthetic call; not a subject result or reference answer",
                 }
             )
     if {item["name"] for item in functions} != set(FUNCTIONS):
@@ -48,10 +67,18 @@ def operations_manifest():
 
 def suggested_operations(context):
     calls = []
+    catalogue = operations_manifest()
+    examples = {row["name"]: row["returns_example"] for row in catalogue["functions"]}
 
     def add(function, inputs, scope, note=""):
         calls.append(
-            {"function": function, "inputs": inputs, "scope": scope, "note": note}
+            {
+                "function": function,
+                "inputs": inputs,
+                "scope": scope,
+                "note": note,
+                "returns_example": examples[function],
+            }
         )
 
     files = context["data"]["files"]
@@ -128,13 +155,15 @@ def suggested_operations(context):
             elif path.endswith(".stats"):
                 add("read_stats_table", {"path": path}, path)
     return {
-        "library": {k: v for k, v in operations_manifest().items() if k != "functions"},
+        "library": {k: v for k, v in catalogue.items() if k != "functions"},
         "calls": calls,
         "custom_method_help": "read_operations returns all signatures and unit/return-value conventions",
     }
 
 
 def execution_bundle(context):
+    from .analysis_output_contract import table_contract
+    operations = suggested_operations(context)
     labels = context.get("analysis_scope", {}).get("labels", {})
     hull = context["method"]["method_id"].endswith("global_convex_hull_gyrification")
     columns = (
@@ -161,17 +190,30 @@ def execution_bundle(context):
             "units",
         ]
     )
+    from .analysis_asymmetry_contract import applies, definition
+    asymmetry = definition() if applies(context) else None
+    if asymmetry:
+        columns.append("asymmetry_index")
     return {
+        "asymmetry_contract": asymmetry,
         "input_paths": context["data"]["files"],
         "label_sets": labels,
-        "operations": suggested_operations(context),
+        "operations": operations,
         "output_contract": {
             "files": context["outputs"],
             "csv_columns": columns,
+            "table": table_contract(context, operations),
             "json_required_keys": ["methods", "limitations"],
             "report": "Describe actual method, units, exclusions, observed prerequisites, limitations and all plan versions",
         },
         "must_disclose": context.get("analysis_scope", {}).get("notices", []),
         "self_checks": "Input vector lengths, finite values, requested scope/coverage, actual counts and exclusions; no expected reference values are supplied",
-        "next_step": "Write the committed script with primatex_ops, execute, check outputs and finalize_artifacts; do not hand-code binary readers",
+        "unit_disclosure": {
+            "stored_values": "Retain the supplied file values; do not relabel them as independently calibrated physical measurements",
+            "software_convention": "FreeSurfer thickness convention is mm; surface areas use squared stored-coordinate units; area ratios are dimensionless",
+            "physical_scale_verified": False,
+            "rescale_applied_during_analysis": "Declare yes/no from the actual generated program",
+            "input_rescale_history": "Unverified unless independently documented",
+        },
+        "next_step": "Write the sealed script with primatex_ops and run_python. The program validates files/columns and finalizes automatically; when finalized, write the reply.",
     }

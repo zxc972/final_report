@@ -1,6 +1,7 @@
 """Scripted model drives genuine plan/commit/container/code/finalization tools."""
 
 import importlib, json, os
+import re
 from pathlib import Path
 import pytest
 from test_analysis_agent import agent
@@ -33,7 +34,7 @@ def test_scripted_product_model_executes_ops_then_finalizes(tmp_path, monkeypatc
             )
         nib.freesurfer.write_morph_data(
             str(root / "surf" / f"{hemi}.thickness"),
-            np.array([0, 2, 4, 6], dtype=np.float32),
+            np.array([0, 2.123456789, 4.987654321, 6.234567891], dtype=np.float32),
         )
         for atlas in ["aparc", "alternate"]:
             nib.freesurfer.write_annot(
@@ -94,7 +95,7 @@ def test_scripted_product_model_executes_ops_then_finalizes(tmp_path, monkeypatc
                     [m.content for m in messages if isinstance(m, ToolMessage)][-1]
                 )
                 assert result["status"] == "committed"
-                label_path = result["execution_bundle"]["label_sets_ref"]["path"]
+                label_path = re.search(r"Labels: (\S+)", result["execution_card"])[1]
                 code = """import json,csv
 from pathlib import Path
 import primatex_ops as ops
@@ -105,7 +106,7 @@ for scope,group in json.loads(Path(LABEL_PATH).read_text()).items():
     labels,names,table=ops.read_annotation(group['annotation'])
     mask=ops.read_label(group['cortex_label'])
     for row in ops.parcel_summary(metric,labels,group['labels'],mask=mask):
-        rows.append(dict(subject=subject,hemisphere=hemi,**row))
+        rows.append(dict(subject=subject,hemisphere=hemi,metric='thickness',units='stored; software convention mm; physical scale unverified',**row))
 with open('/work/summary.csv','w') as stream:
     writer=csv.DictWriter(stream,fieldnames=list(rows[0]));writer.writeheader();writer.writerows(rows)
 Path('/work/summary.json').write_text(json.dumps({'methods':'Synthetic cortex means using primatex_ops','limitations':'Engineering fixture only; units unverified','rows':rows}))
@@ -182,6 +183,8 @@ print('fixture rows',len(rows))
             {
                 "decision": "pass",
                 "findings": [],
+                "hard_block_disclosure": {"complete": True, "undisclosed_constraint_ids": [],
+                                          "evidence_files": ["evidence_card"], "reason": "No hard blockers in this synthetic plan"},
                 "limitations": ["Synthetic engineering fixture only"],
             }
         )

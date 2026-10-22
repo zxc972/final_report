@@ -152,7 +152,8 @@ function parsePlan(raw: any): PlanBasis | undefined {
 
 const VIEW_STATUS: Record<string, ProcessRunStatus> = {
   running: 'running', pending: 'idle', done: 'completed', completed: 'completed',
-  failed: 'failed', blocked: 'blocked', warn: 'completed',
+  failed: 'failed', blocked: 'blocked', warn: 'warning', route_failed: 'failed',
+  incomplete_review: 'incomplete_review', deferred: 'deferred', qualified: 'qualified', accepted: 'accepted',
 };
 
 /** Validate the response of GET /api/agent/analysis/{conversationId}/events. */
@@ -166,7 +167,7 @@ export function parseConversationProcess(raw: any): ConversationProcess {
   const enabled = raw?.enabled === true;
   return {
     available: enabled,
-    status: VIEW_STATUS[raw?.status] ?? 'idle',
+    status: VIEW_STATUS[raw?.overall_status] ?? VIEW_STATUS[raw?.status] ?? 'idle',
     runId: text(raw?.run_id, 64),
     startedAt: events.length ? events[0].time || undefined : undefined,
     events,
@@ -191,6 +192,9 @@ export function collapseEvents(events: ProcessEvent[]): CollapsedStep[] {
     // A finished event replaces its own "running" event in place.
     if (event.opId && byOp.has(event.opId)) {
       const index = byOp.get(event.opId)!;
+      const previousEvent = steps[index].event;
+      // A terminal warning is final for this operation, just like done/failed.
+      if (event.seq < previousEvent.seq || (previousEvent.status !== 'running' && event.status === 'running')) continue;
       steps[index] = { ...steps[index], event: { ...event, time: steps[index].event.time } };
       const previous = steps[index - 1];
       const current = steps[index];
@@ -225,4 +229,15 @@ export function formatStepTime(time: number, startedAt?: number): string {
     return `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, '0')}`;
   }
   return new Date(time * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+}
+
+/** Prefer the newest specific observation to a long-lived graph-node envelope. */
+export function currentStepIndex(steps: CollapsedStep[], active: boolean): number {
+  if (!active) return -1;
+  let latest = -1;
+  let maximum = -1;
+  steps.forEach((step, index) => {
+    if (step.event.seq > maximum) { maximum = step.event.seq; latest = index; }
+  });
+  return latest;
 }

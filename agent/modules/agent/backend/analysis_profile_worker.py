@@ -188,6 +188,7 @@ def profile_file(path):
             values = nib.freesurfer.read_morph_data(str(path))
             item["metric"] = field({
                 "vertex_count": field(int(values.size), path, "read_morph_data vector length"),
+                "ndim": field(int(values.ndim), path, "actual read_morph_data array.ndim"),
                 "measure": field(path.name.split(".")[-1], path, "filename convention; not algorithm provenance"),
                 "finite_count": field(int(np.isfinite(values).sum()), path, "actual stored vector finite values"),
                 "units": field(None, path, "curv-type format has no physical unit metadata", "Use stored units; physical scale unverified"),
@@ -205,6 +206,7 @@ def profile_file(path):
                     len(vertices), path, "nibabel surface pointset length"
                 ),
                 "face_count": field(len(faces), path, "nibabel triangle array length"),
+                "face_width": field(int(faces.shape[1]) if faces.ndim == 2 else None, path, "actual geometry faces.shape"),
                 "hemisphere": hemisphere(path),
                 "stored_coordinate_span": field(
                     span,
@@ -282,6 +284,13 @@ def profile_file(path):
                 ),
             }
             item["label"] = field(details, path, "nibabel label/annotation reader")
+            if kind == "shape.gii":
+                item["metric"] = field({
+                    "vertex_count": field(int(labels.size), path, "actual GIFTI array.size"),
+                    "ndim": field(int(labels.ndim), path, "actual GIFTI array.ndim"),
+                    "finite_count": field(int(np.isfinite(labels).sum()), path, "actual GIFTI finite count"),
+                    "units": field(None, path, "No physical unit verification", "Unknown acquisition scale"),
+                }, path, "GIFTI continuous metric array")
         elif kind in ("stats", "tsv"):
             with path.open(encoding="utf-8", errors="replace") as stream:
                 rows = (
@@ -289,6 +298,14 @@ def profile_file(path):
                     if kind == "tsv"
                     else []
                 )
+            if kind == "tsv":
+                with path.open(encoding="utf-8", errors="replace") as stream:
+                    columns = next(csv.reader(stream, delimiter="\t"), [])
+                item["table"] = field({
+                    "columns": field(columns, path, "TSV header"),
+                    "row_count": field(len(rows), path, "TSV data row count"),
+                    "nonempty_columns": field({key: bool(rows) and all(row.get(key) not in (None, "") for row in rows) for key in columns}, path, "actual TSV cells; rank not inferred"),
+                }, path, "csv.DictReader")
             if rows and any(
                 "participant_id" in row or "subject_id" in row for row in rows
             ):

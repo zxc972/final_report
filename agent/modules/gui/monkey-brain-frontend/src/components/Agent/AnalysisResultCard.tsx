@@ -1,3 +1,4 @@
+import ConclusionCardView from './ConclusionCardView';
 import { useEffect, useState } from 'react';
 import { Button, message } from 'antd';
 import { DownloadOutlined } from '@ant-design/icons';
@@ -46,13 +47,33 @@ export default function AnalysisResultCard({ result }: { result: AnalysisResultI
     finally { setDownloading(null); }
   };
   const statusClass = finished ? 'is-ok' : failed ? 'is-err' : 'is-run';
+  const unified = !!live.overallStatus;
+  const overallClass = live.overallStatus === 'accepted' ? 'is-ok'
+    : ['blocked', 'failed'].includes(live.overallStatus ?? '') ? 'is-err' : 'is-warn';
   return <section className="px-result" aria-label="Analysis results">
     <div className="px-result-head">
-      <span className={'px-tag ' + statusClass}>{label}</span>
+      {unified ? <span className={'px-tag ' + overallClass} aria-label="Overall analysis status">
+        Overall: {live.overallStatus?.replace(/_/g, ' ')}
+      </span> : <><span className={'px-tag ' + statusClass}>{label}</span>
       <span className={'px-tag ' + (live.fileChecksPassed ? 'is-ok' : 'is-warn')}>{live.fileChecksPassed ? 'File checks passed' : 'File checks incomplete'}</span>
-      <span className="px-tag">Numerical review: {live.numericalReview === 'not_performed' ? 'not run' : live.numericalReview}</span>
+      <span className={'px-tag ' + (live.numericalReview === 'pass' ? 'is-ok' : live.numericalReview === 'fail' ? 'is-err' : 'is-warn')} aria-label="Independent numeric check">
+        Independent check: {['pass', 'fail'].includes(live.numericalReview) ? live.numericalReview : 'not assessed'}
+      </span>
+      {['pass', 'fail'].includes(live.numericalReview) && live.independentMismatches !== undefined && <span className="px-tag">{live.independentMismatches} mismatches</span>}</>}
     </div>
     <div className="px-result-body">
+      {unified ? <details className="px-component-review" aria-label="Analysis component status">
+        <summary style={{ cursor: 'pointer' }}>Execution, checks and review</summary>
+        <div style={{ padding: '10px 0' }}>
+          <p>Artifacts: {String(live.componentStatuses?.artifacts ?? 'not finalized')}</p>
+          <p>Public contract: {String(live.componentStatuses?.public_contract ?? 'not performed')}</p>
+          <p aria-label="Independent numeric check">Independent check: {['pass', 'fail'].includes(live.numericalReview) ? live.numericalReview : 'not assessed'}</p>
+          <p>Identity differences: {live.identityMismatches ?? 'not assessed'}; Numeric differences: {live.numericMismatches ?? 'not assessed'}</p>
+          <p>Internal review: {String(live.componentStatuses?.internal_review ?? 'unreviewed').replace(/_/g, ' ')}</p>
+          <p>Last execution exit code: {live.lastExitCode === null || live.lastExitCode === undefined ? 'not run' : live.lastExitCode}</p>
+          {live.conclusionReview && <ConclusionCardView review={live.conclusionReview} />}
+        </div>
+      </details> : live.conclusionReview && <ConclusionCardView review={live.conclusionReview} />}
       <p className="px-result-note">File checks do not establish anatomical or scientific validity.</p>
       {job && <div className="mb-2" aria-label="Background computation">
         <div className="flex items-center gap-2 flex-wrap">

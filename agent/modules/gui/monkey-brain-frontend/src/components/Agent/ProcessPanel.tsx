@@ -31,7 +31,7 @@ import { CheckOutlined, CloseOutlined, ExclamationOutlined, DownloadOutlined } f
 import { Message } from '../../types/agent';
 import { ProcessEvent, ProcessStatus } from '../../types/process';
 import { AnalysisResultInfo } from '../../utils/analysisResult';
-import { collapseEvents, formatStepTime } from '../../utils/processEvents';
+import { collapseEvents, currentStepIndex, formatStepTime } from '../../utils/processEvents';
 import { useConversationProcess } from '../../hooks/useConversationProcess';
 import { agentService } from '../../services/agentService';
 
@@ -54,6 +54,11 @@ const STATUS_ICON: Record<ProcessStatus, React.ReactNode> = {
 const RUN_LABEL: Record<string, { text: string; cls: string }> = {
   running: { text: 'Running', cls: 'is-run' },
   completed: { text: 'Completed', cls: 'is-ok' },
+  warning: { text: 'Warning', cls: 'is-warn' },
+  incomplete_review: { text: 'Incomplete review', cls: 'is-warn' },
+  deferred: { text: 'Deferred', cls: 'is-warn' },
+  qualified: { text: 'Qualified', cls: 'is-warn' },
+  accepted: { text: 'Accepted', cls: 'is-ok' },
   failed: { text: 'Failed', cls: 'is-err' },
   blocked: { text: 'Blocked', cls: 'is-warn' },
   idle: { text: 'Idle', cls: '' },
@@ -107,7 +112,7 @@ const ProcessPanel: React.FC<ProcessPanelProps> = ({ conversationId, active, mes
   const tracked = !!process?.available && process.events.length > 0;
   const events = tracked ? process!.events : fallbackEvents(messages, active);
   const steps = useMemo(() => collapseEvents(events), [events]);
-  const runningIndex = steps.map((s) => s.event.status).lastIndexOf('running');
+  const runningIndex = currentStepIndex(steps, active || process?.status === 'running');
   const analysis = latestAnalysis(messages);
   const plan = tracked ? process!.plan : undefined;
   const outputs = tracked && process!.outputs.length ? process!.outputs : analysis?.files ?? [];
@@ -115,7 +120,9 @@ const ProcessPanel: React.FC<ProcessPanelProps> = ({ conversationId, active, mes
   const runStatus = tracked ? process!.status : active ? 'running' : steps.length ? (steps[steps.length - 1].event.status === 'failed' ? 'failed' : 'completed') : 'idle';
   const latestRoute = [...messages].reverse().find((message) => message.metadata?.route)?.metadata?.route;
   const isPipelineReply = latestRoute === 'pipeline' && runStatus === 'completed';
-  const label = isPipelineReply ? { text: 'Reply finished', cls: 'is-ok' } : RUN_LABEL[runStatus] ?? RUN_LABEL.idle;
+  const isOfflineReply = analysis?.status === 'not_executed_offline_fixture'
+    || analysis?.conclusionReview?.card.text_authorship === 'explicit_offline_placeholder';
+  const label = (isPipelineReply || (isOfflineReply && runStatus === 'completed')) ? { text: 'Reply finished', cls: 'is-ok' } : RUN_LABEL[runStatus] ?? RUN_LABEL.idle;
 
   useEffect(() => {
     if (runningIndex < 0) return undefined;
@@ -232,7 +239,7 @@ const ProcessPanel: React.FC<ProcessPanelProps> = ({ conversationId, active, mes
                     : formatStepTime(event.time, process?.startedAt);
                   return (
                     <li key={step.key} className={`px-step${isCurrent ? ' is-current' : ''}`}>
-                      <span className={`px-step-icon is-${event.status}`} aria-label={event.status}>{STATUS_ICON[event.status]}</span>
+                      <span className={`px-step-icon is-${event.status}`} aria-label={event.status === 'warn' ? 'warning' : event.status}>{STATUS_ICON[event.status]}</span>
                       <div>
                         <button
                           type="button"
@@ -241,6 +248,7 @@ const ProcessPanel: React.FC<ProcessPanelProps> = ({ conversationId, active, mes
                           aria-expanded={hasDetail ? isOpen : undefined}
                         >
                           {isCurrent ? 'Now: ' : ''}{event.title}{step.repeat > 1 ? ` ×${step.repeat}` : ''}
+                          {event.status === 'warn' && <span className="px-tag is-warn">Warning</span>}
                         </button>
                         {event.summary && <span className="px-step-sub">{event.summary}</span>}
                         {isOpen && event.detail && (

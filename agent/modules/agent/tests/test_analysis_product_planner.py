@@ -51,9 +51,9 @@ def setup_products(tmp_path, monkeypatch):
             item = file(mapped, "surface_metric" if name == "thickness" else "surface")
             item["sha256"] = f(p.file_hash(path)[0])
             if name == "thickness":
-                item["metric"] = f({"vertex_count": f(4), "finite_count": f(4)})
+                item["metric"] = f({"vertex_count": f(4), "finite_count": f(4), "ndim": f(1)})
             else:
-                item["surface"] = f({"vertex_count": f(4), "face_count": f(4)})
+                item["surface"] = f({"vertex_count": f(4), "face_count": f(4), "face_width": f(3)})
             rows.append(item)
         for name in ("aparc.annot", "alternate.annot", "cortex.label"):
             path = root / "label" / (hemi + "." + name)
@@ -144,7 +144,7 @@ def test_missing_pial_products_returns_dependency_steps(tmp_path, monkeypatch):
     monkeypatch.setattr(p, "ensure_profile", lambda tools, paths: (saved, True))
     real_load = p.load_knowledge
     step = {"id": "synthetic-surface-supplement", "inputs": ["surface"], "outputs": ["pial_surface"], "input_space": "native", "output_space": "native", "cost": 1}
-    monkeypatch.setattr(p, "load_knowledge", lambda name: ({"steps": [step]}, "a" * 64) if name == "pipeline_dependencies" else real_load(name))
+    monkeypatch.setattr(p, "load_knowledge", lambda name, tools=None: ({"steps": [step]}, "a" * 64) if name == "pipeline_dependencies" else real_load(name, tools))
     result = p.plan_analysis(tools, {"measures": ["gyrification"], "regions": "global"})
     assert not result["candidates"]
     route = result["needs_preprocessing"][0]["preprocessing_plan"]

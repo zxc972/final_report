@@ -69,3 +69,16 @@ it('keeps unmapped conditions separate from executable warnings', () => {
   expect(result.plan?.checks?.warn).toBe(2);
   expect(result.plan?.checks?.items[0].verdict).toBe('unverified');
 });
+
+
+it('treats running to warn as a terminal warning and ignores stale running', () => {
+  const steps = collapseEvents([
+    {seq: 1, time: 1, stage: 'run', status: 'running', title: 'Check', opId: 'r10'},
+    {seq: 2, time: 2, stage: 'run', status: 'warn', title: 'Check warning', opId: 'r10'},
+    {seq: 1, time: 1, stage: 'run', status: 'running', title: 'Check', opId: 'r10'},
+  ]);
+  expect(steps).toHaveLength(1);
+  expect(steps[0].event.status).toBe('warn');
+  expect(parseConversationProcess({enabled: true, status: 'warn', events: []}).status).toBe('warning');
+  expect(parseConversationProcess({enabled: true, status: 'route_failed', events: []}).status).toBe('failed');
+});

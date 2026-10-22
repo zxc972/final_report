@@ -1,0 +1,1442 @@
+{
+  "constraints": {
+    "record": {
+      "condition_templates_sha256": "455a5dde88ca2c29dbcfd3c8c462270159503d6a8cd1b6176219746108dd26d0",
+      "derived_task_categories": [
+        "roi"
+      ],
+      "knowledge_store_sha256": "8b2ec26b35914affb794735eac66a5f12b66351c61599490f19a349585e0a419",
+      "mapping_sha256": "b397e7117e07c628612c26afa1a4bcb2f2902d6ceee2e568d0ffdc88bfba7e31",
+      "method_id": "method:v12:surface_annotation_roi",
+      "plan_context_sha256": "fb4c44ea4a9a7fac71064f1934729d6b0d2f584e1b00e12925ec8f817c831fb4",
+      "profile_sha256": "79f25fc3f9f3b01abf0d8065e4fb53afd97c9f56e663d3ad8f4b189421cbc5ea",
+      "profile_version": 1,
+      "rows": [
+        {
+          "agreement": null,
+          "conflict": false,
+          "constraint_id": "software_available",
+          "model_declared": null,
+          "on_fail": "block",
+          "severity": "hard",
+          "source": [
+            {
+              "source_id": "nibabel_fs",
+              "url": "https://nipy.org/nibabel/reference/nibabel.freesurfer.html"
+            },
+            {
+              "source_id": "andy_roi",
+              "url": "https://andysbrainbook.readthedocs.io/en/latest/FreeSurfer/FS_ShortCourse/FS_11_ROIAnalysis.html"
+            },
+            {
+              "source_id": "fs_parcstats",
+              "url": "https://www.freesurfer.net/fswiki/parcstats"
+            }
+          ],
+          "tool_observed": {
+            "binding_evaluations": [],
+            "commands": [
+              {
+                "accepted_nonzero_version_exit": false,
+                "argv": [
+                  "/opt/analysis/bin/python",
+                  "-I",
+                  "-B",
+                  "-c",
+                  "import nibabel"
+                ],
+                "command": "python:nibabel",
+                "default_path_resolution": null,
+                "environment_policy": "isolated environment; explicit FreeSurfer home for child only",
+                "executable": true,
+                "executable_locations": [
+                  "/opt/analysis/bin/python"
+                ],
+                "executed": true,
+                "exit_code": 0,
+                "locations": [
+                  "/opt/analysis/bin/python"
+                ],
+                "stderr": "",
+                "stdout": ""
+              }
+            ],
+            "evidence_basis": "Actual profile fields plus explicitly labeled plan declarations",
+            "evidence_ref": "data_profile.v000001.json",
+            "execution": {
+              "artifacts": [
+                "constraints.json",
+                "data_card.json",
+                "data_profile.json",
+                "tool_results/inspect_analysis_runtime_6da5d8000be24d3e89cd5a32c8075ee8.json",
+                "tool_results/ls_29b0cd86f57b4b9ab81f006d9a9554c1.json",
+                "tool_results/ls_d580d26e557540d29c25d839694b9e8a.json",
+                "tool_results/read_file_372fdf82f4ca454e85383bd1b6946de8.json",
+                "tool_results/read_file_71ebdbb4082a43e3a6cac65d947fd8b6.json",
+                "tool_results/read_file_79628d2de2e84aecbf4f9484b868dbe7.json",
+                "tool_results/read_file_8fe9200c67a94edca20892d09d5af2e1.json",
+                "tool_results/read_file_a06284c43b03454db9f7157db51f8b3c.json",
+                "tool_results/read_file_dfe52e3b846e4f1ebf8507fd806b6020.json"
+              ],
+              "backend": "apptainer",
+              "exit_code": 0,
+              "resource_limits": {
+                "address_space_bytes": 8589934592,
+                "max_file_size_bytes": 1073741824,
+                "scope": "per_process_address_space_and_per_file_not_aggregate_quota"
+              },
+              "status": "success",
+              "stderr": "",
+              "stderr_truncated": false,
+              "stdout": "PRIMATEX_CONSTRAINT_PROBE={\"commands\": [{\"command\": \"python:nibabel\", \"locations\": [\"/opt/analysis/bin/python\"], \"executable_locations\": [\"/opt/analysis/bin/python\"], \"default_path_resolution\": null, \"executed\": true, \"exit_code\": 0, \"executable\": true, \"argv\": [\"/opt/analysis/bin/python\", \"-I\", \"-B\", \"-c\", \"import nibabel\"], \"environment_policy\": \"isolated environment; explicit FreeSurfer home for child only\", \"stdout\": \"\", \"stderr\": \"\", \"accepted_nonzero_version_exit\": false}]}\n",
+              "stdout_truncated": false
+            },
+            "profile_sha256": "79f25fc3f9f3b01abf0d8065e4fb53afd97c9f56e663d3ad8f4b189421cbc5ea",
+            "reason": "Registered software commands must actually execute in the sandbox",
+            "template_evaluations": [
+              {
+                "condition_id": "software_available:commands",
+                "evidence": {
+                  "commands": [
+                    "python:nibabel"
+                  ],
+                  "execution": {
+                    "artifacts": [
+                      "constraints.json",
+                      "data_card.json",
+                      "data_profile.json",
+                      "tool_results/inspect_analysis_runtime_6da5d8000be24d3e89cd5a32c8075ee8.json",
+                      "tool_results/ls_29b0cd86f57b4b9ab81f006d9a9554c1.json",
+                      "tool_results/ls_d580d26e557540d29c25d839694b9e8a.json",
+                      "tool_results/read_file_372fdf82f4ca454e85383bd1b6946de8.json",
+                      "tool_results/read_file_71ebdbb4082a43e3a6cac65d947fd8b6.json",
+                      "tool_results/read_file_79628d2de2e84aecbf4f9484b868dbe7.json",
+                      "tool_results/read_file_8fe9200c67a94edca20892d09d5af2e1.json",
+                      "tool_results/read_file_a06284c43b03454db9f7157db51f8b3c.json",
+                      "tool_results/read_file_dfe52e3b846e4f1ebf8507fd806b6020.json"
+                    ],
+                    "backend": "apptainer",
+                    "exit_code": 0,
+                    "resource_limits": {
+                      "address_space_bytes": 8589934592,
+                      "max_file_size_bytes": 1073741824,
+                      "scope": "per_process_address_space_and_per_file_not_aggregate_quota"
+                    },
+                    "status": "success",
+                    "stderr": "",
+                    "stderr_truncated": false,
+                    "stdout": "PRIMATEX_CONSTRAINT_PROBE={\"commands\": [{\"command\": \"python:nibabel\", \"locations\": [\"/opt/analysis/bin/python\"], \"executable_locations\": [\"/opt/analysis/bin/python\"], \"default_path_resolution\": null, \"executed\": true, \"exit_code\": 0, \"executable\": true, \"argv\": [\"/opt/analysis/bin/python\", \"-I\", \"-B\", \"-c\", \"import nibabel\"], \"environment_policy\": \"isolated environment; explicit FreeSurfer home for child only\", \"stdout\": \"\", \"stderr\": \"\", \"accepted_nonzero_version_exit\": false}]}\n",
+                    "stdout_truncated": false
+                  },
+                  "observations": [
+                    {
+                      "accepted_nonzero_version_exit": false,
+                      "argv": [
+                        "/opt/analysis/bin/python",
+                        "-I",
+                        "-B",
+                        "-c",
+                        "import nibabel"
+                      ],
+                      "command": "python:nibabel",
+                      "default_path_resolution": null,
+                      "environment_policy": "isolated environment; explicit FreeSurfer home for child only",
+                      "executable": true,
+                      "executable_locations": [
+                        "/opt/analysis/bin/python"
+                      ],
+                      "executed": true,
+                      "exit_code": 0,
+                      "locations": [
+                        "/opt/analysis/bin/python"
+                      ],
+                      "stderr": "",
+                      "stdout": ""
+                    }
+                  ]
+                },
+                "reason": "Actual fixed sandbox command probes",
+                "source": [
+                  {
+                    "method_fact_id": "method-fact:a57a64d55b4ab23e45cfbb8d",
+                    "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/LGI"
+                  }
+                ],
+                "template": "software",
+                "verdict": "pass"
+              }
+            ]
+          },
+          "verdict": "pass"
+        },
+        {
+          "agreement": null,
+          "conflict": false,
+          "constraint_id": "recon_history:disclosure",
+          "model_declared": null,
+          "on_fail": "warn_and_disclose",
+          "severity": "soft",
+          "source": [
+            {
+              "source_id": "nibabel_fs",
+              "url": "https://nipy.org/nibabel/reference/nibabel.freesurfer.html"
+            },
+            {
+              "source_id": "andy_roi",
+              "url": "https://andysbrainbook.readthedocs.io/en/latest/FreeSurfer/FS_ShortCourse/FS_11_ROIAnalysis.html"
+            },
+            {
+              "source_id": "fs_parcstats",
+              "url": "https://www.freesurfer.net/fswiki/parcstats"
+            }
+          ],
+          "tool_observed": {
+            "binding_evaluations": [],
+            "evidence_basis": "Actual profile fields plus explicitly labeled plan declarations",
+            "evidence_ref": "data_profile.v000001.json",
+            "policy": "Product contract scope, grounded in the selected method inputs",
+            "profile_sha256": "79f25fc3f9f3b01abf0d8065e4fb53afd97c9f56e663d3ad8f4b189421cbc5ea",
+            "reason": "Supplied-derivative read only; reconstruction history is not certified",
+            "template_evaluations": [
+              {
+                "condition_id": "recon_complete:observations",
+                "evidence": {
+                  "records": [
+                    {
+                      "done": true,
+                      "error_count": 25,
+                      "error_lines": [
+                        452,
+                        798,
+                        834,
+                        1485,
+                        1894,
+                        2524,
+                        2951,
+                        3108,
+                        3431,
+                        3612,
+                        3613,
+                        3615,
+                        3617,
+                        3625,
+                        3626,
+                        3628,
+                        3630,
+                        3713,
+                        3771,
+                        3996,
+                        4097,
+                        4302,
+                        4510,
+                        4726,
+                        4980
+                      ],
+                      "fatal_count": 0,
+                      "fatal_lines": []
+                    },
+                    {
+                      "done": true,
+                      "error_count": 25,
+                      "error_lines": [
+                        452,
+                        798,
+                        834,
+                        1485,
+                        1894,
+                        2524,
+                        2951,
+                        3108,
+                        3431,
+                        3612,
+                        3613,
+                        3615,
+                        3617,
+                        3625,
+                        3626,
+                        3628,
+                        3630,
+                        3713,
+                        3771,
+                        3996,
+                        4097,
+                        4302,
+                        4510,
+                        4726,
+                        4980
+                      ],
+                      "fatal_count": 0,
+                      "fatal_lines": []
+                    },
+                    {
+                      "done": true,
+                      "error_count": 25,
+                      "error_lines": [
+                        452,
+                        798,
+                        834,
+                        1485,
+                        1894,
+                        2524,
+                        2951,
+                        3108,
+                        3431,
+                        3612,
+                        3613,
+                        3615,
+                        3617,
+                        3625,
+                        3626,
+                        3628,
+                        3630,
+                        3713,
+                        3771,
+                        3996,
+                        4097,
+                        4302,
+                        4510,
+                        4726,
+                        4980
+                      ],
+                      "fatal_count": 0,
+                      "fatal_lines": []
+                    },
+                    {
+                      "done": true,
+                      "error_count": 25,
+                      "error_lines": [
+                        452,
+                        798,
+                        834,
+                        1485,
+                        1894,
+                        2524,
+                        2951,
+                        3108,
+                        3431,
+                        3612,
+                        3613,
+                        3615,
+                        3617,
+                        3625,
+                        3626,
+                        3628,
+                        3630,
+                        3713,
+                        3771,
+                        3996,
+                        4097,
+                        4302,
+                        4510,
+                        4726,
+                        4980
+                      ],
+                      "fatal_count": 0,
+                      "fatal_lines": []
+                    },
+                    {
+                      "done": true,
+                      "error_count": 25,
+                      "error_lines": [
+                        452,
+                        798,
+                        834,
+                        1485,
+                        1894,
+                        2524,
+                        2951,
+                        3108,
+                        3431,
+                        3612,
+                        3613,
+                        3615,
+                        3617,
+                        3625,
+                        3626,
+                        3628,
+                        3630,
+                        3713,
+                        3771,
+                        3996,
+                        4097,
+                        4302,
+                        4510,
+                        4726,
+                        4980
+                      ],
+                      "fatal_count": 0,
+                      "fatal_lines": []
+                    },
+                    {
+                      "done": true,
+                      "error_count": 25,
+                      "error_lines": [
+                        452,
+                        798,
+                        834,
+                        1485,
+                        1894,
+                        2524,
+                        2951,
+                        3108,
+                        3431,
+                        3612,
+                        3613,
+                        3615,
+                        3617,
+                        3625,
+                        3626,
+                        3628,
+                        3630,
+                        3713,
+                        3771,
+                        3996,
+                        4097,
+                        4302,
+                        4510,
+                        4726,
+                        4980
+                      ],
+                      "fatal_count": 0,
+                      "fatal_lines": []
+                    },
+                    {
+                      "done": true,
+                      "error_count": 25,
+                      "error_lines": [
+                        452,
+                        798,
+                        834,
+                        1485,
+                        1894,
+                        2524,
+                        2951,
+                        3108,
+                        3431,
+                        3612,
+                        3613,
+                        3615,
+                        3617,
+                        3625,
+                        3626,
+                        3628,
+                        3630,
+                        3713,
+                        3771,
+                        3996,
+                        4097,
+                        4302,
+                        4510,
+                        4726,
+                        4980
+                      ],
+                      "fatal_count": 0,
+                      "fatal_lines": []
+                    },
+                    {
+                      "done": true,
+                      "error_count": 25,
+                      "error_lines": [
+                        452,
+                        798,
+                        834,
+                        1485,
+                        1894,
+                        2524,
+                        2951,
+                        3108,
+                        3431,
+                        3612,
+                        3613,
+                        3615,
+                        3617,
+                        3625,
+                        3626,
+                        3628,
+                        3630,
+                        3713,
+                        3771,
+                        3996,
+                        4097,
+                        4302,
+                        4510,
+                        4726,
+                        4980
+                      ],
+                      "fatal_count": 0,
+                      "fatal_lines": []
+                    },
+                    {
+                      "done": true,
+                      "error_count": 25,
+                      "error_lines": [
+                        452,
+                        798,
+                        834,
+                        1485,
+                        1894,
+                        2524,
+                        2951,
+                        3108,
+                        3431,
+                        3612,
+                        3613,
+                        3615,
+                        3617,
+                        3625,
+                        3626,
+                        3628,
+                        3630,
+                        3713,
+                        3771,
+                        3996,
+                        4097,
+                        4302,
+                        4510,
+                        4726,
+                        4980
+                      ],
+                      "fatal_count": 0,
+                      "fatal_lines": []
+                    },
+                    {
+                      "done": true,
+                      "error_count": 25,
+                      "error_lines": [
+                        452,
+                        798,
+                        834,
+                        1485,
+                        1894,
+                        2524,
+                        2951,
+                        3108,
+                        3431,
+                        3612,
+                        3613,
+                        3615,
+                        3617,
+                        3625,
+                        3626,
+                        3628,
+                        3630,
+                        3713,
+                        3771,
+                        3996,
+                        4097,
+                        4302,
+                        4510,
+                        4726,
+                        4980
+                      ],
+                      "fatal_count": 0,
+                      "fatal_lines": []
+                    }
+                  ],
+                  "scope": "Completion marker/log observations; model explanations cannot waive FATAL"
+                },
+                "reason": "Source-bound provenance observations; declarations are labeled separately",
+                "source": [
+                  {
+                    "method_fact_id": "method-fact:d4f50f947f3e85a0aec16506",
+                    "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/LGI"
+                  },
+                  {
+                    "method_fact_id": "method-fact:88a7331bf51d3a379e11279f",
+                    "note": "Completion is not anatomical QC."
+                  }
+                ],
+                "template": "provenance",
+                "verdict": "pass"
+              }
+            ]
+          },
+          "verdict": "pass"
+        },
+        {
+          "agreement": null,
+          "conflict": false,
+          "constraint_id": "unassigned_labels_excluded",
+          "model_declared": null,
+          "on_fail": "revise",
+          "severity": "hard",
+          "source": [
+            {
+              "case": "matched_v2/kg/rep2: extra lh/label_-1 and rh/label_-1; exact_parcels failed",
+              "path": "matched_v2_failure_provenance.json",
+              "sha256": "5cf7cd0def7bacadc800629fb795d867e36934e528c7522485b9f05c95770bd2",
+              "type": "observed_failure"
+            },
+            {
+              "note": "orig_ids=False assigns -1 to unlabeled vertices.",
+              "url": "https://nipy.org/nibabel/reference/nibabel.freesurfer.html#read-annot"
+            }
+          ],
+          "tool_observed": {
+            "binding_evaluations": [],
+            "evidence_basis": "Actual profile fields plus explicitly labeled plan declarations",
+            "evidence_ref": "data_profile.v000001.json",
+            "profile_sha256": "79f25fc3f9f3b01abf0d8065e4fb53afd97c9f56e663d3ad8f4b189421cbc5ea",
+            "reason": "Legacy declaration guard; retained-set enforcement is available in the generic label_policy template",
+            "template_evaluations": [
+              {
+                "condition_id": "unassigned_labels_excluded:policy",
+                "evidence": {
+                  "declared_exclusions": [
+                    -1,
+                    "unknown",
+                    "medialwall",
+                    "corpuscallosum"
+                  ],
+                  "required_exclusions": [
+                    -1,
+                    "unknown",
+                    -1,
+                    "unknown"
+                  ],
+                  "retained_label_sets": {
+                    "/inputs/0/label/lh.mpm.vpnl.annot": [
+                      1,
+                      2,
+                      3,
+                      4,
+                      5,
+                      6,
+                      7,
+                      8
+                    ],
+                    "/inputs/0/label/rh.mpm.vpnl.annot": [
+                      1,
+                      2,
+                      3,
+                      4,
+                      5,
+                      6,
+                      7,
+                      8
+                    ]
+                  },
+                  "scope": "Declaration/observation checks do not verify generated-code semantics",
+                  "unreadable": []
+                },
+                "reason": "Observed labels, explicit exclusions and retained label sets",
+                "source": [
+                  {
+                    "case": "matched_v2/kg/rep2: extra lh/label_-1 and rh/label_-1; exact_parcels failed",
+                    "path": "matched_v2_failure_provenance.json",
+                    "sha256": "5cf7cd0def7bacadc800629fb795d867e36934e528c7522485b9f05c95770bd2",
+                    "type": "observed_failure"
+                  },
+                  {
+                    "note": "orig_ids=False assigns -1 to unlabeled vertices.",
+                    "url": "https://nipy.org/nibabel/reference/nibabel.freesurfer.html#read-annot"
+                  }
+                ],
+                "template": "label_policy",
+                "verdict": "pass"
+              }
+            ]
+          },
+          "verdict": "pass"
+        },
+        {
+          "agreement": null,
+          "conflict": false,
+          "constraint_id": "mesh_label_match",
+          "model_declared": null,
+          "on_fail": "revise",
+          "severity": "hard",
+          "source": [
+            {
+              "method_fact_id": "method-fact:1c150a35562383188f51cb4a",
+              "url": "https://nipy.org/nibabel/reference/nibabel.freesurfer.html"
+            },
+            {
+              "note": "Space/provenance requirement specified in chapter-four experimental protocol; not a claim of automatic anatomical registration validation.",
+              "type": "implementation_policy"
+            }
+          ],
+          "tool_observed": {
+            "binding_evaluations": [
+              {
+                "rows": [
+                  {
+                    "condition_id": "mesh_label_match:one_binding",
+                    "evidence": {
+                      "count": 1,
+                      "maximum": 1,
+                      "minimum": 1
+                    },
+                    "reason": "Observed cardinality",
+                    "source": [
+                      {
+                        "method_fact_id": "method-fact:1c150a35562383188f51cb4a",
+                        "url": "https://nipy.org/nibabel/reference/nibabel.freesurfer.html"
+                      },
+                      {
+                        "note": "Space/provenance requirement specified in chapter-four experimental protocol; not a claim of automatic anatomical registration validation.",
+                        "type": "implementation_policy"
+                      }
+                    ],
+                    "template": "cardinality",
+                    "verdict": "pass"
+                  },
+                  {
+                    "condition_id": "mesh_label_match:surface_present",
+                    "evidence": {
+                      "matches": [
+                        "/inputs/0/surf/lh.white"
+                      ],
+                      "optional": false,
+                      "slot": "surface"
+                    },
+                    "reason": "Observed typed slot candidates",
+                    "source": [
+                      {
+                        "method_fact_id": "method-fact:1c150a35562383188f51cb4a",
+                        "url": "https://nipy.org/nibabel/reference/nibabel.freesurfer.html"
+                      },
+                      {
+                        "note": "Space/provenance requirement specified in chapter-four experimental protocol; not a claim of automatic anatomical registration validation.",
+                        "type": "implementation_policy"
+                      }
+                    ],
+                    "template": "product_present",
+                    "verdict": "pass"
+                  },
+                  {
+                    "condition_id": "mesh_label_match:mesh",
+                    "evidence": {
+                      "attribute": "mesh",
+                      "products": [
+                        "/inputs/0/surf/lh.white",
+                        "/inputs/0/label/lh.mpm.vpnl.annot"
+                      ],
+                      "values": [
+                        123824,
+                        123824
+                      ]
+                    },
+                    "reason": "Compare observed attribute values; unknown is not equality",
+                    "source": [
+                      {
+                        "method_fact_id": "method-fact:1c150a35562383188f51cb4a",
+                        "url": "https://nipy.org/nibabel/reference/nibabel.freesurfer.html"
+                      },
+                      {
+                        "note": "Space/provenance requirement specified in chapter-four experimental protocol; not a claim of automatic anatomical registration validation.",
+                        "type": "implementation_policy"
+                      }
+                    ],
+                    "template": "attr_equal",
+                    "verdict": "pass"
+                  },
+                  {
+                    "condition_id": "mesh_label_match:provenance",
+                    "evidence": {
+                      "records": [
+                        {
+                          "declared_origin_and_space": true,
+                          "registration_ref": "/inputs/0/surf/lh.sphere.reg",
+                          "registration_sha256": "e8867835c3d4fa1fbb986225d1fcfbc2c2b4813c969d3839a378d1e01cb157ad",
+                          "scope": "Recorded declaration and actual profiled reference fingerprint; not anatomical correspondence"
+                        }
+                      ],
+                      "scope": "Fingerprint and recorded origin/space; equality does not establish anatomical correspondence"
+                    },
+                    "reason": "Source-bound provenance observations; declarations are labeled separately",
+                    "source": [
+                      {
+                        "method_fact_id": "method-fact:1c150a35562383188f51cb4a",
+                        "url": "https://nipy.org/nibabel/reference/nibabel.freesurfer.html"
+                      },
+                      {
+                        "note": "Space/provenance requirement specified in chapter-four experimental protocol; not a claim of automatic anatomical registration validation.",
+                        "type": "implementation_policy"
+                      }
+                    ],
+                    "template": "provenance",
+                    "verdict": "pass"
+                  }
+                ],
+                "verdict": "pass"
+              },
+              {
+                "rows": [
+                  {
+                    "condition_id": "mesh_label_match:one_binding",
+                    "evidence": {
+                      "count": 1,
+                      "maximum": 1,
+                      "minimum": 1
+                    },
+                    "reason": "Observed cardinality",
+                    "source": [
+                      {
+                        "method_fact_id": "method-fact:1c150a35562383188f51cb4a",
+                        "url": "https://nipy.org/nibabel/reference/nibabel.freesurfer.html"
+                      },
+                      {
+                        "note": "Space/provenance requirement specified in chapter-four experimental protocol; not a claim of automatic anatomical registration validation.",
+                        "type": "implementation_policy"
+                      }
+                    ],
+                    "template": "cardinality",
+                    "verdict": "pass"
+                  },
+                  {
+                    "condition_id": "mesh_label_match:surface_present",
+                    "evidence": {
+                      "matches": [
+                        "/inputs/0/surf/rh.white"
+                      ],
+                      "optional": false,
+                      "slot": "surface"
+                    },
+                    "reason": "Observed typed slot candidates",
+                    "source": [
+                      {
+                        "method_fact_id": "method-fact:1c150a35562383188f51cb4a",
+                        "url": "https://nipy.org/nibabel/reference/nibabel.freesurfer.html"
+                      },
+                      {
+                        "note": "Space/provenance requirement specified in chapter-four experimental protocol; not a claim of automatic anatomical registration validation.",
+                        "type": "implementation_policy"
+                      }
+                    ],
+                    "template": "product_present",
+                    "verdict": "pass"
+                  },
+                  {
+                    "condition_id": "mesh_label_match:mesh",
+                    "evidence": {
+                      "attribute": "mesh",
+                      "products": [
+                        "/inputs/0/surf/rh.white",
+                        "/inputs/0/label/rh.mpm.vpnl.annot"
+                      ],
+                      "values": [
+                        126687,
+                        126687
+                      ]
+                    },
+                    "reason": "Compare observed attribute values; unknown is not equality",
+                    "source": [
+                      {
+                        "method_fact_id": "method-fact:1c150a35562383188f51cb4a",
+                        "url": "https://nipy.org/nibabel/reference/nibabel.freesurfer.html"
+                      },
+                      {
+                        "note": "Space/provenance requirement specified in chapter-four experimental protocol; not a claim of automatic anatomical registration validation.",
+                        "type": "implementation_policy"
+                      }
+                    ],
+                    "template": "attr_equal",
+                    "verdict": "pass"
+                  },
+                  {
+                    "condition_id": "mesh_label_match:provenance",
+                    "evidence": {
+                      "records": [
+                        {
+                          "declared_origin_and_space": true,
+                          "registration_ref": "/inputs/0/surf/rh.sphere.reg",
+                          "registration_sha256": "1e09ad0ddf218d000f2b35a0ff456f1e66213330820282c3a29fa7fcbdb76bc7",
+                          "scope": "Recorded declaration and actual profiled reference fingerprint; not anatomical correspondence"
+                        }
+                      ],
+                      "scope": "Fingerprint and recorded origin/space; equality does not establish anatomical correspondence"
+                    },
+                    "reason": "Source-bound provenance observations; declarations are labeled separately",
+                    "source": [
+                      {
+                        "method_fact_id": "method-fact:1c150a35562383188f51cb4a",
+                        "url": "https://nipy.org/nibabel/reference/nibabel.freesurfer.html"
+                      },
+                      {
+                        "note": "Space/provenance requirement specified in chapter-four experimental protocol; not a claim of automatic anatomical registration validation.",
+                        "type": "implementation_policy"
+                      }
+                    ],
+                    "template": "provenance",
+                    "verdict": "pass"
+                  }
+                ],
+                "verdict": "pass"
+              }
+            ],
+            "evidence_basis": "Actual profile fields plus explicitly labeled plan declarations",
+            "evidence_ref": "data_profile.v000001.json",
+            "profile_sha256": "79f25fc3f9f3b01abf0d8065e4fb53afd97c9f56e663d3ad8f4b189421cbc5ea",
+            "reason": "Actual geometry/annotation cardinality plus explicit origin/space and observed reference fingerprint",
+            "template_evaluations": [
+              {
+                "condition_id": "mesh_label_match:required_annotation",
+                "evidence": {
+                  "matches": [
+                    "/inputs/0/label/lh.mpm.vpnl.annot",
+                    "/inputs/0/label/rh.mpm.vpnl.annot"
+                  ],
+                  "optional": false,
+                  "slot": "annotations"
+                },
+                "reason": "Observed typed slot candidates",
+                "source": [
+                  {
+                    "method_fact_id": "method-fact:1c150a35562383188f51cb4a",
+                    "url": "https://nipy.org/nibabel/reference/nibabel.freesurfer.html"
+                  },
+                  {
+                    "note": "Space/provenance requirement specified in chapter-four experimental protocol; not a claim of automatic anatomical registration validation.",
+                    "type": "implementation_policy"
+                  }
+                ],
+                "template": "product_present",
+                "verdict": "pass"
+              }
+            ]
+          },
+          "verdict": "pass"
+        },
+        {
+          "agreement": null,
+          "conflict": false,
+          "constraint_id": "scale_consistent",
+          "model_declared": null,
+          "on_fail": "revise",
+          "severity": "hard",
+          "source": [
+            {
+              "note": "Header zooms, units and selected affine require explicit interpretation; resolution difference alone is not physical scale misuse.",
+              "url": "https://nipy.org/nibabel/nifti_images.html"
+            },
+            {
+              "note": "Cross-species calibration and no-scale-mixing rule are project requirements.",
+              "type": "implementation_policy"
+            }
+          ],
+          "tool_observed": {
+            "binding_evaluations": [],
+            "evidence_basis": "Actual profile fields plus explicitly labeled plan declarations",
+            "evidence_ref": "data_profile.v000001.json",
+            "profile_sha256": "79f25fc3f9f3b01abf0d8065e4fb53afd97c9f56e663d3ad8f4b189421cbc5ea",
+            "reason": "Preserves explicit scale/conversion guards; filename tags are weak conventions, not verified physical scaling",
+            "template_evaluations": [
+              {
+                "condition_id": "scale_consistent:coded_affine",
+                "evidence": {
+                  "records": [],
+                  "scope": null
+                },
+                "reason": "Source-bound provenance observations; declarations are labeled separately",
+                "source": [
+                  {
+                    "note": "Header zooms, units and selected affine require explicit interpretation; resolution difference alone is not physical scale misuse.",
+                    "url": "https://nipy.org/nibabel/nifti_images.html"
+                  },
+                  {
+                    "note": "Cross-species calibration and no-scale-mixing rule are project requirements.",
+                    "type": "implementation_policy"
+                  }
+                ],
+                "template": "provenance",
+                "verdict": "pass"
+              },
+              {
+                "condition_id": "scale_consistent:units",
+                "evidence": {
+                  "attribute": "unit",
+                  "products": [],
+                  "values": []
+                },
+                "reason": "Compare observed attribute values; unknown is not equality",
+                "source": [
+                  {
+                    "note": "Header zooms, units and selected affine require explicit interpretation; resolution difference alone is not physical scale misuse.",
+                    "url": "https://nipy.org/nibabel/nifti_images.html"
+                  },
+                  {
+                    "note": "Cross-species calibration and no-scale-mixing rule are project requirements.",
+                    "type": "implementation_policy"
+                  }
+                ],
+                "template": "attr_equal",
+                "verdict": "pass"
+              }
+            ]
+          },
+          "verdict": "pass"
+        },
+        {
+          "agreement": null,
+          "conflict": false,
+          "constraint_id": "product_metric_mesh_identity",
+          "model_declared": null,
+          "on_fail": "block",
+          "severity": "hard",
+          "source": [
+            {
+              "source_id": "nibabel_fs",
+              "url": "https://nipy.org/nibabel/reference/nibabel.freesurfer.html"
+            },
+            {
+              "source_id": "andy_roi",
+              "url": "https://andysbrainbook.readthedocs.io/en/latest/FreeSurfer/FS_ShortCourse/FS_11_ROIAnalysis.html"
+            },
+            {
+              "source_id": "fs_parcstats",
+              "url": "https://www.freesurfer.net/fswiki/parcstats"
+            }
+          ],
+          "tool_observed": {
+            "evidence_ref": "data_profile.v000001.json",
+            "issues": [],
+            "reason": "Actual metric/mesh lengths and finite counts; not anatomical validation"
+          },
+          "verdict": "pass"
+        },
+        {
+          "agreement": null,
+          "conflict": false,
+          "constraint_id": "scale_consistent:physical_scale",
+          "model_declared": null,
+          "on_fail": "warn_and_disclose",
+          "severity": "soft",
+          "tool_observed": {
+            "evidence_ref": "data_profile.v000001.json",
+            "reason": "Physical acquisition scale not independently verified; disclose stored-coordinate interpretation",
+            "verified": null
+          },
+          "verdict": "warn"
+        },
+        {
+          "agreement": null,
+          "conflict": false,
+          "constraint_id": "condition:method-fact:63efa81b48f41daf378e19a6",
+          "model_declared": null,
+          "on_fail": "warn_and_disclose",
+          "severity": "soft",
+          "source": [
+            {
+              "method_fact_id": "method-fact:63efa81b48f41daf378e19a6"
+            }
+          ],
+          "template": "advisory",
+          "tool_observed": {
+            "condition_id": "condition:method-fact:63efa81b48f41daf378e19a6",
+            "evidence": {
+              "executable": false,
+              "reason_not_executable": "Import success or current-file parsing does not test both historical format versions.",
+              "status": "advisory"
+            },
+            "evidence_ref": "data_profile.v000001.json",
+            "reason": "Reader support for annotation formats 1 and 2 is a software API capability statement; current profile does not independently inspect both layouts.",
+            "source": [
+              {
+                "method_fact_id": "method-fact:63efa81b48f41daf378e19a6"
+              }
+            ],
+            "template": "advisory",
+            "verdict": "warn"
+          },
+          "verdict": "warn"
+        },
+        {
+          "agreement": null,
+          "conflict": false,
+          "constraint_id": "condition:method-fact:0b90a4102963b2f8bab017ef",
+          "model_declared": null,
+          "on_fail": "warn_and_disclose",
+          "severity": "soft",
+          "source": [
+            {
+              "method_fact_id": "method-fact:0b90a4102963b2f8bab017ef"
+            }
+          ],
+          "template": "advisory",
+          "tool_observed": {
+            "condition_id": "condition:method-fact:0b90a4102963b2f8bab017ef",
+            "evidence": {
+              "executable": false,
+              "reason_not_executable": "A five-column array alone cannot empirically establish transparency-versus-alpha semantics.",
+              "status": "advisory"
+            },
+            "evidence_ref": "data_profile.v000001.json",
+            "reason": "The NiBabel color-table return is documented as RGBT; preserve that API convention.",
+            "source": [
+              {
+                "method_fact_id": "method-fact:0b90a4102963b2f8bab017ef"
+              }
+            ],
+            "template": "advisory",
+            "verdict": "warn"
+          },
+          "verdict": "warn"
+        },
+        {
+          "agreement": null,
+          "conflict": false,
+          "constraint_id": "condition:method-fact:44c05d9e9a8e92569b91a711",
+          "model_declared": null,
+          "on_fail": "warn_and_disclose",
+          "severity": "soft",
+          "source": [
+            {
+              "method_fact_id": "method-fact:44c05d9e9a8e92569b91a711"
+            }
+          ],
+          "template": "advisory",
+          "tool_observed": {
+            "condition_id": "condition:method-fact:44c05d9e9a8e92569b91a711",
+            "evidence": {
+              "executable": false,
+              "reason_not_executable": "The selected recipe does not write morphometry files.",
+              "status": "not_applicable"
+            },
+            "evidence_ref": "data_profile.v000001.json",
+            "reason": "Supported shapes for write_morph_data are not an execution prerequisite of this read-only summary.",
+            "source": [
+              {
+                "method_fact_id": "method-fact:44c05d9e9a8e92569b91a711"
+              }
+            ],
+            "template": "advisory",
+            "verdict": "warn"
+          },
+          "verdict": "warn"
+        },
+        {
+          "agreement": null,
+          "conflict": false,
+          "constraint_id": "condition:method-fact:11bed30ee564aa991d4926ed",
+          "model_declared": null,
+          "on_fail": "block",
+          "severity": "hard",
+          "source": [
+            {
+              "method_fact_id": "method-fact:11bed30ee564aa991d4926ed"
+            }
+          ],
+          "template": "attr_in",
+          "tool_observed": {
+            "condition_id": "condition:method-fact:11bed30ee564aa991d4926ed",
+            "evidence": {
+              "allowed": [
+                1
+              ],
+              "attribute": "vector_ndim",
+              "values": [
+                1,
+                1
+              ]
+            },
+            "evidence_ref": "data_profile.v000001.json",
+            "reason": "Observed attributes must belong to the registered value domain",
+            "source": [
+              {
+                "method_fact_id": "method-fact:11bed30ee564aa991d4926ed"
+              }
+            ],
+            "template": "attr_in",
+            "verdict": "pass"
+          },
+          "verdict": "pass"
+        },
+        {
+          "agreement": null,
+          "conflict": false,
+          "constraint_id": "condition:method-fact:3b74adb32cb4a1624251c912",
+          "model_declared": null,
+          "on_fail": "block",
+          "severity": "hard",
+          "source": [
+            {
+              "method_fact_id": "method-fact:3b74adb32cb4a1624251c912"
+            }
+          ],
+          "template": "product_present",
+          "tool_observed": {
+            "condition_id": "condition:method-fact:3b74adb32cb4a1624251c912",
+            "evidence": {
+              "matches": [
+                "/inputs/0/label/lh.cortex.label",
+                "/inputs/0/label/rh.cortex.label"
+              ],
+              "optional": true,
+              "slot": "labels"
+            },
+            "evidence_ref": "data_profile.v000001.json",
+            "reason": "Observed typed slot candidates",
+            "source": [
+              {
+                "method_fact_id": "method-fact:3b74adb32cb4a1624251c912"
+              }
+            ],
+            "template": "product_present",
+            "verdict": "pass"
+          },
+          "verdict": "pass"
+        },
+        {
+          "agreement": null,
+          "conflict": false,
+          "constraint_id": "condition:method-fact:6845313ae380dd39c60d3d96",
+          "model_declared": null,
+          "on_fail": "block",
+          "severity": "hard",
+          "source": [
+            {
+              "method_fact_id": "method-fact:6845313ae380dd39c60d3d96"
+            }
+          ],
+          "template": "attr_in",
+          "tool_observed": {
+            "condition_id": "condition:method-fact:6845313ae380dd39c60d3d96",
+            "evidence": {
+              "allowed": [
+                3
+              ],
+              "attribute": "face_width",
+              "values": [
+                3,
+                3,
+                3,
+                3
+              ]
+            },
+            "evidence_ref": "data_profile.v000001.json",
+            "reason": "Observed attributes must belong to the registered value domain",
+            "source": [
+              {
+                "method_fact_id": "method-fact:6845313ae380dd39c60d3d96"
+              }
+            ],
+            "template": "attr_in",
+            "verdict": "pass"
+          },
+          "verdict": "pass"
+        },
+        {
+          "agreement": null,
+          "conflict": false,
+          "constraint_id": "cross:species_atlas",
+          "model_declared": null,
+          "on_fail": "block",
+          "severity": "hard",
+          "source": [
+            {
+              "scope": "CHARM macaque six-level hierarchy",
+              "url": "https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/nonhuman/macaque_tempatl/atlas_charm.html"
+            },
+            {
+              "scope": "Human DK atlas",
+              "url": "https://surfer.nmr.mgh.harvard.edu/ftp/articles/desikan06-parcellation.pdf"
+            },
+            {
+              "scope": "SARM is the Subcortical Atlas of the Rhesus Macaque; it cannot fill a cortical atlas slot",
+              "url": "https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/nonhuman/macaque_tempatl/atlas_sarm.html"
+            }
+          ],
+          "template": "species_atlas",
+          "tool_observed": {
+            "evidence": {
+              "atlas": "mpm.vpnl",
+              "required_atlases": {
+                "human": [
+                  "DK",
+                  "DKT",
+                  "Destrieux"
+                ],
+                "macaque": [
+                  "CHARM",
+                  "SARM",
+                  "D99"
+                ]
+              },
+              "species": [
+                "human"
+              ],
+              "species_source": [
+                {
+                  "method": "Authenticated approved-root declaration",
+                  "path": "/data/xuancheng/agent_round12_trial_20261022/cohort_b/data_catalog.json",
+                  "subject": "100610"
+                }
+              ]
+            },
+            "reason": "Atlas is outside the declared species system",
+            "verdict": "block"
+          },
+          "verdict": "block"
+        },
+        {
+          "agreement": null,
+          "conflict": false,
+          "constraint_id": "cross:homology_evidence",
+          "model_declared": null,
+          "on_fail": "block",
+          "severity": "hard",
+          "source": [
+            {
+              "authority": "User-approved project policy; not a universal scientific prohibition",
+              "document": "第四章提纲_参考BrainResearcher与NEURA_20261021.docx",
+              "section": "3.4,3.7",
+              "sha256": "fae1e06aa28671e4daa195d5c1c0456c73d11281fd53d0181fe74d466efeeb7c"
+            }
+          ],
+          "template": "homology_evidence",
+          "tool_observed": {
+            "evidence": {},
+            "reason": "Not a cross-species comparison",
+            "verdict": "pass"
+          },
+          "verdict": "pass"
+        },
+        {
+          "agreement": null,
+          "conflict": false,
+          "constraint_id": "cross:scale_check",
+          "model_declared": null,
+          "on_fail": "warn_and_disclose",
+          "severity": "soft",
+          "source": [
+            {
+              "authority": "User-approved project policy; not a universal scientific prohibition",
+              "document": "第四章提纲_参考BrainResearcher与NEURA_20261021.docx",
+              "section": "3.4,3.7",
+              "sha256": "fae1e06aa28671e4daa195d5c1c0456c73d11281fd53d0181fe74d466efeeb7c"
+            }
+          ],
+          "template": "scale_check",
+          "tool_observed": {
+            "conclusion_ceiling": "qualified",
+            "evidence": {
+              "scale": {}
+            },
+            "reason": "Rescale status or factor is unverified",
+            "verdict": "warn"
+          },
+          "verdict": "warn"
+        },
+        {
+          "agreement": null,
+          "conflict": false,
+          "constraint_id": "cross:plausibility",
+          "model_declared": null,
+          "on_fail": "warn_and_disclose",
+          "severity": "soft",
+          "source": [
+            {
+              "doi": "10.1016/j.neuroimage.2020.116800",
+              "id": "source:Autio2020",
+              "review_status": "AI source-locator checked; not expert normative review",
+              "title": "Towards HCP-Style Macaque Connectomes",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7116593/"
+            },
+            {
+              "authority": "User-approved project policy; not a universal scientific prohibition",
+              "document": "第四章提纲_参考BrainResearcher与NEURA_20261021.docx",
+              "section": "3.4,3.7",
+              "sha256": "fae1e06aa28671e4daa195d5c1c0456c73d11281fd53d0181fe74d466efeeb7c"
+            }
+          ],
+          "template": "plausibility",
+          "tool_observed": {
+            "evidence": {},
+            "reason": "No global physical measurement to compare",
+            "verdict": "pass"
+          },
+          "verdict": "pass"
+        },
+        {
+          "agreement": null,
+          "conflict": false,
+          "constraint_id": "cross:asymmetry_flip",
+          "model_declared": null,
+          "on_fail": "warn_and_disclose",
+          "severity": "soft",
+          "source": [
+            {
+              "doi": "10.1007/s00429-025-02989-3",
+              "id": "source:Liu2025",
+              "locator": "Abstract and symmetric-atlas/vertex-wise methods",
+              "scope": "Human surface-area parcellation asymmetry; transfer to other species is conservative project policy",
+              "url": "https://sites.bu.edu/cnrlab/files/2025/08/Liu-Choi-Perrachione-2025-Brain-Structure-Function.pdf"
+            },
+            {
+              "authority": "User-approved project policy; not a universal scientific prohibition",
+              "document": "第四章提纲_参考BrainResearcher与NEURA_20261021.docx",
+              "section": "3.4,3.7",
+              "sha256": "fae1e06aa28671e4daa195d5c1c0456c73d11281fd53d0181fe74d466efeeb7c"
+            }
+          ],
+          "template": "asymmetry_flip",
+          "tool_observed": {
+            "evidence": {},
+            "reason": "Not an asymmetry analysis",
+            "verdict": "pass"
+          },
+          "verdict": "pass"
+        },
+        {
+          "agreement": null,
+          "conflict": false,
+          "constraint_id": "cross:cross_species_measure",
+          "model_declared": null,
+          "on_fail": "warn_and_disclose",
+          "severity": "soft",
+          "source": [
+            {
+              "authority": "User-approved project policy; not a universal scientific prohibition",
+              "document": "第四章提纲_参考BrainResearcher与NEURA_20261021.docx",
+              "section": "3.4,3.7",
+              "sha256": "fae1e06aa28671e4daa195d5c1c0456c73d11281fd53d0181fe74d466efeeb7c"
+            }
+          ],
+          "template": "cross_species_measure",
+          "tool_observed": {
+            "evidence": {},
+            "reason": "Not a cross-species comparison",
+            "verdict": "pass"
+          },
+          "verdict": "pass"
+        },
+        {
+          "agreement": null,
+          "conflict": false,
+          "constraint_id": "cross:min_detectable_effect",
+          "model_declared": null,
+          "on_fail": "warn_and_disclose",
+          "severity": "soft",
+          "source": [
+            {
+              "authority": "User-approved project policy; not a universal scientific prohibition",
+              "document": "第四章提纲_参考BrainResearcher与NEURA_20261021.docx",
+              "section": "3.4,3.7",
+              "sha256": "fae1e06aa28671e4daa195d5c1c0456c73d11281fd53d0181fe74d466efeeb7c"
+            }
+          ],
+          "template": "min_detectable_effect",
+          "tool_observed": {
+            "evidence": {},
+            "reason": "No group inference requested",
+            "verdict": "pass"
+          },
+          "verdict": "pass"
+        }
+      ],
+      "schema_version": "primatex.constraints.v1",
+      "summary": {
+        "block": 1,
+        "pass": 14,
+        "warn": 5
+      },
+      "task_category": "descriptive",
+      "unmapped_conditions": []
+    },
+    "sha256": "e961f7d6741ea2ef0d6652563565eec92559dcbda54b5aa4e28c3cf7da114642",
+    "version": 5
+  },
+  "source_case": "R12B_H1_1",
+  "execution_constraints_sha256": "e961f7d6741ea2ef0d6652563565eec92559dcbda54b5aa4e28c3cf7da114642"
+}

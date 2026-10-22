@@ -22,14 +22,21 @@ def test_exact_unsupported_field_retries_once_and_preserves_other_options():
  assert seen[0]['retained_option']==seen[1]['retained_option']==7
  first={k:v for k,v in seen[0].items()if k!='thinking'};assert first==seen[1]
 @pytest.mark.parametrize('status,body,cls',[(400,error('context length exceeded','max_tokens'),BadRequestError),(400,error('thinking value invalid'),BadRequestError),(401,error('invalid api key','api_key'),AuthenticationError),(429,error('rate limit','', 'rate_limit_error'),RateLimitError)])
-def test_unrelated_failures_never_erase_options_or_silently_replay(status,body,cls):
+def test_unrelated_failures_never_erase_options_or_silently_replay(status,body,cls,monkeypatch):
+ import modules.agent.backend.analysis_transport as transport
+ delays=[]
+ monkeypatch.setattr(transport,"sleep_sync",delays.append)
+ if status==429:cls=transport.RateLimited
+ if status == 401:
+  cls = transport.AuthenticationFailed
  seen=[]
  def handler(req):seen.append(json.loads(req.content));return httpx.Response(status,json=body)
  with httpx.Client(transport=httpx.MockTransport(handler))as c:
   m=model(c)
   with pytest.raises(cls):m.invoke('fixture')
   assert m.extra_body['thinking']=={'type':'disabled'}
- assert len(seen)==1
+ assert len(seen)==(4 if status==429 else 1)
+ assert delays==([10,30,60] if status==429 else [])
 def test_second_unknown_field_failure_is_not_an_unbounded_loop():
  seen=[]
  def handler(req):seen.append(req);return httpx.Response(400,json=error('unknown field "thinking"'))

@@ -145,7 +145,7 @@ const MessageBubble: React.FC<MessageBubbleProps> = ({ message }) => {
     );
   };
 
-  const failureSummary = errorSummary(message.content, message.metadata?.analysis?.status);
+  const failureSummary = errorSummary(message.content, message.metadata?.analysis?.overallStatus ?? message.metadata?.analysis?.status, message.metadata?.analysis?.lastExitCode);
   const fullContent = <div className="markdown-message">{renderMarkdown(message.content, isStreaming)}</div>;
   const displayContent = failureSummary
     ? <details className="px-error-details"><summary>{failureSummary}</summary>{fullContent}</details>
