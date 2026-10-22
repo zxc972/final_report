@@ -27,6 +27,13 @@ PRODUCT_TYPES = {
 }
 
 
+class AnalysisDesign(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    effect: StrictStr = Field(min_length=1, max_length=128)
+    covariates: list[StrictStr] = Field(default_factory=list, max_length=16)
+    reference: StrictStr | None = Field(default=None, min_length=1, max_length=128)
+
+
 class AnalysisIntent(BaseModel):
     """Small intent; do not construct nested plans or constraint declarations."""
 
@@ -37,7 +44,8 @@ class AnalysisIntent(BaseModel):
     species: StrictStr | None = None
     space: StrictStr | None = None
     method_id: StrictStr | None = None
-    subjects: list[StrictStr] | None = Field(default=None, max_length=32)
+    design: AnalysisDesign | None = None
+    subjects: list[StrictStr] | None = Field(default=None, max_length=128)
     required_inputs: list[StrictStr] | None = Field(default=None, max_length=16)
 
 
@@ -144,6 +152,10 @@ def validate_intent(raw):
         strings = field if isinstance(field, list) else [field]
         if any(isinstance(s, str) and (not s.strip() or len(s) > 500) for s in strings):
             return None, {"status": "error", "field_errors": [{"field": key, "message": "Use nonempty strings of at most 500 characters"}]}
+    if intent.design:
+        columns = [intent.design.effect, *intent.design.covariates]
+        if len(columns) != len(set(columns)) or any(not c.strip() or len(c)>128 for c in columns):
+            return None, {"status": "error", "field_errors": [{"field": "design.covariates", "message": "Use distinct nonempty design column names of at most 128 characters"}]}
     if intent.method_id and intent.method_id.startswith("self:"):
         if not intent.required_inputs or not set(intent.required_inputs) <= PRODUCT_TYPES:
             return None, {"status": "error", "field_errors": [{"field": "required_inputs", "message": "A self: method must list registered product types"}]}
@@ -391,6 +403,13 @@ def plan_analysis(tools, raw):
     from .analysis_participants import table_paths
     paths = discover_paths(entries) + table_paths(tools, entries)
     profile, cached = ensure_profile(tools, paths)
+    design_scope = None
+    if intent.comparison in {"group", "correlation"}:
+        from .analysis_group_design import bind_design
+        design_scope, design_error = bind_design(tools, intent, entries, profile["record"]["files"])
+        if design_error:
+            tools.control_store.save("planning_result", design_error)
+            return design_error
     requirements, req_sha = load_knowledge("method_requirements", tools)
     dependencies, dep_sha = load_knowledge("pipeline_dependencies", tools)
     graph = tools._method_graph()
@@ -472,6 +491,8 @@ def plan_analysis(tools, raw):
             atlases = [name for name in atlases if name == requested_atlas]
         for atlas_name in atlases or ["unavailable"]:
             context, missing, mapping, missing_scopes = _candidate(tools, spec, method, entries, files, atlas_name, intent, domain, profile)
+            if design_scope:
+                context["analysis_scope"].update(copy.deepcopy(design_scope))
             if resolution:
                 context["analysis_scope"]["intent_resolution"] = resolution
             from .analysis_operations import suggested_operations

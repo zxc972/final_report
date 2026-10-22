@@ -6,8 +6,8 @@
   "research_release": "research_evidence_v13",
   "source_root": "/data/xuancheng",
   "source_unchanged_check": true,
-  "source_files": 920,
-  "source_bytes": 33271918,
+  "source_files": 922,
+  "source_bytes": 33279204,
   "excluded_classes": [
     "credentials and .env",
     "FreeSurfer license",
@@ -425,6 +425,13 @@
       "synced_at": "2026-10-22"
     },
     {
+      "path": "agent/modules/agent/backend/analysis_group_design.py",
+      "source": "/data/xuancheng/agent_v1/round14/agent/modules/agent/backend/analysis_group_design.py",
+      "bytes": 4774,
+      "sha256": "1e0256268e2f582c7dd4658659be44addac6cb03cfa1ec4ace63dd96854a1599",
+      "mode": "100644"
+    },
+    {
       "path": "agent/modules/agent/backend/analysis_group_stats.py",
       "source": "/data/xuancheng/agent_v1/round14/agent/modules/agent/backend/analysis_group_stats.py",
       "bytes": 15600,
@@ -697,8 +704,8 @@
       "mode": "100644",
       "source_bytes": 39057,
       "source_sha256": "a56be13c699988d561eeb82b52715be4a20c8ac992f9af2a33fa49394dcf7f7f",
-      "bytes": 39484,
-      "sha256": "511c3c563f1e321a013ef9ccfeb397e2f95c35b3fcc3b4e7ea7a9b5f3305771e",
+      "bytes": 41295,
+      "sha256": "28d1fc68e7a6982ece5a036573eed7ed672b0ea63fae98b60a7b9dff9ba84079",
       "synced_at": "2026-10-22",
       "previous_source": {
         "source": "/data/xuancheng/agent_round7_trial_20261021/offline_followup_review/backend/analysis_product_planner.py",
@@ -3371,6 +3378,13 @@
       "sha256": "eb510aad26ba3302072c39572c60ef278aabcac6d2a3a12680b694e845e93da6",
       "mode": "100644",
       "synced_at": "2026-10-22"
+    },
+    {
+      "path": "agent/modules/agent/tests/test_round14_design.py",
+      "source": "/data/xuancheng/agent_v1/round14/agent/modules/agent/tests/test_round14_design.py",
+      "bytes": 701,
+      "sha256": "8004165e7ae15c16b34a092bafd2ee43623eb0522d5d233afbd2674a420a0e3c",
+      "mode": "100644"
     },
     {
       "path": "agent/modules/agent/tests/test_round14_fastsurfer_layout.py",
@@ -8362,5 +8376,5 @@
       "full_cross_environment_deployment_verified": false
     }
   ],
-  "updated_at": "2026-10-22T17:37:41.485396+00:00"
+  "updated_at": "2026-10-22T17:38:59.997515+00:00"
 }
