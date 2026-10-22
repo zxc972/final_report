@@ -215,6 +215,12 @@ def result_card(tools, text):
     from .analysis_constraint_binding import resolve
     constraints, binding = resolve(tools)
     checks=constraints['record']['rows'] if constraints else []
+    plan = tools.control_store.latest("plan")
+    if plan and plan["record"]["plan"]["method"]["method_id"] == "method:v14:group_regional_glm":
+        from .analysis_group_reporting import conclusion
+        card = conclusion(tools, text, checks, current_summary(tools))
+        card['constraint_binding'] = binding
+        return card
     card = conclusion_card(text or 'No Agent interpretation was supplied.', 'supplied_descriptive', checks,
                            {'independent_numeric':current_summary(tools)}, ['supplied_descriptive'])
     card['constraint_binding'] = binding

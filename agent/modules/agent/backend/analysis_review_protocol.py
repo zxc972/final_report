@@ -228,6 +228,9 @@ def run_structured_review(
             "Internal review was not completed after bounded protocol/transport attempts; Agent text remains an unreviewed draft."
         ],
     }
+    if parsed is not None:
+        from .analysis_group_reporting import enforce_report_review
+        review = enforce_report_review(review, card, workdir)
     root = workdir.parent
     for part in (".analysis_reviews", workdir.name):
         root = root / part

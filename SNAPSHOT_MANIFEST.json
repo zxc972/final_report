@@ -6,8 +6,8 @@
   "research_release": "research_evidence_v13",
   "source_root": "/data/xuancheng",
   "source_unchanged_check": true,
-  "source_files": 933,
-  "source_bytes": 33314399,
+  "source_files": 935,
+  "source_bytes": 33320090,
   "excluded_classes": [
     "credentials and .env",
     "FreeSurfer license",
@@ -453,6 +453,13 @@
       "mode": "100644"
     },
     {
+      "path": "agent/modules/agent/backend/analysis_group_reporting.py",
+      "source": "/data/xuancheng/agent_v1/round14/agent/modules/agent/backend/analysis_group_reporting.py",
+      "bytes": 2507,
+      "sha256": "d1de260ede26a2195d8bac35e038c224766a11f6736be81d1abc62c5cbb2ea16",
+      "mode": "100644"
+    },
+    {
       "path": "agent/modules/agent/backend/analysis_group_stats.py",
       "source": "/data/xuancheng/agent_v1/round14/agent/modules/agent/backend/analysis_group_stats.py",
       "bytes": 17167,
@@ -465,8 +472,8 @@
       "source_head": "75143b21bc459c6f6e951891356ebf9e4e10169d",
       "source_bytes": 10037,
       "source_sha256": "f20b3166f5349431b6307838efda8f088abd8d4275467400bba2b79f637e6235",
-      "bytes": 12561,
-      "sha256": "bcb6ac5312e90dfb46ca016ec6bd91b4d57168ac6f206fc6a8651046f6517a14",
+      "bytes": 12898,
+      "sha256": "7b303b61cdd68202eaf7e9c9d96a7bf1e5098bd6a921380c54b569bf8aa77e32",
       "mode": "100644",
       "synced_at": "2026-10-22"
     },
@@ -676,8 +683,8 @@
       "mode": "100644",
       "source_bytes": 14276,
       "source_sha256": "194a91c02deb9205e05f8ac1e48affff8a7688d84fe9bb14f8e31a23e73417d5",
-      "bytes": 14371,
-      "sha256": "923c1c2165cd583015f51b1a19eb2b4c6bfee4aadc2eafc053b25f94e05119a8",
+      "bytes": 15077,
+      "sha256": "1a47389121a6f9eda15fe14f97c40cbcf5ddbcf4d8a3bf47737ee1b9aa67ffe4",
       "synced_at": "2026-10-22",
       "previous_source": {
         "source": "/data/xuancheng/agent_round7_trial_20261021/offline_followup_review/backend/analysis_plans.py",
@@ -821,8 +828,8 @@
       "source_head": "75143b21bc459c6f6e951891356ebf9e4e10169d",
       "source_bytes": 4626,
       "source_sha256": "886786b87c55f54642b0c3a31df4ac196eb453f9228cad97b3c5c93b42b1bbe9",
-      "bytes": 4626,
-      "sha256": "886786b87c55f54642b0c3a31df4ac196eb453f9228cad97b3c5c93b42b1bbe9",
+      "bytes": 4932,
+      "sha256": "4b1532b25bc08aa250c174d717667a62c53702fb14be434a90cf01cf35587ea4",
       "mode": "100644",
       "synced_at": "2026-10-22"
     },
@@ -832,8 +839,8 @@
       "source_head": "75143b21bc459c6f6e951891356ebf9e4e10169d",
       "source_bytes": 11104,
       "source_sha256": "29864a9c58f84266c3e20caaac2339700515a12fda6c2bdcdd8eaf5f1b97d40a",
-      "bytes": 11104,
-      "sha256": "29864a9c58f84266c3e20caaac2339700515a12fda6c2bdcdd8eaf5f1b97d40a",
+      "bytes": 11264,
+      "sha256": "94bffd70c2ef39054244e7ae6284b4d59a91e47523cb0cd4a89cdc56b4d2fc7a",
       "mode": "100644",
       "synced_at": "2026-10-22"
     },
@@ -3482,6 +3489,13 @@
       "source": "/data/xuancheng/agent_v1/round14/agent/modules/agent/tests/test_round14_participants.py",
       "bytes": 1264,
       "sha256": "2a80008b4cd85f73b63cefc79bdee455a088fd50e3c7d3d96831d7479430b9f0",
+      "mode": "100644"
+    },
+    {
+      "path": "agent/modules/agent/tests/test_round14_reporting.py",
+      "source": "/data/xuancheng/agent_v1/round14/agent/modules/agent/tests/test_round14_reporting.py",
+      "bytes": 1675,
+      "sha256": "c2a3c555527f72a62ac3f5dd637ba02b7bbd598f1f97512a518bce8265f1f39c",
       "mode": "100644"
     },
     {
@@ -8453,5 +8467,5 @@
       "full_cross_environment_deployment_verified": false
     }
   ],
-  "updated_at": "2026-10-22T17:46:31.408902+00:00"
+  "updated_at": "2026-10-22T17:48:48.442986+00:00"
 }
