@@ -862,7 +862,92 @@
           "method_fact_id": "method:v14:group_regional_glm:disclosure",
           "statement": "Report FDR family, exclusions and site/scanner composition"
         }
-      ]
+      ],
+      "design": {
+        "effect_term": "first term; continuous variable or two-level factor (exactly one design column)",
+        "covariates": "optional additional terms, e.g. sex, age, intracranial volume",
+        "per_region_model": "OLS with intercept, one model per (hemisphere, metric, label_key)",
+        "multiple_comparisons": "Benjamini-Hochberg across all fitted regions of both hemispheres",
+        "effect_size": "Cohen's d (unadjusted factor), Pearson r (unadjusted continuous), partial_r for adjusted models; skipped rows empty"
+      },
+      "output_contract": {
+        "files": [
+          "regional_values.csv",
+          "group_results.csv",
+          "summary.json",
+          "report.md"
+        ],
+        "identity_columns": [
+          "hemisphere",
+          "metric",
+          "label_key"
+        ],
+        "rows": "One per retained partition, including skipped:<reason> with empty statistics",
+        "effect": "Exact effect column or column[level]; no alias mapping",
+        "fdr": "BH across every fitted partition of both hemispheres and selected metrics"
+      },
+      "conditions": [
+        {
+          "template": "design_variable",
+          "parameters": {
+            "slot": "subject_table",
+            "columns": "every design term"
+          },
+          "severity": "hard"
+        },
+        {
+          "template": "cardinality",
+          "parameters": {
+            "object": "subjects per level of the effect factor",
+            "minimum": 2
+          },
+          "severity": "hard"
+        },
+        {
+          "template": "attr_equal",
+          "parameters": {
+            "slots": [
+              "surface_metric",
+              "annotation",
+              "cortex_label"
+            ],
+            "attributes": [
+              "subject",
+              "hemisphere",
+              "mesh"
+            ]
+          },
+          "severity": "hard"
+        },
+        {
+          "template": "attr_equal",
+          "parameters": {
+            "across_subjects": true,
+            "attributes": [
+              "atlas",
+              "species_declared"
+            ]
+          },
+          "severity": "hard"
+        },
+        {
+          "template": "min_detectable_effect",
+          "parameters": {
+            "alpha": 0.05,
+            "power": 0.8,
+            "defer_negative_if_dmin_above": 0.8
+          },
+          "severity": "soft"
+        },
+        {
+          "template": "advisory",
+          "parameters": {
+            "text": "Report the FDR family, excluded subjects and site/scanner composition; regional means from atlas parcellations are descriptive of the atlas, not of individual anatomy."
+          },
+          "severity": "soft"
+        }
+      ],
+      "host_reference": "analysis_numeric_reference.roi_rows then analysis_group_stats.regional_glm; independent from Agent numpy/scipy program"
     }
   ]
 }

@@ -211,7 +211,12 @@ def discover_paths(entries):
         root, index = entry["root"], entry["index"]
         for directory in ("surf", "label", "mri"):
             folder = root / directory
-            if not folder.is_dir() or folder.is_symlink():
+            if not folder.is_dir():
+                continue
+            from .analysis_input_links import resolve_input
+            try:
+                resolve_input(folder, root)
+            except (ValueError, OSError, RuntimeError):
                 continue
             for path in sorted(folder.iterdir()):
                 if not path.is_file():
@@ -242,7 +247,7 @@ def ensure_profile(tools, paths):
     stamps = []
     for path in paths:
         target = tools.resolve(path)
-        stamps.append([path, *file_hash(target)])
+        stamps.append([path, str(target), *file_hash(target)])
         scripts = target.parent.parent / "scripts"
         for name in ("recon-all.done", "recon-all.log", "recon-surf.done", "recon-surf.log"):
             adjacent = scripts / name

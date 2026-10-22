@@ -531,6 +531,9 @@ def main(request):
     """Arguments are embedded by the host in the frozen program, never /work JSON."""
     profile = build_profile(request["paths"], request.get("declared_species"))
     for item in profile["files"]:
+        link = request.get("links", {}).get(value(item["path"]))
+        if link:
+            item["link"] = field(link, value(item["path"]), "host-validated subject-local link; read-only sandbox view")
         for declaration in request.get("tables", []):
             if value(item["path"]) == declaration["mapped_path"]:
                 metadata = table_metadata(Path(declaration["mapped_path"]), declaration["id_column"], request.get("registered_ids", []))

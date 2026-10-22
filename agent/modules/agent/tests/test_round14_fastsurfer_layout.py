@@ -30,3 +30,20 @@ class FastSurferLayoutTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError,'outside'):resolve_input(escape,root)
     def test_dkt_mapped_family(self):
         self.assertEqual(identify('aparc.DKTatlas.mapped')['canonical_name'],'DKT')
+
+def test_absolute_link_container_view_is_local(tmp_path):
+    from types import SimpleNamespace
+    from backend.analysis_input_links import prepare_input_views
+    root=tmp_path/'subject';(root/'surf').mkdir(parents=True)
+    target=root/'surf/lh.pial.T1';target.write_text('synthetic')
+    link=root/'surf/lh.pial';link.symlink_to(target)
+    state=tmp_path/'private';state.mkdir()
+    executor=SimpleNamespace(input_roots=[root])
+    tools=SimpleNamespace(input_roots=[root],executor=executor,control_store=SimpleNamespace(root=state))
+    records=prepare_input_views(tools,['/inputs/0/surf/lh.pial'])
+    mapped=executor.input_roots[0]/'surf/lh.pial'
+    assert mapped.is_symlink() and not mapped.readlink().is_absolute()
+    assert mapped.read_text()=='synthetic'
+    assert records['/inputs/0/surf/lh.pial']['target']==str(target)
+    assert records['/inputs/0/surf/lh.pial']['resolved']=='/inputs/0/surf/lh.pial.T1'
+    assert link.readlink()==target

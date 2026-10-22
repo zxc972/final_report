@@ -251,6 +251,7 @@ class AnalysisTools:
         self._lock = threading.Lock()
         self._execution_lock = threading.RLock()
         self.data = DataTools(workspace or workdir, input_roots, workdir)
+        self.data.allow_subject_links = self.knowledge_profile.name == "product_graph_planner"
         self.pipeline = PipelineBridge(self.data, threads) if workspace else None
         self.navigation_calls = 0
         self.feedback_journal = FeedbackJournal(self.workdir)
@@ -355,7 +356,7 @@ class AnalysisTools:
                 raise ValueError("Registered source directories are read-only")
             return candidate
         candidate = root / relative
-        if root != self.workdir and candidate.exists():
+        if root != self.workdir and candidate.exists() and self.knowledge_profile.name == "product_graph_planner":
             from .analysis_input_links import resolve_input
             return resolve_input(candidate, root)
         _no_links(candidate, root)

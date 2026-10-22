@@ -6,8 +6,8 @@
   "research_release": "research_evidence_v13",
   "source_root": "/data/xuancheng",
   "source_unchanged_check": true,
-  "source_files": 935,
-  "source_bytes": 33320090,
+  "source_files": 938,
+  "source_bytes": 33347261,
   "excluded_classes": [
     "credentials and .env",
     "FreeSurfer license",
@@ -182,8 +182,8 @@
       "mode": "100644",
       "source_bytes": 104358,
       "source_sha256": "b2171b50bb407ffaf19bdcf6b860fe5ced996e1095e58f1e2bc705b8b592a515",
-      "bytes": 104723,
-      "sha256": "6752d4c945e9a8f5545c885f1409b7530819702743cff726b143fc9100435ba2",
+      "bytes": 104877,
+      "sha256": "59c26a3267129b29416cfc8231e7ae11969e66f8b5931994545030f16bc21cae",
       "synced_at": "2026-10-22",
       "previous_source": {
         "source": "/data/xuancheng/agent_round7_trial_20261021/offline_followup_review/backend/analysis_agent.py",
@@ -325,8 +325,8 @@
       "source_head": "75143b21bc459c6f6e951891356ebf9e4e10169d",
       "source_bytes": 7067,
       "source_sha256": "85814e7007e615b037c8e03ea24db106225b7eeec73b9b3452855269b1e16b2a",
-      "bytes": 8153,
-      "sha256": "14e39244f3eae12a2b49fe83a7a6a0011ba2c8b776393199c42dced2af3d8db0",
+      "bytes": 7778,
+      "sha256": "2998c032e3f4f2cfbb3e3e197b303a985fc19f403ba2c1c9c5632f5a79d7a6bd",
       "mode": "100644",
       "synced_at": "2026-10-22"
     },
@@ -337,8 +337,8 @@
       "mode": "100644",
       "source_bytes": 3322,
       "source_sha256": "118b0470c6cc5518be93371fdb7109baf1475de923b8fb30d73d83bf3e3b2419",
-      "bytes": 3632,
-      "sha256": "6afd4b3495e913eb9d06c38b1a432a86820ec672b35db72434a7c0250a0eb556",
+      "bytes": 3761,
+      "sha256": "1912f208d944022f76c4e47b7630ddd7090cd3e48008d117445e9cf85239ca5f",
       "synced_at": "2026-10-22"
     },
     {
@@ -427,8 +427,8 @@
     {
       "path": "agent/modules/agent/backend/analysis_group_constraints.py",
       "source": "/data/xuancheng/agent_v1/round14/agent/modules/agent/backend/analysis_group_constraints.py",
-      "bytes": 2588,
-      "sha256": "83dfd33d4b28daee430a2de9c2faa928aaf510519e8461b62979a7a07b381c5e",
+      "bytes": 2960,
+      "sha256": "d81b678d5a4290d6e1538e0af62f7efd8aefa0239880d421bac437374391d519",
       "mode": "100644"
     },
     {
@@ -480,8 +480,8 @@
     {
       "path": "agent/modules/agent/backend/analysis_input_links.py",
       "source": "/data/xuancheng/agent_v1/round14/agent/modules/agent/backend/analysis_input_links.py",
-      "bytes": 526,
-      "sha256": "8b61b494f2f274e0733a2ac379c3e9a1f4c35167492d31d15a5e90846e348748",
+      "bytes": 3783,
+      "sha256": "a9928c4cf61e7531369f724e7b299439f13d80def43cc4e1a43c60cf8b21dabc",
       "mode": "100644"
     },
     {
@@ -639,8 +639,8 @@
     {
       "path": "agent/modules/agent/backend/analysis_participants.py",
       "source": "/data/xuancheng/agent_v1/round14/agent/modules/agent/backend/analysis_participants.py",
-      "bytes": 2295,
-      "sha256": "b996d21c3d0160ed42a6fde4932382c93003c23eee0879a98fd99f23214bce43",
+      "bytes": 2664,
+      "sha256": "aac61d47b1aa5e98f11dc37a2f28511671e486bfda30c009a70b6516621869d7",
       "mode": "100644"
     },
     {
@@ -739,8 +739,8 @@
       "mode": "100644",
       "source_bytes": 39057,
       "source_sha256": "a56be13c699988d561eeb82b52715be4a20c8ac992f9af2a33fa49394dcf7f7f",
-      "bytes": 41886,
-      "sha256": "8f538a98cad6cf2ccadf12573a538a6f745d073b30274b6f78c192a5c013d104",
+      "bytes": 42083,
+      "sha256": "f7da8c16e0ffa355e65ef358641162df01118448b71209d63e22750f22637821",
       "synced_at": "2026-10-22",
       "previous_source": {
         "source": "/data/xuancheng/agent_round7_trial_20261021/offline_followup_review/backend/analysis_product_planner.py",
@@ -773,8 +773,8 @@
       "mode": "100644",
       "source_bytes": 22067,
       "source_sha256": "7eac0e5e6212c2a6ba21be768144582f41c1e2f83ae1505995e1f6954b44eb1a",
-      "bytes": 24950,
-      "sha256": "b23198925c4f1067b3ef0120a76364b3fe48ed6d0f438304ce9f768661d118e4",
+      "bytes": 25156,
+      "sha256": "6ee30840548a50d392b63e6b630cef90117ad9149315e8b820e4fe5d1fd78689",
       "synced_at": "2026-10-22",
       "previous_source": {
         "source": "/data/xuancheng/agent_round7_trial_20261021/offline_followup_review/backend/analysis_profile_worker.py",
@@ -850,8 +850,8 @@
       "source_head": "75143b21bc459c6f6e951891356ebf9e4e10169d",
       "source_bytes": 13765,
       "source_sha256": "5bb2101cde9368922982aeef9d04cf397b184213e27e59dd6ed572285514b454",
-      "bytes": 13765,
-      "sha256": "5bb2101cde9368922982aeef9d04cf397b184213e27e59dd6ed572285514b454",
+      "bytes": 13890,
+      "sha256": "0bcac5a06c1137d6c7186dfc4b9fe70f30fe7aaa8aa284140d9c6b504c6b8093",
       "mode": "100644",
       "synced_at": "2026-10-22"
     },
@@ -862,8 +862,8 @@
       "mode": "100644",
       "source_bytes": 4099,
       "source_sha256": "aba1a4cb2c2d8e3924bc3ab41c53dae9529b5fef3f6839dded2f7009f5a3af3f",
-      "bytes": 4099,
-      "sha256": "aba1a4cb2c2d8e3924bc3ab41c53dae9529b5fef3f6839dded2f7009f5a3af3f",
+      "bytes": 4283,
+      "sha256": "1eb0dc153354e2485eb7af06d713f95b220dc3bdace78e6fa6dfe4cf3252f549",
       "synced_at": "2026-10-22"
     },
     {
@@ -952,8 +952,8 @@
     {
       "path": "agent/modules/agent/backend/data_tools.py",
       "source": "git:75143b21bc459c6f6e951891356ebf9e4e10169d/backend/data_tools.py",
-      "bytes": 14838,
-      "sha256": "80448022b437d872eedbc6d776f2abb207da91637aa5c265c2ab08ec906d3e56",
+      "bytes": 15858,
+      "sha256": "5eb926f484ff2e6cfb2843a412ba7ed5175cc2d5547bcac88b68e7154909ac10",
       "mode": "100644",
       "source_head": "75143b21bc459c6f6e951891356ebf9e4e10169d",
       "source_bytes": 14838,
@@ -1914,8 +1914,8 @@
       "mode": "100644",
       "source_bytes": 30693,
       "source_sha256": "ce6fe723b2b8773ba6d974c77becf40d30f17418a320f5731bee034a96ab5a1b",
-      "bytes": 32519,
-      "sha256": "8417792744755e7704035f27368d8ccc4378378a5985b1f8daf1eeb0f926da5b",
+      "bytes": 35405,
+      "sha256": "2f3f2d9bc61278b0f9bb63113b5ef1425137911730b643b0b5afe666f4d23f85",
       "synced_at": "2026-10-22"
     },
     {
@@ -1926,7 +1926,7 @@
       "source_bytes": 92,
       "source_sha256": "b08b6b48814ac988a931cdad21760bdc8ae5cd72820de1ba8de20a9c8edd87b3",
       "bytes": 66,
-      "sha256": "83c12a8b57eb445eac9eb0d25bbfc9daed38b6b45eb4ba3b48d5e1940d72098f",
+      "sha256": "0e1e3f5d5585079de2d4f105d82a5a9c18acffd9d98a74876d7c6805210fa8db",
       "synced_at": "2026-10-22"
     },
     {
@@ -2707,6 +2707,13 @@
       "mode": "100644"
     },
     {
+      "path": "agent/modules/agent/tests/round14_generated_program.py",
+      "source": "/data/xuancheng/agent_v1/round14/agent/modules/agent/tests/round14_generated_program.py",
+      "bytes": 5068,
+      "sha256": "849da9c3d8721f559787168b9cbd462c2ced592720d37381403674e1e1c3b487",
+      "mode": "100644"
+    },
+    {
       "path": "agent/modules/agent/tests/test_agent_auto_dispatch.py",
       "source": "git:75143b21bc459c6f6e951891356ebf9e4e10169d/tests/test_agent_auto_dispatch.py",
       "source_head": "75143b21bc459c6f6e951891356ebf9e4e10169d",
@@ -3445,8 +3452,15 @@
     {
       "path": "agent/modules/agent/tests/test_round14_fastsurfer_layout.py",
       "source": "/data/xuancheng/agent_v1/round14/agent/modules/agent/tests/test_round14_fastsurfer_layout.py",
-      "bytes": 1834,
-      "sha256": "629404c7af50e5b8b98df3c3fdc34fa92e469845cef12e597980ccde3a8f3247",
+      "bytes": 2794,
+      "sha256": "9d7d2c61bd273d6e6813fbfe756b9bdf768db9a9e040ba80fb7870255cff5711",
+      "mode": "100644"
+    },
+    {
+      "path": "agent/modules/agent/tests/test_round14_full_sandbox.py",
+      "source": "/data/xuancheng/agent_v1/round14/agent/modules/agent/tests/test_round14_full_sandbox.py",
+      "bytes": 5687,
+      "sha256": "47a2e091697daecb3e9a83fcaf4bd60db2133de06fea43c0ab2f2d17bdc70fb9",
       "mode": "100644"
     },
     {
@@ -3459,8 +3473,8 @@
     {
       "path": "agent/modules/agent/tests/test_round14_group_planner.py",
       "source": "/data/xuancheng/agent_v1/round14/agent/modules/agent/tests/test_round14_group_planner.py",
-      "bytes": 1803,
-      "sha256": "05dacddc807b228feea625d78d6dfa7f4e3728f5c2d5202fae5246dddaeadbcf",
+      "bytes": 2353,
+      "sha256": "aa08bd41c39e1e32350c55b1f2c500b0a8b14e8eb010365b01684ee7d3fd7f98",
       "mode": "100644"
     },
     {
@@ -4699,8 +4713,8 @@
     {
       "path": "agent/modules/gui/monkey-brain-frontend/src/utils/analysisResult.test.ts",
       "source": "git:18090d9685f9a83d010d31baf56dfb9b969ba152/src/utils/analysisResult.test.ts",
-      "bytes": 3021,
-      "sha256": "b16676912326e578972ec510af88c569fa80bf1e5fc77b4442095b6bfa1a3023",
+      "bytes": 3744,
+      "sha256": "b488171035570cef4bda7bb64e680f87ca2162ecb01343d18bc7609e4eff9b27",
       "mode": "100644",
       "source_head": "18090d9685f9a83d010d31baf56dfb9b969ba152",
       "source_bytes": 3021,
@@ -6431,6 +6445,13 @@
       "source": "/data/xuancheng/agent_v1/round14/docs/ROUND14_GROUP_ANALYSIS.md",
       "bytes": 3191,
       "sha256": "bfe6f601c7a96a38b9387c156ce5e8f4d175e861a75a90cfee7153532aaa09b5",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/ROUND14_GROUP_ANALYSIS_INTEGRATION.md",
+      "source": "/data/xuancheng/agent_v1/round14/docs/ROUND14_GROUP_ANALYSIS_INTEGRATION.md",
+      "bytes": 5659,
+      "sha256": "8967dc83b10cbfd9b49eb1de5061597957bcda2036e65b61b79890529d288768",
       "mode": "100644"
     },
     {
@@ -8467,5 +8488,5 @@
       "full_cross_environment_deployment_verified": false
     }
   ],
-  "updated_at": "2026-10-22T17:48:48.442986+00:00"
+  "updated_at": "2026-10-22T18:00:47.606796+00:00"
 }

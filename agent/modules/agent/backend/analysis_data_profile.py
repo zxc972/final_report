@@ -44,8 +44,11 @@ def profile_data(tools, paths):
         raise ValueError("Duplicate profile paths")
     from .analysis_agent import _write_regular, _read_regular
 
+    from .analysis_input_links import prepare_input_views
+    links = prepare_input_views(tools, mapped)
     request = {
         "paths": mapped,
+        "links": links,
         "tables": getattr(tools, "participants_tables", []),
         "registered_ids": [r["subject_id"] for r in json.loads(Path(os.environ["AGENT_DATA_CATALOG"]).read_text()).get("roots", [])] if os.environ.get("AGENT_DATA_CATALOG") else [],
         "declared_species": explicit_species(getattr(tools, "task_request", "")),

@@ -37,3 +37,12 @@ it('attaches frozen submitted code under its job path without claiming execution
   expect(r.files).toEqual([{ path: prefix + '/analysis.py', kind: 'submitted code' }]);
   expect(r.fileChecksPassed).toBe(false); expect(r.executions).toBe(0);
 });
+it('exposes only the two declared group table statuses and mismatch counts', () => {
+  const r = parseAnalysisResult({ ...raw, validation: { independent_numeric_status: 'fail', independent_numeric: {
+    tables: { 'regional_values.csv': { status: 'pass', mismatch_count: 0, expected: [123] },
+      'group_results.csv': { status: 'fail', mismatch_count: 1, differences: [{ expected: 99 }] },
+      'private.csv': { status: 'pass', mismatch_count: 0 } } } } }, 'conv')!;
+  expect(r.independentTables).toEqual([{ file: 'regional_values.csv', status: 'pass', mismatches: 0 },
+    { file: 'group_results.csv', status: 'fail', mismatches: 1 }]);
+  expect(JSON.stringify(r)).not.toMatch(/expected|differences|private.csv/);
+});

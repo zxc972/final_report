@@ -17,9 +17,12 @@ def register_tables(tools):
     tables = body.get('participants_tables', [])
     if not isinstance(tables,list) or len(tables)>16:
         raise ValueError('participants_tables must contain at most 16 declarations')
+    datasets={row.get('dataset') for row in body.get('roots',[]) if Path(row['path']).resolve() in tools.input_roots}
     for declaration in tables:
         if not isinstance(declaration,dict) or any(not isinstance(declaration.get(k),str) or not declaration[k].strip() for k in ('dataset','path','id_column','source','license')):
             raise ValueError('participants_tables requires dataset/path/id_column/source/license strings')
+        if declaration['dataset'] not in datasets:
+            continue
         source=Path(declaration['path']).absolute()
         if source.suffix.lower() not in ('.tsv','.csv') or any(p.is_symlink() for p in (source,*source.parents)) or not source.is_file() or source.stat().st_size>MAX_TABLE_BYTES:
             raise ValueError('Participant table must be a bounded regular TSV/CSV without symlink components')
@@ -33,6 +36,8 @@ def register_tables(tools):
             raise ValueError('Participant snapshot changed')
         index=len(tools.input_roots);tools.input_roots.append(stage)
         tools.participants_tables.append({**declaration,'index':index,'mapped_path':f'/inputs/{index}/{source.name}','sha256':sha})
+    tools.data.input_roots=list(tools.input_roots)
+    tools.data.roots=list(dict.fromkeys([tools.data.workdir,*tools.input_roots]))
     if hasattr(tools.executor,'input_roots'):
         tools.executor.input_roots=list(tools.input_roots)
 

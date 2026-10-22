@@ -70,6 +70,11 @@ class DataTools:
             candidate = Path(path).expanduser()
             if not candidate.is_absolute():
                 candidate = self.workdir / candidate
+        if getattr(self, "allow_subject_links", False):
+            root = next((p for p in self.input_roots if candidate.is_relative_to(p)), None)
+            if root is not None and candidate.exists():
+                from .analysis_input_links import resolve_input
+                candidate = resolve_input(candidate, root)
         candidate = checked_path(candidate)
         root = next((p for p in self.roots if candidate == p or p in candidate.parents), None)
         if root is None:
@@ -104,7 +109,20 @@ class DataTools:
         examined = 0
         with os.scandir(directory) as scan:
             for entry in scan:
-                if entry.name.startswith(".") or entry.name in PRIVATE_NAMES or entry.is_symlink():
+                if entry.name.startswith(".") or entry.name in PRIVATE_NAMES:
+                    continue
+                if entry.is_symlink():
+                    if not getattr(self, "allow_subject_links", False):
+                        continue
+                    try:
+                        resolved = self.resolve(str(directory / entry.name))
+                    except (OSError, ValueError, RuntimeError):
+                        continue
+                    if examined >= offset:
+                        entries.append({"name": entry.name, "path": str(directory / entry.name), "type": "symlink", "target": os.readlink(directory / entry.name), "resolved": str(resolved)})
+                    examined += 1
+                    if len(entries) > limit:
+                        break
                     continue
                 if examined >= offset:
                     info = entry.stat(follow_symlinks=False)

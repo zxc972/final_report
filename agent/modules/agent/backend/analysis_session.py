@@ -189,7 +189,8 @@ class AnalysisSession:
                     delimiter="\t" if kind == "tsv" else ",",
                 )
                 columns = next(reader, [])
-                required = contract.get("csv_columns", [])
+                declared_table = contract.get("tables", {}).get(path)
+                required = list(declared_table["columns"]) if declared_table else contract.get("csv_columns", [])
                 for column in required:
                     if column not in columns:
                         missing.append(f"{path}: missing column {column}")

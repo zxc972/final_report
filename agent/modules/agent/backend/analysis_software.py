@@ -24,7 +24,7 @@ def probe_command(command, lgi_health=False):
         if not re.fullmatch(r'[a-zA-Z_][a-zA-Z0-9_.]*', package):
             raise ValueError('Registered Python import required')
         paths = [sys.executable]
-        argv = [sys.executable, '-I', '-B', '-c', 'import ' + package]
+        argv = [sys.executable, '-I', '-B', '-c', 'import ' + package + '; print(getattr(' + package + ', "__version__", "stdlib"))']
         env = dict(os.environ)
     else:
         found = [shutil.which(command)]
@@ -64,6 +64,8 @@ def probe_command(command, lgi_health=False):
         row.update(exit_code=result.returncode, stdout=stdout, stderr=stderr,
                    executable=result.returncode == 0 or valid_version_exit,
                    accepted_nonzero_version_exit=valid_version_exit)
+        if command.startswith('python:') and result.returncode == 0:
+            row['version'] = stdout.strip()[:100]
         if command == 'matlab' and lgi_health:
             row['executable'] = result.returncode == 0 and 'PRIMATEX_MATLAB_HEALTH_OK' in result.stdout
     except Exception as exc:

@@ -16,7 +16,14 @@ def check_group(tools, plan, files):
         value=evaluate(instance,env)
         rows.append({'constraint_id':instance['id'],'severity':instance['severity'],'template':instance['template'],'verdict':value['verdict'],'tool_observed':value,'source':[{'method_fact_id':MID+':'+('design' if ':design:' in instance['id'] else instance['id'].rsplit(':',1)[-1])}], 'on_fail':'block' if instance['severity']=='hard' else 'warn_and_disclose'})
     bypath={unwrap(f)['path']:unwrap(f) for f in files};issues=[]
+    label_names = {}
     for key,labels in scope['labels'].items():
+        hemi = key.rsplit('/', 1)[-1]
+        for label in labels['labels']:
+            identity = (hemi, label['key'])
+            if identity in label_names and label_names[identity] != label['name']:
+                issues.append(key + ':atlas_label_name_mismatch')
+            label_names[identity] = label['name']
         ann=bypath.get(labels['annotation'],{});n=(ann.get('label')or{}).get('vertex_count');prefix=labels['annotation'].split('/label/')[0]+'/surf/'+key.rsplit('/',1)[-1]+'.'
         metrics=[f for p,f in bypath.items() if p.startswith(prefix) and f.get('format')=='surface_metric']
         if not n or not metrics or any((f.get('metric')or{}).get('vertex_count')!=n for f in metrics) or labels['cortex_label'] not in bypath:
