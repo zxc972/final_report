@@ -146,6 +146,10 @@ class ResearchEvidenceRetriever:
     def read_text(
         self, source_id: str, start_char: int = 0, max_chars: int = 8000,
     ) -> dict[str, Any]:
+        from .analysis_method_overlay import source_read
+        extra = source_read(source_id, start_char, max_chars)
+        if extra is not None:
+            return extra
         documents = {document["id"]: document for document in self._source_documents()}
         if not isinstance(source_id, str) or source_id not in documents:
             raise ValueError("Unknown registered original parent ID")

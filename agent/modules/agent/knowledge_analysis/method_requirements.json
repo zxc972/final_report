@@ -790,6 +790,78 @@
           "note": "Explicit self-written analysis with declared inputs; no implicit scientific applicability."
         }
       ]
+    },
+    {
+      "method_id": "method:v14:group_regional_glm",
+      "required_products": [
+        "surface_metric",
+        "annotation",
+        "cortex_label",
+        "subject_table",
+        "surface"
+      ],
+      "needs_parcellation": true,
+      "measures": [
+        "thickness",
+        "area",
+        "curv",
+        "sulc",
+        "volume"
+      ],
+      "comparisons": [
+        "group",
+        "correlation"
+      ],
+      "execution_scope": "supplied_derivatives",
+      "source": [
+        {
+          "method_fact_id": "method:v14:group_regional_glm:design",
+          "source_id": "group_glm_v14",
+          "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/GroupAnalysis"
+        },
+        {
+          "method_fact_id": "method:v14:group_regional_glm:sample",
+          "source_id": "group_glm_v14",
+          "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/GroupAnalysis"
+        },
+        {
+          "method_fact_id": "method:v14:group_regional_glm:identity",
+          "source_id": "group_glm_v14",
+          "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/GroupAnalysis"
+        },
+        {
+          "method_fact_id": "method:v14:group_regional_glm:power",
+          "source_id": "group_glm_v14",
+          "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/GroupAnalysis"
+        },
+        {
+          "method_fact_id": "method:v14:group_regional_glm:disclosure",
+          "source_id": "group_glm_v14",
+          "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/GroupAnalysis"
+        }
+      ],
+      "method_facts": [
+        {
+          "method_fact_id": "method:v14:group_regional_glm:design",
+          "statement": "Every design column exists and is nonempty; effect has one estimable coefficient"
+        },
+        {
+          "method_fact_id": "method:v14:group_regional_glm:sample",
+          "statement": "At least two independent subjects per effect level and positive residual degrees of freedom"
+        },
+        {
+          "method_fact_id": "method:v14:group_regional_glm:identity",
+          "statement": "Same-subject hemisphere mesh bindings and shared atlas/species declarations"
+        },
+        {
+          "method_fact_id": "method:v14:group_regional_glm:power",
+          "statement": "Report design-based minimum detectable standardized effect and its approximations"
+        },
+        {
+          "method_fact_id": "method:v14:group_regional_glm:disclosure",
+          "statement": "Report FDR family, exclusions and site/scanner composition"
+        }
+      ]
     }
   ]
 }

@@ -331,6 +331,14 @@ def cross_species_measure(parameters, environment, severity="soft"):
 def min_detectable_effect(parameters, environment, severity="soft"):
     if not environment.get("group_inference"):
         return result("pass", "No group inference requested")
+    design = environment.get("group_design")
+    if design is not None:
+        d = design["d_min"]
+        defer = environment.get("negative_result") is True and d > parameters["defer_threshold"]
+        return result("warn" if d > parameters["defer_threshold"] else "pass",
+                      "Design-based approximate minimum detectable effect",
+                      {"d_min": d, "n": design["n"], "df": design["df"], "assumptions": design["power_assumptions"]},
+                      underpowered_negative=defer)
     groups = environment.get("groups", {})
     counts = {name: len(set(values)) for name, values in groups.items()}
     if len(counts) != 2 or min(counts.values(), default=0) < 1:

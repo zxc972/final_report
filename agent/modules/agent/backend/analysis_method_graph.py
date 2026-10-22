@@ -49,6 +49,12 @@ class MethodGraph:
         self.nodes={n['id']:n for n in obj['nodes']};self.edges=obj['edges']
         if len(self.nodes)!=len(obj['nodes'])or any(e['source']not in self.nodes or e['target']not in self.nodes for e in self.edges):raise ValueError('Invalid graph endpoints')
         self.sources={s['id']:s for s in obj['sources']}
+        from .analysis_method_overlay import overlay
+        extra, self.overlay_digest = overlay()
+        self.methods.update({m['id']:m for m in extra['methods'] if m['id'] not in self.methods})
+        self.nodes.update({n['id']:n for n in extra['nodes'] if n['id'] not in self.nodes})
+        self.sources.update({s['id']:s for s in extra['sources'] if s['id'] not in self.sources})
+        self.edges += extra['edges']
     def search(self,query:str,limit:int=5):
         if not isinstance(query,str)or not 1<=len(query)<=1000 or type(limit)is not int or not 1<=limit<=8:raise ValueError('Bounded query and integer limit 1..8 required')
         self._load();words=tokens(query);ranked=[]
@@ -78,7 +84,7 @@ class MethodGraph:
                              'read_full_with':'read_research_knowledge("METHOD_SOURCE_'+sid+'")'})
         return {'status':'ok','method':m,'relations':rels[:150],'neighbor_nodes':[self.nodes[i]for i in sorted(relation_ids)if i in self.nodes][:90],
                 'source_evidence':evidence,'release_sha256':self.digest,'review_status':'AI_assisted_candidate_exact_quote_checked_semantics_not_expert_reviewed',
-                'executable':False,'scientific_status':'not_evaluated'}
+                'overlay_sha256':self.overlay_digest,'executable':False,'scientific_status':'not_evaluated'}
     def assess(self,method_id:str,observed_conditions:list[dict[str,Any]]):
         m=self.read(method_id)['method']
         if not isinstance(observed_conditions,list)or len(observed_conditions)>32:raise ValueError('Bounded observed condition list required')

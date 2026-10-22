@@ -436,6 +436,9 @@ def compile_constraints(
                 "on_fail": "warn_and_disclose",
             }
         )
+    if method_id == "method:v14:group_regional_glm":
+        from .analysis_group_constraints import check_group
+        rows.extend(check_group(tools, plan_context, files))
     templated_ids = set()
     environment = environment_for(files, plan_context, {})
     for instance in definitions["extra_method_conditions"]:

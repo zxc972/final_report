@@ -6,8 +6,8 @@
   "research_release": "research_evidence_v13",
   "source_root": "/data/xuancheng",
   "source_unchanged_check": true,
-  "source_files": 922,
-  "source_bytes": 33279204,
+  "source_files": 927,
+  "source_bytes": 33292382,
   "excluded_classes": [
     "credentials and .env",
     "FreeSurfer license",
@@ -265,8 +265,8 @@
       "mode": "100644",
       "source_bytes": 22561,
       "source_sha256": "2aa8f02aef91bfe65a4a1d9424f6383d9575d3890aed4ef5ba809c01824dc050",
-      "bytes": 22561,
-      "sha256": "2aa8f02aef91bfe65a4a1d9424f6383d9575d3890aed4ef5ba809c01824dc050",
+      "bytes": 22738,
+      "sha256": "34ddf438c565c55935513e61099b6ce3e34b35f6f67c8e700859c135647dba15",
       "synced_at": "2026-10-22",
       "previous_source": {
         "source": "/data/xuancheng/agent_round7_trial_20261021/offline_followup_review/backend/analysis_constraints.py",
@@ -314,8 +314,8 @@
       "source_head": "75143b21bc459c6f6e951891356ebf9e4e10169d",
       "source_bytes": 13324,
       "source_sha256": "412929d6467102927e1aac413170770060d7c9d94b87050080b111fb88068d0e",
-      "bytes": 13324,
-      "sha256": "412929d6467102927e1aac413170770060d7c9d94b87050080b111fb88068d0e",
+      "bytes": 13845,
+      "sha256": "49ca11d849886b82a3090c87860c52c275cf7d11e1c72ed6a8c965fe53381776",
       "mode": "100644",
       "synced_at": "2026-10-22"
     },
@@ -423,6 +423,13 @@
       "source_bytes": 3440,
       "source_sha256": "04de18dc2fe5e12a978e9c55cf8fe74294e71583fa80ebdbf7928e2260357707",
       "synced_at": "2026-10-22"
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_group_constraints.py",
+      "source": "/data/xuancheng/agent_v1/round14/agent/modules/agent/backend/analysis_group_constraints.py",
+      "bytes": 2588,
+      "sha256": "83dfd33d4b28daee430a2de9c2faa928aaf510519e8461b62979a7a07b381c5e",
+      "mode": "100644"
     },
     {
       "path": "agent/modules/agent/backend/analysis_group_design.py",
@@ -537,8 +544,8 @@
     {
       "path": "agent/modules/agent/backend/analysis_method_graph.py",
       "source": "git:75143b21bc459c6f6e951891356ebf9e4e10169d/backend/analysis_method_graph.py",
-      "bytes": 7968,
-      "sha256": "1e310bea043f97b2f3ec4e10ec10a7bae975eee0eb222571723184535372d211",
+      "bytes": 8430,
+      "sha256": "ff336f45903b3893507275bef0e84b9180a0b5d143ab3c2e858774b3ae1fd37e",
       "mode": "100644",
       "source_head": "75143b21bc459c6f6e951891356ebf9e4e10169d",
       "source_bytes": 7968,
@@ -550,6 +557,13 @@
         "source_sha256": null,
         "sha256": "471bc76eef50281ec8f632f6a42467e216991c9995cfb3e496a8736752d830c8"
       }
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_method_overlay.py",
+      "source": "/data/xuancheng/agent_v1/round14/agent/modules/agent/backend/analysis_method_overlay.py",
+      "bytes": 1472,
+      "sha256": "c9629d09c4a540c2e7ba10e7cd4feecea283be486778cdf422ac5673e9b7e8e6",
+      "mode": "100644"
     },
     {
       "path": "agent/modules/agent/backend/analysis_numeric_reference.py",
@@ -783,8 +797,8 @@
       "mode": "100644",
       "source_bytes": 9331,
       "source_sha256": "e63e010d3f7db9b0e9ce670820d4b27382eda7b24d19f6117319028f69a43426",
-      "bytes": 9331,
-      "sha256": "e63e010d3f7db9b0e9ce670820d4b27382eda7b24d19f6117319028f69a43426",
+      "bytes": 9505,
+      "sha256": "257a11a0cf9186c0b80c3f301dcb6659c49320ffa763f6d9cd87912eccf673a4",
       "synced_at": "2026-10-22"
     },
     {
@@ -1682,8 +1696,8 @@
       "mode": "100644",
       "source_bytes": 6832,
       "source_sha256": "b397e7117e07c628612c26afa1a4bcb2f2902d6ceee2e568d0ffdc88bfba7e31",
-      "bytes": 6832,
-      "sha256": "b397e7117e07c628612c26afa1a4bcb2f2902d6ceee2e568d0ffdc88bfba7e31",
+      "bytes": 6985,
+      "sha256": "bdad0cec6572ecc0cd2b40c8039888de7a3820c6b355f7c57ac5cc9a1cd686b5",
       "synced_at": "2026-10-22"
     },
     {
@@ -1693,8 +1707,8 @@
       "mode": "100644",
       "source_bytes": 89,
       "source_sha256": "532d8eb9a7ee018abad86cddc67f211bc9d51cb1d72270cd341f0c962228f58b",
-      "bytes": 89,
-      "sha256": "532d8eb9a7ee018abad86cddc67f211bc9d51cb1d72270cd341f0c962228f58b",
+      "bytes": 66,
+      "sha256": "f023cd30bb72525446875d10d2b4d8c8c30f865ffefd92e594aa760eee1b3cd8",
       "synced_at": "2026-10-22"
     },
     {
@@ -1859,14 +1873,28 @@
       "synced_at": "2026-10-22"
     },
     {
+      "path": "agent/modules/agent/knowledge_analysis/method_graph_overlay_v14.json",
+      "source": "/data/xuancheng/agent_v1/round14/agent/modules/agent/knowledge_analysis/method_graph_overlay_v14.json",
+      "bytes": 5097,
+      "sha256": "e6b70145bb4483de75d209c749dbc47895468c182d4cd43562d26a819e701045",
+      "mode": "100644"
+    },
+    {
+      "path": "agent/modules/agent/knowledge_analysis/method_graph_overlay_v14.sha256",
+      "source": "/data/xuancheng/agent_v1/round14/agent/modules/agent/knowledge_analysis/method_graph_overlay_v14.sha256",
+      "bytes": 66,
+      "sha256": "592ed1e382b543b18d9cc4dba68c52ed8d4bd2052ac86d22005aa87fdcac0532",
+      "mode": "100644"
+    },
+    {
       "path": "agent/modules/agent/knowledge_analysis/method_requirements.json",
       "source": "git:75143b21bc459c6f6e951891356ebf9e4e10169d/knowledge_analysis/method_requirements.json",
       "source_head": "75143b21bc459c6f6e951891356ebf9e4e10169d",
       "mode": "100644",
       "source_bytes": 30693,
       "source_sha256": "ce6fe723b2b8773ba6d974c77becf40d30f17418a320f5731bee034a96ab5a1b",
-      "bytes": 30693,
-      "sha256": "ce6fe723b2b8773ba6d974c77becf40d30f17418a320f5731bee034a96ab5a1b",
+      "bytes": 32487,
+      "sha256": "49e928a1af5c4d73967303390a30a7df3f2f43ee68f2388e98ace12f2b944052",
       "synced_at": "2026-10-22"
     },
     {
@@ -1876,8 +1904,8 @@
       "mode": "100644",
       "source_bytes": 92,
       "source_sha256": "b08b6b48814ac988a931cdad21760bdc8ae5cd72820de1ba8de20a9c8edd87b3",
-      "bytes": 92,
-      "sha256": "b08b6b48814ac988a931cdad21760bdc8ae5cd72820de1ba8de20a9c8edd87b3",
+      "bytes": 66,
+      "sha256": "28a6367006dd7e1c5c6487f42a30123e8a256ae422b2873855441e54f110cad9",
       "synced_at": "2026-10-22"
     },
     {
@@ -3398,6 +3426,13 @@
       "source": "/data/xuancheng/agent_v1/round14/agent/modules/agent/tests/test_round14_group_stats.py",
       "bytes": 6497,
       "sha256": "be0740cb3d48c1ceef585c3d3a2a8f904d9abc6a5a5f988f940363099454ba5c",
+      "mode": "100644"
+    },
+    {
+      "path": "agent/modules/agent/tests/test_round14_method_overlay.py",
+      "source": "/data/xuancheng/agent_v1/round14/agent/modules/agent/tests/test_round14_method_overlay.py",
+      "bytes": 723,
+      "sha256": "82f323299c19c3968dca21040ea91f076682fd8f450a2111c2f54137cd0caf0b",
       "mode": "100644"
     },
     {
@@ -8376,5 +8411,5 @@
       "full_cross_environment_deployment_verified": false
     }
   ],
-  "updated_at": "2026-10-22T17:38:59.997515+00:00"
+  "updated_at": "2026-10-22T17:41:14.928793+00:00"
 }
