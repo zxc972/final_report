@@ -158,6 +158,7 @@ def suggested_operations(context):
         "library": {k: v for k, v in catalogue.items() if k != "functions"},
         "calls": calls,
         "custom_method_help": "read_operations returns all signatures and unit/return-value conventions",
+        "group_model": {"implementation": "Agent-written numpy/scipy OLS after per-subject parcel_summary", "design": context.get("analysis_scope", {}).get("design")} if method.endswith("group_regional_glm") else None,
     }
 
 
@@ -194,6 +195,11 @@ def execution_bundle(context):
     asymmetry = definition() if applies(context) else None
     if asymmetry:
         columns.append("asymmetry_index")
+    table = table_contract(context, operations)
+    tables = {}
+    if context["method"]["method_id"] == "method:v14:group_regional_glm":
+        from .analysis_group_contract import group_contract
+        tables = {"regional_values.csv": table, "group_results.csv": group_contract(context, table)}
     return {
         "asymmetry_contract": asymmetry,
         "input_paths": context["data"]["files"],
@@ -202,7 +208,8 @@ def execution_bundle(context):
         "output_contract": {
             "files": context["outputs"],
             "csv_columns": columns,
-            "table": table_contract(context, operations),
+            "table": table,
+            "tables": tables,
             "json_required_keys": ["methods", "limitations"],
             "report": "Describe actual method, units, exclusions, observed prerequisites, limitations and all plan versions",
         },
