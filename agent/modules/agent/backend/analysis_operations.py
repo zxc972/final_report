@@ -141,7 +141,7 @@ def suggested_operations(context):
                         path,
                         "Pass vertices, faces; full surface, not lGI",
                     )
-                elif method.endswith("mesh_surface_area"):
+                elif method.endswith(("surface_mesh_area", "mesh_surface_area")):
                     add(
                         "vertex_area",
                         {"surface_path": path},

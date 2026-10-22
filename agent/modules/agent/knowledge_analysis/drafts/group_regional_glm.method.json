@@ -1,0 +1,35 @@
+{
+  "status": "draft_not_registered",
+  "note": "Draft for round 14 integration. Not loaded by the planner until copied into method_requirements.json (new SHA), the method graph release and constraint_probes.json as listed in docs/ROUND14_GROUP_ANALYSIS.md.",
+  "method_id": "method:v14:group_regional_glm",
+  "required_products": ["surface_metric", "annotation", "cortex_label", "subject_table"],
+  "needs_parcellation": true,
+  "measures": ["thickness", "area", "curv", "sulc", "volume"],
+  "comparisons": ["group", "correlation"],
+  "execution_scope": "supplied_derivatives",
+  "design": {
+    "effect_term": "first term; continuous variable or two-level factor (exactly one design column)",
+    "covariates": "optional additional terms, e.g. sex, age, intracranial volume",
+    "per_region_model": "OLS with intercept, one model per (hemisphere, metric, label_key)",
+    "multiple_comparisons": "Benjamini-Hochberg across all fitted regions of both hemispheres",
+    "effect_size": "Cohen's d (two-group, no covariates) or Pearson r (single continuous effect); otherwise none"
+  },
+  "output_contract": {
+    "columns": {"hemisphere": "str", "metric": "str", "label_key": "int", "name": "str", "n": "int", "effect": "str", "estimate": "float", "se": "float", "t": "float", "df": "int", "p": "float", "q_fdr": "float", "effect_size": "float|empty", "effect_size_kind": "str|empty"},
+    "identity_columns": ["hemisphere", "metric", "label_key"],
+    "rows": "one per fitted region; skipped regions listed in the JSON summary"
+  },
+  "conditions": [
+    {"template": "design_variable", "parameters": {"slot": "subject_table", "columns": "every design term"}, "severity": "hard"},
+    {"template": "cardinality", "parameters": {"object": "subjects per level of the effect factor", "minimum": 2}, "severity": "hard"},
+    {"template": "attr_equal", "parameters": {"slots": ["surface_metric", "annotation", "cortex_label"], "attributes": ["subject", "hemisphere", "mesh"]}, "severity": "hard"},
+    {"template": "attr_equal", "parameters": {"across_subjects": true, "attributes": ["atlas", "species_declared"]}, "severity": "hard"},
+    {"template": "min_detectable_effect", "parameters": {"alpha": 0.05, "power": 0.8, "defer_negative_if_dmin_above": 0.8}, "severity": "soft"},
+    {"template": "advisory", "parameters": {"text": "Report the FDR family, excluded subjects and site/scanner composition; regional means from atlas parcellations are descriptive of the atlas, not of individual anatomy."}, "severity": "soft"}
+  ],
+  "sources": [
+    {"source_id": "freesurfer_group_analysis", "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/GroupAnalysis"},
+    {"source_id": "benjamini_hochberg_1995", "doi": "10.1111/j.2517-6161.1995.tb02031.x"}
+  ],
+  "host_reference": "backend/analysis_group_stats.py::regional_glm"
+}
