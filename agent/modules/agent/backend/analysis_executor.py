@@ -202,8 +202,8 @@ class SandboxExecutor:
         if len(self.workdir.parts) < 3:
             raise ValueError("A dedicated work directory is required")
         self.input_roots = [_absolute_path(Path(p)) for p in input_roots]
-        if len(self.input_roots) > 32:
-            raise ValueError("At most 32 input roots are allowed")
+        if len(self.input_roots) > 144:
+            raise ValueError("At most 144 input roots are allowed (128 subjects plus participant tables)")
         for root in self.input_roots:
             if len(root.parts) < 3 or not root.is_dir():
                 raise ValueError("Input roots must be existing dedicated directories")

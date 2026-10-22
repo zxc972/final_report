@@ -232,8 +232,8 @@ def discover_paths(entries):
             for path in sorted(root.iterdir()):
                 if path.is_file() and not path.is_symlink() and path.name.endswith((".nii", ".nii.gz", ".mgz", ".tsv")):
                     paths.append(f"/inputs/{index}/" + path.name)
-    if not 1 <= len(paths) <= 128:
-        raise ValueError("Approved product inventory requires 1..128 files; no silent truncation")
+    if not 1 <= len(paths) <= 4096:
+        raise ValueError("Approved product inventory requires 1..4096 files; no silent truncation")
     return paths
 
 
@@ -264,6 +264,8 @@ def ensure_profile(tools, paths):
 def product_types(item):
     kind, path = value(item["format"]), Path(value(item["path"]))
     found = set()
+    if kind in {"tsv", "csv"}:
+        found.add("subject_table")
     if kind == "surface":
         found.add("surface")
         if path.name.endswith(".pial"):
@@ -331,6 +333,8 @@ def _candidate(tools, spec, method, entries, files, atlas_name, intent, domain, 
             by_type = {kind: [f for f in members if kind in product_types(f)] for kind in PRODUCT_TYPES}
             for need in spec["required_products"]:
                 possible = by_type[need] if need in {"surface", "pial_surface", "white_surface", "surface_metric", "annotation", "cortex_label", "registration_surface"} else [f for f in group if need in product_types(f)]
+                if need == "subject_table":
+                    possible = [f for f in files if value(f["format"]) in {"tsv", "csv"}]
                 if need == "surface_metric":
                     possible = [f for f in possible if Path(value(f["path"])).name.split(".")[-1] in measures]
                 if need == "annotation":
@@ -369,6 +373,8 @@ def _candidate(tools, spec, method, entries, files, atlas_name, intent, domain, 
     if method["id"].endswith("global_convex_hull_gyrification"):
         notice.append("Global full-pial-area / same-surface 3D convex-hull area is a descriptive alternative, not local gyrification index (lGI)")
     context = {"question": "Describe requested stored products with " + method["name"], "data": {"files": [value(f["path"]) for f in chosen], "subjects": [e["subject_id"] for e in entries], "profile_sha256": profile["sha256"], "profile_ref": f"data_profile.v{profile['version']:06d}.json", "species_declared": intent.species, "species_verified": None}, "atlas": atlas, "method": {"method_id": method["id"], "name": method["name"], "reason": "Candidate for declared measures and comparison; selected by Agent at commitment"}, "outputs": ["summary.csv", "summary.json", "report.md"], "code_path": "/work/analysis.py", "analysis_scope": {"inference": intent.comparison in {"group", "correlation"}, "scale_policy": "dimensionless_per_input" if method["id"].endswith("global_convex_hull_gyrification") else "within_input_only", "comparison": intent.comparison, "labels": labels, "notices": notice}}
+    if method["id"] == "method:v14:group_regional_glm":
+        context["outputs"] = ["regional_values.csv", "group_results.csv", "summary.json", "report.md"]
     if atlas_name:
         from .analysis_atlas_identity import identify
         identity = identify(atlas_name)
@@ -616,6 +622,9 @@ def commit_candidate(tools, candidate_id, rationale, code_path, commitment=None)
             raise ValueError("Refuse to overwrite a versioned label set")
         target.write_bytes(raw)
         bundle["label_sets_ref"] = {"path": label_path, "sha256": hashlib.sha256(raw).hexdigest()}
+        if context["method"]["method_id"] == "method:v14:group_regional_glm":
+            from .analysis_group_manifest import write_manifest
+            bundle["inputs_manifest"] = write_manifest(tools, context, bundle)
         bundle["must_disclose"] += result["must_disclose"]
         bundle_path = f"/work/execution_bundle.v{result['version']:06d}.json"
         bundle["bundle_ref"] = bundle_path

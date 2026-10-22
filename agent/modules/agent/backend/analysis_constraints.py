@@ -294,7 +294,7 @@ def compile_constraints(
     if saved is None:
         raise ValueError("Call profile_data before compile_constraints")
     profile = saved["record"]
-    if not isinstance(plan_context, dict) or len(canonical(plan_context)) > 100_000:
+    if not isinstance(plan_context, dict) or len(canonical(plan_context)) > (2_000_000 if method_id == "method:v14:group_regional_glm" else 100_000):
         raise ValueError("Bounded proposed plan required")
     if product_contract is not None and tools.knowledge_profile.name != "product_graph_planner":
         raise ValueError("Product contracts are isolated to product_graph_planner")

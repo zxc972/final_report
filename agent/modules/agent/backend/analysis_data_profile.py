@@ -35,10 +35,10 @@ def mapped_path(tools, raw):
 def profile_data(tools, paths):
     if (
         not isinstance(paths, list)
-        or not 1 <= len(paths) <= 128
+        or not 1 <= len(paths) <= 4096
         or any(not isinstance(p, str) for p in paths)
     ):
-        raise ValueError("Supply 1..128 explicit file paths")
+        raise ValueError("Supply 1..4096 explicit file paths")
     mapped = [mapped_path(tools, path) for path in paths]
     if len(set(mapped)) != len(mapped):
         raise ValueError("Duplicate profile paths")
@@ -79,7 +79,7 @@ def profile_data(tools, paths):
         }
     profile = json.loads(
         _read_regular(
-            tools.workdir / "data_profile.json", tools.workdir, 8 * 1024 * 1024
+            tools.workdir / "data_profile.json", tools.workdir, 64 * 1024 * 1024
         )
     )
     if (

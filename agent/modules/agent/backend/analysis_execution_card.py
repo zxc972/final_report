@@ -24,6 +24,9 @@ def returns_fields(example):
 def execution_card(payload):
     bundle = payload["execution_bundle"]
     plan = payload["plan"]
+    if plan["method"]["method_id"] == "method:v14:group_regional_glm":
+        from .analysis_group_manifest import card
+        return {"status": "committed", "version": payload["version"], "execution_card": card(plan, bundle), "state": payload.get("state")}
     names = {row["function"] for row in bundle["operations"]["calls"]}
     signatures = []
     for row in operations_manifest()["functions"]:

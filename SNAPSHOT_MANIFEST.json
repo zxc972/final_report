@@ -6,8 +6,8 @@
   "research_release": "research_evidence_v13",
   "source_root": "/data/xuancheng",
   "source_unchanged_check": true,
-  "source_files": 927,
-  "source_bytes": 33292382,
+  "source_files": 930,
+  "source_bytes": 33302609,
   "excluded_classes": [
     "credentials and .env",
     "FreeSurfer license",
@@ -265,8 +265,8 @@
       "mode": "100644",
       "source_bytes": 22561,
       "source_sha256": "2aa8f02aef91bfe65a4a1d9424f6383d9575d3890aed4ef5ba809c01824dc050",
-      "bytes": 22738,
-      "sha256": "34ddf438c565c55935513e61099b6ce3e34b35f6f67c8e700859c135647dba15",
+      "bytes": 22803,
+      "sha256": "b705681aacf3c224bfb53ecd63025da3765209cceec7581cf2ec696e9f7828ca",
       "synced_at": "2026-10-22",
       "previous_source": {
         "source": "/data/xuancheng/agent_round7_trial_20261021/offline_followup_review/backend/analysis_constraints.py",
@@ -325,8 +325,8 @@
       "source_head": "75143b21bc459c6f6e951891356ebf9e4e10169d",
       "source_bytes": 7067,
       "source_sha256": "85814e7007e615b037c8e03ea24db106225b7eeec73b9b3452855269b1e16b2a",
-      "bytes": 7941,
-      "sha256": "7a460c0184c34f47c882cec0ef4ca0cf87f241a056d25716657667e77a533c93",
+      "bytes": 8153,
+      "sha256": "14e39244f3eae12a2b49fe83a7a6a0011ba2c8b776393199c42dced2af3d8db0",
       "mode": "100644",
       "synced_at": "2026-10-22"
     },
@@ -337,8 +337,8 @@
       "mode": "100644",
       "source_bytes": 3322,
       "source_sha256": "118b0470c6cc5518be93371fdb7109baf1475de923b8fb30d73d83bf3e3b2419",
-      "bytes": 3629,
-      "sha256": "dd34f9777f070386858d1ce70f9d60fcbb037468c352801d4b621adc584c3471",
+      "bytes": 3632,
+      "sha256": "6afd4b3495e913eb9d06c38b1a432a86820ec672b35db72434a7c0250a0eb556",
       "synced_at": "2026-10-22"
     },
     {
@@ -375,8 +375,8 @@
       "source_head": "75143b21bc459c6f6e951891356ebf9e4e10169d",
       "source_bytes": 3924,
       "source_sha256": "8ad50aecf59c7beeef8802e9c7c3d185bce0ad7347c3872b2b9fa6eff3417eb4",
-      "bytes": 3924,
-      "sha256": "8ad50aecf59c7beeef8802e9c7c3d185bce0ad7347c3872b2b9fa6eff3417eb4",
+      "bytes": 4184,
+      "sha256": "d8a79d18a75e91f0363d00c021da27e71a27d60fc6d8c5334d93720778192679",
       "mode": "100644",
       "synced_at": "2026-10-22"
     },
@@ -387,8 +387,8 @@
       "mode": "100644",
       "source_bytes": 31000,
       "source_sha256": "5f2cf9a9f3c4869a28a3838b7b9ac8a0543b727ac79786ce0a399696361351bf",
-      "bytes": 32054,
-      "sha256": "a20da0b28953ce5257951b67e2b70182c078b292c9041cfc9df7c01a12b2f54b",
+      "bytes": 32095,
+      "sha256": "159d159dc3294319f7ebc5bef2f5491fcd439980491b29ca44570329fb8dfa4e",
       "synced_at": "2026-10-22"
     },
     {
@@ -436,6 +436,13 @@
       "source": "/data/xuancheng/agent_v1/round14/agent/modules/agent/backend/analysis_group_design.py",
       "bytes": 4774,
       "sha256": "1e0256268e2f582c7dd4658659be44addac6cb03cfa1ec4ace63dd96854a1599",
+      "mode": "100644"
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_group_manifest.py",
+      "source": "/data/xuancheng/agent_v1/round14/agent/modules/agent/backend/analysis_group_manifest.py",
+      "bytes": 3084,
+      "sha256": "fbc716395be078bb3a48832d534df3bfcab7084dc7dfb76a081f2fa8a85a9771",
       "mode": "100644"
     },
     {
@@ -662,8 +669,8 @@
       "mode": "100644",
       "source_bytes": 14276,
       "source_sha256": "194a91c02deb9205e05f8ac1e48affff8a7688d84fe9bb14f8e31a23e73417d5",
-      "bytes": 14276,
-      "sha256": "194a91c02deb9205e05f8ac1e48affff8a7688d84fe9bb14f8e31a23e73417d5",
+      "bytes": 14371,
+      "sha256": "923c1c2165cd583015f51b1a19eb2b4c6bfee4aadc2eafc053b25f94e05119a8",
       "synced_at": "2026-10-22",
       "previous_source": {
         "source": "/data/xuancheng/agent_round7_trial_20261021/offline_followup_review/backend/analysis_plans.py",
@@ -718,8 +725,8 @@
       "mode": "100644",
       "source_bytes": 39057,
       "source_sha256": "a56be13c699988d561eeb82b52715be4a20c8ac992f9af2a33fa49394dcf7f7f",
-      "bytes": 41295,
-      "sha256": "28d1fc68e7a6982ece5a036573eed7ed672b0ea63fae98b60a7b9dff9ba84079",
+      "bytes": 41886,
+      "sha256": "8f538a98cad6cf2ccadf12573a538a6f745d073b30274b6f78c192a5c013d104",
       "synced_at": "2026-10-22",
       "previous_source": {
         "source": "/data/xuancheng/agent_round7_trial_20261021/offline_followup_review/backend/analysis_product_planner.py",
@@ -1893,8 +1900,8 @@
       "mode": "100644",
       "source_bytes": 30693,
       "source_sha256": "ce6fe723b2b8773ba6d974c77becf40d30f17418a320f5731bee034a96ab5a1b",
-      "bytes": 32487,
-      "sha256": "49e928a1af5c4d73967303390a30a7df3f2f43ee68f2388e98ace12f2b944052",
+      "bytes": 32519,
+      "sha256": "8417792744755e7704035f27368d8ccc4378378a5985b1f8daf1eeb0f926da5b",
       "synced_at": "2026-10-22"
     },
     {
@@ -1905,7 +1912,7 @@
       "source_bytes": 92,
       "source_sha256": "b08b6b48814ac988a931cdad21760bdc8ae5cd72820de1ba8de20a9c8edd87b3",
       "bytes": 66,
-      "sha256": "28a6367006dd7e1c5c6487f42a30123e8a256ae422b2873855441e54f110cad9",
+      "sha256": "83c12a8b57eb445eac9eb0d25bbfc9daed38b6b45eb4ba3b48d5e1940d72098f",
       "synced_at": "2026-10-22"
     },
     {
@@ -2679,6 +2686,13 @@
       "synced_at": "2026-10-22"
     },
     {
+      "path": "agent/modules/agent/tests/round14_fixture.py",
+      "source": "/data/xuancheng/agent_v1/round14/agent/modules/agent/tests/round14_fixture.py",
+      "bytes": 4041,
+      "sha256": "0109f96ea00e6eb44c27872c0751f4d56eb1163df1a2461c927b4c9d592ac900",
+      "mode": "100644"
+    },
+    {
       "path": "agent/modules/agent/tests/test_agent_auto_dispatch.py",
       "source": "git:75143b21bc459c6f6e951891356ebf9e4e10169d/tests/test_agent_auto_dispatch.py",
       "source_head": "75143b21bc459c6f6e951891356ebf9e4e10169d",
@@ -3419,6 +3433,13 @@
       "source": "/data/xuancheng/agent_v1/round14/agent/modules/agent/tests/test_round14_fastsurfer_layout.py",
       "bytes": 1834,
       "sha256": "629404c7af50e5b8b98df3c3fdc34fa92e469845cef12e597980ccde3a8f3247",
+      "mode": "100644"
+    },
+    {
+      "path": "agent/modules/agent/tests/test_round14_group_planner.py",
+      "source": "/data/xuancheng/agent_v1/round14/agent/modules/agent/tests/test_round14_group_planner.py",
+      "bytes": 1803,
+      "sha256": "05dacddc807b228feea625d78d6dfa7f4e3728f5c2d5202fae5246dddaeadbcf",
       "mode": "100644"
     },
     {
@@ -8411,5 +8432,5 @@
       "full_cross_environment_deployment_verified": false
     }
   ],
-  "updated_at": "2026-10-22T17:41:14.928793+00:00"
+  "updated_at": "2026-10-22T17:44:07.216243+00:00"
 }

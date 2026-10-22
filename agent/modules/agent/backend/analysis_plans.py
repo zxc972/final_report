@@ -37,7 +37,7 @@ def _work_path(path):
 
 
 def commit_plan(tools, plan):
-    if not isinstance(plan, dict) or len(canonical(plan)) > 100_000:
+    if not isinstance(plan, dict) or len(canonical(plan)) > (2_000_000 if plan.get("method", {}).get("method_id") == "method:v14:group_regional_glm" else 100_000):
         raise ValueError("Bounded structured plan required")
     for key in (
         "question",
