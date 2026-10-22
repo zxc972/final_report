@@ -6,8 +6,8 @@
   "research_release": "research_evidence_v13",
   "source_root": "/data/xuancheng",
   "source_unchanged_check": true,
-  "source_files": 932,
-  "source_bytes": 33307964,
+  "source_files": 933,
+  "source_bytes": 33314399,
   "excluded_classes": [
     "credentials and .env",
     "FreeSurfer license",
@@ -455,8 +455,8 @@
     {
       "path": "agent/modules/agent/backend/analysis_group_stats.py",
       "source": "/data/xuancheng/agent_v1/round14/agent/modules/agent/backend/analysis_group_stats.py",
-      "bytes": 15600,
-      "sha256": "b1ec6f75bdc55049777199b936f421565029b6c2c45e944adb191e361fb4e132",
+      "bytes": 17167,
+      "sha256": "f57662330c479b80562e7172c9c84fe2790ef25101488226e1b50d4da759bd71",
       "mode": "100644"
     },
     {
@@ -465,8 +465,8 @@
       "source_head": "75143b21bc459c6f6e951891356ebf9e4e10169d",
       "source_bytes": 10037,
       "source_sha256": "f20b3166f5349431b6307838efda8f088abd8d4275467400bba2b79f637e6235",
-      "bytes": 10037,
-      "sha256": "f20b3166f5349431b6307838efda8f088abd8d4275467400bba2b79f637e6235",
+      "bytes": 12561,
+      "sha256": "bcb6ac5312e90dfb46ca016ec6bd91b4d57168ac6f206fc6a8651046f6517a14",
       "mode": "100644",
       "synced_at": "2026-10-22"
     },
@@ -3464,6 +3464,13 @@
       "mode": "100644"
     },
     {
+      "path": "agent/modules/agent/tests/test_round14_independent_group.py",
+      "source": "/data/xuancheng/agent_v1/round14/agent/modules/agent/tests/test_round14_independent_group.py",
+      "bytes": 1653,
+      "sha256": "6a9db6a94e5f031849191489795a4c41160fb0ee84c2dcba6bae9b3a6ea4d24b",
+      "mode": "100644"
+    },
+    {
       "path": "agent/modules/agent/tests/test_round14_method_overlay.py",
       "source": "/data/xuancheng/agent_v1/round14/agent/modules/agent/tests/test_round14_method_overlay.py",
       "bytes": 723,
@@ -3886,8 +3893,8 @@
       "mode": "100644",
       "source_bytes": 6603,
       "source_sha256": "788efd5215201559bc7dd49c3054a5e5e53e687f73e829b53000fa3a963a76ec",
-      "bytes": 6603,
-      "sha256": "788efd5215201559bc7dd49c3054a5e5e53e687f73e829b53000fa3a963a76ec",
+      "bytes": 6805,
+      "sha256": "59bab06d0fe47ab3fa19aac7052c02073fee68c7984c71b8f9729f83026c42fc",
       "synced_at": "2026-10-22",
       "previous_source": {
         "source": "/data/xuancheng/agent_round7_trial_20261021/frontend_review/src/components/Agent/AnalysisResultCard.tsx",
@@ -4689,8 +4696,8 @@
     {
       "path": "agent/modules/gui/monkey-brain-frontend/src/utils/analysisResult.ts",
       "source": "git:18090d9685f9a83d010d31baf56dfb9b969ba152/src/utils/analysisResult.ts",
-      "bytes": 5061,
-      "sha256": "6dedf4599d70bb947faec6656e62d6c658cecdd85b3ceb356a85865d1007e3cc",
+      "bytes": 5550,
+      "sha256": "3267a5427741a44c894916432501ac4afd169051cf2a6803eddfb26b10b21055",
       "mode": "100644",
       "source_head": "18090d9685f9a83d010d31baf56dfb9b969ba152",
       "source_bytes": 5061,
@@ -8446,5 +8453,5 @@
       "full_cross_environment_deployment_verified": false
     }
   ],
-  "updated_at": "2026-10-22T17:45:14.228887+00:00"
+  "updated_at": "2026-10-22T17:46:31.408902+00:00"
 }

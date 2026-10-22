@@ -315,7 +315,11 @@ def regional_glm(rows: Iterable[Mapping[str, object]],
     excluded: dict[str, str] = {}
     for key in sorted(regions):
         values = regions[key]
-        design = build_design(participants, sorted(values), terms)
+        try:
+            design = build_design(participants, sorted(values), terms)
+        except DesignError as exc:
+            skipped.append({"region": key, "reason": str(exc)})
+            continue
         for item in design["excluded"]:
             excluded.setdefault(item["subject"], item["reason"])
         if len(design["effect_columns"]) != 1:
@@ -334,12 +338,19 @@ def regional_glm(rows: Iterable[Mapping[str, object]],
             continue
         idx = design["columns"].index(design["effect_columns"][0])
         weights = [1.0 if i == idx else 0.0 for i in range(fit["p"])]
-        test = contrast(fit, weights)
+        try:
+            test = contrast(fit, weights)
+        except DesignError as exc:
+            skipped.append({"region": key, "reason": str(exc)})
+            continue
+        if test["se"] <= 0 or not all(math.isfinite(test[c]) for c in ("estimate", "se", "t", "p")):
+            skipped.append({"region": key, "reason": "zero_variance_or_nonfinite_test"})
+            continue
         record = {"hemisphere": key[0], "metric": key[1], "label_key": key[2],
                   "name": names[key], "n": fit["n"], "effect": design["effect_columns"][0],
                   "estimate": test["estimate"], "se": test["se"], "t": test["t"],
                   "df": test["df"], "p": test["p"], "q_fdr": None, "effect_size": None,
-                  "effect_size_kind": None}
+                  "effect_size_kind": None, "status": "ok"}
         if first["kind"] == "categorical" and len(terms) == 1:
             level = design["effect_columns"][0].split("[", 1)[1][:-1]
             col = str(first["column"])
@@ -352,6 +363,20 @@ def regional_glm(rows: Iterable[Mapping[str, object]],
         results.append(record)
     for record, q in zip(results, fdr_bh([r["p"] for r in results])):
         record["q_fdr"] = q
-    return {"results": results, "skipped": skipped, "n_tests": len(results),
+    # Skipped partitions retain their public identity, exact effect and empty statistics.
+    full_design = build_design(participants, sorted({s for values in regions.values() for s in values}), terms)
+    effect = full_design["effect_columns"][0] if len(full_design["effect_columns"]) == 1 else str(terms[0]["column"])
+    all_rows = [dict(r) for r in results]
+    for record in all_rows:
+        if record["effect_size"] is None:
+            record["effect_size"] = record["t"] / math.sqrt(record["t"]**2 + record["df"])
+            record["effect_size_kind"] = "partial_r"
+    for item in skipped:
+        key = item["region"]
+        all_rows.append({"hemisphere": key[0], "metric": key[1], "label_key": key[2],
+                         "name": names[key], "effect": effect, "status": "skipped:" + item["reason"],
+                         **{column: None for column in ("n", "estimate", "se", "t", "df", "p", "q_fdr", "effect_size", "effect_size_kind")}})
+    all_rows.sort(key=lambda row: (row["hemisphere"], row["metric"], row["label_key"]))
+    return {"rows": all_rows, "results": results, "skipped": skipped, "n_tests": len(results),
             "excluded_subjects": [{"subject": k, "reason": v} for k, v in sorted(excluded.items())],
             "correction": "benjamini_hochberg_all_fitted_regions"}

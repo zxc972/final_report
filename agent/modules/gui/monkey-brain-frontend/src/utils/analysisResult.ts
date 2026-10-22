@@ -22,6 +22,7 @@ export interface AnalysisResultInfo {
   fileChecksPassed: boolean;
   numericalReview: string;
   independentMismatches?: number;
+  independentTables?: { file: string; status: 'pass' | 'fail'; mismatches: number }[];
   files: AnalysisFileInfo[];
 }
 const safePath = (value: unknown): value is string => typeof value === 'string'
@@ -70,6 +71,11 @@ export function parseAnalysisResult(raw: any, conversationId: unknown, context?:
     independentMismatches: Number.isInteger(raw.validation?.independent_numeric?.mismatch_count)
       && raw.validation.independent_numeric.mismatch_count >= 0
       ? raw.validation.independent_numeric.mismatch_count : undefined,
+    independentTables: ['regional_values.csv', 'group_results.csv'].flatMap(file => {
+      const table = raw.validation?.independent_numeric?.tables?.[file];
+      return table && ['pass', 'fail'].includes(table.status) && Number.isInteger(table.mismatch_count) && table.mismatch_count >= 0
+        ? [{ file, status: table.status as 'pass' | 'fail', mismatches: table.mismatch_count }] : [];
+    }),
     files: [...files.values()],
   };
 }

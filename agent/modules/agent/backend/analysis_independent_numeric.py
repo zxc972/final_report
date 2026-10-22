@@ -15,7 +15,7 @@ from .analysis_numeric_reference import roi_rows
 
 RTOL = 1e-7
 ATOL = 1e-9
-REGISTERED = {"surface_annotation_roi", "global_convex_hull_gyrification"}
+REGISTERED = {"surface_annotation_roi", "global_convex_hull_gyrification", "group_regional_glm"}
 
 
 def public_model_validation(value):
@@ -48,6 +48,18 @@ def compare_rows(expected, observed, keys, columns):
             checked += 1
             try:
                 target = reference[key][column]
+                if target is None:
+                    valid = output[key].get(column) in (None, "")
+                    value = None
+                    if not valid:
+                        differences.append({"identity": key, "column": column, "observed": None, "expected": None})
+                    continue
+                if isinstance(target, str):
+                    valid = output[key].get(column) == target
+                    value = output[key].get(column)
+                    if not valid:
+                        differences.append({"identity": key, "column": column, "observed": value, "expected": target})
+                    continue
                 value = float(output[key][column])
                 valid = math.isfinite(value) and abs(value-target) <= ATOL+RTOL*abs(target)
                 if column in {"vertex_count", "zero_count"}:
@@ -63,6 +75,15 @@ def compare_rows(expected, observed, keys, columns):
 
 
 def reference_rows(tools, plan, bundle, method):
+    if method == "group_regional_glm":
+        from .analysis_group_design import participants
+        from .analysis_group_stats import regional_glm
+        regional = roi_rows(plan, bundle, tools.resolve)
+        group = regional_glm(regional, participants(tools, plan["analysis_scope"]), plan["analysis_scope"]["design_terms"])
+        return {
+            "regional_values.csv": (regional, ["subject", "hemisphere", "metric", "label_key", "name"], ["vertex_count", "mean", "std_population", "median", "zero_count"]),
+            "group_results.csv": (group["rows"], ["hemisphere", "metric", "label_key", "name"], ["n", "effect", "estimate", "se", "t", "df", "p", "q_fdr", "effect_size", "effect_size_kind", "status"]),
+        }
     if method == "surface_annotation_roi":
         rows = roi_rows(plan, bundle, tools.resolve)
         columns = ["vertex_count", "mean", "std_population", "median", "zero_count"]
@@ -118,23 +139,39 @@ def verify(tools):
             if not binding["execution_receipt_id"] or execution.get("exit_code") != 0:
                 raise ValueError("A successful current execution receipt is required")
             inputs = {path: hashlib.sha256(tools.resolve(path).read_bytes()).hexdigest() for path in plan["data"]["files"]}
-            expected, keys, columns = reference_rows(tools, plan, bundle, method)
+            references = reference_rows(tools, plan, bundle, method)
             reference_ready = True
             csv_files = [path if isinstance(path, str) else path["path"] for path in bundle["output_contract"]["files"]
                          if (path if isinstance(path, str) else path["path"]).endswith('.csv')]
-            if len(csv_files) != 1:
-                raise ValueError("Exactly one declared CSV is required by registered references")
-            target = tools.resolve('/work/'+csv_files[0].removeprefix('/work/'), writable=True)
+            if method != "group_regional_glm":
+                if len(csv_files) != 1:
+                    raise ValueError("Registered method must declare its reference CSV")
+                references = {csv_files[0]: references}
+            if set(references) != set(csv_files):
+                raise ValueError("Declared CSVs must match method references")
             from .analysis_agent import _read_regular
             from .analysis_validation import MAX_ARTIFACT_BYTES
-            raw = _read_regular(target, tools.workdir, MAX_ARTIFACT_BYTES)
-            observed = list(csv.DictReader(io.StringIO(raw.decode('utf-8-sig'))))
-            comparison = compare_rows(expected, observed, keys, columns)
+            comparisons = {}
+            reference_tables = {}
+            output_digests = {}
+            for filename in csv_files:
+                expected, keys, columns = references[filename]
+                target = tools.resolve('/work/'+filename.removeprefix('/work/'), writable=True)
+                raw = _read_regular(target, tools.workdir, MAX_ARTIFACT_BYTES)
+                observed = list(csv.DictReader(io.StringIO(raw.decode('utf-8-sig'))))
+                comparisons[filename] = compare_rows(expected, observed, keys, columns)
+                reference_tables[filename] = expected
+                output_digests[filename] = hashlib.sha256(raw).hexdigest()
             after = {path: hashlib.sha256(tools.resolve(path).read_bytes()).hexdigest() for path in inputs}
             if inputs != after:
                 raise ValueError("Reference input changed during comparison")
-            private.update(input_sha256=inputs, output_sha256=hashlib.sha256(raw).hexdigest(), expected=expected, **comparison)
-            summary.update(host_verified=True, **{key:comparison[key] for key in ['status','checked','mismatch_count','identity_mismatch_count','numeric_mismatch_count']})
+            combined = {key: sum(c[key] for c in comparisons.values()) for key in ('checked','mismatch_count','identity_mismatch_count','numeric_mismatch_count')}
+            combined['status'] = 'fail' if any(c['status']=='fail' for c in comparisons.values()) else 'pass'
+            private.update(input_sha256=inputs, output_sha256=output_digests, expected=reference_tables, tables=comparisons, **combined)
+            summary.update(host_verified=True, **combined)
+            if method == "group_regional_glm":
+                summary['tables'] = {name: {k:c[k] for k in ('status','checked','mismatch_count','identity_mismatch_count','numeric_mismatch_count')} for name,c in comparisons.items()}
+                private['group_reference_source_sha256'] = hashlib.sha256(Path(__file__).with_name('analysis_group_stats.py').read_bytes()).hexdigest()
         except Exception as exc:
             private.update(reference_error_type=type(exc).__name__, reference_error=str(exc)[:500])
             if reference_ready:
