@@ -289,3 +289,101 @@ def test_null_length_answer_is_empty_and_never_resampled(tmp_path):
     assert call(replay) == "" and sent == []
     assert replay.stats()["historical_null_length_responses"] == 1
     assert replay.stats()["successful_requests"] == 1
+
+
+def test_runner_finishes_other_items_and_labels_provider_failures(
+    tmp_path, monkeypatch
+):
+    monkeypatch.syspath_prepend(str(ROOT))
+    from tools.knowledge import provider_llm as live
+
+    good = {
+        "id": 1,
+        "method": "test_method",
+        "field": "conditions",
+        "statement": "MATLAB software must be installed",
+        "quote": "MATLAB is required.",
+        "source_id": "s",
+        "gold_template": "software",
+        "gold_parameters": {"commands": ["matlab"]},
+    }
+    bad = dict(good, id=2, statement="Always fail: MATLAB software must be installed")
+    gold = tmp_path / "gold.json"
+    gold.write_text(
+        json.dumps(
+            {"status": "draft", "slots": {"T1": ["space"]}, "items": [good, bad]}
+        )
+    )
+    inputs = tmp_path / "inputs"
+    inputs.mkdir()
+    (inputs / "test_method.input.json").write_text(
+        json.dumps({"sources": [{"source_id": "s", "text": good["quote"]}]})
+    )
+    cfg = tmp_path / "dev.env"
+    cfg.write_text(
+        f"PLATFORM_API_BASE_URL=https://gateway.invalid/v1\nPLATFORM_API_KEY={SECRET}\n"
+    )
+
+    def handler(request):
+        prompt = json.loads(request.content)["messages"][0]["content"]
+        if "Always fail:" in prompt:
+            return httpx.Response(429, json={"error": SECRET})
+        return httpx.Response(
+            200,
+            json={
+                "model": "observed-flash",
+                "choices": [
+                    {
+                        "finish_reason": "stop",
+                        "message": {
+                            "content": '{"template":"software","parameters":{"commands":["matlab"]}}'
+                        },
+                    }
+                ],
+                "usage": {
+                    "prompt_tokens": 11,
+                    "completion_tokens": 3,
+                    "total_tokens": 14,
+                },
+            },
+        )
+
+    original = live.configure
+
+    def fake_configure(**kwargs):
+        return original(
+            **kwargs,
+            client=httpx.Client(transport=httpx.MockTransport(handler)),
+            sleep=lambda _: None,
+        )
+
+    monkeypatch.setattr(live, "configure", fake_configure)
+    out = tmp_path / "output"
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        [
+            "run",
+            "--gold",
+            str(gold),
+            "--extractions",
+            str(inputs),
+            "--llm",
+            "tools.knowledge.provider_llm:complete",
+            "--provider-config",
+            str(cfg),
+            "--out",
+            str(out),
+        ],
+    )
+    r.main()
+    status = json.loads((out / "run_status.json").read_text())
+    assert (
+        status["status"] == "completed_with_provider_failures"
+        and status["provider_failure_items"] == 3
+    )
+    summary = json.loads((out / "summary.json").read_text())
+    assert summary["full"]["decisions"]["provider_error"] == 1
+    assert summary["retrieval_only"]["usage"]["http_attempts"] == 0
+    assert summary["direct"]["decisions"]["accepted"] == 1
+    assert SECRET not in (out / "requests/calls.jsonl").read_text()

@@ -292,6 +292,7 @@ def score_with_details(c, items, preds):
             "review",
             "rejected_quote",
             "inference_error",
+            "provider_error",
         ]
     }
     return result
@@ -325,6 +326,11 @@ def error_rows(c, items, preds):
             )
         if pred.get("decision") == "rejected_quote":
             reasons.append("引文原文核对未达阈值")
+        if pred.get("decision") == "provider_error":
+            reasons.append(
+                "接口/预算失败，单列为环境失败而非语义错误："
+                + pred.get("error_summary", "")
+            )
         if pred.get("decision") == "inference_error":
             reasons.append("模型输出触发算法运行异常：" + pred["runtime_error_type"])
         if pred.get("decision") == "advisory":
@@ -455,10 +461,20 @@ def write_reports(c, out, gold, all_preds, summary, provider, frozen_digest):
         }
     )
     save_json(out / "usage.json", total_usage)
+    provider_failures = [
+        {"arm": arm, "item": item, "prediction": pred}
+        for arm, preds in all_preds.items()
+        for item, pred in zip(items, preds)
+        if pred.get("decision") == "provider_error"
+    ]
+    save_json(out / "provider_failures.json", provider_failures)
     save_json(
         out / "run_status.json",
         {
-            "status": "completed",
+            "status": (
+                "completed_with_provider_failures" if provider_failures else "completed"
+            ),
+            "provider_failure_items": len(provider_failures),
             "label_status": gold.get("status"),
             "frozen_sha256": frozen_digest,
             "n_statements": len(items),
@@ -493,6 +509,8 @@ def write_reports(c, out, gold, all_preds, summary, provider, frozen_digest):
         f"full 组逐条错误 {len(errors)} 项，见 full_errors.md / full_errors.csv。引文、候选、分数和全部预测均已保存。",
         "",
         "每个模型响应及 token 记在 requests/calls.jsonl；失败及重试同样占用共享的 800 请求上限，未知 usage 不视为已知零 token。",
+        "",
+        f"接口/预算失败共 {len(provider_failures)} 个组别-条目，单列于 provider_failures.json；主表按未产生有效预测计分，不能将这些失败归为算法语义错误。",
         "",
         f"冻结摘要：`{frozen_digest}`。正式标注冻结、正式重跑、敏感性分析及知识层新增/一致/冲突比较均等待用户审核通知。",
         "",
@@ -605,6 +623,19 @@ def main():
                             arm,
                             call,
                         )
+                    except provider_llm.ProviderFailure as error:
+                        # Authentication failures invalidate the environment. Other
+                        # exhausted transport failures remain explicit failed items.
+                        if "HTTP 401" in str(error) or "HTTP 403" in str(error):
+                            raise
+                        prediction = {
+                            "decision": "provider_error",
+                            "template": None,
+                            "parameters": None,
+                            "failure_kind": "provider_transport_or_budget",
+                            "error_summary": str(error),
+                            "sample_calls": sample,
+                        }
                     except (TypeError, ValueError, KeyError, AttributeError) as error:
                         # Preserve algorithm failures as failures, never repair an answer or resample to improve a score.
                         prediction = {
