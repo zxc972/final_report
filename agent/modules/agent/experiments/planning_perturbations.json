@@ -1,0 +1,949 @@
+{
+  "schema": "planning-eval.rules.v1",
+  "expected_basis": "Hand-authored before execution: declared slot types, subject/hemisphere/mesh/atlas/space equality, optional bilateral pial and existing source-selection policies. No model and no output-derived expectations.",
+  "states": [
+    {
+      "id": "roi_baseline",
+      "family": "baseline",
+      "method_id": "method:v12:surface_annotation_roi",
+      "atlas": "aparc",
+      "intent": {
+        "measures": [
+          "thickness"
+        ]
+      },
+      "perturbations": [],
+      "expected": {
+        "candidate_count": 1,
+        "missing": []
+      }
+    },
+    {
+      "id": "remove_thickness_lh",
+      "family": "delete",
+      "method_id": "method:v12:surface_annotation_roi",
+      "atlas": "aparc",
+      "intent": {
+        "measures": [
+          "thickness"
+        ]
+      },
+      "perturbations": [
+        {
+          "op": "delete",
+          "select": {
+            "type": "type:SurfaceMetric.Thickness",
+            "hemisphere": "lh"
+          }
+        }
+      ],
+      "expected": {
+        "candidate_count": 0,
+        "missing": [
+          "type:SurfaceMetric.Thickness@lh"
+        ]
+      }
+    },
+    {
+      "id": "remove_thickness_rh",
+      "family": "delete",
+      "method_id": "method:v12:surface_annotation_roi",
+      "atlas": "aparc",
+      "intent": {
+        "measures": [
+          "thickness"
+        ]
+      },
+      "perturbations": [
+        {
+          "op": "delete",
+          "select": {
+            "type": "type:SurfaceMetric.Thickness",
+            "hemisphere": "rh"
+          }
+        }
+      ],
+      "expected": {
+        "candidate_count": 0,
+        "missing": [
+          "type:SurfaceMetric.Thickness@rh"
+        ]
+      }
+    },
+    {
+      "id": "remove_white_lh",
+      "family": "delete",
+      "method_id": "method:v12:surface_annotation_roi",
+      "atlas": "aparc",
+      "intent": {
+        "measures": [
+          "thickness"
+        ]
+      },
+      "perturbations": [
+        {
+          "op": "delete",
+          "select": {
+            "type": "type:Surface.White",
+            "hemisphere": "lh"
+          }
+        }
+      ],
+      "expected": {
+        "candidate_count": 0,
+        "missing": [
+          "type:Surface.White@lh"
+        ]
+      }
+    },
+    {
+      "id": "remove_white_rh",
+      "family": "delete",
+      "method_id": "method:v12:surface_annotation_roi",
+      "atlas": "aparc",
+      "intent": {
+        "measures": [
+          "thickness"
+        ]
+      },
+      "perturbations": [
+        {
+          "op": "delete",
+          "select": {
+            "type": "type:Surface.White",
+            "hemisphere": "rh"
+          }
+        }
+      ],
+      "expected": {
+        "candidate_count": 0,
+        "missing": [
+          "type:Surface.White@rh"
+        ]
+      }
+    },
+    {
+      "id": "remove_cortex_lh",
+      "family": "delete",
+      "method_id": "method:v12:surface_annotation_roi",
+      "atlas": "aparc",
+      "intent": {
+        "measures": [
+          "thickness"
+        ]
+      },
+      "perturbations": [
+        {
+          "op": "delete",
+          "select": {
+            "type": "type:Label.Cortex",
+            "hemisphere": "lh"
+          }
+        }
+      ],
+      "expected": {
+        "candidate_count": 0,
+        "missing": [
+          "type:Label.Cortex@lh"
+        ]
+      }
+    },
+    {
+      "id": "remove_cortex_rh",
+      "family": "delete",
+      "method_id": "method:v12:surface_annotation_roi",
+      "atlas": "aparc",
+      "intent": {
+        "measures": [
+          "thickness"
+        ]
+      },
+      "perturbations": [
+        {
+          "op": "delete",
+          "select": {
+            "type": "type:Label.Cortex",
+            "hemisphere": "rh"
+          }
+        }
+      ],
+      "expected": {
+        "candidate_count": 0,
+        "missing": [
+          "type:Label.Cortex@rh"
+        ]
+      }
+    },
+    {
+      "id": "remove_registration_lh",
+      "family": "delete",
+      "method_id": "method:v12:surface_annotation_roi",
+      "atlas": "aparc",
+      "intent": {
+        "measures": [
+          "thickness"
+        ]
+      },
+      "perturbations": [
+        {
+          "op": "delete",
+          "select": {
+            "type": "type:Surface.SphereReg",
+            "hemisphere": "lh"
+          }
+        }
+      ],
+      "expected": {
+        "candidate_count": 0,
+        "missing": [
+          "type:Surface.SphereReg@lh"
+        ]
+      }
+    },
+    {
+      "id": "remove_registration_rh",
+      "family": "delete",
+      "method_id": "method:v12:surface_annotation_roi",
+      "atlas": "aparc",
+      "intent": {
+        "measures": [
+          "thickness"
+        ]
+      },
+      "perturbations": [
+        {
+          "op": "delete",
+          "select": {
+            "type": "type:Surface.SphereReg",
+            "hemisphere": "rh"
+          }
+        }
+      ],
+      "expected": {
+        "candidate_count": 0,
+        "missing": [
+          "type:Surface.SphereReg@rh"
+        ]
+      }
+    },
+    {
+      "id": "remove_thickness_bilateral",
+      "family": "delete",
+      "method_id": "method:v12:surface_annotation_roi",
+      "atlas": "aparc",
+      "intent": {
+        "measures": [
+          "thickness"
+        ]
+      },
+      "perturbations": [
+        {
+          "op": "delete",
+          "select": {
+            "type": "type:SurfaceMetric.Thickness"
+          }
+        }
+      ],
+      "expected": {
+        "candidate_count": 0,
+        "missing": [
+          "type:SurfaceMetric.Thickness@lh",
+          "type:SurfaceMetric.Thickness@rh"
+        ]
+      }
+    },
+    {
+      "id": "remove_unused_pial",
+      "family": "delete",
+      "method_id": "method:v12:surface_annotation_roi",
+      "atlas": "aparc",
+      "intent": {
+        "measures": [
+          "thickness"
+        ]
+      },
+      "perturbations": [
+        {
+          "op": "delete",
+          "select": {
+            "type": "type:Surface.Pial"
+          }
+        }
+      ],
+      "expected": {
+        "candidate_count": 1,
+        "missing": []
+      }
+    },
+    {
+      "id": "remove_dk_left",
+      "family": "delete",
+      "method_id": "method:v12:surface_annotation_roi",
+      "atlas": "aparc",
+      "intent": {
+        "measures": [
+          "thickness"
+        ]
+      },
+      "perturbations": [
+        {
+          "op": "delete",
+          "select": {
+            "type": "type:Annotation.AparcDK",
+            "hemisphere": "lh"
+          }
+        }
+      ],
+      "expected": {
+        "candidate_count": 0,
+        "missing": [
+          "type:Annotation@lh"
+        ]
+      }
+    },
+    {
+      "id": "mesh_metric_left",
+      "family": "mesh",
+      "method_id": "method:v12:surface_annotation_roi",
+      "atlas": "aparc",
+      "intent": {
+        "measures": [
+          "thickness"
+        ]
+      },
+      "perturbations": [
+        {
+          "op": "set",
+          "select": {
+            "type": "type:SurfaceMetric.Thickness",
+            "hemisphere": "lh"
+          },
+          "attributes": {
+            "mesh": 999
+          }
+        }
+      ],
+      "expected": {
+        "candidate_count": 0,
+        "missing": []
+      }
+    },
+    {
+      "id": "mesh_white_left",
+      "family": "mesh",
+      "method_id": "method:v12:surface_annotation_roi",
+      "atlas": "aparc",
+      "intent": {
+        "measures": [
+          "thickness"
+        ]
+      },
+      "perturbations": [
+        {
+          "op": "set",
+          "select": {
+            "type": "type:Surface.White",
+            "hemisphere": "lh"
+          },
+          "attributes": {
+            "mesh": 999
+          }
+        }
+      ],
+      "expected": {
+        "candidate_count": 0,
+        "missing": []
+      }
+    },
+    {
+      "id": "mesh_annotation_left",
+      "family": "mesh",
+      "method_id": "method:v12:surface_annotation_roi",
+      "atlas": "aparc",
+      "intent": {
+        "measures": [
+          "thickness"
+        ]
+      },
+      "perturbations": [
+        {
+          "op": "set",
+          "select": {
+            "type": "type:Annotation.AparcDK",
+            "hemisphere": "lh"
+          },
+          "attributes": {
+            "mesh": 999
+          }
+        }
+      ],
+      "expected": {
+        "candidate_count": 0,
+        "missing": []
+      }
+    },
+    {
+      "id": "wrong_metric_hemisphere",
+      "family": "hemisphere",
+      "method_id": "method:v12:surface_annotation_roi",
+      "atlas": "aparc",
+      "intent": {
+        "measures": [
+          "thickness"
+        ]
+      },
+      "perturbations": [
+        {
+          "op": "set",
+          "select": {
+            "type": "type:SurfaceMetric.Thickness",
+            "hemisphere": "lh"
+          },
+          "attributes": {
+            "hemisphere": "rh"
+          }
+        }
+      ],
+      "expected": {
+        "candidate_count": 0,
+        "missing": [
+          "type:SurfaceMetric.Thickness@lh"
+        ]
+      }
+    },
+    {
+      "id": "mismatched_metric_species",
+      "family": "species",
+      "method_id": "method:v12:surface_annotation_roi",
+      "atlas": "aparc",
+      "intent": {
+        "measures": [
+          "thickness"
+        ]
+      },
+      "perturbations": [
+        {
+          "op": "set",
+          "select": {
+            "type": "type:SurfaceMetric.Thickness",
+            "hemisphere": "lh"
+          },
+          "attributes": {
+            "species": "chimpanzee"
+          }
+        }
+      ],
+      "expected": {
+        "candidate_count": 0,
+        "missing": [
+          "type:SurfaceMetric.Thickness@lh"
+        ]
+      }
+    },
+    {
+      "id": "change_atlas_left",
+      "family": "atlas",
+      "method_id": "method:v12:surface_annotation_roi",
+      "atlas": "aparc",
+      "intent": {
+        "measures": [
+          "thickness"
+        ]
+      },
+      "perturbations": [
+        {
+          "op": "set",
+          "select": {
+            "type": "type:Annotation.AparcDK",
+            "hemisphere": "lh"
+          },
+          "attributes": {
+            "atlas": "D99",
+            "atlas_file_stem": "D99"
+          }
+        }
+      ],
+      "expected": {
+        "candidate_count": 0,
+        "missing": [
+          "type:Annotation@lh"
+        ]
+      }
+    },
+    {
+      "id": "changed_metric_space",
+      "family": "space",
+      "method_id": "method:v12:surface_annotation_roi",
+      "atlas": "aparc",
+      "intent": {
+        "measures": [
+          "thickness"
+        ]
+      },
+      "perturbations": [
+        {
+          "op": "set",
+          "select": {
+            "type": "type:SurfaceMetric.Thickness",
+            "hemisphere": "lh"
+          },
+          "attributes": {
+            "space": "fsLR_32k"
+          }
+        }
+      ],
+      "expected": {
+        "candidate_count": 0,
+        "missing": [
+          "type:SurfaceMetric.Thickness@lh"
+        ]
+      }
+    },
+    {
+      "id": "requested_standard_space_unobserved",
+      "family": "space",
+      "method_id": "method:v12:surface_annotation_roi",
+      "atlas": "aparc",
+      "intent": {
+        "measures": [
+          "thickness"
+        ],
+        "space": "fsLR_32k"
+      },
+      "perturbations": [],
+      "expected": {
+        "candidate_count": 0,
+        "missing": [
+          "type:SurfaceMetric.Thickness@lh",
+          "type:SurfaceMetric.Thickness@rh",
+          "type:Annotation@lh",
+          "type:Annotation@rh",
+          "type:Label.Cortex@lh",
+          "type:Label.Cortex@rh",
+          "type:Surface.White@lh",
+          "type:Surface.White@rh",
+          "type:Surface.SphereReg@lh",
+          "type:Surface.SphereReg@rh"
+        ]
+      }
+    },
+    {
+      "id": "all_products_declared_standard_space",
+      "family": "space",
+      "method_id": "method:v12:surface_annotation_roi",
+      "atlas": "aparc",
+      "intent": {
+        "measures": [
+          "thickness"
+        ],
+        "space": "fsLR_32k"
+      },
+      "perturbations": [
+        {
+          "op": "set",
+          "select": {
+            "type": "type:Product"
+          },
+          "attributes": {
+            "space": "fsLR_32k"
+          }
+        }
+      ],
+      "expected": {
+        "candidate_count": 1,
+        "missing": []
+      }
+    },
+    {
+      "id": "matlab_unavailable_roi",
+      "family": "software",
+      "method_id": "method:v12:surface_annotation_roi",
+      "atlas": "aparc",
+      "intent": {
+        "measures": [
+          "thickness"
+        ]
+      },
+      "perturbations": [
+        {
+          "op": "software",
+          "command": "matlab",
+          "available": false
+        }
+      ],
+      "expected": {
+        "candidate_count": 1,
+        "missing": []
+      }
+    },
+    {
+      "id": "recon_unavailable_and_missing_metric",
+      "family": "software",
+      "method_id": "method:v12:surface_annotation_roi",
+      "atlas": "aparc",
+      "intent": {
+        "measures": [
+          "thickness"
+        ]
+      },
+      "perturbations": [
+        {
+          "op": "delete",
+          "select": {
+            "type": "type:SurfaceMetric.Thickness",
+            "hemisphere": "lh"
+          }
+        },
+        {
+          "op": "software",
+          "command": "recon-all",
+          "available": false
+        }
+      ],
+      "expected": {
+        "candidate_count": 0,
+        "missing": [
+          "type:SurfaceMetric.Thickness@lh"
+        ]
+      }
+    },
+    {
+      "id": "declaration_macaque",
+      "family": "species",
+      "method_id": "method:v12:surface_annotation_roi",
+      "atlas": "aparc",
+      "intent": {
+        "measures": [
+          "thickness"
+        ]
+      },
+      "perturbations": [
+        {
+          "op": "declaration",
+          "species": "macaque"
+        }
+      ],
+      "expected": {
+        "candidate_count": 1,
+        "missing": []
+      }
+    },
+    {
+      "id": "declaration_marmoset",
+      "family": "species",
+      "method_id": "method:v12:surface_annotation_roi",
+      "atlas": "aparc",
+      "intent": {
+        "measures": [
+          "thickness"
+        ]
+      },
+      "perturbations": [
+        {
+          "op": "declaration",
+          "species": "marmoset"
+        }
+      ],
+      "expected": {
+        "candidate_count": 1,
+        "missing": []
+      }
+    },
+    {
+      "id": "declaration_chimpanzee",
+      "family": "species",
+      "method_id": "method:v12:surface_annotation_roi",
+      "atlas": "aparc",
+      "intent": {
+        "measures": [
+          "thickness"
+        ]
+      },
+      "perturbations": [
+        {
+          "op": "declaration",
+          "species": "chimpanzee"
+        }
+      ],
+      "expected": {
+        "candidate_count": 1,
+        "missing": []
+      }
+    },
+    {
+      "id": "declaration_None",
+      "family": "species",
+      "method_id": "method:v12:surface_annotation_roi",
+      "atlas": "aparc",
+      "intent": {
+        "measures": [
+          "thickness"
+        ]
+      },
+      "perturbations": [
+        {
+          "op": "declaration",
+          "species": null
+        }
+      ],
+      "expected": {
+        "candidate_count": 1,
+        "missing": []
+      }
+    },
+    {
+      "id": "macaque_missing_thickness",
+      "family": "species_delete",
+      "method_id": "method:v12:surface_annotation_roi",
+      "atlas": "aparc",
+      "intent": {
+        "measures": [
+          "thickness"
+        ]
+      },
+      "perturbations": [
+        {
+          "op": "declaration",
+          "species": "macaque"
+        },
+        {
+          "op": "delete",
+          "select": {
+            "type": "type:SurfaceMetric.Thickness"
+          }
+        }
+      ],
+      "expected": {
+        "candidate_count": 0,
+        "missing": [
+          "type:SurfaceMetric.Thickness@lh",
+          "type:SurfaceMetric.Thickness@rh"
+        ]
+      }
+    },
+    {
+      "id": "macaque_recon_unavailable",
+      "family": "software",
+      "method_id": "method:v12:surface_annotation_roi",
+      "atlas": "aparc",
+      "intent": {
+        "measures": [
+          "thickness"
+        ]
+      },
+      "perturbations": [
+        {
+          "op": "declaration",
+          "species": "macaque"
+        },
+        {
+          "op": "delete",
+          "select": {
+            "type": "type:SurfaceMetric.Thickness"
+          }
+        },
+        {
+          "op": "software",
+          "command": "recon-all",
+          "available": false
+        }
+      ],
+      "expected": {
+        "candidate_count": 0,
+        "missing": [
+          "type:SurfaceMetric.Thickness@lh",
+          "type:SurfaceMetric.Thickness@rh"
+        ]
+      }
+    },
+    {
+      "id": "hull_baseline",
+      "family": "baseline",
+      "method_id": "method:v13:global_convex_hull_gyrification",
+      "atlas": null,
+      "intent": {
+        "measures": [
+          "gyrification"
+        ]
+      },
+      "perturbations": [],
+      "expected": {
+        "candidate_count": 1,
+        "missing": []
+      }
+    },
+    {
+      "id": "hull_missing_left",
+      "family": "delete",
+      "method_id": "method:v13:global_convex_hull_gyrification",
+      "atlas": null,
+      "intent": {
+        "measures": [
+          "gyrification"
+        ]
+      },
+      "perturbations": [
+        {
+          "op": "delete",
+          "select": {
+            "type": "type:Surface.Pial",
+            "hemisphere": "lh"
+          }
+        }
+      ],
+      "expected": {
+        "candidate_count": 0,
+        "missing": [
+          "type:Surface.Pial@lh"
+        ]
+      }
+    },
+    {
+      "id": "hull_different_hemisphere_mesh_counts",
+      "family": "mesh",
+      "method_id": "method:v13:global_convex_hull_gyrification",
+      "atlas": null,
+      "intent": {
+        "measures": [
+          "gyrification"
+        ]
+      },
+      "perturbations": [
+        {
+          "op": "set",
+          "select": {
+            "type": "type:Surface.Pial",
+            "hemisphere": "lh"
+          },
+          "attributes": {
+            "mesh": 999
+          }
+        }
+      ],
+      "expected": {
+        "candidate_count": 1,
+        "missing": []
+      }
+    },
+    {
+      "id": "global_baseline",
+      "family": "baseline",
+      "method_id": "method:v15:global_morphometry",
+      "atlas": null,
+      "intent": {
+        "measures": [
+          "globalmorphometry"
+        ]
+      },
+      "perturbations": [],
+      "expected": {
+        "candidate_count": 1,
+        "missing": []
+      }
+    },
+    {
+      "id": "global_mask_fallback",
+      "family": "delete",
+      "method_id": "method:v15:global_morphometry",
+      "atlas": null,
+      "intent": {
+        "measures": [
+          "globalmorphometry"
+        ]
+      },
+      "perturbations": [
+        {
+          "op": "delete",
+          "select": {
+            "type": "type:StatsTable.AsegStats"
+          }
+        }
+      ],
+      "expected": {
+        "candidate_count": 1,
+        "missing": []
+      }
+    },
+    {
+      "id": "global_missing_volume",
+      "family": "delete",
+      "method_id": "method:v15:global_morphometry",
+      "atlas": null,
+      "intent": {
+        "measures": [
+          "globalmorphometry"
+        ]
+      },
+      "perturbations": [
+        {
+          "op": "delete",
+          "select": {
+            "type": "type:StatsTable.AsegStats"
+          }
+        },
+        {
+          "op": "delete",
+          "select": {
+            "type": "type:Volume.BrainExtractedT1"
+          }
+        }
+      ],
+      "expected": {
+        "candidate_count": 0,
+        "missing": [
+          "type:StatsTable.AsegStats|type:Volume.BrainExtractedT1@global"
+        ]
+      }
+    },
+    {
+      "id": "global_missing_left_stats",
+      "family": "delete",
+      "method_id": "method:v15:global_morphometry",
+      "atlas": null,
+      "intent": {
+        "measures": [
+          "globalmorphometry"
+        ]
+      },
+      "perturbations": [
+        {
+          "op": "delete",
+          "select": {
+            "type": "type:StatsTable.CorticalParcStats",
+            "hemisphere": "lh"
+          }
+        }
+      ],
+      "expected": {
+        "candidate_count": 0,
+        "missing": [
+          "type:StatsTable.CorticalParcStats@lh"
+        ]
+      }
+    },
+    {
+      "id": "global_optional_pial_incomplete",
+      "family": "delete",
+      "method_id": "method:v15:global_morphometry",
+      "atlas": null,
+      "intent": {
+        "measures": [
+          "globalmorphometry"
+        ]
+      },
+      "perturbations": [
+        {
+          "op": "delete",
+          "select": {
+            "type": "type:Surface.Pial",
+            "hemisphere": "lh"
+          }
+        }
+      ],
+      "expected": {
+        "candidate_count": 1,
+        "missing": []
+      }
+    }
+  ]
+}
