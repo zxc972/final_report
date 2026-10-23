@@ -1,0 +1,16 @@
+{
+  "logical_calls": 751,
+  "http_attempts": 862,
+  "successful_requests": 748,
+  "failed_requests": 110,
+  "unfinished_requests": 4,
+  "length_limited_responses": 256,
+  "historical_null_length_responses": 2,
+  "unknown_usage_requests": 114,
+  "input_tokens": 1075438,
+  "output_tokens": 950755,
+  "total_tokens": 2026193,
+  "observed_models": [
+    "deepseek-v4.1-flash"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "time": "2026-10-23T07:29:24.329093+00:00",
+  "reason": "Treat HTTP200 length-exhausted null content as an empty answer, never a resampling opportunity; cancel queued futures on provider failure; add shared 429 cooldown.",
+  "initial_frozen_sha256": "a02543da11e225423527f4e1acdc460577142e14eb35955fd6fd1a2cef4b5f2a",
+  "initial_ledger_prefix_bytes": 47406,
+  "initial_ledger_prefix_sha256": "c61b7f0083957a0fea8a17533c995ef184cd246e69931ab3b1cede5fa9e41cdb",
+  "attempts_already_reserved": 56,
+  "responses_already_recorded": 52,
+  "unfinished_inflight_requests": 4,
+  "changed_manifest_fields": [
+    "code_sha256"
+  ],
+  "algorithm_inputs_parameters_prompts_sampling_unchanged": true,
+  "predictions_retained": [
+    {
+      "checkpoint": "full_1.json",
+      "prediction_sha256": "f88c5b1384f0d2f355a8e1f9bbd187e17ca428edc93b01fc069ffdb41ae2cfe7"
+    },
+    {
+      "checkpoint": "full_2.json",
+      "prediction_sha256": "105308d1e8efb169150adc5b1f8c30fec48b46a275a8f5ba4b21e889a68a5c59"
+    },
+    {
+      "checkpoint": "full_3.json",
+      "prediction_sha256": "b426515251885d979cbfeee22c1ae218ca64b3e1a39e4b292298d73569afeb81"
+    },
+    {
+      "checkpoint": "full_4.json",
+      "prediction_sha256": "e90de2d934f0d57588072eb4f7de7e41ccf2d6b90d0ed76ab234e24adc154b2f"
+    },
+    {
+      "checkpoint": "full_6.json",
+      "prediction_sha256": "38df7883794446c023450685dfebd3ca7207d3b1e7b39de22350ed2e394a4724"
+    },
+    {
+      "checkpoint": "full_7.json",
+      "prediction_sha256": "e426a50bed292fd09d46236afeeacb054db39f505186d3d5af94b7d51f26d8cb"
+    },
+    {
+      "checkpoint": "full_8.json",
+      "prediction_sha256": "d2d609a554e385212b22e4bbfe0bf35db6b6db1ffd59582963ef7283b713f11f"
+    }
+  ],
+  "resumed_frozen_sha256": "e2f39520ae2a549dc17e954ddee76f76e70017e2483643b47c59d08796be0d26"
+}

@@ -1,0 +1,459 @@
+[
+  {
+    "method_id": "local_gyrification",
+    "template": "software",
+    "parameters": {
+      "commands": [
+        "mris_euler_number",
+        "mris_compute_lgi"
+      ]
+    },
+    "sources": [
+      {
+        "source_id": "fs_lgi",
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      "Check for topological defects of the pial surface using mris_euler_number, as defects cause mris_compute_lgi to crash."
+    ]
+  },
+  {
+    "method_id": "macaque_civet",
+    "template": "attr_in",
+    "parameters": {
+      "slot": "T1",
+      "attr": "species",
+      "values": [
+        "macaque"
+      ]
+    },
+    "sources": [
+      {
+        "source_id": "civet_macaque",
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      "T1-weighted MR scan of a macaque brain as the primary input."
+    ]
+  },
+  {
+    "method_id": "nhp_macapype",
+    "template": "product_present",
+    "parameters": {
+      "slot": "T1",
+      "type": "_T1w"
+    },
+    "sources": [
+      {
+        "source_id": "macapype_commands",
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      "T1 weighted images are expected with the _T1w BIDS extension."
+    ]
+  },
+  {
+    "method_id": "nhp_macapype",
+    "template": "software",
+    "parameters": {
+      "commands": [
+        "SPM",
+        "ANTS"
+      ]
+    },
+    "sources": [
+      {
+        "source_id": "macapype_commands",
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      "The -soft parameter must be either SPM or ANTS, with SPM requiring a specific version of macapype/skullTo3d not available by default."
+    ]
+  },
+  {
+    "method_id": "nhp_macapype",
+    "template": "software",
+    "parameters": {
+      "commands": [
+        "-test"
+      ]
+    },
+    "sources": [
+      {
+        "source_id": "macapype_commands",
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      "The -test option can be used to check if the full pipeline is coherent, generating only graph.dot and graph.png."
+    ]
+  },
+  {
+    "method_id": "nhp_macapype",
+    "template": "software",
+    "parameters": {
+      "commands": [
+        "-prep"
+      ]
+    },
+    "sources": [
+      {
+        "source_id": "macapype_commands",
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      "The -prep option performs only data preparation, without brain extraction and segmentation."
+    ]
+  },
+  {
+    "method_id": "nhp_macapype",
+    "template": "software",
+    "parameters": {
+      "commands": [
+        "bet4animal",
+        "atlas_brex"
+      ]
+    },
+    "sources": [
+      {
+        "source_id": "macapype_commands",
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      "The _4animal option uses bet4animal (FSL) for brain extraction, for faster computation; by default atlas_brex is used."
+    ]
+  },
+  {
+    "method_id": "nhp_macapype",
+    "template": "advisory",
+    "parameters": {
+      "text": "NB : marmoT2 can be used for segmenting from the T2w image (by default, T1w is used for marmo)"
+    },
+    "sources": [
+      {
+        "source_id": "macapype_commands",
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      "The marmoT2 species option can be used for segmenting from the T2w image; by default, T1w is used for marmo."
+    ]
+  },
+  {
+    "method_id": "nhp_macapype",
+    "template": "attr_in",
+    "parameters": {
+      "slot": "T1",
+      "attr": "scale_status",
+      "values": [
+        "baboon1_0p6",
+        "baboon2_0p6",
+        "baboon3_0p6",
+        "macaque_0p5"
+      ]
+    },
+    "sources": [
+      {
+        "source_id": "macapype_commands",
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      "Some templates are available in downgraded versions (e.g., baboon1_0p6, macaque_0p5) showing significant decrease in processing time with low reduction in quality, but not all combinations are available."
+    ]
+  },
+  {
+    "method_id": "samseg_segmentation",
+    "template": "cardinality",
+    "parameters": {
+      "object": "volumes",
+      "minimum": 1
+    },
+    "sources": [
+      {
+        "source_id": "fs_samseg",
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      "One or more co-registered MRI volumes in Nifti (.nii/.nii.gz) or FreeSurfer (.mgz) format."
+    ]
+  },
+  {
+    "method_id": "samseg_segmentation",
+    "template": "attr_equal",
+    "parameters": {
+      "slots": [
+        "T1",
+        "T2",
+        "volumes",
+        "timepoints",
+        "mask"
+      ],
+      "attrs": [
+        "space",
+        "voxel_size"
+      ]
+    },
+    "sources": [
+      {
+        "source_id": "fs_samseg",
+        "quote_support": null
+      },
+      {
+        "source_id": "fs_samseg",
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      "All input volumes must be co-registered with each other and have the same image grid size and voxel dimensions.",
+      "Verify that all input volumes are co-registered and have the same image grid size and voxel dimensions."
+    ]
+  },
+  {
+    "method_id": "samseg_segmentation",
+    "template": "advisory",
+    "parameters": {
+      "text": "Preprocessing of the scan(s) with FreeSurfer is neither required nor recommended"
+    },
+    "sources": [
+      {
+        "source_id": "fs_samseg",
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      "Preprocessing with FreeSurfer is neither required nor recommended for basic SAMSEG."
+    ]
+  },
+  {
+    "method_id": "samseg_segmentation",
+    "template": "advisory",
+    "parameters": {
+      "text": "--lesion-mask-pattern <pattern> is optional but strongly recommended when using the lesion flag."
+    },
+    "sources": [
+      {
+        "source_id": "fs_samseg",
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      "When using the lesion flag, the lesion-mask-pattern is optional but strongly recommended."
+    ]
+  },
+  {
+    "method_id": "samseg_segmentation",
+    "template": "label_policy",
+    "parameters": {
+      "slot": "label",
+      "exclude": [
+        "pallidum"
+      ]
+    },
+    "sources": [
+      {
+        "source_id": "fs_samseg",
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      "The pallidum is treated internally as a white matter structure by default because it typically cannot be discerned easily from white matter in T1w scans."
+    ]
+  },
+  {
+    "method_id": "samseg_segmentation",
+    "template": "advisory",
+    "parameters": {
+      "text": "The first time you run this module, you may be prompted to install Tensorflow"
+    },
+    "sources": [
+      {
+        "source_id": "fs_samseg",
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      "The first time the MS lesion module is run, the user may be prompted to install Tensorflow."
+    ]
+  },
+  {
+    "method_id": "samseg_segmentation",
+    "template": "advisory",
+    "parameters": {
+      "text": "simply reformatting all follow-up time points to the baseline scan would introduce a longitudinal processing bias"
+    },
+    "sources": [
+      {
+        "source_id": "fs_samseg",
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      "For longitudinal processing, simply reformatting all follow-up time points to the baseline scan would introduce a longitudinal processing bias."
+    ]
+  },
+  {
+    "method_id": "surface_mesh_area",
+    "template": "attr_in",
+    "parameters": {
+      "slot": "surface",
+      "attr": "mesh",
+      "values": [
+        "triangular"
+      ]
+    },
+    "sources": [
+      {
+        "source_id": "nibabel_fs",
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      "A FreeSurfer surface mesh file in triangular format, e.g., white or pial surface."
+    ]
+  },
+  {
+    "method_id": "surface_mesh_area",
+    "template": "software",
+    "parameters": {
+      "commands": [
+        "nibabel.read_geometry"
+      ]
+    },
+    "sources": [
+      {
+        "source_id": "nibabel_fs",
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      "The mesh must be in triangular format as read by nibabel's read_geometry."
+    ]
+  },
+  {
+    "method_id": "surface_reconstruction_qc",
+    "template": "software",
+    "parameters": {
+      "commands": [
+        "recon-all"
+      ]
+    },
+    "sources": [
+      {
+        "source_id": "fs_morph",
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      "Subject directory created via recon-all -i command."
+    ]
+  },
+  {
+    "method_id": "surface_reconstruction_qc",
+    "template": "advisory",
+    "parameters": {
+      "text": "Soft Failures occur when recon-all has finished without any errors - but upon closer observation of the output there are obvious errors"
+    },
+    "sources": [
+      {
+        "source_id": "andy_failures",
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      "Soft failures occur when recon-all finishes without errors but output has obvious errors needing fixes."
+    ]
+  },
+  {
+    "method_id": "surface_reconstruction_qc",
+    "template": "advisory",
+    "parameters": {
+      "text": "Make sure that the surfaces follow the true boundaries of the top and bottom of the gray matter."
+    },
+    "sources": [
+      {
+        "source_id": "fs_morph",
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      "Verify that surfaces follow the true boundaries of gray and white matter by visual inspection."
+    ]
+  },
+  {
+    "method_id": "surface_reconstruction_qc",
+    "template": "advisory",
+    "parameters": {
+      "text": "Small and infrequent discrepancies between FreeSurfer-drawn borders and actual gray/white borders should be left alone, as editing may worsen the problem."
+    },
+    "sources": [
+      {
+        "source_id": "andy_failures",
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      "Small and infrequent discrepancies between FreeSurfer-drawn borders and actual gray/white borders should be left alone, as editing may worsen the problem."
+    ]
+  },
+  {
+    "method_id": "surface_reconstruction_qc",
+    "template": "advisory",
+    "parameters": {
+      "text": "White matter segmentation errors caused by lesions or gliomas are relatively uncommon in healthy subjects and will not be covered in this course."
+    },
+    "sources": [
+      {
+        "source_id": "andy_failures",
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      "White matter segmentation errors caused by lesions or gliomas are relatively uncommon in healthy subjects and are not covered in the tutorial."
+    ]
+  },
+  {
+    "method_id": "surface_reconstruction_qc",
+    "template": "advisory",
+    "parameters": {
+      "text": "Since the release of FreeSurfer version 6.0 these types of errors are very rare, and they are usually automatically fixed during recon-all."
+    },
+    "sources": [
+      {
+        "source_id": "andy_failures",
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      "Topological defects are very rare since FreeSurfer version 6.0 and are usually automatically fixed during recon-all."
+    ]
+  },
+  {
+    "method_id": "surface_reconstruction_qc",
+    "template": "attr_in",
+    "parameters": {
+      "slot": "T1",
+      "attr": "species",
+      "values": [
+        "monkey",
+        "newborn"
+      ]
+    },
+    "sources": [
+      {
+        "source_id": "fs_morph",
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      "For populations where aseg tools are ineffective (e.g., monkey or newborn data), use the -noaseg flag to skip subcortical segmentation."
+    ]
+  }
+]

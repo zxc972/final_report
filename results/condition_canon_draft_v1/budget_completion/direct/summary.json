@@ -1,0 +1,57 @@
+{
+  "direct": {
+    "n": 55,
+    "template_accuracy": 0.5454545454545454,
+    "executable": {
+      "precision": 0.4375,
+      "recall": 0.3684210526315789,
+      "f1": 0.39999999999999997,
+      "tp": 7,
+      "fp": 9,
+      "fn": 12
+    },
+    "key": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 15,
+      "fn": 12
+    },
+    "review_queue": 0,
+    "rejected_quote": 0,
+    "advisory_or_not_executable": {
+      "precision": 0.6923076923076923,
+      "recall": 0.75,
+      "f1": 0.7199999999999999,
+      "tp": 27,
+      "fp": 12,
+      "fn": 9
+    },
+    "decisions": {
+      "accepted": 26,
+      "advisory": 29,
+      "review": 0,
+      "rejected_quote": 0,
+      "inference_error": 0,
+      "provider_error": 0
+    },
+    "elapsed_seconds": 318.874,
+    "usage": {
+      "logical_calls": 55,
+      "http_attempts": 62,
+      "successful_requests": 55,
+      "failed_requests": 7,
+      "unfinished_requests": 0,
+      "length_limited_responses": 17,
+      "historical_null_length_responses": 0,
+      "unknown_usage_requests": 7,
+      "input_tokens": 81405,
+      "output_tokens": 64109,
+      "total_tokens": 145514,
+      "observed_models": [
+        "deepseek-v4.1-flash"
+      ]
+    }
+  }
+}

@@ -53,3 +53,8 @@ into a separate `gold_v1.json`, with a change log and a frozen SHA-256. The draf
 run remains available. The formal rerun, tau/delta/K sensitivity analysis, and
 comparison with hand-written condition instances are subsequent work. Existing
 knowledge instances are never overwritten automatically when conflicts arise.
+
+
+## Completed draft run
+
+The user authorised a cumulative cap of 1000 requests after gateway retries. The original phase used 800 and a separately frozen completion of 55 previously budget-omitted statements used 62, for 862 total. All earlier answers remain identical. Results and full errors are in results/condition_canon_draft_v1/; formal gold still awaits user review.

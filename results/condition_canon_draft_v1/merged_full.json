@@ -1,0 +1,134 @@
+[
+  {
+    "method_id": "cat_morphometry",
+    "template": "cardinality",
+    "parameters": {
+      "object": "T1",
+      "minimum": 1
+    },
+    "sources": [
+      {
+        "source_id": "cat",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "T1-weighted MRI scans, single scans, longitudinal series or BIDS datasets"
+    ]
+  },
+  {
+    "method_id": "cat_morphometry",
+    "template": "software",
+    "parameters": {
+      "commands": [
+        "SPM12 or newer",
+        "MATLAB R2020a or newer (Windows: R2022a, Apple Silicon: R2023b)",
+        "No additional MATLAB toolboxes"
+      ]
+    },
+    "sources": [
+      {
+        "source_id": "cat",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "For MATLAB users, SPM12 or newer and MATLAB R2020a or newer are required; no additional MATLAB toolboxes are needed."
+    ]
+  },
+  {
+    "method_id": "macaque_civet",
+    "template": "attr_in",
+    "parameters": {
+      "slot": "T1",
+      "attr": "species",
+      "values": [
+        "macaque"
+      ]
+    },
+    "sources": [
+      {
+        "source_id": "civet_macaque",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "T1-weighted MR scan of a macaque brain as the primary input."
+    ]
+  },
+  {
+    "method_id": "macaque_civet",
+    "template": "cardinality",
+    "parameters": {
+      "object": "T1",
+      "minimum": 1
+    },
+    "sources": [
+      {
+        "source_id": "civet_macaque",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "The pipeline requires T1w scans; T2-weighted or proton density scans are optional for multimodal classification."
+    ]
+  },
+  {
+    "method_id": "macaque_civet",
+    "template": "attr_in",
+    "parameters": {
+      "slot": "mask",
+      "attr": "space",
+      "values": [
+        "native"
+      ]
+    },
+    "sources": [
+      {
+        "source_id": "civet_macaque",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "The pipeline may require manual intervention for custom brain masks in rare registration failures."
+    ]
+  },
+  {
+    "method_id": "surface_mesh_area",
+    "template": "attr_in",
+    "parameters": {
+      "slot": "surface",
+      "attr": "mesh",
+      "values": [
+        "triangular"
+      ]
+    },
+    "sources": [
+      {
+        "source_id": "nibabel_fs",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "Verify that the mesh is in triangular format as expected by read_geometry."
+    ]
+  },
+  {
+    "method_id": "surface_reconstruction_qc",
+    "template": "software",
+    "parameters": {
+      "commands": [
+        "recon-all"
+      ]
+    },
+    "sources": [
+      {
+        "source_id": "andy_failures",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "Topological defects are very rare since FreeSurfer version 6.0 and are usually automatically fixed during recon-all."
+    ]
+  }
+]

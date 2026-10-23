@@ -1,0 +1,10 @@
+{
+  "reason": "Exhausted non-authentication provider failures are explicit failed items; remaining items continue. No model answer is replaced and no algorithm/default/prompt/input changed.",
+  "old_frozen_sha256": "e2f39520ae2a549dc17e954ddee76f76e70017e2483643b47c59d08796be0d26",
+  "ledger_prefix_bytes": 63746,
+  "ledger_prefix_sha256": "0a73d5ba92779ae8dae9a76c18e15f30b489b32ab7999d3af757ea41d0c783de",
+  "reserved_attempts": 75,
+  "responses": 71,
+  "retained_checkpoints": 13,
+  "new_frozen_sha256": "054f9a031ef99326289bf925ea8551ae20ac80f5ffa610c1a3f90d61926cb126"
+}

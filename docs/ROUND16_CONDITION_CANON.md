@@ -13,7 +13,7 @@ not been promoted to human gold.
   development gateway and `deepseek-v4.1-flash`, temperature 0.7 for all model
   arms, maximum 2048 completion tokens, and no agent/tool execution.
 - Every HTTP attempt is reserved before sending and recorded with token usage.
-  All arms and retries share a cap of 800 attempts. Unknown usage is explicit.
+  The initial phase has a cap of 800 attempts. The user later authorised a cumulative cap of 1000; a separately frozen completion phase covers only budget-omitted unanswered items. Unknown usage is explicit.
   Completed logical calls are cached by arm, statement and sample; successful
   calls are not repeated on resume.
 - The runner freezes code, draft labels, original source files, defaults and
@@ -91,3 +91,26 @@ Conflicts await user decisions and never automatically overwrite knowledge.
 This round creates no analysis run, preprocessing submission, deployment,
 service restart, held-out processing, or PR merge. Credentials are loaded in
 memory and omitted from logs and versioned outputs.
+
+## 第一版草稿结果
+
+各组均按 108 条陈述评分，标签尚待用户审核。表中 P/R/F1 单位为百分比；负类包含建议性及未被接受的条件。
+
+| 组别 | 模板准确率 | 可执行 P/R/F1 | 负类 P/R/F1 | 规范键 P/R/F1 | 审核队列 | HTTP/逻辑调用 | 已知 token |
+|---|---:|---|---|---|---:|---|---:|
+| full | 48.15% | 57.14/9.76/16.67 | 63.37/95.52/76.19 | 14.29/3.57/5.71 | 48 | 617/535 | 1,437,081 |
+| k1 | 54.63% | 44.83/31.71/37.14 | 64.56/76.12/69.86 | 3.57/3.57/3.57 | 0 | 125/108 | 274,147 |
+| retrieval_only | 17.59% | 40.59/100.00/57.75 | 100.00/10.45/18.92 | 0.00/0.00/0.00 | 0 | 0/0 | 0 |
+| direct | 55.56% | 46.88/36.59/41.10 | 65.79/74.63/69.93 | 3.33/3.57/3.45 | 0 | 120/108 | 314,965 |
+
+按用户追加授权，累计请求上限为 1000。实际 **862 次 HTTP 请求 / 751 个逻辑样本位置**；已知输入 token 1,075,438、输出 950,755、合计 2,026,193。114 次请求缺少完整 usage，其中 4 次是暂停时在途请求，不能把已知 token 合计视为精确账单总量。
+
+原 800 次阶段后，仅补跑 direct 中因预算遗漏且未收到模型回答的 55 条，独立冻结后实际增加 62 次请求。全部既有回答（包括空回答和错误回答）均通过摘要核对保持原样。
+
+本次预设 2048 completion token 上限，收到 256 条 length 响应；full 组为 182 条，影响 76/108 个陈述。固定 top-3 对草稿可执行标签的覆盖为 27/41。共有 3 个接口失败条目（full 2、k1 1）；分数包含这些环境/资源限制的影响。
+
+full 组 69 条分歧：模板不符 54、正确模板未接受 12、规范参数不符 1、接口失败 2。完整陈述、草稿标准、预测和样本原因见 results/condition_canon_draft_v1/FULL_ERRORS_DETAILED.md。
+
+retrieval_only 不产生参数，规范键预测集合为空，按原评分器约定记零。审核队列数与人工金标准审核表不同；后者仍需用户审核全部 108 条标签。
+
+未做草稿参数调优、敏感性分析或知识条件写回。gold_v1.json 仍未创建；正式重跑和知识层一致/新增/冲突比较等待用户审核通知。

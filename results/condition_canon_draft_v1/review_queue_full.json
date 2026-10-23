@@ -1,0 +1,2168 @@
+[
+  {
+    "item": {
+      "id": 5,
+      "method": "cat_morphometry",
+      "field": "checks",
+      "statement": "A sample homogeneity check flags outliers before statistics.",
+      "quote": "Sample homogeneity check flags outliers before statistics",
+      "source_id": "cat",
+      "gold_template": "advisory",
+      "gold_parameters": null
+    },
+    "prediction": {
+      "id": 5,
+      "method": "cat_morphometry",
+      "statement": "A sample homogeneity check flags outliers before statistics.",
+      "quote_support": 1.0,
+      "source_id": "cat",
+      "template": "provenance",
+      "parameters": {
+        "step": "Sample homogeneity check flags outliers before statistics"
+      },
+      "key": "provenance:{\"step\": \"Sample homogeneity check flags outliers before statistics\"}",
+      "score": 0.32723097203431695,
+      "margin": 0.32723097203431695,
+      "support": 0.4,
+      "candidates": [
+        [
+          "cardinality",
+          0.16762241943767286
+        ],
+        [
+          "provenance",
+          0.1574365734477232
+        ],
+        [
+          "plausibility",
+          0.12755833853007495
+        ]
+      ],
+      "decision": "review"
+    }
+  },
+  {
+    "item": {
+      "id": 6,
+      "method": "cat_morphometry",
+      "field": "exceptions",
+      "statement": "The standalone version lacks some features such as parallelization and interactive help.",
+      "quote": "Some features, such as parallelization and the interactive help, are not available.",
+      "source_id": "cat",
+      "gold_template": "advisory",
+      "gold_parameters": null
+    },
+    "prediction": {
+      "id": 6,
+      "method": "cat_morphometry",
+      "statement": "The standalone version lacks some features such as parallelization and interactive help.",
+      "quote_support": 1.0,
+      "source_id": "cat",
+      "template": "software",
+      "parameters": {
+        "commands": [
+          "parallelization",
+          "interactive help"
+        ]
+      },
+      "key": "software:{\"commands\": [\"interactive help\", \"parallelization\"]}",
+      "score": 0.2374263897106036,
+      "margin": 0.2374263897106036,
+      "support": 0.2,
+      "candidates": [
+        [
+          "software",
+          0.3247546323686787
+        ],
+        [
+          "product_present",
+          0.12239067429201643
+        ],
+        [
+          "advisory",
+          0.0
+        ]
+      ],
+      "decision": "review"
+    }
+  },
+  {
+    "item": {
+      "id": 7,
+      "method": "existing_curvature_sulc_profile",
+      "field": "checks",
+      "statement": "Confirm that the surfaces have been smoothed and topology-corrected before using the morphometry values.",
+      "quote": "Resmooth RH/LH white matter: smooths rh.orig and lh.orig surfaces",
+      "source_id": "fs_morph",
+      "gold_template": "provenance",
+      "gold_parameters": {
+        "step": "topology correction"
+      }
+    },
+    "prediction": {
+      "id": 7,
+      "method": "existing_curvature_sulc_profile",
+      "statement": "Confirm that the surfaces have been smoothed and topology-corrected before using the morphometry values.",
+      "quote_support": 1.0,
+      "source_id": "fs_morph",
+      "template": "provenance",
+      "parameters": {
+        "step": "Resmooth RH/LH white matter: smooths rh.orig and lh.orig surfaces"
+      },
+      "key": "provenance:{\"step\": \"Resmooth RH/LH white matter: smooths rh.orig and lh.orig surfaces\"}",
+      "score": 0.19928419414620732,
+      "margin": 0.01125092499673852,
+      "support": 0.2,
+      "candidates": [
+        [
+          "provenance",
+          0.1976139804873578
+        ],
+        [
+          "plausibility",
+          0.16011089716489607
+        ],
+        [
+          "attr_in",
+          0.12678751218157033
+        ]
+      ],
+      "decision": "review"
+    }
+  },
+  {
+    "item": {
+      "id": 8,
+      "method": "fsl_vbm",
+      "field": "inputs",
+      "statement": "A template_list file containing the names of selected T1 images to be used for template construction, with equal numbers from each group.",
+      "quote": "put all the selected names of exams in a file called template_list in your FSL-VBM directory",
+      "source_id": "fsl_vbm",
+      "gold_template": "advisory",
+      "gold_parameters": null
+    },
+    "prediction": {
+      "id": 8,
+      "method": "fsl_vbm",
+      "statement": "A template_list file containing the names of selected T1 images to be used for template construction, with equal numbers from each group.",
+      "quote_support": 1.0,
+      "source_id": "fsl_vbm",
+      "template": "product_present",
+      "parameters": {
+        "slot": "T1",
+        "type": "template_list"
+      },
+      "key": "product_present:{\"slot\": \"T1\", \"type\": \"template_list\"}",
+      "score": 0.313880667937157,
+      "margin": 0.313880667937157,
+      "support": 0.4,
+      "candidates": [
+        [
+          "attr_in",
+          0.38249855929718224
+        ],
+        [
+          "product_present",
+          0.1129355597905235
+        ],
+        [
+          "asymmetry_flip",
+          0.10968606490559667
+        ]
+      ],
+      "decision": "review"
+    }
+  },
+  {
+    "item": {
+      "id": 10,
+      "method": "fsl_vbm",
+      "field": "inputs",
+      "statement": "A GM mask (GM_mask) and the 4D multi-subject concatenated processed data (e.g., GM_mod_merg_s3) for running randomise.",
+      "quote": "a mask of the GM (GM_mask) and the 4D multi-subject concatenated processed data (e.g. GM_mod_merg_s3)",
+      "source_id": "fsl_vbm",
+      "gold_template": "product_present",
+      "gold_parameters": {
+        "slot": "mask",
+        "type": "type:Volume.BrainMask"
+      }
+    },
+    "prediction": {
+      "id": 10,
+      "method": "fsl_vbm",
+      "statement": "A GM mask (GM_mask) and the 4D multi-subject concatenated processed data (e.g., GM_mod_merg_s3) for running randomise.",
+      "quote_support": 1.0,
+      "source_id": "fsl_vbm",
+      "template": "attr_equal",
+      "parameters": {
+        "slots": [
+          "mask",
+          "volumes"
+        ],
+        "attrs": [
+          "subject",
+          "species",
+          "space",
+          "voxel_size",
+          "scale_status"
+        ]
+      },
+      "key": "attr_equal:{\"attrs\": [\"scale_status\", \"space\", \"species\", \"subject\", \"voxel_size\"], \"slots\": [\"mask\", \"volumes\"]}",
+      "score": 0.19059698822430104,
+      "margin": 0.19059698822430104,
+      "support": 0.2,
+      "candidates": [
+        [
+          "attr_equal",
+          0.16865662741433682
+        ],
+        [
+          "provenance",
+          0.13627720767980925
+        ],
+        [
+          "product_present",
+          0.11443478753753192
+        ]
+      ],
+      "decision": "review"
+    }
+  },
+  {
+    "item": {
+      "id": 14,
+      "method": "fsl_vbm",
+      "field": "checks",
+      "statement": "Check brain-extracted images (*_brain.*) in the struc directory after fslvbm_1_bet.",
+      "quote": "CHECKING the brain images (*_brain.*) in your struc directory",
+      "source_id": "fsl_vbm",
+      "gold_template": "advisory",
+      "gold_parameters": null
+    },
+    "prediction": {
+      "id": 14,
+      "method": "fsl_vbm",
+      "statement": "Check brain-extracted images (*_brain.*) in the struc directory after fslvbm_1_bet.",
+      "quote_support": 1.0,
+      "source_id": "fsl_vbm",
+      "template": "plausibility",
+      "parameters": {
+        "metric": "brain-extracted images (*_brain.*) in struc directory after fslvbm_1_bet"
+      },
+      "key": "plausibility:{\"metric\": \"brain-extracted images (*_brain.*) in struc directory after fslvbm_1_bet\"}",
+      "score": 0.15390378119021395,
+      "margin": 0.0,
+      "support": 0.2,
+      "candidates": [
+        [
+          "scale_check",
+          0.2619149240735661
+        ],
+        [
+          "attr_in",
+          0.1990359061010574
+        ],
+        [
+          "plausibility",
+          0.046345937300713194
+        ]
+      ],
+      "decision": "review"
+    }
+  },
+  {
+    "item": {
+      "id": 15,
+      "method": "fsl_vbm",
+      "field": "checks",
+      "statement": "Check the template_GM_4D image in struc with the movie loop in fsleyes after template creation.",
+      "quote": "CHECK the template_GM_4D image in struc with the movie loop in fsleyes.",
+      "source_id": "fsl_vbm",
+      "gold_template": "advisory",
+      "gold_parameters": null
+    },
+    "prediction": {
+      "id": 15,
+      "method": "fsl_vbm",
+      "statement": "Check the template_GM_4D image in struc with the movie loop in fsleyes after template creation.",
+      "quote_support": 1.0,
+      "source_id": "fsl_vbm",
+      "template": "provenance",
+      "parameters": {
+        "step": "CHECK the template_GM_4D image in struc with the movie loop in fsleyes."
+      },
+      "key": "provenance:{\"step\": \"CHECK the template_GM_4D image in struc with the movie loop in fsleyes.\"}",
+      "score": 0.3087328618398682,
+      "margin": 0.14,
+      "support": 0.4,
+      "candidates": [
+        [
+          "attr_in",
+          0.42543186900855057
+        ],
+        [
+          "asymmetry_flip",
+          0.10691692396594926
+        ],
+        [
+          "provenance",
+          0.09577620613289405
+        ]
+      ],
+      "decision": "review"
+    }
+  },
+  {
+    "item": {
+      "id": 16,
+      "method": "fsl_vbm",
+      "field": "checks",
+      "statement": "Check the 4D image of modulated registered GM images (GM_mod_merg) using the movie loop in fsleyes after fslvbm_3_proc.",
+      "quote": "final CHECK of the 4D image of modulated registered GM images GM_mod_merg using the movie loop in fsleyes.",
+      "source_id": "fsl_vbm",
+      "gold_template": "advisory",
+      "gold_parameters": null
+    },
+    "prediction": {
+      "id": 16,
+      "method": "fsl_vbm",
+      "statement": "Check the 4D image of modulated registered GM images (GM_mod_merg) using the movie loop in fsleyes after fslvbm_3_proc.",
+      "quote_support": 1.0,
+      "source_id": "fsl_vbm",
+      "template": "plausibility",
+      "parameters": {
+        "metric": "GM_mod_merg"
+      },
+      "key": "plausibility:{\"metric\": \"GM_mod_merg\"}",
+      "score": 0.4517072262478738,
+      "margin": 0.2799999999999999,
+      "support": 0.6,
+      "candidates": [
+        [
+          "attr_in",
+          0.39715936746824143
+        ],
+        [
+          "plausibility",
+          0.10569075415957963
+        ],
+        [
+          "scale_check",
+          0.09298800031336167
+        ]
+      ],
+      "decision": "review"
+    }
+  },
+  {
+    "item": {
+      "id": 17,
+      "method": "fsl_vbm",
+      "field": "exceptions",
+      "statement": "FSL-VBM v1.1 analysis is not compatible with an older analysis due to the switch from IRTK to FNIRT.",
+      "quote": "An FSL-VBM v1.1 analysis is not compatible with an older analysis.",
+      "source_id": "fsl_vbm",
+      "gold_template": "advisory",
+      "gold_parameters": null
+    },
+    "prediction": {
+      "id": 17,
+      "method": "fsl_vbm",
+      "statement": "FSL-VBM v1.1 analysis is not compatible with an older analysis due to the switch from IRTK to FNIRT.",
+      "quote_support": 1.0,
+      "source_id": "fsl_vbm",
+      "template": "provenance",
+      "parameters": {
+        "step": "FSL-VBM v1.1 analysis is not compatible with an older analysis due to the switch from IRTK to FNIRT."
+      },
+      "key": "provenance:{\"step\": \"FSL-VBM v1.1 analysis is not compatible with an older analysis due to the switch from IRTK to FNIRT.\"}",
+      "score": 0.19525778880486888,
+      "margin": 0.0,
+      "support": 0.2,
+      "candidates": [
+        [
+          "provenance",
+          0.184192629349563
+        ],
+        [
+          "software",
+          0.17420907614682293
+        ],
+        [
+          "advisory",
+          0.0
+        ]
+      ],
+      "decision": "review"
+    }
+  },
+  {
+    "item": {
+      "id": 18,
+      "method": "global_surface_folding",
+      "field": "inputs",
+      "statement": "Pial surface mesh of the cortical ribbon.",
+      "quote": "our proposed method requires the bounding pial and white matter surfaces of the cortical ribbon as input",
+      "source_id": "comparative_folding",
+      "gold_template": "product_present",
+      "gold_parameters": {
+        "slot": "pial",
+        "type": "type:Surface.Pial"
+      }
+    },
+    "prediction": {
+      "id": 18,
+      "method": "global_surface_folding",
+      "statement": "Pial surface mesh of the cortical ribbon.",
+      "quote_support": 1.0,
+      "source_id": "comparative_folding",
+      "template": "product_present",
+      "parameters": {
+        "slot": "pial",
+        "type": "mesh"
+      },
+      "key": "product_present:{\"slot\": \"pial\", \"type\": \"mesh\"}",
+      "score": 0.18960487013934857,
+      "margin": 0.18960487013934857,
+      "support": 0.2,
+      "candidates": [
+        [
+          "attr_in",
+          0.17128968671943234
+        ],
+        [
+          "product_present",
+          0.16534956713116195
+        ],
+        [
+          "attr_equal",
+          0.08986989424115471
+        ]
+      ],
+      "decision": "review"
+    }
+  },
+  {
+    "item": {
+      "id": 19,
+      "method": "global_surface_folding",
+      "field": "inputs",
+      "statement": "White matter surface mesh of the cortical ribbon.",
+      "quote": "our proposed method requires the bounding pial and white matter surfaces of the cortical ribbon as input",
+      "source_id": "comparative_folding",
+      "gold_template": "product_present",
+      "gold_parameters": {
+        "slot": "white",
+        "type": "type:Surface.White"
+      }
+    },
+    "prediction": {
+      "id": 19,
+      "method": "global_surface_folding",
+      "statement": "White matter surface mesh of the cortical ribbon.",
+      "quote_support": 1.0,
+      "source_id": "comparative_folding",
+      "template": "product_present",
+      "parameters": {
+        "slot": "white",
+        "type": "mesh"
+      },
+      "key": "product_present:{\"slot\": \"white\", \"type\": \"mesh\"}",
+      "score": 0.3296048701393486,
+      "margin": 0.3296048701393486,
+      "support": 0.4,
+      "candidates": [
+        [
+          "attr_in",
+          0.17128968671943234
+        ],
+        [
+          "product_present",
+          0.16534956713116195
+        ],
+        [
+          "attr_equal",
+          0.08986989424115471
+        ]
+      ],
+      "decision": "review"
+    }
+  },
+  {
+    "item": {
+      "id": 21,
+      "method": "global_surface_folding",
+      "field": "inputs",
+      "statement": "Cortical thickness estimate (average) for scaling law.",
+      "quote": "we only had numerical values for the total and exposed surface area, as well a average cortical thickness estimates",
+      "source_id": "comparative_folding",
+      "gold_template": "product_present",
+      "gold_parameters": {
+        "slot": "thickness",
+        "type": "type:SurfaceMetric.Thickness"
+      }
+    },
+    "prediction": {
+      "id": 21,
+      "method": "global_surface_folding",
+      "statement": "Cortical thickness estimate (average) for scaling law.",
+      "quote_support": 1.0,
+      "source_id": "comparative_folding",
+      "template": "plausibility",
+      "parameters": {
+        "metric": "thickness"
+      },
+      "key": "plausibility:{\"metric\": \"thickness\"}",
+      "score": 0.26360969542837115,
+      "margin": 0.0,
+      "support": 0.2,
+      "candidates": [
+        [
+          "plausibility",
+          0.4120323180945705
+        ],
+        [
+          "product_present",
+          0.08426958357792105
+        ],
+        [
+          "attr_in",
+          0.06438650041033948
+        ]
+      ],
+      "decision": "review"
+    }
+  },
+  {
+    "item": {
+      "id": 23,
+      "method": "global_surface_folding",
+      "field": "conditions",
+      "statement": "Coarse-graining erases morphological features smaller than the specified scale while preserving surface integrity.",
+      "quote": "removes morphological details smaller than a specified scale while preserving surface integrity",
+      "source_id": "comparative_folding",
+      "gold_template": "advisory",
+      "gold_parameters": null
+    },
+    "prediction": {
+      "id": 23,
+      "method": "global_surface_folding",
+      "statement": "Coarse-graining erases morphological features smaller than the specified scale while preserving surface integrity.",
+      "quote_support": 1.0,
+      "source_id": "comparative_folding",
+      "template": "scale_check",
+      "parameters": {
+        "metric": "voxel_size"
+      },
+      "key": "scale_check:{\"metric\": \"voxel_size\"}",
+      "score": 0.2468121887076254,
+      "margin": 0.2468121887076254,
+      "support": 0.2,
+      "candidates": [
+        [
+          "scale_check",
+          0.356040629025418
+        ],
+        [
+          "product_present",
+          0.1546703573140464
+        ],
+        [
+          "advisory",
+          0.0
+        ]
+      ],
+      "decision": "review"
+    }
+  },
+  {
+    "item": {
+      "id": 24,
+      "method": "global_surface_folding",
+      "field": "conditions",
+      "statement": "Isometric rescaling is applied to leave dimensionless shape properties unaffected.",
+      "quote": "we apply an isometric rescaling process that leaves all dimensionless shape properties unaffected",
+      "source_id": "comparative_folding",
+      "gold_template": "scale_check",
+      "gold_parameters": {
+        "metric": "shape"
+      }
+    },
+    "prediction": {
+      "id": 24,
+      "method": "global_surface_folding",
+      "statement": "Isometric rescaling is applied to leave dimensionless shape properties unaffected.",
+      "quote_support": 1.0,
+      "source_id": "comparative_folding",
+      "template": "provenance",
+      "parameters": {
+        "step": "we apply an isometric rescaling process that leaves all dimensionless shape properties unaffected"
+      },
+      "key": "provenance:{\"step\": \"we apply an isometric rescaling process that leaves all dimensionless shape properties unaffected\"}",
+      "score": 0.4981463143545937,
+      "margin": 0.13999999999999996,
+      "support": 0.6,
+      "candidates": [
+        [
+          "provenance",
+          0.2604877145153126
+        ],
+        [
+          "advisory",
+          0.0
+        ],
+        [
+          "asymmetry_flip",
+          0.0
+        ]
+      ],
+      "decision": "review"
+    }
+  },
+  {
+    "item": {
+      "id": 25,
+      "method": "global_surface_folding",
+      "field": "checks",
+      "statement": "Quality check reconstructed surfaces by visual inspection.",
+      "quote": "These boundaries were then quality checked by visual inspection for particularly the young and old cohorts and manually corrected where needed.",
+      "source_id": "comparative_folding",
+      "gold_template": "advisory",
+      "gold_parameters": null
+    },
+    "prediction": {
+      "id": 25,
+      "method": "global_surface_folding",
+      "statement": "Quality check reconstructed surfaces by visual inspection.",
+      "quote_support": 1.0,
+      "source_id": "comparative_folding",
+      "template": "plausibility",
+      "parameters": {
+        "metric": "visual inspection"
+      },
+      "key": "plausibility:{\"metric\": \"visual inspection\"}",
+      "score": 0.3781105287717825,
+      "margin": 0.14,
+      "support": 0.4,
+      "candidates": [
+        [
+          "plausibility",
+          0.32703509590594165
+        ],
+        [
+          "advisory",
+          0.1258751891137609
+        ],
+        [
+          "scale_check",
+          0.07752055269640071
+        ]
+      ],
+      "decision": "review"
+    }
+  },
+  {
+    "item": {
+      "id": 26,
+      "method": "global_surface_folding",
+      "field": "checks",
+      "statement": "Verify that coarse-grained cortices follow the scaling law with high R².",
+      "quote": "all species followed a power law (linear regression R2>0.999 for all species)",
+      "source_id": "comparative_folding",
+      "gold_template": "advisory",
+      "gold_parameters": null
+    },
+    "prediction": {
+      "id": 26,
+      "method": "global_surface_folding",
+      "statement": "Verify that coarse-grained cortices follow the scaling law with high R².",
+      "quote_support": 1.0,
+      "source_id": "comparative_folding",
+      "template": "attr_in",
+      "parameters": {
+        "slot": "surface",
+        "attr": "scale_status",
+        "values": [
+          "coarse-grained"
+        ]
+      },
+      "key": "attr_in:{\"attr\": \"scale_status\", \"slot\": \"surface\", \"values\": [\"coarse-grained\"]}",
+      "score": 0.1853189913209781,
+      "margin": 0.0,
+      "support": 0.2,
+      "candidates": [
+        [
+          "provenance",
+          0.2604877145153126
+        ],
+        [
+          "attr_in",
+          0.15106330440326035
+        ],
+        [
+          "advisory",
+          0.0
+        ]
+      ],
+      "decision": "review"
+    }
+  },
+  {
+    "item": {
+      "id": 27,
+      "method": "global_surface_folding",
+      "field": "checks",
+      "statement": "Check that K remains near-invariant across scales and species.",
+      "quote": "The variance in K across scales and all 11 species is <0.01",
+      "source_id": "comparative_folding",
+      "gold_template": "advisory",
+      "gold_parameters": null
+    },
+    "prediction": {
+      "id": 27,
+      "method": "global_surface_folding",
+      "statement": "Check that K remains near-invariant across scales and species.",
+      "quote_support": 1.0,
+      "source_id": "comparative_folding",
+      "template": "plausibility",
+      "parameters": {
+        "metric": "variance in K across scales and all 11 species <0.01"
+      },
+      "key": "plausibility:{\"metric\": \"variance in K across scales and all 11 species <0.01\"}",
+      "score": 0.30439273435204894,
+      "margin": 0.0,
+      "support": 0.4,
+      "candidates": [
+        [
+          "attr_in",
+          0.34918774379588385
+        ],
+        [
+          "provenance",
+          0.10035430474822091
+        ],
+        [
+          "plausibility",
+          0.08130911450682997
+        ]
+      ],
+      "decision": "review"
+    }
+  },
+  {
+    "item": {
+      "id": 29,
+      "method": "global_surface_folding",
+      "field": "exceptions",
+      "statement": "Coarse-grained brain surfaces are algorithmic outputs and not to be directly likened to actual brain surfaces in terms of fold location or shape.",
+      "quote": "the coarse-grained brain surfaces are an output of our algorithm alone and not to be directly/naively likened to actual brain surfaces, e.g., in terms of the location or shape of the folds",
+      "source_id": "comparative_folding",
+      "gold_template": "advisory",
+      "gold_parameters": null
+    },
+    "prediction": {
+      "id": 29,
+      "method": "global_surface_folding",
+      "statement": "Coarse-grained brain surfaces are algorithmic outputs and not to be directly likened to actual brain surfaces in terms of fold location or shape.",
+      "quote_support": 1.0,
+      "source_id": "comparative_folding",
+      "template": "attr_in",
+      "parameters": {
+        "slot": "surface",
+        "attr": "scale_status",
+        "values": [
+          "coarse-grained"
+        ]
+      },
+      "key": "attr_in:{\"attr\": \"scale_status\", \"slot\": \"surface\", \"values\": [\"coarse-grained\"]}",
+      "score": 0.2419051973371292,
+      "margin": 0.2419051973371292,
+      "support": 0.2,
+      "candidates": [
+        [
+          "attr_in",
+          0.3396839911237641
+        ],
+        [
+          "scale_check",
+          0.15932536185375878
+        ],
+        [
+          "product_present",
+          0.08565600031612752
+        ]
+      ],
+      "decision": "review"
+    }
+  },
+  {
+    "item": {
+      "id": 30,
+      "method": "global_surface_folding",
+      "field": "exceptions",
+      "statement": "The model cannot capture large-scale features such as the longitudinal fissure, sylvian fissure, and specific gyri and sulci.",
+      "quote": "The shape of the mammalian brain has a number of prominent large-scale features: the longitudinal fissure, the sylvian fissure, and many specific gyri and sulci with important functional correlates that we cannot capture with our minimal model.",
+      "source_id": "global_gyrification",
+      "gold_template": "advisory",
+      "gold_parameters": null
+    },
+    "prediction": {
+      "id": 30,
+      "method": "global_surface_folding",
+      "statement": "The model cannot capture large-scale features such as the longitudinal fissure, sylvian fissure, and specific gyri and sulci.",
+      "quote_support": 1.0,
+      "source_id": "global_gyrification",
+      "template": "scale_check",
+      "parameters": {
+        "metric": "large-scale features"
+      },
+      "key": "scale_check:{\"metric\": \"large-scale features\"}",
+      "score": 0.3818875363210025,
+      "margin": 0.14,
+      "support": 0.4,
+      "candidates": [
+        [
+          "scale_check",
+          0.33962512107000825
+        ],
+        [
+          "provenance",
+          0.14056023710391216
+        ],
+        [
+          "attr_in",
+          0.12227156618959012
+        ]
+      ],
+      "decision": "review"
+    }
+  },
+  {
+    "item": {
+      "id": 33,
+      "method": "hcp_structural_pipeline",
+      "field": "inputs",
+      "statement": "T1/T2 structural images are processed by the three structural batch scripts.",
+      "quote": "处理T1/T2结构像",
+      "source_id": "alex_hcp_pdf",
+      "gold_template": "product_present",
+      "gold_parameters": {
+        "slot": "T1",
+        "type": "type:Volume.T1"
+      }
+    },
+    "prediction": {
+      "id": 33,
+      "method": "hcp_structural_pipeline",
+      "statement": "T1/T2 structural images are processed by the three structural batch scripts.",
+      "quote_support": 1.0,
+      "source_id": "alex_hcp_pdf",
+      "template": "provenance",
+      "parameters": {
+        "step": "处理T1/T2结构像"
+      },
+      "key": "provenance:{\"step\": \"\\u5904\\u7406T1/T2\\u7ed3\\u6784\\u50cf\"}",
+      "score": 0.3471129625266396,
+      "margin": 0.14,
+      "support": 0.4,
+      "candidates": [
+        [
+          "provenance",
+          0.22370987508879867
+        ],
+        [
+          "product_present",
+          0.1878538052084508
+        ],
+        [
+          "advisory",
+          0.0
+        ]
+      ],
+      "decision": "review"
+    }
+  },
+  {
+    "item": {
+      "id": 36,
+      "method": "local_gyrification",
+      "field": "inputs",
+      "statement": "The pial surface file (?h.pial) for the subject, produced by the recon-all -all stream.",
+      "quote": "usage of the -localGI feature assumes that a subject has already been processed by the freesurfer {{{recon-all -s <subjid> -all}}} stream, such that the ?h.pial surface files exist",
+      "source_id": "fs_lgi",
+      "gold_template": "product_present",
+      "gold_parameters": {
+        "slot": "pial",
+        "type": "type:Surface.Pial"
+      }
+    },
+    "prediction": {
+      "id": 36,
+      "method": "local_gyrification",
+      "statement": "The pial surface file (?h.pial) for the subject, produced by the recon-all -all stream.",
+      "quote_support": 1.0,
+      "source_id": "fs_lgi",
+      "template": "product_present",
+      "parameters": {
+        "slot": "pial",
+        "type": "surface"
+      },
+      "key": "product_present:{\"slot\": \"pial\", \"type\": \"surface\"}",
+      "score": 0.20049288090602232,
+      "margin": 0.20049288090602232,
+      "support": 0.2,
+      "candidates": [
+        [
+          "provenance",
+          0.36568838826922634
+        ],
+        [
+          "product_present",
+          0.2016429363534078
+        ],
+        [
+          "attr_equal",
+          0.11460891180854915
+        ]
+      ],
+      "decision": "review"
+    }
+  },
+  {
+    "item": {
+      "id": 37,
+      "method": "local_gyrification",
+      "field": "inputs",
+      "statement": "The subject's surf directory containing the pial surface files.",
+      "quote": "such that the ?h.pial surface files exist in the subject's <subj>/surf directory",
+      "source_id": "fs_lgi",
+      "gold_template": "product_present",
+      "gold_parameters": {
+        "slot": "pial",
+        "type": "type:Surface.Pial"
+      }
+    },
+    "prediction": {
+      "id": 37,
+      "method": "local_gyrification",
+      "statement": "The subject's surf directory containing the pial surface files.",
+      "quote_support": 1.0,
+      "source_id": "fs_lgi",
+      "template": "product_present",
+      "parameters": {
+        "slot": "pial",
+        "type": "surface"
+      },
+      "key": "product_present:{\"slot\": \"pial\", \"type\": \"surface\"}",
+      "score": 0.33261391008311714,
+      "margin": 0.13999999999999996,
+      "support": 0.4,
+      "candidates": [
+        [
+          "attr_equal",
+          0.2541904465697534
+        ],
+        [
+          "product_present",
+          0.1753797002770573
+        ],
+        [
+          "attr_in",
+          0.12112009902662992
+        ]
+      ],
+      "decision": "review"
+    }
+  },
+  {
+    "item": {
+      "id": 38,
+      "method": "local_gyrification",
+      "field": "inputs",
+      "statement": "MATLAB with Image Processing Toolbox and $FREESURFER_HOME/matlab in the MATLAB path.",
+      "quote": "MATLAB is required to use the -localGI feature. Also, you will need their Image Processing Toolbox.",
+      "source_id": "fs_lgi",
+      "gold_template": "software",
+      "gold_parameters": {
+        "commands": [
+          "matlab"
+        ]
+      }
+    },
+    "prediction": {
+      "id": 38,
+      "method": "local_gyrification",
+      "statement": "MATLAB with Image Processing Toolbox and $FREESURFER_HOME/matlab in the MATLAB path.",
+      "quote_support": 1.0,
+      "source_id": "fs_lgi",
+      "template": "software",
+      "parameters": {
+        "commands": [
+          "matlab -nodisplay -nosplash -r \"addpath(fullfile(getenv('FREESURFER_HOME'),'matlab')); assert(~isempty(ver('images'))); exit\""
+        ]
+      },
+      "key": "software:{\"commands\": [\"matlab -nodisplay -nosplash -r \\\"addpath(fullfile(getenv('FREESURFER_HOME'),'matlab')); assert(~isempty(ver('images'))); exit\\\"\"]}",
+      "score": 0.269843036760929,
+      "margin": 0.0,
+      "support": 0.2,
+      "candidates": [
+        [
+          "software",
+          0.43281012253643014
+        ],
+        [
+          "attr_in",
+          0.0911175067599079
+        ],
+        [
+          "provenance",
+          0.052373167178668106
+        ]
+      ],
+      "decision": "review"
+    }
+  },
+  {
+    "item": {
+      "id": 39,
+      "method": "local_gyrification",
+      "field": "conditions",
+      "statement": "The subject must have been processed with the full recon-all stream before using -localGI.",
+      "quote": "usage of the -localGI feature assumes that a subject has already been processed by the freesurfer {{{recon-all -s <subjid> -all}}} stream",
+      "source_id": "fs_lgi",
+      "gold_template": "provenance",
+      "gold_parameters": {
+        "step": "recon-all"
+      }
+    },
+    "prediction": {
+      "id": 39,
+      "method": "local_gyrification",
+      "statement": "The subject must have been processed with the full recon-all stream before using -localGI.",
+      "quote_support": 1.0,
+      "source_id": "fs_lgi",
+      "template": "provenance",
+      "parameters": {
+        "step": "recon-all -s <subjid> -all"
+      },
+      "key": "provenance:{\"step\": \"recon-all -s <subjid> -all\"}",
+      "score": 0.4328335732575621,
+      "margin": 0.0,
+      "support": 0.4,
+      "candidates": [
+        [
+          "provenance",
+          0.5094452441918738
+        ],
+        [
+          "product_present",
+          0.09036299937798371
+        ],
+        [
+          "attr_equal",
+          0.0887860474720072
+        ]
+      ],
+      "decision": "review"
+    }
+  },
+  {
+    "item": {
+      "id": 40,
+      "method": "local_gyrification",
+      "field": "conditions",
+      "statement": "MATLAB and its Image Processing Toolbox must be installed and accessible.",
+      "quote": "MATLAB is required to use the -localGI feature. Also, you will need their Image Processing Toolbox.",
+      "source_id": "fs_lgi",
+      "gold_template": "software",
+      "gold_parameters": {
+        "commands": [
+          "matlab"
+        ]
+      }
+    },
+    "prediction": {
+      "id": 40,
+      "method": "local_gyrification",
+      "statement": "MATLAB and its Image Processing Toolbox must be installed and accessible.",
+      "quote_support": 1.0,
+      "source_id": "fs_lgi",
+      "template": "software",
+      "parameters": {
+        "commands": [
+          "MATLAB",
+          "Image Processing Toolbox"
+        ]
+      },
+      "key": "software:{\"commands\": [\"Image Processing Toolbox\", \"MATLAB\"]}",
+      "score": 0.4066425102989356,
+      "margin": 0.13999999999999996,
+      "support": 0.4,
+      "candidates": [
+        [
+          "software",
+          0.4221417009964522
+        ],
+        [
+          "product_present",
+          0.14453885130386657
+        ],
+        [
+          "attr_in",
+          0.09982090262136123
+        ]
+      ],
+      "decision": "review"
+    }
+  },
+  {
+    "item": {
+      "id": 42,
+      "method": "local_gyrification",
+      "field": "checks",
+      "statement": "Check for topological defects of the pial surface using mris_euler_number, as defects cause mris_compute_lgi to crash.",
+      "quote": "In case of topological defects of the pial surface (run mris_euler_number), mris_compute_lgi crashes.",
+      "source_id": "fs_lgi",
+      "gold_template": "advisory",
+      "gold_parameters": null
+    },
+    "prediction": {
+      "id": 42,
+      "method": "local_gyrification",
+      "statement": "Check for topological defects of the pial surface using mris_euler_number, as defects cause mris_compute_lgi to crash.",
+      "quote_support": 1.0,
+      "source_id": "fs_lgi",
+      "template": "attr_in",
+      "parameters": {
+        "slot": "pial",
+        "attr": "mesh",
+        "values": [
+          "defective"
+        ]
+      },
+      "key": "attr_in:{\"attr\": \"mesh\", \"slot\": \"pial\", \"values\": [\"defective\"]}",
+      "score": 0.21862534447540904,
+      "margin": 0.21862534447540904,
+      "support": 0.2,
+      "candidates": [
+        [
+          "attr_in",
+          0.2620844815846969
+        ],
+        [
+          "product_present",
+          0.10119828324003421
+        ],
+        [
+          "cardinality",
+          0.09463692047046078
+        ]
+      ],
+      "decision": "review"
+    }
+  },
+  {
+    "item": {
+      "id": 46,
+      "method": "macaque_civet",
+      "field": "inputs",
+      "statement": "NMT brain mask and tissue priors for registration and classification.",
+      "quote": "Registration, using minctracc, proceeds by specifying the brain mask on the target image only, herein the NMT volume with its associated brain mask",
+      "source_id": "civet_macaque",
+      "gold_template": "product_present",
+      "gold_parameters": {
+        "slot": "mask",
+        "type": "type:Volume.BrainMask"
+      }
+    },
+    "prediction": {
+      "id": 46,
+      "method": "macaque_civet",
+      "statement": "NMT brain mask and tissue priors for registration and classification.",
+      "quote_support": 1.0,
+      "source_id": "civet_macaque",
+      "template": "provenance",
+      "parameters": {
+        "step": "Registration, using minctracc, proceeds by specifying the brain mask on the target image only, herein the NMT volume with its associated brain mask"
+      },
+      "key": "provenance:{\"step\": \"Registration, using minctracc, proceeds by specifying the brain mask on the target image only, herein the NMT volume with its associated brain mask\"}",
+      "score": 0.3038482080045421,
+      "margin": 0.13999999999999999,
+      "support": 0.4,
+      "candidates": [
+        [
+          "scale_check",
+          0.2304905198717804
+        ],
+        [
+          "provenance",
+          0.07949402668180708
+        ],
+        [
+          "plausibility",
+          0.06440768967805176
+        ]
+      ],
+      "decision": "review"
+    }
+  },
+  {
+    "item": {
+      "id": 47,
+      "method": "macaque_civet",
+      "field": "conditions",
+      "statement": "The pipeline is designed for macaque brains and uses a length scale of 0.4 relative to human brain size.",
+      "quote": "A length scale of 0.4 was derived from the cubic root of the macaque-to-human volume ratio",
+      "source_id": "civet_macaque",
+      "gold_template": "attr_in",
+      "gold_parameters": {
+        "slot": "T1",
+        "attr": "species",
+        "values": [
+          "macaque"
+        ]
+      }
+    },
+    "prediction": {
+      "id": 47,
+      "method": "macaque_civet",
+      "statement": "The pipeline is designed for macaque brains and uses a length scale of 0.4 relative to human brain size.",
+      "quote_support": 1.0,
+      "source_id": "civet_macaque",
+      "template": "scale_check",
+      "parameters": {
+        "metric": "0.4"
+      },
+      "key": "scale_check:{\"metric\": \"0.4\"}",
+      "score": 0.2550237929488541,
+      "margin": 0.0,
+      "support": 0.2,
+      "candidates": [
+        [
+          "scale_check",
+          0.38341264316284696
+        ],
+        [
+          "attr_in",
+          0.20059614032090853
+        ],
+        [
+          "provenance",
+          0.06449397803780334
+        ]
+      ],
+      "decision": "review"
+    }
+  },
+  {
+    "item": {
+      "id": 51,
+      "method": "macaque_civet",
+      "field": "checks",
+      "statement": "Quality control includes visual inspection of brain masks and surfaces for accuracy.",
+      "quote": "The procedure proved to be very robust at extracting accurate masks on scans of individual subjects (see Fig. 2)",
+      "source_id": "civet_macaque",
+      "gold_template": "advisory",
+      "gold_parameters": null
+    },
+    "prediction": {
+      "id": 51,
+      "method": "macaque_civet",
+      "statement": "Quality control includes visual inspection of brain masks and surfaces for accuracy.",
+      "quote_support": 1.0,
+      "source_id": "civet_macaque",
+      "template": "plausibility",
+      "parameters": {
+        "metric": "accuracy"
+      },
+      "key": "plausibility:{\"metric\": \"accuracy\"}",
+      "score": 0.5875100189643606,
+      "margin": 0.42,
+      "support": 0.8,
+      "candidates": [
+        [
+          "cardinality",
+          0.2666305821143263
+        ],
+        [
+          "attr_in",
+          0.19878721852567618
+        ],
+        [
+          "plausibility",
+          0.09170006321453546
+        ]
+      ],
+      "decision": "review"
+    }
+  },
+  {
+    "item": {
+      "id": 53,
+      "method": "macaque_civet",
+      "field": "exceptions",
+      "statement": "The pipeline is not validated for species other than macaques; adaptations for other primates would require appropriate length scales and templates.",
+      "quote": "Further adaptations of the pipeline to other non-human primate brains should be straightforward by introducing the appropriate length scales and supplying species specific templates.",
+      "source_id": "civet_macaque",
+      "gold_template": "attr_in",
+      "gold_parameters": {
+        "slot": "T1",
+        "attr": "species",
+        "values": [
+          "macaque"
+        ]
+      }
+    },
+    "prediction": {
+      "id": 53,
+      "method": "macaque_civet",
+      "statement": "The pipeline is not validated for species other than macaques; adaptations for other primates would require appropriate length scales and templates.",
+      "quote_support": 1.0,
+      "source_id": "civet_macaque",
+      "template": "attr_in",
+      "parameters": {
+        "slot": "T1",
+        "attr": "species",
+        "values": [
+          "macaque"
+        ]
+      },
+      "key": "attr_in:{\"attr\": \"species\", \"slot\": \"T1\", \"values\": [\"macaque\"]}",
+      "score": 0.2175365753766433,
+      "margin": 0.02984015936755907,
+      "support": 0.2,
+      "candidates": [
+        [
+          "attr_in",
+          0.25845525125547775
+        ],
+        [
+          "provenance",
+          0.15898805336361416
+        ],
+        [
+          "advisory",
+          0.09201336391364938
+        ]
+      ],
+      "decision": "review"
+    }
+  },
+  {
+    "item": {
+      "id": 57,
+      "method": "nhp_macapype",
+      "field": "inputs",
+      "statement": "T1 weighted images are expected with the _T1w BIDS extension.",
+      "quote": "_T1w (BIDS) extension is expected for T1 weighted images",
+      "source_id": "macapype_commands",
+      "gold_template": "product_present",
+      "gold_parameters": {
+        "slot": "T1",
+        "type": "type:Volume.T1"
+      }
+    },
+    "prediction": {
+      "id": 57,
+      "method": "nhp_macapype",
+      "statement": "T1 weighted images are expected with the _T1w BIDS extension.",
+      "quote_support": 1.0,
+      "source_id": "macapype_commands",
+      "template": "plausibility",
+      "parameters": {
+        "metric": "_T1w"
+      },
+      "key": "plausibility:{\"metric\": \"_T1w\"}",
+      "score": 0.35678226132850066,
+      "margin": 0.13999999999999996,
+      "support": 0.4,
+      "candidates": [
+        [
+          "plausibility",
+          0.2559408710950024
+        ],
+        [
+          "provenance",
+          0.11649364739195953
+        ],
+        [
+          "advisory",
+          0.0
+        ]
+      ],
+      "decision": "review"
+    }
+  },
+  {
+    "item": {
+      "id": 58,
+      "method": "nhp_macapype",
+      "field": "inputs",
+      "statement": "T2 weighted images are expected with the _T2w BIDS extension.",
+      "quote": "_T2w (BIDS) extension is expected for T2 weighted images",
+      "source_id": "macapype_commands",
+      "gold_template": "product_present",
+      "gold_parameters": {
+        "slot": "T2",
+        "type": "type:Volume.T1"
+      }
+    },
+    "prediction": {
+      "id": 58,
+      "method": "nhp_macapype",
+      "statement": "T2 weighted images are expected with the _T2w BIDS extension.",
+      "quote_support": 1.0,
+      "source_id": "macapype_commands",
+      "template": "plausibility",
+      "parameters": {
+        "metric": "_T2w (BIDS) extension is expected for T2 weighted images"
+      },
+      "key": "plausibility:{\"metric\": \"_T2w (BIDS) extension is expected for T2 weighted images\"}",
+      "score": 0.35678226132850066,
+      "margin": 0.35678226132850066,
+      "support": 0.4,
+      "candidates": [
+        [
+          "plausibility",
+          0.2559408710950024
+        ],
+        [
+          "provenance",
+          0.11649364739195953
+        ],
+        [
+          "advisory",
+          0.0
+        ]
+      ],
+      "decision": "review"
+    }
+  },
+  {
+    "item": {
+      "id": 62,
+      "method": "nhp_macapype",
+      "field": "conditions",
+      "statement": "The -soft parameter must be either SPM or ANTS, with SPM requiring a specific version of macapype/skullTo3d not available by default.",
+      "quote": "-soft : can be one of these : SPM or ANTS ( NB: SPM requires a specific version of macapype/skullTo3d, not available by default)",
+      "source_id": "macapype_commands",
+      "gold_template": "advisory",
+      "gold_parameters": null
+    },
+    "prediction": {
+      "id": 62,
+      "method": "nhp_macapype",
+      "statement": "The -soft parameter must be either SPM or ANTS, with SPM requiring a specific version of macapype/skullTo3d not available by default.",
+      "quote_support": 1.0,
+      "source_id": "macapype_commands",
+      "template": "software",
+      "parameters": {
+        "commands": [
+          "SPM",
+          "ANTS"
+        ]
+      },
+      "key": "software:{\"commands\": [\"ANTS\", \"SPM\"]}",
+      "score": 0.4999204732775643,
+      "margin": 0.4999204732775643,
+      "support": 0.6,
+      "candidates": [
+        [
+          "attr_in",
+          0.2780266748379233
+        ],
+        [
+          "software",
+          0.2664015775918811
+        ],
+        [
+          "product_present",
+          0.15931097640812553
+        ]
+      ],
+      "decision": "review"
+    }
+  },
+  {
+    "item": {
+      "id": 67,
+      "method": "nhp_macapype",
+      "field": "exceptions",
+      "statement": "The _4animal option uses bet4animal (FSL) for brain extraction, for faster computation; by default atlas_brex is used.",
+      "quote": "_4animal : will use bet4animal (FSL) for brain extraction, for faster computation (by default atlas_brex is used)",
+      "source_id": "macapype_commands",
+      "gold_template": "advisory",
+      "gold_parameters": null
+    },
+    "prediction": {
+      "id": 67,
+      "method": "nhp_macapype",
+      "statement": "The _4animal option uses bet4animal (FSL) for brain extraction, for faster computation; by default atlas_brex is used.",
+      "quote_support": 1.0,
+      "source_id": "macapype_commands",
+      "template": "software",
+      "parameters": {
+        "commands": [
+          "bet4animal",
+          "atlas_brex"
+        ]
+      },
+      "key": "software:{\"commands\": [\"atlas_brex\", \"bet4animal\"]}",
+      "score": 0.19226272284404686,
+      "margin": 0.19226272284404686,
+      "support": 0.2,
+      "candidates": [
+        [
+          "scale_check",
+          0.178020314512709
+        ],
+        [
+          "software",
+          0.17420907614682293
+        ],
+        [
+          "advisory",
+          0.0
+        ]
+      ],
+      "decision": "review"
+    }
+  },
+  {
+    "item": {
+      "id": 69,
+      "method": "nhp_macapype",
+      "field": "exceptions",
+      "statement": "Some templates are available in downgraded versions (e.g., baboon1_0p6, macaque_0p5) showing significant decrease in processing time with low reduction in quality, but not all combinations are available.",
+      "quote": "NB : some templates are available in downgraded versions: baboon1_0p6, baboon2_0p6 baboon3_0p6 and macaque_0p5 and show significant decrease in processing time with low redection in quality. However, not all combinations are available",
+      "source_id": "macapype_commands",
+      "gold_template": "advisory",
+      "gold_parameters": null
+    },
+    "prediction": {
+      "id": 69,
+      "method": "nhp_macapype",
+      "statement": "Some templates are available in downgraded versions (e.g., baboon1_0p6, macaque_0p5) showing significant decrease in processing time with low reduction in quality, but not all combinations are available.",
+      "quote_support": 1.0,
+      "source_id": "macapype_commands",
+      "template": "provenance",
+      "parameters": {
+        "step": "NB: some templates are available in downgraded versions: baboon1_0p6, baboon2_0p6, baboon3_0p6 and macaque_0p5, and show significant decrease in processing time with low reduction in quality. However, not all combinations are available"
+      },
+      "key": "provenance:{\"step\": \"NB: some templates are available in downgraded versions: baboon1_0p6, baboon2_0p6, baboon3_0p6 and macaque_0p5, and show significant decrease in processing time with low reduction in quality. However, not all combinations are available\"}",
+      "score": 0.1804216991085139,
+      "margin": 0.1804216991085139,
+      "support": 0.2,
+      "candidates": [
+        [
+          "attr_in",
+          0.3516232300027043
+        ],
+        [
+          "provenance",
+          0.13473899702837971
+        ],
+        [
+          "software",
+          0.09399130086089283
+        ]
+      ],
+      "decision": "review"
+    }
+  },
+  {
+    "item": {
+      "id": 70,
+      "method": "samseg_segmentation",
+      "field": "inputs",
+      "statement": "One or more co-registered MRI volumes in Nifti (.nii/.nii.gz) or FreeSurfer (.mgz) format.",
+      "quote": "takes one or more co-registered MRI volumes as input",
+      "source_id": "fs_samseg",
+      "gold_template": "product_present",
+      "gold_parameters": {
+        "slot": "volumes",
+        "type": "type:Volume"
+      }
+    },
+    "prediction": {
+      "id": 70,
+      "method": "samseg_segmentation",
+      "statement": "One or more co-registered MRI volumes in Nifti (.nii/.nii.gz) or FreeSurfer (.mgz) format.",
+      "quote_support": 1.0,
+      "source_id": "fs_samseg",
+      "template": "product_present",
+      "parameters": {
+        "slot": "volumes",
+        "type": "MRI"
+      },
+      "key": "product_present:{\"slot\": \"volumes\", \"type\": \"MRI\"}",
+      "score": 0.16320055359710695,
+      "margin": 0.16320055359710695,
+      "support": 0.2,
+      "candidates": [
+        [
+          "attr_in",
+          0.4005670759949739
+        ],
+        [
+          "software",
+          0.08710453807341147
+        ],
+        [
+          "product_present",
+          0.0773351786570232
+        ]
+      ],
+      "decision": "review"
+    }
+  },
+  {
+    "item": {
+      "id": 73,
+      "method": "samseg_segmentation",
+      "field": "inputs",
+      "statement": "For longitudinal processing, all time points must be co-registered and reformatted to the same image grid, using an unbiased reference template.",
+      "quote": "longitudinal SAMSEG expects all its input images to have been co-registered and reformatted to the same image grid beforehand",
+      "source_id": "fs_samseg",
+      "gold_template": "attr_equal",
+      "gold_parameters": {
+        "slots": [
+          "T1",
+          "timepoints"
+        ],
+        "attrs": [
+          "space",
+          "voxel_size"
+        ]
+      }
+    },
+    "prediction": {
+      "id": 73,
+      "method": "samseg_segmentation",
+      "statement": "For longitudinal processing, all time points must be co-registered and reformatted to the same image grid, using an unbiased reference template.",
+      "quote_support": 1.0,
+      "source_id": "fs_samseg",
+      "template": "provenance",
+      "parameters": {
+        "step": "co-registered and reformatted to the same image grid using an unbiased reference template"
+      },
+      "key": "provenance:{\"step\": \"co-registered and reformatted to the same image grid using an unbiased reference template\"}",
+      "score": 0.4666749577228051,
+      "margin": 0.4666749577228051,
+      "support": 0.6,
+      "candidates": [
+        [
+          "product_present",
+          0.16168244514481667
+        ],
+        [
+          "provenance",
+          0.15558319240935048
+        ],
+        [
+          "attr_in",
+          0.14973135393204184
+        ]
+      ],
+      "decision": "review"
+    }
+  },
+  {
+    "item": {
+      "id": 74,
+      "method": "samseg_segmentation",
+      "field": "conditions",
+      "statement": "Preprocessing with FreeSurfer is neither required nor recommended for basic SAMSEG.",
+      "quote": "Preprocessing of the scan(s) with FreeSurfer is neither required nor recommended",
+      "source_id": "fs_samseg",
+      "gold_template": "advisory",
+      "gold_parameters": null
+    },
+    "prediction": {
+      "id": 74,
+      "method": "samseg_segmentation",
+      "statement": "Preprocessing with FreeSurfer is neither required nor recommended for basic SAMSEG.",
+      "quote_support": 1.0,
+      "source_id": "fs_samseg",
+      "template": "provenance",
+      "parameters": {
+        "step": "Preprocessing of the scan(s) with FreeSurfer is neither required nor recommended"
+      },
+      "key": "provenance:{\"step\": \"Preprocessing of the scan(s) with FreeSurfer is neither required nor recommended\"}",
+      "score": 0.32521165152355874,
+      "margin": 0.32521165152355874,
+      "support": 0.4,
+      "candidates": [
+        [
+          "software",
+          0.24766623685739103
+        ],
+        [
+          "provenance",
+          0.15070550507852926
+        ],
+        [
+          "product_present",
+          0.09333827667754561
+        ]
+      ],
+      "decision": "review"
+    }
+  },
+  {
+    "item": {
+      "id": 82,
+      "method": "samseg_segmentation",
+      "field": "exceptions",
+      "statement": "The first time the MS lesion module is run, the user may be prompted to install Tensorflow.",
+      "quote": "The first time you run this module, you may be prompted to install Tensorflow",
+      "source_id": "fs_samseg",
+      "gold_template": "advisory",
+      "gold_parameters": null
+    },
+    "prediction": {
+      "id": 82,
+      "method": "samseg_segmentation",
+      "statement": "The first time the MS lesion module is run, the user may be prompted to install Tensorflow.",
+      "quote_support": 1.0,
+      "source_id": "fs_samseg",
+      "template": "provenance",
+      "parameters": {
+        "step": "The first time you run this module, you may be prompted to install Tensorflow"
+      },
+      "key": "provenance:{\"step\": \"The first time you run this module, you may be prompted to install Tensorflow\"}",
+      "score": 0.18723097203431693,
+      "margin": 0.18723097203431693,
+      "support": 0.2,
+      "candidates": [
+        [
+          "advisory",
+          0.18223090879454287
+        ],
+        [
+          "provenance",
+          0.1574365734477232
+        ],
+        [
+          "attr_in",
+          0.10101001672351256
+        ]
+      ],
+      "decision": "review"
+    }
+  },
+  {
+    "item": {
+      "id": 84,
+      "method": "surface_annotation_roi",
+      "field": "inputs",
+      "statement": "Optionally a FreeSurfer .label file giving vertex indices, with optional per-vertex scalars.",
+      "quote": "Load in a Freesurfer .label file.",
+      "source_id": "nibabel_fs",
+      "gold_template": "product_present",
+      "gold_parameters": {
+        "slot": "label",
+        "type": "type:Label"
+      }
+    },
+    "prediction": {
+      "id": 84,
+      "method": "surface_annotation_roi",
+      "statement": "Optionally a FreeSurfer .label file giving vertex indices, with optional per-vertex scalars.",
+      "quote_support": 1.0,
+      "source_id": "nibabel_fs",
+      "template": "software",
+      "parameters": {
+        "commands": [
+          "Load in a Freesurfer .label file."
+        ]
+      },
+      "key": "software:{\"commands\": [\"Load in a Freesurfer .label file.\"]}",
+      "score": 0.17957731692171985,
+      "margin": 0.17957731692171985,
+      "support": 0.2,
+      "candidates": [
+        [
+          "product_present",
+          0.20351693966944154
+        ],
+        [
+          "label_policy",
+          0.2011164989196108
+        ],
+        [
+          "software",
+          0.1319243897390662
+        ]
+      ],
+      "decision": "review"
+    }
+  },
+  {
+    "item": {
+      "id": 85,
+      "method": "surface_annotation_roi",
+      "field": "inputs",
+      "statement": "Optionally a triangular surface mesh geometry file supplying vertex coordinates and faces.",
+      "quote": "Read a triangular format Freesurfer surface mesh.",
+      "source_id": "nibabel_fs",
+      "gold_template": "product_present",
+      "gold_parameters": {
+        "slot": "surface",
+        "type": "type:Surface"
+      }
+    },
+    "prediction": {
+      "id": 85,
+      "method": "surface_annotation_roi",
+      "statement": "Optionally a triangular surface mesh geometry file supplying vertex coordinates and faces.",
+      "quote_support": 1.0,
+      "source_id": "nibabel_fs",
+      "template": "product_present",
+      "parameters": {
+        "slot": "surface",
+        "type": "mesh"
+      },
+      "key": "product_present:{\"slot\": \"surface\", \"type\": \"mesh\"}",
+      "score": 0.4793564957609992,
+      "margin": 0.4793564957609992,
+      "support": 0.6,
+      "candidates": [
+        [
+          "product_present",
+          0.19785498586999756
+        ],
+        [
+          "attr_equal",
+          0.14338274935724163
+        ],
+        [
+          "software",
+          0.07428299966030348
+        ]
+      ],
+      "decision": "review"
+    }
+  },
+  {
+    "item": {
+      "id": 88,
+      "method": "surface_mesh_area",
+      "field": "inputs",
+      "statement": "A FreeSurfer surface mesh file in triangular format, e.g., white or pial surface.",
+      "quote": "Read a triangular format Freesurfer surface mesh.",
+      "source_id": "nibabel_fs",
+      "gold_template": "product_present",
+      "gold_parameters": {
+        "slot": "surface",
+        "type": "type:Surface"
+      }
+    },
+    "prediction": {
+      "id": 88,
+      "method": "surface_mesh_area",
+      "statement": "A FreeSurfer surface mesh file in triangular format, e.g., white or pial surface.",
+      "quote_support": 1.0,
+      "source_id": "nibabel_fs",
+      "template": "attr_in",
+      "parameters": {
+        "slot": "surface",
+        "attr": "mesh",
+        "values": [
+          "triangular"
+        ]
+      },
+      "key": "attr_in:{\"attr\": \"mesh\", \"slot\": \"surface\", \"values\": [\"triangular\"]}",
+      "score": 0.47669797752570836,
+      "margin": 0.47669797752570836,
+      "support": 0.6,
+      "candidates": [
+        [
+          "attr_in",
+          0.18899325841902817
+        ],
+        [
+          "product_present",
+          0.1824392003324793
+        ],
+        [
+          "software",
+          0.10274290786810004
+        ]
+      ],
+      "decision": "review"
+    }
+  },
+  {
+    "item": {
+      "id": 89,
+      "method": "surface_mesh_area",
+      "field": "inputs",
+      "statement": "Vertex coordinates array (nvtx x 3) from the surface mesh.",
+      "quote": "nvtx x 3 array of vertex (x, y, z) coordinates.",
+      "source_id": "nibabel_fs",
+      "gold_template": "product_present",
+      "gold_parameters": {
+        "slot": "surface",
+        "type": "type:Surface"
+      }
+    },
+    "prediction": {
+      "id": 89,
+      "method": "surface_mesh_area",
+      "statement": "Vertex coordinates array (nvtx x 3) from the surface mesh.",
+      "quote_support": 1.0,
+      "source_id": "nibabel_fs",
+      "template": "product_present",
+      "parameters": {
+        "slot": "surface",
+        "type": "vertex_coordinates"
+      },
+      "key": "product_present:{\"slot\": \"surface\", \"type\": \"vertex_coordinates\"}",
+      "score": 0.17788634537533657,
+      "margin": 0.0,
+      "support": 0.2,
+      "candidates": [
+        [
+          "attr_equal",
+          0.13727853101925577
+        ],
+        [
+          "attr_in",
+          0.1308246591928451
+        ],
+        [
+          "product_present",
+          0.1262878179177886
+        ]
+      ],
+      "decision": "review"
+    }
+  },
+  {
+    "item": {
+      "id": 90,
+      "method": "surface_mesh_area",
+      "field": "inputs",
+      "statement": "Face array (nfaces x 3) defining mesh triangles.",
+      "quote": "nfaces x 3 array of defining mesh triangles.",
+      "source_id": "nibabel_fs",
+      "gold_template": "product_present",
+      "gold_parameters": {
+        "slot": "surface",
+        "type": "type:Surface"
+      }
+    },
+    "prediction": {
+      "id": 90,
+      "method": "surface_mesh_area",
+      "statement": "Face array (nfaces x 3) defining mesh triangles.",
+      "quote_support": 1.0,
+      "source_id": "nibabel_fs",
+      "template": "attr_in",
+      "parameters": {
+        "slot": "surface",
+        "attr": "mesh",
+        "values": [
+          "nfaces x 3 array of defining mesh triangles"
+        ]
+      },
+      "key": "attr_in:{\"attr\": \"mesh\", \"slot\": \"surface\", \"values\": [\"nfaces x 3 array of defining mesh triangles\"]}",
+      "score": 0.170400903579629,
+      "margin": 0.170400903579629,
+      "support": 0.2,
+      "candidates": [
+        [
+          "attr_equal",
+          0.2126709857717584
+        ],
+        [
+          "attr_in",
+          0.10133634526543003
+        ],
+        [
+          "advisory",
+          0.0
+        ]
+      ],
+      "decision": "review"
+    }
+  },
+  {
+    "item": {
+      "id": 92,
+      "method": "surface_mesh_area",
+      "field": "conditions",
+      "statement": "The mesh must be in triangular format as read by nibabel's read_geometry.",
+      "quote": "Read a triangular format Freesurfer surface mesh.",
+      "source_id": "nibabel_fs",
+      "gold_template": "advisory",
+      "gold_parameters": null
+    },
+    "prediction": {
+      "id": 92,
+      "method": "surface_mesh_area",
+      "statement": "The mesh must be in triangular format as read by nibabel's read_geometry.",
+      "quote_support": 1.0,
+      "source_id": "nibabel_fs",
+      "template": "attr_in",
+      "parameters": {
+        "slot": "surface",
+        "attr": "mesh",
+        "values": [
+          "triangular"
+        ]
+      },
+      "key": "attr_in:{\"attr\": \"mesh\", \"slot\": \"surface\", \"values\": [\"triangular\"]}",
+      "score": 0.5253761791660271,
+      "margin": 0.5253761791660271,
+      "support": 0.6,
+      "candidates": [
+        [
+          "attr_in",
+          0.35125393055342385
+        ],
+        [
+          "product_present",
+          0.15328341086343392
+        ],
+        [
+          "attr_equal",
+          0.1346390290761892
+        ]
+      ],
+      "decision": "review"
+    }
+  },
+  {
+    "item": {
+      "id": 94,
+      "method": "surface_mesh_area",
+      "field": "conditions",
+      "statement": "The area function computes the sum area of input triangles.",
+      "quote": "Calculates the sum area of input triangles",
+      "source_id": "trimesh_triangles",
+      "gold_template": "advisory",
+      "gold_parameters": null
+    },
+    "prediction": {
+      "id": 94,
+      "method": "surface_mesh_area",
+      "statement": "The area function computes the sum area of input triangles.",
+      "quote_support": 1.0,
+      "source_id": "trimesh_triangles",
+      "template": "product_present",
+      "parameters": {
+        "slot": "surface",
+        "type": "mesh"
+      },
+      "key": "product_present:{\"slot\": \"surface\", \"type\": \"mesh\"}",
+      "score": 0.1718308969314143,
+      "margin": 0.1718308969314143,
+      "support": 0.2,
+      "candidates": [
+        [
+          "plausibility",
+          0.20820513877929203
+        ],
+        [
+          "attr_in",
+          0.10991469886049575
+        ],
+        [
+          "product_present",
+          0.10610298977138102
+        ]
+      ],
+      "decision": "review"
+    }
+  },
+  {
+    "item": {
+      "id": 100,
+      "method": "surface_reconstruction_qc",
+      "field": "inputs",
+      "statement": "Subject directory created via recon-all -i command.",
+      "quote": "recon-all -i <path-to-first-structural> [-i <path-to-second-structural>] -s <subjid>",
+      "source_id": "fs_morph",
+      "gold_template": "provenance",
+      "gold_parameters": {
+        "step": "recon-all"
+      }
+    },
+    "prediction": {
+      "id": 100,
+      "method": "surface_reconstruction_qc",
+      "statement": "Subject directory created via recon-all -i command.",
+      "quote_support": 1.0,
+      "source_id": "fs_morph",
+      "template": "software",
+      "parameters": {
+        "commands": [
+          "recon-all -i <path-to-first-structural> [-i <path-to-second-structural>] -s <subjid>"
+        ]
+      },
+      "key": "software:{\"commands\": [\"recon-all -i <path-to-first-structural> [-i <path-to-second-structural>] -s <subjid>\"]}",
+      "score": 0.4792603574933324,
+      "margin": 0.4792603574933324,
+      "support": 0.6,
+      "candidates": [
+        [
+          "provenance",
+          0.278473080337166
+        ],
+        [
+          "software",
+          0.19753452497777482
+        ],
+        [
+          "attr_equal",
+          0.06354761164243836
+        ]
+      ],
+      "decision": "review"
+    }
+  },
+  {
+    "item": {
+      "id": 102,
+      "method": "surface_reconstruction_qc",
+      "field": "conditions",
+      "statement": "Anatomical data should have good quality: strong contrast between tissue types, no movement, high resolution.",
+      "quote": "If your anatomical data is of good quality - strong contrast between the tissue types, no movement, high resolution",
+      "source_id": "andy_failures",
+      "gold_template": "advisory",
+      "gold_parameters": null
+    },
+    "prediction": {
+      "id": 102,
+      "method": "surface_reconstruction_qc",
+      "statement": "Anatomical data should have good quality: strong contrast between tissue types, no movement, high resolution.",
+      "quote_support": 1.0,
+      "source_id": "andy_failures",
+      "template": "plausibility",
+      "parameters": {
+        "metric": "anatomical data quality: strong contrast between tissue types, no movement, high resolution"
+      },
+      "key": "plausibility:{\"metric\": \"anatomical data quality: strong contrast between tissue types, no movement, high resolution\"}",
+      "score": 0.46170211757204094,
+      "margin": 0.13999999999999996,
+      "support": 0.6,
+      "candidates": [
+        [
+          "attr_equal",
+          0.2006987244876925
+        ],
+        [
+          "plausibility",
+          0.1390070585734701
+        ],
+        [
+          "attr_in",
+          0.13622530577236797
+        ]
+      ],
+      "decision": "review"
+    }
+  }
+]
