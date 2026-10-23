@@ -135,8 +135,9 @@ class RequestBudget:
         }
         self.records.append(record)
         self.session.store.save("model_charge", record)
-        from .analysis_call_context import HTTP_ATTEMPT
+        from .analysis_call_context import HTTP_ATTEMPT, HTTP_BUDGET
         HTTP_ATTEMPT.set(record["id"])
+        HTTP_BUDGET.set(self)
         return record["id"]
 
     def finish(self, attempt_id, usage, status, *, model=None):
@@ -152,9 +153,10 @@ class RequestBudget:
                 if type(usage.get(key)) is int and usage[key] >= 0
             }
         self.session.store.save("model_charge", row)
-        from .analysis_call_context import HTTP_ATTEMPT
+        from .analysis_call_context import HTTP_ATTEMPT, HTTP_BUDGET
         if HTTP_ATTEMPT.get() == attempt_id:
             HTTP_ATTEMPT.set(None)
+            HTTP_BUDGET.set(None)
 
     def view(self, unmetered_analysis_calls=0):
         summary = usage_summary(self.records)

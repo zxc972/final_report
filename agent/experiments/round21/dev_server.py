@@ -212,14 +212,8 @@ def begin(request):
             )
             raise RuntimeError("Source protection changed; paid requests stopped")
         payload = json.loads(request.content)
-        from backend.agent_chat_state import ACTIVE_CHAT
-
-        session = ACTIVE_CHAT.get()
-        from backend.analysis_call_context import HTTP_ATTEMPT
-        native_attempt = HTTP_ATTEMPT.get()
-        charge = next((row for row in session.budget.records if row["id"] == native_attempt), {}) if session else {}
-        if not charge:
-            raise RuntimeError("Exact native HTTP charge binding unavailable; request not sent")
+        from backend.analysis_http_observer import current_native_charge
+        charge = current_native_charge()
         ledger = json.loads(LEDGER.read_text())
         number = ledger["http_attempts"] + 1
         row = {

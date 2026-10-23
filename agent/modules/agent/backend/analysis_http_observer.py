@@ -6,6 +6,21 @@ import importlib
 _IN_SEND = ContextVar("primatex_http_observer_send", default=False)
 
 
+def current_native_charge():
+    """Resolve this send's exact reservation, including before chat activation.
+
+    Automatic routing receives a budget before ACTIVE_CHAT is activated. Bind
+    the reservation owner directly instead of inferring a current/latest row.
+    """
+    from .analysis_call_context import HTTP_ATTEMPT, HTTP_BUDGET
+
+    attempt, budget = HTTP_ATTEMPT.get(), HTTP_BUDGET.get()
+    charge = next((row for row in budget.records if row["id"] == attempt), None) if budget is not None else None
+    if charge is None or charge.get("status") != "started":
+        raise RuntimeError("Exact native HTTP charge binding unavailable; request not sent")
+    return charge
+
+
 class HTTPObserver:
     """Install only in an isolated process; callbacks own redaction and storage.
 

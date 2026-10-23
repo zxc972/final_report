@@ -9,9 +9,9 @@ ROOT=Path('/data/xuancheng/agent_v1/round21_source')
 WORK=ROOT.parent/'round21_work'
 BASE='a2189f3b3fc5dd05afac12fe9bd49e21a50c6b15'
 REASONS={
-'agent_chat_state.py':'Attach native HTTP charge identity to request-local context; reservation/retry/accounting rules unchanged.',
+'agent_chat_state.py':'Attach exact native HTTP charge identity and owning budget to request-local context, including routing before chat activation; reservation/retry/accounting rules unchanged.',
 'analysis_agent.py':'Generic group-design tool documentation, actionable argument rejection before planner quota, and ToolMessage failure synchronization.',
-'analysis_call_context.py':'Add a ContextVar carrying exact native HTTP attempt identity for the transport observer.',
+'analysis_call_context.py':'Carry exact native HTTP attempt identity and its budget owner for the transport observer, independent of ACTIVE_CHAT activation.',
 'analysis_data_card.py':'Show dynamically observed registered metric names in compact multi-subject data cards.',
 'analysis_feedback.py':'Recognize nested artifact/public-contract failure despite subprocess exit0 and retain bounded original failure reasons.',
 'analysis_group_manifest.py':'Explain existing dict/list/key schema and expose raw-reading/keyed-BH interfaces; bind metric names from actual inputs.',
@@ -23,7 +23,7 @@ REASONS={
 'primatex_ops.py':'Append raw read-only group reader and identity-keyed BH; every pre-existing operation function AST unchanged.',
 }
 NEW={
-'analysis_http_observer.py':'Install isolated-process httpx/httpx2 sync/async observers without changing retry/transport policy.',
+'analysis_http_observer.py':'Install isolated-process httpx/httpx2 sync/async observers and resolve the exact native reservation before/after chat activation; retry/transport policy unchanged.',
 'analysis_planning_arguments.py':'Validate registered IDs/metrics and required design fields using public data-card/profile metadata.',
 }
 
