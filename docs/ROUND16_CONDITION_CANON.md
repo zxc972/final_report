@@ -24,6 +24,9 @@ not been promoted to human gold.
 - With the adapter: 17 targeted tests and 870 full-backend passes. After the
   gateway compatibility fix: **18 targeted tests; full default backend 871 passed,
   14 skipped, 59 subtests passed (98.43 seconds)**; 144 existing warnings.
+- After isolating exhausted gateway failures and merging concurrent reviewed
+  Round15 data tools: **19 targeted tests; complete default backend 877 passed,
+  14 skipped, 59 subtests passed (103.66 seconds)**; 144 existing warnings.
 - Protected-file mapping: all 100 available mapped files match their recorded
   digests. The historical protected set has 101 files with one unmapped file;
   that file is not claimed as rechecked.
@@ -54,6 +57,15 @@ sampling, labels and source texts did not change. Continuation manifest SHA-256:
 `e2f39520ae2a549dc17e954ddee76f76e70017e2483643b47c59d08796be0d26`.
 Length-exhausted empty answers remain failures to supply a condition; no better
 answer is substituted, and final diagnostics identify these responses.
+
+One sample subsequently exhausted its three HTTP attempts because of 429
+responses. At 75 reserved attempts, failed requests were isolated per statement
+so other statements and arms can continue. These predictions are explicitly
+`provider_error`, reported separately from semantic errors, and scored as no
+valid prediction in the supplied aggregate metrics. No answer was resampled,
+and all 13 completed predictions plus the raw ledger were retained. Current
+continuation manifest SHA-256:
+`054f9a031ef99326289bf925ea8551ae20ac80f5ffa610c1a3f90d61926cb126`.
 
 Template accuracy includes the best proposed label of review items, as in the
 supplied scorer. Executable classification requires accepted and non-advisory;

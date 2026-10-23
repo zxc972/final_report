@@ -35,9 +35,11 @@ and logical-call caches permit interruption without repeating successful calls.
 The run creates no analysis session and invokes no analysis or preprocessing tool.
 
 Length-exhausted null/empty answers are retained as no answer and never
-resampled to improve results. The draft run records its one transport-only
-compatibility correction in `freeze_history/`; all earlier requests and
-predictions remain in the same budget ledger.
+resampled to improve results. The draft run records its transport-only
+compatibility and failure-isolation corrections in `freeze_history/`; all
+earlier requests and predictions remain in the same budget ledger. Exhausted
+gateway failures are explicit `provider_error` items and are not described as
+semantic mistakes. The main metrics count them as missing valid predictions.
 
 ## Human review and later formal run
 
