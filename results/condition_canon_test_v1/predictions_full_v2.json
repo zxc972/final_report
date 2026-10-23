@@ -1,0 +1,3509 @@
+[
+  {
+    "id": 1001,
+    "method": "independent_fastsurfer",
+    "statement": "--t1: T1 full head input (not bias corrected), requiring an absolute path.",
+    "quote_support": 1.0,
+    "source_id": "fastsurfer_run",
+    "template": "product_present",
+    "parameters": {
+      "slot": "T1",
+      "type": "type:Volume.T1"
+    },
+    "key": "product_present:{\"slot\": \"T1\", \"type\": \"type:Volume.T1\"}",
+    "support": 0.8,
+    "margin": 0.8,
+    "answered": 4,
+    "invalid_attempts": {},
+    "votes": {
+      "product_present:{\"slot\": \"T1\", \"type\": \"type:Volume.T1\"}": 4
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "4205917c737546e0b38969b3ed65ee8d",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "cbf423755d72448ab7c367f4821ebaf5",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "18c12fb0344e417aaea0f289da400761",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "78064a96d1664bec9fe630fbb49e6e27",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "78d514fbbaab4616b4922117fc8d51b3",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1002,
+    "method": "independent_fastsurfer",
+    "statement": "Optional T2 full-head input must be externally biasfield corrected when --no_biasfield is used.",
+    "quote_support": 1.0,
+    "source_id": "fastsurfer_run",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 0.8,
+    "margin": 0.8,
+    "answered": 4,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 4
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "1f5bf0ab01de4fb396b8f19d9f400be2",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "1830fd953a2d4f21a9939f08bd654882",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "f728121795454c33bb90928a08f5b32b",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "e8ee516a76ac4984a708f461d7369b89",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b6aff760eab44ea8b1c6aa64e8635421",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1003,
+    "method": "independent_fastsurfer",
+    "statement": "An optional binary lesion mask must be in the same space as the T1 input.",
+    "quote_support": 1.0,
+    "source_id": "fastsurfer_run",
+    "template": "attr_equal",
+    "parameters": {
+      "slots": [
+        "mask",
+        "T1"
+      ],
+      "attrs": [
+        "space"
+      ]
+    },
+    "key": "attr_equal:{\"attrs\": [\"space\"], \"slots\": [\"T1\", \"mask\"]}",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "attr_equal:{\"attrs\": [\"space\"], \"slots\": [\"T1\", \"mask\"]}": 5
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "d461538747fc46e59af8ca7a54ecd40f",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "430cad44f95242ce827cd0d42bf74f9a",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ae9a0d83f6234c62b017f667fcc35142",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "e677634fe8ef4e96a8b901380a0576cd",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "6ba76a70223f4a72a720a72580405054",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1004,
+    "method": "independent_fastsurfer",
+    "statement": "For --surf_only, the segmentation created by FastSurferVINN must already exist.",
+    "quote_support": 1.0,
+    "source_id": "fastsurfer_run",
+    "template": "provenance",
+    "parameters": {
+      "step": "fastsurfer"
+    },
+    "key": "provenance:{\"step\": \"fastsurfer\"}",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "provenance:{\"step\": \"fastsurfer\"}": 5
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "49db3d62e22447249fdee2350a00f09e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "37cdfd708a51469b8a1c91847a363ed9",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ba392085bbc24545bd6961d558ad5ce8",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "95cc1a52a5204fec9c9864b2a043b9d2",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "05169e6712654bd3a835008764a58306",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1005,
+    "method": "independent_fastsurfer",
+    "statement": "A segmentation without --tal_reg does not need a FreeSurfer licence.",
+    "quote_support": 1.0,
+    "source_id": "fastsurfer_install",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "22e866ffbc1146e0b07bc0a3726dcc32",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 158
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "fdf31ac897a34b0fa499ac4a70427d36",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "298fa2ef472c471fa811aca69017fb73",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "80e6129234454c0cbb02a2c6f37a76d8",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "752142becdec43df950bf154046d6fd7",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1006,
+    "method": "independent_fastsurfer",
+    "statement": "Docker runs of the surface module require --fs_license pointing to a FreeSurfer licence file.",
+    "quote_support": 1.0,
+    "source_id": "fastsurfer_run",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 0.4,
+    "margin": 0.2,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 2,
+      "software:{\"commands\": [\"freesurfer\"]}": 1,
+      "software:{\"commands\": [\"docker\"]}": 1,
+      "software:{\"commands\": [\"docker\", \"freesurfer\"]}": 1
+    },
+    "decision": "review",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "2bf59db2fe33433fb42a44e667c7f76d",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "d8d4839c169b4addb7d6029028877cde",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "d36eae8f5dc74f6f9f0347df42d13900",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "9e6b27159b9e48d8b5fdf243345bb0ce",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "5d1a7a3779594775a0ebc0958a899f69",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1007,
+    "method": "independent_fastsurfer",
+    "statement": "Input conformation specifications are checked automatically; non-compliant images are conformed.",
+    "quote_support": 1.0,
+    "source_id": "fastsurfer_run",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b91f4f680b664adca7dd1b269054e4eb",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "17af9ad1e50a479faf020b4b96a9f28c",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "715d9e45aee6440996982654a15f05e7",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "019ae8493dd848328035788156a06b0b",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "3afda5049e2e494eba2a833f776eef47",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1008,
+    "method": "independent_fastsurfer",
+    "statement": "Keeping native image geometry is incompatible with the surface pipeline.",
+    "quote_support": 1.0,
+    "source_id": "fastsurfer_run",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "31b1d3f872e447dda46658b5d49e3394",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "fb89e770e73e48d1954f3603c80701f2",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "2a2bcc7a397944c98afa5e5755834d32",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "3d2770c6babe4163b55da9b28a3ededa",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "98c6f796b00a42779279e18016379cfb",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1009,
+    "method": "independent_fastsurfer",
+    "statement": "A GPU makes segmentation much faster.",
+    "quote_support": 1.0,
+    "source_id": "fastsurfer_install",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "6559a5e384234821908dc254f99e5ada",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "0b54b88a070845579f35858536729cbc",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "580e30c3423e472f8f5bd5c614c03bde",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "37a2309dd9f34b0b890ae8e36c085fba",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "12555584f001430cba449364a2c65600",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1010,
+    "method": "independent_fastsurfer",
+    "statement": "--viewagg_device auto checks whether there is enough memory to run view aggregation on the GPU.",
+    "quote_support": 1.0,
+    "source_id": "fastsurfer_run",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "c8f756b7755449f091e3932491b2fdcc",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "287fbf07b1ce46bbbb333714be5d56fa",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "439754acd2884e068f8a547ca25e48ea",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "f2174d4970b1441cab21892f4c09be0c",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "749ae143a16944069cc749adcc6b76af",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1011,
+    "method": "independent_fastsurfer",
+    "statement": "Unless --ignore_fs_version is set, the program checks the FreeSurfer version and terminates if the supported version is not sourced.",
+    "quote_support": 1.0,
+    "source_id": "fastsurfer_run",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "fa267291a5e640f396339fc64098db54",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "a47d410993664bd7be763914bf1b784c",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "9e6ca1049f8f43b383223e8d5fa5560e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "9c1b25ae3f3c4e83ba853f93283a00f6",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "c8703c1788ef48728d634e0d66f83fb9",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1012,
+    "method": "independent_fastsurfer",
+    "statement": "--qc_snap creates quality control images to simplify the QC process.",
+    "quote_support": 1.0,
+    "source_id": "fastsurfer_run",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "2ab1825e2f4d4500988fdf3cb6b50d16",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "183d317a6238421a8344d8f442145d12",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "eca046bb4c0d401296ecfa75575ec4cc",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "c901e346ce6d4e7794f8fc06a77d7630",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "0bea2e67e49d4a90a041cdc3a75d0151",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1013,
+    "method": "independent_fastsurfer",
+    "statement": "For images with tumors or other large lesions, review LIT-modified outputs before downstream use.",
+    "quote_support": 1.0,
+    "source_id": "fastsurfer_run",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "0d9ee1e0d02440aba99bb49c0efb6373",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "6cdc441deda248a4b663ab1ef3196cf1",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "4b154e4d1d3448219cabb7d35a7de4b6",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 432
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "04d88f4bdbc943ac9d5463c702bfee1a",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "5ae839291fc544f1993647ce24a4619f",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1014,
+    "method": "independent_fastsurfer",
+    "statement": "Without --no_cereb, CerebNet runs automatically whenever the segmentation module runs.",
+    "quote_support": 1.0,
+    "source_id": "fastsurfer_outputs",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "a1ff26c8071248509eb972472ac494d6",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "f968d222ef59469ca43886f72f710bea",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "c0fba2d96242485ab0237ffb75eba76d",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "118e23aad2c44b64bf6cb11e415cd787",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "1672490010af4fd99bc832cd16d4f787",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1015,
+    "method": "independent_fastsurfer",
+    "statement": "Without --no_hypothal, HypVINN runs automatically whenever the segmentation module runs.",
+    "quote_support": 1.0,
+    "source_id": "fastsurfer_outputs",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "458137ab6b12425b9a41977bffe8c036",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "9baf3fbfd1e34e2a8b9de7b0e1063653",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "0938c9d41ed34be3b6f11a84198f1815",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "f4239e7d4ccd4392acc27d55bfa007bc",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "78b986bb64dd47f5a378827fad3cf049",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1016,
+    "method": "independent_fastsurfer",
+    "statement": "With --no_biasfield, HypVINN still runs but expects biasfields to be corrected externally.",
+    "quote_support": 1.0,
+    "source_id": "fastsurfer_run",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 0.8,
+    "margin": 0.8,
+    "answered": 5,
+    "invalid_attempts": {
+      "provenance": 1
+    },
+    "votes": {
+      "advisory": 4
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "c5c2a4e3b1b546799fe62898c452a972",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "800f9c341efa4e12864925c13f59e209",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "c767072547db4e2ebb6844e059b3fc14",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "a23438a5dabc4137b84311a3e18f955e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "1962005b0d864e1bb754f4ce29cf8a25",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1017,
+    "method": "independent_fastsurfer",
+    "statement": "--no_surfreg skips surface registration, but sphere.reg is needed for cross-subject statistical analysis of thickness maps.",
+    "quote_support": 1.0,
+    "source_id": "fastsurfer_run",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 0.6,
+    "margin": 0.39999999999999997,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 3,
+      "product_present:{\"slot\": \"surface\", \"type\": \"type:Surface.SphereReg\"}": 1,
+      "provenance:{\"step\": \"recon-all\"}": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "739eed9eeebb4b2997f20756d3e0dbdf",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "7b82f63997ac4becb6bf647bc03113ac",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "9b5f5c1abf68427194bea6b636f61da9",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "6b37b7925fbb47faaf57ccc4783ea2cb",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "e9bbbc88d84b4d1d84188ac0821ff6a8",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1018,
+    "method": "independent_fastsurfer",
+    "statement": "Renaming an output file can break a later step, since later modules and follow-up tools look for the default names.",
+    "quote_support": 1.0,
+    "source_id": "fastsurfer_run",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ac069a8cc319407985119c7c54a24ee6",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "f7c7a6246a1b429197d558f9655059ea",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "0f42c96fbf884887a7a5758b2bffe7ec",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "a97f495a4a0d42dbad80d0aa47e6e5c3",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "12f2b6b5169947dfaf064835304bc3fd",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1019,
+    "method": "independent_fs_glmfit_group",
+    "statement": "The input data file has each frame as a separate input.",
+    "quote_support": 1.0,
+    "source_id": "fs_glmfit",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 0.6,
+    "margin": 0.39999999999999997,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 3,
+      "product_present:{\"slot\": \"volumes\", \"type\": \"type:Volume.GM4D\"}": 1,
+      "product_present:{\"slot\": \"volumes\", \"type\": \"type:Volume\"}": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "fc1321f3e23543798899c21a187325b2",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "72eac532a3604abe9eee0163ded81853",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "903d3e10d29b4275856c3a0b3990395f",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "20f2bb620f9844fe8eeb2674b802cc20",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "2b58cfbd48b64aaeaead49f6f6ee8a4a",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1020,
+    "method": "independent_fs_glmfit_group",
+    "statement": "Global design matrix specified with a FreeSurfer Group Descriptor File (FSGDF).",
+    "quote_support": 1.0,
+    "source_id": "fs_glmfit",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "21203c6d31c44f10aa91b85b73538fba",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "9195881076164101b5b1fa11f162e755",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "d4335a0d56db4d33a163d87787c64d90",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "c5e6f80fc2934643a53f1542a5612b5b",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "30184bf839984f4e9fcc87142f154c60",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1021,
+    "method": "independent_fs_glmfit_group",
+    "statement": "One or more contrast matrix files in ASCII text.",
+    "quote_support": 1.0,
+    "source_id": "fs_glmfit",
+    "template": "product_present",
+    "parameters": {
+      "slot": "design",
+      "type": "type:StatsTable.ContrastMatrix"
+    },
+    "key": "product_present:{\"slot\": \"design\", \"type\": \"type:StatsTable.ContrastMatrix\"}",
+    "support": 0.8,
+    "margin": 0.8,
+    "answered": 5,
+    "invalid_attempts": {
+      "product_present": 1
+    },
+    "votes": {
+      "product_present:{\"slot\": \"design\", \"type\": \"type:StatsTable.ContrastMatrix\"}": 4
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "a68921e042294974b8b60696a02e90dc",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "d01fea5ae0f8493c83feadc77841396f",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "bc1bc7324e9f446492592f7f4d2f588f",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "93e14bc16dc141e6a72f8af314bf502b",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "9f3e2de86e7f4581b3ce00cd767328fd",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1022,
+    "method": "independent_fs_glmfit_group",
+    "statement": "Surface-based smoothing requires --surf; otherwise the input is treated as a volume.",
+    "quote_support": 1.0,
+    "source_id": "fs_glmfit",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "e156fb959a9243fbbfeaec8ee0317f7d",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "0a714cc9e8024048a18d92cb9d75c491",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "0e27fd74ba01436482c5b30203d79389",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "adda2768bdf54c33b81a8558b63584b3",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "67e351b2085343088a412d188229aca0",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1023,
+    "method": "independent_fs_glmfit_group",
+    "statement": "Data must be assembled by resampling each subject's data into a common space and concatenating subjects into a single file.",
+    "quote_support": 1.0,
+    "source_id": "fs_group_tutorial",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 0.8,
+    "margin": 0.6000000000000001,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 4,
+      "provenance:{\"step\": \"rescale\"}": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "d8686ddceef348fb93a4a4b64846b6a8",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "05065565b0db4a2bba0fc66f6e18b459",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "7a2ddf89c0ee44af8ac5581e80706c56",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "8307507765d8463faa4daf08f95d8401",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "bcab7a27fa2b46fcab3daefe71850fdb",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1024,
+    "method": "independent_fs_glmfit_group",
+    "statement": "The same FSGD used with mris_preproc must be used, maintaining subject order.",
+    "quote_support": 1.0,
+    "source_id": "fs_group_tutorial",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 0.8,
+    "margin": 0.8,
+    "answered": 5,
+    "invalid_attempts": {
+      "attr_equal": 1
+    },
+    "votes": {
+      "advisory": 4
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "485fb11fce524cbd857d54c2c8d730cd",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "76a809424f4c4dde94cd01f5a28345be",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "e27c1adfde0c449cac31deda189270d3",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "6f6c626aaecc45c59872d19ada2880a1",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "41865c78dba64eac8713eb19ac5b1511",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1025,
+    "method": "independent_fs_glmfit_group",
+    "statement": "DODS is specified in the tutorial example and is the default.",
+    "quote_support": 1.0,
+    "source_id": "fs_group_tutorial",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "9213d3277d204c3a8c0c4168588e4128",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "bb3ce38d5bf54eb3b456d1afd004c31e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "f2f5674606704500a17f13b622c32d7e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "8694f9dd0bf948ff9ae54895d0a3ec97",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b23b3dfb4e23414a85b82a6e78017e96",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1026,
+    "method": "independent_fs_glmfit_group",
+    "statement": "If data have not been cached, the same operations can be performed manually.",
+    "quote_support": 1.0,
+    "source_id": "fs_group_tutorial",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "69c6631275e24a808366b9263bc73d2d",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "7cf162648776415badff0a7af90d22e7",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "bb8480e8025647b08c574969590a35fc",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "aa5eeb4b16ec4b40b40f1e486e4195ca",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "8c8a786d639d43cb89112084f39cd35e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1027,
+    "method": "independent_fs_glmfit_group",
+    "statement": "The completed GLM has its output subdirectory under the glm directory.",
+    "quote_support": 1.0,
+    "source_id": "fs_group_tutorial",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 0.8,
+    "margin": 0.8,
+    "answered": 5,
+    "invalid_attempts": {
+      "provenance": 1
+    },
+    "votes": {
+      "advisory": 4
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "352ae106d717480a8242ec0c64db3a43",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "416ce5f297304b4aaec915b67275513d",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "98f1923209fe4c7cbdce8d9b4d898b1c",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ac3fa283824240f28fdd25bba4dd6741",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "4d93ff938cf7409e8bda17b853534fc1",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1028,
+    "method": "independent_fs_glmfit_group",
+    "statement": "There is a subdirectory for each specified contrast, named after the contrast matrix file without the .mtx extension.",
+    "quote_support": 1.0,
+    "source_id": "fs_group_tutorial",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ade784bf576547a6bfec99ecb9ed4edc",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b3afb9f111b845d6acebfb319d7b4d1f",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "40635c47db944c85982afb19afb0beda",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "eff430955bdf4acaa4a8207b2f751f98",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ee0f26eba8874d3299bbca94c0e6aece",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1029,
+    "method": "independent_fs_glmfit_group",
+    "statement": "mri_info can be run on the assembled data to find its dimensions.",
+    "quote_support": 1.0,
+    "source_id": "fs_group_tutorial",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "bb3a082478984d908142228f49a2d74e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "749bd8c81b2843e6b9b20917b0965805",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "7d472b91a22e419c88fd244039a063ae",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "e011071297a444a8a8c3d100f528dab6",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "e4c86e434630491c9d0fb1aa9fd92e45",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1030,
+    "method": "independent_fs_glmfit_group",
+    "statement": "Temporary directories or log files starting with tmp may appear and can be ignored.",
+    "quote_support": 1.0,
+    "source_id": "fs_group_tutorial",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "18bd26ec2a8b4c70a449d01f44927754",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "f81792f3108e4291819638298499509d",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "24d668df447647c7acee0de2e0d859ec",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "58c575adc2d84f58b07966a457eaec70",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "2369da7768fd43a8a87d5e85dc5125c9",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1031,
+    "method": "independent_fs_glmfit_group",
+    "statement": "You cannot specify both --X and --osgm, and a contrast cannot be specified with --osgm.",
+    "quote_support": 1.0,
+    "source_id": "fs_glmfit",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b93c49bdd62b41d183c3f877d5d2cc90",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "08b26de4adda4f48bd3dada9a729faff",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "0b71e65b0fe74d94a7ed660ac7f7f8cb",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "e70747da8a954c91b8eca772f9efab03",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "89128e905f4046799f4c70ac2ad7b974",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1032,
+    "method": "independent_fs_glmfit_group",
+    "statement": "Do not use --prune with --sim; instead run the non-sim analysis with --prune and pass the created mask to the simulation.",
+    "quote_support": 1.0,
+    "source_id": "fs_glmfit",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ec7d89d4e446479a8457e3ef4f5ce314",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "75011dfdc4374c45b6bc27119968bc6d",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "129773a0379b4d338ecf28ca662f5d0b",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "fcc653b101d3459ca7ae83821a160498",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "e1e7eb482bda40e192e4d547acff63f0",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 366
+        }
+      ]
+    }
+  },
+  {
+    "id": 1033,
+    "method": "independent_workbench_area_stats",
+    "statement": "A surface file to measure for -surface-vertex-areas.",
+    "quote_support": 1.0,
+    "source_id": "wb_vertex_areas",
+    "template": "product_present",
+    "parameters": {
+      "slot": "surface",
+      "type": "type:Surface"
+    },
+    "key": "product_present:{\"slot\": \"surface\", \"type\": \"type:Surface\"}",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "product_present:{\"slot\": \"surface\", \"type\": \"type:Surface\"}": 5
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "814c8ff863194d588fec08668341d22b",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "49b3ed3816ba4889a4c1f3ecf288d794",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "3a57ee512d164f399022cdd570b3a53c",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "04f4e5cad36b4ff3bc2b3650cdbac3cb",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "2ad1e7b6c7924dfc88f05b4cb37b2343",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1034,
+    "method": "independent_workbench_area_stats",
+    "statement": "An input metric file for -metric-stats.",
+    "quote_support": 1.0,
+    "source_id": "wb_metric_stats",
+    "template": "product_present",
+    "parameters": {
+      "slot": "metric",
+      "type": "type:SurfaceMetric"
+    },
+    "key": "product_present:{\"slot\": \"metric\", \"type\": \"type:SurfaceMetric\"}",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "product_present:{\"slot\": \"metric\", \"type\": \"type:SurfaceMetric\"}": 5
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "74df89ede5b64a3391e72d3d6df41247",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "4ccdd65035554076aa059f0efd3e0d72",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b25d5c4eda4e4f48a06fb5d10c0c2f40",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "54affd7a41694f23b4a1e12df5ff957b",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "1b42c4906d8c492bb4e33045a737ae29",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1035,
+    "method": "independent_workbench_area_stats",
+    "statement": "Optional ROI metric file restricting which data are considered.",
+    "quote_support": 1.0,
+    "source_id": "wb_metric_stats",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "5abc3ca3a66541fdaeef789b9eeed56d",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "cc28df6a489644d6ae0f3cf17fad839a",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "2ae32dc5299d4237ba4f3c2099b78044",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "6cd0a2db53af4669808a9b626d955385",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "9ec3bd2c505640a5bc02e9993dd44cc2",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1036,
+    "method": "independent_workbench_area_stats",
+    "statement": "Exactly one of -reduce or -percentile must be specified for -metric-stats.",
+    "quote_support": 1.0,
+    "source_id": "wb_metric_stats",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "841cac45dd954e54bc63de71b0b5c2ee",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "d600f01f03494212965486d8aa2af68b",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "8c61feb9db0b49dbba9c04a93b26709d",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "df1821ec517247b9b8d285382455402b",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "6dc537693f994e678fc6dc20c66ceab0",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1037,
+    "method": "independent_workbench_area_stats",
+    "statement": "The percentile must be between 0 and 100.",
+    "quote_support": 1.0,
+    "source_id": "wb_metric_stats",
+    "template": "plausibility",
+    "parameters": {
+      "metric": "percentile"
+    },
+    "key": "plausibility:{\"metric\": \"percentile\"}",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "plausibility:{\"metric\": \"percentile\"}": 5
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "3cd702196fcd48c0a9aa904b85cc20de",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b9019cd5215d4104976b443b1fe5dcce",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "5c113f1a79a64d9ab02b4bdaf0acb550",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "d74fceac3de34121b934ec273e5354d4",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "60b1c56b2cc9437bb09315299f880e4c",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1038,
+    "method": "independent_workbench_area_stats",
+    "statement": "The reduction operation must be selected from the documented allowed list.",
+    "quote_support": 1.0,
+    "source_id": "wb_metric_stats",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "295e31b1ada34a21b3780624aaa9d644",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "84241a3d64404a12be6c97471f1193a6",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "3402a95cd0304571867ed354523f3482",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "42b2b5fb775d4477a920e9a173a32819",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "76f60940a62442ff9d72badc3e333f17",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1039,
+    "method": "independent_nmt_v2_charm",
+    "statement": "The NMT v2 template and its accompanying matching CHARM dataset, obtained from the NMT download.",
+    "quote_support": 1.0,
+    "source_id": "afni_charm",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 0.8,
+    "margin": 0.8,
+    "answered": 4,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 4
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "0c5aabb4c47c418383d183c1d904a912",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "c4b35dfa406947d8bb10c6eab66901ea",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "0bc2f04522364623b07a97f8bf3689fc",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b6aa8812bf984937a9b566c4539e0215",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "e8220daf602647ee983917ac98320162",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1040,
+    "method": "independent_nmt_v2_charm",
+    "statement": "The NMT download also includes a CSV table file of the ROI labels, hierarchically organized.",
+    "quote_support": 1.0,
+    "source_id": "afni_charm",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "29fce3d425d94d228184eed57188fa4e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ee83e9615d3346a49082b33ad62fa77d",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "0f9ca46b71ce4b199903488b64dcda20",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "d3cbb3a5afba41d6afe59f6e42a4a7b8",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "687d30d838444794b695f3ed8a23368d",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1041,
+    "method": "independent_nmt_v2_charm",
+    "statement": "The CHARM is defined in the coordinates/space of the NMT v2 template.",
+    "quote_support": 1.0,
+    "source_id": "afni_charm",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 0.8,
+    "margin": 0.8,
+    "answered": 5,
+    "invalid_attempts": {
+      "attr_in": 1
+    },
+    "votes": {
+      "advisory": 4
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "48fc1c1197c546b2a70f962588b4d1eb",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "a0e67f72e4734cb6a7c98b8e7a067137",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "f648052d75cd49a1a65f18f18a348221",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "2f6e9432e82049158e51f177b355a41d",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "f30d23f839dc42bebecea79931ccd230",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1042,
+    "method": "independent_nmt_v2_charm",
+    "statement": "For each form/variant of the NMT (symmetry/asymmetry, FOV, voxel size), there is a matching CHARM dataset.",
+    "quote_support": 1.0,
+    "source_id": "afni_charm",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "4965cacedb5b4fb49864fff745dac96c",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ecee24a182f24b748f12f7d2fa75df56",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "7411027de9b645749b2efe05e3b6efd1",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ca0f6f2960874802ac6567800e135d49",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "e8418c7d8db548a1b2b7b53c9dcadeda",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1043,
+    "method": "independent_nmt_v2_charm",
+    "statement": "The -sym option is valid for the NMT v2 only; in other cases it is ignored.",
+    "quote_support": 1.0,
+    "source_id": "afni_install_nmt",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "97f5af69e690470d95936ab994d13525",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "6f4dd4e2a49b4239b069b8f6b5325099",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "baa75ede8d384ad58eeabf5173a9b524",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "8f09270dfb654603b426838cea647b06",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "2fafc9743504422d874a930dc54d0e38",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1044,
+    "method": "independent_nmt_v2_charm",
+    "statement": "The -overwrite option allows the script to remove a pre-existing NMT directory.",
+    "quote_support": 1.0,
+    "source_id": "afni_install_nmt",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "02eb86d0c4b34f58b2799ee286717beb",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "21d4668f1ff9455587cefcb5e5ccc1de",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "d72a8511856d4462b17f1f880b2edecb",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "330c2a53a6884c06b914756a472fe762",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "4cde8230c5b24b2ab03c63a582606654",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1045,
+    "method": "independent_nmt_v2_charm",
+    "statement": "AFNI uses zero-base counting, so CHARM Level 1 is volume \"[0]\" and Level 6 is volume \"[5]\".",
+    "quote_support": 1.0,
+    "source_id": "afni_charm",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "4ebef4020bf1495693c722026ec11c8b",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "229364ad93df4217a60563ee25a8a04a",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "2cf0444f63a9441db1b032c5860335f5",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "127224eb3ca0494280460006079a1e1f",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "685af749e69a49759f186d451bd075c2",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  }
+]

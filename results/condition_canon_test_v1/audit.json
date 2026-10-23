@@ -1,0 +1,24 @@
+{
+  "status": "audited",
+  "frozen_sha256": "3f7738e6ee03e2d2c9be14cf7df64d50a92c5044d4e6dd91d99d6e0396da6426",
+  "gold_sha256": "e34d6796259e87f44f3bcede9c304eb87b4c1a5e31605cdfd357085bdac45135",
+  "formal_predictions_replayed_without_http": 180,
+  "development_repairs_replayed_without_http": 8,
+  "development_other_predictions_unchanged": 100,
+  "prompt_hashes_checked": 348,
+  "code_and_vocabulary_unchanged": true,
+  "raw_ledger_sha256": "2b9ae1bf69c662cecb5043a418453f2e99e0900de9ab69f738e18643d21d506f",
+  "historical_ledger_sha256_unchanged": "8682c3848759fabe703928cd805e9fe8378b1107ec97ae6b35045e97c7f61d9c",
+  "both_bootstraps_reproduced": true,
+  "independent_numpy_interval_crosschecks": 88,
+  "scipy_binomial_crosschecks": 4,
+  "http_attempts": 348,
+  "http_cap": 600,
+  "unfinished_requests": 0,
+  "secret_scan_matches": 0,
+  "new_http_calls_in_audit": 0,
+  "statistics_sources": [
+    "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.bootstrap.html",
+    "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.binomtest.html"
+  ]
+}

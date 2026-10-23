@@ -1,0 +1,103 @@
+[
+  {
+    "item": {
+      "id": 1006,
+      "method": "independent_fastsurfer",
+      "field": "conditions",
+      "statement": "Docker runs of the surface module require --fs_license pointing to a FreeSurfer licence file.",
+      "source_id": "fastsurfer_run",
+      "quote": "Required for Docker when running surface module:\n\n--fs_license: Path to FreeSurfer license key file",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 7921,
+        "end": 8020,
+        "text_sha256": "86e0b793c322530a30c34aaa6f2c1ec00912fceb693cb4fd554e9860eeea8892"
+      },
+      "source_url": "https://deep-mi.org/FastSurfer/stable/scripts/RUN_FASTSURFER.html",
+      "gold_template": "advisory",
+      "gold_parameters": null,
+      "annotation_note": "许可证文件不是可执行程序，且只在 Docker 运行表面模块时要求",
+      "pending_user_decision": false
+    },
+    "prediction": {
+      "id": 1006,
+      "method": "independent_fastsurfer",
+      "statement": "Docker runs of the surface module require --fs_license pointing to a FreeSurfer licence file.",
+      "quote_support": 1.0,
+      "source_id": "fastsurfer_run",
+      "template": "advisory",
+      "parameters": null,
+      "key": "advisory",
+      "support": 0.4,
+      "margin": 0.2,
+      "answered": 5,
+      "invalid_attempts": {},
+      "votes": {
+        "advisory": 2,
+        "software:{\"commands\": [\"freesurfer\"]}": 1,
+        "software:{\"commands\": [\"docker\"]}": 1,
+        "software:{\"commands\": [\"docker\", \"freesurfer\"]}": 1
+      },
+      "decision": "review",
+      "sampling": {
+        "nominal_samples": 5,
+        "interface_replacements": 0,
+        "truncation_replacements": 0,
+        "unavailable_positions": [],
+        "interface_failures": [],
+        "responses": [
+          {
+            "sample": 1,
+            "replacement_of": null,
+            "historical": false,
+            "request_id": "2bf59db2fe33433fb42a44e667c7f76d",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 2,
+            "replacement_of": null,
+            "historical": false,
+            "request_id": "d8d4839c169b4addb7d6029028877cde",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": true,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 3,
+            "replacement_of": null,
+            "historical": false,
+            "request_id": "d36eae8f5dc74f6f9f0347df42d13900",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 4,
+            "replacement_of": null,
+            "historical": false,
+            "request_id": "9e6b27159b9e48d8b5fdf243345bb0ce",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": true,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 5,
+            "replacement_of": null,
+            "historical": false,
+            "request_id": "5d1a7a3779594775a0ebc0958a899f69",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          }
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,1694 @@
+[
+  {
+    "id": 1001,
+    "method": "independent_fastsurfer",
+    "statement": "--t1: T1 full head input (not bias corrected), requiring an absolute path.",
+    "quote_support": 1.0,
+    "source_id": "fastsurfer_run",
+    "template": "product_present",
+    "parameters": {
+      "slot": "T1",
+      "type": "type:Volume.T1"
+    },
+    "key": "product_present:{\"slot\": \"T1\", \"type\": \"type:Volume.T1\"}",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "product_present:{\"slot\": \"T1\", \"type\": \"type:Volume.T1\"}": 1
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b3be185278044b358b00d98bbd3c658c",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1002,
+    "method": "independent_fastsurfer",
+    "statement": "Optional T2 full-head input must be externally biasfield corrected when --no_biasfield is used.",
+    "quote_support": 1.0,
+    "source_id": "fastsurfer_run",
+    "decision": "review",
+    "template": "advisory",
+    "parameters": null,
+    "reason": "no valid answer",
+    "answered": 1,
+    "invalid_attempts": {
+      "provenance": 1
+    },
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "f12807195ef84d71b2d31f9822b2fa90",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1003,
+    "method": "independent_fastsurfer",
+    "statement": "An optional binary lesion mask must be in the same space as the T1 input.",
+    "quote_support": 1.0,
+    "source_id": "fastsurfer_run",
+    "template": "attr_equal",
+    "parameters": {
+      "slots": [
+        "mask",
+        "T1"
+      ],
+      "attrs": [
+        "space"
+      ]
+    },
+    "key": "attr_equal:{\"attrs\": [\"space\"], \"slots\": [\"T1\", \"mask\"]}",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "attr_equal:{\"attrs\": [\"space\"], \"slots\": [\"T1\", \"mask\"]}": 1
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "8c34ed71c328410894f5fb46e89941f3",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1004,
+    "method": "independent_fastsurfer",
+    "statement": "For --surf_only, the segmentation created by FastSurferVINN must already exist.",
+    "quote_support": 1.0,
+    "source_id": "fastsurfer_run",
+    "template": "provenance",
+    "parameters": {
+      "step": "fastsurfer"
+    },
+    "key": "provenance:{\"step\": \"fastsurfer\"}",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "provenance:{\"step\": \"fastsurfer\"}": 1
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "fb6ec48b8b4942bfab3e29455b573397",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1005,
+    "method": "independent_fastsurfer",
+    "statement": "A segmentation without --tal_reg does not need a FreeSurfer licence.",
+    "quote_support": 1.0,
+    "source_id": "fastsurfer_install",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ba355bed85074e34aaadb0b336350974",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1006,
+    "method": "independent_fastsurfer",
+    "statement": "Docker runs of the surface module require --fs_license pointing to a FreeSurfer licence file.",
+    "quote_support": 1.0,
+    "source_id": "fastsurfer_run",
+    "template": "software",
+    "parameters": {
+      "commands": [
+        "freesurfer"
+      ]
+    },
+    "key": "software:{\"commands\": [\"freesurfer\"]}",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "software:{\"commands\": [\"freesurfer\"]}": 1
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "6431fd34f81b424c95f4d07d2af05114",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1007,
+    "method": "independent_fastsurfer",
+    "statement": "Input conformation specifications are checked automatically; non-compliant images are conformed.",
+    "quote_support": 1.0,
+    "source_id": "fastsurfer_run",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "bbec8b9b4120424c97e67e3005d59ca8",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1008,
+    "method": "independent_fastsurfer",
+    "statement": "Keeping native image geometry is incompatible with the surface pipeline.",
+    "quote_support": 1.0,
+    "source_id": "fastsurfer_run",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "9253ae3774eb4d2e958813668dd5f7e6",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1009,
+    "method": "independent_fastsurfer",
+    "statement": "A GPU makes segmentation much faster.",
+    "quote_support": 1.0,
+    "source_id": "fastsurfer_install",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "5569f7b9a560474694ac5a6d0ce0d28f",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1010,
+    "method": "independent_fastsurfer",
+    "statement": "--viewagg_device auto checks whether there is enough memory to run view aggregation on the GPU.",
+    "quote_support": 1.0,
+    "source_id": "fastsurfer_run",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "f9790f69f27a44e0b115c07d6fb5faa1",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1011,
+    "method": "independent_fastsurfer",
+    "statement": "Unless --ignore_fs_version is set, the program checks the FreeSurfer version and terminates if the supported version is not sourced.",
+    "quote_support": 1.0,
+    "source_id": "fastsurfer_run",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "27b2581201934b9aa4bb51185e0da55e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1012,
+    "method": "independent_fastsurfer",
+    "statement": "--qc_snap creates quality control images to simplify the QC process.",
+    "quote_support": 1.0,
+    "source_id": "fastsurfer_run",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "7256cb68632e4a1ba58eb083cbfe8451",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1013,
+    "method": "independent_fastsurfer",
+    "statement": "For images with tumors or other large lesions, review LIT-modified outputs before downstream use.",
+    "quote_support": 1.0,
+    "source_id": "fastsurfer_run",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "7d6289075add4abd9ebfcf600bdcaf1f",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1014,
+    "method": "independent_fastsurfer",
+    "statement": "Without --no_cereb, CerebNet runs automatically whenever the segmentation module runs.",
+    "quote_support": 1.0,
+    "source_id": "fastsurfer_outputs",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "da9ee22499bd42cf81256c0f336e0fa2",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1015,
+    "method": "independent_fastsurfer",
+    "statement": "Without --no_hypothal, HypVINN runs automatically whenever the segmentation module runs.",
+    "quote_support": 1.0,
+    "source_id": "fastsurfer_outputs",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "7475318182c9490bb1f19295fca1962d",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1016,
+    "method": "independent_fastsurfer",
+    "statement": "With --no_biasfield, HypVINN still runs but expects biasfields to be corrected externally.",
+    "quote_support": 1.0,
+    "source_id": "fastsurfer_run",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "20c9018de2384a5b97cf385612cc1397",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1017,
+    "method": "independent_fastsurfer",
+    "statement": "--no_surfreg skips surface registration, but sphere.reg is needed for cross-subject statistical analysis of thickness maps.",
+    "quote_support": 1.0,
+    "source_id": "fastsurfer_run",
+    "template": "provenance",
+    "parameters": {
+      "step": "recon-all"
+    },
+    "key": "provenance:{\"step\": \"recon-all\"}",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "provenance:{\"step\": \"recon-all\"}": 1
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "25c5fdbb75df407aaad585ca074c0a2f",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1018,
+    "method": "independent_fastsurfer",
+    "statement": "Renaming an output file can break a later step, since later modules and follow-up tools look for the default names.",
+    "quote_support": 1.0,
+    "source_id": "fastsurfer_run",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "f65f888d28744db2ac6838f080e2ce10",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1019,
+    "method": "independent_fs_glmfit_group",
+    "statement": "The input data file has each frame as a separate input.",
+    "quote_support": 1.0,
+    "source_id": "fs_glmfit",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "1e482b58891648118d20a50fa8a7e909",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1020,
+    "method": "independent_fs_glmfit_group",
+    "statement": "Global design matrix specified with a FreeSurfer Group Descriptor File (FSGDF).",
+    "quote_support": 1.0,
+    "source_id": "fs_glmfit",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "c72bd36ae7a74438bcc7f607ad60b6ce",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1021,
+    "method": "independent_fs_glmfit_group",
+    "statement": "One or more contrast matrix files in ASCII text.",
+    "quote_support": 1.0,
+    "source_id": "fs_glmfit",
+    "template": "product_present",
+    "parameters": {
+      "slot": "design",
+      "type": "type:StatsTable.ContrastMatrix"
+    },
+    "key": "product_present:{\"slot\": \"design\", \"type\": \"type:StatsTable.ContrastMatrix\"}",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "product_present:{\"slot\": \"design\", \"type\": \"type:StatsTable.ContrastMatrix\"}": 1
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "e26c37359c6648ab9dcde54d665b99e9",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1022,
+    "method": "independent_fs_glmfit_group",
+    "statement": "Surface-based smoothing requires --surf; otherwise the input is treated as a volume.",
+    "quote_support": 1.0,
+    "source_id": "fs_glmfit",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "3b648d1f8cf74f9199db7abaf0b936dc",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1023,
+    "method": "independent_fs_glmfit_group",
+    "statement": "Data must be assembled by resampling each subject's data into a common space and concatenating subjects into a single file.",
+    "quote_support": 1.0,
+    "source_id": "fs_group_tutorial",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "3bffacaf8f5c40849f6fab423ef8d1e2",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1024,
+    "method": "independent_fs_glmfit_group",
+    "statement": "The same FSGD used with mris_preproc must be used, maintaining subject order.",
+    "quote_support": 1.0,
+    "source_id": "fs_group_tutorial",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "0b821e22d93c4c20b96b40e30a7bc26d",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1025,
+    "method": "independent_fs_glmfit_group",
+    "statement": "DODS is specified in the tutorial example and is the default.",
+    "quote_support": 1.0,
+    "source_id": "fs_group_tutorial",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "6fa8544ac744410ebaa51ae3d20ad4a0",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1026,
+    "method": "independent_fs_glmfit_group",
+    "statement": "If data have not been cached, the same operations can be performed manually.",
+    "quote_support": 1.0,
+    "source_id": "fs_group_tutorial",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "c752f93aefa54735bf25472bc8df26c6",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1027,
+    "method": "independent_fs_glmfit_group",
+    "statement": "The completed GLM has its output subdirectory under the glm directory.",
+    "quote_support": 1.0,
+    "source_id": "fs_group_tutorial",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "c4e475503f634de79d66d193bf3deed3",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1028,
+    "method": "independent_fs_glmfit_group",
+    "statement": "There is a subdirectory for each specified contrast, named after the contrast matrix file without the .mtx extension.",
+    "quote_support": 1.0,
+    "source_id": "fs_group_tutorial",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b2e2de3191ca4546b3cfdd8a9ea697d3",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1029,
+    "method": "independent_fs_glmfit_group",
+    "statement": "mri_info can be run on the assembled data to find its dimensions.",
+    "quote_support": 1.0,
+    "source_id": "fs_group_tutorial",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "da6b5a5138b94efa9ff927c4e8dfcf12",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1030,
+    "method": "independent_fs_glmfit_group",
+    "statement": "Temporary directories or log files starting with tmp may appear and can be ignored.",
+    "quote_support": 1.0,
+    "source_id": "fs_group_tutorial",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "3c9d5a8bcf8e4408b11a8af4f3bd2f4b",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1031,
+    "method": "independent_fs_glmfit_group",
+    "statement": "You cannot specify both --X and --osgm, and a contrast cannot be specified with --osgm.",
+    "quote_support": 1.0,
+    "source_id": "fs_glmfit",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ccd858d165a740ac90d2694a9b4783af",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1032,
+    "method": "independent_fs_glmfit_group",
+    "statement": "Do not use --prune with --sim; instead run the non-sim analysis with --prune and pass the created mask to the simulation.",
+    "quote_support": 1.0,
+    "source_id": "fs_glmfit",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "98c89dbccc58433a9ee3879d17c4384b",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1033,
+    "method": "independent_workbench_area_stats",
+    "statement": "A surface file to measure for -surface-vertex-areas.",
+    "quote_support": 1.0,
+    "source_id": "wb_vertex_areas",
+    "template": "product_present",
+    "parameters": {
+      "slot": "surface",
+      "type": "type:Surface"
+    },
+    "key": "product_present:{\"slot\": \"surface\", \"type\": \"type:Surface\"}",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "product_present:{\"slot\": \"surface\", \"type\": \"type:Surface\"}": 1
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "bbd551e99ea949e4829b0dc033628831",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1034,
+    "method": "independent_workbench_area_stats",
+    "statement": "An input metric file for -metric-stats.",
+    "quote_support": 1.0,
+    "source_id": "wb_metric_stats",
+    "template": "product_present",
+    "parameters": {
+      "slot": "metric",
+      "type": "type:SurfaceMetric"
+    },
+    "key": "product_present:{\"slot\": \"metric\", \"type\": \"type:SurfaceMetric\"}",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "product_present:{\"slot\": \"metric\", \"type\": \"type:SurfaceMetric\"}": 1
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "aece340a822644e391256876f51ae722",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1035,
+    "method": "independent_workbench_area_stats",
+    "statement": "Optional ROI metric file restricting which data are considered.",
+    "quote_support": 1.0,
+    "source_id": "wb_metric_stats",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "10651faef5284227b99c84b0da344544",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1036,
+    "method": "independent_workbench_area_stats",
+    "statement": "Exactly one of -reduce or -percentile must be specified for -metric-stats.",
+    "quote_support": 1.0,
+    "source_id": "wb_metric_stats",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ff2ed174e33c4bee8eb200ab2a672a0e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1037,
+    "method": "independent_workbench_area_stats",
+    "statement": "The percentile must be between 0 and 100.",
+    "quote_support": 1.0,
+    "source_id": "wb_metric_stats",
+    "template": "plausibility",
+    "parameters": {
+      "metric": "percentile"
+    },
+    "key": "plausibility:{\"metric\": \"percentile\"}",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "plausibility:{\"metric\": \"percentile\"}": 1
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "50984a7b2cf14379aadc51c346123bf2",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1038,
+    "method": "independent_workbench_area_stats",
+    "statement": "The reduction operation must be selected from the documented allowed list.",
+    "quote_support": 1.0,
+    "source_id": "wb_metric_stats",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "7eecb9c98ff04f8195cc43ceb3b6755b",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1039,
+    "method": "independent_nmt_v2_charm",
+    "statement": "The NMT v2 template and its accompanying matching CHARM dataset, obtained from the NMT download.",
+    "quote_support": 1.0,
+    "source_id": "afni_charm",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "fc6bed6a52fb442cbfc469bf87a434b7",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1040,
+    "method": "independent_nmt_v2_charm",
+    "statement": "The NMT download also includes a CSV table file of the ROI labels, hierarchically organized.",
+    "quote_support": 1.0,
+    "source_id": "afni_charm",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "34ceaa88e6494e2c98b62dbf9d39b7c0",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1041,
+    "method": "independent_nmt_v2_charm",
+    "statement": "The CHARM is defined in the coordinates/space of the NMT v2 template.",
+    "quote_support": 1.0,
+    "source_id": "afni_charm",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "6c2d0e36fddd49139553416463e62a93",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1042,
+    "method": "independent_nmt_v2_charm",
+    "statement": "For each form/variant of the NMT (symmetry/asymmetry, FOV, voxel size), there is a matching CHARM dataset.",
+    "quote_support": 1.0,
+    "source_id": "afni_charm",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b4d0cc5c93c24041bade61d559906b11",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1043,
+    "method": "independent_nmt_v2_charm",
+    "statement": "The -sym option is valid for the NMT v2 only; in other cases it is ignored.",
+    "quote_support": 1.0,
+    "source_id": "afni_install_nmt",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "bfa4d3597c354e7e8ff68e86b40986b4",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1044,
+    "method": "independent_nmt_v2_charm",
+    "statement": "The -overwrite option allows the script to remove a pre-existing NMT directory.",
+    "quote_support": 1.0,
+    "source_id": "afni_install_nmt",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "1d562f41748249c982ddb2903c833780",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1045,
+    "method": "independent_nmt_v2_charm",
+    "statement": "AFNI uses zero-base counting, so CHARM Level 1 is volume \"[0]\" and Level 6 is volume \"[5]\".",
+    "quote_support": 1.0,
+    "source_id": "afni_charm",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "f634077977374bef81edd150e3377d17",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  }
+]

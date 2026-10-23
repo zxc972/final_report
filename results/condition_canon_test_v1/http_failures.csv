@@ -1,0 +1,10 @@
+﻿ordinal,arm,item_id,sample,attempt,request_id,status,http_status,recovered_in_same_sample,input_tokens,output_tokens,total_tokens
+25,full_v2,1003,5,1,d79de6216d8a4071a371b735831daffe,http_error,429,True,,,
+26,full_v2,1006,2,1,d78b82af43a348ba8c57880342a3cee5,http_error,429,True,,,
+27,full_v2,1005,5,1,0af73fa2a43040e29dda0b4a36a060b8,http_error,429,True,,,
+28,full_v2,1003,5,2,616bfb287c3d4cf1a7957b11849dd625,http_error,429,True,,,
+137,full_v2,1027,4,1,11f965d77a5142b59bbea8b3c6701a9b,http_error,429,True,,,
+138,full_v2,1026,3,1,4404b9b4580c42998c422ec22b37f490,http_error,429,True,,,
+303,direct_v2,1027,1,1,a21d5c408c414414af40411206e56406,http_error,429,True,,,
+304,direct_v2,1028,1,1,e295b29416b543f588dba86e1b51d871,http_error,429,True,,,
+336,dev_full_v2_repair,15,4,1,0ee670514dd24a7fb41eff629f041370,http_error,429,True,,,

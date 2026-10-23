@@ -1,0 +1,12 @@
+{
+  "status": "posthoc_error_explanations_only",
+  "gold_or_algorithm_changes": false,
+  "notes": {
+    "1003": "可选病灶掩膜启用时确有空间一致要求；模型5/5投attr_equal。冻结标注把可选输入整体记为建议性，本条待用户决定。",
+    "1011": "模型5/5将版本检查及可跳过选项视为建议性；冻结标准要求表达FreeSurfer软件前置条件，属于模板边界判断。",
+    "1017": "sphere.reg的下游统计输入要求被选项说明语境覆盖：3票advisory、1票product_present、1票provenance；本条待用户决定。",
+    "1020": "描述式FSGDF设计矩阵输入说明被模型5/5判为建议性，未转成design产物需求。",
+    "1037": "模型5/5把命令行percentile参数的合法范围0–100判为数据指标plausibility；冻结标准将命令用法归建议性。",
+    "1041": "4票advisory；另1票attr_in的空间值不在现有受控域，被类型检查拒绝。冻结标准要求annotation.space=NMT_v2，本条待用户决定。"
+  }
+}

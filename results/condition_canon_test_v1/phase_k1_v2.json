@@ -1,0 +1,20 @@
+{
+  "completed_at": "2026-10-23T14:34:17.863804+00:00",
+  "elapsed_seconds_this_execution": 195.79125655256212,
+  "usage": {
+    "logical_calls": 45,
+    "http_attempts": 45,
+    "successful_requests": 45,
+    "failed_requests": 0,
+    "unfinished_requests": 0,
+    "length_limited_responses": 0,
+    "historical_null_length_responses": 0,
+    "unknown_usage_requests": 0,
+    "input_tokens": 118081,
+    "output_tokens": 8880,
+    "total_tokens": 126961,
+    "observed_models": [
+      "deepseek-v4.1-flash"
+    ]
+  }
+}

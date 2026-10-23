@@ -1,0 +1,26 @@
+{
+  "reviewed_at_utc": "2026-10-23T14:42:46.801217+00:00",
+  "pre_run_freeze_commit": "bdfbf1bf450a23b5925e5906045ece86d0a1cb81",
+  "formal_statements": 45,
+  "sensitivity_statements": 39,
+  "full_v2_error_ids": [
+    1003,
+    1011,
+    1017,
+    1020,
+    1037,
+    1041
+  ],
+  "pending_error_ids": [
+    1003,
+    1017,
+    1041
+  ],
+  "http_failures": 9,
+  "all_http_failures_recovered_in_same_sample": true,
+  "additional_interface_samples": 0,
+  "truncation_replacements": 0,
+  "no_parameter_or_gold_changes": true,
+  "algorithm_diff_from_round17_bytes": 0,
+  "independent_interval_crosschecks": 88
+}

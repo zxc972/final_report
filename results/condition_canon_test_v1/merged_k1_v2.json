@@ -1,0 +1,158 @@
+[
+  {
+    "method_id": "independent_fastsurfer",
+    "template": "product_present",
+    "parameters": {
+      "slot": "T1",
+      "type": "type:Volume.T1"
+    },
+    "sources": [
+      {
+        "source_id": "fastsurfer_run",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "--t1: T1 full head input (not bias corrected), requiring an absolute path."
+    ]
+  },
+  {
+    "method_id": "independent_fastsurfer",
+    "template": "attr_equal",
+    "parameters": {
+      "slots": [
+        "mask",
+        "T1"
+      ],
+      "attrs": [
+        "space"
+      ]
+    },
+    "sources": [
+      {
+        "source_id": "fastsurfer_run",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "An optional binary lesion mask must be in the same space as the T1 input."
+    ]
+  },
+  {
+    "method_id": "independent_fastsurfer",
+    "template": "provenance",
+    "parameters": {
+      "step": "fastsurfer"
+    },
+    "sources": [
+      {
+        "source_id": "fastsurfer_run",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "For --surf_only, the segmentation created by FastSurferVINN must already exist."
+    ]
+  },
+  {
+    "method_id": "independent_fastsurfer",
+    "template": "software",
+    "parameters": {
+      "commands": [
+        "freesurfer"
+      ]
+    },
+    "sources": [
+      {
+        "source_id": "fastsurfer_run",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "Docker runs of the surface module require --fs_license pointing to a FreeSurfer licence file."
+    ]
+  },
+  {
+    "method_id": "independent_fastsurfer",
+    "template": "provenance",
+    "parameters": {
+      "step": "recon-all"
+    },
+    "sources": [
+      {
+        "source_id": "fastsurfer_run",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "--no_surfreg skips surface registration, but sphere.reg is needed for cross-subject statistical analysis of thickness maps."
+    ]
+  },
+  {
+    "method_id": "independent_fs_glmfit_group",
+    "template": "product_present",
+    "parameters": {
+      "slot": "design",
+      "type": "type:StatsTable.ContrastMatrix"
+    },
+    "sources": [
+      {
+        "source_id": "fs_glmfit",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "One or more contrast matrix files in ASCII text."
+    ]
+  },
+  {
+    "method_id": "independent_workbench_area_stats",
+    "template": "product_present",
+    "parameters": {
+      "slot": "surface",
+      "type": "type:Surface"
+    },
+    "sources": [
+      {
+        "source_id": "wb_vertex_areas",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "A surface file to measure for -surface-vertex-areas."
+    ]
+  },
+  {
+    "method_id": "independent_workbench_area_stats",
+    "template": "product_present",
+    "parameters": {
+      "slot": "metric",
+      "type": "type:SurfaceMetric"
+    },
+    "sources": [
+      {
+        "source_id": "wb_metric_stats",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "An input metric file for -metric-stats."
+    ]
+  },
+  {
+    "method_id": "independent_workbench_area_stats",
+    "template": "plausibility",
+    "parameters": {
+      "metric": "percentile"
+    },
+    "sources": [
+      {
+        "source_id": "wb_metric_stats",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "The percentile must be between 0 and 100."
+    ]
+  }
+]

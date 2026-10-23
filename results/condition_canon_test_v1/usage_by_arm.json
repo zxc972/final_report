@@ -1,0 +1,80 @@
+{
+  "full_v2": {
+    "logical_calls": 225,
+    "http_attempts": 231,
+    "successful_requests": 225,
+    "failed_requests": 6,
+    "unfinished_requests": 0,
+    "length_limited_responses": 0,
+    "historical_null_length_responses": 0,
+    "unknown_usage_requests": 6,
+    "input_tokens": 480505,
+    "output_tokens": 36248,
+    "total_tokens": 516753,
+    "observed_models": [
+      "deepseek-v4.1-flash"
+    ]
+  },
+  "k1_v2": {
+    "logical_calls": 45,
+    "http_attempts": 45,
+    "successful_requests": 45,
+    "failed_requests": 0,
+    "unfinished_requests": 0,
+    "length_limited_responses": 0,
+    "historical_null_length_responses": 0,
+    "unknown_usage_requests": 0,
+    "input_tokens": 118081,
+    "output_tokens": 8880,
+    "total_tokens": 126961,
+    "observed_models": [
+      "deepseek-v4.1-flash"
+    ]
+  },
+  "direct_v2": {
+    "logical_calls": 45,
+    "http_attempts": 47,
+    "successful_requests": 45,
+    "failed_requests": 2,
+    "unfinished_requests": 0,
+    "length_limited_responses": 0,
+    "historical_null_length_responses": 0,
+    "unknown_usage_requests": 2,
+    "input_tokens": 61133,
+    "output_tokens": 7787,
+    "total_tokens": 68920,
+    "observed_models": [
+      "deepseek-v4.1-flash"
+    ]
+  },
+  "retrieval_only": {
+    "logical_calls": 0,
+    "http_attempts": 0,
+    "successful_requests": 0,
+    "failed_requests": 0,
+    "unfinished_requests": 0,
+    "length_limited_responses": 0,
+    "historical_null_length_responses": 0,
+    "unknown_usage_requests": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "total_tokens": 0,
+    "observed_models": []
+  },
+  "dev_full_v2_repair": {
+    "logical_calls": 24,
+    "http_attempts": 25,
+    "successful_requests": 24,
+    "failed_requests": 1,
+    "unfinished_requests": 0,
+    "length_limited_responses": 0,
+    "historical_null_length_responses": 0,
+    "unknown_usage_requests": 1,
+    "input_tokens": 36925,
+    "output_tokens": 1064,
+    "total_tokens": 37989,
+    "observed_models": [
+      "deepseek-v4.1-flash"
+    ]
+  }
+}

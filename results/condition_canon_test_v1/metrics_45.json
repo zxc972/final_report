@@ -1,0 +1,397 @@
+{
+  "n": 45,
+  "replicates": 2000,
+  "seed": 20261023,
+  "interval_method": "paired statement percentile bootstrap, linear quantiles",
+  "key_set_policy": "unique (method,key) sets recomputed in each resample; repeated rows collapse in key sets",
+  "arms": {
+    "full_v2": {
+      "metrics": {
+        "n": 45,
+        "template_accuracy": 0.8666666666666667,
+        "executable": {
+          "precision": 0.7142857142857143,
+          "recall": 0.5555555555555556,
+          "f1": 0.6250000000000001,
+          "tp": 5,
+          "fp": 2,
+          "fn": 4
+        },
+        "key": {
+          "precision": 0.7142857142857143,
+          "recall": 0.5555555555555556,
+          "f1": 0.6250000000000001,
+          "tp": 5,
+          "fp": 2,
+          "fn": 4
+        },
+        "review_queue": 1,
+        "rejected_quote": 0,
+        "advisory_or_not_executable": {
+          "precision": 0.8947368421052632,
+          "recall": 0.9444444444444444,
+          "f1": 0.918918918918919,
+          "tp": 34,
+          "fp": 4,
+          "fn": 2
+        },
+        "decisions": {
+          "accepted": 7,
+          "advisory": 37,
+          "review": 1,
+          "rejected_quote": 0,
+          "inference_error": 0,
+          "provider_error": 0
+        }
+      },
+      "intervals_95": {
+        "template_accuracy": {
+          "estimate": 0.8666666666666667,
+          "low": 0.7555555555555555,
+          "high": 0.9555555555555556
+        },
+        "executable.precision": {
+          "estimate": 0.7142857142857143,
+          "low": 0.3333333333333333,
+          "high": 1.0
+        },
+        "executable.recall": {
+          "estimate": 0.5555555555555556,
+          "low": 0.2,
+          "high": 0.8888888888888888
+        },
+        "executable.f1": {
+          "estimate": 0.6250000000000001,
+          "low": 0.28523809523809524,
+          "high": 0.8750000000000001
+        },
+        "advisory_or_not_executable.precision": {
+          "estimate": 0.8947368421052632,
+          "low": 0.7894736842105263,
+          "high": 0.975609756097561
+        },
+        "advisory_or_not_executable.recall": {
+          "estimate": 0.9444444444444444,
+          "low": 0.8611111111111112,
+          "high": 1.0
+        },
+        "advisory_or_not_executable.f1": {
+          "estimate": 0.918918918918919,
+          "low": 0.8450704225352113,
+          "high": 0.975609756097561
+        },
+        "key.precision": {
+          "estimate": 0.7142857142857143,
+          "low": 0.5,
+          "high": 1.0
+        },
+        "key.recall": {
+          "estimate": 0.5555555555555556,
+          "low": 0.25,
+          "high": 0.8333333333333334
+        },
+        "key.f1": {
+          "estimate": 0.6250000000000001,
+          "low": 0.3333333333333333,
+          "high": 0.8333333333333334
+        },
+        "review_queue": {
+          "estimate": 1,
+          "low": 0.0,
+          "high": 3.0
+        }
+      }
+    },
+    "k1_v2": {
+      "metrics": {
+        "n": 45,
+        "template_accuracy": 0.8444444444444444,
+        "executable": {
+          "precision": 0.6666666666666666,
+          "recall": 0.6666666666666666,
+          "f1": 0.6666666666666666,
+          "tp": 6,
+          "fp": 3,
+          "fn": 3
+        },
+        "key": {
+          "precision": 0.6666666666666666,
+          "recall": 0.6666666666666666,
+          "f1": 0.6666666666666666,
+          "tp": 6,
+          "fp": 3,
+          "fn": 3
+        },
+        "review_queue": 1,
+        "rejected_quote": 0,
+        "advisory_or_not_executable": {
+          "precision": 0.9166666666666666,
+          "recall": 0.9166666666666666,
+          "f1": 0.9166666666666666,
+          "tp": 33,
+          "fp": 3,
+          "fn": 3
+        },
+        "decisions": {
+          "accepted": 9,
+          "advisory": 35,
+          "review": 1,
+          "rejected_quote": 0,
+          "inference_error": 0,
+          "provider_error": 0
+        }
+      },
+      "intervals_95": {
+        "template_accuracy": {
+          "estimate": 0.8444444444444444,
+          "low": 0.7333333333333333,
+          "high": 0.9555555555555556
+        },
+        "executable.precision": {
+          "estimate": 0.6666666666666666,
+          "low": 0.3333333333333333,
+          "high": 1.0
+        },
+        "executable.recall": {
+          "estimate": 0.6666666666666666,
+          "low": 0.3,
+          "high": 1.0
+        },
+        "executable.f1": {
+          "estimate": 0.6666666666666666,
+          "low": 0.3333333333333333,
+          "high": 0.888888888888889
+        },
+        "advisory_or_not_executable.precision": {
+          "estimate": 0.9166666666666666,
+          "low": 0.8157894736842105,
+          "high": 1.0
+        },
+        "advisory_or_not_executable.recall": {
+          "estimate": 0.9166666666666666,
+          "low": 0.8157072368421052,
+          "high": 1.0
+        },
+        "advisory_or_not_executable.f1": {
+          "estimate": 0.9166666666666666,
+          "low": 0.8405797101449276,
+          "high": 0.9743589743589743
+        },
+        "key.precision": {
+          "estimate": 0.6666666666666666,
+          "low": 0.3333333333333333,
+          "high": 1.0
+        },
+        "key.recall": {
+          "estimate": 0.6666666666666666,
+          "low": 0.3333333333333333,
+          "high": 1.0
+        },
+        "key.f1": {
+          "estimate": 0.6666666666666666,
+          "low": 0.3636363636363636,
+          "high": 0.8571428571428571
+        },
+        "review_queue": {
+          "estimate": 1,
+          "low": 0.0,
+          "high": 3.0
+        }
+      }
+    },
+    "direct_v2": {
+      "metrics": {
+        "n": 45,
+        "template_accuracy": 0.8222222222222222,
+        "executable": {
+          "precision": 0.6,
+          "recall": 0.6666666666666666,
+          "f1": 0.631578947368421,
+          "tp": 6,
+          "fp": 4,
+          "fn": 3
+        },
+        "key": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "fp": 10,
+          "fn": 9
+        },
+        "review_queue": 0,
+        "rejected_quote": 0,
+        "advisory_or_not_executable": {
+          "precision": 0.9142857142857143,
+          "recall": 0.8888888888888888,
+          "f1": 0.9014084507042254,
+          "tp": 32,
+          "fp": 3,
+          "fn": 4
+        },
+        "decisions": {
+          "accepted": 10,
+          "advisory": 35,
+          "review": 0,
+          "rejected_quote": 0,
+          "inference_error": 0,
+          "provider_error": 0
+        }
+      },
+      "intervals_95": {
+        "template_accuracy": {
+          "estimate": 0.8222222222222222,
+          "low": 0.7111111111111111,
+          "high": 0.9333333333333333
+        },
+        "executable.precision": {
+          "estimate": 0.6,
+          "low": 0.25,
+          "high": 0.9166666666666666
+        },
+        "executable.recall": {
+          "estimate": 0.6666666666666666,
+          "low": 0.3,
+          "high": 1.0
+        },
+        "executable.f1": {
+          "estimate": 0.631578947368421,
+          "low": 0.3075,
+          "high": 0.8571428571428571
+        },
+        "advisory_or_not_executable.precision": {
+          "estimate": 0.9142857142857143,
+          "low": 0.8125,
+          "high": 1.0
+        },
+        "advisory_or_not_executable.recall": {
+          "estimate": 0.8888888888888888,
+          "low": 0.7741935483870968,
+          "high": 0.975
+        },
+        "advisory_or_not_executable.f1": {
+          "estimate": 0.9014084507042254,
+          "low": 0.8196348733233979,
+          "high": 0.9696969696969697
+        },
+        "key.precision": {
+          "estimate": 0.0,
+          "low": 0.0,
+          "high": 0.0
+        },
+        "key.recall": {
+          "estimate": 0.0,
+          "low": 0.0,
+          "high": 0.0
+        },
+        "key.f1": {
+          "estimate": 0.0,
+          "low": 0.0,
+          "high": 0.0
+        },
+        "review_queue": {
+          "estimate": 0,
+          "low": 0.0,
+          "high": 0.0
+        }
+      }
+    },
+    "retrieval_only": {
+      "metrics": {
+        "n": 45,
+        "template_accuracy": 0.13333333333333333,
+        "executable": {
+          "precision": 0.20930232558139536,
+          "recall": 1.0,
+          "f1": 0.3461538461538462,
+          "tp": 9,
+          "fp": 34,
+          "fn": 0
+        },
+        "key": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 9
+        },
+        "review_queue": 0,
+        "rejected_quote": 0,
+        "advisory_or_not_executable": {
+          "precision": 1.0,
+          "recall": 0.05555555555555555,
+          "f1": 0.10526315789473684,
+          "tp": 2,
+          "fp": 0,
+          "fn": 34
+        },
+        "decisions": {
+          "accepted": 43,
+          "advisory": 2,
+          "review": 0,
+          "rejected_quote": 0,
+          "inference_error": 0,
+          "provider_error": 0
+        }
+      },
+      "intervals_95": {
+        "template_accuracy": {
+          "estimate": 0.13333333333333333,
+          "low": 0.044444444444444446,
+          "high": 0.24444444444444444
+        },
+        "executable.precision": {
+          "estimate": 0.20930232558139536,
+          "low": 0.09302325581395349,
+          "high": 0.3333333333333333
+        },
+        "executable.recall": {
+          "estimate": 1.0,
+          "low": 1.0,
+          "high": 1.0
+        },
+        "executable.f1": {
+          "estimate": 0.3461538461538462,
+          "low": 0.1702127659574468,
+          "high": 0.5
+        },
+        "advisory_or_not_executable.precision": {
+          "estimate": 1.0,
+          "low": 0.0,
+          "high": 1.0
+        },
+        "advisory_or_not_executable.recall": {
+          "estimate": 0.05555555555555555,
+          "low": 0.0,
+          "high": 0.14285714285714285
+        },
+        "advisory_or_not_executable.f1": {
+          "estimate": 0.10526315789473684,
+          "low": 0.0,
+          "high": 0.25
+        },
+        "key.precision": {
+          "estimate": 0.0,
+          "low": 0.0,
+          "high": 0.0
+        },
+        "key.recall": {
+          "estimate": 0.0,
+          "low": 0.0,
+          "high": 0.0
+        },
+        "key.f1": {
+          "estimate": 0.0,
+          "low": 0.0,
+          "high": 0.0
+        },
+        "review_queue": {
+          "estimate": 0,
+          "low": 0.0,
+          "high": 0.0
+        }
+      }
+    }
+  }
+}
