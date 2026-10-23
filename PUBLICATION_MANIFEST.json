@@ -1,6 +1,6 @@
 {
   "schema": "final_report.publication.v1",
-  "source_snapshot": "2026-10-23 Round16 source and draft protocol, merged reviewed Round15 tools, 877 default tests passed; evaluation running",
+  "source_snapshot": "2026-10-23 Round16 source and first draft condition evaluation, 877 default tests passed, 862/1000 requests; labels await human review; raw HTTP traces excluded",
   "files": [
     {
       "path": ".env.example",
@@ -24,8 +24,8 @@
     },
     {
       "path": "SNAPSHOT_MANIFEST.json",
-      "bytes": 442069,
-      "sha256": "659023db5347244e37d103bd9aea8edabed69f51b42a74609ef777b8ac50cb2a"
+      "bytes": 472920,
+      "sha256": "32d7ff97aca6fed8861712a156a2a30b47fe71653e932492ac183f8d49ae4521"
     },
     {
       "path": "agent/.gitignore",
@@ -3459,8 +3459,8 @@
     },
     {
       "path": "docs/ROUND16_CONDITION_CANON.md",
-      "bytes": 5771,
-      "sha256": "ad4ecfa4a73c00b2fdbec3344899f58499e6cda070eecf7bab6243289ff66863"
+      "bytes": 7968,
+      "sha256": "5c4804f1e7c48044712982e2c8fcff33876cabf5028dc6686a4feed7c67471be"
     },
     {
       "path": "docs/SNAPSHOT.md",
@@ -3496,6 +3496,11 @@
       "path": "docs/evidence/round15_algorithms_validation.json",
       "bytes": 2413,
       "sha256": "cd79fc2c13aaa5daa326ddd2b30490e7168d984e9dad8a8d7967379336ddd82a"
+    },
+    {
+      "path": "docs/evidence/round16_condition_canon_draft_v1.json",
+      "bytes": 8089,
+      "sha256": "803bcdfb8d9a2bc62095ea29fc36705657c19bd4fc175f58f8e777d4ae52ba82"
     },
     {
       "path": "docs/evidence/software_graph_count_audit.json",
@@ -3664,8 +3669,8 @@
     },
     {
       "path": "evaluation/condition_gold/README.md",
-      "bytes": 2938,
-      "sha256": "0aab39973a0d1e46344446bdbc03c1ce94cf5cdaea8809ecf80c186927309b5f"
+      "bytes": 3258,
+      "sha256": "35955b0d7ebbe6664937cae260b4931d5d057b5d1608a63efe78981c7454b855"
     },
     {
       "path": "evaluation/condition_gold/gold_draft_v1.json",
@@ -4771,6 +4776,271 @@
       "path": "knowledge/software_graph/summary.json",
       "bytes": 741,
       "sha256": "46b6d60b796ed8426e68904b977ce32182f61f05f019cb5dbe7a950d224803ee"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/FULL_ERRORS_DETAILED.md",
+      "bytes": 39585,
+      "sha256": "607a3a6866df5facd62713fb10995d1f4d0cb7f8c3345416d84a595e23f81158"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/REPORT.md",
+      "bytes": 3013,
+      "sha256": "f4bf297ea46d8df8298c3300dd6fbb46d03fece75bea856a3d5975698768c685"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/annotation_review_notes.md",
+      "bytes": 824,
+      "sha256": "58efee62a9dbe411e4de45547baed74260dc4d4d77a570769a34c715a7497d03"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/audit.json",
+      "bytes": 3155,
+      "sha256": "6e3a821f60935b4b3c4848c404117f70e18cdcd4a39aea9d9ac114f665d66aa8"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/audit_scripts/README.md",
+      "bytes": 909,
+      "sha256": "6dad3a87eb83c16fdede215f66033a78b161a368655d057fe2d38f0eddb374a2"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/audit_scripts/audit_results.py",
+      "bytes": 7664,
+      "sha256": "40ef0415af079e4fc16721589567261b1d5448fb8ee696754adee7d977b12ce2"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/audit_scripts/build_diagnostics.py",
+      "bytes": 7156,
+      "sha256": "db741f2d11c1468cdd4741c83f24f4a3c0eadcefb4d457080652d0a5dabdc853"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/audit_scripts/complete_budget.py",
+      "bytes": 9389,
+      "sha256": "c78e21831354f711cee7baafeed0981c539f9854724489f431cfd5373d19221b"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/budget_authorization.json",
+      "bytes": 376,
+      "sha256": "2770b22dffe5042885e8b4a681c02d1a7fed4e42e57f805e5849acbb19713854"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/budget_completion/direct/frozen.json",
+      "bytes": 3031,
+      "sha256": "4c83a30959c323f8acf54982a8ade3fd57000d8ba55f586aa817dbda5d7e0273"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/budget_completion/direct/frozen.sha256",
+      "bytes": 65,
+      "sha256": "600970e4016ba0b6372174f0cac4eb79253d0dd98c1516ccc3dbfb23c0426e63"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/budget_completion/direct/merged_direct.json",
+      "bytes": 11545,
+      "sha256": "a8df0274b9dbc37ad5827a5d1859e95ee33889519e206d101408d15fc6173ead"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/budget_completion/direct/predictions_direct.json",
+      "bytes": 17468,
+      "sha256": "d7280c3007fa38846eec1c36045af563d8c43d862e3c9255010cc0b846e035a0"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/budget_completion/direct/provider_failures.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/budget_completion/direct/review_queue_direct.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/budget_completion/direct/run_status.json",
+      "bytes": 779,
+      "sha256": "862a4651e59980fdb527d7f196f7b224ee55ac97668b4742f29f4d37a2a2b32b"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/budget_completion/direct/summary.csv",
+      "bytes": 665,
+      "sha256": "2b03f8f0dcde8eb14cf46a07812bf9b2a63f4a5a3bd39823c928b00948eed446"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/budget_completion/direct/summary.json",
+      "bytes": 1248,
+      "sha256": "808f6dfedc86e33dd123b3b42866bbdcd60e46f1e6bdd9dc13d7e45883258811"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/budget_completion/direct/usage.json",
+      "bytes": 367,
+      "sha256": "027e36e7e4459868916267d6ad99022d88d1c03a217784335e61ae4c5760240f"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/budget_completion/gold_draft_budget_subset_direct.json",
+      "bytes": 26922,
+      "sha256": "93fa086f03a95708808f0724e4b162f248ede3591a3ca46a7ad7acfd7acc0d21"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/budget_completion_manifest.json",
+      "bytes": 32356,
+      "sha256": "b61f7c5f0faea7ac4ea1a12a71e271537f9adb82da9837565eeec97d908b2222"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/call_usage.csv",
+      "bytes": 145904,
+      "sha256": "cef47e821f5a8463b2184ec63c25cf19cfbe58163be4949f948cd1cd710ffef9"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/completion_phase_status.json",
+      "bytes": 102,
+      "sha256": "002e20d635353267973fb7f5155dff214c4827685ec2bdf01108bd6106bc19df"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/freeze_history/before_failure_isolation_frozen.json",
+      "bytes": 4396,
+      "sha256": "e2f39520ae2a549dc17e954ddee76f76e70017e2483643b47c59d08796be0d26"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/freeze_history/failure_isolation.json",
+      "bytes": 577,
+      "sha256": "9edd60b6785a88f7a049a1fea4bcae1bee02c213ba2eea35feec7d8a7168bb77"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/freeze_history/initial_frozen.json",
+      "bytes": 4396,
+      "sha256": "a02543da11e225423527f4e1acdc460577142e14eb35955fd6fd1a2cef4b5f2a"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/freeze_history/initial_frozen.sha256",
+      "bytes": 65,
+      "sha256": "1517305d2a39982de70b8f92de678865b07a5675fd9dedc8ea781d1c70339bca"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/freeze_history/transport_fix.json",
+      "bytes": 1814,
+      "sha256": "9ac77fbec0950d0a1bfb836615d8ed653dc7f364ef5265cadfa774524cafbb11"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/frozen.json",
+      "bytes": 4396,
+      "sha256": "054f9a031ef99326289bf925ea8551ae20ac80f5ffa610c1a3f90d61926cb126"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/frozen.sha256",
+      "bytes": 65,
+      "sha256": "86dce841a18304c750d773d9856096eb37194cc2ac4ef1ef5207aba59030e9f2"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/full_diagnostics.json",
+      "bytes": 203111,
+      "sha256": "6917dc11836e7d6f79e589777d3c65419730b7423d69213fe3e3bc28df5c500a"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/full_errors.csv",
+      "bytes": 36073,
+      "sha256": "d1c38ebed3d17400770afb91c6395e8d235bdadeaad9f15471b581342596b4bb"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/full_errors.json",
+      "bytes": 63170,
+      "sha256": "e635105cbd22bf3254f59dd06e370dc8c0470c0ee895899a25fedb9ce46b8779"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/full_errors.md",
+      "bytes": 33394,
+      "sha256": "3107a6b8fb478b73ae471fa1813d4b1810e68e7e2114d1f824350d08d9ca2967"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/full_errors_detailed.csv",
+      "bytes": 34704,
+      "sha256": "c8146da9114083ca784def6dde8e1ee380578ab120242c94488a6d73726f65a2"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/full_errors_detailed.json",
+      "bytes": 220325,
+      "sha256": "0e659193ac1bba623ba93183b3f912abcb0bc8f708d151d9c4b8e6716f09aa9c"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/merged_direct.json",
+      "bytes": 22333,
+      "sha256": "2fd20a953c7eca66eea612b29bdd3631d409c246b738879bcb8652a5d974ea75"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/merged_full.json",
+      "bytes": 2903,
+      "sha256": "58195f4fcb5c5a824ee41417ab2a7847a2200351c09853fd608d467c99177a1e"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/merged_k1.json",
+      "bytes": 11869,
+      "sha256": "a737fa4df2dacbea7ad233cc845a53fc848bd11c576a8088d99d32afd01d5afc"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/merged_retrieval_only.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/predictions_direct.json",
+      "bytes": 33861,
+      "sha256": "1287688d7799e6f5afb4817f817bba83900fa676a90738330da20d2a75d7ab26"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/predictions_full.json",
+      "bytes": 74095,
+      "sha256": "b29d42521914b9d8daee952cd7debb0c1708b75d437b424b9c9330cad73b2bec"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/predictions_k1.json",
+      "bytes": 68752,
+      "sha256": "27c4a7e20bd72875221dec020d1b5752e883f15f9db9982045f477213889bd85"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/predictions_retrieval_only.json",
+      "bytes": 14933,
+      "sha256": "45366eb6581ff6f661c9af4547500dbd1d2748a562545fa37c984056621430b6"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/provider_failures.json",
+      "bytes": 2602,
+      "sha256": "2e490b28344516e2cfecf0e96581d5bee4154af377775f7b957fac42670b3045"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/review_queue_direct.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/review_queue_full.json",
+      "bytes": 64594,
+      "sha256": "35e8cdbfae0cf1ed100df33edf146625773e7a184f07ecd74d4fb451201d226e"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/review_queue_k1.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/review_queue_retrieval_only.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/run_status.json",
+      "bytes": 1082,
+      "sha256": "12d86e38210bb9f2a5c9a7211472923c50808bcc9ae9f19f8c35d98ae20193ad"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/summary.csv",
+      "bytes": 1467,
+      "sha256": "217a772a7583f0d1f9050cf284469990535f6296cc8bc635d66066425be1188b"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/summary.json",
+      "bytes": 5169,
+      "sha256": "34f04bae6ab4f140b8590b3a5bcec89fadce33cb1023feb16fce0ae121fd883f"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/usage.json",
+      "bytes": 379,
+      "sha256": "fe93459e0632877c108941364ec9fd64041668c548fc72090f14da8bd44fed1a"
     },
     {
       "path": "tools/download_primatex_models.py",

@@ -6,8 +6,8 @@
   "research_release": "research_evidence_v13",
   "source_root": "/data/xuancheng",
   "source_unchanged_check": true,
-  "source_files": 977,
-  "source_bytes": 33747391,
+  "source_files": 1031,
+  "source_bytes": 34981063,
   "excluded_classes": [
     "credentials and .env",
     "FreeSurfer license",
@@ -6901,19 +6901,20 @@
     },
     {
       "path": "docs/ROUND16_CONDITION_CANON.md",
-      "source": "git:ab96abbd949f60f3bcd99d96d09fe666b4cebc4d/docs/ROUND16_CONDITION_CANON.md",
-      "source_head": "ab96abbd949f60f3bcd99d96d09fe666b4cebc4d",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/docs/ROUND16_CONDITION_CANON.md",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
       "mode": "100644",
-      "bytes": 5771,
-      "sha256": "ad4ecfa4a73c00b2fdbec3344899f58499e6cda070eecf7bab6243289ff66863",
-      "source_bytes": 5771,
-      "source_sha256": "ad4ecfa4a73c00b2fdbec3344899f58499e6cda070eecf7bab6243289ff66863",
+      "bytes": 7968,
+      "sha256": "5c4804f1e7c48044712982e2c8fcff33876cabf5028dc6686a4feed7c67471be",
+      "source_bytes": 7968,
+      "source_sha256": "5c4804f1e7c48044712982e2c8fcff33876cabf5028dc6686a4feed7c67471be",
       "synced_at": "2026-10-23",
       "previous_source": {
-        "source": "git:855d24f418caf3f8cd4b3da1b1dabe1233247c84/docs/ROUND16_CONDITION_CANON.md",
-        "source_head": "855d24f418caf3f8cd4b3da1b1dabe1233247c84",
-        "bytes": 4967,
-        "sha256": "7cb78eb0864dd098f1c88c1f880e177d8ea6ba7f6bb6680728e6000bc16967d7"
+        "source": "git:ab96abbd949f60f3bcd99d96d09fe666b4cebc4d/docs/ROUND16_CONDITION_CANON.md",
+        "source_head": "ab96abbd949f60f3bcd99d96d09fe666b4cebc4d",
+        "bytes": 5771,
+        "sha256": "ad4ecfa4a73c00b2fdbec3344899f58499e6cda070eecf7bab6243289ff66863",
+        "mode": "100644"
       }
     },
     {
@@ -6975,6 +6976,17 @@
         "sha256": "7be337061f20ab50a995d5101c0f09a5d36ce5fd0dcf555715322f36eee23052",
         "mode": "100644"
       }
+    },
+    {
+      "path": "docs/evidence/round16_condition_canon_draft_v1.json",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/docs/evidence/round16_condition_canon_draft_v1.json",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 8089,
+      "sha256": "803bcdfb8d9a2bc62095ea29fc36705657c19bd4fc175f58f8e777d4ae52ba82",
+      "source_bytes": 8089,
+      "source_sha256": "803bcdfb8d9a2bc62095ea29fc36705657c19bd4fc175f58f8e777d4ae52ba82",
+      "synced_at": "2026-10-23"
     },
     {
       "path": "docs/evidence/software_graph_count_audit.json",
@@ -7209,19 +7221,20 @@
     },
     {
       "path": "evaluation/condition_gold/README.md",
-      "source": "git:ab96abbd949f60f3bcd99d96d09fe666b4cebc4d/evaluation/condition_gold/README.md",
-      "source_head": "ab96abbd949f60f3bcd99d96d09fe666b4cebc4d",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/evaluation/condition_gold/README.md",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
       "mode": "100644",
-      "bytes": 2938,
-      "sha256": "0aab39973a0d1e46344446bdbc03c1ce94cf5cdaea8809ecf80c186927309b5f",
-      "source_bytes": 2938,
-      "source_sha256": "0aab39973a0d1e46344446bdbc03c1ce94cf5cdaea8809ecf80c186927309b5f",
+      "bytes": 3258,
+      "sha256": "35955b0d7ebbe6664937cae260b4931d5d057b5d1608a63efe78981c7454b855",
+      "source_bytes": 3258,
+      "source_sha256": "35955b0d7ebbe6664937cae260b4931d5d057b5d1608a63efe78981c7454b855",
       "synced_at": "2026-10-23",
       "previous_source": {
-        "source": "git:855d24f418caf3f8cd4b3da1b1dabe1233247c84/evaluation/condition_gold/README.md",
-        "source_head": "855d24f418caf3f8cd4b3da1b1dabe1233247c84",
-        "bytes": 2752,
-        "sha256": "a19eaea050ff4fc67f00e38f725708b7e1430e6fcaf786ba1ff9722ac44f92e3"
+        "source": "git:ab96abbd949f60f3bcd99d96d09fe666b4cebc4d/evaluation/condition_gold/README.md",
+        "source_head": "ab96abbd949f60f3bcd99d96d09fe666b4cebc4d",
+        "bytes": 2938,
+        "sha256": "0aab39973a0d1e46344446bdbc03c1ce94cf5cdaea8809ecf80c186927309b5f",
+        "mode": "100644"
       }
     },
     {
@@ -8806,6 +8819,589 @@
       "mode": "100644"
     },
     {
+      "path": "results/condition_canon_draft_v1/FULL_ERRORS_DETAILED.md",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/FULL_ERRORS_DETAILED.md",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 39585,
+      "sha256": "607a3a6866df5facd62713fb10995d1f4d0cb7f8c3345416d84a595e23f81158",
+      "source_bytes": 39585,
+      "source_sha256": "607a3a6866df5facd62713fb10995d1f4d0cb7f8c3345416d84a595e23f81158",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/REPORT.md",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/REPORT.md",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 3013,
+      "sha256": "f4bf297ea46d8df8298c3300dd6fbb46d03fece75bea856a3d5975698768c685",
+      "source_bytes": 3013,
+      "source_sha256": "f4bf297ea46d8df8298c3300dd6fbb46d03fece75bea856a3d5975698768c685",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/annotation_review_notes.md",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/annotation_review_notes.md",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 824,
+      "sha256": "58efee62a9dbe411e4de45547baed74260dc4d4d77a570769a34c715a7497d03",
+      "source_bytes": 824,
+      "source_sha256": "58efee62a9dbe411e4de45547baed74260dc4d4d77a570769a34c715a7497d03",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/audit.json",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/audit.json",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 3155,
+      "sha256": "6e3a821f60935b4b3c4848c404117f70e18cdcd4a39aea9d9ac114f665d66aa8",
+      "source_bytes": 3155,
+      "source_sha256": "6e3a821f60935b4b3c4848c404117f70e18cdcd4a39aea9d9ac114f665d66aa8",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/audit_scripts/README.md",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/audit_scripts/README.md",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 909,
+      "sha256": "6dad3a87eb83c16fdede215f66033a78b161a368655d057fe2d38f0eddb374a2",
+      "source_bytes": 909,
+      "source_sha256": "6dad3a87eb83c16fdede215f66033a78b161a368655d057fe2d38f0eddb374a2",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/audit_scripts/audit_results.py",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/audit_scripts/audit_results.py",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 7664,
+      "sha256": "40ef0415af079e4fc16721589567261b1d5448fb8ee696754adee7d977b12ce2",
+      "source_bytes": 7664,
+      "source_sha256": "40ef0415af079e4fc16721589567261b1d5448fb8ee696754adee7d977b12ce2",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/audit_scripts/build_diagnostics.py",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/audit_scripts/build_diagnostics.py",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 7156,
+      "sha256": "db741f2d11c1468cdd4741c83f24f4a3c0eadcefb4d457080652d0a5dabdc853",
+      "source_bytes": 7156,
+      "source_sha256": "db741f2d11c1468cdd4741c83f24f4a3c0eadcefb4d457080652d0a5dabdc853",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/audit_scripts/complete_budget.py",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/audit_scripts/complete_budget.py",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 9389,
+      "sha256": "c78e21831354f711cee7baafeed0981c539f9854724489f431cfd5373d19221b",
+      "source_bytes": 9389,
+      "source_sha256": "c78e21831354f711cee7baafeed0981c539f9854724489f431cfd5373d19221b",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/budget_authorization.json",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/budget_authorization.json",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 376,
+      "sha256": "2770b22dffe5042885e8b4a681c02d1a7fed4e42e57f805e5849acbb19713854",
+      "source_bytes": 376,
+      "source_sha256": "2770b22dffe5042885e8b4a681c02d1a7fed4e42e57f805e5849acbb19713854",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/budget_completion/direct/frozen.json",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/budget_completion/direct/frozen.json",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 3031,
+      "sha256": "4c83a30959c323f8acf54982a8ade3fd57000d8ba55f586aa817dbda5d7e0273",
+      "source_bytes": 3031,
+      "source_sha256": "4c83a30959c323f8acf54982a8ade3fd57000d8ba55f586aa817dbda5d7e0273",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/budget_completion/direct/frozen.sha256",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/budget_completion/direct/frozen.sha256",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 65,
+      "sha256": "600970e4016ba0b6372174f0cac4eb79253d0dd98c1516ccc3dbfb23c0426e63",
+      "source_bytes": 65,
+      "source_sha256": "600970e4016ba0b6372174f0cac4eb79253d0dd98c1516ccc3dbfb23c0426e63",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/budget_completion/direct/merged_direct.json",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/budget_completion/direct/merged_direct.json",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 11545,
+      "sha256": "a8df0274b9dbc37ad5827a5d1859e95ee33889519e206d101408d15fc6173ead",
+      "source_bytes": 11545,
+      "source_sha256": "a8df0274b9dbc37ad5827a5d1859e95ee33889519e206d101408d15fc6173ead",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/budget_completion/direct/predictions_direct.json",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/budget_completion/direct/predictions_direct.json",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 17468,
+      "sha256": "d7280c3007fa38846eec1c36045af563d8c43d862e3c9255010cc0b846e035a0",
+      "source_bytes": 17468,
+      "source_sha256": "d7280c3007fa38846eec1c36045af563d8c43d862e3c9255010cc0b846e035a0",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/budget_completion/direct/provider_failures.json",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/budget_completion/direct/provider_failures.json",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "source_bytes": 3,
+      "source_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/budget_completion/direct/review_queue_direct.json",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/budget_completion/direct/review_queue_direct.json",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "source_bytes": 3,
+      "source_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/budget_completion/direct/run_status.json",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/budget_completion/direct/run_status.json",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 779,
+      "sha256": "862a4651e59980fdb527d7f196f7b224ee55ac97668b4742f29f4d37a2a2b32b",
+      "source_bytes": 779,
+      "source_sha256": "862a4651e59980fdb527d7f196f7b224ee55ac97668b4742f29f4d37a2a2b32b",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/budget_completion/direct/summary.csv",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/budget_completion/direct/summary.csv",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 665,
+      "sha256": "2b03f8f0dcde8eb14cf46a07812bf9b2a63f4a5a3bd39823c928b00948eed446",
+      "source_bytes": 665,
+      "source_sha256": "2b03f8f0dcde8eb14cf46a07812bf9b2a63f4a5a3bd39823c928b00948eed446",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/budget_completion/direct/summary.json",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/budget_completion/direct/summary.json",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 1248,
+      "sha256": "808f6dfedc86e33dd123b3b42866bbdcd60e46f1e6bdd9dc13d7e45883258811",
+      "source_bytes": 1248,
+      "source_sha256": "808f6dfedc86e33dd123b3b42866bbdcd60e46f1e6bdd9dc13d7e45883258811",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/budget_completion/direct/usage.json",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/budget_completion/direct/usage.json",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 367,
+      "sha256": "027e36e7e4459868916267d6ad99022d88d1c03a217784335e61ae4c5760240f",
+      "source_bytes": 367,
+      "source_sha256": "027e36e7e4459868916267d6ad99022d88d1c03a217784335e61ae4c5760240f",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/budget_completion/gold_draft_budget_subset_direct.json",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/budget_completion/gold_draft_budget_subset_direct.json",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 26922,
+      "sha256": "93fa086f03a95708808f0724e4b162f248ede3591a3ca46a7ad7acfd7acc0d21",
+      "source_bytes": 26922,
+      "source_sha256": "93fa086f03a95708808f0724e4b162f248ede3591a3ca46a7ad7acfd7acc0d21",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/budget_completion_manifest.json",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/budget_completion_manifest.json",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 32356,
+      "sha256": "b61f7c5f0faea7ac4ea1a12a71e271537f9adb82da9837565eeec97d908b2222",
+      "source_bytes": 32356,
+      "source_sha256": "b61f7c5f0faea7ac4ea1a12a71e271537f9adb82da9837565eeec97d908b2222",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/call_usage.csv",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/call_usage.csv",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 145904,
+      "sha256": "cef47e821f5a8463b2184ec63c25cf19cfbe58163be4949f948cd1cd710ffef9",
+      "source_bytes": 145904,
+      "source_sha256": "cef47e821f5a8463b2184ec63c25cf19cfbe58163be4949f948cd1cd710ffef9",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/completion_phase_status.json",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/completion_phase_status.json",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 102,
+      "sha256": "002e20d635353267973fb7f5155dff214c4827685ec2bdf01108bd6106bc19df",
+      "source_bytes": 102,
+      "source_sha256": "002e20d635353267973fb7f5155dff214c4827685ec2bdf01108bd6106bc19df",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/freeze_history/before_failure_isolation_frozen.json",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/freeze_history/before_failure_isolation_frozen.json",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 4396,
+      "sha256": "e2f39520ae2a549dc17e954ddee76f76e70017e2483643b47c59d08796be0d26",
+      "source_bytes": 4396,
+      "source_sha256": "e2f39520ae2a549dc17e954ddee76f76e70017e2483643b47c59d08796be0d26",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/freeze_history/failure_isolation.json",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/freeze_history/failure_isolation.json",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 577,
+      "sha256": "9edd60b6785a88f7a049a1fea4bcae1bee02c213ba2eea35feec7d8a7168bb77",
+      "source_bytes": 577,
+      "source_sha256": "9edd60b6785a88f7a049a1fea4bcae1bee02c213ba2eea35feec7d8a7168bb77",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/freeze_history/initial_frozen.json",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/freeze_history/initial_frozen.json",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 4396,
+      "sha256": "a02543da11e225423527f4e1acdc460577142e14eb35955fd6fd1a2cef4b5f2a",
+      "source_bytes": 4396,
+      "source_sha256": "a02543da11e225423527f4e1acdc460577142e14eb35955fd6fd1a2cef4b5f2a",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/freeze_history/initial_frozen.sha256",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/freeze_history/initial_frozen.sha256",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 65,
+      "sha256": "1517305d2a39982de70b8f92de678865b07a5675fd9dedc8ea781d1c70339bca",
+      "source_bytes": 65,
+      "source_sha256": "1517305d2a39982de70b8f92de678865b07a5675fd9dedc8ea781d1c70339bca",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/freeze_history/transport_fix.json",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/freeze_history/transport_fix.json",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 1814,
+      "sha256": "9ac77fbec0950d0a1bfb836615d8ed653dc7f364ef5265cadfa774524cafbb11",
+      "source_bytes": 1814,
+      "source_sha256": "9ac77fbec0950d0a1bfb836615d8ed653dc7f364ef5265cadfa774524cafbb11",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/frozen.json",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/frozen.json",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 4396,
+      "sha256": "054f9a031ef99326289bf925ea8551ae20ac80f5ffa610c1a3f90d61926cb126",
+      "source_bytes": 4396,
+      "source_sha256": "054f9a031ef99326289bf925ea8551ae20ac80f5ffa610c1a3f90d61926cb126",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/frozen.sha256",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/frozen.sha256",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 65,
+      "sha256": "86dce841a18304c750d773d9856096eb37194cc2ac4ef1ef5207aba59030e9f2",
+      "source_bytes": 65,
+      "source_sha256": "86dce841a18304c750d773d9856096eb37194cc2ac4ef1ef5207aba59030e9f2",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/full_diagnostics.json",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/full_diagnostics.json",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 203111,
+      "sha256": "6917dc11836e7d6f79e589777d3c65419730b7423d69213fe3e3bc28df5c500a",
+      "source_bytes": 203111,
+      "source_sha256": "6917dc11836e7d6f79e589777d3c65419730b7423d69213fe3e3bc28df5c500a",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/full_errors.csv",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/full_errors.csv",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 36073,
+      "sha256": "d1c38ebed3d17400770afb91c6395e8d235bdadeaad9f15471b581342596b4bb",
+      "source_bytes": 36073,
+      "source_sha256": "d1c38ebed3d17400770afb91c6395e8d235bdadeaad9f15471b581342596b4bb",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/full_errors.json",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/full_errors.json",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 63170,
+      "sha256": "e635105cbd22bf3254f59dd06e370dc8c0470c0ee895899a25fedb9ce46b8779",
+      "source_bytes": 63170,
+      "source_sha256": "e635105cbd22bf3254f59dd06e370dc8c0470c0ee895899a25fedb9ce46b8779",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/full_errors.md",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/full_errors.md",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 33394,
+      "sha256": "3107a6b8fb478b73ae471fa1813d4b1810e68e7e2114d1f824350d08d9ca2967",
+      "source_bytes": 33394,
+      "source_sha256": "3107a6b8fb478b73ae471fa1813d4b1810e68e7e2114d1f824350d08d9ca2967",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/full_errors_detailed.csv",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/full_errors_detailed.csv",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 34704,
+      "sha256": "c8146da9114083ca784def6dde8e1ee380578ab120242c94488a6d73726f65a2",
+      "source_bytes": 34704,
+      "source_sha256": "c8146da9114083ca784def6dde8e1ee380578ab120242c94488a6d73726f65a2",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/full_errors_detailed.json",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/full_errors_detailed.json",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 220325,
+      "sha256": "0e659193ac1bba623ba93183b3f912abcb0bc8f708d151d9c4b8e6716f09aa9c",
+      "source_bytes": 220325,
+      "source_sha256": "0e659193ac1bba623ba93183b3f912abcb0bc8f708d151d9c4b8e6716f09aa9c",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/merged_direct.json",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/merged_direct.json",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 22333,
+      "sha256": "2fd20a953c7eca66eea612b29bdd3631d409c246b738879bcb8652a5d974ea75",
+      "source_bytes": 22333,
+      "source_sha256": "2fd20a953c7eca66eea612b29bdd3631d409c246b738879bcb8652a5d974ea75",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/merged_full.json",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/merged_full.json",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 2903,
+      "sha256": "58195f4fcb5c5a824ee41417ab2a7847a2200351c09853fd608d467c99177a1e",
+      "source_bytes": 2903,
+      "source_sha256": "58195f4fcb5c5a824ee41417ab2a7847a2200351c09853fd608d467c99177a1e",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/merged_k1.json",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/merged_k1.json",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 11869,
+      "sha256": "a737fa4df2dacbea7ad233cc845a53fc848bd11c576a8088d99d32afd01d5afc",
+      "source_bytes": 11869,
+      "source_sha256": "a737fa4df2dacbea7ad233cc845a53fc848bd11c576a8088d99d32afd01d5afc",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/merged_retrieval_only.json",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/merged_retrieval_only.json",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "source_bytes": 3,
+      "source_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/predictions_direct.json",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/predictions_direct.json",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 33861,
+      "sha256": "1287688d7799e6f5afb4817f817bba83900fa676a90738330da20d2a75d7ab26",
+      "source_bytes": 33861,
+      "source_sha256": "1287688d7799e6f5afb4817f817bba83900fa676a90738330da20d2a75d7ab26",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/predictions_full.json",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/predictions_full.json",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 74095,
+      "sha256": "b29d42521914b9d8daee952cd7debb0c1708b75d437b424b9c9330cad73b2bec",
+      "source_bytes": 74095,
+      "source_sha256": "b29d42521914b9d8daee952cd7debb0c1708b75d437b424b9c9330cad73b2bec",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/predictions_k1.json",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/predictions_k1.json",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 68752,
+      "sha256": "27c4a7e20bd72875221dec020d1b5752e883f15f9db9982045f477213889bd85",
+      "source_bytes": 68752,
+      "source_sha256": "27c4a7e20bd72875221dec020d1b5752e883f15f9db9982045f477213889bd85",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/predictions_retrieval_only.json",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/predictions_retrieval_only.json",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 14933,
+      "sha256": "45366eb6581ff6f661c9af4547500dbd1d2748a562545fa37c984056621430b6",
+      "source_bytes": 14933,
+      "source_sha256": "45366eb6581ff6f661c9af4547500dbd1d2748a562545fa37c984056621430b6",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/provider_failures.json",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/provider_failures.json",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 2602,
+      "sha256": "2e490b28344516e2cfecf0e96581d5bee4154af377775f7b957fac42670b3045",
+      "source_bytes": 2602,
+      "source_sha256": "2e490b28344516e2cfecf0e96581d5bee4154af377775f7b957fac42670b3045",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/review_queue_direct.json",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/review_queue_direct.json",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "source_bytes": 3,
+      "source_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/review_queue_full.json",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/review_queue_full.json",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 64594,
+      "sha256": "35e8cdbfae0cf1ed100df33edf146625773e7a184f07ecd74d4fb451201d226e",
+      "source_bytes": 64594,
+      "source_sha256": "35e8cdbfae0cf1ed100df33edf146625773e7a184f07ecd74d4fb451201d226e",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/review_queue_k1.json",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/review_queue_k1.json",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "source_bytes": 3,
+      "source_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/review_queue_retrieval_only.json",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/review_queue_retrieval_only.json",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "source_bytes": 3,
+      "source_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/run_status.json",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/run_status.json",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 1082,
+      "sha256": "12d86e38210bb9f2a5c9a7211472923c50808bcc9ae9f19f8c35d98ae20193ad",
+      "source_bytes": 1082,
+      "source_sha256": "12d86e38210bb9f2a5c9a7211472923c50808bcc9ae9f19f8c35d98ae20193ad",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/summary.csv",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/summary.csv",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 1467,
+      "sha256": "217a772a7583f0d1f9050cf284469990535f6296cc8bc635d66066425be1188b",
+      "source_bytes": 1467,
+      "source_sha256": "217a772a7583f0d1f9050cf284469990535f6296cc8bc635d66066425be1188b",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/summary.json",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/summary.json",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 5169,
+      "sha256": "34f04bae6ab4f140b8590b3a5bcec89fadce33cb1023feb16fce0ae121fd883f",
+      "source_bytes": 5169,
+      "source_sha256": "34f04bae6ab4f140b8590b3a5bcec89fadce33cb1023feb16fce0ae121fd883f",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "results/condition_canon_draft_v1/usage.json",
+      "source": "git:8802f87d28876ebc077b90abb22d9f130aabca08/results/condition_canon_draft_v1/usage.json",
+      "source_head": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "mode": "100644",
+      "bytes": 379,
+      "sha256": "fe93459e0632877c108941364ec9fd64041668c548fc72090f14da8bd44fed1a",
+      "source_bytes": 379,
+      "source_sha256": "fe93459e0632877c108941364ec9fd64041668c548fc72090f14da8bd44fed1a",
+      "synced_at": "2026-10-23"
+    },
+    {
       "path": "tools/download_primatex_models.py",
       "source": "/data/xuancheng/agent_v1/round15_combined_verification/tools/download_primatex_models.py",
       "bytes": 3850,
@@ -8999,9 +9595,9 @@
   ],
   "last_incremental_sync": {
     "date": "2026-10-23",
-    "source_commit": "ab96abbd949f60f3bcd99d96d09fe666b4cebc4d",
-    "scope": "Round16 source ready after concurrent Round15 merge; 877 default tests passed; no deployment or private run traces",
-    "changed_files": 2,
+    "source_commit": "8802f87d28876ebc077b90abb22d9f130aabca08",
+    "scope": "Round16 first draft four-arm condition canonicalization results: 862 HTTP attempts under the user-authorised 1000 cap, structural predictions, sanitised token table, errors and independent audit; no raw HTTP traces, checkpoints, subject data or deployment",
+    "changed_files": 56,
     "formal_v1_0": false
   },
   "incremental_sync_history": [
@@ -9167,7 +9763,14 @@
       "scope": "Round16 source ready after concurrent Round15 merge; 877 default tests passed; no deployment or private run traces",
       "changed_files": 2,
       "formal_v1_0": false
+    },
+    {
+      "date": "2026-10-23",
+      "source_commit": "8802f87d28876ebc077b90abb22d9f130aabca08",
+      "scope": "Round16 first draft four-arm condition canonicalization results: 862 HTTP attempts under the user-authorised 1000 cap, structural predictions, sanitised token table, errors and independent audit; no raw HTTP traces, checkpoints, subject data or deployment",
+      "changed_files": 56,
+      "formal_v1_0": false
     }
   ],
-  "updated_at": "2026-10-23T15:43:53.410210+08:00"
+  "updated_at": "2026-10-23T16:58:07.387161+08:00"
 }
