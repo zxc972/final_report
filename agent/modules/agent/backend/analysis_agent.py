@@ -1138,13 +1138,15 @@ def _build_coding_agent(tools: AnalysisTools, *, model: str, base_url: str,
 
             def submit_conclusion(text: str, claim_scope: str, direction: str | None = None) -> dict[str, Any]:
                 """Submit your conclusion for deterministic typed-claim review; rewrite when verdict is revised."""
-                from .analysis_crossspecies import submit_conclusion as submit
+                from .analysis_crossspecies import submit_conclusion as submit, public_conclusion_feedback
                 def operation():
-                    result = submit(tools, text, claim_scope, direction)
-                    card = result["conclusion_card"]
-                    return {"status": result["status"], "must_rewrite": card["must_rewrite"],
-                            "supported_rewrite_scope": card["supported_rewrite_scope"]}
+                    return public_conclusion_feedback(submit(tools, text, claim_scope, direction))
                 return tools._call(operation)
+            from typing import Literal
+            from .analysis_crossspecies import load_policy
+            submit_conclusion.__annotations__["claim_scope"] = Literal[
+                tuple(row["scope"] for row in load_policy("conclusion_rules")["scope_rules"])
+            ]
             functions.append(submit_conclusion)
         functions.extend([tools.plan_analysis, commit_plan])
     functions = filter_functions(functions, profile)

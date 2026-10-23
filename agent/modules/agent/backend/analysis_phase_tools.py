@@ -64,6 +64,10 @@ def restrict_request(tools, request):
     allowed = phase_tools(tools.session, [tool_name(t) for t in request.tools])
     phase = tools.session.state()["phase"]
     selected = [tool for tool in request.tools if tool_name(tool) in allowed]
+    if phase == "finalized":
+        from .analysis_conclusion_tools import restrict_schema
+        selected = [restrict_schema(tool, tools) if tool_name(tool) == "submit_conclusion"
+                    else tool for tool in selected]
     force_write = (
         phase == "sealed"
         and tools.session.record.get("written_plan_version")
