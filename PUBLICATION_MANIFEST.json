@@ -24,8 +24,8 @@
     },
     {
       "path": "SNAPSHOT_MANIFEST.json",
-      "bytes": 519986,
-      "sha256": "34a0b514d1c6f3a84ecaa35a6264110ba610d5364575ac9b7feb56046dd86793"
+      "bytes": 530396,
+      "sha256": "3585f647c0bcaa47715d9145e287bb5b6b5d4a51d0d24b46b5492c88c5f3fda0"
     },
     {
       "path": "agent/.gitignore",
@@ -5686,6 +5686,131 @@
       "path": "results/round21_group_repair_20261024/offline/targeted_v3.txt",
       "bytes": 1145,
       "sha256": "2c6f591469c471462908ef1625fc7025edbc9a981eeff0f95627f2aca336c192"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/report/QC复核变更.json",
+      "bytes": 2137,
+      "sha256": "682e27fd7f6c3d8bc366192c5575cc7a02dec2c5e968fed7c9f29976029fe65a"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/report/export_manifest.json",
+      "bytes": 4522,
+      "sha256": "911a84416ad31ab5badeb21d46fe4d7aee3207fb18e0773fbf9b49e55d63c380"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/report/participants.tsv",
+      "bytes": 748,
+      "sha256": "3a885b481e2e49556dcb5b9d3c82fb887888ae1c5fdd40a1aacc41b013245e0c"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/report/两张表核对状态.json",
+      "bytes": 3253,
+      "sha256": "1c61bc77662b9d45e2363e47e71648043f0e09a525f15268c87d6f78305c8f7e"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/report/受保护文件变更清单_冻结版.json",
+      "bytes": 5853,
+      "sha256": "13407789e87de0063f1a36d5e6a129748ac3d6846404954736cbd2ffe02dd528"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/report/受保护文件核验_本地修正版.json",
+      "bytes": 5536,
+      "sha256": "d5e030cd41be9b4e70113b2c1f4ee4e95262ea310e5f6c3a442fb35bf7fea598"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/report/安全核对_批次结束.json",
+      "bytes": 8495,
+      "sha256": "a6dec0541b39876c3297b8f5f830fb384a19f390ee50d16efb4e50c8afecb181"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/report/待同步六文件清单.json",
+      "bytes": 1101,
+      "sha256": "284ba6f895305acd9e5ab26fcf07dd9cc7d063aaf7b39abd40df9d106a1c6a89"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/report/最终安全与猕猴验收核对.json",
+      "bytes": 44413,
+      "sha256": "80d0c5b891d4ff8dcde52293d28ad5a6499a0708a55c2e720bb3778e114ef75b"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/report/本地源码清单核验.json",
+      "bytes": 176,
+      "sha256": "a900b58f60c613582a7386f42b3eaef0ec66973f525c4eb6e21087be31bd4ea4"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/report/本地绑定边界回归.json",
+      "bytes": 3539,
+      "sha256": "632d6e2616b119b0ef4a15b9b02fed31a7e716a218fbbb137553fbcdf0fbe23e"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/report/猕猴_white面积_mm2.csv",
+      "bytes": 1453,
+      "sha256": "eb65fd8913aa0b3463486890d2a22be1e7fba6e87d1f2626bb51997cec2b2014"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/report/猕猴_凸包折叠比.csv",
+      "bytes": 1182,
+      "sha256": "8aec21ec78b6f86acb23db47466a772c6b4040f35715b9776f683f460091a93c"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/report/猕猴_平均厚度_mm.csv",
+      "bytes": 1336,
+      "sha256": "3d510c45959dcaf661c6127f30a91ef99602f31a05d068a09dbe080b13cfb381"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/report/猕猴_脑掩膜体积_cm3.csv",
+      "bytes": 1128,
+      "sha256": "cacd790c4aa174a2a7e0a876cd1270596e92a050524b7544c71e25422e9bb6d6"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/report/猕猴六例全局指标与验收.json",
+      "bytes": 24151,
+      "sha256": "eba184edae7067ddf65ecc80414bb4a0f11786cffe8e645ca5267f3ba4d218c0"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/report/猕猴新增两例独立验收证据.json",
+      "bytes": 42270,
+      "sha256": "d9eba0d2bf2445807aeb7b5c874af0f8232bed09b70da124d2440c6a0a6d2367"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/report/猕猴本轮授权范围.json",
+      "bytes": 387,
+      "sha256": "4100f0c61828caf7b3b8256d8a6c12355f018377d4eeb5b6d92c233d8acd118b"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/report/猕猴进度.json",
+      "bytes": 2058,
+      "sha256": "56cccd84096a99bc250f822f2958f17590b8c4786275eb93b65ca000722b54ac"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/report/真实复测汇总.csv",
+      "bytes": 858,
+      "sha256": "65869bd1514dec57e3579d78ba6bc86756104a1ffc56a15a17eceef73b19e3a0"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/report/真实复测逐次记录.json",
+      "bytes": 17605,
+      "sha256": "2f5c18ac493cbc4c94fc6cabfe2920a016cce302136319abc9151c9b80870dab"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/report/离线合成验收.json",
+      "bytes": 2772,
+      "sha256": "392dd72ce21b67dfea2e69092a4b7fe6b3ae47391f197f4c11a316c1e4abe9a6"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/report/第二十一轮报告.md",
+      "bytes": 15885,
+      "sha256": "0ae7f9eac01199499ba3e1be96f6045fee13b8e3795c0ad724c8b540cd31680b"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/report/路由故障本地复现.json",
+      "bytes": 1078,
+      "sha256": "59d45851b4acc77132f0687d009f216a371c5efd29673d085179d609ea155188"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/report/队列与QC_20例.json",
+      "bytes": 7107,
+      "sha256": "0953771029b811c69153482706f830beb515846ad23ac6c709ce44d8bc1aac13"
     },
     {
       "path": "tools/accept_macaque_globals.py",
