@@ -27,6 +27,9 @@ def execution_card(payload):
     if plan["method"]["method_id"] == "method:v14:group_regional_glm":
         from .analysis_group_manifest import card
         return {"status": "committed", "version": payload["version"], "execution_card": card(plan, bundle), "state": payload.get("state")}
+    if plan["method"]["method_id"] == "method:v15:global_morphometry":
+        from .analysis_global_method import execution_card as global_card
+        return global_card(payload)
     names = {row["function"] for row in bundle["operations"]["calls"]}
     signatures = []
     for row in operations_manifest()["functions"]:

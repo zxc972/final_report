@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import copy
+import re
 from pathlib import Path
 
 from .analysis_control_store import digest
@@ -53,7 +54,11 @@ def classify(record):
     if fmt == "label":
         return "type:Label.Cortex" if "cortex" in stem else "type:Label"
     if fmt == "stats":
-        return "type:StatsTable.Aseg" if "aseg" in stem else "type:StatsTable.Aparc"
+        if stem == "aseg.stats":
+            return "type:StatsTable.AsegStats"
+        if re.fullmatch(r"[lr]h\.aparc.*\.stats", stem):
+            return "type:StatsTable.CorticalParcStats"
+        return "type:StatsTable"
     if fmt in {"tsv", "csv"}:
         return "type:SubjectTable.Participants"
     if fmt in {"nifti", "mgz"}:
@@ -184,6 +189,12 @@ def _import_profile(store, profile, registry, *, activity_id=None):
             "nonempty_columns": (observed.get("table") or {}).get("nonempty_columns"),
             "column_types": (observed.get("table") or {}).get("column_types"),
         }
+        if registered.get("scale_observation"):
+            from .analysis_global_method import trusted_scale
+            observed_scale = trusted_scale(registered)
+            attrs["scale_status"] = {"rescaled": observed_scale["rescaled"], "factor": observed_scale["k"],
+                                     "verified": observed_scale["host_verified"], "source": observed_scale.get("sources", []),
+                                     "physical_calibration_verified": False}
         if fmt == "annot":
             from .analysis_atlas_identity import identify
             identity = identify(Path(path).name[3:-6])

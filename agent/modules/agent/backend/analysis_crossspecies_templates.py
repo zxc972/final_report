@@ -99,6 +99,9 @@ def species_atlas(parameters, environment, severity="hard"):
 def homology_evidence(parameters, environment, severity="hard"):
     if not environment.get("cross_species"):
         return result("pass", "Not a cross-species comparison")
+    if environment.get("global_scope") is True and environment.get("measure_kind") == "ratio":
+        return result("pass", "Whole-brain ratios require compatible definitions and scale, not regional homology",
+                      {"global_scope": True, "homology_required": False})
     accepted = []
     for record in environment.get("homology", []):
         if (

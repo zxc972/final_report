@@ -124,7 +124,7 @@ def observed_environment(tools, plan):
         "normalization_ref",
         "measure_kind",
         "independent_numeric",
-        "observed_direction",
+        "observed_direction", "plausibility_required",
     }
     observed = {key: val for key, val in trusted.items() if key in allowed_keys}
     numeric = observed.get("independent_numeric")
@@ -162,7 +162,8 @@ def observed_environment(tools, plan):
         "cross_species": scope.get("comparison") == "cross_species",
         "asymmetry": scope.get("comparison") == "asymmetry",
         "group_inference": scope.get("inference") is True,
-        "scale_check_required": scope.get("comparison") == "cross_species",
+        "scale_check_required": scope.get("comparison") == "cross_species" or scope.get("global_bindings") is not None,
+        "global_scope": bool(scope.get("global_bindings") or scope.get("global_scope")),
         "executed": tools.last_execution.get("status") == "success",
     }
 
@@ -327,8 +328,10 @@ def supported_scopes(plan, checks, repository=None):
         rule["scope"]
         for rule in policy["scope_rules"]
         if ("*" in rule["comparisons"] or comparison in rule["comparisons"])
+        and (not rule.get("global_method_only") or plan.get("method", {}).get("method_id") == "method:v15:global_morphometry")
         and (not rule.get("no_hard_block") or not blocked)
         and all(by_id.get(key) == "pass" for key in rule.get("required_pass", []))
+        and all(by_id.get(key) in {"pass", "warn"} for key in rule.get("required_evaluated", []))
     ]
 
 

@@ -385,6 +385,7 @@ class AnalysisTools:
     def plan_analysis(self, intent: AnalysisIntent) -> dict[str, Any]:
         """Get feasible candidates, missing-product recipes and observed blockers.
 
+        Whole-brain volume/total area/mean thickness/hull ratio: use measures=["global_morphometry"], regions="global".
         Supply only a flat intent: measures, regions, comparison, optional
         subjects/species/space/method_id. This profiles registered inputs and
         checks actual software without calling a model or running preprocessing.
@@ -1697,6 +1698,8 @@ def _run_sync(*, message: str, user_id: str, workspace: Path, conversation_id: s
         elif tools.session is not None:
             from .analysis_independent_numeric import result_card
             response["conclusion_card"] = result_card(tools, result.get("draft_message", ""))
+            from .analysis_global_host import attach_result_card
+            response["conclusion_card"] = attach_result_card(tools, response["conclusion_card"])
             from .analysis_overall_status import finalize_card
             response["conclusion_card"] = finalize_card(
                 response["conclusion_card"], result.get("validation", {}), result["status"],
@@ -1715,6 +1718,11 @@ def _run_sync(*, message: str, user_id: str, workspace: Path, conversation_id: s
                     result.get("execution", {}), tools.session.state()["phase"])
             response["overall_status"] = response["conclusion_card"]["overall_status"]
             response["component_statuses"] = response["conclusion_card"]["component_statuses"]
+            from .analysis_global_host import publish_eligible
+            global_summary = publish_eligible(tools, response)
+            if global_summary is not None:
+                response["conclusion_card"]["global_summary"] = global_summary
+                tools.control_store.save("product_conclusion", response["conclusion_card"])
             tools.control_store.save("overall_result", {
                 "overall_status": response["overall_status"],
                 "component_statuses": response["component_statuses"], "native_status": result["status"],

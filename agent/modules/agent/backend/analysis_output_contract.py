@@ -24,6 +24,9 @@ HULL_TYPES = {
 def table_contract(plan, operations):
     """Declare identities solely from the plan, selected inputs and label_sets."""
     method = plan["method"]["method_id"].rsplit(":", 1)[-1]
+    if method == "global_morphometry":
+        from .analysis_global_method import table_contract as global_contract
+        return global_contract(plan)
     labels = plan.get("analysis_scope", {}).get("labels", {})
     expected = []
     if labels:

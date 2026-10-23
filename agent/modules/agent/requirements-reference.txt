@@ -1,0 +1,4 @@
+# Host-only independent numeric verification; never mounted to generated-code sandboxes.
+numpy==2.2.6
+scipy==1.15.3
+nibabel==5.4.2

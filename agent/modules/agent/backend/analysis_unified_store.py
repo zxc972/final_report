@@ -266,7 +266,7 @@ class UnifiedKnowledge:
             "condition_templates",
             "workflow_steps",
         )
-        optional = tuple(name for name in ("cross_species_rules", "species_reference_values", "conclusion_rules")
+        optional = tuple(name for name in ("cross_species_rules", "species_reference_values", "conclusion_rules", "method_graph_overlay_v15")
                          if (knowledge_root / (name + ".json")).is_file())
         names += optional
         docs = {}
@@ -285,6 +285,8 @@ class UnifiedKnowledge:
                     raise ValueError("Missing frozen release digest for " + filename)
                 graph, _ = self.document(name, release_root / filename, expected)
                 self.import_graph(name, graph)
+        if "method_graph_overlay_v15" in docs:
+            self.import_graph("method_graph_overlay_v15", docs["method_graph_overlay_v15"])
         for row in docs["product_types"]["types"]:
             self.node(row["id"], "knowledge", "ProductType", row["id"], row)
         for row in docs["product_types"]["types"]:
@@ -308,6 +310,8 @@ class UnifiedKnowledge:
             "t2_volume": "type:Volume.T2",
             "brainmask": "type:Volume.BrainMask",
             "subject_table": "type:SubjectTable",
+            "aseg_stats": "type:StatsTable.AsegStats",
+            "cortical_parc_stats": "type:StatsTable.CorticalParcStats",
             "aseg_presurf": "type:Volume.Aseg",
             "design_matrix": "type:StatsTable.DesignMatrix",
             "contrast": "type:StatsTable.ContrastMatrix",

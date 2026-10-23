@@ -162,7 +162,8 @@ def test_changed_finalized_output_cannot_reuse_receipt(tmp_path, monkeypatch):
 
 def test_actual_operation_examples_cover_all_functions():
     catalogue = operations.operations_manifest()
-    assert len(catalogue["functions"]) == 10
+    assert len(catalogue["functions"]) == 12  # Round15 adds two low-level readers.
+    assert {"read_stats_measures", "positive_mask_volume"} <= {r["name"] for r in catalogue["functions"]}
     for row in catalogue["functions"]:
         assert "returns_example" in row
         assert row["example_scope"].startswith("Actual synthetic")

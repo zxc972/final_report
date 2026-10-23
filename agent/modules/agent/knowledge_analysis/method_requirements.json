@@ -948,6 +948,44 @@
         }
       ],
       "host_reference": "analysis_numeric_reference.roi_rows then analysis_group_stats.regional_glm; independent from Agent numpy/scipy program"
+    },
+    {
+      "method_id": "method:v15:global_morphometry",
+      "measures": [
+        "globalmorphometry",
+        "brainvolume",
+        "etiv",
+        "totalarea",
+        "meanthickness",
+        "hullratio",
+        "thickness",
+        "area",
+        "gyrification"
+      ],
+      "comparisons": [
+        "describe"
+      ],
+      "required_products": [
+        "cortical_parc_stats"
+      ],
+      "alternative_products": [
+        [
+          "aseg_stats",
+          "brainmask"
+        ]
+      ],
+      "optional_products": [
+        "pial_surface"
+      ],
+      "needs_parcellation": false,
+      "execution_scope": "supplied_derivatives",
+      "source": [
+        {
+          "source_id": "global_morphometry_v15",
+          "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/MorphometryStats",
+          "note": "Public project definitions: bilateral WhiteSurfArea-weighted MeanThickness and summed pial/hull ratio."
+        }
+      ]
     }
   ]
 }

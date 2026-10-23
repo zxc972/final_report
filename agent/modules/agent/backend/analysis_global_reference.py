@@ -66,10 +66,12 @@ def mask_volume_mm3(path) -> float:
         if len(header) < 284:
             raise ValueError("Truncated MGH header")
         version, w, h, d, frames, kind = struct.unpack(">6i", header[:24])
-        if version != 1 or kind not in MGH_TYPES or frames < 1:
+        if version != 1 or kind not in MGH_TYPES or frames != 1 or min(w, h, d) <= 0:
             raise ValueError("Unsupported MGH volume")
         good_ras = struct.unpack(">h", header[28:30])[0]
         spacing = struct.unpack(">3f", header[30:42]) if good_ras else (1.0, 1.0, 1.0)
+        if any(not math.isfinite(v) or v <= 0 for v in spacing):
+            raise ValueError("Invalid MGH voxel spacing")
         count = w * h * d
         if not 0 < count <= MAX_VOXELS:
             raise ValueError("Out-of-range MGH dimensions")
@@ -80,7 +82,11 @@ def mask_volume_mm3(path) -> float:
     if fmt == "B":
         nonzero = count - raw.count(0)
     else:
-        nonzero = sum(1 for (v,) in struct.iter_unpack(fmt, raw) if v > 0)
+        nonzero = 0
+        for (number,) in struct.iter_unpack(fmt, raw):
+            if not math.isfinite(number):
+                raise ValueError("Nonfinite MGH support value")
+            nonzero += number > 0
     return nonzero * abs(spacing[0] * spacing[1] * spacing[2])
 
 

@@ -5,6 +5,7 @@ import io
 from decimal import Decimal, InvalidOperation
 
 FLOAT_COLUMNS = {
+    "global_morphometry": ("mean_thickness_mm", "hull_ratio", "stored_mean_thickness_mm", "stored_hull_ratio"),
     "surface_annotation_roi": ("mean", "std_population", "median"),
     "group_regional_glm": ("mean", "std_population", "median", "estimate", "se", "t", "p", "q_fdr", "effect_size"),
     "global_convex_hull_gyrification": ("surface_area", "hull_area", "area_ratio"),

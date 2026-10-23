@@ -1,7 +1,7 @@
 {
   "schema": "primatex.synthetic_operation_examples.v1",
   "synthetic_only": true,
-  "library_sha256": "f2f86392868c798afc9dc0b66f9b0244610708930c832328be8785e6a6681106",
+  "library_sha256": "168ebd483e32f1ed04efb4354fb730c3191e0424bbcefaadd10e0de9c799b314",
   "examples": {
     "read_surface": {
       "python_type": "tuple",
@@ -268,6 +268,17 @@
         ]
       ],
       "physical_scale_verified": false
+    },
+    "read_stats_measures": {
+      "MeanThickness": {
+        "value": 2.456789123,
+        "unit": "mm"
+      }
+    },
+    "positive_mask_volume": {
+      "volume_mm3": 27.0,
+      "positive_voxels": 27,
+      "unit_source": "MGH header millimetre convention; acquisition calibration unverified"
     }
   }
 }

@@ -693,6 +693,30 @@
         "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/ViewSegOutput",
         "classification_trust": "Documented product-name convention, not verified execution provenance"
       }
+    },
+    {
+      "id": "type:StatsTable.AsegStats",
+      "parent": "type:StatsTable",
+      "description": "AsegStats identified by observed stats file format and exact registered path",
+      "source": [
+        {
+          "source_id": "global_morphometry_v15",
+          "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/MorphometryStats",
+          "note": "Public project definitions: bilateral WhiteSurfArea-weighted MeanThickness and summed pial/hull ratio."
+        }
+      ]
+    },
+    {
+      "id": "type:StatsTable.CorticalParcStats",
+      "parent": "type:StatsTable",
+      "description": "CorticalParcStats identified by observed stats file format and exact registered path",
+      "source": [
+        {
+          "source_id": "global_morphometry_v15",
+          "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/MorphometryStats",
+          "note": "Public project definitions: bilateral WhiteSurfArea-weighted MeanThickness and summed pial/hull ratio."
+        }
+      ]
     }
   ],
   "space_aliases": {

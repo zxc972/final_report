@@ -1,0 +1,51 @@
+{
+  "schema": "primatex.method_graph.v1",
+  "overlay_for": "research_v13",
+  "methods": [
+    {
+      "id": "method:v15:global_morphometry",
+      "name": "Single-subject global morphometry",
+      "purpose": "Project global method: BrainSegVol (or positive brainmask support volume, disclosed separately) is distinct from eTIV. Bilateral WhiteSurfArea is summed; MeanThickness is weighted by those hemisphere areas. Optional full-pial area / 3D convex-hull area is computed as a ratio of bilateral sums, not local gyrification. Correct verified rescale k by powers 1/2/3; unknown history leaves physical outputs empty. Whole-brain species-mean ratios require scale and definition compatibility, not regional homology.",
+      "species_scope": [
+        "human",
+        "macaque",
+        "monkey_unknown"
+      ],
+      "software": [
+        "numpy",
+        "nibabel",
+        "scipy"
+      ],
+      "inputs": [],
+      "conditions": [],
+      "steps": [
+        {
+          "id": "method:v15:global_morphometry:definitions",
+          "statement": "Project global method: BrainSegVol (or positive brainmask support volume, disclosed separately) is distinct from eTIV. Bilateral WhiteSurfArea is summed; MeanThickness is weighted by those hemisphere areas. Optional full-pial area / 3D convex-hull area is computed as a ratio of bilateral sums, not local gyrification. Correct verified rescale k by powers 1/2/3; unknown history leaves physical outputs empty. Whole-brain species-mean ratios require scale and definition compatibility, not regional homology."
+        }
+      ],
+      "checks": [],
+      "source_ids": [
+        "global_morphometry_v15"
+      ],
+      "scope_note": "Project implementation definition, not normative biological acceptance or expert QC."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "method:v15:global_morphometry",
+      "type": "Method",
+      "name": "Single-subject global morphometry"
+    }
+  ],
+  "edges": [],
+  "sources": [
+    {
+      "id": "global_morphometry_v15",
+      "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/MorphometryStats",
+      "text": "Project global method: BrainSegVol (or positive brainmask support volume, disclosed separately) is distinct from eTIV. Bilateral WhiteSurfArea is summed; MeanThickness is weighted by those hemisphere areas. Optional full-pial area / 3D convex-hull area is computed as a ratio of bilateral sums, not local gyrification. Correct verified rescale k by powers 1/2/3; unknown history leaves physical outputs empty. Whole-brain species-mean ratios require scale and definition compatibility, not regional homology.",
+      "text_sha256": "98ac6ca24fcc8cfeea2622eaa13858efdfe973d259a04b629d7ac647ada94923",
+      "evidence_class": "project_definition_with_primary_source"
+    }
+  ]
+}

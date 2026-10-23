@@ -18,6 +18,8 @@ FUNCTIONS = (
     "read_stats_table",
     "convex_hull_area_ratio",
     "nifti_info",
+    "read_stats_measures",
+    "positive_mask_volume",
 )
 
 
@@ -125,7 +127,13 @@ def suggested_operations(context):
                 scope,
                 "Use the reader return arrays and label_sets JSON group.labels; unweighted means, population SD",
             )
-    if not calls:
+    if method == "method:v15:global_morphometry":
+        for path in files:
+            if path.endswith('.stats'):
+                add('read_stats_measures', {'path': path}, path, 'Measure short-name maps, no unit conversion')
+            elif path.endswith('brainmask.mgz'):
+                add('positive_mask_volume', {'path': path}, path, 'Fallback support volume, not BrainSegVol equivalence')
+    if not calls or method == "method:v15:global_morphometry":
         for path in files:
             if path.endswith((".pial", ".white")):
                 add(
@@ -134,7 +142,7 @@ def suggested_operations(context):
                     path,
                     "Preserve all original vertices and faces",
                 )
-                if method.endswith("global_convex_hull_gyrification"):
+                if method.endswith(("global_convex_hull_gyrification", "global_morphometry")):
                     add(
                         "convex_hull_area_ratio",
                         {"surface_path": path},
@@ -196,6 +204,8 @@ def execution_bundle(context):
     if asymmetry:
         columns.append("asymmetry_index")
     table = table_contract(context, operations)
+    if context["method"]["method_id"] == "method:v15:global_morphometry":
+        columns = list(table["columns"])
     tables = {}
     if context["method"]["method_id"] == "method:v14:group_regional_glm":
         from .analysis_group_contract import group_contract

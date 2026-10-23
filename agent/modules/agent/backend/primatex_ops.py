@@ -303,3 +303,41 @@ def nifti_info(path):
         "affine": image.affine.tolist(),
         "physical_scale_verified": False,
     }
+
+
+
+def read_stats_measures(path):
+    """Read FS '# Measure' short names into {name: {value: float, unit: str}}.
+
+    Does not substitute parcel ThickAvg for global MeanThickness. No rescaling.
+    """
+    measures = {}
+    for line in Path(path).read_text(encoding="utf-8").splitlines():
+        if not line.startswith("# Measure "):
+            continue
+        parts = [part.strip() for part in line[10:].split(",")]
+        if len(parts) < 5:
+            raise ValueError("Malformed Measure row")
+        number = float(parts[-2])
+        if not np.isfinite(number) or parts[1] in measures:
+            raise ValueError("Nonfinite or duplicate Measure short name")
+        measures[parts[1]] = {"value": number, "unit": parts[-1]}
+    return measures
+
+
+def positive_mask_volume(path):
+    """Positive support volume from one finite 3D image, in header mm convention.
+
+    brainmask.mgz is an intensity image: count >0 support, not label IDs.
+    This fallback definition is not the segmentation BrainSegVol definition.
+    """
+    image = nib.load(str(path))
+    data = np.asanyarray(image.dataobj)
+    if data.ndim != 3 or not np.isfinite(data).all():
+        raise ValueError("A finite three-dimensional support image is required")
+    zooms = np.asarray(image.header.get_zooms()[:3], dtype=float)
+    if not np.isfinite(zooms).all() or np.any(zooms <= 0):
+        raise ValueError("Finite positive voxel sizes are required")
+    count = int(np.count_nonzero(data > 0))
+    return {"volume_mm3": float(count * np.prod(zooms)), "positive_voxels": count,
+            "unit_source": "MGH header millimetre convention; acquisition calibration unverified"}

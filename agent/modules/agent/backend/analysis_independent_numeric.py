@@ -15,7 +15,7 @@ from .analysis_numeric_reference import roi_rows
 
 RTOL = 1e-7
 ATOL = 1e-9
-REGISTERED = {"surface_annotation_roi", "global_convex_hull_gyrification", "group_regional_glm"}
+REGISTERED = {"surface_annotation_roi", "global_convex_hull_gyrification", "group_regional_glm", "global_morphometry"}
 
 
 def public_model_validation(value):
@@ -75,6 +75,9 @@ def compare_rows(expected, observed, keys, columns):
 
 
 def reference_rows(tools, plan, bundle, method):
+    if method == "global_morphometry":
+        from .analysis_global_host import reference_rows as global_rows
+        return global_rows(tools, plan)
     if method == "group_regional_glm":
         from .analysis_group_design import participants
         from .analysis_group_stats import regional_glm
@@ -186,6 +189,11 @@ def verify(tools):
     record.update(binding, independent_numeric=summary)
     tools.control_store.save('crossspecies_observations', record)
     tools.control_store.save('independent_numeric', {**binding, **summary})
+    if method == "global_morphometry":
+        private['global_reference_source_sha256'] = hashlib.sha256(Path(__file__).with_name('analysis_global_reference.py').read_bytes()).hexdigest()
+        tools.control_store.save('global_reference_binding', private)
+        from .analysis_global_host import bind_observations
+        bind_observations(tools, summary)
     return summary
 
 

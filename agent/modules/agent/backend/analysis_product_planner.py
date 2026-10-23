@@ -23,7 +23,7 @@ PRODUCT_TYPES = {
     "t1_volume", "t2_volume", "brainmask", "wm_segmentation", "aseg_presurf",
     "template", "tissue_priors", "bids_t1", "bids_t2", "parameter_file",
     "gm_4d", "gm_mask", "design_matrix", "contrast", "recon_complete",
-    "coarse_graining_recipe",
+    "coarse_graining_recipe", "aseg_stats", "cortical_parc_stats",
 }
 
 
@@ -165,7 +165,9 @@ def validate_intent(raw):
 def normal_measure(name):
     word = re.sub(r"[^a-z0-9]", "", name.lower())
     return {
-        "corticalthickness": "thickness", "curvature": "curv", "sulcaldepth": "sulc",
+        "corticalthickness": "thickness", "brainvolumemm3": "brainvolume",
+        "totalareamm2": "totalarea", "meanthicknessmm": "meanthickness",
+        "globalmetrics": "globalmorphometry", "convexhullratio": "hullratio", "curvature": "curv", "sulcaldepth": "sulc",
         "localgyrificationindex": "lgi", "localgyrification": "lgi",
         "gyrificationindex": "gyrification", "surfacearea": "area",
     }.get(word, word)
@@ -209,7 +211,7 @@ def discover_paths(entries):
     paths = []
     for entry in entries:
         root, index = entry["root"], entry["index"]
-        for directory in ("surf", "label", "mri"):
+        for directory in ("surf", "label", "mri", "stats"):
             folder = root / directory
             if not folder.is_dir():
                 continue
@@ -231,6 +233,8 @@ def discover_paths(entries):
                 if directory == "label" and not (path.suffix == ".annot" or path.name in {"lh.cortex.label", "rh.cortex.label"}):
                     continue
                 if directory == "mri" and path.name not in {"orig.mgz", "T1.mgz", "brainmask.mgz", "wm.mgz", "aseg.presurf.mgz"}:
+                    continue
+                if directory == "stats" and not (path.name == "aseg.stats" or re.fullmatch(r"[lr]h\.aparc.*\.stats", path.name)):
                     continue
                 paths.append(f"/inputs/{index}/" + path.relative_to(root).as_posix())
         if not (root / "surf").exists():
@@ -297,6 +301,11 @@ def product_types(item):
             found.add("wm_segmentation")
         if path.name == "aseg.presurf.mgz":
             found.add("aseg_presurf")
+    if kind == "stats":
+        if path.name == "aseg.stats":
+            found.add("aseg_stats")
+        elif re.fullmatch(r"[lr]h\.aparc.*\.stats", path.name):
+            found.add("cortical_parc_stats")
     if value(item.get("subject")):
         found.add("subject_table")
     recon = value(item.get("recon"))
@@ -326,6 +335,9 @@ def resolve_regions(names, keys, counts, regions, domain):
 
 
 def _candidate(tools, spec, method, entries, files, atlas_name, intent, domain, profile):
+    if method["id"] == "method:v15:global_morphometry":
+        from .analysis_global_method import candidate
+        return candidate(tools, spec, method, entries, files, intent, profile)
     chosen, bindings, labels, mapping = [], [], {}, []
     missing = set()
     missing_scopes = {}
@@ -479,6 +491,8 @@ def plan_analysis(tools, raw):
         return result
     measures = {normal_measure(m) for m in intent.measures}
     specs = [s for s in requirements["methods"] if s["method_id"] != "self:*" and measures <= set(s["measures"]) and intent.comparison in s["comparisons"]]
+    if not (measures & {"globalmorphometry", "brainvolume", "etiv", "totalarea", "meanthickness", "hullratio"}):
+        specs = [s for s in specs if s["method_id"] != "method:v15:global_morphometry"]
     region_tokens = [intent.regions] if isinstance(intent.regions, str) else intent.regions
     if any(t.lower().strip() not in {"global", "whole cortex", "cortex", "both hemispheres"} for t in region_tokens):
         specs = [s for s in specs if not s["method_id"].endswith("existing_curvature_sulc_profile")]
