@@ -70,3 +70,8 @@ Thumbs.db
 /results/condition_canon_dev_v2/run.lock
 /evaluation/condition_test_v1/requests/
 /evaluation/condition_test_v1/run.lock
+
+# Round18 private transport journal and resumable checkpoints
+/results/condition_canon_test_v1/requests/
+/results/condition_canon_test_v1/checkpoints/
+/results/condition_canon_test_v1/run.lock

@@ -1,0 +1,473 @@
+{
+  "frozen_at": "2026-10-23T14:13:15.278263+00:00",
+  "schema": "primatex.condition_test_run.v1",
+  "split": "independent_test",
+  "gold_sha256": "e34d6796259e87f44f3bcede9c304eb87b4c1a5e31605cdfd357085bdac45135",
+  "gold_freeze": {
+    "schema": "primatex.condition_gold.freeze.v1",
+    "frozen_at_utc": "2026-10-23T14:07:47.887112+00:00",
+    "file": "evaluation/condition_gold/gold_test_v1.json",
+    "sha256": "e34d6796259e87f44f3bcede9c304eb87b4c1a5e31605cdfd357085bdac45135",
+    "items": 45,
+    "verified_statement_ids": [
+      1001,
+      1002,
+      1003,
+      1004,
+      1005,
+      1006,
+      1007,
+      1008,
+      1009,
+      1010,
+      1011,
+      1012,
+      1013,
+      1014,
+      1015,
+      1016,
+      1017,
+      1018,
+      1019,
+      1020,
+      1021,
+      1022,
+      1023,
+      1024,
+      1025,
+      1026,
+      1027,
+      1028,
+      1029,
+      1030,
+      1031,
+      1032,
+      1033,
+      1034,
+      1035,
+      1036,
+      1037,
+      1038,
+      1039,
+      1040,
+      1041,
+      1042,
+      1043,
+      1044,
+      1045
+    ],
+    "verified_handoff_manifest_sha256": "e82cb771d6eeff360c70e8d4d009ff21ac20a0f4bc33dfa530a9bc33dfc7806f",
+    "verified_exact_quotes": 45,
+    "pending_user_decision": [
+      1003,
+      1004,
+      1017,
+      1019,
+      1023,
+      1041
+    ],
+    "pending_policy": "score supplied annotations; also report the 39 non-pending statements",
+    "immutability": "Gold bytes must never change after this freeze."
+  },
+  "pending_ids": [
+    1003,
+    1004,
+    1017,
+    1019,
+    1023,
+    1041
+  ],
+  "arms": [
+    "full_v2",
+    "k1_v2",
+    "direct_v2",
+    "retrieval_only"
+  ],
+  "provider": {
+    "endpoint_host": "inferaiapi.com",
+    "endpoint_path": "/v1",
+    "model": "deepseek-v4.1-flash",
+    "temperature": 0.7,
+    "timeout": 180,
+    "max_tokens": 8192,
+    "max_attempts": 3,
+    "thinking": {
+      "type": "disabled"
+    },
+    "response_format": {
+      "type": "json_object"
+    }
+  },
+  "vocabulary": {
+    "types": [
+      "type:Annotation",
+      "type:Annotation.AparcA2009s",
+      "type:Annotation.AparcDK",
+      "type:Annotation.AparcDKT",
+      "type:Annotation.CHARM",
+      "type:Annotation.D99",
+      "type:Label",
+      "type:Label.Cortex",
+      "type:Label.MedialWall",
+      "type:Product",
+      "type:StatsTable",
+      "type:StatsTable.Aparc",
+      "type:StatsTable.Aseg",
+      "type:StatsTable.AsegStats",
+      "type:StatsTable.ContrastMatrix",
+      "type:StatsTable.CorticalParcStats",
+      "type:StatsTable.DesignMatrix",
+      "type:SubjectTable",
+      "type:SubjectTable.Participants",
+      "type:Surface",
+      "type:Surface.Inflated",
+      "type:Surface.Midthickness",
+      "type:Surface.Pial",
+      "type:Surface.Sphere",
+      "type:Surface.SphereReg",
+      "type:Surface.White",
+      "type:SurfaceMetric",
+      "type:SurfaceMetric.Area",
+      "type:SurfaceMetric.Curvature",
+      "type:SurfaceMetric.LGI",
+      "type:SurfaceMetric.Sulc",
+      "type:SurfaceMetric.Thickness",
+      "type:Transform",
+      "type:Transform.Affine",
+      "type:Transform.Deformation",
+      "type:Transform.SphericalRegistration",
+      "type:Volume",
+      "type:Volume.Aseg",
+      "type:Volume.BrainExtractedT1",
+      "type:Volume.BrainMask",
+      "type:Volume.GM4D",
+      "type:Volume.GMMask",
+      "type:Volume.T1",
+      "type:Volume.T2",
+      "type:Volume.TissuePVE",
+      "type:Volume.TissuePVE.CSF",
+      "type:Volume.TissuePVE.GM",
+      "type:Volume.TissuePVE.WM"
+    ],
+    "steps": [
+      "acpc-align",
+      "fastsurfer",
+      "freesurfer2caret",
+      "image-reorient",
+      "label-resample",
+      "mris_compute_lgi",
+      "preprocess-1",
+      "preprocess-3",
+      "preprocess-3-1",
+      "preprocess-3-2",
+      "recon-all",
+      "rescale",
+      "seg-brain",
+      "seg-router",
+      "seg-wm"
+    ]
+  },
+  "vocabulary_sha256": {
+    "product_types.json": "6fe849854dce715c40389ff00a9945dd8803e1f9db2c620d485eec0bcaa6021e",
+    "workflow_steps.json": "d9d54bd84300c5135f69ec670cc0528c3891c0f784bc0c316d4deead8917d030"
+  },
+  "slots": {
+    "T1": [
+      "subject",
+      "species",
+      "space",
+      "voxel_size",
+      "scale_status"
+    ],
+    "T2": [
+      "subject",
+      "species",
+      "space",
+      "voxel_size",
+      "scale_status"
+    ],
+    "volumes": [
+      "subject",
+      "species",
+      "space",
+      "voxel_size",
+      "scale_status"
+    ],
+    "timepoints": [
+      "subject",
+      "species",
+      "space",
+      "voxel_size",
+      "scale_status"
+    ],
+    "mask": [
+      "subject",
+      "species",
+      "space",
+      "voxel_size",
+      "scale_status"
+    ],
+    "pial": [
+      "subject",
+      "species",
+      "hemisphere",
+      "space",
+      "mesh",
+      "scale_status"
+    ],
+    "white": [
+      "subject",
+      "species",
+      "hemisphere",
+      "space",
+      "mesh",
+      "scale_status"
+    ],
+    "surface": [
+      "subject",
+      "species",
+      "hemisphere",
+      "space",
+      "mesh",
+      "scale_status"
+    ],
+    "metric": [
+      "subject",
+      "species",
+      "hemisphere",
+      "space",
+      "mesh",
+      "scale_status"
+    ],
+    "thickness": [
+      "subject",
+      "species",
+      "hemisphere",
+      "space",
+      "mesh",
+      "scale_status"
+    ],
+    "annotation": [
+      "subject",
+      "species",
+      "hemisphere",
+      "space",
+      "mesh",
+      "scale_status",
+      "atlas"
+    ],
+    "label": [
+      "subject",
+      "species",
+      "hemisphere",
+      "space",
+      "mesh",
+      "scale_status"
+    ],
+    "design": [
+      "columns",
+      "n_subjects"
+    ]
+  },
+  "code_sha256": {
+    "agent/modules/agent/backend/analysis_condition_canonicalizer.py": "140669418d7a6603df4dbe55be7a677d9f0d8bff92d7255a7aadff1892bb07d8",
+    "tools/knowledge/run_condition_test_evaluation.py": "bada9fb326bfd9054fbd4d4e30c0fa672efe6fca9553f020fe24e4071c1b79b0",
+    "tools/knowledge/provider_llm.py": "ded374b85365f7cb47263cfd242307c80df50f38ee09ea6e4d96bf7a5edb3d27",
+    "tools/knowledge/run_condition_canonicalization_v2.py": "8a10c83e68e3ad8d2c9b0a500f9cf0b114bc74e539d5d5db64b479aaaee177ef",
+    "tools/knowledge/run_condition_canonicalization.py": "e43d61bd2f84bffaaad7902a7d0bec4d66fc43a0842f5bf451931035b76c1cee",
+    "tools/knowledge/condition_evaluation_statistics.py": "f70210a36770c7be6fd3ce7c2db0833c7807927311a4fcea35776f258f8408c4"
+  },
+  "parameters": {
+    "RHO_MIN": 0.9,
+    "SAMPLES": 5,
+    "V2_SUPPORT": 0.6,
+    "V2_MARGIN": 0.2
+  },
+  "source_sha256": {
+    "evaluation/condition_test_v1/method_extractions/independent_fastsurfer.input.json": "7d49a16568aedda3ec8b127f7eee88e4297810df799c872b1071a0edab882fdb",
+    "evaluation/condition_test_v1/method_extractions/independent_fs_glmfit_group.input.json": "622cf492df4ff10f31045e6251d3c78b47b867124dee8b46c1db343a76bbb126",
+    "evaluation/condition_test_v1/method_extractions/independent_nmt_v2_charm.input.json": "97da9e09077c95970905aef0ee56f64e9401d763e877fac69a89c6628c7f7454",
+    "evaluation/condition_test_v1/method_extractions/independent_workbench_area_stats.input.json": "a233a8f487656ff346c788514b719a4e7756297de91d4e8e16060ca907c7fc1a",
+    "knowledge/method_extractions/cat_morphometry.input.json": "2267203ee8ec23b2454ebe3a0bc7d27e7ff5e767ee30a273618bbb2753eb5435",
+    "knowledge/method_extractions/existing_curvature_sulc_profile.input.json": "44002fe680dc50ad362e197105c30dedb1a3aebc88715f8fa9bb08c84fad4778",
+    "knowledge/method_extractions/fsl_vbm.input.json": "cd9b7a3b2e22c4dce2950207177f9cb6b9dd7d5b6deb051f6b1ba9ed1df0e3bb",
+    "knowledge/method_extractions/global_surface_folding.input.json": "7286ce61a66895c8ca0c22c370ce4d1415577f8fd5bad5d550d5ecbd92dfe156",
+    "knowledge/method_extractions/hcp_structural_pipeline.input.json": "0accc6639a30c037d357a9fa877a16b473b44ca3137dc84718399a6e5f75f901",
+    "knowledge/method_extractions/local_gyrification.input.json": "00c72d50ae8e4cf78f761c9c8452dd1a142720434be1c5ef17c88c32155c6695",
+    "knowledge/method_extractions/macaque_civet.input.json": "6cf19795d8d1fc71ac3070976836d7b37f44cb229ed9a8abca0f29f0c64aceaf",
+    "knowledge/method_extractions/nhp_macapype.input.json": "e3682edce9892fad2df4f3d439732f9490588a06eb1c50edc96e4040f7baa540",
+    "knowledge/method_extractions/samseg_segmentation.input.json": "cf50b34ee062dccf8f814a1178c84e11d1ccd7dcccc62dd7a1ad9ad011f5e93a",
+    "knowledge/method_extractions/surface_annotation_roi.input.json": "05a8ad651cef3342904fed11142560d8cb8c5cf933146c26abad454f1a14a73c",
+    "knowledge/method_extractions/surface_mesh_area.input.json": "7410620f7c61a78f6a230318b6135f14b3bd9378dba6d19c5e64c1e45ceaa1c9",
+    "knowledge/method_extractions/surface_reconstruction_qc.input.json": "e1fe431ba7cb9e0fbee515b0c00c5515e3bf33a412752d1bfdb2c55939d11767"
+  },
+  "workers": 4,
+  "shared_http_cap": 600,
+  "test_nominal_positions": 315,
+  "development_repair_positions": [
+    {
+      "id": 1,
+      "sample": 5,
+      "historical_logical_id": "full_v2:1:5",
+      "reason": "failed_interface_sample"
+    },
+    {
+      "id": 2,
+      "sample": 4,
+      "historical_logical_id": "full_v2:2:4",
+      "reason": "failed_interface_sample"
+    },
+    {
+      "id": 2,
+      "sample": 5,
+      "historical_logical_id": "full_v2:2:5",
+      "reason": "not_started_after_early_abort"
+    },
+    {
+      "id": 6,
+      "sample": 4,
+      "historical_logical_id": "full_v2:6:4",
+      "reason": "failed_interface_sample"
+    },
+    {
+      "id": 6,
+      "sample": 5,
+      "historical_logical_id": "full_v2:6:5",
+      "reason": "not_started_after_early_abort"
+    },
+    {
+      "id": 11,
+      "sample": 2,
+      "historical_logical_id": "full_v2:11:2",
+      "reason": "failed_interface_sample"
+    },
+    {
+      "id": 11,
+      "sample": 3,
+      "historical_logical_id": "full_v2:11:3",
+      "reason": "not_started_after_early_abort"
+    },
+    {
+      "id": 11,
+      "sample": 4,
+      "historical_logical_id": "full_v2:11:4",
+      "reason": "not_started_after_early_abort"
+    },
+    {
+      "id": 11,
+      "sample": 5,
+      "historical_logical_id": "full_v2:11:5",
+      "reason": "not_started_after_early_abort"
+    },
+    {
+      "id": 14,
+      "sample": 3,
+      "historical_logical_id": "full_v2:14:3",
+      "reason": "failed_interface_sample"
+    },
+    {
+      "id": 14,
+      "sample": 4,
+      "historical_logical_id": "full_v2:14:4",
+      "reason": "not_started_after_early_abort"
+    },
+    {
+      "id": 14,
+      "sample": 5,
+      "historical_logical_id": "full_v2:14:5",
+      "reason": "not_started_after_early_abort"
+    },
+    {
+      "id": 15,
+      "sample": 3,
+      "historical_logical_id": "full_v2:15:3",
+      "reason": "failed_interface_sample"
+    },
+    {
+      "id": 15,
+      "sample": 4,
+      "historical_logical_id": "full_v2:15:4",
+      "reason": "not_started_after_early_abort"
+    },
+    {
+      "id": 15,
+      "sample": 5,
+      "historical_logical_id": "full_v2:15:5",
+      "reason": "not_started_after_early_abort"
+    },
+    {
+      "id": 16,
+      "sample": 2,
+      "historical_logical_id": "full_v2:16:2",
+      "reason": "failed_interface_sample"
+    },
+    {
+      "id": 16,
+      "sample": 3,
+      "historical_logical_id": "full_v2:16:3",
+      "reason": "not_started_after_early_abort"
+    },
+    {
+      "id": 16,
+      "sample": 4,
+      "historical_logical_id": "full_v2:16:4",
+      "reason": "not_started_after_early_abort"
+    },
+    {
+      "id": 16,
+      "sample": 5,
+      "historical_logical_id": "full_v2:16:5",
+      "reason": "not_started_after_early_abort"
+    },
+    {
+      "id": 19,
+      "sample": 1,
+      "historical_logical_id": "full_v2:19:1",
+      "reason": "failed_interface_sample"
+    },
+    {
+      "id": 19,
+      "sample": 2,
+      "historical_logical_id": "full_v2:19:2",
+      "reason": "not_started_after_early_abort"
+    },
+    {
+      "id": 19,
+      "sample": 3,
+      "historical_logical_id": "full_v2:19:3",
+      "reason": "not_started_after_early_abort"
+    },
+    {
+      "id": 19,
+      "sample": 4,
+      "historical_logical_id": "full_v2:19:4",
+      "reason": "not_started_after_early_abort"
+    },
+    {
+      "id": 19,
+      "sample": 5,
+      "historical_logical_id": "full_v2:19:5",
+      "reason": "not_started_after_early_abort"
+    }
+  ],
+  "historical_ledger_sha256": "8682c3848759fabe703928cd805e9fe8378b1107ec97ae6b35045e97c7f61d9c",
+  "historical_prediction_sha256": "013ef75fc06d2fdfbc1b114ff7c92e2aba4408ef288ae96fc7babd8df6e13051",
+  "development_gold_sha256": "2bd158cf3c9dc19aa9b5f4029134f144d5dd87fdf9de89595b30f514db89dd58",
+  "retry_policy": "Keep K vote positions and continue after an unavailable sample.\n\n    At most one interface supplemental SAMPLE and one length supplemental SAMPLE\n    per arm/statement. Each logical sample uses the unchanged metered adapter's\n    maximum three HTTP attempts; all attempts count against the shared cap.\n    Exhausted interface positions contribute no parsed vote, never an advisory\n    vote. Valid/empty/invalid semantic answers are never resampled.\n    ",
+  "transport_pacing": {
+    "minimum_seconds": 2.0,
+    "429_multiplier": 1.25,
+    "maximum_seconds": 6.0,
+    "reduce_after_successes": 32,
+    "reduction": 0.9
+  },
+  "statistics": {
+    "bootstrap_replicates": 2000,
+    "seed": 20261023,
+    "interval": "statement paired percentile bootstrap, linear 2.5/97.5 percentiles",
+    "canonical_key_metric": "unchanged scorer: unique (method,key) sets recomputed in every resample; repeats collapse in key sets",
+    "zero_denominator": "precision/recall/f1=0, as in development",
+    "mcnemar": "two-sided exact binomial; per-statement expected vs accepted parameterised canonical key; advisory gold has key None; non-accepted has key None (same as historical error_rows); both 45 and 39 statements",
+    "multiple_comparisons": "two preregistered comparisons, unadjusted exact p; no tuning"
+  }
+}
