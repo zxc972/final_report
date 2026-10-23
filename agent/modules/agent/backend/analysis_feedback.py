@@ -32,13 +32,36 @@ class FeedbackJournal:
         if path.is_symlink()or not stat.S_ISREG(path.lstat().st_mode)or path.stat().st_size>120000:raise ValueError('Invalid feedback observation')
         return json.loads(path.read_bytes())
     @staticmethod
+    def failure_details(result):
+        """Retain actual contract failures even when the subprocess exited zero."""
+        failures = []
+        def visit(value, path, depth=0):
+            if not isinstance(value, dict) or depth > 5:
+                return
+            status = value.get('status')
+            bad = ((isinstance(status, str) and status in {'error', 'fail', 'failed', 'timeout', 'blocked'})
+                   or (isinstance(status, str) and ('contract' in status and status.endswith('failed')))
+                   or value.get('returncode') not in (None, 0)
+                   or value.get('exit_code') not in (None, 0)
+                   or value.get('valid') is False or value.get('passed') is False
+                   or value.get('argument_validation_failed') is True)
+            if bad:
+                detail = {'path': path, 'status': status}
+                for key in ('error', 'reason', 'errors', 'files', 'missing', 'returncode', 'exit_code'):
+                    if key in value:
+                        detail[key] = value[key]
+                encoded = json.dumps(detail, ensure_ascii=False, default=str)
+                if len(encoded) > 4000:
+                    detail = {'path': path, 'status': status, 'observation_prefix': encoded[:3500], 'full_observation_sha256': hashlib.sha256(encoded.encode()).hexdigest()}
+                failures.append(detail)
+            for key in ('automatic_finalization', 'validation', 'public_output_contract',
+                        'output_contract', 'contract', 'artifact_validation'):
+                visit(value.get(key), path + '.' + key, depth + 1)
+        visit(result, 'result')
+        return failures[:20]
+    @staticmethod
     def failed(result):
-        if not isinstance(result,dict):return False
-        if result.get('status')in ['error','failed','timeout','blocked']:return True
-        if result.get('returncode')not in [None,0]:return True
-        if result.get('valid')is False or result.get('passed')is False:return True
-        validation=result.get('validation',{})
-        return isinstance(validation,dict)and(validation.get('valid')is False or validation.get('passed')is False)
+        return bool(FeedbackJournal.failure_details(result))
     def observe(self,tool_name:str,arguments:dict,result:dict):
         if tool_name in ['read_analysis_feedback','record_analysis_reflection']:return None
         args={k:v for k,v in arguments.items()if k not in ['code']}
@@ -48,7 +71,7 @@ class FeedbackJournal:
         # Store a bounded original observation, never synthesized diagnosis.
         kept=result if len(serialized)<=18000 else {'status':result.get('status'),'observation_prefix':serialized[:16000],'full_observation_sha256':hashlib.sha256(serialized.encode()).hexdigest(),'truncated':True}
         failed=self.failed(result)
-        return self._write('observation',{'tool':tool_name,'arguments':args,'failed':failed,'result':kept,
+        return self._write('observation',{'tool':tool_name,'arguments':args,'failed':failed,'result':kept,'failure_details':self.failure_details(result),
             'evidence_scope':'Actual product tool response; neither a private reference nor expert judgment.'})
     def reflect(self,observation_id:str,hypothesis:str,next_check:str,knowledge_ids:list[str]|None=None):
         original=self._read(observation_id)

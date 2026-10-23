@@ -45,7 +45,7 @@ class AnalysisIntent(BaseModel):
     space: StrictStr | None = None
     method_id: StrictStr | None = None
     design: AnalysisDesign | None = None
-    subjects: list[StrictStr] | None = Field(default=None, max_length=128)
+    subjects: list[StrictStr] | Literal["全部已登记被试", "all_registered"] | None = Field(default=None, max_length=128)
     required_inputs: list[StrictStr] | None = Field(default=None, max_length=16)
 
 
@@ -189,7 +189,9 @@ def registered_roots(tools, intent):
         matches = [row for row in catalogue if Path(row["path"]).resolve() == root]
         entry = matches[0] if matches else {"subject_id": root.name, "species_declared": None, "source": "approved root registration; species unavailable"}
         entries.append({**entry, "index": index, "root": root})
-    if intent.subjects:
+    if intent.subjects in ("全部已登记被试", "all_registered") or intent.subjects in (["全部已登记被试"], ["all_registered"]):
+        pass
+    elif intent.subjects:
         entries = [r for r in entries if r["subject_id"] in intent.subjects]
         if {r["subject_id"] for r in entries} != set(intent.subjects):
             raise ValueError("subjects must identify approved registered subjects")

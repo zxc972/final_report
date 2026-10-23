@@ -4,6 +4,7 @@ from contextlib import contextmanager
 from contextvars import ContextVar
 
 MODEL_SOURCE = ContextVar("primatex_model_source_node", default=None)
+HTTP_ATTEMPT = ContextVar("primatex_native_http_attempt", default=None)
 
 
 @contextmanager

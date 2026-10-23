@@ -61,14 +61,16 @@ def finalize_card(card, validation, native_status, execution, artifact_phase=Non
     result['overall_status'] = overall_status(native_status, result['verdict'], validation)
     numeric = validation.get('independent_numeric', {})
     public = validation.get('public_output_contract', {})
+    numeric_assessed = numeric.get('host_verified') is True and numeric.get('status') in {'pass', 'fail'}
     result['component_statuses'] = {
         'artifacts': 'finalized' if artifact_phase == 'finalized' else artifact_phase or 'not_finalized',
         'public_contract': public.get('status', 'not_performed'),
-        'independent_numeric': numeric.get('status', validation.get('independent_numeric_status', 'not_configured')),
+        'independent_numeric': numeric.get('status') if numeric_assessed else 'not_assessed',
         'internal_review': reviewed,
         'execution': 'passed' if execution.get('exit_code') == 0 and execution.get('status') == 'success' else 'failed' if execution.get('exit_code') is not None else 'not_run',
         'last_exit_code': execution.get('exit_code'),
-        'identity_mismatch_count': (public.get('identity_mismatch_count', 0) + numeric.get('identity_mismatch_count', 0)) if public.get('status') in {'pass', 'fail'} or numeric.get('status') in {'pass', 'fail'} else None,
-        'numeric_mismatch_count': numeric.get('numeric_mismatch_count', 0) if numeric.get('status') in {'pass', 'fail'} else None,
+        'identity_mismatch_count': (public.get('identity_mismatch_count', 0) + numeric['identity_mismatch_count']) if numeric_assessed and numeric.get('identity_mismatch_count') is not None else None,
+        'numeric_mismatch_count': numeric.get('numeric_mismatch_count') if numeric_assessed else None,
+        'public_identity_mismatch_count': public.get('identity_mismatch_count') if public.get('status') in {'pass', 'fail'} else None,
     }
     return result

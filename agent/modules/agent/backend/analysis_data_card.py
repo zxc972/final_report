@@ -91,6 +91,7 @@ def summarize(profile, entries, runtime):
     tables = [{"path": _value(f["path"]), "columns": _value(_value(f.get("table", {})).get("columns", {})) or []} for f in profile.get("files", []) if _value(f.get("format")) in {"tsv", "csv"}]
     table_line = "Participant tables/model columns: " + ("; ".join(t["path"] + ": " + ",".join(t["columns"]) for t in tables) or "none registered")
     lines.insert(-2, table_line)
+    metrics_line = "Registered metric names: " + ",".join(sorted({name for row in rows for name in row["metrics"]}))
     text = "\n".join(lines)
     if len(text) > 1500:
         # Keep all subjects and missing prerequisites; details stay in the full card.
@@ -106,7 +107,7 @@ def summarize(profile, entries, runtime):
         )
         text = "\n".join(lines)
     if len(text) > 1500 and len(rows) > 8:
-        text = "\n".join([lines[0], f"{len(rows)} registered subjects; full subject inventory and missing ROI products: /work/data_card.json", table_line, *lines[-2:]])
+        text = "\n".join([lines[0], f"{len(rows)} registered subjects; full subject inventory and missing ROI products: /work/data_card.json", metrics_line, table_line, *lines[-2:]])
     if quality_control:
         pending = [row["subject_id"] for row in quality_control if row["qc_visual"] == "需复核"]
         flagged = [row["subject_id"] for row in quality_control if row.get("qc_automatic_flags") not in (None, "", "[]", [])]

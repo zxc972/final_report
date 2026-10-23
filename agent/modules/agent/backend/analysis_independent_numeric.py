@@ -133,7 +133,7 @@ def verify(tools):
     plan = plan_record["record"]["plan"]
     method = plan["method"]["method_id"].rsplit(":", 1)[-1]
     binding = {"plan_sha256": plan_record["sha256"], "execution_receipt_id": execution.get("receipt_id")}
-    summary = {"host_verified": False, "status": "not_configured", "checked": 0, "mismatch_count": None}
+    summary = {"host_verified": False, "status": "not_configured", "assessment_status": "not_assessed", "checked": None, "mismatch_count": None, "identity_mismatch_count": None, "numeric_mismatch_count": None}
     private = {**binding, "method": method, "atol": ATOL, "rtol": RTOL,
                "reference_source_sha256": hashlib.sha256(Path(__file__).with_name("analysis_numeric_reference.py").read_bytes()).hexdigest()}
     if method in REGISTERED:
@@ -171,7 +171,7 @@ def verify(tools):
             combined = {key: sum(c[key] for c in comparisons.values()) for key in ('checked','mismatch_count','identity_mismatch_count','numeric_mismatch_count')}
             combined['status'] = 'fail' if any(c['status']=='fail' for c in comparisons.values()) else 'pass'
             private.update(input_sha256=inputs, output_sha256=output_digests, expected=reference_tables, tables=comparisons, **combined)
-            summary.update(host_verified=True, **combined)
+            summary.update(host_verified=True, assessment_status="assessed", **combined)
             if method == "group_regional_glm":
                 summary['tables'] = {name: {k:c[k] for k in ('status','checked','mismatch_count','identity_mismatch_count','numeric_mismatch_count')} for name,c in comparisons.items()}
                 private['group_reference_source_sha256'] = hashlib.sha256(Path(__file__).with_name('analysis_group_stats.py').read_bytes()).hexdigest()
@@ -201,10 +201,10 @@ def current_summary(tools):
     saved = tools.control_store.latest('independent_numeric')
     plan = tools.control_store.latest('plan')
     if not saved or not plan:
-        return {"host_verified":False,"status":"not_configured","mismatch_count":None}
+        return {"host_verified":False,"status":"not_configured","assessment_status":"not_assessed","checked":None,"mismatch_count":None,"identity_mismatch_count":None,"numeric_mismatch_count":None}
     record = saved['record']
     if record.get('plan_sha256') != plan['sha256'] or record.get('execution_receipt_id') != tools.last_execution.get('receipt_id'):
-        return {"host_verified":False,"status":"not_configured","mismatch_count":None}
+        return {"host_verified":False,"status":"not_configured","assessment_status":"not_assessed","checked":None,"mismatch_count":None,"identity_mismatch_count":None,"numeric_mismatch_count":None}
     return {key:value for key,value in record.items() if key not in {'plan_sha256','execution_receipt_id'}}
 
 

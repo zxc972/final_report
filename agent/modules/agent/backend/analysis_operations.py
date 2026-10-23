@@ -20,6 +20,8 @@ FUNCTIONS = (
     "nifti_info",
     "read_stats_measures",
     "positive_mask_volume",
+    "read_group_inputs",
+    "fdr_bh_by_identity",
 )
 
 

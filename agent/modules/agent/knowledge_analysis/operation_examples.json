@@ -1,7 +1,7 @@
 {
   "schema": "primatex.synthetic_operation_examples.v1",
   "synthetic_only": true,
-  "library_sha256": "168ebd483e32f1ed04efb4354fb730c3191e0424bbcefaadd10e0de9c799b314",
+  "library_sha256": "b9780babc27324c41329f0c7494a810e95a6a3d6f09c47896ccb366d670d7333",
   "examples": {
     "read_surface": {
       "python_type": "tuple",
@@ -279,6 +279,71 @@
       "volume_mm3": 27.0,
       "positive_voxels": 27,
       "unit_source": "MGH header millimetre convention; acquisition calibration unverified"
+    },
+    "read_group_inputs": {
+      "python_type": "list",
+      "example": [
+        {
+          "subject": "synthetic-A",
+          "hemisphere": "lh",
+          "metric": "sample_metric",
+          "label_key": 1,
+          "name": "parcel",
+          "values": {
+            "python_type": "numpy.ndarray",
+            "dtype": "float64",
+            "shape": [
+              3
+            ],
+            "example": [
+              1.0,
+              2.0,
+              3.0
+            ]
+          }
+        }
+      ]
+    },
+    "fdr_bh_by_identity": {
+      "python_type": "dict",
+      "fields": [
+        "(hemisphere,metric,label_key)"
+      ],
+      "key_type": "tuple[str,str,int]",
+      "example": [
+        {
+          "identity": [
+            "lh",
+            "sample_metric",
+            1
+          ],
+          "q_fdr": 0.02
+        },
+        {
+          "identity": [
+            "rh",
+            "sample_metric",
+            1
+          ],
+          "q_fdr": 0.04
+        },
+        {
+          "identity": [
+            "rh",
+            "sample_metric",
+            2
+          ],
+          "q_fdr": null
+        }
+      ]
     }
+  },
+  "round21_extension": {
+    "synthetic_only": true,
+    "actual_new_function_calls": [
+      "read_group_inputs",
+      "fdr_bh_by_identity"
+    ],
+    "original_operation_functions_ast_unchanged": true
   }
 }
