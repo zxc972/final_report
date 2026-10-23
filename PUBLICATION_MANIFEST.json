@@ -1,6 +1,6 @@
 {
   "schema": "final_report.publication.v1",
-  "source_snapshot": "2026-10-23 Round17: v2 algorithm and metered development runner; 894 default tests passed; four source-verified independent cards and 45 blind annotation statements; development evaluation running; no test labels or algorithm test runs",
+  "source_snapshot": "2026-10-23 Round17: v2 development results under reviewed labels: 819/1200 model HTTP attempts, zero truncations/replacements, 324 replayed predictions; 894 default tests; four source-verified cards and 45 blind-annotation statements; no formal test labels or algorithm test calls",
   "files": [
     {
       "path": ".env.example",
@@ -24,8 +24,8 @@
     },
     {
       "path": "SNAPSHOT_MANIFEST.json",
-      "bytes": 504613,
-      "sha256": "8239ff815d2d6952b8c0e0c081848f520799a3c71f8651677276cf0231703fd1"
+      "bytes": 506273,
+      "sha256": "2f85c4655bdc9fc9473dfcdc9d7fcdb36ceedbf5f3c2b1816e714b371751c584"
     },
     {
       "path": "agent/.gitignore",
@@ -3478,6 +3478,11 @@
       "sha256": "5c4804f1e7c48044712982e2c8fcff33876cabf5028dc6686a4feed7c67471be"
     },
     {
+      "path": "docs/ROUND17_CONDITION_CANON_V2.md",
+      "bytes": 3230,
+      "sha256": "09a0016fffe6f1f0ad3d898417463b37b9b98d763de45bee1e807e682a0121ca"
+    },
+    {
       "path": "docs/SNAPSHOT.md",
       "bytes": 5908,
       "sha256": "6a5fb781fb830de356a3e14e828b1173683f34bb2a4f9f90d219b71e4b984066"
@@ -3516,6 +3521,11 @@
       "path": "docs/evidence/round16_condition_canon_draft_v1.json",
       "bytes": 8089,
       "sha256": "803bcdfb8d9a2bc62095ea29fc36705657c19bd4fc175f58f8e777d4ae52ba82"
+    },
+    {
+      "path": "docs/evidence/round17_condition_canon_v2.json",
+      "bytes": 12412,
+      "sha256": "7d4c21f102b71a4e29800aca7df4c052c45838ca1780d5d00d393979ba17bea3"
     },
     {
       "path": "docs/evidence/software_graph_count_audit.json",
@@ -5073,6 +5083,171 @@
       "sha256": "46b6d60b796ed8426e68904b977ce32182f61f05f019cb5dbe7a950d224803ee"
     },
     {
+      "path": "results/condition_canon_dev_v2/FULL_V2_ERRORS.md",
+      "bytes": 19102,
+      "sha256": "ebf52a3b38460f503408275f3b797b66878ed845b70314c040139a9797ed52d1"
+    },
+    {
+      "path": "results/condition_canon_dev_v2/FULL_V2_ERRORS_DETAILED.md",
+      "bytes": 36220,
+      "sha256": "383fe25163fc5d6ab5264f95aba9b617e4793865955d26cc62caae18d37fde15"
+    },
+    {
+      "path": "results/condition_canon_dev_v2/REPORT.md",
+      "bytes": 5504,
+      "sha256": "d9ad97668832c3c9c4e40244126ae6e626ec45c05016fb63b06e16be74e19507"
+    },
+    {
+      "path": "results/condition_canon_dev_v2/all_call_usage.csv",
+      "bytes": 79611,
+      "sha256": "2ab05e42bbc4569d6183f25b6cdc17b5a602d094b92eebd220ea169dd98f3d3a"
+    },
+    {
+      "path": "results/condition_canon_dev_v2/annotation_review_notes_v2.md",
+      "bytes": 2308,
+      "sha256": "56da93defa9e126056b9e4d74b299bff70efb38eaf36e62e4df2c0775876b28f"
+    },
+    {
+      "path": "results/condition_canon_dev_v2/audit.json",
+      "bytes": 1185,
+      "sha256": "29e1a1ef97ad7f1ac10332349b66cd57f485d6f3dc6548cb46063a5bc9eeb2d3"
+    },
+    {
+      "path": "results/condition_canon_dev_v2/audit_scripts/build_diagnostics.py",
+      "bytes": 13973,
+      "sha256": "e763de8b3f970db6a8266759357afcabeee7a95e4f2e40bdb534b511a3a724e2"
+    },
+    {
+      "path": "results/condition_canon_dev_v2/call_usage.csv",
+      "bytes": 68932,
+      "sha256": "d5de81a45f6784c366c42b541519605ae12f05c0c32e637725148dc7aa7d8ed6"
+    },
+    {
+      "path": "results/condition_canon_dev_v2/freeze_history/001_transport_pacing/continuation.json",
+      "bytes": 2261,
+      "sha256": "8b3ded830ac433f77e4a67172e5d1d3cb8e4cea3649d4b6613af3bc90aa2a302"
+    },
+    {
+      "path": "results/condition_canon_dev_v2/freeze_history/001_transport_pacing/frozen.json",
+      "bytes": 7507,
+      "sha256": "0c71ad9956ae6b3a2f9f391133a93cec85e8ef94b9f15c11e0999e268dcbc158"
+    },
+    {
+      "path": "results/condition_canon_dev_v2/freeze_history/001_transport_pacing/frozen.sha256",
+      "bytes": 65,
+      "sha256": "68bdd932892dca46a87d21221be182e42d9a7e20bdecd73b442e9c83b9b943e8"
+    },
+    {
+      "path": "results/condition_canon_dev_v2/frozen.json",
+      "bytes": 7675,
+      "sha256": "1eb334ccc1e0762fc582aaa0b5ebc0eb4d9344aaf6b35d2aebf6f8747ba09808"
+    },
+    {
+      "path": "results/condition_canon_dev_v2/frozen.sha256",
+      "bytes": 65,
+      "sha256": "f99751178d443eaae7d9f459f669a53c726182680d836c51a22bba0e4f9613c6"
+    },
+    {
+      "path": "results/condition_canon_dev_v2/full_v2_diagnostics.json",
+      "bytes": 317,
+      "sha256": "ff5fef065c1044f686c950beb7b64353da3c8b176390693afef46ea5cb9645b7"
+    },
+    {
+      "path": "results/condition_canon_dev_v2/full_v2_errors.csv",
+      "bytes": 45366,
+      "sha256": "5f7ca69bdd1bd9cb057ff5bfbbf9a99cd682c3c393a28e183e5d31f41d194742"
+    },
+    {
+      "path": "results/condition_canon_dev_v2/full_v2_errors.json",
+      "bytes": 67461,
+      "sha256": "775f41cefb5c505cb71c935d7cd3970a989cd520aea6451783a6815cf2b12437"
+    },
+    {
+      "path": "results/condition_canon_dev_v2/full_v2_errors_detailed.csv",
+      "bytes": 81606,
+      "sha256": "0f72de5a6955d8dec309c02e7b5fd33367e4a0ca133aa996af1fdab2ccccc7d7"
+    },
+    {
+      "path": "results/condition_canon_dev_v2/full_v2_errors_detailed.json",
+      "bytes": 124033,
+      "sha256": "2d32ef695dfc9f062de2d2afe4bceaf97ee2dc63c76f0017f9161ab3e9a09b0e"
+    },
+    {
+      "path": "results/condition_canon_dev_v2/merged_direct_v2.json",
+      "bytes": 7733,
+      "sha256": "3a95da2d26a71fd4a30bb57244fe7e4b5a1f130c5e6d8dc6ed5744297a3af250"
+    },
+    {
+      "path": "results/condition_canon_dev_v2/merged_full_v2.json",
+      "bytes": 4836,
+      "sha256": "315e55e9ebf0228b01c77b62c647ae2d10a649217fbc7cc53a019dde91bd1c9a"
+    },
+    {
+      "path": "results/condition_canon_dev_v2/merged_k1_v2.json",
+      "bytes": 8476,
+      "sha256": "c2831ad1646bc6d3bd244439f0967e74a729746614e13d9ec90b56a82c0db60a"
+    },
+    {
+      "path": "results/condition_canon_dev_v2/predictions_direct_v2.json",
+      "bytes": 61866,
+      "sha256": "e6c6e62496dd403dc531315bca98819d987c2574c8ec71ae89a09244bdaf8642"
+    },
+    {
+      "path": "results/condition_canon_dev_v2/predictions_full_v2.json",
+      "bytes": 208286,
+      "sha256": "013ef75fc06d2fdfbc1b114ff7c92e2aba4408ef288ae96fc7babd8df6e13051"
+    },
+    {
+      "path": "results/condition_canon_dev_v2/predictions_k1_v2.json",
+      "bytes": 95918,
+      "sha256": "d20bdf27025d5570696baed0e74e8564d41974a282d7db3584040c0c74d2cceb"
+    },
+    {
+      "path": "results/condition_canon_dev_v2/provider_and_structure_failures.json",
+      "bytes": 11963,
+      "sha256": "65c631a435410925d2c7244a6a74dfedbe7924ebee1214ad4dcdbaff0bec8e3f"
+    },
+    {
+      "path": "results/condition_canon_dev_v2/review_queue_direct_v2.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "results/condition_canon_dev_v2/review_queue_full_v2.json",
+      "bytes": 39077,
+      "sha256": "f010b1a2ccb7ceb37fa3311f3d4d326d07b1c7457650154e85e8c2daac3d5648"
+    },
+    {
+      "path": "results/condition_canon_dev_v2/review_queue_k1_v2.json",
+      "bytes": 14689,
+      "sha256": "9da588e60b8087f2f4eaeb5a4021a00d106f94ed96ed7c62e677530f229a87dd"
+    },
+    {
+      "path": "results/condition_canon_dev_v2/run_status.json",
+      "bytes": 697,
+      "sha256": "29bde7975f8ab95ab96849b465b97aa508e7ef9056bd88caacd367fc1af86720"
+    },
+    {
+      "path": "results/condition_canon_dev_v2/summary.csv",
+      "bytes": 1748,
+      "sha256": "550278d68e1ccc0412c2078ee73e33f8400d6b9f6e25543b468bcb9ba558d8df"
+    },
+    {
+      "path": "results/condition_canon_dev_v2/summary.json",
+      "bytes": 7751,
+      "sha256": "b212bb8a3bd0928b681b196d5ffb1aec8e80dfd55707b232fbcb0926e61e5b66"
+    },
+    {
+      "path": "results/condition_canon_dev_v2/usage.json",
+      "bytes": 375,
+      "sha256": "24257aa6740928688aecc3368480a7a3b4c01e8a5b9e83983cc587894954768b"
+    },
+    {
+      "path": "results/condition_canon_dev_v2/v1_rescored.json",
+      "bytes": 3734,
+      "sha256": "f2234af943e5cdca01a474d369131537520206ce539531d99d957bbad04d3a54"
+    },
+    {
       "path": "results/condition_canon_draft_v1/FULL_ERRORS_DETAILED.md",
       "bytes": 39585,
       "sha256": "607a3a6866df5facd62713fb10995d1f4d0cb7f8c3345416d84a595e23f81158"
@@ -5349,8 +5524,8 @@
     },
     {
       "path": "tools/knowledge/audit_condition_canon_v2.py",
-      "bytes": 12126,
-      "sha256": "63c686c53f1a55d537ee5cdf7d780818d8aae178e7e13e372cabb1d8a16b1818"
+      "bytes": 12968,
+      "sha256": "bef0967f0e6b24ae5917558966c08e4a31095fb32e21c2c6cbcab2aa1568437c"
     },
     {
       "path": "tools/knowledge/audit_fresh_method_autonomy.py",
