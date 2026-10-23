@@ -1,0 +1,2530 @@
+[
+  {
+    "id": 1,
+    "method": "cat_morphometry",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "d365f281d71f43b085c5037058b54b38",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "method": "cat_morphometry",
+    "decision": "accepted",
+    "template": "software",
+    "parameters": {
+      "commands": [
+        "SPM12",
+        "MATLAB R2020a"
+      ]
+    },
+    "key": "software:{\"commands\": [\"MATLAB R2020a\", \"SPM12\"]}",
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "fecb1f9d066f493f9b54f4320bc3e896",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "method": "cat_morphometry",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "009956787595430c923a6ada504ebca5",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "method": "cat_morphometry",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "c223b580c8f949c5bcfb8a75a511789e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "method": "cat_morphometry",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "87504dbf0022415384502d37ad062c64",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "method": "cat_morphometry",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "a2f9ac9dc61142dea615a8cd1d7a9b28",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "method": "existing_curvature_sulc_profile",
+    "decision": "accepted",
+    "template": "provenance",
+    "parameters": {
+      "step": "surface smoothing and topology correction"
+    },
+    "key": "provenance:{\"step\": \"surface smoothing and topology correction\"}",
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "e8d49e8dea304ac6bcd9921bff6019ee",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 8,
+    "method": "fsl_vbm",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": {
+      "slot": "T1",
+      "type": "template_list file containing names of selected T1 images for template construction"
+    },
+    "key": "product_present:{\"slot\": \"T1\", \"type\": \"template_list file containing names of selected T1 images for template construction\"}",
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "c318429ead0247bd830dc6669f9f2f93",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 9,
+    "method": "fsl_vbm",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "4c7cc0d1ddad41f3a654b3d2135e0f24",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 10,
+    "method": "fsl_vbm",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": {
+      "slot": "mask",
+      "type": "GM_mask"
+    },
+    "key": "product_present:{\"slot\": \"mask\", \"type\": \"GM_mask\"}",
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "675b9a1c6aec4da8b2ea6ae5c1ae978a",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 11,
+    "method": "fsl_vbm",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "19646b594bd4423cb2c7b312ea94f4c1",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 12,
+    "method": "fsl_vbm",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "4bfd46569ca640b5a28aa58f05c99b10",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 13,
+    "method": "fsl_vbm",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "abf3e409821c465989237cb440c23f63",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 14,
+    "method": "fsl_vbm",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "9df651af471c4d118d1d7452e7259649",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 15,
+    "method": "fsl_vbm",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "6cbc363853b042bba10dde2431b5d48b",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 16,
+    "method": "fsl_vbm",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "4767fd637a884e41a51de49d4250f8a7",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 17,
+    "method": "fsl_vbm",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "ccd1d305dac24a61847b398e9718633b",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 18,
+    "method": "global_surface_folding",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": {
+      "slot": "pial",
+      "type": "surface mesh"
+    },
+    "key": "product_present:{\"slot\": \"pial\", \"type\": \"surface mesh\"}",
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "55b57932b33044b0a03bfd914d648938",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 19,
+    "method": "global_surface_folding",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": {
+      "slot": "white",
+      "type": "surface mesh"
+    },
+    "key": "product_present:{\"slot\": \"white\", \"type\": \"surface mesh\"}",
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "6a19b0cc06ba415c877439eb7f04ca40",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 20,
+    "method": "global_surface_folding",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": {
+      "slot": "point",
+      "type": "coordinates"
+    },
+    "key": "product_present:{\"slot\": \"point\", \"type\": \"coordinates\"}",
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "f8465bd484564d3b9aa38606a9d55dc5",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 1087
+        }
+      ]
+    }
+  },
+  {
+    "id": 21,
+    "method": "global_surface_folding",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "0c5f8b03c08b4d62a61f5274c2c72e54",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 22,
+    "method": "global_surface_folding",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "c206c6f42d5941b395be375cd8d0699d",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 23,
+    "method": "global_surface_folding",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "16bfc7f1962b475c9dc2b6d386e89d95",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 24,
+    "method": "global_surface_folding",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "bf10d6ae13d64cbb891152e512a1a659",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 25,
+    "method": "global_surface_folding",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "7ec2ecac62fd4d4b954d2cdbe4d5213d",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 26,
+    "method": "global_surface_folding",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "707a68e92fef44aa8679de5436f863d5",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 27,
+    "method": "global_surface_folding",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "8c77a3c02ce1473188ff32f779882cf9",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 28,
+    "method": "global_surface_folding",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "2f51238f8f0546e980718b3ce2b4c288",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 29,
+    "method": "global_surface_folding",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "af33a9677da64f2fbbdf94fc04151114",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 30,
+    "method": "global_surface_folding",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "6a691c9e920a42379a0c04f666cc7315",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 31,
+    "method": "global_surface_folding",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "2afd07ce97854eddbde04ed71e6aa06b",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 32,
+    "method": "global_surface_folding",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "45e4593e7ce248d9b84924df149d9d67",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 33,
+    "method": "hcp_structural_pipeline",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "238ba6c254e9415d82b284f63ed43ee7",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 34,
+    "method": "hcp_structural_pipeline",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "9278878d154948ac80531944b4972290",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 35,
+    "method": "hcp_structural_pipeline",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "ed0d5db475134f94babee2c5b1b98e7f",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 36,
+    "method": "local_gyrification",
+    "decision": "accepted",
+    "template": "provenance",
+    "parameters": {
+      "step": "freesurfer recon-all -s <subjid> -all stream completed, producing ?h.pial surface files"
+    },
+    "key": "provenance:{\"step\": \"freesurfer recon-all -s <subjid> -all stream completed, producing ?h.pial surface files\"}",
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "9c4d830926ae4e8abf2704dc1e801b09",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 37,
+    "method": "local_gyrification",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": {
+      "slot": "pial",
+      "type": "pial"
+    },
+    "key": "product_present:{\"slot\": \"pial\", \"type\": \"pial\"}",
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "502cca7274864f909f496a67b725f3bf",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 38,
+    "method": "local_gyrification",
+    "decision": "accepted",
+    "template": "software",
+    "parameters": {
+      "commands": [
+        "MATLAB",
+        "Image Processing Toolbox",
+        "$FREESURFER_HOME/matlab"
+      ]
+    },
+    "key": "software:{\"commands\": [\"$FREESURFER_HOME/matlab\", \"Image Processing Toolbox\", \"MATLAB\"]}",
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "30fbd6f6ac07406f8bc9114112c0cd77",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 39,
+    "method": "local_gyrification",
+    "decision": "accepted",
+    "template": "provenance",
+    "parameters": {
+      "step": "freesurfer recon-all"
+    },
+    "key": "provenance:{\"step\": \"freesurfer recon-all\"}",
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "c08e08afc8444d4c820de27653334d26",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 40,
+    "method": "local_gyrification",
+    "decision": "accepted",
+    "template": "software",
+    "parameters": {
+      "commands": [
+        "MATLAB",
+        "Image Processing Toolbox"
+      ]
+    },
+    "key": "software:{\"commands\": [\"Image Processing Toolbox\", \"MATLAB\"]}",
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "a224229c50ef426aab8243b15c694b22",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 41,
+    "method": "local_gyrification",
+    "decision": "accepted",
+    "template": "software",
+    "parameters": {
+      "commands": [
+        "$FREESURFER_HOME/matlab"
+      ]
+    },
+    "key": "software:{\"commands\": [\"$FREESURFER_HOME/matlab\"]}",
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "e3b8b23a96f24367bf8aaed481957e76",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 42,
+    "method": "local_gyrification",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "2f8bbaa80d8641bdb4193c10d45d39cc",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 43,
+    "method": "local_gyrification",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "eb5bd9fdeffc40079362f0b4108f3a4f",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 44,
+    "method": "macaque_civet",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": {
+      "slot": "T1",
+      "attr": "species",
+      "values": [
+        "macaque"
+      ]
+    },
+    "key": "attr_in:{\"attr\": \"species\", \"slot\": \"T1\", \"values\": [\"macaque\"]}",
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "e7ea741d18634e5685d350cc81271a80",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 45,
+    "method": "macaque_civet",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "3f52a60230904caf9d1c734d3642e165",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 46,
+    "method": "macaque_civet",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "10ab9397981a4abbaf8bb0f3cddb5e14",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 47,
+    "method": "macaque_civet",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "90b8835148cc453db1065dfcb989694b",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 48,
+    "method": "macaque_civet",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "1e8b8f26fef14e9f89374972a9884537",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 49,
+    "method": "macaque_civet",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": {
+      "slot": "T1",
+      "type": "T1w"
+    },
+    "key": "product_present:{\"slot\": \"T1\", \"type\": \"T1w\"}",
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "e439ab447b6947ceadece4759b348e88",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 50,
+    "method": "macaque_civet",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "62504ae5e59b4e39bf4a230b99c50c41",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 51,
+    "method": "macaque_civet",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "43643f0460e34f62bc0436f0bb2b83a7",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 52,
+    "method": "macaque_civet",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "3396676a6ddc49239be48c8de0ebd3b9",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 53,
+    "method": "macaque_civet",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "dcb3853f6da8400aa338bf1b99ddcf9e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 54,
+    "method": "macaque_civet",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "97dca6ba4d384df7bdecf2700925d12a",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 55,
+    "method": "macaque_civet",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "d315e2bd8020421bad9a0a90e09d4506",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 56,
+    "method": "nhp_macapype",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": {
+      "slot": [
+        "T1",
+        "T2"
+      ],
+      "type": [
+        "T1w",
+        "T2w"
+      ]
+    },
+    "key": "product_present:{\"slot\": [\"T1\", \"T2\"], \"type\": [\"T1w\", \"T2w\"]}",
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "9b164a7a1f3f4248b0ac70e310143b54",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 57,
+    "method": "nhp_macapype",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": {
+      "slot": "T1",
+      "type": "T1w"
+    },
+    "key": "product_present:{\"slot\": \"T1\", \"type\": \"T1w\"}",
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "87d61912849d428289b0d33900ff6d33",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 58,
+    "method": "nhp_macapype",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": {
+      "slot": "T2",
+      "type": "T2w"
+    },
+    "key": "product_present:{\"slot\": \"T2\", \"type\": \"T2w\"}",
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "8cdfcfd97619409d994d02353ce57b55",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 59,
+    "method": "nhp_macapype",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "5b332f00da1144ca941ad8c0a9860a5b",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 60,
+    "method": "nhp_macapype",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "687158af63944497bbe004fa0b2aa2d6",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 61,
+    "method": "nhp_macapype",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "04269849a29d444a996011944c22a2a9",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 62,
+    "method": "nhp_macapype",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "8f677bf9649a4d4eb922397d978dbb60",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 63,
+    "method": "nhp_macapype",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "b8dd6cd29f304584a42f84bf707d629a",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 64,
+    "method": "nhp_macapype",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "136bd32c8cc84936b48d570fc8db84b1",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 65,
+    "method": "nhp_macapype",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "5b5ce4252f3e4020ab74427d10da6072",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 66,
+    "method": "nhp_macapype",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "fcc8c43744094dc3b488e3c812d6f62c",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 67,
+    "method": "nhp_macapype",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "93d6af187580493e8edfc5d91ebd5cfb",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 68,
+    "method": "nhp_macapype",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "e68e1b8acaae4f27b4f1d62d2beac83f",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 69,
+    "method": "nhp_macapype",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "435858f7e34d45ddbf06e29df9581c1b",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 70,
+    "method": "samseg_segmentation",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": {
+      "slot": "volumes",
+      "type": "MRI"
+    },
+    "key": "product_present:{\"slot\": \"volumes\", \"type\": \"MRI\"}",
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "c852a16479594e30b8f6be6fbcd3b66e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 71,
+    "method": "samseg_segmentation",
+    "decision": "accepted",
+    "template": "attr_equal",
+    "parameters": {
+      "slots": [
+        "volumes"
+      ],
+      "attrs": [
+        "space",
+        "voxel_size"
+      ]
+    },
+    "key": "attr_equal:{\"attrs\": [\"space\", \"voxel_size\"], \"slots\": [\"volumes\"]}",
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "7a859b07abb0415b877f33a61e87e0cf",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 72,
+    "method": "samseg_segmentation",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "46e22b2e1227425da5fb0122e1c2e85a",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 73,
+    "method": "samseg_segmentation",
+    "decision": "accepted",
+    "template": "attr_equal",
+    "parameters": {
+      "slots": [
+        "timepoints"
+      ],
+      "attrs": [
+        "space",
+        "voxel_size"
+      ]
+    },
+    "key": "attr_equal:{\"attrs\": [\"space\", \"voxel_size\"], \"slots\": [\"timepoints\"]}",
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "c6c7ef448f894c9d90e9a170981c90f3",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 74,
+    "method": "samseg_segmentation",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "a638b7ed5e654f7291a83f69dbbd8f58",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 75,
+    "method": "samseg_segmentation",
+    "decision": "accepted",
+    "template": "attr_equal",
+    "parameters": {
+      "slots": [
+        "volumes"
+      ],
+      "attrs": [
+        "space",
+        "voxel_size"
+      ]
+    },
+    "key": "attr_equal:{\"attrs\": [\"space\", \"voxel_size\"], \"slots\": [\"volumes\"]}",
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "3cb245a508a54030897d16e086b9c1b7",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 76,
+    "method": "samseg_segmentation",
+    "decision": "accepted",
+    "template": "attr_equal",
+    "parameters": {
+      "slots": [
+        "timepoints"
+      ],
+      "attrs": [
+        "contrast"
+      ]
+    },
+    "key": "attr_equal:{\"attrs\": [\"contrast\"], \"slots\": [\"timepoints\"]}",
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "062613775aa04a50ae306e018a9c6c18",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 77,
+    "method": "samseg_segmentation",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "a12dd9bdca8b4f729bff2bb0be525739",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 78,
+    "method": "samseg_segmentation",
+    "decision": "accepted",
+    "template": "attr_equal",
+    "parameters": {
+      "slots": [
+        "volumes"
+      ],
+      "attrs": [
+        "space",
+        "voxel_size"
+      ]
+    },
+    "key": "attr_equal:{\"attrs\": [\"space\", \"voxel_size\"], \"slots\": [\"volumes\"]}",
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "4657caa955cd4ec8b20994d7b91cef77",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 79,
+    "method": "samseg_segmentation",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "e8fafe9187c44418aaa70d4474e22ec5",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 80,
+    "method": "samseg_segmentation",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "37dbd6a807074cc3affefaca21bef88b",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 81,
+    "method": "samseg_segmentation",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "2e2772ca26e94e70a8e103ef1d6ff20b",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 82,
+    "method": "samseg_segmentation",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "67dd02235492443e932b809f66071e4c",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 83,
+    "method": "samseg_segmentation",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "9ec07e1425954f9291714c42a2b37a48",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 84,
+    "method": "surface_annotation_roi",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "45c54fa452ec41c7938d9bf820da0a15",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 85,
+    "method": "surface_annotation_roi",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "27d732f87a444c3b97044e8848adf009",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 86,
+    "method": "surface_annotation_roi",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "ae6239bb370f4d188538d26fb30247c3",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 87,
+    "method": "surface_annotation_roi",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "806aad4411e747bfb94022a372de21f2",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 88,
+    "method": "surface_mesh_area",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": {
+      "slot": "surface",
+      "type": "freesurfer_surface_mesh"
+    },
+    "key": "product_present:{\"slot\": \"surface\", \"type\": \"freesurfer_surface_mesh\"}",
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "1cf89a4a56284ddb849c66aaef1f669e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 89,
+    "method": "surface_mesh_area",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "1bd067f8573145d8a8d7176ec7ea0d97",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 90,
+    "method": "surface_mesh_area",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "2a93b5d8026b45f88d825efeec68ff15",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 91,
+    "method": "surface_mesh_area",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "e74fe20aa39d41a0b9e64d22c20cfb2d",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 92,
+    "method": "surface_mesh_area",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": {
+      "slot": "surface",
+      "attr": "mesh",
+      "values": [
+        "triangular"
+      ]
+    },
+    "key": "attr_in:{\"attr\": \"mesh\", \"slot\": \"surface\", \"values\": [\"triangular\"]}",
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "646c8d9589ef4aa2bf3d0e4e7692c93e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 93,
+    "method": "surface_mesh_area",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "c1f561579cd64440a28ee2b14b7f3d4a",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 94,
+    "method": "surface_mesh_area",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "a3c9f144fde14772a29f8400793c2d8b",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 95,
+    "method": "surface_mesh_area",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": {
+      "slot": "surface",
+      "attr": "mesh",
+      "values": [
+        "triangular"
+      ]
+    },
+    "key": "attr_in:{\"attr\": \"mesh\", \"slot\": \"surface\", \"values\": [\"triangular\"]}",
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "1d94baec8d9547f6aad82cedbbc2f9bd",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 96,
+    "method": "surface_mesh_area",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "564c92b848224a72a7c6caa5565e66ae",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 97,
+    "method": "surface_mesh_area",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "07c434d57b5c4caeb7cf80d23da7c9ca",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 98,
+    "method": "surface_mesh_area",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "aea452a07d2d41518a35f2e5674027a7",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 99,
+    "method": "surface_reconstruction_qc",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "598ee18045a747e4bcf6e463d6b89a38",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 100,
+    "method": "surface_reconstruction_qc",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "95286e9802a54b3f990ac65db688d338",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 101,
+    "method": "surface_reconstruction_qc",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "291b2356f7b046228472405ed99f300a",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 102,
+    "method": "surface_reconstruction_qc",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "096aa32de1624be99f5832fed1254d92",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 103,
+    "method": "surface_reconstruction_qc",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "24f15effaf104e7bacba2448a7005a6b",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 104,
+    "method": "surface_reconstruction_qc",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "59a710b2afc04fddb3d68c31508c977b",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 105,
+    "method": "surface_reconstruction_qc",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "03120faccedc4f048cd8c2417a191784",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 106,
+    "method": "surface_reconstruction_qc",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "2ff323dbafa948419174179b0b66f500",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 107,
+    "method": "surface_reconstruction_qc",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "6ff3704f31924d1481460f7b6e896272",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 108,
+    "method": "surface_reconstruction_qc",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "db51ad72a99a47799b8343e8a292108c",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  }
+]

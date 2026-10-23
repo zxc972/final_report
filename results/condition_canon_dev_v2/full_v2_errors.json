@@ -1,0 +1,2199 @@
+[
+  {
+    "id": 1,
+    "method": "cat_morphometry",
+    "field": "inputs",
+    "statement": "T1-weighted MRI scans, single scans, longitudinal series or BIDS datasets",
+    "quote": "T1-weighted MRI\nSingle scans, longitudinal series or BIDS datasets",
+    "source_id": "cat",
+    "gold_template": "product_present",
+    "gold_parameters": {
+      "slot": "T1",
+      "type": "type:Volume.T1"
+    },
+    "predicted_decision": "provider_error",
+    "predicted_template": null,
+    "predicted_parameters": null,
+    "template_wrong": true,
+    "executable_wrong": true,
+    "statement_key_wrong": true,
+    "invalid_attempts": {},
+    "reasons": [
+      "运行/接口失败，单列环境或输出结构问题",
+      "主模板与审核版开发集标准不一致",
+      "可执行/非可执行判定不一致",
+      "逐条规范键不一致（严格字符串，不增设同义规则）"
+    ],
+    "votes": {},
+    "sampling": {
+      "nominal_samples": 5,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "878a2028a8e14774bc3e936558509042",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "request_id": "758b88c0436c4d8d8c60e7f5e6e60e03",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "request_id": "cdd4c0a6fe49437c827c60c1cba39dd5",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "request_id": "de359730f7064db899e555fc92d34d7a",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "method": "cat_morphometry",
+    "field": "conditions",
+    "statement": "For MATLAB users, SPM12 or newer and MATLAB R2020a or newer are required; no additional MATLAB toolboxes are needed.",
+    "quote": "SPM12 or newer\nMATLAB R2020a or newer (Windows: R2022a, Apple Silicon: R2023b)\nNo additional MATLAB toolboxes",
+    "source_id": "cat",
+    "gold_template": "software",
+    "gold_parameters": {
+      "commands": [
+        "matlab",
+        "spm12"
+      ]
+    },
+    "predicted_decision": "provider_error",
+    "predicted_template": null,
+    "predicted_parameters": null,
+    "template_wrong": true,
+    "executable_wrong": true,
+    "statement_key_wrong": true,
+    "invalid_attempts": {},
+    "reasons": [
+      "运行/接口失败，单列环境或输出结构问题",
+      "主模板与审核版开发集标准不一致",
+      "可执行/非可执行判定不一致",
+      "逐条规范键不一致（严格字符串，不增设同义规则）"
+    ],
+    "votes": {},
+    "sampling": {
+      "nominal_samples": 4,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "fcbf0832ec4543b78973ca886a6c4012",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "request_id": "35b49f47ffc048d7a430e11a6ceb64c0",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "request_id": "f8f97bc43f2e408185f9851758fa9cc9",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "method": "cat_morphometry",
+    "field": "exceptions",
+    "statement": "The standalone version lacks some features such as parallelization and interactive help.",
+    "quote": "Some features, such as parallelization and the interactive help, are not available.",
+    "source_id": "cat",
+    "gold_template": "advisory",
+    "gold_parameters": null,
+    "predicted_decision": "provider_error",
+    "predicted_template": null,
+    "predicted_parameters": null,
+    "template_wrong": true,
+    "executable_wrong": false,
+    "statement_key_wrong": false,
+    "invalid_attempts": {},
+    "reasons": [
+      "运行/接口失败，单列环境或输出结构问题",
+      "主模板与审核版开发集标准不一致"
+    ],
+    "votes": {},
+    "sampling": {
+      "nominal_samples": 4,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "566d495e8cbc4b65bebb8881241df892",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "request_id": "28ab987cefac4c31b084e045fab66cf7",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "request_id": "87b11d06a08c4435a231bd2a2e659d3d",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "method": "existing_curvature_sulc_profile",
+    "field": "checks",
+    "statement": "Confirm that the surfaces have been smoothed and topology-corrected before using the morphometry values.",
+    "quote": "Resmooth RH/LH white matter: smooths rh.orig and lh.orig surfaces",
+    "source_id": "fs_morph",
+    "gold_template": "advisory",
+    "gold_parameters": null,
+    "predicted_decision": "accepted",
+    "predicted_template": "provenance",
+    "predicted_parameters": {
+      "step": "recon-all"
+    },
+    "template_wrong": true,
+    "executable_wrong": true,
+    "statement_key_wrong": true,
+    "invalid_attempts": {},
+    "reasons": [
+      "主模板与审核版开发集标准不一致",
+      "可执行/非可执行判定不一致",
+      "逐条规范键不一致（严格字符串，不增设同义规则）"
+    ],
+    "votes": {
+      "provenance:{\"step\": \"recon-all\"}": 4,
+      "provenance:{\"step\": \"rescale\"}": 1
+    },
+    "sampling": {
+      "nominal_samples": 5,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "0a48a28b91aa4ed28d69f47fce12aff6",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "request_id": "74e0bb4b53874ab2945f5055a0dfbb10",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "request_id": "1bd4a7f5e54a42408d43c333db62e25f",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "request_id": "67e890159b2d4ca4b8c8fe40b5c43747",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "request_id": "72d7fe70aa694926b5db7a8ab059f6f5",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 9,
+    "method": "fsl_vbm",
+    "field": "inputs",
+    "statement": "design.mat and design.con files specifying the cross-subject statistical model, with row order matching the image order from imglob.",
+    "quote": "create your design.mat and design.con in your FSL-VBM directory; see the randomise manual",
+    "source_id": "fsl_vbm",
+    "gold_template": "product_present",
+    "gold_parameters": {
+      "slot": "design",
+      "type": "type:StatsTable.DesignMatrix"
+    },
+    "predicted_decision": "advisory",
+    "predicted_template": "advisory",
+    "predicted_parameters": null,
+    "template_wrong": true,
+    "executable_wrong": true,
+    "statement_key_wrong": true,
+    "invalid_attempts": {},
+    "reasons": [
+      "主模板与审核版开发集标准不一致",
+      "可执行/非可执行判定不一致",
+      "逐条规范键不一致（严格字符串，不增设同义规则）"
+    ],
+    "votes": {
+      "advisory": 3
+    },
+    "sampling": {
+      "nominal_samples": 5,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "5029507af2a7421aba67e583953cb126",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "request_id": "0c2d09d446ac45c68f6a84b91e06bdc5",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "request_id": "be37a95d0790443d88402e2b7d1f575d",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "request_id": "b110ba9b62154cda9d7412fc707eed9e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "request_id": "fcefff20498b4881ac2c7ed23c2153eb",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 11,
+    "method": "fsl_vbm",
+    "field": "conditions",
+    "statement": "All different populations included in the study must be represented in the template construction.",
+    "quote": "All your different populations included in this study MUST be represented in the template construction.",
+    "source_id": "fsl_vbm",
+    "gold_template": "advisory",
+    "gold_parameters": null,
+    "predicted_decision": "provider_error",
+    "predicted_template": null,
+    "predicted_parameters": null,
+    "template_wrong": true,
+    "executable_wrong": false,
+    "statement_key_wrong": false,
+    "invalid_attempts": {},
+    "reasons": [
+      "运行/接口失败，单列环境或输出结构问题",
+      "主模板与审核版开发集标准不一致"
+    ],
+    "votes": {},
+    "sampling": {
+      "nominal_samples": 2,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "90cdbcc7dd7240c9a3e4065e460fce56",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 14,
+    "method": "fsl_vbm",
+    "field": "checks",
+    "statement": "Check brain-extracted images (*_brain.*) in the struc directory after fslvbm_1_bet.",
+    "quote": "CHECKING the brain images (*_brain.*) in your struc directory",
+    "source_id": "fsl_vbm",
+    "gold_template": "advisory",
+    "gold_parameters": null,
+    "predicted_decision": "provider_error",
+    "predicted_template": null,
+    "predicted_parameters": null,
+    "template_wrong": true,
+    "executable_wrong": false,
+    "statement_key_wrong": false,
+    "invalid_attempts": {},
+    "reasons": [
+      "运行/接口失败，单列环境或输出结构问题",
+      "主模板与审核版开发集标准不一致"
+    ],
+    "votes": {},
+    "sampling": {
+      "nominal_samples": 3,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "a8416a6114e64a498883fe1f14c948bd",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "request_id": "8801d629977b4f43a75bfac18820d1d5",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 15,
+    "method": "fsl_vbm",
+    "field": "checks",
+    "statement": "Check the template_GM_4D image in struc with the movie loop in fsleyes after template creation.",
+    "quote": "CHECK the template_GM_4D image in struc with the movie loop in fsleyes.",
+    "source_id": "fsl_vbm",
+    "gold_template": "advisory",
+    "gold_parameters": null,
+    "predicted_decision": "provider_error",
+    "predicted_template": null,
+    "predicted_parameters": null,
+    "template_wrong": true,
+    "executable_wrong": false,
+    "statement_key_wrong": false,
+    "invalid_attempts": {},
+    "reasons": [
+      "运行/接口失败，单列环境或输出结构问题",
+      "主模板与审核版开发集标准不一致"
+    ],
+    "votes": {},
+    "sampling": {
+      "nominal_samples": 3,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "423f9d4f483442e88cd5059920a5e642",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "request_id": "645644d4e227454f9e209a6a47a985b7",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 16,
+    "method": "fsl_vbm",
+    "field": "checks",
+    "statement": "Check the 4D image of modulated registered GM images (GM_mod_merg) using the movie loop in fsleyes after fslvbm_3_proc.",
+    "quote": "final CHECK of the 4D image of modulated registered GM images GM_mod_merg using the movie loop in fsleyes.",
+    "source_id": "fsl_vbm",
+    "gold_template": "advisory",
+    "gold_parameters": null,
+    "predicted_decision": "provider_error",
+    "predicted_template": null,
+    "predicted_parameters": null,
+    "template_wrong": true,
+    "executable_wrong": false,
+    "statement_key_wrong": false,
+    "invalid_attempts": {},
+    "reasons": [
+      "运行/接口失败，单列环境或输出结构问题",
+      "主模板与审核版开发集标准不一致"
+    ],
+    "votes": {},
+    "sampling": {
+      "nominal_samples": 2,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "fcb4864c1f3e4d0eae1761e4aa917c96",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 19,
+    "method": "global_surface_folding",
+    "field": "inputs",
+    "statement": "White matter surface mesh of the cortical ribbon.",
+    "quote": "our proposed method requires the bounding pial and white matter surfaces of the cortical ribbon as input",
+    "source_id": "comparative_folding",
+    "gold_template": "product_present",
+    "gold_parameters": {
+      "slot": "white",
+      "type": "type:Surface.White"
+    },
+    "predicted_decision": "provider_error",
+    "predicted_template": null,
+    "predicted_parameters": null,
+    "template_wrong": true,
+    "executable_wrong": true,
+    "statement_key_wrong": true,
+    "invalid_attempts": {},
+    "reasons": [
+      "运行/接口失败，单列环境或输出结构问题",
+      "主模板与审核版开发集标准不一致",
+      "可执行/非可执行判定不一致",
+      "逐条规范键不一致（严格字符串，不增设同义规则）"
+    ],
+    "votes": {},
+    "sampling": {
+      "nominal_samples": 1,
+      "truncation_replacements": 0,
+      "responses": []
+    }
+  },
+  {
+    "id": 20,
+    "method": "global_surface_folding",
+    "field": "inputs",
+    "statement": "Point coordinates for convex hull computation.",
+    "quote": "Coordinates of points to construct a convex hull from",
+    "source_id": "scipy_hull",
+    "gold_template": "product_present",
+    "gold_parameters": {
+      "slot": "pial",
+      "type": "type:Surface.Pial"
+    },
+    "predicted_decision": "advisory",
+    "predicted_template": "advisory",
+    "predicted_parameters": null,
+    "template_wrong": true,
+    "executable_wrong": true,
+    "statement_key_wrong": true,
+    "invalid_attempts": {},
+    "reasons": [
+      "主模板与审核版开发集标准不一致",
+      "可执行/非可执行判定不一致",
+      "逐条规范键不一致（严格字符串，不增设同义规则）"
+    ],
+    "votes": {
+      "advisory": 5
+    },
+    "sampling": {
+      "nominal_samples": 5,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "4cd87f20cec743cb969514a83fdbfb3f",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "request_id": "1405ab9fa2044834ac149ca9097ed16e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "request_id": "1ebe369afa5a4dac97f4a991b351f293",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "request_id": "b8da94583a3c40b29f267befec08f28b",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "request_id": "6241d415d4bb4d1cb696f97530aaf56a",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 21,
+    "method": "global_surface_folding",
+    "field": "inputs",
+    "statement": "Cortical thickness estimate (average) for scaling law.",
+    "quote": "we only had numerical values for the total and exposed surface area, as well a average cortical thickness estimates",
+    "source_id": "comparative_folding",
+    "gold_template": "product_present",
+    "gold_parameters": {
+      "slot": "thickness",
+      "type": "type:SurfaceMetric.Thickness"
+    },
+    "predicted_decision": "advisory",
+    "predicted_template": "advisory",
+    "predicted_parameters": null,
+    "template_wrong": true,
+    "executable_wrong": true,
+    "statement_key_wrong": true,
+    "invalid_attempts": {},
+    "reasons": [
+      "主模板与审核版开发集标准不一致",
+      "可执行/非可执行判定不一致",
+      "逐条规范键不一致（严格字符串，不增设同义规则）"
+    ],
+    "votes": {
+      "advisory": 4,
+      "product_present:{\"slot\": \"thickness\", \"type\": \"type:SurfaceMetric.Thickness\"}": 1
+    },
+    "sampling": {
+      "nominal_samples": 5,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "8256ef32823643f5928827bf38e23e67",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "request_id": "ac941b6ced944d58b3f735070d9d068a",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "request_id": "661278e19e7143ecab84ec989a5db9c5",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "request_id": "12cb637086544012bc3fd0499811af07",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "request_id": "3a64e71c4654444fa10ae20122bab15d",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 33,
+    "method": "hcp_structural_pipeline",
+    "field": "inputs",
+    "statement": "T1/T2 structural images are processed by the three structural batch scripts.",
+    "quote": "处理T1/T2结构像",
+    "source_id": "alex_hcp_pdf",
+    "gold_template": "product_present",
+    "gold_parameters": {
+      "slot": "T1",
+      "type": "type:Volume.T1"
+    },
+    "predicted_decision": "advisory",
+    "predicted_template": "advisory",
+    "predicted_parameters": null,
+    "template_wrong": true,
+    "executable_wrong": true,
+    "statement_key_wrong": true,
+    "invalid_attempts": {},
+    "reasons": [
+      "主模板与审核版开发集标准不一致",
+      "可执行/非可执行判定不一致",
+      "逐条规范键不一致（严格字符串，不增设同义规则）"
+    ],
+    "votes": {
+      "advisory": 5
+    },
+    "sampling": {
+      "nominal_samples": 5,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "015c07d9cd4449a9a0423f5a2bebbbd8",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "request_id": "f40b28aaf9db43ba8cb088fda24093e0",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "request_id": "14941f06bd2d4ebe89f99b60c770d15c",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "request_id": "dd1aa292d4bb44d88e0ef663d6751590",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "request_id": "07af995ed1dd45ac8c1fc024cf38e481",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 36,
+    "method": "local_gyrification",
+    "field": "inputs",
+    "statement": "The pial surface file (?h.pial) for the subject, produced by the recon-all -all stream.",
+    "quote": "usage of the -localGI feature assumes that a subject has already been processed by the freesurfer {{{recon-all -s <subjid> -all}}} stream, such that the ?h.pial surface files exist",
+    "source_id": "fs_lgi",
+    "gold_template": "product_present",
+    "gold_parameters": {
+      "slot": "pial",
+      "type": "type:Surface.Pial"
+    },
+    "predicted_decision": "review",
+    "predicted_template": "provenance",
+    "predicted_parameters": {
+      "step": "recon-all"
+    },
+    "template_wrong": true,
+    "executable_wrong": true,
+    "statement_key_wrong": true,
+    "invalid_attempts": {},
+    "reasons": [
+      "未接受：support=0.6, margin=0.19999999999999996, answered=5",
+      "主模板与审核版开发集标准不一致",
+      "可执行/非可执行判定不一致",
+      "逐条规范键不一致（严格字符串，不增设同义规则）"
+    ],
+    "votes": {
+      "provenance:{\"step\": \"recon-all\"}": 3,
+      "product_present:{\"slot\": \"pial\", \"type\": \"type:Surface.Pial\"}": 2
+    },
+    "sampling": {
+      "nominal_samples": 5,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "238ffe6bd69d4cf59376adcab7623341",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "request_id": "5a76f8f37dcd41169c346e2a6f253b94",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "request_id": "e8cedf9730214ebeaf8195d1470bc0c2",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "request_id": "d0ec32deaf0c4ed49ec4367b2717608f",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "request_id": "ce777220cd23438685fbdafa2280a9a0",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 38,
+    "method": "local_gyrification",
+    "field": "inputs",
+    "statement": "MATLAB with Image Processing Toolbox and $FREESURFER_HOME/matlab in the MATLAB path.",
+    "quote": "MATLAB is required to use the -localGI feature. Also, you will need their Image Processing Toolbox.",
+    "source_id": "fs_lgi",
+    "gold_template": "software",
+    "gold_parameters": {
+      "commands": [
+        "matlab"
+      ]
+    },
+    "predicted_decision": "accepted",
+    "predicted_template": "software",
+    "predicted_parameters": {
+      "commands": [
+        "image",
+        "matlab"
+      ]
+    },
+    "template_wrong": false,
+    "executable_wrong": false,
+    "statement_key_wrong": true,
+    "invalid_attempts": {},
+    "reasons": [
+      "逐条规范键不一致（严格字符串，不增设同义规则）"
+    ],
+    "votes": {
+      "software:{\"commands\": [\"image\", \"matlab\"]}": 5
+    },
+    "sampling": {
+      "nominal_samples": 5,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "71a41fe07d7d413eb3189f4eea9db114",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "request_id": "869a5ad18a6344c3815ff5b54f057ce6",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "request_id": "7b34112546e34fc0829531a0a8dae970",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 560
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "request_id": "dc4ab8b796834cc9a26cb497ced7e482",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 1469
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "request_id": "a0648a2834a648d1b4efc51d065f0b7e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 40,
+    "method": "local_gyrification",
+    "field": "conditions",
+    "statement": "MATLAB and its Image Processing Toolbox must be installed and accessible.",
+    "quote": "MATLAB is required to use the -localGI feature. Also, you will need their Image Processing Toolbox.",
+    "source_id": "fs_lgi",
+    "gold_template": "software",
+    "gold_parameters": {
+      "commands": [
+        "matlab"
+      ]
+    },
+    "predicted_decision": "accepted",
+    "predicted_template": "software",
+    "predicted_parameters": {
+      "commands": [
+        "image",
+        "matlab"
+      ]
+    },
+    "template_wrong": false,
+    "executable_wrong": false,
+    "statement_key_wrong": true,
+    "invalid_attempts": {},
+    "reasons": [
+      "逐条规范键不一致（严格字符串，不增设同义规则）"
+    ],
+    "votes": {
+      "software:{\"commands\": [\"image\", \"matlab\"]}": 5
+    },
+    "sampling": {
+      "nominal_samples": 5,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "4a84f492ac284d9bb5ffa7280e6cfc1c",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "request_id": "697d8474ef274db59f291e9f6f80c41a",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "request_id": "adb7043a1f6e4fd598515b6142444759",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "request_id": "635de60850c64ff4841416527940065c",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "request_id": "bcea2aa168fc462cb20f1f3c2e901dff",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 41,
+    "method": "local_gyrification",
+    "field": "conditions",
+    "statement": "The MATLAB path must include $FREESURFER_HOME/matlab, set up in ~/matlab/startup.m.",
+    "quote": "You will also need $FREESURFER_HOME/matlab in your matlab path set up in your ~/matlab/starup.m script.",
+    "source_id": "fs_lgi",
+    "gold_template": "software",
+    "gold_parameters": {
+      "commands": [
+        "matlab"
+      ]
+    },
+    "predicted_decision": "accepted",
+    "predicted_template": "software",
+    "predicted_parameters": {
+      "commands": [
+        "freesurfer",
+        "matlab"
+      ]
+    },
+    "template_wrong": false,
+    "executable_wrong": false,
+    "statement_key_wrong": true,
+    "invalid_attempts": {},
+    "reasons": [
+      "逐条规范键不一致（严格字符串，不增设同义规则）"
+    ],
+    "votes": {
+      "software:{\"commands\": [\"freesurfer\", \"matlab\"]}": 4,
+      "software:{\"commands\": [\"matlab\"]}": 1
+    },
+    "sampling": {
+      "nominal_samples": 5,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "4a3ec4bcdbe640838c685c0feaeaeae7",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "request_id": "6a66c00c3eb7480f8bd22cd9e191d05a",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "request_id": "1ceafe45ef544a7891eb7a297854173c",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "request_id": "22b122c12a004180a8196f34de68ddfa",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "request_id": "623c9077467f4d15a2e09edf71535361",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 47,
+    "method": "macaque_civet",
+    "field": "conditions",
+    "statement": "The pipeline is designed for macaque brains and uses a length scale of 0.4 relative to human brain size.",
+    "quote": "A length scale of 0.4 was derived from the cubic root of the macaque-to-human volume ratio",
+    "source_id": "civet_macaque",
+    "gold_template": "attr_in",
+    "gold_parameters": {
+      "slot": "T1",
+      "attr": "species",
+      "values": [
+        "macaque"
+      ]
+    },
+    "predicted_decision": "review",
+    "predicted_template": "advisory",
+    "predicted_parameters": null,
+    "template_wrong": true,
+    "executable_wrong": true,
+    "statement_key_wrong": true,
+    "invalid_attempts": {},
+    "reasons": [
+      "未接受：support=0.4, margin=0.0, answered=4",
+      "主模板与审核版开发集标准不一致",
+      "可执行/非可执行判定不一致",
+      "逐条规范键不一致（严格字符串，不增设同义规则）"
+    ],
+    "votes": {
+      "advisory": 2,
+      "scale_check:{\"metric\": \"length scale (macaque-to-human volume ratio)\"}": 2
+    },
+    "sampling": {
+      "nominal_samples": 5,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "713dcf53305249009eb8dcdd91bac3cd",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "request_id": "d5d8f8aba717493694ad2d2386f13c72",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "request_id": "a43a02a1282f490fb83eb5900c8c6485",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "request_id": "4421e86738a74ada9e7392c7e3b371bb",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "request_id": "1566065800fa459b80b5ffc4395663a4",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 53,
+    "method": "macaque_civet",
+    "field": "exceptions",
+    "statement": "The pipeline is not validated for species other than macaques; adaptations for other primates would require appropriate length scales and templates.",
+    "quote": "Further adaptations of the pipeline to other non-human primate brains should be straightforward by introducing the appropriate length scales and supplying species specific templates.",
+    "source_id": "civet_macaque",
+    "gold_template": "attr_in",
+    "gold_parameters": {
+      "slot": "T1",
+      "attr": "species",
+      "values": [
+        "macaque"
+      ]
+    },
+    "predicted_decision": "advisory",
+    "predicted_template": "advisory",
+    "predicted_parameters": null,
+    "template_wrong": true,
+    "executable_wrong": true,
+    "statement_key_wrong": true,
+    "invalid_attempts": {},
+    "reasons": [
+      "主模板与审核版开发集标准不一致",
+      "可执行/非可执行判定不一致",
+      "逐条规范键不一致（严格字符串，不增设同义规则）"
+    ],
+    "votes": {
+      "advisory": 4
+    },
+    "sampling": {
+      "nominal_samples": 5,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "644d3a7a95b14c36bcdc5c10582bd7f9",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "request_id": "9ae18eb5b9974f70a30386a1da8608b2",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "request_id": "2168d0c81e774937b047b15c5dfa508e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "request_id": "4a093faa0e384de9a057f393898b2ac6",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "request_id": "28133009b16d4119bee243ee33037a20",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 56,
+    "method": "nhp_macapype",
+    "field": "inputs",
+    "statement": "Input data must be in BIDS format, with T1w and T2w images expected.",
+    "quote": "All the data have to be in BIDS format to run properly",
+    "source_id": "macapype_commands",
+    "gold_template": "product_present",
+    "gold_parameters": {
+      "slot": "T1",
+      "type": "type:Volume.T1"
+    },
+    "predicted_decision": "advisory",
+    "predicted_template": "advisory",
+    "predicted_parameters": null,
+    "template_wrong": true,
+    "executable_wrong": true,
+    "statement_key_wrong": true,
+    "invalid_attempts": {
+      "attr_in": 1
+    },
+    "reasons": [
+      "主模板与审核版开发集标准不一致",
+      "可执行/非可执行判定不一致",
+      "逐条规范键不一致（严格字符串，不增设同义规则）"
+    ],
+    "votes": {
+      "advisory": 4
+    },
+    "sampling": {
+      "nominal_samples": 5,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "f46979adc0014f42a171cc6c0ffa9787",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "request_id": "06943bd8248a4d82b3b0df06b225aad8",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "request_id": "84db9bd5c43b462cbd35921fe8bd3ead",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "request_id": "c01c944359034ac98ec22991193555c9",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "request_id": "b808784b614d455290e3e1d06f98d2ee",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 57,
+    "method": "nhp_macapype",
+    "field": "inputs",
+    "statement": "T1 weighted images are expected with the _T1w BIDS extension.",
+    "quote": "_T1w (BIDS) extension is expected for T1 weighted images",
+    "source_id": "macapype_commands",
+    "gold_template": "product_present",
+    "gold_parameters": {
+      "slot": "T1",
+      "type": "type:Volume.T1"
+    },
+    "predicted_decision": "advisory",
+    "predicted_template": "advisory",
+    "predicted_parameters": null,
+    "template_wrong": true,
+    "executable_wrong": true,
+    "statement_key_wrong": true,
+    "invalid_attempts": {},
+    "reasons": [
+      "主模板与审核版开发集标准不一致",
+      "可执行/非可执行判定不一致",
+      "逐条规范键不一致（严格字符串，不增设同义规则）"
+    ],
+    "votes": {
+      "advisory": 4,
+      "product_present:{\"slot\": \"T1\", \"type\": \"type:Volume.T1\"}": 1
+    },
+    "sampling": {
+      "nominal_samples": 5,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "f63f43d5f3a646a6ab3ea4606d4063c7",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "request_id": "73226a276f964c43a9ca3ccf2ba5600a",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "request_id": "06a293955bac4c5c8826969a7c31ce63",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "request_id": "a823998dd220463690bd65894078dc34",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "request_id": "00118dd0c13f49a3936b810a81da9a60",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 71,
+    "method": "samseg_segmentation",
+    "field": "inputs",
+    "statement": "All input volumes must be co-registered with each other and have the same image grid size and voxel dimensions.",
+    "quote": "the only requirement is that all input volumes are co-registered with each other, and have the same image grid size and voxel dimensions",
+    "source_id": "fs_samseg",
+    "gold_template": "attr_equal",
+    "gold_parameters": {
+      "slots": [
+        "T1",
+        "volumes"
+      ],
+      "attrs": [
+        "space",
+        "voxel_size"
+      ]
+    },
+    "predicted_decision": "review",
+    "predicted_template": "advisory",
+    "predicted_parameters": null,
+    "template_wrong": true,
+    "executable_wrong": true,
+    "statement_key_wrong": true,
+    "invalid_attempts": {
+      "attr_equal": 5
+    },
+    "reasons": [
+      "未接受：support=None, margin=None, answered=5",
+      "主模板与审核版开发集标准不一致",
+      "可执行/非可执行判定不一致",
+      "逐条规范键不一致（严格字符串，不增设同义规则）"
+    ],
+    "votes": {},
+    "sampling": {
+      "nominal_samples": 5,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "288d8d3c6c6f483c88c198fb7aa4feb6",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "request_id": "11b86e58e7674761b1324dde8e193a75",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "request_id": "b39a473d29fd4b7e80a69e77886677f6",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "request_id": "7e793d9275814515bff11edc70391772",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "request_id": "f7f5f060d2e145249bd9d9d2f0b7dc2f",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 73,
+    "method": "samseg_segmentation",
+    "field": "inputs",
+    "statement": "For longitudinal processing, all time points must be co-registered and reformatted to the same image grid, using an unbiased reference template.",
+    "quote": "longitudinal SAMSEG expects all its input images to have been co-registered and reformatted to the same image grid beforehand",
+    "source_id": "fs_samseg",
+    "gold_template": "attr_equal",
+    "gold_parameters": {
+      "slots": [
+        "T1",
+        "timepoints"
+      ],
+      "attrs": [
+        "space",
+        "voxel_size"
+      ]
+    },
+    "predicted_decision": "review",
+    "predicted_template": "advisory",
+    "predicted_parameters": null,
+    "template_wrong": true,
+    "executable_wrong": true,
+    "statement_key_wrong": true,
+    "invalid_attempts": {
+      "attr_equal": 4
+    },
+    "reasons": [
+      "未接受：support=0.2, margin=0.2, answered=5",
+      "主模板与审核版开发集标准不一致",
+      "可执行/非可执行判定不一致",
+      "逐条规范键不一致（严格字符串，不增设同义规则）"
+    ],
+    "votes": {
+      "advisory": 1
+    },
+    "sampling": {
+      "nominal_samples": 5,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "227c1d404eed441791c87a57cf678be7",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "request_id": "fa3ff05161db4bb49c22e6952e9892c4",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "request_id": "98806c709bca4230a9204fa2770ddb9a",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "request_id": "0c1c8381ffd8419abea9be94adc44c6f",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "request_id": "c8ad889174694f3e9ff9480dfdee9207",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 75,
+    "method": "samseg_segmentation",
+    "field": "conditions",
+    "statement": "For multi-contrast input, all volumes must be co-registered and have the same image grid size and voxel dimensions.",
+    "quote": "all input volumes are co-registered with each other, and have the same image grid size and voxel dimensions",
+    "source_id": "fs_samseg",
+    "gold_template": "attr_equal",
+    "gold_parameters": {
+      "slots": [
+        "T1",
+        "volumes"
+      ],
+      "attrs": [
+        "space",
+        "voxel_size"
+      ]
+    },
+    "predicted_decision": "review",
+    "predicted_template": "advisory",
+    "predicted_parameters": null,
+    "template_wrong": true,
+    "executable_wrong": true,
+    "statement_key_wrong": true,
+    "invalid_attempts": {
+      "attr_equal": 5
+    },
+    "reasons": [
+      "未接受：support=None, margin=None, answered=5",
+      "主模板与审核版开发集标准不一致",
+      "可执行/非可执行判定不一致",
+      "逐条规范键不一致（严格字符串，不增设同义规则）"
+    ],
+    "votes": {},
+    "sampling": {
+      "nominal_samples": 5,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "aea5d6001ddd48689535b1249a1085cf",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "request_id": "d0476a4e77f64565963e237193da649a",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "request_id": "c62f83bb6db14dbfb417bc55c469b327",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "request_id": "b713b12cb1614c63bcb2dc4a0b8c71ce",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "request_id": "10cf3631c1f44172abd2dc25a59a07a3",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 78,
+    "method": "samseg_segmentation",
+    "field": "checks",
+    "statement": "Verify that all input volumes are co-registered and have the same image grid size and voxel dimensions.",
+    "quote": "the only requirement is that all input volumes are co-registered with each other, and have the same image grid size and voxel dimensions",
+    "source_id": "fs_samseg",
+    "gold_template": "attr_equal",
+    "gold_parameters": {
+      "slots": [
+        "T1",
+        "volumes"
+      ],
+      "attrs": [
+        "space",
+        "voxel_size"
+      ]
+    },
+    "predicted_decision": "review",
+    "predicted_template": "advisory",
+    "predicted_parameters": null,
+    "template_wrong": true,
+    "executable_wrong": true,
+    "statement_key_wrong": true,
+    "invalid_attempts": {
+      "attr_equal": 4
+    },
+    "reasons": [
+      "未接受：support=None, margin=None, answered=4",
+      "主模板与审核版开发集标准不一致",
+      "可执行/非可执行判定不一致",
+      "逐条规范键不一致（严格字符串，不增设同义规则）"
+    ],
+    "votes": {},
+    "sampling": {
+      "nominal_samples": 5,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "9dcf7aa543284d31b5ad890235993700",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "request_id": "5cac7edc7d4e4505bb5bd6abda818d28",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "request_id": "98a404eef86942a6845ac025d72a33da",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "request_id": "c0995b3795be456990009693b290741e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "request_id": "a3bbfadba2f24020b9c94074c2360d32",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 82,
+    "method": "samseg_segmentation",
+    "field": "exceptions",
+    "statement": "The first time the MS lesion module is run, the user may be prompted to install Tensorflow.",
+    "quote": "The first time you run this module, you may be prompted to install Tensorflow",
+    "source_id": "fs_samseg",
+    "gold_template": "advisory",
+    "gold_parameters": null,
+    "predicted_decision": "review",
+    "predicted_template": "software",
+    "predicted_parameters": {
+      "commands": [
+        "tensorflow"
+      ]
+    },
+    "template_wrong": true,
+    "executable_wrong": false,
+    "statement_key_wrong": false,
+    "invalid_attempts": {},
+    "reasons": [
+      "未接受：support=0.6, margin=0.19999999999999996, answered=5",
+      "主模板与审核版开发集标准不一致"
+    ],
+    "votes": {
+      "software:{\"commands\": [\"tensorflow\"]}": 3,
+      "advisory": 2
+    },
+    "sampling": {
+      "nominal_samples": 5,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "e00fd25b0db548d48a321d76c6c75c5e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "request_id": "f6dfd1d2a4ff4767be8964cca8fbe943",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "request_id": "a22b9e539dfe4171982423ae46a2d6b4",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "request_id": "9bdf551b45434f66873f920190b4dff5",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "request_id": "a01ac22d8b154dd8b8b4ca49c4f004d0",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 86,
+    "method": "surface_annotation_roi",
+    "field": "checks",
+    "statement": "Verify that the number of morphometry values matches the number of vertices in the annotation.",
+    "quote": "labelsndarray, shape (n_vertices,)",
+    "source_id": "nibabel_fs",
+    "gold_template": "attr_equal",
+    "gold_parameters": {
+      "slots": [
+        "annotation",
+        "metric"
+      ],
+      "attrs": [
+        "mesh"
+      ]
+    },
+    "predicted_decision": "advisory",
+    "predicted_template": "advisory",
+    "predicted_parameters": null,
+    "template_wrong": true,
+    "executable_wrong": true,
+    "statement_key_wrong": true,
+    "invalid_attempts": {},
+    "reasons": [
+      "主模板与审核版开发集标准不一致",
+      "可执行/非可执行判定不一致",
+      "逐条规范键不一致（严格字符串，不增设同义规则）"
+    ],
+    "votes": {
+      "advisory": 3,
+      "attr_equal:{\"attrs\": [\"mesh\"], \"slots\": [\"annotation\", \"metric\"]}": 1
+    },
+    "sampling": {
+      "nominal_samples": 5,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "a55edbf844cc4b3d9ab96367812dfbd3",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "request_id": "7805bdec964f4eec8c67b1d58eb76669",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "request_id": "50519d0fec0348daadb2dd3da303286c",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "request_id": "75d4ed40e3174492897a100f65068937",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "request_id": "9069a27b643943669e17d31f2d06e214",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 95,
+    "method": "surface_mesh_area",
+    "field": "checks",
+    "statement": "Verify that the mesh is in triangular format as expected by read_geometry.",
+    "quote": "Read a triangular format Freesurfer surface mesh.",
+    "source_id": "nibabel_fs",
+    "gold_template": "advisory",
+    "gold_parameters": null,
+    "predicted_decision": "review",
+    "predicted_template": "attr_in",
+    "predicted_parameters": {
+      "slot": "surface",
+      "attr": "mesh",
+      "values": [
+        "triangular"
+      ]
+    },
+    "template_wrong": true,
+    "executable_wrong": false,
+    "statement_key_wrong": false,
+    "invalid_attempts": {},
+    "reasons": [
+      "未接受：support=0.6, margin=0.19999999999999996, answered=5",
+      "主模板与审核版开发集标准不一致"
+    ],
+    "votes": {
+      "attr_in:{\"attr\": \"mesh\", \"slot\": \"surface\", \"values\": [\"triangular\"]}": 3,
+      "advisory": 2
+    },
+    "sampling": {
+      "nominal_samples": 5,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "3deb88e128ad4893936996abef53d620",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "request_id": "75e84e96211c4df8b9d03265f40d6fb2",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "request_id": "fa9ee3b859384746b6ec13085d81e4dd",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "request_id": "2fdd4899401f4b47bb7935b9d706f2e4",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "request_id": "11cfbff9a5eb4db4adc0db3b67fe5d4e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 99,
+    "method": "surface_reconstruction_qc",
+    "field": "inputs",
+    "statement": "T1-weighted anatomical image(s) in DICOM or other native scanner format.",
+    "quote": "the raw data from the scan must be converted into a format recognized by FreeSurfer",
+    "source_id": "fs_morph",
+    "gold_template": "product_present",
+    "gold_parameters": {
+      "slot": "T1",
+      "type": "type:Volume.T1"
+    },
+    "predicted_decision": "review",
+    "predicted_template": "advisory",
+    "predicted_parameters": null,
+    "template_wrong": true,
+    "executable_wrong": true,
+    "statement_key_wrong": true,
+    "invalid_attempts": {},
+    "reasons": [
+      "未接受：support=0.4, margin=0.0, answered=4",
+      "主模板与审核版开发集标准不一致",
+      "可执行/非可执行判定不一致",
+      "逐条规范键不一致（严格字符串，不增设同义规则）"
+    ],
+    "votes": {
+      "advisory": 2,
+      "product_present:{\"slot\": \"T1\", \"type\": \"type:Volume.T1\"}": 2
+    },
+    "sampling": {
+      "nominal_samples": 5,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "0c3c6d0806a946878bc50dd808d71065",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "request_id": "771515afef54419283a6ac8e4916797d",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "request_id": "fad4e7625a1746b0809156075ab2eac5",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "request_id": "8b9a1dfc04944f3894f3c052afa9a184",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "request_id": "6adb5ff1d187424fa8b7a423f99c1b34",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 101,
+    "method": "surface_reconstruction_qc",
+    "field": "inputs",
+    "statement": "Output volumes from recon-all processing, including T1.mgz, brainmask.mgz, and surface files.",
+    "quote": "load the T1 and brainmask images as underlays in freeview, and overlay the white and pial surfaces",
+    "source_id": "andy_failures",
+    "gold_template": "product_present",
+    "gold_parameters": {
+      "slot": "T1",
+      "type": "type:Volume.T1"
+    },
+    "predicted_decision": "review",
+    "predicted_template": "provenance",
+    "predicted_parameters": {
+      "step": "recon-all"
+    },
+    "template_wrong": true,
+    "executable_wrong": true,
+    "statement_key_wrong": true,
+    "invalid_attempts": {},
+    "reasons": [
+      "未接受：support=0.6, margin=0.19999999999999996, answered=5",
+      "主模板与审核版开发集标准不一致",
+      "可执行/非可执行判定不一致",
+      "逐条规范键不一致（严格字符串，不增设同义规则）"
+    ],
+    "votes": {
+      "provenance:{\"step\": \"recon-all\"}": 3,
+      "advisory": 2
+    },
+    "sampling": {
+      "nominal_samples": 5,
+      "truncation_replacements": 0,
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "request_id": "60a85db4fd1748e287a7bd595a1ac4ef",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 5275
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "request_id": "e86aa94685f6409cbacfbe8eb511fae5",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "request_id": "9c3fdd4ef77c4cc4a1116352a46b1562",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 1999
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "request_id": "b5c9ed11f6f246a5acbe5b91ae5ea4c9",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 2375
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "request_id": "1e89aff65bcf404992609ede64c404d0",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 2059
+        }
+      ]
+    }
+  }
+]

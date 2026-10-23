@@ -1,0 +1,217 @@
+[
+  {
+    "method_id": "existing_curvature_sulc_profile",
+    "template": "provenance",
+    "parameters": {
+      "step": "recon-all"
+    },
+    "sources": [
+      {
+        "source_id": "fs_morph",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "Confirm that the surfaces have been smoothed and topology-corrected before using the morphometry values."
+    ]
+  },
+  {
+    "method_id": "fsl_vbm",
+    "template": "product_present",
+    "parameters": {
+      "slot": "mask",
+      "type": "type:Volume.GMMask"
+    },
+    "sources": [
+      {
+        "source_id": "fsl_vbm",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "A GM mask (GM_mask) and the 4D multi-subject concatenated processed data (e.g., GM_mod_merg_s3) for running randomise."
+    ]
+  },
+  {
+    "method_id": "global_surface_folding",
+    "template": "product_present",
+    "parameters": {
+      "slot": "pial",
+      "type": "type:Surface.Pial"
+    },
+    "sources": [
+      {
+        "source_id": "comparative_folding",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "Pial surface mesh of the cortical ribbon."
+    ]
+  },
+  {
+    "method_id": "local_gyrification",
+    "template": "product_present",
+    "parameters": {
+      "slot": "pial",
+      "type": "type:Surface.Pial"
+    },
+    "sources": [
+      {
+        "source_id": "fs_lgi",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "The subject's surf directory containing the pial surface files."
+    ]
+  },
+  {
+    "method_id": "local_gyrification",
+    "template": "software",
+    "parameters": {
+      "commands": [
+        "image",
+        "matlab"
+      ]
+    },
+    "sources": [
+      {
+        "source_id": "fs_lgi",
+        "quote_support": 1.0
+      },
+      {
+        "source_id": "fs_lgi",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "MATLAB with Image Processing Toolbox and $FREESURFER_HOME/matlab in the MATLAB path.",
+      "MATLAB and its Image Processing Toolbox must be installed and accessible."
+    ]
+  },
+  {
+    "method_id": "local_gyrification",
+    "template": "provenance",
+    "parameters": {
+      "step": "recon-all"
+    },
+    "sources": [
+      {
+        "source_id": "fs_lgi",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "The subject must have been processed with the full recon-all stream before using -localGI."
+    ]
+  },
+  {
+    "method_id": "local_gyrification",
+    "template": "software",
+    "parameters": {
+      "commands": [
+        "freesurfer",
+        "matlab"
+      ]
+    },
+    "sources": [
+      {
+        "source_id": "fs_lgi",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "The MATLAB path must include $FREESURFER_HOME/matlab, set up in ~/matlab/startup.m."
+    ]
+  },
+  {
+    "method_id": "macaque_civet",
+    "template": "product_present",
+    "parameters": {
+      "slot": "T1",
+      "type": "type:Volume.T1"
+    },
+    "sources": [
+      {
+        "source_id": "civet_macaque",
+        "quote_support": 1.0
+      },
+      {
+        "source_id": "civet_macaque",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "T1-weighted MR scan of a macaque brain as the primary input.",
+      "The pipeline requires T1w scans; T2-weighted or proton density scans are optional for multimodal classification."
+    ]
+  },
+  {
+    "method_id": "nhp_macapype",
+    "template": "product_present",
+    "parameters": {
+      "slot": "T2",
+      "type": "type:Volume.T2"
+    },
+    "sources": [
+      {
+        "source_id": "macapype_commands",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "T2 weighted images are expected with the _T2w BIDS extension."
+    ]
+  },
+  {
+    "method_id": "samseg_segmentation",
+    "template": "product_present",
+    "parameters": {
+      "slot": "volumes",
+      "type": "type:Volume"
+    },
+    "sources": [
+      {
+        "source_id": "fs_samseg",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "One or more co-registered MRI volumes in Nifti (.nii/.nii.gz) or FreeSurfer (.mgz) format."
+    ]
+  },
+  {
+    "method_id": "surface_mesh_area",
+    "template": "product_present",
+    "parameters": {
+      "slot": "surface",
+      "type": "type:Surface"
+    },
+    "sources": [
+      {
+        "source_id": "nibabel_fs",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "A FreeSurfer surface mesh file in triangular format, e.g., white or pial surface."
+    ]
+  },
+  {
+    "method_id": "surface_reconstruction_qc",
+    "template": "provenance",
+    "parameters": {
+      "step": "recon-all"
+    },
+    "sources": [
+      {
+        "source_id": "fs_morph",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "Subject directory created via recon-all -i command."
+    ]
+  }
+]

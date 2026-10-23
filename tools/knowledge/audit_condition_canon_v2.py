@@ -246,7 +246,29 @@ def main():
     requests = [ends[s["request_id"]] for s in starts] + [
         iends[s["request_id"]] for s in istarts
     ]
+    received = [e for e in requests if e.get("status") == "ok"]
+    empty, json_objects, other = 0, 0, 0
+    for response in received:
+        text = response.get("text", "")
+        if not text.strip():
+            empty += 1
+            continue
+        try:
+            parsed = json.loads(text)
+        except (ValueError, TypeError):
+            parsed = None
+        if isinstance(parsed, dict):
+            json_objects += 1
+        else:
+            other += 1
+    assert empty + json_objects + other == len(received)
     report = {
+        "received_text_responses": len(received),
+        "strict_json_object_responses": json_objects,
+        "empty_text_responses": empty,
+        "non_object_or_invalid_json_responses": other,
+        "python_version": sys.version.split()[0],
+        "httpx_version": t.httpx.__version__,
         "status": "audited",
         "development_predictions_replayed_without_HTTP": verified,
         "all_prompt_hashes_label_free": True,

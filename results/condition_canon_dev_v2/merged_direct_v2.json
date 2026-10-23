@@ -1,0 +1,456 @@
+[
+  {
+    "method_id": "cat_morphometry",
+    "template": "software",
+    "parameters": {
+      "commands": [
+        "SPM12",
+        "MATLAB R2020a"
+      ]
+    },
+    "sources": [
+      {
+        "source_id": null,
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      null
+    ]
+  },
+  {
+    "method_id": "existing_curvature_sulc_profile",
+    "template": "provenance",
+    "parameters": {
+      "step": "surface smoothing and topology correction"
+    },
+    "sources": [
+      {
+        "source_id": null,
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      null
+    ]
+  },
+  {
+    "method_id": "fsl_vbm",
+    "template": "product_present",
+    "parameters": {
+      "slot": "T1",
+      "type": "template_list file containing names of selected T1 images for template construction"
+    },
+    "sources": [
+      {
+        "source_id": null,
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      null
+    ]
+  },
+  {
+    "method_id": "fsl_vbm",
+    "template": "product_present",
+    "parameters": {
+      "slot": "mask",
+      "type": "GM_mask"
+    },
+    "sources": [
+      {
+        "source_id": null,
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      null
+    ]
+  },
+  {
+    "method_id": "global_surface_folding",
+    "template": "product_present",
+    "parameters": {
+      "slot": "pial",
+      "type": "surface mesh"
+    },
+    "sources": [
+      {
+        "source_id": null,
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      null
+    ]
+  },
+  {
+    "method_id": "global_surface_folding",
+    "template": "product_present",
+    "parameters": {
+      "slot": "white",
+      "type": "surface mesh"
+    },
+    "sources": [
+      {
+        "source_id": null,
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      null
+    ]
+  },
+  {
+    "method_id": "global_surface_folding",
+    "template": "product_present",
+    "parameters": {
+      "slot": "point",
+      "type": "coordinates"
+    },
+    "sources": [
+      {
+        "source_id": null,
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      null
+    ]
+  },
+  {
+    "method_id": "local_gyrification",
+    "template": "provenance",
+    "parameters": {
+      "step": "freesurfer recon-all -s <subjid> -all stream completed, producing ?h.pial surface files"
+    },
+    "sources": [
+      {
+        "source_id": null,
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      null
+    ]
+  },
+  {
+    "method_id": "local_gyrification",
+    "template": "product_present",
+    "parameters": {
+      "slot": "pial",
+      "type": "pial"
+    },
+    "sources": [
+      {
+        "source_id": null,
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      null
+    ]
+  },
+  {
+    "method_id": "local_gyrification",
+    "template": "software",
+    "parameters": {
+      "commands": [
+        "MATLAB",
+        "Image Processing Toolbox",
+        "$FREESURFER_HOME/matlab"
+      ]
+    },
+    "sources": [
+      {
+        "source_id": null,
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      null
+    ]
+  },
+  {
+    "method_id": "local_gyrification",
+    "template": "provenance",
+    "parameters": {
+      "step": "freesurfer recon-all"
+    },
+    "sources": [
+      {
+        "source_id": null,
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      null
+    ]
+  },
+  {
+    "method_id": "local_gyrification",
+    "template": "software",
+    "parameters": {
+      "commands": [
+        "MATLAB",
+        "Image Processing Toolbox"
+      ]
+    },
+    "sources": [
+      {
+        "source_id": null,
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      null
+    ]
+  },
+  {
+    "method_id": "local_gyrification",
+    "template": "software",
+    "parameters": {
+      "commands": [
+        "$FREESURFER_HOME/matlab"
+      ]
+    },
+    "sources": [
+      {
+        "source_id": null,
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      null
+    ]
+  },
+  {
+    "method_id": "macaque_civet",
+    "template": "attr_in",
+    "parameters": {
+      "slot": "T1",
+      "attr": "species",
+      "values": [
+        "macaque"
+      ]
+    },
+    "sources": [
+      {
+        "source_id": null,
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      null
+    ]
+  },
+  {
+    "method_id": "macaque_civet",
+    "template": "product_present",
+    "parameters": {
+      "slot": "T1",
+      "type": "T1w"
+    },
+    "sources": [
+      {
+        "source_id": null,
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      null
+    ]
+  },
+  {
+    "method_id": "nhp_macapype",
+    "template": "product_present",
+    "parameters": {
+      "slot": [
+        "T1",
+        "T2"
+      ],
+      "type": [
+        "T1w",
+        "T2w"
+      ]
+    },
+    "sources": [
+      {
+        "source_id": null,
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      null
+    ]
+  },
+  {
+    "method_id": "nhp_macapype",
+    "template": "product_present",
+    "parameters": {
+      "slot": "T1",
+      "type": "T1w"
+    },
+    "sources": [
+      {
+        "source_id": null,
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      null
+    ]
+  },
+  {
+    "method_id": "nhp_macapype",
+    "template": "product_present",
+    "parameters": {
+      "slot": "T2",
+      "type": "T2w"
+    },
+    "sources": [
+      {
+        "source_id": null,
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      null
+    ]
+  },
+  {
+    "method_id": "samseg_segmentation",
+    "template": "product_present",
+    "parameters": {
+      "slot": "volumes",
+      "type": "MRI"
+    },
+    "sources": [
+      {
+        "source_id": null,
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      null
+    ]
+  },
+  {
+    "method_id": "samseg_segmentation",
+    "template": "attr_equal",
+    "parameters": {
+      "slots": [
+        "volumes"
+      ],
+      "attrs": [
+        "space",
+        "voxel_size"
+      ]
+    },
+    "sources": [
+      {
+        "source_id": null,
+        "quote_support": null
+      },
+      {
+        "source_id": null,
+        "quote_support": null
+      },
+      {
+        "source_id": null,
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "method_id": "samseg_segmentation",
+    "template": "attr_equal",
+    "parameters": {
+      "slots": [
+        "timepoints"
+      ],
+      "attrs": [
+        "space",
+        "voxel_size"
+      ]
+    },
+    "sources": [
+      {
+        "source_id": null,
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      null
+    ]
+  },
+  {
+    "method_id": "samseg_segmentation",
+    "template": "attr_equal",
+    "parameters": {
+      "slots": [
+        "timepoints"
+      ],
+      "attrs": [
+        "contrast"
+      ]
+    },
+    "sources": [
+      {
+        "source_id": null,
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      null
+    ]
+  },
+  {
+    "method_id": "surface_mesh_area",
+    "template": "product_present",
+    "parameters": {
+      "slot": "surface",
+      "type": "freesurfer_surface_mesh"
+    },
+    "sources": [
+      {
+        "source_id": null,
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      null
+    ]
+  },
+  {
+    "method_id": "surface_mesh_area",
+    "template": "attr_in",
+    "parameters": {
+      "slot": "surface",
+      "attr": "mesh",
+      "values": [
+        "triangular"
+      ]
+    },
+    "sources": [
+      {
+        "source_id": null,
+        "quote_support": null
+      },
+      {
+        "source_id": null,
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      null,
+      null
+    ]
+  }
+]

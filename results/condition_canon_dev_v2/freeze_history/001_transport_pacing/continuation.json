@@ -1,0 +1,34 @@
+{
+  "reason": "smooth HTTP departures after repeated 429; no model/sampling/prompt/label/algorithm change",
+  "old_frozen_sha256": "0c71ad9956ae6b3a2f9f391133a93cec85e8ef94b9f15c11e0999e268dcbc158",
+  "new_frozen_sha256": "1eb334ccc1e0762fc582aaa0b5ebc0eb4d9344aaf6b35d2aebf6f8747ba09808",
+  "http_attempts": 124,
+  "all_attempts_have_terminal_events": true,
+  "ledger_prefix_bytes": 146933,
+  "ledger_prefix_sha256": "883ae658f506f41742f31a48dd18c7b22f919e412d8d84ae8502e82699f3b06f",
+  "retained_prediction_sha256": {
+    "full_v2_8.json": "3cb641b2b2015a8cef845d4ab31a21ed414515e850169e5af63b98ac4643d12e",
+    "full_v2_18.json": "74c4bf05adccef80ee09f9d70bfbe2065c53ffdd3dda3bb8c4be9570b2c03128",
+    "full_v2_13.json": "413d537fdd4582cc8a814023133410326f060ef39dafa59f3e93a0eb6d9b24ee",
+    "full_v2_9.json": "292de1713aceb2331b5810ad9c9e944b2231eed6db4ee53128301c952dcd20e6",
+    "full_v2_10.json": "901bdf9b5f04a40b8b2b625bed639b3edd5002612fdfb5d1fe4fc5ad06660c54",
+    "full_v2_16.json": "b485632e91d9ce3b1c2a1df8cb11a2dc69f401a2dca3aeefff2bd95beb830f16",
+    "full_v2_15.json": "83d19a33e23fe00b7ef94677c911482af2be42583262efaab6548a32d87e2be9",
+    "full_v2_11.json": "886db847ff95c1faf6fa122c27aeb96b5166bb5cded8da38404b381b489b54dd",
+    "full_v2_17.json": "ce24d4a4d89bb3a02faba690dd24025b33f3ba80a685cff882123cd48aaf82f1",
+    "full_v2_12.json": "1fa7a191b122adbe96027b8461fd7a0f689787c8ae269cb56103ef0b35c64964",
+    "full_v2_6.json": "eda4b2409de34ee3157384e87cce65e9403443a7c7dadafd11e4f941f7df5ddc",
+    "full_v2_14.json": "265b1d307840b38d9b246db9d8109e7dbdedcd2ecfde7849c78bb5ce2bd10054",
+    "full_v2_4.json": "d628a0f95032849a3eac0cd10b21e2d6eaa5c560e8423d22dfed33a5150867f9",
+    "full_v2_7.json": "69d42463be1cd701bb0bcf144a82c1649ca53d3087712b1a2c3b1dca750561e8",
+    "full_v2_5.json": "039486ab554f9a9ae0fbfd3e4fe0cb1225876fd51e64e3ba0ac5d419770564c4",
+    "full_v2_3.json": "cbe0554093c3f3cb70ac354b2163324feadb30e70454b66dd24656ab04f2e9ba",
+    "full_v2_1.json": "0bd9092fddc7a706bdd1f5b1969c0a85785f1e80e38a65fa0dec7843e29be007",
+    "full_v2_2.json": "ebcb64efad65240a90906fcad67dd80f47a66701c735a3d9480902b5f1be7125"
+  },
+  "changed_fields": [
+    "code_sha256.provider",
+    "code_sha256.v2_runner",
+    "transport_pacing"
+  ]
+}

@@ -1,0 +1,388 @@
+[
+  {
+    "arm": "full_v2",
+    "item": {
+      "id": 1,
+      "method": "cat_morphometry",
+      "field": "inputs",
+      "statement": "T1-weighted MRI scans, single scans, longitudinal series or BIDS datasets",
+      "quote": "T1-weighted MRI\nSingle scans, longitudinal series or BIDS datasets",
+      "source_id": "cat",
+      "gold_template": "product_present",
+      "gold_parameters": {
+        "slot": "T1",
+        "type": "type:Volume.T1"
+      },
+      "review_status": "确认",
+      "review_note": ""
+    },
+    "prediction": {
+      "id": 1,
+      "method": "cat_morphometry",
+      "decision": "provider_error",
+      "template": null,
+      "parameters": null,
+      "error_summary": "Provider request failed (http_error, HTTP 429); see metered ledger",
+      "sampling": {
+        "nominal_samples": 5,
+        "truncation_replacements": 0,
+        "responses": [
+          {
+            "sample": 1,
+            "replacement_of": null,
+            "request_id": "878a2028a8e14774bc3e936558509042",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": true,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 2,
+            "replacement_of": null,
+            "request_id": "758b88c0436c4d8d8c60e7f5e6e60e03",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": true,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 3,
+            "replacement_of": null,
+            "request_id": "cdd4c0a6fe49437c827c60c1cba39dd5",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 4,
+            "replacement_of": null,
+            "request_id": "de359730f7064db899e555fc92d34d7a",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": true,
+            "reasoning_tokens": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "arm": "full_v2",
+    "item": {
+      "id": 2,
+      "method": "cat_morphometry",
+      "field": "conditions",
+      "statement": "For MATLAB users, SPM12 or newer and MATLAB R2020a or newer are required; no additional MATLAB toolboxes are needed.",
+      "quote": "SPM12 or newer\nMATLAB R2020a or newer (Windows: R2022a, Apple Silicon: R2023b)\nNo additional MATLAB toolboxes",
+      "source_id": "cat",
+      "gold_template": "software",
+      "gold_parameters": {
+        "commands": [
+          "matlab",
+          "spm12"
+        ]
+      },
+      "review_status": "确认",
+      "review_note": ""
+    },
+    "prediction": {
+      "id": 2,
+      "method": "cat_morphometry",
+      "decision": "provider_error",
+      "template": null,
+      "parameters": null,
+      "error_summary": "Provider request failed (http_error, HTTP 429); see metered ledger",
+      "sampling": {
+        "nominal_samples": 4,
+        "truncation_replacements": 0,
+        "responses": [
+          {
+            "sample": 1,
+            "replacement_of": null,
+            "request_id": "fcbf0832ec4543b78973ca886a6c4012",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": true,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 2,
+            "replacement_of": null,
+            "request_id": "35b49f47ffc048d7a430e11a6ceb64c0",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 3,
+            "replacement_of": null,
+            "request_id": "f8f97bc43f2e408185f9851758fa9cc9",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": true,
+            "reasoning_tokens": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "arm": "full_v2",
+    "item": {
+      "id": 6,
+      "method": "cat_morphometry",
+      "field": "exceptions",
+      "statement": "The standalone version lacks some features such as parallelization and interactive help.",
+      "quote": "Some features, such as parallelization and the interactive help, are not available.",
+      "source_id": "cat",
+      "gold_template": "advisory",
+      "gold_parameters": null,
+      "review_status": "确认",
+      "review_note": ""
+    },
+    "prediction": {
+      "id": 6,
+      "method": "cat_morphometry",
+      "decision": "provider_error",
+      "template": null,
+      "parameters": null,
+      "error_summary": "Provider request failed (http_error, HTTP 429); see metered ledger",
+      "sampling": {
+        "nominal_samples": 4,
+        "truncation_replacements": 0,
+        "responses": [
+          {
+            "sample": 1,
+            "replacement_of": null,
+            "request_id": "566d495e8cbc4b65bebb8881241df892",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 2,
+            "replacement_of": null,
+            "request_id": "28ab987cefac4c31b084e045fab66cf7",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 3,
+            "replacement_of": null,
+            "request_id": "87b11d06a08c4435a231bd2a2e659d3d",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "arm": "full_v2",
+    "item": {
+      "id": 11,
+      "method": "fsl_vbm",
+      "field": "conditions",
+      "statement": "All different populations included in the study must be represented in the template construction.",
+      "quote": "All your different populations included in this study MUST be represented in the template construction.",
+      "source_id": "fsl_vbm",
+      "gold_template": "advisory",
+      "gold_parameters": null,
+      "review_status": "确认",
+      "review_note": ""
+    },
+    "prediction": {
+      "id": 11,
+      "method": "fsl_vbm",
+      "decision": "provider_error",
+      "template": null,
+      "parameters": null,
+      "error_summary": "Provider request failed (http_error, HTTP 429); see metered ledger",
+      "sampling": {
+        "nominal_samples": 2,
+        "truncation_replacements": 0,
+        "responses": [
+          {
+            "sample": 1,
+            "replacement_of": null,
+            "request_id": "90cdbcc7dd7240c9a3e4065e460fce56",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "arm": "full_v2",
+    "item": {
+      "id": 14,
+      "method": "fsl_vbm",
+      "field": "checks",
+      "statement": "Check brain-extracted images (*_brain.*) in the struc directory after fslvbm_1_bet.",
+      "quote": "CHECKING the brain images (*_brain.*) in your struc directory",
+      "source_id": "fsl_vbm",
+      "gold_template": "advisory",
+      "gold_parameters": null,
+      "review_status": "确认",
+      "review_note": ""
+    },
+    "prediction": {
+      "id": 14,
+      "method": "fsl_vbm",
+      "decision": "provider_error",
+      "template": null,
+      "parameters": null,
+      "error_summary": "Provider request failed (http_error, HTTP 429); see metered ledger",
+      "sampling": {
+        "nominal_samples": 3,
+        "truncation_replacements": 0,
+        "responses": [
+          {
+            "sample": 1,
+            "replacement_of": null,
+            "request_id": "a8416a6114e64a498883fe1f14c948bd",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 2,
+            "replacement_of": null,
+            "request_id": "8801d629977b4f43a75bfac18820d1d5",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "arm": "full_v2",
+    "item": {
+      "id": 15,
+      "method": "fsl_vbm",
+      "field": "checks",
+      "statement": "Check the template_GM_4D image in struc with the movie loop in fsleyes after template creation.",
+      "quote": "CHECK the template_GM_4D image in struc with the movie loop in fsleyes.",
+      "source_id": "fsl_vbm",
+      "gold_template": "advisory",
+      "gold_parameters": null,
+      "review_status": "确认",
+      "review_note": ""
+    },
+    "prediction": {
+      "id": 15,
+      "method": "fsl_vbm",
+      "decision": "provider_error",
+      "template": null,
+      "parameters": null,
+      "error_summary": "Provider request failed (http_error, HTTP 429); see metered ledger",
+      "sampling": {
+        "nominal_samples": 3,
+        "truncation_replacements": 0,
+        "responses": [
+          {
+            "sample": 1,
+            "replacement_of": null,
+            "request_id": "423f9d4f483442e88cd5059920a5e642",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 2,
+            "replacement_of": null,
+            "request_id": "645644d4e227454f9e209a6a47a985b7",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "arm": "full_v2",
+    "item": {
+      "id": 16,
+      "method": "fsl_vbm",
+      "field": "checks",
+      "statement": "Check the 4D image of modulated registered GM images (GM_mod_merg) using the movie loop in fsleyes after fslvbm_3_proc.",
+      "quote": "final CHECK of the 4D image of modulated registered GM images GM_mod_merg using the movie loop in fsleyes.",
+      "source_id": "fsl_vbm",
+      "gold_template": "advisory",
+      "gold_parameters": null,
+      "review_status": "确认",
+      "review_note": ""
+    },
+    "prediction": {
+      "id": 16,
+      "method": "fsl_vbm",
+      "decision": "provider_error",
+      "template": null,
+      "parameters": null,
+      "error_summary": "Provider request failed (http_error, HTTP 429); see metered ledger",
+      "sampling": {
+        "nominal_samples": 2,
+        "truncation_replacements": 0,
+        "responses": [
+          {
+            "sample": 1,
+            "replacement_of": null,
+            "request_id": "fcb4864c1f3e4d0eae1761e4aa917c96",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": true,
+            "reasoning_tokens": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "arm": "full_v2",
+    "item": {
+      "id": 19,
+      "method": "global_surface_folding",
+      "field": "inputs",
+      "statement": "White matter surface mesh of the cortical ribbon.",
+      "quote": "our proposed method requires the bounding pial and white matter surfaces of the cortical ribbon as input",
+      "source_id": "comparative_folding",
+      "gold_template": "product_present",
+      "gold_parameters": {
+        "slot": "white",
+        "type": "type:Surface.White"
+      },
+      "review_status": "确认",
+      "review_note": ""
+    },
+    "prediction": {
+      "id": 19,
+      "method": "global_surface_folding",
+      "decision": "provider_error",
+      "template": null,
+      "parameters": null,
+      "error_summary": "Provider request failed (http_error, HTTP 429); see metered ledger",
+      "sampling": {
+        "nominal_samples": 1,
+        "truncation_replacements": 0,
+        "responses": []
+      }
+    }
+  }
+]
