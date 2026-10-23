@@ -6,8 +6,8 @@
   "research_release": "research_evidence_v13",
   "source_root": "/data/xuancheng",
   "source_unchanged_check": true,
-  "source_files": 1126,
-  "source_bytes": 36743384,
+  "source_files": 1184,
+  "source_bytes": 37521297,
   "excluded_classes": [
     "credentials and .env",
     "FreeSurfer license",
@@ -3967,6 +3967,13 @@
       "mode": "100644"
     },
     {
+      "path": "agent/modules/agent/tests/test_round18_condition_test_evaluation.py",
+      "source": "/data/xuancheng/agent_v1/round18_source/agent/modules/agent/tests/test_round18_condition_test_evaluation.py",
+      "bytes": 6669,
+      "sha256": "0370bb7d18df23847baa4391ead4351639d9541be112710484e8c6c3884ba5d6",
+      "mode": "100644"
+    },
+    {
       "path": "agent/modules/agent/tests/test_round6_plan_affordances.py",
       "source": "git:75143b21bc459c6f6e951891356ebf9e4e10169d/tests/test_round6_plan_affordances.py",
       "source_head": "75143b21bc459c6f6e951891356ebf9e4e10169d",
@@ -7309,6 +7316,27 @@
       "mode": "100644"
     },
     {
+      "path": "evaluation/condition_gold/gold_test_v1.freeze.json",
+      "source": "/data/xuancheng/agent_v1/round18_source/evaluation/condition_gold/gold_test_v1.freeze.json",
+      "bytes": 1201,
+      "sha256": "f37cef15b998db478077e1c7383fed49f8b702c42f2d10a5724b41e700ee9277",
+      "mode": "100644"
+    },
+    {
+      "path": "evaluation/condition_gold/gold_test_v1.json",
+      "source": "/data/xuancheng/agent_v1/round18_source/evaluation/condition_gold/gold_test_v1.json",
+      "bytes": 35243,
+      "sha256": "e34d6796259e87f44f3bcede9c304eb87b4c1a5e31605cdfd357085bdac45135",
+      "mode": "100644"
+    },
+    {
+      "path": "evaluation/condition_test_v1/ROUND18_PROTOCOL.md",
+      "source": "/data/xuancheng/agent_v1/round18_source/evaluation/condition_test_v1/ROUND18_PROTOCOL.md",
+      "bytes": 3046,
+      "sha256": "6e25abc8e76fbce09f3dfc2456de52b2a900e818aa79840359074f224e868842",
+      "mode": "100644"
+    },
+    {
       "path": "evaluation/condition_test_v1/claude_annotation_packet/HANDOFF_MANIFEST.json",
       "source": "/data/xuancheng/agent_v1/round17_source/evaluation/condition_test_v1/claude_annotation_packet/HANDOFF_MANIFEST.json",
       "bytes": 1523,
@@ -10039,6 +10067,356 @@
       "synced_at": "2026-10-23"
     },
     {
+      "path": "results/condition_canon_test_v1/ARTIFACT_MANIFEST.json",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/ARTIFACT_MANIFEST.json",
+      "bytes": 5028,
+      "sha256": "4ac61d09961e7c4f0e58b3f535be94527747cbdb7fc8cf6a5b047e969ed26c1f",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/FULL_V2_ERRORS.md",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/FULL_V2_ERRORS.md",
+      "bytes": 4100,
+      "sha256": "f90309e07cddf5c6191db703c792a4a7b98197e8613fcd9d9be6c66ddab76b88",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/FULL_V2_ERRORS_DETAILED.md",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/FULL_V2_ERRORS_DETAILED.md",
+      "bytes": 16243,
+      "sha256": "b1005316496660064862424ee615963d6552873f5a1834d2a007c33ddefe8cd7",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/REPORT.md",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/REPORT.md",
+      "bytes": 12116,
+      "sha256": "56df0a00d5655050221bcdfde93b2aa214b4bb7733f16d15516b8f5b8c6f5ff5",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/audit.json",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/audit.json",
+      "bytes": 1077,
+      "sha256": "ab68569d254abcfa7128d5e18a8d228a2b520b67e12488ad76d3e4759ed0b9fc",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/call_usage.csv",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/call_usage.csv",
+      "bytes": 30736,
+      "sha256": "0cb8adc0d51e4ede4a9b96570fe2fefa14e142b07ee025d48e5847af49ec3c3a",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/completion_review.json",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/completion_review.json",
+      "bytes": 607,
+      "sha256": "e5cf626ae0333ab34c1fa657677312bebdea67d7e4c4dc8aa3ab90609efe94fe",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/development_full_v2_errors.json",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/development_full_v2_errors.json",
+      "bytes": 57818,
+      "sha256": "7c647df33ab2432e3297abe6fd856c9c142278c41eccf514a9d6f651f88a1e96",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/development_repair.json",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/development_repair.json",
+      "bytes": 2245,
+      "sha256": "8cce1ad427de191ee0b74d9d524efb3cb7f6f7e7f0ce980300412a83f06f002f",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/frozen.json",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/frozen.json",
+      "bytes": 13908,
+      "sha256": "3f7738e6ee03e2d2c9be14cf7df64d50a92c5044d4e6dd91d99d6e0396da6426",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/frozen.sha256",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/frozen.sha256",
+      "bytes": 65,
+      "sha256": "83d387a82171af0c07e7bdf3c7134a65f101063265433be13e00fc10894fdf24",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/frozen_gold_vocabulary_compatibility.json",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/frozen_gold_vocabulary_compatibility.json",
+      "bytes": 331,
+      "sha256": "24df785daffc84429a92a649b6bad5ffb265f679edb533430f51b70cb2aa30a7",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/full_v2_errors.csv",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/full_v2_errors.csv",
+      "bytes": 11814,
+      "sha256": "b400d433285e7e7c0b9a26ce749fc31a31127a6872d259ae0f233c9e133dec1d",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/full_v2_errors.json",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/full_v2_errors.json",
+      "bytes": 17026,
+      "sha256": "219fb598e853bcd0a75c8988f2b0b56cdab270d45f49c2b1e77e8dc4ff09dfd5",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/full_v2_errors_detailed.json",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/full_v2_errors_detailed.json",
+      "bytes": 32573,
+      "sha256": "2f7f1103fe8c9618290a97d441d1a7673956fb48d8949b82a503de44a5c0a623",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/http_failures.csv",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/http_failures.csv",
+      "bytes": 845,
+      "sha256": "ec45eedf880ddd91b3ee71aec3f999d49a6d09c3eff126f23bccf1ca5f69e836",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/http_failures.json",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/http_failures.json",
+      "bytes": 2973,
+      "sha256": "1d56b0227ef1e537220f7af4d736c752e797a2eea732aee033bf9ffe941d448f",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/interface_failures.json",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/interface_failures.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/mcnemar.json",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/mcnemar.json",
+      "bytes": 1384,
+      "sha256": "511dfeb045a015b709494fbbdedc184bf74f4ebb6200bc053c7fc276ff663852",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/merged_direct_v2.json",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/merged_direct_v2.json",
+      "bytes": 3035,
+      "sha256": "bb2cf9b5b39293aef3bf6b3e1024b794aa9e7eb7a8f3bfc0d122e23e16eba823",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/merged_full_v2.json",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/merged_full_v2.json",
+      "bytes": 2615,
+      "sha256": "b773f917b638c945f0b072b79a07a9d6884505ed8cbeb0007473d0387c213bc2",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/merged_k1_v2.json",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/merged_k1_v2.json",
+      "bytes": 3408,
+      "sha256": "51c605e5141dcb082137d875b2e729d05c49373968c70c971a30ed566546907b",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/merged_retrieval_only.json",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/merged_retrieval_only.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/metrics_39.json",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/metrics_39.json",
+      "bytes": 10268,
+      "sha256": "212d8af39ced62bfdec34abb30201a35cdd331f5b552cdae53b94f1d80f3f9be",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/metrics_45.json",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/metrics_45.json",
+      "bytes": 10442,
+      "sha256": "ae8396a112870aad6e4192bfaa2d5a2ea8922f6a3dfe49f718566837f571f66d",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/metrics_with_ci.csv",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/metrics_with_ci.csv",
+      "bytes": 6956,
+      "sha256": "00116c5ae5ccc7e78551a76f6c6599589630c74a8f230bacb4f88763314b6dfc",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/paired_key_correctness.csv",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/paired_key_correctness.csv",
+      "bytes": 1537,
+      "sha256": "e455db339e993607edeb798978cf2bd95803fe1096195ec891d9d8ff6d826f57",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/phase_dev_full_v2_repair.json",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/phase_dev_full_v2_repair.json",
+      "bytes": 519,
+      "sha256": "e96bb1fae8f51083efc08d689d7e1411aad750f340c64ae628b7790fb351bc42",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/phase_direct_v2.json",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/phase_direct_v2.json",
+      "bytes": 518,
+      "sha256": "10dd76235d97e4d2e4e6c380cc797084444cba8c9327b68dab65f0516784306f",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/phase_full_v2.json",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/phase_full_v2.json",
+      "bytes": 525,
+      "sha256": "6a8e6b85fae5e7cebe3ad05a223cc405550878bb5d8b683b712b16ae046e3a07",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/phase_k1_v2.json",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/phase_k1_v2.json",
+      "bytes": 521,
+      "sha256": "0643f530ad906cd6bf28412f5560ff2ebabb3213caba3bc5f249dd94ff261178",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/phase_retrieval_only.json",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/phase_retrieval_only.json",
+      "bytes": 473,
+      "sha256": "7a138ecb23c7f89adc7f9be926dfc7b38a7be30761904a1a4ed6bf0e0a512140",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/posthoc_error_review.json",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/posthoc_error_review.json",
+      "bytes": 1031,
+      "sha256": "1f0d7145150604d57da4d935baa9d68f0dc0fad1896f41cb85babb35ceac2b92",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/predictions_dev_full_v2_repair.json",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/predictions_dev_full_v2_repair.json",
+      "bytes": 219557,
+      "sha256": "5add488da8fadbd932b62853eae0633fd64cf80d8082483d231d88cbdfd489e8",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/predictions_direct_v2.json",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/predictions_direct_v2.json",
+      "bytes": 31671,
+      "sha256": "861b87323bde259f4d3075c50a3599b6036eaf015df30d25769f6f8da88e1315",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/predictions_full_v2.json",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/predictions_full_v2.json",
+      "bytes": 101810,
+      "sha256": "01b6740db55df0190b448babacf0cc80b07b7521a255a1c01fad91d12058774e",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/predictions_k1_v2.json",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/predictions_k1_v2.json",
+      "bytes": 45849,
+      "sha256": "d1d39e1a42c96d6dcff05d59a149960b0b2315ae214d922861b305434aa6faf9",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/predictions_retrieval_only.json",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/predictions_retrieval_only.json",
+      "bytes": 7641,
+      "sha256": "471f6e0ec1dfbd43a81b5e9bf90661b7d1636076c59c220451a9a1dab9eb4e12",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/provider_settings_audit.json",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/provider_settings_audit.json",
+      "bytes": 596,
+      "sha256": "c2fa602c3e107fbf6188d188d95baadf39a89b2716c8481eaf44f6a6ee6c973c",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/review_queue_direct_v2.json",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/review_queue_direct_v2.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/review_queue_full_v2.json",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/review_queue_full_v2.json",
+      "bytes": 3463,
+      "sha256": "a93d3aa19b606adcc45296837f39e4520ff3ea5a2a36e0790d824efe81db074a",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/review_queue_k1_v2.json",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/review_queue_k1_v2.json",
+      "bytes": 1888,
+      "sha256": "afe5d547351f020d3fb89d4e9eacbc9d67653aed86b6318f31b003dbd43e2c93",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/review_queue_retrieval_only.json",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/review_queue_retrieval_only.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/run_status.json",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/run_status.json",
+      "bytes": 738,
+      "sha256": "180181f4880a53f25f6fc030ec806858b2c1489e4a5e6090b99aaaf8bc3e85dd",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/supplemental_samples.json",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/supplemental_samples.json",
+      "bytes": 611,
+      "sha256": "b7c09a976ca9495869e20450225261de338f6841ddcc4258e728d1879f7ba55b",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/usage.json",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/usage.json",
+      "bytes": 370,
+      "sha256": "9f295e16d6a5449364fb6f01a67843be480d68bd2e2e4d133847138534f74664",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/usage_by_arm.json",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/usage_by_arm.json",
+      "bytes": 2022,
+      "sha256": "be8a8ff26473381681f59a98e4323ca73c796086d877cd0fbb8ee3a4fae87748",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/validation/backend_default.log",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/validation/backend_default.log",
+      "bytes": 7680,
+      "sha256": "da32e29364fa56e2cbbd401f81d49fc26ebdcb52f252b02afb15ed4d1756d93a",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/validation/independent_statistics_fixture.json",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/validation/independent_statistics_fixture.json",
+      "bytes": 209,
+      "sha256": "7edd20521bad061c8d7c5dff3e1869aa61e48175bc677250334c3465ab9f9d5e",
+      "mode": "100644"
+    },
+    {
+      "path": "results/condition_canon_test_v1/validation/test_results.json",
+      "source": "/data/xuancheng/agent_v1/round18_source/results/condition_canon_test_v1/validation/test_results.json",
+      "bytes": 617,
+      "sha256": "32d432546dc1185a8eec700f4472ffdfa8705f831e4122ab4da96a494a5401aa",
+      "mode": "100644"
+    },
+    {
       "path": "tools/download_primatex_models.py",
       "source": "/data/xuancheng/agent_v1/round15_combined_verification/tools/download_primatex_models.py",
       "bytes": 3850,
@@ -10057,6 +10435,13 @@
       "source": "/data/xuancheng/agent_v1/round17_source/tools/knowledge/audit_condition_canon_v2.py",
       "bytes": 12968,
       "sha256": "bef0967f0e6b24ae5917558966c08e4a31095fb32e21c2c6cbcab2aa1568437c",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/knowledge/audit_condition_test_evaluation.py",
+      "source": "/data/xuancheng/agent_v1/round18_source/tools/knowledge/audit_condition_test_evaluation.py",
+      "bytes": 12454,
+      "sha256": "62323422a12b5bbf268da82c55f079f613d0e5252d550f33fae33c74fa01b77a",
       "mode": "100644"
     },
     {
@@ -10123,10 +10508,24 @@
       "mode": "100644"
     },
     {
+      "path": "tools/knowledge/condition_evaluation_statistics.py",
+      "source": "/data/xuancheng/agent_v1/round18_source/tools/knowledge/condition_evaluation_statistics.py",
+      "bytes": 16927,
+      "sha256": "f70210a36770c7be6fd3ce7c2db0833c7807927311a4fcea35776f258f8408c4",
+      "mode": "100644"
+    },
+    {
       "path": "tools/knowledge/curate_method_semantics_v13.py",
       "source": "/data/xuancheng/agent_overnight_20261020/curate_method_semantics_v13.py",
       "bytes": 15201,
       "sha256": "f9ef1cd4b6f8a5f8b4fbaec287e226d00990e95647e65ec1ddabf1bc48e45a63",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/knowledge/diagnose_condition_test_errors.py",
+      "source": "/data/xuancheng/agent_v1/round18_source/tools/knowledge/diagnose_condition_test_errors.py",
+      "bytes": 7083,
+      "sha256": "31640e7b226b3393a8afb51943c9601788ecddc009def2ec4b0a84214ffde96d",
       "mode": "100644"
     },
     {
@@ -10184,6 +10583,13 @@
       "source": "/data/xuancheng/agent_v1/round17_source/tools/knowledge/run_condition_canonicalization_v2.py",
       "bytes": 21339,
       "sha256": "8a10c83e68e3ad8d2c9b0a500f9cf0b114bc74e539d5d5db64b479aaaee177ef",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/knowledge/run_condition_test_evaluation.py",
+      "source": "/data/xuancheng/agent_v1/round18_source/tools/knowledge/run_condition_test_evaluation.py",
+      "bytes": 17819,
+      "sha256": "bada9fb326bfd9054fbd4d4e30c0fa672efe6fca9553f020fe24e4071c1b79b0",
       "mode": "100644"
     },
     {
@@ -10260,9 +10666,9 @@
   ],
   "last_incremental_sync": {
     "date": "2026-10-23",
-    "source_commit": "bba4639339cd0af7ac01879f21c15f57ec54a600",
-    "scope": "v2 development results under reviewed labels: 819/1200 model HTTP attempts, zero truncations/replacements, 324 replayed predictions; 894 default tests; four source-verified cards and 45 blind-annotation statements; no formal test labels or algorithm test calls",
-    "changed_files": 36,
+    "source_commit": "3b7955f8a54e6ace17055a7959f83ed6d4891fe1",
+    "scope": "Round18 frozen 45-statement test, bootstrap and paired comparisons; transport-only development repair",
+    "changed_files": 58,
     "formal_v1_0": false
   },
   "incremental_sync_history": [
@@ -10449,7 +10855,14 @@
       "scope": "v2 development results under reviewed labels: 819/1200 model HTTP attempts, zero truncations/replacements, 324 replayed predictions; 894 default tests; four source-verified cards and 45 blind-annotation statements; no formal test labels or algorithm test calls",
       "changed_files": 36,
       "formal_v1_0": false
+    },
+    {
+      "date": "2026-10-23",
+      "source_commit": "3b7955f8a54e6ace17055a7959f83ed6d4891fe1",
+      "scope": "Round18 frozen 45-statement test, bootstrap and paired comparisons; transport-only development repair",
+      "changed_files": 58,
+      "formal_v1_0": false
     }
   ],
-  "updated_at": "2026-10-23T19:10:25.008972+08:00"
+  "updated_at": "2026-10-23T22:44:12.336351+08:00"
 }
