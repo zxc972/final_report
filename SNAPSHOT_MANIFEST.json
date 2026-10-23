@@ -6,8 +6,8 @@
   "research_release": "research_evidence_v13",
   "source_root": "/data/xuancheng",
   "source_unchanged_check": true,
-  "source_files": 961,
-  "source_bytes": 33541904,
+  "source_files": 968,
+  "source_bytes": 33598757,
   "excluded_classes": [
     "credentials and .env",
     "FreeSurfer license",
@@ -3866,6 +3866,13 @@
       "synced_at": "2026-10-23"
     },
     {
+      "path": "agent/modules/agent/tests/test_round15_data_tools.py",
+      "source": "/data/xuancheng/agent_v1/round15_combined_verification/agent/modules/agent/tests/test_round15_data_tools.py",
+      "bytes": 4535,
+      "sha256": "3fbf0d312bd31813035fa4da8c1b6a38d8c15f41a9e2b5b1abca809320b51dc6",
+      "mode": "100644"
+    },
+    {
       "path": "agent/modules/agent/tests/test_round15_global_method.py",
       "source": "git:bf0c9671ede4933845ef293923405543231fefac/agent/modules/agent/tests/test_round15_global_method.py",
       "source_head": "bf0c9671ede4933845ef293923405543231fefac",
@@ -6927,6 +6934,20 @@
       "mode": "100644"
     },
     {
+      "path": "docs/round15/PRIMATEX_RHESUS_MODELS.json",
+      "source": "/data/xuancheng/agent_v1/round15_combined_verification/docs/round15/PRIMATEX_RHESUS_MODELS.json",
+      "bytes": 1450,
+      "sha256": "7aa9e452264f7e1b4b11cc00cca50e3af102d1efb54a9a12159f34c737e289ae",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/round15/ROUND15_IMPLEMENTATION.md",
+      "source": "/data/xuancheng/agent_v1/round15_combined_verification/docs/round15/ROUND15_IMPLEMENTATION.md",
+      "bytes": 10315,
+      "sha256": "c478765849ccc0602156078f6ec43e5da847987ebd46a3a24ffd798ce0021f0b",
+      "mode": "100644"
+    },
+    {
       "path": "environment/manifests/AFNI_C3D.dependencies.json",
       "source": "/data/xuancheng/structural_env/manifests/AFNI_C3D.dependencies.json",
       "bytes": 964,
@@ -8696,6 +8717,13 @@
       "mode": "100644"
     },
     {
+      "path": "tools/download_primatex_models.py",
+      "source": "/data/xuancheng/agent_v1/round15_combined_verification/tools/download_primatex_models.py",
+      "bytes": 3850,
+      "sha256": "c9b23494d239310b06635df4a58989f5c122eb99be76275153b90cef4a004dfb",
+      "mode": "100644"
+    },
+    {
       "path": "tools/export_server_snapshot.py",
       "source": "/data/xuancheng/agent_v1/round14/tools/export_server_snapshot.py",
       "bytes": 8004,
@@ -8787,6 +8815,13 @@
       "mode": "100644"
     },
     {
+      "path": "tools/prepare_prime_structural.py",
+      "source": "/data/xuancheng/agent_v1/round15_combined_verification/tools/prepare_prime_structural.py",
+      "bytes": 9619,
+      "sha256": "438629585f7652bfe6d91551f338fcecba7a556f871a0407b0e0fa9dbc0b0be8",
+      "mode": "100644"
+    },
+    {
       "path": "tools/retrieval/export_graph.py",
       "source": "/data/xuancheng/retrieval_pilot_20261020/export_graph.py",
       "bytes": 686,
@@ -8822,6 +8857,20 @@
       "mode": "100644"
     },
     {
+      "path": "tools/run_prime_primatex_pilot.py",
+      "source": "/data/xuancheng/agent_v1/round15_combined_verification/tools/run_prime_primatex_pilot.py",
+      "bytes": 14693,
+      "sha256": "a6fb1149e2523ff36d1cfc9adeafd579c72132a9d86109a5ffc75022c33b9ae8",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/verify_round15_analysis_outputs.py",
+      "source": "/data/xuancheng/agent_v1/round15_combined_verification/tools/verify_round15_analysis_outputs.py",
+      "bytes": 12391,
+      "sha256": "8a4c0fb1f62d90d72d99499f73b229f2ec879c65bfb49c41ed91a7ea225b6a76",
+      "mode": "100644"
+    },
+    {
       "path": "tools/verify_snapshot.py",
       "source": "/data/xuancheng/agent_v1/round14/tools/verify_snapshot.py",
       "bytes": 2228,
@@ -8839,10 +8888,65 @@
   ],
   "last_incremental_sync": {
     "date": "2026-10-23",
-    "source_commit": "cf38c6f80a1e1a3c10fc39581b6e7b764720a96d",
-    "scope": "Round 15 algorithm supplement validation after the concurrent committed folding intent fix; source and aggregate evidence only",
-    "changed_files": 4,
-    "formal_v1_0": false
+    "synced_at": "2026-10-23T15:17:44.594665+08:00",
+    "base_commit": "36d4c73ab87d4c5d723aa384fb41aaa6bf80e533",
+    "code_commit": "222d268f1e3ea90d80731a80137707ec1cd6ec83",
+    "scope": "Append Round15 data utilities and compatibility evidence; preserve concurrent remote CSP/AND-OR product files",
+    "changes": [
+      {
+        "path": "agent/modules/agent/tests/test_round15_data_tools.py",
+        "previous_sha256": null,
+        "sha256": "3fbf0d312bd31813035fa4da8c1b6a38d8c15f41a9e2b5b1abca809320b51dc6",
+        "bytes": 4535
+      },
+      {
+        "path": "docs/round15/PRIMATEX_RHESUS_MODELS.json",
+        "previous_sha256": null,
+        "sha256": "7aa9e452264f7e1b4b11cc00cca50e3af102d1efb54a9a12159f34c737e289ae",
+        "bytes": 1450
+      },
+      {
+        "path": "docs/round15/ROUND15_IMPLEMENTATION.md",
+        "previous_sha256": null,
+        "sha256": "c478765849ccc0602156078f6ec43e5da847987ebd46a3a24ffd798ce0021f0b",
+        "bytes": 10315
+      },
+      {
+        "path": "tools/download_primatex_models.py",
+        "previous_sha256": null,
+        "sha256": "c9b23494d239310b06635df4a58989f5c122eb99be76275153b90cef4a004dfb",
+        "bytes": 3850
+      },
+      {
+        "path": "tools/prepare_prime_structural.py",
+        "previous_sha256": null,
+        "sha256": "438629585f7652bfe6d91551f338fcecba7a556f871a0407b0e0fa9dbc0b0be8",
+        "bytes": 9619
+      },
+      {
+        "path": "tools/run_prime_primatex_pilot.py",
+        "previous_sha256": null,
+        "sha256": "a6fb1149e2523ff36d1cfc9adeafd579c72132a9d86109a5ffc75022c33b9ae8",
+        "bytes": 14693
+      },
+      {
+        "path": "tools/verify_round15_analysis_outputs.py",
+        "previous_sha256": null,
+        "sha256": "8a4c0fb1f62d90d72d99499f73b229f2ec879c65bfb49c41ed91a7ea225b6a76",
+        "bytes": 12391
+      }
+    ],
+    "formal_v1_0": false,
+    "deployment": false,
+    "real_analysis_runs": 4,
+    "real_model_logical_calls": 66,
+    "real_model_http_attempts": 71,
+    "combined_backend_default": {
+      "passed": 858,
+      "skipped": 14,
+      "subtests_passed": 59,
+      "failed": 0
+    }
   },
   "incremental_sync_history": [
     {
@@ -8922,7 +9026,69 @@
       "scope": "Round 15 algorithm supplement validation after the concurrent committed folding intent fix; source and aggregate evidence only",
       "changed_files": 4,
       "formal_v1_0": false
+    },
+    {
+      "date": "2026-10-23",
+      "synced_at": "2026-10-23T15:17:44.594665+08:00",
+      "base_commit": "36d4c73ab87d4c5d723aa384fb41aaa6bf80e533",
+      "code_commit": "222d268f1e3ea90d80731a80137707ec1cd6ec83",
+      "scope": "Append Round15 data utilities and compatibility evidence; preserve concurrent remote CSP/AND-OR product files",
+      "changes": [
+        {
+          "path": "agent/modules/agent/tests/test_round15_data_tools.py",
+          "previous_sha256": null,
+          "sha256": "3fbf0d312bd31813035fa4da8c1b6a38d8c15f41a9e2b5b1abca809320b51dc6",
+          "bytes": 4535
+        },
+        {
+          "path": "docs/round15/PRIMATEX_RHESUS_MODELS.json",
+          "previous_sha256": null,
+          "sha256": "7aa9e452264f7e1b4b11cc00cca50e3af102d1efb54a9a12159f34c737e289ae",
+          "bytes": 1450
+        },
+        {
+          "path": "docs/round15/ROUND15_IMPLEMENTATION.md",
+          "previous_sha256": null,
+          "sha256": "c478765849ccc0602156078f6ec43e5da847987ebd46a3a24ffd798ce0021f0b",
+          "bytes": 10315
+        },
+        {
+          "path": "tools/download_primatex_models.py",
+          "previous_sha256": null,
+          "sha256": "c9b23494d239310b06635df4a58989f5c122eb99be76275153b90cef4a004dfb",
+          "bytes": 3850
+        },
+        {
+          "path": "tools/prepare_prime_structural.py",
+          "previous_sha256": null,
+          "sha256": "438629585f7652bfe6d91551f338fcecba7a556f871a0407b0e0fa9dbc0b0be8",
+          "bytes": 9619
+        },
+        {
+          "path": "tools/run_prime_primatex_pilot.py",
+          "previous_sha256": null,
+          "sha256": "a6fb1149e2523ff36d1cfc9adeafd579c72132a9d86109a5ffc75022c33b9ae8",
+          "bytes": 14693
+        },
+        {
+          "path": "tools/verify_round15_analysis_outputs.py",
+          "previous_sha256": null,
+          "sha256": "8a4c0fb1f62d90d72d99499f73b229f2ec879c65bfb49c41ed91a7ea225b6a76",
+          "bytes": 12391
+        }
+      ],
+      "formal_v1_0": false,
+      "deployment": false,
+      "real_analysis_runs": 4,
+      "real_model_logical_calls": 66,
+      "real_model_http_attempts": 71,
+      "combined_backend_default": {
+        "passed": 858,
+        "skipped": 14,
+        "subtests_passed": 59,
+        "failed": 0
+      }
     }
   ],
-  "updated_at": "2026-10-23T14:59:25.434492+08:00"
+  "updated_at": "2026-10-23T15:17:44.594665+08:00"
 }
