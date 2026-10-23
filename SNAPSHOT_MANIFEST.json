@@ -7,7 +7,7 @@
   "source_root": "/data/xuancheng",
   "source_unchanged_check": true,
   "source_files": 961,
-  "source_bytes": 33541090,
+  "source_bytes": 33541904,
   "excluded_classes": [
     "credentials and .env",
     "FreeSurfer license",
@@ -897,19 +897,20 @@
     },
     {
       "path": "agent/modules/agent/backend/analysis_product_planner.py",
-      "source": "git:de4bf4872a381b5251cbfaa015493e9b175a2776/agent/modules/agent/backend/analysis_product_planner.py",
-      "source_head": "de4bf4872a381b5251cbfaa015493e9b175a2776",
+      "source": "git:2dbbd12f231905246001154bbd4ef49e366f611c/agent/modules/agent/backend/analysis_product_planner.py",
+      "source_head": "2dbbd12f231905246001154bbd4ef49e366f611c",
       "mode": "100644",
-      "source_bytes": 45750,
-      "source_sha256": "cfc0ef1932a554c7ccf57a7f1b4fb72203367560d461cb7af747f08844221e00",
-      "bytes": 45750,
-      "sha256": "cfc0ef1932a554c7ccf57a7f1b4fb72203367560d461cb7af747f08844221e00",
+      "source_bytes": 45777,
+      "source_sha256": "f0f6482eacb15a95981f13d4da24f31d072a5464fa22cacb5d6be34c979d11cf",
+      "bytes": 45777,
+      "sha256": "f0f6482eacb15a95981f13d4da24f31d072a5464fa22cacb5d6be34c979d11cf",
       "synced_at": "2026-10-23",
       "previous_source": {
-        "source": "git:75143b21bc459c6f6e951891356ebf9e4e10169d/backend/analysis_product_planner.py",
-        "source_head": "75143b21bc459c6f6e951891356ebf9e4e10169d",
-        "source_sha256": "a56be13c699988d561eeb82b52715be4a20c8ac992f9af2a33fa49394dcf7f7f",
-        "sha256": "f7da8c16e0ffa355e65ef358641162df01118448b71209d63e22750f22637821"
+        "source": "git:de4bf4872a381b5251cbfaa015493e9b175a2776/agent/modules/agent/backend/analysis_product_planner.py",
+        "source_head": "de4bf4872a381b5251cbfaa015493e9b175a2776",
+        "bytes": 45750,
+        "sha256": "cfc0ef1932a554c7ccf57a7f1b4fb72203367560d461cb7af747f08844221e00",
+        "mode": "100644"
       }
     },
     {
@@ -1260,14 +1261,21 @@
     },
     {
       "path": "agent/modules/agent/docs/ROUND15_ALGORITHMS.md",
-      "source": "git:5d4c67050bce1be6b8d86f81c6d9c72bc09c569a/agent/modules/agent/docs/ROUND15_ALGORITHMS.md",
-      "source_head": "5d4c67050bce1be6b8d86f81c6d9c72bc09c569a",
+      "source": "git:cf38c6f80a1e1a3c10fc39581b6e7b764720a96d/agent/modules/agent/docs/ROUND15_ALGORITHMS.md",
+      "source_head": "cf38c6f80a1e1a3c10fc39581b6e7b764720a96d",
       "mode": "100644",
-      "source_bytes": 6639,
-      "source_sha256": "684c04322b59f1521f3a5a891af8dbe922c30d0f40f0867b25bf268a5e4e4f5f",
-      "bytes": 6639,
-      "sha256": "684c04322b59f1521f3a5a891af8dbe922c30d0f40f0867b25bf268a5e4e4f5f",
-      "synced_at": "2026-10-23"
+      "source_bytes": 6692,
+      "source_sha256": "ae4c4bc12b456ac4da87695b89f2af3e87d86803decf0dd1b9e21f3085c1e0d6",
+      "bytes": 6692,
+      "sha256": "ae4c4bc12b456ac4da87695b89f2af3e87d86803decf0dd1b9e21f3085c1e0d6",
+      "synced_at": "2026-10-23",
+      "previous_source": {
+        "source": "git:5d4c67050bce1be6b8d86f81c6d9c72bc09c569a/agent/modules/agent/docs/ROUND15_ALGORITHMS.md",
+        "source_head": "5d4c67050bce1be6b8d86f81c6d9c72bc09c569a",
+        "bytes": 6639,
+        "sha256": "684c04322b59f1521f3a5a891af8dbe922c30d0f40f0867b25bf268a5e4e4f5f",
+        "mode": "100644"
+      }
     },
     {
       "path": "agent/modules/agent/docs/ROUND15_GLOBAL_MORPHOMETRY.md",
@@ -3859,14 +3867,21 @@
     },
     {
       "path": "agent/modules/agent/tests/test_round15_global_method.py",
-      "source": "git:b8e27a147286045e496c29114e4359f68c67f7fb/agent/modules/agent/tests/test_round15_global_method.py",
-      "source_head": "b8e27a147286045e496c29114e4359f68c67f7fb",
+      "source": "git:bf0c9671ede4933845ef293923405543231fefac/agent/modules/agent/tests/test_round15_global_method.py",
+      "source_head": "bf0c9671ede4933845ef293923405543231fefac",
       "mode": "100644",
-      "source_bytes": 12228,
-      "source_sha256": "97d5dd263785f7629fb3d7768881f754b24793f85e01e934f66a1174584641f2",
-      "bytes": 12228,
-      "sha256": "97d5dd263785f7629fb3d7768881f754b24793f85e01e934f66a1174584641f2",
-      "synced_at": "2026-10-23"
+      "source_bytes": 12876,
+      "source_sha256": "27857804abd584626c096ecde3154c4d9582c6fa5fbc2e9f25958c87b934dc99",
+      "bytes": 12876,
+      "sha256": "27857804abd584626c096ecde3154c4d9582c6fa5fbc2e9f25958c87b934dc99",
+      "synced_at": "2026-10-23",
+      "previous_source": {
+        "source": "git:b8e27a147286045e496c29114e4359f68c67f7fb/agent/modules/agent/tests/test_round15_global_method.py",
+        "source_head": "b8e27a147286045e496c29114e4359f68c67f7fb",
+        "bytes": 12228,
+        "sha256": "97d5dd263785f7629fb3d7768881f754b24793f85e01e934f66a1174584641f2",
+        "mode": "100644"
+      }
     },
     {
       "path": "agent/modules/agent/tests/test_round15_global_reference.py",
@@ -6888,14 +6903,21 @@
     },
     {
       "path": "docs/evidence/round15_algorithms_validation.json",
-      "source": "generated round15 algorithm validation summary",
-      "source_head": null,
+      "source": "git:cf38c6f80a1e1a3c10fc39581b6e7b764720a96d/docs/evidence/round15_algorithms_validation.json",
+      "source_head": "cf38c6f80a1e1a3c10fc39581b6e7b764720a96d",
       "mode": "100644",
-      "source_bytes": 2327,
-      "source_sha256": "7be337061f20ab50a995d5101c0f09a5d36ce5fd0dcf555715322f36eee23052",
-      "bytes": 2327,
-      "sha256": "7be337061f20ab50a995d5101c0f09a5d36ce5fd0dcf555715322f36eee23052",
-      "synced_at": "2026-10-23"
+      "source_bytes": 2413,
+      "source_sha256": "cd79fc2c13aaa5daa326ddd2b30490e7168d984e9dad8a8d7967379336ddd82a",
+      "bytes": 2413,
+      "sha256": "cd79fc2c13aaa5daa326ddd2b30490e7168d984e9dad8a8d7967379336ddd82a",
+      "synced_at": "2026-10-23",
+      "previous_source": {
+        "source": "generated round15 algorithm validation summary",
+        "source_head": null,
+        "bytes": 2327,
+        "sha256": "7be337061f20ab50a995d5101c0f09a5d36ce5fd0dcf555715322f36eee23052",
+        "mode": "100644"
+      }
     },
     {
       "path": "docs/evidence/software_graph_count_audit.json",
@@ -8817,9 +8839,9 @@
   ],
   "last_incremental_sync": {
     "date": "2026-10-23",
-    "source_commit": "5d4c67050bce1be6b8d86f81c6d9c72bc09c569a",
-    "scope": "Round 15 A3/global source plus isolated CSP/AND-OR supplement; code and aggregate validation only; no deployment or subject imagery",
-    "changed_files": 51,
+    "source_commit": "cf38c6f80a1e1a3c10fc39581b6e7b764720a96d",
+    "scope": "Round 15 algorithm supplement validation after the concurrent committed folding intent fix; source and aggregate evidence only",
+    "changed_files": 4,
     "formal_v1_0": false
   },
   "incremental_sync_history": [
@@ -8893,7 +8915,14 @@
       "scope": "Round 15 A3/global source plus isolated CSP/AND-OR supplement; code and aggregate validation only; no deployment or subject imagery",
       "changed_files": 51,
       "formal_v1_0": false
+    },
+    {
+      "date": "2026-10-23",
+      "source_commit": "cf38c6f80a1e1a3c10fc39581b6e7b764720a96d",
+      "scope": "Round 15 algorithm supplement validation after the concurrent committed folding intent fix; source and aggregate evidence only",
+      "changed_files": 4,
+      "formal_v1_0": false
     }
   ],
-  "updated_at": "2026-10-23T14:51:15.849715+08:00"
+  "updated_at": "2026-10-23T14:59:25.434492+08:00"
 }
