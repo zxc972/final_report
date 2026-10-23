@@ -1,0 +1,7 @@
+﻿subject,species,age,sex,remaining_k,scale_verified,verdict,source,volume_cm3
+ION_32198,Macaca mulatta,5.81,Male,1.0,True,conditional_pass,/data/xuancheng/datasets/provenance/macaque_global_acceptance_20261023/ION_32198_acceptance_v2,106.415875
+UCDAVIS_32125,Macaca mulatta,22.5,F,1.0,True,conditional_pass,/data/xuancheng/datasets/provenance/macaque_global_acceptance_20261023/UCDAVIS_32125_automatic_acceptance,83.01275
+ION_32199,Macaca mulatta,4.78,Male,1.0,True,conditional_pass,/data/xuancheng/datasets/provenance/macaque_global_acceptance_20261023/ION_32199_automatic_acceptance,111.36025
+ION_32201,Macaca mulatta,4.69,Male,1.0,True,conditional_pass,/data/xuancheng/datasets/provenance/macaque_global_acceptance_20261023/ION_32201_automatic_acceptance,100.90825
+UCDAVIS_32126,Macaca mulatta,21.5,F,1.0,True,conditional_pass,/data/xuancheng/datasets/provenance/round21_macaque_followup_20261024/UCDAVIS_32126_automatic_acceptance,91.3415
+UCDAVIS_32127,Macaca mulatta,21.5,F,1.0,True,conditional_pass,/data/xuancheng/datasets/provenance/round21_macaque_followup_20261024/UCDAVIS_32127_automatic_acceptance,94.55125

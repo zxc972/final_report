@@ -1,0 +1,186 @@
+{
+  "order_matches_original_round19_request": true,
+  "approved_non_heldout_only": true,
+  "rows": [
+    {
+      "subject_id": "IXI064",
+      "input_root": "/data/xuancheng/datasets/slim/IXI/IXI064",
+      "species": null,
+      "held_out": false,
+      "qc_visual": "可保留",
+      "qc_note": "未见局部明显问题；否",
+      "qc_reviewer": "Claude AI 初查，非专家盲审"
+    },
+    {
+      "subject_id": "IXI294",
+      "input_root": "/data/xuancheng/datasets/slim/IXI/IXI294",
+      "species": null,
+      "held_out": false,
+      "qc_visual": "可保留",
+      "qc_note": "颞叶外侧（冠状位）对比低，未见明确错位；否",
+      "qc_reviewer": "Claude AI 初查，非专家盲审"
+    },
+    {
+      "subject_id": "IXI307",
+      "input_root": "/data/xuancheng/datasets/slim/IXI/IXI307",
+      "species": null,
+      "held_out": false,
+      "qc_visual": "可保留",
+      "qc_note": "未见局部明显问题；否",
+      "qc_reviewer": "Claude AI 初查，非专家盲审"
+    },
+    {
+      "subject_id": "IXI045",
+      "input_root": "/data/xuancheng/datasets/slim/IXI/IXI045",
+      "species": null,
+      "held_out": false,
+      "qc_visual": "可保留",
+      "qc_note": "未见局部明显问题；否",
+      "qc_reviewer": "Claude AI 初查，非专家盲审"
+    },
+    {
+      "subject_id": "IXI625",
+      "input_root": "/data/xuancheng/datasets/slim/IXI/IXI625",
+      "species": null,
+      "held_out": false,
+      "qc_visual": "可保留",
+      "qc_note": "未见局部明显问题；否",
+      "qc_reviewer": "Claude AI 初查，非专家盲审"
+    },
+    {
+      "subject_id": "IXI353",
+      "input_root": "/data/xuancheng/datasets/slim/IXI/IXI353",
+      "species": null,
+      "held_out": false,
+      "qc_visual": "可保留",
+      "qc_note": "未见局部明显问题；否",
+      "qc_reviewer": "Claude AI 初查，非专家盲审"
+    },
+    {
+      "subject_id": "IXI445",
+      "input_root": "/data/xuancheng/datasets/slim/IXI/IXI445",
+      "species": null,
+      "held_out": false,
+      "qc_visual": "可保留",
+      "qc_note": "未见局部明显问题；否",
+      "qc_reviewer": "Claude AI 初查，非专家盲审"
+    },
+    {
+      "subject_id": "IXI434",
+      "input_root": "/data/xuancheng/datasets/slim/IXI/IXI434",
+      "species": null,
+      "held_out": false,
+      "qc_visual": "可保留",
+      "qc_note": "未见明确错位；否",
+      "qc_reviewer": "Claude AI 初查，非专家盲审"
+    },
+    {
+      "subject_id": "IXI216",
+      "input_root": "/data/xuancheng/datasets/slim/IXI/IXI216",
+      "species": null,
+      "held_out": false,
+      "qc_visual": "可保留",
+      "qc_note": "未见重建错误；否",
+      "qc_reviewer": "Claude AI 初查，非专家盲审"
+    },
+    {
+      "subject_id": "IXI288",
+      "input_root": "/data/xuancheng/datasets/slim/IXI/IXI288",
+      "species": null,
+      "held_out": false,
+      "qc_visual": "可保留",
+      "qc_note": "未见局部明显问题；否",
+      "qc_reviewer": "Claude AI 初查，非专家盲审"
+    },
+    {
+      "subject_id": "IXI095",
+      "input_root": "/data/xuancheng/datasets/slim/IXI/IXI095",
+      "species": null,
+      "held_out": false,
+      "qc_visual": "可保留",
+      "qc_note": "未见局部明显问题；否",
+      "qc_reviewer": "Claude AI 初查，非专家盲审"
+    },
+    {
+      "subject_id": "IXI303",
+      "input_root": "/data/xuancheng/datasets/slim/IXI/IXI303",
+      "species": null,
+      "held_out": false,
+      "qc_visual": "保留（AI 复核）",
+      "qc_note": "冠状 Y=13.1/14.0/14.9 mm（侧脑室前角层面）：双侧下外侧皮层 white 沿灰白质交界、pial 沿灰质外缘，三层走行连续一致；pial 未越入硬膜/颅骨，white 未穿入灰质；右侧小闭合环为脑沟斜切面，属正常。低对比使颞底灰白界略模糊，但未见明显重建错误；复核置信度：中；复核日期：2026-10-24",
+      "qc_reviewer": "Claude AI 初查与复核，非专家盲审"
+    },
+    {
+      "subject_id": "IXI026",
+      "input_root": "/data/xuancheng/datasets/slim/IXI/IXI026",
+      "species": null,
+      "held_out": false,
+      "qc_visual": "可保留",
+      "qc_note": "未见局部明显问题；否",
+      "qc_reviewer": "Claude AI 初查，非专家盲审"
+    },
+    {
+      "subject_id": "IXI267",
+      "input_root": "/data/xuancheng/datasets/slim/IXI/IXI267",
+      "species": null,
+      "held_out": false,
+      "qc_visual": "可保留",
+      "qc_note": "未见局部明显问题；否",
+      "qc_reviewer": "Claude AI 初查，非专家盲审"
+    },
+    {
+      "subject_id": "IXI542",
+      "input_root": "/data/xuancheng/datasets/slim/IXI/IXI542",
+      "species": null,
+      "held_out": false,
+      "qc_visual": "保留（AI 复核）",
+      "qc_note": "轴位 Z=-1.7/-0.8/0.1 mm：额极 pial 贴灰质外缘，未进入前方眼眶/额窦高信号区，三层一致；外侧皮层与枕叶走行正常。注意：这三层实际在侧脑室体部水平，位置高于眶额底面，眶额本身未被覆盖，该处无法判断；复核置信度：中；复核日期：2026-10-24",
+      "qc_reviewer": "Claude AI 初查与复核，非专家盲审"
+    },
+    {
+      "subject_id": "IXI198",
+      "input_root": "/data/xuancheng/datasets/slim/IXI/IXI198",
+      "species": null,
+      "held_out": false,
+      "qc_visual": "可保留",
+      "qc_note": "未见局部明显问题；否",
+      "qc_reviewer": "Claude AI 初查，非专家盲审"
+    },
+    {
+      "subject_id": "IXI546",
+      "input_root": "/data/xuancheng/datasets/slim/IXI/IXI546",
+      "species": null,
+      "held_out": false,
+      "qc_visual": "可保留",
+      "qc_note": "未见局部明显问题；否",
+      "qc_reviewer": "Claude AI 初查，非专家盲审"
+    },
+    {
+      "subject_id": "IXI442",
+      "input_root": "/data/xuancheng/datasets/slim/IXI/IXI442",
+      "species": null,
+      "held_out": false,
+      "qc_visual": "可保留",
+      "qc_note": "脑室扩大；eTIV 超过 3 MAD 的自动标记在图像上表现为头颅整体较大，未见重建错误；否（自动标记保留，不剔除）；自动 3 MAD 标记保留，不剔除；筛查提示不是病理判断",
+      "qc_reviewer": "Claude AI 初查，非专家盲审"
+    },
+    {
+      "subject_id": "IXI158",
+      "input_root": "/data/xuancheng/datasets/slim/IXI/IXI158",
+      "species": null,
+      "held_out": false,
+      "qc_visual": "可保留",
+      "qc_note": "未见重建错误；否",
+      "qc_reviewer": "Claude AI 初查，非专家盲审"
+    },
+    {
+      "subject_id": "IXI327",
+      "input_root": "/data/xuancheng/datasets/slim/IXI/IXI327",
+      "species": null,
+      "held_out": false,
+      "qc_visual": "可保留",
+      "qc_note": "未见局部明显问题；否",
+      "qc_reviewer": "Claude AI 初查，非专家盲审"
+    }
+  ]
+}

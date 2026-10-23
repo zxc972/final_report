@@ -1,0 +1,107 @@
+{
+  "passed": true,
+  "utc": "2026-10-23T17:44:44.804704+00:00",
+  "scope": "LOCAL actual ChatSession/ControlStore/RequestBudget + route_message + corrected dev_server begin/finish -> real httpx -> local HTTP fixture; inactive/active chat and concurrent identity isolation. Backend API __init__ bypassed. SDK/httpx2 and full-backend validation not performed locally.",
+  "real_requests_to_local_fixture": 4,
+  "external_provider_requests": 0,
+  "model_api_requests": 0,
+  "real_analysis_batch_reruns": 0,
+  "httpx_version": "0.27.0",
+  "coverage": [
+    {
+      "module": "httpx",
+      "class": "Client",
+      "original_send_module": "httpx._client"
+    },
+    {
+      "module": "httpx",
+      "class": "AsyncClient",
+      "original_send_module": "httpx._client"
+    }
+  ],
+  "cases": [
+    {
+      "active_chat": false,
+      "request_id": "39ca5a99caae4fb1b1abd98db3e2b8b1",
+      "native_attempt": "4368b87fac864f3fa7f9a663dee9f064",
+      "result": {
+        "route": "analysis",
+        "reason": "Analyse registered fixture outputs",
+        "task_kind": "analysis_compute",
+        "fallback": false,
+        "attempt_id": "4368b87fac864f3fa7f9a663dee9f064",
+        "attempt_ids": [
+          "4368b87fac864f3fa7f9a663dee9f064"
+        ],
+        "model_calls": 1,
+        "parse_status": "first_success",
+        "json_constraint": true
+      }
+    },
+    {
+      "active_chat": false,
+      "request_id": "ff0ebe7a20324dc9a04b14cdf8d6d1ac",
+      "native_attempt": "0704ad821d284896990b55f9a9ed9c37",
+      "result": {
+        "route": "analysis",
+        "reason": "Analyse registered fixture outputs",
+        "task_kind": "analysis_compute",
+        "fallback": false,
+        "attempt_id": "0704ad821d284896990b55f9a9ed9c37",
+        "attempt_ids": [
+          "0704ad821d284896990b55f9a9ed9c37"
+        ],
+        "model_calls": 1,
+        "parse_status": "first_success",
+        "json_constraint": true
+      }
+    },
+    {
+      "active_chat": true,
+      "request_id": "2bef6b9077ff4dc1b172c4d30ced44fa",
+      "native_attempt": "64842c00b5a545268e5ccf393d1c88c0",
+      "result": {
+        "route": "analysis",
+        "reason": "Analyse registered fixture outputs",
+        "task_kind": "analysis_compute",
+        "fallback": false,
+        "attempt_id": "64842c00b5a545268e5ccf393d1c88c0",
+        "attempt_ids": [
+          "64842c00b5a545268e5ccf393d1c88c0"
+        ],
+        "model_calls": 1,
+        "parse_status": "first_success",
+        "json_constraint": true
+      }
+    },
+    {
+      "active_chat": true,
+      "request_id": "6a939e4cc347497fbecc224bd6f33f4f",
+      "native_attempt": "85abb5b4bd554077b1242d1c9dce0948",
+      "result": {
+        "route": "analysis",
+        "reason": "Analyse registered fixture outputs",
+        "task_kind": "analysis_compute",
+        "fallback": false,
+        "attempt_id": "85abb5b4bd554077b1242d1c9dce0948",
+        "attempt_ids": [
+          "85abb5b4bd554077b1242d1c9dce0948"
+        ],
+        "model_calls": 1,
+        "parse_status": "first_success",
+        "json_constraint": true
+      }
+    }
+  ],
+  "actual_native_binding_aligned": true,
+  "fixture_usage_only": {
+    "prompt_tokens": 44,
+    "completion_tokens": 12
+  },
+  "evidence_folder": "C:\\Users\\zxc18\\OneDrive\\Desktop\\知识图谱\\round21\\local_binding_repro_134072b2",
+  "additional_exact_test_assertions_passed": [
+    "missing_budget",
+    "wrong_id",
+    "finished"
+  ]
+}
