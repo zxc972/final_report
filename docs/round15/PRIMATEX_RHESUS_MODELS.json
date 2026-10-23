@@ -1,0 +1,52 @@
+{
+  "repo": "CNAIL/PrimateX",
+  "commit": "ab48594a75179c0cf427c5c41aa10655ebe29c8f",
+  "license_from_official_model_card": "agpl-3.0",
+  "source": "https://huggingface.co/CNAIL/PrimateX",
+  "assets": [
+    {
+      "path": "rhesus_brain/checkpoint.pth",
+      "size": 681657115,
+      "oid": "3f9fc41f44646a2d92321dd1a5575850aaf917bd",
+      "lfs": {
+        "oid": "22840202b590a360e1c41181e9304da8d3acad03d7aae81916414138ec840e71",
+        "size": 681657115,
+        "pointerSize": 134
+      }
+    },
+    {
+      "path": "rhesus_brain/dataset.json",
+      "size": 171,
+      "oid": "cb80cd209acca3f92d2193d863c6564ec5542bc7",
+      "lfs": null
+    },
+    {
+      "path": "rhesus_brain/plans.json",
+      "size": 11204,
+      "oid": "18d669252134454f6430d142fb3c4966bbafb69e",
+      "lfs": null
+    },
+    {
+      "path": "rhesus_wm/checkpoint.pth",
+      "size": 681650331,
+      "oid": "1e430e1d3f843b2b53c4208bee9d3356f8c983ef",
+      "lfs": {
+        "oid": "beef08133646b74bb84d8e785f60b30c7767394aaf54eb21dfd32f9728ade90d",
+        "size": 681650331,
+        "pointerSize": 134
+      }
+    },
+    {
+      "path": "rhesus_wm/dataset.json",
+      "size": 172,
+      "oid": "8a16822ecc777987ccaa4401fe414b6320ef0356",
+      "lfs": null
+    },
+    {
+      "path": "rhesus_wm/plans.json",
+      "size": 7385,
+      "oid": "d1a89b873d3bf908ed651b79ba9fca0f569dd851",
+      "lfs": null
+    }
+  ]
+}

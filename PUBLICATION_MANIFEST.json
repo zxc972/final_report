@@ -1,6 +1,6 @@
 {
   "schema": "final_report.publication.v1",
-  "source_snapshot": "2026-10-23 Round16 reviewed source and unreviewed draft labels; draft evaluation running",
+  "source_snapshot": "2026-10-23 Round16 source and draft protocol with concurrent reviewed Round15 data tools; evaluation running",
   "files": [
     {
       "path": ".env.example",
@@ -24,8 +24,8 @@
     },
     {
       "path": "SNAPSHOT_MANIFEST.json",
-      "bytes": 436332,
-      "sha256": "a4ad1c1e21a9aa60c68f19185a343900f1fa6b24ce24a29aaf63c59b21fdff6a"
+      "bytes": 441233,
+      "sha256": "245141b652aff943945a8166bbca54df7fe286743132ea55c97ae86ad5bc3f1c"
     },
     {
       "path": "agent/.gitignore",
@@ -1713,6 +1713,11 @@
       "sha256": "5a4f12b19e4fbbc211f40ae8bdf1f646ce7de20f352d9504d3d6a5051d818d30"
     },
     {
+      "path": "agent/modules/agent/tests/test_round15_data_tools.py",
+      "bytes": 4535,
+      "sha256": "3fbf0d312bd31813035fa4da8c1b6a38d8c15f41a9e2b5b1abca809320b51dc6"
+    },
+    {
       "path": "agent/modules/agent/tests/test_round15_global_method.py",
       "bytes": 12876,
       "sha256": "27857804abd584626c096ecde3154c4d9582c6fa5fbc2e9f25958c87b934dc99"
@@ -1729,8 +1734,8 @@
     },
     {
       "path": "agent/modules/agent/tests/test_round16_canon_runner.py",
-      "bytes": 9897,
-      "sha256": "f4a78a6c8d3b0ebc2fc2bcc9a6f6798a7106ec02c36134ab007a77c71377c47d"
+      "bytes": 13028,
+      "sha256": "13bad09d2c6f2bf6d7e11f69f5360659fa5bde5dd0be4aa5b22c4a2d29bb1188"
     },
     {
       "path": "agent/modules/agent/tests/test_round16_condition_canonicalizer.py",
@@ -3498,6 +3503,16 @@
       "sha256": "cbf1ae0569d69d9c4d03c87d61c0346830f7e3f6c40ff2439c5578cf754a0afb"
     },
     {
+      "path": "docs/round15/PRIMATEX_RHESUS_MODELS.json",
+      "bytes": 1450,
+      "sha256": "7aa9e452264f7e1b4b11cc00cca50e3af102d1efb54a9a12159f34c737e289ae"
+    },
+    {
+      "path": "docs/round15/ROUND15_IMPLEMENTATION.md",
+      "bytes": 10315,
+      "sha256": "c478765849ccc0602156078f6ec43e5da847987ebd46a3a24ffd798ce0021f0b"
+    },
+    {
       "path": "environment/manifests/AFNI_C3D.dependencies.json",
       "bytes": 964,
       "sha256": "7a010c7e88b25bed145b950f5036cfff4ff3241d6da432a36dca606980fadf7c"
@@ -4758,6 +4773,11 @@
       "sha256": "46b6d60b796ed8426e68904b977ce32182f61f05f019cb5dbe7a950d224803ee"
     },
     {
+      "path": "tools/download_primatex_models.py",
+      "bytes": 3850,
+      "sha256": "c9b23494d239310b06635df4a58989f5c122eb99be76275153b90cef4a004dfb"
+    },
+    {
       "path": "tools/export_server_snapshot.py",
       "bytes": 8004,
       "sha256": "92f83f9507ec1ec3698460840339eb01ac4d3d8fa77e51b9f62737796c326f0f"
@@ -4829,8 +4849,13 @@
     },
     {
       "path": "tools/knowledge/run_condition_canonicalization.py",
-      "bytes": 28290,
-      "sha256": "9cde5664d0d268b2afdd5ff77fa56a9702bc0d8f6d1fb5dd2603843f9c5305c7"
+      "bytes": 29990,
+      "sha256": "e43d61bd2f84bffaaad7902a7d0bec4d66fc43a0842f5bf451931035b76c1cee"
+    },
+    {
+      "path": "tools/prepare_prime_structural.py",
+      "bytes": 9619,
+      "sha256": "438629585f7652bfe6d91551f338fcecba7a556f871a0407b0e0fa9dbc0b0be8"
     },
     {
       "path": "tools/retrieval/export_graph.py",
@@ -4856,6 +4881,16 @@
       "path": "tools/retrieval/run_retrieval.py",
       "bytes": 10523,
       "sha256": "691d54280770e639a5f4ea709910dbc3c56ab93830f4b8381b438a1af2d8b4e9"
+    },
+    {
+      "path": "tools/run_prime_primatex_pilot.py",
+      "bytes": 14693,
+      "sha256": "a6fb1149e2523ff36d1cfc9adeafd579c72132a9d86109a5ffc75022c33b9ae8"
+    },
+    {
+      "path": "tools/verify_round15_analysis_outputs.py",
+      "bytes": 12391,
+      "sha256": "8a4c0fb1f62d90d72d99499f73b229f2ec879c65bfb49c41ed91a7ea225b6a76"
     },
     {
       "path": "tools/verify_snapshot.py",
