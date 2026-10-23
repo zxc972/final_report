@@ -7,7 +7,8 @@
   ],
   "main_round15_commits": [
     "0d09847",
-    "b8e27a1"
+    "b8e27a1",
+    "bf0c967"
   ],
   "algorithm_commits": [
     {
@@ -26,12 +27,13 @@
   "tests": {
     "bundle_new_passed": 13,
     "merged_default_passed": 837,
-    "final_default_passed": 850,
+    "final_default_passed": 853,
     "final_default_skipped": 14,
     "final_subtests_passed": 59,
-    "final_default_seconds": 94.78,
+    "final_default_seconds": 82.78,
     "initial_environment_failures": 2,
-    "environment_fix": "Use the existing ANALYSIS_REFERENCE_PYTHON with SciPy"
+    "environment_fix": "Use the existing ANALYSIS_REFERENCE_PYTHON with SciPy",
+    "final_source_commit": "2dbbd12f231905246001154bbd4ef49e366f611c"
   },
   "candidate_regression": {
     "equal_baseline_cases": 9,

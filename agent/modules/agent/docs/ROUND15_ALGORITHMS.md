@@ -1,6 +1,6 @@
 # Round 15: CSP matching and AND-OR completion
 
-本补充基于 `7f684bb`，合入 `round15_algorithms.bundle` 的 `151a95f`、`ac66f76`，并与第十五轮主任务的 `0d09847`（A3）和 `b8e27a1`（全局指标）共同验证。开发工作树为 `/data/xuancheng/agent_v1/round15_algorithms_source`。原服务及正在运行的主任务开发实例没有部署或重启。
+本补充基于 `7f684bb`，合入 `round15_algorithms.bundle` 的 `151a95f`、`ac66f76`，并与第十五轮主任务的 `0d09847`（A3）、`b8e27a1`（全局指标）和 `bf0c967`（单独折叠请求选择凸包方法）共同验证。开发工作树为 `/data/xuancheng/agent_v1/round15_algorithms_source`。原服务及正在运行的主任务开发实例没有部署或重启。
 
 ## 接入改动
 
@@ -56,7 +56,7 @@ python experiments/planning_eval.py --profile PROFILE.json --registry CATALOG.js
 
 - 原始 bundle 新测试：13 passed（匹配/规划 8、全局参考 5）。
 - 合入基线：837 passed、14 skipped、59 subtests passed。
-- 接入最终完整默认后端：**850 passed、14 skipped、59 subtests passed**，94.78 秒；144 条既有告警。
+- 接入最终完整默认后端：**853 passed、14 skipped、59 subtests passed**，82.78 秒；144 条既有告警。
 - 第一次基线的两项失败来自独立进程选择了不含 SciPy 的 Python；指定既有 `.venv-reference/bin/python` 后完整通过。没有因此修改参考算法或放宽判定。
 - 受保护原始集合登记为 101 个，其中历史上只有 100 个映射到当前仓库；当前可映射 100 个全部保持原摘要。未声称重新核实无法映射的原主机文件。
 - 本补充没有真实模型分析运行，不消耗主任务的 4 次真实分析授权；没有预处理提交、保留组处理、服务重启或 PR 合并。
