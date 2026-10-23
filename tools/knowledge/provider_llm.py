@@ -39,10 +39,12 @@ class Config:
     timeout: float = 120.0
     max_tokens: int = 2048
     max_attempts: int = 3
+    thinking: str | None = None
+    json_output: bool = False
 
     def public(self):
         u = urlsplit(self.base_url)
-        return {
+        public = {
             "endpoint_host": u.hostname,
             "endpoint_path": u.path,
             "model": self.model,
@@ -51,6 +53,26 @@ class Config:
             "max_tokens": self.max_tokens,
             "max_attempts": self.max_attempts,
         }
+        if self.thinking is not None:
+            public["thinking"] = {"type": self.thinking}
+        if self.json_output:
+            public["response_format"] = {"type": "json_object"}
+        return public
+
+    def request(self, prompt):
+        body = {
+            "model": self.model,
+            "messages": [{"role": "user", "content": prompt}],
+            "temperature": self.temperature,
+            "max_tokens": self.max_tokens,
+        }
+        if self.thinking is not None:
+            if self.thinking not in {"enabled", "disabled"}:
+                raise ValueError("Unsupported thinking setting")
+            body["thinking"] = {"type": self.thinking}
+        if self.json_output:
+            body["response_format"] = {"type": "json_object"}
+        return body
 
 
 def load_config(config_path=None, **overrides):
@@ -123,10 +145,16 @@ def usage_counts(usage):
 
 class Provider:
     def __init__(
-        self, config, ledger_dir, max_requests=800, client=None, sleep=time.sleep
+        self,
+        config,
+        ledger_dir,
+        max_requests=800,
+        client=None,
+        sleep=time.sleep,
+        minimum_interval=0.0,
     ):
-        if not 1 <= max_requests <= 800:
-            raise ValueError("This round permits at most 800 HTTP attempts")
+        if not 1 <= max_requests <= 1200:
+            raise ValueError("Round 17 permits at most 1200 HTTP attempts")
         self.config, self.max_requests, self.sleep = config, max_requests, sleep
         self.folder = Path(ledger_dir)
         self.folder.mkdir(parents=True, exist_ok=True)
@@ -141,6 +169,11 @@ class Provider:
         )
         self.cache_hits = 0
         self.cooldown_until = 0.0
+        self.pace_lock = threading.Lock()
+        self.minimum_interval = float(minimum_interval)
+        self.current_interval = float(minimum_interval)
+        self.next_start = 0.0
+        self.success_streak = 0
 
     def _append(self, event):
         event = {"time": datetime.now(timezone.utc).isoformat(), **event}
@@ -191,16 +224,22 @@ class Provider:
                 return done[-1].get("text", "")
             prior_attempts = sum(e["event"] == "start" for e in previous)
         for attempt in range(prior_attempts + 1, self.config.max_attempts + 1):
-            with self.lock:
-                delay = max(0.0, self.cooldown_until - time.monotonic())
-            if delay:
-                self.sleep(delay)
+            # Serialize departure times, not HTTP responses. This prevents all
+            # workers from issuing a new burst when a shared cooldown expires.
+            with self.pace_lock:
+                with self.lock:
+                    delay = max(
+                        0.0,
+                        max(self.cooldown_until, self.next_start) - time.monotonic(),
+                    )
+                if delay:
+                    self.sleep(delay)
+                with self.lock:
+                    self.next_start = time.monotonic() + self.current_interval
             with self.lock:
                 count = sum(e["event"] == "start" for e in self.events)
                 if count >= self.max_requests:
-                    raise ProviderFailure(
-                        "The shared 800-or-lower HTTP attempt budget is exhausted"
-                    )
+                    raise ProviderFailure("The shared HTTP attempt budget is exhausted")
                 request_id = uuid.uuid4().hex
                 self._append(
                     {
@@ -213,6 +252,8 @@ class Provider:
                         "config_sha256": config_digest,
                         "model": self.config.model,
                         "temperature": self.config.temperature,
+                        "settings": self.config.public(),
+                        "transport_interval": self.current_interval,
                     }
                 )
             started = time.monotonic()
@@ -224,16 +265,12 @@ class Provider:
                 None,
                 None,
             )
+            reasoning_present, reasoning_tokens = None, None
             try:
                 response = self.client.post(
                     self.config.base_url + "/chat/completions",
                     headers={"Authorization": "Bearer " + self.config.api_key},
-                    json={
-                        "model": self.config.model,
-                        "messages": [{"role": "user", "content": prompt}],
-                        "temperature": self.config.temperature,
-                        "max_tokens": self.config.max_tokens,
-                    },
+                    json=self.config.request(prompt),
                 )
                 http_status = response.status_code
                 status = "http_error"
@@ -249,6 +286,15 @@ class Provider:
                         first = choices[0] if choices else {}
                         finish = first.get("finish_reason")
                         text = first.get("message", {}).get("content")
+                        reasoning_present = bool(
+                            first.get("message", {}).get("reasoning_content")
+                        )
+                        if isinstance(usage, dict):
+                            detail = usage.get("completion_tokens_details") or {}
+                            if isinstance(detail, dict):
+                                reasoning_tokens = _number(
+                                    detail.get("reasoning_tokens")
+                                )
                         # A length-limited reasoning response can contain no answer.
                         # Preserve it as an empty model answer, never retry a bad answer.
                         if text is None and finish == "length":
@@ -269,13 +315,26 @@ class Provider:
                 "seconds": round(time.monotonic() - started, 4),
                 "observed_model": observed,
                 "finish_reason": finish,
+                "reasoning_content_present": reasoning_present,
+                "reasoning_tokens": reasoning_tokens,
                 **usage_counts(usage),
             }
             if status == "ok":
                 event["text"] = text
             with self.lock:
                 self._append(event)
+                if status == "ok":
+                    self.success_streak += 1
+                    if self.success_streak >= 32:
+                        self.current_interval = max(
+                            self.minimum_interval, self.current_interval * 0.9
+                        )
+                        self.success_streak = 0
                 if http_status == 429:
+                    self.success_streak = 0
+                    self.current_interval = min(
+                        6.0, max(self.minimum_interval, self.current_interval * 1.25)
+                    )
                     # Transport backoff only; no change to sampling or scoring.
                     self.cooldown_until = max(
                         self.cooldown_until, time.monotonic() + 15.0
@@ -297,6 +356,28 @@ class Provider:
         raise ProviderFailure(
             "Maximum attempts for this logical call were already consumed"
         )
+
+    def response_info(self, arm, item_id, sample):
+        """Read only whitelisted metadata for a received or cached logical call."""
+        logical = f"{arm}:{item_id}:{sample}"
+        with self.lock:
+            ends = [
+                e
+                for e in self.events
+                if e["event"] == "end" and e.get("logical_id") == logical
+            ]
+        if not ends:
+            return {}
+        return {
+            key: ends[-1].get(key)
+            for key in [
+                "request_id",
+                "finish_reason",
+                "status",
+                "reasoning_content_present",
+                "reasoning_tokens",
+            ]
+        }
 
     def stats(self, arm=None):
         with self.lock:
