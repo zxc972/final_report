@@ -87,3 +87,10 @@ Only `rhesus_brain/` and `rhesus_wm/` are fetched; no account, token or agreemen
 - Available historical protected inventory: 100 mapped files match; one historically unmapped inventory entry remains unverified, not silently counted as passing.
 
 The live batch is exhausted at four cases. Remaining work includes live retest of the offline A2 dispatch correction with separate authorization, completion/review of monkey reconstruction and scale, both-species host aggregation, and visual anatomical QC. A successful computation is not expert QC, a blind generalization test, or a population comparison.
+
+
+## Concurrent publication update
+
+The target branch advanced to `36d4c73` during publication. It already included this round's analysis changes and the offline folding fix, plus a concurrent CSP/AND-OR implementation. Those remote product files were preserved. Only the additive data utilities, this validation note and refreshed inventories were appended; no force push or deployment was performed.
+
+An isolated 6007 checkout of the combined tree completed the full default backend suite: **858 passed, 14 skipped, 59 subtests passed**, no failures (108.29 s). This is an offline compatibility check. The four live cases above remain attributed to immutable `0d09847`/`b8e27a1`, not to the later concurrent algorithm integration.
