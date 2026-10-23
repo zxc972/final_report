@@ -22,16 +22,20 @@ Supported constraint kinds (subset of the condition templates):
   unary  attr_in(attr, values), attr_equals(attr, value), attr_present(attr)
   n-ary  attr_equal(slots, attrs): all bound products share each attribute value
 """
+
 from __future__ import annotations
 
 from typing import Iterable, Mapping, Sequence
+import json
 
 MAX_SOLUTIONS = 256
 
 
 class TypeHierarchy:
     def __init__(self, types: Iterable[Mapping[str, object]]):
-        self.parent = {str(t["id"]): (str(t["parent"]) if t.get("parent") else None) for t in types}
+        self.parent = {
+            str(t["id"]): (str(t["parent"]) if t.get("parent") else None) for t in types
+        }
 
     @classmethod
     def from_document(cls, document: Mapping[str, object]) -> "TypeHierarchy":
@@ -65,45 +69,75 @@ def _unary_ok(attrs: Mapping[str, object], constraint: Mapping[str, object]) -> 
     raise ValueError(f"Unknown unary constraint {kind!r}")
 
 
-def domains(slots: Sequence[Mapping[str, object]], products: Sequence[Mapping[str, object]],
-            hierarchy: TypeHierarchy) -> dict[str, list[Mapping[str, object]]]:
+def domains(
+    slots: Sequence[Mapping[str, object]],
+    products: Sequence[Mapping[str, object]],
+    hierarchy: TypeHierarchy,
+) -> dict[str, list[Mapping[str, object]]]:
     out = {}
     for slot in slots:
         out[str(slot["name"])] = [
-            p for p in products
-            if hierarchy.subsumes(str(slot["type"]), str(p["type"]))
+            p
+            for p in products
+            if any(
+                hierarchy.subsumes(str(t), str(p["type"]))
+                for t in slot.get("types", [slot["type"]])
+            )
             and all(_unary_ok(p.get("attrs", {}), c) for c in slot.get("unary", []))
         ]
     return out
 
 
-def _nary_status(constraint: Mapping[str, object], binding: Mapping[str, Mapping[str, object]]):
+def _nary_status(
+    constraint: Mapping[str, object], binding: Mapping[str, Mapping[str, object]]
+):
     """True / False when decidable on the bound slots, None while undecided."""
     names = [str(s) for s in constraint["slots"]]
     bound = [binding[n] for n in names if n in binding]
     if len(bound) < 2:
         return None if len(bound) < len(names) else True
     for attr in constraint["attrs"]:
-        values = {p.get("attrs", {}).get(str(attr)) for p in bound}
-        if len(values) > 1 or None in values:
+        raw = [p.get("attrs", {}).get(str(attr)) for p in bound]
+        values = {json.dumps(v, sort_keys=True) for v in raw}
+        if len(values) > 1 or None in raw:
             return False
     return True if len(bound) == len(names) else None
 
 
-def solve(slots: Sequence[Mapping[str, object]], products: Sequence[Mapping[str, object]],
-          constraints: Sequence[Mapping[str, object]], hierarchy: TypeHierarchy,
-          preferred_space: str | None = None, max_solutions: int = MAX_SOLUTIONS) -> dict:
+def solve(
+    slots: Sequence[Mapping[str, object]],
+    products: Sequence[Mapping[str, object]],
+    constraints: Sequence[Mapping[str, object]],
+    hierarchy: TypeHierarchy,
+    preferred_space: str | None = None,
+    max_solutions: int = MAX_SOLUTIONS,
+) -> dict:
     """Enumerate feasible assignments; report empty domains as missing requirements."""
     for c in constraints:
         if c.get("kind") != "attr_equal":
             raise ValueError(f"Unsupported n-ary constraint {c.get('kind')!r}")
+    if max_solutions < 1:
+        raise ValueError("max_solutions must be positive")
     dom = domains(slots, products, hierarchy)
-    missing = [{"slot": str(s["name"]), "type": str(s["type"]), "unary": list(s.get("unary", []))}
-               for s in slots if not dom[str(s["name"])]]
+    missing = [
+        {
+            "slot": str(s["name"]),
+            "type": str(s["type"]),
+            "unary": list(s.get("unary", [])),
+            **({"types": s["types"]} if "types" in s else {}),
+        }
+        for s in slots
+        if not dom[str(s["name"])]
+    ]
     stats = {"nodes": 0, "pruned": 0}
     if missing:
-        return {"solutions": [], "missing": missing, "domain_sizes": {k: len(v) for k, v in dom.items()},
-                "stats": stats, "truncated": False}
+        return {
+            "solutions": [],
+            "missing": missing,
+            "domain_sizes": {k: len(v) for k, v in dom.items()},
+            "stats": stats,
+            "truncated": False,
+        }
     hard = [c for c in constraints if c.get("severity", "hard") == "hard"]
     soft = [c for c in constraints if c.get("severity", "hard") == "soft"]
     solutions: list[dict] = []
@@ -120,7 +154,7 @@ def solve(slots: Sequence[Mapping[str, object]], products: Sequence[Mapping[str,
             return
         name = min(free, key=lambda n: (len(current[n]), n))  # MRV
         for product in current[name]:
-            if any(product is p for p in binding.values()):
+            if any(product["id"] == p["id"] for p in binding.values()):
                 continue
             stats["nodes"] += 1
             binding[name] = product
@@ -136,7 +170,9 @@ def solve(slots: Sequence[Mapping[str, object]], products: Sequence[Mapping[str,
                 keep = []
                 for candidate in current[other]:
                     binding[other] = candidate
-                    if all(_nary_status(c, binding) is not False for c in hard):
+                    if candidate["id"] not in {
+                        p["id"] for n, p in binding.items() if n != other
+                    } and all(_nary_status(c, binding) is not False for c in hard):
                         keep.append(candidate)
                     del binding[other]
                 if not keep:
@@ -151,25 +187,63 @@ def solve(slots: Sequence[Mapping[str, object]], products: Sequence[Mapping[str,
                 search(binding, nxt)
             del binding[name]
 
-    search({}, dom)
+    # A large cohort usually has singleton domains; avoid the recursion limit.
+    if all(len(d) == 1 for d in dom.values()):
+        binding = {n: d[0] for n, d in dom.items()}
+        stats["nodes"] = len(binding)
+        if len({p["id"] for p in binding.values()}) == len(binding) and all(
+            _nary_status(c, binding) is not False for c in hard
+        ):
+            solutions.append(binding)
+        else:
+            stats["pruned"] = 1
+    else:
+        forced = {n: d[0] for n, d in dom.items() if len(d) == 1}
+        stats["nodes"] += len(forced)
+        if len({p["id"] for p in forced.values()}) != len(forced) or any(
+            _nary_status(c, forced) is False for c in hard
+        ):
+            stats["pruned"] += 1
+        else:
+            search(forced, dom)
 
     ranked = []
     for sol in solutions:
         soft_violations = sum(1 for c in soft if _nary_status(c, sol) is False)
         off_space = 0
         if preferred_space:
-            off_space = sum(1 for p in sol.values() if p.get("attrs", {}).get("space") not in (None, preferred_space))
-        ranked.append({"assignment": {k: str(v["id"]) for k, v in sol.items()},
-                       "soft_violations": soft_violations, "off_preferred_space": off_space})
-    ranked.sort(key=lambda r: (r["soft_violations"], r["off_preferred_space"],
-                               tuple(sorted(r["assignment"].items()))))
-    return {"solutions": ranked, "missing": [], "domain_sizes": {k: len(v) for k, v in dom.items()},
-            "stats": stats, "truncated": truncated}
+            off_space = sum(
+                1
+                for p in sol.values()
+                if p.get("attrs", {}).get("space") not in (None, preferred_space)
+            )
+        ranked.append(
+            {
+                "assignment": {k: str(v["id"]) for k, v in sol.items()},
+                "soft_violations": soft_violations,
+                "off_preferred_space": off_space,
+            }
+        )
+    ranked.sort(
+        key=lambda r: (
+            r["soft_violations"],
+            r["off_preferred_space"],
+            tuple(sorted(r["assignment"].items())),
+        )
+    )
+    return {
+        "solutions": ranked,
+        "missing": [],
+        "domain_sizes": {k: len(v) for k, v in dom.items()},
+        "stats": stats,
+        "truncated": truncated,
+    }
 
 
 def brute_force(slots, products, constraints, hierarchy) -> list[dict]:
     """Exhaustive reference used only by tests and the matching experiment."""
     import itertools
+
     dom = domains(slots, products, hierarchy)
     names = [str(s["name"]) for s in slots]
     hard = [c for c in constraints if c.get("severity", "hard") == "hard"]
