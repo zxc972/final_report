@@ -264,3 +264,148 @@ def evaluate(predicted: Iterable[Mapping[str, object]], gold: Iterable[Mapping[s
     recall = tp / len(gk) if gk else 0.0
     f1 = 2 * precision * recall / (precision + recall) if precision + recall else 0.0
     return {"tp": tp, "predicted": len(pk), "gold": len(gk), "precision": precision, "recall": recall, "f1": f1}
+
+
+# ----------------------------------------------------------------------------
+# Version 2 (round 17). Changes after the draft run, all generic:
+#  * every template is offered (retrieval top-k cut removed; it excluded the
+#    correct template for many input statements);
+#  * "advisory" is an explicit answer and takes part in the vote;
+#  * parameter vocabularies are given and enforced (type ids, workflow steps),
+#    software names are normalised, so equivalent answers share one key;
+#  * acceptance uses vote support only (the idf cosine was on a different
+#    scale and made unanimous answers fall below the threshold);
+#  * template definitions follow the annotation rules, not the labels.
+# ----------------------------------------------------------------------------
+
+V2_SUPPORT = 0.6
+V2_MARGIN = 0.2
+
+DEFINITIONS = {
+    "product_present": "a subject's own REQUIRED input file of a given product type (not optional inputs, not software-bundled templates, not in-memory arrays)",
+    "attr_in": "one input's attribute must take one of the given values (species, space, ...)",
+    "attr_equal": "several inputs must share attribute values (subject, hemisphere, mesh, space, voxel_size)",
+    "label_policy": "labels that must be excluded from an annotation (unknown, medial wall)",
+    "cardinality": "a minimum number of subjects or subjects per group",
+    "design_variable": "columns that must exist in the participants/design table",
+    "software": "an executable program or toolbox that must be installed",
+    "provenance": "a processing step that must have been completed before",
+    "scale_check": "values must be converted with a verified scale factor",
+    "plausibility": "values must lie within a numeric reference range",
+    "asymmetry_flip": "left-right asymmetry requires a flip or symmetric-template check",
+    "advisory": "anything else: visual inspection, recommendations, interpretation caveats, command-line usage, version notes, optional features, or what the method itself does",
+}
+
+_SOFTWARE_STOP = {"or", "newer", "and", "the", "version", "with", "runtime", "toolbox", "toolboxes", "no", "additional"}
+
+
+def normalise_software(values) -> list[str]:
+    out = set()
+    for value in values if isinstance(values, list) else [values]:
+        for token in _TOKEN.findall(str(value).lower()):
+            if token in _SOFTWARE_STOP or token.isdigit() or re.fullmatch(r"r?\d{4}[ab]?", token):
+                continue
+            out.add(token)
+            break
+    return sorted(out)
+
+
+def normalise_step(value, steps: Sequence[str]) -> str | None:
+    text = str(value).lower()
+    hits = [s for s in steps if s.lower() in text]
+    return max(hits, key=len) if hits else None
+
+
+def normalise_v2(template: str, params: Mapping[str, object], vocab: Mapping[str, Sequence[str]]):
+    params = dict(params or {})
+    if template == "software" and "commands" in params:
+        params["commands"] = normalise_software(params["commands"])
+    if template == "provenance" and "step" in params:
+        step = normalise_step(params["step"], vocab.get("steps", []))
+        if step is None:
+            return None, ["step not in workflow vocabulary"]
+        params["step"] = step
+    if template in ("scale_check", "plausibility") and "metric" in params:
+        params["metric"] = str(params["metric"]).strip().lower()
+    return params, []
+
+
+def type_check_v2(template, params, slots, vocab) -> list[str]:
+    if template == "advisory":
+        return []
+    problems = [p for p in type_check(template, params, slots) if not p.startswith("missing parameter text")]
+    if template == "product_present" and params.get("type") not in set(vocab.get("types", [])):
+        problems.append("type not in product type vocabulary")
+    if template == "software" and not params.get("commands"):
+        problems.append("no recognisable software name")
+    return problems
+
+
+def build_prompt_v2(statement: str, quote: str, field: str, slots, vocab) -> str:
+    specs = {n: {"meaning": DEFINITIONS[n], "parameters": TEMPLATES[n]["params"]} for n in DEFINITIONS if n != "advisory"}
+    return (
+        "Classify one statement from a neuroimaging method's documentation as an executable data condition or advisory.\n"
+        f"Field in the method card: {field}\nStatement: {statement}\nQuote: {quote}\n"
+        f"Templates: {json.dumps(specs)}\n"
+        f"advisory: {DEFINITIONS['advisory']}\n"
+        f"Slots and attributes: {json.dumps({k: list(v) for k, v in slots.items()})}\n"
+        f"Allowed product types: {json.dumps(list(vocab.get('types', [])))}\n"
+        f"Allowed processing steps: {json.dumps(list(vocab.get('steps', [])))}\n"
+        "One statement maps to one main condition. Answer with a single short JSON object and nothing else: "
+        '{"template": "<name or advisory>", "parameters": {...}}'
+    )
+
+
+def canonicalise_statement_v2(statement: Mapping[str, object], source_text: str, slots, llm, vocab,
+                              field: str = "", samples: int = SAMPLES) -> dict:
+    rho = quote_support(str(statement.get("quote", "")), source_text)
+    record = {"statement": statement.get("statement"), "quote_support": rho, "source_id": statement.get("source_id")}
+    if rho < RHO_MIN:
+        return {**record, "decision": "rejected_quote", "template": "advisory", "parameters": None}
+    prompt = build_prompt_v2(str(statement["statement"]), str(statement.get("quote", "")), field, slots, vocab)
+    votes: Counter = Counter()
+    keyed: dict[str, tuple[str, dict | None]] = {}
+    invalid: Counter = Counter()
+    answered = 0
+    for _ in range(samples):
+        text = llm(prompt)
+        match = re.search(r"\{.*\}", text or "", re.S)
+        try:
+            data = json.loads(match.group(0)) if match else None
+        except json.JSONDecodeError:
+            data = None
+        if not isinstance(data, dict):
+            continue
+        answered += 1
+        template = str(data.get("template", "advisory")).strip()
+        if template in ("none", ""):
+            template = "advisory"
+        if template == "advisory":
+            votes["advisory"] += 1
+            keyed["advisory"] = ("advisory", None)
+            continue
+        if template not in TEMPLATES:
+            invalid[template] += 1
+            continue
+        params, problems = normalise_v2(template, data.get("parameters") or {}, vocab)
+        problems = problems or type_check_v2(template, params, slots, vocab)
+        if problems:
+            invalid[template] += 1
+            continue
+        key = canonical_key(template, params)
+        votes[key] += 1
+        keyed[key] = (template, params)
+    ranked = votes.most_common()
+    if not ranked:
+        return {**record, "decision": "review", "template": "advisory", "parameters": None,
+                "reason": "no valid answer", "answered": answered, "invalid_attempts": dict(invalid)}
+    best_key, best = ranked[0]
+    support = best / samples
+    margin = support - (ranked[1][1] / samples if len(ranked) > 1 else 0.0)
+    template, params = keyed[best_key]
+    result = {**record, "template": template, "parameters": params, "key": best_key, "support": support,
+              "margin": margin, "answered": answered, "invalid_attempts": dict(invalid),
+              "votes": {k: v for k, v in ranked}}
+    if support >= V2_SUPPORT and margin >= V2_MARGIN:
+        return {**result, "decision": "advisory" if template == "advisory" else "accepted"}
+    return {**result, "decision": "review"}
