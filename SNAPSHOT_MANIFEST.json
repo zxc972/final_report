@@ -6,8 +6,8 @@
   "research_release": "research_evidence_v13",
   "source_root": "/data/xuancheng",
   "source_unchanged_check": true,
-  "source_files": 961,
-  "source_bytes": 33541904,
+  "source_files": 970,
+  "source_bytes": 33684717,
   "excluded_classes": [
     "credentials and .env",
     "FreeSurfer license",
@@ -267,6 +267,17 @@
       "source_sha256": "02c07d10af51fca22a6ae65a2877d6fffdc4222e41b12e8806aa8f1952ea9c23",
       "bytes": 940,
       "sha256": "02c07d10af51fca22a6ae65a2877d6fffdc4222e41b12e8806aa8f1952ea9c23",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_condition_canonicalizer.py",
+      "source": "git:e767445e5fe928f87de883ea9067117fcc68a636/agent/modules/agent/backend/analysis_condition_canonicalizer.py",
+      "source_head": "e767445e5fe928f87de883ea9067117fcc68a636",
+      "mode": "100644",
+      "bytes": 13421,
+      "sha256": "9bf1171fc9fc831b7e9628c982888a7c5e74578bed377f5594f4f749cbbce4e9",
+      "source_bytes": 13421,
+      "source_sha256": "9bf1171fc9fc831b7e9628c982888a7c5e74578bed377f5594f4f749cbbce4e9",
       "synced_at": "2026-10-23"
     },
     {
@@ -3906,6 +3917,28 @@
       "synced_at": "2026-10-23"
     },
     {
+      "path": "agent/modules/agent/tests/test_round16_canon_runner.py",
+      "source": "git:31a1cf97ffd44fb898a0b6a36be90f020b8b9751/agent/modules/agent/tests/test_round16_canon_runner.py",
+      "source_head": "31a1cf97ffd44fb898a0b6a36be90f020b8b9751",
+      "mode": "100644",
+      "bytes": 9897,
+      "sha256": "f4a78a6c8d3b0ebc2fc2bcc9a6f6798a7106ec02c36134ab007a77c71377c47d",
+      "source_bytes": 9897,
+      "source_sha256": "f4a78a6c8d3b0ebc2fc2bcc9a6f6798a7106ec02c36134ab007a77c71377c47d",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "agent/modules/agent/tests/test_round16_condition_canonicalizer.py",
+      "source": "git:e767445e5fe928f87de883ea9067117fcc68a636/agent/modules/agent/tests/test_round16_condition_canonicalizer.py",
+      "source_head": "e767445e5fe928f87de883ea9067117fcc68a636",
+      "mode": "100644",
+      "bytes": 4552,
+      "sha256": "4d91402ea5bfbf8f4e3289a35fbe91c42a3e0333e8f7fe3c2d1a6a8f16951cc9",
+      "source_bytes": 4552,
+      "source_sha256": "4d91402ea5bfbf8f4e3289a35fbe91c42a3e0333e8f7fe3c2d1a6a8f16951cc9",
+      "synced_at": "2026-10-23"
+    },
+    {
       "path": "agent/modules/agent/tests/test_round6_plan_affordances.py",
       "source": "git:75143b21bc459c6f6e951891356ebf9e4e10169d/tests/test_round6_plan_affordances.py",
       "source_head": "75143b21bc459c6f6e951891356ebf9e4e10169d",
@@ -6860,6 +6893,17 @@
       "mode": "100644"
     },
     {
+      "path": "docs/ROUND16_CONDITION_CANON.md",
+      "source": "git:855d24f418caf3f8cd4b3da1b1dabe1233247c84/docs/ROUND16_CONDITION_CANON.md",
+      "source_head": "855d24f418caf3f8cd4b3da1b1dabe1233247c84",
+      "mode": "100644",
+      "bytes": 4967,
+      "sha256": "7cb78eb0864dd098f1c88c1f880e177d8ea6ba7f6bb6680728e6000bc16967d7",
+      "source_bytes": 4967,
+      "source_sha256": "7cb78eb0864dd098f1c88c1f880e177d8ea6ba7f6bb6680728e6000bc16967d7",
+      "synced_at": "2026-10-23"
+    },
+    {
       "path": "docs/SNAPSHOT.md",
       "source": "/data/xuancheng/agent_v1/round14/docs/SNAPSHOT.md",
       "bytes": 5908,
@@ -7135,6 +7179,39 @@
       "bytes": 8349,
       "sha256": "06a20419670e83f849b361af8773601c705c4c57159dc6c53d65bf2ee87bd6cc",
       "mode": "100644"
+    },
+    {
+      "path": "evaluation/condition_gold/README.md",
+      "source": "git:855d24f418caf3f8cd4b3da1b1dabe1233247c84/evaluation/condition_gold/README.md",
+      "source_head": "855d24f418caf3f8cd4b3da1b1dabe1233247c84",
+      "mode": "100644",
+      "bytes": 2752,
+      "sha256": "a19eaea050ff4fc67f00e38f725708b7e1430e6fcaf786ba1ff9722ac44f92e3",
+      "source_bytes": 2752,
+      "source_sha256": "a19eaea050ff4fc67f00e38f725708b7e1430e6fcaf786ba1ff9722ac44f92e3",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "evaluation/condition_gold/gold_draft_v1.json",
+      "source": "git:e767445e5fe928f87de883ea9067117fcc68a636/evaluation/condition_gold/gold_draft_v1.json",
+      "source_head": "e767445e5fe928f87de883ea9067117fcc68a636",
+      "mode": "100644",
+      "bytes": 47402,
+      "sha256": "cd71d169d5cb4cb743b58216f4341f46569cf6f9f3cd56d80d1a223d6326f849",
+      "source_bytes": 47402,
+      "source_sha256": "cd71d169d5cb4cb743b58216f4341f46569cf6f9f3cd56d80d1a223d6326f849",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "evaluation/condition_gold/gold_review_sheet_v1.csv",
+      "source": "git:e767445e5fe928f87de883ea9067117fcc68a636/evaluation/condition_gold/gold_review_sheet_v1.csv",
+      "source_head": "e767445e5fe928f87de883ea9067117fcc68a636",
+      "mode": "100644",
+      "bytes": 17991,
+      "sha256": "18dc618da044cebb33755d381a91bc6bc9576069ebf52db7bfd5923e8722f3c7",
+      "source_bytes": 17991,
+      "source_sha256": "18dc618da044cebb33755d381a91bc6bc9576069ebf52db7bfd5923e8722f3c7",
+      "synced_at": "2026-10-23"
     },
     {
       "path": "evaluation/retrieval/round1/comparison_metrics.json",
@@ -8787,6 +8864,28 @@
       "mode": "100644"
     },
     {
+      "path": "tools/knowledge/provider_llm.py",
+      "source": "git:31a1cf97ffd44fb898a0b6a36be90f020b8b9751/tools/knowledge/provider_llm.py",
+      "source_head": "31a1cf97ffd44fb898a0b6a36be90f020b8b9751",
+      "mode": "100644",
+      "bytes": 13541,
+      "sha256": "141c0adfea592a23b42113b2ea9d24fd2335f1eb218ebffe4d63eeb88120855a",
+      "source_bytes": 13541,
+      "source_sha256": "141c0adfea592a23b42113b2ea9d24fd2335f1eb218ebffe4d63eeb88120855a",
+      "synced_at": "2026-10-23"
+    },
+    {
+      "path": "tools/knowledge/run_condition_canonicalization.py",
+      "source": "git:31a1cf97ffd44fb898a0b6a36be90f020b8b9751/tools/knowledge/run_condition_canonicalization.py",
+      "source_head": "31a1cf97ffd44fb898a0b6a36be90f020b8b9751",
+      "mode": "100644",
+      "bytes": 28290,
+      "sha256": "9cde5664d0d268b2afdd5ff77fa56a9702bc0d8f6d1fb5dd2603843f9c5305c7",
+      "source_bytes": 28290,
+      "source_sha256": "9cde5664d0d268b2afdd5ff77fa56a9702bc0d8f6d1fb5dd2603843f9c5305c7",
+      "synced_at": "2026-10-23"
+    },
+    {
       "path": "tools/retrieval/export_graph.py",
       "source": "/data/xuancheng/retrieval_pilot_20261020/export_graph.py",
       "bytes": 686,
@@ -8839,9 +8938,9 @@
   ],
   "last_incremental_sync": {
     "date": "2026-10-23",
-    "source_commit": "cf38c6f80a1e1a3c10fc39581b6e7b764720a96d",
-    "scope": "Round 15 algorithm supplement validation after the concurrent committed folding intent fix; source and aggregate evidence only",
-    "changed_files": 4,
+    "source_commit": "855d24f418caf3f8cd4b3da1b1dabe1233247c84",
+    "scope": "Round16 condition-canonicalization source, draft labels, metered evaluator and protocol; no HTTP traces, subject data or runtime artifacts",
+    "changed_files": 9,
     "formal_v1_0": false
   },
   "incremental_sync_history": [
@@ -8922,7 +9021,14 @@
       "scope": "Round 15 algorithm supplement validation after the concurrent committed folding intent fix; source and aggregate evidence only",
       "changed_files": 4,
       "formal_v1_0": false
+    },
+    {
+      "date": "2026-10-23",
+      "source_commit": "855d24f418caf3f8cd4b3da1b1dabe1233247c84",
+      "scope": "Round16 condition-canonicalization source, draft labels, metered evaluator and protocol; no HTTP traces, subject data or runtime artifacts",
+      "changed_files": 9,
+      "formal_v1_0": false
     }
   ],
-  "updated_at": "2026-10-23T14:59:25.434492+08:00"
+  "updated_at": "2026-10-23T15:33:52.549712+08:00"
 }
