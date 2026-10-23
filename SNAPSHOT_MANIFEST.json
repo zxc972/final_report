@@ -7,7 +7,7 @@
   "source_root": "/data/xuancheng",
   "source_unchanged_check": true,
   "source_files": 977,
-  "source_bytes": 33746401,
+  "source_bytes": 33747391,
   "excluded_classes": [
     "credentials and .env",
     "FreeSurfer license",
@@ -6901,14 +6901,20 @@
     },
     {
       "path": "docs/ROUND16_CONDITION_CANON.md",
-      "source": "git:855d24f418caf3f8cd4b3da1b1dabe1233247c84/docs/ROUND16_CONDITION_CANON.md",
-      "source_head": "855d24f418caf3f8cd4b3da1b1dabe1233247c84",
+      "source": "git:ab96abbd949f60f3bcd99d96d09fe666b4cebc4d/docs/ROUND16_CONDITION_CANON.md",
+      "source_head": "ab96abbd949f60f3bcd99d96d09fe666b4cebc4d",
       "mode": "100644",
-      "bytes": 4967,
-      "sha256": "7cb78eb0864dd098f1c88c1f880e177d8ea6ba7f6bb6680728e6000bc16967d7",
-      "source_bytes": 4967,
-      "source_sha256": "7cb78eb0864dd098f1c88c1f880e177d8ea6ba7f6bb6680728e6000bc16967d7",
-      "synced_at": "2026-10-23"
+      "bytes": 5771,
+      "sha256": "ad4ecfa4a73c00b2fdbec3344899f58499e6cda070eecf7bab6243289ff66863",
+      "source_bytes": 5771,
+      "source_sha256": "ad4ecfa4a73c00b2fdbec3344899f58499e6cda070eecf7bab6243289ff66863",
+      "synced_at": "2026-10-23",
+      "previous_source": {
+        "source": "git:855d24f418caf3f8cd4b3da1b1dabe1233247c84/docs/ROUND16_CONDITION_CANON.md",
+        "source_head": "855d24f418caf3f8cd4b3da1b1dabe1233247c84",
+        "bytes": 4967,
+        "sha256": "7cb78eb0864dd098f1c88c1f880e177d8ea6ba7f6bb6680728e6000bc16967d7"
+      }
     },
     {
       "path": "docs/SNAPSHOT.md",
@@ -7203,14 +7209,20 @@
     },
     {
       "path": "evaluation/condition_gold/README.md",
-      "source": "git:855d24f418caf3f8cd4b3da1b1dabe1233247c84/evaluation/condition_gold/README.md",
-      "source_head": "855d24f418caf3f8cd4b3da1b1dabe1233247c84",
+      "source": "git:ab96abbd949f60f3bcd99d96d09fe666b4cebc4d/evaluation/condition_gold/README.md",
+      "source_head": "ab96abbd949f60f3bcd99d96d09fe666b4cebc4d",
       "mode": "100644",
-      "bytes": 2752,
-      "sha256": "a19eaea050ff4fc67f00e38f725708b7e1430e6fcaf786ba1ff9722ac44f92e3",
-      "source_bytes": 2752,
-      "source_sha256": "a19eaea050ff4fc67f00e38f725708b7e1430e6fcaf786ba1ff9722ac44f92e3",
-      "synced_at": "2026-10-23"
+      "bytes": 2938,
+      "sha256": "0aab39973a0d1e46344446bdbc03c1ce94cf5cdaea8809ecf80c186927309b5f",
+      "source_bytes": 2938,
+      "source_sha256": "0aab39973a0d1e46344446bdbc03c1ce94cf5cdaea8809ecf80c186927309b5f",
+      "synced_at": "2026-10-23",
+      "previous_source": {
+        "source": "git:855d24f418caf3f8cd4b3da1b1dabe1233247c84/evaluation/condition_gold/README.md",
+        "source_head": "855d24f418caf3f8cd4b3da1b1dabe1233247c84",
+        "bytes": 2752,
+        "sha256": "a19eaea050ff4fc67f00e38f725708b7e1430e6fcaf786ba1ff9722ac44f92e3"
+      }
     },
     {
       "path": "evaluation/condition_gold/gold_draft_v1.json",
@@ -8987,11 +8999,9 @@
   ],
   "last_incremental_sync": {
     "date": "2026-10-23",
-    "source_commits": [
-      "a6839f97675956e7ee2478c3e75ac979500546cf",
-      "d25d4e92f4c9e6c1a86366f595c39f63f4fa456d"
-    ],
-    "scope": "Reconcile concurrent reviewed Round15 data tools with isolated Round16 condition evaluator; frozen evaluation code, labels, sources and payload unchanged",
+    "source_commit": "ab96abbd949f60f3bcd99d96d09fe666b4cebc4d",
+    "scope": "Round16 source ready after concurrent Round15 merge; 877 default tests passed; no deployment or private run traces",
+    "changed_files": 2,
     "formal_v1_0": false
   },
   "incremental_sync_history": [
@@ -9150,7 +9160,14 @@
       ],
       "scope": "Reconcile concurrent reviewed Round15 data tools with isolated Round16 condition evaluator; frozen evaluation code, labels, sources and payload unchanged",
       "formal_v1_0": false
+    },
+    {
+      "date": "2026-10-23",
+      "source_commit": "ab96abbd949f60f3bcd99d96d09fe666b4cebc4d",
+      "scope": "Round16 source ready after concurrent Round15 merge; 877 default tests passed; no deployment or private run traces",
+      "changed_files": 2,
+      "formal_v1_0": false
     }
   ],
-  "updated_at": "2026-10-23T15:39:57.762552+08:00"
+  "updated_at": "2026-10-23T15:43:53.410210+08:00"
 }

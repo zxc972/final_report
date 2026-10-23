@@ -1,6 +1,6 @@
 {
   "schema": "final_report.publication.v1",
-  "source_snapshot": "2026-10-23 Round16 source and draft protocol with concurrent reviewed Round15 data tools; evaluation running",
+  "source_snapshot": "2026-10-23 Round16 source and draft protocol, merged reviewed Round15 tools, 877 default tests passed; evaluation running",
   "files": [
     {
       "path": ".env.example",
@@ -24,8 +24,8 @@
     },
     {
       "path": "SNAPSHOT_MANIFEST.json",
-      "bytes": 441233,
-      "sha256": "245141b652aff943945a8166bbca54df7fe286743132ea55c97ae86ad5bc3f1c"
+      "bytes": 442069,
+      "sha256": "659023db5347244e37d103bd9aea8edabed69f51b42a74609ef777b8ac50cb2a"
     },
     {
       "path": "agent/.gitignore",
@@ -3459,8 +3459,8 @@
     },
     {
       "path": "docs/ROUND16_CONDITION_CANON.md",
-      "bytes": 4967,
-      "sha256": "7cb78eb0864dd098f1c88c1f880e177d8ea6ba7f6bb6680728e6000bc16967d7"
+      "bytes": 5771,
+      "sha256": "ad4ecfa4a73c00b2fdbec3344899f58499e6cda070eecf7bab6243289ff66863"
     },
     {
       "path": "docs/SNAPSHOT.md",
@@ -3664,8 +3664,8 @@
     },
     {
       "path": "evaluation/condition_gold/README.md",
-      "bytes": 2752,
-      "sha256": "a19eaea050ff4fc67f00e38f725708b7e1430e6fcaf786ba1ff9722ac44f92e3"
+      "bytes": 2938,
+      "sha256": "0aab39973a0d1e46344446bdbc03c1ce94cf5cdaea8809ecf80c186927309b5f"
     },
     {
       "path": "evaluation/condition_gold/gold_draft_v1.json",
