@@ -6,8 +6,8 @@
   "research_release": "research_evidence_v13",
   "source_root": "/data/xuancheng",
   "source_unchanged_check": true,
-  "source_files": 1126,
-  "source_bytes": 36743384,
+  "source_files": 1165,
+  "source_bytes": 36953164,
   "excluded_classes": [
     "credentials and .env",
     "FreeSurfer license",
@@ -87,6 +87,48 @@
       "mode": "100755"
     },
     {
+      "path": "agent/experiments/round21/PROTECTED_CHANGES.md",
+      "source": "/data/xuancheng/agent_v1/round21_source/agent/experiments/round21/PROTECTED_CHANGES.md",
+      "bytes": 2896,
+      "sha256": "32305599fa976f4b437dcdfe362602c7187b184a22b6534e108e909c1006550b",
+      "mode": "100644"
+    },
+    {
+      "path": "agent/experiments/round21/build_operation_examples.py",
+      "source": "/data/xuancheng/agent_v1/round21_source/agent/experiments/round21/build_operation_examples.py",
+      "bytes": 3542,
+      "sha256": "a851bbc4ec9cc8795ab1b2176ab44f16729c9c6e2419187ba24d5f9e20a5c0d2",
+      "mode": "100644"
+    },
+    {
+      "path": "agent/experiments/round21/dev_server.py",
+      "source": "/data/xuancheng/agent_v1/round21_source/agent/experiments/round21/dev_server.py",
+      "bytes": 12945,
+      "sha256": "2136964ac2d1acc361ef7304bc961c4bb600b703e115c0d07d07d3144b25b4bd",
+      "mode": "100644"
+    },
+    {
+      "path": "agent/experiments/round21/prepare_driver.py",
+      "source": "/data/xuancheng/agent_v1/round21_source/agent/experiments/round21/prepare_driver.py",
+      "bytes": 1118,
+      "sha256": "9b71294a73dc9fb53d2a5572ecfae372c671d876f271a3dfd2c5812e28b1ce88",
+      "mode": "100644"
+    },
+    {
+      "path": "agent/experiments/round21/review_protected_changes.py",
+      "source": "/data/xuancheng/agent_v1/round21_source/agent/experiments/round21/review_protected_changes.py",
+      "bytes": 5987,
+      "sha256": "baf7c3b54f87632128db3a00a048620bcd276bd255e19039bba8a7eaf0e6f36c",
+      "mode": "100644"
+    },
+    {
+      "path": "agent/experiments/round21/run_one_round21.py",
+      "source": "/data/xuancheng/agent_v1/round21_source/agent/experiments/round21/run_one_round21.py",
+      "bytes": 8826,
+      "sha256": "1f06934aab28f58aca49f05e89a558b1a9cc7169ef78946af2a93d012aed2eae",
+      "mode": "100644"
+    },
+    {
       "path": "agent/modules/agent/CODING_AGENT.md",
       "source": "git:75143b21bc459c6f6e951891356ebf9e4e10169d/CODING_AGENT.md",
       "bytes": 10220,
@@ -132,13 +174,13 @@
     },
     {
       "path": "agent/modules/agent/backend/agent_chat_state.py",
-      "source": "git:75143b21bc459c6f6e951891356ebf9e4e10169d/backend/agent_chat_state.py",
+      "source": "/data/xuancheng/agent_v1/round21_source/agent/modules/agent/backend/agent_chat_state.py",
       "source_head": "75143b21bc459c6f6e951891356ebf9e4e10169d",
       "mode": "100644",
       "source_bytes": 14281,
       "source_sha256": "45d1435762f3f35ad01130143fa11fa759d4453535e2c857e0412f31081652e3",
-      "bytes": 14281,
-      "sha256": "45d1435762f3f35ad01130143fa11fa759d4453535e2c857e0412f31081652e3",
+      "bytes": 14512,
+      "sha256": "c9ef02b3a56e1dee81a8ed0b46e0f0600cfd0a0bde5a8b7bd8a604c092cb9e84",
       "synced_at": "2026-10-22",
       "previous_source": {
         "source": "/data/xuancheng/agent_round7_trial_20261021/offline_followup_review/backend/agent_chat_state.py",
@@ -177,13 +219,13 @@
     },
     {
       "path": "agent/modules/agent/backend/analysis_agent.py",
-      "source": "git:b8e27a147286045e496c29114e4359f68c67f7fb/agent/modules/agent/backend/analysis_agent.py",
+      "source": "/data/xuancheng/agent_v1/round21_source/agent/modules/agent/backend/analysis_agent.py",
       "source_head": "b8e27a147286045e496c29114e4359f68c67f7fb",
       "mode": "100644",
       "source_bytes": 105596,
       "source_sha256": "17d2d128b7eb600590b52c28f5553b4bdba94cd8016ea71e1459bee7dc92ca7d",
-      "bytes": 105596,
-      "sha256": "17d2d128b7eb600590b52c28f5553b4bdba94cd8016ea71e1459bee7dc92ca7d",
+      "bytes": 108343,
+      "sha256": "49e0ed0b4997b541c61dc11c8f2edf5ef9dbf208993de40b0ae59a1d35f392f4",
       "synced_at": "2026-10-23",
       "previous_source": {
         "source": "git:75143b21bc459c6f6e951891356ebf9e4e10169d/backend/analysis_agent.py",
@@ -238,12 +280,12 @@
     },
     {
       "path": "agent/modules/agent/backend/analysis_call_context.py",
-      "source": "git:75143b21bc459c6f6e951891356ebf9e4e10169d/backend/analysis_call_context.py",
+      "source": "/data/xuancheng/agent_v1/round21_source/agent/modules/agent/backend/analysis_call_context.py",
       "source_head": "75143b21bc459c6f6e951891356ebf9e4e10169d",
       "source_bytes": 461,
       "source_sha256": "c5d91d4298de4db89185f99a3b2fb7d6cd0531deec0e7e476ffd826d5e40648a",
-      "bytes": 461,
-      "sha256": "c5d91d4298de4db89185f99a3b2fb7d6cd0531deec0e7e476ffd826d5e40648a",
+      "bytes": 533,
+      "sha256": "e5bd229b341f00d5115c34b7ce75dd33950e73c02f9737a35f344dd55abaf1d9",
       "mode": "100644",
       "synced_at": "2026-10-22"
     },
@@ -394,12 +436,12 @@
     },
     {
       "path": "agent/modules/agent/backend/analysis_data_card.py",
-      "source": "git:75143b21bc459c6f6e951891356ebf9e4e10169d/backend/analysis_data_card.py",
+      "source": "/data/xuancheng/agent_v1/round21_source/agent/modules/agent/backend/analysis_data_card.py",
       "source_head": "75143b21bc459c6f6e951891356ebf9e4e10169d",
       "source_bytes": 7067,
       "source_sha256": "85814e7007e615b037c8e03ea24db106225b7eeec73b9b3452855269b1e16b2a",
-      "bytes": 7778,
-      "sha256": "2998c032e3f4f2cfbb3e3e197b303a985fc19f403ba2c1c9c5632f5a79d7a6bd",
+      "bytes": 9078,
+      "sha256": "6b2cdb20ec920cae3dacc23b0fd44dee647ef12174435daa80f4caaf149cac82",
       "mode": "100644",
       "synced_at": "2026-10-22"
     },
@@ -483,9 +525,9 @@
     },
     {
       "path": "agent/modules/agent/backend/analysis_feedback.py",
-      "source": "git:75143b21bc459c6f6e951891356ebf9e4e10169d/backend/analysis_feedback.py",
-      "bytes": 5628,
-      "sha256": "4a3b22b2255ffbc6ddf0842497d1f433023df86ac9d4558bfff9f09c0ec54b8b",
+      "source": "/data/xuancheng/agent_v1/round21_source/agent/modules/agent/backend/analysis_feedback.py",
+      "bytes": 6998,
+      "sha256": "e7bc256041b0c514f9148405f8e6fba5c40615f733f467ea085c77a5f380a360",
       "mode": "100644",
       "source_head": "75143b21bc459c6f6e951891356ebf9e4e10169d",
       "source_bytes": 5628,
@@ -505,35 +547,42 @@
     },
     {
       "path": "agent/modules/agent/backend/analysis_global_host.py",
-      "source": "git:b8e27a147286045e496c29114e4359f68c67f7fb/agent/modules/agent/backend/analysis_global_host.py",
+      "source": "/data/xuancheng/agent_v1/round21_source/agent/modules/agent/backend/analysis_global_host.py",
       "source_head": "b8e27a147286045e496c29114e4359f68c67f7fb",
       "mode": "100644",
       "source_bytes": 12553,
       "source_sha256": "deefbecbc2bbdfc4dcffb83c07091ed78c4e7659937d729071c40b976634987c",
-      "bytes": 12553,
-      "sha256": "deefbecbc2bbdfc4dcffb83c07091ed78c4e7659937d729071c40b976634987c",
+      "bytes": 12750,
+      "sha256": "7d3451767bf090b7cf524ddb6a5868101a06ec2e405f6d9ab6695a47c154d241",
       "synced_at": "2026-10-23"
     },
     {
       "path": "agent/modules/agent/backend/analysis_global_method.py",
-      "source": "git:de4bf4872a381b5251cbfaa015493e9b175a2776/agent/modules/agent/backend/analysis_global_method.py",
+      "source": "/data/xuancheng/agent_v1/round21_source/agent/modules/agent/backend/analysis_global_method.py",
       "source_head": "de4bf4872a381b5251cbfaa015493e9b175a2776",
       "mode": "100644",
       "source_bytes": 8663,
       "source_sha256": "4fe3dc0b45887d23ae4317e85047be6622e1c561f402f564ba9754d08407e1cd",
-      "bytes": 8663,
-      "sha256": "4fe3dc0b45887d23ae4317e85047be6622e1c561f402f564ba9754d08407e1cd",
+      "bytes": 12874,
+      "sha256": "309b3c2496f9cdc3679d95ad06e3b3760752295af57d54c2215246c1a966643d",
       "synced_at": "2026-10-23"
     },
     {
+      "path": "agent/modules/agent/backend/analysis_global_policy.py",
+      "source": "/data/xuancheng/agent_v1/round21_source/agent/modules/agent/backend/analysis_global_policy.py",
+      "bytes": 1280,
+      "sha256": "c8f5142c1a268a6c25ee65f569baca0cf5f1d703122d57f4fd90f509f8a0817f",
+      "mode": "100644"
+    },
+    {
       "path": "agent/modules/agent/backend/analysis_global_reference.py",
-      "source": "git:b8e27a147286045e496c29114e4359f68c67f7fb/agent/modules/agent/backend/analysis_global_reference.py",
+      "source": "/data/xuancheng/agent_v1/round21_source/agent/modules/agent/backend/analysis_global_reference.py",
       "source_head": "b8e27a147286045e496c29114e4359f68c67f7fb",
       "mode": "100644",
       "source_bytes": 8264,
       "source_sha256": "23706e7aa8ba071c22ccebf61ca0ff6a43c2924c220f53f5f7d1a5b9db837398",
-      "bytes": 8264,
-      "sha256": "23706e7aa8ba071c22ccebf61ca0ff6a43c2924c220f53f5f7d1a5b9db837398",
+      "bytes": 14733,
+      "sha256": "6082436fb2161aa437a2012abbf0ffc336aebfe0e4df7fb647cccdaf3d860049",
       "synced_at": "2026-10-23"
     },
     {
@@ -570,9 +619,9 @@
     },
     {
       "path": "agent/modules/agent/backend/analysis_group_manifest.py",
-      "source": "/data/xuancheng/agent_v1/round14/agent/modules/agent/backend/analysis_group_manifest.py",
-      "bytes": 3084,
-      "sha256": "fbc716395be078bb3a48832d534df3bfcab7084dc7dfb76a081f2fa8a85a9771",
+      "source": "/data/xuancheng/agent_v1/round21_source/agent/modules/agent/backend/analysis_group_manifest.py",
+      "bytes": 3335,
+      "sha256": "3ad9241e7e335fb37aefd3e5c13efd5cf51ca79d5c43eba6c9c9965f12b73ef8",
       "mode": "100644"
     },
     {
@@ -590,14 +639,21 @@
       "mode": "100644"
     },
     {
+      "path": "agent/modules/agent/backend/analysis_http_observer.py",
+      "source": "/data/xuancheng/agent_v1/round21_source/agent/modules/agent/backend/analysis_http_observer.py",
+      "bytes": 3577,
+      "sha256": "352001534f6b729e0a57758bdc8278c60212a89b51d000200c4b3bc4627dd9d9",
+      "mode": "100644"
+    },
+    {
       "path": "agent/modules/agent/backend/analysis_independent_numeric.py",
-      "source": "git:b8e27a147286045e496c29114e4359f68c67f7fb/agent/modules/agent/backend/analysis_independent_numeric.py",
+      "source": "/data/xuancheng/agent_v1/round21_source/agent/modules/agent/backend/analysis_independent_numeric.py",
       "source_head": "b8e27a147286045e496c29114e4359f68c67f7fb",
       "mode": "100644",
       "source_bytes": 13432,
       "source_sha256": "665aaff6d171927a59ccec6776f211ac4cb2df258b2a1d11bfbd1466128a521c",
-      "bytes": 13432,
-      "sha256": "665aaff6d171927a59ccec6776f211ac4cb2df258b2a1d11bfbd1466128a521c",
+      "bytes": 13789,
+      "sha256": "b9c8e610504cab5b9cf669d0311b179527079c77da6dc87d57cefca5b4556e3a",
       "synced_at": "2026-10-23",
       "previous_source": {
         "source": "git:75143b21bc459c6f6e951891356ebf9e4e10169d/backend/analysis_independent_numeric.py",
@@ -693,13 +749,13 @@
     },
     {
       "path": "agent/modules/agent/backend/analysis_matching_adapter.py",
-      "source": "git:de4bf4872a381b5251cbfaa015493e9b175a2776/agent/modules/agent/backend/analysis_matching_adapter.py",
+      "source": "/data/xuancheng/agent_v1/round21_source/agent/modules/agent/backend/analysis_matching_adapter.py",
       "source_head": "de4bf4872a381b5251cbfaa015493e9b175a2776",
       "mode": "100644",
       "source_bytes": 13189,
       "source_sha256": "eb54a7070e589caddafc7e761537a6747a1db641b9fa58fcf56b0062883b81e0",
-      "bytes": 13189,
-      "sha256": "eb54a7070e589caddafc7e761537a6747a1db641b9fa58fcf56b0062883b81e0",
+      "bytes": 13218,
+      "sha256": "82f46b46b7d17e70a6cba09cb0db4f2fec3d1c544b211c87f131ee0e26c9c8cd",
       "synced_at": "2026-10-23"
     },
     {
@@ -749,13 +805,13 @@
     },
     {
       "path": "agent/modules/agent/backend/analysis_operations.py",
-      "source": "git:b8e27a147286045e496c29114e4359f68c67f7fb/agent/modules/agent/backend/analysis_operations.py",
+      "source": "/data/xuancheng/agent_v1/round21_source/agent/modules/agent/backend/analysis_operations.py",
       "source_head": "b8e27a147286045e496c29114e4359f68c67f7fb",
       "mode": "100644",
       "source_bytes": 9633,
       "source_sha256": "4efac740e1b3cc19bc65fec06ac61a302a68523db348b9e6863ef6ffb8c0a95a",
-      "bytes": 9633,
-      "sha256": "4efac740e1b3cc19bc65fec06ac61a302a68523db348b9e6863ef6ffb8c0a95a",
+      "bytes": 11866,
+      "sha256": "afe8981983b598e4855fe8797b386be59d7ae6391ec9fa462af16993ed44c2cc",
       "synced_at": "2026-10-23",
       "previous_source": {
         "source": "git:75143b21bc459c6f6e951891356ebf9e4e10169d/backend/analysis_operations.py",
@@ -783,12 +839,12 @@
     },
     {
       "path": "agent/modules/agent/backend/analysis_overall_status.py",
-      "source": "git:75143b21bc459c6f6e951891356ebf9e4e10169d/backend/analysis_overall_status.py",
+      "source": "/data/xuancheng/agent_v1/round21_source/agent/modules/agent/backend/analysis_overall_status.py",
       "source_head": "75143b21bc459c6f6e951891356ebf9e4e10169d",
       "source_bytes": 4381,
       "source_sha256": "27a8a0c3df930c400a354e958aaa6b8db429461a45c7058ddcbfa5fefaf6851b",
-      "bytes": 4381,
-      "sha256": "27a8a0c3df930c400a354e958aaa6b8db429461a45c7058ddcbfa5fefaf6851b",
+      "bytes": 4549,
+      "sha256": "f69a434627334b15af6dc8aea48622ed68bef416330015bbef16f2f6b3b05945",
       "mode": "100644",
       "synced_at": "2026-10-22"
     },
@@ -817,6 +873,13 @@
       }
     },
     {
+      "path": "agent/modules/agent/backend/analysis_planning_arguments.py",
+      "source": "/data/xuancheng/agent_v1/round21_source/agent/modules/agent/backend/analysis_planning_arguments.py",
+      "bytes": 3565,
+      "sha256": "5df1ec1188a35bdcbb3a92e0c5774d9130d770154f36db763b411ea91b1d2ce1",
+      "mode": "100644"
+    },
+    {
       "path": "agent/modules/agent/backend/analysis_planning_budget.py",
       "source": "git:75143b21bc459c6f6e951891356ebf9e4e10169d/backend/analysis_planning_budget.py",
       "source_head": "75143b21bc459c6f6e951891356ebf9e4e10169d",
@@ -829,12 +892,12 @@
     },
     {
       "path": "agent/modules/agent/backend/analysis_planning_tools.py",
-      "source": "git:75143b21bc459c6f6e951891356ebf9e4e10169d/backend/analysis_planning_tools.py",
+      "source": "/data/xuancheng/agent_v1/round21_source/agent/modules/agent/backend/analysis_planning_tools.py",
       "source_head": "75143b21bc459c6f6e951891356ebf9e4e10169d",
       "source_bytes": 2053,
       "source_sha256": "5e2cab0eeea686c6412e6a370d336af6115fa73789b9285eb5e024bda0c6652e",
-      "bytes": 2053,
-      "sha256": "5e2cab0eeea686c6412e6a370d336af6115fa73789b9285eb5e024bda0c6652e",
+      "bytes": 2882,
+      "sha256": "6f48fa22208a09416321dcf97f8ecdc85329fb798bf510db2f928a5bea586df9",
       "mode": "100644",
       "synced_at": "2026-10-22"
     },
@@ -908,13 +971,13 @@
     },
     {
       "path": "agent/modules/agent/backend/analysis_product_planner.py",
-      "source": "git:2dbbd12f231905246001154bbd4ef49e366f611c/agent/modules/agent/backend/analysis_product_planner.py",
+      "source": "/data/xuancheng/agent_v1/round21_source/agent/modules/agent/backend/analysis_product_planner.py",
       "source_head": "2dbbd12f231905246001154bbd4ef49e366f611c",
       "mode": "100644",
       "source_bytes": 45777,
       "source_sha256": "f0f6482eacb15a95981f13d4da24f31d072a5464fa22cacb5d6be34c979d11cf",
-      "bytes": 45777,
-      "sha256": "f0f6482eacb15a95981f13d4da24f31d072a5464fa22cacb5d6be34c979d11cf",
+      "bytes": 46463,
+      "sha256": "ae14561211659123d5d20aa346e9cbcfb06b57876aed8cc613069fc9c9db9adb",
       "synced_at": "2026-10-23",
       "previous_source": {
         "source": "git:de4bf4872a381b5251cbfaa015493e9b175a2776/agent/modules/agent/backend/analysis_product_planner.py",
@@ -1193,13 +1256,13 @@
     },
     {
       "path": "agent/modules/agent/backend/primatex_ops.py",
-      "source": "git:b8e27a147286045e496c29114e4359f68c67f7fb/agent/modules/agent/backend/primatex_ops.py",
+      "source": "/data/xuancheng/agent_v1/round21_source/agent/modules/agent/backend/primatex_ops.py",
       "source_head": "b8e27a147286045e496c29114e4359f68c67f7fb",
       "mode": "100644",
       "source_bytes": 13424,
       "source_sha256": "168ebd483e32f1ed04efb4354fb730c3191e0424bbcefaadd10e0de9c799b314",
-      "bytes": 13424,
-      "sha256": "168ebd483e32f1ed04efb4354fb730c3191e0424bbcefaadd10e0de9c799b314",
+      "bytes": 18647,
+      "sha256": "b9780babc27324c41329f0c7494a810e95a6a3d6f09c47896ccb366d670d7333",
       "synced_at": "2026-10-23",
       "previous_source": {
         "source": "git:75143b21bc459c6f6e951891356ebf9e4e10169d/backend/primatex_ops.py",
@@ -1751,6 +1814,13 @@
       "synced_at": "2026-10-22"
     },
     {
+      "path": "agent/modules/agent/experiments/round19/dev_server.py",
+      "source": "/data/xuancheng/agent_v1/round21_source/agent/modules/agent/experiments/round19/dev_server.py",
+      "bytes": 12482,
+      "sha256": "6c69d403ad4d1341bb2942147ac4d678bebcdfd4f7195e00fd45b421d67fc055",
+      "mode": "100644"
+    },
+    {
       "path": "agent/modules/agent/experiments/round9/README.md",
       "source": "git:75143b21bc459c6f6e951891356ebf9e4e10169d/experiments/round9/README.md",
       "source_head": "75143b21bc459c6f6e951891356ebf9e4e10169d",
@@ -2101,6 +2171,20 @@
       "synced_at": "2026-10-22"
     },
     {
+      "path": "agent/modules/agent/knowledge_analysis/global_morphometry_species_policy.json",
+      "source": "/data/xuancheng/agent_v1/round21_source/agent/modules/agent/knowledge_analysis/global_morphometry_species_policy.json",
+      "bytes": 2479,
+      "sha256": "002ee9dbc4674ed79154746052ccd0c60e1e9f47cedc31d6974afb65db896019",
+      "mode": "100644"
+    },
+    {
+      "path": "agent/modules/agent/knowledge_analysis/global_morphometry_species_policy.sha256",
+      "source": "/data/xuancheng/agent_v1/round21_source/agent/modules/agent/knowledge_analysis/global_morphometry_species_policy.sha256",
+      "bytes": 65,
+      "sha256": "a29a1161082b06892c7cf504202d2981fcc55ec6e34727d24359a92c06d6e52f",
+      "mode": "100644"
+    },
+    {
       "path": "agent/modules/agent/knowledge_analysis/km002_metadata_observations.json",
       "source": "git:75143b21bc459c6f6e951891356ebf9e4e10169d/knowledge_analysis/km002_metadata_observations.json",
       "source_head": "75143b21bc459c6f6e951891356ebf9e4e10169d",
@@ -2182,35 +2266,35 @@
     },
     {
       "path": "agent/modules/agent/knowledge_analysis/method_graph_overlay_v15.json",
-      "source": "git:b8e27a147286045e496c29114e4359f68c67f7fb/agent/modules/agent/knowledge_analysis/method_graph_overlay_v15.json",
+      "source": "/data/xuancheng/agent_v1/round21_source/agent/modules/agent/knowledge_analysis/method_graph_overlay_v15.json",
       "source_head": "b8e27a147286045e496c29114e4359f68c67f7fb",
       "mode": "100644",
       "source_bytes": 2774,
       "source_sha256": "81db94466ec10500d2986d68965729e53da38380df2039910fd171d393998a0b",
-      "bytes": 2774,
-      "sha256": "81db94466ec10500d2986d68965729e53da38380df2039910fd171d393998a0b",
+      "bytes": 5617,
+      "sha256": "f8bc1673aea2cfeb962b6723d9a915c464b9e3c669ebf108fb7339a758fcdf65",
       "synced_at": "2026-10-23"
     },
     {
       "path": "agent/modules/agent/knowledge_analysis/method_graph_overlay_v15.sha256",
-      "source": "git:b8e27a147286045e496c29114e4359f68c67f7fb/agent/modules/agent/knowledge_analysis/method_graph_overlay_v15.sha256",
+      "source": "/data/xuancheng/agent_v1/round21_source/agent/modules/agent/knowledge_analysis/method_graph_overlay_v15.sha256",
       "source_head": "b8e27a147286045e496c29114e4359f68c67f7fb",
       "mode": "100644",
       "source_bytes": 66,
       "source_sha256": "b6cab8d7cce504623f06b7e4391f1206f5ebf8ce80423701938cd67cbf744f75",
-      "bytes": 66,
-      "sha256": "b6cab8d7cce504623f06b7e4391f1206f5ebf8ce80423701938cd67cbf744f75",
+      "bytes": 65,
+      "sha256": "6df04b67e581779c3ad6afc2c7ce19e76f7b45e14f9097b2062c366898b41447",
       "synced_at": "2026-10-23"
     },
     {
       "path": "agent/modules/agent/knowledge_analysis/method_requirements.json",
-      "source": "git:de4bf4872a381b5251cbfaa015493e9b175a2776/agent/modules/agent/knowledge_analysis/method_requirements.json",
+      "source": "/data/xuancheng/agent_v1/round21_source/agent/modules/agent/knowledge_analysis/method_requirements.json",
       "source_head": "de4bf4872a381b5251cbfaa015493e9b175a2776",
       "mode": "100644",
       "source_bytes": 41844,
       "source_sha256": "f72ac57d28a1713d3ca89c880b4587ecd9023495633f993506f4b28c7ca2cfc8",
-      "bytes": 41844,
-      "sha256": "f72ac57d28a1713d3ca89c880b4587ecd9023495633f993506f4b28c7ca2cfc8",
+      "bytes": 42435,
+      "sha256": "64f22f906afc72bf7c4a94d010f02bf1851a18cfdcca075602d2e850225a4afb",
       "synced_at": "2026-10-23",
       "previous_source": {
         "source": "git:75143b21bc459c6f6e951891356ebf9e4e10169d/knowledge_analysis/method_requirements.json",
@@ -2221,13 +2305,13 @@
     },
     {
       "path": "agent/modules/agent/knowledge_analysis/method_requirements.sha256",
-      "source": "git:de4bf4872a381b5251cbfaa015493e9b175a2776/agent/modules/agent/knowledge_analysis/method_requirements.sha256",
+      "source": "/data/xuancheng/agent_v1/round21_source/agent/modules/agent/knowledge_analysis/method_requirements.sha256",
       "source_head": "de4bf4872a381b5251cbfaa015493e9b175a2776",
       "mode": "100644",
       "source_bytes": 66,
       "source_sha256": "048769ab1d4e58a743cef6b2ddd67a0921ea5d715c2c5d680b62e349640a1e15",
-      "bytes": 66,
-      "sha256": "048769ab1d4e58a743cef6b2ddd67a0921ea5d715c2c5d680b62e349640a1e15",
+      "bytes": 65,
+      "sha256": "eff9426d56c9187f79077a40519b31c5a5d9c98f8144bd1ba83724e26fddf68f",
       "synced_at": "2026-10-23",
       "previous_source": {
         "source": "git:75143b21bc459c6f6e951891356ebf9e4e10169d/knowledge_analysis/method_requirements.sha256",
@@ -2238,13 +2322,13 @@
     },
     {
       "path": "agent/modules/agent/knowledge_analysis/operation_examples.json",
-      "source": "git:b8e27a147286045e496c29114e4359f68c67f7fb/agent/modules/agent/knowledge_analysis/operation_examples.json",
+      "source": "/data/xuancheng/agent_v1/round21_source/agent/modules/agent/knowledge_analysis/operation_examples.json",
       "source_head": "b8e27a147286045e496c29114e4359f68c67f7fb",
       "mode": "100644",
       "source_bytes": 5297,
       "source_sha256": "01c84b542521b9f67dcf6df6dfc24740de16e53edfce958706909255e8e93e38",
-      "bytes": 5297,
-      "sha256": "01c84b542521b9f67dcf6df6dfc24740de16e53edfce958706909255e8e93e38",
+      "bytes": 6658,
+      "sha256": "ddaa4c8467d3e1094be90c6e0f0ed7ec81d50d5bf538e6f01d5c0588593e6a64",
       "synced_at": "2026-10-23",
       "previous_source": {
         "source": "git:75143b21bc459c6f6e951891356ebf9e4e10169d/knowledge_analysis/operation_examples.json",
@@ -2255,13 +2339,13 @@
     },
     {
       "path": "agent/modules/agent/knowledge_analysis/operation_examples.sha256",
-      "source": "git:b8e27a147286045e496c29114e4359f68c67f7fb/agent/modules/agent/knowledge_analysis/operation_examples.sha256",
+      "source": "/data/xuancheng/agent_v1/round21_source/agent/modules/agent/knowledge_analysis/operation_examples.sha256",
       "source_head": "b8e27a147286045e496c29114e4359f68c67f7fb",
       "mode": "100644",
       "source_bytes": 65,
       "source_sha256": "074d3d4f4df1e1da6061495abf1c6bc41346009f4aba7beb9f1286ae9874c3f6",
       "bytes": 65,
-      "sha256": "074d3d4f4df1e1da6061495abf1c6bc41346009f4aba7beb9f1286ae9874c3f6",
+      "sha256": "7c77728dfaaedb58c87474cffee5fc26feefe2f6b7f90d1fdf58282521253293",
       "synced_at": "2026-10-23",
       "previous_source": {
         "source": "git:75143b21bc459c6f6e951891356ebf9e4e10169d/knowledge_analysis/operation_examples.sha256",
@@ -3056,6 +3140,13 @@
       "mode": "100644"
     },
     {
+      "path": "agent/modules/agent/tests/round21_generated_program.py",
+      "source": "/data/xuancheng/agent_v1/round21_source/agent/modules/agent/tests/round21_generated_program.py",
+      "bytes": 5037,
+      "sha256": "d0a0e91a7b893afc5f72f50dcb35e1ab37332f7fddc5e412cfd42f173be0d6ca",
+      "mode": "100644"
+    },
+    {
       "path": "agent/modules/agent/tests/test_agent_auto_dispatch.py",
       "source": "git:75143b21bc459c6f6e951891356ebf9e4e10169d/tests/test_agent_auto_dispatch.py",
       "source_head": "75143b21bc459c6f6e951891356ebf9e4e10169d",
@@ -3497,6 +3588,27 @@
       "source_bytes": 15296,
       "source_sha256": "50a19ec76501b059530cc5c4c95f889b7a521e70739debc154d0f9d6cf17e9f5",
       "synced_at": "2026-10-22"
+    },
+    {
+      "path": "agent/modules/agent/tests/test_macaque_batch_gate.py",
+      "source": "/data/xuancheng/agent_v1/round21_source/agent/modules/agent/tests/test_macaque_batch_gate.py",
+      "bytes": 1258,
+      "sha256": "c71d4ccdba88fee61843d61f7ea283595c907bb53c725ef99dd777a32019be2c",
+      "mode": "100644"
+    },
+    {
+      "path": "agent/modules/agent/tests/test_macaque_global_acceptance.py",
+      "source": "/data/xuancheng/agent_v1/round21_source/agent/modules/agent/tests/test_macaque_global_acceptance.py",
+      "bytes": 9203,
+      "sha256": "1f9b813bcc24cd2fa007fa9d1190477fc8eb479a6678b5d81246f6218062c8f2",
+      "mode": "100644"
+    },
+    {
+      "path": "agent/modules/agent/tests/test_macaque_global_audit_tool.py",
+      "source": "/data/xuancheng/agent_v1/round21_source/agent/modules/agent/tests/test_macaque_global_audit_tool.py",
+      "bytes": 4376,
+      "sha256": "e812e69af7bfd6d61948a6a50375775750a584d74944fa01e741f8f95ff6a69d",
+      "mode": "100644"
     },
     {
       "path": "agent/modules/agent/tests/test_pipeline_segmentation_lock.py",
@@ -3967,6 +4079,48 @@
       "mode": "100644"
     },
     {
+      "path": "agent/modules/agent/tests/test_round19_http_meter.py",
+      "source": "/data/xuancheng/agent_v1/round21_source/agent/modules/agent/tests/test_round19_http_meter.py",
+      "bytes": 2701,
+      "sha256": "dd1fdc136aa9b9746aefdb23e9564263be608d3f095aed5c3f4efbe448430be4",
+      "mode": "100644"
+    },
+    {
+      "path": "agent/modules/agent/tests/test_round19_qc_data_card.py",
+      "source": "/data/xuancheng/agent_v1/round21_source/agent/modules/agent/tests/test_round19_qc_data_card.py",
+      "bytes": 1698,
+      "sha256": "a949f079f1a1bade46b562ba3d0a28f178b57fe44dad7604b70cd5d0076d0af5",
+      "mode": "100644"
+    },
+    {
+      "path": "agent/modules/agent/tests/test_round21_feedback_planning.py",
+      "source": "/data/xuancheng/agent_v1/round21_source/agent/modules/agent/tests/test_round21_feedback_planning.py",
+      "bytes": 7010,
+      "sha256": "2d4d5156b80057a9e6fe759d62159a48c461e7d5599fbf53efe821b9bc6cff7a",
+      "mode": "100644"
+    },
+    {
+      "path": "agent/modules/agent/tests/test_round21_full_sandbox.py",
+      "source": "/data/xuancheng/agent_v1/round21_source/agent/modules/agent/tests/test_round21_full_sandbox.py",
+      "bytes": 5700,
+      "sha256": "f6e4437629be166ff8d8e65d69140506bd6623809069c57ab3010c9d672f773c",
+      "mode": "100644"
+    },
+    {
+      "path": "agent/modules/agent/tests/test_round21_group_interfaces.py",
+      "source": "/data/xuancheng/agent_v1/round21_source/agent/modules/agent/tests/test_round21_group_interfaces.py",
+      "bytes": 4942,
+      "sha256": "397084f4ef6d80b3ee8146a839dd9e5888b8e070fc31e1d5a0d8c583f1179d9e",
+      "mode": "100644"
+    },
+    {
+      "path": "agent/modules/agent/tests/test_round21_sdk_http_observer.py",
+      "source": "/data/xuancheng/agent_v1/round21_source/agent/modules/agent/tests/test_round21_sdk_http_observer.py",
+      "bytes": 4078,
+      "sha256": "37d80b2215407d5c2b3144e6e8b887a5ddd7d2176c3918a54f5ff44d21293d0f",
+      "mode": "100644"
+    },
+    {
       "path": "agent/modules/agent/tests/test_round6_plan_affordances.py",
       "source": "git:75143b21bc459c6f6e951891356ebf9e4e10169d/tests/test_round6_plan_affordances.py",
       "source_head": "75143b21bc459c6f6e951891356ebf9e4e10169d",
@@ -4029,13 +4183,13 @@
     },
     {
       "path": "agent/modules/agent/tests/test_round8_closure.py",
-      "source": "git:b8e27a147286045e496c29114e4359f68c67f7fb/agent/modules/agent/tests/test_round8_closure.py",
+      "source": "/data/xuancheng/agent_v1/round21_source/agent/modules/agent/tests/test_round8_closure.py",
       "source_head": "b8e27a147286045e496c29114e4359f68c67f7fb",
       "mode": "100644",
       "source_bytes": 10067,
       "source_sha256": "fc2bd55454a3079dc6efd4850eaedad50793e7c1dbc9a8b87eb19b5b0e1a9317",
-      "bytes": 10067,
-      "sha256": "fc2bd55454a3079dc6efd4850eaedad50793e7c1dbc9a8b87eb19b5b0e1a9317",
+      "bytes": 10085,
+      "sha256": "9ca4748767d5fd83b49f96d89eb0f92d7a0c70681ba6b62982519d0dc8681f3a",
       "synced_at": "2026-10-23",
       "previous_source": {
         "source": "git:75143b21bc459c6f6e951891356ebf9e4e10169d/tests/test_round8_closure.py",
@@ -6904,6 +7058,13 @@
       "source": "/data/xuancheng/agent_v1/round14/docs/DEVELOPMENT_ROUNDS_20261021.md",
       "bytes": 6388,
       "sha256": "8205b4a047d5bb09653a950b1ac6555fbcf96bd58da552d02538960154ab2ef8",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/Macaque_Global_Acceptance.md",
+      "source": "/data/xuancheng/agent_v1/round21_source/docs/Macaque_Global_Acceptance.md",
+      "bytes": 3265,
+      "sha256": "67897793d9fb22f1bf645f2b79153ae3d885858e950bc2c68ae4e8f155f403c8",
       "mode": "100644"
     },
     {
@@ -10039,6 +10200,97 @@
       "synced_at": "2026-10-23"
     },
     {
+      "path": "results/round21_group_repair_20261024/offline/backend_default_v3.status.json",
+      "source": "/data/xuancheng/agent_v1/round21_source/results/round21_group_repair_20261024/offline/backend_default_v3.status.json",
+      "bytes": 184,
+      "sha256": "57de3225d7aa36c1fad7f0f1aac6883124cc43ffaccde2571e2f2b1bc0ecc36e",
+      "mode": "100644"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/offline/backend_default_v3.txt",
+      "source": "/data/xuancheng/agent_v1/round21_source/results/round21_group_repair_20261024/offline/backend_default_v3.txt",
+      "bytes": 7761,
+      "sha256": "535b802a4b1e4a5f36184926dd9d6a0c34605e79c2834c2445c9ed3e3e747e4b",
+      "mode": "100644"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/offline/line_ending_cleanup.json",
+      "source": "/data/xuancheng/agent_v1/round21_source/results/round21_group_repair_20261024/offline/line_ending_cleanup.json",
+      "bytes": 499,
+      "sha256": "63f498414bcb5eec8195a63c30e9558ce44c46c22b79c9471bbb0db64e188240",
+      "mode": "100644"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/offline/offline_all_passed.json",
+      "source": "/data/xuancheng/agent_v1/round21_source/results/round21_group_repair_20261024/offline/offline_all_passed.json",
+      "bytes": 177,
+      "sha256": "b33a5326fe1d2e01960357faf078604c526cf45943aa030d40366e8778fa450d",
+      "mode": "100644"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/offline/original_questions_verified.json",
+      "source": "/data/xuancheng/agent_v1/round21_source/results/round21_group_repair_20261024/offline/original_questions_verified.json",
+      "bytes": 1220,
+      "sha256": "6a7efcd129e0fc932dfa50435e01fb36142d9c6a40d92fbeb3a54ebc8dcf55c9",
+      "mode": "100644"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/offline/planner_after_eol_cleanup.txt",
+      "source": "/data/xuancheng/agent_v1/round21_source/results/round21_group_repair_20261024/offline/planner_after_eol_cleanup.txt",
+      "bytes": 1144,
+      "sha256": "97ee1b31b3876cf358b84d8830cd7cd546f56badb6202e4c0fca0316664a3398",
+      "mode": "100644"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/offline/protected_review.json",
+      "source": "/data/xuancheng/agent_v1/round21_source/results/round21_group_repair_20261024/offline/protected_review.json",
+      "bytes": 5756,
+      "sha256": "cce123fed4506a439dc807ec32d68f055ff5306e1ab6c1a94d0142183095b961",
+      "mode": "100644"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/offline/synthetic_acceptance.json",
+      "source": "/data/xuancheng/agent_v1/round21_source/results/round21_group_repair_20261024/offline/synthetic_acceptance.json",
+      "bytes": 1567,
+      "sha256": "eee19e9e5333c5a04f36697f303f4679951878f771c5519a5648c068296cc27d",
+      "mode": "100644"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/offline/synthetic_singularity_v3.status.json",
+      "source": "/data/xuancheng/agent_v1/round21_source/results/round21_group_repair_20261024/offline/synthetic_singularity_v3.status.json",
+      "bytes": 190,
+      "sha256": "9a155b406919a9c8a302d6981a232a168ee550dea132f7c1fdcf3712cd2e314e",
+      "mode": "100644"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/offline/synthetic_singularity_v3.txt",
+      "source": "/data/xuancheng/agent_v1/round21_source/results/round21_group_repair_20261024/offline/synthetic_singularity_v3.txt",
+      "bytes": 1238,
+      "sha256": "8ad577df6a3a42af78edc5bb86c30ebd95883c787a463f2ed153079386579500",
+      "mode": "100644"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/offline/targeted_v3.status.json",
+      "source": "/data/xuancheng/agent_v1/round21_source/results/round21_group_repair_20261024/offline/targeted_v3.status.json",
+      "bytes": 177,
+      "sha256": "d91866358ee63719c8bc0757557559e5d9678436fb624d055c773f9a265b7eff",
+      "mode": "100644"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/offline/targeted_v3.txt",
+      "source": "/data/xuancheng/agent_v1/round21_source/results/round21_group_repair_20261024/offline/targeted_v3.txt",
+      "bytes": 1145,
+      "sha256": "2c6f591469c471462908ef1625fc7025edbc9a981eeff0f95627f2aca336c192",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/accept_macaque_globals.py",
+      "source": "/data/xuancheng/agent_v1/round21_source/tools/accept_macaque_globals.py",
+      "bytes": 17830,
+      "sha256": "5363dc58961ea471b5f312051223aee3cb32548ba89543f8e93b820ab3c8431f",
+      "mode": "100644"
+    },
+    {
       "path": "tools/download_primatex_models.py",
       "source": "/data/xuancheng/agent_v1/round15_combined_verification/tools/download_primatex_models.py",
       "bytes": 3850,
@@ -10187,10 +10439,31 @@
       "mode": "100644"
     },
     {
+      "path": "tools/macaque_batch_followup.py",
+      "source": "/data/xuancheng/agent_v1/round21_source/tools/macaque_batch_followup.py",
+      "bytes": 11517,
+      "sha256": "7229c1dd400cd0f5a86cec8ab9619a8ac3b7866ee3b3451bb315700b0f81d0db",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/prepare_ixi_round19.py",
+      "source": "/data/xuancheng/agent_v1/round21_source/tools/prepare_ixi_round19.py",
+      "bytes": 10680,
+      "sha256": "cb36076341290a2d7323d12199dd7fb19f88ee93015f4c0567509137c1fe0544",
+      "mode": "100644"
+    },
+    {
       "path": "tools/prepare_prime_structural.py",
       "source": "/data/xuancheng/agent_v1/round15_combined_verification/tools/prepare_prime_structural.py",
       "bytes": 9619,
       "sha256": "438629585f7652bfe6d91551f338fcecba7a556f871a0407b0e0fa9dbc0b0be8",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/render_ixi_adjacent_qc.py",
+      "source": "/data/xuancheng/agent_v1/round21_source/tools/render_ixi_adjacent_qc.py",
+      "bytes": 9481,
+      "sha256": "4feb7136d82cd6511ab85d38defe1ff35da0f9ff7d7d1b5bfe1a45c192f9c1f8",
       "mode": "100644"
     },
     {
@@ -10259,10 +10532,10 @@
     "knowledge/software_graph/graph.json.gz"
   ],
   "last_incremental_sync": {
-    "date": "2026-10-23",
-    "source_commit": "bba4639339cd0af7ac01879f21c15f57ec54a600",
-    "scope": "v2 development results under reviewed labels: 819/1200 model HTTP attempts, zero truncations/replacements, 324 replayed predictions; 894 default tests; four source-verified cards and 45 blind-annotation statements; no formal test labels or algorithm test calls",
-    "changed_files": 36,
+    "date": "2026-10-24",
+    "source_commit": "d5e7bf4dc52766b05600a11412d7fe8e556c479e",
+    "scope": "Round21 six interface repairs, protected review and offline G1/G2 validation",
+    "changed_files": 62,
     "formal_v1_0": false
   },
   "incremental_sync_history": [
@@ -10449,7 +10722,14 @@
       "scope": "v2 development results under reviewed labels: 819/1200 model HTTP attempts, zero truncations/replacements, 324 replayed predictions; 894 default tests; four source-verified cards and 45 blind-annotation statements; no formal test labels or algorithm test calls",
       "changed_files": 36,
       "formal_v1_0": false
+    },
+    {
+      "date": "2026-10-24",
+      "source_commit": "d5e7bf4dc52766b05600a11412d7fe8e556c479e",
+      "scope": "Round21 six interface repairs, protected review and offline G1/G2 validation",
+      "changed_files": 62,
+      "formal_v1_0": false
     }
   ],
-  "updated_at": "2026-10-23T19:10:25.008972+08:00"
+  "updated_at": "2026-10-24T01:24:16.129689+08:00"
 }
