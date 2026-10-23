@@ -1,0 +1,22 @@
+{
+  "status": "ready_for_Claude_not_transmitted_by_a_Claude_tool",
+  "files": {
+    "annotation_sheet.csv": "38cd38ba4370688751d382de4325aa336452279e274f7ef597998ced26e534f2",
+    "annotation_schema.json": "dcd8948f0f31598301e8f951e12a43cb65744ca70d03d323a4156d60f80d7893",
+    "statements_unlabelled.json": "6a22428a0916875e78dada03d3f052aab9697f695825d3e53881e3c1c3aa3202",
+    "README.md": "1c5d211f9e397c79c6de9a136f9bc8fec38f70efdabf44672607b8cd9e3d9462",
+    "sources/fastsurfer_run.txt": "86e0b793c322530a30c34aaa6f2c1ec00912fceb693cb4fd554e9860eeea8892",
+    "sources/fastsurfer_install.txt": "03f05ff592ee287c347fe2bff7ff5c84ff307bc49801bd8f238e8da5e36084b5",
+    "sources/fs_group_tutorial.txt": "47df6d321ae9ec7a10d07f18b6f6301ae427901f68bbcc4de50181e95d18eaeb",
+    "sources/afni_charm.txt": "bb2cb3f01235e020c18a9c1e27a318d5cec676f9523dab8a45d973b82717d77b",
+    "sources/wb_metric_stats.txt": "019a5139fa7a191282de20bda1328b905477a91cf875583fef08d96b0784e37b",
+    "sources/wb_vertex_areas.txt": "8e3163dff98453dbb078cd523a393ec13cd0de0bc590306f1e7d4b8059a49e2f",
+    "sources/afni_install_nmt.txt": "00a6391ddd49949966f42e676ced0b076621477ba9db68f00e02b4622470bf9f",
+    "sources/fs_glmfit.txt": "a5f4b73f3a2f35110ee8a23127ea3ae6b65332a72ab28deb4ec45b5076843fd8",
+    "sources/fastsurfer_outputs.txt": "d8b6e8b2eb5482291eb29cbc2e92f1aa73e8f43f001adce7a8546daf57f5848e"
+  },
+  "n_statements": 45,
+  "algorithm_predictions_included": false,
+  "gold_labels_included": false,
+  "algorithm_evaluation_calls": 0
+}

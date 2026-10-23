@@ -1,0 +1,73 @@
+{
+  "schema": "primatex.independent_card_extraction.v1",
+  "split": "independent_test_candidate",
+  "source_manifest_sha256": "c19815e36e6f5e1eb74b72bd079ab7868fdc0453b73fa6c200ca4b7c26e89285",
+  "script_sha256": "b4e569a5fc488a8207ed5bbe8ec7979b33dd8cbe1f15d942201274bc68dfbdc8",
+  "provider_sha256": "ded374b85365f7cb47263cfd242307c80df50f38ee09ea6e4d96bf7a5edb3d27",
+  "prompt_sha256": "b38ae556e892a697f680495f863c06c490163ce7b7c37502d6db275b55d1a73c",
+  "methods": [
+    {
+      "method_id": "independent_fastsurfer",
+      "name": "FastSurfer",
+      "sources": [
+        "fastsurfer_install",
+        "fastsurfer_run",
+        "fastsurfer_outputs"
+      ],
+      "objective": "FastSurfer T1 segmentation and cortical surface reconstruction. Preserve distinctions between segmentation-only, surface-only, optional modules, and FreeSurfer licence requirements."
+    },
+    {
+      "method_id": "independent_fs_glmfit_group",
+      "name": "FreeSurfer mri_glmfit group analysis",
+      "sources": [
+        "fs_group_tutorial",
+        "fs_glmfit"
+      ],
+      "objective": "Surface-based group GLM using the official GroupAnalysis tutorial and mri_glmfit reference. Cover subject order, common-surface resampling, required data/design/contrast files, optional settings, masking and interpretation."
+    },
+    {
+      "method_id": "independent_workbench_area_stats",
+      "name": "Connectome Workbench vertex areas and metric statistics",
+      "sources": [
+        "wb_vertex_areas",
+        "wb_metric_stats"
+      ],
+      "objective": "Document wb_command -surface-vertex-areas and -metric-stats, including input/output, units, reduction/percentile choice, optional ROI and map matching. The requested shorthand -surface-area is not the documented command; do not invent it."
+    },
+    {
+      "method_id": "independent_nmt_v2_charm",
+      "name": "AFNI NMT v2 and CHARM",
+      "sources": [
+        "afni_charm",
+        "afni_install_nmt"
+      ],
+      "objective": "Use of the macaque NMT v2 reference template and CHARM hierarchical atlas. Distinguish bundled resources from subject data, spatial variants/voxel sizes, six atlas levels and zero-based selectors. The installer currently defaults to v2.1: retain version scopes."
+    }
+  ],
+  "provider": {
+    "endpoint_host": "inferaiapi.com",
+    "endpoint_path": "/v1",
+    "model": "deepseek-v4.1-flash",
+    "temperature": 0.7,
+    "timeout": 180,
+    "max_tokens": 8192,
+    "max_attempts": 3,
+    "thinking": {
+      "type": "disabled"
+    },
+    "response_format": {
+      "type": "json_object"
+    }
+  },
+  "max_http_attempts": 12,
+  "annotation_fields": [
+    "inputs",
+    "conditions",
+    "checks",
+    "exceptions"
+  ],
+  "selection": "all verified items in the same four fields as development; exclude exact normalized quote or statement duplicates against development; no outcome-based selection",
+  "algorithm_calls": 0,
+  "gold_created": false,
+  "annotation_status": "ready_for_Claude_not_labelled"
+}

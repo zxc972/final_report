@@ -1,0 +1,71 @@
+﻿id,method,field,statement,quote,source_id,source_url,gold_template,gold_parameters,annotation_note
+1001,independent_fastsurfer,inputs,"--t1: T1 full head input (not bias corrected), requiring an absolute path.","--t1 <t1_path> T1 full head input (not bias corrected). Requires an
+ABSOLUTE Path!",fastsurfer_run,https://deep-mi.org/FastSurfer/stable/scripts/RUN_FASTSURFER.html,,,
+1002,independent_fastsurfer,inputs,Optional T2 full-head input must be externally biasfield corrected when --no_biasfield is used.,"*Optional* T2 full head input (must be externally biasfield
+corrected when called with --no_biasfield). Requires an
+ABSOLUTE Path!",fastsurfer_run,https://deep-mi.org/FastSurfer/stable/scripts/RUN_FASTSURFER.html,,,
+1003,independent_fastsurfer,inputs,An optional binary lesion mask must be in the same space as the T1 input.,Path to a binary lesion mask in the same space as the T1 input.,fastsurfer_run,https://deep-mi.org/FastSurfer/stable/scripts/RUN_FASTSURFER.html,,,
+1004,independent_fastsurfer,inputs,"For --surf_only, the segmentation created by FastSurferVINN must already exist.",--surf_only: Only run the surface pipeline. The segmentation created by FastSurferVINN must already exist in this case.,fastsurfer_run,https://deep-mi.org/FastSurfer/stable/scripts/RUN_FASTSURFER.html,,,
+1005,independent_fastsurfer,conditions,A segmentation without --tal_reg does not need a FreeSurfer licence.,"A
+segmentation without --tal_reg does not need one.",fastsurfer_install,https://deep-mi.org/FastSurfer/stable/overview/INSTALL.html,,,
+1006,independent_fastsurfer,conditions,Docker runs of the surface module require --fs_license pointing to a FreeSurfer licence file.,"Required for Docker when running surface module:
+
+--fs_license: Path to FreeSurfer license key file",fastsurfer_run,https://deep-mi.org/FastSurfer/stable/scripts/RUN_FASTSURFER.html,,,
+1007,independent_fastsurfer,conditions,Input conformation specifications are checked automatically; non-compliant images are conformed.,These specifications are checked in the run_prediction.py script and the image is automatically conformed if it does not comply.,fastsurfer_run,https://deep-mi.org/FastSurfer/stable/scripts/RUN_FASTSURFER.html,,,
+1008,independent_fastsurfer,conditions,Keeping native image geometry is incompatible with the surface pipeline.,"Output all images and segmentations in the native
+--keepgeom image space with its image geometry (voxel size,
+dimensions, orientation). This setting is not
+compatible with the surface pipeline",fastsurfer_run,https://deep-mi.org/FastSurfer/stable/scripts/RUN_FASTSURFER.html,,,
+1009,independent_fastsurfer,conditions,A GPU makes segmentation much faster.,A GPU makes the segmentation much faster.,fastsurfer_install,https://deep-mi.org/FastSurfer/stable/overview/INSTALL.html,,,
+1010,independent_fastsurfer,checks,--viewagg_device auto checks whether there is enough memory to run view aggregation on the GPU.,"By default, the program checks if you have enough memory to run the view aggregation on the GPU.",fastsurfer_run,https://deep-mi.org/FastSurfer/stable/scripts/RUN_FASTSURFER.html,,,
+1011,independent_fastsurfer,checks,"Unless --ignore_fs_version is set, the program checks the FreeSurfer version and terminates if the supported version is not sourced.","--ignore_fs_version Switch on to avoid check for FreeSurfer version.
+Program will terminate if the supported version
+(see recon-surf.sh) is not sourced.",fastsurfer_run,https://deep-mi.org/FastSurfer/stable/scripts/RUN_FASTSURFER.html,,,
+1012,independent_fastsurfer,checks,--qc_snap creates quality control images to simplify the QC process.,--qc_snap Create quality control images in $SUBJECTS_DIR/$sid/qc_snapshots,fastsurfer_run,https://deep-mi.org/FastSurfer/stable/scripts/RUN_FASTSURFER.html,,,
+1013,independent_fastsurfer,checks,"For images with tumors or other large lesions, review LIT-modified outputs before downstream use.",review LIT-modified outputs before downstream use.,fastsurfer_run,https://deep-mi.org/FastSurfer/stable/scripts/RUN_FASTSURFER.html,,,
+1014,independent_fastsurfer,exceptions,"Without --no_cereb, CerebNet runs automatically whenever the segmentation module runs.","Unless switched off by the --no_cereb argument, this module is automatically run whenever the segmentation module is run.",fastsurfer_outputs,https://deep-mi.org/FastSurfer/stable/overview/OUTPUT_FILES.html,,,
+1015,independent_fastsurfer,exceptions,"Without --no_hypothal, HypVINN runs automatically whenever the segmentation module runs.","Unless switched off by the --no_hypothal argument, this module is automatically run whenever the segmentation module is run.",fastsurfer_outputs,https://deep-mi.org/FastSurfer/stable/overview/OUTPUT_FILES.html,,,
+1016,independent_fastsurfer,exceptions,"With --no_biasfield, HypVINN still runs but expects biasfields to be corrected externally.",HypVINN does run but expects that biasfields are corrected externally.,fastsurfer_run,https://deep-mi.org/FastSurfer/stable/scripts/RUN_FASTSURFER.html,,,
+1017,independent_fastsurfer,exceptions,"--no_surfreg skips surface registration, but sphere.reg is needed for cross-subject statistical analysis of thickness maps.",sphere.reg will be needed for any cross-subject statistical analysis of thickness maps,fastsurfer_run,https://deep-mi.org/FastSurfer/stable/scripts/RUN_FASTSURFER.html,,,
+1018,independent_fastsurfer,exceptions,"Renaming an output file can break a later step, since later modules and follow-up tools look for the default names.","Later modules
+and follow-up tools look for the default names, so renaming an output can
+break a later step.",fastsurfer_run,https://deep-mi.org/FastSurfer/stable/scripts/RUN_FASTSURFER.html,,,
+1019,independent_fs_glmfit_group,inputs,The input data file has each frame as a separate input.,Path to input file with each frame being a separate input.,fs_glmfit,https://surfer.nmr.mgh.harvard.edu/fswiki/mri_glmfit,,,
+1020,independent_fs_glmfit_group,inputs,Global design matrix specified with a FreeSurfer Group Descriptor File (FSGDF).,Specify the global design matrix with a FreeSurfer Group Descriptor File (FSGDF).,fs_glmfit,https://surfer.nmr.mgh.harvard.edu/fswiki/mri_glmfit,,,
+1021,independent_fs_glmfit_group,inputs,One or more contrast matrix files in ASCII text.,Specify one or more contrasts to test. The contrast.mat file is an ASCII text file with the contrast matrix in it,fs_glmfit,https://surfer.nmr.mgh.harvard.edu/fswiki/mri_glmfit,,,
+1022,independent_fs_glmfit_group,inputs,Surface-based smoothing requires --surf; otherwise the input is treated as a volume.,"If the data are surface-based, then you must specify --surf, otherwise mri_glmfit assumes that the input is a volume",fs_glmfit,https://surfer.nmr.mgh.harvard.edu/fswiki/mri_glmfit,,,
+1023,independent_fs_glmfit_group,conditions,Data must be assembled by resampling each subject's data into a common space and concatenating subjects into a single file.,"Resampling each subject's data into a common space.
+
+Concatenating all the subjects' into a single file.",fs_group_tutorial,https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/GroupAnalysis,,,
+1024,independent_fs_glmfit_group,conditions,"The same FSGD used with mris_preproc must be used, maintaining subject order.",Same FSGD used as with mris_preproc. Maintains subject order!,fs_group_tutorial,https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/GroupAnalysis,,,
+1025,independent_fs_glmfit_group,conditions,DODS is specified in the tutorial example and is the default.,DODS is specified (it is the default).,fs_group_tutorial,https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/GroupAnalysis,,,
+1026,independent_fs_glmfit_group,conditions,"If data have not been cached, the same operations can be performed manually.","In the case that you have not cached the data, you can perform the same operations manually using the two commands below.",fs_group_tutorial,https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/GroupAnalysis,,,
+1027,independent_fs_glmfit_group,checks,The completed GLM has its output subdirectory under the glm directory.,When this command is finished the glm directory will contain a sub-directory called lh.gender_age.glmdir.,fs_group_tutorial,https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/GroupAnalysis,,,
+1028,independent_fs_glmfit_group,checks,"There is a subdirectory for each specified contrast, named after the contrast matrix file without the .mtx extension.",There will be a subdirectory for each contrast that you specify. The name of the directory will be that of the contrast matrix file (without the .mtx extension).,fs_group_tutorial,https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/GroupAnalysis,,,
+1029,independent_fs_glmfit_group,checks,mri_info can be run on the assembled data to find its dimensions.,Run mri_info on lh.gender_age.thickness.10.mgh to find its dimensions:,fs_group_tutorial,https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/GroupAnalysis,,,
+1030,independent_fs_glmfit_group,exceptions,Temporary directories or log files starting with tmp may appear and can be ignored.,"You may also see some temporary directories (with names starting with tmp) or log files, which you can ignore.",fs_group_tutorial,https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/GroupAnalysis,,,
+1031,independent_fs_glmfit_group,exceptions,"You cannot specify both --X and --osgm, and a contrast cannot be specified with --osgm.",You cannot specify both --X and --osgm. A contrast cannot be specified either.,fs_glmfit,https://surfer.nmr.mgh.harvard.edu/fswiki/mri_glmfit,,,
+1032,independent_fs_glmfit_group,exceptions,Do not use --prune with --sim; instead run the non-sim analysis with --prune and pass the created mask to the simulation.,"Do not use with --sim. Rather, run the non-sim analysis with --prune, then pass the created mask when running simulation.",fs_glmfit,https://surfer.nmr.mgh.harvard.edu/fswiki/mri_glmfit,,,
+1033,independent_workbench_area_stats,inputs,A surface file to measure for -surface-vertex-areas.,<surface> - the surface to measure,wb_vertex_areas,https://www.humanconnectome.org/software/workbench-command/-surface-vertex-areas,,,
+1034,independent_workbench_area_stats,inputs,An input metric file for -metric-stats.,<metric-in> - the input metric,wb_metric_stats,https://www.humanconnectome.org/software/workbench-command/-metric-stats,,,
+1035,independent_workbench_area_stats,inputs,Optional ROI metric file restricting which data are considered.,"[-roi] - only consider data inside an roi
+<roi-metric> - the roi, as a metric file",wb_metric_stats,https://www.humanconnectome.org/software/workbench-command/-metric-stats,,,
+1036,independent_workbench_area_stats,conditions,Exactly one of -reduce or -percentile must be specified for -metric-stats.,"Exactly one of
+-reduce or -percentile must be specified.",wb_metric_stats,https://www.humanconnectome.org/software/workbench-command/-metric-stats,,,
+1037,independent_workbench_area_stats,conditions,The percentile must be between 0 and 100.,must be between 0 and 100,wb_metric_stats,https://www.humanconnectome.org/software/workbench-command/-metric-stats,,,
+1038,independent_workbench_area_stats,conditions,The reduction operation must be selected from the documented allowed list.,The argument to the -reduce option must be one of the following:,wb_metric_stats,https://www.humanconnectome.org/software/workbench-command/-metric-stats,,,
+1039,independent_nmt_v2_charm,inputs,"The NMT v2 template and its accompanying matching CHARM dataset, obtained from the NMT download.","The CHARM is distributed with the NMT v2. The NMT v2 has several forms
+and variants (based on symmetry/asymmetry, FOV and voxel size), and
+for each of these there is an accompanying CHARM.",afni_charm,https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/nonhuman/macaque_tempatl/atlas_charm.html,,,
+1040,independent_nmt_v2_charm,inputs,"The NMT download also includes a CSV table file of the ROI labels, hierarchically organized.","the NMT download also includes a CSV table file of the ROI
+labels, hierarchically organized",afni_charm,https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/nonhuman/macaque_tempatl/atlas_charm.html,,,
+1041,independent_nmt_v2_charm,conditions,The CHARM is defined in the coordinates/space of the NMT v2 template.,"This atlas is defined in the coordinates/space of the NMT v2
+template",afni_charm,https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/nonhuman/macaque_tempatl/atlas_charm.html,,,
+1042,independent_nmt_v2_charm,conditions,"For each form/variant of the NMT (symmetry/asymmetry, FOV, voxel size), there is a matching CHARM dataset.","The NMT v2 has several forms
+and variants (based on symmetry/asymmetry, FOV and voxel size), and
+for each of these there is an accompanying CHARM.",afni_charm,https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/nonhuman/macaque_tempatl/atlas_charm.html,,,
+1043,independent_nmt_v2_charm,conditions,The -sym option is valid for the NMT v2 only; in other cases it is ignored.,"Option is valid for the NMT v2 only--in
+other cases it is ignored.",afni_install_nmt,https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/alpha/@Install_NMT_sphx.html,,,
+1044,independent_nmt_v2_charm,exceptions,The -overwrite option allows the script to remove a pre-existing NMT directory.,-overwrite :allows the script to remove a pre-existing NMT directory,afni_install_nmt,https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/alpha/@Install_NMT_sphx.html,,,
+1045,independent_nmt_v2_charm,exceptions,"AFNI uses zero-base counting, so CHARM Level 1 is volume ""[0]"" and Level 6 is volume ""[5]"".","CHARM Level 1 is volume ""[0]"" and Level 6 is volume
+""[5]"", because AFNI (like Python and C) use zero-base counting.",afni_charm,https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/nonhuman/macaque_tempatl/atlas_charm.html,,,

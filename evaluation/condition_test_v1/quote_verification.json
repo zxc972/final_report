@@ -1,0 +1,34 @@
+{
+  "methods": [
+    {
+      "method": "independent_fastsurfer",
+      "card_statements": 32,
+      "annotation_statements": 18,
+      "quarantined": 0
+    },
+    {
+      "method": "independent_fs_glmfit_group",
+      "card_statements": 27,
+      "annotation_statements": 14,
+      "quarantined": 0
+    },
+    {
+      "method": "independent_workbench_area_stats",
+      "card_statements": 19,
+      "annotation_statements": 6,
+      "quarantined": 0
+    },
+    {
+      "method": "independent_nmt_v2_charm",
+      "card_statements": 18,
+      "annotation_statements": 7,
+      "quarantined": 0
+    }
+  ],
+  "annotation_statements": 45,
+  "all_retained_quotes_exact": true,
+  "duplicate_development_items_excluded": [],
+  "method_disjoint_from_development": true,
+  "annotation_status": "not_labelled",
+  "test_evaluation_calls": 0
+}

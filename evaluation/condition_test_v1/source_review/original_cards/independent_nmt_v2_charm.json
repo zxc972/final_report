@@ -1,0 +1,226 @@
+{
+  "method_id": "independent_nmt_v2_charm",
+  "name": "AFNI NMT v2 and CHARM",
+  "purpose": "Provide a NIMH Macaque Template (NMT) with the accompanying Cortical Hierarchy Atlas of the Rhesus Macaque (CHARM), which parcellates the macaque cortex at six spatial scales in NMT v2 coordinates.",
+  "species_scope": "Rhesus macaque (macaque)",
+  "software": [
+    "AFNI",
+    "SUMA",
+    "FATCAT",
+    "@Install_NMT",
+    "@chauffeur_afni"
+  ],
+  "inputs": [
+    {
+      "statement": "The NMT v2 template and its accompanying matching CHARM dataset, obtained from the NMT download.",
+      "source_id": "afni_charm",
+      "quote": "for each of these there is an accompanying CHARM",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1518,
+        "end": 1566,
+        "text_sha256": "bb2cb3f01235e020c18a9c1e27a318d5cec676f9523dab8a45d973b82717d77b"
+      }
+    },
+    {
+      "statement": "The NMT download also includes a CSV table file of the ROI labels, hierarchically organized.",
+      "source_id": "afni_charm",
+      "quote": "the NMT download also includes a CSV table file of the ROI\nlabels, hierarchically organized",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1579,
+        "end": 1670,
+        "text_sha256": "bb2cb3f01235e020c18a9c1e27a318d5cec676f9523dab8a45d973b82717d77b"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "statement": "The CHARM is defined in the coordinates/space of the NMT v2 template.",
+      "source_id": "afni_charm",
+      "quote": "This atlas is defined in the coordinates/space of the NMT v2\ntemplate",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 465,
+        "end": 534,
+        "text_sha256": "bb2cb3f01235e020c18a9c1e27a318d5cec676f9523dab8a45d973b82717d77b"
+      }
+    },
+    {
+      "statement": "For each form/variant of the NMT (symmetry/asymmetry, FOV, voxel size), there is a matching CHARM dataset.",
+      "source_id": "afni_charm",
+      "quote": "for each of these there is an accompanying CHARM",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1518,
+        "end": 1566,
+        "text_sha256": "bb2cb3f01235e020c18a9c1e27a318d5cec676f9523dab8a45d973b82717d77b"
+      }
+    },
+    {
+      "statement": "The -sym option is valid for the NMT v2 only; in other cases it is ignored.",
+      "source_id": "afni_install_nmt",
+      "quote": "Option is valid for the NMT v2 only--in\nother cases it is ignored.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1596,
+        "end": 1662,
+        "text_sha256": "00a6391ddd49949966f42e676ced0b076621477ba9db68f00e02b4622470bf9f"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "statement": "Run @Install_NMT to install the NMT with the accompanying CHARM.",
+      "source_id": "afni_install_nmt",
+      "quote": "Installs the NIMH Macaque Template (NMT) with the accompanying\nCortical Hierarchy Atlas of the Rhesus Macaque (CHARM).",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 142,
+        "end": 260,
+        "text_sha256": "00a6391ddd49949966f42e676ced0b076621477ba9db68f00e02b4622470bf9f"
+      }
+    },
+    {
+      "statement": "Choose the template version and variant via the -nmt_ver and -sym options.",
+      "source_id": "afni_install_nmt",
+      "quote": "Note there are multiple versions and variants of the template to\nchoose from",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 262,
+        "end": 338,
+        "text_sha256": "00a6391ddd49949966f42e676ced0b076621477ba9db68f00e02b4622470bf9f"
+      }
+    },
+    {
+      "statement": "After the archive is downloaded and unpacked as the directory \"NMT_*\", see its README.txt for details.",
+      "source_id": "afni_install_nmt",
+      "quote": "After the archive is downloaded and unpacked (as the directory\n\"NMT_*\", depending on your selected version+variant), see its\nREADME.txt for details.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1141,
+        "end": 1289,
+        "text_sha256": "00a6391ddd49949966f42e676ced0b076621477ba9db68f00e02b4622470bf9f"
+      }
+    },
+    {
+      "statement": "Select the desired CHARM level from the six sub-volumes using AFNI sub-brick selectors.",
+      "source_id": "afni_charm",
+      "quote": "CHARM Level 1 is volume \"[0]\" and Level 6 is volume\n\"[5]\"",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1262,
+        "end": 1319,
+        "text_sha256": "bb2cb3f01235e020c18a9c1e27a318d5cec676f9523dab8a45d973b82717d77b"
+      }
+    }
+  ],
+  "checks": [],
+  "exceptions": [
+    {
+      "statement": "The -overwrite option allows the script to remove a pre-existing NMT directory.",
+      "source_id": "afni_install_nmt",
+      "quote": "-overwrite :allows the script to remove a pre-existing NMT directory",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1682,
+        "end": 1750,
+        "text_sha256": "00a6391ddd49949966f42e676ced0b076621477ba9db68f00e02b4622470bf9f"
+      }
+    },
+    {
+      "statement": "AFNI uses zero-base counting, so CHARM Level 1 is volume \"[0]\" and Level 6 is volume \"[5]\".",
+      "source_id": "afni_charm",
+      "quote": "because AFNI (like Python and C) use zero-base counting",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1321,
+        "end": 1376,
+        "text_sha256": "bb2cb3f01235e020c18a9c1e27a318d5cec676f9523dab8a45d973b82717d77b"
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "statement": "An unpacked NMT_* directory containing the NMT and matching CHARM data.",
+      "source_id": "afni_install_nmt",
+      "quote": "After the archive is downloaded and unpacked (as the directory\n\"NMT_*\"",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1141,
+        "end": 1211,
+        "text_sha256": "00a6391ddd49949966f42e676ced0b076621477ba9db68f00e02b4622470bf9f"
+      }
+    },
+    {
+      "statement": "The CHARM as a single data set with six sub-volumes (six parcellation levels).",
+      "source_id": "afni_charm",
+      "quote": "The CHARM is distributed as a single data set with six\nsub-volumes.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1133,
+        "end": 1200,
+        "text_sha256": "bb2cb3f01235e020c18a9c1e27a318d5cec676f9523dab8a45d973b82717d77b"
+      }
+    },
+    {
+      "statement": "A CSV table file of the hierarchically organized ROI labels.",
+      "source_id": "afni_charm",
+      "quote": "a CSV table file of the ROI\nlabels, hierarchically organized",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1610,
+        "end": 1670,
+        "text_sha256": "bb2cb3f01235e020c18a9c1e27a318d5cec676f9523dab8a45d973b82717d77b"
+      }
+    }
+  ],
+  "parameters": [
+    {
+      "statement": "-install_dir DD sets the install location for the NMT (default = the PWD).",
+      "source_id": "afni_install_nmt",
+      "quote": "-install_dir DD :the install location for the NMT\n(default = the PWD)",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1301,
+        "end": 1370,
+        "text_sha256": "00a6391ddd49949966f42e676ced0b076621477ba9db68f00e02b4622470bf9f"
+      }
+    },
+    {
+      "statement": "-nmt_ver VV selects the NMT version (default = 2.1; valid = 2.1, 2.0, 1.3, 1.2).",
+      "source_id": "afni_install_nmt",
+      "quote": "-nmt_ver VV :the version of the NMT you wish to install\n(default = 2.1; valid = 2.1, 2.0, 1.3, 1.2)",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1372,
+        "end": 1471,
+        "text_sha256": "00a6391ddd49949966f42e676ced0b076621477ba9db68f00e02b4622470bf9f"
+      }
+    },
+    {
+      "statement": "-sym SS selects the NMT v2 variant as \"sym\" or \"asym\" (default = \"sym\").",
+      "source_id": "afni_install_nmt",
+      "quote": "Specify the desired variant SS as either \"sym\" or\n\"asym\".",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1538,
+        "end": 1595,
+        "text_sha256": "00a6391ddd49949966f42e676ced0b076621477ba9db68f00e02b4622470bf9f"
+      }
+    },
+    {
+      "statement": "The default template is the symmetric NMT v2.1.",
+      "source_id": "afni_install_nmt",
+      "quote": "with\nthe default being the symmetric NMT v2.1",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 389,
+        "end": 434,
+        "text_sha256": "00a6391ddd49949966f42e676ced0b076621477ba9db68f00e02b4622470bf9f"
+      }
+    }
+  ],
+  "quarantined_claims": [],
+  "evidence_status": "exact_quotes_verified_semantics_pending_annotation"
+}

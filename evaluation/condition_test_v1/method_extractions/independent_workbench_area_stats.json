@@ -1,0 +1,234 @@
+{
+  "method_id": "independent_workbench_area_stats",
+  "name": "Connectome Workbench vertex areas and metric statistics",
+  "purpose": "Compute per-vertex surface area and print spatial statistics (reduction or percentile) on a metric file via Workbench Command.",
+  "species_scope": "unspecified",
+  "software": [
+    "Connectome Workbench",
+    "Workbench Command",
+    "wb_command"
+  ],
+  "inputs": [
+    {
+      "statement": "A surface file to measure for -surface-vertex-areas.",
+      "source_id": "wb_vertex_areas",
+      "quote": "<surface> - the surface to measure",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 4809,
+        "end": 4843,
+        "text_sha256": "8e3163dff98453dbb078cd523a393ec13cd0de0bc590306f1e7d4b8059a49e2f"
+      }
+    },
+    {
+      "statement": "An input metric file for -metric-stats.",
+      "source_id": "wb_metric_stats",
+      "quote": "<metric-in> - the input metric",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 4785,
+        "end": 4815,
+        "text_sha256": "019a5139fa7a191282de20bda1328b905477a91cf875583fef08d96b0784e37b"
+      }
+    },
+    {
+      "statement": "Optional ROI metric file restricting which data are considered.",
+      "source_id": "wb_metric_stats",
+      "quote": "[-roi] - only consider data inside an roi\n<roi-metric> - the roi, as a metric file",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 5089,
+        "end": 5171,
+        "text_sha256": "019a5139fa7a191282de20bda1328b905477a91cf875583fef08d96b0784e37b"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "statement": "Exactly one of -reduce or -percentile must be specified for -metric-stats.",
+      "source_id": "wb_metric_stats",
+      "quote": "Exactly one of\n-reduce or -percentile must be specified.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 5653,
+        "end": 5709,
+        "text_sha256": "019a5139fa7a191282de20bda1328b905477a91cf875583fef08d96b0784e37b"
+      }
+    },
+    {
+      "statement": "The percentile must be between 0 and 100.",
+      "source_id": "wb_metric_stats",
+      "quote": "must be between 0 and 100",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 4977,
+        "end": 5002,
+        "text_sha256": "019a5139fa7a191282de20bda1328b905477a91cf875583fef08d96b0784e37b"
+      }
+    },
+    {
+      "statement": "The reduction operation must be selected from the documented allowed list.",
+      "source_id": "wb_metric_stats",
+      "quote": "The argument to the -reduce option must be one of the following:",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 5711,
+        "end": 5775,
+        "text_sha256": "019a5139fa7a191282de20bda1328b905477a91cf875583fef08d96b0784e37b"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "statement": "Run wb_command -surface-vertex-areas with the surface and output metric.",
+      "source_id": "wb_vertex_areas",
+      "quote": "wb_command -surface-vertex-areas\n<surface> - the surface to measure\n<metric> - output - the output metric",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 4776,
+        "end": 4881,
+        "text_sha256": "8e3163dff98453dbb078cd523a393ec13cd0de0bc590306f1e7d4b8059a49e2f"
+      }
+    },
+    {
+      "statement": "Assign each vertex one third of the area of each triangle it belongs to.",
+      "source_id": "wb_vertex_areas",
+      "quote": "Each vertex gets one third of the area of each triangle it is a part of.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 4883,
+        "end": 4955,
+        "text_sha256": "8e3163dff98453dbb078cd523a393ec13cd0de0bc590306f1e7d4b8059a49e2f"
+      }
+    },
+    {
+      "statement": "Run wb_command -metric-stats with the input metric and a reduction or percentile operation.",
+      "source_id": "wb_metric_stats",
+      "quote": "wb_command -metric-stats\n<metric-in> - the input metric",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 4760,
+        "end": 4815,
+        "text_sha256": "019a5139fa7a191282de20bda1328b905477a91cf875583fef08d96b0784e37b"
+      }
+    },
+    {
+      "statement": "Optionally restrict analysis to an ROI metric file.",
+      "source_id": "wb_metric_stats",
+      "quote": "[-roi] - only consider data inside an roi\n<roi-metric> - the roi, as a metric file",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 5089,
+        "end": 5171,
+        "text_sha256": "019a5139fa7a191282de20bda1328b905477a91cf875583fef08d96b0784e37b"
+      }
+    },
+    {
+      "statement": "Optionally match each input column to the corresponding ROI column.",
+      "source_id": "wb_metric_stats",
+      "quote": "[-match-maps] - each column of input uses the corresponding column\nfrom the roi file",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 5173,
+        "end": 5257,
+        "text_sha256": "019a5139fa7a191282de20bda1328b905477a91cf875583fef08d96b0784e37b"
+      }
+    }
+  ],
+  "checks": [],
+  "exceptions": [],
+  "outputs": [
+    {
+      "statement": "The vertex-areas output is a metric file.",
+      "source_id": "wb_vertex_areas",
+      "quote": "<metric> - output - the output metric",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 4844,
+        "end": 4881,
+        "text_sha256": "8e3163dff98453dbb078cd523a393ec13cd0de0bc590306f1e7d4b8059a49e2f"
+      }
+    },
+    {
+      "statement": "Vertex areas are in units of mm^2.",
+      "source_id": "wb_vertex_areas",
+      "quote": "Units are mm^2.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 4956,
+        "end": 4971,
+        "text_sha256": "8e3163dff98453dbb078cd523a393ec13cd0de0bc590306f1e7d4b8059a49e2f"
+      }
+    },
+    {
+      "statement": "For each input column, a line of text is printed from the specified reduction or percentile operation.",
+      "source_id": "wb_metric_stats",
+      "quote": "For each column of the input, a line of text is printed, resulting from\nthe specified reduction or percentile operation.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 5323,
+        "end": 5443,
+        "text_sha256": "019a5139fa7a191282de20bda1328b905477a91cf875583fef08d96b0784e37b"
+      }
+    },
+    {
+      "statement": "With -roi and without -match-maps, each line contains as many numbers as there are maps in the ROI file, tab-separated.",
+      "source_id": "wb_metric_stats",
+      "quote": "If the -roi option is used without\n-match-maps, then each line will contain as many numbers as there are\nmaps in the ROI file, separated by tab characters.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 5497,
+        "end": 5652,
+        "text_sha256": "019a5139fa7a191282de20bda1328b905477a91cf875583fef08d96b0784e37b"
+      }
+    }
+  ],
+  "parameters": [
+    {
+      "statement": "Reduction operation choice; the argument to -reduce must be one of the listed operations.",
+      "source_id": "wb_metric_stats",
+      "quote": "[-reduce] - use a reduction operation\n<operation> - the reduction operation",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 4817,
+        "end": 4892,
+        "text_sha256": "019a5139fa7a191282de20bda1328b905477a91cf875583fef08d96b0784e37b"
+      }
+    },
+    {
+      "statement": "Percentile to find, between 0 and 100.",
+      "source_id": "wb_metric_stats",
+      "quote": "<percent> - the percentile to find, must be between 0 and 100",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 4941,
+        "end": 5002,
+        "text_sha256": "019a5139fa7a191282de20bda1328b905477a91cf875583fef08d96b0784e37b"
+      }
+    },
+    {
+      "statement": "Optional single column selection by number or name.",
+      "source_id": "wb_metric_stats",
+      "quote": "[-column] - only display output for one column\n<column> - the column number or name",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 5004,
+        "end": 5087,
+        "text_sha256": "019a5139fa7a191282de20bda1328b905477a91cf875583fef08d96b0784e37b"
+      }
+    },
+    {
+      "statement": "Optional flag to print map index and name before each output.",
+      "source_id": "wb_metric_stats",
+      "quote": "[-show-map-name] - print map index and name before each output",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 5259,
+        "end": 5321,
+        "text_sha256": "019a5139fa7a191282de20bda1328b905477a91cf875583fef08d96b0784e37b"
+      }
+    }
+  ],
+  "quarantined_claims": [],
+  "evidence_status": "exact_quotes_verified_agent_scope_reviewed_blind_gold_pending"
+}
