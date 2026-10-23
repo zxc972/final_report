@@ -34,6 +34,11 @@ calls fit in a shared cap of 800 HTTP attempts including retries. Checkpoints
 and logical-call caches permit interruption without repeating successful calls.
 The run creates no analysis session and invokes no analysis or preprocessing tool.
 
+Length-exhausted null/empty answers are retained as no answer and never
+resampled to improve results. The draft run records its one transport-only
+compatibility correction in `freeze_history/`; all earlier requests and
+predictions remain in the same budget ledger.
+
 ## Human review and later formal run
 
 In a copy of the review sheet, use `reviewer_agree(Y/N)` to mark agreement.
