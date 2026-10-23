@@ -100,7 +100,49 @@
           "source_id": "nibabel_fs"
         }
       ],
-      "policy_note": "Supplied-derivative reading checks actual products; it does not certify completed reconstruction or anatomical QC."
+      "policy_note": "Supplied-derivative reading checks actual products; it does not certify completed reconstruction or anatomical QC.",
+      "matching_conditions": [
+        {
+          "id": "product_metric_mesh_identity",
+          "template": "attr_equal",
+          "parameters": {
+            "slots": [
+              "surface_metric",
+              "surface"
+            ],
+            "attributes": [
+              "subject",
+              "hemisphere",
+              "mesh"
+            ]
+          },
+          "severity": "hard",
+          "source": [
+            {
+              "source_id": "nibabel_fs",
+              "url": "https://nipy.org/nibabel/reference/nibabel.freesurfer.html"
+            },
+            {
+              "source_id": "numpy_average",
+              "url": "https://numpy.org/doc/stable/reference/generated/numpy.average.html"
+            },
+            {
+              "source_id": "numpy_histogram",
+              "url": "https://numpy.org/doc/stable/reference/generated/numpy.histogram.html"
+            },
+            {
+              "source_id": "fs_morph",
+              "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/MorphAndRecon"
+            }
+          ]
+        }
+      ],
+      "slot_preferences": {
+        "surface": {
+          "required_type": "type:Surface.White",
+          "basis": "Existing ROI/vector execution and independent verification bind metrics to the observed white mesh."
+        }
+      }
     },
     {
       "method_id": "method:v12:fsl_vbm",
@@ -533,7 +575,45 @@
           "source_id": "nibabel_fs"
         }
       ],
-      "policy_note": "Supplied-derivative reading checks actual products; it does not certify completed reconstruction or anatomical QC."
+      "policy_note": "Supplied-derivative reading checks actual products; it does not certify completed reconstruction or anatomical QC.",
+      "matching_conditions": [
+        {
+          "id": "product_metric_mesh_identity",
+          "template": "attr_equal",
+          "parameters": {
+            "slots": [
+              "surface_metric",
+              "surface"
+            ],
+            "attributes": [
+              "subject",
+              "hemisphere",
+              "mesh"
+            ]
+          },
+          "severity": "hard",
+          "source": [
+            {
+              "source_id": "nibabel_fs",
+              "url": "https://nipy.org/nibabel/reference/nibabel.freesurfer.html"
+            },
+            {
+              "source_id": "andy_roi",
+              "url": "https://andysbrainbook.readthedocs.io/en/latest/FreeSurfer/FS_ShortCourse/FS_11_ROIAnalysis.html"
+            },
+            {
+              "source_id": "fs_parcstats",
+              "url": "https://www.freesurfer.net/fswiki/parcstats"
+            }
+          ]
+        }
+      ],
+      "slot_preferences": {
+        "surface": {
+          "required_type": "type:Surface.White",
+          "basis": "Existing ROI/vector execution and independent verification bind metrics to the observed white mesh."
+        }
+      }
     },
     {
       "method_id": "method:v12:surface_mesh_area",
@@ -600,7 +680,17 @@
           "source_id": "trimesh_triangles"
         }
       ],
-      "policy_note": "Supplied-derivative reading checks actual products; it does not certify completed reconstruction or anatomical QC."
+      "policy_note": "Supplied-derivative reading checks actual products; it does not certify completed reconstruction or anatomical QC.",
+      "slot_preferences": {
+        "surface": {
+          "type_priority": [
+            "type:Surface.White",
+            "type:Surface.Pial",
+            "type:Surface.SphereReg"
+          ],
+          "basis": "Preserve the existing primary geometry choice; each product within the chosen type tier is still a separate CSP assignment."
+        }
+      }
     },
     {
       "method_id": "method:v12:surface_reconstruction_qc",
@@ -653,7 +743,17 @@
           "source_id": "andy_failures"
         }
       ],
-      "policy_note": "Supplied-derivative reading checks actual products; it does not certify completed reconstruction or anatomical QC."
+      "policy_note": "Supplied-derivative reading checks actual products; it does not certify completed reconstruction or anatomical QC.",
+      "slot_preferences": {
+        "surface": {
+          "type_priority": [
+            "type:Surface.White",
+            "type:Surface.Pial",
+            "type:Surface.SphereReg"
+          ],
+          "basis": "Preserve the existing primary geometry choice; each product within the chosen type tier is still a separate CSP assignment."
+        }
+      }
     },
     {
       "method_id": "method:v13:global_convex_hull_gyrification",
@@ -947,7 +1047,58 @@
           "severity": "soft"
         }
       ],
-      "host_reference": "analysis_numeric_reference.roi_rows then analysis_group_stats.regional_glm; independent from Agent numpy/scipy program"
+      "host_reference": "analysis_numeric_reference.roi_rows then analysis_group_stats.regional_glm; independent from Agent numpy/scipy program",
+      "matching_conditions": [
+        {
+          "id": "product_metric_mesh_identity",
+          "template": "attr_equal",
+          "parameters": {
+            "slots": [
+              "surface_metric",
+              "surface"
+            ],
+            "attributes": [
+              "subject",
+              "hemisphere",
+              "mesh"
+            ]
+          },
+          "severity": "hard",
+          "source": [
+            {
+              "method_fact_id": "method:v14:group_regional_glm:design",
+              "source_id": "group_glm_v14",
+              "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/GroupAnalysis"
+            },
+            {
+              "method_fact_id": "method:v14:group_regional_glm:sample",
+              "source_id": "group_glm_v14",
+              "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/GroupAnalysis"
+            },
+            {
+              "method_fact_id": "method:v14:group_regional_glm:identity",
+              "source_id": "group_glm_v14",
+              "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/GroupAnalysis"
+            },
+            {
+              "method_fact_id": "method:v14:group_regional_glm:power",
+              "source_id": "group_glm_v14",
+              "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/GroupAnalysis"
+            },
+            {
+              "method_fact_id": "method:v14:group_regional_glm:disclosure",
+              "source_id": "group_glm_v14",
+              "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/GroupAnalysis"
+            }
+          ]
+        }
+      ],
+      "slot_preferences": {
+        "surface": {
+          "required_type": "type:Surface.White",
+          "basis": "Existing ROI/vector execution and independent verification bind metrics to the observed white mesh."
+        }
+      }
     },
     {
       "method_id": "method:v15:global_morphometry",
@@ -985,7 +1136,17 @@
           "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/MorphometryStats",
           "note": "Public project definitions: bilateral WhiteSurfArea-weighted MeanThickness and summed pial/hull ratio."
         }
-      ]
+      ],
+      "slot_preferences": {
+        "cortical_parc_stats": {
+          "attribute": "atlas_file_stem",
+          "preferred_values": [
+            "aparc"
+          ],
+          "fallback": "lexicographic",
+          "basis": "Preserve the registered global Measure-line source policy; prefer aparc.stats, then the first available aparc variant per hemisphere."
+        }
+      }
     }
   ]
 }

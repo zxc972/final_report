@@ -26,7 +26,7 @@ COLUMNS = (
 )
 
 
-def candidate(tools, spec, method, entries, files, intent, profile):
+def candidate(tools, spec, method, entries, files, intent, profile, binding=None):
     if len(entries) != 1:
         raise ValueError(
             "Global morphometry describes one subject; aggregate verified subject results on the host"
@@ -36,32 +36,34 @@ def candidate(tools, spec, method, entries, files, intent, profile):
     paths = sorted(
         value(row["path"]) for row in files if value(row["path"]).startswith(prefix)
     )
-    binding = {"aseg_stats": None, "mask_volume": None, "hemi_stats": {}, "pial": {}}
-    binding["aseg_stats"] = next(
-        (p for p in paths if p.endswith("/stats/aseg.stats")), None
-    )
-    binding["mask_volume"] = next(
-        (p for p in paths if p.endswith("/mri/brainmask.mgz")), None
-    )
     missing = []
-    for hemi in ("lh", "rh"):
-        matches = [
-            p
-            for p in paths
-            if Path(p).name.startswith(hemi + ".aparc") and p.endswith(".stats")
-        ]
-        matches.sort(key=lambda p: (Path(p).name != hemi + ".aparc.stats", p))
-        if matches:
-            binding["hemi_stats"][hemi] = matches[0]
-        else:
-            missing.append("cortical_parc_stats:" + hemi)
-        pial = next((p for p in paths if Path(p).name == hemi + ".pial"), None)
-        if pial:
-            binding["pial"][hemi] = pial
-    if not binding["aseg_stats"] and not binding["mask_volume"]:
-        missing.append("aseg_stats_or_brainmask")
-    if len(binding["pial"]) != 2:
-        binding["pial"] = {}
+    if binding is None:
+        binding = {"aseg_stats": None, "mask_volume": None, "hemi_stats": {}, "pial": {}}
+        binding["aseg_stats"] = next(
+            (p for p in paths if p.endswith("/stats/aseg.stats")), None
+        )
+        binding["mask_volume"] = next(
+            (p for p in paths if p.endswith("/mri/brainmask.mgz")), None
+        )
+        missing = []
+        for hemi in ("lh", "rh"):
+            matches = [
+                p
+                for p in paths
+                if Path(p).name.startswith(hemi + ".aparc") and p.endswith(".stats")
+            ]
+            matches.sort(key=lambda p: (Path(p).name != hemi + ".aparc.stats", p))
+            if matches:
+                binding["hemi_stats"][hemi] = matches[0]
+            else:
+                missing.append("cortical_parc_stats:" + hemi)
+            pial = next((p for p in paths if Path(p).name == hemi + ".pial"), None)
+            if pial:
+                binding["pial"][hemi] = pial
+        if not binding["aseg_stats"] and not binding["mask_volume"]:
+            missing.append("aseg_stats_or_brainmask")
+        if len(binding["pial"]) != 2:
+            binding["pial"] = {}
     selected = [binding["aseg_stats"], binding["mask_volume"]]
     selected = (
         [p for p in selected if p]

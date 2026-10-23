@@ -334,39 +334,32 @@ def resolve_regions(names, keys, counts, regions, domain):
     return selected, sources, unmatched
 
 
-def _candidate(tools, spec, method, entries, files, atlas_name, intent, domain, profile):
+def _candidate(tools, spec, method, entries, files, atlas_name, intent, domain, profile, assignment):
     if method["id"] == "method:v15:global_morphometry":
         from .analysis_global_method import candidate
-        return candidate(tools, spec, method, entries, files, intent, profile)
-    chosen, bindings, labels, mapping = [], [], {}, []
-    missing = set()
-    missing_scopes = {}
-    measures = [normal_measure(m) for m in intent.measures]
+        binding = {"aseg_stats": None, "mask_volume": None, "hemi_stats": {}, "pial": {}}
+        subject = entries[0]["subject_id"]
+        for need, key in [("aseg_stats", "aseg_stats"), ("brainmask", "mask_volume")]:
+            binding[key] = assignment.get(subject + "/global/" + need)
+        for hemi in ("lh", "rh"):
+            for need, key in [("cortical_parc_stats", "hemi_stats"), ("pial_surface", "pial")]:
+                path = assignment.get(subject + "/" + hemi + "/" + need)
+                if path:
+                    binding[key][hemi] = path
+        return candidate(tools, spec, method, entries, files, intent, profile, binding=binding)
+    by_path = {value(f["path"]): f for f in files}
+    chosen = [by_path[path] for path in dict.fromkeys(assignment.values()) if path in by_path]
+    bindings, labels, mapping = [], {}, []
+    missing, missing_scopes = set(), {}
     for entry in entries:
         prefix = f"/inputs/{entry['index']}/"
-        group = [f for f in files if value(f["path"]).startswith(prefix)]
         for hemi in ("lh", "rh"):
-            members = [f for f in group if Path(value(f["path"])).name.startswith(hemi + ".")]
-            by_type = {kind: [f for f in members if kind in product_types(f)] for kind in PRODUCT_TYPES}
-            for need in spec["required_products"]:
-                possible = by_type[need] if need in {"surface", "pial_surface", "white_surface", "surface_metric", "annotation", "cortex_label", "registration_surface"} else [f for f in group if need in product_types(f)]
-                if need == "subject_table":
-                    possible = [f for f in files if value(f["format"]) in {"tsv", "csv"}]
-                if need == "surface_metric":
-                    possible = [f for f in possible if Path(value(f["path"])).name.split(".")[-1] in measures]
-                if need == "annotation":
-                    possible = [f for f in possible if Path(value(f["path"])).name == f"{hemi}.{atlas_name}.annot"]
-                if need == "surface":
-                    possible.sort(key=lambda f: (not value(f["path"]).endswith(".white"), value(f["path"])))
-                if not possible:
-                    missing.add(need)
-                    missing_scopes.setdefault(entry["subject_id"] + "/" + hemi, []).append(need)
-                else:
-                    chosen.extend(possible if need == "surface_metric" else possible[:1])
-            if spec["needs_parcellation"] and by_type["annotation"]:
-                ann = next((f for f in by_type["annotation"] if value(f["path"]).endswith(f".{atlas_name}.annot")), None)
-                surf = next((f for f in chosen if value(f["path"]).startswith(prefix) and Path(value(f["path"])).name == hemi + ".white"), None)
-                reg = by_type["registration_surface"][:1]
+            scope = entry["subject_id"] + "/" + hemi + "/"
+            if spec["needs_parcellation"]:
+                ann = by_path.get(assignment.get(scope + "annotation"))
+                surf = by_path.get(assignment.get(scope + "surface"))
+                reg_path = assignment.get(scope + "registration_surface")
+                reg = [by_path[reg_path]] if reg_path in by_path else []
                 if ann:
                     detail = value(ann["label"])
                     keys = value(detail.get("label_keys")) or list(range(len(value(detail["label_names"]))))
@@ -380,12 +373,12 @@ def _candidate(tools, spec, method, entries, files, atlas_name, intent, domain, 
                         selected = []
                     if unresolved or not selected:
                         missing.add("resolved_regions:" + ",".join(unresolved))
-                    labels[entry["subject_id"] + "/" + hemi] = {"annotation": value(ann["path"]), "labels": selected, "exclude_keys": [-1], "exclude_names": ["unknown", "medialwall", "corpuscallosum"], "cortex_label": prefix + "label/" + hemi + ".cortex.label"}
+                    labels[entry["subject_id"] + "/" + hemi] = {"annotation": value(ann["path"]), "labels": selected, "exclude_keys": [-1], "exclude_names": ["unknown", "medialwall", "corpuscallosum"], "cortex_label": assignment.get(scope + "cortex_label")}
                     mapping.extend(evidence)
                     if surf and reg:
-                        bindings.append({"label": value(ann["path"]), "surface": value(surf["path"]), "mesh_origin": "same approved subject native derivative bundle; anatomical provenance unverified", "space": "native_stored", "registration_ref": value(reg[0]["path"])})
+                        bindings.append({"label": value(ann["path"]), "surface": value(surf["path"]), "mesh_origin": "same approved subject native derivative bundle; anatomical provenance unverified", "space": intent.space or "native_stored", "registration_ref": value(reg[0]["path"])})
     chosen = list({value(f["path"]): f for f in chosen}.values())
-    atlas = {"name": atlas_name or "not applicable", "version": "input annotation fingerprint; acquisition release unknown" if atlas_name else None, "space": "native_stored", "hemisphere_rule": "separate lh/rh; preserve native vertex IDs", "applicable": bool(atlas_name), "reason": None if atlas_name else "Method operates on whole supplied surfaces without a parcellation", "exclude_labels": [-1, "unknown", "medialwall", "corpuscallosum"], "mesh_bindings": bindings}
+    atlas = {"name": atlas_name or "not applicable", "version": "input annotation fingerprint; acquisition release unknown" if atlas_name else None, "space": intent.space or "native_stored", "hemisphere_rule": "separate lh/rh; preserve native vertex IDs", "applicable": bool(atlas_name), "reason": None if atlas_name else "Method operates on whole supplied surfaces without a parcellation", "exclude_labels": [-1, "unknown", "medialwall", "corpuscallosum"], "mesh_bindings": bindings}
     notice = ["Species is user/registration-declared only; not independently verified", "Stored coordinates/values; no verified acquisition-scale or expert anatomical-QC claim"]
     if method["id"].endswith("global_convex_hull_gyrification"):
         notice.append("Global full-pial-area / same-surface 3D convex-hull area is a descriptive alternative, not local gyrification index (lGI)")
@@ -434,7 +427,9 @@ def plan_analysis(tools, raw):
             tools.control_store.save("planning_result", design_error)
             return design_error
     requirements, req_sha = load_knowledge("method_requirements", tools)
-    dependencies, dep_sha = load_knowledge("pipeline_dependencies", tools)
+    workflow, dep_sha = load_knowledge("workflow_steps", tools)
+    type_document, type_sha = load_knowledge("product_types", tools)
+    templates, template_sha = load_knowledge("condition_templates", tools)
     graph = tools._method_graph()
     from .analysis_unified_runtime import repository_for
     repository = repository_for(tools)
@@ -446,6 +441,11 @@ def plan_analysis(tools, raw):
     registry = [{**{key: val for key, val in entry.items() if key != "root"}, "path": str(entry["root"]), "input_index": entry["index"]} for entry in entries]
     import_profile(repository, profile["record"], registry)
     files = [f for f in profile["record"]["files"] if not f.get("read_error")]
+    from .analysis_matching_adapter import inventory, match, missing_targets, planning_targets
+    from .analysis_completion_adapter import completion, observed_software, record_check
+    from .analysis_csp_matching import domains
+    products = inventory(profile["record"], entries)
+    software_cache = {}
     requested_atlas = None
     resolution = None
     known_atlases = {Path(value(f["path"])).name[3:-6] for f in files
@@ -501,6 +501,7 @@ def plan_analysis(tools, raw):
     if intent.method_id and intent.method_id.startswith("self:"):
         specs = [{"method_id": intent.method_id, "required_products": intent.required_inputs, "needs_parcellation": False, "execution_scope": "supplied_derivatives", "source": [{"type": "project_policy", "note": "Explicit self-written method; scientific applicability unverified"}]}]
     output = {"status": "ok", "candidates": [], "needs_preprocessing": [], "infeasible": [], "profile_cached": cached, "profile_ref": f"data_profile.v{profile['version']:06d}.json", "method_requirements_sha256": req_sha, "pipeline_dependencies_sha256": dep_sha, "domain_graph_sha256": domain_sha, "input_file_count": len(files)}
+    output["workflow_steps_sha256"] = dep_sha
     output["intent_resolution"] = resolution
     from .analysis_constraints import compile_constraints
     for spec in specs:
@@ -515,64 +516,95 @@ def plan_analysis(tools, raw):
         if requested_atlas and spec["needs_parcellation"]:
             atlases = [name for name in atlases if name == requested_atlas]
         for atlas_name in atlases or ["unavailable"]:
-            context, missing, mapping, missing_scopes = _candidate(tools, spec, method, entries, files, atlas_name, intent, domain, profile)
-            if design_scope:
-                context["analysis_scope"].update(copy.deepcopy(design_scope))
-            if resolution:
-                context["analysis_scope"]["intent_resolution"] = resolution
-            from .analysis_operations import suggested_operations
-            operations = suggested_operations(context)
-            item = {"operations": operations, "method": method_evidence_view(graph, method), "atlas": context["atlas"], "space": intent.space or "native", "missing_products": missing}
-            if intent.space and intent.space not in {"native", "native_stored", "stored"}:
-                missing = sorted(set(missing) | set(spec["required_products"]))
-            constraints = compile_constraints(tools, method["id"], "group_inference" if intent.comparison in {"group", "correlation"} else "descriptive", context, product_contract=spec)
-            item["conditions"] = constraints["summary"]
-            item["blocked_constraints"] = [row for row in constraints["rows"] if row["verdict"] == "block"]
-            if item["blocked_constraints"]:
-                tools.control_store.save("planning_failure", {
-                    "constraints_sha256": constraints["constraints_sha256"],
-                    "plan_context": context,
-                    "method_id": method["id"],
-                    "reason": "Observed failed candidate prerequisites",
-                })
-            unrepairable = [row for row in item["blocked_constraints"]
-                            if row["constraint_id"] not in {"recon_complete", "mesh_label_match", "product_metric_mesh_identity"}]
-            if unrepairable or (item["blocked_constraints"] and not missing):
-                item["reason"] = "; ".join(row["constraint_id"] + ": " + str(row["tool_observed"].get("reason", "failed observed prerequisite")) for row in item["blocked_constraints"])
-                missing_commands = [c["command"] for row in item["blocked_constraints"] for c in row["tool_observed"].get("commands", []) if not c.get("executable")]
-                if missing_commands:
-                    item["reason"] = "Missing software: " + ", ".join("MATLAB" if c == "matlab" else c for c in missing_commands)
-                output["infeasible"].append(item)
-                continue
-            if any(part.startswith("parcellation_mapping:") for part in missing):
-                item["reason"] = "; ".join(part.split(":",1)[1] for part in missing if part.startswith("parcellation_mapping:"))
-                output["infeasible"].append(item)
-                continue
-            if missing or spec["execution_scope"] == "full_processing":
-                scopes = missing_scopes or {entry["subject_id"] + "/" + hemi: missing or ["complete_analysis_recipe"]
-                                           for entry in entries for hemi in ("lh", "rh")}
-                path = scoped_dependency_plan(entries, files, scopes, dependencies["steps"], intent.space or "native")
-                unresolved = [part.split(":",1)[1] for part in missing if part.startswith("resolved_regions:")]
-                item["reason"] = ("Unresolved region labels: " + "; ".join(unresolved)
-                                  + ". Use actual annotation label names or 'all regions'."
-                                  if unresolved else "Missing or unsupported product/space/complete method recipe")
-                if path:
-                    item["preprocessing_plan"] = path
-                    output["needs_preprocessing"].append(item)
-                else:
+            normalized = {**intent.model_dump(), "measures": [normal_measure(m) for m in intent.measures]}
+            matching = match(spec, entries, products, normalized, atlas_name, templates, type_document)
+            solutions = matching["solutions"]
+            if not solutions:
+                partial = {n: d[0]["id"] for n, d in domains(matching["problem"]["slots"], products, matching["problem"]["hierarchy"]).items() if d}
+                solutions = [{"assignment": partial}]
+            for solution in solutions:
+                context, missing, mapping, missing_scopes = _candidate(tools, spec, method, entries, files, atlas_name, intent, domain, profile, solution["assignment"])
+                targets = missing_targets(matching)
+                missing = sorted(set(missing) | {t["need"] for t in targets})
+                if design_scope:
+                    context["analysis_scope"].update(copy.deepcopy(design_scope))
+                if resolution:
+                    context["analysis_scope"]["intent_resolution"] = resolution
+                from .analysis_operations import suggested_operations
+                operations = suggested_operations(context)
+                item = {"operations": operations, "method": method_evidence_view(graph, method), "atlas": context["atlas"], "space": intent.space or "native", "missing_products": missing}
+                item["matching_stats"] = matching["matching_stats"]
+                item["missing_requirements"] = targets
+                if matching["conflicts"]:
+                    item["reason"] = "CSP attr_equal constraints have no compatible assignment"
+                    item["matching_conflicts"] = matching["conflicts"]
                     output["infeasible"].append(item)
-                continue
-            candidate_id = "candidate_" + digest({"intent": intent.model_dump(), "plan": context, "requirements": req_sha})[:24]
-            record = {"candidate_id": candidate_id, "intent": intent.model_dump(), "plan": context, "product_contract": spec, "mapping_evidence": mapping, "profile_sha256": profile["sha256"], "method_requirements_sha256": req_sha, "pipeline_dependencies_sha256": dep_sha, "domain_graph_sha256": domain_sha, "condition_snapshot": constraints, "operations": operations}
-            tools.control_store.save(candidate_id, record)
-            summary = {"candidate_id": candidate_id, "method": item["method"], "atlas": {k: context["atlas"][k] for k in ["name", "version", "space", "applicable", "reason"]}, "space": "native_stored", "file_count": len(context["data"]["files"]), "subjects": context["data"]["subjects"], "label_counts": {key: len(group["labels"]) for key, group in context["analysis_scope"]["labels"].items()}, "conditions": constraints["summary"], "must_disclose": context["analysis_scope"]["notices"], "protected_ref": candidate_id, "mapping_source_count": len(mapping)}
-            summary["operations"] = operations
-            from .analysis_asymmetry_contract import applies as asymmetry_applies, definition as asymmetry_definition
-            if asymmetry_applies(context):
-                summary["asymmetry_contract"] = asymmetry_definition()
-            output["candidates"].append(summary)
+                    continue
+                constraints = (compile_constraints(tools, method["id"], "group_inference" if intent.comparison in {"group", "correlation"} else "descriptive", context, product_contract=spec)
+                               if context["data"]["files"] else {"summary": {"pass": 0, "warn": 0, "block": 0}, "rows": [], "status": "not_evaluated_missing_inputs"})
+                item["conditions"] = constraints["summary"]
+                item["blocked_constraints"] = [row for row in constraints["rows"] if row["verdict"] == "block"]
+                if item["blocked_constraints"]:
+                    tools.control_store.save("planning_failure", {
+                        "constraints_sha256": constraints["constraints_sha256"],
+                        "plan_context": context,
+                        "method_id": method["id"],
+                        "reason": "Observed failed candidate prerequisites",
+                    })
+                unrepairable = [row for row in item["blocked_constraints"]
+                                if row["constraint_id"] not in {"recon_complete", "mesh_label_match", "product_metric_mesh_identity"}]
+                if (unrepairable or item["blocked_constraints"]) and not targets and spec["execution_scope"] != "full_processing":
+                    item["reason"] = "; ".join(row["constraint_id"] + ": " + str(row["tool_observed"].get("reason", "failed observed prerequisite")) for row in item["blocked_constraints"])
+                    missing_commands = [c["command"] for row in item["blocked_constraints"] for c in row["tool_observed"].get("commands", []) if not c.get("executable")]
+                    if missing_commands:
+                        item["reason"] = "Missing software: " + ", ".join("MATLAB" if c == "matlab" else c for c in missing_commands)
+                    output["infeasible"].append(item)
+                    continue
+                if any(part.startswith("parcellation_mapping:") for part in missing):
+                    item["reason"] = "; ".join(part.split(":",1)[1] for part in missing if part.startswith("parcellation_mapping:"))
+                    output["infeasible"].append(item)
+                    continue
+                if missing or spec["execution_scope"] == "full_processing":
+                    targets = planning_targets(matching, spec, entries)
+                    if any(x.startswith("resolved_regions:") for x in missing):
+                        item["reason"] = "Unresolved region labels: " + "; ".join(missing)
+                        output["infeasible"].append(item)
+                        continue
+                    if method["id"] not in software_cache:
+                        software_cache[method["id"]] = observed_software(tools, workflow, method["id"])
+                    software, software_sha = software_cache[method["id"]]
+                    route = completion(targets, products, workflow, matching["problem"]["hierarchy"], software)
+                    record_check(tools, route, method["id"])
+                    item["software_observation_sha256"] = software_sha
+                    item["optimality_check"] = route["optimality_check"]
+                    item["missing_requirements"] = targets
+                    if route["feasible"]:
+                        item["reason"] = "Typed products require workflow completion"
+                        item["preprocessing_plan"] = route
+                        output["needs_preprocessing"].append(item)
+                    else:
+                        item["reason_chain"] = route["reason_chain"]
+                        item["reason"] = "; ".join(route["reason_chain"]) or "No compatible workflow completion"
+                        if "matlab" in item["reason"]:
+                            item["reason"] = "Missing software: MATLAB; " + item["reason"]
+                        output["infeasible"].append(item)
+                    continue
+                if matching["truncated"]:
+                    context["analysis_scope"]["notices"].append("CSP result limit reached; narrow subjects, atlas or space to enumerate the remaining assignments.")
+                candidate_id = "candidate_" + digest({"intent": intent.model_dump(), "plan": context, "requirements": req_sha})[:24]
+                record = {"candidate_id": candidate_id, "intent": intent.model_dump(), "plan": context, "product_contract": spec, "mapping_evidence": mapping, "profile_sha256": profile["sha256"], "method_requirements_sha256": req_sha, "pipeline_dependencies_sha256": dep_sha, "domain_graph_sha256": domain_sha, "condition_snapshot": constraints, "operations": operations, "matching_stats": matching["matching_stats"], "matching_assignment": solution["assignment"], "product_types_sha256": type_sha, "condition_templates_sha256": template_sha}
+                tools.control_store.save(candidate_id, record)
+                summary = {"candidate_id": candidate_id, "method": item["method"], "atlas": {k: context["atlas"][k] for k in ["name", "version", "space", "applicable", "reason"]}, "space": intent.space or "native_stored", "file_count": len(context["data"]["files"]), "subjects": context["data"]["subjects"], "label_counts": {key: len(group["labels"]) for key, group in context["analysis_scope"]["labels"].items()}, "conditions": constraints["summary"], "must_disclose": context["analysis_scope"]["notices"], "protected_ref": candidate_id, "mapping_source_count": len(mapping)}
+                summary["operations"] = operations
+                summary["matching_stats"] = matching["matching_stats"]
+                summary["matching_rank"] = {k: solution.get(k) for k in ("soft_violations", "off_preferred_space")}
+                from .analysis_asymmetry_contract import applies as asymmetry_applies, definition as asymmetry_definition
+                if asymmetry_applies(context):
+                    summary["asymmetry_contract"] = asymmetry_definition()
+                output["candidates"].append(summary)
     if not specs:
         output["infeasible"].append({"reason": "No registered method matches the requested measures and comparison"})
+    output["candidates"].sort(key=lambda c: (c["matching_rank"]["soft_violations"], c["matching_rank"]["off_preferred_space"]))
     saved = tools.control_store.save("planning_result", output)
     output["protected_ref"] = f"planning_result.v{saved['version']:06d}.json"
     # Large failure observations remain host-owned; expose a bounded explanation.
@@ -595,7 +627,9 @@ def commit_candidate(tools, candidate_id, rationale, code_path, commitment=None)
         return {"status": "blocked", "reason": "Candidate missing or profile changed; call plan_analysis again"}
     record = saved["record"]
     if (record["method_requirements_sha256"] != load_knowledge("method_requirements", tools)[1]
-            or record["pipeline_dependencies_sha256"] != load_knowledge("pipeline_dependencies", tools)[1]):
+            or record["pipeline_dependencies_sha256"] != load_knowledge("workflow_steps", tools)[1]
+            or record.get("product_types_sha256") != load_knowledge("product_types", tools)[1]
+            or record.get("condition_templates_sha256") != load_knowledge("condition_templates", tools)[1]):
         return {"status": "blocked", "reason": "Requirements changed; call plan_analysis again"}
     if not isinstance(code_path, str) or len(json.dumps(code_path)) > 240:
         raise ValueError("code_path must be a bounded /work Python path")
