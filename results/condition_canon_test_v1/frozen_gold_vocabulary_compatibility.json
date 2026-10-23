@@ -1,0 +1,14 @@
+{
+  "gold_sha256": "e34d6796259e87f44f3bcede9c304eb87b4c1a5e31605cdfd357085bdac45135",
+  "template_counts": {
+    "product_present": 6,
+    "advisory": 36,
+    "provenance": 1,
+    "software": 1,
+    "attr_in": 1
+  },
+  "non_advisory_gold": 9,
+  "compatibility_notes": [],
+  "gold_modified": false,
+  "algorithm_modified": false
+}

@@ -1,0 +1,18 @@
+{
+  "focused_tests": {
+    "passed": 21,
+    "commands": [
+      "python -m pytest -q agent/modules/agent/tests/test_round18_condition_test_evaluation.py agent/modules/agent/tests/test_round17_canon_runner.py agent/modules/agent/tests/test_round17_canonicalizer_v2.py"
+    ]
+  },
+  "default_backend_tests": {
+    "passed": 902,
+    "skipped": 14,
+    "subtests_passed": 59,
+    "warnings": 144,
+    "elapsed_seconds": 85.59,
+    "command": "python -m pytest -q modules/agent/tests",
+    "log_sha256": "da32e29364fa56e2cbbd401f81d49fc26ebdcb52f252b02afb15ed4d1756d93a"
+  },
+  "services_deployed_or_restarted": false
+}
