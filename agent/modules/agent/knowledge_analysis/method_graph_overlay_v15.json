@@ -5,7 +5,7 @@
     {
       "id": "method:v15:global_morphometry",
       "name": "Single-subject global morphometry",
-      "purpose": "Project global method: BrainSegVol (or positive brainmask support volume, disclosed separately) is distinct from eTIV. Bilateral WhiteSurfArea is summed; MeanThickness is weighted by those hemisphere areas. Optional full-pial area / 3D convex-hull area is computed as a ratio of bilateral sums, not local gyrification. Correct verified rescale k by powers 1/2/3; unknown history leaves physical outputs empty. Whole-brain species-mean ratios require scale and definition compatibility, not regional homology.",
+      "purpose": "Project global method: BrainSegVol (or positive brainmask support volume, disclosed separately) is distinct from eTIV. Bilateral WhiteSurfArea is summed; MeanThickness is weighted by those hemisphere areas. Optional full-pial area / 3D convex-hull area is computed as a ratio of bilateral sums, not local gyrification. Correct verified rescale k by powers 1/2/3; unknown history leaves physical outputs empty. Whole-brain species-mean ratios require scale and definition compatibility, not regional homology. For macaque inputs, the direct-native species policy replaces all stats-derived estimators.",
       "species_scope": [
         "human",
         "macaque",
@@ -22,11 +22,19 @@
         {
           "id": "method:v15:global_morphometry:definitions",
           "statement": "Project global method: BrainSegVol (or positive brainmask support volume, disclosed separately) is distinct from eTIV. Bilateral WhiteSurfArea is summed; MeanThickness is weighted by those hemisphere areas. Optional full-pial area / 3D convex-hull area is computed as a ratio of bilateral sums, not local gyrification. Correct verified rescale k by powers 1/2/3; unknown history leaves physical outputs empty. Whole-brain species-mean ratios require scale and definition compatibility, not regional homology."
+        },
+        {
+          "id": "method:v15:global_morphometry:macaque_native_policy",
+          "statement": "Macaque global input policy: use final native brainmask.mgz positive-voxel support for brain volume, final white triangle areas for total area, final cortex.label thickness means weighted by hemisphere white areas for global thickness, and final pial/3D-hull area sums for folding ratio. Do not use eTIV, aseg-derived volumes or human-named annotations. A restored native result has remaining k=1 (rescale_applied_and_reverted); NIfTI qform/sform conflicts remain disclosed but those files are excluded from this method.",
+          "source_ids": [
+            "macaque_global_species_policy_20261023"
+          ]
         }
       ],
       "checks": [],
       "source_ids": [
-        "global_morphometry_v15"
+        "global_morphometry_v15",
+        "macaque_global_species_policy_20261023"
       ],
       "scope_note": "Project implementation definition, not normative biological acceptance or expert QC."
     }
@@ -36,9 +44,24 @@
       "id": "method:v15:global_morphometry",
       "type": "Method",
       "name": "Single-subject global morphometry"
+    },
+    {
+      "id": "method:v15:global_morphometry:macaque_native_policy",
+      "type": "MethodPolicy",
+      "name": "Macaque direct-native global morphometry",
+      "statement": "Macaque global input policy: use final native brainmask.mgz positive-voxel support for brain volume, final white triangle areas for total area, final cortex.label thickness means weighted by hemisphere white areas for global thickness, and final pial/3D-hull area sums for folding ratio. Do not use eTIV, aseg-derived volumes or human-named annotations. A restored native result has remaining k=1 (rescale_applied_and_reverted); NIfTI qform/sform conflicts remain disclosed but those files are excluded from this method.",
+      "source_ids": [
+        "macaque_global_species_policy_20261023"
+      ]
     }
   ],
-  "edges": [],
+  "edges": [
+    {
+      "source": "method:v15:global_morphometry",
+      "target": "method:v15:global_morphometry:macaque_native_policy",
+      "type": "HAS_INPUT_POLICY"
+    }
+  ],
   "sources": [
     {
       "id": "global_morphometry_v15",
@@ -46,6 +69,14 @@
       "text": "Project global method: BrainSegVol (or positive brainmask support volume, disclosed separately) is distinct from eTIV. Bilateral WhiteSurfArea is summed; MeanThickness is weighted by those hemisphere areas. Optional full-pial area / 3D convex-hull area is computed as a ratio of bilateral sums, not local gyrification. Correct verified rescale k by powers 1/2/3; unknown history leaves physical outputs empty. Whole-brain species-mean ratios require scale and definition compatibility, not regional homology.",
       "text_sha256": "98ac6ca24fcc8cfeea2622eaa13858efdfe973d259a04b629d7ac647ada94923",
       "evidence_class": "project_definition_with_primary_source"
+    },
+    {
+      "id": "macaque_global_species_policy_20261023",
+      "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/MghFormat",
+      "text": "Macaque global input policy: use final native brainmask.mgz positive-voxel support for brain volume, final white triangle areas for total area, final cortex.label thickness means weighted by hemisphere white areas for global thickness, and final pial/3D-hull area sums for folding ratio. Do not use eTIV, aseg-derived volumes or human-named annotations. A restored native result has remaining k=1 (rescale_applied_and_reverted); NIfTI qform/sform conflicts remain disclosed but those files are excluded from this method.",
+      "text_sha256": "91b17363d5da52ba91f5847e0d2f4eb3814bc49b65ce0e2ead191314de90dc27",
+      "evidence_class": "project_definition_from_user_instruction_20261023",
+      "scope_note": "URL supports MGH format only; metric/input choices are the explicit project policy, not a normative FreeSurfer or Autio acceptance standard."
     }
   ]
 }

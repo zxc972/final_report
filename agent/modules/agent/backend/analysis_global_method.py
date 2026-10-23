@@ -32,13 +32,21 @@ def candidate(tools, spec, method, entries, files, intent, profile, binding=None
             "Global morphometry describes one subject; aggregate verified subject results on the host"
         )
     entry = entries[0]
+    from .analysis_global_policy import is_macaque, policy
+
+    macaque = is_macaque(entry.get("species_declared"))
     prefix = f"/inputs/{entry['index']}/"
     paths = sorted(
         value(row["path"]) for row in files if value(row["path"]).startswith(prefix)
     )
     missing = []
     if binding is None:
-        binding = {"aseg_stats": None, "mask_volume": None, "hemi_stats": {}, "pial": {}}
+        binding = {
+            "aseg_stats": None,
+            "mask_volume": None,
+            "hemi_stats": {},
+            "pial": {},
+        }
         binding["aseg_stats"] = next(
             (p for p in paths if p.endswith("/stats/aseg.stats")), None
         )
@@ -64,12 +72,44 @@ def candidate(tools, spec, method, entries, files, intent, profile, binding=None
             missing.append("aseg_stats_or_brainmask")
         if len(binding["pial"]) != 2:
             binding["pial"] = {}
+    if macaque:
+        # Never retain aseg/stat/annotation fallbacks for a macaque candidate.
+        binding["aseg_stats"] = None
+        binding["hemi_stats"] = {}
+        missing = []
+        binding["mask_volume"] = binding.get("mask_volume") or next(
+            (path for path in paths if path.endswith("/mri/brainmask.mgz")), None
+        )
+        if not binding["mask_volume"]:
+            missing.append("brainmask")
+        for key, suffix in [
+            ("white", ".white"),
+            ("thickness", ".thickness"),
+            ("cortex_labels", ".cortex.label"),
+            ("pial", ".pial"),
+        ]:
+            mapping = binding.setdefault(key, {})
+            for hemi in ("lh", "rh"):
+                match = mapping.get(hemi) or next(
+                    (path for path in paths if Path(path).name == hemi + suffix), None
+                )
+                if match:
+                    mapping[hemi] = match
+                else:
+                    missing.append(key + ":" + hemi)
     selected = [binding["aseg_stats"], binding["mask_volume"]]
     selected = (
         [p for p in selected if p]
         + list(binding["hemi_stats"].values())
         + list(binding["pial"].values())
     )
+    if macaque:
+        selected = [binding["mask_volume"]] if binding["mask_volume"] else []
+        selected += [
+            path
+            for key in ("white", "thickness", "cortex_labels", "pial")
+            for path in binding[key].values()
+        ]
     scale = trusted_scale(entry)
     tools.control_store.save("global_scale_observation", scale)
     notices = [
@@ -79,6 +119,14 @@ def candidate(tools, spec, method, entries, files, intent, profile, binding=None
         "Hull ratio = summed pial area / summed 3D convex-hull area; not lGI.",
         "Scale processing history and physical acquisition calibration are distinct; calibration remains unverified.",
     ]
+    if macaque:
+        body, _ = policy()
+        notices = [
+            "Macaque global measures only; human-named annotations are not used.",
+            *body["definitions"].values(),
+            "Use final native MGZ affine; conflicting NIfTI geometry is excluded.",
+            "Processing-scale verification is not independent scanner calibration or expert anatomical QC.",
+        ]
     if not scale["host_verified"]:
         notices.append(
             "Scale history unknown: physical columns and scale_k must be empty; retain stored values."
@@ -119,6 +167,14 @@ def candidate(tools, spec, method, entries, files, intent, profile, binding=None
             "global_scale": scale,
         },
     }
+    if macaque:
+        body, sha = policy()
+        context["analysis_scope"]["global_species_policy"] = {
+            "variant": "macaque_direct_native",
+            "sha256": sha,
+            "definitions": body["definitions"],
+            "annotation_policy": body["annotation_policy"],
+        }
     return context, missing, [], {}
 
 
@@ -151,7 +207,13 @@ def trusted_scale(entry):
     return {
         **raw,
         "host_verified": True,
-        "status": "verified" if raw["rescaled"] else "verified_not_rescaled",
+        "status": (
+            "rescale_applied_and_reverted"
+            if raw["rescaled"]
+            and k == 1
+            and raw.get("status") == "rescale_applied_and_reverted"
+            else "verified" if raw["rescaled"] else "verified_not_rescaled"
+        ),
         "physical_calibration_verified": False,
     }
 
@@ -187,6 +249,8 @@ def table_contract(plan):
 def execution_card(payload):
     plan, bundle = payload["plan"], payload["execution_bundle"]
     scope = plan["analysis_scope"]
+    if scope.get("global_species_policy", {}).get("variant") == "macaque_direct_native":
+        return macaque_execution_card(payload)
     scale = scope["global_scale"]
     lines = [
         "import primatex_ops as ops",
@@ -216,6 +280,44 @@ def execution_card(payload):
     card = "\n".join(lines)
     if len(card) > 1500:
         raise ValueError("Global execution card exceeds 1500 characters")
+    return {
+        "status": "committed",
+        "version": payload["version"],
+        "execution_card": card,
+        "state": payload.get("state"),
+    }
+
+
+def macaque_execution_card(payload):
+    plan, bundle = payload["plan"], payload["execution_bundle"]
+    scale = plan["analysis_scope"]["global_scale"]
+    lines = [
+        "import primatex_ops as ops",
+        *bundle["input_paths"],
+        "read_surface->vertices,faces; vertex_area->per-vertex triangle area/3; read_surface_metric->values; read_label->indices",
+        "positive_mask_volume->volume_mm3,positive_voxels; convex_hull_area_ratio->surface_area,hull_area,area_ratio",
+        "Code: " + plan["code_path"],
+        "Outputs: global_metrics.csv,summary.json,report.md; CSV: " + ",".join(COLUMNS),
+        "1 row; subject="
+        + plan["data"]["subjects"][0]
+        + ";species="
+        + str(plan["data"]["species_declared"]),
+        "Volume=positive brainmask voxels*MGZ voxel volume. eTIV columns empty; no aseg/annot.",
+        "Area=sum final white triangles. Thickness=hemi cortex.label means weighted by white areas; retain finite zeros.",
+        "Hull=sum pial areas/sum hull areas; not lGI. CSV repr/%.17g; missing=empty.",
+        "scale_status="
+        + scale["status"]
+        + ";k="
+        + str(scale["k"])
+        + ";physical=stored/k^power (1,2,3,0); unknown=>empty.",
+        "Disclose units, scale source, QC/calibration limits, zero counts, descriptive n=1; JSON methods,limitations.",
+        "Full plan: "
+        + bundle["bundle_ref"]
+        + "; write sealed script; run_python(); auto-finalize.",
+    ]
+    card = "\n".join(lines)
+    if len(card) > 1500:
+        raise ValueError("Macaque execution card exceeds1500 characters")
     return {
         "status": "committed",
         "version": payload["version"],

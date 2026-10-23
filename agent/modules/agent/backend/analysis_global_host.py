@@ -23,19 +23,21 @@ def reference_rows(tools, plan):
         for path in [binding.get(key)]
         if path
     }
-    bound.update(
-        path for key in ("hemi_stats", "pial") for path in binding[key].values()
-    )
+    mapping_keys = ("hemi_stats", "pial", "white", "thickness", "cortex_labels")
+    bound.update(path for key in mapping_keys for path in binding.get(key, {}).values())
     if not bound <= set(plan["data"]["files"]):
         raise ValueError("Every global reference input must be sealed and hash-bound")
     request = {}
     for key in ("aseg_stats", "mask_volume"):
         path = binding.get(key)
         request[key] = str(tools.resolve(path)) if path else None
-    for key in ("hemi_stats", "pial"):
-        request[key] = {
-            h: str(tools.resolve(p)) for h, p in binding[key].items()
-        } or None
+    for key in mapping_keys:
+        if key in binding:
+            request[key] = {
+                h: str(tools.resolve(p)) for h, p in binding[key].items()
+            } or None
+    request["species"] = plan["data"]["species_declared"]
+    request["scale_state"] = scale["status"]
     request.update(scale_k=scale["k"], rescaled=scale["rescaled"])
     source = Path(__file__).with_name("analysis_global_reference_worker.py")
     python = os.environ.get("ANALYSIS_REFERENCE_PYTHON", sys.executable)

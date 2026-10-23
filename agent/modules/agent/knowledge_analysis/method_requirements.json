@@ -1135,6 +1135,11 @@
           "source_id": "global_morphometry_v15",
           "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/MorphometryStats",
           "note": "Public project definitions: bilateral WhiteSurfArea-weighted MeanThickness and summed pial/hull ratio."
+        },
+        {
+          "source_id": "macaque_global_species_policy_20261023",
+          "path": "global_morphometry_species_policy.json",
+          "note": "Macaque: direct native surfaces/thickness/MGZ support; never eTIV, aseg-derived volume or human-named annotations"
         }
       ],
       "slot_preferences": {
@@ -1146,6 +1151,12 @@
           "fallback": "lexicographic",
           "basis": "Preserve the registered global Measure-line source policy; prefer aparc.stats, then the first available aparc variant per hemisphere."
         }
+      },
+      "species_policy": {
+        "path": "global_morphometry_species_policy.json",
+        "sha256": "002ee9dbc4674ed79154746052ccd0c60e1e9f47cedc31d6974afb65db896019",
+        "macaque_variant": "macaque_direct_native",
+        "other_species": "Keep the registered legacy stats estimator unchanged"
       }
     }
   ]
