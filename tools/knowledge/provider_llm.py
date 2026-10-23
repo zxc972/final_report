@@ -140,6 +140,7 @@ class Provider:
             timeout=config.timeout, follow_redirects=False
         )
         self.cache_hits = 0
+        self.cooldown_until = 0.0
 
     def _append(self, event):
         event = {"time": datetime.now(timezone.utc).isoformat(), **event}
@@ -174,13 +175,26 @@ class Provider:
                     "A cached logical call has different frozen input"
                 )
             done = [
-                e for e in previous if e["event"] == "end" and e.get("status") == "ok"
+                e
+                for e in previous
+                if e["event"] == "end"
+                and (
+                    e.get("status") == "ok"
+                    or (
+                        e.get("status") == "invalid_response"
+                        and e.get("finish_reason") == "length"
+                    )
+                )
             ]
             if done:
                 self.cache_hits += 1
-                return done[-1]["text"]
+                return done[-1].get("text", "")
             prior_attempts = sum(e["event"] == "start" for e in previous)
         for attempt in range(prior_attempts + 1, self.config.max_attempts + 1):
+            with self.lock:
+                delay = max(0.0, self.cooldown_until - time.monotonic())
+            if delay:
+                self.sleep(delay)
             with self.lock:
                 count = sum(e["event"] == "start" for e in self.events)
                 if count >= self.max_requests:
@@ -235,6 +249,10 @@ class Provider:
                         first = choices[0] if choices else {}
                         finish = first.get("finish_reason")
                         text = first.get("message", {}).get("content")
+                        # A length-limited reasoning response can contain no answer.
+                        # Preserve it as an empty model answer, never retry a bad answer.
+                        if text is None and finish == "length":
+                            text = ""
                         if isinstance(text, str):
                             status = "ok"
                     except (ValueError, TypeError, AttributeError, IndexError):
@@ -257,6 +275,11 @@ class Provider:
                 event["text"] = text
             with self.lock:
                 self._append(event)
+                if http_status == 429:
+                    # Transport backoff only; no change to sampling or scoring.
+                    self.cooldown_until = max(
+                        self.cooldown_until, time.monotonic() + 15.0
+                    )
             if status == "ok":
                 return text
             retryable = status == "transport_error" or http_status in {
@@ -281,14 +304,23 @@ class Provider:
         starts = [e for e in events if e["event"] == "start"]
         ended = {e["request_id"]: e for e in events if e["event"] == "end"}
         requests = [ended.get(s["request_id"], {}) for s in starts]
+        received = lambda r: r.get("status") == "ok" or (
+            r.get("status") == "invalid_response" and r.get("finish_reason") == "length"
+        )
         return {
             "logical_calls": len({s["logical_id"] for s in starts}),
             "http_attempts": len(starts),
-            "successful_requests": sum(r.get("status") == "ok" for r in requests),
-            "failed_requests": sum(
-                bool(r) and r.get("status") != "ok" for r in requests
-            ),
+            "successful_requests": sum(received(r) for r in requests),
+            "failed_requests": sum(bool(r) and not received(r) for r in requests),
             "unfinished_requests": sum(not r for r in requests),
+            "length_limited_responses": sum(
+                r.get("finish_reason") == "length" for r in requests
+            ),
+            "historical_null_length_responses": sum(
+                r.get("status") == "invalid_response"
+                and r.get("finish_reason") == "length"
+                for r in requests
+            ),
             "unknown_usage_requests": sum(
                 any(
                     r.get(k) is None

@@ -253,3 +253,39 @@ def test_full_error_list_includes_withheld_correct_template_and_wrong_parameters
         and not row["executable_wrong"]
         and row["statement_key_wrong"]
     )
+
+
+def test_null_length_answer_is_empty_and_never_resampled(tmp_path):
+    def handler(request):
+        return httpx.Response(
+            200,
+            json={
+                "model": "observed-flash",
+                "choices": [{"finish_reason": "length", "message": {"content": None}}],
+                "usage": {
+                    "prompt_tokens": 11,
+                    "completion_tokens": 2048,
+                    "total_tokens": 2059,
+                },
+            },
+        )
+
+    adapter = p.Provider(
+        p.Config(base_url="https://gateway.invalid/v1", api_key=SECRET),
+        tmp_path,
+        client=httpx.Client(transport=httpx.MockTransport(handler)),
+    )
+    assert call(adapter) == "" and call(adapter) == ""
+    assert adapter.stats()["http_attempts"] == 1
+    assert adapter.stats()["length_limited_responses"] == 1
+    assert adapter.stats()["total_tokens"] == 2059
+    # Replay a record written by the initial adapter: retain the raw event and
+    # interpret its normal length exhaustion without another paid request.
+    events = [json.loads(x) for x in adapter.ledger.read_text().splitlines()]
+    events[-1]["status"] = "invalid_response"
+    events[-1].pop("text")
+    adapter.ledger.write_text("\n".join(json.dumps(x) for x in events) + "\n")
+    replay, sent = provider(tmp_path)
+    assert call(replay) == "" and sent == []
+    assert replay.stats()["historical_null_length_responses"] == 1
+    assert replay.stats()["successful_requests"] == 1

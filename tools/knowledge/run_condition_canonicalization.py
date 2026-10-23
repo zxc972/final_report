@@ -635,7 +635,12 @@ def main():
                         for index, item in enumerate(gold["items"])
                     ]
                     for future in as_completed(futures):
-                        index, prediction = future.result()
+                        try:
+                            index, prediction = future.result()
+                        except BaseException:
+                            for pending in futures:
+                                pending.cancel()
+                            raise
                         preds[index] = prediction
                         completed += 1
                         if completed % 10 == 0 or completed == len(preds):
