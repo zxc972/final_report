@@ -167,7 +167,8 @@ def normal_measure(name):
     return {
         "corticalthickness": "thickness", "brainvolumemm3": "brainvolume",
         "totalareamm2": "totalarea", "meanthicknessmm": "meanthickness",
-        "globalmetrics": "globalmorphometry", "convexhullratio": "hullratio", "curvature": "curv", "sulcaldepth": "sulc",
+        "globalmetrics": "globalmorphometry", "convexhullratio": "gyrification",
+        "hullratio": "gyrification", "curvature": "curv", "sulcaldepth": "sulc",
         "localgyrificationindex": "lgi", "localgyrification": "lgi",
         "gyrificationindex": "gyrification", "surfacearea": "area",
     }.get(word, word)
@@ -491,7 +492,7 @@ def plan_analysis(tools, raw):
         return result
     measures = {normal_measure(m) for m in intent.measures}
     specs = [s for s in requirements["methods"] if s["method_id"] != "self:*" and measures <= set(s["measures"]) and intent.comparison in s["comparisons"]]
-    if not (measures & {"globalmorphometry", "brainvolume", "etiv", "totalarea", "meanthickness", "hullratio"}):
+    if not (measures & {"globalmorphometry", "brainvolume", "etiv", "totalarea", "meanthickness"}):
         specs = [s for s in specs if s["method_id"] != "method:v15:global_morphometry"]
     region_tokens = [intent.regions] if isinstance(intent.regions, str) else intent.regions
     if any(t.lower().strip() not in {"global", "whole cortex", "cortex", "both hemispheres"} for t in region_tokens):

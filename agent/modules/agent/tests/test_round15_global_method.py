@@ -322,3 +322,16 @@ def test_plausibility_warning_qualifies_global_ratio_not_homology(tmp_path):
     }
     assert "global_cross_species_ratio" in policy.supported_scopes(plan, rows)
     assert "cross_species_comparison" not in policy.supported_scopes(plan, rows)
+
+
+@pytest.mark.parametrize("measure", ["hull_ratio", "convex_hull_ratio", "gyrification"])
+def test_standalone_folding_request_preserves_bilateral_hull_method(tmp_path, monkeypatch, measure):
+    tools, intent = fixture(tmp_path, monkeypatch)
+    intent.pop("method_id")
+    intent["measures"] = [measure]
+    intent["regions"] = "both hemispheres"
+    result = tools.plan_analysis(intent)
+    assert result.get("candidates"), result
+    methods = {item["method"]["method_id"] for item in result["candidates"]}
+    assert methods == {"method:v13:global_convex_hull_gyrification"}
+    assert p.normal_measure(measure) == "gyrification"
