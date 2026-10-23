@@ -7,7 +7,7 @@
   "source_root": "/data/xuancheng",
   "source_unchanged_check": true,
   "source_files": 1165,
-  "source_bytes": 36953164,
+  "source_bytes": 36958928,
   "excluded_classes": [
     "credentials and .env",
     "FreeSurfer license",
@@ -102,9 +102,9 @@
     },
     {
       "path": "agent/experiments/round21/dev_server.py",
-      "source": "/data/xuancheng/agent_v1/round21_source/agent/experiments/round21/dev_server.py",
-      "bytes": 12945,
-      "sha256": "2136964ac2d1acc361ef7304bc961c4bb600b703e115c0d07d07d3144b25b4bd",
+      "source": "C:\\Users\\zxc18\\OneDrive\\Desktop\\知识图谱\\round21_implementation\\agent\\experiments\\round21\\dev_server.py",
+      "bytes": 12621,
+      "sha256": "9472278c0eeaddec3e52b419aff0e4e9ea05f2428f60400e06ee4f8f9376779e",
       "mode": "100644"
     },
     {
@@ -116,9 +116,9 @@
     },
     {
       "path": "agent/experiments/round21/review_protected_changes.py",
-      "source": "/data/xuancheng/agent_v1/round21_source/agent/experiments/round21/review_protected_changes.py",
-      "bytes": 5987,
-      "sha256": "baf7c3b54f87632128db3a00a048620bcd276bd255e19039bba8a7eaf0e6f36c",
+      "source": "C:\\Users\\zxc18\\OneDrive\\Desktop\\知识图谱\\round21_implementation\\agent\\experiments\\round21\\review_protected_changes.py",
+      "bytes": 6157,
+      "sha256": "b6775dec3cd4bc4c281a1a355639835b5e06ba19b04d8e3a05e1d986df0a3af3",
       "mode": "100644"
     },
     {
@@ -174,13 +174,13 @@
     },
     {
       "path": "agent/modules/agent/backend/agent_chat_state.py",
-      "source": "/data/xuancheng/agent_v1/round21_source/agent/modules/agent/backend/agent_chat_state.py",
+      "source": "C:\\Users\\zxc18\\OneDrive\\Desktop\\知识图谱\\round21_implementation\\agent\\modules\\agent\\backend\\agent_chat_state.py",
       "source_head": "75143b21bc459c6f6e951891356ebf9e4e10169d",
       "mode": "100644",
       "source_bytes": 14281,
       "source_sha256": "45d1435762f3f35ad01130143fa11fa759d4453535e2c857e0412f31081652e3",
-      "bytes": 14512,
-      "sha256": "c9ef02b3a56e1dee81a8ed0b46e0f0600cfd0a0bde5a8b7bd8a604c092cb9e84",
+      "bytes": 14602,
+      "sha256": "b0d204bff0c0036855501b4a1f1d0ace786dc79c94e6886c59351e2068f4d0c7",
       "synced_at": "2026-10-22",
       "previous_source": {
         "source": "/data/xuancheng/agent_round7_trial_20261021/offline_followup_review/backend/agent_chat_state.py",
@@ -280,12 +280,12 @@
     },
     {
       "path": "agent/modules/agent/backend/analysis_call_context.py",
-      "source": "/data/xuancheng/agent_v1/round21_source/agent/modules/agent/backend/analysis_call_context.py",
+      "source": "C:\\Users\\zxc18\\OneDrive\\Desktop\\知识图谱\\round21_implementation\\agent\\modules\\agent\\backend\\analysis_call_context.py",
       "source_head": "75143b21bc459c6f6e951891356ebf9e4e10169d",
       "source_bytes": 461,
       "source_sha256": "c5d91d4298de4db89185f99a3b2fb7d6cd0531deec0e7e476ffd826d5e40648a",
-      "bytes": 533,
-      "sha256": "e5bd229b341f00d5115c34b7ce75dd33950e73c02f9737a35f344dd55abaf1d9",
+      "bytes": 603,
+      "sha256": "66901bdcb18b321dff82afff02d64a4edca0c6cfa48580fdc7cf2eb5581c1f2d",
       "mode": "100644",
       "synced_at": "2026-10-22"
     },
@@ -640,9 +640,9 @@
     },
     {
       "path": "agent/modules/agent/backend/analysis_http_observer.py",
-      "source": "/data/xuancheng/agent_v1/round21_source/agent/modules/agent/backend/analysis_http_observer.py",
-      "bytes": 3577,
-      "sha256": "352001534f6b729e0a57758bdc8278c60212a89b51d000200c4b3bc4627dd9d9",
+      "source": "C:\\Users\\zxc18\\OneDrive\\Desktop\\知识图谱\\round21_implementation\\agent\\modules\\agent\\backend\\analysis_http_observer.py",
+      "bytes": 4263,
+      "sha256": "ed9f6d3a7f61f5d94c4de0eaab3a2f45d5a984019f7a0b4202fa5ec3dcd81fec",
       "mode": "100644"
     },
     {
@@ -4115,9 +4115,9 @@
     },
     {
       "path": "agent/modules/agent/tests/test_round21_sdk_http_observer.py",
-      "source": "/data/xuancheng/agent_v1/round21_source/agent/modules/agent/tests/test_round21_sdk_http_observer.py",
-      "bytes": 4078,
-      "sha256": "37d80b2215407d5c2b3144e6e8b887a5ddd7d2176c3918a54f5ff44d21293d0f",
+      "source": "C:\\Users\\zxc18\\OneDrive\\Desktop\\知识图谱\\round21_implementation\\agent\\modules\\agent\\tests\\test_round21_sdk_http_observer.py",
+      "bytes": 9150,
+      "sha256": "25356124fada8b1a23786906767567b544437ae2e2dca7425ec3bc6bc2e38875",
       "mode": "100644"
     },
     {
@@ -10533,9 +10533,9 @@
   ],
   "last_incremental_sync": {
     "date": "2026-10-24",
-    "source_commit": "d5e7bf4dc52766b05600a11412d7fe8e556c479e",
-    "scope": "Round21 six interface repairs, protected review and offline G1/G2 validation",
-    "changed_files": 62,
+    "source_commit": "604118407f11cf35123dc84a739ae33b48468a63",
+    "scope": "Round21 local post-stop correction; local boundary verified, remote SDK/full regression pending direct human source-sync approval; real batch closed",
+    "changed_files": 6,
     "formal_v1_0": false
   },
   "incremental_sync_history": [
@@ -10729,7 +10729,14 @@
       "scope": "Round21 six interface repairs, protected review and offline G1/G2 validation",
       "changed_files": 62,
       "formal_v1_0": false
+    },
+    {
+      "date": "2026-10-24",
+      "source_commit": "604118407f11cf35123dc84a739ae33b48468a63",
+      "scope": "Round21 local post-stop correction; local boundary verified, remote SDK/full regression pending direct human source-sync approval; real batch closed",
+      "changed_files": 6,
+      "formal_v1_0": false
     }
   ],
-  "updated_at": "2026-10-24T01:24:16.129689+08:00"
+  "updated_at": "2026-10-24T01:58:12.658738+08:00"
 }
