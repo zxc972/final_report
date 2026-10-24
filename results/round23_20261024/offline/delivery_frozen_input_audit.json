@@ -1,0 +1,8 @@
+{
+  "gold_source_matches_frozen_exactly": true,
+  "frozen_gold_sha256": "2ca5ca7492d9f09569372085a0cf75715d41a8e78e8bd24a0fc5c38015d84e3e",
+  "canonicalizer_sha256": "140669418d7a6603df4dbe55be7a677d9f0d8bff92d7255a7aadff1892bb07d8",
+  "canonicalizer_unchanged": true,
+  "final_gate_log_byte_identity_checks": 5,
+  "no_tests_or_model_calls_by_this_audit": true
+}

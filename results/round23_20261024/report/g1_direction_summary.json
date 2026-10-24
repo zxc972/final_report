@@ -1,0 +1,189 @@
+[
+  {
+    "case": "R23_G1_1",
+    "matches_original_question": true,
+    "numeric_results_available": true,
+    "reviewed_conclusion_available": true,
+    "requested_n": 20,
+    "observed_n": [
+      20
+    ],
+    "cohort_size_matches_request": true,
+    "n_partitions": 62,
+    "skipped_partitions": 0,
+    "fdr_family_size": 62,
+    "fdr_significant": 32,
+    "negative_age_estimates": 58,
+    "negative_age_proportion": 0.9354838709677419,
+    "df_values": [
+      17
+    ],
+    "fdr_alpha": 0.05,
+    "age_units": "stored thickness (software convention mm) per year; physical calibration unverified",
+    "design": "regional mean thickness ~ age + sex; no site/scanner adjustment",
+    "d_min_plan_sha256": "6068a42c89e79524daedff9732a8f03a8b1b770e1f68fb2ae552e95df8ca5dba",
+    "d_min_plan_version": "plan.v000001.json",
+    "d_min": 0.6450063704987976,
+    "d_min_basis": "sealed host group design; normal approximation, two-sided alpha=.05, power=.8; standardized continuous slope; not FDR-adjusted power",
+    "direction_groups": [
+      {
+        "group": "superior_and_inferior_frontal",
+        "labels": [
+          "superiorfrontal",
+          "parsopercularis",
+          "parsorbitalis",
+          "parstriangularis"
+        ],
+        "n_hemisphere_partitions": 8,
+        "negative": 8,
+        "q_lt_005": 7,
+        "mean_age_estimate_mm_per_year": -0.005191073021807947,
+        "mean_absolute_age_estimate_mm_per_year": 0.005191073021807947
+      },
+      {
+        "group": "superior_temporal",
+        "labels": [
+          "superiortemporal"
+        ],
+        "n_hemisphere_partitions": 2,
+        "negative": 2,
+        "q_lt_005": 0,
+        "mean_age_estimate_mm_per_year": -0.002440472342924252,
+        "mean_absolute_age_estimate_mm_per_year": 0.002440472342924252
+      },
+      {
+        "group": "inferior_temporal",
+        "labels": [
+          "inferiortemporal"
+        ],
+        "n_hemisphere_partitions": 2,
+        "negative": 2,
+        "q_lt_005": 0,
+        "mean_age_estimate_mm_per_year": -0.0031734484935570318,
+        "mean_absolute_age_estimate_mm_per_year": 0.0031734484935570318
+      },
+      {
+        "group": "medial_temporal_extra_not_paper_proxy",
+        "labels": [
+          "entorhinal",
+          "parahippocampal"
+        ],
+        "n_hemisphere_partitions": 4,
+        "negative": 3,
+        "q_lt_005": 0,
+        "mean_age_estimate_mm_per_year": -0.001972134636542833,
+        "mean_absolute_age_estimate_mm_per_year": 0.0029854730836807227
+      },
+      {
+        "group": "anterior_cingulate",
+        "labels": [
+          "caudalanteriorcingulate",
+          "rostralanteriorcingulate"
+        ],
+        "n_hemisphere_partitions": 4,
+        "negative": 4,
+        "q_lt_005": 1,
+        "mean_age_estimate_mm_per_year": -0.004087536407680632,
+        "mean_absolute_age_estimate_mm_per_year": 0.004087536407680632
+      }
+    ],
+    "interpretation": "Descriptive directional comparison only; no causal, expert-QC or one-to-one temporoparietal correspondence claim. Internal review pass. Historical Round22 G1_1 is reported separately."
+  },
+  {
+    "case": "R23_G1_2",
+    "matches_original_question": false,
+    "numeric_results_available": false,
+    "reviewed_conclusion_available": false,
+    "unavailable_reason": "No pair of tables passed public contract and host numeric verification in this run; partial outputs are not treated as results."
+  },
+  {
+    "case": "R23_G1_3",
+    "matches_original_question": true,
+    "numeric_results_available": true,
+    "reviewed_conclusion_available": false,
+    "requested_n": 20,
+    "observed_n": [
+      20
+    ],
+    "cohort_size_matches_request": true,
+    "n_partitions": 62,
+    "skipped_partitions": 0,
+    "fdr_family_size": 62,
+    "fdr_significant": 32,
+    "negative_age_estimates": 58,
+    "negative_age_proportion": 0.9354838709677419,
+    "df_values": [
+      17
+    ],
+    "fdr_alpha": 0.05,
+    "age_units": "stored thickness (software convention mm) per year; physical calibration unverified",
+    "design": "regional mean thickness ~ age + sex; no site/scanner adjustment",
+    "d_min_plan_sha256": "c9c0e9872f1af88e398adf96661ff24ff36096b4eac2f2c588986d7c782f2f33",
+    "d_min_plan_version": "plan.v000001.json",
+    "d_min": 0.6450063704987976,
+    "d_min_basis": "sealed host group design; normal approximation, two-sided alpha=.05, power=.8; standardized continuous slope; not FDR-adjusted power",
+    "direction_groups": [
+      {
+        "group": "superior_and_inferior_frontal",
+        "labels": [
+          "superiorfrontal",
+          "parsopercularis",
+          "parsorbitalis",
+          "parstriangularis"
+        ],
+        "n_hemisphere_partitions": 8,
+        "negative": 8,
+        "q_lt_005": 7,
+        "mean_age_estimate_mm_per_year": -0.005191073021807923,
+        "mean_absolute_age_estimate_mm_per_year": 0.005191073021807923
+      },
+      {
+        "group": "superior_temporal",
+        "labels": [
+          "superiortemporal"
+        ],
+        "n_hemisphere_partitions": 2,
+        "negative": 2,
+        "q_lt_005": 0,
+        "mean_age_estimate_mm_per_year": -0.0024404723429241985,
+        "mean_absolute_age_estimate_mm_per_year": 0.0024404723429241985
+      },
+      {
+        "group": "inferior_temporal",
+        "labels": [
+          "inferiortemporal"
+        ],
+        "n_hemisphere_partitions": 2,
+        "negative": 2,
+        "q_lt_005": 0,
+        "mean_age_estimate_mm_per_year": -0.003173448493557005,
+        "mean_absolute_age_estimate_mm_per_year": 0.003173448493557005
+      },
+      {
+        "group": "medial_temporal_extra_not_paper_proxy",
+        "labels": [
+          "entorhinal",
+          "parahippocampal"
+        ],
+        "n_hemisphere_partitions": 4,
+        "negative": 3,
+        "q_lt_005": 0,
+        "mean_age_estimate_mm_per_year": -0.001972134636542806,
+        "mean_absolute_age_estimate_mm_per_year": 0.002985473083680714
+      },
+      {
+        "group": "anterior_cingulate",
+        "labels": [
+          "caudalanteriorcingulate",
+          "rostralanteriorcingulate"
+        ],
+        "n_hemisphere_partitions": 4,
+        "negative": 4,
+        "q_lt_005": 1,
+        "mean_age_estimate_mm_per_year": -0.004087536407680609,
+        "mean_absolute_age_estimate_mm_per_year": 0.004087536407680609
+      }
+    ],
+    "interpretation": "Descriptive directional comparison only; no causal, expert-QC or one-to-one temporoparietal correspondence claim. Internal review unreviewed. Historical Round22 G1_1 is reported separately."
+  }
+]

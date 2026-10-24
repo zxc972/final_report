@@ -1,0 +1,679 @@
+[
+  {
+    "case": "R23_G1_1",
+    "classification": {
+      "category": null,
+      "stop_eligible": false,
+      "reason": "No terminal failure"
+    },
+    "observed_terminal_execution": {
+      "status": "success",
+      "error": null,
+      "agent_error": null,
+      "automatic_finalization": {
+        "status": "finalized",
+        "artifact_receipt_id": "1ed869477e884a1089a7432cb7449a19",
+        "manifest_sha256": "18feb863f772efbee52bb2f550336934fb7ec578f911c98eda0e8ab062a7eb83"
+      }
+    },
+    "execution_receipts": [],
+    "internal_review": {
+      "decision": "pass",
+      "protocol_valid": true,
+      "protocol_attempts": 1,
+      "limitations": [
+        "report.md, code and CSVs were received only as truncated/preview strings ('text' role, 'not_full_numeric_validation' = true); full sources remain on server, so certain claims (e.g. report references to site/field_strength composition, exact d_min wording) were verified on preview text only.",
+        "This review does not verify the numerical correctness of GLM estimates, FDR values or partial-r values; only internal consistency of supplied summaries was checked.",
+        "No independent reference values, expected p-values or expert anatomical QC were supplied, so biological validity of the analysis is not assessed.",
+        "PNG-dimension references in the instructions are not applicable; no image evidence is included."
+      ],
+      "transport_exhausted": false
+    }
+  },
+  {
+    "case": "R23_G1_2",
+    "classification": {
+      "category": "agent_budget_exhausted",
+      "stop_eligible": true,
+      "reason": "Agent logical/non-review or planning-stage allowance was exhausted without a recorded host defect",
+      "basis": {
+        "system_defect_codes": [],
+        "review_decision": null,
+        "review_protocol_attempts": null,
+        "review_transport_exhausted": null,
+        "public_contract_status": "not_performed",
+        "review_budget": {
+          "enabled": true,
+          "total_logical_limit": 30,
+          "review_reserved_attempts": 4,
+          "nonreview_limit": 26,
+          "nonreview_model_calls": 21,
+          "review_logical_calls": 0,
+          "review_http_attempts": 0,
+          "review_credits_used": 0,
+          "review_credits_remaining": 4,
+          "budget_units_used": 21,
+          "transport_retries_charge_review_pool": true,
+          "native_logical_http_counters_not_reset": true
+        },
+        "phase_budget": {
+          "planning_model_calls": 5,
+          "planning_actual_model_calls": 5,
+          "system_defect_exempt_model_calls": [],
+          "postseal_model_calls": 16,
+          "planning_limit": 18,
+          "execution_reserve": 9,
+          "model_calls_by_phase": {
+            "unplanned": 3,
+            "planned": 1,
+            "sealed": 16
+          },
+          "planning_includes_precharged_router_calls": true
+        }
+      }
+    },
+    "observed_terminal_execution": {
+      "status": "not_executed",
+      "error": "No Python execution in this iteration",
+      "agent_error": "Analysis wall-clock budget exhausted",
+      "automatic_finalization": null
+    },
+    "execution_receipts": [],
+    "internal_review": {
+      "decision": null,
+      "protocol_valid": null,
+      "protocol_attempts": null,
+      "limitations": null,
+      "transport_exhausted": null
+    }
+  },
+  {
+    "case": "R23_G1_3",
+    "classification": {
+      "category": "review_incomplete",
+      "stop_eligible": true,
+      "reason": "A final valid passing internal review was not completed; inspect protocol, transport and protected review-budget counters",
+      "basis": {
+        "system_defect_codes": [],
+        "review_decision": "unreviewed",
+        "review_protocol_attempts": 2,
+        "review_transport_exhausted": false,
+        "public_contract_status": "pass",
+        "review_budget": {
+          "enabled": true,
+          "total_logical_limit": 30,
+          "review_reserved_attempts": 4,
+          "nonreview_limit": 26,
+          "nonreview_model_calls": 14,
+          "review_logical_calls": 2,
+          "review_http_attempts": 2,
+          "review_credits_used": 2,
+          "review_credits_remaining": 2,
+          "budget_units_used": 16,
+          "transport_retries_charge_review_pool": true,
+          "native_logical_http_counters_not_reset": true
+        },
+        "phase_budget": {
+          "planning_model_calls": 5,
+          "planning_actual_model_calls": 5,
+          "system_defect_exempt_model_calls": [],
+          "postseal_model_calls": 11,
+          "planning_limit": 18,
+          "execution_reserve": 9,
+          "model_calls_by_phase": {
+            "unplanned": 3,
+            "planned": 1,
+            "sealed": 7,
+            "finalized": 4
+          },
+          "planning_includes_precharged_router_calls": true
+        }
+      }
+    },
+    "observed_terminal_execution": {
+      "status": "success",
+      "error": null,
+      "agent_error": null,
+      "automatic_finalization": {
+        "status": "finalized",
+        "artifact_receipt_id": "f139828a1f014477b120311e116c5d3e",
+        "manifest_sha256": "18feb863f772efbee52bb2f550336934fb7ec578f911c98eda0e8ab062a7eb83"
+      }
+    },
+    "execution_receipts": [
+      {
+        "receipt_file": "run_python_a23c575af18b44118380784cdad33e28.json",
+        "status": "success",
+        "exit_code": 0,
+        "automatic_finalization": {
+          "status": "finalized",
+          "artifact_receipt_id": "f139828a1f014477b120311e116c5d3e",
+          "manifest_sha256": "18feb863f772efbee52bb2f550336934fb7ec578f911c98eda0e8ab062a7eb83"
+        },
+        "stderr_tail": ""
+      }
+    ],
+    "internal_review": {
+      "decision": "unreviewed",
+      "protocol_valid": false,
+      "protocol_attempts": 2,
+      "limitations": [
+        "Internal review was not completed after bounded protocol/transport attempts; Agent text remains an unreviewed draft."
+      ],
+      "transport_exhausted": false
+    }
+  },
+  {
+    "case": "R23_G2_1",
+    "classification": {
+      "category": "review_incomplete",
+      "stop_eligible": true,
+      "reason": "A final valid passing internal review was not completed; inspect protocol, transport and protected review-budget counters",
+      "basis": {
+        "system_defect_codes": [],
+        "review_decision": "revise",
+        "review_protocol_attempts": 1,
+        "review_transport_exhausted": false,
+        "public_contract_status": "pass",
+        "review_budget": {
+          "enabled": true,
+          "total_logical_limit": 30,
+          "review_reserved_attempts": 4,
+          "nonreview_limit": 26,
+          "nonreview_model_calls": 26,
+          "review_logical_calls": 1,
+          "review_http_attempts": 2,
+          "review_credits_used": 2,
+          "review_credits_remaining": 2,
+          "budget_units_used": 28,
+          "transport_retries_charge_review_pool": true,
+          "native_logical_http_counters_not_reset": true
+        },
+        "phase_budget": {
+          "planning_model_calls": 5,
+          "planning_actual_model_calls": 5,
+          "system_defect_exempt_model_calls": [],
+          "postseal_model_calls": 22,
+          "planning_limit": 18,
+          "execution_reserve": 9,
+          "model_calls_by_phase": {
+            "unplanned": 3,
+            "planned": 1,
+            "sealed": 7,
+            "executed_failed": 12,
+            "finalized": 3
+          },
+          "planning_includes_precharged_router_calls": true
+        }
+      }
+    },
+    "observed_terminal_execution": {
+      "status": "success",
+      "error": null,
+      "agent_error": null,
+      "automatic_finalization": {
+        "status": "finalized",
+        "artifact_receipt_id": "daa425495239461ebdd089d7a66bc7cf",
+        "manifest_sha256": "18feb863f772efbee52bb2f550336934fb7ec578f911c98eda0e8ab062a7eb83"
+      }
+    },
+    "execution_receipts": [
+      {
+        "receipt_file": "run_python_a025bf85d6b9401cbc6680947626de02.json",
+        "status": "success",
+        "exit_code": 0,
+        "automatic_finalization": {
+          "status": "finalized",
+          "artifact_receipt_id": "daa425495239461ebdd089d7a66bc7cf",
+          "manifest_sha256": "18feb863f772efbee52bb2f550336934fb7ec578f911c98eda0e8ab062a7eb83"
+        },
+        "stderr_tail": ""
+      },
+      {
+        "receipt_file": "run_python_1633627a7b2b417d85b407a48d2218d2.json",
+        "status": "success",
+        "exit_code": 0,
+        "automatic_finalization": {
+          "status": "artifact_contract_failed",
+          "error": "Public output contract failed: group_results.csv: row 2 unknown effect_size_kind; group_results.csv: row 3 unknown effect_size_kind; group_results.csv: row 4 unknown effect_size_kind; group_results.csv: row 5 unknown effect_size_kind; group_results.csv: row 6 unknown effect_size_kind; group_results.csv: row 7 unknown effect_size_kind; group_results.csv: row 8 unknown effect_size_kind; group_results.csv: row 9 unknown effect_size_kind; group_results.csv: row 10 unknown effect_size_kind; group_results.csv: row 11 unknown effect_size_kind; group_results.csv: row 12 unknown effect_size_kind; group_results.csv: row 13 unknown effect_size_kind; group_results.csv: row 14 unknown effect_size_kind; group_results.csv: row 15 unknown effect_size_kind; group_results.csv: row 16 unknown effect_size_kind; group_results.csv: row 17 unknown effect_size_kind; group_results.csv: row 18 unknown effect_size_kind; group_results.csv: row 19 unknown effect_size_kind; group_results.csv: row 20 unknown effect_size_kind; group_results.csv: row 21 unknown effect_size_kind; group_results.csv: row 22 unknown effect_size_kind; group_results.csv: row 23 unknown effect_size_kind; group_results.csv: row 24 unknown effect_size_kind; group_results.csv: row 25 unknown effect_size_kind; Observed CSV header (first 12): [\"hemisphere\", \"metric\", \"label_key\", \"name\", \"n\", \"effect\", \"estimate\", \"se\", \"t\", \"df\", \"p\", \"q_fdr\"]; detected delimiter=','; required parser delimiter=comma",
+          "serialization_diagnostics": {
+            "sealed_tables": [
+              {
+                "file": "regional_values.csv",
+                "exists": true,
+                "actual_reader_delimiter": ",",
+                "observed_header": [
+                  "subject",
+                  "hemisphere",
+                  "metric",
+                  "label_key",
+                  "name",
+                  "vertex_count",
+                  "mean",
+                  "std_population",
+                  "median",
+                  "zero_count",
+                  "units"
+                ],
+                "detected_delimiter": ",",
+                "detected_header": [
+                  "subject",
+                  "hemisphere",
+                  "metric",
+                  "label_key",
+                  "name",
+                  "vertex_count",
+                  "mean",
+                  "std_population",
+                  "median",
+                  "zero_count",
+                  "units"
+                ],
+                "diagnostic_only": true,
+                "no_alias_mapping_or_reparse_for_validation": true
+              },
+              {
+                "file": "group_results.csv",
+                "exists": true,
+                "actual_reader_delimiter": ",",
+                "observed_header": [
+                  "hemisphere",
+                  "metric",
+                  "label_key",
+                  "name",
+                  "n",
+                  "effect",
+                  "estimate",
+                  "se",
+                  "t",
+                  "df",
+                  "p",
+                  "q_fdr"
+                ],
+                "detected_delimiter": ",",
+                "detected_header": [
+                  "hemisphere",
+                  "metric",
+                  "label_key",
+                  "name",
+                  "n",
+                  "effect",
+                  "estimate",
+                  "se",
+                  "t",
+                  "df",
+                  "p",
+                  "q_fdr"
+                ],
+                "diagnostic_only": true,
+                "no_alias_mapping_or_reparse_for_validation": true
+              }
+            ],
+            "observed_csv_files": [
+              {
+                "file": "group_results.csv",
+                "actual_reader_delimiter": ",",
+                "observed_header": [
+                  "hemisphere",
+                  "metric",
+                  "label_key",
+                  "name",
+                  "n",
+                  "effect",
+                  "estimate",
+                  "se",
+                  "t",
+                  "df",
+                  "p",
+                  "q_fdr"
+                ],
+                "detected_delimiter": ",",
+                "detected_header": [
+                  "hemisphere",
+                  "metric",
+                  "label_key",
+                  "name",
+                  "n",
+                  "effect",
+                  "estimate",
+                  "se",
+                  "t",
+                  "df",
+                  "p",
+                  "q_fdr"
+                ],
+                "diagnostic_only": true,
+                "no_alias_mapping_or_reparse_for_validation": true
+              },
+              {
+                "file": "regional_values.csv",
+                "actual_reader_delimiter": ",",
+                "observed_header": [
+                  "subject",
+                  "hemisphere",
+                  "metric",
+                  "label_key",
+                  "name",
+                  "vertex_count",
+                  "mean",
+                  "std_population",
+                  "median",
+                  "zero_count",
+                  "units"
+                ],
+                "detected_delimiter": ",",
+                "detected_header": [
+                  "subject",
+                  "hemisphere",
+                  "metric",
+                  "label_key",
+                  "name",
+                  "vertex_count",
+                  "mean",
+                  "std_population",
+                  "median",
+                  "zero_count",
+                  "units"
+                ],
+                "diagnostic_only": true,
+                "no_alias_mapping_or_reparse_for_validation": true
+              }
+            ],
+            "diagnostic_only": true
+          }
+        },
+        "stderr_tail": ""
+      }
+    ],
+    "internal_review": {
+      "decision": "revise",
+      "protocol_valid": true,
+      "protocol_attempts": 1,
+      "limitations": [
+        "Limited AI review: text/source consistency only; no independent numerical re-computation, statistical validation, or visual/surface inspection was performed.",
+        "Full verbatim contents of some referenced files (constraints.v000001.json, input_manifest, participants.tsv, execution_bundle.v000001.json) were not supplied; claims depending on them (e.g., QC retention flag for IXI442, field-strength counts, '31 labeled regions per hemisphere') could not be directly verified from quoted text.",
+        "regional_values.csv and group_results.csv were provided as header/sample rows only (not_full_numeric_validation=true); full-table numeric consistency was not independently re-checked beyond the recorded contract receipts.",
+        "Species and physical scaling are declared/unverified (report correctly labels these as user-declared and scale-unverified); no independent verification was available."
+      ],
+      "transport_exhausted": false
+    }
+  },
+  {
+    "case": "R23_G2_2",
+    "classification": {
+      "category": "contract_failed",
+      "stop_eligible": true,
+      "reason": "Public columns, fixed values, identities or row count did not pass",
+      "basis": {
+        "system_defect_codes": [],
+        "review_decision": null,
+        "review_protocol_attempts": null,
+        "review_transport_exhausted": null,
+        "public_contract_status": "fail",
+        "review_budget": {
+          "enabled": true,
+          "total_logical_limit": 30,
+          "review_reserved_attempts": 4,
+          "nonreview_limit": 26,
+          "nonreview_model_calls": 25,
+          "review_logical_calls": 0,
+          "review_http_attempts": 0,
+          "review_credits_used": 0,
+          "review_credits_remaining": 4,
+          "budget_units_used": 25,
+          "transport_retries_charge_review_pool": true,
+          "native_logical_http_counters_not_reset": true
+        },
+        "phase_budget": {
+          "planning_model_calls": 5,
+          "planning_actual_model_calls": 5,
+          "system_defect_exempt_model_calls": [],
+          "postseal_model_calls": 20,
+          "planning_limit": 18,
+          "execution_reserve": 9,
+          "model_calls_by_phase": {
+            "unplanned": 3,
+            "planned": 1,
+            "sealed": 6,
+            "executed_failed": 14
+          },
+          "planning_includes_precharged_router_calls": true
+        }
+      }
+    },
+    "observed_terminal_execution": {
+      "status": "not_executed",
+      "error": "No Python execution in this iteration",
+      "agent_error": "Analysis wall-clock budget exhausted",
+      "automatic_finalization": null
+    },
+    "execution_receipts": [
+      {
+        "receipt_file": "run_python_6384081787e84a2c974d76d7cc7db589.json",
+        "status": "success",
+        "exit_code": 0,
+        "automatic_finalization": {
+          "status": "artifact_contract_failed",
+          "error": "Public output contract failed: group_results.csv: row 2 unknown effect_size_kind; group_results.csv: row 3 unknown effect_size_kind; group_results.csv: row 4 unknown effect_size_kind; group_results.csv: row 5 unknown effect_size_kind; group_results.csv: row 6 unknown effect_size_kind; group_results.csv: row 7 unknown effect_size_kind; group_results.csv: row 8 unknown effect_size_kind; group_results.csv: row 9 unknown effect_size_kind; group_results.csv: row 10 unknown effect_size_kind; group_results.csv: row 11 unknown effect_size_kind; group_results.csv: row 12 unknown effect_size_kind; group_results.csv: row 13 unknown effect_size_kind; group_results.csv: row 14 unknown effect_size_kind; group_results.csv: row 15 unknown effect_size_kind; group_results.csv: row 16 unknown effect_size_kind; group_results.csv: row 17 unknown effect_size_kind; group_results.csv: row 18 unknown effect_size_kind; group_results.csv: row 19 unknown effect_size_kind; group_results.csv: row 20 unknown effect_size_kind; group_results.csv: row 21 unknown effect_size_kind; group_results.csv: row 22 unknown effect_size_kind; group_results.csv: row 23 unknown effect_size_kind; group_results.csv: row 24 unknown effect_size_kind; group_results.csv: row 25 unknown effect_size_kind; Observed CSV header (first 12): [\"hemisphere\", \"metric\", \"label_key\", \"name\", \"n\", \"effect\", \"estimate\", \"se\", \"t\", \"df\", \"p\", \"q_fdr\"]; detected delimiter=','; required parser delimiter=comma",
+          "serialization_diagnostics": {
+            "sealed_tables": [
+              {
+                "file": "regional_values.csv",
+                "exists": true,
+                "actual_reader_delimiter": ",",
+                "observed_header": [
+                  "subject",
+                  "hemisphere",
+                  "metric",
+                  "label_key",
+                  "name",
+                  "vertex_count",
+                  "mean",
+                  "std_population",
+                  "median",
+                  "zero_count",
+                  "units"
+                ],
+                "detected_delimiter": ",",
+                "detected_header": [
+                  "subject",
+                  "hemisphere",
+                  "metric",
+                  "label_key",
+                  "name",
+                  "vertex_count",
+                  "mean",
+                  "std_population",
+                  "median",
+                  "zero_count",
+                  "units"
+                ],
+                "diagnostic_only": true,
+                "no_alias_mapping_or_reparse_for_validation": true
+              },
+              {
+                "file": "group_results.csv",
+                "exists": true,
+                "actual_reader_delimiter": ",",
+                "observed_header": [
+                  "hemisphere",
+                  "metric",
+                  "label_key",
+                  "name",
+                  "n",
+                  "effect",
+                  "estimate",
+                  "se",
+                  "t",
+                  "df",
+                  "p",
+                  "q_fdr"
+                ],
+                "detected_delimiter": ",",
+                "detected_header": [
+                  "hemisphere",
+                  "metric",
+                  "label_key",
+                  "name",
+                  "n",
+                  "effect",
+                  "estimate",
+                  "se",
+                  "t",
+                  "df",
+                  "p",
+                  "q_fdr"
+                ],
+                "diagnostic_only": true,
+                "no_alias_mapping_or_reparse_for_validation": true
+              }
+            ],
+            "observed_csv_files": [
+              {
+                "file": "group_results.csv",
+                "actual_reader_delimiter": ",",
+                "observed_header": [
+                  "hemisphere",
+                  "metric",
+                  "label_key",
+                  "name",
+                  "n",
+                  "effect",
+                  "estimate",
+                  "se",
+                  "t",
+                  "df",
+                  "p",
+                  "q_fdr"
+                ],
+                "detected_delimiter": ",",
+                "detected_header": [
+                  "hemisphere",
+                  "metric",
+                  "label_key",
+                  "name",
+                  "n",
+                  "effect",
+                  "estimate",
+                  "se",
+                  "t",
+                  "df",
+                  "p",
+                  "q_fdr"
+                ],
+                "diagnostic_only": true,
+                "no_alias_mapping_or_reparse_for_validation": true
+              },
+              {
+                "file": "regional_values.csv",
+                "actual_reader_delimiter": ",",
+                "observed_header": [
+                  "subject",
+                  "hemisphere",
+                  "metric",
+                  "label_key",
+                  "name",
+                  "vertex_count",
+                  "mean",
+                  "std_population",
+                  "median",
+                  "zero_count",
+                  "units"
+                ],
+                "detected_delimiter": ",",
+                "detected_header": [
+                  "subject",
+                  "hemisphere",
+                  "metric",
+                  "label_key",
+                  "name",
+                  "vertex_count",
+                  "mean",
+                  "std_population",
+                  "median",
+                  "zero_count",
+                  "units"
+                ],
+                "diagnostic_only": true,
+                "no_alias_mapping_or_reparse_for_validation": true
+              }
+            ],
+            "diagnostic_only": true
+          }
+        },
+        "stderr_tail": ""
+      }
+    ],
+    "internal_review": {
+      "decision": null,
+      "protocol_valid": null,
+      "protocol_attempts": null,
+      "limitations": null,
+      "transport_exhausted": null
+    }
+  },
+  {
+    "case": "R23_G2_3",
+    "classification": {
+      "category": "review_incomplete",
+      "stop_eligible": true,
+      "reason": "A final valid passing internal review was not completed; inspect protocol, transport and protected review-budget counters",
+      "basis": {
+        "system_defect_codes": [],
+        "review_decision": "unreviewed",
+        "review_protocol_attempts": 2,
+        "review_transport_exhausted": false,
+        "public_contract_status": "pass",
+        "review_budget": {
+          "enabled": true,
+          "total_logical_limit": 30,
+          "review_reserved_attempts": 4,
+          "nonreview_limit": 26,
+          "nonreview_model_calls": 15,
+          "review_logical_calls": 2,
+          "review_http_attempts": 4,
+          "review_credits_used": 4,
+          "review_credits_remaining": 0,
+          "budget_units_used": 19,
+          "transport_retries_charge_review_pool": true,
+          "native_logical_http_counters_not_reset": true
+        },
+        "phase_budget": {
+          "planning_model_calls": 7,
+          "planning_actual_model_calls": 7,
+          "system_defect_exempt_model_calls": [],
+          "postseal_model_calls": 10,
+          "planning_limit": 18,
+          "execution_reserve": 9,
+          "model_calls_by_phase": {
+            "unplanned": 5,
+            "planned": 1,
+            "sealed": 7,
+            "finalized": 3
+          },
+          "planning_includes_precharged_router_calls": true
+        }
+      }
+    },
+    "observed_terminal_execution": {
+      "status": "success",
+      "error": null,
+      "agent_error": null,
+      "automatic_finalization": {
+        "status": "finalized",
+        "artifact_receipt_id": "007fa5e5ae1949f69cf5985345a3dd0a",
+        "manifest_sha256": "18feb863f772efbee52bb2f550336934fb7ec578f911c98eda0e8ab062a7eb83"
+      }
+    },
+    "execution_receipts": [],
+    "internal_review": {
+      "decision": "unreviewed",
+      "protocol_valid": false,
+      "protocol_attempts": 2,
+      "limitations": [
+        "Internal review was not completed after bounded protocol/transport attempts; Agent text remains an unreviewed draft."
+      ],
+      "transport_exhausted": false
+    }
+  }
+]

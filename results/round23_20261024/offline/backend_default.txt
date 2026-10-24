@@ -1,0 +1,109 @@
+.................................................................... [  6%]
+........................................................................ [ 13%]
+........................................................................ [ 20%]
+.................ssss..................................... [ 25%]
+............................................................ [ 31%]
+........................................................................ [ 38%]
+........................................................................ [ 45%]
+............................................s. [ 49%]
+........................................................s............ [ 56%]
+.....s.................................................................. [ 63%]
+.........................................ss............................. [ 69%]
+........................................................................ [ 76%]
+.........................................ss............................. [ 83%]
+.....ss..............................................................s.. [ 90%]
+.........sss............................................................ [ 97%]
+...........s................                                             [100%]
+=============================== warnings summary ===============================
+modules/agent/backend/api.py:183: 3 warnings
+modules/agent/tests/test_agent_auto_dispatch.py: 10 warnings
+modules/agent/tests/test_agent_route_budget_bridge.py: 1 warning
+modules/agent/tests/test_agent_skill_loop.py: 2 warnings
+modules/agent/tests/test_analysis_api.py: 1 warning
+modules/agent/tests/test_analysis_download.py: 15 warnings
+modules/agent/tests/test_analysis_events.py: 2 warnings
+modules/agent/tests/test_analysis_jobs_api.py: 19 warnings
+modules/agent/tests/test_analysis_knowledge_profiles.py: 1 warning
+modules/agent/tests/test_analysis_required_api.py: 2 warnings
+modules/agent/tests/test_data_tools.py: 1 warning
+modules/agent/tests/test_round11_router_transport_cause.py: 6 warnings
+modules/agent/tests/test_round13_auth_failed.py: 3 warnings
+  /data/xuancheng/agent_v1/round23_source/agent/modules/agent/backend/api.py:183: DeprecationWarning: 
+          on_event is deprecated, use lifespan event handlers instead.
+  
+          Read more about it in the
+          [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+          
+    app.on_event("shutdown")(shutdown_cleanup)
+
+../../.venv-coding/lib/python3.11/site-packages/fastapi/applications.py:4745: 3 warnings
+modules/agent/tests/test_agent_auto_dispatch.py: 10 warnings
+modules/agent/tests/test_agent_route_budget_bridge.py: 1 warning
+modules/agent/tests/test_agent_skill_loop.py: 2 warnings
+modules/agent/tests/test_analysis_api.py: 1 warning
+modules/agent/tests/test_analysis_download.py: 15 warnings
+modules/agent/tests/test_analysis_events.py: 2 warnings
+modules/agent/tests/test_analysis_jobs_api.py: 19 warnings
+modules/agent/tests/test_analysis_knowledge_profiles.py: 1 warning
+modules/agent/tests/test_analysis_required_api.py: 2 warnings
+modules/agent/tests/test_data_tools.py: 1 warning
+modules/agent/tests/test_round11_router_transport_cause.py: 6 warnings
+modules/agent/tests/test_round13_auth_failed.py: 3 warnings
+  /data/xuancheng/agent_v1/.venv-coding/lib/python3.11/site-packages/fastapi/applications.py:4745: DeprecationWarning: 
+          on_event is deprecated, use lifespan event handlers instead.
+  
+          Read more about it in the
+          [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+          
+    return self.router.on_event(event_type)  # ty: ignore[deprecated]
+
+modules/agent/tests/test_analysis_agent.py:42
+  /data/xuancheng/agent_v1/round23_source/agent/modules/agent/tests/test_analysis_agent.py:42: PytestCollectionWarning: cannot collect test class 'TestOnlyExecutor' because it has a __init__ constructor (from: modules/agent/tests/test_agent_route_budget_bridge.py)
+    class TestOnlyExecutor:
+
+modules/agent/tests/test_analysis_agent.py:42
+  /data/xuancheng/agent_v1/round23_source/agent/modules/agent/tests/test_analysis_agent.py:42: PytestCollectionWarning: cannot collect test class 'TestOnlyExecutor' because it has a __init__ constructor (from: modules/agent/tests/test_analysis_agent.py)
+    class TestOnlyExecutor:
+
+modules/agent/tests/test_analysis_agent.py:42
+  /data/xuancheng/agent_v1/round23_source/agent/modules/agent/tests/test_analysis_agent.py:42: PytestCollectionWarning: cannot collect test class 'TestOnlyExecutor' because it has a __init__ constructor (from: modules/agent/tests/test_analysis_data_profile.py)
+    class TestOnlyExecutor:
+
+modules/agent/tests/test_analysis_agent.py:42
+  /data/xuancheng/agent_v1/round23_source/agent/modules/agent/tests/test_analysis_agent.py:42: PytestCollectionWarning: cannot collect test class 'TestOnlyExecutor' because it has a __init__ constructor (from: modules/agent/tests/test_analysis_evidence.py)
+    class TestOnlyExecutor:
+
+modules/agent/tests/test_analysis_agent.py:42
+  /data/xuancheng/agent_v1/round23_source/agent/modules/agent/tests/test_analysis_agent.py:42: PytestCollectionWarning: cannot collect test class 'TestOnlyExecutor' because it has a __init__ constructor (from: modules/agent/tests/test_analysis_finalization.py)
+    class TestOnlyExecutor:
+
+modules/agent/tests/test_analysis_agent.py:42
+  /data/xuancheng/agent_v1/round23_source/agent/modules/agent/tests/test_analysis_agent.py:42: PytestCollectionWarning: cannot collect test class 'TestOnlyExecutor' because it has a __init__ constructor (from: modules/agent/tests/test_analysis_internal_review_graph.py)
+    class TestOnlyExecutor:
+
+modules/agent/tests/test_analysis_agent.py:42
+  /data/xuancheng/agent_v1/round23_source/agent/modules/agent/tests/test_analysis_agent.py:42: PytestCollectionWarning: cannot collect test class 'TestOnlyExecutor' because it has a __init__ constructor (from: modules/agent/tests/test_analysis_knowledge_profiles.py)
+    class TestOnlyExecutor:
+
+modules/agent/tests/test_analysis_agent.py:42
+  /data/xuancheng/agent_v1/round23_source/agent/modules/agent/tests/test_analysis_agent.py:42: PytestCollectionWarning: cannot collect test class 'TestOnlyExecutor' because it has a __init__ constructor (from: modules/agent/tests/test_analysis_legacy_policy.py)
+    class TestOnlyExecutor:
+
+modules/agent/tests/test_analysis_agent.py:42
+  /data/xuancheng/agent_v1/round23_source/agent/modules/agent/tests/test_analysis_agent.py:42: PytestCollectionWarning: cannot collect test class 'TestOnlyExecutor' because it has a __init__ constructor (from: modules/agent/tests/test_analysis_profile.py)
+    class TestOnlyExecutor:
+
+modules/agent/tests/test_analysis_agent.py:42
+  /data/xuancheng/agent_v1/round23_source/agent/modules/agent/tests/test_analysis_agent.py:42: PytestCollectionWarning: cannot collect test class 'TestOnlyExecutor' because it has a __init__ constructor (from: modules/agent/tests/test_analysis_required_artifacts.py)
+    class TestOnlyExecutor:
+
+modules/agent/tests/test_analysis_agent.py:42
+  /data/xuancheng/agent_v1/round23_source/agent/modules/agent/tests/test_analysis_agent.py:42: PytestCollectionWarning: cannot collect test class 'TestOnlyExecutor' because it has a __init__ constructor (from: modules/agent/tests/test_analysis_runtime_progress.py)
+    class TestOnlyExecutor:
+
+modules/agent/tests/test_analysis_agent.py:42
+  /data/xuancheng/agent_v1/round23_source/agent/modules/agent/tests/test_analysis_agent.py:42: PytestCollectionWarning: cannot collect test class 'TestOnlyExecutor' because it has a __init__ constructor (from: modules/agent/tests/test_round13_counter_resume.py)
+    class TestOnlyExecutor:
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+1031 passed, 18 skipped, 144 warnings, 59 subtests passed in 245.89s (0:04:05)

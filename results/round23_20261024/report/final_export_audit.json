@@ -1,0 +1,15 @@
+{
+  "status": "audited",
+  "source_commit": "1767b2179959352170a81d0dbf90e6ae9267f014",
+  "original_questions_exact": true,
+  "QC_context_unchanged": true,
+  "all_before_case_stop_checks_passed": true,
+  "real_analysis_entries": 6,
+  "completed_cases": 6,
+  "actual_upstream_http_attempts": 131,
+  "all_native_meter_and_review_pool_checks_passed": true,
+  "executed_programs_recovered": 6,
+  "configured_secret_scan_matches": 0,
+  "paid_calls_by_export": 0,
+  "completed_utc": "2026-10-24T09:14:27.820534+00:00"
+}

@@ -1,0 +1,336 @@
+{
+  "created_utc": "2026-10-24T09:14:27.753763+00:00",
+  "partial": false,
+  "cases": [
+    {
+      "case": "R23_G1_1",
+      "checks": {
+        "unmetered_logical_calls_zero": true,
+        "http_count_matches_native_budget": true,
+        "logical_count_matches_native_budget": true,
+        "prompt_tokens_match_native_budget": true,
+        "completion_tokens_match_native_budget": true,
+        "unknown_usage_matches_native_budget": true,
+        "all_http_receipts_match_native_ids_and_usage": true,
+        "review_http_native_alignment": true,
+        "review_http_within_four": true,
+        "review_logical_within_four": true,
+        "coding_cannot_borrow_reserve": true,
+        "total_review_and_nonreview_credits_within_thirty": true,
+        "actual_logical_calls_retained": true
+      },
+      "logical_calls": 13,
+      "http_attempts": 15,
+      "known_usage_attempts": 13,
+      "unknown_usage_attempts": 2,
+      "known_prompt_tokens": 344903,
+      "known_completion_tokens": 30826,
+      "http_status_counts": {
+        "200": 13,
+        "504": 2
+      },
+      "source_node_attempts": {
+        "router": 1,
+        "coding.model": 11,
+        "internal_review": 3
+      },
+      "phase_attempts": {
+        "router": 1,
+        "unplanned": 3,
+        "planned": 1,
+        "sealed": 4,
+        "finalized": 6
+      },
+      "review_budget": {
+        "enabled": true,
+        "total_logical_limit": 30,
+        "review_reserved_attempts": 4,
+        "nonreview_limit": 26,
+        "nonreview_model_calls": 12,
+        "review_logical_calls": 1,
+        "review_http_attempts": 3,
+        "review_credits_used": 3,
+        "review_credits_remaining": 1,
+        "budget_units_used": 15,
+        "transport_retries_charge_review_pool": true,
+        "native_logical_http_counters_not_reset": true
+      }
+    },
+    {
+      "case": "R23_G1_2",
+      "checks": {
+        "unmetered_logical_calls_zero": true,
+        "http_count_matches_native_budget": true,
+        "logical_count_matches_native_budget": true,
+        "prompt_tokens_match_native_budget": true,
+        "completion_tokens_match_native_budget": true,
+        "unknown_usage_matches_native_budget": true,
+        "all_http_receipts_match_native_ids_and_usage": true,
+        "review_http_native_alignment": true,
+        "review_http_within_four": true,
+        "review_logical_within_four": true,
+        "coding_cannot_borrow_reserve": true,
+        "total_review_and_nonreview_credits_within_thirty": true,
+        "actual_logical_calls_retained": true
+      },
+      "logical_calls": 21,
+      "http_attempts": 25,
+      "known_usage_attempts": 20,
+      "unknown_usage_attempts": 5,
+      "known_prompt_tokens": 329153,
+      "known_completion_tokens": 29560,
+      "http_status_counts": {
+        "200": 20,
+        "504": 5
+      },
+      "source_node_attempts": {
+        "router": 1,
+        "coding.model": 24
+      },
+      "phase_attempts": {
+        "router": 1,
+        "unplanned": 3,
+        "planned": 1,
+        "sealed": 20
+      },
+      "review_budget": {
+        "enabled": true,
+        "total_logical_limit": 30,
+        "review_reserved_attempts": 4,
+        "nonreview_limit": 26,
+        "nonreview_model_calls": 21,
+        "review_logical_calls": 0,
+        "review_http_attempts": 0,
+        "review_credits_used": 0,
+        "review_credits_remaining": 4,
+        "budget_units_used": 21,
+        "transport_retries_charge_review_pool": true,
+        "native_logical_http_counters_not_reset": true
+      }
+    },
+    {
+      "case": "R23_G1_3",
+      "checks": {
+        "unmetered_logical_calls_zero": true,
+        "http_count_matches_native_budget": true,
+        "logical_count_matches_native_budget": true,
+        "prompt_tokens_match_native_budget": true,
+        "completion_tokens_match_native_budget": true,
+        "unknown_usage_matches_native_budget": true,
+        "all_http_receipts_match_native_ids_and_usage": true,
+        "review_http_native_alignment": true,
+        "review_http_within_four": true,
+        "review_logical_within_four": true,
+        "coding_cannot_borrow_reserve": true,
+        "total_review_and_nonreview_credits_within_thirty": true,
+        "actual_logical_calls_retained": true
+      },
+      "logical_calls": 16,
+      "http_attempts": 16,
+      "known_usage_attempts": 16,
+      "unknown_usage_attempts": 0,
+      "known_prompt_tokens": 579002,
+      "known_completion_tokens": 36608,
+      "http_status_counts": {
+        "200": 16
+      },
+      "source_node_attempts": {
+        "router": 1,
+        "coding.model": 13,
+        "internal_review": 2
+      },
+      "phase_attempts": {
+        "router": 1,
+        "unplanned": 3,
+        "planned": 1,
+        "sealed": 7,
+        "finalized": 4
+      },
+      "review_budget": {
+        "enabled": true,
+        "total_logical_limit": 30,
+        "review_reserved_attempts": 4,
+        "nonreview_limit": 26,
+        "nonreview_model_calls": 14,
+        "review_logical_calls": 2,
+        "review_http_attempts": 2,
+        "review_credits_used": 2,
+        "review_credits_remaining": 2,
+        "budget_units_used": 16,
+        "transport_retries_charge_review_pool": true,
+        "native_logical_http_counters_not_reset": true
+      }
+    },
+    {
+      "case": "R23_G2_1",
+      "checks": {
+        "unmetered_logical_calls_zero": true,
+        "http_count_matches_native_budget": true,
+        "logical_count_matches_native_budget": true,
+        "prompt_tokens_match_native_budget": true,
+        "completion_tokens_match_native_budget": true,
+        "unknown_usage_matches_native_budget": true,
+        "all_http_receipts_match_native_ids_and_usage": true,
+        "review_http_native_alignment": true,
+        "review_http_within_four": true,
+        "review_logical_within_four": true,
+        "coding_cannot_borrow_reserve": true,
+        "total_review_and_nonreview_credits_within_thirty": true,
+        "actual_logical_calls_retained": true
+      },
+      "logical_calls": 27,
+      "http_attempts": 28,
+      "known_usage_attempts": 27,
+      "unknown_usage_attempts": 1,
+      "known_prompt_tokens": 713925,
+      "known_completion_tokens": 35458,
+      "http_status_counts": {
+        "200": 27,
+        "504": 1
+      },
+      "source_node_attempts": {
+        "router": 1,
+        "coding.model": 25,
+        "internal_review": 2
+      },
+      "phase_attempts": {
+        "router": 1,
+        "unplanned": 3,
+        "planned": 1,
+        "sealed": 7,
+        "executed_failed": 12,
+        "finalized": 4
+      },
+      "review_budget": {
+        "enabled": true,
+        "total_logical_limit": 30,
+        "review_reserved_attempts": 4,
+        "nonreview_limit": 26,
+        "nonreview_model_calls": 26,
+        "review_logical_calls": 1,
+        "review_http_attempts": 2,
+        "review_credits_used": 2,
+        "review_credits_remaining": 2,
+        "budget_units_used": 28,
+        "transport_retries_charge_review_pool": true,
+        "native_logical_http_counters_not_reset": true
+      }
+    },
+    {
+      "case": "R23_G2_2",
+      "checks": {
+        "unmetered_logical_calls_zero": true,
+        "http_count_matches_native_budget": true,
+        "logical_count_matches_native_budget": true,
+        "prompt_tokens_match_native_budget": true,
+        "completion_tokens_match_native_budget": true,
+        "unknown_usage_matches_native_budget": true,
+        "all_http_receipts_match_native_ids_and_usage": true,
+        "review_http_native_alignment": true,
+        "review_http_within_four": true,
+        "review_logical_within_four": true,
+        "coding_cannot_borrow_reserve": true,
+        "total_review_and_nonreview_credits_within_thirty": true,
+        "actual_logical_calls_retained": true
+      },
+      "logical_calls": 25,
+      "http_attempts": 28,
+      "known_usage_attempts": 24,
+      "unknown_usage_attempts": 4,
+      "known_prompt_tokens": 441222,
+      "known_completion_tokens": 38345,
+      "http_status_counts": {
+        "200": 24,
+        "504": 4
+      },
+      "source_node_attempts": {
+        "router": 1,
+        "coding.model": 27
+      },
+      "phase_attempts": {
+        "router": 1,
+        "unplanned": 3,
+        "planned": 1,
+        "sealed": 6,
+        "executed_failed": 17
+      },
+      "review_budget": {
+        "enabled": true,
+        "total_logical_limit": 30,
+        "review_reserved_attempts": 4,
+        "nonreview_limit": 26,
+        "nonreview_model_calls": 25,
+        "review_logical_calls": 0,
+        "review_http_attempts": 0,
+        "review_credits_used": 0,
+        "review_credits_remaining": 4,
+        "budget_units_used": 25,
+        "transport_retries_charge_review_pool": true,
+        "native_logical_http_counters_not_reset": true
+      }
+    },
+    {
+      "case": "R23_G2_3",
+      "checks": {
+        "unmetered_logical_calls_zero": true,
+        "http_count_matches_native_budget": true,
+        "logical_count_matches_native_budget": true,
+        "prompt_tokens_match_native_budget": true,
+        "completion_tokens_match_native_budget": true,
+        "unknown_usage_matches_native_budget": true,
+        "all_http_receipts_match_native_ids_and_usage": true,
+        "review_http_native_alignment": true,
+        "review_http_within_four": true,
+        "review_logical_within_four": true,
+        "coding_cannot_borrow_reserve": true,
+        "total_review_and_nonreview_credits_within_thirty": true,
+        "actual_logical_calls_retained": true
+      },
+      "logical_calls": 17,
+      "http_attempts": 19,
+      "known_usage_attempts": 17,
+      "unknown_usage_attempts": 2,
+      "known_prompt_tokens": 573037,
+      "known_completion_tokens": 32075,
+      "http_status_counts": {
+        "200": 17,
+        "504": 2
+      },
+      "source_node_attempts": {
+        "router": 1,
+        "coding.model": 14,
+        "internal_review": 4
+      },
+      "phase_attempts": {
+        "router": 1,
+        "unplanned": 5,
+        "planned": 1,
+        "sealed": 7,
+        "finalized": 5
+      },
+      "review_budget": {
+        "enabled": true,
+        "total_logical_limit": 30,
+        "review_reserved_attempts": 4,
+        "nonreview_limit": 26,
+        "nonreview_model_calls": 15,
+        "review_logical_calls": 2,
+        "review_http_attempts": 4,
+        "review_credits_used": 4,
+        "review_credits_remaining": 0,
+        "budget_units_used": 19,
+        "transport_retries_charge_review_pool": true,
+        "native_logical_http_counters_not_reset": true
+      }
+    }
+  ],
+  "actual_analysis_entries": 6,
+  "completed_cases": 6,
+  "all_completed_case_native_meter_checks_passed": true,
+  "actual_upstream_http_requests": 131,
+  "completed_case_http_attempts": 131,
+  "known_prompt_tokens_completed_cases": 2981242,
+  "known_completion_tokens_completed_cases": 202872,
+  "unknown_usage_attempts_completed_cases": 14,
+  "unknown_is_not_zero": true
+}

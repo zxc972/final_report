@@ -1,0 +1,114 @@
+[
+  {
+    "case": "R23_G1_1",
+    "review_id": "898c47f6bbf648d08f3b260d193103e5",
+    "final_review": true,
+    "decision": "pass",
+    "expected_hard_block_constraint_ids": [
+      "group_inference_sample"
+    ],
+    "attempts": [
+      {
+        "attempt": 1,
+        "error_type": null,
+        "protocol_error": null,
+        "parse_warnings": [],
+        "json_format_fallback": null,
+        "transport": null,
+        "returned_undisclosed_constraint_ids": []
+      }
+    ],
+    "transport": null
+  },
+  {
+    "case": "R23_G1_3",
+    "review_id": "ed089b8bb207409e8ee97e9adc206a48",
+    "final_review": true,
+    "decision": "unreviewed",
+    "expected_hard_block_constraint_ids": [
+      "group_inference_sample"
+    ],
+    "attempts": [
+      {
+        "attempt": 1,
+        "error_type": "ValueError",
+        "protocol_error": "Disclosure must cite observed hard-block ids",
+        "parse_warnings": [],
+        "json_format_fallback": null,
+        "transport": null,
+        "returned_undisclosed_constraint_ids": [
+          "method:v12:surface_annotation_roi:group_inference_sample"
+        ]
+      },
+      {
+        "attempt": 2,
+        "error_type": "ValueError",
+        "protocol_error": "Disclosure must cite observed hard-block ids",
+        "parse_warnings": [],
+        "json_format_fallback": null,
+        "transport": null,
+        "returned_undisclosed_constraint_ids": [
+          "method:v12:surface_annotation_roi:group_inference_sample"
+        ]
+      }
+    ],
+    "transport": null
+  },
+  {
+    "case": "R23_G2_1",
+    "review_id": "1e1eb75a41ad48f6b2012b2bac68b227",
+    "final_review": true,
+    "decision": "revise",
+    "expected_hard_block_constraint_ids": [
+      "group_inference_sample"
+    ],
+    "attempts": [
+      {
+        "attempt": 1,
+        "error_type": null,
+        "protocol_error": null,
+        "parse_warnings": [],
+        "json_format_fallback": null,
+        "transport": null,
+        "returned_undisclosed_constraint_ids": [
+          "group_inference_sample"
+        ]
+      }
+    ],
+    "transport": null
+  },
+  {
+    "case": "R23_G2_3",
+    "review_id": "5b9c900558c445bc8afd730b127ad6ae",
+    "final_review": true,
+    "decision": "unreviewed",
+    "expected_hard_block_constraint_ids": [
+      "group_inference_sample"
+    ],
+    "attempts": [
+      {
+        "attempt": 1,
+        "error_type": "ValueError",
+        "protocol_error": "Review finding cites unavailable evidence",
+        "parse_warnings": [],
+        "json_format_fallback": null,
+        "transport": null,
+        "returned_undisclosed_constraint_ids": [
+          "group_inference_sample"
+        ]
+      },
+      {
+        "attempt": 2,
+        "error_type": "ValueError",
+        "protocol_error": "Disclosure must cite observed hard-block ids",
+        "parse_warnings": [],
+        "json_format_fallback": null,
+        "transport": null,
+        "returned_undisclosed_constraint_ids": [
+          "method:v12:surface_annotation_roi:group_inference_sample"
+        ]
+      }
+    ],
+    "transport": null
+  }
+]

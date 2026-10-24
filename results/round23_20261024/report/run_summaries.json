@@ -1,0 +1,835 @@
+[
+  {
+    "case": "R23_G1_1",
+    "model": "deepseek-v4-pro",
+    "source_commit": "1767b2179959352170a81d0dbf90e6ae9267f014",
+    "http_status": 200,
+    "status": "completed",
+    "overall_status": "qualified",
+    "route": "analysis",
+    "routing": {
+      "fallback": false,
+      "modelCalls": 1,
+      "parseStatus": "first_success",
+      "warnings": []
+    },
+    "model_calls": 13,
+    "tool_calls": 15,
+    "executions": 1,
+    "iterations": 1,
+    "elapsed_seconds": 689.4581562532112,
+    "phase_budget": {
+      "planning_model_calls": 5,
+      "planning_actual_model_calls": 5,
+      "system_defect_exempt_model_calls": [],
+      "postseal_model_calls": 8,
+      "planning_limit": 18,
+      "execution_reserve": 9,
+      "model_calls_by_phase": {
+        "unplanned": 3,
+        "planned": 1,
+        "sealed": 4,
+        "finalized": 4
+      },
+      "planning_includes_precharged_router_calls": true
+    },
+    "review_budget": {
+      "enabled": true,
+      "total_logical_limit": 30,
+      "review_reserved_attempts": 4,
+      "nonreview_limit": 26,
+      "nonreview_model_calls": 12,
+      "review_logical_calls": 1,
+      "review_http_attempts": 3,
+      "review_credits_used": 3,
+      "review_credits_remaining": 1,
+      "budget_units_used": 15,
+      "transport_retries_charge_review_pool": true,
+      "native_logical_http_counters_not_reset": true
+    },
+    "system_defects": {
+      "events": [],
+      "counts": {},
+      "stop": false
+    },
+    "failure_classification": {
+      "category": null,
+      "stop_eligible": false,
+      "reason": "No terminal failure"
+    },
+    "event_count": 58,
+    "full_chain_passed": true,
+    "client_error": null,
+    "phase_sequence": [
+      "unplanned",
+      "planned",
+      "sealed",
+      "executed_ok",
+      "finalized"
+    ],
+    "http_attempts": 15,
+    "known_prompt_tokens": 344903,
+    "known_completion_tokens": 30826,
+    "unknown_usage_attempts": 2,
+    "internal_review_decision": "pass",
+    "internal_review_protocol_valid": true,
+    "internal_review_protocol_attempts": 1,
+    "internal_review_transport_exhausted": false,
+    "conclusion_verdict": "qualified",
+    "selected_plans": [
+      {
+        "version": 1,
+        "sha256": "6068a42c89e79524daedff9732a8f03a8b1b770e1f68fb2ae552e95df8ca5dba",
+        "method_id": "method:v14:group_regional_glm",
+        "atlas_name": "aparc.DKTatlas",
+        "outputs": [
+          "regional_values.csv",
+          "group_results.csv",
+          "summary.json",
+          "report.md"
+        ],
+        "subjects": 20,
+        "design": {
+          "covariates": [
+            "sex"
+          ],
+          "effect": "age",
+          "reference": null
+        },
+        "comparison": "correlation",
+        "effect": "age",
+        "n": 20,
+        "df": 17
+      }
+    ],
+    "observed_metrics": [
+      "thickness"
+    ],
+    "completed_output_scope_matches_original_question": true,
+    "requested_group_tables_both_verified": true,
+    "selected_scope_matches_original_question": true,
+    "original_question_full_chain_passed": true
+  },
+  {
+    "case": "R23_G1_2",
+    "model": "deepseek-v4-pro",
+    "source_commit": "1767b2179959352170a81d0dbf90e6ae9267f014",
+    "http_status": 200,
+    "status": "failed",
+    "overall_status": "failed",
+    "route": "analysis",
+    "routing": {
+      "fallback": false,
+      "modelCalls": 1,
+      "parseStatus": "first_success",
+      "warnings": []
+    },
+    "model_calls": 21,
+    "tool_calls": 30,
+    "executions": 0,
+    "iterations": 3,
+    "elapsed_seconds": 1162.9482872476801,
+    "phase_budget": {
+      "planning_model_calls": 5,
+      "planning_actual_model_calls": 5,
+      "system_defect_exempt_model_calls": [],
+      "postseal_model_calls": 16,
+      "planning_limit": 18,
+      "execution_reserve": 9,
+      "model_calls_by_phase": {
+        "unplanned": 3,
+        "planned": 1,
+        "sealed": 16
+      },
+      "planning_includes_precharged_router_calls": true
+    },
+    "review_budget": {
+      "enabled": true,
+      "total_logical_limit": 30,
+      "review_reserved_attempts": 4,
+      "nonreview_limit": 26,
+      "nonreview_model_calls": 21,
+      "review_logical_calls": 0,
+      "review_http_attempts": 0,
+      "review_credits_used": 0,
+      "review_credits_remaining": 4,
+      "budget_units_used": 21,
+      "transport_retries_charge_review_pool": true,
+      "native_logical_http_counters_not_reset": true
+    },
+    "system_defects": {
+      "events": [],
+      "counts": {},
+      "stop": false
+    },
+    "failure_classification": {
+      "category": "agent_budget_exhausted",
+      "stop_eligible": true,
+      "reason": "Agent logical/non-review or planning-stage allowance was exhausted without a recorded host defect",
+      "basis": {
+        "system_defect_codes": [],
+        "review_decision": null,
+        "review_protocol_attempts": null,
+        "review_transport_exhausted": null,
+        "public_contract_status": "not_performed",
+        "review_budget": {
+          "enabled": true,
+          "total_logical_limit": 30,
+          "review_reserved_attempts": 4,
+          "nonreview_limit": 26,
+          "nonreview_model_calls": 21,
+          "review_logical_calls": 0,
+          "review_http_attempts": 0,
+          "review_credits_used": 0,
+          "review_credits_remaining": 4,
+          "budget_units_used": 21,
+          "transport_retries_charge_review_pool": true,
+          "native_logical_http_counters_not_reset": true
+        },
+        "phase_budget": {
+          "planning_model_calls": 5,
+          "planning_actual_model_calls": 5,
+          "system_defect_exempt_model_calls": [],
+          "postseal_model_calls": 16,
+          "planning_limit": 18,
+          "execution_reserve": 9,
+          "model_calls_by_phase": {
+            "unplanned": 3,
+            "planned": 1,
+            "sealed": 16
+          },
+          "planning_includes_precharged_router_calls": true
+        }
+      }
+    },
+    "event_count": 109,
+    "full_chain_passed": false,
+    "client_error": null,
+    "phase_sequence": [
+      "unplanned",
+      "planned",
+      "sealed"
+    ],
+    "http_attempts": 25,
+    "known_prompt_tokens": 329153,
+    "known_completion_tokens": 29560,
+    "unknown_usage_attempts": 5,
+    "internal_review_decision": "not_performed",
+    "internal_review_protocol_valid": null,
+    "internal_review_protocol_attempts": null,
+    "internal_review_transport_exhausted": null,
+    "conclusion_verdict": "deferred",
+    "selected_plans": [
+      {
+        "version": 1,
+        "sha256": "9665acfa2172163b098ff81a4710fe8eb998f599fe09929c1e702c29392abf1f",
+        "method_id": "method:v12:surface_annotation_roi",
+        "atlas_name": "aparc.DKTatlas",
+        "outputs": [
+          "summary.csv",
+          "summary.json",
+          "report.md"
+        ],
+        "subjects": 20,
+        "design": null,
+        "comparison": "describe",
+        "effect": null,
+        "n": null,
+        "df": null
+      }
+    ],
+    "observed_metrics": [],
+    "completed_output_scope_matches_original_question": false,
+    "requested_group_tables_both_verified": false,
+    "selected_scope_matches_original_question": false,
+    "original_question_full_chain_passed": false
+  },
+  {
+    "case": "R23_G1_3",
+    "model": "deepseek-v4-pro",
+    "source_commit": "1767b2179959352170a81d0dbf90e6ae9267f014",
+    "http_status": 200,
+    "status": "incomplete_review",
+    "overall_status": "incomplete_review",
+    "route": "analysis",
+    "routing": {
+      "fallback": false,
+      "modelCalls": 1,
+      "parseStatus": "first_success",
+      "warnings": []
+    },
+    "model_calls": 16,
+    "tool_calls": 20,
+    "executions": 1,
+    "iterations": 1,
+    "elapsed_seconds": 571.0541418464854,
+    "phase_budget": {
+      "planning_model_calls": 5,
+      "planning_actual_model_calls": 5,
+      "system_defect_exempt_model_calls": [],
+      "postseal_model_calls": 11,
+      "planning_limit": 18,
+      "execution_reserve": 9,
+      "model_calls_by_phase": {
+        "unplanned": 3,
+        "planned": 1,
+        "sealed": 7,
+        "finalized": 4
+      },
+      "planning_includes_precharged_router_calls": true
+    },
+    "review_budget": {
+      "enabled": true,
+      "total_logical_limit": 30,
+      "review_reserved_attempts": 4,
+      "nonreview_limit": 26,
+      "nonreview_model_calls": 14,
+      "review_logical_calls": 2,
+      "review_http_attempts": 2,
+      "review_credits_used": 2,
+      "review_credits_remaining": 2,
+      "budget_units_used": 16,
+      "transport_retries_charge_review_pool": true,
+      "native_logical_http_counters_not_reset": true
+    },
+    "system_defects": {
+      "events": [],
+      "counts": {},
+      "stop": false
+    },
+    "failure_classification": {
+      "category": "review_incomplete",
+      "stop_eligible": true,
+      "reason": "A final valid passing internal review was not completed; inspect protocol, transport and protected review-budget counters",
+      "basis": {
+        "system_defect_codes": [],
+        "review_decision": "unreviewed",
+        "review_protocol_attempts": 2,
+        "review_transport_exhausted": false,
+        "public_contract_status": "pass",
+        "review_budget": {
+          "enabled": true,
+          "total_logical_limit": 30,
+          "review_reserved_attempts": 4,
+          "nonreview_limit": 26,
+          "nonreview_model_calls": 14,
+          "review_logical_calls": 2,
+          "review_http_attempts": 2,
+          "review_credits_used": 2,
+          "review_credits_remaining": 2,
+          "budget_units_used": 16,
+          "transport_retries_charge_review_pool": true,
+          "native_logical_http_counters_not_reset": true
+        },
+        "phase_budget": {
+          "planning_model_calls": 5,
+          "planning_actual_model_calls": 5,
+          "system_defect_exempt_model_calls": [],
+          "postseal_model_calls": 11,
+          "planning_limit": 18,
+          "execution_reserve": 9,
+          "model_calls_by_phase": {
+            "unplanned": 3,
+            "planned": 1,
+            "sealed": 7,
+            "finalized": 4
+          },
+          "planning_includes_precharged_router_calls": true
+        }
+      }
+    },
+    "event_count": 68,
+    "full_chain_passed": false,
+    "client_error": null,
+    "phase_sequence": [
+      "unplanned",
+      "planned",
+      "sealed",
+      "executed_ok",
+      "finalized"
+    ],
+    "http_attempts": 16,
+    "known_prompt_tokens": 579002,
+    "known_completion_tokens": 36608,
+    "unknown_usage_attempts": 0,
+    "internal_review_decision": "unreviewed",
+    "internal_review_protocol_valid": false,
+    "internal_review_protocol_attempts": 2,
+    "internal_review_transport_exhausted": false,
+    "conclusion_verdict": "deferred",
+    "selected_plans": [
+      {
+        "version": 1,
+        "sha256": "c9c0e9872f1af88e398adf96661ff24ff36096b4eac2f2c588986d7c782f2f33",
+        "method_id": "method:v14:group_regional_glm",
+        "atlas_name": "aparc.DKTatlas",
+        "outputs": [
+          "regional_values.csv",
+          "group_results.csv",
+          "summary.json",
+          "report.md"
+        ],
+        "subjects": 20,
+        "design": {
+          "covariates": [
+            "sex"
+          ],
+          "effect": "age",
+          "reference": null
+        },
+        "comparison": "correlation",
+        "effect": "age",
+        "n": 20,
+        "df": 17
+      }
+    ],
+    "observed_metrics": [
+      "thickness"
+    ],
+    "completed_output_scope_matches_original_question": true,
+    "requested_group_tables_both_verified": true,
+    "selected_scope_matches_original_question": true,
+    "original_question_full_chain_passed": false
+  },
+  {
+    "case": "R23_G2_1",
+    "model": "deepseek-v4-pro",
+    "source_commit": "1767b2179959352170a81d0dbf90e6ae9267f014",
+    "http_status": 200,
+    "status": "failed",
+    "overall_status": "failed",
+    "route": "analysis",
+    "routing": {
+      "fallback": false,
+      "modelCalls": 1,
+      "parseStatus": "first_success",
+      "warnings": []
+    },
+    "model_calls": 27,
+    "tool_calls": 35,
+    "executions": 2,
+    "iterations": 1,
+    "elapsed_seconds": 787.899261597544,
+    "phase_budget": {
+      "planning_model_calls": 5,
+      "planning_actual_model_calls": 5,
+      "system_defect_exempt_model_calls": [],
+      "postseal_model_calls": 22,
+      "planning_limit": 18,
+      "execution_reserve": 9,
+      "model_calls_by_phase": {
+        "unplanned": 3,
+        "planned": 1,
+        "sealed": 7,
+        "executed_failed": 12,
+        "finalized": 3
+      },
+      "planning_includes_precharged_router_calls": true
+    },
+    "review_budget": {
+      "enabled": true,
+      "total_logical_limit": 30,
+      "review_reserved_attempts": 4,
+      "nonreview_limit": 26,
+      "nonreview_model_calls": 26,
+      "review_logical_calls": 1,
+      "review_http_attempts": 2,
+      "review_credits_used": 2,
+      "review_credits_remaining": 2,
+      "budget_units_used": 28,
+      "transport_retries_charge_review_pool": true,
+      "native_logical_http_counters_not_reset": true
+    },
+    "system_defects": {
+      "events": [],
+      "counts": {},
+      "stop": false
+    },
+    "failure_classification": {
+      "category": "review_incomplete",
+      "stop_eligible": true,
+      "reason": "A final valid passing internal review was not completed; inspect protocol, transport and protected review-budget counters",
+      "basis": {
+        "system_defect_codes": [],
+        "review_decision": "revise",
+        "review_protocol_attempts": 1,
+        "review_transport_exhausted": false,
+        "public_contract_status": "pass",
+        "review_budget": {
+          "enabled": true,
+          "total_logical_limit": 30,
+          "review_reserved_attempts": 4,
+          "nonreview_limit": 26,
+          "nonreview_model_calls": 26,
+          "review_logical_calls": 1,
+          "review_http_attempts": 2,
+          "review_credits_used": 2,
+          "review_credits_remaining": 2,
+          "budget_units_used": 28,
+          "transport_retries_charge_review_pool": true,
+          "native_logical_http_counters_not_reset": true
+        },
+        "phase_budget": {
+          "planning_model_calls": 5,
+          "planning_actual_model_calls": 5,
+          "system_defect_exempt_model_calls": [],
+          "postseal_model_calls": 22,
+          "planning_limit": 18,
+          "execution_reserve": 9,
+          "model_calls_by_phase": {
+            "unplanned": 3,
+            "planned": 1,
+            "sealed": 7,
+            "executed_failed": 12,
+            "finalized": 3
+          },
+          "planning_includes_precharged_router_calls": true
+        }
+      }
+    },
+    "event_count": 115,
+    "full_chain_passed": false,
+    "client_error": null,
+    "phase_sequence": [
+      "unplanned",
+      "planned",
+      "sealed",
+      "executed_ok",
+      "executed_failed",
+      "sealed",
+      "executed_ok",
+      "finalized",
+      "executed_failed"
+    ],
+    "http_attempts": 28,
+    "known_prompt_tokens": 713925,
+    "known_completion_tokens": 35458,
+    "unknown_usage_attempts": 1,
+    "internal_review_decision": "revise",
+    "internal_review_protocol_valid": true,
+    "internal_review_protocol_attempts": 1,
+    "internal_review_transport_exhausted": false,
+    "conclusion_verdict": "deferred",
+    "selected_plans": [
+      {
+        "version": 1,
+        "sha256": "f02bb605ee3e37cc4d1b5ac04f95e13f5ab78f25fd4f41e8dfc196eabefc094c",
+        "method_id": "method:v14:group_regional_glm",
+        "atlas_name": "aparc.DKTatlas",
+        "outputs": [
+          "regional_values.csv",
+          "group_results.csv",
+          "summary.json",
+          "report.md"
+        ],
+        "subjects": 20,
+        "design": {
+          "covariates": [],
+          "effect": "sex",
+          "reference": "F"
+        },
+        "comparison": "group",
+        "effect": "sex[M]",
+        "n": 20,
+        "df": 18
+      }
+    ],
+    "observed_metrics": [
+      "thickness"
+    ],
+    "completed_output_scope_matches_original_question": true,
+    "requested_group_tables_both_verified": true,
+    "selected_scope_matches_original_question": true,
+    "original_question_full_chain_passed": false
+  },
+  {
+    "case": "R23_G2_2",
+    "model": "deepseek-v4-pro",
+    "source_commit": "1767b2179959352170a81d0dbf90e6ae9267f014",
+    "http_status": 200,
+    "status": "failed",
+    "overall_status": "failed",
+    "route": "analysis",
+    "routing": {
+      "fallback": false,
+      "modelCalls": 1,
+      "parseStatus": "first_success",
+      "warnings": []
+    },
+    "model_calls": 25,
+    "tool_calls": 36,
+    "executions": 1,
+    "iterations": 3,
+    "elapsed_seconds": 1149.3635908486322,
+    "phase_budget": {
+      "planning_model_calls": 5,
+      "planning_actual_model_calls": 5,
+      "system_defect_exempt_model_calls": [],
+      "postseal_model_calls": 20,
+      "planning_limit": 18,
+      "execution_reserve": 9,
+      "model_calls_by_phase": {
+        "unplanned": 3,
+        "planned": 1,
+        "sealed": 6,
+        "executed_failed": 14
+      },
+      "planning_includes_precharged_router_calls": true
+    },
+    "review_budget": {
+      "enabled": true,
+      "total_logical_limit": 30,
+      "review_reserved_attempts": 4,
+      "nonreview_limit": 26,
+      "nonreview_model_calls": 25,
+      "review_logical_calls": 0,
+      "review_http_attempts": 0,
+      "review_credits_used": 0,
+      "review_credits_remaining": 4,
+      "budget_units_used": 25,
+      "transport_retries_charge_review_pool": true,
+      "native_logical_http_counters_not_reset": true
+    },
+    "system_defects": {
+      "events": [],
+      "counts": {},
+      "stop": false
+    },
+    "failure_classification": {
+      "category": "contract_failed",
+      "stop_eligible": true,
+      "reason": "Public columns, fixed values, identities or row count did not pass",
+      "basis": {
+        "system_defect_codes": [],
+        "review_decision": null,
+        "review_protocol_attempts": null,
+        "review_transport_exhausted": null,
+        "public_contract_status": "fail",
+        "review_budget": {
+          "enabled": true,
+          "total_logical_limit": 30,
+          "review_reserved_attempts": 4,
+          "nonreview_limit": 26,
+          "nonreview_model_calls": 25,
+          "review_logical_calls": 0,
+          "review_http_attempts": 0,
+          "review_credits_used": 0,
+          "review_credits_remaining": 4,
+          "budget_units_used": 25,
+          "transport_retries_charge_review_pool": true,
+          "native_logical_http_counters_not_reset": true
+        },
+        "phase_budget": {
+          "planning_model_calls": 5,
+          "planning_actual_model_calls": 5,
+          "system_defect_exempt_model_calls": [],
+          "postseal_model_calls": 20,
+          "planning_limit": 18,
+          "execution_reserve": 9,
+          "model_calls_by_phase": {
+            "unplanned": 3,
+            "planned": 1,
+            "sealed": 6,
+            "executed_failed": 14
+          },
+          "planning_includes_precharged_router_calls": true
+        }
+      }
+    },
+    "event_count": 126,
+    "full_chain_passed": false,
+    "client_error": null,
+    "phase_sequence": [
+      "unplanned",
+      "planned",
+      "sealed",
+      "executed_ok",
+      "executed_failed"
+    ],
+    "http_attempts": 28,
+    "known_prompt_tokens": 441222,
+    "known_completion_tokens": 38345,
+    "unknown_usage_attempts": 4,
+    "internal_review_decision": "not_performed",
+    "internal_review_protocol_valid": null,
+    "internal_review_protocol_attempts": null,
+    "internal_review_transport_exhausted": null,
+    "conclusion_verdict": "deferred",
+    "selected_plans": [
+      {
+        "version": 1,
+        "sha256": "38f2f01a0eabb97144e582612d054247b4dfbaf20fb7520eb10d71b44172cd30",
+        "method_id": "method:v14:group_regional_glm",
+        "atlas_name": "aparc.DKTatlas",
+        "outputs": [
+          "regional_values.csv",
+          "group_results.csv",
+          "summary.json",
+          "report.md"
+        ],
+        "subjects": 20,
+        "design": {
+          "covariates": [],
+          "effect": "sex",
+          "reference": null
+        },
+        "comparison": "group",
+        "effect": "sex[M]",
+        "n": 20,
+        "df": 18
+      }
+    ],
+    "observed_metrics": [
+      "thickness"
+    ],
+    "completed_output_scope_matches_original_question": true,
+    "requested_group_tables_both_verified": false,
+    "selected_scope_matches_original_question": true,
+    "original_question_full_chain_passed": false
+  },
+  {
+    "case": "R23_G2_3",
+    "model": "deepseek-v4-pro",
+    "source_commit": "1767b2179959352170a81d0dbf90e6ae9267f014",
+    "http_status": 200,
+    "status": "incomplete_review",
+    "overall_status": "incomplete_review",
+    "route": "analysis",
+    "routing": {
+      "fallback": false,
+      "modelCalls": 1,
+      "parseStatus": "first_success",
+      "warnings": []
+    },
+    "model_calls": 17,
+    "tool_calls": 19,
+    "executions": 1,
+    "iterations": 1,
+    "elapsed_seconds": 840.6030108155683,
+    "phase_budget": {
+      "planning_model_calls": 7,
+      "planning_actual_model_calls": 7,
+      "system_defect_exempt_model_calls": [],
+      "postseal_model_calls": 10,
+      "planning_limit": 18,
+      "execution_reserve": 9,
+      "model_calls_by_phase": {
+        "unplanned": 5,
+        "planned": 1,
+        "sealed": 7,
+        "finalized": 3
+      },
+      "planning_includes_precharged_router_calls": true
+    },
+    "review_budget": {
+      "enabled": true,
+      "total_logical_limit": 30,
+      "review_reserved_attempts": 4,
+      "nonreview_limit": 26,
+      "nonreview_model_calls": 15,
+      "review_logical_calls": 2,
+      "review_http_attempts": 4,
+      "review_credits_used": 4,
+      "review_credits_remaining": 0,
+      "budget_units_used": 19,
+      "transport_retries_charge_review_pool": true,
+      "native_logical_http_counters_not_reset": true
+    },
+    "system_defects": {
+      "events": [],
+      "counts": {},
+      "stop": false
+    },
+    "failure_classification": {
+      "category": "review_incomplete",
+      "stop_eligible": true,
+      "reason": "A final valid passing internal review was not completed; inspect protocol, transport and protected review-budget counters",
+      "basis": {
+        "system_defect_codes": [],
+        "review_decision": "unreviewed",
+        "review_protocol_attempts": 2,
+        "review_transport_exhausted": false,
+        "public_contract_status": "pass",
+        "review_budget": {
+          "enabled": true,
+          "total_logical_limit": 30,
+          "review_reserved_attempts": 4,
+          "nonreview_limit": 26,
+          "nonreview_model_calls": 15,
+          "review_logical_calls": 2,
+          "review_http_attempts": 4,
+          "review_credits_used": 4,
+          "review_credits_remaining": 0,
+          "budget_units_used": 19,
+          "transport_retries_charge_review_pool": true,
+          "native_logical_http_counters_not_reset": true
+        },
+        "phase_budget": {
+          "planning_model_calls": 7,
+          "planning_actual_model_calls": 7,
+          "system_defect_exempt_model_calls": [],
+          "postseal_model_calls": 10,
+          "planning_limit": 18,
+          "execution_reserve": 9,
+          "model_calls_by_phase": {
+            "unplanned": 5,
+            "planned": 1,
+            "sealed": 7,
+            "finalized": 3
+          },
+          "planning_includes_precharged_router_calls": true
+        }
+      }
+    },
+    "event_count": 69,
+    "full_chain_passed": false,
+    "client_error": null,
+    "phase_sequence": [
+      "unplanned",
+      "planned",
+      "sealed",
+      "executed_ok",
+      "finalized"
+    ],
+    "http_attempts": 19,
+    "known_prompt_tokens": 573037,
+    "known_completion_tokens": 32075,
+    "unknown_usage_attempts": 2,
+    "internal_review_decision": "unreviewed",
+    "internal_review_protocol_valid": false,
+    "internal_review_protocol_attempts": 2,
+    "internal_review_transport_exhausted": false,
+    "conclusion_verdict": "deferred",
+    "selected_plans": [
+      {
+        "version": 1,
+        "sha256": "300dde9ff335c295f366bac32649a37fca479e4cfb3d91cb1193a8f5fd93f4eb",
+        "method_id": "method:v14:group_regional_glm",
+        "atlas_name": "aparc.DKTatlas",
+        "outputs": [
+          "regional_values.csv",
+          "group_results.csv",
+          "summary.json",
+          "report.md"
+        ],
+        "subjects": 20,
+        "design": {
+          "covariates": [],
+          "effect": "sex",
+          "reference": "M"
+        },
+        "comparison": "group",
+        "effect": "sex[F]",
+        "n": 20,
+        "df": 18
+      }
+    ],
+    "observed_metrics": [
+      "thickness"
+    ],
+    "completed_output_scope_matches_original_question": true,
+    "requested_group_tables_both_verified": true,
+    "selected_scope_matches_original_question": true,
+    "original_question_full_chain_passed": false
+  }
+]

@@ -1,0 +1,13 @@
+case,file,public_contract_status,overall_public_contract_status,rows,expected_rows,public_identity_mismatches,schema_mismatches,host_numeric_status,overall_host_numeric_status,host_identity_mismatches,host_numeric_mismatches,host_checked_scalars,output_sha256,internal_review_decision,internal_review_protocol_valid
+R23_G1_1,regional_values.csv,pass,pass,1240,1240,0,0,pass,pass,0,0,6200,c9a16996a586db9581678a6c345c9dd1cc283229fa52f78c4aaa7a1a927dbc01,pass,True
+R23_G1_1,group_results.csv,pass,pass,62,62,0,0,pass,pass,0,0,682,9a3c23d943943b5b7b3f82baacde50b28733a052e1a11fa19eeb61b3415a9eab,pass,True
+R23_G1_2,regional_values.csv,not_assessed,not_performed,,,,,not_assessed,not_configured,,,,,not_performed,
+R23_G1_2,group_results.csv,not_assessed,not_performed,,,,,not_assessed,not_configured,,,,,not_performed,
+R23_G1_3,regional_values.csv,pass,pass,1240,1240,0,0,pass,pass,0,0,6200,4a73b25147148998b74bb26c6e08c852ee448a4c3a7d4461182ca1e9f1f32f5d,unreviewed,False
+R23_G1_3,group_results.csv,pass,pass,62,62,0,0,pass,pass,0,0,682,3c48dd2044250b081f1ff3fc0ee3ad26ad4f1d70b65a8e8bc2db773e73cce2e5,unreviewed,False
+R23_G2_1,regional_values.csv,pass,pass,1240,1240,0,0,pass,pass,0,0,6200,268d062f6f2c935c0036dbd8fe373ef91da03f5e689177a939ad44a8b391ef93,revise,True
+R23_G2_1,group_results.csv,pass,pass,62,62,0,0,pass,pass,0,0,682,ab5fefb425ed8334f4d6681296d9b0fb0cb81f8cafbef12f9742878e276491a0,revise,True
+R23_G2_2,regional_values.csv,pass,fail,1240,1240,0,0,not_assessed,not_configured,,,,77c18489e2c27b3bf25df6aa99f23324ba115a089cf8d204f3b8a7a33a5194cb,not_performed,
+R23_G2_2,group_results.csv,fail,fail,62,62,0,62,not_assessed,not_configured,,,,072724ed44f7eae0231078304a58f846c327a9c46d8960d3844960f7ddeb2172,not_performed,
+R23_G2_3,regional_values.csv,pass,pass,1240,1240,0,0,pass,pass,0,0,6200,93f551c43e0196fae0dffb47053cfdc81cfcfdbf01fded93af7449d0fb026a7a,unreviewed,False
+R23_G2_3,group_results.csv,pass,pass,62,62,0,0,pass,pass,0,0,682,01094fa3aa180098c87506eeea2c2d38d3aeef608ecf918c8c844ac6f19e0b9d,unreviewed,False

@@ -1,0 +1,546 @@
+case,seq,time,stage,status,title
+R23_G1_1,1,2026-10-24T07:47:37.804621+00:00,other,done,Routed to analysis
+R23_G1_1,2,2026-10-24T07:47:39.635119+00:00,data,running,Planning and inspecting data
+R23_G1_1,3,2026-10-24T07:47:39.697406+00:00,data,running,Profiling data: 20 files
+R23_G1_1,4,2026-10-24T07:47:57.232033+00:00,data,done,Built data profile: 20 files
+R23_G1_1,5,2026-10-24T07:47:57.249530+00:00,data,running,Inspect data: inputs
+R23_G1_1,6,2026-10-24T07:47:58.765941+00:00,data,done,Inspect data: inputs
+R23_G1_1,7,2026-10-24T07:47:58.904206+00:00,review,done,Phase tools: unplanned
+R23_G1_1,8,2026-10-24T07:48:03.374788+00:00,data,running,Inspect data: data_card.json
+R23_G1_1,9,2026-10-24T07:48:03.390192+00:00,data,running,Inspect data: data_profile.json
+R23_G1_1,10,2026-10-24T07:48:03.451771+00:00,data,done,Inspect data: data_card.json
+R23_G1_1,11,2026-10-24T07:48:03.480797+00:00,data,done,Inspect data: data_profile.json
+R23_G1_1,12,2026-10-24T07:48:03.594695+00:00,review,done,Phase tools: unplanned
+R23_G1_1,13,2026-10-24T07:48:15.830256+00:00,plan,running,Planned analysis candidates
+R23_G1_1,14,2026-10-24T07:48:16.952173+00:00,plan,done,Planned analysis candidates
+R23_G1_1,15,2026-10-24T07:48:17.031012+00:00,review,done,Phase tools: unplanned
+R23_G1_1,16,2026-10-24T07:48:22.932159+00:00,plan,running,Planned analysis candidates
+R23_G1_1,17,2026-10-24T07:48:54.590679+00:00,plan,done,Analysis phase: planned
+R23_G1_1,18,2026-10-24T07:48:54.627367+00:00,plan,warn,Planned analysis candidates
+R23_G1_1,19,2026-10-24T07:48:54.762359+00:00,review,done,Phase tools: planned
+R23_G1_1,20,2026-10-24T07:49:00.428818+00:00,plan,running,Checking plan prerequisites
+R23_G1_1,21,2026-10-24T07:49:02.220672+00:00,plan,done,Analysis phase: sealed
+R23_G1_1,22,2026-10-24T07:49:02.253239+00:00,plan,done,Plan sealed v1
+R23_G1_1,23,2026-10-24T07:49:02.377180+00:00,code,done,Plan sealed: writing analysis code
+R23_G1_1,24,2026-10-24T07:49:08.733498+00:00,data,running,Inspect data: INPUTS.md
+R23_G1_1,25,2026-10-24T07:49:08.760033+00:00,data,running,Inspect data: execution_bundle.v000001.j
+R23_G1_1,26,2026-10-24T07:49:08.819747+00:00,data,warn,Inspect data: INPUTS.md
+R23_G1_1,27,2026-10-24T07:49:08.853025+00:00,data,warn,Inspect data: execution_bundle.v000001.j
+R23_G1_1,28,2026-10-24T07:49:09.021825+00:00,code,done,Plan sealed: writing analysis code
+R23_G1_1,29,2026-10-24T07:49:14.510587+00:00,knowledge,running,Read method: evidence
+R23_G1_1,30,2026-10-24T07:49:14.529499+00:00,data,running,Inspect data: INPUTS.md
+R23_G1_1,31,2026-10-24T07:49:14.556293+00:00,data,running,Inspect data: contract_tables.json
+R23_G1_1,32,2026-10-24T07:49:14.643848+00:00,knowledge,warn,Read method: evidence
+R23_G1_1,33,2026-10-24T07:49:14.688201+00:00,data,warn,Inspect data: INPUTS.md
+R23_G1_1,34,2026-10-24T07:49:14.721256+00:00,data,warn,Inspect data: contract_tables.json
+R23_G1_1,35,2026-10-24T07:49:14.884903+00:00,code,done,Plan sealed: writing analysis code
+R23_G1_1,36,2026-10-24T07:51:12.803422+00:00,code,running,Wrote analysis_dkt_thickness_age_sex.py
+R23_G1_1,37,2026-10-24T07:51:12.883393+00:00,code,done,Wrote analysis_dkt_thickness_age_sex.py
+R23_G1_1,38,2026-10-24T07:51:13.024380+00:00,code,done,Plan sealed: writing analysis code
+R23_G1_1,39,2026-10-24T07:51:16.903288+00:00,run,running,Running analysis_dkt_thickness_age_sex.p
+R23_G1_1,40,2026-10-24T07:51:19.643119+00:00,review,done,Analysis phase: executed_ok
+R23_G1_1,41,2026-10-24T07:51:19.760470+00:00,plan,done,Analysis phase: finalized
+R23_G1_1,42,2026-10-24T07:51:27.435965+00:00,run,done,Running analysis_dkt_thickness_age_sex.p
+R23_G1_1,43,2026-10-24T07:51:27.556267+00:00,review,done,Phase tools: finalized
+R23_G1_1,44,2026-10-24T07:52:38.564280+00:00,code,running,Wrote analysis_dkt_thickness_age_sex.py
+R23_G1_1,45,2026-10-24T07:52:38.612038+00:00,code,blocked,Wrote analysis_dkt_thickness_age_sex.py
+R23_G1_1,46,2026-10-24T07:52:38.734508+00:00,review,done,Phase tools: finalized
+R23_G1_1,47,2026-10-24T07:53:10.196513+00:00,data,running,Inspect data: summary.json
+R23_G1_1,48,2026-10-24T07:53:10.220582+00:00,data,running,Inspect data: report.md
+R23_G1_1,49,2026-10-24T07:53:10.278262+00:00,data,blocked,Inspect data: summary.json
+R23_G1_1,50,2026-10-24T07:53:10.312923+00:00,data,blocked,Inspect data: report.md
+R23_G1_1,51,2026-10-24T07:53:10.458601+00:00,review,done,Phase tools: finalized
+R23_G1_1,52,2026-10-24T07:54:15.219087+00:00,data,done,Planning and inspecting data
+R23_G1_1,53,2026-10-24T07:54:15.255413+00:00,review,running,Checking execution and outputs
+R23_G1_1,54,2026-10-24T07:56:16.750238+00:00,other,warn,Retrying upstream model request
+R23_G1_1,55,2026-10-24T07:58:24.456626+00:00,other,warn,Retrying upstream model request
+R23_G1_1,56,2026-10-24T07:59:01.024823+00:00,review,done,Output checks passed
+R23_G1_1,57,2026-10-24T07:59:01.062214+00:00,result,running,Preparing analysis result
+R23_G1_1,58,2026-10-24T07:59:01.110356+00:00,result,done,Preparing analysis result
+R23_G1_2,1,2026-10-24T07:59:05.441141+00:00,other,done,Routed to analysis
+R23_G1_2,2,2026-10-24T07:59:05.821708+00:00,data,running,Planning and inspecting data
+R23_G1_2,3,2026-10-24T07:59:05.888463+00:00,data,running,Profiling data: 20 files
+R23_G1_2,4,2026-10-24T07:59:20.664535+00:00,data,done,Built data profile: 20 files
+R23_G1_2,5,2026-10-24T07:59:20.682401+00:00,data,running,Inspect data: inputs
+R23_G1_2,6,2026-10-24T07:59:22.189503+00:00,data,done,Inspect data: inputs
+R23_G1_2,7,2026-10-24T07:59:22.322331+00:00,review,done,Phase tools: unplanned
+R23_G1_2,8,2026-10-24T07:59:27.676897+00:00,data,running,Inspect data: data_card.json
+R23_G1_2,9,2026-10-24T07:59:27.696232+00:00,data,running,Inspect data: 20
+R23_G1_2,10,2026-10-24T07:59:27.765919+00:00,data,done,Inspect data: data_card.json
+R23_G1_2,11,2026-10-24T07:59:27.812790+00:00,data,done,Inspect data: 20
+R23_G1_2,12,2026-10-24T07:59:27.918696+00:00,review,done,Phase tools: unplanned
+R23_G1_2,13,2026-10-24T07:59:33.648403+00:00,data,running,Inspect data: participants.tsv
+R23_G1_2,14,2026-10-24T07:59:33.660076+00:00,data,running,Inspect data: data_card.json
+R23_G1_2,15,2026-10-24T07:59:33.745401+00:00,data,done,Inspect data: participants.tsv
+R23_G1_2,16,2026-10-24T07:59:33.780609+00:00,data,done,Inspect data: data_card.json
+R23_G1_2,17,2026-10-24T07:59:33.905832+00:00,review,done,Phase tools: unplanned
+R23_G1_2,18,2026-10-24T07:59:44.495812+00:00,plan,running,Planned analysis candidates
+R23_G1_2,19,2026-10-24T08:00:44.132741+00:00,plan,done,Analysis phase: planned
+R23_G1_2,20,2026-10-24T08:00:44.172412+00:00,plan,warn,Planned analysis candidates
+R23_G1_2,21,2026-10-24T08:00:44.322536+00:00,review,done,Phase tools: planned
+R23_G1_2,22,2026-10-24T08:00:52.582012+00:00,plan,running,Checking plan prerequisites
+R23_G1_2,23,2026-10-24T08:00:54.335188+00:00,plan,done,Analysis phase: sealed
+R23_G1_2,24,2026-10-24T08:00:54.371256+00:00,plan,done,Plan sealed v1
+R23_G1_2,25,2026-10-24T08:00:54.476794+00:00,code,done,Plan sealed: writing analysis code
+R23_G1_2,26,2026-10-24T08:01:03.555041+00:00,data,running,Inspect data: INPUTS.md
+R23_G1_2,27,2026-10-24T08:01:03.570913+00:00,data,running,Inspect data: contract_tables.json
+R23_G1_2,28,2026-10-24T08:01:03.649871+00:00,data,warn,Inspect data: INPUTS.md
+R23_G1_2,29,2026-10-24T08:01:03.677971+00:00,data,warn,Inspect data: contract_tables.json
+R23_G1_2,30,2026-10-24T08:01:03.814669+00:00,code,done,Plan sealed: writing analysis code
+R23_G1_2,31,2026-10-24T08:01:08.478357+00:00,data,running,Inspect data: label_sets.v000001.json
+R23_G1_2,32,2026-10-24T08:01:08.494299+00:00,data,running,Inspect data: INPUTS.md
+R23_G1_2,33,2026-10-24T08:01:08.582783+00:00,data,warn,Inspect data: label_sets.v000001.json
+R23_G1_2,34,2026-10-24T08:01:08.613511+00:00,data,warn,Inspect data: INPUTS.md
+R23_G1_2,35,2026-10-24T08:01:08.767158+00:00,code,done,Plan sealed: writing analysis code
+R23_G1_2,36,2026-10-24T08:01:14.012808+00:00,data,running,Inspect data: execution_bundle.v000001.j
+R23_G1_2,37,2026-10-24T08:01:14.026665+00:00,data,running,Inspect data: INPUTS.md
+R23_G1_2,38,2026-10-24T08:01:14.090199+00:00,data,warn,Inspect data: execution_bundle.v000001.j
+R23_G1_2,39,2026-10-24T08:01:14.125727+00:00,data,warn,Inspect data: INPUTS.md
+R23_G1_2,40,2026-10-24T08:01:14.279911+00:00,code,done,Plan sealed: writing analysis code
+R23_G1_2,41,2026-10-24T08:01:48.619002+00:00,knowledge,running,Read method: evidence
+R23_G1_2,42,2026-10-24T08:01:48.645581+00:00,knowledge,running,Read method: evidence
+R23_G1_2,43,2026-10-24T08:01:48.666969+00:00,data,running,Inspect data: execution_bundle.v000001.j
+R23_G1_2,44,2026-10-24T08:01:48.744309+00:00,knowledge,warn,Read method: evidence
+R23_G1_2,45,2026-10-24T08:01:48.789107+00:00,knowledge,warn,Read method: evidence
+R23_G1_2,46,2026-10-24T08:01:48.824578+00:00,data,warn,Inspect data: execution_bundle.v000001.j
+R23_G1_2,47,2026-10-24T08:01:48.995312+00:00,code,done,Plan sealed: writing analysis code
+R23_G1_2,48,2026-10-24T08:03:15.791646+00:00,code,running,Wrote probe.py
+R23_G1_2,49,2026-10-24T08:03:15.846643+00:00,knowledge,running,Read method: evidence
+R23_G1_2,50,2026-10-24T08:03:15.874506+00:00,knowledge,running,Read method: evidence
+R23_G1_2,51,2026-10-24T08:03:15.927888+00:00,code,failed,Wrote probe.py
+R23_G1_2,52,2026-10-24T08:03:15.971748+00:00,knowledge,warn,Read method: evidence
+R23_G1_2,53,2026-10-24T08:03:16.025683+00:00,knowledge,warn,Read method: evidence
+R23_G1_2,54,2026-10-24T08:03:16.183289+00:00,code,done,Plan sealed: writing analysis code
+R23_G1_2,55,2026-10-24T08:04:21.617959+00:00,data,running,Inspect data: execution_bundle.v000001.j
+R23_G1_2,56,2026-10-24T08:04:21.663507+00:00,data,warn,Inspect data: execution_bundle.v000001.j
+R23_G1_2,57,2026-10-24T08:04:21.792830+00:00,code,done,Plan sealed: writing analysis code
+R23_G1_2,58,2026-10-24T08:04:29.476351+00:00,data,running,Inspect data: execution_bundle.v000001.j
+R23_G1_2,59,2026-10-24T08:04:29.537804+00:00,data,warn,Inspect data: execution_bundle.v000001.j
+R23_G1_2,60,2026-10-24T08:04:29.686082+00:00,code,done,Plan sealed: writing analysis code
+R23_G1_2,61,2026-10-24T08:05:11.582170+00:00,data,running,Inspect data: execution_bundle.v000001.j
+R23_G1_2,62,2026-10-24T08:05:11.641284+00:00,data,warn,Inspect data: execution_bundle.v000001.j
+R23_G1_2,63,2026-10-24T08:05:11.759962+00:00,code,done,Plan sealed: writing analysis code
+R23_G1_2,64,2026-10-24T08:05:16.460590+00:00,data,running,Inspect data: execution_bundle.v000001.j
+R23_G1_2,65,2026-10-24T08:05:16.524384+00:00,data,warn,Inspect data: execution_bundle.v000001.j
+R23_G1_2,66,2026-10-24T08:05:16.673554+00:00,code,done,Plan sealed: writing analysis code
+R23_G1_2,67,2026-10-24T08:05:25.067230+00:00,data,running,Inspect data: execution_bundle.v000001.j
+R23_G1_2,68,2026-10-24T08:05:25.130131+00:00,data,warn,Inspect data: execution_bundle.v000001.j
+R23_G1_2,69,2026-10-24T08:05:25.254668+00:00,code,done,Plan sealed: writing analysis code
+R23_G1_2,70,2026-10-24T08:05:28.545997+00:00,knowledge,running,Read method: evidence
+R23_G1_2,71,2026-10-24T08:05:28.603959+00:00,knowledge,warn,Read method: evidence
+R23_G1_2,72,2026-10-24T08:05:28.745908+00:00,code,done,Plan sealed: writing analysis code
+R23_G1_2,73,2026-10-24T08:07:29.373343+00:00,other,warn,Retrying upstream model request
+R23_G1_2,74,2026-10-24T08:07:52.567687+00:00,data,running,Inspect data: data_card.json
+R23_G1_2,75,2026-10-24T08:07:52.595578+00:00,data,running,Inspect data: execution_bundle.v000001.j
+R23_G1_2,76,2026-10-24T08:07:52.659259+00:00,data,blocked,Inspect data: data_card.json
+R23_G1_2,77,2026-10-24T08:07:52.688571+00:00,data,warn,Inspect data: execution_bundle.v000001.j
+R23_G1_2,78,2026-10-24T08:07:52.847615+00:00,code,done,Plan sealed: writing analysis code
+R23_G1_2,79,2026-10-24T08:09:53.561438+00:00,other,warn,Retrying upstream model request
+R23_G1_2,80,2026-10-24T08:10:52.721452+00:00,data,running,Inspect data: execution_bundle.v000001.j
+R23_G1_2,81,2026-10-24T08:10:52.789608+00:00,data,warn,Inspect data: execution_bundle.v000001.j
+R23_G1_2,82,2026-10-24T08:10:52.941863+00:00,code,done,Plan sealed: writing analysis code
+R23_G1_2,83,2026-10-24T08:11:39.384557+00:00,knowledge,running,Read method: evidence
+R23_G1_2,84,2026-10-24T08:11:39.402002+00:00,knowledge,running,Read method: evidence
+R23_G1_2,85,2026-10-24T08:11:39.474809+00:00,knowledge,warn,Read method: evidence
+R23_G1_2,86,2026-10-24T08:11:39.518497+00:00,knowledge,warn,Read method: evidence
+R23_G1_2,87,2026-10-24T08:11:39.665338+00:00,code,done,Plan sealed: writing analysis code
+R23_G1_2,88,2026-10-24T08:11:58.975195+00:00,data,running,Inspect data: execution_bundle.v000001.j
+R23_G1_2,89,2026-10-24T08:11:59.040347+00:00,data,warn,Inspect data: execution_bundle.v000001.j
+R23_G1_2,90,2026-10-24T08:11:59.164397+00:00,code,done,Plan sealed: writing analysis code
+R23_G1_2,91,2026-10-24T08:14:00.057726+00:00,other,warn,Retrying upstream model request
+R23_G1_2,92,2026-10-24T08:16:06.644052+00:00,other,warn,Retrying upstream model request
+R23_G1_2,93,2026-10-24T08:18:23.338999+00:00,data,done,Planning and inspecting data
+R23_G1_2,94,2026-10-24T08:18:23.365654+00:00,review,running,Checking execution and outputs
+R23_G1_2,95,2026-10-24T08:18:23.403998+00:00,review,warn,Output checks need review
+R23_G1_2,96,2026-10-24T08:18:23.453666+00:00,repair,running,Repairing from tool feedback
+R23_G1_2,97,2026-10-24T08:18:23.496928+00:00,repair,done,Repairing from tool feedback
+R23_G1_2,98,2026-10-24T08:18:23.543324+00:00,data,running,Planning and inspecting data
+R23_G1_2,99,2026-10-24T08:18:23.607485+00:00,data,done,Planning and inspecting data
+R23_G1_2,100,2026-10-24T08:18:23.645580+00:00,review,running,Checking execution and outputs
+R23_G1_2,101,2026-10-24T08:18:23.700449+00:00,review,warn,Output checks need review
+R23_G1_2,102,2026-10-24T08:18:23.757911+00:00,repair,running,Repairing from tool feedback
+R23_G1_2,103,2026-10-24T08:18:23.867940+00:00,repair,done,Repairing from tool feedback
+R23_G1_2,104,2026-10-24T08:18:23.902601+00:00,data,running,Planning and inspecting data
+R23_G1_2,105,2026-10-24T08:18:23.942891+00:00,data,done,Planning and inspecting data
+R23_G1_2,106,2026-10-24T08:18:23.978196+00:00,review,running,Checking execution and outputs
+R23_G1_2,107,2026-10-24T08:18:24.019801+00:00,review,warn,Output checks need review
+R23_G1_2,108,2026-10-24T08:18:24.067050+00:00,result,running,Preparing analysis result
+R23_G1_2,109,2026-10-24T08:18:24.114244+00:00,result,failed,Preparing analysis result
+R23_G1_3,1,2026-10-24T08:18:28.689569+00:00,other,done,Routed to analysis
+R23_G1_3,2,2026-10-24T08:18:29.047391+00:00,data,running,Planning and inspecting data
+R23_G1_3,3,2026-10-24T08:18:29.123125+00:00,data,running,Profiling data: 20 files
+R23_G1_3,4,2026-10-24T08:18:45.651487+00:00,data,done,Built data profile: 20 files
+R23_G1_3,5,2026-10-24T08:18:45.667235+00:00,data,running,Inspect data: inputs
+R23_G1_3,6,2026-10-24T08:18:47.271881+00:00,data,done,Inspect data: inputs
+R23_G1_3,7,2026-10-24T08:18:47.398108+00:00,review,done,Phase tools: unplanned
+R23_G1_3,8,2026-10-24T08:18:54.821122+00:00,data,running,Inspect data: data_card.json
+R23_G1_3,9,2026-10-24T08:18:54.832591+00:00,data,running,Inspect data: 20
+R23_G1_3,10,2026-10-24T08:18:54.847754+00:00,data,running,Inspect data: data_profile.json
+R23_G1_3,11,2026-10-24T08:18:54.916641+00:00,data,done,Inspect data: data_card.json
+R23_G1_3,12,2026-10-24T08:18:54.952453+00:00,data,done,Inspect data: 20
+R23_G1_3,13,2026-10-24T08:18:54.991982+00:00,data,done,Inspect data: data_profile.json
+R23_G1_3,14,2026-10-24T08:18:55.115615+00:00,review,done,Phase tools: unplanned
+R23_G1_3,15,2026-10-24T08:19:06.595695+00:00,data,running,Inspect data: participants.tsv
+R23_G1_3,16,2026-10-24T08:19:06.648604+00:00,data,done,Inspect data: participants.tsv
+R23_G1_3,17,2026-10-24T08:19:06.745792+00:00,review,done,Phase tools: unplanned
+R23_G1_3,18,2026-10-24T08:19:21.998447+00:00,plan,running,Planned analysis candidates
+R23_G1_3,19,2026-10-24T08:19:54.554531+00:00,plan,done,Analysis phase: planned
+R23_G1_3,20,2026-10-24T08:19:54.593892+00:00,plan,warn,Planned analysis candidates
+R23_G1_3,21,2026-10-24T08:19:54.746736+00:00,review,done,Phase tools: planned
+R23_G1_3,22,2026-10-24T08:20:02.997730+00:00,plan,running,Checking plan prerequisites
+R23_G1_3,23,2026-10-24T08:20:04.887029+00:00,plan,done,Analysis phase: sealed
+R23_G1_3,24,2026-10-24T08:20:04.916649+00:00,plan,done,Plan sealed v1
+R23_G1_3,25,2026-10-24T08:20:05.037729+00:00,code,done,Plan sealed: writing analysis code
+R23_G1_3,26,2026-10-24T08:20:10.956590+00:00,data,running,Inspect data: INPUTS.md
+R23_G1_3,27,2026-10-24T08:20:10.970780+00:00,data,running,Inspect data: contract_tables.json
+R23_G1_3,28,2026-10-24T08:20:11.063370+00:00,data,warn,Inspect data: INPUTS.md
+R23_G1_3,29,2026-10-24T08:20:11.096097+00:00,data,warn,Inspect data: contract_tables.json
+R23_G1_3,30,2026-10-24T08:20:11.229555+00:00,code,done,Plan sealed: writing analysis code
+R23_G1_3,31,2026-10-24T08:20:18.735827+00:00,knowledge,running,Read method: evidence
+R23_G1_3,32,2026-10-24T08:20:18.754201+00:00,data,running,Inspect data: INPUTS.md
+R23_G1_3,33,2026-10-24T08:20:18.785784+00:00,data,running,Inspect data: inputs_manifest.json
+R23_G1_3,34,2026-10-24T08:20:18.854741+00:00,knowledge,warn,Read method: evidence
+R23_G1_3,35,2026-10-24T08:20:18.887024+00:00,data,warn,Inspect data: INPUTS.md
+R23_G1_3,36,2026-10-24T08:20:18.935790+00:00,data,warn,Inspect data: inputs_manifest.json
+R23_G1_3,37,2026-10-24T08:20:19.088837+00:00,code,done,Plan sealed: writing analysis code
+R23_G1_3,38,2026-10-24T08:20:31.180107+00:00,data,running,Inspect data: inputs_manifest.json
+R23_G1_3,39,2026-10-24T08:20:31.203781+00:00,knowledge,running,Read method: evidence
+R23_G1_3,40,2026-10-24T08:20:31.226903+00:00,knowledge,running,Read method: evidence
+R23_G1_3,41,2026-10-24T08:20:31.281663+00:00,data,warn,Inspect data: inputs_manifest.json
+R23_G1_3,42,2026-10-24T08:20:31.338100+00:00,knowledge,warn,Read method: evidence
+R23_G1_3,43,2026-10-24T08:20:31.379801+00:00,knowledge,warn,Read method: evidence
+R23_G1_3,44,2026-10-24T08:20:31.536566+00:00,code,done,Plan sealed: writing analysis code
+R23_G1_3,45,2026-10-24T08:21:36.289241+00:00,data,running,Inspect data: execution_bundle.v000001.j
+R23_G1_3,46,2026-10-24T08:21:36.355781+00:00,data,warn,Inspect data: execution_bundle.v000001.j
+R23_G1_3,47,2026-10-24T08:21:36.485110+00:00,code,done,Plan sealed: writing analysis code
+R23_G1_3,48,2026-10-24T08:23:17.335329+00:00,code,running,Wrote run_dkt_thickness_age_glm.py
+R23_G1_3,49,2026-10-24T08:23:17.409509+00:00,code,done,Wrote run_dkt_thickness_age_glm.py
+R23_G1_3,50,2026-10-24T08:23:17.540506+00:00,code,done,Plan sealed: writing analysis code
+R23_G1_3,51,2026-10-24T08:24:05.318262+00:00,code,running,Wrote run_dkt_thickness_age_glm.py
+R23_G1_3,52,2026-10-24T08:24:05.392242+00:00,code,done,Wrote run_dkt_thickness_age_glm.py
+R23_G1_3,53,2026-10-24T08:24:05.508886+00:00,code,done,Plan sealed: writing analysis code
+R23_G1_3,54,2026-10-24T08:24:18.712302+00:00,run,running,Running run_dkt_thickness_age_glm.py
+R23_G1_3,55,2026-10-24T08:24:21.300759+00:00,review,done,Analysis phase: executed_ok
+R23_G1_3,56,2026-10-24T08:24:21.456831+00:00,plan,done,Analysis phase: finalized
+R23_G1_3,57,2026-10-24T08:24:29.223553+00:00,run,done,Running run_dkt_thickness_age_glm.py
+R23_G1_3,58,2026-10-24T08:24:29.345370+00:00,review,done,Phase tools: finalized
+R23_G1_3,59,2026-10-24T08:24:36.308541+00:00,data,running,Inspect data: run_python_a23c575af18b441
+R23_G1_3,60,2026-10-24T08:24:36.327074+00:00,data,running,Inspect data: self_checks.json
+R23_G1_3,61,2026-10-24T08:24:36.393771+00:00,data,blocked,Inspect data: run_python_a23c575af18b441
+R23_G1_3,62,2026-10-24T08:24:36.428281+00:00,data,blocked,Inspect data: self_checks.json
+R23_G1_3,63,2026-10-24T08:24:36.569707+00:00,review,done,Phase tools: finalized
+R23_G1_3,64,2026-10-24T08:25:06.135060+00:00,data,done,Planning and inspecting data
+R23_G1_3,65,2026-10-24T08:25:06.165718+00:00,review,running,Checking execution and outputs
+R23_G1_3,66,2026-10-24T08:27:55.111746+00:00,review,warn,Output checks need review
+R23_G1_3,67,2026-10-24T08:27:55.144290+00:00,result,running,Preparing analysis result
+R23_G1_3,68,2026-10-24T08:27:55.194090+00:00,result,warn,Preparing analysis result
+R23_G2_1,1,2026-10-24T08:27:59.840414+00:00,other,done,Routed to analysis
+R23_G2_1,2,2026-10-24T08:28:00.245297+00:00,data,running,Planning and inspecting data
+R23_G2_1,3,2026-10-24T08:28:00.282553+00:00,data,running,Profiling data: 20 files
+R23_G2_1,4,2026-10-24T08:28:15.184878+00:00,data,done,Built data profile: 20 files
+R23_G2_1,5,2026-10-24T08:28:15.204307+00:00,data,running,Inspect data: inputs
+R23_G2_1,6,2026-10-24T08:28:16.707259+00:00,data,done,Inspect data: inputs
+R23_G2_1,7,2026-10-24T08:28:16.848258+00:00,review,done,Phase tools: unplanned
+R23_G2_1,8,2026-10-24T08:28:28.251833+00:00,data,running,Inspect data: 20
+R23_G2_1,9,2026-10-24T08:28:28.262316+00:00,data,running,Inspect data: data_card.json
+R23_G2_1,10,2026-10-24T08:28:28.336185+00:00,data,done,Inspect data: 20
+R23_G2_1,11,2026-10-24T08:28:28.363699+00:00,data,done,Inspect data: data_card.json
+R23_G2_1,12,2026-10-24T08:28:28.467504+00:00,review,done,Phase tools: unplanned
+R23_G2_1,13,2026-10-24T08:28:54.651758+00:00,data,running,Inspect data: participants.tsv
+R23_G2_1,14,2026-10-24T08:28:54.660211+00:00,data,running,Inspect data: data_profile.json
+R23_G2_1,15,2026-10-24T08:28:54.719934+00:00,data,done,Inspect data: participants.tsv
+R23_G2_1,16,2026-10-24T08:28:54.743968+00:00,data,done,Inspect data: data_profile.json
+R23_G2_1,17,2026-10-24T08:28:54.826938+00:00,review,done,Phase tools: unplanned
+R23_G2_1,18,2026-10-24T08:28:59.364097+00:00,plan,running,Planned analysis candidates
+R23_G2_1,19,2026-10-24T08:29:32.007286+00:00,plan,done,Analysis phase: planned
+R23_G2_1,20,2026-10-24T08:29:32.049236+00:00,plan,warn,Planned analysis candidates
+R23_G2_1,21,2026-10-24T08:29:32.187924+00:00,review,done,Phase tools: planned
+R23_G2_1,22,2026-10-24T08:29:38.411718+00:00,plan,running,Checking plan prerequisites
+R23_G2_1,23,2026-10-24T08:29:40.267504+00:00,plan,done,Analysis phase: sealed
+R23_G2_1,24,2026-10-24T08:29:40.301081+00:00,plan,done,Plan sealed v1
+R23_G2_1,25,2026-10-24T08:29:40.452338+00:00,code,done,Plan sealed: writing analysis code
+R23_G2_1,26,2026-10-24T08:29:43.693246+00:00,data,running,Inspect data: INPUTS.md
+R23_G2_1,27,2026-10-24T08:29:43.710908+00:00,data,running,Inspect data: execution_bundle.v000001.j
+R23_G2_1,28,2026-10-24T08:29:43.823351+00:00,data,warn,Inspect data: INPUTS.md
+R23_G2_1,29,2026-10-24T08:29:43.856619+00:00,data,warn,Inspect data: execution_bundle.v000001.j
+R23_G2_1,30,2026-10-24T08:29:44.013179+00:00,code,done,Plan sealed: writing analysis code
+R23_G2_1,31,2026-10-24T08:29:57.059700+00:00,data,running,Inspect data: INPUTS.md
+R23_G2_1,32,2026-10-24T08:29:57.079576+00:00,data,running,Inspect data: contract_tables.json
+R23_G2_1,33,2026-10-24T08:29:57.135944+00:00,data,warn,Inspect data: INPUTS.md
+R23_G2_1,34,2026-10-24T08:29:57.171081+00:00,data,warn,Inspect data: contract_tables.json
+R23_G2_1,35,2026-10-24T08:29:57.313738+00:00,code,done,Plan sealed: writing analysis code
+R23_G2_1,36,2026-10-24T08:30:04.988601+00:00,knowledge,running,Read method: evidence
+R23_G2_1,37,2026-10-24T08:30:05.006033+00:00,data,running,Inspect data: inputs_manifest.json
+R23_G2_1,38,2026-10-24T08:30:05.074512+00:00,knowledge,warn,Read method: evidence
+R23_G2_1,39,2026-10-24T08:30:05.126612+00:00,data,warn,Inspect data: inputs_manifest.json
+R23_G2_1,40,2026-10-24T08:30:05.259244+00:00,code,done,Plan sealed: writing analysis code
+R23_G2_1,41,2026-10-24T08:30:15.681006+00:00,knowledge,running,Read method: evidence
+R23_G2_1,42,2026-10-24T08:30:15.698276+00:00,data,running,Inspect data: inputs_manifest.json
+R23_G2_1,43,2026-10-24T08:30:15.821197+00:00,knowledge,warn,Read method: evidence
+R23_G2_1,44,2026-10-24T08:30:15.851335+00:00,data,warn,Inspect data: inputs_manifest.json
+R23_G2_1,45,2026-10-24T08:30:15.976424+00:00,code,done,Plan sealed: writing analysis code
+R23_G2_1,46,2026-10-24T08:31:50.939187+00:00,code,running,Wrote analysis_script.py
+R23_G2_1,47,2026-10-24T08:31:51.036360+00:00,code,done,Wrote analysis_script.py
+R23_G2_1,48,2026-10-24T08:31:51.167723+00:00,code,done,Plan sealed: writing analysis code
+R23_G2_1,49,2026-10-24T08:31:57.694372+00:00,run,running,Running analysis_script.py
+R23_G2_1,50,2026-10-24T08:32:01.399152+00:00,review,done,Analysis phase: executed_ok
+R23_G2_1,51,2026-10-24T08:32:01.477948+00:00,review,failed,Analysis phase: executed_failed
+R23_G2_1,52,2026-10-24T08:32:01.523362+00:00,run,done,Running analysis_script.py
+R23_G2_1,53,2026-10-24T08:32:01.662095+00:00,review,done,Phase tools: executed_failed
+R23_G2_1,54,2026-10-24T08:32:07.558803+00:00,data,running,Inspect data: validation_feedback.json
+R23_G2_1,55,2026-10-24T08:32:07.573327+00:00,data,running,Inspect data: group_results.csv
+R23_G2_1,56,2026-10-24T08:32:07.659554+00:00,data,warn,Inspect data: validation_feedback.json
+R23_G2_1,57,2026-10-24T08:32:07.690516+00:00,data,blocked,Inspect data: group_results.csv
+R23_G2_1,58,2026-10-24T08:32:07.837108+00:00,review,done,Phase tools: executed_failed
+R23_G2_1,59,2026-10-24T08:32:17.189814+00:00,data,running,Inspect data: validation_feedback.json
+R23_G2_1,60,2026-10-24T08:32:17.207629+00:00,data,running,Inspect data: execution_bundle.v000001.j
+R23_G2_1,61,2026-10-24T08:32:17.291764+00:00,data,warn,Inspect data: validation_feedback.json
+R23_G2_1,62,2026-10-24T08:32:17.322219+00:00,data,warn,Inspect data: execution_bundle.v000001.j
+R23_G2_1,63,2026-10-24T08:32:17.484706+00:00,review,done,Phase tools: executed_failed
+R23_G2_1,64,2026-10-24T08:32:52.754991+00:00,repair,running,Recording repair hypothesis
+R23_G2_1,65,2026-10-24T08:32:52.813945+00:00,repair,failed,Recording repair hypothesis
+R23_G2_1,66,2026-10-24T08:32:52.934475+00:00,review,done,Phase tools: executed_failed
+R23_G2_1,67,2026-10-24T08:33:08.635673+00:00,repair,running,Recording repair hypothesis
+R23_G2_1,68,2026-10-24T08:33:08.664541+00:00,data,running,Inspect data: execution_bundle.v000001.j
+R23_G2_1,69,2026-10-24T08:33:08.709772+00:00,repair,done,Recording repair hypothesis
+R23_G2_1,70,2026-10-24T08:33:08.754889+00:00,data,warn,Inspect data: execution_bundle.v000001.j
+R23_G2_1,71,2026-10-24T08:33:08.913307+00:00,review,done,Phase tools: executed_failed
+R23_G2_1,72,2026-10-24T08:33:14.219153+00:00,data,running,Inspect data: execution_bundle.v000001.j
+R23_G2_1,73,2026-10-24T08:33:14.294030+00:00,data,warn,Inspect data: execution_bundle.v000001.j
+R23_G2_1,74,2026-10-24T08:33:14.444038+00:00,review,done,Phase tools: executed_failed
+R23_G2_1,75,2026-10-24T08:33:21.289325+00:00,data,running,Inspect data: execution_bundle.v000001.j
+R23_G2_1,76,2026-10-24T08:33:21.351142+00:00,data,warn,Inspect data: execution_bundle.v000001.j
+R23_G2_1,77,2026-10-24T08:33:21.490418+00:00,review,done,Phase tools: executed_failed
+R23_G2_1,78,2026-10-24T08:33:28.139769+00:00,data,running,Inspect data: execution_bundle.v000001.j
+R23_G2_1,79,2026-10-24T08:33:28.208381+00:00,data,warn,Inspect data: execution_bundle.v000001.j
+R23_G2_1,80,2026-10-24T08:33:28.353959+00:00,review,done,Phase tools: executed_failed
+R23_G2_1,81,2026-10-24T08:33:41.422349+00:00,data,running,Inspect data: execution_bundle.v000001.j
+R23_G2_1,82,2026-10-24T08:33:41.492041+00:00,data,warn,Inspect data: execution_bundle.v000001.j
+R23_G2_1,83,2026-10-24T08:33:41.648372+00:00,review,done,Phase tools: executed_failed
+R23_G2_1,84,2026-10-24T08:33:55.572815+00:00,code,running,Wrote inspect_bundle.py
+R23_G2_1,85,2026-10-24T08:33:55.661371+00:00,code,failed,Wrote inspect_bundle.py
+R23_G2_1,86,2026-10-24T08:33:55.787406+00:00,review,done,Phase tools: executed_failed
+R23_G2_1,87,2026-10-24T08:34:10.521064+00:00,repair,running,Recording repair hypothesis
+R23_G2_1,88,2026-10-24T08:34:10.584414+00:00,repair,done,Recording repair hypothesis
+R23_G2_1,89,2026-10-24T08:34:10.712110+00:00,review,done,Phase tools: executed_failed
+R23_G2_1,90,2026-10-24T08:34:24.965702+00:00,data,running,Inspect data: execution_bundle.v000001.j
+R23_G2_1,91,2026-10-24T08:34:25.029218+00:00,data,warn,Inspect data: execution_bundle.v000001.j
+R23_G2_1,92,2026-10-24T08:34:25.185593+00:00,review,done,Phase tools: executed_failed
+R23_G2_1,93,2026-10-24T08:35:55.634677+00:00,code,running,Wrote analysis_script.py
+R23_G2_1,94,2026-10-24T08:35:55.717959+00:00,plan,done,Analysis phase: sealed
+R23_G2_1,95,2026-10-24T08:35:55.763355+00:00,code,done,Wrote analysis_script.py
+R23_G2_1,96,2026-10-24T08:35:55.881038+00:00,code,done,Plan sealed: writing analysis code
+R23_G2_1,97,2026-10-24T08:36:09.243685+00:00,run,running,Running analysis_script.py
+R23_G2_1,98,2026-10-24T08:36:12.056188+00:00,review,done,Analysis phase: executed_ok
+R23_G2_1,99,2026-10-24T08:36:12.158143+00:00,plan,done,Analysis phase: finalized
+R23_G2_1,100,2026-10-24T08:36:20.215341+00:00,run,done,Running analysis_script.py
+R23_G2_1,101,2026-10-24T08:36:20.332664+00:00,review,done,Phase tools: finalized
+R23_G2_1,102,2026-10-24T08:36:28.277800+00:00,data,running,Inspect data: self_checks.json
+R23_G2_1,103,2026-10-24T08:36:28.300357+00:00,data,running,Inspect data: report.md
+R23_G2_1,104,2026-10-24T08:36:28.319087+00:00,data,running,Inspect data: summary.json
+R23_G2_1,105,2026-10-24T08:36:28.382858+00:00,data,blocked,Inspect data: self_checks.json
+R23_G2_1,106,2026-10-24T08:36:28.428322+00:00,data,blocked,Inspect data: report.md
+R23_G2_1,107,2026-10-24T08:36:28.459940+00:00,data,blocked,Inspect data: summary.json
+R23_G2_1,108,2026-10-24T08:36:28.613399+00:00,review,done,Phase tools: finalized
+R23_G2_1,109,2026-10-24T08:37:15.364588+00:00,data,done,Planning and inspecting data
+R23_G2_1,110,2026-10-24T08:37:15.400070+00:00,review,running,Checking execution and outputs
+R23_G2_1,111,2026-10-24T08:39:16.704467+00:00,other,warn,Retrying upstream model request
+R23_G2_1,112,2026-10-24T08:41:02.999548+00:00,review,failed,Analysis phase: executed_failed
+R23_G2_1,113,2026-10-24T08:41:03.024827+00:00,review,warn,Output checks need review
+R23_G2_1,114,2026-10-24T08:41:03.059804+00:00,result,running,Preparing analysis result
+R23_G2_1,115,2026-10-24T08:41:03.104896+00:00,result,failed,Preparing analysis result
+R23_G2_2,1,2026-10-24T08:41:07.190347+00:00,other,done,Routed to analysis
+R23_G2_2,2,2026-10-24T08:41:07.549034+00:00,data,running,Planning and inspecting data
+R23_G2_2,3,2026-10-24T08:41:07.613500+00:00,data,running,Profiling data: 20 files
+R23_G2_2,4,2026-10-24T08:41:27.868521+00:00,data,done,Built data profile: 20 files
+R23_G2_2,5,2026-10-24T08:41:27.884408+00:00,data,running,Inspect data: inputs
+R23_G2_2,6,2026-10-24T08:41:30.288857+00:00,data,done,Inspect data: inputs
+R23_G2_2,7,2026-10-24T08:41:30.413218+00:00,review,done,Phase tools: unplanned
+R23_G2_2,8,2026-10-24T08:41:35.371344+00:00,data,running,Inspect data: data_card.json
+R23_G2_2,9,2026-10-24T08:41:35.387138+00:00,data,running,Inspect data: 20
+R23_G2_2,10,2026-10-24T08:41:35.441863+00:00,data,done,Inspect data: data_card.json
+R23_G2_2,11,2026-10-24T08:41:35.481981+00:00,data,done,Inspect data: 20
+R23_G2_2,12,2026-10-24T08:41:35.590066+00:00,review,done,Phase tools: unplanned
+R23_G2_2,13,2026-10-24T08:41:49.275503+00:00,data,running,Inspect data: participants.tsv
+R23_G2_2,14,2026-10-24T08:41:49.286566+00:00,data,running,Inspect data: data_profile.json
+R23_G2_2,15,2026-10-24T08:41:49.363720+00:00,data,done,Inspect data: participants.tsv
+R23_G2_2,16,2026-10-24T08:41:49.390431+00:00,data,done,Inspect data: data_profile.json
+R23_G2_2,17,2026-10-24T08:41:49.485655+00:00,review,done,Phase tools: unplanned
+R23_G2_2,18,2026-10-24T08:42:04.153049+00:00,plan,running,Planned analysis candidates
+R23_G2_2,19,2026-10-24T08:42:36.904430+00:00,plan,done,Analysis phase: planned
+R23_G2_2,20,2026-10-24T08:42:36.946246+00:00,plan,warn,Planned analysis candidates
+R23_G2_2,21,2026-10-24T08:42:37.094245+00:00,review,done,Phase tools: planned
+R23_G2_2,22,2026-10-24T08:42:40.501425+00:00,plan,running,Checking plan prerequisites
+R23_G2_2,23,2026-10-24T08:42:42.370669+00:00,plan,done,Analysis phase: sealed
+R23_G2_2,24,2026-10-24T08:42:42.406625+00:00,plan,done,Plan sealed v1
+R23_G2_2,25,2026-10-24T08:42:42.546436+00:00,code,done,Plan sealed: writing analysis code
+R23_G2_2,26,2026-10-24T08:42:52.158350+00:00,data,running,Inspect data: execution_bundle.v000001.j
+R23_G2_2,27,2026-10-24T08:42:52.175384+00:00,data,running,Inspect data: INPUTS.md
+R23_G2_2,28,2026-10-24T08:42:52.259919+00:00,data,warn,Inspect data: execution_bundle.v000001.j
+R23_G2_2,29,2026-10-24T08:42:52.289018+00:00,data,warn,Inspect data: INPUTS.md
+R23_G2_2,30,2026-10-24T08:42:52.450599+00:00,code,done,Plan sealed: writing analysis code
+R23_G2_2,31,2026-10-24T08:42:56.846022+00:00,data,running,Inspect data: contract_tables.json
+R23_G2_2,32,2026-10-24T08:42:56.864658+00:00,data,running,Inspect data: INPUTS.md
+R23_G2_2,33,2026-10-24T08:42:56.975662+00:00,data,warn,Inspect data: contract_tables.json
+R23_G2_2,34,2026-10-24T08:42:57.004983+00:00,data,warn,Inspect data: INPUTS.md
+R23_G2_2,35,2026-10-24T08:42:57.149578+00:00,code,done,Plan sealed: writing analysis code
+R23_G2_2,36,2026-10-24T08:43:06.754650+00:00,knowledge,running,Read method: evidence
+R23_G2_2,37,2026-10-24T08:43:06.769057+00:00,knowledge,running,Read method: evidence
+R23_G2_2,38,2026-10-24T08:43:06.843564+00:00,knowledge,warn,Read method: evidence
+R23_G2_2,39,2026-10-24T08:43:06.872709+00:00,knowledge,warn,Read method: evidence
+R23_G2_2,40,2026-10-24T08:43:07.008248+00:00,code,done,Plan sealed: writing analysis code
+R23_G2_2,41,2026-10-24T08:43:12.921160+00:00,data,running,Inspect data: inputs_manifest.json
+R23_G2_2,42,2026-10-24T08:43:12.987377+00:00,data,warn,Inspect data: inputs_manifest.json
+R23_G2_2,43,2026-10-24T08:43:13.108203+00:00,code,done,Plan sealed: writing analysis code
+R23_G2_2,44,2026-10-24T08:44:59.671866+00:00,code,running,Wrote group_dkt_thickness_sex.py
+R23_G2_2,45,2026-10-24T08:44:59.739869+00:00,code,done,Wrote group_dkt_thickness_sex.py
+R23_G2_2,46,2026-10-24T08:44:59.860009+00:00,code,done,Plan sealed: writing analysis code
+R23_G2_2,47,2026-10-24T08:45:03.958496+00:00,run,running,Running group_dkt_thickness_sex.py
+R23_G2_2,48,2026-10-24T08:45:07.588806+00:00,review,done,Analysis phase: executed_ok
+R23_G2_2,49,2026-10-24T08:45:07.657021+00:00,review,failed,Analysis phase: executed_failed
+R23_G2_2,50,2026-10-24T08:45:07.694100+00:00,run,done,Running group_dkt_thickness_sex.py
+R23_G2_2,51,2026-10-24T08:45:07.825156+00:00,review,done,Phase tools: executed_failed
+R23_G2_2,52,2026-10-24T08:45:18.461650+00:00,data,running,Inspect data: validation_feedback.json
+R23_G2_2,53,2026-10-24T08:45:18.488538+00:00,data,running,Inspect data: group_results.csv
+R23_G2_2,54,2026-10-24T08:45:18.551630+00:00,data,warn,Inspect data: validation_feedback.json
+R23_G2_2,55,2026-10-24T08:45:18.599265+00:00,data,blocked,Inspect data: group_results.csv
+R23_G2_2,56,2026-10-24T08:45:18.744434+00:00,review,done,Phase tools: executed_failed
+R23_G2_2,57,2026-10-24T08:45:30.259972+00:00,data,running,Inspect data: validation_feedback.json
+R23_G2_2,58,2026-10-24T08:45:30.274326+00:00,data,running,Inspect data: execution_bundle.v000001.j
+R23_G2_2,59,2026-10-24T08:45:30.344734+00:00,data,warn,Inspect data: validation_feedback.json
+R23_G2_2,60,2026-10-24T08:45:30.377483+00:00,data,warn,Inspect data: execution_bundle.v000001.j
+R23_G2_2,61,2026-10-24T08:45:30.540136+00:00,review,done,Phase tools: executed_failed
+R23_G2_2,62,2026-10-24T08:45:41.476994+00:00,repair,running,Recording repair hypothesis
+R23_G2_2,63,2026-10-24T08:45:41.513006+00:00,data,running,Inspect data: execution_bundle.v000001.j
+R23_G2_2,64,2026-10-24T08:45:41.580001+00:00,repair,failed,Recording repair hypothesis
+R23_G2_2,65,2026-10-24T08:45:41.632448+00:00,data,warn,Inspect data: execution_bundle.v000001.j
+R23_G2_2,66,2026-10-24T08:45:41.796691+00:00,review,done,Phase tools: executed_failed
+R23_G2_2,67,2026-10-24T08:46:05.776480+00:00,data,running,Inspect data: inputs_manifest.json
+R23_G2_2,68,2026-10-24T08:46:05.821911+00:00,data,warn,Inspect data: inputs_manifest.json
+R23_G2_2,69,2026-10-24T08:46:05.916645+00:00,review,done,Phase tools: executed_failed
+R23_G2_2,70,2026-10-24T08:46:14.099830+00:00,data,running,Inspect data: execution_bundle.v000001.j
+R23_G2_2,71,2026-10-24T08:46:14.148095+00:00,data,warn,Inspect data: execution_bundle.v000001.j
+R23_G2_2,72,2026-10-24T08:46:14.303989+00:00,review,done,Phase tools: executed_failed
+R23_G2_2,73,2026-10-24T08:46:29.708603+00:00,code,running,Wrote inspect_bundle.py
+R23_G2_2,74,2026-10-24T08:46:29.758515+00:00,code,failed,Wrote inspect_bundle.py
+R23_G2_2,75,2026-10-24T08:46:29.842125+00:00,review,done,Phase tools: executed_failed
+R23_G2_2,76,2026-10-24T08:46:57.004760+00:00,data,running,Inspect data: planning_result.v000001.js
+R23_G2_2,77,2026-10-24T08:46:57.045933+00:00,knowledge,running,Read method: evidence
+R23_G2_2,78,2026-10-24T08:46:57.074366+00:00,data,blocked,Inspect data: planning_result.v000001.js
+R23_G2_2,79,2026-10-24T08:46:57.118325+00:00,knowledge,warn,Read method: evidence
+R23_G2_2,80,2026-10-24T08:46:57.235073+00:00,review,done,Phase tools: executed_failed
+R23_G2_2,81,2026-10-24T08:47:24.234175+00:00,data,running,Inspect data: execution_bundle.v000001.j
+R23_G2_2,82,2026-10-24T08:47:24.246587+00:00,data,running,Inspect data: run_python_6384081787e84a2
+R23_G2_2,83,2026-10-24T08:47:24.298880+00:00,data,warn,Inspect data: execution_bundle.v000001.j
+R23_G2_2,84,2026-10-24T08:47:24.328780+00:00,data,warn,Inspect data: run_python_6384081787e84a2
+R23_G2_2,85,2026-10-24T08:47:24.448343+00:00,review,done,Phase tools: executed_failed
+R23_G2_2,86,2026-10-24T08:47:53.676369+00:00,data,running,Inspect data: validation_feedback.json
+R23_G2_2,87,2026-10-24T08:47:53.687431+00:00,data,running,Inspect data: constraints.json
+R23_G2_2,88,2026-10-24T08:47:53.741901+00:00,data,warn,Inspect data: validation_feedback.json
+R23_G2_2,89,2026-10-24T08:47:53.771124+00:00,data,blocked,Inspect data: constraints.json
+R23_G2_2,90,2026-10-24T08:47:53.875737+00:00,review,done,Phase tools: executed_failed
+R23_G2_2,91,2026-10-24T08:49:04.531808+00:00,data,running,Inspect data: plan_analysis_dc4516f186df
+R23_G2_2,92,2026-10-24T08:49:04.541047+00:00,knowledge,running,Read method: evidence
+R23_G2_2,93,2026-10-24T08:49:04.589964+00:00,data,warn,Inspect data: plan_analysis_dc4516f186df
+R23_G2_2,94,2026-10-24T08:49:04.614215+00:00,knowledge,warn,Read method: evidence
+R23_G2_2,95,2026-10-24T08:49:04.724038+00:00,review,done,Phase tools: executed_failed
+R23_G2_2,96,2026-10-24T08:49:54.127873+00:00,data,running,Inspect data: execution_bundle.v000001.j
+R23_G2_2,97,2026-10-24T08:49:54.172102+00:00,data,warn,Inspect data: execution_bundle.v000001.j
+R23_G2_2,98,2026-10-24T08:49:54.279907+00:00,review,done,Phase tools: executed_failed
+R23_G2_2,99,2026-10-24T08:50:13.198433+00:00,data,running,Inspect data: validation_feedback.json
+R23_G2_2,100,2026-10-24T08:50:13.244162+00:00,data,warn,Inspect data: validation_feedback.json
+R23_G2_2,101,2026-10-24T08:50:13.333141+00:00,review,done,Phase tools: executed_failed
+R23_G2_2,102,2026-10-24T08:52:14.229606+00:00,other,warn,Retrying upstream model request
+R23_G2_2,103,2026-10-24T08:54:21.766383+00:00,other,warn,Retrying upstream model request
+R23_G2_2,104,2026-10-24T08:56:38.343118+00:00,data,done,Planning and inspecting data
+R23_G2_2,105,2026-10-24T08:56:38.387597+00:00,review,running,Checking execution and outputs
+R23_G2_2,106,2026-10-24T08:56:38.445598+00:00,review,warn,Output checks need review
+R23_G2_2,107,2026-10-24T08:56:38.508984+00:00,repair,running,Repairing from tool feedback
+R23_G2_2,108,2026-10-24T08:56:38.559769+00:00,repair,done,Repairing from tool feedback
+R23_G2_2,109,2026-10-24T08:56:38.613900+00:00,data,running,Planning and inspecting data
+R23_G2_2,110,2026-10-24T08:56:38.804286+00:00,review,done,Phase tools: executed_failed
+R23_G2_2,111,2026-10-24T08:58:39.831373+00:00,other,warn,Retrying upstream model request
+R23_G2_2,112,2026-10-24T09:00:11.417791+00:00,data,running,Inspect data: plan_analysis_dc4516f186df
+R23_G2_2,113,2026-10-24T09:00:11.435841+00:00,data,running,Inspect data: execution_bundle.v000001.j
+R23_G2_2,114,2026-10-24T09:00:11.511360+00:00,data,warn,Inspect data: plan_analysis_dc4516f186df
+R23_G2_2,115,2026-10-24T09:00:11.544293+00:00,data,warn,Inspect data: execution_bundle.v000001.j
+R23_G2_2,116,2026-10-24T09:00:11.625149+00:00,data,done,Planning and inspecting data
+R23_G2_2,117,2026-10-24T09:00:11.692143+00:00,review,running,Checking execution and outputs
+R23_G2_2,118,2026-10-24T09:00:11.753409+00:00,review,warn,Output checks need review
+R23_G2_2,119,2026-10-24T09:00:11.813069+00:00,repair,running,Repairing from tool feedback
+R23_G2_2,120,2026-10-24T09:00:11.872724+00:00,repair,done,Repairing from tool feedback
+R23_G2_2,121,2026-10-24T09:00:11.931021+00:00,data,running,Planning and inspecting data
+R23_G2_2,122,2026-10-24T09:00:12.003502+00:00,data,done,Planning and inspecting data
+R23_G2_2,123,2026-10-24T09:00:12.072154+00:00,review,running,Checking execution and outputs
+R23_G2_2,124,2026-10-24T09:00:12.146462+00:00,review,warn,Output checks need review
+R23_G2_2,125,2026-10-24T09:00:12.302591+00:00,result,running,Preparing analysis result
+R23_G2_2,126,2026-10-24T09:00:12.360773+00:00,result,failed,Preparing analysis result
+R23_G2_3,1,2026-10-24T09:00:17.376259+00:00,other,done,Routed to analysis
+R23_G2_3,2,2026-10-24T09:00:17.785988+00:00,data,running,Planning and inspecting data
+R23_G2_3,3,2026-10-24T09:00:17.862103+00:00,data,running,Profiling data: 20 files
+R23_G2_3,4,2026-10-24T09:00:36.169138+00:00,data,done,Built data profile: 20 files
+R23_G2_3,5,2026-10-24T09:00:36.186714+00:00,data,running,Inspect data: inputs
+R23_G2_3,6,2026-10-24T09:00:37.750344+00:00,data,done,Inspect data: inputs
+R23_G2_3,7,2026-10-24T09:00:37.878917+00:00,review,done,Phase tools: unplanned
+R23_G2_3,8,2026-10-24T09:00:44.020963+00:00,data,running,Inspect data: 20
+R23_G2_3,9,2026-10-24T09:00:44.031197+00:00,data,running,Inspect data: data_card.json
+R23_G2_3,10,2026-10-24T09:00:44.104510+00:00,data,done,Inspect data: 20
+R23_G2_3,11,2026-10-24T09:00:44.134254+00:00,data,done,Inspect data: data_card.json
+R23_G2_3,12,2026-10-24T09:00:44.240495+00:00,review,done,Phase tools: unplanned
+R23_G2_3,13,2026-10-24T09:00:52.555333+00:00,data,running,Inspect data: participants.tsv
+R23_G2_3,14,2026-10-24T09:00:52.565340+00:00,data,running,Inspect data: data_card.json
+R23_G2_3,15,2026-10-24T09:00:52.640068+00:00,data,done,Inspect data: participants.tsv
+R23_G2_3,16,2026-10-24T09:00:52.667719+00:00,data,done,Inspect data: data_card.json
+R23_G2_3,17,2026-10-24T09:00:52.791268+00:00,review,done,Phase tools: unplanned
+R23_G2_3,18,2026-10-24T09:00:58.731156+00:00,plan,running,Planned analysis candidates
+R23_G2_3,19,2026-10-24T09:02:26.022968+00:00,plan,warn,Planned analysis candidates
+R23_G2_3,20,2026-10-24T09:02:26.136268+00:00,review,done,Phase tools: unplanned
+R23_G2_3,21,2026-10-24T09:02:30.213292+00:00,data,running,Inspect data: plan_analysis_3ac045671493
+R23_G2_3,22,2026-10-24T09:02:30.279850+00:00,data,blocked,Inspect data: plan_analysis_3ac045671493
+R23_G2_3,23,2026-10-24T09:02:30.393007+00:00,review,done,Phase tools: unplanned
+R23_G2_3,24,2026-10-24T09:02:56.490437+00:00,plan,running,Planned analysis candidates
+R23_G2_3,25,2026-10-24T09:03:28.547498+00:00,plan,done,Analysis phase: planned
+R23_G2_3,26,2026-10-24T09:03:28.588806+00:00,plan,warn,Planned analysis candidates
+R23_G2_3,27,2026-10-24T09:03:28.740062+00:00,review,done,Phase tools: planned
+R23_G2_3,28,2026-10-24T09:03:35.880441+00:00,plan,running,Checking plan prerequisites
+R23_G2_3,29,2026-10-24T09:03:37.753846+00:00,plan,done,Analysis phase: sealed
+R23_G2_3,30,2026-10-24T09:03:37.788257+00:00,plan,done,Plan sealed v1
+R23_G2_3,31,2026-10-24T09:03:37.914175+00:00,code,done,Plan sealed: writing analysis code
+R23_G2_3,32,2026-10-24T09:03:41.891202+00:00,data,running,Inspect data: INPUTS.md
+R23_G2_3,33,2026-10-24T09:03:41.945706+00:00,data,warn,Inspect data: INPUTS.md
+R23_G2_3,34,2026-10-24T09:03:42.051812+00:00,code,done,Plan sealed: writing analysis code
+R23_G2_3,35,2026-10-24T09:03:46.242749+00:00,data,running,Inspect data: contract_tables.json
+R23_G2_3,36,2026-10-24T09:03:46.266576+00:00,data,running,Inspect data: INPUTS.md
+R23_G2_3,37,2026-10-24T09:03:46.335516+00:00,data,warn,Inspect data: contract_tables.json
+R23_G2_3,38,2026-10-24T09:03:46.364167+00:00,data,warn,Inspect data: INPUTS.md
+R23_G2_3,39,2026-10-24T09:03:46.512930+00:00,code,done,Plan sealed: writing analysis code
+R23_G2_3,40,2026-10-24T09:03:50.659993+00:00,knowledge,running,Read method: evidence
+R23_G2_3,41,2026-10-24T09:03:50.675162+00:00,data,running,Inspect data: execution_bundle.v000001.j
+R23_G2_3,42,2026-10-24T09:03:50.734570+00:00,knowledge,warn,Read method: evidence
+R23_G2_3,43,2026-10-24T09:03:50.773755+00:00,data,warn,Inspect data: execution_bundle.v000001.j
+R23_G2_3,44,2026-10-24T09:03:50.948729+00:00,code,done,Plan sealed: writing analysis code
+R23_G2_3,45,2026-10-24T09:03:55.468152+00:00,knowledge,running,Read method: evidence
+R23_G2_3,46,2026-10-24T09:03:55.512160+00:00,data,running,Inspect data: inputs_manifest.json
+R23_G2_3,47,2026-10-24T09:03:55.602148+00:00,knowledge,warn,Read method: evidence
+R23_G2_3,48,2026-10-24T09:03:55.688712+00:00,data,warn,Inspect data: inputs_manifest.json
+R23_G2_3,49,2026-10-24T09:03:55.889258+00:00,code,done,Plan sealed: writing analysis code
+R23_G2_3,50,2026-10-24T09:04:00.488702+00:00,data,running,Inspect data: label_sets.v000001.json
+R23_G2_3,51,2026-10-24T09:04:00.515479+00:00,data,running,Inspect data: inputs_manifest.json
+R23_G2_3,52,2026-10-24T09:04:00.578655+00:00,data,warn,Inspect data: label_sets.v000001.json
+R23_G2_3,53,2026-10-24T09:04:00.615263+00:00,data,warn,Inspect data: inputs_manifest.json
+R23_G2_3,54,2026-10-24T09:04:00.755057+00:00,code,done,Plan sealed: writing analysis code
+R23_G2_3,55,2026-10-24T09:05:37.459871+00:00,code,running,Wrote analysis_dkt_thickness_sex.py
+R23_G2_3,56,2026-10-24T09:05:37.546550+00:00,code,done,Wrote analysis_dkt_thickness_sex.py
+R23_G2_3,57,2026-10-24T09:05:37.673217+00:00,code,done,Plan sealed: writing analysis code
+R23_G2_3,58,2026-10-24T09:05:40.560933+00:00,run,running,Running analysis_dkt_thickness_sex.py
+R23_G2_3,59,2026-10-24T09:05:43.691468+00:00,review,done,Analysis phase: executed_ok
+R23_G2_3,60,2026-10-24T09:05:43.797348+00:00,plan,done,Analysis phase: finalized
+R23_G2_3,61,2026-10-24T09:05:51.581163+00:00,run,done,Running analysis_dkt_thickness_sex.py
+R23_G2_3,62,2026-10-24T09:05:51.694518+00:00,review,done,Phase tools: finalized
+R23_G2_3,63,2026-10-24T09:06:15.920161+00:00,data,done,Planning and inspecting data
+R23_G2_3,64,2026-10-24T09:06:15.955836+00:00,review,running,Checking execution and outputs
+R23_G2_3,65,2026-10-24T09:08:17.770619+00:00,other,warn,Retrying upstream model request
+R23_G2_3,66,2026-10-24T09:10:24.890275+00:00,other,warn,Retrying upstream model request
+R23_G2_3,67,2026-10-24T09:14:13.072729+00:00,review,warn,Output checks need review
+R23_G2_3,68,2026-10-24T09:14:13.107111+00:00,result,running,Preparing analysis result
+R23_G2_3,69,2026-10-24T09:14:13.143745+00:00,result,warn,Preparing analysis result

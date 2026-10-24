@@ -1,0 +1,28 @@
+{
+  "registered_subjects": [
+    "IXI026",
+    "IXI045",
+    "IXI064",
+    "IXI095",
+    "IXI158",
+    "IXI198",
+    "IXI216",
+    "IXI267",
+    "IXI288",
+    "IXI294",
+    "IXI303",
+    "IXI307",
+    "IXI327",
+    "IXI353",
+    "IXI434",
+    "IXI442",
+    "IXI445",
+    "IXI542",
+    "IXI546",
+    "IXI625"
+  ],
+  "development_ixi20_exact": true,
+  "held_out_registered": false,
+  "new_macaques_released": 0,
+  "preprocessing_submissions_authorized": false
+}
