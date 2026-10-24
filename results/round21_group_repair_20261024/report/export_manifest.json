@@ -1,6 +1,16 @@
 {
-  "scope": "Round21 public-review small-file whitelist; no images/volumes/license/credentials; code sync not yet approved",
+  "scope": "Round21 small-file review whitelist; no images, volumes, license or credentials; six-file source sync directly approved and validated offline",
   "files": [
+    {
+      "name": "6007同步与离线回归.json",
+      "bytes": 4214,
+      "sha256": "6cb4c894abcdbe85f854d4eb7a2a2c09d6d2746235a7a4e4181a68b56285ade5"
+    },
+    {
+      "name": "6007源码与清单核验.json",
+      "bytes": 699,
+      "sha256": "7f843a1eb1f746535afd1c4d53a978e31c354b42b5cdaf5918332b453ad03448"
+    },
     {
       "name": "participants.tsv",
       "bytes": 748,
@@ -22,6 +32,11 @@
       "sha256": "13407789e87de0063f1a36d5e6a129748ac3d6846404954736cbd2ffe02dd528"
     },
     {
+      "name": "受保护文件核验_6007修正版.json",
+      "bytes": 5926,
+      "sha256": "10c58fb83c797cbf4707c54eaba47cc244a25d8ce3365bb153c8d456a1bcff7a"
+    },
+    {
       "name": "受保护文件核验_本地修正版.json",
       "bytes": 5536,
       "sha256": "d5e030cd41be9b4e70113b2c1f4ee4e95262ea310e5f6c3a442fb35bf7fea598"
@@ -30,6 +45,11 @@
       "name": "安全核对_批次结束.json",
       "bytes": 8495,
       "sha256": "a6dec0541b39876c3297b8f5f830fb384a19f390ee50d16efb4e50c8afecb181"
+    },
+    {
+      "name": "封存后同步安全核对.json",
+      "bytes": 6885,
+      "sha256": "c764d3b57ec725c4f77196dae6a8af2f6bac299a305649f7b2242b2e2963b4b3"
     },
     {
       "name": "待同步六文件清单.json",
@@ -107,9 +127,14 @@
       "sha256": "392dd72ce21b67dfea2e69092a4b7fe6b3ae47391f197f4c11a316c1e4abe9a6"
     },
     {
+      "name": "离线合成验收_6007修正版.json",
+      "bytes": 1271,
+      "sha256": "596200e57dcd81e14de293e5ecde372c52a41f2073bfee515c0cfff71cffd1f0"
+    },
+    {
       "name": "第二十一轮报告.md",
-      "bytes": 15885,
-      "sha256": "0ae7f9eac01199499ba3e1be96f6045fee13b8e3795c0ad724c8b540cd31680b"
+      "bytes": 17278,
+      "sha256": "fb3782cf08d6ceccc39e94751b97c709ef3b97ff67bd6ec0e7c9ad9ab8446d20"
     },
     {
       "name": "路由故障本地复现.json",
@@ -125,7 +150,9 @@
   "no_mri_or_macaque_qc_images": true,
   "real_analysis_entries": 4,
   "actual_upstream_http_sends": 0,
-  "remote_post_stop_sdk_full_validation": "pending_user_approval",
+  "remote_post_stop_sdk_full_validation": "passed",
   "latest_local_code_commit": "604118407f11cf35123dc84a739ae33b48468a63",
-  "frozen_real_run_source_commit": "2dbaf9b478ed5e5fbcb15fc900e4b797da99feac"
+  "frozen_real_run_source_commit": "2dbaf9b478ed5e5fbcb15fc900e4b797da99feac",
+  "latest_remote_code_commit": "0a229157abf4398613866e9cabff409ab2897043",
+  "latest_remote_inventory_commit": "691350a2d5fd90aed570b1cb87be9004ff41c308"
 }
