@@ -376,9 +376,16 @@ def _candidate(tools, spec, method, entries, files, atlas_name, intent, domain, 
                     keys = value(detail.get("label_keys")) or list(range(len(value(detail["label_names"]))))
                     counts = value(detail.get("cortex_retained_label_counts")) or value(detail.get("label_vertex_counts")) or {}
                     from .analysis_lobar_mapping import resolve_lobes
-                    requested, lobe_evidence, lobe_error = resolve_lobes(entry, atlas_name, intent.regions, value(detail["label_names"]), tools=tools)
+                    requested, lobe_evidence, lobe_error = resolve_lobes(entry, atlas_name, intent.regions, value(detail["label_names"]), tools=tools, hemisphere=hemi, annotation_path=value(ann["path"]))
                     selected, evidence, unresolved = resolve_regions(value(detail["label_names"]), keys, counts, requested, domain)
                     evidence.extend(lobe_evidence)
+                    for observation in lobe_evidence:
+                        if observation.get("kind") == "region_overlap":
+                            for source in observation["provenance"]["inputs"].values():
+                                if source["path"] not in by_path:
+                                    lobe_error = "Missing profiled region overlap product: " + source["path"]
+                                else:
+                                    chosen.append(by_path[source["path"]])
                     if lobe_error:
                         missing.add("parcellation_mapping:" + lobe_error)
                         selected = []
@@ -388,12 +395,24 @@ def _candidate(tools, spec, method, entries, files, atlas_name, intent, domain, 
                     mapping.extend(evidence)
                     if surf and reg:
                         bindings.append({"label": value(ann["path"]), "surface": value(surf["path"]), "mesh_origin": "same approved subject native derivative bundle; anatomical provenance unverified", "space": intent.space or "native_stored", "registration_ref": value(reg[0]["path"])})
+                        for observation in lobe_evidence:
+                            if observation.get("kind") == "region_overlap":
+                                inputs = observation["provenance"]["inputs"]
+                                reference_path = inputs["reference_annotation"]["path"]
+                                if not any(row["label"] == reference_path for row in bindings):
+                                    bindings.append({"label": reference_path, "surface": inputs["white_surface"]["path"], "mesh_origin": "DK reference in the same approved subject native bundle; anatomical correspondence unverified", "space": intent.space or "native_stored", "registration_ref": value(reg[0]["path"])})
     chosen = list({value(f["path"]): f for f in chosen}.values())
     atlas = {"name": atlas_name or "not applicable", "version": "input annotation fingerprint; acquisition release unknown" if atlas_name else None, "space": intent.space or "native_stored", "hemisphere_rule": "separate lh/rh; preserve native vertex IDs", "applicable": bool(atlas_name), "reason": None if atlas_name else "Method operates on whole supplied surfaces without a parcellation", "exclude_labels": [-1, "unknown", "medialwall", "corpuscallosum"], "mesh_bindings": bindings}
     notice = ["Species is user/registration-declared only; not independently verified", "Stored coordinates/values; no verified acquisition-scale or expert anatomical-QC claim"]
     if method["id"].endswith("global_convex_hull_gyrification"):
         notice.append("Global full-pial-area / same-surface 3D convex-hull area is a descriptive alternative, not local gyrification index (lGI)")
     context = {"question": "Describe requested stored products with " + method["name"], "data": {"files": [value(f["path"]) for f in chosen], "subjects": [e["subject_id"] for e in entries], "profile_sha256": profile["sha256"], "profile_ref": f"data_profile.v{profile['version']:06d}.json", "species_declared": intent.species, "species_verified": None}, "atlas": atlas, "method": {"method_id": method["id"], "name": method["name"], "reason": "Candidate for declared measures and comparison; selected by Agent at commitment"}, "outputs": ["summary.csv", "summary.json", "report.md"], "code_path": "/work/analysis.py", "analysis_scope": {"inference": intent.comparison in {"group", "correlation"}, "scale_policy": "dimensionless_per_input" if method["id"].endswith("global_convex_hull_gyrification") else "within_input_only", "comparison": intent.comparison, "labels": labels, "notices": notice}}
+    overlaps = [row for row in mapping if row.get("kind") == "region_overlap"]
+    if overlaps:
+        from .analysis_region_overlap import disclosure
+        context["analysis_scope"]["region_overlap_evidence"] = overlaps
+        context["data"]["species_declared"] = "human"
+        notice.extend(disclosure(row) for row in overlaps)
     if method["id"] == "method:v14:group_regional_glm":
         context["outputs"] = ["regional_values.csv", "group_results.csv", "summary.json", "report.md"]
     if atlas_name:

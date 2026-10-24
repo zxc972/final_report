@@ -372,6 +372,8 @@ def _submit_conclusion_once(tools, text, claim_scope, direction=None):
     rows.extend(original_blocks.get(row["constraint_id"], row) for row in posterior_rows)
     covered = {row["constraint_id"] for row in rows}
     rows.extend(row for key, row in original_blocks.items() if key not in covered)
+    from .analysis_region_overlap import conclusion_checks, attach_card
+    rows.extend(conclusion_checks(plan))
     posterior = tools.control_store.save(
         "conclusion_checks",
         {
@@ -389,6 +391,7 @@ def _submit_conclusion_once(tools, text, claim_scope, direction=None):
         supported_scopes(plan, rows, repository),
         direction=direction,
     )
+    card = attach_card(card, plan)
     card["postexecution_checks_ref"] = (
         f"conclusion_checks.v{posterior['version']:06d}.json"
     )

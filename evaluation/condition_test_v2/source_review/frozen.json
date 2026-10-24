@@ -1,0 +1,17 @@
+{
+  "script_sha256": "173889945d512e075d51eef4be9afe6bd5b8006abbf5010a70ff39476269cd62",
+  "review_audit_sha256": "91810c4c9bc61e453d432d76147c0ccd71d4fb6b155d86b0f656eba57b73c56d",
+  "handoff_manifest_sha256": "caf821b66b1e841c595822ca94362fc7a025f969365168eb9c8803000a7239b0",
+  "reviewed_at_utc": "2026-10-24T05:44:57.330286+00:00",
+  "annotation_frozen": false,
+  "freeze_type": "source_cards_only",
+  "retained_claims": 191,
+  "annotation_statements": 83,
+  "quarantined": 1,
+  "fields": {
+    "inputs": 33,
+    "conditions": 24,
+    "checks": 11,
+    "exceptions": 15
+  }
+}

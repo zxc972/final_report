@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "checks": [
+    "new_integration",
+    "region_algorithm",
+    "sdk_binding",
+    "targeted_merged",
+    "backend_default_merged",
+    "synthetic_singularity_merged"
+  ],
+  "provider_requests": 0,
+  "real_analysis_requests": 0
+}

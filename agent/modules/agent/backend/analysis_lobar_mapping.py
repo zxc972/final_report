@@ -5,7 +5,7 @@ import re
 from .analysis_product_planner import load_knowledge
 
 
-def resolve_lobes(entry, atlas_name, regions, names, tools=None):
+def resolve_lobes(entry, atlas_name, regions, names, tools=None, *, hemisphere=None, annotation_path=None):
     tokens = [regions] if isinstance(regions, str) else regions
     aliases = {
         name + suffix: name
@@ -46,6 +46,24 @@ def resolve_lobes(entry, atlas_name, regions, names, tools=None):
                 "Species remains declaration-only; CHARM is defined in NMT v2 space."
             ),
         )
+    if atlas_name == "aparc.a2009s":
+        mapping, mapping_sha = load_knowledge("lobar_mapping", tools)
+        from .analysis_region_overlap import resolve_native
+        expanded, evidence = [], []
+        for token, lobe in zip(tokens, requested):
+            if lobe is None:
+                expanded.append(token)
+                continue
+            try:
+                labels, observation, error = resolve_native(entry, hemisphere, annotation_path, lobe,
+                                                            mapping["records"], mapping_sha)
+            except (ValueError, OSError, RuntimeError) as exc:
+                return regions, [], "Region overlap unavailable: " + str(exc)
+            if error:
+                return regions, [], error
+            expanded.extend(labels)
+            evidence.append(observation)
+        return list(dict.fromkeys(expanded)), evidence, None
     atlas = (
         "DKT"
         if atlas_name

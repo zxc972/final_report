@@ -1,0 +1,2688 @@
+{
+ "results": [
+  {
+   "condition": "C3_DK_to_Destrieux",
+   "provenance": {
+    "subject": "fsaverage",
+    "hemi": "lh",
+    "surface": "lh.white",
+    "surface_sha256": "11b39bd38090b504142d3fd23be422046fac4f44d6e73eb7097af58ba3e2f0cc",
+    "annotations": {
+     "DK": {
+      "file": "lh.aparc.annot",
+      "sha256": "39b1acde9a32b4227631eb51cbcd8dff84e2138c57bf9f96d74026f2c17f1480"
+     },
+     "Destrieux": {
+      "file": "lh.aparc.a2009s.annot",
+      "sha256": "8ce931d3c87d9dfd369ac739fa32c04ab9b8335afab0e6d77f569b43d8c0b70e"
+     }
+    },
+    "mapping_sha256": "eb38082fce092038cd0f941e316f132e9ba4fea51b2c393356119c374ed3e5c7"
+   },
+   "n_labels": 74,
+   "regions": {
+    "cingulate": {
+     "labels": [
+      "G_and_S_cingul-Mid-Post",
+      "G_cingul-Post-dorsal",
+      "G_cingul-Post-ventral",
+      "S_pericallosal"
+     ],
+     "weights": {
+      "G_and_S_cingul-Mid-Post": 0.604836,
+      "G_cingul-Post-dorsal": 0.959145,
+      "G_cingul-Post-ventral": 0.972425,
+      "S_pericallosal": 1.0
+     },
+     "coverage": 0.6000803170413584,
+     "purity": 0.8551619115667122,
+     "dice": 0.7052651729402967,
+     "ambiguous": [
+      "S_cingul-Marginalis"
+     ],
+     "verdict": "qualified"
+    },
+    "frontal": {
+     "labels": [
+      "G_and_S_cingul-Ant",
+      "G_and_S_cingul-Mid-Ant",
+      "G_and_S_frontomargin",
+      "G_and_S_paracentral",
+      "G_and_S_transv_frontopol",
+      "G_front_inf-Opercular",
+      "G_front_inf-Orbital",
+      "G_front_inf-Triangul",
+      "G_front_middle",
+      "G_front_sup",
+      "G_orbital",
+      "G_precentral",
+      "G_rectus",
+      "G_subcallosal",
+      "Lat_Fis-ant-Horizont",
+      "Lat_Fis-ant-Vertical",
+      "S_central",
+      "S_circular_insula_ant",
+      "S_front_inf",
+      "S_front_middle",
+      "S_front_sup",
+      "S_orbital-H_Shaped",
+      "S_orbital_lateral",
+      "S_orbital_med-olfact",
+      "S_precentral-inf-part",
+      "S_precentral-sup-part",
+      "S_suborbital"
+     ],
+     "weights": {
+      "G_and_S_cingul-Ant": 0.55517,
+      "G_and_S_cingul-Mid-Ant": 0.52905,
+      "G_and_S_frontomargin": 1.0,
+      "G_and_S_paracentral": 0.785508,
+      "G_and_S_transv_frontopol": 1.0,
+      "G_front_inf-Opercular": 1.0,
+      "G_front_inf-Orbital": 1.0,
+      "G_front_inf-Triangul": 1.0,
+      "G_front_middle": 1.0,
+      "G_front_sup": 0.999906,
+      "G_orbital": 0.988099,
+      "G_precentral": 1.0,
+      "G_rectus": 1.0,
+      "G_subcallosal": 0.577852,
+      "Lat_Fis-ant-Horizont": 1.0,
+      "Lat_Fis-ant-Vertical": 1.0,
+      "S_central": 0.521359,
+      "S_circular_insula_ant": 0.772491,
+      "S_front_inf": 1.0,
+      "S_front_middle": 1.0,
+      "S_front_sup": 1.0,
+      "S_orbital-H_Shaped": 1.0,
+      "S_orbital_lateral": 1.0,
+      "S_orbital_med-olfact": 0.99915,
+      "S_precentral-inf-part": 1.0,
+      "S_precentral-sup-part": 1.0,
+      "S_suborbital": 0.998827
+     },
+     "coverage": 0.939859955455705,
+     "purity": 0.9054591957043767,
+     "dice": 0.9223389231143889,
+     "ambiguous": [
+      "S_cingul-Marginalis"
+     ],
+     "verdict": "qualified"
+    },
+    "insula": {
+     "labels": [
+      "G_Ins_lg_and_S_cent_ins",
+      "G_insular_short",
+      "S_circular_insula_sup"
+     ],
+     "weights": {
+      "G_Ins_lg_and_S_cent_ins": 1.0,
+      "G_insular_short": 0.989772,
+      "S_circular_insula_sup": 0.518766
+     },
+     "coverage": 0.6286757738030408,
+     "purity": 0.7006060845641436,
+     "dice": 0.6626947769911053,
+     "ambiguous": [],
+     "verdict": "qualified"
+    },
+    "occipital": {
+     "labels": [
+      "G_and_S_occipital_inf",
+      "G_cuneus",
+      "G_oc-temp_med-Lingual",
+      "G_occipital_middle",
+      "Pole_occipital",
+      "S_calcarine",
+      "S_collat_transv_post",
+      "S_oc_middle_and_Lunatus",
+      "S_occipital_ant"
+     ],
+     "weights": {
+      "G_and_S_occipital_inf": 0.934318,
+      "G_cuneus": 0.950953,
+      "G_oc-temp_med-Lingual": 0.991843,
+      "G_occipital_middle": 0.564767,
+      "Pole_occipital": 1.0,
+      "S_calcarine": 0.772658,
+      "S_collat_transv_post": 0.54429,
+      "S_oc_middle_and_Lunatus": 0.916629,
+      "S_occipital_ant": 0.785743
+     },
+     "coverage": 0.8605295111680172,
+     "purity": 0.8627142311268761,
+     "dice": 0.8616204862588259,
+     "ambiguous": [],
+     "verdict": "resolved"
+    },
+    "parietal": {
+     "labels": [
+      "G_and_S_subcentral",
+      "G_occipital_sup",
+      "G_pariet_inf-Angular",
+      "G_pariet_inf-Supramar",
+      "G_parietal_sup",
+      "G_postcentral",
+      "G_precuneus",
+      "S_interm_prim-Jensen",
+      "S_intrapariet_and_P_trans",
+      "S_oc_sup_and_transversal",
+      "S_parieto_occipital",
+      "S_postcentral",
+      "S_subparietal"
+     ],
+     "weights": {
+      "G_and_S_subcentral": 0.775088,
+      "G_occipital_sup": 0.752042,
+      "G_pariet_inf-Angular": 0.998622,
+      "G_pariet_inf-Supramar": 0.990812,
+      "G_parietal_sup": 1.0,
+      "G_postcentral": 1.0,
+      "G_precuneus": 0.96821,
+      "S_interm_prim-Jensen": 1.0,
+      "S_intrapariet_and_P_trans": 1.0,
+      "S_oc_sup_and_transversal": 0.84891,
+      "S_parieto_occipital": 0.766109,
+      "S_postcentral": 1.0,
+      "S_subparietal": 0.763142
+     },
+     "coverage": 0.7699914034602409,
+     "purity": 0.9305526078682094,
+     "dice": 0.8426921076465318,
+     "ambiguous": [
+      "Lat_Fis-post",
+      "S_cingul-Marginalis"
+     ],
+     "verdict": "qualified"
+    },
+    "temporal": {
+     "labels": [
+      "G_oc-temp_lat-fusifor",
+      "G_oc-temp_med-Parahip",
+      "G_temp_sup-G_T_transv",
+      "G_temp_sup-Lateral",
+      "G_temp_sup-Plan_polar",
+      "G_temp_sup-Plan_tempo",
+      "G_temporal_inf",
+      "G_temporal_middle",
+      "Pole_temporal",
+      "S_circular_insula_inf",
+      "S_collat_transv_ant",
+      "S_oc-temp_lat",
+      "S_oc-temp_med_and_Lingual",
+      "S_temporal_inf",
+      "S_temporal_sup",
+      "S_temporal_transverse"
+     ],
+     "weights": {
+      "G_oc-temp_lat-fusifor": 1.0,
+      "G_oc-temp_med-Parahip": 0.986503,
+      "G_temp_sup-G_T_transv": 1.0,
+      "G_temp_sup-Lateral": 0.999693,
+      "G_temp_sup-Plan_polar": 0.885845,
+      "G_temp_sup-Plan_tempo": 0.651581,
+      "G_temporal_inf": 0.999304,
+      "G_temporal_middle": 0.99411,
+      "Pole_temporal": 1.0,
+      "S_circular_insula_inf": 0.566926,
+      "S_collat_transv_ant": 1.0,
+      "S_oc-temp_lat": 1.0,
+      "S_oc-temp_med_and_Lingual": 0.650471,
+      "S_temporal_inf": 0.952464,
+      "S_temporal_sup": 0.646699,
+      "S_temporal_transverse": 1.0
+     },
+     "coverage": 0.9626198031116324,
+     "purity": 0.8529065447973094,
+     "dice": 0.9044481576056834,
+     "ambiguous": [
+      "Lat_Fis-post"
+     ],
+     "verdict": "qualified"
+    }
+   },
+   "inclusion": {
+    "G_precentral": {
+     "frontal": 1.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "G_parietal_sup": {
+     "frontal": 0.0,
+     "parietal": 1.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "G_and_S_cingul-Mid-Post": {
+     "frontal": 0.39516356443806966,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "cingulate": 0.6048364355619297,
+     "insula": 0.0
+    },
+    "S_front_middle": {
+     "frontal": 1.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "G_and_S_subcentral": {
+     "frontal": 0.22491196603548935,
+     "parietal": 0.7750880339645114,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "G_pariet_inf-Supramar": {
+     "frontal": 0.0,
+     "parietal": 0.9908122786031511,
+     "occipital": 0.0,
+     "temporal": 0.009187721396848363,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "G_occipital_middle": {
+     "frontal": 0.0,
+     "parietal": 0.4352327963524132,
+     "occipital": 0.5647672036475859,
+     "temporal": 0.0,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "S_calcarine": {
+     "frontal": 0.0,
+     "parietal": 0.0945328696766083,
+     "occipital": 0.7726580888542066,
+     "temporal": 0.0,
+     "cingulate": 0.1328090414691858,
+     "insula": 0.0
+    },
+    "S_circular_insula_ant": {
+     "frontal": 0.772491137284615,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "cingulate": 0.0,
+     "insula": 0.2275088627153841
+    },
+    "S_temporal_sup": {
+     "frontal": 0.0,
+     "parietal": 0.35330076130623034,
+     "occipital": 0.0,
+     "temporal": 0.6466992386937666,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "S_collat_transv_ant": {
+     "frontal": 0.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 1.0,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "S_front_inf": {
+     "frontal": 1.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "G_front_middle": {
+     "frontal": 1.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "G_postcentral": {
+     "frontal": 0.0,
+     "parietal": 1.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "S_intrapariet_and_P_trans": {
+     "frontal": 0.0,
+     "parietal": 1.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "G_front_sup": {
+     "frontal": 0.9999058807017912,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "cingulate": 9.411929820875158e-05,
+     "insula": 0.0
+    },
+    "S_cingul-Marginalis": {
+     "frontal": 0.39488695238887345,
+     "parietal": 0.3771540895803275,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "cingulate": 0.22795895803079658,
+     "insula": 0.0
+    },
+    "G_and_S_cingul-Ant": {
+     "frontal": 0.5551696122911164,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "cingulate": 0.4448303877088836,
+     "insula": 0.0
+    },
+    "S_pericallosal": {
+     "frontal": 0.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "cingulate": 1.0,
+     "insula": 0.0
+    },
+    "G_orbital": {
+     "frontal": 0.9880990344303993,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "cingulate": 0.0,
+     "insula": 0.011900965569600495
+    },
+    "G_front_inf-Opercular": {
+     "frontal": 1.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "Lat_Fis-post": {
+     "frontal": 0.0,
+     "parietal": 0.4404370561152959,
+     "occipital": 0.0,
+     "temporal": 0.36290334299564714,
+     "cingulate": 0.0,
+     "insula": 0.19665960088905776
+    },
+    "S_circular_insula_inf": {
+     "frontal": 0.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.5669262478997655,
+     "cingulate": 0.0,
+     "insula": 0.4330737521002348
+    },
+    "G_temp_sup-Lateral": {
+     "frontal": 0.0,
+     "parietal": 0.00030731395707106555,
+     "occipital": 0.0,
+     "temporal": 0.9996926860429288,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "G_temporal_middle": {
+     "frontal": 0.0,
+     "parietal": 0.005890059635915612,
+     "occipital": 0.0,
+     "temporal": 0.9941099403640845,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "S_oc_sup_and_transversal": {
+     "frontal": 0.0,
+     "parietal": 0.8489103089667097,
+     "occipital": 0.151089691033291,
+     "temporal": 0.0,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "S_parieto_occipital": {
+     "frontal": 0.0,
+     "parietal": 0.7661094165501896,
+     "occipital": 0.23389058344981056,
+     "temporal": 0.0,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "G_cingul-Post-dorsal": {
+     "frontal": 0.0,
+     "parietal": 0.040855229115365266,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "cingulate": 0.959144770884635,
+     "insula": 0.0
+    },
+    "Pole_temporal": {
+     "frontal": 0.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 1.0,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "S_temporal_inf": {
+     "frontal": 0.0,
+     "parietal": 0.0,
+     "occipital": 0.047536424162728824,
+     "temporal": 0.9524635758372711,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "G_oc-temp_lat-fusifor": {
+     "frontal": 0.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 1.0,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "G_oc-temp_med-Lingual": {
+     "frontal": 0.0,
+     "parietal": 0.0,
+     "occipital": 0.9918433748329052,
+     "temporal": 0.00815662516709505,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "S_central": {
+     "frontal": 0.5213587112109357,
+     "parietal": 0.47864128878906376,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "S_precentral-sup-part": {
+     "frontal": 1.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "S_front_sup": {
+     "frontal": 1.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "G_and_S_frontomargin": {
+     "frontal": 1.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "S_circular_insula_sup": {
+     "frontal": 0.42641160985840404,
+     "parietal": 0.05482221977196131,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "cingulate": 0.0,
+     "insula": 0.5187661703696353
+    },
+    "G_pariet_inf-Angular": {
+     "frontal": 0.0,
+     "parietal": 0.9986221500052669,
+     "occipital": 0.0,
+     "temporal": 0.0013778499947331884,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "G_precuneus": {
+     "frontal": 0.0,
+     "parietal": 0.9682099320174521,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "cingulate": 0.03179006798254877,
+     "insula": 0.0
+    },
+    "G_occipital_sup": {
+     "frontal": 0.0,
+     "parietal": 0.7520417938111449,
+     "occipital": 0.24795820618885542,
+     "temporal": 0.0,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "S_subparietal": {
+     "frontal": 0.0,
+     "parietal": 0.7631419575816173,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "cingulate": 0.23685804241838349,
+     "insula": 0.0
+    },
+    "G_and_S_cingul-Mid-Ant": {
+     "frontal": 0.529049534747357,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "cingulate": 0.47095046525264156,
+     "insula": 0.0
+    },
+    "G_rectus": {
+     "frontal": 1.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "G_Ins_lg_and_S_cent_ins": {
+     "frontal": 0.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "cingulate": 0.0,
+     "insula": 1.0
+    },
+    "G_temp_sup-Plan_polar": {
+     "frontal": 0.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.885845395391342,
+     "cingulate": 0.0,
+     "insula": 0.11415460460865952
+    },
+    "Pole_occipital": {
+     "frontal": 0.0,
+     "parietal": 0.0,
+     "occipital": 1.0,
+     "temporal": 0.0,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "G_and_S_occipital_inf": {
+     "frontal": 0.0,
+     "parietal": 0.0,
+     "occipital": 0.9343176969739746,
+     "temporal": 0.06568230302602586,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "G_cingul-Post-ventral": {
+     "frontal": 0.0,
+     "parietal": 0.00788320919481698,
+     "occipital": 0.0,
+     "temporal": 0.0170150772048394,
+     "cingulate": 0.9724248024611305,
+     "insula": 0.0
+    },
+    "G_oc-temp_med-Parahip": {
+     "frontal": 0.0,
+     "parietal": 0.0,
+     "occipital": 0.004350720965343187,
+     "temporal": 0.9865034656804231,
+     "cingulate": 0.003647185799655438,
+     "insula": 0.005498627554578249
+    },
+    "S_precentral-inf-part": {
+     "frontal": 1.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "S_postcentral": {
+     "frontal": 0.0,
+     "parietal": 1.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "G_and_S_paracentral": {
+     "frontal": 0.7855084107338368,
+     "parietal": 0.21449158926616224,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "G_front_inf-Orbital": {
+     "frontal": 1.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "S_orbital-H_Shaped": {
+     "frontal": 1.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "G_front_inf-Triangul": {
+     "frontal": 1.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "S_temporal_transverse": {
+     "frontal": 0.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 1.0,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "G_insular_short": {
+     "frontal": 0.010227858389509865,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "cingulate": 0.0,
+     "insula": 0.9897721416104904
+    },
+    "S_occipital_ant": {
+     "frontal": 0.0,
+     "parietal": 0.05666254789351917,
+     "occipital": 0.7857426045821149,
+     "temporal": 0.15759484752436517,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "G_cuneus": {
+     "frontal": 0.0,
+     "parietal": 0.04904654678761374,
+     "occipital": 0.9509534532123857,
+     "temporal": 0.0,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "G_temporal_inf": {
+     "frontal": 0.0,
+     "parietal": 0.0,
+     "occipital": 0.0006960804367162913,
+     "temporal": 0.9993039195632835,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "S_oc-temp_med_and_Lingual": {
+     "frontal": 0.0,
+     "parietal": 0.0,
+     "occipital": 0.3495286246750937,
+     "temporal": 0.6504713753249042,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "S_interm_prim-Jensen": {
+     "frontal": 0.0,
+     "parietal": 1.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "G_subcallosal": {
+     "frontal": 0.5778522105776459,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "cingulate": 0.4221477894223541,
+     "insula": 0.0
+    },
+    "G_and_S_transv_frontopol": {
+     "frontal": 1.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "S_suborbital": {
+     "frontal": 0.9988272456013902,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "cingulate": 0.0011727543986096629,
+     "insula": 0.0
+    },
+    "S_orbital_lateral": {
+     "frontal": 1.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "G_temp_sup-G_T_transv": {
+     "frontal": 0.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 1.0,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "S_collat_transv_post": {
+     "frontal": 0.0,
+     "parietal": 0.0,
+     "occipital": 0.5442902671667527,
+     "temporal": 0.4557097328332477,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "S_orbital_med-olfact": {
+     "frontal": 0.9991500986801086,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "cingulate": 0.0,
+     "insula": 0.0008499013198913634
+    },
+    "Lat_Fis-ant-Vertical": {
+     "frontal": 1.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "Lat_Fis-ant-Horizont": {
+     "frontal": 1.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "G_temp_sup-Plan_tempo": {
+     "frontal": 0.0,
+     "parietal": 0.3484191217303683,
+     "occipital": 0.0,
+     "temporal": 0.6515808782696312,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "S_oc_middle_and_Lunatus": {
+     "frontal": 0.0,
+     "parietal": 0.08337078596489678,
+     "occipital": 0.9166292140351034,
+     "temporal": 0.0,
+     "cingulate": 0.0,
+     "insula": 0.0
+    },
+    "S_oc-temp_lat": {
+     "frontal": 0.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 1.0,
+     "cingulate": 0.0,
+     "insula": 0.0
+    }
+   },
+   "methods": {
+    "overlap_weighted": {
+     "mapping": {
+      "G_Ins_lg_and_S_cent_ins": "insula",
+      "G_and_S_cingul-Ant": "frontal",
+      "G_and_S_cingul-Mid-Ant": "frontal",
+      "G_and_S_cingul-Mid-Post": "cingulate",
+      "G_and_S_frontomargin": "frontal",
+      "G_and_S_occipital_inf": "occipital",
+      "G_and_S_paracentral": "frontal",
+      "G_and_S_subcentral": "parietal",
+      "G_and_S_transv_frontopol": "frontal",
+      "G_cingul-Post-dorsal": "cingulate",
+      "G_cingul-Post-ventral": "cingulate",
+      "G_cuneus": "occipital",
+      "G_front_inf-Opercular": "frontal",
+      "G_front_inf-Orbital": "frontal",
+      "G_front_inf-Triangul": "frontal",
+      "G_front_middle": "frontal",
+      "G_front_sup": "frontal",
+      "G_insular_short": "insula",
+      "G_oc-temp_lat-fusifor": "temporal",
+      "G_oc-temp_med-Lingual": "occipital",
+      "G_oc-temp_med-Parahip": "temporal",
+      "G_occipital_middle": "occipital",
+      "G_occipital_sup": "parietal",
+      "G_orbital": "frontal",
+      "G_pariet_inf-Angular": "parietal",
+      "G_pariet_inf-Supramar": "parietal",
+      "G_parietal_sup": "parietal",
+      "G_postcentral": "parietal",
+      "G_precentral": "frontal",
+      "G_precuneus": "parietal",
+      "G_rectus": "frontal",
+      "G_subcallosal": "frontal",
+      "G_temp_sup-G_T_transv": "temporal",
+      "G_temp_sup-Lateral": "temporal",
+      "G_temp_sup-Plan_polar": "temporal",
+      "G_temp_sup-Plan_tempo": "temporal",
+      "G_temporal_inf": "temporal",
+      "G_temporal_middle": "temporal",
+      "Lat_Fis-ant-Horizont": "frontal",
+      "Lat_Fis-ant-Vertical": "frontal",
+      "Lat_Fis-post": null,
+      "Pole_occipital": "occipital",
+      "Pole_temporal": "temporal",
+      "S_calcarine": "occipital",
+      "S_central": "frontal",
+      "S_cingul-Marginalis": null,
+      "S_circular_insula_ant": "frontal",
+      "S_circular_insula_inf": "temporal",
+      "S_circular_insula_sup": "insula",
+      "S_collat_transv_ant": "temporal",
+      "S_collat_transv_post": "occipital",
+      "S_front_inf": "frontal",
+      "S_front_middle": "frontal",
+      "S_front_sup": "frontal",
+      "S_interm_prim-Jensen": "parietal",
+      "S_intrapariet_and_P_trans": "parietal",
+      "S_oc-temp_lat": "temporal",
+      "S_oc-temp_med_and_Lingual": "temporal",
+      "S_oc_middle_and_Lunatus": "occipital",
+      "S_oc_sup_and_transversal": "parietal",
+      "S_occipital_ant": "occipital",
+      "S_orbital-H_Shaped": "frontal",
+      "S_orbital_lateral": "frontal",
+      "S_orbital_med-olfact": "frontal",
+      "S_parieto_occipital": "parietal",
+      "S_pericallosal": "cingulate",
+      "S_postcentral": "parietal",
+      "S_precentral-inf-part": "frontal",
+      "S_precentral-sup-part": "frontal",
+      "S_suborbital": "frontal",
+      "S_subparietal": "parietal",
+      "S_temporal_inf": "temporal",
+      "S_temporal_sup": "temporal",
+      "S_temporal_transverse": "temporal"
+     },
+     "geometry": {
+      "cingulate": {
+       "coverage": 0.6000803170413584,
+       "purity": 0.8551619115667122,
+       "dice": 0.7052651729402967
+      },
+      "frontal": {
+       "coverage": 0.939859955455705,
+       "purity": 0.9054591957043767,
+       "dice": 0.9223389231143889
+      },
+      "insula": {
+       "coverage": 0.6286757738030408,
+       "purity": 0.7006060845641436,
+       "dice": 0.6626947769911053
+      },
+      "occipital": {
+       "coverage": 0.8605295111680172,
+       "purity": 0.8627142311268761,
+       "dice": 0.8616204862588259
+      },
+      "parietal": {
+       "coverage": 0.7699914034602409,
+       "purity": 0.9305526078682094,
+       "dice": 0.8426921076465318
+      },
+      "temporal": {
+       "coverage": 0.9626198031116324,
+       "purity": 0.8529065447973094,
+       "dice": 0.9044481576056834
+      }
+     }
+    },
+    "overlap_unweighted": {
+     "mapping": {
+      "G_Ins_lg_and_S_cent_ins": "insula",
+      "G_and_S_cingul-Ant": "frontal",
+      "G_and_S_cingul-Mid-Ant": "frontal",
+      "G_and_S_cingul-Mid-Post": "cingulate",
+      "G_and_S_frontomargin": "frontal",
+      "G_and_S_occipital_inf": "occipital",
+      "G_and_S_paracentral": "frontal",
+      "G_and_S_subcentral": "parietal",
+      "G_and_S_transv_frontopol": "frontal",
+      "G_cingul-Post-dorsal": "cingulate",
+      "G_cingul-Post-ventral": "cingulate",
+      "G_cuneus": "occipital",
+      "G_front_inf-Opercular": "frontal",
+      "G_front_inf-Orbital": "frontal",
+      "G_front_inf-Triangul": "frontal",
+      "G_front_middle": "frontal",
+      "G_front_sup": "frontal",
+      "G_insular_short": "insula",
+      "G_oc-temp_lat-fusifor": "temporal",
+      "G_oc-temp_med-Lingual": "occipital",
+      "G_oc-temp_med-Parahip": "temporal",
+      "G_occipital_middle": "occipital",
+      "G_occipital_sup": "parietal",
+      "G_orbital": "frontal",
+      "G_pariet_inf-Angular": "parietal",
+      "G_pariet_inf-Supramar": "parietal",
+      "G_parietal_sup": "parietal",
+      "G_postcentral": "parietal",
+      "G_precentral": "frontal",
+      "G_precuneus": "parietal",
+      "G_rectus": "frontal",
+      "G_subcallosal": "frontal",
+      "G_temp_sup-G_T_transv": "temporal",
+      "G_temp_sup-Lateral": "temporal",
+      "G_temp_sup-Plan_polar": "temporal",
+      "G_temp_sup-Plan_tempo": "temporal",
+      "G_temporal_inf": "temporal",
+      "G_temporal_middle": "temporal",
+      "Lat_Fis-ant-Horizont": "frontal",
+      "Lat_Fis-ant-Vertical": "frontal",
+      "Lat_Fis-post": null,
+      "Pole_occipital": "occipital",
+      "Pole_temporal": "temporal",
+      "S_calcarine": "occipital",
+      "S_central": "frontal",
+      "S_cingul-Marginalis": null,
+      "S_circular_insula_ant": "frontal",
+      "S_circular_insula_inf": "temporal",
+      "S_circular_insula_sup": "insula",
+      "S_collat_transv_ant": "temporal",
+      "S_collat_transv_post": "occipital",
+      "S_front_inf": "frontal",
+      "S_front_middle": "frontal",
+      "S_front_sup": "frontal",
+      "S_interm_prim-Jensen": "parietal",
+      "S_intrapariet_and_P_trans": "parietal",
+      "S_oc-temp_lat": "temporal",
+      "S_oc-temp_med_and_Lingual": "temporal",
+      "S_oc_middle_and_Lunatus": "occipital",
+      "S_oc_sup_and_transversal": "parietal",
+      "S_occipital_ant": "occipital",
+      "S_orbital-H_Shaped": "frontal",
+      "S_orbital_lateral": "frontal",
+      "S_orbital_med-olfact": "frontal",
+      "S_parieto_occipital": "parietal",
+      "S_pericallosal": "cingulate",
+      "S_postcentral": "parietal",
+      "S_precentral-inf-part": "frontal",
+      "S_precentral-sup-part": "frontal",
+      "S_suborbital": "frontal",
+      "S_subparietal": "parietal",
+      "S_temporal_inf": "temporal",
+      "S_temporal_sup": "temporal",
+      "S_temporal_transverse": "temporal"
+     },
+     "geometry": {
+      "cingulate": {
+       "coverage": 0.6000803170413584,
+       "purity": 0.8551619115667122,
+       "dice": 0.7052651729402967
+      },
+      "frontal": {
+       "coverage": 0.939859955455705,
+       "purity": 0.9054591957043767,
+       "dice": 0.9223389231143889
+      },
+      "insula": {
+       "coverage": 0.6286757738030408,
+       "purity": 0.7006060845641436,
+       "dice": 0.6626947769911053
+      },
+      "occipital": {
+       "coverage": 0.8605295111680172,
+       "purity": 0.8627142311268761,
+       "dice": 0.8616204862588259
+      },
+      "parietal": {
+       "coverage": 0.7699914034602409,
+       "purity": 0.9305526078682094,
+       "dice": 0.8426921076465318
+      },
+      "temporal": {
+       "coverage": 0.9626198031116324,
+       "purity": 0.8529065447973094,
+       "dice": 0.9044481576056834
+      }
+     }
+    },
+    "name_exact": {
+     "mapping": {
+      "G_Ins_lg_and_S_cent_ins": null,
+      "G_and_S_cingul-Ant": null,
+      "G_and_S_cingul-Mid-Ant": null,
+      "G_and_S_cingul-Mid-Post": null,
+      "G_and_S_frontomargin": null,
+      "G_and_S_occipital_inf": null,
+      "G_and_S_paracentral": null,
+      "G_and_S_subcentral": null,
+      "G_and_S_transv_frontopol": null,
+      "G_cingul-Post-dorsal": null,
+      "G_cingul-Post-ventral": null,
+      "G_cuneus": null,
+      "G_front_inf-Opercular": null,
+      "G_front_inf-Orbital": null,
+      "G_front_inf-Triangul": null,
+      "G_front_middle": null,
+      "G_front_sup": null,
+      "G_insular_short": null,
+      "G_oc-temp_lat-fusifor": null,
+      "G_oc-temp_med-Lingual": null,
+      "G_oc-temp_med-Parahip": null,
+      "G_occipital_middle": null,
+      "G_occipital_sup": null,
+      "G_orbital": null,
+      "G_pariet_inf-Angular": null,
+      "G_pariet_inf-Supramar": null,
+      "G_parietal_sup": null,
+      "G_postcentral": null,
+      "G_precentral": null,
+      "G_precuneus": null,
+      "G_rectus": null,
+      "G_subcallosal": null,
+      "G_temp_sup-G_T_transv": null,
+      "G_temp_sup-Lateral": null,
+      "G_temp_sup-Plan_polar": null,
+      "G_temp_sup-Plan_tempo": null,
+      "G_temporal_inf": null,
+      "G_temporal_middle": null,
+      "Lat_Fis-ant-Horizont": null,
+      "Lat_Fis-ant-Vertical": null,
+      "Lat_Fis-post": null,
+      "Pole_occipital": null,
+      "Pole_temporal": null,
+      "S_calcarine": null,
+      "S_central": null,
+      "S_cingul-Marginalis": null,
+      "S_circular_insula_ant": null,
+      "S_circular_insula_inf": null,
+      "S_circular_insula_sup": null,
+      "S_collat_transv_ant": null,
+      "S_collat_transv_post": null,
+      "S_front_inf": null,
+      "S_front_middle": null,
+      "S_front_sup": null,
+      "S_interm_prim-Jensen": null,
+      "S_intrapariet_and_P_trans": null,
+      "S_oc-temp_lat": null,
+      "S_oc-temp_med_and_Lingual": null,
+      "S_oc_middle_and_Lunatus": null,
+      "S_oc_sup_and_transversal": null,
+      "S_occipital_ant": null,
+      "S_orbital-H_Shaped": null,
+      "S_orbital_lateral": null,
+      "S_orbital_med-olfact": null,
+      "S_parieto_occipital": null,
+      "S_pericallosal": null,
+      "S_postcentral": null,
+      "S_precentral-inf-part": null,
+      "S_precentral-sup-part": null,
+      "S_suborbital": null,
+      "S_subparietal": null,
+      "S_temporal_inf": null,
+      "S_temporal_sup": null,
+      "S_temporal_transverse": null
+     },
+     "geometry": {
+      "cingulate": {
+       "coverage": 0.0,
+       "purity": 0.0,
+       "dice": 0.0
+      },
+      "frontal": {
+       "coverage": 0.0,
+       "purity": 0.0,
+       "dice": 0.0
+      },
+      "insula": {
+       "coverage": 0.0,
+       "purity": 0.0,
+       "dice": 0.0
+      },
+      "occipital": {
+       "coverage": 0.0,
+       "purity": 0.0,
+       "dice": 0.0
+      },
+      "parietal": {
+       "coverage": 0.0,
+       "purity": 0.0,
+       "dice": 0.0
+      },
+      "temporal": {
+       "coverage": 0.0,
+       "purity": 0.0,
+       "dice": 0.0
+      }
+     }
+    },
+    "keyword": {
+     "mapping": {
+      "G_Ins_lg_and_S_cent_ins": null,
+      "G_and_S_cingul-Ant": "cingulate",
+      "G_and_S_cingul-Mid-Ant": "cingulate",
+      "G_and_S_cingul-Mid-Post": "cingulate",
+      "G_and_S_frontomargin": "frontal",
+      "G_and_S_occipital_inf": "occipital",
+      "G_and_S_paracentral": "frontal",
+      "G_and_S_subcentral": null,
+      "G_and_S_transv_frontopol": "frontal",
+      "G_cingul-Post-dorsal": "cingulate",
+      "G_cingul-Post-ventral": "cingulate",
+      "G_cuneus": "occipital",
+      "G_front_inf-Opercular": "frontal",
+      "G_front_inf-Orbital": "frontal",
+      "G_front_inf-Triangul": "frontal",
+      "G_front_middle": "frontal",
+      "G_front_sup": "frontal",
+      "G_insular_short": "insula",
+      "G_oc-temp_lat-fusifor": null,
+      "G_oc-temp_med-Lingual": "occipital",
+      "G_oc-temp_med-Parahip": null,
+      "G_occipital_middle": "occipital",
+      "G_occipital_sup": "occipital",
+      "G_orbital": "frontal",
+      "G_pariet_inf-Angular": "parietal",
+      "G_pariet_inf-Supramar": "parietal",
+      "G_parietal_sup": "parietal",
+      "G_postcentral": "parietal",
+      "G_precentral": "frontal",
+      "G_precuneus": null,
+      "G_rectus": "frontal",
+      "G_subcallosal": null,
+      "G_temp_sup-G_T_transv": null,
+      "G_temp_sup-Lateral": null,
+      "G_temp_sup-Plan_polar": null,
+      "G_temp_sup-Plan_tempo": null,
+      "G_temporal_inf": "temporal",
+      "G_temporal_middle": "temporal",
+      "Lat_Fis-ant-Horizont": null,
+      "Lat_Fis-ant-Vertical": null,
+      "Lat_Fis-post": null,
+      "Pole_occipital": "occipital",
+      "Pole_temporal": "temporal",
+      "S_calcarine": "occipital",
+      "S_central": null,
+      "S_cingul-Marginalis": "cingulate",
+      "S_circular_insula_ant": "insula",
+      "S_circular_insula_inf": "insula",
+      "S_circular_insula_sup": "insula",
+      "S_collat_transv_ant": null,
+      "S_collat_transv_post": null,
+      "S_front_inf": "frontal",
+      "S_front_middle": "frontal",
+      "S_front_sup": "frontal",
+      "S_interm_prim-Jensen": null,
+      "S_intrapariet_and_P_trans": "parietal",
+      "S_oc-temp_lat": null,
+      "S_oc-temp_med_and_Lingual": "occipital",
+      "S_oc_middle_and_Lunatus": null,
+      "S_oc_sup_and_transversal": null,
+      "S_occipital_ant": "occipital",
+      "S_orbital-H_Shaped": "frontal",
+      "S_orbital_lateral": "frontal",
+      "S_orbital_med-olfact": "frontal",
+      "S_parieto_occipital": null,
+      "S_pericallosal": null,
+      "S_postcentral": "parietal",
+      "S_precentral-inf-part": "frontal",
+      "S_precentral-sup-part": "frontal",
+      "S_suborbital": "frontal",
+      "S_subparietal": "parietal",
+      "S_temporal_inf": "temporal",
+      "S_temporal_sup": "temporal",
+      "S_temporal_transverse": "temporal"
+     },
+     "geometry": {
+      "cingulate": {
+       "coverage": 0.5915769798519824,
+       "purity": 0.5181824513464169,
+       "dice": 0.552452722566693
+      },
+      "frontal": {
+       "coverage": 0.8148161291176369,
+       "purity": 0.9877383224220782,
+       "dice": 0.8929828619264584
+      },
+      "insula": {
+       "coverage": 0.7376822427400028,
+       "purity": 0.5113945427277103,
+       "dice": 0.6040408045260671
+      },
+      "occipital": {
+       "coverage": 0.8730006884628486,
+       "purity": 0.7369803137827297,
+       "dice": 0.7992446127233874
+      },
+      "parietal": {
+       "coverage": 0.524919996174257,
+       "purity": 0.9824759430819597,
+       "dice": 0.6842545542989195
+      },
+      "temporal": {
+       "coverage": 0.44636112151137897,
+       "purity": 0.8619993064594941,
+       "dice": 0.5881605235799081
+      }
+     }
+    }
+   },
+   "theta_sweep": [
+    {
+     "theta": 0.3,
+     "unassigned": 0,
+     "mean_dice": 0.8163154908160536,
+     "resolved": 3
+    },
+    {
+     "theta": 0.4,
+     "unassigned": 1,
+     "mean_dice": 0.8166759923897636,
+     "resolved": 2
+    },
+    {
+     "theta": 0.5,
+     "unassigned": 2,
+     "mean_dice": 0.8165099374261388,
+     "resolved": 1
+    },
+    {
+     "theta": 0.6,
+     "unassigned": 10,
+     "mean_dice": 0.7831545277903228,
+     "resolved": 0
+    },
+    {
+     "theta": 0.7,
+     "unassigned": 14,
+     "mean_dice": 0.7560231582954825,
+     "resolved": 0
+    },
+    {
+     "theta": 0.8,
+     "unassigned": 22,
+     "mean_dice": 0.7200755244388638,
+     "resolved": 0
+    }
+   ]
+  },
+  {
+   "condition": "C3_DK_to_Destrieux",
+   "provenance": {
+    "subject": "fsaverage",
+    "hemi": "rh",
+    "surface": "rh.white",
+    "surface_sha256": "108a3bcfb74a3b63f5e461266e489d58333a200378d82beca7ea8487272df011",
+    "annotations": {
+     "DK": {
+      "file": "rh.aparc.annot",
+      "sha256": "6a326aed325d313e6e0d10f67630efcd8d3b8343c50d3e108e005f626614badb"
+     },
+     "Destrieux": {
+      "file": "rh.aparc.a2009s.annot",
+      "sha256": "f0de8093fc336ddea7fdefde91449f552accdb198dd51a559718262adf317aac"
+     }
+    },
+    "mapping_sha256": "eb38082fce092038cd0f941e316f132e9ba4fea51b2c393356119c374ed3e5c7"
+   },
+   "n_labels": 74,
+   "regions": {
+    "cingulate": {
+     "labels": [
+      "G_and_S_cingul-Mid-Post",
+      "G_cingul-Post-dorsal",
+      "G_cingul-Post-ventral",
+      "S_pericallosal"
+     ],
+     "weights": {
+      "G_and_S_cingul-Mid-Post": 0.581848,
+      "G_cingul-Post-dorsal": 0.971112,
+      "G_cingul-Post-ventral": 0.785565,
+      "S_pericallosal": 1.0
+     },
+     "coverage": 0.6196638884668797,
+     "purity": 0.8325041665995365,
+     "dice": 0.7104863204229539,
+     "ambiguous": [],
+     "verdict": "qualified"
+    },
+    "frontal": {
+     "labels": [
+      "G_and_S_cingul-Ant",
+      "G_and_S_cingul-Mid-Ant",
+      "G_and_S_frontomargin",
+      "G_and_S_paracentral",
+      "G_and_S_transv_frontopol",
+      "G_front_inf-Opercular",
+      "G_front_inf-Orbital",
+      "G_front_inf-Triangul",
+      "G_front_middle",
+      "G_front_sup",
+      "G_orbital",
+      "G_precentral",
+      "G_rectus",
+      "G_subcallosal",
+      "Lat_Fis-ant-Horizont",
+      "Lat_Fis-ant-Vertical",
+      "S_central",
+      "S_cingul-Marginalis",
+      "S_circular_insula_ant",
+      "S_front_inf",
+      "S_front_middle",
+      "S_front_sup",
+      "S_orbital-H_Shaped",
+      "S_orbital_lateral",
+      "S_orbital_med-olfact",
+      "S_precentral-inf-part",
+      "S_precentral-sup-part",
+      "S_suborbital"
+     ],
+     "weights": {
+      "G_and_S_cingul-Ant": 0.676789,
+      "G_and_S_cingul-Mid-Ant": 0.568259,
+      "G_and_S_frontomargin": 1.0,
+      "G_and_S_paracentral": 0.706518,
+      "G_and_S_transv_frontopol": 1.0,
+      "G_front_inf-Opercular": 0.968431,
+      "G_front_inf-Orbital": 1.0,
+      "G_front_inf-Triangul": 1.0,
+      "G_front_middle": 1.0,
+      "G_front_sup": 1.0,
+      "G_orbital": 0.978715,
+      "G_precentral": 1.0,
+      "G_rectus": 1.0,
+      "G_subcallosal": 0.754516,
+      "Lat_Fis-ant-Horizont": 1.0,
+      "Lat_Fis-ant-Vertical": 1.0,
+      "S_central": 0.544858,
+      "S_cingul-Marginalis": 0.500312,
+      "S_circular_insula_ant": 0.747471,
+      "S_front_inf": 1.0,
+      "S_front_middle": 1.0,
+      "S_front_sup": 1.0,
+      "S_orbital-H_Shaped": 1.0,
+      "S_orbital_lateral": 1.0,
+      "S_orbital_med-olfact": 1.0,
+      "S_precentral-inf-part": 1.0,
+      "S_precentral-sup-part": 1.0,
+      "S_suborbital": 1.0
+     },
+     "coverage": 0.9589620757111603,
+     "purity": 0.888351481747406,
+     "dice": 0.9223072904521621,
+     "ambiguous": [],
+     "verdict": "resolved"
+    },
+    "insula": {
+     "labels": [
+      "G_Ins_lg_and_S_cent_ins",
+      "G_insular_short",
+      "S_circular_insula_sup"
+     ],
+     "weights": {
+      "G_Ins_lg_and_S_cent_ins": 1.0,
+      "G_insular_short": 1.0,
+      "S_circular_insula_sup": 0.522332
+     },
+     "coverage": 0.5695209991942656,
+     "purity": 0.7124620409570694,
+     "dice": 0.6330225607445739,
+     "ambiguous": [],
+     "verdict": "qualified"
+    },
+    "occipital": {
+     "labels": [
+      "G_and_S_occipital_inf",
+      "G_cuneus",
+      "G_oc-temp_med-Lingual",
+      "G_occipital_middle",
+      "Pole_occipital",
+      "S_calcarine",
+      "S_collat_transv_post",
+      "S_oc_middle_and_Lunatus",
+      "S_occipital_ant"
+     ],
+     "weights": {
+      "G_and_S_occipital_inf": 0.837492,
+      "G_cuneus": 0.956815,
+      "G_oc-temp_med-Lingual": 0.957118,
+      "G_occipital_middle": 0.509956,
+      "Pole_occipital": 1.0,
+      "S_calcarine": 0.767814,
+      "S_collat_transv_post": 0.686361,
+      "S_oc_middle_and_Lunatus": 0.850263,
+      "S_occipital_ant": 0.567075
+     },
+     "coverage": 0.8783957501767783,
+     "purity": 0.8408957285862839,
+     "dice": 0.8592367768418288,
+     "ambiguous": [],
+     "verdict": "resolved"
+    },
+    "parietal": {
+     "labels": [
+      "G_and_S_subcentral",
+      "G_occipital_sup",
+      "G_pariet_inf-Angular",
+      "G_pariet_inf-Supramar",
+      "G_parietal_sup",
+      "G_postcentral",
+      "G_precuneus",
+      "Lat_Fis-post",
+      "S_interm_prim-Jensen",
+      "S_intrapariet_and_P_trans",
+      "S_oc_sup_and_transversal",
+      "S_parieto_occipital",
+      "S_postcentral",
+      "S_subparietal"
+     ],
+     "weights": {
+      "G_and_S_subcentral": 0.801917,
+      "G_occipital_sup": 0.80564,
+      "G_pariet_inf-Angular": 1.0,
+      "G_pariet_inf-Supramar": 0.97555,
+      "G_parietal_sup": 1.0,
+      "G_postcentral": 1.0,
+      "G_precuneus": 1.0,
+      "Lat_Fis-post": 0.505708,
+      "S_interm_prim-Jensen": 0.942917,
+      "S_intrapariet_and_P_trans": 1.0,
+      "S_oc_sup_and_transversal": 0.792683,
+      "S_parieto_occipital": 0.825583,
+      "S_postcentral": 1.0,
+      "S_subparietal": 0.798837
+     },
+     "coverage": 0.7655660610067534,
+     "purity": 0.9019877206134994,
+     "dice": 0.8281966002626827,
+     "ambiguous": [],
+     "verdict": "qualified"
+    },
+    "temporal": {
+     "labels": [
+      "G_oc-temp_lat-fusifor",
+      "G_oc-temp_med-Parahip",
+      "G_temp_sup-G_T_transv",
+      "G_temp_sup-Lateral",
+      "G_temp_sup-Plan_polar",
+      "G_temp_sup-Plan_tempo",
+      "G_temporal_inf",
+      "G_temporal_middle",
+      "Pole_temporal",
+      "S_circular_insula_inf",
+      "S_collat_transv_ant",
+      "S_oc-temp_lat",
+      "S_oc-temp_med_and_Lingual",
+      "S_temporal_inf",
+      "S_temporal_sup",
+      "S_temporal_transverse"
+     ],
+     "weights": {
+      "G_oc-temp_lat-fusifor": 0.969281,
+      "G_oc-temp_med-Parahip": 0.968895,
+      "G_temp_sup-G_T_transv": 1.0,
+      "G_temp_sup-Lateral": 1.0,
+      "G_temp_sup-Plan_polar": 0.949053,
+      "G_temp_sup-Plan_tempo": 0.582567,
+      "G_temporal_inf": 1.0,
+      "G_temporal_middle": 0.996235,
+      "Pole_temporal": 1.0,
+      "S_circular_insula_inf": 0.608036,
+      "S_collat_transv_ant": 1.0,
+      "S_oc-temp_lat": 1.0,
+      "S_oc-temp_med_and_Lingual": 0.735293,
+      "S_temporal_inf": 0.992917,
+      "S_temporal_sup": 0.630162,
+      "S_temporal_transverse": 1.0
+     },
+     "coverage": 0.9614526144441534,
+     "purity": 0.8526502892506892,
+     "dice": 0.9037886970325225,
+     "ambiguous": [],
+     "verdict": "resolved"
+    }
+   },
+   "inclusion": {
+    "S_precentral-sup-part": {
+     "frontal": 1.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "S_intrapariet_and_P_trans": {
+     "frontal": 0.0,
+     "parietal": 1.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "G_postcentral": {
+     "frontal": 0.0,
+     "parietal": 1.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "G_front_middle": {
+     "frontal": 1.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "G_and_S_cingul-Mid-Ant": {
+     "frontal": 0.5682593969480964,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "insula": 0.0,
+     "cingulate": 0.4317406030519038
+    },
+    "S_subparietal": {
+     "frontal": 0.0,
+     "parietal": 0.7988366709854343,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "insula": 0.0,
+     "cingulate": 0.20116332901456657
+    },
+    "Pole_occipital": {
+     "frontal": 0.0,
+     "parietal": 0.0,
+     "occipital": 1.0,
+     "temporal": 0.0,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "S_temporal_sup": {
+     "frontal": 0.0,
+     "parietal": 0.3698381774698742,
+     "occipital": 0.0,
+     "temporal": 0.6301618225301243,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "S_circular_insula_inf": {
+     "frontal": 0.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.6080358526932029,
+     "insula": 0.39196414730679646,
+     "cingulate": 0.0
+    },
+    "S_orbital_med-olfact": {
+     "frontal": 1.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "G_cingul-Post-ventral": {
+     "frontal": 0.0,
+     "parietal": 0.2108535526446384,
+     "occipital": 0.0,
+     "temporal": 0.0035809683000988246,
+     "insula": 0.0,
+     "cingulate": 0.785565479055262
+    },
+    "S_collat_transv_ant": {
+     "frontal": 0.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 1.0,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "G_front_sup": {
+     "frontal": 1.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "G_and_S_paracentral": {
+     "frontal": 0.7065182838372566,
+     "parietal": 0.29348171616274354,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "G_and_S_cingul-Mid-Post": {
+     "frontal": 0.41815216256502813,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "insula": 0.0,
+     "cingulate": 0.581847837434972
+    },
+    "G_parietal_sup": {
+     "frontal": 0.0,
+     "parietal": 1.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "S_central": {
+     "frontal": 0.5448581834896425,
+     "parietal": 0.4551418165103548,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "S_postcentral": {
+     "frontal": 0.0,
+     "parietal": 1.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "S_precentral-inf-part": {
+     "frontal": 1.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "G_front_inf-Triangul": {
+     "frontal": 1.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "G_and_S_subcentral": {
+     "frontal": 0.19808256902183846,
+     "parietal": 0.8019174309781625,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "G_and_S_frontomargin": {
+     "frontal": 1.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "S_circular_insula_ant": {
+     "frontal": 0.7474708015953913,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "insula": 0.2525291984046082,
+     "cingulate": 0.0
+    },
+    "G_and_S_cingul-Ant": {
+     "frontal": 0.6767893262144925,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "insula": 0.0,
+     "cingulate": 0.3232106737855112
+    },
+    "G_cingul-Post-dorsal": {
+     "frontal": 0.0,
+     "parietal": 0.028887836750821037,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "insula": 0.0,
+     "cingulate": 0.9711121632491788
+    },
+    "S_parieto_occipital": {
+     "frontal": 0.0,
+     "parietal": 0.8255826125949225,
+     "occipital": 0.1744173874050776,
+     "temporal": 0.0,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "S_calcarine": {
+     "frontal": 0.0,
+     "parietal": 0.11449953136751795,
+     "occipital": 0.7678142972985185,
+     "temporal": 0.003706839168430172,
+     "insula": 0.0,
+     "cingulate": 0.11397933216553444
+    },
+    "S_oc_sup_and_transversal": {
+     "frontal": 0.0,
+     "parietal": 0.7926833384977039,
+     "occipital": 0.20731666150229708,
+     "temporal": 0.0,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "G_pariet_inf-Angular": {
+     "frontal": 0.0,
+     "parietal": 1.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "S_occipital_ant": {
+     "frontal": 0.0,
+     "parietal": 0.25535407601255794,
+     "occipital": 0.5670751237537562,
+     "temporal": 0.1775708002336844,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "G_temp_sup-Plan_tempo": {
+     "frontal": 0.0,
+     "parietal": 0.41743291554749634,
+     "occipital": 0.0,
+     "temporal": 0.5825670844525026,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "G_temp_sup-Lateral": {
+     "frontal": 0.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 1.0,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "Pole_temporal": {
+     "frontal": 0.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 1.0,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "S_oc-temp_med_and_Lingual": {
+     "frontal": 0.0,
+     "parietal": 0.0,
+     "occipital": 0.2647069006030725,
+     "temporal": 0.7352930993969258,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "G_oc-temp_lat-fusifor": {
+     "frontal": 0.0,
+     "parietal": 0.0,
+     "occipital": 0.03071930790708073,
+     "temporal": 0.9692806920929193,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "G_temporal_middle": {
+     "frontal": 0.0,
+     "parietal": 0.003764640814541344,
+     "occipital": 0.0,
+     "temporal": 0.9962353591854588,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "S_front_sup": {
+     "frontal": 1.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "G_precentral": {
+     "frontal": 1.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "S_front_inf": {
+     "frontal": 1.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "G_front_inf-Opercular": {
+     "frontal": 0.9684308232835586,
+     "parietal": 0.03156917671644163,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "S_orbital_lateral": {
+     "frontal": 1.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "S_front_middle": {
+     "frontal": 1.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "G_and_S_transv_frontopol": {
+     "frontal": 1.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "S_pericallosal": {
+     "frontal": 0.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "insula": 0.0,
+     "cingulate": 1.0
+    },
+    "G_precuneus": {
+     "frontal": 0.0,
+     "parietal": 1.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "S_interm_prim-Jensen": {
+     "frontal": 0.0,
+     "parietal": 0.9429169777175752,
+     "occipital": 0.0,
+     "temporal": 0.05708302228242475,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "Lat_Fis-post": {
+     "frontal": 0.0,
+     "parietal": 0.5057077370113017,
+     "occipital": 0.0,
+     "temporal": 0.1800185263134133,
+     "insula": 0.31427373667528413,
+     "cingulate": 0.0
+    },
+    "G_pariet_inf-Supramar": {
+     "frontal": 0.0,
+     "parietal": 0.9755503972540979,
+     "occipital": 0.0,
+     "temporal": 0.024449602745902944,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "G_insular_short": {
+     "frontal": 0.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "insula": 1.0,
+     "cingulate": 0.0
+    },
+    "G_oc-temp_med-Lingual": {
+     "frontal": 0.0,
+     "parietal": 0.0,
+     "occipital": 0.9571175635442783,
+     "temporal": 0.042882436455722456,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "G_oc-temp_med-Parahip": {
+     "frontal": 0.0,
+     "parietal": 0.0,
+     "occipital": 0.0020490837999897348,
+     "temporal": 0.9688950308693207,
+     "insula": 0.014721779152053215,
+     "cingulate": 0.014334106178637002
+    },
+    "S_oc_middle_and_Lunatus": {
+     "frontal": 0.0,
+     "parietal": 0.14973678450327374,
+     "occipital": 0.8502632154967267,
+     "temporal": 0.0,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "G_and_S_occipital_inf": {
+     "frontal": 0.0,
+     "parietal": 0.0,
+     "occipital": 0.8374916589700317,
+     "temporal": 0.16250834102996664,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "S_cingul-Marginalis": {
+     "frontal": 0.5003116661691341,
+     "parietal": 0.29792246380301807,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "insula": 0.0,
+     "cingulate": 0.20176587002784557
+    },
+    "S_circular_insula_sup": {
+     "frontal": 0.4066969117720717,
+     "parietal": 0.07097066041142126,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "insula": 0.5223324278165087,
+     "cingulate": 0.0
+    },
+    "G_orbital": {
+     "frontal": 0.9787147529470168,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "insula": 0.02128524705298297,
+     "cingulate": 0.0
+    },
+    "S_orbital-H_Shaped": {
+     "frontal": 1.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "G_front_inf-Orbital": {
+     "frontal": 1.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "G_rectus": {
+     "frontal": 1.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "G_occipital_sup": {
+     "frontal": 0.0,
+     "parietal": 0.8056400864103129,
+     "occipital": 0.19435991358968752,
+     "temporal": 0.0,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "G_cuneus": {
+     "frontal": 0.0,
+     "parietal": 0.04318463615058501,
+     "occipital": 0.9568153638494153,
+     "temporal": 0.0,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "G_occipital_middle": {
+     "frontal": 0.0,
+     "parietal": 0.49004427817809787,
+     "occipital": 0.509955721821903,
+     "temporal": 0.0,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "G_temporal_inf": {
+     "frontal": 0.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 1.0,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "S_temporal_inf": {
+     "frontal": 0.0,
+     "parietal": 0.0,
+     "occipital": 0.007082522470036701,
+     "temporal": 0.9929174775299633,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "G_Ins_lg_and_S_cent_ins": {
+     "frontal": 0.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "insula": 1.0,
+     "cingulate": 0.0
+    },
+    "Lat_Fis-ant-Vertical": {
+     "frontal": 1.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "Lat_Fis-ant-Horizont": {
+     "frontal": 1.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "S_oc-temp_lat": {
+     "frontal": 0.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 1.0,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "S_temporal_transverse": {
+     "frontal": 0.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 1.0,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "S_suborbital": {
+     "frontal": 1.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "G_temp_sup-G_T_transv": {
+     "frontal": 0.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 1.0,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "G_temp_sup-Plan_polar": {
+     "frontal": 0.0,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.9490526147043865,
+     "insula": 0.05094738529561415,
+     "cingulate": 0.0
+    },
+    "S_collat_transv_post": {
+     "frontal": 0.0,
+     "parietal": 0.0,
+     "occipital": 0.6863606695701705,
+     "temporal": 0.3136393304298301,
+     "insula": 0.0,
+     "cingulate": 0.0
+    },
+    "G_subcallosal": {
+     "frontal": 0.7545156922584528,
+     "parietal": 0.0,
+     "occipital": 0.0,
+     "temporal": 0.0,
+     "insula": 0.0,
+     "cingulate": 0.24548430774154723
+    }
+   },
+   "methods": {
+    "overlap_weighted": {
+     "mapping": {
+      "G_Ins_lg_and_S_cent_ins": "insula",
+      "G_and_S_cingul-Ant": "frontal",
+      "G_and_S_cingul-Mid-Ant": "frontal",
+      "G_and_S_cingul-Mid-Post": "cingulate",
+      "G_and_S_frontomargin": "frontal",
+      "G_and_S_occipital_inf": "occipital",
+      "G_and_S_paracentral": "frontal",
+      "G_and_S_subcentral": "parietal",
+      "G_and_S_transv_frontopol": "frontal",
+      "G_cingul-Post-dorsal": "cingulate",
+      "G_cingul-Post-ventral": "cingulate",
+      "G_cuneus": "occipital",
+      "G_front_inf-Opercular": "frontal",
+      "G_front_inf-Orbital": "frontal",
+      "G_front_inf-Triangul": "frontal",
+      "G_front_middle": "frontal",
+      "G_front_sup": "frontal",
+      "G_insular_short": "insula",
+      "G_oc-temp_lat-fusifor": "temporal",
+      "G_oc-temp_med-Lingual": "occipital",
+      "G_oc-temp_med-Parahip": "temporal",
+      "G_occipital_middle": "occipital",
+      "G_occipital_sup": "parietal",
+      "G_orbital": "frontal",
+      "G_pariet_inf-Angular": "parietal",
+      "G_pariet_inf-Supramar": "parietal",
+      "G_parietal_sup": "parietal",
+      "G_postcentral": "parietal",
+      "G_precentral": "frontal",
+      "G_precuneus": "parietal",
+      "G_rectus": "frontal",
+      "G_subcallosal": "frontal",
+      "G_temp_sup-G_T_transv": "temporal",
+      "G_temp_sup-Lateral": "temporal",
+      "G_temp_sup-Plan_polar": "temporal",
+      "G_temp_sup-Plan_tempo": "temporal",
+      "G_temporal_inf": "temporal",
+      "G_temporal_middle": "temporal",
+      "Lat_Fis-ant-Horizont": "frontal",
+      "Lat_Fis-ant-Vertical": "frontal",
+      "Lat_Fis-post": "parietal",
+      "Pole_occipital": "occipital",
+      "Pole_temporal": "temporal",
+      "S_calcarine": "occipital",
+      "S_central": "frontal",
+      "S_cingul-Marginalis": "frontal",
+      "S_circular_insula_ant": "frontal",
+      "S_circular_insula_inf": "temporal",
+      "S_circular_insula_sup": "insula",
+      "S_collat_transv_ant": "temporal",
+      "S_collat_transv_post": "occipital",
+      "S_front_inf": "frontal",
+      "S_front_middle": "frontal",
+      "S_front_sup": "frontal",
+      "S_interm_prim-Jensen": "parietal",
+      "S_intrapariet_and_P_trans": "parietal",
+      "S_oc-temp_lat": "temporal",
+      "S_oc-temp_med_and_Lingual": "temporal",
+      "S_oc_middle_and_Lunatus": "occipital",
+      "S_oc_sup_and_transversal": "parietal",
+      "S_occipital_ant": "occipital",
+      "S_orbital-H_Shaped": "frontal",
+      "S_orbital_lateral": "frontal",
+      "S_orbital_med-olfact": "frontal",
+      "S_parieto_occipital": "parietal",
+      "S_pericallosal": "cingulate",
+      "S_postcentral": "parietal",
+      "S_precentral-inf-part": "frontal",
+      "S_precentral-sup-part": "frontal",
+      "S_suborbital": "frontal",
+      "S_subparietal": "parietal",
+      "S_temporal_inf": "temporal",
+      "S_temporal_sup": "temporal",
+      "S_temporal_transverse": "temporal"
+     },
+     "geometry": {
+      "cingulate": {
+       "coverage": 0.6196638884668797,
+       "purity": 0.8325041665995365,
+       "dice": 0.7104863204229539
+      },
+      "frontal": {
+       "coverage": 0.9589620757111603,
+       "purity": 0.888351481747406,
+       "dice": 0.9223072904521621
+      },
+      "insula": {
+       "coverage": 0.5695209991942656,
+       "purity": 0.7124620409570694,
+       "dice": 0.6330225607445739
+      },
+      "occipital": {
+       "coverage": 0.8783957501767783,
+       "purity": 0.8408957285862839,
+       "dice": 0.8592367768418288
+      },
+      "parietal": {
+       "coverage": 0.7655660610067534,
+       "purity": 0.9019877206134994,
+       "dice": 0.8281966002626827
+      },
+      "temporal": {
+       "coverage": 0.9614526144441534,
+       "purity": 0.8526502892506892,
+       "dice": 0.9037886970325225
+      }
+     }
+    },
+    "overlap_unweighted": {
+     "mapping": {
+      "G_Ins_lg_and_S_cent_ins": "insula",
+      "G_and_S_cingul-Ant": "frontal",
+      "G_and_S_cingul-Mid-Ant": "frontal",
+      "G_and_S_cingul-Mid-Post": "cingulate",
+      "G_and_S_frontomargin": "frontal",
+      "G_and_S_occipital_inf": "occipital",
+      "G_and_S_paracentral": "frontal",
+      "G_and_S_subcentral": "parietal",
+      "G_and_S_transv_frontopol": "frontal",
+      "G_cingul-Post-dorsal": "cingulate",
+      "G_cingul-Post-ventral": "cingulate",
+      "G_cuneus": "occipital",
+      "G_front_inf-Opercular": "frontal",
+      "G_front_inf-Orbital": "frontal",
+      "G_front_inf-Triangul": "frontal",
+      "G_front_middle": "frontal",
+      "G_front_sup": "frontal",
+      "G_insular_short": "insula",
+      "G_oc-temp_lat-fusifor": "temporal",
+      "G_oc-temp_med-Lingual": "occipital",
+      "G_oc-temp_med-Parahip": "temporal",
+      "G_occipital_middle": "occipital",
+      "G_occipital_sup": "parietal",
+      "G_orbital": "frontal",
+      "G_pariet_inf-Angular": "parietal",
+      "G_pariet_inf-Supramar": "parietal",
+      "G_parietal_sup": "parietal",
+      "G_postcentral": "parietal",
+      "G_precentral": "frontal",
+      "G_precuneus": "parietal",
+      "G_rectus": "frontal",
+      "G_subcallosal": "frontal",
+      "G_temp_sup-G_T_transv": "temporal",
+      "G_temp_sup-Lateral": "temporal",
+      "G_temp_sup-Plan_polar": "temporal",
+      "G_temp_sup-Plan_tempo": "temporal",
+      "G_temporal_inf": "temporal",
+      "G_temporal_middle": "temporal",
+      "Lat_Fis-ant-Horizont": "frontal",
+      "Lat_Fis-ant-Vertical": "frontal",
+      "Lat_Fis-post": "parietal",
+      "Pole_occipital": "occipital",
+      "Pole_temporal": "temporal",
+      "S_calcarine": "occipital",
+      "S_central": "frontal",
+      "S_cingul-Marginalis": null,
+      "S_circular_insula_ant": "frontal",
+      "S_circular_insula_inf": "temporal",
+      "S_circular_insula_sup": "insula",
+      "S_collat_transv_ant": "temporal",
+      "S_collat_transv_post": "occipital",
+      "S_front_inf": "frontal",
+      "S_front_middle": "frontal",
+      "S_front_sup": "frontal",
+      "S_interm_prim-Jensen": "parietal",
+      "S_intrapariet_and_P_trans": "parietal",
+      "S_oc-temp_lat": "temporal",
+      "S_oc-temp_med_and_Lingual": "temporal",
+      "S_oc_middle_and_Lunatus": "occipital",
+      "S_oc_sup_and_transversal": "parietal",
+      "S_occipital_ant": null,
+      "S_orbital-H_Shaped": "frontal",
+      "S_orbital_lateral": "frontal",
+      "S_orbital_med-olfact": "frontal",
+      "S_parieto_occipital": "parietal",
+      "S_pericallosal": "cingulate",
+      "S_postcentral": "parietal",
+      "S_precentral-inf-part": "frontal",
+      "S_precentral-sup-part": "frontal",
+      "S_suborbital": "frontal",
+      "S_subparietal": "parietal",
+      "S_temporal_inf": "temporal",
+      "S_temporal_sup": "temporal",
+      "S_temporal_transverse": "temporal"
+     },
+     "geometry": {
+      "cingulate": {
+       "coverage": 0.6196638884668797,
+       "purity": 0.8325041665995365,
+       "dice": 0.7104863204229539
+      },
+      "frontal": {
+       "coverage": 0.9389195129940892,
+       "purity": 0.9033068058252735,
+       "dice": 0.920768938697238
+      },
+      "insula": {
+       "coverage": 0.5695209991942656,
+       "purity": 0.7124620409570694,
+       "dice": 0.6330225607445739
+      },
+      "occipital": {
+       "coverage": 0.8610797782256139,
+       "purity": 0.8491410741437616,
+       "dice": 0.8550687553516615
+      },
+      "parietal": {
+       "coverage": 0.7655660610067534,
+       "purity": 0.9019877206134994,
+       "dice": 0.8281966002626827
+      },
+      "temporal": {
+       "coverage": 0.9614526144441534,
+       "purity": 0.8526502892506892,
+       "dice": 0.9037886970325225
+      }
+     }
+    },
+    "name_exact": {
+     "mapping": {
+      "G_Ins_lg_and_S_cent_ins": null,
+      "G_and_S_cingul-Ant": null,
+      "G_and_S_cingul-Mid-Ant": null,
+      "G_and_S_cingul-Mid-Post": null,
+      "G_and_S_frontomargin": null,
+      "G_and_S_occipital_inf": null,
+      "G_and_S_paracentral": null,
+      "G_and_S_subcentral": null,
+      "G_and_S_transv_frontopol": null,
+      "G_cingul-Post-dorsal": null,
+      "G_cingul-Post-ventral": null,
+      "G_cuneus": null,
+      "G_front_inf-Opercular": null,
+      "G_front_inf-Orbital": null,
+      "G_front_inf-Triangul": null,
+      "G_front_middle": null,
+      "G_front_sup": null,
+      "G_insular_short": null,
+      "G_oc-temp_lat-fusifor": null,
+      "G_oc-temp_med-Lingual": null,
+      "G_oc-temp_med-Parahip": null,
+      "G_occipital_middle": null,
+      "G_occipital_sup": null,
+      "G_orbital": null,
+      "G_pariet_inf-Angular": null,
+      "G_pariet_inf-Supramar": null,
+      "G_parietal_sup": null,
+      "G_postcentral": null,
+      "G_precentral": null,
+      "G_precuneus": null,
+      "G_rectus": null,
+      "G_subcallosal": null,
+      "G_temp_sup-G_T_transv": null,
+      "G_temp_sup-Lateral": null,
+      "G_temp_sup-Plan_polar": null,
+      "G_temp_sup-Plan_tempo": null,
+      "G_temporal_inf": null,
+      "G_temporal_middle": null,
+      "Lat_Fis-ant-Horizont": null,
+      "Lat_Fis-ant-Vertical": null,
+      "Lat_Fis-post": null,
+      "Pole_occipital": null,
+      "Pole_temporal": null,
+      "S_calcarine": null,
+      "S_central": null,
+      "S_cingul-Marginalis": null,
+      "S_circular_insula_ant": null,
+      "S_circular_insula_inf": null,
+      "S_circular_insula_sup": null,
+      "S_collat_transv_ant": null,
+      "S_collat_transv_post": null,
+      "S_front_inf": null,
+      "S_front_middle": null,
+      "S_front_sup": null,
+      "S_interm_prim-Jensen": null,
+      "S_intrapariet_and_P_trans": null,
+      "S_oc-temp_lat": null,
+      "S_oc-temp_med_and_Lingual": null,
+      "S_oc_middle_and_Lunatus": null,
+      "S_oc_sup_and_transversal": null,
+      "S_occipital_ant": null,
+      "S_orbital-H_Shaped": null,
+      "S_orbital_lateral": null,
+      "S_orbital_med-olfact": null,
+      "S_parieto_occipital": null,
+      "S_pericallosal": null,
+      "S_postcentral": null,
+      "S_precentral-inf-part": null,
+      "S_precentral-sup-part": null,
+      "S_suborbital": null,
+      "S_subparietal": null,
+      "S_temporal_inf": null,
+      "S_temporal_sup": null,
+      "S_temporal_transverse": null
+     },
+     "geometry": {
+      "cingulate": {
+       "coverage": 0.0,
+       "purity": 0.0,
+       "dice": 0.0
+      },
+      "frontal": {
+       "coverage": 0.0,
+       "purity": 0.0,
+       "dice": 0.0
+      },
+      "insula": {
+       "coverage": 0.0,
+       "purity": 0.0,
+       "dice": 0.0
+      },
+      "occipital": {
+       "coverage": 0.0,
+       "purity": 0.0,
+       "dice": 0.0
+      },
+      "parietal": {
+       "coverage": 0.0,
+       "purity": 0.0,
+       "dice": 0.0
+      },
+      "temporal": {
+       "coverage": 0.0,
+       "purity": 0.0,
+       "dice": 0.0
+      }
+     }
+    },
+    "keyword": {
+     "mapping": {
+      "G_Ins_lg_and_S_cent_ins": null,
+      "G_and_S_cingul-Ant": "cingulate",
+      "G_and_S_cingul-Mid-Ant": "cingulate",
+      "G_and_S_cingul-Mid-Post": "cingulate",
+      "G_and_S_frontomargin": "frontal",
+      "G_and_S_occipital_inf": "occipital",
+      "G_and_S_paracentral": "frontal",
+      "G_and_S_subcentral": null,
+      "G_and_S_transv_frontopol": "frontal",
+      "G_cingul-Post-dorsal": "cingulate",
+      "G_cingul-Post-ventral": "cingulate",
+      "G_cuneus": "occipital",
+      "G_front_inf-Opercular": "frontal",
+      "G_front_inf-Orbital": "frontal",
+      "G_front_inf-Triangul": "frontal",
+      "G_front_middle": "frontal",
+      "G_front_sup": "frontal",
+      "G_insular_short": "insula",
+      "G_oc-temp_lat-fusifor": null,
+      "G_oc-temp_med-Lingual": "occipital",
+      "G_oc-temp_med-Parahip": null,
+      "G_occipital_middle": "occipital",
+      "G_occipital_sup": "occipital",
+      "G_orbital": "frontal",
+      "G_pariet_inf-Angular": "parietal",
+      "G_pariet_inf-Supramar": "parietal",
+      "G_parietal_sup": "parietal",
+      "G_postcentral": "parietal",
+      "G_precentral": "frontal",
+      "G_precuneus": null,
+      "G_rectus": "frontal",
+      "G_subcallosal": null,
+      "G_temp_sup-G_T_transv": null,
+      "G_temp_sup-Lateral": null,
+      "G_temp_sup-Plan_polar": null,
+      "G_temp_sup-Plan_tempo": null,
+      "G_temporal_inf": "temporal",
+      "G_temporal_middle": "temporal",
+      "Lat_Fis-ant-Horizont": null,
+      "Lat_Fis-ant-Vertical": null,
+      "Lat_Fis-post": null,
+      "Pole_occipital": "occipital",
+      "Pole_temporal": "temporal",
+      "S_calcarine": "occipital",
+      "S_central": null,
+      "S_cingul-Marginalis": "cingulate",
+      "S_circular_insula_ant": "insula",
+      "S_circular_insula_inf": "insula",
+      "S_circular_insula_sup": "insula",
+      "S_collat_transv_ant": null,
+      "S_collat_transv_post": null,
+      "S_front_inf": "frontal",
+      "S_front_middle": "frontal",
+      "S_front_sup": "frontal",
+      "S_interm_prim-Jensen": null,
+      "S_intrapariet_and_P_trans": "parietal",
+      "S_oc-temp_lat": null,
+      "S_oc-temp_med_and_Lingual": "occipital",
+      "S_oc_middle_and_Lunatus": null,
+      "S_oc_sup_and_transversal": null,
+      "S_occipital_ant": "occipital",
+      "S_orbital-H_Shaped": "frontal",
+      "S_orbital_lateral": "frontal",
+      "S_orbital_med-olfact": "frontal",
+      "S_parieto_occipital": null,
+      "S_pericallosal": null,
+      "S_postcentral": "parietal",
+      "S_precentral-inf-part": "frontal",
+      "S_precentral-sup-part": "frontal",
+      "S_suborbital": "frontal",
+      "S_subparietal": "parietal",
+      "S_temporal_inf": "temporal",
+      "S_temporal_sup": "temporal",
+      "S_temporal_transverse": "temporal"
+     },
+     "geometry": {
+      "cingulate": {
+       "coverage": 0.5973060147073093,
+       "purity": 0.4445674500798344,
+       "dice": 0.5097410018596209
+      },
+      "frontal": {
+       "coverage": 0.7915654699455625,
+       "purity": 0.9821168662613032,
+       "dice": 0.876605447225835
+      },
+      "insula": {
+       "coverage": 0.6446141965110398,
+       "purity": 0.4885598389912452,
+       "dice": 0.5558415533573519
+      },
+      "occipital": {
+       "coverage": 0.879731253709435,
+       "purity": 0.7039495498477932,
+       "dice": 0.7820848982254054
+      },
+      "parietal": {
+       "coverage": 0.46807163005338065,
+       "purity": 0.9807955930790642,
+       "dice": 0.6337124405494593
+      },
+      "temporal": {
+       "coverage": 0.48296844748670026,
+       "purity": 0.8435761766137625,
+       "dice": 0.6142585314567756
+      }
+     }
+    }
+   },
+   "theta_sweep": [
+    {
+     "theta": 0.3,
+     "unassigned": 0,
+     "mean_dice": 0.8095063742927873,
+     "resolved": 3
+    },
+    {
+     "theta": 0.4,
+     "unassigned": 0,
+     "mean_dice": 0.8095063742927873,
+     "resolved": 3
+    },
+    {
+     "theta": 0.5,
+     "unassigned": 0,
+     "mean_dice": 0.8095063742927873,
+     "resolved": 3
+    },
+    {
+     "theta": 0.6,
+     "unassigned": 9,
+     "mean_dice": 0.7644238708491619,
+     "resolved": 0
+    },
+    {
+     "theta": 0.7,
+     "unassigned": 13,
+     "mean_dice": 0.7503299333127242,
+     "resolved": 0
+    },
+    {
+     "theta": 0.8,
+     "unassigned": 21,
+     "mean_dice": 0.7151883738390259,
+     "resolved": 0
+    }
+   ]
+  }
+ ],
+ "skipped": [
+  {
+   "subject": "fsaverage",
+   "hemi": "lh",
+   "reason": "DKT annotation missing"
+  },
+  {
+   "subject": "fsaverage",
+   "hemi": "rh",
+   "reason": "DKT annotation missing"
+  },
+  {
+   "subject": "fsaverage6",
+   "hemi": "lh",
+   "reason": "surface or DK annotation missing"
+  },
+  {
+   "subject": "fsaverage6",
+   "hemi": "rh",
+   "reason": "surface or DK annotation missing"
+  },
+  {
+   "subject": "fsaverage5",
+   "hemi": "lh",
+   "reason": "surface or DK annotation missing"
+  },
+  {
+   "subject": "fsaverage5",
+   "hemi": "rh",
+   "reason": "surface or DK annotation missing"
+  },
+  {
+   "subject": "bert",
+   "hemi": "lh",
+   "reason": "surface or DK annotation missing"
+  },
+  {
+   "subject": "bert",
+   "hemi": "rh",
+   "reason": "surface or DK annotation missing"
+  }
+ ],
+ "stability": [],
+ "parameters": {
+  "theta": 0.5,
+  "kappa": 0.8,
+  "pi": 0.8,
+  "tau": 0.2,
+  "thetas": [
+   0.3,
+   0.4,
+   0.5,
+   0.6,
+   0.7,
+   0.8
+  ]
+ }
+}

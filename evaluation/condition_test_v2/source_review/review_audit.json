@@ -1,0 +1,3364 @@
+{
+  "reviewer": "Codex source-scope check; not expert gold annotation",
+  "reviewed_at_utc": "2026-10-24T05:44:57.330286+00:00",
+  "screened_statements": 191,
+  "annotation_fields": [
+    "inputs",
+    "conditions",
+    "checks",
+    "exceptions"
+  ],
+  "changed_items": 115,
+  "edits": [
+    {
+      "method": "independent_v2_fs_anatomical_stats",
+      "field": "inputs",
+      "index": 1,
+      "annotation_id_before_review": 2001,
+      "before": {
+        "statement": "Subject name is a required positional argument.",
+        "source_id": "fs_anatomical_stats",
+        "quote": "<subjectname>\n\nsubject name",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 1030,
+          "end": 1057,
+          "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+        }
+      },
+      "after": {
+        "statement": "Subject name is a required positional argument.",
+        "source_id": "fs_anatomical_stats",
+        "quote": "Required Positional Arguments\n\n<subjectname>\n\nsubject name",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 999,
+          "end": 1057,
+          "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_anatomical_stats",
+      "field": "inputs",
+      "index": 2,
+      "annotation_id_before_review": 2002,
+      "before": {
+        "statement": "Hemisphere is a required positional argument.",
+        "source_id": "fs_anatomical_stats",
+        "quote": "<hemi>\n\nhemisphere",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 1059,
+          "end": 1077,
+          "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+        }
+      },
+      "after": {
+        "statement": "Hemisphere is a required positional argument.",
+        "source_id": "fs_anatomical_stats",
+        "quote": "Required Positional Arguments\n\n<subjectname>\n\nsubject name\n\n<hemi>\n\nhemisphere",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 999,
+          "end": 1077,
+          "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_anatomical_stats",
+      "field": "inputs",
+      "index": 4,
+      "annotation_id_before_review": 2004,
+      "before": {
+        "statement": "A label file can optionally be supplied to limit calculations.",
+        "source_id": "fs_anatomical_stats",
+        "quote": "-l <label file>\n\nlimit calculations to specified label",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 1281,
+          "end": 1335,
+          "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+        }
+      },
+      "after": {
+        "statement": "When the -l label-file option is used, calculations are limited to the specified label.",
+        "source_id": "fs_anatomical_stats",
+        "quote": "-l <label file>\n\nlimit calculations to specified label",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 1281,
+          "end": 1335,
+          "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_anatomical_stats",
+      "field": "conditions",
+      "index": 2,
+      "annotation_id_before_review": 2006,
+      "before": {
+        "statement": "Using -f requires either the -a or -l option to specify input.",
+        "source_id": "fs_anatomical_stats",
+        "quote": "Must use -a or -l options to spec input.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 1594,
+          "end": 1634,
+          "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+        }
+      },
+      "after": {
+        "statement": "Using -f requires either the -a or -l option to specify input.",
+        "source_id": "fs_anatomical_stats",
+        "quote": "-f <tablefile>\n\ntable output to tablefile (different format than -b). Must use -a or -l options to spec input.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 1524,
+          "end": 1634,
+          "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_segstats",
+      "field": "inputs",
+      "index": 2,
+      "annotation_id_before_review": 2008,
+      "before": {
+        "statement": "Optional input volume from which more statistics (min, max, range, average, standard deviation) are computed across each segmentation; must be same size and dimension as the segmentation volume.",
+        "source_id": "fs_segstats",
+        "quote": "The input volume must be the same size and dimension as the segmentation volume.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 2206,
+          "end": 2286,
+          "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+        }
+      },
+      "after": {
+        "statement": "If an input volume is supplied, it must be the same size and dimension as the segmentation volume.",
+        "source_id": "fs_segstats",
+        "quote": "The input volume must be the same size and dimension as the segmentation volume.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 2206,
+          "end": 2286,
+          "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_segstats",
+      "field": "inputs",
+      "index": 3,
+      "annotation_id_before_review": 2009,
+      "before": {
+        "statement": "Optional mask volume; may be binary or continuous and must be the same size and dimension as the segmentation volume.",
+        "source_id": "fs_segstats",
+        "quote": "The mask volume must be the same size and dimension as the segmentation volume.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 5957,
+          "end": 6036,
+          "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+        }
+      },
+      "after": {
+        "statement": "If a mask volume is supplied, it must be the same size and dimension as the segmentation volume.",
+        "source_id": "fs_segstats",
+        "quote": "The mask volume must be the same size and dimension as the segmentation volume.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 5957,
+          "end": 6036,
+          "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_segstats",
+      "field": "inputs",
+      "index": 4,
+      "annotation_id_before_review": 2010,
+      "before": {
+        "statement": "Optional color table file used to map segmentation indices to names and colors.",
+        "source_id": "fs_segstats",
+        "quote": "Freesurfer color table file. Thi s the file used by FreeSurfer to specify how each segmentation index is mapped to a segmentation name and color.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 2986,
+          "end": 3131,
+          "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+        }
+      },
+      "after": {
+        "statement": "The FreeSurfer color table file maps each segmentation index to a segmentation name and color.",
+        "source_id": "fs_segstats",
+        "quote": "Freesurfer color table file. Thi s the file used by FreeSurfer to specify how each segmentation index is mapped to a segmentation name and color.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 2986,
+          "end": 3131,
+          "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_segstats",
+      "field": "conditions",
+      "index": 1,
+      "annotation_id_before_review": 2011,
+      "before": {
+        "statement": "Partial volume compensation with --pv is usually only done when computing anatomical statistics and is not used with --annot.",
+        "source_id": "fs_segstats",
+        "quote": "Usually, this is only done when computing anatomical statistics. Usually the mri/norm.mgz volume is used. Not with --annot",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 1912,
+          "end": 2034,
+          "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+        }
+      },
+      "after": {
+        "statement": "Partial volume compensation with --pv is usually only done when computing anatomical statistics and is not used with --annot.",
+        "source_id": "fs_segstats",
+        "quote": "--pv pvvol\n\nUse pvvol to compenstate for partial voluming. This should result in more accurate volumes. Usually, this is only done when computing anatomical statistics. Usually the mri/norm.mgz volume is used. Not with --annot",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 1808,
+          "end": 2034,
+          "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_segstats",
+      "field": "conditions",
+      "index": 3,
+      "annotation_id_before_review": 2013,
+      "before": {
+        "statement": "Segmentation list may be specified by --id, by a supplied color table, or else all ids from the segmentation volume are used.",
+        "source_id": "fs_segstats",
+        "quote": "If the user does not specify either --id or a color table, then all the ids from the segmentation volume are used.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 9381,
+          "end": 9495,
+          "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+        }
+      },
+      "after": {
+        "statement": "If neither --id nor a color table is specified, all IDs from the segmentation volume are used.",
+        "source_id": "fs_segstats",
+        "quote": "If the user does not specify either --id or a color table, then all the ids from the segmentation volume are used.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 9381,
+          "end": 9495,
+          "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_segstats",
+      "field": "checks",
+      "index": 1,
+      "annotation_id_before_review": 2014,
+      "before": {
+        "statement": "Input volume for --i must match the segmentation volume in size and dimension.",
+        "source_id": "fs_segstats",
+        "quote": "The input volume must be the same size and dimension as the segmentation volume.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 2206,
+          "end": 2286,
+          "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+        }
+      },
+      "after": {
+        "statement": "If an input volume is supplied, it must be the same size and dimension as the segmentation volume.",
+        "source_id": "fs_segstats",
+        "quote": "The input volume must be the same size and dimension as the segmentation volume.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 2206,
+          "end": 2286,
+          "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_segstats",
+      "field": "checks",
+      "index": 2,
+      "annotation_id_before_review": 2015,
+      "before": {
+        "statement": "Mask volume must match the segmentation volume in size and dimension.",
+        "source_id": "fs_segstats",
+        "quote": "The mask volume must be the same size and dimension as the segmentation volume.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 5957,
+          "end": 6036,
+          "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+        }
+      },
+      "after": {
+        "statement": "If a mask volume is supplied, it must be the same size and dimension as the segmentation volume.",
+        "source_id": "fs_segstats",
+        "quote": "The mask volume must be the same size and dimension as the segmentation volume.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 5957,
+          "end": 6036,
+          "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_preproc",
+      "field": "inputs",
+      "index": 1,
+      "annotation_id_before_review": 2017,
+      "before": {
+        "statement": "Surface measure files per subject, specified via --meas, --is, or --iv alternatives.",
+        "source_id": "fs_preproc",
+        "quote": "--meas surfmeasure\nUse subject/surf/hemi.surfmeasure as input.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 2598,
+          "end": 2660,
+          "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+        }
+      },
+      "after": {
+        "statement": "With --meas surfmeasure, input is taken from subject/surf/hemi.surfmeasure.",
+        "source_id": "fs_preproc",
+        "quote": "--meas surfmeasure\nUse subject/surf/hemi.surfmeasure as input.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 2598,
+          "end": 2660,
+          "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_preproc",
+      "field": "inputs",
+      "index": 2,
+      "annotation_id_before_review": 2018,
+      "before": {
+        "statement": "A subject list supplied via repeated --s, an fsgd file (--fsgd), or a subject list file (--f).",
+        "source_id": "fs_preproc",
+        "quote": "--fsgd fsgdfile\nSpecify the list of input subjects from the fsgd file.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 3055,
+          "end": 3125,
+          "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+        }
+      },
+      "after": {
+        "statement": "The --fsgd option specifies the input subject list from an FSGD file.",
+        "source_id": "fs_preproc",
+        "quote": "--fsgd fsgdfile\nSpecify the list of input subjects from the fsgd file.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 3055,
+          "end": 3125,
+          "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_preproc",
+      "field": "inputs",
+      "index": 3,
+      "annotation_id_before_review": 2019,
+      "before": {
+        "statement": "For volume input, a volume file and its registration matrix file of the type accepted/created by tkregister2.",
+        "source_id": "fs_preproc",
+        "quote": "The registration matrix file is of the type accepted/created by tkregister2.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 3981,
+          "end": 4057,
+          "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+        }
+      },
+      "after": {
+        "statement": "The registration matrix file is of the type accepted or created by tkregister2.",
+        "source_id": "fs_preproc",
+        "quote": "The registration matrix file is of the type accepted/created by tkregister2.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 3981,
+          "end": 4057,
+          "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_preproc",
+      "field": "inputs",
+      "index": 4,
+      "annotation_id_before_review": 2020,
+      "before": {
+        "statement": "A target common-space subject and hemisphere (lh or rh) must be given.",
+        "source_id": "fs_preproc",
+        "quote": "--target subject\nSubject to use as the common-space.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 2401,
+          "end": 2453,
+          "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+        }
+      },
+      "after": {
+        "statement": "The --target option selects the common-space subject; --hemi selects lh or rh for source and target surfaces.",
+        "source_id": "fs_preproc",
+        "quote": "--target subject\nSubject to use as the common-space. All the input data will be resampled to the surface of this subject.\n--hemi hemi\nUse hemi for source and target surfaces. hemi can be lh or rh.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 2401,
+          "end": 2597,
+          "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_preproc",
+      "field": "conditions",
+      "index": 1,
+      "annotation_id_before_review": 2021,
+      "before": {
+        "statement": "All subjects must each be specified with their own --s on the command line; --s is for use with --meas.",
+        "source_id": "fs_preproc",
+        "quote": "All subjects must be specified in this way on the command-line (ie, each with its own --s).",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 2942,
+          "end": 3033,
+          "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+        }
+      },
+      "after": {
+        "statement": "When subjects are listed using --s, each has its own --s; this option is for use with --meas.",
+        "source_id": "fs_preproc",
+        "quote": "--s subjN\nSpecify an input subject on the command-line. All subjects must be specified in this way on the command-line (ie, each with its own --s). For use with --meas.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 2886,
+          "end": 3054,
+          "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_preproc",
+      "field": "conditions",
+      "index": 2,
+      "annotation_id_before_review": 2022,
+      "before": {
+        "statement": "--is and --iv are alternatives to --meas but still require that a subject list be supplied.",
+        "source_id": "fs_preproc",
+        "quote": "This is an alternative to using --meas. This still requires that a subject list be supplied.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 3561,
+          "end": 3653,
+          "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+        }
+      },
+      "after": {
+        "statement": "The --is option is an alternative to --meas and still requires a supplied subject list.",
+        "source_id": "fs_preproc",
+        "quote": "--is surfmeasfile\nSpecify full path to input surface measure file. This is an alternative to using --meas. This still requires that a subject list be supplied.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 3494,
+          "end": 3653,
+          "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_preproc",
+      "field": "conditions",
+      "index": 3,
+      "annotation_id_before_review": 2023,
+      "before": {
+        "statement": "For --paired-diff there must be an even number of inputs.",
+        "source_id": "fs_preproc",
+        "quote": "There must be an even number of inputs.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 5128,
+          "end": 5167,
+          "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+        }
+      },
+      "after": {
+        "statement": "For --paired-diff there must be an even number of inputs.",
+        "source_id": "fs_preproc",
+        "quote": "--paired-diff\nAfter concatenating all the inputs together, create a new output file by computing paired differences, ie, Input1-Input2, Input3-Input4, etc. There must be an even number of inputs.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 4972,
+          "end": 5167,
+          "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_preproc",
+      "field": "conditions",
+      "index": 4,
+      "annotation_id_before_review": 2024,
+      "before": {
+        "statement": "When using full paths with --fsgd, subjects must be in the same order as the input surface files.",
+        "source_id": "fs_preproc",
+        "quote": "which must be in the same order as the --isp",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 8751,
+          "end": 8795,
+          "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+        }
+      },
+      "after": {
+        "statement": "When using full paths with --fsgd, subjects must be in the same order as the input surface files.",
+        "source_id": "fs_preproc",
+        "quote": "Same as #1 but using full paths. Note there is no --meas, but\n--fsgd still needed to provide list of subjects, which must be in the same order as the --isp.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 8640,
+          "end": 8796,
+          "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_preproc",
+      "field": "exceptions",
+      "index": 1,
+      "annotation_id_before_review": 2026,
+      "before": {
+        "statement": "For ANALYZE and NIFTI formats, spatial dimension may not exceed 32k elements, so reshaping is turned on when these formats are automatically detected.",
+        "source_id": "fs_preproc",
+        "quote": "This will not work for ANALYZE and NIFTI formats because they cannot represent a dimension with more than 32k elements.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 7443,
+          "end": 7562,
+          "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+        }
+      },
+      "after": {
+        "statement": "ANALYZE and NIFTI formats cannot represent a dimension with more than 32k elements.",
+        "source_id": "fs_preproc",
+        "quote": "This will not work for ANALYZE and NIFTI formats because they cannot represent a dimension with more than 32k elements.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 7443,
+          "end": 7562,
+          "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_wb_metric_resample",
+      "field": "inputs",
+      "index": 2,
+      "annotation_id_before_review": 2035,
+      "before": {
+        "statement": "A sphere surface in register with the new sphere and having the mesh the metric is currently on.",
+        "source_id": "wb_metric_resample",
+        "quote": "<current-sphere> - a sphere surface that is in register with <new-sphere>",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 4869,
+          "end": 4942,
+          "text_sha256": "4be39435118cef7bb22f14f058f4b215a5af9d7e5fef0c1e6a5ebcd0d0b44656"
+        }
+      },
+      "after": {
+        "statement": "A sphere surface in register with the new sphere and having the mesh the metric is currently on.",
+        "source_id": "wb_metric_resample",
+        "quote": "<current-sphere> - a sphere surface that is in register with <new-sphere>\nand has the mesh that the metric is currently on, typically a\nregistered native-mesh sphere",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 4869,
+          "end": 5034,
+          "text_sha256": "4be39435118cef7bb22f14f058f4b215a5af9d7e5fef0c1e6a5ebcd0d0b44656"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_wb_metric_resample",
+      "field": "conditions",
+      "index": 1,
+      "annotation_id_before_review": 2037,
+      "before": {
+        "statement": "The method argument must be one of ADAP_BARY_AREA or BARYCENTRIC.",
+        "source_id": "wb_metric_resample",
+        "quote": "The <method> argument must be one of the following:",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 7025,
+          "end": 7076,
+          "text_sha256": "4be39435118cef7bb22f14f058f4b215a5af9d7e5fef0c1e6a5ebcd0d0b44656"
+        }
+      },
+      "after": {
+        "statement": "The method argument must be one of ADAP_BARY_AREA or BARYCENTRIC.",
+        "source_id": "wb_metric_resample",
+        "quote": "The <method> argument must be one of the following:\n\nADAP_BARY_AREA\nBARYCENTRIC",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 7025,
+          "end": 7104,
+          "text_sha256": "4be39435118cef7bb22f14f058f4b215a5af9d7e5fef0c1e6a5ebcd0d0b44656"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_ants_thickness",
+      "field": "inputs",
+      "index": 1,
+      "annotation_id_before_review": 2041,
+      "before": {
+        "statement": "Anatomical structural intensity image, typically T1; if multiple are given, later ones are used in segmentation but only the first in prior registration.",
+        "source_id": "ants_thickness_script",
+        "quote": "Structural *intensity* image, typically T1.  If more than one",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 1754,
+          "end": 1815,
+          "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+        }
+      },
+      "after": {
+        "statement": "The anatomical input is a structural intensity image, typically T1.",
+        "source_id": "ants_thickness_script",
+        "quote": "Structural *intensity* image, typically T1.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 1754,
+          "end": 1797,
+          "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_ants_thickness",
+      "field": "inputs",
+      "index": 3,
+      "annotation_id_before_review": 2043,
+      "before": {
+        "statement": "Brain extraction probability mask in the segmentation template space; a binary mask is acceptable.",
+        "source_id": "ants_thickness_script",
+        "quote": "Brain *probability* mask in the segmentation template space. A binary mask",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 3022,
+          "end": 3096,
+          "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+        }
+      },
+      "after": {
+        "statement": "Brain extraction probability mask in the segmentation template space; a binary mask is acceptable.",
+        "source_id": "ants_thickness_script",
+        "quote": "Brain *probability* mask in the segmentation template space. A binary mask\n                                                is an acceptable probability image.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 3022,
+          "end": 3180,
+          "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_ants_thickness",
+      "field": "inputs",
+      "index": 4,
+      "annotation_id_before_review": 2044,
+      "before": {
+        "statement": "Tissue probability priors in template space; at least four must exist for CSF, Cortical GM, WM, Subcortical GM.",
+        "source_id": "ants_thickness_script",
+        "quote": "At least four priors must exist, corresponding to CSF, Cortical GM, WM, Subcortical GM.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 3810,
+          "end": 3897,
+          "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+        }
+      },
+      "after": {
+        "statement": "At least four priors must exist, corresponding to CSF, cortical GM, WM and subcortical GM.",
+        "source_id": "ants_thickness_script",
+        "quote": "At least four priors must exist, corresponding to CSF, Cortical GM, WM, Subcortical GM.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 3810,
+          "end": 3897,
+          "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_ants_thickness",
+      "field": "conditions",
+      "index": 1,
+      "annotation_id_before_review": 2045,
+      "before": {
+        "statement": "Image dimension must be 2 or 3; other values cause an error.",
+        "source_id": "ants_thickness_script",
+        "quote": "ImageDimension must be 2 or 3",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 20520,
+          "end": 20549,
+          "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+        }
+      },
+      "after": {
+        "statement": "Image dimension must be 2 or 3.",
+        "source_id": "ants_thickness_script",
+        "quote": "ImageDimension must be 2 or 3",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 20520,
+          "end": 20549,
+          "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_ants_thickness",
+      "field": "conditions",
+      "index": 2,
+      "annotation_id_before_review": 2046,
+      "before": {
+        "statement": "If the optional registration template is supplied, the template must be skull-stripped.",
+        "source_id": "ants_thickness_script",
+        "quote": "This template *must* be skull-stripped.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 6476,
+          "end": 6515,
+          "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+        }
+      },
+      "after": {
+        "statement": "If a registration template is supplied with -t, it must be skull-stripped.",
+        "source_id": "ants_thickness_script",
+        "quote": "-t:  template for t1 registration          Anatomical *intensity* template. This template *must* be skull-stripped.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 6400,
+          "end": 6515,
+          "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_ants_thickness",
+      "field": "conditions",
+      "index": 3,
+      "annotation_id_before_review": 2047,
+      "before": {
+        "statement": "The optional extraction registration mask must be a binary metric mask defined in the segmentation template space.",
+        "source_id": "ants_thickness_script",
+        "quote": "Binary metric mask defined in the segmentation template space (-e).",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 8167,
+          "end": 8234,
+          "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+        }
+      },
+      "after": {
+        "statement": "If an extraction registration mask is supplied with -f, it is a binary metric mask in the segmentation template space (-e).",
+        "source_id": "ants_thickness_script",
+        "quote": "-f:  extraction registration mask          Binary metric mask defined in the segmentation template space (-e).",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 8124,
+          "end": 8234,
+          "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_ants_thickness",
+      "field": "conditions",
+      "index": 4,
+      "annotation_id_before_review": 2048,
+      "before": {
+        "statement": "At least four prior images are required; fewer causes the script to exit.",
+        "source_id": "ants_thickness_script",
+        "quote": "Expected at least 4 prior images",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 27207,
+          "end": 27239,
+          "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+        }
+      },
+      "after": {
+        "statement": "At least four prior images are required; fewer causes the script to exit.",
+        "source_id": "ants_thickness_script",
+        "quote": "if [[ ${NUMBER_OF_PRIOR_IMAGES} -lt 4 ]]; then\n  echo \"Expected at least 4 prior images (${NUMBER_OF_PRIOR_IMAGES} are specified).  Check the command line specification.\"\n  exit 1\nfi",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 27152,
+          "end": 27334,
+          "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_ants_thickness",
+      "field": "conditions",
+      "index": 5,
+      "annotation_id_before_review": 2049,
+      "before": {
+        "statement": "The optional registration template may differ from the segmentation template; output in template space then uses the registration template.",
+        "source_id": "ants_thickness_outputs",
+        "quote": "the segmentation template (used for brain extraction and priors) and registration template (used for final, high-quality registration on brain-extracted images) may be different",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 791,
+          "end": 968,
+          "text_sha256": "73c52afc4087a016c0dc8cbe136f327eb65a9c62abf29b2eb8a4f3338445206a"
+        }
+      },
+      "after": {
+        "statement": "The segmentation template and registration template may be different.",
+        "source_id": "ants_thickness_outputs",
+        "quote": "the segmentation template (used for brain extraction and priors) and registration template (used for final, high-quality registration on brain-extracted images) may be different",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 791,
+          "end": 968,
+          "text_sha256": "73c52afc4087a016c0dc8cbe136f327eb65a9c62abf29b2eb8a4f3338445206a"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_ants_thickness",
+      "field": "checks",
+      "index": 1,
+      "annotation_id_before_review": 2050,
+      "before": {
+        "statement": "Required programs and scripts are checked for availability on PATH before processing.",
+        "source_id": "ants_thickness_script",
+        "quote": "we can't find the $D program.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 351,
+          "end": 380,
+          "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+        }
+      },
+      "after": {
+        "statement": "If command -v cannot find a dependency program, the script reports an error.",
+        "source_id": "ants_thickness_script",
+        "quote": "if ! command -v ${D} &> /dev/null\n      then\n        echo \"Error:  we can't find the $D program.\"",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 284,
+          "end": 381,
+          "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_ants_thickness",
+      "field": "checks",
+      "index": 2,
+      "annotation_id_before_review": 2051,
+      "before": {
+        "statement": "Specified anatomical images are checked for existence.",
+        "source_id": "ants_thickness_script",
+        "quote": "does not exist.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 24300,
+          "end": 24315,
+          "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+        }
+      },
+      "after": {
+        "statement": "Specified anatomical images are checked for existence.",
+        "source_id": "ants_thickness_script",
+        "quote": "if [[ ! -f ${ANATOMICAL_IMAGES[$i]} ]];\n    then\n      echo \"The specified image \\\"${ANATOMICAL_IMAGES[$i]}\\\" does not exist.\"\n      exit 1\n    fi",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 24190,
+          "end": 24336,
+          "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_ants_thickness",
+      "field": "checks",
+      "index": 3,
+      "annotation_id_before_review": 2052,
+      "before": {
+        "statement": "After completion, expected outputs such as BrainExtractionMask, BrainSegmentation and CorticalThickness are checked for existence.",
+        "source_id": "ants_thickness_script",
+        "quote": "Missing output image $img",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 14846,
+          "end": 14871,
+          "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+        }
+      },
+      "after": {
+        "statement": "The script tests each expected output image for existence and records missing outputs.",
+        "source_id": "ants_thickness_script",
+        "quote": "for img in \"${singleOutputs[@]}\";\n    do\n      if [[ ! -f $img ]];\n        then\n          echo \"Missing output image $img\"\n          missingOutput=1\n        fi",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 14750,
+          "end": 14909,
+          "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_ants_thickness",
+      "field": "checks",
+      "index": 4,
+      "annotation_id_before_review": 2053,
+      "before": {
+        "statement": "The registration component of segmentation is checked for its transform files.",
+        "source_id": "ants_thickness_script",
+        "quote": "The registration component of the segmentation step didn't complete properly.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 38149,
+          "end": 38226,
+          "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+        }
+      },
+      "after": {
+        "statement": "The script checks for the affine registration transform from the segmentation step.",
+        "source_id": "ants_thickness_script",
+        "quote": "if [[ ! -f ${SEGMENTATION_GENERIC_AFFINE} ]];\n          then\n            echo \"The registration component of the segmentation step didn't complete properly.\"",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 38070,
+          "end": 38227,
+          "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_ants_thickness",
+      "field": "exceptions",
+      "index": 1,
+      "annotation_id_before_review": 2054,
+      "before": {
+        "statement": "If a command exits with nonzero status, the script exits unless debug mode is enabled.",
+        "source_id": "ants_thickness_script",
+        "quote": "ERROR: command exited with nonzero status $cmdExit",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 17601,
+          "end": 17651,
+          "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+        }
+      },
+      "after": {
+        "statement": "If a command exits with nonzero status, the script exits unless debug mode is enabled.",
+        "source_id": "ants_thickness_script",
+        "quote": "ERROR: command exited with nonzero status $cmdExit\"\n      echo \"Command: $cmd\"\n      echo\n      if [[ ! $DEBUG_MODE -gt 0 ]];\n        then\n          exit 1\n        fi",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 17601,
+          "end": 17767,
+          "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_ants_thickness",
+      "field": "exceptions",
+      "index": 2,
+      "annotation_id_before_review": 2055,
+      "before": {
+        "statement": "In BIDS prior formatting, a missing required SGM label triggers a fallback to templateflow SCGM; if absent, the script exits.",
+        "source_id": "ants_thickness_script",
+        "quote": "Hack for templateflow - try SCGM instead of SGM",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 26246,
+          "end": 26293,
+          "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+        }
+      },
+      "after": {
+        "statement": "For Templateflow priors, if SGM is not found then SCGM is used instead.",
+        "source_id": "ants_thickness_script",
+        "quote": "Templateflow labels use \"SCGM\" instead of \"SGM\", if \"SGM\" is not\n                                                found, \"SCGM\" will be used instead.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 4503,
+          "end": 4651,
+          "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_ants_thickness",
+      "field": "exceptions",
+      "index": 3,
+      "annotation_id_before_review": 2056,
+      "before": {
+        "statement": "Prior combinations are only allowed for gray matter or white matter; other labels cause an error exit.",
+        "source_id": "ants_thickness_script",
+        "quote": "We only combine with the gray matter or the white matter.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 29165,
+          "end": 29222,
+          "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+        }
+      },
+      "after": {
+        "statement": "Prior combinations are only allowed for gray matter or white matter; other labels cause an error exit.",
+        "source_id": "ants_thickness_script",
+        "quote": "We only combine with the gray matter or the white matter.\"\n        echo \"The label ${COMBINATION[0]} does not correspond to the gray or white matters.\"\n        exit 1",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 29165,
+          "end": 29331,
+          "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_ants_thickness",
+      "field": "exceptions",
+      "index": 4,
+      "annotation_id_before_review": 2057,
+      "before": {
+        "statement": "If the cortical thickness output is not produced, the script exits with an error.",
+        "source_id": "ants_thickness_script",
+        "quote": "Expected output was not produced.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 56540,
+          "end": 56573,
+          "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+        }
+      },
+      "after": {
+        "statement": "If the cortical thickness output is not produced, the script exits with an error.",
+        "source_id": "ants_thickness_script",
+        "quote": "if [[ ! -f ${CORTICAL_THICKNESS_IMAGE} ]];\n      then\n        echo \"Expected output was not produced.  The cortical thickness image doesn't exist:\"\n        echo \"   $CORTICAL_THICKNESS_IMAGE\"\n        exit 1\n      fi",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 56472,
+          "end": 56687,
+          "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_ca_label",
+      "field": "inputs",
+      "index": 4,
+      "annotation_id_before_review": 2061,
+      "before": {
+        "statement": "classifier array input file (atlas file previously prepared from a training set)",
+        "source_id": "fs_ca_label",
+        "quote": "<classifier>\n\nspecify classifier array input file",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 1751,
+          "end": 1800,
+          "text_sha256": "adec54a1302a3d1d07f108d0f7a11a17359381574733836fc8161e24af1dff5d"
+        }
+      },
+      "after": {
+        "statement": "Classifier array input file.",
+        "source_id": "fs_ca_label",
+        "quote": "<classifier>\n\nspecify classifier array input file",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 1751,
+          "end": 1800,
+          "text_sha256": "adec54a1302a3d1d07f108d0f7a11a17359381574733836fc8161e24af1dff5d"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_wb_surface_resample",
+      "field": "inputs",
+      "index": 1,
+      "annotation_id_before_review": 2063,
+      "before": {
+        "statement": "The surface file to resample, typically a native-mesh anatomical or inflated surface.",
+        "source_id": "wb_surface_resample",
+        "quote": "<surface-in> - the surface file to resample, typically a native-mesh",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 4792,
+          "end": 4860,
+          "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+        }
+      },
+      "after": {
+        "statement": "The surface file to resample, typically a native-mesh anatomical or inflated surface.",
+        "source_id": "wb_surface_resample",
+        "quote": "<surface-in> - the surface file to resample, typically a native-mesh\nanatomical or inflated surface",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 4792,
+          "end": 4891,
+          "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_wb_surface_resample",
+      "field": "inputs",
+      "index": 2,
+      "annotation_id_before_review": 2064,
+      "before": {
+        "statement": "A sphere surface in register with <new-sphere> that uses the mesh the input surface is currently on, typically a registered native-mesh sphere.",
+        "source_id": "wb_surface_resample",
+        "quote": "<current-sphere> - a sphere surface that is in register with <new-sphere>",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 4892,
+          "end": 4965,
+          "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+        }
+      },
+      "after": {
+        "statement": "A sphere surface in register with <new-sphere> that uses the mesh the input surface is currently on, typically a registered native-mesh sphere.",
+        "source_id": "wb_surface_resample",
+        "quote": "<current-sphere> - a sphere surface that is in register with <new-sphere>\nand uses the mesh that the input surface is currently on, typically a\nregistered native-mesh sphere",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 4892,
+          "end": 5065,
+          "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_wb_surface_resample",
+      "field": "inputs",
+      "index": 3,
+      "annotation_id_before_review": 2065,
+      "before": {
+        "statement": "A sphere surface that has the desired output mesh, typically a standard sphere.",
+        "source_id": "wb_surface_resample",
+        "quote": "<new-sphere> - a sphere surface that has the desired output mesh",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 5117,
+          "end": 5181,
+          "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+        }
+      },
+      "after": {
+        "statement": "A sphere surface that has the desired output mesh, typically a standard sphere.",
+        "source_id": "wb_surface_resample",
+        "quote": "<new-sphere> - a sphere surface that has the desired output mesh,\ntypically a standard sphere",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 5117,
+          "end": 5210,
+          "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_wb_surface_resample",
+      "field": "inputs",
+      "index": 4,
+      "annotation_id_before_review": 2066,
+      "before": {
+        "statement": "The method name, which must be one of ADAP_BARY_AREA or BARYCENTRIC.",
+        "source_id": "wb_surface_resample",
+        "quote": "<method> - the method name",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 5248,
+          "end": 5274,
+          "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+        }
+      },
+      "after": {
+        "statement": "The method name, which must be one of ADAP_BARY_AREA or BARYCENTRIC.",
+        "source_id": "wb_surface_resample",
+        "quote": "The <method> argument must be one of the following:\n\nADAP_BARY_AREA\nBARYCENTRIC",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 6417,
+          "end": 6496,
+          "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_wb_surface_resample",
+      "field": "conditions",
+      "index": 1,
+      "annotation_id_before_review": 2067,
+      "before": {
+        "statement": "If ADAP_BARY_AREA is used, exactly one of -area-surfs or -area-metrics must be specified.",
+        "source_id": "wb_surface_resample",
+        "quote": "If ADAP_BARY_AREA is used, exactly one of -area-surfs or",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 5948,
+          "end": 6004,
+          "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+        }
+      },
+      "after": {
+        "statement": "If ADAP_BARY_AREA is used, exactly one of -area-surfs or -area-metrics must be specified.",
+        "source_id": "wb_surface_resample",
+        "quote": "If ADAP_BARY_AREA is used, exactly one of -area-surfs or\n-area-metrics must be specified.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 5948,
+          "end": 6037,
+          "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_wb_surface_resample",
+      "field": "exceptions",
+      "index": 2,
+      "annotation_id_before_review": 2069,
+      "before": {
+        "statement": "Instead of resampling a spherical surface, the -surface-sphere-project-unproject command is recommended.",
+        "source_id": "wb_surface_resample",
+        "quote": "Instead of resampling a spherical surface, the",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 6311,
+          "end": 6357,
+          "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+        }
+      },
+      "after": {
+        "statement": "Instead of resampling a spherical surface, the -surface-sphere-project-unproject command is recommended.",
+        "source_id": "wb_surface_resample",
+        "quote": "Instead of resampling a spherical surface, the\n-surface-sphere-project-unproject command is recommended.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 6311,
+          "end": 6415,
+          "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_wb_surface_resample",
+      "field": "exceptions",
+      "index": 3,
+      "annotation_id_before_review": 2070,
+      "before": {
+        "statement": "ADAP_BARY_AREA is not generally recommended for surface resampling, but is provided for completeness.",
+        "source_id": "wb_surface_resample",
+        "quote": "This method is not generally",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 6038,
+          "end": 6066,
+          "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+        }
+      },
+      "after": {
+        "statement": "ADAP_BARY_AREA is not generally recommended for surface resampling, but is provided for completeness.",
+        "source_id": "wb_surface_resample",
+        "quote": "If ADAP_BARY_AREA is used, exactly one of -area-surfs or\n-area-metrics must be specified. This method is not generally\nrecommended for surface resampling, but is provided for completeness.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 5948,
+          "end": 6136,
+          "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fsl_first",
+      "field": "inputs",
+      "index": 1,
+      "annotation_id_before_review": 2071,
+      "before": {
+        "statement": "A good quality T1-weighted image is needed to segment the supported structures.",
+        "source_id": "fsl_first",
+        "quote": "FIRST needs a good quality T1-weighted image",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 250,
+          "end": 294,
+          "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+        }
+      },
+      "after": {
+        "statement": "FIRST needs a good quality T1-weighted image.",
+        "source_id": "fsl_first",
+        "quote": "FIRST needs a good quality T1-weighted image",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 250,
+          "end": 294,
+          "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fsl_first",
+      "field": "inputs",
+      "index": 2,
+      "annotation_id_before_review": 2072,
+      "before": {
+        "statement": "Only T1-weighted images can be used as input to run_first_all.",
+        "source_id": "fsl_first",
+        "quote": "only T1-weighted images can be used",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 4809,
+          "end": 4844,
+          "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+        }
+      },
+      "after": {
+        "statement": "Only T1-weighted images can be used as input to run_first_all.",
+        "source_id": "fsl_first",
+        "quote": "run_first_all -i t1_image -o output_name\n\nThe argument -i specifies the original T1-weighted structural image (only T1-weighted images can be used).",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 4698,
+          "end": 4846,
+          "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fsl_first",
+      "field": "conditions",
+      "index": 1,
+      "annotation_id_before_review": 2074,
+      "before": {
+        "statement": "If the registration stage fails then the model fitting will not work, though run_first_all continues to run and may produce outputs.",
+        "source_id": "fsl_first",
+        "quote": "if the registration stage fails then the models fitting will\nnot work",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 31711,
+          "end": 31780,
+          "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+        }
+      },
+      "after": {
+        "statement": "If the registration stage fails then the model fitting will not work, though run_first_all continues to run and may produce outputs.",
+        "source_id": "fsl_first",
+        "quote": "if the registration stage fails then the models fitting will\nnot work, despite the fact that run_first_all continues to run and may produce outputs.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 31711,
+          "end": 31859,
+          "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fsl_first",
+      "field": "conditions",
+      "index": 2,
+      "annotation_id_before_review": 2075,
+      "before": {
+        "statement": "When fitting the cerebellum models, a different transformation matrix than that used for the other structures must be input.",
+        "source_id": "fsl_first",
+        "quote": "you will need to input a different transformation matrix than that used for the other structures",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 32686,
+          "end": 32782,
+          "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+        }
+      },
+      "after": {
+        "statement": "When fitting the cerebellum models, a different transformation matrix than that used for the other structures must be input.",
+        "source_id": "fsl_first",
+        "quote": "When fitting the cerebellum models, you will need to input a different transformation matrix than that used for the other structures.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 32650,
+          "end": 32783,
+          "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fsl_first",
+      "field": "conditions",
+      "index": 3,
+      "annotation_id_before_review": 2076,
+      "before": {
+        "statement": "The -cort flag must be specified for first_flirt to perform the registration needed for cerebellum models.",
+        "source_id": "fsl_first",
+        "quote": "first_flirt will not perform the necessary registration by default - the -cort flag must be specified",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 32784,
+          "end": 32885,
+          "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+        }
+      },
+      "after": {
+        "statement": "The -cort flag must be specified for first_flirt to perform the registration needed for cerebellum models.",
+        "source_id": "fsl_first",
+        "quote": "cerebellum models, you will need to input a different transformation matrix than that used for the other structures. first_flirt will not perform the necessary registration by default - the -cort flag must be specified.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 32667,
+          "end": 32886,
+          "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fsl_first",
+      "field": "conditions",
+      "index": 4,
+      "annotation_id_before_review": 2077,
+      "before": {
+        "statement": "The full path name to the model must be used with -m.",
+        "source_id": "fsl_first",
+        "quote": "The full path name to the model must be used",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 35806,
+          "end": 35850,
+          "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+        }
+      },
+      "after": {
+        "statement": "The full path name to the model must be used with -m.",
+        "source_id": "fsl_first",
+        "quote": "-m: The model file (e.g. ${FSLDIR}/data/first/models_336_bin/L_Hipp_bin.bmv). The full path name to the model must be used.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 35728,
+          "end": 35851,
+          "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fsl_first",
+      "field": "checks",
+      "index": 1,
+      "annotation_id_before_review": 2078,
+      "before": {
+        "statement": "Check the log directory error outputs; no output means no errors.",
+        "source_id": "fsl_first",
+        "quote": "cat *.logs/*.e*",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 5422,
+          "end": 5437,
+          "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+        }
+      },
+      "after": {
+        "statement": "Check the log directory error outputs; no output means no errors.",
+        "source_id": "fsl_first",
+        "quote": "cat *.logs/*.e*\n\nand if there are no errors then you will see no output, otherwise you will see what errors have occured.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 5422,
+          "end": 5543,
+          "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fsl_first",
+      "field": "exceptions",
+      "index": 1,
+      "annotation_id_before_review": 2082,
+      "before": {
+        "statement": "If there are problems, different segmentation options such as number of modes or boundary correction method can be tried using the individual tools.",
+        "source_id": "fsl_first",
+        "quote": "If there are any problems, you can try different segmentation options",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 13075,
+          "end": 13144,
+          "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+        }
+      },
+      "after": {
+        "statement": "If there are problems, different segmentation options such as number of modes or boundary correction method can be tried using the individual tools.",
+        "source_id": "fsl_first",
+        "quote": "If there are any problems, you can try different segmentation options (e.g. number of modes, boundary correction method, etc.) using the individual tools described in the Advanced Usage section.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 13075,
+          "end": 13269,
+          "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fsl_first",
+      "field": "exceptions",
+      "index": 2,
+      "annotation_id_before_review": 2083,
+      "before": {
+        "statement": "Boundary correction method none is appropriate for models in the 05mm subdirectory.",
+        "source_id": "fsl_first",
+        "quote": "all boundary voxels are considered as belonging to the structure, and hence none is the appropriate correction method",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 40220,
+          "end": 40337,
+          "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+        }
+      },
+      "after": {
+        "statement": "Boundary correction method none is appropriate for models in the 05mm subdirectory.",
+        "source_id": "fsl_first",
+        "quote": "For the models contained in ${FSLDIR}/data/first/models_336_bin/05mm/, all boundary voxels are considered as belonging to the structure, and hence none is the appropriate correction method.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 40149,
+          "end": 40338,
+          "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_anatomical_stats",
+      "field": "steps",
+      "index": 2,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "Optionally restrict thickness values to a specified low and high range.",
+        "source_id": "fs_anatomical_stats",
+        "quote": "only consider thicknesses in the specified range.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 1230,
+          "end": 1279,
+          "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+        }
+      },
+      "after": {
+        "statement": "Optionally restrict thickness values to a specified low and high range.",
+        "source_id": "fs_anatomical_stats",
+        "quote": "-i <low thresh> <hi thresh>\n\nonly consider thicknesses in the specified range.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 1201,
+          "end": 1279,
+          "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_anatomical_stats",
+      "field": "outputs",
+      "index": 1,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "Tabular output includes structure name, number of vertices, surface area, gray matter volume, average thickness, and thickness std dev.",
+        "source_id": "fs_anatomical_stats",
+        "quote": "Tabular output includes the following:",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 1984,
+          "end": 2022,
+          "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+        }
+      },
+      "after": {
+        "statement": "Tabular output includes structure name, number of vertices and surface area.",
+        "source_id": "fs_anatomical_stats",
+        "quote": "Tabular output includes the following:\n\nData column\n\nunits\n\nComments\n\nStructure Name\n\nNA\n\nNumber of Vertices\n\nunitless\n\nSurface Area\n\nmm^2\n\ntotal surface area",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 1984,
+          "end": 2142,
+          "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_anatomical_stats",
+      "field": "outputs",
+      "index": 3,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "Table output can be written to a tablefile with -f, in a different format than -b.",
+        "source_id": "fs_anatomical_stats",
+        "quote": "table output to tablefile (different format than -b).",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 1540,
+          "end": 1593,
+          "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+        }
+      },
+      "after": {
+        "statement": "Table output can be written to a tablefile with -f, in a different format than -b.",
+        "source_id": "fs_anatomical_stats",
+        "quote": "-f <tablefile>\n\ntable output to tablefile (different format than -b).",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 1524,
+          "end": 1593,
+          "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_anatomical_stats",
+      "field": "outputs",
+      "index": 4,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "Stats can be written to a file named log with -log.",
+        "source_id": "fs_anatomical_stats",
+        "quote": "Write stats to file named log",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 1652,
+          "end": 1681,
+          "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+        }
+      },
+      "after": {
+        "statement": "Stats can be written to a file named log with -log.",
+        "source_id": "fs_anatomical_stats",
+        "quote": "-log <logfile>\n\nWrite stats to file named log",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 1636,
+          "end": 1681,
+          "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_anatomical_stats",
+      "field": "parameters",
+      "index": 3,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "Global brain stats are computed unless -noglobal is specified.",
+        "source_id": "fs_anatomical_stats",
+        "quote": "-noglobal\n\nDo not compute global brain stats",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 1817,
+          "end": 1861,
+          "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+        }
+      },
+      "after": {
+        "statement": "The -noglobal option disables computation of global brain statistics.",
+        "source_id": "fs_anatomical_stats",
+        "quote": "-noglobal\n\nDo not compute global brain stats",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 1817,
+          "end": 1861,
+          "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_segstats",
+      "field": "steps",
+      "index": 1,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "Provide a segmentation via --seg, or create one from an annotation (--annot) or surface label (--slabel).",
+        "source_id": "fs_segstats",
+        "quote": "create a segmentation from a given surface label. The points in the label are given a value of 1; 0 for outside",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 1605,
+          "end": 1716,
+          "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+        }
+      },
+      "after": {
+        "statement": "With --slabel, a segmentation is created from a surface label: label points are 1, outside points are 0.",
+        "source_id": "fs_segstats",
+        "quote": "--slabel subject hemi label\n\ncreate a segmentation from a given surface label. The points in the label are given a value of 1; 0 for outside",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 1576,
+          "end": 1716,
+          "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_segstats",
+      "field": "steps",
+      "index": 3,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "Optionally compute statistics from another volume with --i, including min, max, range, average, and standard deviation.",
+        "source_id": "fs_segstats",
+        "quote": "Input volume from which to compute more statistics, including min, max, range, average, and standard deviation as measured spatially across each segmentation.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 2047,
+          "end": 2205,
+          "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+        }
+      },
+      "after": {
+        "statement": "Optionally compute statistics from another volume with --i, including min, max, range, average, and standard deviation.",
+        "source_id": "fs_segstats",
+        "quote": "--i invol\n\nInput volume from which to compute more statistics, including min, max, range, average, and standard deviation as measured spatially across each segmentation.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 2036,
+          "end": 2205,
+          "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_segstats",
+      "field": "steps",
+      "index": 4,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "Save summary statistics to an ASCII file with --sum.",
+        "source_id": "fs_segstats",
+        "quote": "ASCII file in which summary statistics are saved",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 1730,
+          "end": 1778,
+          "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+        }
+      },
+      "after": {
+        "statement": "Save summary statistics to an ASCII file with --sum.",
+        "source_id": "fs_segstats",
+        "quote": "--sum file\n\nASCII file in which summary statistics are saved",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 1718,
+          "end": 1778,
+          "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_segstats",
+      "field": "steps",
+      "index": 5,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "Optionally compute average waveforms per segmentation with --avgwf and save to an ASCII text file.",
+        "source_id": "fs_segstats",
+        "quote": "For each segmentation, computes the average waveform across all the voxels in the segmentation (excluding voxels masked out).",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 7908,
+          "end": 8033,
+          "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+        }
+      },
+      "after": {
+        "statement": "With --avgwf, average waveforms are computed across the unmasked voxels in each segmentation.",
+        "source_id": "fs_segstats",
+        "quote": "--avgwf textfile\n\nFor each segmentation, computes the average waveform across all the voxels in the segmentation (excluding voxels masked out).",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 7890,
+          "end": 8033,
+          "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_segstats",
+      "field": "outputs",
+      "index": 1,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "Summary statistics ASCII file specified by --sum, with header lines beginning with '#'.",
+        "source_id": "fs_segstats",
+        "quote": "The summary file is an ascii file in which the segmentation statistics are reported. This file will have some 'header' information. Each header line begins with a '#'.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 10613,
+          "end": 10780,
+          "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+        }
+      },
+      "after": {
+        "statement": "The segmentation summary is an ASCII file with header lines beginning with '#'.",
+        "source_id": "fs_segstats",
+        "quote": "The summary file is an ascii file in which the segmentation statistics are reported. This file will have some 'header' information. Each header line begins with a '#'.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 10613,
+          "end": 10780,
+          "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_segstats",
+      "field": "outputs",
+      "index": 2,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "Optional output color table with just the reported segmentations via --ctab-out.",
+        "source_id": "fs_segstats",
+        "quote": "Create an output color table with just the segmentations reported in the output.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 4435,
+          "end": 4515,
+          "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+        }
+      },
+      "after": {
+        "statement": "Optional output color table with just the reported segmentations via --ctab-out.",
+        "source_id": "fs_segstats",
+        "quote": "--ctab-out ctaboutput\n\nCreate an output color table with just the segmentations reported in the output.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 4412,
+          "end": 4515,
+          "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_segstats",
+      "field": "outputs",
+      "index": 4,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "Optional binary MRI volume output of waveforms via --avgwfvol.",
+        "source_id": "fs_segstats",
+        "quote": "Same as --avgwf except that the resulting waveforms are stored in a binary mri volume format",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 8365,
+          "end": 8457,
+          "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+        }
+      },
+      "after": {
+        "statement": "Optional binary MRI volume output of waveforms via --avgwfvol.",
+        "source_id": "fs_segstats",
+        "quote": "--avgwfvol mrivol\n\nSame as --avgwf except that the resulting waveforms are stored in a binary mri volume format",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 8346,
+          "end": 8457,
+          "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_segstats",
+      "field": "parameters",
+      "index": 2,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "Masking threshold default is 0.5.",
+        "source_id": "fs_segstats",
+        "quote": "Default is 0.5",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 6254,
+          "end": 6268,
+          "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+        }
+      },
+      "after": {
+        "statement": "Masking threshold default is 0.5.",
+        "source_id": "fs_segstats",
+        "quote": "--maskthresh thresh\n\nExclude voxels that are below thresh (for pos sign), above thresh (for neg sign), or between thresh (for abs sign). Default is 0.5",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 6117,
+          "end": 6268,
+          "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_segstats",
+      "field": "parameters",
+      "index": 3,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "Mask sign choices are abs, pos, and neg; default is abs.",
+        "source_id": "fs_segstats",
+        "quote": "Choices are abs, pos, and neg. Default is abs.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 6323,
+          "end": 6369,
+          "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+        }
+      },
+      "after": {
+        "statement": "Mask sign choices are abs, pos, and neg; default is abs.",
+        "source_id": "fs_segstats",
+        "quote": "--masksign sign\n\nSpecify sign for masking threshold. Choices are abs, pos, and neg. Default is abs.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 6270,
+          "end": 6369,
+          "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_preproc",
+      "field": "steps",
+      "index": 1,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "Resample surface or volume source data to the surface of the common-space target subject.",
+        "source_id": "fs_preproc",
+        "quote": "resampling surface or volume source data to a common sujbect (usually an average subject)",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 2149,
+          "end": 2238,
+          "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+        }
+      },
+      "after": {
+        "statement": "Surface or volume source data are resampled to a common subject, usually an average subject.",
+        "source_id": "fs_preproc",
+        "quote": "resampling surface or volume source data to a common sujbect (usually an average subject)",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 2149,
+          "end": 2238,
+          "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_preproc",
+      "field": "steps",
+      "index": 2,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "Concatenate the resampled inputs into one output file.",
+        "source_id": "fs_preproc",
+        "quote": "and then concatenating them into one file",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 2239,
+          "end": 2280,
+          "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+        }
+      },
+      "after": {
+        "statement": "Concatenate the resampled inputs into one output file.",
+        "source_id": "fs_preproc",
+        "quote": "Script to prepare surface-based data for high-level analysis by resampling surface or volume source data to a common sujbect (usually an average subject) and then concatenating them into one file",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 2085,
+          "end": 2280,
+          "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_preproc",
+      "field": "steps",
+      "index": 3,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "Optionally smooth on the target surface by FWHM mm or by nearest-neighbor iterations.",
+        "source_id": "fs_preproc",
+        "quote": "Smooth the data on the target surface by fwhm mm.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 4407,
+          "end": 4456,
+          "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+        }
+      },
+      "after": {
+        "statement": "The target surface data may be smoothed by an FWHM specified in millimeters.",
+        "source_id": "fs_preproc",
+        "quote": "Smooth the data on the target surface by fwhm mm.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 4407,
+          "end": 4456,
+          "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_preproc",
+      "field": "outputs",
+      "index": 1,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "An output file specified with --out containing the concatenated resampled data.",
+        "source_id": "fs_preproc",
+        "quote": "--out outfile\nSave output here.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 2369,
+          "end": 2400,
+          "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+        }
+      },
+      "after": {
+        "statement": "The --out option specifies the output file.",
+        "source_id": "fs_preproc",
+        "quote": "--out outfile\nSave output here.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 2369,
+          "end": 2400,
+          "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_preproc",
+      "field": "outputs",
+      "index": 3,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "Output is a volume-encoded surface file, normally with spatial dimension nvertices-by-1-by-1.",
+        "source_id": "fs_preproc",
+        "quote": "the output volume-encoded surface file will have spatial dimension of nvertices-by-1-by-1",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 7285,
+          "end": 7374,
+          "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+        }
+      },
+      "after": {
+        "statement": "Output is a volume-encoded surface file, normally with spatial dimension nvertices-by-1-by-1.",
+        "source_id": "fs_preproc",
+        "quote": "Normally, the output volume-encoded surface file will have spatial dimension of nvertices-by-1-by-1",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 7275,
+          "end": 7374,
+          "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_preproc",
+      "field": "parameters",
+      "index": 1,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "--projfrac sets the projection fraction for vol2surf and is 0-1, default 0.",
+        "source_id": "fs_preproc",
+        "quote": "projfrac is 0-1. Default is 0.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 4364,
+          "end": 4394,
+          "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+        }
+      },
+      "after": {
+        "statement": "--projfrac sets the projection fraction for vol2surf and is 0-1, default 0.",
+        "source_id": "fs_preproc",
+        "quote": "--projfrac projfrac\nWhen sampling a volume onto the surface, sample a fraction of the thickness along the surface normal. projfrac is 0-1. Default is 0.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 4242,
+          "end": 4394,
+          "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_preproc",
+      "field": "parameters",
+      "index": 2,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "--fwhm sets smoothing by FWHM in mm on the target surface; --fwhm-src smooths the source surface instead.",
+        "source_id": "fs_preproc",
+        "quote": "Smooth the data on the target surface by fwhm mm.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 4407,
+          "end": 4456,
+          "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+        }
+      },
+      "after": {
+        "statement": "The --fwhm option smooths data on the target surface by the specified FWHM in millimeters.",
+        "source_id": "fs_preproc",
+        "quote": "--fwhm fwhm\nSmooth the data on the target surface by fwhm mm.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 4395,
+          "end": 4456,
+          "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_preproc",
+      "field": "parameters",
+      "index": 4,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "--srcfmt specifies source format when using --is; --meas implies --srcfmt curv.",
+        "source_id": "fs_preproc",
+        "quote": "--meas implies --srcfmt curv.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 3836,
+          "end": 3865,
+          "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+        }
+      },
+      "after": {
+        "statement": "Using --meas implies --srcfmt curv.",
+        "source_id": "fs_preproc",
+        "quote": "--meas implies --srcfmt curv.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 3836,
+          "end": 3865,
+          "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_surf2surf",
+      "field": "parameters",
+      "index": 3,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "Number of smoothing iterations, each averaging each vertex with its neighbors.",
+        "source_id": "fs_surf2surf",
+        "quote": "Each iteration consists of averaging eeach vertex with its neighbors.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 3721,
+          "end": 3790,
+          "text_sha256": "02c4e1aef707ab0874c3277e093e442f6a7f99fc5b6ebdfc29491aa4c2f0c6c5"
+        }
+      },
+      "after": {
+        "statement": "Each smoothing iteration averages each vertex with its neighbors.",
+        "source_id": "fs_surf2surf",
+        "quote": "Each iteration consists of averaging eeach vertex with its neighbors.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 3721,
+          "end": 3790,
+          "text_sha256": "02c4e1aef707ab0874c3277e093e442f6a7f99fc5b6ebdfc29491aa4c2f0c6c5"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_surf2surf",
+      "field": "parameters",
+      "index": 4,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "Frame number for paint/w output, zero-based, default 0.",
+        "source_id": "fs_surf2surf",
+        "quote": "The frame number is zero-based (default is 0).",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 4133,
+          "end": 4179,
+          "text_sha256": "02c4e1aef707ab0874c3277e093e442f6a7f99fc5b6ebdfc29491aa4c2f0c6c5"
+        }
+      },
+      "after": {
+        "statement": "Frame number for paint/w output, zero-based, default 0.",
+        "source_id": "fs_surf2surf",
+        "quote": "--frame <framenumber>\n\nWhen using paint/w output format, this specifies which frame to output. This format can store only one frame. The frame number is zero-based (default is 0).",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 4000,
+          "end": 4179,
+          "text_sha256": "02c4e1aef707ab0874c3277e093e442f6a7f99fc5b6ebdfc29491aa4c2f0c6c5"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_wb_metric_resample",
+      "field": "steps",
+      "index": 1,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "Provide the input metric, current sphere, new sphere, method name, and output metric path.",
+        "source_id": "wb_metric_resample",
+        "quote": "wb_command -metric-resample\n<metric-in> - the metric file to resample, typically a native-mesh metric",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 4767,
+          "end": 4868,
+          "text_sha256": "4be39435118cef7bb22f14f058f4b215a5af9d7e5fef0c1e6a5ebcd0d0b44656"
+        }
+      },
+      "after": {
+        "statement": "wb_command -metric-resample takes the metric file to resample as <metric-in>.",
+        "source_id": "wb_metric_resample",
+        "quote": "wb_command -metric-resample\n<metric-in> - the metric file to resample, typically a native-mesh metric",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 4767,
+          "end": 4868,
+          "text_sha256": "4be39435118cef7bb22f14f058f4b215a5af9d7e5fef0c1e6a5ebcd0d0b44656"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_wb_metric_resample",
+      "field": "steps",
+      "index": 2,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "Optionally specify -area-surfs with current-area and new-area surfaces for vertex area correction.",
+        "source_id": "wb_metric_resample",
+        "quote": "[-area-surfs] - specify surfaces to do vertex area correction based on",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 5283,
+          "end": 5353,
+          "text_sha256": "4be39435118cef7bb22f14f058f4b215a5af9d7e5fef0c1e6a5ebcd0d0b44656"
+        }
+      },
+      "after": {
+        "statement": "Optionally specify -area-surfs with current-area and new-area surfaces for vertex area correction.",
+        "source_id": "wb_metric_resample",
+        "quote": "[-area-surfs] - specify surfaces to do vertex area correction based on\n<current-area> - a relevant anatomical surface with <current-sphere>\nmesh\n<new-area> - a relevant anatomical surface with <new-sphere> mesh",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 5283,
+          "end": 5493,
+          "text_sha256": "4be39435118cef7bb22f14f058f4b215a5af9d7e5fef0c1e6a5ebcd0d0b44656"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_wb_metric_resample",
+      "field": "parameters",
+      "index": 2,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "For -area-surfs, a current-area anatomical surface with current-sphere mesh and a new-area surface with new-sphere mesh.",
+        "source_id": "wb_metric_resample",
+        "quote": "<current-area> - a relevant anatomical surface with <current-sphere>\nmesh",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 5354,
+          "end": 5427,
+          "text_sha256": "4be39435118cef7bb22f14f058f4b215a5af9d7e5fef0c1e6a5ebcd0d0b44656"
+        }
+      },
+      "after": {
+        "statement": "For -area-surfs, a current-area anatomical surface with current-sphere mesh and a new-area surface with new-sphere mesh.",
+        "source_id": "wb_metric_resample",
+        "quote": "[-area-surfs] - specify surfaces to do vertex area correction based on\n<current-area> - a relevant anatomical surface with <current-sphere>\nmesh\n<new-area> - a relevant anatomical surface with <new-sphere> mesh",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 5283,
+          "end": 5493,
+          "text_sha256": "4be39435118cef7bb22f14f058f4b215a5af9d7e5fef0c1e6a5ebcd0d0b44656"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_wb_metric_resample",
+      "field": "steps",
+      "index": 3,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "Optionally specify -area-metrics with current-area and new-area vertex area metric files.",
+        "source_id": "wb_metric_resample",
+        "quote": "[-area-metrics] - specify vertex area metrics to do area correction based\non",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 5495,
+          "end": 5571,
+          "text_sha256": "4be39435118cef7bb22f14f058f4b215a5af9d7e5fef0c1e6a5ebcd0d0b44656"
+        }
+      },
+      "after": {
+        "statement": "Optionally specify -area-metrics with current-area and new-area vertex area metric files.",
+        "source_id": "wb_metric_resample",
+        "quote": "[-area-metrics] - specify vertex area metrics to do area correction based\non\n<current-area> - a metric file with vertex areas for <current-sphere>\nmesh\n<new-area> - a metric file with vertex areas for <new-sphere> mesh",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 5495,
+          "end": 5713,
+          "text_sha256": "4be39435118cef7bb22f14f058f4b215a5af9d7e5fef0c1e6a5ebcd0d0b44656"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_wb_metric_resample",
+      "field": "parameters",
+      "index": 3,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "For -area-metrics, a current-area metric file with vertex areas for current-sphere mesh and a new-area metric file for new-sphere mesh.",
+        "source_id": "wb_metric_resample",
+        "quote": "<current-area> - a metric file with vertex areas for <current-sphere>\nmesh",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 5572,
+          "end": 5646,
+          "text_sha256": "4be39435118cef7bb22f14f058f4b215a5af9d7e5fef0c1e6a5ebcd0d0b44656"
+        }
+      },
+      "after": {
+        "statement": "For -area-metrics, a current-area metric file with vertex areas for current-sphere mesh and a new-area metric file for new-sphere mesh.",
+        "source_id": "wb_metric_resample",
+        "quote": "[-area-metrics] - specify vertex area metrics to do area correction based\non\n<current-area> - a metric file with vertex areas for <current-sphere>\nmesh\n<new-area> - a metric file with vertex areas for <new-sphere> mesh",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 5495,
+          "end": 5713,
+          "text_sha256": "4be39435118cef7bb22f14f058f4b215a5af9d7e5fef0c1e6a5ebcd0d0b44656"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_wb_metric_resample",
+      "field": "steps",
+      "index": 4,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "Optionally use -current-roi to exclude non-data vertices via an input roi metric.",
+        "source_id": "wb_metric_resample",
+        "quote": "[-current-roi] - use an input roi on the current mesh to exclude non-data\nvertices",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 5715,
+          "end": 5797,
+          "text_sha256": "4be39435118cef7bb22f14f058f4b215a5af9d7e5fef0c1e6a5ebcd0d0b44656"
+        }
+      },
+      "after": {
+        "statement": "Optionally use -current-roi to exclude non-data vertices via an input roi metric.",
+        "source_id": "wb_metric_resample",
+        "quote": "[-current-roi] - use an input roi on the current mesh to exclude non-data\nvertices\n<roi-metric> - the roi, as a metric file",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 5715,
+          "end": 5838,
+          "text_sha256": "4be39435118cef7bb22f14f058f4b215a5af9d7e5fef0c1e6a5ebcd0d0b44656"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_wb_metric_resample",
+      "field": "outputs",
+      "index": 2,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "Optional ROI of vertices that got data from valid source vertices, output as a metric.",
+        "source_id": "wb_metric_resample",
+        "quote": "[-valid-roi-out] - output the ROI of vertices that got data from valid\nsource vertices",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 5840,
+          "end": 5926,
+          "text_sha256": "4be39435118cef7bb22f14f058f4b215a5af9d7e5fef0c1e6a5ebcd0d0b44656"
+        }
+      },
+      "after": {
+        "statement": "Optional ROI of vertices that got data from valid source vertices, output as a metric.",
+        "source_id": "wb_metric_resample",
+        "quote": "[-valid-roi-out] - output the ROI of vertices that got data from valid\nsource vertices\n<roi-out> - output - the output roi as a metric",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 5840,
+          "end": 5974,
+          "text_sha256": "4be39435118cef7bb22f14f058f4b215a5af9d7e5fef0c1e6a5ebcd0d0b44656"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_wb_metric_resample",
+      "field": "parameters",
+      "index": 1,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "The method name, one of ADAP_BARY_AREA or BARYCENTRIC.",
+        "source_id": "wb_metric_resample",
+        "quote": "<method> - the method name",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 5213,
+          "end": 5239,
+          "text_sha256": "4be39435118cef7bb22f14f058f4b215a5af9d7e5fef0c1e6a5ebcd0d0b44656"
+        }
+      },
+      "after": {
+        "statement": "The method name, one of ADAP_BARY_AREA or BARYCENTRIC.",
+        "source_id": "wb_metric_resample",
+        "quote": "The <method> argument must be one of the following:\n\nADAP_BARY_AREA\nBARYCENTRIC",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 7025,
+          "end": 7104,
+          "text_sha256": "4be39435118cef7bb22f14f058f4b215a5af9d7e5fef0c1e6a5ebcd0d0b44656"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_wb_metric_resample",
+      "field": "parameters",
+      "index": 4,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "For -current-roi, the roi as a metric file.",
+        "source_id": "wb_metric_resample",
+        "quote": "<roi-metric> - the roi, as a metric file",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 5798,
+          "end": 5838,
+          "text_sha256": "4be39435118cef7bb22f14f058f4b215a5af9d7e5fef0c1e6a5ebcd0d0b44656"
+        }
+      },
+      "after": {
+        "statement": "For -current-roi, the roi as a metric file.",
+        "source_id": "wb_metric_resample",
+        "quote": "[-current-roi] - use an input roi on the current mesh to exclude non-data\nvertices\n<roi-metric> - the roi, as a metric file",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 5715,
+          "end": 5838,
+          "text_sha256": "4be39435118cef7bb22f14f058f4b215a5af9d7e5fef0c1e6a5ebcd0d0b44656"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_ants_thickness",
+      "field": "steps",
+      "index": 1,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "Brain extraction is performed with antsBrainExtraction.sh, optionally passing the extraction registration mask.",
+        "source_id": "ants_thickness_script",
+        "quote": "logCmd antsBrainExtraction.sh",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 31385,
+          "end": 31414,
+          "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+        }
+      },
+      "after": {
+        "statement": "Brain extraction calls antsBrainExtraction.sh.",
+        "source_id": "ants_thickness_script",
+        "quote": "logCmd antsBrainExtraction.sh",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 31385,
+          "end": 31414,
+          "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_ants_thickness",
+      "field": "steps",
+      "index": 2,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "The extracted brain is masked and given a quick N4 bias correction before registration.",
+        "source_id": "ants_thickness_script",
+        "quote": "Do a quick N4 on the brain before registration",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 32379,
+          "end": 32425,
+          "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+        }
+      },
+      "after": {
+        "statement": "A quick N4 correction is applied to the brain before registration.",
+        "source_id": "ants_thickness_script",
+        "quote": "Do a quick N4 on the brain before registration",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 32379,
+          "end": 32425,
+          "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_ants_thickness",
+      "field": "steps",
+      "index": 3,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "The template and segmentation priors are registered to the anatomical image and the priors are warped to subject space.",
+        "source_id": "ants_thickness_script",
+        "quote": "Warp priors to ${ANATOMICAL_IMAGES[0]}",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 34118,
+          "end": 34156,
+          "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+        }
+      },
+      "after": {
+        "statement": "The priors are warped to the first anatomical image.",
+        "source_id": "ants_thickness_script",
+        "quote": "Warp priors to ${ANATOMICAL_IMAGES[0]}",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 34118,
+          "end": 34156,
+          "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_ants_thickness",
+      "field": "steps",
+      "index": 4,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "N-tissue segmentation is run with antsAtroposN4.sh in two stages, the second using N4-corrected images with 2 iterations.",
+        "source_id": "ants_thickness_script",
+        "quote": "We do two stages of antsAtroposN4.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 39990,
+          "end": 40024,
+          "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+        }
+      },
+      "after": {
+        "statement": "N-tissue segmentation is run with antsAtroposN4.sh in two stages, the second using N4-corrected images with 2 iterations.",
+        "source_id": "ants_thickness_script",
+        "quote": "We do two stages of antsAtroposN4.  The first stage is to get a good N4\n# bias corrected image(s).  This bias corrected image(s) is used as input to the\n# second stage where we only do 2 iterations.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 39990,
+          "end": 40188,
+          "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_ants_thickness",
+      "field": "steps",
+      "index": 5,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "Cortical thickness is estimated with DiReCT via KellyKapowski using gray and white matter posteriors.",
+        "source_id": "ants_thickness_script",
+        "quote": "Cortical thickness using DiReCT (KellyKapowski)",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 52054,
+          "end": 52101,
+          "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+        }
+      },
+      "after": {
+        "statement": "Cortical thickness is estimated using DiReCT (KellyKapowski).",
+        "source_id": "ants_thickness_script",
+        "quote": "Cortical thickness using DiReCT (KellyKapowski)",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 52054,
+          "end": 52101,
+          "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_ants_thickness",
+      "field": "steps",
+      "index": 6,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "Optional registration of the brain-masked N4 image to the registration template produces forward and inverse warps and a log Jacobian.",
+        "source_id": "ants_thickness_script",
+        "quote": "Registration brain masked ${HEAD_N4_IMAGE} to ${REGISTRATION_TEMPLATE}",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 46043,
+          "end": 46113,
+          "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+        }
+      },
+      "after": {
+        "statement": "The brain-masked N4 image is registered to the registration template.",
+        "source_id": "ants_thickness_script",
+        "quote": "Registration brain masked ${HEAD_N4_IMAGE} to ${REGISTRATION_TEMPLATE}",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 46043,
+          "end": 46113,
+          "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_ants_thickness",
+      "field": "steps",
+      "index": 7,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "A quality control stage computes summary measurements and tiled mosaic images.",
+        "source_id": "ants_thickness_script",
+        "quote": "Compute summary measurements",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 57778,
+          "end": 57806,
+          "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+        }
+      },
+      "after": {
+        "statement": "The script computes summary measurements.",
+        "source_id": "ants_thickness_script",
+        "quote": "Compute summary measurements",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 57778,
+          "end": 57806,
+          "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_ants_thickness",
+      "field": "outputs",
+      "index": 2,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "Segmentation image with one label per tissue class; number of classes is determined by the input priors.",
+        "source_id": "ants_thickness_outputs",
+        "quote": "Segmentation image, one label per tissue class.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 1791,
+          "end": 1838,
+          "text_sha256": "73c52afc4087a016c0dc8cbe136f327eb65a9c62abf29b2eb8a4f3338445206a"
+        }
+      },
+      "after": {
+        "statement": "Segmentation image with one label per tissue class; number of classes is determined by the input priors.",
+        "source_id": "ants_thickness_outputs",
+        "quote": "Segmentation image, one label per tissue class. The number of classes is determined by the input priors.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 1791,
+          "end": 1895,
+          "text_sha256": "73c52afc4087a016c0dc8cbe136f327eb65a9c62abf29b2eb8a4f3338445206a"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_ants_thickness",
+      "field": "outputs",
+      "index": 4,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "Optional forward warps (SubjectToTemplate1Warp, SubjectToTemplate0GenericAffine.mat) and log Jacobian are produced when a registration template is supplied.",
+        "source_id": "ants_thickness_outputs",
+        "quote": "SubjectToTemplate1Warp, SubjectToTemplate0GenericAffine.mat - Transforms to be used when warping images from the subject space to the template space",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 2288,
+          "end": 2436,
+          "text_sha256": "73c52afc4087a016c0dc8cbe136f327eb65a9c62abf29b2eb8a4f3338445206a"
+        }
+      },
+      "after": {
+        "statement": "SubjectToTemplate1Warp and SubjectToTemplate0GenericAffine.mat transform images from subject space to template space.",
+        "source_id": "ants_thickness_outputs",
+        "quote": "SubjectToTemplate1Warp, SubjectToTemplate0GenericAffine.mat - Transforms to be used when warping images from the subject space to the template space",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 2288,
+          "end": 2436,
+          "text_sha256": "73c52afc4087a016c0dc8cbe136f327eb65a9c62abf29b2eb8a4f3338445206a"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_ca_label",
+      "field": "outputs",
+      "index": 3,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "Optional -p output file containing label probability for each vertex (default none).",
+        "source_id": "fs_ca_label",
+        "quote": "output a file containing label probability for each vertex (default: none)",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 2616,
+          "end": 2690,
+          "text_sha256": "adec54a1302a3d1d07f108d0f7a11a17359381574733836fc8161e24af1dff5d"
+        }
+      },
+      "after": {
+        "statement": "Optional -p output file containing label probability for each vertex (default none).",
+        "source_id": "fs_ca_label",
+        "quote": "-p <filename>\n\noutput a file containing label probability for each vertex (default: none)",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 2601,
+          "end": 2690,
+          "text_sha256": "adec54a1302a3d1d07f108d0f7a11a17359381574733836fc8161e24af1dff5d"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_ca_label",
+      "field": "parameters",
+      "index": 1,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "-sdir <subject dir>: specify a subjects directory (default=$SUBJECTS_DIR)",
+        "source_id": "fs_ca_label",
+        "quote": "specify a subjects directory (default=$SUBJECTS_DIR)",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 2067,
+          "end": 2119,
+          "text_sha256": "adec54a1302a3d1d07f108d0f7a11a17359381574733836fc8161e24af1dff5d"
+        }
+      },
+      "after": {
+        "statement": "-sdir <subject dir>: specify a subjects directory (default=$SUBJECTS_DIR)",
+        "source_id": "fs_ca_label",
+        "quote": "-sdir <subject dir>\n\nspecify a subjects directory (default=$SUBJECTS_DIR)",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 2046,
+          "end": 2119,
+          "text_sha256": "adec54a1302a3d1d07f108d0f7a11a17359381574733836fc8161e24af1dff5d"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_ca_label",
+      "field": "parameters",
+      "index": 2,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "-orig <filename>: specify filename of original surface (default=smoothwm)",
+        "source_id": "fs_ca_label",
+        "quote": "specify filename of original surface (default=smoothwm)",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 2139,
+          "end": 2194,
+          "text_sha256": "adec54a1302a3d1d07f108d0f7a11a17359381574733836fc8161e24af1dff5d"
+        }
+      },
+      "after": {
+        "statement": "-orig <filename>: specify filename of original surface (default=smoothwm)",
+        "source_id": "fs_ca_label",
+        "quote": "-orig <filename>\n\nspecify filename of original surface (default=smoothwm)",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 2121,
+          "end": 2194,
+          "text_sha256": "adec54a1302a3d1d07f108d0f7a11a17359381574733836fc8161e24af1dff5d"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_ca_label",
+      "field": "parameters",
+      "index": 3,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "-nbrs <number>: neighborhood size (default=2)",
+        "source_id": "fs_ca_label",
+        "quote": "neighborhood size (default=2)",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 2416,
+          "end": 2445,
+          "text_sha256": "adec54a1302a3d1d07f108d0f7a11a17359381574733836fc8161e24af1dff5d"
+        }
+      },
+      "after": {
+        "statement": "-nbrs <number>: neighborhood size (default=2)",
+        "source_id": "fs_ca_label",
+        "quote": "-nbrs <number>\n\nneighborhood size (default=2)",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 2400,
+          "end": 2445,
+          "text_sha256": "adec54a1302a3d1d07f108d0f7a11a17359381574733836fc8161e24af1dff5d"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fs_ca_label",
+      "field": "parameters",
+      "index": 4,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "-novar: sets all covariance matrices to the identify (default: disabled)",
+        "source_id": "fs_ca_label",
+        "quote": "sets all covariance matrices to the identify (default: disabled)",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 2334,
+          "end": 2398,
+          "text_sha256": "adec54a1302a3d1d07f108d0f7a11a17359381574733836fc8161e24af1dff5d"
+        }
+      },
+      "after": {
+        "statement": "-novar: sets all covariance matrices to the identify (default: disabled)",
+        "source_id": "fs_ca_label",
+        "quote": "-novar\n\nsets all covariance matrices to the identify (default: disabled)",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 2326,
+          "end": 2398,
+          "text_sha256": "adec54a1302a3d1d07f108d0f7a11a17359381574733836fc8161e24af1dff5d"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_wb_surface_resample",
+      "field": "steps",
+      "index": 1,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "Run wb_command -surface-resample with surface-in, current-sphere, new-sphere, method, and surface-out.",
+        "source_id": "wb_surface_resample",
+        "quote": "wb_command -surface-resample",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 4763,
+          "end": 4791,
+          "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+        }
+      },
+      "after": {
+        "statement": "Run the wb_command -surface-resample command.",
+        "source_id": "wb_surface_resample",
+        "quote": "wb_command -surface-resample",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 4763,
+          "end": 4791,
+          "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_wb_surface_resample",
+      "field": "steps",
+      "index": 3,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "Provide the current-sphere mesh-registered sphere as <current-sphere>.",
+        "source_id": "wb_surface_resample",
+        "quote": "<current-sphere> - a sphere surface that is in register with <new-sphere>",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 4892,
+          "end": 4965,
+          "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+        }
+      },
+      "after": {
+        "statement": "Provide the current-sphere mesh-registered sphere as <current-sphere>.",
+        "source_id": "wb_surface_resample",
+        "quote": "<current-sphere> - a sphere surface that is in register with <new-sphere>\nand uses the mesh that the input surface is currently on, typically a\nregistered native-mesh sphere",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 4892,
+          "end": 5065,
+          "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_wb_surface_resample",
+      "field": "parameters",
+      "index": 1,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "Optional -area-surfs specifies surfaces for vertex area correction: <current-area> with current-sphere mesh and <new-area> with new-sphere mesh.",
+        "source_id": "wb_surface_resample",
+        "quote": "[-area-surfs] - specify surfaces to do vertex area correction based on",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 5325,
+          "end": 5395,
+          "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+        }
+      },
+      "after": {
+        "statement": "Optional -area-surfs specifies surfaces for vertex area correction: <current-area> with current-sphere mesh and <new-area> with new-sphere mesh.",
+        "source_id": "wb_surface_resample",
+        "quote": "[-area-surfs] - specify surfaces to do vertex area correction based on\n<current-area> - a relevant surface with <current-sphere> mesh\n<new-area> - a relevant surface with <new-sphere> mesh",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 5325,
+          "end": 5513,
+          "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_wb_surface_resample",
+      "field": "parameters",
+      "index": 2,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "Optional -area-metrics specifies vertex area metric files for current-sphere and new-sphere meshes.",
+        "source_id": "wb_surface_resample",
+        "quote": "[-area-metrics] - specify vertex area metrics to do area correction based",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 5515,
+          "end": 5588,
+          "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+        }
+      },
+      "after": {
+        "statement": "Optional -area-metrics specifies vertex area metric files for current-sphere and new-sphere meshes.",
+        "source_id": "wb_surface_resample",
+        "quote": "[-area-metrics] - specify vertex area metrics to do area correction based\non\n<current-area> - a metric file with vertex areas for <current-sphere>\nmesh\n<new-area> - a metric file with vertex areas for <new-sphere> mesh",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 5515,
+          "end": 5733,
+          "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_wb_surface_resample",
+      "field": "parameters",
+      "index": 3,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "Advanced -bypass-sphere-check allows current and new 'spheres' to have arbitrary shape as long as they follow the same contour.",
+        "source_id": "wb_surface_resample",
+        "quote": "[-bypass-sphere-check] - ADVANCED: allow the current and new 'spheres' to",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 5735,
+          "end": 5808,
+          "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+        }
+      },
+      "after": {
+        "statement": "Advanced -bypass-sphere-check allows current and new 'spheres' to have arbitrary shape as long as they follow the same contour.",
+        "source_id": "wb_surface_resample",
+        "quote": "[-bypass-sphere-check] - ADVANCED: allow the current and new 'spheres' to\nhave arbitrary shape as long as they follow the same contour",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 5735,
+          "end": 5869,
+          "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_wb_surface_resample",
+      "field": "parameters",
+      "index": 4,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "The method argument must be ADAP_BARY_AREA or BARYCENTRIC.",
+        "source_id": "wb_surface_resample",
+        "quote": "The <method> argument must be one of the following:",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 6417,
+          "end": 6468,
+          "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+        }
+      },
+      "after": {
+        "statement": "The method argument must be ADAP_BARY_AREA or BARYCENTRIC.",
+        "source_id": "wb_surface_resample",
+        "quote": "The <method> argument must be one of the following:\n\nADAP_BARY_AREA\nBARYCENTRIC",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 6417,
+          "end": 6496,
+          "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fsl_first",
+      "field": "steps",
+      "index": 2,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "run_first_all runs lower-level utilities including first_flirt, run_first and first on all structures with tuned settings.",
+        "source_id": "fsl_first",
+        "quote": "This script will run lower-level utilities (including first_flirt, run_first and first) on all the structures",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 4072,
+          "end": 4181,
+          "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+        }
+      },
+      "after": {
+        "statement": "run_first_all runs lower-level utilities including first_flirt, run_first and first on all structures with tuned settings.",
+        "source_id": "fsl_first",
+        "quote": "This script will run lower-level utilities (including first_flirt, run_first and first) on all the structures, with the settings (number of modes and boundary correction) tuned to be optimal for each structure.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 4072,
+          "end": 4282,
+          "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fsl_first",
+      "field": "steps",
+      "index": 4,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "run_first segments a single structure given the T1 image, transformation matrix, number of modes, model file and output basename.",
+        "source_id": "fsl_first",
+        "quote": "The run_first script will run FIRST to extract a single structure",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 34617,
+          "end": 34682,
+          "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+        }
+      },
+      "after": {
+        "statement": "The run_first script runs FIRST to extract a single structure.",
+        "source_id": "fsl_first",
+        "quote": "The run_first script will run FIRST to extract a single structure",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 34617,
+          "end": 34682,
+          "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fsl_first",
+      "field": "outputs",
+      "index": 2,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "output_name_all_fast_origsegs.nii.gz is a 4D image of individual segmentations without boundary correction.",
+        "source_id": "fsl_first",
+        "quote": "output_name_all_fast_origsegs.nii.gz: This is a 4D image containing the individual structure segmentations",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 7219,
+          "end": 7325,
+          "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+        }
+      },
+      "after": {
+        "statement": "output_name_all_fast_origsegs.nii.gz is a 4D image of individual segmentations without boundary correction.",
+        "source_id": "fsl_first",
+        "quote": "output_name_all_fast_origsegs.nii.gz: This is a 4D image containing the individual structure segmentations, converted directly from the native mesh representation and without any boundary correction.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 7219,
+          "end": 7418,
+          "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fsl_first",
+      "field": "parameters",
+      "index": 1,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "The -m option specifies the boundary correction method; default is auto, other options are fast, thresh or none.",
+        "source_id": "fsl_first",
+        "quote": "-m specifies the boundary correction method. The default is auto",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 5614,
+          "end": 5678,
+          "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+        }
+      },
+      "after": {
+        "statement": "The -m option specifies the boundary correction method and defaults to auto.",
+        "source_id": "fsl_first",
+        "quote": "-m specifies the boundary correction method. The default is auto",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 5614,
+          "end": 5678,
+          "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fsl_first",
+      "field": "parameters",
+      "index": 2,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "The -s option allows a restricted set of structures to be selected, comma separated with no spaces.",
+        "source_id": "fsl_first",
+        "quote": "-s allows a restricted set of structures (one or more) to be selected",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 5977,
+          "end": 6046,
+          "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+        }
+      },
+      "after": {
+        "statement": "The -s option allows a restricted set of structures to be selected, comma separated with no spaces.",
+        "source_id": "fsl_first",
+        "quote": "-s allows a restricted set of structures (one or more) to be selected. For more than one structure the list must be comma separated with no spaces.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 5977,
+          "end": 6124,
+          "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fsl_first",
+      "field": "parameters",
+      "index": 3,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "The -b option specifies that the input image is brain extracted, important when calculating the registration.",
+        "source_id": "fsl_first",
+        "quote": "-b specifies that the input image is brain extracted",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 6268,
+          "end": 6320,
+          "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+        }
+      },
+      "after": {
+        "statement": "The -b option specifies that the input image is brain extracted, important when calculating the registration.",
+        "source_id": "fsl_first",
+        "quote": "-b specifies that the input image is brain extracted - important when calculating the registration.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 6268,
+          "end": 6367,
+          "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    },
+    {
+      "method": "independent_v2_fsl_first",
+      "field": "parameters",
+      "index": 4,
+      "annotation_id_before_review": null,
+      "before": {
+        "statement": "The -n option sets the number of modes of variation; more modes capture finer details but may reduce robustness.",
+        "source_id": "fsl_first",
+        "quote": "The more modes of variation used the finer details FIRST may capture, however you may decrease the robustness/reliability of the results",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 35231,
+          "end": 35367,
+          "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+        }
+      },
+      "after": {
+        "statement": "The -n option sets the number of modes of variation; more modes capture finer details but may reduce robustness.",
+        "source_id": "fsl_first",
+        "quote": "-n: The number of modes of variation to be used in the fitting. The more modes of variation used the finer details FIRST may capture, however you may decrease the robustness/reliability of the results.",
+        "claim_type": "direct",
+        "source_span": {
+          "start": 35167,
+          "end": 35368,
+          "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+        }
+      },
+      "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+    }
+  ],
+  "quarantined_claims_preserved": 1,
+  "source_documents_modified": false,
+  "extraction_prompt_schema_model_settings_changed": false,
+  "algorithm_outputs_read": false,
+  "gold_labels_created": false,
+  "source_ambiguities": [
+    {
+      "annotation_ids": [
+        2032,
+        2033
+      ],
+      "source_id": "fs_surf2surf",
+      "note": "Official paint-output path descriptions differ between the BUG ALERT and paint-path paragraph. Both source claims are retained for blind annotation; no expert resolution is asserted."
+    }
+  ]
+}

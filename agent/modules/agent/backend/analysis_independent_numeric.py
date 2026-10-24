@@ -142,6 +142,11 @@ def verify(tools):
             if not binding["execution_receipt_id"] or execution.get("exit_code") != 0:
                 raise ValueError("A successful current execution receipt is required")
             inputs = {path: hashlib.sha256(tools.resolve(path).read_bytes()).hexdigest() for path in plan["data"]["files"]}
+            if plan.get("analysis_scope", {}).get("region_overlap_evidence"):
+                from .analysis_product_planner import load_knowledge
+                from .analysis_region_overlap import recheck
+                mapping, mapping_sha = load_knowledge("lobar_mapping", tools)
+                private["region_overlap_recheck"] = recheck(plan, tools.resolve, mapping["records"], mapping_sha)
             references = reference_rows(tools, plan, bundle, method)
             reference_ready = True
             csv_files = [path if isinstance(path, str) else path["path"] for path in bundle["output_contract"]["files"]
@@ -224,12 +229,15 @@ def result_card(tools, text):
     constraints, binding = resolve(tools)
     checks=constraints['record']['rows'] if constraints else []
     plan = tools.control_store.latest("plan")
+    from .analysis_region_overlap import conclusion_checks, attach_card
+    context = plan["record"]["plan"] if plan else {}
+    checks = [*checks, *conclusion_checks(context)]
     if plan and plan["record"]["plan"]["method"]["method_id"] == "method:v14:group_regional_glm":
         from .analysis_group_reporting import conclusion
         card = conclusion(tools, text, checks, current_summary(tools))
         card['constraint_binding'] = binding
-        return card
+        return attach_card(card, context)
     card = conclusion_card(text or 'No Agent interpretation was supplied.', 'supplied_descriptive', checks,
                            {'independent_numeric':current_summary(tools)}, ['supplied_descriptive'])
     card['constraint_binding'] = binding
-    return card
+    return attach_card(card, context)

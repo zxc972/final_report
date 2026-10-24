@@ -1,0 +1,21 @@
+{
+  "status": "ready_for_Claude_not_transmitted_by_a_Claude_tool",
+  "files": {
+    "annotation_sheet.csv": "c09ef310cea0c6875843d31d72fd5c9a585c26e6dfbb6433489252f7507f89bd",
+    "annotation_schema.json": "dcd8948f0f31598301e8f951e12a43cb65744ca70d03d323a4156d60f80d7893",
+    "statements_unlabelled.json": "7641258f251c03c77fca8893a32b04cc1a7cfddad7d3aee44d1cb4f20ba6fb0e",
+    "README.md": "447c7d12209fbfb12a4f09726225b50a52c82e0c39d583a0e4110d05d6abab5a",
+    "sources/fs_anatomical_stats.txt": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7",
+    "sources/ants_thickness_script.txt": "82f4c18a561a34ae3b5c74c4b8e58a8c442776af6dbd9851ac58cfdd9994d88c",
+    "sources/fs_preproc.txt": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb",
+    "sources/ants_thickness_outputs.txt": "71dd19ac3d5558f0bc665113d80af28ed94746623118e29cf7807bee49f378b2",
+    "sources/fs_ca_label.txt": "adec54a1302a3d1d07f108d0f7a11a17359381574733836fc8161e24af1dff5d",
+    "sources/fs_segstats.txt": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c",
+    "sources/fs_surf2surf.txt": "02c4e1aef707ab0874c3277e093e442f6a7f99fc5b6ebdfc29491aa4c2f0c6c5",
+    "sources/wb_metric_resample.txt": "4be39435118cef7bb22f14f058f4b215a5af9d7e5fef0c1e6a5ebcd0d0b44656"
+  },
+  "n_statements": 62,
+  "algorithm_predictions_included": false,
+  "gold_labels_included": false,
+  "algorithm_evaluation_calls": 0
+}

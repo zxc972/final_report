@@ -1,0 +1,12 @@
+{
+  "source_id": "wb_metric_resample",
+  "url": "https://www.humanconnectome.org/software/workbench-command/-metric-resample",
+  "final_url": "https://www.humanconnectome.org/software/workbench-command/-metric-resample",
+  "fetched_at": "2026-10-24T04:57:07.217173+00:00",
+  "http_status": 200,
+  "text_sha256": "4be39435118cef7bb22f14f058f4b215a5af9d7e5fef0c1e6a5ebcd0d0b44656",
+  "html_sha256": "0edaeaac3620a753778b410896c9ea86bdbd0c4c370cc3153b5d3c5800d75a31",
+  "text_characters": 9441,
+  "projection": "stdlib HTMLParser SourceText v1",
+  "evidence_class": "official_documentation"
+}

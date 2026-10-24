@@ -1,0 +1,39 @@
+{
+  "active_sources": 10,
+  "shared_urls": [],
+  "checked_against": [
+    "all existing development method-card inputs",
+    "development gold source URLs",
+    "independent test-v1 source_manifest"
+  ],
+  "excluded_sources": [
+    {
+      "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/LGI",
+      "reason": "Previously used development source; mris_ca_label selected from the authorized backups",
+      "prior_locations": [
+        "knowledge/method_extractions/local_gyrification.input.json/sources/0/url"
+      ]
+    }
+  ],
+  "normalization": "HTTPS/host aliases, fragments and trailing slashes normalized; source content is not a model instruction",
+  "supplementary_source_independence": {
+    "active_sources": 2,
+    "shared_urls": [],
+    "checked_against": [
+      "all existing development method-card inputs",
+      "development gold source URLs",
+      "independent test-v1 source_manifest"
+    ],
+    "excluded_sources": [
+      {
+        "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/LGI",
+        "reason": "Previously used development source; mris_ca_label selected from the authorized backups",
+        "prior_locations": [
+          "knowledge/method_extractions/local_gyrification.input.json/sources/0/url"
+        ]
+      }
+    ],
+    "normalization": "HTTPS/host aliases, fragments and trailing slashes normalized; source content is not a model instruction"
+  },
+  "primary_manifest_preserved": true
+}

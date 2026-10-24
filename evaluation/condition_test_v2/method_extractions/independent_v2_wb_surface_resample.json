@@ -1,0 +1,235 @@
+{
+  "method_id": "independent_v2_wb_surface_resample",
+  "name": "Connectome Workbench -surface-resample",
+  "purpose": "Resamples a surface file, given two spherical surfaces that are in register.",
+  "species_scope": "unspecified",
+  "software": [
+    "Connectome Workbench",
+    "Workbench Command",
+    "Version 2.2.1"
+  ],
+  "inputs": [
+    {
+      "statement": "The surface file to resample, typically a native-mesh anatomical or inflated surface.",
+      "source_id": "wb_surface_resample",
+      "quote": "<surface-in> - the surface file to resample, typically a native-mesh\nanatomical or inflated surface",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 4792,
+        "end": 4891,
+        "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+      }
+    },
+    {
+      "statement": "A sphere surface in register with <new-sphere> that uses the mesh the input surface is currently on, typically a registered native-mesh sphere.",
+      "source_id": "wb_surface_resample",
+      "quote": "<current-sphere> - a sphere surface that is in register with <new-sphere>\nand uses the mesh that the input surface is currently on, typically a\nregistered native-mesh sphere",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 4892,
+        "end": 5065,
+        "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+      }
+    },
+    {
+      "statement": "A sphere surface that has the desired output mesh, typically a standard sphere.",
+      "source_id": "wb_surface_resample",
+      "quote": "<new-sphere> - a sphere surface that has the desired output mesh,\ntypically a standard sphere",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 5117,
+        "end": 5210,
+        "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+      }
+    },
+    {
+      "statement": "The method name, which must be one of ADAP_BARY_AREA or BARYCENTRIC.",
+      "source_id": "wb_surface_resample",
+      "quote": "The <method> argument must be one of the following:\n\nADAP_BARY_AREA\nBARYCENTRIC",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 6417,
+        "end": 6496,
+        "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "statement": "If ADAP_BARY_AREA is used, exactly one of -area-surfs or -area-metrics must be specified.",
+      "source_id": "wb_surface_resample",
+      "quote": "If ADAP_BARY_AREA is used, exactly one of -area-surfs or\n-area-metrics must be specified.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 5948,
+        "end": 6037,
+        "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "statement": "Run the wb_command -surface-resample command.",
+      "source_id": "wb_surface_resample",
+      "quote": "wb_command -surface-resample",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 4763,
+        "end": 4791,
+        "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+      }
+    },
+    {
+      "statement": "Provide the surface file to resample as <surface-in>.",
+      "source_id": "wb_surface_resample",
+      "quote": "<surface-in> - the surface file to resample",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 4792,
+        "end": 4835,
+        "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+      }
+    },
+    {
+      "statement": "Provide the current-sphere mesh-registered sphere as <current-sphere>.",
+      "source_id": "wb_surface_resample",
+      "quote": "<current-sphere> - a sphere surface that is in register with <new-sphere>\nand uses the mesh that the input surface is currently on, typically a\nregistered native-mesh sphere",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 4892,
+        "end": 5065,
+        "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+      }
+    },
+    {
+      "statement": "Provide the desired output mesh sphere as <new-sphere>.",
+      "source_id": "wb_surface_resample",
+      "quote": "<new-sphere> - a sphere surface that has the desired output mesh",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 5117,
+        "end": 5181,
+        "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+      }
+    },
+    {
+      "statement": "Specify the method name as <method>.",
+      "source_id": "wb_surface_resample",
+      "quote": "<method> - the method name",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 5248,
+        "end": 5274,
+        "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+      }
+    },
+    {
+      "statement": "Write the resampled surface to <surface-out>.",
+      "source_id": "wb_surface_resample",
+      "quote": "<surface-out> - output - the output surface file",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 5275,
+        "end": 5323,
+        "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+      }
+    }
+  ],
+  "checks": [],
+  "exceptions": [
+    {
+      "statement": "For cut surfaces (including flatmaps), use -surface-cut-resample instead.",
+      "source_id": "wb_surface_resample",
+      "quote": "For cut surfaces (including flatmaps), use -surface-cut-resample.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 6244,
+        "end": 6309,
+        "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+      }
+    },
+    {
+      "statement": "Instead of resampling a spherical surface, the -surface-sphere-project-unproject command is recommended.",
+      "source_id": "wb_surface_resample",
+      "quote": "Instead of resampling a spherical surface, the\n-surface-sphere-project-unproject command is recommended.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 6311,
+        "end": 6415,
+        "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+      }
+    },
+    {
+      "statement": "ADAP_BARY_AREA is not generally recommended for surface resampling, but is provided for completeness.",
+      "source_id": "wb_surface_resample",
+      "quote": "If ADAP_BARY_AREA is used, exactly one of -area-surfs or\n-area-metrics must be specified. This method is not generally\nrecommended for surface resampling, but is provided for completeness.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 5948,
+        "end": 6136,
+        "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "statement": "The output surface file.",
+      "source_id": "wb_surface_resample",
+      "quote": "<surface-out> - output - the output surface file",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 5275,
+        "end": 5323,
+        "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+      }
+    }
+  ],
+  "parameters": [
+    {
+      "statement": "Optional -area-surfs specifies surfaces for vertex area correction: <current-area> with current-sphere mesh and <new-area> with new-sphere mesh.",
+      "source_id": "wb_surface_resample",
+      "quote": "[-area-surfs] - specify surfaces to do vertex area correction based on\n<current-area> - a relevant surface with <current-sphere> mesh\n<new-area> - a relevant surface with <new-sphere> mesh",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 5325,
+        "end": 5513,
+        "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+      }
+    },
+    {
+      "statement": "Optional -area-metrics specifies vertex area metric files for current-sphere and new-sphere meshes.",
+      "source_id": "wb_surface_resample",
+      "quote": "[-area-metrics] - specify vertex area metrics to do area correction based\non\n<current-area> - a metric file with vertex areas for <current-sphere>\nmesh\n<new-area> - a metric file with vertex areas for <new-sphere> mesh",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 5515,
+        "end": 5733,
+        "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+      }
+    },
+    {
+      "statement": "Advanced -bypass-sphere-check allows current and new 'spheres' to have arbitrary shape as long as they follow the same contour.",
+      "source_id": "wb_surface_resample",
+      "quote": "[-bypass-sphere-check] - ADVANCED: allow the current and new 'spheres' to\nhave arbitrary shape as long as they follow the same contour",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 5735,
+        "end": 5869,
+        "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+      }
+    },
+    {
+      "statement": "The method argument must be ADAP_BARY_AREA or BARYCENTRIC.",
+      "source_id": "wb_surface_resample",
+      "quote": "The <method> argument must be one of the following:\n\nADAP_BARY_AREA\nBARYCENTRIC",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 6417,
+        "end": 6496,
+        "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+      }
+    }
+  ],
+  "quarantined_claims": [],
+  "evidence_status": "exact_quotes_verified_agent_scope_reviewed_blind_gold_pending"
+}

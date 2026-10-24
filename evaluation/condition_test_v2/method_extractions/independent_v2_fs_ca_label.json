@@ -1,0 +1,188 @@
+{
+  "method_id": "independent_v2_fs_ca_label",
+  "name": "mris_ca_label",
+  "purpose": "For a single subject, produces an annotation file in which each cortical surface vertex is assigned a neuroanatomical label, using data from a previously-prepared atlas file.",
+  "species_scope": "human (reference: Automatically Parcellating the Human Cerebral Cortex)",
+  "software": [
+    "FreeSurfer"
+  ],
+  "inputs": [
+    {
+      "statement": "subject id",
+      "source_id": "fs_ca_label",
+      "quote": "<subject>\n\nsubject id",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1504,
+        "end": 1525,
+        "text_sha256": "adec54a1302a3d1d07f108d0f7a11a17359381574733836fc8161e24af1dff5d"
+      }
+    },
+    {
+      "statement": "hemisphere: rh or lh",
+      "source_id": "fs_ca_label",
+      "quote": "<hemi>\n\nhemisphere: rh or lh",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1527,
+        "end": 1555,
+        "text_sha256": "adec54a1302a3d1d07f108d0f7a11a17359381574733836fc8161e24af1dff5d"
+      }
+    },
+    {
+      "statement": "canonical surface file, e.g. sphere.reg, describing registration of a subject's vertices to the reference average surface",
+      "source_id": "fs_ca_label",
+      "quote": "canonical surface file. Ie: the name of the spherical surface file which describes the registration of a subject's vertices to the reference \"average\" surface. Example: sphere.reg",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1570,
+        "end": 1749,
+        "text_sha256": "adec54a1302a3d1d07f108d0f7a11a17359381574733836fc8161e24af1dff5d"
+      }
+    },
+    {
+      "statement": "Classifier array input file.",
+      "source_id": "fs_ca_label",
+      "quote": "<classifier>\n\nspecify classifier array input file",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1751,
+        "end": 1800,
+        "text_sha256": "adec54a1302a3d1d07f108d0f7a11a17359381574733836fc8161e24af1dff5d"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "statement": "This automatic procedure employs data from a previously-prepared atlas file.",
+      "source_id": "fs_ca_label",
+      "quote": "This automatic procedure employs data from a previously-prepared atlas file.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 894,
+        "end": 970,
+        "text_sha256": "adec54a1302a3d1d07f108d0f7a11a17359381574733836fc8161e24af1dff5d"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "statement": "Run mris_ca_label with options and positional arguments subject, hemi, canonsurf, classifier, outputfile.",
+      "source_id": "fs_ca_label",
+      "quote": "mris_ca_label [options] <subject> <hemi> <canonsurf> <classifier> <outputfile>",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1309,
+        "end": 1387,
+        "text_sha256": "adec54a1302a3d1d07f108d0f7a11a17359381574733836fc8161e24af1dff5d"
+      }
+    },
+    {
+      "statement": "Optionally apply a mode filter a specified number of times before writing output (default 10).",
+      "source_id": "fs_ca_label",
+      "quote": "applies mode filter <number> times before writing output (default=10)",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 2460,
+        "end": 2529,
+        "text_sha256": "adec54a1302a3d1d07f108d0f7a11a17359381574733836fc8161e24af1dff5d"
+      }
+    },
+    {
+      "statement": "Optionally write out snapshots of the gibbs process every <number> iterations to <filename> (default disabled).",
+      "source_id": "fs_ca_label",
+      "quote": "writes-out snapshots of gibbs process every <number> iterations to <filename> (default=disabled)",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 2759,
+        "end": 2855,
+        "text_sha256": "adec54a1302a3d1d07f108d0f7a11a17359381574733836fc8161e24af1dff5d"
+      }
+    }
+  ],
+  "checks": [],
+  "exceptions": [],
+  "outputs": [
+    {
+      "statement": "annotated surface output file, an annotation file listing the region label for each vertex",
+      "source_id": "fs_ca_label",
+      "quote": "annotated surface output file. Ie: an annotation file listing the region label for each vertex.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1816,
+        "end": 1911,
+        "text_sha256": "adec54a1302a3d1d07f108d0f7a11a17359381574733836fc8161e24af1dff5d"
+      }
+    },
+    {
+      "statement": "outputfile: labeled cortical surface model",
+      "source_id": "fs_ca_label",
+      "quote": "outputfile:\n\nlabeled cortical surface model",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 2922,
+        "end": 2965,
+        "text_sha256": "adec54a1302a3d1d07f108d0f7a11a17359381574733836fc8161e24af1dff5d"
+      }
+    },
+    {
+      "statement": "Optional -p output file containing label probability for each vertex (default none).",
+      "source_id": "fs_ca_label",
+      "quote": "-p <filename>\n\noutput a file containing label probability for each vertex (default: none)",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 2601,
+        "end": 2690,
+        "text_sha256": "adec54a1302a3d1d07f108d0f7a11a17359381574733836fc8161e24af1dff5d"
+      }
+    }
+  ],
+  "parameters": [
+    {
+      "statement": "-sdir <subject dir>: specify a subjects directory (default=$SUBJECTS_DIR)",
+      "source_id": "fs_ca_label",
+      "quote": "-sdir <subject dir>\n\nspecify a subjects directory (default=$SUBJECTS_DIR)",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 2046,
+        "end": 2119,
+        "text_sha256": "adec54a1302a3d1d07f108d0f7a11a17359381574733836fc8161e24af1dff5d"
+      }
+    },
+    {
+      "statement": "-orig <filename>: specify filename of original surface (default=smoothwm)",
+      "source_id": "fs_ca_label",
+      "quote": "-orig <filename>\n\nspecify filename of original surface (default=smoothwm)",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 2121,
+        "end": 2194,
+        "text_sha256": "adec54a1302a3d1d07f108d0f7a11a17359381574733836fc8161e24af1dff5d"
+      }
+    },
+    {
+      "statement": "-nbrs <number>: neighborhood size (default=2)",
+      "source_id": "fs_ca_label",
+      "quote": "-nbrs <number>\n\nneighborhood size (default=2)",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 2400,
+        "end": 2445,
+        "text_sha256": "adec54a1302a3d1d07f108d0f7a11a17359381574733836fc8161e24af1dff5d"
+      }
+    },
+    {
+      "statement": "-novar: sets all covariance matrices to the identify (default: disabled)",
+      "source_id": "fs_ca_label",
+      "quote": "-novar\n\nsets all covariance matrices to the identify (default: disabled)",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 2326,
+        "end": 2398,
+        "text_sha256": "adec54a1302a3d1d07f108d0f7a11a17359381574733836fc8161e24af1dff5d"
+      }
+    }
+  ],
+  "quarantined_claims": [],
+  "evidence_status": "exact_quotes_verified_agent_scope_reviewed_blind_gold_pending"
+}

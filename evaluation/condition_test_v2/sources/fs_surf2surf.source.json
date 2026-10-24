@@ -1,0 +1,12 @@
+{
+  "source_id": "fs_surf2surf",
+  "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mri_surf2surf",
+  "final_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mri_surf2surf",
+  "fetched_at": "2026-10-24T04:57:08.171106+00:00",
+  "http_status": 200,
+  "text_sha256": "02c4e1aef707ab0874c3277e093e442f6a7f99fc5b6ebdfc29491aa4c2f0c6c5",
+  "html_sha256": "13f632c4da0af3961515780c5cf6464ddee2b0a24e9301c464387681159ffd66",
+  "text_characters": 6883,
+  "projection": "stdlib HTMLParser SourceText v1",
+  "evidence_class": "official_documentation"
+}

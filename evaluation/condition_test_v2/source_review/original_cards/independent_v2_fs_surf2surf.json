@@ -1,0 +1,181 @@
+{
+  "method_id": "independent_v2_fs_surf2surf",
+  "name": "FreeSurfer mri_surf2surf",
+  "purpose": "Resamples one CorticalSurface onto another, with optional surface smoothing.",
+  "species_scope": "unspecified",
+  "software": [
+    "FreeSurfer",
+    "mri_surf2surf",
+    "mri_convert",
+    "mri_vol2surf"
+  ],
+  "inputs": [
+    {
+      "statement": "Source subject name in $SUBJECTS_DIR or ico; input data must have been sampled onto this subject's surface.",
+      "source_id": "fs_surf2surf",
+      "quote": "As found in $SUBJECTS_DIR or ico for icosahedron. The input data must have been sampled onto this subject's surface",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1122,
+        "end": 1237,
+        "text_sha256": "02c4e1aef707ab0874c3277e093e442f6a7f99fc5b6ebdfc29491aa4c2f0c6c5"
+      }
+    },
+    {
+      "statement": "File containing the data on the source surface.",
+      "source_id": "fs_surf2surf",
+      "quote": "Name of file where the data on the source surface is located.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1291,
+        "end": 1352,
+        "text_sha256": "02c4e1aef707ab0874c3277e093e442f6a7f99fc5b6ebdfc29491aa4c2f0c6c5"
+      }
+    },
+    {
+      "statement": "Target subject name in $SUBJECTS_DIR or ico for icosahedron.",
+      "source_id": "fs_surf2surf",
+      "quote": "name of target subject as found in $SUBJECTS_DIR or ico for icosahedron.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1390,
+        "end": 1462,
+        "text_sha256": "02c4e1aef707ab0874c3277e093e442f6a7f99fc5b6ebdfc29491aa4c2f0c6c5"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "statement": "If source and target subjects differ, the registration surface is used; sphere.reg is the default.",
+      "source_id": "fs_surf2surf",
+      "quote": "If the source and target subjects are not the same, this surface is used to register the two surfaces. sphere.reg is used as the default.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 2580,
+        "end": 2717,
+        "text_sha256": "02c4e1aef707ab0874c3277e093e442f6a7f99fc5b6ebdfc29491aa4c2f0c6c5"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "statement": "Specify source subject, source surface values, target subject, target output file, and hemisphere.",
+      "source_id": "fs_surf2surf",
+      "quote": "mri_surf2surf --srcsubject <source subject name> --srcsurfval <sourcefile> --trgsubject <target suhject name> --trgsurfval <target file> --hemi <hemifield>",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 856,
+        "end": 1011,
+        "text_sha256": "02c4e1aef707ab0874c3277e093e442f6a7f99fc5b6ebdfc29491aa4c2f0c6c5"
+      }
+    },
+    {
+      "statement": "Optionally smooth input surface values before resampling.",
+      "source_id": "fs_surf2surf",
+      "quote": "--smooth-in smoothes the input surface values prior to any resampling.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 3884,
+        "end": 3954,
+        "text_sha256": "02c4e1aef707ab0874c3277e093e442f6a7f99fc5b6ebdfc29491aa4c2f0c6c5"
+      }
+    },
+    {
+      "statement": "Optionally smooth after resampling.",
+      "source_id": "fs_surf2surf",
+      "quote": "--smooth-out smoothes after any resampling.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 3955,
+        "end": 3998,
+        "text_sha256": "02c4e1aef707ab0874c3277e093e442f6a7f99fc5b6ebdfc29491aa4c2f0c6c5"
+      }
+    }
+  ],
+  "checks": [],
+  "exceptions": [
+    {
+      "statement": "For trg_type w or paint, use the full path for the target file.",
+      "source_id": "fs_surf2surf",
+      "quote": "BUG ALERT: for trg_type w or paint, use the full path.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1558,
+        "end": 1612,
+        "text_sha256": "02c4e1aef707ab0874c3277e093e442f6a7f99fc5b6ebdfc29491aa4c2f0c6c5"
+      }
+    },
+    {
+      "statement": "With paint output, specify the output file with a partial path or it will be written into the subject's anatomical directory.",
+      "source_id": "fs_surf2surf",
+      "quote": "When the output format is paint, the output file must be specified with a partial path (eg, ./data-lh.w) or else the output will be written into the subject's anatomical directory.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 5813,
+        "end": 5993,
+        "text_sha256": "02c4e1aef707ab0874c3277e093e442f6a7f99fc5b6ebdfc29491aa4c2f0c6c5"
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "statement": "File where the data on the target surface will be stored.",
+      "source_id": "fs_surf2surf",
+      "quote": "Name of file where the data on the target surface will be stored.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1491,
+        "end": 1556,
+        "text_sha256": "02c4e1aef707ab0874c3277e093e442f6a7f99fc5b6ebdfc29491aa4c2f0c6c5"
+      }
+    }
+  ],
+  "parameters": [
+    {
+      "statement": "Mapping method: nnfr (nearest-neighbor, forward and reverse, default) or nnf (forward only).",
+      "source_id": "fs_surf2surf",
+      "quote": "Legal values are: nnfr (neighest-neighbor, forward and reverse) and nnf (neighest-neighbor, forward only). Default is nnfr.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 2873,
+        "end": 2996,
+        "text_sha256": "02c4e1aef707ab0874c3277e093e442f6a7f99fc5b6ebdfc29491aa4c2f0c6c5"
+      }
+    },
+    {
+      "statement": "Icosahedron order n, with #vertices=10*4^n+2; largest available generally best.",
+      "source_id": "fs_surf2surf",
+      "quote": "This specifies the size of the icosahedron according to the formula #vertices=10*4^n+2. In general, it is best to use the largest size available.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 2096,
+        "end": 2241,
+        "text_sha256": "02c4e1aef707ab0874c3277e093e442f6a7f99fc5b6ebdfc29491aa4c2f0c6c5"
+      }
+    },
+    {
+      "statement": "Number of smoothing iterations, each averaging each vertex with its neighbors.",
+      "source_id": "fs_surf2surf",
+      "quote": "Each iteration consists of averaging eeach vertex with its neighbors.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 3721,
+        "end": 3790,
+        "text_sha256": "02c4e1aef707ab0874c3277e093e442f6a7f99fc5b6ebdfc29491aa4c2f0c6c5"
+      }
+    },
+    {
+      "statement": "Frame number for paint/w output, zero-based, default 0.",
+      "source_id": "fs_surf2surf",
+      "quote": "The frame number is zero-based (default is 0).",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 4133,
+        "end": 4179,
+        "text_sha256": "02c4e1aef707ab0874c3277e093e442f6a7f99fc5b6ebdfc29491aa4c2f0c6c5"
+      }
+    }
+  ],
+  "quarantined_claims": [],
+  "evidence_status": "exact_quotes_verified_semantics_pending_annotation"
+}

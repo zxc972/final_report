@@ -1,0 +1,98 @@
+[
+  {
+    "source_id": "fs_anatomical_stats",
+    "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mris_anatomical_stats",
+    "final_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mris_anatomical_stats",
+    "fetched_at": "2026-10-24T04:57:05.109209+00:00",
+    "http_status": 200,
+    "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7",
+    "html_sha256": "8e2cfbee832d6c6017dad6942b3da25dce6ffae2ac05a6f53a102d53853df95b",
+    "text_characters": 3414,
+    "projection": "stdlib HTMLParser SourceText v1",
+    "evidence_class": "official_documentation"
+  },
+  {
+    "source_id": "fs_segstats",
+    "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mri_segstats",
+    "final_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mri_segstats",
+    "fetched_at": "2026-10-24T04:57:05.081014+00:00",
+    "http_status": 200,
+    "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c",
+    "html_sha256": "ab6d351223ef31f62852db1cfebf5a76e4b8f455fe96e62927434283322a5056",
+    "text_characters": 14469,
+    "projection": "stdlib HTMLParser SourceText v1",
+    "evidence_class": "official_documentation"
+  },
+  {
+    "source_id": "fs_preproc",
+    "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mris_preproc",
+    "final_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mris_preproc",
+    "fetched_at": "2026-10-24T04:57:05.150745+00:00",
+    "http_status": 200,
+    "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb",
+    "html_sha256": "65a690ac621f79fd2f7710fe57ccb56e19a4538a11a1802309a8e1983dff6f60",
+    "text_characters": 10589,
+    "projection": "stdlib HTMLParser SourceText v1",
+    "evidence_class": "official_documentation"
+  },
+  {
+    "source_id": "fs_surf2surf",
+    "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mri_surf2surf",
+    "final_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mri_surf2surf",
+    "fetched_at": "2026-10-24T04:57:08.171106+00:00",
+    "http_status": 200,
+    "text_sha256": "02c4e1aef707ab0874c3277e093e442f6a7f99fc5b6ebdfc29491aa4c2f0c6c5",
+    "html_sha256": "13f632c4da0af3961515780c5cf6464ddee2b0a24e9301c464387681159ffd66",
+    "text_characters": 6883,
+    "projection": "stdlib HTMLParser SourceText v1",
+    "evidence_class": "official_documentation"
+  },
+  {
+    "source_id": "wb_metric_resample",
+    "url": "https://www.humanconnectome.org/software/workbench-command/-metric-resample",
+    "final_url": "https://www.humanconnectome.org/software/workbench-command/-metric-resample",
+    "fetched_at": "2026-10-24T04:57:07.217173+00:00",
+    "http_status": 200,
+    "text_sha256": "4be39435118cef7bb22f14f058f4b215a5af9d7e5fef0c1e6a5ebcd0d0b44656",
+    "html_sha256": "0edaeaac3620a753778b410896c9ea86bdbd0c4c370cc3153b5d3c5800d75a31",
+    "text_characters": 9441,
+    "projection": "stdlib HTMLParser SourceText v1",
+    "evidence_class": "official_documentation"
+  },
+  {
+    "source_id": "ants_thickness_script",
+    "url": "https://raw.githubusercontent.com/ANTsX/ANTs/main/Scripts/antsCorticalThickness.sh",
+    "final_url": "https://raw.githubusercontent.com/ANTsX/ANTs/main/Scripts/antsCorticalThickness.sh",
+    "fetched_at": "2026-10-24T04:58:56.153128+00:00",
+    "http_status": 200,
+    "text_sha256": "82f4c18a561a34ae3b5c74c4b8e58a8c442776af6dbd9851ac58cfdd9994d88c",
+    "html_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c",
+    "text_characters": 66159,
+    "projection": "official plain-text UTF-8 v1",
+    "evidence_class": "official_documentation"
+  },
+  {
+    "source_id": "ants_thickness_outputs",
+    "url": "https://github.com/ANTsX/ANTs/wiki/antsCorticalThickness-and-antsLongitudinalCorticalThickness-output",
+    "final_url": "https://github.com/ANTsX/ANTs/wiki/antsCorticalThickness-and-antsLongitudinalCorticalThickness-output",
+    "fetched_at": "2026-10-24T04:58:56.736478+00:00",
+    "http_status": 200,
+    "text_sha256": "71dd19ac3d5558f0bc665113d80af28ed94746623118e29cf7807bee49f378b2",
+    "html_sha256": "43729a102ef144287271bb0faa150fe04b1d2b0fa0c31235e960de5f4a672da5",
+    "text_characters": 4829,
+    "projection": "stdlib HTMLParser SourceText v1",
+    "evidence_class": "official_documentation"
+  },
+  {
+    "source_id": "fs_ca_label",
+    "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mris_ca_label",
+    "final_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mris_ca_label",
+    "fetched_at": "2026-10-24T04:57:11.382584+00:00",
+    "http_status": 200,
+    "text_sha256": "adec54a1302a3d1d07f108d0f7a11a17359381574733836fc8161e24af1dff5d",
+    "html_sha256": "af5fd328463712c82357e8d608aecbdb438c098c51411cc957903ead963d707b",
+    "text_characters": 4366,
+    "projection": "stdlib HTMLParser SourceText v1",
+    "evidence_class": "official_documentation"
+  }
+]

@@ -1,0 +1,22 @@
+..                                                                       [100%]
+=============================== warnings summary ===============================
+modules/agent/tests/test_round21_full_sandbox.py::test_round21_group_interfaces_real_container[group]
+  /data/xuancheng/agent_v1/round20_source/agent/modules/agent/backend/api.py:183: DeprecationWarning: 
+          on_event is deprecated, use lifespan event handlers instead.
+  
+          Read more about it in the
+          [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+          
+    app.on_event("shutdown")(shutdown_cleanup)
+
+modules/agent/tests/test_round21_full_sandbox.py::test_round21_group_interfaces_real_container[group]
+  /data/xuancheng/agent_v1/.venv-coding/lib/python3.11/site-packages/fastapi/applications.py:4745: DeprecationWarning: 
+          on_event is deprecated, use lifespan event handlers instead.
+  
+          Read more about it in the
+          [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+          
+    return self.router.on_event(event_type)  # ty: ignore[deprecated]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+2 passed, 2 warnings in 23.11s

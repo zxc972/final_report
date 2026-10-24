@@ -1,0 +1,272 @@
+{
+  "templates": {
+    "product_present": {
+      "desc": "required input file product must exist be present available produced processed output surface volume annotation label stats",
+      "params": {
+        "slot": "slot",
+        "type": "type"
+      }
+    },
+    "attr_equal": {
+      "desc": "same subject hemisphere mesh space resolution match consistent identical correspond vertices number equal between files",
+      "params": {
+        "slots": "slots",
+        "attrs": "attrs"
+      }
+    },
+    "attr_in": {
+      "desc": "must be in space species template resolution format allowed values one of native fsaverage MNI isotropic voxel size",
+      "params": {
+        "slot": "slot",
+        "attr": "attr",
+        "values": "values"
+      }
+    },
+    "label_policy": {
+      "desc": "exclude unknown unassigned medial wall labels annotation colour table label names parcellation regions",
+      "params": {
+        "slot": "slot",
+        "exclude": "values"
+      }
+    },
+    "cardinality": {
+      "desc": "at least minimum number subjects group size sample per group participants scans",
+      "params": {
+        "object": "text",
+        "minimum": "int"
+      }
+    },
+    "design_variable": {
+      "desc": "design matrix covariate age sex group variable column participants table contrast",
+      "params": {
+        "columns": "values"
+      }
+    },
+    "software": {
+      "desc": "software installed required toolbox matlab freesurfer fsl ants command available path version licence environment",
+      "params": {
+        "commands": "values"
+      }
+    },
+    "provenance": {
+      "desc": "processed with stream recon-all completed run before pipeline step previously done log finished",
+      "params": {
+        "step": "text"
+      }
+    },
+    "scale_check": {
+      "desc": "scale rescale units millimetre physical size conversion factor voxel dimensions brain size",
+      "params": {
+        "metric": "text"
+      }
+    },
+    "plausibility": {
+      "desc": "typical range expected values normal thickness area volume outlier quality check implausible",
+      "params": {
+        "metric": "text"
+      }
+    },
+    "asymmetry_flip": {
+      "desc": "left right hemisphere asymmetry flip symmetric template lateralization bias",
+      "params": {}
+    },
+    "advisory": {
+      "desc": "recommendation note caution interpret consider may should visually inspect manually",
+      "params": {
+        "text": "text"
+      }
+    }
+  },
+  "definitions": {
+    "product_present": "a subject's own REQUIRED input file of a given product type (not optional inputs, not software-bundled templates, not in-memory arrays)",
+    "attr_in": "one input's attribute must take one of the given values (species, space, ...)",
+    "attr_equal": "several inputs must share attribute values (subject, hemisphere, mesh, space, voxel_size)",
+    "label_policy": "labels that must be excluded from an annotation (unknown, medial wall)",
+    "cardinality": "a minimum number of subjects or subjects per group",
+    "design_variable": "columns that must exist in the participants/design table",
+    "software": "an executable program or toolbox that must be installed",
+    "provenance": "a processing step that must have been completed before",
+    "scale_check": "values must be converted with a verified scale factor",
+    "plausibility": "values must lie within a numeric reference range",
+    "asymmetry_flip": "left-right asymmetry requires a flip or symmetric-template check",
+    "advisory": "anything else: visual inspection, recommendations, interpretation caveats, command-line usage, version notes, optional features, or what the method itself does"
+  },
+  "slots": {
+    "T1": [
+      "subject",
+      "species",
+      "space",
+      "voxel_size",
+      "scale_status"
+    ],
+    "T2": [
+      "subject",
+      "species",
+      "space",
+      "voxel_size",
+      "scale_status"
+    ],
+    "volumes": [
+      "subject",
+      "species",
+      "space",
+      "voxel_size",
+      "scale_status"
+    ],
+    "timepoints": [
+      "subject",
+      "species",
+      "space",
+      "voxel_size",
+      "scale_status"
+    ],
+    "mask": [
+      "subject",
+      "species",
+      "space",
+      "voxel_size",
+      "scale_status"
+    ],
+    "pial": [
+      "subject",
+      "species",
+      "hemisphere",
+      "space",
+      "mesh",
+      "scale_status"
+    ],
+    "white": [
+      "subject",
+      "species",
+      "hemisphere",
+      "space",
+      "mesh",
+      "scale_status"
+    ],
+    "surface": [
+      "subject",
+      "species",
+      "hemisphere",
+      "space",
+      "mesh",
+      "scale_status"
+    ],
+    "metric": [
+      "subject",
+      "species",
+      "hemisphere",
+      "space",
+      "mesh",
+      "scale_status"
+    ],
+    "thickness": [
+      "subject",
+      "species",
+      "hemisphere",
+      "space",
+      "mesh",
+      "scale_status"
+    ],
+    "annotation": [
+      "subject",
+      "species",
+      "hemisphere",
+      "space",
+      "mesh",
+      "scale_status",
+      "atlas"
+    ],
+    "label": [
+      "subject",
+      "species",
+      "hemisphere",
+      "space",
+      "mesh",
+      "scale_status"
+    ],
+    "design": [
+      "columns",
+      "n_subjects"
+    ]
+  },
+  "vocabulary": {
+    "types": [
+      "type:Annotation",
+      "type:Annotation.AparcA2009s",
+      "type:Annotation.AparcDK",
+      "type:Annotation.AparcDKT",
+      "type:Annotation.CHARM",
+      "type:Annotation.D99",
+      "type:Label",
+      "type:Label.Cortex",
+      "type:Label.MedialWall",
+      "type:Product",
+      "type:StatsTable",
+      "type:StatsTable.Aparc",
+      "type:StatsTable.Aseg",
+      "type:StatsTable.AsegStats",
+      "type:StatsTable.ContrastMatrix",
+      "type:StatsTable.CorticalParcStats",
+      "type:StatsTable.DesignMatrix",
+      "type:SubjectTable",
+      "type:SubjectTable.Participants",
+      "type:Surface",
+      "type:Surface.Inflated",
+      "type:Surface.Midthickness",
+      "type:Surface.Pial",
+      "type:Surface.Sphere",
+      "type:Surface.SphereReg",
+      "type:Surface.White",
+      "type:SurfaceMetric",
+      "type:SurfaceMetric.Area",
+      "type:SurfaceMetric.Curvature",
+      "type:SurfaceMetric.LGI",
+      "type:SurfaceMetric.Sulc",
+      "type:SurfaceMetric.Thickness",
+      "type:Transform",
+      "type:Transform.Affine",
+      "type:Transform.Deformation",
+      "type:Transform.SphericalRegistration",
+      "type:Volume",
+      "type:Volume.Aseg",
+      "type:Volume.BrainExtractedT1",
+      "type:Volume.BrainMask",
+      "type:Volume.GM4D",
+      "type:Volume.GMMask",
+      "type:Volume.T1",
+      "type:Volume.T2",
+      "type:Volume.TissuePVE",
+      "type:Volume.TissuePVE.CSF",
+      "type:Volume.TissuePVE.GM",
+      "type:Volume.TissuePVE.WM"
+    ],
+    "steps": [
+      "acpc-align",
+      "fastsurfer",
+      "freesurfer2caret",
+      "image-reorient",
+      "label-resample",
+      "mris_compute_lgi",
+      "preprocess-1",
+      "preprocess-3",
+      "preprocess-3-1",
+      "preprocess-3-2",
+      "recon-all",
+      "rescale",
+      "seg-brain",
+      "seg-router",
+      "seg-wm"
+    ]
+  },
+  "rules": [
+    "一条陈述只标一个主要条件",
+    "product_present：被试自己的、必需的输入文件；文档写明可选的、软件自带的资源、内存数据结构都不算",
+    "attr_in：对单个文件属性取值的要求（物种、空间等）",
+    "attr_equal：多个文件之间必须一致的属性（被试、半球、网格、空间、体素大小）",
+    "software：必需的可执行程序或工具箱",
+    "provenance：要求某个处理步骤已经完成",
+    "advisory：目视检查、操作建议、结果解释注意事项、命令行用法、版本说明、方法自身的处理描述",
+    "陈述超出引文内容的，按建议性处理并标注"
+  ],
+  "unknown_scope": "If a condition cannot be expressed without invented data or parameters, annotate advisory and explain. Preserve ambiguity for human decision."
+}

@@ -1,0 +1,181 @@
+﻿id,method,field,statement,quote,source_id,source_url,gold_template,gold_parameters,annotation_note
+2001,independent_v2_fs_anatomical_stats,inputs,Subject name is a required positional argument.,"Required Positional Arguments
+
+<subjectname>
+
+subject name",fs_anatomical_stats,https://surfer.nmr.mgh.harvard.edu/fswiki/mris_anatomical_stats,,,
+2002,independent_v2_fs_anatomical_stats,inputs,Hemisphere is a required positional argument.,"Required Positional Arguments
+
+<subjectname>
+
+subject name
+
+<hemi>
+
+hemisphere",fs_anatomical_stats,https://surfer.nmr.mgh.harvard.edu/fswiki/mris_anatomical_stats,,,
+2003,independent_v2_fs_anatomical_stats,inputs,Surface name is an optional positional argument.,"Optional Positional Arguments
+
+<surfacename>
+
+surface name",fs_anatomical_stats,https://surfer.nmr.mgh.harvard.edu/fswiki/mris_anatomical_stats,,,
+2004,independent_v2_fs_anatomical_stats,inputs,"When the -l label-file option is used, calculations are limited to the specified label.","-l <label file>
+
+limit calculations to specified label",fs_anatomical_stats,https://surfer.nmr.mgh.harvard.edu/fswiki/mris_anatomical_stats,,,
+2005,independent_v2_fs_anatomical_stats,conditions,No flagged arguments are required.,"Required Flagged Arguments
+
+none",fs_anatomical_stats,https://surfer.nmr.mgh.harvard.edu/fswiki/mris_anatomical_stats,,,
+2006,independent_v2_fs_anatomical_stats,conditions,Using -f requires either the -a or -l option to specify input.,"-f <tablefile>
+
+table output to tablefile (different format than -b). Must use -a or -l options to spec input.",fs_anatomical_stats,https://surfer.nmr.mgh.harvard.edu/fswiki/mris_anatomical_stats,,,
+2007,independent_v2_fs_segstats,inputs,Input segmentation volume provided with --seg.,"--seg segvol
+
+input segmentation volume",fs_segstats,https://surfer.nmr.mgh.harvard.edu/fswiki/mri_segstats,,,
+2008,independent_v2_fs_segstats,inputs,"If an input volume is supplied, it must be the same size and dimension as the segmentation volume.",The input volume must be the same size and dimension as the segmentation volume.,fs_segstats,https://surfer.nmr.mgh.harvard.edu/fswiki/mri_segstats,,,
+2009,independent_v2_fs_segstats,inputs,"If a mask volume is supplied, it must be the same size and dimension as the segmentation volume.",The mask volume must be the same size and dimension as the segmentation volume.,fs_segstats,https://surfer.nmr.mgh.harvard.edu/fswiki/mri_segstats,,,
+2010,independent_v2_fs_segstats,inputs,The FreeSurfer color table file maps each segmentation index to a segmentation name and color.,Freesurfer color table file. Thi s the file used by FreeSurfer to specify how each segmentation index is mapped to a segmentation name and color.,fs_segstats,https://surfer.nmr.mgh.harvard.edu/fswiki/mri_segstats,,,
+2011,independent_v2_fs_segstats,conditions,Partial volume compensation with --pv is usually only done when computing anatomical statistics and is not used with --annot.,"--pv pvvol
+
+Use pvvol to compenstate for partial voluming. This should result in more accurate volumes. Usually, this is only done when computing anatomical statistics. Usually the mri/norm.mgz volume is used. Not with --annot",fs_segstats,https://surfer.nmr.mgh.harvard.edu/fswiki/mri_segstats,,,
+2012,independent_v2_fs_segstats,conditions,"If no voxels meet the masking criteria, mri_segstats exits with an error.","If no voxels meet the masking criteria, then mri_segstats exits with an error.",fs_segstats,https://surfer.nmr.mgh.harvard.edu/fswiki/mri_segstats,,,
+2013,independent_v2_fs_segstats,conditions,"If neither --id nor a color table is specified, all IDs from the segmentation volume are used.","If the user does not specify either --id or a color table, then all the ids from the segmentation volume are used.",fs_segstats,https://surfer.nmr.mgh.harvard.edu/fswiki/mri_segstats,,,
+2014,independent_v2_fs_segstats,checks,"If an input volume is supplied, it must be the same size and dimension as the segmentation volume.",The input volume must be the same size and dimension as the segmentation volume.,fs_segstats,https://surfer.nmr.mgh.harvard.edu/fswiki/mri_segstats,,,
+2015,independent_v2_fs_segstats,checks,"If a mask volume is supplied, it must be the same size and dimension as the segmentation volume.",The mask volume must be the same size and dimension as the segmentation volume.,fs_segstats,https://surfer.nmr.mgh.harvard.edu/fswiki/mri_segstats,,,
+2016,independent_v2_fs_segstats,exceptions,"If no voxels meet the masking criteria, the program exits with an error.","If no voxels meet the masking criteria, then mri_segstats exits with an error.",fs_segstats,https://surfer.nmr.mgh.harvard.edu/fswiki/mri_segstats,,,
+2017,independent_v2_fs_preproc,inputs,"With --meas surfmeasure, input is taken from subject/surf/hemi.surfmeasure.","--meas surfmeasure
+Use subject/surf/hemi.surfmeasure as input.",fs_preproc,https://surfer.nmr.mgh.harvard.edu/fswiki/mris_preproc,,,
+2018,independent_v2_fs_preproc,inputs,The --fsgd option specifies the input subject list from an FSGD file.,"--fsgd fsgdfile
+Specify the list of input subjects from the fsgd file.",fs_preproc,https://surfer.nmr.mgh.harvard.edu/fswiki/mris_preproc,,,
+2019,independent_v2_fs_preproc,inputs,The registration matrix file is of the type accepted or created by tkregister2.,The registration matrix file is of the type accepted/created by tkregister2.,fs_preproc,https://surfer.nmr.mgh.harvard.edu/fswiki/mris_preproc,,,
+2020,independent_v2_fs_preproc,inputs,The --target option selects the common-space subject; --hemi selects lh or rh for source and target surfaces.,"--target subject
+Subject to use as the common-space. All the input data will be resampled to the surface of this subject.
+--hemi hemi
+Use hemi for source and target surfaces. hemi can be lh or rh.",fs_preproc,https://surfer.nmr.mgh.harvard.edu/fswiki/mris_preproc,,,
+2021,independent_v2_fs_preproc,conditions,"When subjects are listed using --s, each has its own --s; this option is for use with --meas.","--s subjN
+Specify an input subject on the command-line. All subjects must be specified in this way on the command-line (ie, each with its own --s). For use with --meas.",fs_preproc,https://surfer.nmr.mgh.harvard.edu/fswiki/mris_preproc,,,
+2022,independent_v2_fs_preproc,conditions,The --is option is an alternative to --meas and still requires a supplied subject list.,"--is surfmeasfile
+Specify full path to input surface measure file. This is an alternative to using --meas. This still requires that a subject list be supplied.",fs_preproc,https://surfer.nmr.mgh.harvard.edu/fswiki/mris_preproc,,,
+2023,independent_v2_fs_preproc,conditions,For --paired-diff there must be an even number of inputs.,"--paired-diff
+After concatenating all the inputs together, create a new output file by computing paired differences, ie, Input1-Input2, Input3-Input4, etc. There must be an even number of inputs.",fs_preproc,https://surfer.nmr.mgh.harvard.edu/fswiki/mris_preproc,,,
+2024,independent_v2_fs_preproc,conditions,"When using full paths with --fsgd, subjects must be in the same order as the input surface files.","Same as #1 but using full paths. Note there is no --meas, but
+--fsgd still needed to provide list of subjects, which must be in the same order as the --isp.",fs_preproc,https://surfer.nmr.mgh.harvard.edu/fswiki/mris_preproc,,,
+2025,independent_v2_fs_preproc,conditions,--cache-out-only requires supplying a tmpdir.,"If you want to cache without actually creating an output, then --cache-out-only. You must supply a tmpdir.",fs_preproc,https://surfer.nmr.mgh.harvard.edu/fswiki/mris_preproc,,,
+2026,independent_v2_fs_preproc,exceptions,ANALYZE and NIFTI formats cannot represent a dimension with more than 32k elements.,This will not work for ANALYZE and NIFTI formats because they cannot represent a dimension with more than 32k elements.,fs_preproc,https://surfer.nmr.mgh.harvard.edu/fswiki/mris_preproc,,,
+2027,independent_v2_fs_preproc,exceptions,None of the paired diff options will affect caching.,None of the paired diff options will affect caching.,fs_preproc,https://surfer.nmr.mgh.harvard.edu/fswiki/mris_preproc,,,
+2028,independent_v2_fs_surf2surf,inputs,Source subject name in $SUBJECTS_DIR or ico; input data must have been sampled onto this subject's surface.,As found in $SUBJECTS_DIR or ico for icosahedron. The input data must have been sampled onto this subject's surface,fs_surf2surf,https://surfer.nmr.mgh.harvard.edu/fswiki/mri_surf2surf,,,
+2029,independent_v2_fs_surf2surf,inputs,File containing the data on the source surface.,Name of file where the data on the source surface is located.,fs_surf2surf,https://surfer.nmr.mgh.harvard.edu/fswiki/mri_surf2surf,,,
+2030,independent_v2_fs_surf2surf,inputs,Target subject name in $SUBJECTS_DIR or ico for icosahedron.,name of target subject as found in $SUBJECTS_DIR or ico for icosahedron.,fs_surf2surf,https://surfer.nmr.mgh.harvard.edu/fswiki/mri_surf2surf,,,
+2031,independent_v2_fs_surf2surf,conditions,"If source and target subjects differ, the registration surface is used; sphere.reg is the default.","If the source and target subjects are not the same, this surface is used to register the two surfaces. sphere.reg is used as the default.",fs_surf2surf,https://surfer.nmr.mgh.harvard.edu/fswiki/mri_surf2surf,,,
+2032,independent_v2_fs_surf2surf,exceptions,"For trg_type w or paint, use the full path for the target file.","BUG ALERT: for trg_type w or paint, use the full path.",fs_surf2surf,https://surfer.nmr.mgh.harvard.edu/fswiki/mri_surf2surf,,,
+2033,independent_v2_fs_surf2surf,exceptions,"With paint output, specify the output file with a partial path or it will be written into the subject's anatomical directory.","When the output format is paint, the output file must be specified with a partial path (eg, ./data-lh.w) or else the output will be written into the subject's anatomical directory.",fs_surf2surf,https://surfer.nmr.mgh.harvard.edu/fswiki/mri_surf2surf,,,
+2034,independent_v2_wb_metric_resample,inputs,"The metric file to resample, typically a native-mesh metric.","<metric-in> - the metric file to resample, typically a native-mesh metric",wb_metric_resample,https://www.humanconnectome.org/software/workbench-command/-metric-resample,,,
+2035,independent_v2_wb_metric_resample,inputs,A sphere surface in register with the new sphere and having the mesh the metric is currently on.,"<current-sphere> - a sphere surface that is in register with <new-sphere>
+and has the mesh that the metric is currently on, typically a
+registered native-mesh sphere",wb_metric_resample,https://www.humanconnectome.org/software/workbench-command/-metric-resample,,,
+2036,independent_v2_wb_metric_resample,inputs,"A sphere surface that is the desired output mesh, typically a standard sphere.","<new-sphere> - a sphere surface that the desired output mesh, typically a
+standard sphere",wb_metric_resample,https://www.humanconnectome.org/software/workbench-command/-metric-resample,,,
+2037,independent_v2_wb_metric_resample,conditions,The method argument must be one of ADAP_BARY_AREA or BARYCENTRIC.,"The <method> argument must be one of the following:
+
+ADAP_BARY_AREA
+BARYCENTRIC",wb_metric_resample,https://www.humanconnectome.org/software/workbench-command/-metric-resample,,,
+2038,independent_v2_wb_metric_resample,conditions,"If ADAP_BARY_AREA is used, exactly one of -area-surfs or -area-metrics must be specified.","If ADAP_BARY_AREA is used, exactly one of -area-surfs or
+-area-metrics must be specified.",wb_metric_resample,https://www.humanconnectome.org/software/workbench-command/-metric-resample,,,
+2039,independent_v2_wb_metric_resample,checks,The current sphere must be in register with the new sphere.,<current-sphere> - a sphere surface that is in register with <new-sphere>,wb_metric_resample,https://www.humanconnectome.org/software/workbench-command/-metric-resample,,,
+2040,independent_v2_wb_metric_resample,exceptions,The -current-roi option only masks the input; the output may be slightly dilated in comparison.,"The -current-roi option only masks the input, the output may be slightly
+dilated in comparison",wb_metric_resample,https://www.humanconnectome.org/software/workbench-command/-metric-resample,,,
+2041,independent_v2_ants_thickness,inputs,"The anatomical input is a structural intensity image, typically T1.","Structural *intensity* image, typically T1.",ants_thickness_script,https://raw.githubusercontent.com/ANTsX/ANTs/main/Scripts/antsCorticalThickness.sh,,,
+2042,independent_v2_ants_thickness,inputs,Brain segmentation template: an anatomical intensity template that is not skull-stripped.,Anatomical *intensity* template. This template is *not* skull-stripped.,ants_thickness_script,https://raw.githubusercontent.com/ANTsX/ANTs/main/Scripts/antsCorticalThickness.sh,,,
+2043,independent_v2_ants_thickness,inputs,Brain extraction probability mask in the segmentation template space; a binary mask is acceptable.,"Brain *probability* mask in the segmentation template space. A binary mask
+                                                is an acceptable probability image.",ants_thickness_script,https://raw.githubusercontent.com/ANTsX/ANTs/main/Scripts/antsCorticalThickness.sh,,,
+2044,independent_v2_ants_thickness,inputs,"At least four priors must exist, corresponding to CSF, cortical GM, WM and subcortical GM.","At least four priors must exist, corresponding to CSF, Cortical GM, WM, Subcortical GM.",ants_thickness_script,https://raw.githubusercontent.com/ANTsX/ANTs/main/Scripts/antsCorticalThickness.sh,,,
+2045,independent_v2_ants_thickness,conditions,Image dimension must be 2 or 3.,ImageDimension must be 2 or 3,ants_thickness_script,https://raw.githubusercontent.com/ANTsX/ANTs/main/Scripts/antsCorticalThickness.sh,,,
+2046,independent_v2_ants_thickness,conditions,"If a registration template is supplied with -t, it must be skull-stripped.",-t:  template for t1 registration          Anatomical *intensity* template. This template *must* be skull-stripped.,ants_thickness_script,https://raw.githubusercontent.com/ANTsX/ANTs/main/Scripts/antsCorticalThickness.sh,,,
+2047,independent_v2_ants_thickness,conditions,"If an extraction registration mask is supplied with -f, it is a binary metric mask in the segmentation template space (-e).",-f:  extraction registration mask          Binary metric mask defined in the segmentation template space (-e).,ants_thickness_script,https://raw.githubusercontent.com/ANTsX/ANTs/main/Scripts/antsCorticalThickness.sh,,,
+2048,independent_v2_ants_thickness,conditions,At least four prior images are required; fewer causes the script to exit.,"if [[ ${NUMBER_OF_PRIOR_IMAGES} -lt 4 ]]; then
+  echo ""Expected at least 4 prior images (${NUMBER_OF_PRIOR_IMAGES} are specified).  Check the command line specification.""
+  exit 1
+fi",ants_thickness_script,https://raw.githubusercontent.com/ANTsX/ANTs/main/Scripts/antsCorticalThickness.sh,,,
+2049,independent_v2_ants_thickness,conditions,The segmentation template and registration template may be different.,"the segmentation template (used for brain extraction and priors) and registration template (used for final, high-quality registration on brain-extracted images) may be different",ants_thickness_outputs,https://github.com/ANTsX/ANTs/wiki/antsCorticalThickness-and-antsLongitudinalCorticalThickness-output,,,
+2050,independent_v2_ants_thickness,checks,"If command -v cannot find a dependency program, the script reports an error.","if ! command -v ${D} &> /dev/null
+      then
+        echo ""Error:  we can't find the $D program.""",ants_thickness_script,https://raw.githubusercontent.com/ANTsX/ANTs/main/Scripts/antsCorticalThickness.sh,,,
+2051,independent_v2_ants_thickness,checks,Specified anatomical images are checked for existence.,"if [[ ! -f ${ANATOMICAL_IMAGES[$i]} ]];
+    then
+      echo ""The specified image \""${ANATOMICAL_IMAGES[$i]}\"" does not exist.""
+      exit 1
+    fi",ants_thickness_script,https://raw.githubusercontent.com/ANTsX/ANTs/main/Scripts/antsCorticalThickness.sh,,,
+2052,independent_v2_ants_thickness,checks,The script tests each expected output image for existence and records missing outputs.,"for img in ""${singleOutputs[@]}"";
+    do
+      if [[ ! -f $img ]];
+        then
+          echo ""Missing output image $img""
+          missingOutput=1
+        fi",ants_thickness_script,https://raw.githubusercontent.com/ANTsX/ANTs/main/Scripts/antsCorticalThickness.sh,,,
+2053,independent_v2_ants_thickness,checks,The script checks for the affine registration transform from the segmentation step.,"if [[ ! -f ${SEGMENTATION_GENERIC_AFFINE} ]];
+          then
+            echo ""The registration component of the segmentation step didn't complete properly.""",ants_thickness_script,https://raw.githubusercontent.com/ANTsX/ANTs/main/Scripts/antsCorticalThickness.sh,,,
+2054,independent_v2_ants_thickness,exceptions,"If a command exits with nonzero status, the script exits unless debug mode is enabled.","ERROR: command exited with nonzero status $cmdExit""
+      echo ""Command: $cmd""
+      echo
+      if [[ ! $DEBUG_MODE -gt 0 ]];
+        then
+          exit 1
+        fi",ants_thickness_script,https://raw.githubusercontent.com/ANTsX/ANTs/main/Scripts/antsCorticalThickness.sh,,,
+2055,independent_v2_ants_thickness,exceptions,"For Templateflow priors, if SGM is not found then SCGM is used instead.","Templateflow labels use ""SCGM"" instead of ""SGM"", if ""SGM"" is not
+                                                found, ""SCGM"" will be used instead.",ants_thickness_script,https://raw.githubusercontent.com/ANTsX/ANTs/main/Scripts/antsCorticalThickness.sh,,,
+2056,independent_v2_ants_thickness,exceptions,Prior combinations are only allowed for gray matter or white matter; other labels cause an error exit.,"We only combine with the gray matter or the white matter.""
+        echo ""The label ${COMBINATION[0]} does not correspond to the gray or white matters.""
+        exit 1",ants_thickness_script,https://raw.githubusercontent.com/ANTsX/ANTs/main/Scripts/antsCorticalThickness.sh,,,
+2057,independent_v2_ants_thickness,exceptions,"If the cortical thickness output is not produced, the script exits with an error.","if [[ ! -f ${CORTICAL_THICKNESS_IMAGE} ]];
+      then
+        echo ""Expected output was not produced.  The cortical thickness image doesn't exist:""
+        echo ""   $CORTICAL_THICKNESS_IMAGE""
+        exit 1
+      fi",ants_thickness_script,https://raw.githubusercontent.com/ANTsX/ANTs/main/Scripts/antsCorticalThickness.sh,,,
+2058,independent_v2_fs_ca_label,inputs,subject id,"<subject>
+
+subject id",fs_ca_label,https://surfer.nmr.mgh.harvard.edu/fswiki/mris_ca_label,,,
+2059,independent_v2_fs_ca_label,inputs,hemisphere: rh or lh,"<hemi>
+
+hemisphere: rh or lh",fs_ca_label,https://surfer.nmr.mgh.harvard.edu/fswiki/mris_ca_label,,,
+2060,independent_v2_fs_ca_label,inputs,"canonical surface file, e.g. sphere.reg, describing registration of a subject's vertices to the reference average surface","canonical surface file. Ie: the name of the spherical surface file which describes the registration of a subject's vertices to the reference ""average"" surface. Example: sphere.reg",fs_ca_label,https://surfer.nmr.mgh.harvard.edu/fswiki/mris_ca_label,,,
+2061,independent_v2_fs_ca_label,inputs,Classifier array input file.,"<classifier>
+
+specify classifier array input file",fs_ca_label,https://surfer.nmr.mgh.harvard.edu/fswiki/mris_ca_label,,,
+2062,independent_v2_fs_ca_label,conditions,This automatic procedure employs data from a previously-prepared atlas file.,This automatic procedure employs data from a previously-prepared atlas file.,fs_ca_label,https://surfer.nmr.mgh.harvard.edu/fswiki/mris_ca_label,,,
+2063,independent_v2_wb_surface_resample,inputs,"The surface file to resample, typically a native-mesh anatomical or inflated surface.","<surface-in> - the surface file to resample, typically a native-mesh
+anatomical or inflated surface",wb_surface_resample,https://www.humanconnectome.org/software/workbench-command/-surface-resample,,,
+2064,independent_v2_wb_surface_resample,inputs,"A sphere surface in register with <new-sphere> that uses the mesh the input surface is currently on, typically a registered native-mesh sphere.","<current-sphere> - a sphere surface that is in register with <new-sphere>
+and uses the mesh that the input surface is currently on, typically a
+registered native-mesh sphere",wb_surface_resample,https://www.humanconnectome.org/software/workbench-command/-surface-resample,,,
+2065,independent_v2_wb_surface_resample,inputs,"A sphere surface that has the desired output mesh, typically a standard sphere.","<new-sphere> - a sphere surface that has the desired output mesh,
+typically a standard sphere",wb_surface_resample,https://www.humanconnectome.org/software/workbench-command/-surface-resample,,,
+2066,independent_v2_wb_surface_resample,inputs,"The method name, which must be one of ADAP_BARY_AREA or BARYCENTRIC.","The <method> argument must be one of the following:
+
+ADAP_BARY_AREA
+BARYCENTRIC",wb_surface_resample,https://www.humanconnectome.org/software/workbench-command/-surface-resample,,,
+2067,independent_v2_wb_surface_resample,conditions,"If ADAP_BARY_AREA is used, exactly one of -area-surfs or -area-metrics must be specified.","If ADAP_BARY_AREA is used, exactly one of -area-surfs or
+-area-metrics must be specified.",wb_surface_resample,https://www.humanconnectome.org/software/workbench-command/-surface-resample,,,
+2068,independent_v2_wb_surface_resample,exceptions,"For cut surfaces (including flatmaps), use -surface-cut-resample instead.","For cut surfaces (including flatmaps), use -surface-cut-resample.",wb_surface_resample,https://www.humanconnectome.org/software/workbench-command/-surface-resample,,,
+2069,independent_v2_wb_surface_resample,exceptions,"Instead of resampling a spherical surface, the -surface-sphere-project-unproject command is recommended.","Instead of resampling a spherical surface, the
+-surface-sphere-project-unproject command is recommended.",wb_surface_resample,https://www.humanconnectome.org/software/workbench-command/-surface-resample,,,
+2070,independent_v2_wb_surface_resample,exceptions,"ADAP_BARY_AREA is not generally recommended for surface resampling, but is provided for completeness.","If ADAP_BARY_AREA is used, exactly one of -area-surfs or
+-area-metrics must be specified. This method is not generally
+recommended for surface resampling, but is provided for completeness.",wb_surface_resample,https://www.humanconnectome.org/software/workbench-command/-surface-resample,,,
+2071,independent_v2_fsl_first,inputs,FIRST needs a good quality T1-weighted image.,FIRST needs a good quality T1-weighted image,fsl_first,https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/first.html,,,
+2072,independent_v2_fsl_first,inputs,Only T1-weighted images can be used as input to run_first_all.,"run_first_all -i t1_image -o output_name
+
+The argument -i specifies the original T1-weighted structural image (only T1-weighted images can be used).",fsl_first,https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/first.html,,,
+2073,independent_v2_fsl_first,inputs,first_flirt should be used on whole-head (non-betted) images.,first_flirt should be used on whole-head (non-betted) images,fsl_first,https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/first.html,,,
+2074,independent_v2_fsl_first,conditions,"If the registration stage fails then the model fitting will not work, though run_first_all continues to run and may produce outputs.","if the registration stage fails then the models fitting will
+not work, despite the fact that run_first_all continues to run and may produce outputs.",fsl_first,https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/first.html,,,
+2075,independent_v2_fsl_first,conditions,"When fitting the cerebellum models, a different transformation matrix than that used for the other structures must be input.","When fitting the cerebellum models, you will need to input a different transformation matrix than that used for the other structures.",fsl_first,https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/first.html,,,
+2076,independent_v2_fsl_first,conditions,The -cort flag must be specified for first_flirt to perform the registration needed for cerebellum models.,"cerebellum models, you will need to input a different transformation matrix than that used for the other structures. first_flirt will not perform the necessary registration by default - the -cort flag must be specified.",fsl_first,https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/first.html,,,
+2077,independent_v2_fsl_first,conditions,The full path name to the model must be used with -m.,-m: The model file (e.g. ${FSLDIR}/data/first/models_336_bin/L_Hipp_bin.bmv). The full path name to the model must be used.,fsl_first,https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/first.html,,,
+2078,independent_v2_fsl_first,checks,Check the log directory error outputs; no output means no errors.,"cat *.logs/*.e*
+
+and if there are no errors then you will see no output, otherwise you will see what errors have occured.",fsl_first,https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/first.html,,,
+2079,independent_v2_fsl_first,checks,Check registration quality using slicesdir on the registered images.,slicesdir -p ${FSLDIR}/data/standard/MNI152_T1_1mm.nii.gz *_to_std_sub.nii.gz,fsl_first,https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/first.html,,,
+2080,independent_v2_fsl_first,checks,Pay particular attention to the sub-cortical structures when assessing registrations.,pay particular attention to the sub-cortical structures,fsl_first,https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/first.html,,,
+2081,independent_v2_fsl_first,checks,"Check segmentation quality with first_roi_slicesdir, which generates a webpage summary.","first_roi_slicesdir is a script to generate summary images, in a webpage format, for the segmentation outputs",fsl_first,https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/first.html,,,
+2082,independent_v2_fsl_first,exceptions,"If there are problems, different segmentation options such as number of modes or boundary correction method can be tried using the individual tools.","If there are any problems, you can try different segmentation options (e.g. number of modes, boundary correction method, etc.) using the individual tools described in the Advanced Usage section.",fsl_first,https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/first.html,,,
+2083,independent_v2_fsl_first,exceptions,Boundary correction method none is appropriate for models in the 05mm subdirectory.,"For the models contained in ${FSLDIR}/data/first/models_336_bin/05mm/, all boundary voxels are considered as belonging to the structure, and hence none is the appropriate correction method.",fsl_first,https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/first.html,,,

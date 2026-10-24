@@ -1,0 +1,15 @@
+{
+  "status": "ready_for_Claude_not_transmitted_by_a_Claude_tool",
+  "files": {
+    "annotation_sheet.csv": "9ffe98f1f0724bd5ceea4a1c767ff2d9396cc83f10a721266c14b05883e111e4",
+    "annotation_schema.json": "dcd8948f0f31598301e8f951e12a43cb65744ca70d03d323a4156d60f80d7893",
+    "statements_unlabelled.json": "cac9df5f8fc30fd385d6d5c91b80863169b69b8d92f309d39f94f352c446b7b7",
+    "README.md": "447c7d12209fbfb12a4f09726225b50a52c82e0c39d583a0e4110d05d6abab5a",
+    "sources/fsl_first.txt": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958",
+    "sources/wb_surface_resample.txt": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+  },
+  "n_statements": 21,
+  "algorithm_predictions_included": false,
+  "gold_labels_included": false,
+  "algorithm_evaluation_calls": 0
+}

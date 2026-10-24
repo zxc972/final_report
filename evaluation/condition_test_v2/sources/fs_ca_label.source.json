@@ -1,0 +1,12 @@
+{
+  "source_id": "fs_ca_label",
+  "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mris_ca_label",
+  "final_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mris_ca_label",
+  "fetched_at": "2026-10-24T04:57:11.382584+00:00",
+  "http_status": 200,
+  "text_sha256": "adec54a1302a3d1d07f108d0f7a11a17359381574733836fc8161e24af1dff5d",
+  "html_sha256": "af5fd328463712c82357e8d608aecbdb438c098c51411cc957903ead963d707b",
+  "text_characters": 4366,
+  "projection": "stdlib HTMLParser SourceText v1",
+  "evidence_class": "official_documentation"
+}

@@ -1,0 +1,24 @@
+{
+  "v1_extraction_fragments_identical": {
+    "FIELDS": true,
+    "ANNOTATION_FIELDS": true,
+    "SCHEMA": true,
+    "PROMPT": true,
+    "SourceText": true,
+    "validate_card": true
+  },
+  "retained_exact_source_scope_reviewed": 191,
+  "annotation_statements": 83,
+  "inputs": 33,
+  "quarantined": 1,
+  "blind_packet_all_hashes_verified": true,
+  "blank_annotation_columns": true,
+  "source_url_overlap": 0,
+  "annotation_gold_frozen": false,
+  "canonicalization_evaluation_calls": 0,
+  "region_algorithm_models": 0,
+  "region_raw_conditions": 2,
+  "missing_combinations": 8,
+  "stability_assessable": false,
+  "handoff_manifest_sha256": "caf821b66b1e841c595822ca94362fc7a025f969365168eb9c8803000a7239b0"
+}

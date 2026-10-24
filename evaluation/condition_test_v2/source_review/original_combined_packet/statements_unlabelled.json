@@ -1,0 +1,1350 @@
+{
+  "schema": "primatex.condition_annotation_input.v1",
+  "split": "independent_test_candidate",
+  "slots": {
+    "T1": [
+      "subject",
+      "species",
+      "space",
+      "voxel_size",
+      "scale_status"
+    ],
+    "T2": [
+      "subject",
+      "species",
+      "space",
+      "voxel_size",
+      "scale_status"
+    ],
+    "volumes": [
+      "subject",
+      "species",
+      "space",
+      "voxel_size",
+      "scale_status"
+    ],
+    "timepoints": [
+      "subject",
+      "species",
+      "space",
+      "voxel_size",
+      "scale_status"
+    ],
+    "mask": [
+      "subject",
+      "species",
+      "space",
+      "voxel_size",
+      "scale_status"
+    ],
+    "pial": [
+      "subject",
+      "species",
+      "hemisphere",
+      "space",
+      "mesh",
+      "scale_status"
+    ],
+    "white": [
+      "subject",
+      "species",
+      "hemisphere",
+      "space",
+      "mesh",
+      "scale_status"
+    ],
+    "surface": [
+      "subject",
+      "species",
+      "hemisphere",
+      "space",
+      "mesh",
+      "scale_status"
+    ],
+    "metric": [
+      "subject",
+      "species",
+      "hemisphere",
+      "space",
+      "mesh",
+      "scale_status"
+    ],
+    "thickness": [
+      "subject",
+      "species",
+      "hemisphere",
+      "space",
+      "mesh",
+      "scale_status"
+    ],
+    "annotation": [
+      "subject",
+      "species",
+      "hemisphere",
+      "space",
+      "mesh",
+      "scale_status",
+      "atlas"
+    ],
+    "label": [
+      "subject",
+      "species",
+      "hemisphere",
+      "space",
+      "mesh",
+      "scale_status"
+    ],
+    "design": [
+      "columns",
+      "n_subjects"
+    ]
+  },
+  "items": [
+    {
+      "id": 2001,
+      "method": "independent_v2_fs_anatomical_stats",
+      "field": "inputs",
+      "statement": "Subject name is a required positional argument.",
+      "source_id": "fs_anatomical_stats",
+      "quote": "<subjectname>\n\nsubject name",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1030,
+        "end": 1057,
+        "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mris_anatomical_stats"
+    },
+    {
+      "id": 2002,
+      "method": "independent_v2_fs_anatomical_stats",
+      "field": "inputs",
+      "statement": "Hemisphere is a required positional argument.",
+      "source_id": "fs_anatomical_stats",
+      "quote": "<hemi>\n\nhemisphere",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1059,
+        "end": 1077,
+        "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mris_anatomical_stats"
+    },
+    {
+      "id": 2003,
+      "method": "independent_v2_fs_anatomical_stats",
+      "field": "inputs",
+      "statement": "Surface name is an optional positional argument.",
+      "source_id": "fs_anatomical_stats",
+      "quote": "Optional Positional Arguments\n\n<surfacename>\n\nsurface name",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1079,
+        "end": 1137,
+        "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mris_anatomical_stats"
+    },
+    {
+      "id": 2004,
+      "method": "independent_v2_fs_anatomical_stats",
+      "field": "inputs",
+      "statement": "A label file can optionally be supplied to limit calculations.",
+      "source_id": "fs_anatomical_stats",
+      "quote": "-l <label file>\n\nlimit calculations to specified label",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1281,
+        "end": 1335,
+        "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mris_anatomical_stats"
+    },
+    {
+      "id": 2005,
+      "method": "independent_v2_fs_anatomical_stats",
+      "field": "conditions",
+      "statement": "No flagged arguments are required.",
+      "source_id": "fs_anatomical_stats",
+      "quote": "Required Flagged Arguments\n\nnone",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1139,
+        "end": 1171,
+        "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mris_anatomical_stats"
+    },
+    {
+      "id": 2006,
+      "method": "independent_v2_fs_anatomical_stats",
+      "field": "conditions",
+      "statement": "Using -f requires either the -a or -l option to specify input.",
+      "source_id": "fs_anatomical_stats",
+      "quote": "Must use -a or -l options to spec input.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1594,
+        "end": 1634,
+        "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mris_anatomical_stats"
+    },
+    {
+      "id": 2007,
+      "method": "independent_v2_fs_segstats",
+      "field": "inputs",
+      "statement": "Input segmentation volume provided with --seg.",
+      "source_id": "fs_segstats",
+      "quote": "--seg segvol\n\ninput segmentation volume",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1464,
+        "end": 1503,
+        "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mri_segstats"
+    },
+    {
+      "id": 2008,
+      "method": "independent_v2_fs_segstats",
+      "field": "inputs",
+      "statement": "Optional input volume from which more statistics (min, max, range, average, standard deviation) are computed across each segmentation; must be same size and dimension as the segmentation volume.",
+      "source_id": "fs_segstats",
+      "quote": "The input volume must be the same size and dimension as the segmentation volume.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 2206,
+        "end": 2286,
+        "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mri_segstats"
+    },
+    {
+      "id": 2009,
+      "method": "independent_v2_fs_segstats",
+      "field": "inputs",
+      "statement": "Optional mask volume; may be binary or continuous and must be the same size and dimension as the segmentation volume.",
+      "source_id": "fs_segstats",
+      "quote": "The mask volume must be the same size and dimension as the segmentation volume.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 5957,
+        "end": 6036,
+        "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mri_segstats"
+    },
+    {
+      "id": 2010,
+      "method": "independent_v2_fs_segstats",
+      "field": "inputs",
+      "statement": "Optional color table file used to map segmentation indices to names and colors.",
+      "source_id": "fs_segstats",
+      "quote": "Freesurfer color table file. Thi s the file used by FreeSurfer to specify how each segmentation index is mapped to a segmentation name and color.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 2986,
+        "end": 3131,
+        "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mri_segstats"
+    },
+    {
+      "id": 2011,
+      "method": "independent_v2_fs_segstats",
+      "field": "conditions",
+      "statement": "Partial volume compensation with --pv is usually only done when computing anatomical statistics and is not used with --annot.",
+      "source_id": "fs_segstats",
+      "quote": "Usually, this is only done when computing anatomical statistics. Usually the mri/norm.mgz volume is used. Not with --annot",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1912,
+        "end": 2034,
+        "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mri_segstats"
+    },
+    {
+      "id": 2012,
+      "method": "independent_v2_fs_segstats",
+      "field": "conditions",
+      "statement": "If no voxels meet the masking criteria, mri_segstats exits with an error.",
+      "source_id": "fs_segstats",
+      "quote": "If no voxels meet the masking criteria, then mri_segstats exits with an error.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 6037,
+        "end": 6115,
+        "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mri_segstats"
+    },
+    {
+      "id": 2013,
+      "method": "independent_v2_fs_segstats",
+      "field": "conditions",
+      "statement": "Segmentation list may be specified by --id, by a supplied color table, or else all ids from the segmentation volume are used.",
+      "source_id": "fs_segstats",
+      "quote": "If the user does not specify either --id or a color table, then all the ids from the segmentation volume are used.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 9381,
+        "end": 9495,
+        "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mri_segstats"
+    },
+    {
+      "id": 2014,
+      "method": "independent_v2_fs_segstats",
+      "field": "checks",
+      "statement": "Input volume for --i must match the segmentation volume in size and dimension.",
+      "source_id": "fs_segstats",
+      "quote": "The input volume must be the same size and dimension as the segmentation volume.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 2206,
+        "end": 2286,
+        "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mri_segstats"
+    },
+    {
+      "id": 2015,
+      "method": "independent_v2_fs_segstats",
+      "field": "checks",
+      "statement": "Mask volume must match the segmentation volume in size and dimension.",
+      "source_id": "fs_segstats",
+      "quote": "The mask volume must be the same size and dimension as the segmentation volume.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 5957,
+        "end": 6036,
+        "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mri_segstats"
+    },
+    {
+      "id": 2016,
+      "method": "independent_v2_fs_segstats",
+      "field": "exceptions",
+      "statement": "If no voxels meet the masking criteria, the program exits with an error.",
+      "source_id": "fs_segstats",
+      "quote": "If no voxels meet the masking criteria, then mri_segstats exits with an error.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 6037,
+        "end": 6115,
+        "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mri_segstats"
+    },
+    {
+      "id": 2017,
+      "method": "independent_v2_fs_preproc",
+      "field": "inputs",
+      "statement": "Surface measure files per subject, specified via --meas, --is, or --iv alternatives.",
+      "source_id": "fs_preproc",
+      "quote": "--meas surfmeasure\nUse subject/surf/hemi.surfmeasure as input.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 2598,
+        "end": 2660,
+        "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mris_preproc"
+    },
+    {
+      "id": 2018,
+      "method": "independent_v2_fs_preproc",
+      "field": "inputs",
+      "statement": "A subject list supplied via repeated --s, an fsgd file (--fsgd), or a subject list file (--f).",
+      "source_id": "fs_preproc",
+      "quote": "--fsgd fsgdfile\nSpecify the list of input subjects from the fsgd file.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 3055,
+        "end": 3125,
+        "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mris_preproc"
+    },
+    {
+      "id": 2019,
+      "method": "independent_v2_fs_preproc",
+      "field": "inputs",
+      "statement": "For volume input, a volume file and its registration matrix file of the type accepted/created by tkregister2.",
+      "source_id": "fs_preproc",
+      "quote": "The registration matrix file is of the type accepted/created by tkregister2.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 3981,
+        "end": 4057,
+        "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mris_preproc"
+    },
+    {
+      "id": 2020,
+      "method": "independent_v2_fs_preproc",
+      "field": "inputs",
+      "statement": "A target common-space subject and hemisphere (lh or rh) must be given.",
+      "source_id": "fs_preproc",
+      "quote": "--target subject\nSubject to use as the common-space.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 2401,
+        "end": 2453,
+        "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mris_preproc"
+    },
+    {
+      "id": 2021,
+      "method": "independent_v2_fs_preproc",
+      "field": "conditions",
+      "statement": "All subjects must each be specified with their own --s on the command line; --s is for use with --meas.",
+      "source_id": "fs_preproc",
+      "quote": "All subjects must be specified in this way on the command-line (ie, each with its own --s).",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 2942,
+        "end": 3033,
+        "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mris_preproc"
+    },
+    {
+      "id": 2022,
+      "method": "independent_v2_fs_preproc",
+      "field": "conditions",
+      "statement": "--is and --iv are alternatives to --meas but still require that a subject list be supplied.",
+      "source_id": "fs_preproc",
+      "quote": "This is an alternative to using --meas. This still requires that a subject list be supplied.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 3561,
+        "end": 3653,
+        "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mris_preproc"
+    },
+    {
+      "id": 2023,
+      "method": "independent_v2_fs_preproc",
+      "field": "conditions",
+      "statement": "For --paired-diff there must be an even number of inputs.",
+      "source_id": "fs_preproc",
+      "quote": "There must be an even number of inputs.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 5128,
+        "end": 5167,
+        "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mris_preproc"
+    },
+    {
+      "id": 2024,
+      "method": "independent_v2_fs_preproc",
+      "field": "conditions",
+      "statement": "When using full paths with --fsgd, subjects must be in the same order as the input surface files.",
+      "source_id": "fs_preproc",
+      "quote": "which must be in the same order as the --isp",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 8751,
+        "end": 8795,
+        "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mris_preproc"
+    },
+    {
+      "id": 2025,
+      "method": "independent_v2_fs_preproc",
+      "field": "conditions",
+      "statement": "--cache-out-only requires supplying a tmpdir.",
+      "source_id": "fs_preproc",
+      "quote": "If you want to cache without actually creating an output, then --cache-out-only. You must supply a tmpdir.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 6025,
+        "end": 6131,
+        "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mris_preproc"
+    },
+    {
+      "id": 2026,
+      "method": "independent_v2_fs_preproc",
+      "field": "exceptions",
+      "statement": "For ANALYZE and NIFTI formats, spatial dimension may not exceed 32k elements, so reshaping is turned on when these formats are automatically detected.",
+      "source_id": "fs_preproc",
+      "quote": "This will not work for ANALYZE and NIFTI formats because they cannot represent a dimension with more than 32k elements.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 7443,
+        "end": 7562,
+        "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mris_preproc"
+    },
+    {
+      "id": 2027,
+      "method": "independent_v2_fs_preproc",
+      "field": "exceptions",
+      "statement": "None of the paired diff options will affect caching.",
+      "source_id": "fs_preproc",
+      "quote": "None of the paired diff options will affect caching.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 6211,
+        "end": 6263,
+        "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mris_preproc"
+    },
+    {
+      "id": 2028,
+      "method": "independent_v2_fs_surf2surf",
+      "field": "inputs",
+      "statement": "Source subject name in $SUBJECTS_DIR or ico; input data must have been sampled onto this subject's surface.",
+      "source_id": "fs_surf2surf",
+      "quote": "As found in $SUBJECTS_DIR or ico for icosahedron. The input data must have been sampled onto this subject's surface",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1122,
+        "end": 1237,
+        "text_sha256": "02c4e1aef707ab0874c3277e093e442f6a7f99fc5b6ebdfc29491aa4c2f0c6c5"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mri_surf2surf"
+    },
+    {
+      "id": 2029,
+      "method": "independent_v2_fs_surf2surf",
+      "field": "inputs",
+      "statement": "File containing the data on the source surface.",
+      "source_id": "fs_surf2surf",
+      "quote": "Name of file where the data on the source surface is located.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1291,
+        "end": 1352,
+        "text_sha256": "02c4e1aef707ab0874c3277e093e442f6a7f99fc5b6ebdfc29491aa4c2f0c6c5"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mri_surf2surf"
+    },
+    {
+      "id": 2030,
+      "method": "independent_v2_fs_surf2surf",
+      "field": "inputs",
+      "statement": "Target subject name in $SUBJECTS_DIR or ico for icosahedron.",
+      "source_id": "fs_surf2surf",
+      "quote": "name of target subject as found in $SUBJECTS_DIR or ico for icosahedron.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1390,
+        "end": 1462,
+        "text_sha256": "02c4e1aef707ab0874c3277e093e442f6a7f99fc5b6ebdfc29491aa4c2f0c6c5"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mri_surf2surf"
+    },
+    {
+      "id": 2031,
+      "method": "independent_v2_fs_surf2surf",
+      "field": "conditions",
+      "statement": "If source and target subjects differ, the registration surface is used; sphere.reg is the default.",
+      "source_id": "fs_surf2surf",
+      "quote": "If the source and target subjects are not the same, this surface is used to register the two surfaces. sphere.reg is used as the default.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 2580,
+        "end": 2717,
+        "text_sha256": "02c4e1aef707ab0874c3277e093e442f6a7f99fc5b6ebdfc29491aa4c2f0c6c5"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mri_surf2surf"
+    },
+    {
+      "id": 2032,
+      "method": "independent_v2_fs_surf2surf",
+      "field": "exceptions",
+      "statement": "For trg_type w or paint, use the full path for the target file.",
+      "source_id": "fs_surf2surf",
+      "quote": "BUG ALERT: for trg_type w or paint, use the full path.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1558,
+        "end": 1612,
+        "text_sha256": "02c4e1aef707ab0874c3277e093e442f6a7f99fc5b6ebdfc29491aa4c2f0c6c5"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mri_surf2surf"
+    },
+    {
+      "id": 2033,
+      "method": "independent_v2_fs_surf2surf",
+      "field": "exceptions",
+      "statement": "With paint output, specify the output file with a partial path or it will be written into the subject's anatomical directory.",
+      "source_id": "fs_surf2surf",
+      "quote": "When the output format is paint, the output file must be specified with a partial path (eg, ./data-lh.w) or else the output will be written into the subject's anatomical directory.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 5813,
+        "end": 5993,
+        "text_sha256": "02c4e1aef707ab0874c3277e093e442f6a7f99fc5b6ebdfc29491aa4c2f0c6c5"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mri_surf2surf"
+    },
+    {
+      "id": 2034,
+      "method": "independent_v2_wb_metric_resample",
+      "field": "inputs",
+      "statement": "The metric file to resample, typically a native-mesh metric.",
+      "source_id": "wb_metric_resample",
+      "quote": "<metric-in> - the metric file to resample, typically a native-mesh metric",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 4795,
+        "end": 4868,
+        "text_sha256": "4be39435118cef7bb22f14f058f4b215a5af9d7e5fef0c1e6a5ebcd0d0b44656"
+      },
+      "source_url": "https://www.humanconnectome.org/software/workbench-command/-metric-resample"
+    },
+    {
+      "id": 2035,
+      "method": "independent_v2_wb_metric_resample",
+      "field": "inputs",
+      "statement": "A sphere surface in register with the new sphere and having the mesh the metric is currently on.",
+      "source_id": "wb_metric_resample",
+      "quote": "<current-sphere> - a sphere surface that is in register with <new-sphere>",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 4869,
+        "end": 4942,
+        "text_sha256": "4be39435118cef7bb22f14f058f4b215a5af9d7e5fef0c1e6a5ebcd0d0b44656"
+      },
+      "source_url": "https://www.humanconnectome.org/software/workbench-command/-metric-resample"
+    },
+    {
+      "id": 2036,
+      "method": "independent_v2_wb_metric_resample",
+      "field": "inputs",
+      "statement": "A sphere surface that is the desired output mesh, typically a standard sphere.",
+      "source_id": "wb_metric_resample",
+      "quote": "<new-sphere> - a sphere surface that the desired output mesh, typically a\nstandard sphere",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 5086,
+        "end": 5175,
+        "text_sha256": "4be39435118cef7bb22f14f058f4b215a5af9d7e5fef0c1e6a5ebcd0d0b44656"
+      },
+      "source_url": "https://www.humanconnectome.org/software/workbench-command/-metric-resample"
+    },
+    {
+      "id": 2037,
+      "method": "independent_v2_wb_metric_resample",
+      "field": "conditions",
+      "statement": "The method argument must be one of ADAP_BARY_AREA or BARYCENTRIC.",
+      "source_id": "wb_metric_resample",
+      "quote": "The <method> argument must be one of the following:",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 7025,
+        "end": 7076,
+        "text_sha256": "4be39435118cef7bb22f14f058f4b215a5af9d7e5fef0c1e6a5ebcd0d0b44656"
+      },
+      "source_url": "https://www.humanconnectome.org/software/workbench-command/-metric-resample"
+    },
+    {
+      "id": 2038,
+      "method": "independent_v2_wb_metric_resample",
+      "field": "conditions",
+      "statement": "If ADAP_BARY_AREA is used, exactly one of -area-surfs or -area-metrics must be specified.",
+      "source_id": "wb_metric_resample",
+      "quote": "If ADAP_BARY_AREA is used, exactly one of -area-surfs or\n-area-metrics must be specified.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 6259,
+        "end": 6348,
+        "text_sha256": "4be39435118cef7bb22f14f058f4b215a5af9d7e5fef0c1e6a5ebcd0d0b44656"
+      },
+      "source_url": "https://www.humanconnectome.org/software/workbench-command/-metric-resample"
+    },
+    {
+      "id": 2039,
+      "method": "independent_v2_wb_metric_resample",
+      "field": "checks",
+      "statement": "The current sphere must be in register with the new sphere.",
+      "source_id": "wb_metric_resample",
+      "quote": "<current-sphere> - a sphere surface that is in register with <new-sphere>",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 4869,
+        "end": 4942,
+        "text_sha256": "4be39435118cef7bb22f14f058f4b215a5af9d7e5fef0c1e6a5ebcd0d0b44656"
+      },
+      "source_url": "https://www.humanconnectome.org/software/workbench-command/-metric-resample"
+    },
+    {
+      "id": 2040,
+      "method": "independent_v2_wb_metric_resample",
+      "field": "exceptions",
+      "statement": "The -current-roi option only masks the input; the output may be slightly dilated in comparison.",
+      "source_id": "wb_metric_resample",
+      "quote": "The -current-roi option only masks the input, the output may be slightly\ndilated in comparison",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 6670,
+        "end": 6764,
+        "text_sha256": "4be39435118cef7bb22f14f058f4b215a5af9d7e5fef0c1e6a5ebcd0d0b44656"
+      },
+      "source_url": "https://www.humanconnectome.org/software/workbench-command/-metric-resample"
+    },
+    {
+      "id": 2041,
+      "method": "independent_v2_ants_thickness",
+      "field": "inputs",
+      "statement": "Anatomical structural intensity image, typically T1; if multiple are given, later ones are used in segmentation but only the first in prior registration.",
+      "source_id": "ants_thickness_script",
+      "quote": "Structural *intensity* image, typically T1.  If more than one",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1754,
+        "end": 1815,
+        "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+      },
+      "source_url": "https://raw.githubusercontent.com/ANTsX/ANTs/main/Scripts/antsCorticalThickness.sh"
+    },
+    {
+      "id": 2042,
+      "method": "independent_v2_ants_thickness",
+      "field": "inputs",
+      "statement": "Brain segmentation template: an anatomical intensity template that is not skull-stripped.",
+      "source_id": "ants_thickness_script",
+      "quote": "Anatomical *intensity* template. This template is *not* skull-stripped.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 2276,
+        "end": 2347,
+        "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+      },
+      "source_url": "https://raw.githubusercontent.com/ANTsX/ANTs/main/Scripts/antsCorticalThickness.sh"
+    },
+    {
+      "id": 2043,
+      "method": "independent_v2_ants_thickness",
+      "field": "inputs",
+      "statement": "Brain extraction probability mask in the segmentation template space; a binary mask is acceptable.",
+      "source_id": "ants_thickness_script",
+      "quote": "Brain *probability* mask in the segmentation template space. A binary mask",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 3022,
+        "end": 3096,
+        "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+      },
+      "source_url": "https://raw.githubusercontent.com/ANTsX/ANTs/main/Scripts/antsCorticalThickness.sh"
+    },
+    {
+      "id": 2044,
+      "method": "independent_v2_ants_thickness",
+      "field": "inputs",
+      "statement": "Tissue probability priors in template space; at least four must exist for CSF, Cortical GM, WM, Subcortical GM.",
+      "source_id": "ants_thickness_script",
+      "quote": "At least four priors must exist, corresponding to CSF, Cortical GM, WM, Subcortical GM.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 3810,
+        "end": 3897,
+        "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+      },
+      "source_url": "https://raw.githubusercontent.com/ANTsX/ANTs/main/Scripts/antsCorticalThickness.sh"
+    },
+    {
+      "id": 2045,
+      "method": "independent_v2_ants_thickness",
+      "field": "conditions",
+      "statement": "Image dimension must be 2 or 3; other values cause an error.",
+      "source_id": "ants_thickness_script",
+      "quote": "ImageDimension must be 2 or 3",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 20520,
+        "end": 20549,
+        "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+      },
+      "source_url": "https://raw.githubusercontent.com/ANTsX/ANTs/main/Scripts/antsCorticalThickness.sh"
+    },
+    {
+      "id": 2046,
+      "method": "independent_v2_ants_thickness",
+      "field": "conditions",
+      "statement": "If the optional registration template is supplied, the template must be skull-stripped.",
+      "source_id": "ants_thickness_script",
+      "quote": "This template *must* be skull-stripped.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 6476,
+        "end": 6515,
+        "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+      },
+      "source_url": "https://raw.githubusercontent.com/ANTsX/ANTs/main/Scripts/antsCorticalThickness.sh"
+    },
+    {
+      "id": 2047,
+      "method": "independent_v2_ants_thickness",
+      "field": "conditions",
+      "statement": "The optional extraction registration mask must be a binary metric mask defined in the segmentation template space.",
+      "source_id": "ants_thickness_script",
+      "quote": "Binary metric mask defined in the segmentation template space (-e).",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 8167,
+        "end": 8234,
+        "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+      },
+      "source_url": "https://raw.githubusercontent.com/ANTsX/ANTs/main/Scripts/antsCorticalThickness.sh"
+    },
+    {
+      "id": 2048,
+      "method": "independent_v2_ants_thickness",
+      "field": "conditions",
+      "statement": "At least four prior images are required; fewer causes the script to exit.",
+      "source_id": "ants_thickness_script",
+      "quote": "Expected at least 4 prior images",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 27207,
+        "end": 27239,
+        "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+      },
+      "source_url": "https://raw.githubusercontent.com/ANTsX/ANTs/main/Scripts/antsCorticalThickness.sh"
+    },
+    {
+      "id": 2049,
+      "method": "independent_v2_ants_thickness",
+      "field": "conditions",
+      "statement": "The optional registration template may differ from the segmentation template; output in template space then uses the registration template.",
+      "source_id": "ants_thickness_outputs",
+      "quote": "the segmentation template (used for brain extraction and priors) and registration template (used for final, high-quality registration on brain-extracted images) may be different",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 791,
+        "end": 968,
+        "text_sha256": "73c52afc4087a016c0dc8cbe136f327eb65a9c62abf29b2eb8a4f3338445206a"
+      },
+      "source_url": "https://github.com/ANTsX/ANTs/wiki/antsCorticalThickness-and-antsLongitudinalCorticalThickness-output"
+    },
+    {
+      "id": 2050,
+      "method": "independent_v2_ants_thickness",
+      "field": "checks",
+      "statement": "Required programs and scripts are checked for availability on PATH before processing.",
+      "source_id": "ants_thickness_script",
+      "quote": "we can't find the $D program.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 351,
+        "end": 380,
+        "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+      },
+      "source_url": "https://raw.githubusercontent.com/ANTsX/ANTs/main/Scripts/antsCorticalThickness.sh"
+    },
+    {
+      "id": 2051,
+      "method": "independent_v2_ants_thickness",
+      "field": "checks",
+      "statement": "Specified anatomical images are checked for existence.",
+      "source_id": "ants_thickness_script",
+      "quote": "does not exist.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 24300,
+        "end": 24315,
+        "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+      },
+      "source_url": "https://raw.githubusercontent.com/ANTsX/ANTs/main/Scripts/antsCorticalThickness.sh"
+    },
+    {
+      "id": 2052,
+      "method": "independent_v2_ants_thickness",
+      "field": "checks",
+      "statement": "After completion, expected outputs such as BrainExtractionMask, BrainSegmentation and CorticalThickness are checked for existence.",
+      "source_id": "ants_thickness_script",
+      "quote": "Missing output image $img",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 14846,
+        "end": 14871,
+        "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+      },
+      "source_url": "https://raw.githubusercontent.com/ANTsX/ANTs/main/Scripts/antsCorticalThickness.sh"
+    },
+    {
+      "id": 2053,
+      "method": "independent_v2_ants_thickness",
+      "field": "checks",
+      "statement": "The registration component of segmentation is checked for its transform files.",
+      "source_id": "ants_thickness_script",
+      "quote": "The registration component of the segmentation step didn't complete properly.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 38149,
+        "end": 38226,
+        "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+      },
+      "source_url": "https://raw.githubusercontent.com/ANTsX/ANTs/main/Scripts/antsCorticalThickness.sh"
+    },
+    {
+      "id": 2054,
+      "method": "independent_v2_ants_thickness",
+      "field": "exceptions",
+      "statement": "If a command exits with nonzero status, the script exits unless debug mode is enabled.",
+      "source_id": "ants_thickness_script",
+      "quote": "ERROR: command exited with nonzero status $cmdExit",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 17601,
+        "end": 17651,
+        "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+      },
+      "source_url": "https://raw.githubusercontent.com/ANTsX/ANTs/main/Scripts/antsCorticalThickness.sh"
+    },
+    {
+      "id": 2055,
+      "method": "independent_v2_ants_thickness",
+      "field": "exceptions",
+      "statement": "In BIDS prior formatting, a missing required SGM label triggers a fallback to templateflow SCGM; if absent, the script exits.",
+      "source_id": "ants_thickness_script",
+      "quote": "Hack for templateflow - try SCGM instead of SGM",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 26246,
+        "end": 26293,
+        "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+      },
+      "source_url": "https://raw.githubusercontent.com/ANTsX/ANTs/main/Scripts/antsCorticalThickness.sh"
+    },
+    {
+      "id": 2056,
+      "method": "independent_v2_ants_thickness",
+      "field": "exceptions",
+      "statement": "Prior combinations are only allowed for gray matter or white matter; other labels cause an error exit.",
+      "source_id": "ants_thickness_script",
+      "quote": "We only combine with the gray matter or the white matter.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 29165,
+        "end": 29222,
+        "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+      },
+      "source_url": "https://raw.githubusercontent.com/ANTsX/ANTs/main/Scripts/antsCorticalThickness.sh"
+    },
+    {
+      "id": 2057,
+      "method": "independent_v2_ants_thickness",
+      "field": "exceptions",
+      "statement": "If the cortical thickness output is not produced, the script exits with an error.",
+      "source_id": "ants_thickness_script",
+      "quote": "Expected output was not produced.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 56540,
+        "end": 56573,
+        "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+      },
+      "source_url": "https://raw.githubusercontent.com/ANTsX/ANTs/main/Scripts/antsCorticalThickness.sh"
+    },
+    {
+      "id": 2058,
+      "method": "independent_v2_fs_ca_label",
+      "field": "inputs",
+      "statement": "subject id",
+      "source_id": "fs_ca_label",
+      "quote": "<subject>\n\nsubject id",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1504,
+        "end": 1525,
+        "text_sha256": "adec54a1302a3d1d07f108d0f7a11a17359381574733836fc8161e24af1dff5d"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mris_ca_label"
+    },
+    {
+      "id": 2059,
+      "method": "independent_v2_fs_ca_label",
+      "field": "inputs",
+      "statement": "hemisphere: rh or lh",
+      "source_id": "fs_ca_label",
+      "quote": "<hemi>\n\nhemisphere: rh or lh",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1527,
+        "end": 1555,
+        "text_sha256": "adec54a1302a3d1d07f108d0f7a11a17359381574733836fc8161e24af1dff5d"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mris_ca_label"
+    },
+    {
+      "id": 2060,
+      "method": "independent_v2_fs_ca_label",
+      "field": "inputs",
+      "statement": "canonical surface file, e.g. sphere.reg, describing registration of a subject's vertices to the reference average surface",
+      "source_id": "fs_ca_label",
+      "quote": "canonical surface file. Ie: the name of the spherical surface file which describes the registration of a subject's vertices to the reference \"average\" surface. Example: sphere.reg",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1570,
+        "end": 1749,
+        "text_sha256": "adec54a1302a3d1d07f108d0f7a11a17359381574733836fc8161e24af1dff5d"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mris_ca_label"
+    },
+    {
+      "id": 2061,
+      "method": "independent_v2_fs_ca_label",
+      "field": "inputs",
+      "statement": "classifier array input file (atlas file previously prepared from a training set)",
+      "source_id": "fs_ca_label",
+      "quote": "<classifier>\n\nspecify classifier array input file",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1751,
+        "end": 1800,
+        "text_sha256": "adec54a1302a3d1d07f108d0f7a11a17359381574733836fc8161e24af1dff5d"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mris_ca_label"
+    },
+    {
+      "id": 2062,
+      "method": "independent_v2_fs_ca_label",
+      "field": "conditions",
+      "statement": "This automatic procedure employs data from a previously-prepared atlas file.",
+      "source_id": "fs_ca_label",
+      "quote": "This automatic procedure employs data from a previously-prepared atlas file.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 894,
+        "end": 970,
+        "text_sha256": "adec54a1302a3d1d07f108d0f7a11a17359381574733836fc8161e24af1dff5d"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mris_ca_label"
+    },
+    {
+      "id": 2063,
+      "method": "independent_v2_wb_surface_resample",
+      "field": "inputs",
+      "statement": "The surface file to resample, typically a native-mesh anatomical or inflated surface.",
+      "source_id": "wb_surface_resample",
+      "quote": "<surface-in> - the surface file to resample, typically a native-mesh",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 4792,
+        "end": 4860,
+        "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+      },
+      "source_url": "https://www.humanconnectome.org/software/workbench-command/-surface-resample"
+    },
+    {
+      "id": 2064,
+      "method": "independent_v2_wb_surface_resample",
+      "field": "inputs",
+      "statement": "A sphere surface in register with <new-sphere> that uses the mesh the input surface is currently on, typically a registered native-mesh sphere.",
+      "source_id": "wb_surface_resample",
+      "quote": "<current-sphere> - a sphere surface that is in register with <new-sphere>",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 4892,
+        "end": 4965,
+        "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+      },
+      "source_url": "https://www.humanconnectome.org/software/workbench-command/-surface-resample"
+    },
+    {
+      "id": 2065,
+      "method": "independent_v2_wb_surface_resample",
+      "field": "inputs",
+      "statement": "A sphere surface that has the desired output mesh, typically a standard sphere.",
+      "source_id": "wb_surface_resample",
+      "quote": "<new-sphere> - a sphere surface that has the desired output mesh",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 5117,
+        "end": 5181,
+        "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+      },
+      "source_url": "https://www.humanconnectome.org/software/workbench-command/-surface-resample"
+    },
+    {
+      "id": 2066,
+      "method": "independent_v2_wb_surface_resample",
+      "field": "inputs",
+      "statement": "The method name, which must be one of ADAP_BARY_AREA or BARYCENTRIC.",
+      "source_id": "wb_surface_resample",
+      "quote": "<method> - the method name",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 5248,
+        "end": 5274,
+        "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+      },
+      "source_url": "https://www.humanconnectome.org/software/workbench-command/-surface-resample"
+    },
+    {
+      "id": 2067,
+      "method": "independent_v2_wb_surface_resample",
+      "field": "conditions",
+      "statement": "If ADAP_BARY_AREA is used, exactly one of -area-surfs or -area-metrics must be specified.",
+      "source_id": "wb_surface_resample",
+      "quote": "If ADAP_BARY_AREA is used, exactly one of -area-surfs or",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 5948,
+        "end": 6004,
+        "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+      },
+      "source_url": "https://www.humanconnectome.org/software/workbench-command/-surface-resample"
+    },
+    {
+      "id": 2068,
+      "method": "independent_v2_wb_surface_resample",
+      "field": "exceptions",
+      "statement": "For cut surfaces (including flatmaps), use -surface-cut-resample instead.",
+      "source_id": "wb_surface_resample",
+      "quote": "For cut surfaces (including flatmaps), use -surface-cut-resample.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 6244,
+        "end": 6309,
+        "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+      },
+      "source_url": "https://www.humanconnectome.org/software/workbench-command/-surface-resample"
+    },
+    {
+      "id": 2069,
+      "method": "independent_v2_wb_surface_resample",
+      "field": "exceptions",
+      "statement": "Instead of resampling a spherical surface, the -surface-sphere-project-unproject command is recommended.",
+      "source_id": "wb_surface_resample",
+      "quote": "Instead of resampling a spherical surface, the",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 6311,
+        "end": 6357,
+        "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+      },
+      "source_url": "https://www.humanconnectome.org/software/workbench-command/-surface-resample"
+    },
+    {
+      "id": 2070,
+      "method": "independent_v2_wb_surface_resample",
+      "field": "exceptions",
+      "statement": "ADAP_BARY_AREA is not generally recommended for surface resampling, but is provided for completeness.",
+      "source_id": "wb_surface_resample",
+      "quote": "This method is not generally",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 6038,
+        "end": 6066,
+        "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+      },
+      "source_url": "https://www.humanconnectome.org/software/workbench-command/-surface-resample"
+    },
+    {
+      "id": 2071,
+      "method": "independent_v2_fsl_first",
+      "field": "inputs",
+      "statement": "A good quality T1-weighted image is needed to segment the supported structures.",
+      "source_id": "fsl_first",
+      "quote": "FIRST needs a good quality T1-weighted image",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 250,
+        "end": 294,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      },
+      "source_url": "https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/first.html"
+    },
+    {
+      "id": 2072,
+      "method": "independent_v2_fsl_first",
+      "field": "inputs",
+      "statement": "Only T1-weighted images can be used as input to run_first_all.",
+      "source_id": "fsl_first",
+      "quote": "only T1-weighted images can be used",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 4809,
+        "end": 4844,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      },
+      "source_url": "https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/first.html"
+    },
+    {
+      "id": 2073,
+      "method": "independent_v2_fsl_first",
+      "field": "inputs",
+      "statement": "first_flirt should be used on whole-head (non-betted) images.",
+      "source_id": "fsl_first",
+      "quote": "first_flirt should be used on whole-head (non-betted) images",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 32993,
+        "end": 33053,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      },
+      "source_url": "https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/first.html"
+    },
+    {
+      "id": 2074,
+      "method": "independent_v2_fsl_first",
+      "field": "conditions",
+      "statement": "If the registration stage fails then the model fitting will not work, though run_first_all continues to run and may produce outputs.",
+      "source_id": "fsl_first",
+      "quote": "if the registration stage fails then the models fitting will\nnot work",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 31711,
+        "end": 31780,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      },
+      "source_url": "https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/first.html"
+    },
+    {
+      "id": 2075,
+      "method": "independent_v2_fsl_first",
+      "field": "conditions",
+      "statement": "When fitting the cerebellum models, a different transformation matrix than that used for the other structures must be input.",
+      "source_id": "fsl_first",
+      "quote": "you will need to input a different transformation matrix than that used for the other structures",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 32686,
+        "end": 32782,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      },
+      "source_url": "https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/first.html"
+    },
+    {
+      "id": 2076,
+      "method": "independent_v2_fsl_first",
+      "field": "conditions",
+      "statement": "The -cort flag must be specified for first_flirt to perform the registration needed for cerebellum models.",
+      "source_id": "fsl_first",
+      "quote": "first_flirt will not perform the necessary registration by default - the -cort flag must be specified",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 32784,
+        "end": 32885,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      },
+      "source_url": "https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/first.html"
+    },
+    {
+      "id": 2077,
+      "method": "independent_v2_fsl_first",
+      "field": "conditions",
+      "statement": "The full path name to the model must be used with -m.",
+      "source_id": "fsl_first",
+      "quote": "The full path name to the model must be used",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 35806,
+        "end": 35850,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      },
+      "source_url": "https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/first.html"
+    },
+    {
+      "id": 2078,
+      "method": "independent_v2_fsl_first",
+      "field": "checks",
+      "statement": "Check the log directory error outputs; no output means no errors.",
+      "source_id": "fsl_first",
+      "quote": "cat *.logs/*.e*",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 5422,
+        "end": 5437,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      },
+      "source_url": "https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/first.html"
+    },
+    {
+      "id": 2079,
+      "method": "independent_v2_fsl_first",
+      "field": "checks",
+      "statement": "Check registration quality using slicesdir on the registered images.",
+      "source_id": "fsl_first",
+      "quote": "slicesdir -p ${FSLDIR}/data/standard/MNI152_T1_1mm.nii.gz *_to_std_sub.nii.gz",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 11151,
+        "end": 11228,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      },
+      "source_url": "https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/first.html"
+    },
+    {
+      "id": 2080,
+      "method": "independent_v2_fsl_first",
+      "field": "checks",
+      "statement": "Pay particular attention to the sub-cortical structures when assessing registrations.",
+      "source_id": "fsl_first",
+      "quote": "pay particular attention to the sub-cortical structures",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 11858,
+        "end": 11913,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      },
+      "source_url": "https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/first.html"
+    },
+    {
+      "id": 2081,
+      "method": "independent_v2_fsl_first",
+      "field": "checks",
+      "statement": "Check segmentation quality with first_roi_slicesdir, which generates a webpage summary.",
+      "source_id": "fsl_first",
+      "quote": "first_roi_slicesdir is a script to generate summary images, in a webpage format, for the segmentation outputs",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 12483,
+        "end": 12592,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      },
+      "source_url": "https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/first.html"
+    },
+    {
+      "id": 2082,
+      "method": "independent_v2_fsl_first",
+      "field": "exceptions",
+      "statement": "If there are problems, different segmentation options such as number of modes or boundary correction method can be tried using the individual tools.",
+      "source_id": "fsl_first",
+      "quote": "If there are any problems, you can try different segmentation options",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 13075,
+        "end": 13144,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      },
+      "source_url": "https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/first.html"
+    },
+    {
+      "id": 2083,
+      "method": "independent_v2_fsl_first",
+      "field": "exceptions",
+      "statement": "Boundary correction method none is appropriate for models in the 05mm subdirectory.",
+      "source_id": "fsl_first",
+      "quote": "all boundary voxels are considered as belonging to the structure, and hence none is the appropriate correction method",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 40220,
+        "end": 40337,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      },
+      "source_url": "https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/first.html"
+    }
+  ],
+  "status": "unlabelled_pending_blind_Claude_annotation"
+}

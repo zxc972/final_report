@@ -1,0 +1,293 @@
+{
+  "method_id": "independent_v2_fs_preproc",
+  "name": "mris_preproc",
+  "purpose": "Prepare surface-based data for high-level analysis by resampling surface or volume source data to a common subject (usually an average subject) and concatenating them into one file usable by programs such as mri_glmfit.",
+  "species_scope": "unspecified",
+  "software": [
+    "FreeSurfer",
+    "mris_preproc",
+    "mri_glmfit",
+    "mri_surf2surf",
+    "mri_convert",
+    "tkregister2"
+  ],
+  "inputs": [
+    {
+      "statement": "With --meas surfmeasure, input is taken from subject/surf/hemi.surfmeasure.",
+      "source_id": "fs_preproc",
+      "quote": "--meas surfmeasure\nUse subject/surf/hemi.surfmeasure as input.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 2598,
+        "end": 2660,
+        "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+      }
+    },
+    {
+      "statement": "The --fsgd option specifies the input subject list from an FSGD file.",
+      "source_id": "fs_preproc",
+      "quote": "--fsgd fsgdfile\nSpecify the list of input subjects from the fsgd file.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 3055,
+        "end": 3125,
+        "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+      }
+    },
+    {
+      "statement": "The registration matrix file is of the type accepted or created by tkregister2.",
+      "source_id": "fs_preproc",
+      "quote": "The registration matrix file is of the type accepted/created by tkregister2.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 3981,
+        "end": 4057,
+        "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+      }
+    },
+    {
+      "statement": "The --target option selects the common-space subject; --hemi selects lh or rh for source and target surfaces.",
+      "source_id": "fs_preproc",
+      "quote": "--target subject\nSubject to use as the common-space. All the input data will be resampled to the surface of this subject.\n--hemi hemi\nUse hemi for source and target surfaces. hemi can be lh or rh.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 2401,
+        "end": 2597,
+        "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "statement": "When subjects are listed using --s, each has its own --s; this option is for use with --meas.",
+      "source_id": "fs_preproc",
+      "quote": "--s subjN\nSpecify an input subject on the command-line. All subjects must be specified in this way on the command-line (ie, each with its own --s). For use with --meas.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 2886,
+        "end": 3054,
+        "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+      }
+    },
+    {
+      "statement": "The --is option is an alternative to --meas and still requires a supplied subject list.",
+      "source_id": "fs_preproc",
+      "quote": "--is surfmeasfile\nSpecify full path to input surface measure file. This is an alternative to using --meas. This still requires that a subject list be supplied.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 3494,
+        "end": 3653,
+        "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+      }
+    },
+    {
+      "statement": "For --paired-diff there must be an even number of inputs.",
+      "source_id": "fs_preproc",
+      "quote": "--paired-diff\nAfter concatenating all the inputs together, create a new output file by computing paired differences, ie, Input1-Input2, Input3-Input4, etc. There must be an even number of inputs.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 4972,
+        "end": 5167,
+        "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+      }
+    },
+    {
+      "statement": "When using full paths with --fsgd, subjects must be in the same order as the input surface files.",
+      "source_id": "fs_preproc",
+      "quote": "Same as #1 but using full paths. Note there is no --meas, but\n--fsgd still needed to provide list of subjects, which must be in the same order as the --isp.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 8640,
+        "end": 8796,
+        "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+      }
+    },
+    {
+      "statement": "--cache-out-only requires supplying a tmpdir.",
+      "source_id": "fs_preproc",
+      "quote": "If you want to cache without actually creating an output, then --cache-out-only. You must supply a tmpdir.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 6025,
+        "end": 6131,
+        "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "statement": "Surface or volume source data are resampled to a common subject, usually an average subject.",
+      "source_id": "fs_preproc",
+      "quote": "resampling surface or volume source data to a common sujbect (usually an average subject)",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 2149,
+        "end": 2238,
+        "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+      }
+    },
+    {
+      "statement": "Concatenate the resampled inputs into one output file.",
+      "source_id": "fs_preproc",
+      "quote": "Script to prepare surface-based data for high-level analysis by resampling surface or volume source data to a common sujbect (usually an average subject) and then concatenating them into one file",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 2085,
+        "end": 2280,
+        "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+      }
+    },
+    {
+      "statement": "The target surface data may be smoothed by an FWHM specified in millimeters.",
+      "source_id": "fs_preproc",
+      "quote": "Smooth the data on the target surface by fwhm mm.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 4407,
+        "end": 4456,
+        "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+      }
+    },
+    {
+      "statement": "When sampling a volume, sample a fraction of the thickness along the surface normal.",
+      "source_id": "fs_preproc",
+      "quote": "sample a fraction of the thickness along the surface normal",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 4303,
+        "end": 4362,
+        "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+      }
+    },
+    {
+      "statement": "Optionally compute paired differences after concatenation.",
+      "source_id": "fs_preproc",
+      "quote": "After concatenating all the inputs together, create a new output file by computing paired differences",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 4986,
+        "end": 5087,
+        "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+      }
+    },
+    {
+      "statement": "Optionally compute the mean of all inputs after concatenation and possible paired diffs.",
+      "source_id": "fs_preproc",
+      "quote": "After concatenating all the inputs together (and possibly computing paired diffs), compute the mean of all inputs.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 6553,
+        "end": 6667,
+        "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+      }
+    }
+  ],
+  "checks": [],
+  "exceptions": [
+    {
+      "statement": "ANALYZE and NIFTI formats cannot represent a dimension with more than 32k elements.",
+      "source_id": "fs_preproc",
+      "quote": "This will not work for ANALYZE and NIFTI formats because they cannot represent a dimension with more than 32k elements.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 7443,
+        "end": 7562,
+        "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+      }
+    },
+    {
+      "statement": "None of the paired diff options will affect caching.",
+      "source_id": "fs_preproc",
+      "quote": "None of the paired diff options will affect caching.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 6211,
+        "end": 6263,
+        "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "statement": "The --out option specifies the output file.",
+      "source_id": "fs_preproc",
+      "quote": "--out outfile\nSave output here.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 2369,
+        "end": 2400,
+        "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+      }
+    },
+    {
+      "statement": "With caching, per-subject data are saved in the subject's surf directory as hemi.cachefile.",
+      "source_id": "fs_preproc",
+      "quote": "mris_preproc will save the data for each subject, after resampling to the target and smoothing, in the subjects surf directory as hemi.cachefile.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 5688,
+        "end": 5833,
+        "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+      }
+    },
+    {
+      "statement": "Output is a volume-encoded surface file, normally with spatial dimension nvertices-by-1-by-1.",
+      "source_id": "fs_preproc",
+      "quote": "Normally, the output volume-encoded surface file will have spatial dimension of nvertices-by-1-by-1",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 7275,
+        "end": 7374,
+        "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+      }
+    }
+  ],
+  "parameters": [
+    {
+      "statement": "--projfrac sets the projection fraction for vol2surf and is 0-1, default 0.",
+      "source_id": "fs_preproc",
+      "quote": "--projfrac projfrac\nWhen sampling a volume onto the surface, sample a fraction of the thickness along the surface normal. projfrac is 0-1. Default is 0.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 4242,
+        "end": 4394,
+        "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+      }
+    },
+    {
+      "statement": "The --fwhm option smooths data on the target surface by the specified FWHM in millimeters.",
+      "source_id": "fs_preproc",
+      "quote": "--fwhm fwhm\nSmooth the data on the target surface by fwhm mm.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 4395,
+        "end": 4456,
+        "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+      }
+    },
+    {
+      "statement": "--surfreg sets the surface registration to the common space; default is sphere.reg.",
+      "source_id": "fs_preproc",
+      "quote": "Use hemi.SurfReg as the surface registration to the common space. Default is sphere.reg.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 7148,
+        "end": 7236,
+        "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+      }
+    },
+    {
+      "statement": "Using --meas implies --srcfmt curv.",
+      "source_id": "fs_preproc",
+      "quote": "--meas implies --srcfmt curv.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 3836,
+        "end": 3865,
+        "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+      }
+    }
+  ],
+  "quarantined_claims": [],
+  "evidence_status": "exact_quotes_verified_agent_scope_reviewed_blind_gold_pending"
+}
