@@ -1,0 +1,21 @@
+{
+  "status": "offline_passed_protected_reviewed",
+  "checks": {
+    "status": "passed",
+    "checks": [
+      "core_targeted",
+      "compatibility",
+      "sdk_binding",
+      "synthetic_singularity",
+      "backend_default"
+    ],
+    "provider_requests": 0,
+    "real_analysis_requests": 0
+  },
+  "tested_source_files": 369,
+  "tested_source_sha256_file": "8c84a38ad6dcc5cc7d09f3e1aed1d2639935f069c9237e505f2ef9978dde2aae",
+  "protected_scientific_sources_unchanged": true,
+  "backend_default": "1031 passed,18 skipped,59 subtests passed",
+  "analysis_entries_before_release": 0,
+  "provider_calls_in_offline_gates": 0
+}

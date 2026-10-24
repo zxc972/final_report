@@ -246,15 +246,15 @@ def table_contract(plan):
     }
 
 
-def execution_card(payload):
+def detailed_execution_card(payload):
     plan, bundle = payload["plan"], payload["execution_bundle"]
     scope = plan["analysis_scope"]
     if scope.get("global_species_policy", {}).get("variant") == "macaque_direct_native":
-        return macaque_execution_card(payload)
+        return detailed_macaque_execution_card(payload)
     scale = scope["global_scale"]
     lines = [
         "import primatex_ops as ops",
-        *bundle["input_paths"],
+        "Input paths: sealed execution_bundle JSON [input_paths / operations.calls].",
         "ops.read_stats_measures(path)->dict[name:{value:float,unit:str}]",
         "ops.read_surface(path)->vertices,faces; ops.convex_hull_area_ratio(vertices,faces)->surface_area,hull_area,area_ratio",
         "ops.positive_mask_volume(path)->volume_mm3,positive_voxels (only if BrainSegVol absent)",
@@ -278,8 +278,6 @@ def execution_card(payload):
         "Write sealed script; run_python(); auto-finalize.",
     ]
     card = "\n".join(lines)
-    if len(card) > 1500:
-        raise ValueError("Global execution card exceeds 1500 characters")
     return {
         "status": "committed",
         "version": payload["version"],
@@ -288,12 +286,12 @@ def execution_card(payload):
     }
 
 
-def macaque_execution_card(payload):
+def detailed_macaque_execution_card(payload):
     plan, bundle = payload["plan"], payload["execution_bundle"]
     scale = plan["analysis_scope"]["global_scale"]
     lines = [
         "import primatex_ops as ops",
-        *bundle["input_paths"],
+        "Input paths: sealed execution_bundle JSON [input_paths / operations.calls].",
         "read_surface->vertices,faces; vertex_area->per-vertex triangle area/3; read_surface_metric->values; read_label->indices",
         "positive_mask_volume->volume_mm3,positive_voxels; convex_hull_area_ratio->surface_area,hull_area,area_ratio",
         "Code: " + plan["code_path"],
@@ -316,11 +314,17 @@ def macaque_execution_card(payload):
         + "; write sealed script; run_python(); auto-finalize.",
     ]
     card = "\n".join(lines)
-    if len(card) > 1500:
-        raise ValueError("Macaque execution card exceeds1500 characters")
     return {
         "status": "committed",
         "version": payload["version"],
         "execution_card": card,
         "state": payload.get("state"),
     }
+
+
+def execution_card(payload):
+    from .analysis_execution_guidance import compact_payload
+    return compact_payload(payload)
+
+def macaque_execution_card(payload):
+    return execution_card(payload)

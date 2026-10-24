@@ -1,0 +1,666 @@
+[
+  {
+    "id": 2001,
+    "method": "independent_v2_fs_anatomical_stats",
+    "decision": "accepted",
+    "template": "attr_equal",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2002,
+    "method": "independent_v2_fs_anatomical_stats",
+    "decision": "accepted",
+    "template": "attr_equal",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2003,
+    "method": "independent_v2_fs_anatomical_stats",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2004,
+    "method": "independent_v2_fs_anatomical_stats",
+    "decision": "accepted",
+    "template": "label_policy",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2005,
+    "method": "independent_v2_fs_anatomical_stats",
+    "decision": "accepted",
+    "template": "software",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2006,
+    "method": "independent_v2_fs_anatomical_stats",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2007,
+    "method": "independent_v2_fs_segstats",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2008,
+    "method": "independent_v2_fs_segstats",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2009,
+    "method": "independent_v2_fs_segstats",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2010,
+    "method": "independent_v2_fs_segstats",
+    "decision": "accepted",
+    "template": "software",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2011,
+    "method": "independent_v2_fs_segstats",
+    "decision": "accepted",
+    "template": "provenance",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2012,
+    "method": "independent_v2_fs_segstats",
+    "decision": "accepted",
+    "template": "provenance",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2013,
+    "method": "independent_v2_fs_segstats",
+    "decision": "accepted",
+    "template": "provenance",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2014,
+    "method": "independent_v2_fs_segstats",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2015,
+    "method": "independent_v2_fs_segstats",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2016,
+    "method": "independent_v2_fs_segstats",
+    "decision": "accepted",
+    "template": "provenance",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2017,
+    "method": "independent_v2_fs_preproc",
+    "decision": "accepted",
+    "template": "attr_equal",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2018,
+    "method": "independent_v2_fs_preproc",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2019,
+    "method": "independent_v2_fs_preproc",
+    "decision": "accepted",
+    "template": "design_variable",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2020,
+    "method": "independent_v2_fs_preproc",
+    "decision": "accepted",
+    "template": "attr_equal",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2021,
+    "method": "independent_v2_fs_preproc",
+    "decision": "accepted",
+    "template": "provenance",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2022,
+    "method": "independent_v2_fs_preproc",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2023,
+    "method": "independent_v2_fs_preproc",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2024,
+    "method": "independent_v2_fs_preproc",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2025,
+    "method": "independent_v2_fs_preproc",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2026,
+    "method": "independent_v2_fs_preproc",
+    "decision": "accepted",
+    "template": "provenance",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2027,
+    "method": "independent_v2_fs_preproc",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2028,
+    "method": "independent_v2_fs_surf2surf",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2029,
+    "method": "independent_v2_fs_surf2surf",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2030,
+    "method": "independent_v2_fs_surf2surf",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2031,
+    "method": "independent_v2_fs_surf2surf",
+    "decision": "accepted",
+    "template": "cardinality",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2032,
+    "method": "independent_v2_fs_surf2surf",
+    "decision": "accepted",
+    "template": "software",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2033,
+    "method": "independent_v2_fs_surf2surf",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2034,
+    "method": "independent_v2_wb_metric_resample",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2035,
+    "method": "independent_v2_wb_metric_resample",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2036,
+    "method": "independent_v2_wb_metric_resample",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2037,
+    "method": "independent_v2_wb_metric_resample",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2038,
+    "method": "independent_v2_wb_metric_resample",
+    "decision": "accepted",
+    "template": "plausibility",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2039,
+    "method": "independent_v2_wb_metric_resample",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2040,
+    "method": "independent_v2_wb_metric_resample",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2041,
+    "method": "independent_v2_ants_thickness",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2042,
+    "method": "independent_v2_ants_thickness",
+    "decision": "accepted",
+    "template": "asymmetry_flip",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2043,
+    "method": "independent_v2_ants_thickness",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2044,
+    "method": "independent_v2_ants_thickness",
+    "decision": "accepted",
+    "template": "cardinality",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2045,
+    "method": "independent_v2_ants_thickness",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2046,
+    "method": "independent_v2_ants_thickness",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2047,
+    "method": "independent_v2_ants_thickness",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2048,
+    "method": "independent_v2_ants_thickness",
+    "decision": "accepted",
+    "template": "cardinality",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2049,
+    "method": "independent_v2_ants_thickness",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2050,
+    "method": "independent_v2_ants_thickness",
+    "decision": "accepted",
+    "template": "software",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2051,
+    "method": "independent_v2_ants_thickness",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2052,
+    "method": "independent_v2_ants_thickness",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2053,
+    "method": "independent_v2_ants_thickness",
+    "decision": "accepted",
+    "template": "provenance",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2054,
+    "method": "independent_v2_ants_thickness",
+    "decision": "accepted",
+    "template": "software",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2055,
+    "method": "independent_v2_ants_thickness",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2056,
+    "method": "independent_v2_ants_thickness",
+    "decision": "accepted",
+    "template": "label_policy",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2057,
+    "method": "independent_v2_ants_thickness",
+    "decision": "accepted",
+    "template": "plausibility",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2058,
+    "method": "independent_v2_fs_ca_label",
+    "decision": "accepted",
+    "template": "attr_equal",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2059,
+    "method": "independent_v2_fs_ca_label",
+    "decision": "accepted",
+    "template": "asymmetry_flip",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2060,
+    "method": "independent_v2_fs_ca_label",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2061,
+    "method": "independent_v2_fs_ca_label",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2062,
+    "method": "independent_v2_fs_ca_label",
+    "decision": "accepted",
+    "template": "provenance",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2063,
+    "method": "independent_v2_wb_surface_resample",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2064,
+    "method": "independent_v2_wb_surface_resample",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2065,
+    "method": "independent_v2_wb_surface_resample",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2066,
+    "method": "independent_v2_wb_surface_resample",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2067,
+    "method": "independent_v2_wb_surface_resample",
+    "decision": "accepted",
+    "template": "plausibility",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2068,
+    "method": "independent_v2_wb_surface_resample",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2069,
+    "method": "independent_v2_wb_surface_resample",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2070,
+    "method": "independent_v2_wb_surface_resample",
+    "decision": "accepted",
+    "template": "plausibility",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2071,
+    "method": "independent_v2_fsl_first",
+    "decision": "accepted",
+    "template": "plausibility",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2072,
+    "method": "independent_v2_fsl_first",
+    "decision": "accepted",
+    "template": "provenance",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2073,
+    "method": "independent_v2_fsl_first",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2074,
+    "method": "independent_v2_fsl_first",
+    "decision": "accepted",
+    "template": "provenance",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2075,
+    "method": "independent_v2_fsl_first",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2076,
+    "method": "independent_v2_fsl_first",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2077,
+    "method": "independent_v2_fsl_first",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2078,
+    "method": "independent_v2_fsl_first",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2079,
+    "method": "independent_v2_fsl_first",
+    "decision": "accepted",
+    "template": "plausibility",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2080,
+    "method": "independent_v2_fsl_first",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2081,
+    "method": "independent_v2_fsl_first",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2082,
+    "method": "independent_v2_fsl_first",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 2083,
+    "method": "independent_v2_fsl_first",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null,
+    "sampling": {}
+  }
+]

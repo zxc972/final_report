@@ -363,6 +363,10 @@ def execution_gate(tools, script, background=False):
                     actual = None
                 if not manifest.get("sha256") or actual != manifest["sha256"]:
                     return {"allowed": False, "status": "blocked", "reason": "Sealed input manifest changed; replan before execution"}
+            from .analysis_execution_guidance import verify_documents
+            public_bundle = tools.control_store.latest("execution_bundle")
+            if public_bundle and not verify_documents(tools, public_bundle["record"]):
+                return {"allowed": False, "status": "blocked", "reason": "Sealed execution documentation changed; replan before execution"}
             return {
                 "allowed": True,
                 "read_only": False,

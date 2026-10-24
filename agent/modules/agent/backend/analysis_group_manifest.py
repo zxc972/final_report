@@ -20,7 +20,7 @@ def write_manifest(tools,plan,bundle):
     return {'path':'/work/inputs_manifest.json','sha256':hashlib.sha256(raw).hexdigest(),'subject_count':len(groups)}
 
 
-def card(plan,bundle):
+def instructions(plan,bundle):
     scope=plan['analysis_scope'];design=json.dumps(scope['design'],ensure_ascii=False,separators=(',',':'))
     if len(design)>400:design='inputs_manifest.json[design]; effect='+scope['effect']
     regional='subject,hemisphere,metric,label_key,name,vertex_count,mean,std_population,median,zero_count,units'
@@ -37,5 +37,9 @@ def card(plan,bundle):
       'CSV repr/%.17g; summary.json methods,limitations; report.md n/exclusions,FDR,effect size,d_min,site/scanner,stored units/scale limits.',
       'Code: '+plan['code_path']+'; write_code then run_python(); automatic checks and review.']
     text='\n'.join(lines)
-    if len(text)>1500:raise ValueError('Group execution card exceeds 1500 characters; shorten design names')
     return text
+
+
+def card(plan,bundle):
+    from .analysis_execution_guidance import compact_card
+    return compact_card(plan,bundle)

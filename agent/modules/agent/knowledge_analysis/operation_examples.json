@@ -1,7 +1,7 @@
 {
   "schema": "primatex.synthetic_operation_examples.v1",
   "synthetic_only": true,
-  "library_sha256": "b9780babc27324c41329f0c7494a810e95a6a3d6f09c47896ccb366d670d7333",
+  "library_sha256": "dc75a3fefa8d6372278937ad2504f21a05219973adc9f2d1cea940298e7bfac8",
   "examples": {
     "read_surface": {
       "python_type": "tuple",
@@ -336,6 +336,18 @@
           "q_fdr": null
         }
       ]
+    },
+    "write_contract_table": {
+      "path": "/work/synthetic.csv",
+      "rows": 1,
+      "columns": [
+        "subject",
+        "value"
+      ],
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "header": true,
+      "index": false
     }
   },
   "round21_extension": {

@@ -294,6 +294,13 @@ class SandboxExecutor:
         self._validate_license()
         if self.fs_license_file is not None:
             command.extend(["--bind", _mount_spec(self.fs_license_file, CONTAINER_FS_LICENSE, "ro")])
+        for name in ("INPUTS.md", "contract_tables.json"):
+            document = workdir / name
+            if document.exists():
+                _no_symlink_components(document)
+                if not document.is_file():
+                    raise ValueError("Execution documentation must be a regular file")
+                command.extend(["--bind", _mount_spec(document, "/work/" + name, "ro")])
         for i, root in enumerate(inputs):
             command.extend(["--bind", _mount_spec(root, f"/inputs/{i}", "ro")])
         if frozen_source is not None:

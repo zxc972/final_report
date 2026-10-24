@@ -162,7 +162,8 @@ def test_changed_finalized_output_cannot_reuse_receipt(tmp_path, monkeypatch):
 
 def test_actual_operation_examples_cover_all_functions():
     catalogue = operations.operations_manifest()
-    assert len(catalogue["functions"]) == 14  # Round21 adds raw group reading and identity-keyed BH.
+    assert len(catalogue["functions"]) == 15  # Round23 adds the optional canonical contract writer.
+    assert 'write_contract_table' in {r['name'] for r in catalogue['functions']}
     assert {"read_stats_measures", "positive_mask_volume"} <= {r["name"] for r in catalogue["functions"]}
     for row in catalogue["functions"]:
         assert "returns_example" in row
@@ -192,7 +193,8 @@ def test_bounded_returns_and_complete_recoverable_file(tmp_path, monkeypatch):
     assert len(context.serialized(result)) <= 4000
     assert len(result["execution_card"]) <= 1500
     assert "Code: /work/analysis.py" in result["execution_card"]
-    assert "Labels: /work/label_sets." in result["execution_card"]
+    assert '/work/INPUTS.md' in result['execution_card']
+    assert 'Labels: /work/label_sets.' in tools.resolve('/work/INPUTS.md').read_text()
     bundle_ref = original["execution_bundle"]["bundle_ref"]
     recovered = json.loads(tools.resolve(bundle_ref).read_text())
     assert recovered == {key: val for key, val in original["execution_bundle"].items() if key != "label_sets"}

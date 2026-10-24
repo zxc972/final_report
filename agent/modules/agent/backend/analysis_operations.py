@@ -22,6 +22,7 @@ FUNCTIONS = (
     "positive_mask_volume",
     "read_group_inputs",
     "fdr_bh_by_identity",
+    "write_contract_table",
 )
 
 

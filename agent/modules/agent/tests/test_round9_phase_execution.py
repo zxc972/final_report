@@ -71,7 +71,8 @@ def test_real_toolnode_four_tools_force_write_then_error_read_repair(
             bindings.append(kwargs)
             if i == 0:
                 assert set(kwargs["exposed"]) == set(phase.SEALED_TOOLS)
-                assert kwargs["choice"]["function"]["name"] == "write_code"
+                assert kwargs['choice'] is None  # The sealed guide is readable before code is written.
+                assert tools.resolve('/work/INPUTS.md').is_file()
             if i == 2:
                 assert set(kwargs["exposed"]) == set(phase.FAILED_TOOLS)
             sequence = [
@@ -160,12 +161,14 @@ def test_execution_card_is_small_complete_and_exact_return_fields(
     response = tools.model_context.offload("commit_plan", committed)
     card = response["execution_card"]
     assert len(card) <= 1500
+    guide=tools.resolve('/work/INPUTS.md').read_text()
+    assert '/work/INPUTS.md' in card
     assert (
         "label_key/name/vertex_count/mean/std_population/median/zero_count/weight_sum"
-        in card
+        in guide
     )
     for path in committed["execution_bundle"]["input_paths"]:
-        assert path in card
+        assert path in json.dumps(committed['execution_bundle'])
     assert "execution_bundle.v000001.json" in card
     assert "plan" not in response and "next_read" not in response
 

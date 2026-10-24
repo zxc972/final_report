@@ -5,6 +5,7 @@ from __future__ import annotations
 from collections import Counter
 
 CATEGORIES = {
+    'system_defect', 'agent_budget_exhausted', 'review_incomplete', 'contract_failed',
     'contract_mismatch', 'numeric_mismatch', 'review_revision_unfinished',
     'upstream_transport_error', 'environment_auth_failed', 'environment_rate_limited', 'expected_safety_block', 'route_failed', 'budget_exhausted', 'execution_error',
 }
@@ -36,27 +37,34 @@ def classify(metadata, expected_route='analysis'):
         category, reason = 'route_failed', 'No valid dispatch to the requested task type'
     elif status in {'completed', 'inspected'}:
         return {'category': None, 'stop_eligible': False, 'reason': reason}
-    elif review.get('decision') == 'unreviewed' and review.get('protocol_attempts') and not review.get('transport_exhausted'):
-        category, reason = 'review_revision_unfinished', 'Structured review remained invalid after bounded protocol attempts'
-    elif review.get('transport_exhausted') or review.get('decision') == 'unreviewed' or status == 'incomplete_review':
-        category, reason = 'upstream_transport_error', 'Final review remained unavailable after bounded retries'
+    elif metadata.get('system_defects', {}).get('events'):
+        category, reason = 'system_defect', 'Host-generated execution instructions failed; actual model charges are retained and planning-quota exemptions are recorded'
+    elif (review.get('decision') in {'unreviewed','revise','insufficient_evidence'} or review.get('protocol_valid') is False or status == 'incomplete_review'):
+        category, reason = 'review_incomplete', 'A final valid passing internal review was not completed; inspect protocol, transport and protected review-budget counters'
+    elif execution.get('automatic_finalization', {}).get('status') == 'artifact_contract_failed':
+        category, reason = 'contract_failed', 'Current execution did not produce the sealed filenames/headers/required artifacts; observed serialization diagnostics are attached'
     elif public.get('status') == 'fail':
-        category, reason = 'contract_mismatch', 'Public columns, fixed values, identities or row count did not pass'
+        category, reason = 'contract_failed', 'Public columns, fixed values, identities or row count did not pass'
     elif numeric.get('status') == 'fail' or validation.get('independent_numeric_status') == 'fail':
-        category = 'contract_mismatch' if numeric.get('identity_mismatch_count', 0) else 'numeric_mismatch'
-        reason = 'Host identity binding differs' if category == 'contract_mismatch' else 'Independent numeric agreement did not pass'
-    elif review.get('decision') in {'revise', 'insufficient_evidence'} or review.get('protocol_valid') is False:
-        category, reason = 'review_revision_unfinished', 'A valid final passing review was not obtained'
+        category = 'contract_failed' if numeric.get('identity_mismatch_count', 0) else 'numeric_mismatch'
+        reason = 'Host identity binding differs' if category == 'contract_failed' else 'Independent numeric agreement did not pass'
     else:
         error = str(execution.get('agent_error', '')) + ' ' + str(execution.get('error', ''))
         phase = metadata.get('phase_budget', {})
-        if 'budget' in error.lower() or 'planning stage limit' in error.lower() or metadata.get('model_calls', 0) >= 30 or (phase.get('planning_limit') and phase.get('planning_model_calls', 0) >= phase['planning_limit'] and not metadata.get('executions')):
-            category, reason = 'budget_exhausted', 'Logical or planning-stage budget was exhausted'
+        if 'budget' in error.lower() or metadata.get('review_budget',{}).get('nonreview_model_calls',0) >= metadata.get('review_budget',{}).get('nonreview_limit',float('inf')) or 'planning stage limit' in error.lower() or metadata.get('model_calls', 0) >= 30 or (phase.get('planning_limit') and phase.get('planning_model_calls', 0) >= phase['planning_limit'] and not metadata.get('executions')):
+            category, reason = 'agent_budget_exhausted', 'Agent logical/non-review or planning-stage allowance was exhausted without a recorded host defect'
         elif 'transport unavailable' in error.lower():
             category, reason = 'upstream_transport_error', 'Coding model transport retries exhausted'
         else:
             category, reason = 'execution_error', 'No current successful completed analysis was produced'
-    return {'category': category, 'stop_eligible': category not in {None, 'upstream_transport_error'}, 'reason': reason}
+    review_transport = category == 'review_incomplete' and (review.get('transport_exhausted') is True or
+        (status == 'incomplete_review' and not review.get('protocol_attempts') and review.get('decision') not in {'revise','insufficient_evidence'}))
+    if review_transport:reason = 'Final passing internal review unavailable after transport; recorded separately and excluded from model failure stops'
+    return {'category': category, 'stop_eligible': category not in {None, 'upstream_transport_error'} and not review_transport, 'reason': reason,
+            'basis': {'system_defect_codes':[e.get('code') for e in metadata.get('system_defects',{}).get('events',[])],
+                      'review_decision':review.get('decision'),'review_protocol_attempts':review.get('protocol_attempts'),
+                      'review_transport_exhausted':review.get('transport_exhausted'),'public_contract_status':public.get('status'),
+                      'review_budget':metadata.get('review_budget'),'phase_budget':metadata.get('phase_budget')}}
 
 
 def failure_counts(results):

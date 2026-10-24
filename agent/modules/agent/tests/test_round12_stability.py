@@ -241,6 +241,6 @@ def test_format_exhaustion_is_not_counted_as_transport_failure():
         },
     }
     result = policy.classify(metadata)
-    assert result["category"] == "review_revision_unfinished"
+    assert result["category"] == "review_incomplete"
     assert result["stop_eligible"] is True
     assert policy.should_stop([result, result])

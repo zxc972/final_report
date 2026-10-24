@@ -280,9 +280,11 @@ class AnalysisSession:
                 outputs_complete=False,
                 finalized_receipt=None,
             )
+            from .analysis_contract_diagnostics import outputs
             execution["automatic_finalization"] = {
                 "status": "artifact_contract_failed",
                 "error": reason,
+                "serialization_diagnostics": outputs(self.tools),
             }
             return execution["automatic_finalization"]
         self._save(

@@ -201,7 +201,9 @@ def test_round17_budget_reserves_separate_extraction_cap(tmp_path):
     assert r.DEV_CAP + r.EXTRACTION_CAP == 1200
     cfg = t.Config(base_url="https://gateway.invalid/v1", api_key=SECRET)
     assert "thinking" not in cfg.public() and "response_format" not in cfg.public()
-    with pytest.raises(ValueError, match="1200"):
+    import inspect
+    assert inspect.signature(t.Provider).parameters['authorized_max_requests'].default == 1200
+    with pytest.raises(ValueError, match="explicit round authorization"):
         t.Provider(cfg, tmp_path, 1201)
 
 

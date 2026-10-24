@@ -434,3 +434,68 @@ def fdr_bh_by_identity(pvalues):
         previous = min(previous, p * count / (index + 1))
         output[identity] = previous
     return output
+
+
+CONTRACT_WORKDIR = "/work"
+
+
+def write_contract_table(table_name, rows):
+    """Serialize row dicts using the sealed filename and ordered CSV columns.
+
+    UTF-8, comma delimiter, one header and no index. Native floats use repr;
+    None is an empty cell. This helper computes no statistics and never maps
+    aliases, fills missing fields or changes the public contract.
+    """
+    import csv
+    import json
+    import math
+    import numbers
+    import os
+    import stat
+    from pathlib import Path
+    root = Path(CONTRACT_WORKDIR)
+    layout = json.loads((root / "contract_tables.json").read_text(encoding="utf-8"))
+    tables = layout["tables"]
+    if table_name not in tables:
+        raise ValueError("Unknown sealed table name; choose " + ", ".join(tables))
+    relative = Path(table_name)
+    if relative.is_absolute() or len(relative.parts) != 1 or relative.name in {".", ".."}:
+        raise ValueError("Sealed table name must be a filename beneath /work")
+    columns = tables[table_name]["columns"]
+    if not columns or len(columns) != len(set(columns)):
+        raise ValueError("Invalid sealed serialization columns")
+    target = root / table_name
+    if target.is_symlink():
+        raise ValueError("Contract output cannot be a symlink")
+    flags = os.O_WRONLY | os.O_CREAT | os.O_TRUNC | getattr(os, "O_NOFOLLOW", 0)
+    descriptor = os.open(target, flags, 0o600)
+    if not stat.S_ISREG(os.fstat(descriptor).st_mode):
+        os.close(descriptor)
+        raise ValueError("Contract output must be a regular file")
+    count = 0
+    with os.fdopen(descriptor, "w", encoding="utf-8", newline="") as stream:
+        writer = csv.writer(stream, delimiter=",", lineterminator="\n")
+        writer.writerow(columns)
+        for row in rows:
+            if not isinstance(row, dict):
+                raise ValueError("Contract rows must be dicts keyed by sealed column names")
+            missing = [name for name in columns if name not in row]
+            if missing:
+                raise ValueError("Missing row fields: " + ", ".join(missing) + "; observed: " + ", ".join(map(str, row)))
+            values = []
+            for name in columns:
+                value = row[name]
+                if value is None:
+                    value = ""
+                elif isinstance(value, numbers.Integral):
+                    value = str(int(value))
+                elif isinstance(value, numbers.Real):
+                    value = float(value)
+                    if not math.isfinite(value):
+                        raise ValueError("Non-finite contract value for " + name + "; use None only where allowed")
+                    value = repr(value)
+                values.append(value)
+            writer.writerow(values)
+            count += 1
+    return {"path": "/work/" + table_name, "rows": count, "columns": columns,
+            "encoding": "utf-8", "delimiter": ",", "header": True, "index": False}

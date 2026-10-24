@@ -1,0 +1,232 @@
+{
+  "baseline": "12f8fbd2b12622c3b67c3e204722028f7b28b42e",
+  "intentional_backend_changes": [
+    {
+      "path": "agent/modules/agent/backend/analysis_agent.py",
+      "before_sha256": "49e0ed0b4997b541c61dc11c8f2edf5ef9dbf208993de40b0ae59a1d35f392f4",
+      "after_sha256": "d82cbb69adbec0337aab6f87dcfd4c079c11107675a897f1a406dcd0cd00579a",
+      "reason": "Typed host defects, phase-correct reflection, protected read-only guide reads, and separate internal-review reservation; actual/native counters retained."
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_execution_card.py",
+      "before_sha256": "7769a2522136dabf2ed0a7806f7a7b90fbc24a28b8423073b1e9f09485330d83",
+      "after_sha256": "436dfa9fb88be72fe048c3835bf0395e4d2be84bb1d1e5b0f1babfd79320e9fa",
+      "reason": "Move detailed public instructions to INPUTS.md and return bounded cards."
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_execution_guidance.py",
+      "before_sha256": null,
+      "after_sha256": "5448ff6c86964ea736e581cb78341977ec48de747a2a06d48008aad621b95625",
+      "reason": "New bounded card and sealed schema/guide files; exact scientific detail kept in read-only documents."
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_executor.py",
+      "before_sha256": "159d159dc3294319f7ebc5bef2f5491fcd439980491b29ca44570329fb8dfa4e",
+      "after_sha256": "7f51e26cfbd05b70d6cddc6d55bd80fc3e2a6cede685e9197e51a7ddd218d0d6",
+      "reason": "Bind two sealed guide/schema files read-only in the real analysis container."
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_failure_classification.py",
+      "before_sha256": "03419fbb2355e844479517646f955ec2b0b19afd5a5bfe140cc7376050c09eb9",
+      "after_sha256": "ce73786fdbe878563b2da5edf7d87eaf63edbac7b040d3c3c74927c5c9a0fd07",
+      "reason": "Report host defects, Agent exhaustion, incomplete review and contract failures separately with evidence."
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_feedback.py",
+      "before_sha256": "e7bc256041b0c514f9148405f8e6fba5c40615f733f467ea085c77a5f380a360",
+      "after_sha256": "2341b72a22fed17e53985e8c31125a1fee285d258027fbb9b2e0841baf7441ae",
+      "reason": "Recognize typed host defects as failures while preserving observed reasons."
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_global_method.py",
+      "before_sha256": "309b3c2496f9cdc3679d95ad06e3b3760752295af57d54c2215246c1a966643d",
+      "after_sha256": "42f26640915a0ae11ac0208dd8b438a49f727e530f413f964df26e8956588b83",
+      "reason": "Move global execution descriptions to detailed guide functions; species formulas and contracts unchanged."
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_group_manifest.py",
+      "before_sha256": "3ad9241e7e335fb37aefd3e5c13efd5cf51ca79d5c43eba6c9c9965f12b73ef8",
+      "after_sha256": "64dc14da8963ca5a50221bac2a4ac516164886fb66cd396b7dd11ea7e89a9e83",
+      "reason": "Move existing group input/science instructions into the read-only guide; bounded wrapper."
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_operations.py",
+      "before_sha256": "afe8981983b598e4855fe8797b386be59d7ae6391ec9fa462af16993ed44c2cc",
+      "after_sha256": "0ac18c754c9ac3dcb932d9677dd4d49ca44ca5dd335774c525ca717b58716caf",
+      "reason": "Register the generic optional contract serializer; old operation catalogue entries retained."
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_output_contract.py",
+      "before_sha256": "7168f302dcbd4c5f989f21686cf33e0830b739ed582ad5c5cf8b91f26c84c39e",
+      "after_sha256": "716c2b771ce0bed611a04ca8a0f189c50d0e4164fd590661fd198326d91a5bda",
+      "reason": "Attach observed CSV headers/delimiters after existing validator rejects; validate_csv AST unchanged."
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_phase_tools.py",
+      "before_sha256": "3cc3c001844a50bf4ee9b3957ca66b45878523092507eb5918ccc45577657e62",
+      "after_sha256": "6c9bd3d55d8bb34fef11d6e17722e2c6ba62695020819167c099550f0baf280a",
+      "reason": "Allow only sealed public guide/schema reads before coding; phase-correct budget notice."
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_planning_budget.py",
+      "before_sha256": "e4f8ac4ec49b9953df918f0264a5c8aa589c2c4f1d808ab64632442c4eae07e3",
+      "after_sha256": "06cb74bc85f99296184266fb9d979763af33a599866c1d088554d64ba13f88a8",
+      "reason": "Record actual planning calls separately from host-defect exemptions; limits unchanged."
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_policy.py",
+      "before_sha256": "42396ebcbba59d39d6781d5fe814731961e53d9eec0c794a40b52694a46ae388",
+      "after_sha256": "37b98068e3902dabd438a1cddedf503d949f94cc16b8d2fc8a2aa9bbf7c29e3a",
+      "reason": "Align execution-only policy text with the sealed guide/schema read path; scientific instructions and condition-canonicalization prompts unchanged."
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_plans.py",
+      "before_sha256": "1a47389121a6f9eda15fe14f97c40cbcf5ddbcf4d8a3bf47737ee1b9aa67ffe4",
+      "after_sha256": "146897b86aee10a566ac75aa8c910590f71e3635a0997cd892cadf280d2c3eae",
+      "reason": "Verify sealed document digests at execution gate."
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_product_planner.py",
+      "before_sha256": "0e880d1b3fb06db5cfc8f795c7f5923c16b4dc223a506b819cf4c6116745f0ad",
+      "after_sha256": "cbeecf46a05e33879e57a0f1be5884034aab35e709f26bfc9dab2c5f48866fb7",
+      "reason": "Write and bind read-only execution documents at commitment; matching/planning algorithms unchanged."
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_provider.py",
+      "before_sha256": "1b355a13406b4e0cb3a5a1a0670ee54300675d265f256b8d8b6e20ea6fad133b",
+      "after_sha256": "51a701fffb1098b1d1e86aa1a7aed24349cc8841973c927ce9e9b110cd336c57",
+      "reason": "Charge every actual internal-review HTTP attempt, including retries, to the four reserved credits before native charge/send."
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_session.py",
+      "before_sha256": "0bcac5a06c1137d6c7186dfc4b9fe70f30fe7aaa8aa284140d9c6b504c6b8093",
+      "after_sha256": "f2d40b1434d9dde01b71f6f8a24b600786d11e28347e924f95cdc72a7423fa88",
+      "reason": "Include observed filenames/header/delimiter diagnostics after automatic finalization fails."
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_review_budget.py",
+      "before_sha256": null,
+      "after_sha256": "853970b3691461986814e422225d3fe7558b57c5e9514923f9be712d30d46716",
+      "reason": "New four-credit review reservation inside unchanged total budget; coding cannot borrow; native counters unchanged."
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_system_defects.py",
+      "before_sha256": null,
+      "after_sha256": "c0887f203fa090bdc85f29775ca2b02d45e0b53621331374b058d1abc1a25bef",
+      "reason": "New typed defect observation, effective planning exemption and stop after repeated host defect."
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_contract_diagnostics.py",
+      "before_sha256": null,
+      "after_sha256": "526a59e4d0060ebd3e9ba4d3dbbb57bd90562615d9eee963eb5dd444c8cb7712",
+      "reason": "Diagnostic-only delimiter/header observations; no aliases, reparsing or numeric fixes."
+    },
+    {
+      "path": "agent/modules/agent/backend/primatex_ops.py",
+      "before_sha256": "b9780babc27324c41329f0c7494a810e95a6a3d6f09c47896ccb366d670d7333",
+      "after_sha256": "dc75a3fefa8d6372278937ad2504f21a05219973adc9f2d1cea940298e7bfac8",
+      "reason": "Append optional canonical CSV serializer; all 14 existing public operation ASTs unchanged."
+    }
+  ],
+  "unchanged_scientific_sources": [
+    {
+      "path": "agent/modules/agent/backend/analysis_group_stats.py",
+      "sha256": "f57662330c479b80562e7172c9c84fe2790ef25101488226e1b50d4da759bd71",
+      "unchanged": true
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_numeric_reference.py",
+      "sha256": "cf3a5e7a808d1b59d61bdc55115f8c66df2daecda036a8e1e8ab2976f1d420a1",
+      "unchanged": true
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_global_reference.py",
+      "sha256": "6082436fb2161aa437a2012abbf0ffc336aebfe0e4df7fb647cccdaf3d860049",
+      "unchanged": true
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_global_reference_worker.py",
+      "sha256": "cb6241eed6e347d4809242468c20425d3528ddab373bc28955aaf6ea1af5ebf0",
+      "unchanged": true
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_group_contract.py",
+      "sha256": "93a682ab0e54b82724662782750fc0c9600a949fb100700ec5ab069ebf4e6a65",
+      "unchanged": true
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_precision.py",
+      "sha256": "34bc2b94b529cacceb34af5fbc99f0ab99f1a898598dec932d290d7655f3274c",
+      "unchanged": true
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_internal_review.py",
+      "sha256": "6d5661cba5f4395fd5e4bbb205ba6caf2d83d13025758d8b903efd70c15a53e2",
+      "unchanged": true
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_review_protocol.py",
+      "sha256": "94bffd70c2ef39054244e7ae6284b4d59a91e47523cb0cd4a89cdc56b4d2fc7a",
+      "unchanged": true
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_group_reporting.py",
+      "sha256": "d1de260ede26a2195d8bac35e038c224766a11f6736be81d1abc62c5cbb2ea16",
+      "unchanged": true
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_independent_numeric.py",
+      "sha256": "b98afb76d966fb524a7b2246e8d4f23c3202b12ca79f08725ccc398982a508a6",
+      "unchanged": true
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_condition_canonicalizer.py",
+      "sha256": "140669418d7a6603df4dbe55be7a677d9f0d8bff92d7255a7aadff1892bb07d8",
+      "unchanged": true
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_region_resolver.py",
+      "sha256": "bfc4f28059181e25d500977e97367b303a8e8249000b1198370ce607e053b264",
+      "unchanged": true
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_csp_matching.py",
+      "sha256": "e75768b097c05d7d568c4c48ee3fd4b548b047b0f64f8ff745ef5157279ec001",
+      "unchanged": true
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_andor_planner.py",
+      "sha256": "ed82645d69ccd9eda61950edab89cbe871e3dd32f7dc397424ce75919aea6854",
+      "unchanged": true
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_transport.py",
+      "sha256": "1ed187c81a8c1b523f7d5031bcd10bb26f30a1305d0e54c355e0332f9a0af34a",
+      "unchanged": true
+    },
+    {
+      "path": "agent/modules/agent/backend/agent_chat_state.py",
+      "sha256": "b0d204bff0c0036855501b4a1f1d0ace786dc79c94e6886c59351e2068f4d0c7",
+      "unchanged": true
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_call_context.py",
+      "sha256": "66901bdcb18b321dff82afff02d64a4edca0c6cfa48580fdc7cf2eb5581c1f2d",
+      "unchanged": true
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_http_observer.py",
+      "sha256": "ed9f6d3a7f61f5d94c4de0eaab3a2f45d5a984019f7a0b4202fa5ec3dcd81fec",
+      "unchanged": true
+    }
+  ],
+  "public_validate_csv_AST_unchanged": true,
+  "global_candidate_and_table_contract_AST_unchanged": true,
+  "all_old_operations_AST_unchanged": true,
+  "old_14_operation_examples_unchanged": true,
+  "operation_metadata_reason": "Append actual synthetic serializer receipt; bind the new library SHA only.",
+  "research_files_unchanged": 82,
+  "algorithm_parameters_prompts_vocabulary_unchanged": true,
+  "native_http_metering_and_retry_policy_unchanged": true,
+  "unexpected_changes": []
+}

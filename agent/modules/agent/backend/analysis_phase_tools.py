@@ -3,7 +3,7 @@
 from pathlib import PurePosixPath
 
 SEALED_TOOLS = frozenset(
-    {"write_code", "run_python", "read_operations", "finalize_artifacts"}
+    {"write_code", "run_python", "read_operations", "read_file", "finalize_artifacts"}
 )
 FAILED_TOOLS = SEALED_TOOLS | {"read_file", "record_analysis_reflection"}
 
@@ -76,6 +76,10 @@ def restrict_request(tools, request):
     force_write = force_write and tools.session.record.get(
         "tool_choice_supported", True
     )
+    bundle = tools.control_store.latest("execution_bundle")
+    if bundle and bundle["record"].get("execution_documents"):
+        # A newly separated guide must be readable before forcing a code write.
+        force_write = False
     choice = (
         {"type": "function", "function": {"name": "write_code"}}
         if force_write
@@ -115,15 +119,18 @@ def restrict_request(tools, request):
     )
     from .analysis_planning_budget import budget_hint
     hint = budget_hint(tools)
-    if hint:
+    from .analysis_review_budget import notice
+    review_notice = notice(tools)
+    if hint or review_notice:
         from langchain_core.messages import HumanMessage
-        tools.events.append("plan", "warn", "Planning limit: seal or decline", {
-            "planning_model_calls": tools.session.record.get("planning_model_calls", 0),
-            "planning_model_limit": tools.session.record.get("planning_model_limit"),
-            "reserved_execution_calls": 9, "available_tools": sorted(allowed),
-        })
+        if hint:
+            tools.events.append("plan", "warn", "Planning limit: seal or decline", {
+                "planning_model_calls": tools.session.record.get("planning_model_calls", 0),
+                "planning_model_limit": tools.session.record.get("planning_model_limit"),
+                "reserved_execution_calls": 9, "available_tools": sorted(allowed),
+            })
         return request.override(tools=selected, tool_choice=choice,
-                                messages=[*request.messages, HumanMessage(content=hint)])
+                                messages=[*request.messages, HumanMessage(content="\n".join(v for v in [hint, review_notice] if v))])
     return request.override(tools=selected, tool_choice=choice)
 
 

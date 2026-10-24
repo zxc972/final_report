@@ -1,0 +1,275 @@
+{
+  "reviewed_utc": "2026-10-24T07:22:13.209007+00:00",
+  "original_exports_unchanged": true,
+  "corrections": [
+    {
+      "case": "R22_G1_2",
+      "corrected_category": "system_defect",
+      "basis": "Repeated host-generated execution card overflow; unavailable planning reflection was required. Actual budget exhaustion is the downstream stop, not the root cause.",
+      "distinct_observed_failures": 13,
+      "observations": [
+        {
+          "error": "Execution card exceeds 2200 characters; choose a smaller analysis scope",
+          "reflection_required": true,
+          "phase": "planned",
+          "request_file": "http_051_request.json"
+        },
+        {
+          "error": "Execution card exceeds 2200 characters; choose a smaller analysis scope",
+          "reflection_required": true,
+          "phase": "planned",
+          "request_file": "http_051_request.json"
+        },
+        {
+          "error": "Execution card exceeds 2200 characters; choose a smaller analysis scope",
+          "reflection_required": true,
+          "phase": "planned",
+          "request_file": "http_051_request.json"
+        },
+        {
+          "error": "Execution card exceeds 2200 characters; choose a smaller analysis scope",
+          "reflection_required": true,
+          "phase": "planned",
+          "request_file": "http_051_request.json"
+        },
+        {
+          "error": "Execution card exceeds 2200 characters; choose a smaller analysis scope",
+          "reflection_required": true,
+          "phase": "planned",
+          "request_file": "http_051_request.json"
+        },
+        {
+          "error": "Execution card exceeds 2200 characters; choose a smaller analysis scope",
+          "reflection_required": true,
+          "phase": "planned",
+          "request_file": "http_051_request.json"
+        },
+        {
+          "error": "Execution card exceeds 2200 characters; choose a smaller analysis scope",
+          "reflection_required": true,
+          "phase": "planned",
+          "request_file": "http_051_request.json"
+        },
+        {
+          "error": "Execution card exceeds 2200 characters; choose a smaller analysis scope",
+          "reflection_required": true,
+          "phase": "planned",
+          "request_file": "http_051_request.json"
+        },
+        {
+          "error": "Execution card exceeds 2200 characters; choose a smaller analysis scope",
+          "reflection_required": true,
+          "phase": "planned",
+          "request_file": "http_051_request.json"
+        },
+        {
+          "error": "Execution card exceeds 2200 characters; choose a smaller analysis scope",
+          "reflection_required": true,
+          "phase": "planned",
+          "request_file": "http_051_request.json"
+        },
+        {
+          "error": "Execution card exceeds 2200 characters; choose a smaller analysis scope",
+          "reflection_required": true,
+          "phase": "planned",
+          "request_file": "http_051_request.json"
+        },
+        {
+          "error": "Execution card exceeds 2200 characters; choose a smaller analysis scope",
+          "reflection_required": true,
+          "phase": "planned",
+          "request_file": "http_051_request.json"
+        },
+        {
+          "error": "Execution card exceeds 2200 characters; choose a smaller analysis scope",
+          "reflection_required": true,
+          "phase": "planned",
+          "request_file": "http_051_request.json"
+        }
+      ]
+    },
+    {
+      "case": "R22_G2_2",
+      "corrected_category": "system_defect",
+      "basis": "Repeated host-generated execution card overflow; unavailable planning reflection was required. Actual budget exhaustion is the downstream stop, not the root cause.",
+      "distinct_observed_failures": 14,
+      "observations": [
+        {
+          "error": "Execution card exceeds 2200 characters; choose a smaller analysis scope",
+          "reflection_required": true,
+          "phase": "planned",
+          "request_file": "http_129_request.json"
+        },
+        {
+          "error": "Execution card exceeds 2200 characters; choose a smaller analysis scope",
+          "reflection_required": true,
+          "phase": "planned",
+          "request_file": "http_129_request.json"
+        },
+        {
+          "error": "Execution card exceeds 2200 characters; choose a smaller analysis scope",
+          "reflection_required": true,
+          "phase": "planned",
+          "request_file": "http_129_request.json"
+        },
+        {
+          "error": "Execution card exceeds 2200 characters; choose a smaller analysis scope",
+          "reflection_required": true,
+          "phase": "planned",
+          "request_file": "http_129_request.json"
+        },
+        {
+          "error": "Execution card exceeds 2200 characters; choose a smaller analysis scope",
+          "reflection_required": true,
+          "phase": "planned",
+          "request_file": "http_129_request.json"
+        },
+        {
+          "error": "Execution card exceeds 2200 characters; choose a smaller analysis scope",
+          "reflection_required": true,
+          "phase": "planned",
+          "request_file": "http_129_request.json"
+        },
+        {
+          "error": "Execution card exceeds 2200 characters; choose a smaller analysis scope",
+          "reflection_required": true,
+          "phase": "planned",
+          "request_file": "http_129_request.json"
+        },
+        {
+          "error": "Execution card exceeds 2200 characters; choose a smaller analysis scope",
+          "reflection_required": true,
+          "phase": "planned",
+          "request_file": "http_129_request.json"
+        },
+        {
+          "error": "Execution card exceeds 2200 characters; choose a smaller analysis scope",
+          "reflection_required": true,
+          "phase": "planned",
+          "request_file": "http_129_request.json"
+        },
+        {
+          "error": "Execution card exceeds 2200 characters; choose a smaller analysis scope",
+          "reflection_required": true,
+          "phase": "planned",
+          "request_file": "http_129_request.json"
+        },
+        {
+          "error": "Execution card exceeds 2200 characters; choose a smaller analysis scope",
+          "reflection_required": true,
+          "phase": "planned",
+          "request_file": "http_129_request.json"
+        },
+        {
+          "error": "Execution card exceeds 2200 characters; choose a smaller analysis scope",
+          "reflection_required": true,
+          "phase": "planned",
+          "request_file": "http_129_request.json"
+        },
+        {
+          "error": "Execution card exceeds 2200 characters; choose a smaller analysis scope",
+          "reflection_required": true,
+          "phase": "planned",
+          "request_file": "http_129_request.json"
+        },
+        {
+          "error": "Execution card exceeds 2200 characters; choose a smaller analysis scope",
+          "reflection_required": true,
+          "phase": "planned",
+          "request_file": "http_129_request.json"
+        }
+      ]
+    },
+    {
+      "case": "R22_G2_3",
+      "corrected_category": "system_defect",
+      "basis": "Repeated host-generated execution card overflow; unavailable planning reflection was required. Actual budget exhaustion is the downstream stop, not the root cause.",
+      "distinct_observed_failures": 13,
+      "observations": [
+        {
+          "error": "Execution card exceeds 2200 characters; choose a smaller analysis scope",
+          "reflection_required": true,
+          "phase": "planned",
+          "request_file": "http_148_request.json"
+        },
+        {
+          "error": "Execution card exceeds 2200 characters; choose a smaller analysis scope",
+          "reflection_required": true,
+          "phase": "planned",
+          "request_file": "http_148_request.json"
+        },
+        {
+          "error": "Execution card exceeds 2200 characters; choose a smaller analysis scope",
+          "reflection_required": true,
+          "phase": "planned",
+          "request_file": "http_148_request.json"
+        },
+        {
+          "error": "Execution card exceeds 2200 characters; choose a smaller analysis scope",
+          "reflection_required": true,
+          "phase": "planned",
+          "request_file": "http_148_request.json"
+        },
+        {
+          "error": "Execution card exceeds 2200 characters; choose a smaller analysis scope",
+          "reflection_required": true,
+          "phase": "planned",
+          "request_file": "http_148_request.json"
+        },
+        {
+          "error": "Execution card exceeds 2200 characters; choose a smaller analysis scope",
+          "reflection_required": true,
+          "phase": "planned",
+          "request_file": "http_148_request.json"
+        },
+        {
+          "error": "Execution card exceeds 2200 characters; choose a smaller analysis scope",
+          "reflection_required": true,
+          "phase": "planned",
+          "request_file": "http_148_request.json"
+        },
+        {
+          "error": "Execution card exceeds 2200 characters; choose a smaller analysis scope",
+          "reflection_required": true,
+          "phase": "planned",
+          "request_file": "http_148_request.json"
+        },
+        {
+          "error": "Execution card exceeds 2200 characters; choose a smaller analysis scope",
+          "reflection_required": true,
+          "phase": "planned",
+          "request_file": "http_148_request.json"
+        },
+        {
+          "error": "Execution card exceeds 2200 characters; choose a smaller analysis scope",
+          "reflection_required": true,
+          "phase": "planned",
+          "request_file": "http_148_request.json"
+        },
+        {
+          "error": "Execution card exceeds 2200 characters; choose a smaller analysis scope",
+          "reflection_required": true,
+          "phase": "planned",
+          "request_file": "http_148_request.json"
+        },
+        {
+          "error": "Execution card exceeds 2200 characters; choose a smaller analysis scope",
+          "reflection_required": true,
+          "phase": "planned",
+          "request_file": "http_148_request.json"
+        },
+        {
+          "error": "Execution card exceeds 2200 characters; choose a smaller analysis scope",
+          "reflection_required": true,
+          "phase": "planned",
+          "request_file": "http_148_request.json"
+        }
+      ]
+    }
+  ],
+  "G1_1": "Host-verified tables; internal review unfinished; kept separate from Round23 trials",
+  "other_categories": {
+    "R22_G1_3": "contract_failed",
+    "R22_G2_1": "contract_failed"
+  }
+}

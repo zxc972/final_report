@@ -175,6 +175,10 @@ def check_outputs(tools):
             raw = _read_regular(target, tools.workdir, MAX_ARTIFACT_BYTES)
             declared = bundle["output_contract"].get("tables", {}).get(filename, table)
             result = validate_csv(raw, declared, filename)
+            if result["status"] == "fail":
+                from .analysis_contract_diagnostics import inspect_bytes, describe
+                result["serialization_diagnostics"] = inspect_bytes(raw)
+                result["errors"].append(describe(result["serialization_diagnostics"]))
             result["output_sha256"] = hashlib.sha256(raw).hexdigest()
             results.append(result)
     summary = {**binding, "status": "fail" if any(r["status"] == "fail" for r in results) else "pass" if results else "not_configured",

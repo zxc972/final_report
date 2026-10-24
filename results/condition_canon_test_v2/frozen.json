@@ -1,0 +1,267 @@
+{
+  "frozen_at": "2026-10-24T06:50:50.349608+00:00",
+  "schema": "primatex.condition_test_run.v2",
+  "gold_sha256": "2ca5ca7492d9f09569372085a0cf75715d41a8e78e8bd24a0fc5c38015d84e3e",
+  "gold_freeze": {
+    "schema": "primatex.condition_gold_freeze.v1",
+    "frozen_at_utc": "2026-10-24T06:44:39.981925+00:00",
+    "gold_file": "evaluation/condition_gold/gold_test_v2.json",
+    "gold_sha256": "2ca5ca7492d9f09569372085a0cf75715d41a8e78e8bd24a0fc5c38015d84e3e",
+    "statements": 83,
+    "class_counts": {
+      "advisory": 68,
+      "executable": 15
+    },
+    "pending_user_decision": [
+      2008,
+      2009,
+      2014,
+      2015,
+      2017,
+      2031,
+      2039
+    ],
+    "score_pending_as_supplied": true,
+    "statement_ids_and_source_fields_exact_match": true,
+    "all_quotes_and_source_spans_verified": true,
+    "handoff_manifest_sha256": "caf821b66b1e841c595822ca94362fc7a025f969365168eb9c8803000a7239b0",
+    "base_commit": "12f8fbd2b12622c3b67c3e204722028f7b28b42e",
+    "gold_v1_sha256_unchanged": "e34d6796259e87f44f3bcede9c304eb87b4c1a5e31605cdfd357085bdac45135",
+    "canonicalizer_sha256": "140669418d7a6603df4dbe55be7a677d9f0d8bff92d7255a7aadff1892bb07d8",
+    "annotation_edit_count": 0,
+    "immutable": true
+  },
+  "provider": {
+    "endpoint_host": "inferaiapi.com",
+    "endpoint_path": "/v1",
+    "model": "deepseek-v4.1-flash",
+    "temperature": 0.7,
+    "timeout": 180,
+    "max_tokens": 8192,
+    "max_attempts": 3,
+    "thinking": {
+      "type": "disabled"
+    },
+    "response_format": {
+      "type": "json_object"
+    }
+  },
+  "slots": {
+    "T1": [
+      "subject",
+      "species",
+      "space",
+      "voxel_size",
+      "scale_status"
+    ],
+    "T2": [
+      "subject",
+      "species",
+      "space",
+      "voxel_size",
+      "scale_status"
+    ],
+    "volumes": [
+      "subject",
+      "species",
+      "space",
+      "voxel_size",
+      "scale_status"
+    ],
+    "timepoints": [
+      "subject",
+      "species",
+      "space",
+      "voxel_size",
+      "scale_status"
+    ],
+    "mask": [
+      "subject",
+      "species",
+      "space",
+      "voxel_size",
+      "scale_status"
+    ],
+    "pial": [
+      "subject",
+      "species",
+      "hemisphere",
+      "space",
+      "mesh",
+      "scale_status"
+    ],
+    "white": [
+      "subject",
+      "species",
+      "hemisphere",
+      "space",
+      "mesh",
+      "scale_status"
+    ],
+    "surface": [
+      "subject",
+      "species",
+      "hemisphere",
+      "space",
+      "mesh",
+      "scale_status"
+    ],
+    "metric": [
+      "subject",
+      "species",
+      "hemisphere",
+      "space",
+      "mesh",
+      "scale_status"
+    ],
+    "thickness": [
+      "subject",
+      "species",
+      "hemisphere",
+      "space",
+      "mesh",
+      "scale_status"
+    ],
+    "annotation": [
+      "subject",
+      "species",
+      "hemisphere",
+      "space",
+      "mesh",
+      "scale_status",
+      "atlas"
+    ],
+    "label": [
+      "subject",
+      "species",
+      "hemisphere",
+      "space",
+      "mesh",
+      "scale_status"
+    ],
+    "design": [
+      "columns",
+      "n_subjects"
+    ]
+  },
+  "vocabulary": {
+    "types": [
+      "type:Annotation",
+      "type:Annotation.AparcA2009s",
+      "type:Annotation.AparcDK",
+      "type:Annotation.AparcDKT",
+      "type:Annotation.CHARM",
+      "type:Annotation.D99",
+      "type:Label",
+      "type:Label.Cortex",
+      "type:Label.MedialWall",
+      "type:Product",
+      "type:StatsTable",
+      "type:StatsTable.Aparc",
+      "type:StatsTable.Aseg",
+      "type:StatsTable.AsegStats",
+      "type:StatsTable.ContrastMatrix",
+      "type:StatsTable.CorticalParcStats",
+      "type:StatsTable.DesignMatrix",
+      "type:SubjectTable",
+      "type:SubjectTable.Participants",
+      "type:Surface",
+      "type:Surface.Inflated",
+      "type:Surface.Midthickness",
+      "type:Surface.Pial",
+      "type:Surface.Sphere",
+      "type:Surface.SphereReg",
+      "type:Surface.White",
+      "type:SurfaceMetric",
+      "type:SurfaceMetric.Area",
+      "type:SurfaceMetric.Curvature",
+      "type:SurfaceMetric.LGI",
+      "type:SurfaceMetric.Sulc",
+      "type:SurfaceMetric.Thickness",
+      "type:Transform",
+      "type:Transform.Affine",
+      "type:Transform.Deformation",
+      "type:Transform.SphericalRegistration",
+      "type:Volume",
+      "type:Volume.Aseg",
+      "type:Volume.BrainExtractedT1",
+      "type:Volume.BrainMask",
+      "type:Volume.GM4D",
+      "type:Volume.GMMask",
+      "type:Volume.T1",
+      "type:Volume.T2",
+      "type:Volume.TissuePVE",
+      "type:Volume.TissuePVE.CSF",
+      "type:Volume.TissuePVE.GM",
+      "type:Volume.TissuePVE.WM"
+    ],
+    "steps": [
+      "acpc-align",
+      "fastsurfer",
+      "freesurfer2caret",
+      "image-reorient",
+      "label-resample",
+      "mris_compute_lgi",
+      "preprocess-1",
+      "preprocess-3",
+      "preprocess-3-1",
+      "preprocess-3-2",
+      "recon-all",
+      "rescale",
+      "seg-brain",
+      "seg-router",
+      "seg-wm"
+    ]
+  },
+  "vocabulary_sha256": {
+    "product_types.json": "6fe849854dce715c40389ff00a9945dd8803e1f9db2c620d485eec0bcaa6021e",
+    "workflow_steps.json": "d9d54bd84300c5135f69ec670cc0528c3891c0f784bc0c316d4deead8917d030"
+  },
+  "parameters": {
+    "RHO_MIN": 0.9,
+    "SAMPLES": 5,
+    "V2_SUPPORT": 0.6,
+    "V2_MARGIN": 0.2
+  },
+  "workers": 4,
+  "code_sha256": {
+    "agent/modules/agent/backend/analysis_condition_canonicalizer.py": "140669418d7a6603df4dbe55be7a677d9f0d8bff92d7255a7aadff1892bb07d8",
+    "tools/knowledge/run_condition_test_v2_evaluation.py": "efac3b49f71653be6ac219bb4c763c5bb7789b3679957f043faae41e3df3ba5e",
+    "tools/knowledge/provider_llm.py": "ef26a0dd32eab8021b8ff4faf74b682b06ff4c4d0e93574a6a9cf5ac5d7cecc4",
+    "tools/knowledge/run_condition_canonicalization_v2.py": "8a10c83e68e3ad8d2c9b0a500f9cf0b114bc74e539d5d5db64b479aaaee177ef",
+    "tools/knowledge/run_condition_canonicalization.py": "e43d61bd2f84bffaaad7902a7d0bec4d66fc43a0842f5bf451931035b76c1cee",
+    "tools/knowledge/run_condition_test_evaluation.py": "bada9fb326bfd9054fbd4d4e30c0fa672efe6fca9553f020fe24e4071c1b79b0",
+    "tools/knowledge/condition_evaluation_statistics.py": "f70210a36770c7be6fd3ce7c2db0833c7807927311a4fcea35776f258f8408c4"
+  },
+  "source_sha256": {
+    "evaluation/condition_test_v2/method_extractions/independent_v2_fs_segstats.input.json": "24c9b126db425450beb760db24a729ee875cd3dd7421d250c80cb44c3e01b60b",
+    "evaluation/condition_test_v2/method_extractions/independent_v2_ants_thickness.input.json": "431174a182559ddd40e49c9eb3891b5c1340c8d8b64cf498a7333d4e29c817b5",
+    "evaluation/condition_test_v2/method_extractions/independent_v2_fs_surf2surf.input.json": "7e56a46c39529265df50456e1d74ce4eb80f52f94bd6509bf8430fc2723029d6",
+    "evaluation/condition_test_v2/method_extractions/independent_v2_wb_surface_resample.input.json": "c5f35dce429e61652d3f99e9b4dfe21097587a7a18ab03050160cc6841e46917",
+    "evaluation/condition_test_v2/method_extractions/independent_v2_fs_anatomical_stats.input.json": "3afceb2a039fd45d98d5baf4abf23078d010d2bfe8e8a9027be674bef3b3e553",
+    "evaluation/condition_test_v2/method_extractions/independent_v2_fsl_first.input.json": "1e9b906d122306441e392108740b75cf97c35910615ecc2ff4c1eb52b89acbc6",
+    "evaluation/condition_test_v2/method_extractions/independent_v2_fs_ca_label.input.json": "65e00385e6e4fdd95c33b38c4bacc6b52365c22edb39b7bc0ac6b0ac2812a4c1",
+    "evaluation/condition_test_v2/method_extractions/independent_v2_fs_preproc.input.json": "ccac6f641374ddc2d236b44f3255be2b43a9f0c6e9caade31166c5fafcbc02a8",
+    "evaluation/condition_test_v2/method_extractions/independent_v2_wb_metric_resample.input.json": "82d808b170de891a1487763736696edb4aaf1db1138bf9589aab3d69d7aaea18"
+  },
+  "historical_prediction_sha256": {
+    "full_v2": "01b6740db55df0190b448babacf0cc80b07b7521a255a1c01fad91d12058774e",
+    "k1_v2": "d1d39e1a42c96d6dcff05d59a149960b0b2315ae214d922861b305434aa6faf9",
+    "direct_v2": "861b87323bde259f4d3075c50a3599b6036eaf015df30d25769f6f8da88e1315",
+    "retrieval_only": "471f6e0ec1dfbd43a81b5e9bf90661b7d1636076c59c220451a9a1dab9eb4e12"
+  },
+  "retry_policy": "Keep K vote positions and continue after an unavailable sample.\n\n    At most one interface supplemental SAMPLE and one length supplemental SAMPLE\n    per arm/statement. Each logical sample uses the unchanged metered adapter's\n    maximum three HTTP attempts; all attempts count against the shared cap.\n    Exhausted interface positions contribute no parsed vote, never an advisory\n    vote. Valid/empty/invalid semantic answers are never resampled.\n    ",
+  "shared_http_cap": 1500,
+  "nominal_samples": 581,
+  "minimum_interval_seconds": 2.0,
+  "arms": [
+    "full_v2",
+    "k1_v2",
+    "direct_v2",
+    "retrieval_only"
+  ],
+  "bootstrap_replicates": 2000,
+  "bootstrap_seed": 20261023,
+  "combined_bootstrap_stratified_by_test_set": true,
+  "analysis_runs": 0
+}

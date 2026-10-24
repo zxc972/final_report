@@ -714,6 +714,8 @@ def commit_candidate(tools, candidate_id, rationale, code_path, commitment=None)
         bundle["must_disclose"] += result["must_disclose"]
         bundle_path = f"/work/execution_bundle.v{result['version']:06d}.json"
         bundle["bundle_ref"] = bundle_path
+        from .analysis_execution_guidance import write_documents
+        bundle["execution_documents"] = write_documents(tools, context, bundle, result["version"])
         bundle_copy = {key: val for key, val in bundle.items() if key != "label_sets"}
         from .analysis_agent import _write_regular
         _write_regular(tools.resolve(bundle_path, writable=True), tools.workdir,

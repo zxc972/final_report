@@ -85,6 +85,8 @@ class CompatibleChatOpenAI(ChatOpenAI):
         return result
 
     def _reserve_usage(self, retry_of=None):
+        from .analysis_review_budget import reserve_http_attempt
+        reserve_http_attempt()
         from .agent_chat_state import ACTIVE_CHAT
 
         session = ACTIVE_CHAT.get()

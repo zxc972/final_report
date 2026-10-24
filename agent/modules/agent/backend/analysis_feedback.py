@@ -39,7 +39,7 @@ class FeedbackJournal:
             if not isinstance(value, dict) or depth > 5:
                 return
             status = value.get('status')
-            bad = ((isinstance(status, str) and status in {'error', 'fail', 'failed', 'timeout', 'blocked'})
+            bad = ((isinstance(status, str) and status in {'error', 'fail', 'failed', 'timeout', 'blocked', 'system_defect'})
                    or (isinstance(status, str) and ('contract' in status and status.endswith('failed')))
                    or value.get('returncode') not in (None, 0)
                    or value.get('exit_code') not in (None, 0)

@@ -28,6 +28,8 @@ def before_reserve(tools):
 def after_reserve(tools, phase):
     session = tools.session
     if phase in {'unplanned', 'planned'}:
+        session.record['last_planning_reservation'] = tools.model_calls
+        session.record['planning_actual_model_calls'] = session.record.get('planning_actual_model_calls',session.record['planning_model_calls'])+1
         session.record['planning_model_calls'] += 1
     else:
         session.record['postseal_model_calls'] = session.record.get('postseal_model_calls', 0) + 1
@@ -72,4 +74,5 @@ def budget_hint(tools):
 def snapshot(session):
     return {key: session.record.get(key) for key in (
         'planning_model_calls', 'planning_model_limit', 'postseal_model_calls',
-        'planning_exhausted', 'model_calls_by_phase') if key in session.record}
+        'planning_exhausted', 'model_calls_by_phase', 'planning_actual_model_calls',
+        'last_planning_reservation', 'system_defect_exempt_model_calls') if key in session.record}
