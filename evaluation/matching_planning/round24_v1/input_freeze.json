@@ -1,0 +1,6 @@
+{
+  "protocol_sha256": "06690fb4584a68474513e91e6c1c20a4e3464951c66cfe85280929c113ac30e6",
+  "csp_instances_sha256": "12d30b0965838a6b5b2025f0309e5849c3cac785c3d21f7b4ac83a5a77719f42",
+  "planning_instances_sha256": "88ac8b9da493452d574986abff37c06c2dbecaac1e0f8ceab776f185899a576e",
+  "frozen_before_first_solver_or_oracle_call": true
+}

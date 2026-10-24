@@ -1,0 +1,13 @@
+{
+  "status": "offline_passed_protected_reviewed",
+  "source_commit": "28698e341ef953688e8fa8d314918350772b7fd1",
+  "full_backend": {
+    "passed": 1044,
+    "skipped": 20,
+    "subtests_passed": 59
+  },
+  "chain_regressions": 90,
+  "http_sdk": 13,
+  "real_singularity_loops": 2,
+  "model_calls": 0
+}

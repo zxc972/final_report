@@ -1,0 +1,89 @@
+[
+  {
+    "case": "R24_G1",
+    "review_id": "494036e3a5b64990886a012ace80c371",
+    "final_review": false,
+    "decision": "revise",
+    "observed_hard_block_constraint_ids": [
+      "method:v12:surface_annotation_roi:group_inference_sample"
+    ],
+    "attempts": [
+      {
+        "attempt": 1,
+        "error_type": null,
+        "protocol_error_present": false,
+        "transport_present": false
+      }
+    ]
+  },
+  {
+    "case": "R24_G1",
+    "review_id": "ef76cc9f04d946c2863e522e2161aeab",
+    "final_review": true,
+    "decision": "pass",
+    "observed_hard_block_constraint_ids": [
+      "method:v12:surface_annotation_roi:group_inference_sample"
+    ],
+    "attempts": [
+      {
+        "attempt": 1,
+        "error_type": null,
+        "protocol_error_present": false,
+        "transport_present": false
+      }
+    ]
+  },
+  {
+    "case": "E1_S1",
+    "review_id": "14ce52f4877b47099259b999b7ed0be8",
+    "final_review": true,
+    "decision": "unreviewed",
+    "observed_hard_block_constraint_ids": [],
+    "attempts": [
+      {
+        "attempt": 1,
+        "error_type": "ValueError",
+        "protocol_error_present": true,
+        "transport_present": false
+      },
+      {
+        "attempt": 2,
+        "error_type": null,
+        "protocol_error_present": false,
+        "transport_present": true
+      }
+    ]
+  },
+  {
+    "case": "E1_G2",
+    "review_id": "4d5a8e7d3493435e91b42788c55fc058",
+    "final_review": false,
+    "decision": "insufficient_evidence",
+    "observed_hard_block_constraint_ids": [
+      "method:v12:surface_annotation_roi:group_inference_sample"
+    ],
+    "attempts": [
+      {
+        "attempt": 1,
+        "error_type": null,
+        "protocol_error_present": false,
+        "transport_present": false
+      }
+    ]
+  },
+  {
+    "case": "E1_N3",
+    "review_id": "e25d59a211a341139f6592d74ed19681",
+    "final_review": true,
+    "decision": "pass",
+    "observed_hard_block_constraint_ids": [],
+    "attempts": [
+      {
+        "attempt": 1,
+        "error_type": null,
+        "protocol_error_present": false,
+        "transport_present": false
+      }
+    ]
+  }
+]

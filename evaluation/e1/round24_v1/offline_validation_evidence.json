@@ -1,0 +1,116 @@
+{
+  "collected_utc": "2026-10-24T13:01:00.013748+00:00",
+  "checks": [
+    {
+      "name": "chain_targeted_v5",
+      "status": {
+        "exit_code": 0,
+        "started_utc": "2026-10-24T10:46:04.309352+00:00",
+        "ended_utc": "2026-10-24T10:47:44.120938+00:00",
+        "real_provider_requests": 0
+      },
+      "log_sha256": "e6f10302a1f2a9bcf226f11039eb2bbe6a387db4715e3247a6ca4faf8bccc372",
+      "summary_lines": [
+        "90 passed, 2 warnings in 99.12s (0:01:39)"
+      ]
+    },
+    {
+      "name": "sdk_binding_v5",
+      "status": {
+        "exit_code": 0,
+        "started_utc": "2026-10-24T10:47:44.121180+00:00",
+        "ended_utc": "2026-10-24T10:47:45.071564+00:00",
+        "real_provider_requests": 0
+      },
+      "log_sha256": "b6d92abe8c6bed41520a78681146c534729248f5274883e47feb753a89cfcffc",
+      "summary_lines": [
+        "13 passed, 2 warnings in 0.53s"
+      ]
+    },
+    {
+      "name": "synthetic_container_v5",
+      "status": {
+        "exit_code": 0,
+        "started_utc": "2026-10-24T10:47:45.071748+00:00",
+        "ended_utc": "2026-10-24T10:48:15.477992+00:00",
+        "real_provider_requests": 0
+      },
+      "log_sha256": "97549283132a385b037937a2cdb5be31fb9c72f7ef34daf4500346cc95eb0ace",
+      "summary_lines": [
+        "2 passed, 2 warnings in 29.74s"
+      ]
+    },
+    {
+      "name": "backend_default_v5",
+      "status": {
+        "exit_code": 0,
+        "started_utc": "2026-10-24T10:48:15.478227+00:00",
+        "ended_utc": "2026-10-24T10:52:35.816603+00:00",
+        "real_provider_requests": 0
+      },
+      "log_sha256": "84f1be9ceed0d3216e8bc1611dfb1d555070ec4fd889b35a689fb2a2fde5615c",
+      "summary_lines": [
+        "1044 passed, 20 skipped, 144 warnings, 59 subtests passed in 259.40s (0:04:19)"
+      ]
+    },
+    {
+      "name": "chain_targeted_post_v6",
+      "status": {
+        "exit_code": 0,
+        "started_utc": "2026-10-24T11:49:23.929608+00:00",
+        "ended_utc": "2026-10-24T11:50:50.691645+00:00",
+        "real_provider_requests": 0
+      },
+      "log_sha256": "6ed8e421da0ae3b8fbd9da1a3eb692cce3487ce1b9b2f5476f7bad0a8973e45d",
+      "summary_lines": [
+        "98 passed, 2 warnings in 85.92s (0:01:25)"
+      ]
+    },
+    {
+      "name": "sdk_binding_post_v6",
+      "status": {
+        "exit_code": 0,
+        "started_utc": "2026-10-24T11:50:50.691855+00:00",
+        "ended_utc": "2026-10-24T11:50:51.647051+00:00",
+        "real_provider_requests": 0
+      },
+      "log_sha256": "ca8d3fa6b9258c63017f981c8369e54745e2529a4a2a5562ae12101fa846efa4",
+      "summary_lines": [
+        "13 passed, 2 warnings in 0.52s"
+      ]
+    },
+    {
+      "name": "synthetic_container_post_v6",
+      "status": {
+        "exit_code": 0,
+        "started_utc": "2026-10-24T11:50:51.647270+00:00",
+        "ended_utc": "2026-10-24T11:51:22.549348+00:00",
+        "real_provider_requests": 0
+      },
+      "log_sha256": "6a3315eb33f9be6b617161d5abf10cd1c9be4ab91aa9f408d80d071c1132a64d",
+      "summary_lines": [
+        "2 passed, 2 warnings in 30.24s"
+      ]
+    },
+    {
+      "name": "backend_default_post_v6",
+      "status": {
+        "exit_code": 0,
+        "started_utc": "2026-10-24T11:51:22.549558+00:00",
+        "ended_utc": "2026-10-24T11:55:41.849315+00:00",
+        "real_provider_requests": 0
+      },
+      "log_sha256": "8b19ae936a75d495517268eabc462bb15128a979220dedf9a3465f948a2dad9d",
+      "summary_lines": [
+        "1052 passed, 20 skipped, 144 warnings, 59 subtests passed in 258.39s (0:04:18)"
+      ]
+    }
+  ],
+  "post_trial_tested_source_sha256": {
+    "agent/modules/agent/backend/analysis_product_planner.py": "3cf8844f913192d9275b1f78578cdfd1c235b7a49262356c3f0ebdf7d5a16afa",
+    "agent/modules/agent/tests/test_round24_caller_scope.py": "5ead01d107081462fcf718b31fc0303b85cef2b5a767e6a45c4ae05bac35c5f7"
+  },
+  "real_provider_requests": 0,
+  "real_analysis_entries": 0,
+  "all_exit_codes_zero": true
+}

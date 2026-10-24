@@ -1,0 +1,29 @@
+{
+  "frozen_utc": "2026-10-24T10:55:38.715073+00:00",
+  "source_commit": "28698e341ef953688e8fa8d314918350772b7fd1",
+  "input_sha256": {
+    "/data/xuancheng/agent_v1/retests/round24_20261024/catalog.e1.json": "9ff3d585f056c323ee07d03f18c926f24b742d4b78c410e7a9c937f386fbf07c",
+    "/data/xuancheng/agent_v1/retests/round24_20261024/cases.runtime.json": "a8c82a8d2cdcb612de74749dfcf58172da29586df50aa8640835fff6975053ce",
+    "/data/xuancheng/agent_v1/retests/round24_20261024/cases.host.json": "e1b4030810bbf44061b6f44a3949095d440c38da9cb4a5f2f96a2aa789d910c0",
+    "/data/xuancheng/agent_v1/retests/round24_20261024/host_reference_private.json": "4862cfd6b37c4580acd25d5d511aeecb03ffa1142ab9a15a841eca88cd3ee3a4",
+    "/data/xuancheng/agent_v1/round24_source/evaluation/task_specs/E1_protocol_v1.json": "342becece00eea8615cfc3181ec87acf9a3b2e78c121aa17433f6eaee44ac839",
+    "/data/xuancheng/agent_v1/round24_source/evaluation/task_specs/task_E1_G1_v1.json": "dadf1c254c3101170dd0b993d6961bf8004b283943a4e5d0dadf4014b7bd86ef",
+    "/data/xuancheng/agent_v1/round24_source/evaluation/task_specs/task_E1_G2_v1.json": "d3c1bfc13c8ff8fa82ef69787f846581cc1d9a7bb22b94f5013ddfedacb489a4",
+    "/data/xuancheng/agent_v1/round24_source/evaluation/task_specs/task_E1_G3_v1.json": "9fc8c0338adef4db51b77216eacd788358a087e8b9f0a0d57f22e92ddff5e049",
+    "/data/xuancheng/agent_v1/round24_source/evaluation/task_specs/task_E1_N1_v1.json": "a527ce1dca2bf7c14fa6696ac80d5605c5389382357769cd904ef248cd811ce5",
+    "/data/xuancheng/agent_v1/round24_source/evaluation/task_specs/task_E1_N2_v1.json": "234ae1ed91f1161e9d3d7c3fbd427b43b8458cc0d00c1ab60daa957f37d16b91",
+    "/data/xuancheng/agent_v1/round24_source/evaluation/task_specs/task_E1_N3_v1.json": "e85e6e40e53796b92ef7e15356d1ffe57acaa83a5dd4f97959493b4e7404f24c",
+    "/data/xuancheng/agent_v1/round24_source/evaluation/task_specs/task_E1_S1_v1.json": "be9727bfa1285686b732fc355b138a420acf26c304ec2829d981f75fb05e6d93",
+    "/data/xuancheng/agent_v1/round24_source/evaluation/task_specs/task_E1_S2_v1.json": "597ed4747f47e23be124f64125577a82ec9dc80e5dfd68f5fdbebbd89463813b",
+    "/data/xuancheng/agent_v1/round24_source/evaluation/task_specs/task_E1_S3_v1.json": "18782e7231876d07463912fdd4cadd5a936efebc672a624b4f5c94a841b04e0a",
+    "/data/xuancheng/agent_v1/round24_source/evaluation/task_specs/task_E1_X1_v1.json": "874851c96eb5c2f181d3e338b7c5a6e7ea7a9f52203a6ca691b59218d37aa793",
+    "/data/xuancheng/agent_v1/round24_source/evaluation/task_specs/task_R24_retest_G1_v1.json": "9542bc4c3daacb96342427f305d409ba3de898c1f3050057c6d7bc79a3ffbb59",
+    "/data/xuancheng/agent_v1/round24_source/evaluation/task_specs/task_R24_retest_G2_v1.json": "b32650b52e1c68ec459cb7766207db31b49064c8291dd811abd1d933142f1532"
+  },
+  "real_analysis_calls_at_freeze": 0,
+  "real_model_requests_at_freeze": 0,
+  "source_backend_knowledge_tests_identical_to_offline_v5": true,
+  "tested_files": 284,
+  "preflight_fixtures": 9,
+  "approval_origin": "Direct Round24 user instruction; Draft Task Specs agent-reviewed, not human-approved"
+}

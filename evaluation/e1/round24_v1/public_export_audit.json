@@ -1,0 +1,6 @@
+{
+  "credential_scan": "pass",
+  "files_before_audit": 36,
+  "source": "Whitelisted metadata only",
+  "private_raw_files_excluded": true
+}

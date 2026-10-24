@@ -1,0 +1,9 @@
+{
+  "status": "completed",
+  "source_algorithms_unchanged": true,
+  "model_calls": 0,
+  "result_rows": 2500,
+  "csp_instances": 300,
+  "planning_instances": 250,
+  "protocol_sha256": "06690fb4584a68474513e91e6c1c20a4e3464951c66cfe85280929c113ac30e6"
+}

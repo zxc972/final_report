@@ -1,0 +1,39 @@
+{
+  "started_utc": "2026-10-24T10:55:46.745207+00:00",
+  "order": [
+    "R24_G1",
+    "R24_G2",
+    "E1_S1",
+    "E1_S2",
+    "E1_S3",
+    "E1_G1",
+    "E1_G2",
+    "E1_G3",
+    "E1_X1",
+    "E1_N1",
+    "E1_N2",
+    "E1_N3"
+  ],
+  "finished": [
+    "R24_G1",
+    "R24_G2",
+    "E1_S1",
+    "E1_S2",
+    "E1_S3",
+    "E1_G1",
+    "E1_G2",
+    "E1_G3",
+    "E1_X1",
+    "E1_N1",
+    "E1_N2",
+    "E1_N3"
+  ],
+  "skipped": [],
+  "max_real_analysis_runs": 12,
+  "model_hints_or_repairs_during_batch": false,
+  "active_case": null,
+  "active_started_utc": "2026-10-24T12:41:11.200841+00:00",
+  "last_status": "completed",
+  "ended_utc": "2026-10-24T12:48:05.002514+00:00",
+  "status": "closed"
+}

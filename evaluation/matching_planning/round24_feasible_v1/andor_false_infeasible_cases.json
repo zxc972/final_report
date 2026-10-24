@@ -1,0 +1,6451 @@
+[
+  {
+    "case": "FEASIBLE_1_006",
+    "missing_count": 1,
+    "targets": [
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      }
+    ],
+    "exact_steps": [
+      "rescale"
+    ],
+    "exact_cost": 1.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_1_011",
+    "missing_count": 1,
+    "targets": [
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      }
+    ],
+    "exact_steps": [
+      "rescale"
+    ],
+    "exact_cost": 1.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_1_035",
+    "missing_count": 1,
+    "targets": [
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      }
+    ],
+    "exact_steps": [
+      "rescale"
+    ],
+    "exact_cost": 1.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_1_043",
+    "missing_count": 1,
+    "targets": [
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      }
+    ],
+    "exact_steps": [
+      "rescale"
+    ],
+    "exact_cost": 1.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_1_044",
+    "missing_count": 1,
+    "targets": [
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "species": "macaque"
+        }
+      }
+    ],
+    "exact_steps": [
+      "rescale"
+    ],
+    "exact_cost": 1.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_1_049",
+    "missing_count": 1,
+    "targets": [
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      }
+    ],
+    "exact_steps": [
+      "rescale"
+    ],
+    "exact_cost": 1.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_2_005",
+    "missing_count": 2,
+    "targets": [
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:StatsTable.CorticalParcStats",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "species": "macaque"
+        }
+      }
+    ],
+    "exact_steps": [
+      "rescale"
+    ],
+    "exact_cost": 1.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:StatsTable.CorticalParcStats",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:StatsTable.CorticalParcStats <- rescale <- type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_2_019",
+    "missing_count": 2,
+    "targets": [
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Volume.BrainMask",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque"
+        }
+      }
+    ],
+    "exact_steps": [
+      "seg-brain",
+      "rescale"
+    ],
+    "exact_cost": 2.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:Volume.BrainMask",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "seg-brain"
+        ],
+        "reasons": []
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_2_028",
+    "missing_count": 2,
+    "targets": [
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:StatsTable.CorticalParcStats",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      }
+    ],
+    "exact_steps": [
+      "rescale"
+    ],
+    "exact_cost": 1.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:StatsTable.CorticalParcStats",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:StatsTable.CorticalParcStats <- rescale <- type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_2_033",
+    "missing_count": 2,
+    "targets": [
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:SurfaceMetric",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      }
+    ],
+    "exact_steps": [
+      "rescale",
+      "freesurfer2caret"
+    ],
+    "exact_cost": 2.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_2_035",
+    "missing_count": 2,
+    "targets": [
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Volume.BrainMask",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "human"
+        }
+      }
+    ],
+    "exact_steps": [
+      "seg-brain",
+      "rescale"
+    ],
+    "exact_cost": 2.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:Volume.BrainMask",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "human"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "seg-brain"
+        ],
+        "reasons": []
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_2_036",
+    "missing_count": 2,
+    "targets": [
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:SurfaceMetric.LGI",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "human",
+          "hemisphere": "rh"
+        }
+      }
+    ],
+    "exact_steps": [
+      "rescale",
+      "mris_compute_lgi"
+    ],
+    "exact_cost": 2.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric.LGI",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "human",
+            "hemisphere": "rh"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "mris_compute_lgi"
+        ],
+        "reasons": []
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_2_037",
+    "missing_count": 2,
+    "targets": [
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:SurfaceMetric.Thickness",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "species": "macaque"
+        }
+      }
+    ],
+    "exact_steps": [
+      "rescale"
+    ],
+    "exact_cost": 1.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric.Thickness",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "rescale"
+        ],
+        "reasons": []
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_2_038",
+    "missing_count": 2,
+    "targets": [
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Surface",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      }
+    ],
+    "exact_steps": [
+      "rescale",
+      "freesurfer2caret"
+    ],
+    "exact_cost": 2.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:Surface",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_2_039",
+    "missing_count": 2,
+    "targets": [
+      {
+        "type": "type:SurfaceMetric.Curvature",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "species": "macaque"
+        }
+      }
+    ],
+    "exact_steps": [
+      "preprocess-3-2",
+      "rescale"
+    ],
+    "exact_cost": 2.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:SurfaceMetric.Curvature",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "preprocess-3"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_3_006",
+    "missing_count": 3,
+    "targets": [
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:SurfaceMetric.Curvature",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:SurfaceMetric.Thickness",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "species": "macaque"
+        }
+      }
+    ],
+    "exact_steps": [
+      "preprocess-3-2",
+      "rescale"
+    ],
+    "exact_cost": 2.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric.Curvature",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "preprocess-3"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric.Thickness",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:SurfaceMetric.Thickness <- rescale <- type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_3_007",
+    "missing_count": 3,
+    "targets": [
+      {
+        "type": "type:Transform.Affine",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:SurfaceMetric.Thickness",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      }
+    ],
+    "exact_steps": [
+      "acpc-align",
+      "rescale"
+    ],
+    "exact_cost": 2.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:Transform.Affine",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "acpc-align"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric.Thickness",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "rescale"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_3_009",
+    "missing_count": 3,
+    "targets": [
+      {
+        "type": "type:SurfaceMetric.Curvature",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Volume.BrainMask",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      }
+    ],
+    "exact_steps": [
+      "seg-brain",
+      "preprocess-3-2",
+      "rescale"
+    ],
+    "exact_cost": 3.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:SurfaceMetric.Curvature",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "preprocess-3-2"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Volume.BrainMask",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "seg-brain"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_3_010",
+    "missing_count": 3,
+    "targets": [
+      {
+        "type": "type:StatsTable.CorticalParcStats",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Label.Cortex",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      }
+    ],
+    "exact_steps": [
+      "preprocess-3-2",
+      "rescale"
+    ],
+    "exact_cost": 2.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:StatsTable.CorticalParcStats",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "rescale"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Label.Cortex",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "preprocess-3"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_3_017",
+    "missing_count": 3,
+    "targets": [
+      {
+        "type": "type:Transform.Affine",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:SurfaceMetric.Thickness",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      }
+    ],
+    "exact_steps": [
+      "acpc-align",
+      "rescale"
+    ],
+    "exact_cost": 2.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:Transform.Affine",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "acpc-align"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric.Thickness",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "rescale"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_3_018",
+    "missing_count": 3,
+    "targets": [
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Volume.Aseg",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:SurfaceMetric",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      }
+    ],
+    "exact_steps": [
+      "preprocess-3-1",
+      "rescale",
+      "freesurfer2caret"
+    ],
+    "exact_cost": 3.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:Volume.Aseg",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "preprocess-3"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_3_023",
+    "missing_count": 3,
+    "targets": [
+      {
+        "type": "type:SurfaceMetric.LGI",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "human",
+          "hemisphere": "lh"
+        }
+      },
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:StatsTable.CorticalParcStats",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      }
+    ],
+    "exact_steps": [
+      "rescale",
+      "mris_compute_lgi"
+    ],
+    "exact_cost": 2.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:SurfaceMetric.LGI",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "human",
+            "hemisphere": "lh"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "mris_compute_lgi"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:StatsTable.CorticalParcStats",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:StatsTable.CorticalParcStats <- rescale <- type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_3_024",
+    "missing_count": 3,
+    "targets": [
+      {
+        "type": "type:Annotation",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      },
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:StatsTable.CorticalParcStats",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      }
+    ],
+    "exact_steps": [
+      "rescale",
+      "freesurfer2caret"
+    ],
+    "exact_cost": 2.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:Annotation",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:StatsTable.CorticalParcStats",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:StatsTable.CorticalParcStats <- rescale <- type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_3_028",
+    "missing_count": 3,
+    "targets": [
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Annotation",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      },
+      {
+        "type": "type:Volume.BrainMask",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "human"
+        }
+      }
+    ],
+    "exact_steps": [
+      "seg-brain",
+      "rescale",
+      "freesurfer2caret"
+    ],
+    "exact_cost": 3.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:Annotation",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Volume.BrainMask",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "human"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "seg-brain"
+        ],
+        "reasons": []
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_3_030",
+    "missing_count": 3,
+    "targets": [
+      {
+        "type": "type:SurfaceMetric.Sulc",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Volume.Aseg",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "species": "macaque"
+        }
+      }
+    ],
+    "exact_steps": [
+      "preprocess-3",
+      "rescale"
+    ],
+    "exact_cost": 2.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:SurfaceMetric.Sulc",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "preprocess-3"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Volume.Aseg",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "preprocess-3"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_3_031",
+    "missing_count": 3,
+    "targets": [
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:StatsTable.CorticalParcStats",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:SurfaceMetric.Sulc",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque"
+        }
+      }
+    ],
+    "exact_steps": [
+      "preprocess-3-2",
+      "rescale"
+    ],
+    "exact_cost": 2.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:StatsTable.CorticalParcStats",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "rescale"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric.Sulc",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "preprocess-3"
+        ],
+        "reasons": []
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_3_038",
+    "missing_count": 3,
+    "targets": [
+      {
+        "type": "type:StatsTable.CorticalParcStats",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Surface",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      }
+    ],
+    "exact_steps": [
+      "rescale",
+      "freesurfer2caret"
+    ],
+    "exact_cost": 2.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:StatsTable.CorticalParcStats",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:StatsTable.CorticalParcStats <- rescale <- type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:Surface",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_3_040",
+    "missing_count": 3,
+    "targets": [
+      {
+        "type": "type:SurfaceMetric.Curvature",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Surface",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      },
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      }
+    ],
+    "exact_steps": [
+      "preprocess-3-2",
+      "rescale",
+      "freesurfer2caret"
+    ],
+    "exact_cost": 3.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:SurfaceMetric.Curvature",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "preprocess-3"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Surface",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_3_042",
+    "missing_count": 3,
+    "targets": [
+      {
+        "type": "type:SurfaceMetric.Sulc",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:SurfaceMetric.Thickness",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      }
+    ],
+    "exact_steps": [
+      "preprocess-3-2",
+      "rescale"
+    ],
+    "exact_cost": 2.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:SurfaceMetric.Sulc",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "preprocess-3"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric.Thickness",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "rescale"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_4_002",
+    "missing_count": 4,
+    "targets": [
+      {
+        "type": "type:SurfaceMetric",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      },
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Annotation",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      },
+      {
+        "type": "type:SurfaceMetric.LGI",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque",
+          "hemisphere": "rh"
+        }
+      }
+    ],
+    "exact_steps": [
+      "rescale",
+      "freesurfer2caret",
+      "mris_compute_lgi"
+    ],
+    "exact_cost": 3.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:SurfaceMetric",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:Annotation",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric.LGI",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque",
+            "hemisphere": "rh"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "mris_compute_lgi"
+        ],
+        "reasons": []
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_4_010",
+    "missing_count": 4,
+    "targets": [
+      {
+        "type": "type:SurfaceMetric",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      },
+      {
+        "type": "type:StatsTable.CorticalParcStats",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Annotation",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      },
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "species": "macaque"
+        }
+      }
+    ],
+    "exact_steps": [
+      "rescale",
+      "freesurfer2caret"
+    ],
+    "exact_cost": 2.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:SurfaceMetric",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:StatsTable.CorticalParcStats",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:StatsTable.CorticalParcStats <- rescale <- type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:Annotation",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_4_011",
+    "missing_count": 4,
+    "targets": [
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:SurfaceMetric",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      },
+      {
+        "type": "type:SurfaceMetric.Curvature",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:SurfaceMetric.LGI",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque",
+          "hemisphere": "lh"
+        }
+      }
+    ],
+    "exact_steps": [
+      "preprocess-3-2",
+      "rescale",
+      "freesurfer2caret",
+      "mris_compute_lgi"
+    ],
+    "exact_cost": 4.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric.Curvature",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "preprocess-3"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric.LGI",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque",
+            "hemisphere": "lh"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "mris_compute_lgi"
+        ],
+        "reasons": []
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_4_013",
+    "missing_count": 4,
+    "targets": [
+      {
+        "type": "type:Annotation",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      },
+      {
+        "type": "type:Volume.BrainMask",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "human"
+        }
+      },
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:SurfaceMetric.Curvature",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque"
+        }
+      }
+    ],
+    "exact_steps": [
+      "seg-brain",
+      "preprocess-3-2",
+      "rescale",
+      "freesurfer2caret"
+    ],
+    "exact_cost": 4.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:Annotation",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Volume.BrainMask",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "human"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "seg-brain"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric.Curvature",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "preprocess-3"
+        ],
+        "reasons": []
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_4_015",
+    "missing_count": 4,
+    "targets": [
+      {
+        "type": "type:SurfaceMetric",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      },
+      {
+        "type": "type:SurfaceMetric.LGI",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque",
+          "hemisphere": "lh"
+        }
+      },
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Volume.Aseg",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque"
+        }
+      }
+    ],
+    "exact_steps": [
+      "preprocess-3-1",
+      "rescale",
+      "freesurfer2caret",
+      "mris_compute_lgi"
+    ],
+    "exact_cost": 4.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:SurfaceMetric",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric.LGI",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque",
+            "hemisphere": "lh"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "mris_compute_lgi"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:Volume.Aseg",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "preprocess-3"
+        ],
+        "reasons": []
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_4_016",
+    "missing_count": 4,
+    "targets": [
+      {
+        "type": "type:Annotation",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      },
+      {
+        "type": "type:SurfaceMetric.LGI",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "human",
+          "hemisphere": "lh"
+        }
+      },
+      {
+        "type": "type:SurfaceMetric.LGI",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque",
+          "hemisphere": "lh"
+        }
+      },
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      }
+    ],
+    "exact_steps": [
+      "rescale",
+      "freesurfer2caret",
+      "mris_compute_lgi"
+    ],
+    "exact_cost": 3.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:Annotation",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric.LGI",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "human",
+            "hemisphere": "lh"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "mris_compute_lgi"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric.LGI",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque",
+            "hemisphere": "lh"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "mris_compute_lgi"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_4_017",
+    "missing_count": 4,
+    "targets": [
+      {
+        "type": "type:SurfaceMetric.Thickness",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:StatsTable.CorticalParcStats",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:StatsTable.CorticalParcStats",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      }
+    ],
+    "exact_steps": [
+      "rescale"
+    ],
+    "exact_cost": 1.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:SurfaceMetric.Thickness",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:SurfaceMetric.Thickness <- rescale <- type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:StatsTable.CorticalParcStats",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:StatsTable.CorticalParcStats <- rescale <- type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:StatsTable.CorticalParcStats",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "rescale"
+        ],
+        "reasons": []
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_4_019",
+    "missing_count": 4,
+    "targets": [
+      {
+        "type": "type:StatsTable.CorticalParcStats",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Annotation",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      },
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Surface",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      }
+    ],
+    "exact_steps": [
+      "rescale",
+      "freesurfer2caret"
+    ],
+    "exact_cost": 2.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:StatsTable.CorticalParcStats",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "rescale"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Annotation",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:Surface",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_4_030",
+    "missing_count": 4,
+    "targets": [
+      {
+        "type": "type:SurfaceMetric.LGI",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque",
+          "hemisphere": "rh"
+        }
+      },
+      {
+        "type": "type:SurfaceMetric.Curvature",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Surface",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      }
+    ],
+    "exact_steps": [
+      "preprocess-3-2",
+      "rescale",
+      "freesurfer2caret",
+      "mris_compute_lgi"
+    ],
+    "exact_cost": 4.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:SurfaceMetric.LGI",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque",
+            "hemisphere": "rh"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "mris_compute_lgi"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric.Curvature",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "preprocess-3"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:Surface",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_4_033",
+    "missing_count": 4,
+    "targets": [
+      {
+        "type": "type:Transform.Affine",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:SurfaceMetric",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      },
+      {
+        "type": "type:Annotation",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      },
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      }
+    ],
+    "exact_steps": [
+      "acpc-align",
+      "rescale",
+      "freesurfer2caret"
+    ],
+    "exact_cost": 3.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:Transform.Affine",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "acpc-align"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Annotation",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_4_034",
+    "missing_count": 4,
+    "targets": [
+      {
+        "type": "type:SurfaceMetric",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      },
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Volume.BrainMask",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "human"
+        }
+      },
+      {
+        "type": "type:Label.Cortex",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque"
+        }
+      }
+    ],
+    "exact_steps": [
+      "seg-brain",
+      "preprocess-3-2",
+      "rescale",
+      "freesurfer2caret"
+    ],
+    "exact_cost": 4.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:SurfaceMetric",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:Volume.BrainMask",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "human"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "seg-brain"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Label.Cortex",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "preprocess-3"
+        ],
+        "reasons": []
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_4_037",
+    "missing_count": 4,
+    "targets": [
+      {
+        "type": "type:SurfaceMetric.LGI",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "human",
+          "hemisphere": "rh"
+        }
+      },
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Label.Cortex",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:SurfaceMetric.Thickness",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      }
+    ],
+    "exact_steps": [
+      "preprocess-3-2",
+      "rescale",
+      "mris_compute_lgi"
+    ],
+    "exact_cost": 3.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:SurfaceMetric.LGI",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "human",
+            "hemisphere": "rh"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "mris_compute_lgi"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:Label.Cortex",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "preprocess-3"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric.Thickness",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "rescale"
+        ],
+        "reasons": []
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_4_038",
+    "missing_count": 4,
+    "targets": [
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Annotation",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      },
+      {
+        "type": "type:SurfaceMetric.Sulc",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:StatsTable.CorticalParcStats",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      }
+    ],
+    "exact_steps": [
+      "preprocess-3-2",
+      "rescale",
+      "freesurfer2caret"
+    ],
+    "exact_cost": 3.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:Annotation",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric.Sulc",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "preprocess-3"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:StatsTable.CorticalParcStats",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:StatsTable.CorticalParcStats <- rescale <- type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_4_042",
+    "missing_count": 4,
+    "targets": [
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Volume.Aseg",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:SurfaceMetric.Sulc",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:SurfaceMetric.LGI",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "human",
+          "hemisphere": "lh"
+        }
+      }
+    ],
+    "exact_steps": [
+      "preprocess-3",
+      "rescale",
+      "mris_compute_lgi"
+    ],
+    "exact_cost": 3.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:Volume.Aseg",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "preprocess-3"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric.Sulc",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "preprocess-3"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric.LGI",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "human",
+            "hemisphere": "lh"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "mris_compute_lgi"
+        ],
+        "reasons": []
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_4_045",
+    "missing_count": 4,
+    "targets": [
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Transform.Affine",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Annotation.AparcDK",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque",
+          "atlas_file_stem": "aparc"
+        }
+      },
+      {
+        "type": "type:SurfaceMetric",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      }
+    ],
+    "exact_steps": [
+      "acpc-align",
+      "preprocess-3-2",
+      "rescale",
+      "freesurfer2caret"
+    ],
+    "exact_cost": 4.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:Transform.Affine",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "acpc-align"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Annotation.AparcDK",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque",
+            "atlas_file_stem": "aparc"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "preprocess-3"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_4_046",
+    "missing_count": 4,
+    "targets": [
+      {
+        "type": "type:Annotation",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      },
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Transform.Affine",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:SurfaceMetric.LGI",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque",
+          "hemisphere": "lh"
+        }
+      }
+    ],
+    "exact_steps": [
+      "acpc-align",
+      "rescale",
+      "freesurfer2caret",
+      "mris_compute_lgi"
+    ],
+    "exact_cost": 4.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:Annotation",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:Transform.Affine",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "acpc-align"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric.LGI",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque",
+            "hemisphere": "lh"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "mris_compute_lgi"
+        ],
+        "reasons": []
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_4_048",
+    "missing_count": 4,
+    "targets": [
+      {
+        "type": "type:SurfaceMetric.LGI",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "human",
+          "hemisphere": "rh"
+        }
+      },
+      {
+        "type": "type:Surface",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      },
+      {
+        "type": "type:Volume.BrainMask",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "species": "macaque"
+        }
+      }
+    ],
+    "exact_steps": [
+      "seg-brain",
+      "rescale",
+      "freesurfer2caret",
+      "mris_compute_lgi"
+    ],
+    "exact_cost": 4.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:SurfaceMetric.LGI",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "human",
+            "hemisphere": "rh"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "mris_compute_lgi"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Surface",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Volume.BrainMask",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "seg-brain"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_4_049",
+    "missing_count": 4,
+    "targets": [
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:SurfaceMetric.LGI",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque",
+          "hemisphere": "lh"
+        }
+      },
+      {
+        "type": "type:Surface",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      },
+      {
+        "type": "type:Surface",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      }
+    ],
+    "exact_steps": [
+      "rescale",
+      "freesurfer2caret",
+      "mris_compute_lgi"
+    ],
+    "exact_cost": 3.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric.LGI",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque",
+            "hemisphere": "lh"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "mris_compute_lgi"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Surface",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Surface",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_5_001",
+    "missing_count": 5,
+    "targets": [
+      {
+        "type": "type:Annotation",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      },
+      {
+        "type": "type:SurfaceMetric.Curvature",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:SurfaceMetric.Thickness",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:StatsTable.CorticalParcStats",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      }
+    ],
+    "exact_steps": [
+      "preprocess-3-2",
+      "rescale",
+      "freesurfer2caret"
+    ],
+    "exact_cost": 3.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:Annotation",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric.Curvature",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "preprocess-3"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric.Thickness",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "rescale"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:StatsTable.CorticalParcStats",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:StatsTable.CorticalParcStats <- rescale <- type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_5_002",
+    "missing_count": 5,
+    "targets": [
+      {
+        "type": "type:SurfaceMetric.Curvature",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Surface",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      },
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Label.Cortex",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:SurfaceMetric.Thickness",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "species": "macaque"
+        }
+      }
+    ],
+    "exact_steps": [
+      "preprocess-3-2",
+      "rescale",
+      "freesurfer2caret"
+    ],
+    "exact_cost": 3.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:SurfaceMetric.Curvature",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "preprocess-3"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Surface",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:Label.Cortex",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "preprocess-3"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric.Thickness",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:SurfaceMetric.Thickness <- rescale <- type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_5_005",
+    "missing_count": 5,
+    "targets": [
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:StatsTable.CorticalParcStats",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:SurfaceMetric.Sulc",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Volume.BrainMask",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "human"
+        }
+      },
+      {
+        "type": "type:SurfaceMetric.Curvature",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque"
+        }
+      }
+    ],
+    "exact_steps": [
+      "seg-brain",
+      "preprocess-3-2",
+      "rescale"
+    ],
+    "exact_cost": 3.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:StatsTable.CorticalParcStats",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "rescale"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric.Sulc",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "preprocess-3"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Volume.BrainMask",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "human"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "seg-brain"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric.Curvature",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "preprocess-3"
+        ],
+        "reasons": []
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_5_008",
+    "missing_count": 5,
+    "targets": [
+      {
+        "type": "type:Volume.BrainMask",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Annotation",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      },
+      {
+        "type": "type:Surface",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      },
+      {
+        "type": "type:StatsTable.CorticalParcStats",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      }
+    ],
+    "exact_steps": [
+      "seg-brain",
+      "rescale",
+      "freesurfer2caret"
+    ],
+    "exact_cost": 3.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:Volume.BrainMask",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "seg-brain"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Annotation",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Surface",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:StatsTable.CorticalParcStats",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "rescale"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_5_012",
+    "missing_count": 5,
+    "targets": [
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Annotation.AparcDK",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque",
+          "atlas_file_stem": "aparc"
+        }
+      },
+      {
+        "type": "type:SurfaceMetric",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      },
+      {
+        "type": "type:SurfaceMetric.LGI",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque",
+          "hemisphere": "lh"
+        }
+      },
+      {
+        "type": "type:StatsTable.CorticalParcStats",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      }
+    ],
+    "exact_steps": [
+      "preprocess-3-2",
+      "rescale",
+      "freesurfer2caret",
+      "mris_compute_lgi"
+    ],
+    "exact_cost": 4.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:Annotation.AparcDK",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque",
+            "atlas_file_stem": "aparc"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "preprocess-3"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric.LGI",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque",
+            "hemisphere": "lh"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "mris_compute_lgi"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:StatsTable.CorticalParcStats",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "rescale"
+        ],
+        "reasons": []
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_5_013",
+    "missing_count": 5,
+    "targets": [
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:SurfaceMetric",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      },
+      {
+        "type": "type:SurfaceMetric.LGI",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "human",
+          "hemisphere": "lh"
+        }
+      },
+      {
+        "type": "type:Label.Cortex",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Volume.BrainMask",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque"
+        }
+      }
+    ],
+    "exact_steps": [
+      "seg-brain",
+      "preprocess-3-2",
+      "rescale",
+      "freesurfer2caret",
+      "mris_compute_lgi"
+    ],
+    "exact_cost": 5.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric.LGI",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "human",
+            "hemisphere": "lh"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "mris_compute_lgi"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Label.Cortex",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "preprocess-3-2"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Volume.BrainMask",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "seg-brain"
+        ],
+        "reasons": []
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_5_014",
+    "missing_count": 5,
+    "targets": [
+      {
+        "type": "type:SurfaceMetric.LGI",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "human",
+          "hemisphere": "lh"
+        }
+      },
+      {
+        "type": "type:Surface",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      },
+      {
+        "type": "type:SurfaceMetric.Sulc",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:SurfaceMetric.Thickness",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      }
+    ],
+    "exact_steps": [
+      "preprocess-3-2",
+      "rescale",
+      "freesurfer2caret",
+      "mris_compute_lgi"
+    ],
+    "exact_cost": 4.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:SurfaceMetric.LGI",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "human",
+            "hemisphere": "lh"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "mris_compute_lgi"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Surface",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric.Sulc",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "preprocess-3"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric.Thickness",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:SurfaceMetric.Thickness <- rescale <- type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_5_015",
+    "missing_count": 5,
+    "targets": [
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Annotation",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      },
+      {
+        "type": "type:SurfaceMetric.LGI",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque",
+          "hemisphere": "rh"
+        }
+      },
+      {
+        "type": "type:SurfaceMetric.LGI",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "human",
+          "hemisphere": "rh"
+        }
+      },
+      {
+        "type": "type:Transform.Affine",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque"
+        }
+      }
+    ],
+    "exact_steps": [
+      "acpc-align",
+      "rescale",
+      "freesurfer2caret",
+      "mris_compute_lgi"
+    ],
+    "exact_cost": 4.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:Annotation",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric.LGI",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque",
+            "hemisphere": "rh"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "mris_compute_lgi"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric.LGI",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "human",
+            "hemisphere": "rh"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "mris_compute_lgi"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Transform.Affine",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "acpc-align"
+        ],
+        "reasons": []
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_5_016",
+    "missing_count": 5,
+    "targets": [
+      {
+        "type": "type:Transform.Affine",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:StatsTable.CorticalParcStats",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Surface",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      },
+      {
+        "type": "type:SurfaceMetric.Sulc",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "species": "macaque"
+        }
+      }
+    ],
+    "exact_steps": [
+      "acpc-align",
+      "preprocess-3-2",
+      "rescale",
+      "freesurfer2caret"
+    ],
+    "exact_cost": 4.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:Transform.Affine",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "acpc-align"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:StatsTable.CorticalParcStats",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:StatsTable.CorticalParcStats <- rescale <- type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:Surface",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric.Sulc",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "preprocess-3"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_5_020",
+    "missing_count": 5,
+    "targets": [
+      {
+        "type": "type:SurfaceMetric.LGI",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "human",
+          "hemisphere": "rh"
+        }
+      },
+      {
+        "type": "type:Surface",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      },
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:SurfaceMetric.Curvature",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Volume.Aseg",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque"
+        }
+      }
+    ],
+    "exact_steps": [
+      "preprocess-3",
+      "rescale",
+      "freesurfer2caret",
+      "mris_compute_lgi"
+    ],
+    "exact_cost": 4.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:SurfaceMetric.LGI",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "human",
+            "hemisphere": "rh"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "mris_compute_lgi"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Surface",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric.Curvature",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "preprocess-3"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Volume.Aseg",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "preprocess-3"
+        ],
+        "reasons": []
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_5_023",
+    "missing_count": 5,
+    "targets": [
+      {
+        "type": "type:SurfaceMetric.LGI",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque",
+          "hemisphere": "lh"
+        }
+      },
+      {
+        "type": "type:SurfaceMetric.Thickness",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:StatsTable.CorticalParcStats",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:SurfaceMetric.Curvature",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque"
+        }
+      }
+    ],
+    "exact_steps": [
+      "preprocess-3-2",
+      "rescale",
+      "mris_compute_lgi"
+    ],
+    "exact_cost": 3.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:SurfaceMetric.LGI",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque",
+            "hemisphere": "lh"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "mris_compute_lgi"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric.Thickness",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:SurfaceMetric.Thickness <- rescale <- type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:StatsTable.CorticalParcStats",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:StatsTable.CorticalParcStats <- rescale <- type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric.Curvature",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "preprocess-3"
+        ],
+        "reasons": []
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_5_024",
+    "missing_count": 5,
+    "targets": [
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:SurfaceMetric",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      },
+      {
+        "type": "type:Surface",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      },
+      {
+        "type": "type:Annotation",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      },
+      {
+        "type": "type:SurfaceMetric",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      }
+    ],
+    "exact_steps": [
+      "rescale",
+      "freesurfer2caret"
+    ],
+    "exact_cost": 2.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Surface",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Annotation",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_5_026",
+    "missing_count": 5,
+    "targets": [
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Annotation.AparcDK",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque",
+          "atlas_file_stem": "aparc"
+        }
+      },
+      {
+        "type": "type:SurfaceMetric.LGI",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque",
+          "hemisphere": "lh"
+        }
+      },
+      {
+        "type": "type:SurfaceMetric.LGI",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "human",
+          "hemisphere": "lh"
+        }
+      },
+      {
+        "type": "type:SurfaceMetric",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      }
+    ],
+    "exact_steps": [
+      "preprocess-3-2",
+      "rescale",
+      "freesurfer2caret",
+      "mris_compute_lgi"
+    ],
+    "exact_cost": 4.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:Annotation.AparcDK",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque",
+            "atlas_file_stem": "aparc"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "preprocess-3"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric.LGI",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque",
+            "hemisphere": "lh"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "mris_compute_lgi"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric.LGI",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "human",
+            "hemisphere": "lh"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "mris_compute_lgi"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_5_031",
+    "missing_count": 5,
+    "targets": [
+      {
+        "type": "type:Annotation.AparcDK",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque",
+          "atlas_file_stem": "aparc"
+        }
+      },
+      {
+        "type": "type:Transform.Affine",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Annotation",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      },
+      {
+        "type": "type:SurfaceMetric.LGI",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "human",
+          "hemisphere": "lh"
+        }
+      }
+    ],
+    "exact_steps": [
+      "acpc-align",
+      "preprocess-3-2",
+      "rescale",
+      "freesurfer2caret",
+      "mris_compute_lgi"
+    ],
+    "exact_cost": 5.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:Annotation.AparcDK",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque",
+            "atlas_file_stem": "aparc"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "preprocess-3"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Transform.Affine",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "acpc-align"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:Annotation",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric.LGI",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "human",
+            "hemisphere": "lh"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "mris_compute_lgi"
+        ],
+        "reasons": []
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_5_034",
+    "missing_count": 5,
+    "targets": [
+      {
+        "type": "type:Annotation",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      },
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:StatsTable.CorticalParcStats",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:SurfaceMetric.Curvature",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Volume.BrainMask",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "human"
+        }
+      }
+    ],
+    "exact_steps": [
+      "seg-brain",
+      "preprocess-3-2",
+      "rescale",
+      "freesurfer2caret"
+    ],
+    "exact_cost": 4.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:Annotation",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:StatsTable.CorticalParcStats",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "rescale"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric.Curvature",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "preprocess-3"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Volume.BrainMask",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "human"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "seg-brain"
+        ],
+        "reasons": []
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_5_036",
+    "missing_count": 5,
+    "targets": [
+      {
+        "type": "type:SurfaceMetric",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      },
+      {
+        "type": "type:SurfaceMetric.Curvature",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:SurfaceMetric",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      },
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Volume.BrainMask",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque"
+        }
+      }
+    ],
+    "exact_steps": [
+      "seg-brain",
+      "preprocess-3-2",
+      "rescale",
+      "freesurfer2caret"
+    ],
+    "exact_cost": 4.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:SurfaceMetric",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric.Curvature",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "preprocess-3-2"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:Volume.BrainMask",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "seg-brain"
+        ],
+        "reasons": []
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_5_047",
+    "missing_count": 5,
+    "targets": [
+      {
+        "type": "type:SurfaceMetric.LGI",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque",
+          "hemisphere": "rh"
+        }
+      },
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:SurfaceMetric.Thickness",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Volume.Aseg",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:StatsTable.CorticalParcStats",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      }
+    ],
+    "exact_steps": [
+      "preprocess-3-1",
+      "rescale",
+      "mris_compute_lgi"
+    ],
+    "exact_cost": 3.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:SurfaceMetric.LGI",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque",
+            "hemisphere": "rh"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "mris_compute_lgi"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric.Thickness",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:SurfaceMetric.Thickness <- rescale <- type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:Volume.Aseg",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "preprocess-3"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:StatsTable.CorticalParcStats",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "rescale"
+        ],
+        "reasons": []
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_5_048",
+    "missing_count": 5,
+    "targets": [
+      {
+        "type": "type:Annotation",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      },
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:StatsTable.CorticalParcStats",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Annotation.AparcDK",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque",
+          "atlas_file_stem": "aparc"
+        }
+      },
+      {
+        "type": "type:SurfaceMetric.Sulc",
+        "attrs": {
+          "subject": "synthetic_0",
+          "species": "macaque"
+        }
+      }
+    ],
+    "exact_steps": [
+      "preprocess-3-2",
+      "rescale",
+      "freesurfer2caret"
+    ],
+    "exact_cost": 3.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:Annotation",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:StatsTable.CorticalParcStats",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:StatsTable.CorticalParcStats <- rescale <- type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:Annotation.AparcDK",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque",
+            "atlas_file_stem": "aparc"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "preprocess-3"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:SurfaceMetric.Sulc",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "preprocess-3"
+        ],
+        "reasons": []
+      }
+    ]
+  },
+  {
+    "case": "FEASIBLE_5_049",
+    "missing_count": 5,
+    "targets": [
+      {
+        "type": "type:SurfaceMetric",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      },
+      {
+        "type": "type:Volume.T1",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:StatsTable.CorticalParcStats",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:StatsTable.CorticalParcStats",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "rh",
+          "species": "macaque"
+        }
+      },
+      {
+        "type": "type:Surface",
+        "attrs": {
+          "subject": "synthetic_0",
+          "hemisphere": "lh",
+          "scale_status": null,
+          "species": "macaque",
+          "space": "fsLR_32k",
+          "mesh": 32492
+        }
+      }
+    ],
+    "exact_steps": [
+      "rescale",
+      "freesurfer2caret"
+    ],
+    "exact_cost": 2.0,
+    "andor_reason_chains": [
+      {
+        "target": {
+          "type": "type:SurfaceMetric",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:StatsTable.CorticalParcStats",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "species": "macaque"
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "rescale"
+        ],
+        "reasons": []
+      },
+      {
+        "target": {
+          "type": "type:StatsTable.CorticalParcStats",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:StatsTable.CorticalParcStats <- rescale <- type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      },
+      {
+        "target": {
+          "type": "type:Surface",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "lh",
+            "scale_status": null,
+            "species": "macaque",
+            "space": "fsLR_32k",
+            "mesh": 32492
+          }
+        },
+        "cost": 1.0,
+        "steps": [
+          "freesurfer2caret"
+        ],
+        "reasons": []
+      }
+    ]
+  }
+]

@@ -1,0 +1,54 @@
+{
+  "status": "pass",
+  "tests": [
+    {
+      "fixture": "correct",
+      "expected": "pass",
+      "actual": "pass"
+    },
+    {
+      "fixture": "valid_reordered_extra",
+      "expected": "pass",
+      "actual": "pass"
+    },
+    {
+      "fixture": "wrong_value",
+      "expected": "fail",
+      "actual": "fail"
+    },
+    {
+      "fixture": "shortcut_one_row",
+      "expected": "fail",
+      "actual": "fail"
+    },
+    {
+      "fixture": "duplicate",
+      "expected": "error",
+      "actual": "error"
+    },
+    {
+      "fixture": "missing_metric",
+      "expected": "fail",
+      "actual": "fail"
+    },
+    {
+      "fixture": "valid_reverse_group_contrast",
+      "actual": "pass",
+      "expected": "pass"
+    },
+    {
+      "fixture": "corrupt.csv",
+      "actual": "error",
+      "expected": "error"
+    },
+    {
+      "fixture": "missing.csv",
+      "actual": "error",
+      "expected": "error"
+    }
+  ],
+  "unchanged_atol": 1e-09,
+  "unchanged_rtol": 1e-07,
+  "hidden_reference_outside_inputs": true,
+  "model_calls": 0
+}

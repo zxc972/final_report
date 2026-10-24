@@ -1,0 +1,15 @@
+{
+  "unit": "one frozen question, one entry",
+  "E1_total": 10,
+  "E1_positive_full_chain_pass": 0,
+  "E1_positive_n": 7,
+  "frozen_negative_criterion_pass": 3,
+  "negative_n": 3,
+  "strict_refusal_pass": 2,
+  "frozen_criterion_composite_pass": 3,
+  "strict_original_scope_composite_pass": 2,
+  "original_G1_G2_pass": 1,
+  "original_G1_G2_n": 2,
+  "N3": "IXI999 explicitly absent and not fabricated; unsolicited IXI064 computation fails strict original-scope/refusal criterion",
+  "additional_runs_for_scoring": 0
+}

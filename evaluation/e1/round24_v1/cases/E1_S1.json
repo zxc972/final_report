@@ -1,0 +1,154 @@
+{
+  "case": "E1_S1",
+  "C": true,
+  "status": "incomplete_review",
+  "overall_status": "incomplete_review",
+  "route": "analysis",
+  "model_calls": 16,
+  "tool_calls": 19,
+  "executions": 1,
+  "iterations": 1,
+  "elapsed_seconds": 852.4313344322145,
+  "internal_review_decision": "unreviewed",
+  "internal_review_protocol_valid": false,
+  "full_chain_passed": false,
+  "source_commit": "28698e341ef953688e8fa8d314918350772b7fd1",
+  "http_status": 200,
+  "client_error": null,
+  "http_attempts": 19,
+  "known_prompt_tokens": 184158,
+  "known_completion_tokens": 24668,
+  "known_total_tokens": 208826,
+  "unknown_usage_attempts": 4,
+  "observed_native_logical_calls": 16,
+  "all_http_bound_to_native": true,
+  "public_output_contract": {
+    "status": "pass",
+    "identity_mismatch_count": 0,
+    "numeric_mismatch_count": 0,
+    "schema_mismatch_count": 0,
+    "files": [
+      {
+        "status": "pass",
+        "identity_mismatch_count": 0,
+        "numeric_mismatch_count": 0,
+        "output_sha256": "7edc031b9b67554506f620832cc4f63056deb8f8ad8bbebf6cbd6b689e8ef563",
+        "file": "summary.csv",
+        "rows": 62,
+        "expected_rows": 62,
+        "schema_mismatch_count": 0
+      }
+    ]
+  },
+  "independent_numeric": {
+    "status": "pass",
+    "host_verified": true,
+    "assessment_status": "assessed",
+    "checked": 310,
+    "mismatch_count": 0,
+    "identity_mismatch_count": 0,
+    "numeric_mismatch_count": 0
+  },
+  "request_budget": {
+    "model_calls": 16,
+    "http_attempts": 19,
+    "model_source": "provider_response",
+    "retry_http_attempts": 3,
+    "unmetered_logical_calls": 0,
+    "router_calls": 1,
+    "router_http_attempts": 1,
+    "limit": 30,
+    "known_usage_calls": 15,
+    "unknown_usage_calls": 4,
+    "cost": null,
+    "cost_status": "No verified monetary price; unknown usage is not zero"
+  },
+  "review_budget": {
+    "enabled": true,
+    "total_logical_limit": 30,
+    "review_reserved_attempts": 4,
+    "revision_reserved_calls": 3,
+    "initial_coding_limit": 23,
+    "initial_coding_model_calls": 14,
+    "nonreview_limit": 26,
+    "nonreview_model_calls": 14,
+    "review_logical_calls": 2,
+    "review_http_attempts": 5,
+    "review_http_by_logical": [
+      2,
+      3
+    ],
+    "review_transport_retries_maximum": 2,
+    "review_credits_used": 2,
+    "review_credits_remaining": 2,
+    "revision_model_calls": 0,
+    "revision_credits_remaining": 3,
+    "revision_authorized": false,
+    "budget_units_used": 16,
+    "transport_retries_charge_review_pool": false,
+    "native_logical_http_counters_not_reset": true
+  },
+  "phase_budget": {
+    "planning_model_calls": 5,
+    "planning_actual_model_calls": 5,
+    "postseal_model_calls": 11,
+    "planning_limit": 18,
+    "execution_reserve": 9,
+    "planning_includes_precharged_router_calls": true
+  },
+  "system_defect_codes": [],
+  "failure_category": "review_incomplete",
+  "source_nodes": {
+    "router": 1,
+    "coding.model": 13,
+    "internal_review": 5
+  },
+  "tables": {
+    "summary.csv": {
+      "status": "pass",
+      "checked": 310,
+      "mismatch_count": 0,
+      "identity_mismatch_count": 0,
+      "numeric_mismatch_count": 0,
+      "output_sha256": "7edc031b9b67554506f620832cc4f63056deb8f8ad8bbebf6cbd6b689e8ef563",
+      "source": "independent E1 fixed-scope reference"
+    }
+  },
+  "fixed_scope_numeric_pass": true,
+  "conclusion_card": {
+    "overall_status": "incomplete_review",
+    "verdict": "deferred",
+    "review_status": "unreviewed",
+    "scope": "supplied_descriptive",
+    "component_statuses": {
+      "artifacts": "finalized",
+      "public_contract": "pass",
+      "independent_numeric": "pass",
+      "internal_review": "unreviewed",
+      "execution": "passed",
+      "last_exit_code": 0,
+      "identity_mismatch_count": 0,
+      "numeric_mismatch_count": 0,
+      "public_identity_mismatch_count": 0
+    }
+  },
+  "semantic_audit_required": true,
+  "analysis_model_calls_reported": 16,
+  "logical_call_count_source": "native RequestBudget including router; analysis-only field retained separately",
+  "selected_plans": [
+    {
+      "version": 1,
+      "sha256": "bbf0a5a4d224383ff610ece262a51d6f1c1a6f879534607f953356de203987d1",
+      "method_id": "method:v12:surface_annotation_roi",
+      "subject_count": 1,
+      "atlas": "aparc.DKTatlas",
+      "design": null,
+      "comparison": "describe",
+      "effect": null,
+      "n": null,
+      "df": null,
+      "metrics": null,
+      "regions": null
+    }
+  ]
+}

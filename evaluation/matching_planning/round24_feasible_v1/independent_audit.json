@@ -1,0 +1,16 @@
+{
+  "protocol_and_input_hashes_match": true,
+  "source_algorithms_unchanged": true,
+  "verified_feasible_step_replays": 934,
+  "full_reduced_exact_comparisons": 250,
+  "full_reduced_exact_mismatches": 0,
+  "andor_false_infeasible": 66,
+  "false_infeasible_by_missing_count": {
+    "1": 6,
+    "2": 9,
+    "3": 14,
+    "4": 18,
+    "5": 19
+  },
+  "model_calls": 0
+}

@@ -1,0 +1,74 @@
+{
+  "seed": 20261024,
+  "per_stratum": 50,
+  "workers": 4,
+  "csp_timeout_seconds": 10.0,
+  "planning_timeout_seconds": 30.0,
+  "csp_stress": {
+    "slots": [
+      2,
+      8
+    ],
+    "candidate_bins": [
+      5,
+      10,
+      25,
+      50,
+      100,
+      200
+    ],
+    "densities": [
+      "random spanning tree",
+      "tree plus .4 of remaining edges",
+      "tree plus .85 of remaining edges"
+    ],
+    "instances_per_density": 50,
+    "planted_solutions": 2,
+    "max_solutions": 256
+  },
+  "csp_auxiliary_correctness": {
+    "slots": [
+      2,
+      4
+    ],
+    "candidates": [
+      5,
+      9
+    ],
+    "subject_values": 4,
+    "instances_per_density": 50,
+    "max_solutions": 100000
+  },
+  "node_definitions": {
+    "backtracking": "attempted slot-product bindings, existing stats.nodes",
+    "brute_force": "complete Cartesian bindings visited; not prefix-node equivalents"
+  },
+  "ablations": "isolated source-derived heuristic removals; original module files never written; full/oracle bytecode unchanged",
+  "planning": {
+    "missing_counts": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "instances_per_count": 50,
+    "real_workflow_steps": 14,
+    "unit_step_costs": true,
+    "additional_verification_oracle": "existing optimal_plan on the complete type-ancestor producer closure; full-graph optimal_plan remains a separate measured baseline",
+    "forward_baseline": "run all enabled steps whose inputs bind, including unnecessary stages"
+  },
+  "source_sha256": {
+    "analysis_csp_matching.py": "e75768b097c05d7d568c4c48ee3fd4b548b047b0f64f8ff745ef5157279ec001",
+    "analysis_andor_planner.py": "ed82645d69ccd9eda61950edab89cbe871e3dd32f7dc397424ce75919aea6854"
+  },
+  "workflow_sha256": "d9d54bd84300c5135f69ec670cc0528c3891c0f784bc0c316d4deead8917d030",
+  "product_types_sha256": "6fe849854dce715c40389ff00a9945dd8803e1f9db2c620d485eec0bcaa6021e",
+  "machine": {
+    "platform": "Linux-5.14.0-284.30.1.el9_2.x86_64-x86_64-with-glibc2.34",
+    "python": "3.11.5 (main, Sep 11 2023, 13:54:46) [GCC 11.2.0]",
+    "logical_cpus": 24
+  },
+  "model_calls": 0,
+  "fairness": "Timeouts are censored, not agreement; equality only for complete sets. Stress certificate and direct brute-force checks reported separately."
+}

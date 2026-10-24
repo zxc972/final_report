@@ -1,0 +1,164 @@
+{
+  "baseline": "9ec6d91b3441e56f15d8e5e456848a981955d95f",
+  "intentional_backend_changes": [
+    {
+      "path": "agent/modules/agent/backend/analysis_constraint_ids.py",
+      "before_sha256": null,
+      "after_sha256": "17d10b101c3ddd4e6bdb4776548c092b83cf8e1cbd5408a4305dca41f88fef10",
+      "reason": "Canonical observed method-qualified IDs with only unique aliases accepted; forged/ambiguous identities rejected."
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_review_evidence.py",
+      "before_sha256": "4b1532b25bc08aa250c174d717667a62c53702fb14be434a90cf01cf35587ea4",
+      "after_sha256": "f8600ec03db2614d23b59df43371303bba66a627ffae1e8bc7eda33f2205c17e",
+      "reason": "Render and index observed evidence with the canonical ID."
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_review_protocol.py",
+      "before_sha256": "94bffd70c2ef39054244e7ae6284b4d59a91e47523cb0cd4a89cdc56b4d2fc7a",
+      "after_sha256": "7a7e3ad300bab82d8cd13eef2cc14bdda9ea14efcaac89013152bd7b6705aee5",
+      "reason": "Normalize only observed aliases in review findings/disclosures; protocol content predicates unchanged."
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_review_budget.py",
+      "before_sha256": "853970b3691461986814e422225d3fe7558b57c5e9514923f9be712d30d46716",
+      "after_sha256": "ba3e2e221d00a9ab4561464329e603d9d683f376277257199f613034266b99d9",
+      "reason": "Disjoint 23 initial, 4 logical review, 3 revise-only repair pools; retries metered separately."
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_provider.py",
+      "before_sha256": "51a701fffb1098b1d1e86aa1a7aed24349cc8841973c927ce9e9b110cd336c57",
+      "after_sha256": "18843610fa9ba7f3578ca772016e514eaae77e199122036a67fbabd176b2a878",
+      "reason": "Mark actual transport retries for logical reservation while preserving native actual counters."
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_transport.py",
+      "before_sha256": "1ed187c81a8c1b523f7d5031bcd10bb26f30a1305d0e54c355e0332f9a0af34a",
+      "after_sha256": "826805e91721ea93b4b90c055d2b6e7a2077040f69a1529b5125506a1c2f9e88",
+      "reason": "Context-local review retry cap 2; ordinary provider retry policy unchanged."
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_system_defects.py",
+      "before_sha256": "c0887f203fa090bdc85f29775ca2b02d45e0b53621331374b058d1abc1a25bef",
+      "after_sha256": "740e9c31b1a8d05732d200b5677166a6035f0a7cb92a97391222ef6a2e02cf82",
+      "reason": "Operational stop threshold configurable; closed Round24 evaluation uses first defect, legacy default stays 2."
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_agent.py",
+      "before_sha256": "d82cbb69adbec0337aab6f87dcfd4c079c11107675a897f1a406dcd0cd00579a",
+      "after_sha256": "42e01374cd3be8adeb73ec4cf65aa042c04e6f2e0b5ade90f73fe558d86dc8cb",
+      "reason": "Authorize reserved repair credits only after valid revise; optional design-mismatch rationale, same outer-round limit."
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_product_planner.py",
+      "before_sha256": "cbeecf46a05e33879e57a0f1be5884034aab35e709f26bfc9dab2c5f48866fb7",
+      "after_sha256": "3cf8844f913192d9275b1f78578cdfd1c235b7a49262356c3f0ebdf7d5a16afa",
+      "reason": "Rank group-supporting methods first for explicit group design; preserve caller group-table contract before discovery, without guessing a design; retain unsupported choices with required rationale."
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_execution_guidance.py",
+      "before_sha256": "5448ff6c86964ea736e581cb78341977ec48de747a2a06d48008aad621b95625",
+      "after_sha256": "7711a112c8cec90c6c9b26340fb0b29a068014bb592b30f24390d3a55be52a10",
+      "reason": "Inline fixed values and enums in bounded cards; expose sealed public schema to the writer."
+    },
+    {
+      "path": "agent/modules/agent/backend/primatex_ops.py",
+      "before_sha256": "dc75a3fefa8d6372278937ad2504f21a05219973adc9f2d1cea940298e7bfac8",
+      "after_sha256": "368a921c911d383b341ed5a93bbf3c8c90138b9ac18e183dcd1b012a1edb0f98",
+      "reason": "Only generic write_contract_table preflight changed; checks enums/fixed/identities before writing without altering data."
+    }
+  ],
+  "unchanged_scientific_sources": [
+    {
+      "path": "agent/modules/agent/backend/analysis_group_stats.py",
+      "sha256": "f57662330c479b80562e7172c9c84fe2790ef25101488226e1b50d4da759bd71",
+      "unchanged": true
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_numeric_reference.py",
+      "sha256": "cf3a5e7a808d1b59d61bdc55115f8c66df2daecda036a8e1e8ab2976f1d420a1",
+      "unchanged": true
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_global_reference.py",
+      "sha256": "6082436fb2161aa437a2012abbf0ffc336aebfe0e4df7fb647cccdaf3d860049",
+      "unchanged": true
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_global_reference_worker.py",
+      "sha256": "cb6241eed6e347d4809242468c20425d3528ddab373bc28955aaf6ea1af5ebf0",
+      "unchanged": true
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_group_contract.py",
+      "sha256": "93a682ab0e54b82724662782750fc0c9600a949fb100700ec5ab069ebf4e6a65",
+      "unchanged": true
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_precision.py",
+      "sha256": "34bc2b94b529cacceb34af5fbc99f0ab99f1a898598dec932d290d7655f3274c",
+      "unchanged": true
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_internal_review.py",
+      "sha256": "6d5661cba5f4395fd5e4bbb205ba6caf2d83d13025758d8b903efd70c15a53e2",
+      "unchanged": true
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_group_reporting.py",
+      "sha256": "d1de260ede26a2195d8bac35e038c224766a11f6736be81d1abc62c5cbb2ea16",
+      "unchanged": true
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_independent_numeric.py",
+      "sha256": "b98afb76d966fb524a7b2246e8d4f23c3202b12ca79f08725ccc398982a508a6",
+      "unchanged": true
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_condition_canonicalizer.py",
+      "sha256": "140669418d7a6603df4dbe55be7a677d9f0d8bff92d7255a7aadff1892bb07d8",
+      "unchanged": true
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_region_resolver.py",
+      "sha256": "bfc4f28059181e25d500977e97367b303a8e8249000b1198370ce607e053b264",
+      "unchanged": true
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_csp_matching.py",
+      "sha256": "e75768b097c05d7d568c4c48ee3fd4b548b047b0f64f8ff745ef5157279ec001",
+      "unchanged": true
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_andor_planner.py",
+      "sha256": "ed82645d69ccd9eda61950edab89cbe871e3dd32f7dc397424ce75919aea6854",
+      "unchanged": true
+    },
+    {
+      "path": "agent/modules/agent/backend/agent_chat_state.py",
+      "sha256": "b0d204bff0c0036855501b4a1f1d0ace786dc79c94e6886c59351e2068f4d0c7",
+      "unchanged": true
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_call_context.py",
+      "sha256": "66901bdcb18b321dff82afff02d64a4edca0c6cfa48580fdc7cf2eb5581c1f2d",
+      "unchanged": true
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_http_observer.py",
+      "sha256": "ed9f6d3a7f61f5d94c4de0eaab3a2f45d5a984019f7a0b4202fa5ec3dcd81fec",
+      "unchanged": true
+    }
+  ],
+  "public_validate_csv_AST_unchanged": true,
+  "global_candidate_and_table_contract_AST_unchanged": true,
+  "all_old_operations_AST_unchanged": true,
+  "old_14_operation_examples_unchanged": true,
+  "operation_metadata_reason": "Append actual synthetic serializer receipt; bind the new library SHA only.",
+  "research_files_unchanged": 82,
+  "algorithm_parameters_prompts_vocabulary_unchanged": true,
+  "native_http_metering_unchanged": true,
+  "ordinary_retry_policy_unchanged": true,
+  "review_retry_cap": 2,
+  "unexpected_changes": []
+}

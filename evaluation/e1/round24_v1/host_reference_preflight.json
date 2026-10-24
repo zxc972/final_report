@@ -1,0 +1,34 @@
+{
+  "ready": true,
+  "cases": {
+    "S1": {
+      "summary.csv": 62
+    },
+    "S3": {
+      "summary.csv": 62
+    },
+    "G1": {
+      "regional_values.csv": 1240,
+      "group_results.csv": 62
+    },
+    "G2": {
+      "regional_values.csv": 1240,
+      "group_results.csv": 62
+    },
+    "S2": {
+      "global_metrics.csv": 1
+    },
+    "G3": {
+      "global_area_values.csv": 20,
+      "group_results.csv": 1
+    },
+    "X1": {
+      "global_metrics.csv": 26,
+      "species_summary.csv": 4
+    }
+  },
+  "numeric_tolerances_unchanged": true,
+  "source_hashes_count": 966,
+  "private_reference_sha256": "4862cfd6b37c4580acd25d5d511aeecb03ffa1142ab9a15a841eca88cd3ee3a4",
+  "model_calls": 0
+}
