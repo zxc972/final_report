@@ -1,6 +1,6 @@
 {
   "schema": "final_report.publication.v1",
-  "source_snapshot": "2026-10-24 Round22 six frozen original-question retests, aligned native metering and complete outcome report; source unchanged, authorization closed, existing services preserved",
+  "source_snapshot": "2026-10-24 Round23 immutable 83-statement gold freeze and unchanged-algorithm evaluator with explicitly authorized 1500-call meter; four offline evaluator tests passed",
   "files": [
     {
       "path": ".env.example",
@@ -24,8 +24,8 @@
     },
     {
       "path": "SNAPSHOT_MANIFEST.json",
-      "bytes": 730592,
-      "sha256": "a46e844991b7a28aa678f5168ac50de2af6a63a82cdfb45c8e54365354976bdb"
+      "bytes": 723015,
+      "sha256": "cecfac46a76a6f9a79d25c54bf9df7ad6077e17dc1f9022e0b8abb6ae1581ac7"
     },
     {
       "path": "agent/.gitignore",
@@ -1906,6 +1906,11 @@
       "path": "agent/modules/agent/tests/test_round21_sdk_http_observer.py",
       "bytes": 9561,
       "sha256": "6c9227fb6fa7c38855bd0f738921d68ba45776f54a61e3f48870fb53050411f9"
+    },
+    {
+      "path": "agent/modules/agent/tests/test_round23_condition_eval.py",
+      "bytes": 2905,
+      "sha256": "1eb471e6ea2bd837a25fd4170d00ebd5abec87364b61d06156f92a2db07be87f"
     },
     {
       "path": "agent/modules/agent/tests/test_round6_plan_affordances.py",
@@ -3898,6 +3903,11 @@
       "sha256": "e34d6796259e87f44f3bcede9c304eb87b4c1a5e31605cdfd357085bdac45135"
     },
     {
+      "path": "evaluation/condition_gold/gold_test_v2.json",
+      "bytes": 66635,
+      "sha256": "2ca5ca7492d9f09569372085a0cf75715d41a8e78e8bd24a0fc5c38015d84e3e"
+    },
+    {
       "path": "evaluation/condition_test_v1/ROUND18_PROTOCOL.md",
       "bytes": 3046,
       "sha256": "6e25abc8e76fbce09f3dfc2456de52b2a900e818aa79840359074f224e868842"
@@ -4161,6 +4171,11 @@
       "path": "evaluation/condition_test_v2/.gitignore",
       "bytes": 12,
       "sha256": "608cd2d434b1f57210c497a26367f24cb397b07b79e3fdde25b77d9a0a05b69b"
+    },
+    {
+      "path": "evaluation/condition_test_v2/ROUND23_GOLD_FREEZE.json",
+      "bytes": 1013,
+      "sha256": "86e611df0a6fa2110d5318c13b1a95e919ec7af2dd30e47e26bb3d87813d6b63"
     },
     {
       "path": "evaluation/condition_test_v2/claude_annotation_packet/HANDOFF_MANIFEST.json",
@@ -7394,8 +7409,8 @@
     },
     {
       "path": "tools/knowledge/provider_llm.py",
-      "bytes": 16892,
-      "sha256": "ded374b85365f7cb47263cfd242307c80df50f38ee09ea6e4d96bf7a5edb3d27"
+      "bytes": 17048,
+      "sha256": "ef26a0dd32eab8021b8ff4faf74b682b06ff4c4d0e93574a6a9cf5ac5d7cecc4"
     },
     {
       "path": "tools/knowledge/review_condition_test_cards.py",
@@ -7421,6 +7436,11 @@
       "path": "tools/knowledge/run_condition_test_evaluation.py",
       "bytes": 17819,
       "sha256": "bada9fb326bfd9054fbd4d4e30c0fa672efe6fca9553f020fe24e4071c1b79b0"
+    },
+    {
+      "path": "tools/knowledge/run_condition_test_v2_evaluation.py",
+      "bytes": 11713,
+      "sha256": "efac3b49f71653be6ac219bb4c763c5bb7789b3679957f043faae41e3df3ba5e"
     },
     {
       "path": "tools/knowledge/run_region_resolution.py",

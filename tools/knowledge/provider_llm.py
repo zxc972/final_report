@@ -152,9 +152,11 @@ class Provider:
         client=None,
         sleep=time.sleep,
         minimum_interval=0.0,
+        authorized_max_requests=1200,
     ):
-        if not 1 <= max_requests <= 1200:
-            raise ValueError("Round 17 permits at most 1200 HTTP attempts")
+        # Preserve legacy authorization unless a later round explicitly raises it.
+        if not 1 <= max_requests <= authorized_max_requests <= 1500:
+            raise ValueError("HTTP cap exceeds the explicit round authorization")
         self.config, self.max_requests, self.sleep = config, max_requests, sleep
         self.folder = Path(ledger_dir)
         self.folder.mkdir(parents=True, exist_ok=True)

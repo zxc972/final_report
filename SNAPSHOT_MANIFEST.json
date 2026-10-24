@@ -6,8 +6,8 @@
   "research_release": "research_evidence_v13",
   "source_root": "/data/xuancheng",
   "source_unchanged_check": true,
-  "source_files": 1492,
-  "source_bytes": 40544299,
+  "source_files": 1496,
+  "source_bytes": 40626721,
   "excluded_classes": [
     "credentials and .env",
     "FreeSurfer license",
@@ -4177,6 +4177,13 @@
       "mode": "100644"
     },
     {
+      "path": "agent/modules/agent/tests/test_round23_condition_eval.py",
+      "mode": "100644",
+      "bytes": 2905,
+      "sha256": "1eb471e6ea2bd837a25fd4170d00ebd5abec87364b61d06156f92a2db07be87f",
+      "source": "/data/xuancheng/agent_v1/round23_eval_source/agent/modules/agent/tests/test_round23_condition_eval.py"
+    },
+    {
       "path": "agent/modules/agent/tests/test_round6_plan_affordances.py",
       "source": "git:75143b21bc459c6f6e951891356ebf9e4e10169d/tests/test_round6_plan_affordances.py",
       "source_head": "75143b21bc459c6f6e951891356ebf9e4e10169d",
@@ -7561,6 +7568,13 @@
       "mode": "100644"
     },
     {
+      "path": "evaluation/condition_gold/gold_test_v2.json",
+      "mode": "100644",
+      "bytes": 66635,
+      "sha256": "2ca5ca7492d9f09569372085a0cf75715d41a8e78e8bd24a0fc5c38015d84e3e",
+      "source": "C:\\Users\\zxc18\\OneDrive\\Desktop\\知识图谱\\work\\round15_algorithms_sync\\evaluation\\condition_gold\\gold_test_v2.json"
+    },
+    {
       "path": "evaluation/condition_test_v1/ROUND18_PROTOCOL.md",
       "source": "/data/xuancheng/agent_v1/round18_source/evaluation/condition_test_v1/ROUND18_PROTOCOL.md",
       "bytes": 3046,
@@ -7930,6 +7944,13 @@
       "bytes": 12,
       "sha256": "608cd2d434b1f57210c497a26367f24cb397b07b79e3fdde25b77d9a0a05b69b",
       "source": "/data/xuancheng/agent_v1/round20_source/evaluation/condition_test_v2/.gitignore"
+    },
+    {
+      "path": "evaluation/condition_test_v2/ROUND23_GOLD_FREEZE.json",
+      "mode": "100644",
+      "bytes": 1013,
+      "sha256": "86e611df0a6fa2110d5318c13b1a95e919ec7af2dd30e47e26bb3d87813d6b63",
+      "source": "/data/xuancheng/agent_v1/round23_eval_source/evaluation/condition_test_v2/ROUND23_GOLD_FREEZE.json"
     },
     {
       "path": "evaluation/condition_test_v2/claude_annotation_packet/HANDOFF_MANIFEST.json",
@@ -12672,11 +12693,11 @@
     },
     {
       "path": "tools/knowledge/provider_llm.py",
-      "source": "/data/xuancheng/agent_v1/round17_source/tools/knowledge/provider_llm.py",
+      "source": "/data/xuancheng/agent_v1/round23_eval_source/tools/knowledge/provider_llm.py",
       "source_head": "31a1cf97ffd44fb898a0b6a36be90f020b8b9751",
       "mode": "100644",
-      "bytes": 16892,
-      "sha256": "ded374b85365f7cb47263cfd242307c80df50f38ee09ea6e4d96bf7a5edb3d27",
+      "bytes": 17048,
+      "sha256": "ef26a0dd32eab8021b8ff4faf74b682b06ff4c4d0e93574a6a9cf5ac5d7cecc4",
       "source_bytes": 13541,
       "source_sha256": "141c0adfea592a23b42113b2ea9d24fd2335f1eb218ebffe4d63eeb88120855a",
       "synced_at": "2026-10-23"
@@ -12719,6 +12740,13 @@
       "bytes": 17819,
       "sha256": "bada9fb326bfd9054fbd4d4e30c0fa672efe6fca9553f020fe24e4071c1b79b0",
       "mode": "100644"
+    },
+    {
+      "path": "tools/knowledge/run_condition_test_v2_evaluation.py",
+      "mode": "100644",
+      "bytes": 11713,
+      "sha256": "efac3b49f71653be6ac219bb4c763c5bb7789b3679957f043faae41e3df3ba5e",
+      "source": "/data/xuancheng/agent_v1/round23_eval_source/tools/knowledge/run_condition_test_v2_evaluation.py"
     },
     {
       "path": "tools/knowledge/run_region_resolution.py",
@@ -12822,293 +12850,41 @@
   ],
   "last_incremental_sync": {
     "date": "2026-10-24",
-    "base_commit": "91807e5a690e86b57cd6cf989d33862248983453",
-    "scope": "Round22 six frozen original-question retests, aligned native metering and complete outcome report; source unchanged, authorization closed, existing services preserved",
-    "changed_files": 47,
+    "base_commit": "12f8fbd2b12622c3b67c3e204722028f7b28b42e",
+    "scope": "Round23 immutable 83-statement gold freeze and unchanged-algorithm evaluator with explicitly authorized 1500-call meter; four offline evaluator tests passed",
+    "changed_files": 5,
     "formal_v1_0": false,
     "deployment": false,
     "changes": [
       {
-        "path": "docs/round22/ROUND22_REPORT.md",
+        "path": "agent/modules/agent/tests/test_round23_condition_eval.py",
         "previous_sha256": null,
-        "sha256": "f397dd835799b7b175d5cf5a180c9665230e657faa1e50c096d28e3723bd0921",
-        "bytes": 13725
+        "sha256": "1eb471e6ea2bd837a25fd4170d00ebd5abec87364b61d06156f92a2db07be87f",
+        "bytes": 2905
       },
       {
-        "path": "results/round22_group_retest_20261024/branch_merge.json",
+        "path": "evaluation/condition_gold/gold_test_v2.json",
         "previous_sha256": null,
-        "sha256": "a1287d0230b6e4cc7ff57fd3c163c471ea4d2022aebdb3dbfc8ba813b35b4fad",
-        "bytes": 1926
+        "sha256": "2ca5ca7492d9f09569372085a0cf75715d41a8e78e8bd24a0fc5c38015d84e3e",
+        "bytes": 66635
       },
       {
-        "path": "results/round22_group_retest_20261024/export_manifest.json",
+        "path": "evaluation/condition_test_v2/ROUND23_GOLD_FREEZE.json",
         "previous_sha256": null,
-        "sha256": "d45f1c2a49902c0d7b94411610acd55c271344a1d3bcc07834ba7bd029e6438d",
-        "bytes": 41730
+        "sha256": "86e611df0a6fa2110d5318c13b1a95e919ec7af2dd30e47e26bb3d87813d6b63",
+        "bytes": 1013
       },
       {
-        "path": "results/round22_group_retest_20261024/offline_v2/backend_default_merged.status.json",
-        "previous_sha256": null,
-        "sha256": "7a68be39d15af64b339cd5d767976404ddfb2f8ff93133e761239451e72ccbe9",
-        "bytes": 188
+        "path": "tools/knowledge/provider_llm.py",
+        "previous_sha256": "ded374b85365f7cb47263cfd242307c80df50f38ee09ea6e4d96bf7a5edb3d27",
+        "sha256": "ef26a0dd32eab8021b8ff4faf74b682b06ff4c4d0e93574a6a9cf5ac5d7cecc4",
+        "bytes": 17048
       },
       {
-        "path": "results/round22_group_retest_20261024/offline_v2/backend_default_merged.txt",
+        "path": "tools/knowledge/run_condition_test_v2_evaluation.py",
         "previous_sha256": null,
-        "sha256": "1e2be312c4f2e13d07651f52cc013a01dcf4d9b937bc246d53691482e02240c8",
-        "bytes": 7761
-      },
-      {
-        "path": "results/round22_group_retest_20261024/offline_v2/offline_all_passed.json",
-        "previous_sha256": null,
-        "sha256": "c313d3161d1974de947a3485222c978db8f564374d7138c7aa33f9e5dba8a139",
-        "bytes": 232
-      },
-      {
-        "path": "results/round22_group_retest_20261024/offline_v2/protected_review.json",
-        "previous_sha256": null,
-        "sha256": "69d236f88aa3f79aba475b6193cf67ed1a7d326d8ce98f9add89cd8f86c06257",
-        "bytes": 55437
-      },
-      {
-        "path": "results/round22_group_retest_20261024/offline_v2/region_algorithm.status.json",
-        "previous_sha256": null,
-        "sha256": "7c1b7f412e298c4cd68dc98925f62059a33f62f63ff0ed218714af42e6e306bb",
-        "bytes": 182
-      },
-      {
-        "path": "results/round22_group_retest_20261024/offline_v2/region_algorithm.txt",
-        "previous_sha256": null,
-        "sha256": "58745d8011883213acd6d3ad00c73a2860f68e432f60fc956b8cb2a8bb6d8181",
-        "bytes": 98
-      },
-      {
-        "path": "results/round22_group_retest_20261024/offline_v2/run_offline_checks.py",
-        "previous_sha256": null,
-        "sha256": "06ebb89a40b582ae08ef5ef56d04fc17e12b734293b168c3a5e48ccd97aebf41",
-        "bytes": 2457
-      },
-      {
-        "path": "results/round22_group_retest_20261024/offline_v2/sdk_binding.junit.xml",
-        "previous_sha256": null,
-        "sha256": "881ae9b54699da5def8a386c59a2fbde1be42ec636988b90db430302a3786b05",
-        "bytes": 2525
-      },
-      {
-        "path": "results/round22_group_retest_20261024/offline_v2/sdk_binding.status.json",
-        "previous_sha256": null,
-        "sha256": "d7ac4299e02ea0baa355a1ecc27cd5fd9d7e98e995a7f578629daf0f1ef67c58",
-        "bytes": 177
-      },
-      {
-        "path": "results/round22_group_retest_20261024/offline_v2/sdk_binding.txt",
-        "previous_sha256": null,
-        "sha256": "f800fbcbb99b5734976c2e854f677ac9215e9ce2a0c94aa8d536cb57b975d98c",
-        "bytes": 3486
-      },
-      {
-        "path": "results/round22_group_retest_20261024/offline_v2/snapshot_verify.txt",
-        "previous_sha256": null,
-        "sha256": "df9066e9bc5f14d1d994cd70e4b3340286d3e905beb28191d214bfc54f8d187d",
-        "bytes": 60
-      },
-      {
-        "path": "results/round22_group_retest_20261024/offline_v2/supervisor.txt",
-        "previous_sha256": null,
-        "sha256": "96defc11766c34214fadcc71beb062da567c6e033519120c00a8b8598445d97f",
-        "bytes": 862
-      },
-      {
-        "path": "results/round22_group_retest_20261024/offline_v2/synthetic_singularity_merged.status.json",
-        "previous_sha256": null,
-        "sha256": "2f08f663cbde1cd2eed656b434cf13963d35eab3b0109f8e0f6b149b07bd2804",
-        "bytes": 194
-      },
-      {
-        "path": "results/round22_group_retest_20261024/offline_v2/synthetic_singularity_merged.txt",
-        "previous_sha256": null,
-        "sha256": "3bec1498cf79d9cb8b50eba7da820625baf24c497776ad8bdf085d2b382f93ea",
-        "bytes": 1238
-      },
-      {
-        "path": "results/round22_group_retest_20261024/offline_v2/targeted_merged.status.json",
-        "previous_sha256": null,
-        "sha256": "0d841f5e532df60c7fa8e41b17b0600eb493ef3c2ecfa2770cc29b65c6e0fca7",
-        "bytes": 181
-      },
-      {
-        "path": "results/round22_group_retest_20261024/offline_v2/targeted_merged.txt",
-        "previous_sha256": null,
-        "sha256": "14a7b1353b76454634dd4785cdda9d38c87b1596a472fbcf8aea15b8dfff3425",
-        "bytes": 1145
-      },
-      {
-        "path": "results/round22_group_retest_20261024/push_before_real_runs.json",
-        "previous_sha256": null,
-        "sha256": "5580762d8b38a7a71ccbb0af7409faadc244a4ba994f54192ac005bab81cacd4",
-        "bytes": 333
-      },
-      {
-        "path": "results/round22_group_retest_20261024/push_round20_delivery.json",
-        "previous_sha256": null,
-        "sha256": "af906e819fd0f89ff8a8931020add2d1fdb50396a5f4677f85dea4526659d8ba",
-        "bytes": 415
-      },
-      {
-        "path": "results/round22_group_retest_20261024/report/G1_continue_third_decision.json",
-        "previous_sha256": null,
-        "sha256": "51d45a4f46c1270cbf3b378ad27134617a0c689f4d7557c221e98b2e3e4e91f0",
-        "bytes": 600
-      },
-      {
-        "path": "results/round22_group_retest_20261024/report/G2_continue_third_decision.json",
-        "previous_sha256": null,
-        "sha256": "9d1c9df1c16acd4377b8616d57f5f9aea5920c85153c26706ce9916a3f4252d2",
-        "bytes": 509
-      },
-      {
-        "path": "results/round22_group_retest_20261024/report/G2_stop_decision.json",
-        "previous_sha256": null,
-        "sha256": "4097d3b30c59395de4728240ae7c7d15b077ac164d8b629212be378ad76db49f",
-        "bytes": 414
-      },
-      {
-        "path": "results/round22_group_retest_20261024/report/authorization.json",
-        "previous_sha256": null,
-        "sha256": "09aa463e126bc653b3f69df217c16307b5abf94474699f3079bfdb8663326593",
-        "bytes": 684
-      },
-      {
-        "path": "results/round22_group_retest_20261024/report/catalog_scope_audit.json",
-        "previous_sha256": null,
-        "sha256": "331d06c557fa61c374c54c3e9ce524cedbce6a07e8a2158c82ee820d596b97a6",
-        "bytes": 3148
-      },
-      {
-        "path": "results/round22_group_retest_20261024/report/conclusion_cards.json",
-        "previous_sha256": null,
-        "sha256": "2bcfe29de6befeb16b338329fd79e4f9ae9359044badbf672313b39850db5e03",
-        "bytes": 1890
-      },
-      {
-        "path": "results/round22_group_retest_20261024/report/configuration_freeze_audit.json",
-        "previous_sha256": null,
-        "sha256": "c21780f37583610a63aa0218d62a124392a0486d1b72d1190ad2d1a6a69ae462",
-        "bytes": 2772
-      },
-      {
-        "path": "results/round22_group_retest_20261024/report/development_launch.json",
-        "previous_sha256": null,
-        "sha256": "585f9eb35bc144874d70acf6145afe5d26ef46a925288a6717ecb8f215334fec",
-        "bytes": 482
-      },
-      {
-        "path": "results/round22_group_retest_20261024/report/development_ready.json",
-        "previous_sha256": null,
-        "sha256": "35d91e87f02bcd7dbdc6e897999a7ff83ddfd944a72eca5e167292c922425049",
-        "bytes": 395
-      },
-      {
-        "path": "results/round22_group_retest_20261024/report/existing_services_after.json",
-        "previous_sha256": null,
-        "sha256": "e4d44265a8ce7993b2268313e2f9bbb365168637c9954307c322373a622e90a5",
-        "bytes": 5051
-      },
-      {
-        "path": "results/round22_group_retest_20261024/report/existing_services_before.json",
-        "previous_sha256": null,
-        "sha256": "a4ce91ad561fd45c5cf6d3b9795ceb62918c0f618055a17618d3671f79c9486a",
-        "bytes": 2157
-      },
-      {
-        "path": "results/round22_group_retest_20261024/report/export_round22_report.py",
-        "previous_sha256": null,
-        "sha256": "5efa090e551ff79c659ddf54ee313735d2a30f2626e830433b393531aca761c1",
-        "bytes": 13755
-      },
-      {
-        "path": "results/round22_group_retest_20261024/report/export_secret_scan.json",
-        "previous_sha256": null,
-        "sha256": "d1ee2884ede366ae6a8610c9fed88a83975b5d7aeb1ea33e644728117eff0fb1",
-        "bytes": 276
-      },
-      {
-        "path": "results/round22_group_retest_20261024/report/failure_details.json",
-        "previous_sha256": null,
-        "sha256": "517199715117ff7df00e9c3dda909267aaaa0e947b9965e4b45b8d1debe3d414",
-        "bytes": 4026
-      },
-      {
-        "path": "results/round22_group_retest_20261024/report/final_safety_audit.json",
-        "previous_sha256": null,
-        "sha256": "7c28a17c372a85ad22359ed97a7e57d53c737790559f95920d6a7616ead99ca2",
-        "bytes": 734
-      },
-      {
-        "path": "results/round22_group_retest_20261024/report/g1_direction_summary.json",
-        "previous_sha256": null,
-        "sha256": "0a3b99b9f171e08f3c911f239f51e2045306f62971f9c04006a152a0ed8f97f8",
-        "bytes": 3067
-      },
-      {
-        "path": "results/round22_group_retest_20261024/report/http_attempts.csv",
-        "previous_sha256": null,
-        "sha256": "03eb836936debf36e6712d0b54802531daa190b0e4ee74dbb2472ff175051c05",
-        "bytes": 35225
-      },
-      {
-        "path": "results/round22_group_retest_20261024/report/http_transport_coverage.json",
-        "previous_sha256": null,
-        "sha256": "cf71b2b0a588a7d9b5ba6ef3ae094efdfe29e93193b3016a041ca81f72274962",
-        "bytes": 413
-      },
-      {
-        "path": "results/round22_group_retest_20261024/report/internal_review_protocol_observations.json",
-        "previous_sha256": null,
-        "sha256": "293b06590389582f6225daf389241fb2d6e1aa85d0141ca9227d583e7abb2047",
-        "bytes": 1329
-      },
-      {
-        "path": "results/round22_group_retest_20261024/report/meter_alignment.json",
-        "previous_sha256": null,
-        "sha256": "7eae02bb7c98b28932708fcb7659256de808238150089699253d3af38544fb3b",
-        "bytes": 6019
-      },
-      {
-        "path": "results/round22_group_retest_20261024/report/offline_release.json",
-        "previous_sha256": null,
-        "sha256": "e76543ddab79a5cd51ac6f77ff08106e52dde4d121d1bb8e295cbd6b7c60337c",
-        "bytes": 40176
-      },
-      {
-        "path": "results/round22_group_retest_20261024/report/run_summaries.json",
-        "previous_sha256": null,
-        "sha256": "3ccf994d2c7912946d48a11e53c3c22d5467344437b0fffd56a104755764a363",
-        "bytes": 9123
-      },
-      {
-        "path": "results/round22_group_retest_20261024/report/shutdown.json",
-        "previous_sha256": null,
-        "sha256": "8a6f15712dea01aba7b853db8607880e8910122b95aedb753c2b637368fb58ae",
-        "bytes": 422
-      },
-      {
-        "path": "results/round22_group_retest_20261024/report/stages.csv",
-        "previous_sha256": null,
-        "sha256": "a8b620f0aacf422946effebc4a6d81756d0aae9538dccb87ec3d9a128791b96b",
-        "bytes": 51777
-      },
-      {
-        "path": "results/round22_group_retest_20261024/report/table_verification.csv",
-        "previous_sha256": null,
-        "sha256": "d9142b5a9ef73a782767d006608df530013971da1224b097eed258ceb8f6a351",
-        "bytes": 1351
-      },
-      {
-        "path": "results/round22_group_retest_20261024/six_file_lineage.json",
-        "previous_sha256": null,
-        "sha256": "4373adbf63cc3fa7b8d39602c085a065a6edbcfdb0a3efc014d0949e6884f404",
-        "bytes": 3698
+        "sha256": "efac3b49f71653be6ac219bb4c763c5bb7789b3679957f043faae41e3df3ba5e",
+        "bytes": 11713
       }
     ]
   },
@@ -14679,7 +14455,47 @@
           "bytes": 3698
         }
       ]
+    },
+    {
+      "date": "2026-10-24",
+      "base_commit": "12f8fbd2b12622c3b67c3e204722028f7b28b42e",
+      "scope": "Round23 immutable 83-statement gold freeze and unchanged-algorithm evaluator with explicitly authorized 1500-call meter; four offline evaluator tests passed",
+      "changed_files": 5,
+      "formal_v1_0": false,
+      "deployment": false,
+      "changes": [
+        {
+          "path": "agent/modules/agent/tests/test_round23_condition_eval.py",
+          "previous_sha256": null,
+          "sha256": "1eb471e6ea2bd837a25fd4170d00ebd5abec87364b61d06156f92a2db07be87f",
+          "bytes": 2905
+        },
+        {
+          "path": "evaluation/condition_gold/gold_test_v2.json",
+          "previous_sha256": null,
+          "sha256": "2ca5ca7492d9f09569372085a0cf75715d41a8e78e8bd24a0fc5c38015d84e3e",
+          "bytes": 66635
+        },
+        {
+          "path": "evaluation/condition_test_v2/ROUND23_GOLD_FREEZE.json",
+          "previous_sha256": null,
+          "sha256": "86e611df0a6fa2110d5318c13b1a95e919ec7af2dd30e47e26bb3d87813d6b63",
+          "bytes": 1013
+        },
+        {
+          "path": "tools/knowledge/provider_llm.py",
+          "previous_sha256": "ded374b85365f7cb47263cfd242307c80df50f38ee09ea6e4d96bf7a5edb3d27",
+          "sha256": "ef26a0dd32eab8021b8ff4faf74b682b06ff4c4d0e93574a6a9cf5ac5d7cecc4",
+          "bytes": 17048
+        },
+        {
+          "path": "tools/knowledge/run_condition_test_v2_evaluation.py",
+          "previous_sha256": null,
+          "sha256": "efac3b49f71653be6ac219bb4c763c5bb7789b3679957f043faae41e3df3ba5e",
+          "bytes": 11713
+        }
+      ]
     }
   ],
-  "updated_at": "2026-10-24T06:12:00.881352+00:00"
+  "updated_at": "2026-10-24T06:50:12.389094+00:00"
 }

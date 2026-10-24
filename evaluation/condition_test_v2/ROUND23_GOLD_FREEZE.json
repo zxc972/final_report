@@ -1,0 +1,29 @@
+{
+  "schema": "primatex.condition_gold_freeze.v1",
+  "frozen_at_utc": "2026-10-24T06:44:39.981925+00:00",
+  "gold_file": "evaluation/condition_gold/gold_test_v2.json",
+  "gold_sha256": "2ca5ca7492d9f09569372085a0cf75715d41a8e78e8bd24a0fc5c38015d84e3e",
+  "statements": 83,
+  "class_counts": {
+    "advisory": 68,
+    "executable": 15
+  },
+  "pending_user_decision": [
+    2008,
+    2009,
+    2014,
+    2015,
+    2017,
+    2031,
+    2039
+  ],
+  "score_pending_as_supplied": true,
+  "statement_ids_and_source_fields_exact_match": true,
+  "all_quotes_and_source_spans_verified": true,
+  "handoff_manifest_sha256": "caf821b66b1e841c595822ca94362fc7a025f969365168eb9c8803000a7239b0",
+  "base_commit": "12f8fbd2b12622c3b67c3e204722028f7b28b42e",
+  "gold_v1_sha256_unchanged": "e34d6796259e87f44f3bcede9c304eb87b4c1a5e31605cdfd357085bdac45135",
+  "canonicalizer_sha256": "140669418d7a6603df4dbe55be7a677d9f0d8bff92d7255a7aadff1892bb07d8",
+  "annotation_edit_count": 0,
+  "immutable": true
+}
