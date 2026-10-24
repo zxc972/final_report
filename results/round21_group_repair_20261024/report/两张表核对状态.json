@@ -1,0 +1,114 @@
+{
+  "R21_G1_1": {
+    "tables": {
+      "regional_values.csv": {
+        "present": false,
+        "public_contract_status": "not_assessed",
+        "independent_status": "not_assessed",
+        "identity_mismatch_count": null,
+        "numeric_mismatch_count": null,
+        "rows": null
+      },
+      "group_results.csv": {
+        "present": false,
+        "public_contract_status": "not_assessed",
+        "independent_status": "not_assessed",
+        "identity_mismatch_count": null,
+        "numeric_mismatch_count": null,
+        "rows": null
+      }
+    },
+    "internal_review": {
+      "status": "not_assessed",
+      "decision": null
+    },
+    "conclusion_card": null,
+    "d_min": null,
+    "fdr_significant_regions": null,
+    "negative_age_effect_proportion": null
+  },
+  "R21_G1_2": {
+    "tables": {
+      "regional_values.csv": {
+        "present": false,
+        "public_contract_status": "not_assessed",
+        "independent_status": "not_assessed",
+        "identity_mismatch_count": null,
+        "numeric_mismatch_count": null,
+        "rows": null
+      },
+      "group_results.csv": {
+        "present": false,
+        "public_contract_status": "not_assessed",
+        "independent_status": "not_assessed",
+        "identity_mismatch_count": null,
+        "numeric_mismatch_count": null,
+        "rows": null
+      }
+    },
+    "internal_review": {
+      "status": "not_assessed",
+      "decision": null
+    },
+    "conclusion_card": null,
+    "d_min": null,
+    "fdr_significant_regions": null,
+    "negative_age_effect_proportion": null
+  },
+  "R21_G2_1": {
+    "tables": {
+      "regional_values.csv": {
+        "present": false,
+        "public_contract_status": "not_assessed",
+        "independent_status": "not_assessed",
+        "identity_mismatch_count": null,
+        "numeric_mismatch_count": null,
+        "rows": null
+      },
+      "group_results.csv": {
+        "present": false,
+        "public_contract_status": "not_assessed",
+        "independent_status": "not_assessed",
+        "identity_mismatch_count": null,
+        "numeric_mismatch_count": null,
+        "rows": null
+      }
+    },
+    "internal_review": {
+      "status": "not_assessed",
+      "decision": null
+    },
+    "conclusion_card": null,
+    "d_min": null,
+    "fdr_significant_regions": null,
+    "negative_age_effect_proportion": null
+  },
+  "R21_G2_2": {
+    "tables": {
+      "regional_values.csv": {
+        "present": false,
+        "public_contract_status": "not_assessed",
+        "independent_status": "not_assessed",
+        "identity_mismatch_count": null,
+        "numeric_mismatch_count": null,
+        "rows": null
+      },
+      "group_results.csv": {
+        "present": false,
+        "public_contract_status": "not_assessed",
+        "independent_status": "not_assessed",
+        "identity_mismatch_count": null,
+        "numeric_mismatch_count": null,
+        "rows": null
+      }
+    },
+    "internal_review": {
+      "status": "not_assessed",
+      "decision": null
+    },
+    "conclusion_card": null,
+    "d_min": null,
+    "fdr_significant_regions": null,
+    "negative_age_effect_proportion": null
+  }
+}

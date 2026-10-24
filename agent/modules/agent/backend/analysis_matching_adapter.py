@@ -89,7 +89,7 @@ def problem(spec, entries, products, intent, atlas, definitions, types):
     is never compared with a full mesh. Full meshes bind metric/annotation/white.
     """
     slots, constraints = [], []
-    measures = intent["measures"]
+    measures = spec.get("metric_measures", intent["measures"])
     h = hierarchy(types, spec["required_products"])
 
     def add(need, entry=None, hemi=None, measure=None, alternatives=None):

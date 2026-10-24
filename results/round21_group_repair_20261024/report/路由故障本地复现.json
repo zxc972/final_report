@@ -1,0 +1,33 @@
+{
+  "utc": "2026-10-23T17:29:40.812572+00:00",
+  "tested_source_commit": "2dbaf9b478ed5e5fbcb15fc900e4b797da99feac",
+  "entry": "real route_message -> real backend.llm HTTP client -> frozen dev_server.begin extracted unchanged",
+  "ACTIVE_CHAT_activated": false,
+  "result": {
+    "route": null,
+    "reason": "Unable to determine the task type; please clarify your request.",
+    "fallback": false,
+    "parse_status": "route_failed",
+    "failure": "Router call failed",
+    "attempt_ids": [
+      "ecddaf7a4c914421bf5f3bf6e05903f5",
+      "903e06efbb7e4cc3b54c98c29c6c4560"
+    ],
+    "model_calls": 2,
+    "json_constraint": true
+  },
+  "guard_errors": [
+    {
+      "type": "RuntimeError",
+      "message": "Exact native HTTP charge binding unavailable; request not sent"
+    },
+    {
+      "type": "RuntimeError",
+      "message": "Exact native HTTP charge binding unavailable; request not sent"
+    }
+  ],
+  "native_failed_reservations": 2,
+  "local_server_requests": 0,
+  "external_provider_requests": 0,
+  "diagnosis_confirmed": true
+}

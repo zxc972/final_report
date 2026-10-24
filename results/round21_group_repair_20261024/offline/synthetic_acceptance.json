@@ -1,0 +1,54 @@
+[
+  {
+    "comparison": "group",
+    "completed": true,
+    "tables": {
+      "group_results.csv": {
+        "checked": 44,
+        "identity_mismatch_count": 0,
+        "mismatch_count": 0,
+        "numeric_mismatch_count": 0,
+        "status": "pass"
+      },
+      "regional_values.csv": {
+        "checked": 160,
+        "identity_mismatch_count": 0,
+        "mismatch_count": 0,
+        "numeric_mismatch_count": 0,
+        "status": "pass"
+      }
+    },
+    "execution_card_length": 1332,
+    "provider_http_calls": 0,
+    "review": "pass",
+    "raw_reader": "read_group_inputs",
+    "identity_fdr": "fdr_bh_by_identity",
+    "audit_path": "/data/xuancheng/agent_v1/round21_work/synthetic_container_runs_v3/test_round21_group_interfaces_0/work/offline_acceptance.json"
+  },
+  {
+    "comparison": "correlation",
+    "completed": true,
+    "tables": {
+      "group_results.csv": {
+        "checked": 44,
+        "identity_mismatch_count": 0,
+        "mismatch_count": 0,
+        "numeric_mismatch_count": 0,
+        "status": "pass"
+      },
+      "regional_values.csv": {
+        "checked": 160,
+        "identity_mismatch_count": 0,
+        "mismatch_count": 0,
+        "numeric_mismatch_count": 0,
+        "status": "pass"
+      }
+    },
+    "execution_card_length": 1322,
+    "provider_http_calls": 0,
+    "review": "pass",
+    "raw_reader": "read_group_inputs",
+    "identity_fdr": "fdr_bh_by_identity",
+    "audit_path": "/data/xuancheng/agent_v1/round21_work/synthetic_container_runs_v3/test_round21_group_interfaces_1/work/offline_acceptance.json"
+  }
+]

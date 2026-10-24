@@ -45,7 +45,7 @@ class AnalysisIntent(BaseModel):
     space: StrictStr | None = None
     method_id: StrictStr | None = None
     design: AnalysisDesign | None = None
-    subjects: list[StrictStr] | None = Field(default=None, max_length=128)
+    subjects: list[StrictStr] | Literal["全部已登记被试", "all_registered"] | None = Field(default=None, max_length=128)
     required_inputs: list[StrictStr] | None = Field(default=None, max_length=16)
 
 
@@ -189,7 +189,9 @@ def registered_roots(tools, intent):
         matches = [row for row in catalogue if Path(row["path"]).resolve() == root]
         entry = matches[0] if matches else {"subject_id": root.name, "species_declared": None, "source": "approved root registration; species unavailable"}
         entries.append({**entry, "index": index, "root": root})
-    if intent.subjects:
+    if intent.subjects in ("全部已登记被试", "all_registered") or intent.subjects in (["全部已登记被试"], ["all_registered"]):
+        pass
+    elif intent.subjects:
         entries = [r for r in entries if r["subject_id"] in intent.subjects]
         if {r["subject_id"] for r in entries} != set(intent.subjects):
             raise ValueError("subjects must identify approved registered subjects")
@@ -343,10 +345,18 @@ def _candidate(tools, spec, method, entries, files, atlas_name, intent, domain, 
         for need, key in [("aseg_stats", "aseg_stats"), ("brainmask", "mask_volume")]:
             binding[key] = assignment.get(subject + "/global/" + need)
         for hemi in ("lh", "rh"):
-            for need, key in [("cortical_parc_stats", "hemi_stats"), ("pial_surface", "pial")]:
+            roles = [("cortical_parc_stats", "hemi_stats"), ("pial_surface", "pial")]
+            if spec.get("species_policy") == "macaque_direct_native":
+                roles = [
+                    ("white_surface", "white"),
+                    ("surface_metric:thickness", "thickness"),
+                    ("cortex_label", "cortex_labels"),
+                    ("pial_surface", "pial"),
+                ]
+            for need, key in roles:
                 path = assignment.get(subject + "/" + hemi + "/" + need)
                 if path:
-                    binding[key][hemi] = path
+                    binding.setdefault(key, {})[hemi] = path
         return candidate(tools, spec, method, entries, files, intent, profile, binding=binding)
     by_path = {value(f["path"]): f for f in files}
     chosen = [by_path[path] for path in dict.fromkeys(assignment.values()) if path in by_path]
@@ -506,6 +516,9 @@ def plan_analysis(tools, raw):
     output["intent_resolution"] = resolution
     from .analysis_constraints import compile_constraints
     for spec in specs:
+        from .analysis_global_policy import specialize
+
+        spec = specialize(spec, entries)
         method = graph.read(spec["method_id"])["method"] if not spec["method_id"].startswith("self:") else {"id": spec["method_id"], "name": spec["method_id"], "conditions": [], "inputs": []}
         if intent.comparison == "cross_species" and spec["needs_parcellation"]:
             output["infeasible"].append({"method": method_evidence_view(graph, method),

@@ -341,3 +341,96 @@ def positive_mask_volume(path):
     count = int(np.count_nonzero(data > 0))
     return {"volume_mm3": float(count * np.prod(zooms)), "positive_voxels": count,
             "unit_source": "MGH header millimetre convention; acquisition calibration unverified"}
+
+
+
+def read_group_inputs(manifest_path):
+    """Read a group manifest/label_sets into identity-sorted raw vertex rows.
+
+    Manifest is a dict: subjects maps subject IDs to LISTS of hemisphere/metric
+    binding dicts; label_sets_ref.path points to a dict keyed by label_set_scope;
+    each group.labels is a LIST of {key, name} dicts; key becomes row.label_key. Rows contain subject,
+    hemisphere, metric, label_key, name, and read-only float64 values arrays.
+    Identity is (subject, hemisphere, metric, label_key), never name or position.
+    Cortex membership is read as declared. No finite-value removal, summaries,
+    model fitting, multiple correction, rescaling, or output writes occur here.
+    """
+    import json
+    manifest = json.loads(Path(manifest_path).read_text(encoding="utf-8"))
+    subjects = manifest.get("subjects")
+    if not isinstance(subjects, dict):
+        raise ValueError("manifest.subjects must be a dict of subject -> list[bindings]")
+    labels_ref = manifest.get("label_sets_ref", {}).get("path")
+    if not isinstance(labels_ref, str):
+        raise ValueError("manifest.label_sets_ref.path is required")
+    label_sets = json.loads(Path(labels_ref).read_text(encoding="utf-8"))
+    if not isinstance(label_sets, dict):
+        raise ValueError("label_sets must be a dict keyed by label_set_scope")
+    rows, identities = [], set()
+    for subject, bindings in subjects.items():
+        if not isinstance(subject, str) or not isinstance(bindings, list):
+            raise ValueError("Each subject ID must map to a list of binding dicts")
+        for binding in bindings:
+            if not isinstance(binding, dict):
+                raise ValueError("Each hemisphere/metric binding must be a dict")
+            hemisphere = binding["hemisphere"]
+            metric_name = binding.get("metric") or Path(binding["metric_path"]).name.split(".", 1)[-1]
+            if hemisphere not in {"lh", "rh"}:
+                raise ValueError("Binding hemisphere must be lh or rh")
+            group = label_sets[binding["label_set_scope"]]
+            retained = group.get("labels")
+            if not isinstance(retained, list):
+                raise ValueError("label_sets[scope].labels must be a list of label dicts")
+            labels, names, _ = read_annotation(binding["annotation_path"])
+            metric = read_surface_metric(binding["metric_path"])
+            mask_ids = read_label(binding["mask_path"])
+            if len(labels) != len(metric) or (len(mask_ids) and mask_ids.max() >= len(metric)):
+                raise ValueError("Metric, annotation and cortex indices must share a vertex domain")
+            cortex = np.zeros(len(metric), dtype=bool)
+            cortex[mask_ids] = True
+            for label in retained:
+                key, name = label["key"], label["name"]
+                if type(key) is not int or not 0 <= key < len(names) or names[key] != name:
+                    raise ValueError("Retained label identity/name differs from annotation")
+                identity = (subject, hemisphere, metric_name, key)
+                if identity in identities:
+                    raise ValueError("Duplicate regional identity: " + repr(identity))
+                identities.add(identity)
+                values = np.asarray(metric[cortex & (labels == key)], dtype=np.float64)
+                values.setflags(write=False)
+                rows.append({"subject": subject, "hemisphere": hemisphere, "metric": metric_name,
+                             "label_key": key, "name": name, "values": values})
+    return sorted(rows, key=lambda r: (r["subject"], r["hemisphere"], r["metric"], r["label_key"]))
+
+
+def fdr_bh_by_identity(pvalues):
+    """BH correction: mapping[(hemisphere, metric, label_key)] -> p or None.
+
+    Returns the SAME exact identity keys mapped to q (None for an explicitly
+    unfitted partition). The family is every non-None p across both hemispheres
+    and all metrics in this mapping. Names/row order never identify a partition.
+    Finite p in [0,1] required. Host reference uses its own implementation.
+    """
+    from collections.abc import Mapping
+    if not isinstance(pvalues, Mapping):
+        raise ValueError("FDR input must map exact identity tuples to p values")
+    output, fitted = {}, []
+    for identity, p in pvalues.items():
+        if (not isinstance(identity, tuple) or len(identity) != 3
+                or identity[0] not in {"lh", "rh"}
+                or not isinstance(identity[1], str) or not identity[1]
+                or type(identity[2]) is not int or identity[2] < 0):
+            raise ValueError("FDR identity must be (hemisphere, metric, integer label_key)")
+        output[identity] = None
+        if p is None:
+            continue
+        if isinstance(p, (bool, str)) or not np.isfinite(p) or not 0 <= p <= 1:
+            raise ValueError("Fitted p values must be finite numbers in [0,1]")
+        fitted.append((identity, float(p)))
+    fitted.sort(key=lambda item: item[1])
+    previous, count = 1.0, len(fitted)
+    for index in range(count - 1, -1, -1):
+        identity, p = fitted[index]
+        previous = min(previous, p * count / (index + 1))
+        output[identity] = previous
+    return output

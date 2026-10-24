@@ -389,14 +389,25 @@ class AnalysisTools:
         Supply only a flat intent: measures, regions, comparison, optional
         subjects/species/space/method_id. This profiles registered inputs and
         checks actual software without calling a model or running preprocessing.
+        For group/correlation, design.effect is the participant-table column being
+        tested; design.covariates lists adjustment columns; design.reference is
+        the baseline level of a categorical effect. Generic example:
+        某指标 ~ 连续变量 + 分类协变量.
+        Use the data card's registered metric names and subject IDs, or set
+        subjects="全部已登记被试". Argument corrections and actual planner entries
+        have separate limits; the total run budget is unchanged.
         Select a candidate with commit_plan; never hand-construct nested plans.
         """
         def operation():
             if self.knowledge_profile.name != "product_graph_planner":
                 raise ValueError("Product planning is disabled in this profile")
             from .analysis_product_planner import plan_analysis
+            from .analysis_planning_arguments import validate_for_planning
+            validated, error = validate_for_planning(self, intent)
+            if error:
+                return error
             with self._execution_lock:
-                return plan_analysis(self, intent)
+                return plan_analysis(self, validated)
         return self._call(operation)
 
     def commit_plan(self, plan: dict[str, Any]) -> dict[str, Any]:
@@ -1003,7 +1014,18 @@ def _build_coding_agent(tools: AnalysisTools, *, model: str, base_url: str,
                 if tools.session is not None and hasattr(schema, "model_validate"):
                     schema.model_validate(request.tool_call.get("args", {}))
                 if tools.session is not None:
-                    from .analysis_planning_tools import reserve_action
+                    from .analysis_planning_tools import reserve_action, reserve_argument_error
+                    if request.tool_call["name"] == "plan_analysis":
+                        from .analysis_planning_arguments import validate_for_planning
+                        _, error = validate_for_planning(tools, request.tool_call.get("args", {}).get("intent"))
+                        if error:
+                            tools._tick()
+                            try:
+                                reserve_argument_error(tools)
+                            except ValueError as exc:
+                                error = {**error, "status": "blocked", "error": str(exc)}
+                            error["planning_counters"] = {key: tools.session.record.get(key, 0) for key in ("planning_argument_errors", "planning_attempts")}
+                            return ToolMessage(content=json.dumps(error, ensure_ascii=False), tool_call_id=request.tool_call["id"], status="error")
                     reserve_action(tools, request.tool_call["name"])
                 return handler(request)
 
@@ -1022,10 +1044,21 @@ def _build_coding_agent(tools: AnalysisTools, *, model: str, base_url: str,
                 # Schema rejection happens before the tool function can reserve
                 # its budget or append state. Count that actual failed attempt.
                 tools._tick()
+                extra = {}
+                if request.tool_call["name"] == "plan_analysis":
+                    from .analysis_planning_tools import reserve_argument_error
+                    from .analysis_planning_arguments import registry
+                    extra = {**registry(tools), "planner_entered": False}
+                    if isinstance(exc, ValidationError):
+                        extra["field_errors"] = [{"field": ".".join(map(str, row["loc"])), "message": row["msg"]} for row in exc.errors(include_input=False, include_url=False)]
+                    try:
+                        reserve_argument_error(tools)
+                    except ValueError as limit:
+                        extra["correction_limit"] = str(limit)
                 response = ToolMessage(
                     content=json.dumps({
                         "status": "error", "argument_validation_failed": True,
-                        "error": _safe(str(exc), tools.secret),
+                        "error": _safe(str(exc), tools.secret), **extra,
                     }, ensure_ascii=False),
                     tool_call_id=request.tool_call["id"], status="error",
                 )
@@ -1057,8 +1090,11 @@ def _build_coding_agent(tools: AnalysisTools, *, model: str, base_url: str,
                     if observation:
                         payload["feedback_observation_id"] = observation["id"]
                         if observation["failed"]:
-                            payload["reflection_required"] = True
-                            payload["feedback_scope"] = "Actual tool failure; diagnose with record_analysis_reflection and check your hypothesis. No external fix or expected values supplied."
+                            response = response.model_copy(update={"status": "error"})
+                            planning_argument_error = payload.get("argument_validation_failed") is True
+                            payload["reflection_required"] = not planning_argument_error
+                            payload["feedback_scope"] = ("Actual argument rejection; correct the named fields using the registered data-card values."
+                                if planning_argument_error else "Actual tool failure; diagnose with record_analysis_reflection and check your hypothesis. No external fix or expected values supplied.")
                         response.content = json.dumps(payload, ensure_ascii=False)
                     if tools.model_context is not None:
                         payload = tools.model_context.offload(request.tool_call["name"], payload)

@@ -1,0 +1,8 @@
+{
+  "path": "agent/modules/agent/backend/analysis_product_planner.py",
+  "reason": "Restore original mixed line endings outside the two intentional schema/selection edits",
+  "ast_sha256_before_and_after": "d3703c57b113bf8827f2576b3430a1a7942d04c814751198c2cd2d086c06602e",
+  "semantics_unchanged": true,
+  "tested_bytes_sha256": "549e499bd7be97ccbb3a9917850de38149b544bd98d37bfdc36dbdd2eaa0dab3",
+  "final_bytes_sha256": "ae14561211659123d5d20aa346e9cbcfb06b57876aed8cc613069fc9c9db9adb"
+}

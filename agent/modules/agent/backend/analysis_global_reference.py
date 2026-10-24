@@ -23,6 +23,7 @@ Sources: FreeSurfer stats file format ("# Measure" lines:
 https://surfer.nmr.mgh.harvard.edu/fswiki/MorphometryStats); MGH format
 (https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/MghFormat).
 """
+
 from __future__ import annotations
 
 import gzip
@@ -31,8 +32,13 @@ from pathlib import Path
 import struct
 from typing import Mapping, Sequence
 
-POWERS = {"mean_thickness_mm": 1, "total_area_mm2": 2, "brain_volume_mm3": 3,
-          "etiv_mm3": 3, "hull_ratio": 0}
+POWERS = {
+    "mean_thickness_mm": 1,
+    "total_area_mm2": 2,
+    "brain_volume_mm3": 3,
+    "etiv_mm3": 3,
+    "hull_ratio": 0,
+}
 METRICS = tuple(POWERS)
 MGH_TYPES = {0: ("B", 1), 1: (">i", 4), 3: (">f", 4), 4: (">h", 2)}
 MAX_VOXELS = 512 * 512 * 512
@@ -44,7 +50,7 @@ def parse_measures(path) -> dict:
     for line in Path(path).read_text(encoding="utf-8", errors="replace").splitlines():
         if not line.startswith("# Measure "):
             continue
-        parts = [p.strip() for p in line[len("# Measure "):].split(",")]
+        parts = [p.strip() for p in line[len("# Measure ") :].split(",")]
         if len(parts) < 5:
             continue
         try:
@@ -57,7 +63,7 @@ def parse_measures(path) -> dict:
     return out
 
 
-def mask_volume_mm3(path) -> float:
+def mask_volume_mm3(path, require_ras=False) -> float:
     """Voxel count (> 0) times voxel volume for an .mgz/.mgh volume."""
     path = Path(path)
     opener = gzip.open if path.suffix == ".mgz" else open
@@ -69,6 +75,10 @@ def mask_volume_mm3(path) -> float:
         if version != 1 or kind not in MGH_TYPES or frames != 1 or min(w, h, d) <= 0:
             raise ValueError("Unsupported MGH volume")
         good_ras = struct.unpack(">h", header[28:30])[0]
+        if require_ras and not good_ras:
+            raise ValueError(
+                "Macaque physical support volume requires valid MGH RAS spacing"
+            )
         spacing = struct.unpack(">3f", header[30:42]) if good_ras else (1.0, 1.0, 1.0)
         if any(not math.isfinite(v) or v <= 0 for v in spacing):
             raise ValueError("Invalid MGH voxel spacing")
@@ -90,9 +100,14 @@ def mask_volume_mm3(path) -> float:
     return nonzero * abs(spacing[0] * spacing[1] * spacing[2])
 
 
-def subject_globals(aseg_stats=None, hemi_stats: Mapping[str, str] | None = None,
-                    mask_volume=None, pial: Mapping[str, str] | None = None,
-                    scale_k: float | None = None, rescaled: bool | None = None) -> dict:
+def _legacy_subject_globals(
+    aseg_stats=None,
+    hemi_stats: Mapping[str, str] | None = None,
+    mask_volume=None,
+    pial: Mapping[str, str] | None = None,
+    scale_k: float | None = None,
+    rescaled: bool | None = None,
+) -> dict:
     """Compute one subject's global metrics in stored and scale-corrected units."""
     stored = {m: None for m in METRICS}
     sources = {}
@@ -121,11 +136,14 @@ def subject_globals(aseg_stats=None, hemi_stats: Mapping[str, str] | None = None
         if total <= 0:
             raise ValueError("Nonpositive total white surface area")
         stored["total_area_mm2"] = total
-        stored["mean_thickness_mm"] = (areas["lh"] * thick["lh"] + areas["rh"] * thick["rh"]) / total
+        stored["mean_thickness_mm"] = (
+            areas["lh"] * thick["lh"] + areas["rh"] * thick["rh"]
+        ) / total
         sources["total_area_mm2"] = "lh+rh WhiteSurfArea"
         sources["mean_thickness_mm"] = "area-weighted lh/rh MeanThickness"
     if pial:
         from .analysis_numeric_reference import hull_measure
+
         surf = hull = 0.0
         for hemi in ("lh", "rh"):
             measured = hull_measure(pial[hemi])
@@ -135,7 +153,9 @@ def subject_globals(aseg_stats=None, hemi_stats: Mapping[str, str] | None = None
         sources["hull_ratio"] = "sum pial area / sum convex-hull area"
     if rescaled is True:
         if not (scale_k and scale_k > 0):
-            raise ValueError("A verified positive scale factor is required when rescaled")
+            raise ValueError(
+                "A verified positive scale factor is required when rescaled"
+            )
         k, scale_status = float(scale_k), "verified"
     elif rescaled is False:
         k, scale_status = 1.0, "verified_not_rescaled"
@@ -147,12 +167,177 @@ def subject_globals(aseg_stats=None, hemi_stats: Mapping[str, str] | None = None
             physical[metric] = None
         else:
             physical[metric] = value / (k ** POWERS[metric])
-    return {"stored": stored, "physical": physical, "scale_k": k,
-            "scale_status": scale_status, "sources": sources}
+    return {
+        "stored": stored,
+        "physical": physical,
+        "scale_k": k,
+        "scale_status": scale_status,
+        "sources": sources,
+    }
 
 
-def cross_species_summary(rows: Sequence[Mapping[str, object]],
-                          numerator: str = "human", denominator: str = "macaque") -> dict:
+def _macaque_subject_globals(
+    mask_volume, white, thickness, cortex_labels, pial, scale_k, rescaled, scale_state
+):
+    from .analysis_numeric_reference import (
+        hull_measure,
+        read_cortex,
+        read_metric,
+        read_surface,
+        triangle_area,
+    )
+
+    hemispheres = {"lh", "rh"}
+    for name, mapping in [
+        ("white", white),
+        ("thickness", thickness),
+        ("cortex_labels", cortex_labels),
+    ]:
+        if not mapping or set(mapping) != hemispheres:
+            raise ValueError("Macaque global method requires both hemispheres: " + name)
+    if not mask_volume:
+        raise ValueError("Macaque global volume requires final native brainmask.mgz")
+    stored = {metric: None for metric in METRICS}
+    stored["brain_volume_mm3"] = mask_volume_mm3(mask_volume, require_ras=True)
+    diagnostics = {}
+    for hemi in ("lh", "rh"):
+        vertices, faces = read_surface(white[hemi])
+        metric = read_metric(thickness[hemi])
+        if len(vertices) != len(metric):
+            raise ValueError("Macaque white/thickness vertex counts disagree: " + hemi)
+        if any(number < 0 for number in metric):
+            raise ValueError("Negative thickness is not a valid global input")
+        cortex = sorted(read_cortex(cortex_labels[hemi], len(vertices)))
+        if not cortex:
+            raise ValueError("Macaque cortex.label is empty: " + hemi)
+        values = [metric[index] for index in cortex]
+        area = math.fsum(
+            triangle_area(*(vertices[index] for index in face)) for face in faces
+        )
+        if not 0 < area < math.inf:
+            raise ValueError("Nonpositive macaque white surface area")
+        diagnostics[hemi] = {
+            "white_area": area,
+            "cortex_mean_thickness": math.fsum(values) / len(values),
+            "cortex_vertex_count": len(values),
+            "cortex_zero_count": sum(value == 0 for value in values),
+            "mesh_vertices": len(vertices),
+        }
+    stored["total_area_mm2"] = math.fsum(
+        diagnostics[h]["white_area"] for h in hemispheres
+    )
+    stored["mean_thickness_mm"] = (
+        math.fsum(
+            diagnostics[h]["white_area"] * diagnostics[h]["cortex_mean_thickness"]
+            for h in hemispheres
+        )
+        / stored["total_area_mm2"]
+    )
+    if pial:
+        if set(pial) != hemispheres:
+            raise ValueError(
+                "Both pial surfaces are required for a bilateral hull ratio"
+            )
+        for hemi in ("lh", "rh"):
+            pial_vertices, pial_faces = read_surface(pial[hemi])
+            white_vertices, white_faces = read_surface(white[hemi])
+            if len(pial_vertices) != len(white_vertices) or pial_faces != white_faces:
+                raise ValueError("Macaque white/pial topology differs: " + hemi)
+            measured = hull_measure(pial[hemi])
+            diagnostics[hemi]["pial_area"] = measured["surface_area"]
+            diagnostics[hemi]["hull_area"] = measured["hull_area"]
+        stored["hull_ratio"] = math.fsum(
+            diagnostics[h]["pial_area"] for h in hemispheres
+        ) / math.fsum(diagnostics[h]["hull_area"] for h in hemispheres)
+    if rescaled is True:
+        if (
+            type(scale_k) not in (int, float)
+            or not math.isfinite(scale_k)
+            or scale_k <= 0
+        ):
+            raise ValueError("A verified positive scale factor is required")
+        k, status = float(scale_k), "verified"
+    elif rescaled is False:
+        k, status = 1.0, "verified_not_rescaled"
+    else:
+        k, status = None, "unknown"
+    if scale_state == "rescale_applied_and_reverted":
+        if rescaled is not True or k != 1.0:
+            raise ValueError(
+                "Reverted scale requires verified rescaled=True and final k=1"
+            )
+        status = scale_state
+    physical = {
+        metric: (
+            value / (k ** POWERS[metric])
+            if value is not None and k is not None
+            else None
+        )
+        for metric, value in stored.items()
+    }
+    return {
+        "stored": stored,
+        "physical": physical,
+        "scale_k": k,
+        "scale_status": status,
+        "sources": {
+            "brain_volume_mm3": "final brainmask.mgz positive-voxel support x MGH voxel volume",
+            "etiv_mm3": "not used for macaque",
+            "total_area_mm2": "sum of final native white triangle areas",
+            "mean_thickness_mm": "final cortex-label vertex means weighted by hemisphere white areas; finite zeros retained",
+            "hull_ratio": "sum final pial area / sum per-hemisphere convex-hull area",
+        },
+        "hemispheres": diagnostics,
+        "annotation_policy": "Human-named annotations are not used for macaque parcellation",
+        "aseg_derived_values_used": False,
+    }
+
+
+def subject_globals(
+    aseg_stats=None,
+    hemi_stats: Mapping[str, str] | None = None,
+    mask_volume=None,
+    pial: Mapping[str, str] | None = None,
+    scale_k: float | None = None,
+    rescaled: bool | None = None,
+    *,
+    species=None,
+    white=None,
+    thickness=None,
+    cortex_labels=None,
+    scale_state=None,
+) -> dict:
+    """Species-specific public estimator; legacy human calculations remain unchanged.
+
+    Macaque input selection uses native white/thickness/cortex.label and MGZ
+    support. Even explicitly supplied aseg/stats paths are never opened there.
+    """
+    # Keep the isolated host worker independent of Agent operation libraries.
+    declared = str(species or "").strip().casefold()
+    if species is not None:
+        from .analysis_global_policy import is_macaque
+
+        if is_macaque(species):
+            return _macaque_subject_globals(
+                mask_volume,
+                white,
+                thickness,
+                cortex_labels,
+                pial,
+                scale_k,
+                rescaled,
+                scale_state,
+            )
+    return _legacy_subject_globals(
+        aseg_stats, hemi_stats, mask_volume, pial, scale_k, rescaled
+    )
+
+
+def cross_species_summary(
+    rows: Sequence[Mapping[str, object]],
+    numerator: str = "human",
+    denominator: str = "macaque",
+) -> dict:
     """rows: [{"subject", "species", "physical": {metric: value}}]. Ratio of species means."""
     by_species: dict[str, dict[str, list[float]]] = {}
     unknown_scale = []
@@ -164,7 +349,9 @@ def cross_species_summary(rows: Sequence[Mapping[str, object]],
         for metric in METRICS:
             value = values.get(metric)
             if value is not None:
-                by_species.setdefault(species, {}).setdefault(metric, []).append(float(value))
+                by_species.setdefault(species, {}).setdefault(metric, []).append(
+                    float(value)
+                )
     summary = []
     for metric in METRICS:
         num = by_species.get(numerator, {}).get(metric, [])
@@ -172,8 +359,19 @@ def cross_species_summary(rows: Sequence[Mapping[str, object]],
         if not num or not den:
             continue
         mean_num, mean_den = math.fsum(num) / len(num), math.fsum(den) / len(den)
-        summary.append({"metric": metric, f"{numerator}_n": len(num), f"{numerator}_mean": mean_num,
-                        f"{denominator}_n": len(den), f"{denominator}_mean": mean_den,
-                        "ratio": mean_num / mean_den if mean_den else None})
-    return {"summary": summary, "excluded_unknown_scale": unknown_scale,
-            "measure_kind": "ratio", "homology_required": False}
+        summary.append(
+            {
+                "metric": metric,
+                f"{numerator}_n": len(num),
+                f"{numerator}_mean": mean_num,
+                f"{denominator}_n": len(den),
+                f"{denominator}_mean": mean_den,
+                "ratio": mean_num / mean_den if mean_den else None,
+            }
+        )
+    return {
+        "summary": summary,
+        "excluded_unknown_scale": unknown_scale,
+        "measure_kind": "ratio",
+        "homology_required": False,
+    }

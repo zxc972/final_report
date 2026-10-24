@@ -1,0 +1,14 @@
+{
+  "source": "local isolated round21_implementation",
+  "destination_if_approved": "xuancheng6007:/data/xuancheng/agent_v1/round21_work/post_stop_binding_fix.zip",
+  "files": {
+    "agent/modules/agent/backend/agent_chat_state.py": "b0d204bff0c0036855501b4a1f1d0ace786dc79c94e6886c59351e2068f4d0c7",
+    "agent/modules/agent/backend/analysis_call_context.py": "66901bdcb18b321dff82afff02d64a4edca0c6cfa48580fdc7cf2eb5581c1f2d",
+    "agent/modules/agent/backend/analysis_http_observer.py": "ed9f6d3a7f61f5d94c4de0eaab3a2f45d5a984019f7a0b4202fa5ec3dcd81fec",
+    "agent/experiments/round21/dev_server.py": "9472278c0eeaddec3e52b419aff0e4e9ea05f2428f60400e06ee4f8f9376779e",
+    "agent/experiments/round21/review_protected_changes.py": "b6775dec3cd4bc4c281a1a355639835b5e06ba19b04d8e3a05e1d986df0a3af3",
+    "agent/modules/agent/tests/test_round21_sdk_http_observer.py": "25356124fada8b1a23786906767567b544437ae2e2dca7425ec3bc6bc2e38875"
+  },
+  "archive_sha256": "a7534fb7d8410f78c3f8dec7c799739081d30f10957675501c7a8ad1cd6d07ef",
+  "scope": "offline regression only; real batch closed"
+}

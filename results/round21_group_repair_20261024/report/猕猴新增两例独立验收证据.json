@@ -1,0 +1,963 @@
+{
+  "progress": {
+    "updated_utc": "2026-10-23T18:14:31.298128+00:00",
+    "pid": 327048,
+    "active": [],
+    "statuses": {
+      "UCDAVIS_32125": {
+        "stage": "computed_pending_independent_output_and_scale_review",
+        "steps_completed": 8,
+        "pid_alive": false
+      },
+      "UCDAVIS_32126": {
+        "stage": "computed_pending_independent_output_and_scale_review",
+        "steps_completed": 8,
+        "pid_alive": false
+      },
+      "UCDAVIS_32127": {
+        "stage": "computed_pending_independent_output_and_scale_review",
+        "steps_completed": 8,
+        "pid_alive": false
+      }
+    },
+    "acceptances": {
+      "ION_32198": {
+        "status": "conditional_pass",
+        "scale_verified": true,
+        "metrics": {
+          "mean_thickness_mm": 1.683949606346392,
+          "total_area_mm2": 25006.612070429102,
+          "brain_volume_mm3": 106415.875,
+          "etiv_mm3": null,
+          "hull_ratio": 1.8765998901551444
+        }
+      },
+      "UCDAVIS_32125": {
+        "status": "conditional_pass",
+        "scale_verified": true,
+        "metrics": {
+          "mean_thickness_mm": 1.6620886116589424,
+          "total_area_mm2": 18791.111579683118,
+          "brain_volume_mm3": 83012.75,
+          "etiv_mm3": null,
+          "hull_ratio": 1.748585585776282
+        }
+      },
+      "UCDAVIS_32126": {
+        "status": "conditional_pass",
+        "scale_verified": true,
+        "metrics": {
+          "mean_thickness_mm": 1.509373538548777,
+          "total_area_mm2": 22815.180938707126,
+          "brain_volume_mm3": 91341.5,
+          "etiv_mm3": null,
+          "hull_ratio": 1.862509656448595
+        }
+      },
+      "UCDAVIS_32127": {
+        "status": "conditional_pass",
+        "scale_verified": true,
+        "metrics": {
+          "mean_thickness_mm": 1.7736948270754709,
+          "total_area_mm2": 19890.87440659612,
+          "brain_volume_mm3": 94551.25,
+          "etiv_mm3": null,
+          "hull_ratio": 1.7242020925006576
+        }
+      }
+    },
+    "holds": [],
+    "model_api_requests": 0,
+    "automatic_retries": 0,
+    "pending": 0,
+    "stage": "finished"
+  },
+  "subjects": {
+    "UCDAVIS_32126": {
+      "directory": "/data/xuancheng/datasets/provenance/round21_macaque_followup_20261024/UCDAVIS_32126_automatic_acceptance",
+      "files": {
+        "acceptance.json": {
+          "sha256": "af40f1fd175bdae0a2b17ecc332955589fd7cb9a84b7d53aebbaeeeb2ab31f59",
+          "record": {
+            "subject": "UCDAVIS_32126",
+            "generated_utc": "2026-10-23T18:12:59.020031+00:00",
+            "status": "conditional_pass",
+            "scale_verified": true,
+            "metrics": {
+              "stored": {
+                "mean_thickness_mm": 1.509373538548777,
+                "total_area_mm2": 22815.180938707126,
+                "brain_volume_mm3": 91341.5,
+                "etiv_mm3": null,
+                "hull_ratio": 1.862509656448595
+              },
+              "physical": {
+                "mean_thickness_mm": 1.509373538548777,
+                "total_area_mm2": 22815.180938707126,
+                "brain_volume_mm3": 91341.5,
+                "etiv_mm3": null,
+                "hull_ratio": 1.862509656448595
+              },
+              "scale_k": 1.0,
+              "scale_status": "rescale_applied_and_reverted",
+              "sources": {
+                "brain_volume_mm3": "final brainmask.mgz positive-voxel support x MGH voxel volume",
+                "etiv_mm3": "not used for macaque",
+                "total_area_mm2": "sum of final native white triangle areas",
+                "mean_thickness_mm": "final cortex-label vertex means weighted by hemisphere white areas; finite zeros retained",
+                "hull_ratio": "sum final pial area / sum per-hemisphere convex-hull area"
+              },
+              "hemispheres": {
+                "lh": {
+                  "white_area": 11903.652847011615,
+                  "cortex_mean_thickness": 1.4964599542133197,
+                  "cortex_vertex_count": 58182,
+                  "cortex_zero_count": 50,
+                  "mesh_vertices": 66216,
+                  "pial_area": 13336.567784780851,
+                  "hull_area": 7130.181772678521
+                },
+                "rh": {
+                  "white_area": 10911.528091695509,
+                  "cortex_mean_thickness": 1.5234612835142953,
+                  "cortex_vertex_count": 58522,
+                  "cortex_zero_count": 36,
+                  "mesh_vertices": 65072,
+                  "pial_area": 12910.339524550976,
+                  "hull_area": 6962.0443902606985
+                }
+              },
+              "annotation_policy": "Human-named annotations are not used for macaque parcellation",
+              "aseg_derived_values_used": false
+            },
+            "coarse_reference_comparison": {
+              "mean_thickness_mm": {
+                "reference": 2.1,
+                "observed": 1.509373538548777
+              },
+              "area_per_hemisphere_mm2": {
+                "reference": 10100.0,
+                "observed": 11407.590469353563
+              },
+              "brain_volume_cm3": {
+                "reference": 100.0,
+                "observed": 91.3415
+              },
+              "hull_ratio": {
+                "reference_range": [
+                  1.75,
+                  1.9
+                ],
+                "observed": 1.862509656448595
+              },
+              "source_status": "User-supplied coarse comparisons attributed to Autio2020; not a gold standard or proof all estimates use the same definition. Thickness/area/volume conventions and hull definitions require source matching."
+            },
+            "warnings": [
+              "Requested two-voxel bounding-box equality is not met in all dimensions; actual differences retained; white and mask are different tissue boundaries.",
+              "Conflicting NIfTI geometry excluded; final MGZ affine used without modifying originals.",
+              "Global metrics only; human-named compatibility labels not used as macaque parcellation. Anatomical expert QC not completed."
+            ],
+            "literal_three_check_full_pass": false,
+            "automatic_release_default": false,
+            "release_note": "Conditional acceptance must not silently become a full two-voxel pass; release of subsequent subjects follows the separately recorded user gate policy.",
+            "scale_record_sha256": "bc44aff59cdd663c88fe00eaada0429b9997e24085cf6fc9c0f4c2151c98d1a4",
+            "annotation_policy": "人类命名标签，不作猕猴分区",
+            "macaque_etiv_or_aseg_used": false,
+            "model_api_requests": 0,
+            "raw_or_derivative_outputs_modified": false
+          }
+        },
+        "scale.json": {
+          "sha256": "bc44aff59cdd663c88fe00eaada0429b9997e24085cf6fc9c0f4c2151c98d1a4",
+          "record": {
+            "subject": "UCDAVIS_32126",
+            "final_surface_scale_k": 1.0,
+            "producer_tool_sha256": "1a6890d02c82bb2af3a0d658f8e2a70176718d4441f4030639a1bcf99358057d",
+            "pipeline_source_commit": "774e0b666a3e82bedc79e435081a0fa459d3cb83",
+            "pipeline_runner_sha256": "a6fb1149e2523ff36d1cfc9adeafd579c72132a9d86109a5ffc75022c33b9ae8",
+            "basis": {
+              "pipeline_execution": true,
+              "raw_unchanged": true,
+              "volumes": {
+                "selected_file": "/data/xuancheng/datasets/derivatives/primatex_1.7_PRIME_DE/UCDAVIS_32126/UCDAVIS_32126/mri/brainmask.mgz",
+                "selected_affine": [
+                  [
+                    -0.5,
+                    0.0,
+                    0.0,
+                    159.5
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.5,
+                    -91.75
+                  ],
+                  [
+                    0.0,
+                    -0.5,
+                    0.0,
+                    162.25
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "vox2ras_tkr": [
+                  [
+                    -0.5,
+                    0.0,
+                    0.0,
+                    64.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.5,
+                    -64.0
+                  ],
+                  [
+                    0.0,
+                    -0.5,
+                    0.0,
+                    64.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "voxel_size_mm": [
+                  0.5,
+                  0.5,
+                  0.5
+                ],
+                "voxel_volume_mm3": 0.12500000000000003,
+                "positive_voxel_count": 730732,
+                "support_extent_tkr_mm": [
+                  58.5,
+                  75.5,
+                  47.5
+                ],
+                "voxel_centre_bbox_extent_tkr_mm": [
+                  58.0,
+                  75.0,
+                  47.0
+                ],
+                "bbox_uses_voxel_edges": true,
+                "pre_fake_T1_voxel_size_mm": [
+                  0.5,
+                  0.5,
+                  0.5
+                ],
+                "fake_mgz_voxel_size_mm": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "nifti_used_for_volume": false
+              },
+              "surface_restore": [
+                {
+                  "hemisphere": "lh",
+                  "kind": "white",
+                  "path": "/data/xuancheng/datasets/derivatives/primatex_1.7_PRIME_DE/UCDAVIS_32126/UCDAVIS_32126/surf/lh.white",
+                  "vertices": 66216,
+                  "faces": 132428,
+                  "native_over_fake1mm_linear_factor": 0.5,
+                  "max_coordinate_residual": 0.0,
+                  "same_faces": true
+                },
+                {
+                  "hemisphere": "rh",
+                  "kind": "white",
+                  "path": "/data/xuancheng/datasets/derivatives/primatex_1.7_PRIME_DE/UCDAVIS_32126/UCDAVIS_32126/surf/rh.white",
+                  "vertices": 65072,
+                  "faces": 130140,
+                  "native_over_fake1mm_linear_factor": 0.5,
+                  "max_coordinate_residual": 0.0,
+                  "same_faces": true
+                },
+                {
+                  "hemisphere": "lh",
+                  "kind": "pial",
+                  "path": "/data/xuancheng/datasets/derivatives/primatex_1.7_PRIME_DE/UCDAVIS_32126/UCDAVIS_32126/surf/lh.pial",
+                  "vertices": 66216,
+                  "faces": 132428,
+                  "native_over_fake1mm_linear_factor": 0.5,
+                  "max_coordinate_residual": 0.0,
+                  "same_faces": true
+                },
+                {
+                  "hemisphere": "rh",
+                  "kind": "pial",
+                  "path": "/data/xuancheng/datasets/derivatives/primatex_1.7_PRIME_DE/UCDAVIS_32126/UCDAVIS_32126/surf/rh.pial",
+                  "vertices": 65072,
+                  "faces": 130140,
+                  "native_over_fake1mm_linear_factor": 0.5,
+                  "max_coordinate_residual": 0.0,
+                  "same_faces": true
+                },
+                {
+                  "hemisphere": "lh",
+                  "kind": "smoothwm",
+                  "path": "/data/xuancheng/datasets/derivatives/primatex_1.7_PRIME_DE/UCDAVIS_32126/UCDAVIS_32126/surf/lh.smoothwm",
+                  "vertices": 66216,
+                  "faces": 132428,
+                  "native_over_fake1mm_linear_factor": 0.5,
+                  "max_coordinate_residual": 0.0,
+                  "same_faces": true
+                },
+                {
+                  "hemisphere": "rh",
+                  "kind": "smoothwm",
+                  "path": "/data/xuancheng/datasets/derivatives/primatex_1.7_PRIME_DE/UCDAVIS_32126/UCDAVIS_32126/surf/rh.smoothwm",
+                  "vertices": 65072,
+                  "faces": 130140,
+                  "native_over_fake1mm_linear_factor": 0.5,
+                  "max_coordinate_residual": 0.0,
+                  "same_faces": true
+                }
+              ],
+              "bbox_comparison": [
+                {
+                  "surface": "white",
+                  "extent_tkr_mm": [
+                    55.657081604003906,
+                    70.9843864440918,
+                    41.70008659362793
+                  ],
+                  "surface_over_mask_extent": [
+                    0.9514031043419471,
+                    0.9401905489283682,
+                    0.8778965598658511
+                  ],
+                  "difference_mm": [
+                    -2.8429183959960938,
+                    -4.515613555908203,
+                    -5.79991340637207
+                  ],
+                  "centre_span_difference_mm": [
+                    -2.3429183959960938,
+                    -4.015613555908203,
+                    -5.29991340637207
+                  ],
+                  "centre_span_two_voxel_pass": false,
+                  "difference_in_0_5mm_voxels": [
+                    -5.6858367919921875,
+                    -9.031227111816406,
+                    -11.59982681274414
+                  ],
+                  "literal_two_voxel_pass": false,
+                  "note": "white is an inner white/gray boundary; mask and pial are different outer tissue supports. This note does not relabel a failed literal threshold as pass."
+                },
+                {
+                  "surface": "pial",
+                  "extent_tkr_mm": [
+                    57.919382095336914,
+                    73.85369873046875,
+                    45.30854034423828
+                  ],
+                  "surface_over_mask_extent": [
+                    0.9900749076125969,
+                    0.9781946851717715,
+                    0.9538640072471217
+                  ],
+                  "difference_mm": [
+                    -0.5806179046630859,
+                    -1.64630126953125,
+                    -2.1914596557617188
+                  ],
+                  "centre_span_difference_mm": [
+                    -0.08061790466308594,
+                    -1.14630126953125,
+                    -1.6914596557617188
+                  ],
+                  "centre_span_two_voxel_pass": false,
+                  "difference_in_0_5mm_voxels": [
+                    -1.1612358093261719,
+                    -3.2926025390625,
+                    -4.3829193115234375
+                  ],
+                  "literal_two_voxel_pass": false,
+                  "note": "white is an inner white/gray boundary; mask and pial are different outer tissue supports. This note does not relabel a failed literal threshold as pass."
+                }
+              ],
+              "thickness_medians": [
+                {
+                  "hemisphere": "lh",
+                  "all_vertex_median_mm": 1.4365204572677612,
+                  "cortex_median_mm": 1.5124605894088745,
+                  "finite": true,
+                  "cortex_zero_count": 50,
+                  "median_in_user_expected_1_5_to_2_5_mm": true
+                },
+                {
+                  "hemisphere": "rh",
+                  "all_vertex_median_mm": 1.487305998802185,
+                  "cortex_median_mm": 1.5593476295471191,
+                  "finite": true,
+                  "cortex_zero_count": 36,
+                  "median_in_user_expected_1_5_to_2_5_mm": true
+                }
+              ],
+              "area_stats_comparison": [
+                {
+                  "hemisphere": "lh",
+                  "direct_white_area_mm2": 11903.652847011612,
+                  "stats_WhiteSurfArea": {
+                    "value": 11903.7,
+                    "unit": "mm^2",
+                    "line": 20,
+                    "path": "/data/xuancheng/datasets/derivatives/primatex_1.7_PRIME_DE/UCDAVIS_32126/UCDAVIS_32126/stats/lh.aparc.stats",
+                    "display_rounding_tolerance_mm2": 0.050000010000000004
+                  },
+                  "stats_matches_final_native": true,
+                  "stats_over_final_ratio": 1.0000039612200553,
+                  "independent_fake1mm_area": 47614.61138804645,
+                  "interpretation": "post_restore"
+                },
+                {
+                  "hemisphere": "rh",
+                  "direct_white_area_mm2": 10911.528091695507,
+                  "stats_WhiteSurfArea": {
+                    "value": 10911.5,
+                    "unit": "mm^2",
+                    "line": 20,
+                    "path": "/data/xuancheng/datasets/derivatives/primatex_1.7_PRIME_DE/UCDAVIS_32126/UCDAVIS_32126/stats/rh.aparc.stats",
+                    "display_rounding_tolerance_mm2": 0.050000010000000004
+                  },
+                  "stats_matches_final_native": true,
+                  "stats_over_final_ratio": 0.9999974255030761,
+                  "independent_fake1mm_area": 43646.11236678203,
+                  "interpretation": "post_restore"
+                }
+              ]
+            },
+            "verified": true,
+            "status": "rescale_applied_and_reverted",
+            "verified_scope": "Remaining processing scale relative to native MRI nominal mm; independent scanner calibration not asserted",
+            "all_requested_bbox_thresholds_pass": false,
+            "pial_two_voxel_pass": false,
+            "input_fingerprints": [
+              {
+                "path": "/data/xuancheng/datasets/derivatives/primatex_1.7_PRIME_DE/UCDAVIS_32126/UCDAVIS_32126/surf/lh.white",
+                "sha256": "ecbdc55b71b0c75b9d24237d5e115c8dc007e384f689806c4b1c0d9b75a77c69"
+              },
+              {
+                "path": "/data/xuancheng/datasets/derivatives/primatex_1.7_PRIME_DE/UCDAVIS_32126/UCDAVIS_32126/surf/rh.white",
+                "sha256": "6c22d8c219230bead5906c64c372f3c85de6fb454cf56a2efd98befbcef9ffdd"
+              },
+              {
+                "path": "/data/xuancheng/datasets/derivatives/primatex_1.7_PRIME_DE/UCDAVIS_32126/UCDAVIS_32126/surf/lh.pial",
+                "sha256": "df3b53e95ed909f4345215a9ac4ff0507dabdb408ee0a280a4473ed30ef08baf"
+              },
+              {
+                "path": "/data/xuancheng/datasets/derivatives/primatex_1.7_PRIME_DE/UCDAVIS_32126/UCDAVIS_32126/surf/rh.pial",
+                "sha256": "43a31f415bd9b4153dde37c7a2dc0ae8a50e8ce99bafe5d7d4d38309eead9480"
+              },
+              {
+                "path": "/data/xuancheng/datasets/derivatives/primatex_1.7_PRIME_DE/UCDAVIS_32126/UCDAVIS_32126/surf/lh.smoothwm",
+                "sha256": "74b3807908d19f36039cb906392d6c5bdc82ed1e72ec59413dc837a709674429"
+              },
+              {
+                "path": "/data/xuancheng/datasets/derivatives/primatex_1.7_PRIME_DE/UCDAVIS_32126/UCDAVIS_32126/surf/rh.smoothwm",
+                "sha256": "a684546804c4c2aae63d51b1bfd79afde38f5456fa8ad8ea62ba04805d57a6bb"
+              },
+              {
+                "path": "/data/xuancheng/datasets/derivatives/primatex_1.7_PRIME_DE/UCDAVIS_32126/UCDAVIS_32126/surf/lh.thickness",
+                "sha256": "8f187ac08ec8692b3da726744d2bb0b91b5f6d71d203a883da0afcd7b6f18faa"
+              },
+              {
+                "path": "/data/xuancheng/datasets/derivatives/primatex_1.7_PRIME_DE/UCDAVIS_32126/UCDAVIS_32126/label/lh.cortex.label",
+                "sha256": "87437d06ff955e40eab6920ad0c329568d8e7dda65a62a92b760a8f94cb4044d"
+              },
+              {
+                "path": "/data/xuancheng/datasets/derivatives/primatex_1.7_PRIME_DE/UCDAVIS_32126/UCDAVIS_32126/surf/rh.thickness",
+                "sha256": "57ac6ac12570fc5fb1324744404cb88cc365408aa647b9e6a443b7d47e58ea12"
+              },
+              {
+                "path": "/data/xuancheng/datasets/derivatives/primatex_1.7_PRIME_DE/UCDAVIS_32126/UCDAVIS_32126/label/rh.cortex.label",
+                "sha256": "c70d1b56dff0f26a531a356a68b7ec4331223871530e38dac5bf53c7aff1d06f"
+              },
+              {
+                "path": "/data/xuancheng/datasets/derivatives/primatex_1.7_PRIME_DE/UCDAVIS_32126/UCDAVIS_32126/mri/brainmask.mgz",
+                "sha256": "c0c3d8f4e6c2a647122a4fa42db5a7adff56dd1e3f778cbf4771869fe2e1db41"
+              }
+            ],
+            "voxel_coordinate_frame": "Native MGH affine and its vox2ras_tkr; NIfTI sform not used"
+          }
+        },
+        "reference_execution.json": {
+          "sha256": "a160f882dd66468269b79790f47e7ad232a4689be8c12a30361cf47ab4c63c96",
+          "record": {
+            "argv": [
+              "/data/xuancheng/agent_v1/.venv-reference/bin/python",
+              "-I",
+              "-B",
+              "/data/xuancheng/datasets/provenance/macaque_global_acceptance_20261023/runtime_bundle/agent/modules/agent/backend/analysis_global_reference_worker.py"
+            ],
+            "returncode": 0,
+            "worker_sha256": "cb6241eed6e347d4809242468c20425d3528ddab373bc28955aaf6ea1af5ebf0",
+            "reference_sha256": "34dd8dc8243c980bbb1c547103cb6c2c35238575f306d43a6a9a3631e8553f51",
+            "ended_utc": "2026-10-23T18:12:59.015534+00:00",
+            "model_api_requests": 0
+          }
+        }
+      },
+      "pilot_status": {
+        "stage": "computed_pending_independent_output_and_scale_review",
+        "steps_completed": 8,
+        "pid_alive": false
+      }
+    },
+    "UCDAVIS_32127": {
+      "directory": "/data/xuancheng/datasets/provenance/round21_macaque_followup_20261024/UCDAVIS_32127_automatic_acceptance",
+      "files": {
+        "acceptance.json": {
+          "sha256": "cb812244a32cdacee1c47779d484d92385636008d8388039fdf4d671593a12db",
+          "record": {
+            "subject": "UCDAVIS_32127",
+            "generated_utc": "2026-10-23T18:14:31.237213+00:00",
+            "status": "conditional_pass",
+            "scale_verified": true,
+            "metrics": {
+              "stored": {
+                "mean_thickness_mm": 1.7736948270754709,
+                "total_area_mm2": 19890.87440659612,
+                "brain_volume_mm3": 94551.25,
+                "etiv_mm3": null,
+                "hull_ratio": 1.7242020925006576
+              },
+              "physical": {
+                "mean_thickness_mm": 1.7736948270754709,
+                "total_area_mm2": 19890.87440659612,
+                "brain_volume_mm3": 94551.25,
+                "etiv_mm3": null,
+                "hull_ratio": 1.7242020925006576
+              },
+              "scale_k": 1.0,
+              "scale_status": "rescale_applied_and_reverted",
+              "sources": {
+                "brain_volume_mm3": "final brainmask.mgz positive-voxel support x MGH voxel volume",
+                "etiv_mm3": "not used for macaque",
+                "total_area_mm2": "sum of final native white triangle areas",
+                "mean_thickness_mm": "final cortex-label vertex means weighted by hemisphere white areas; finite zeros retained",
+                "hull_ratio": "sum final pial area / sum per-hemisphere convex-hull area"
+              },
+              "hemispheres": {
+                "lh": {
+                  "white_area": 10089.898534137868,
+                  "cortex_mean_thickness": 1.8046217222923713,
+                  "cortex_vertex_count": 51159,
+                  "cortex_zero_count": 202,
+                  "mesh_vertices": 58465,
+                  "pial_area": 12112.155849292129,
+                  "hull_area": 7076.39936855109
+                },
+                "rh": {
+                  "white_area": 9800.97587245825,
+                  "cortex_mean_thickness": 1.7418562388802554,
+                  "cortex_vertex_count": 50885,
+                  "cortex_zero_count": 39,
+                  "mesh_vertices": 57233,
+                  "pial_area": 11839.462439749565,
+                  "hull_area": 6815.022288584243
+                }
+              },
+              "annotation_policy": "Human-named annotations are not used for macaque parcellation",
+              "aseg_derived_values_used": false
+            },
+            "coarse_reference_comparison": {
+              "mean_thickness_mm": {
+                "reference": 2.1,
+                "observed": 1.7736948270754709
+              },
+              "area_per_hemisphere_mm2": {
+                "reference": 10100.0,
+                "observed": 9945.43720329806
+              },
+              "brain_volume_cm3": {
+                "reference": 100.0,
+                "observed": 94.55125
+              },
+              "hull_ratio": {
+                "reference_range": [
+                  1.75,
+                  1.9
+                ],
+                "observed": 1.7242020925006576
+              },
+              "source_status": "User-supplied coarse comparisons attributed to Autio2020; not a gold standard or proof all estimates use the same definition. Thickness/area/volume conventions and hull definitions require source matching."
+            },
+            "warnings": [
+              "Requested two-voxel bounding-box equality is not met in all dimensions; actual differences retained; white and mask are different tissue boundaries.",
+              "Conflicting NIfTI geometry excluded; final MGZ affine used without modifying originals.",
+              "Global metrics only; human-named compatibility labels not used as macaque parcellation. Anatomical expert QC not completed."
+            ],
+            "literal_three_check_full_pass": false,
+            "automatic_release_default": false,
+            "release_note": "Conditional acceptance must not silently become a full two-voxel pass; release of subsequent subjects follows the separately recorded user gate policy.",
+            "scale_record_sha256": "3b68df2faa8f17f26eb8ca89cb6ac66d8ef45f18308a89720fd41664f2a11ece",
+            "annotation_policy": "人类命名标签，不作猕猴分区",
+            "macaque_etiv_or_aseg_used": false,
+            "model_api_requests": 0,
+            "raw_or_derivative_outputs_modified": false
+          }
+        },
+        "scale.json": {
+          "sha256": "3b68df2faa8f17f26eb8ca89cb6ac66d8ef45f18308a89720fd41664f2a11ece",
+          "record": {
+            "subject": "UCDAVIS_32127",
+            "final_surface_scale_k": 1.0,
+            "producer_tool_sha256": "1a6890d02c82bb2af3a0d658f8e2a70176718d4441f4030639a1bcf99358057d",
+            "pipeline_source_commit": "774e0b666a3e82bedc79e435081a0fa459d3cb83",
+            "pipeline_runner_sha256": "a6fb1149e2523ff36d1cfc9adeafd579c72132a9d86109a5ffc75022c33b9ae8",
+            "basis": {
+              "pipeline_execution": true,
+              "raw_unchanged": true,
+              "volumes": {
+                "selected_file": "/data/xuancheng/datasets/derivatives/primatex_1.7_PRIME_DE/UCDAVIS_32127/UCDAVIS_32127/mri/brainmask.mgz",
+                "selected_affine": [
+                  [
+                    -0.5,
+                    0.0,
+                    0.0,
+                    159.5
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.5,
+                    -91.75
+                  ],
+                  [
+                    0.0,
+                    -0.5,
+                    0.0,
+                    162.25
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "vox2ras_tkr": [
+                  [
+                    -0.5,
+                    0.0,
+                    0.0,
+                    64.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.5,
+                    -64.0
+                  ],
+                  [
+                    0.0,
+                    -0.5,
+                    0.0,
+                    64.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "voxel_size_mm": [
+                  0.5,
+                  0.5,
+                  0.5
+                ],
+                "voxel_volume_mm3": 0.12500000000000003,
+                "positive_voxel_count": 756410,
+                "support_extent_tkr_mm": [
+                  59.0,
+                  74.0,
+                  48.0
+                ],
+                "voxel_centre_bbox_extent_tkr_mm": [
+                  58.5,
+                  73.5,
+                  47.5
+                ],
+                "bbox_uses_voxel_edges": true,
+                "pre_fake_T1_voxel_size_mm": [
+                  0.5,
+                  0.5,
+                  0.5
+                ],
+                "fake_mgz_voxel_size_mm": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "nifti_used_for_volume": false
+              },
+              "surface_restore": [
+                {
+                  "hemisphere": "lh",
+                  "kind": "white",
+                  "path": "/data/xuancheng/datasets/derivatives/primatex_1.7_PRIME_DE/UCDAVIS_32127/UCDAVIS_32127/surf/lh.white",
+                  "vertices": 58465,
+                  "faces": 116926,
+                  "native_over_fake1mm_linear_factor": 0.5,
+                  "max_coordinate_residual": 0.0,
+                  "same_faces": true
+                },
+                {
+                  "hemisphere": "rh",
+                  "kind": "white",
+                  "path": "/data/xuancheng/datasets/derivatives/primatex_1.7_PRIME_DE/UCDAVIS_32127/UCDAVIS_32127/surf/rh.white",
+                  "vertices": 57233,
+                  "faces": 114462,
+                  "native_over_fake1mm_linear_factor": 0.5,
+                  "max_coordinate_residual": 0.0,
+                  "same_faces": true
+                },
+                {
+                  "hemisphere": "lh",
+                  "kind": "pial",
+                  "path": "/data/xuancheng/datasets/derivatives/primatex_1.7_PRIME_DE/UCDAVIS_32127/UCDAVIS_32127/surf/lh.pial",
+                  "vertices": 58465,
+                  "faces": 116926,
+                  "native_over_fake1mm_linear_factor": 0.5,
+                  "max_coordinate_residual": 0.0,
+                  "same_faces": true
+                },
+                {
+                  "hemisphere": "rh",
+                  "kind": "pial",
+                  "path": "/data/xuancheng/datasets/derivatives/primatex_1.7_PRIME_DE/UCDAVIS_32127/UCDAVIS_32127/surf/rh.pial",
+                  "vertices": 57233,
+                  "faces": 114462,
+                  "native_over_fake1mm_linear_factor": 0.5,
+                  "max_coordinate_residual": 0.0,
+                  "same_faces": true
+                },
+                {
+                  "hemisphere": "lh",
+                  "kind": "smoothwm",
+                  "path": "/data/xuancheng/datasets/derivatives/primatex_1.7_PRIME_DE/UCDAVIS_32127/UCDAVIS_32127/surf/lh.smoothwm",
+                  "vertices": 58465,
+                  "faces": 116926,
+                  "native_over_fake1mm_linear_factor": 0.5,
+                  "max_coordinate_residual": 0.0,
+                  "same_faces": true
+                },
+                {
+                  "hemisphere": "rh",
+                  "kind": "smoothwm",
+                  "path": "/data/xuancheng/datasets/derivatives/primatex_1.7_PRIME_DE/UCDAVIS_32127/UCDAVIS_32127/surf/rh.smoothwm",
+                  "vertices": 57233,
+                  "faces": 114462,
+                  "native_over_fake1mm_linear_factor": 0.5,
+                  "max_coordinate_residual": 0.0,
+                  "same_faces": true
+                }
+              ],
+              "bbox_comparison": [
+                {
+                  "surface": "white",
+                  "extent_tkr_mm": [
+                    54.991159439086914,
+                    68.61139678955078,
+                    41.38511085510254
+                  ],
+                  "surface_over_mask_extent": [
+                    0.9320535498150324,
+                    0.9271810376966322,
+                    0.8621898094813029
+                  ],
+                  "difference_mm": [
+                    -4.008840560913086,
+                    -5.388603210449219,
+                    -6.614889144897461
+                  ],
+                  "centre_span_difference_mm": [
+                    -3.508840560913086,
+                    -4.888603210449219,
+                    -6.114889144897461
+                  ],
+                  "centre_span_two_voxel_pass": false,
+                  "difference_in_0_5mm_voxels": [
+                    -8.017681121826172,
+                    -10.777206420898438,
+                    -13.229778289794922
+                  ],
+                  "literal_two_voxel_pass": false,
+                  "note": "white is an inner white/gray boundary; mask and pial are different outer tissue supports. This note does not relabel a failed literal threshold as pass."
+                },
+                {
+                  "surface": "pial",
+                  "extent_tkr_mm": [
+                    57.82644462585449,
+                    71.72762298583984,
+                    46.11618232727051
+                  ],
+                  "surface_over_mask_extent": [
+                    0.9801092309466863,
+                    0.9692922025113493,
+                    0.9607537984848022
+                  ],
+                  "difference_mm": [
+                    -1.1735553741455078,
+                    -2.2723770141601562,
+                    -1.8838176727294922
+                  ],
+                  "centre_span_difference_mm": [
+                    -0.6735553741455078,
+                    -1.7723770141601562,
+                    -1.3838176727294922
+                  ],
+                  "centre_span_two_voxel_pass": false,
+                  "difference_in_0_5mm_voxels": [
+                    -2.3471107482910156,
+                    -4.5447540283203125,
+                    -3.7676353454589844
+                  ],
+                  "literal_two_voxel_pass": false,
+                  "note": "white is an inner white/gray boundary; mask and pial are different outer tissue supports. This note does not relabel a failed literal threshold as pass."
+                }
+              ],
+              "thickness_medians": [
+                {
+                  "hemisphere": "lh",
+                  "all_vertex_median_mm": 1.7479736804962158,
+                  "cortex_median_mm": 1.8131084442138672,
+                  "finite": true,
+                  "cortex_zero_count": 202,
+                  "median_in_user_expected_1_5_to_2_5_mm": true
+                },
+                {
+                  "hemisphere": "rh",
+                  "all_vertex_median_mm": 1.687429666519165,
+                  "cortex_median_mm": 1.7594313621520996,
+                  "finite": true,
+                  "cortex_zero_count": 39,
+                  "median_in_user_expected_1_5_to_2_5_mm": true
+                }
+              ],
+              "area_stats_comparison": [
+                {
+                  "hemisphere": "lh",
+                  "direct_white_area_mm2": 10089.898534137867,
+                  "stats_WhiteSurfArea": {
+                    "value": 10089.9,
+                    "unit": "mm^2",
+                    "line": 20,
+                    "path": "/data/xuancheng/datasets/derivatives/primatex_1.7_PRIME_DE/UCDAVIS_32127/UCDAVIS_32127/stats/lh.aparc.stats",
+                    "display_rounding_tolerance_mm2": 0.050000010000000004
+                  },
+                  "stats_matches_final_native": true,
+                  "stats_over_final_ratio": 1.000000145280166,
+                  "independent_fake1mm_area": 40359.59413655147,
+                  "interpretation": "post_restore"
+                },
+                {
+                  "hemisphere": "rh",
+                  "direct_white_area_mm2": 9800.975872458248,
+                  "stats_WhiteSurfArea": {
+                    "value": 9800.98,
+                    "unit": "mm^2",
+                    "line": 20,
+                    "path": "/data/xuancheng/datasets/derivatives/primatex_1.7_PRIME_DE/UCDAVIS_32127/UCDAVIS_32127/stats/rh.aparc.stats",
+                    "display_rounding_tolerance_mm2": 0.00500001
+                  },
+                  "stats_matches_final_native": true,
+                  "stats_over_final_ratio": 1.0000004211357936,
+                  "independent_fake1mm_area": 39203.90348983299,
+                  "interpretation": "post_restore"
+                }
+              ]
+            },
+            "verified": true,
+            "status": "rescale_applied_and_reverted",
+            "verified_scope": "Remaining processing scale relative to native MRI nominal mm; independent scanner calibration not asserted",
+            "all_requested_bbox_thresholds_pass": false,
+            "pial_two_voxel_pass": false,
+            "input_fingerprints": [
+              {
+                "path": "/data/xuancheng/datasets/derivatives/primatex_1.7_PRIME_DE/UCDAVIS_32127/UCDAVIS_32127/surf/lh.white",
+                "sha256": "47a7f2cf8496c6f7da1f684cc32a1e19d1e4b0cf5098aadb1e5dfbff9550f133"
+              },
+              {
+                "path": "/data/xuancheng/datasets/derivatives/primatex_1.7_PRIME_DE/UCDAVIS_32127/UCDAVIS_32127/surf/rh.white",
+                "sha256": "dd7b44eda34150a5fc87ba84c9d2f13db8e74a504ee1500b2f847b28c1b2607a"
+              },
+              {
+                "path": "/data/xuancheng/datasets/derivatives/primatex_1.7_PRIME_DE/UCDAVIS_32127/UCDAVIS_32127/surf/lh.pial",
+                "sha256": "1c52ba0280918727b7e32aebf0d6b252e11ea2141f0906b3168e4926931df09d"
+              },
+              {
+                "path": "/data/xuancheng/datasets/derivatives/primatex_1.7_PRIME_DE/UCDAVIS_32127/UCDAVIS_32127/surf/rh.pial",
+                "sha256": "11210f3625535510237150d7d43eac136778e79704c40e28401708dad840a556"
+              },
+              {
+                "path": "/data/xuancheng/datasets/derivatives/primatex_1.7_PRIME_DE/UCDAVIS_32127/UCDAVIS_32127/surf/lh.smoothwm",
+                "sha256": "b006b41f0e5c18925fb9aeb5ad560abd0ca239c66b070b822fc09843d1fcb63b"
+              },
+              {
+                "path": "/data/xuancheng/datasets/derivatives/primatex_1.7_PRIME_DE/UCDAVIS_32127/UCDAVIS_32127/surf/rh.smoothwm",
+                "sha256": "cf9ce1d5ad4d212a37a6b2ed8c4f176d3c4fb6923564184d5206571d7e65744b"
+              },
+              {
+                "path": "/data/xuancheng/datasets/derivatives/primatex_1.7_PRIME_DE/UCDAVIS_32127/UCDAVIS_32127/surf/lh.thickness",
+                "sha256": "4586f462a9756e90ee12c8ae17b8015acfd373efc337cbaa373287b37d60ab64"
+              },
+              {
+                "path": "/data/xuancheng/datasets/derivatives/primatex_1.7_PRIME_DE/UCDAVIS_32127/UCDAVIS_32127/label/lh.cortex.label",
+                "sha256": "11dfdb3836ba412ec99b93204fddb64e273834562d2d13b1a7a49c5b9cf7414e"
+              },
+              {
+                "path": "/data/xuancheng/datasets/derivatives/primatex_1.7_PRIME_DE/UCDAVIS_32127/UCDAVIS_32127/surf/rh.thickness",
+                "sha256": "24bf01852c7fc61f63ad9b208ad15b56abae832111394d42ba2641024ffa546e"
+              },
+              {
+                "path": "/data/xuancheng/datasets/derivatives/primatex_1.7_PRIME_DE/UCDAVIS_32127/UCDAVIS_32127/label/rh.cortex.label",
+                "sha256": "f41f1ede918a189c6e3c33ae51fcdae616024f601d8fdcf51a762333c87585e9"
+              },
+              {
+                "path": "/data/xuancheng/datasets/derivatives/primatex_1.7_PRIME_DE/UCDAVIS_32127/UCDAVIS_32127/mri/brainmask.mgz",
+                "sha256": "0ebcebbbf6e50181cafb895236efc91f4b9d37862c7d4add8826d3d700b75f17"
+              }
+            ],
+            "voxel_coordinate_frame": "Native MGH affine and its vox2ras_tkr; NIfTI sform not used"
+          }
+        },
+        "reference_execution.json": {
+          "sha256": "a45f3394856a8236a050ec3ba53bf73eef662acb39a28e0e06b5ab05c54748cf",
+          "record": {
+            "argv": [
+              "/data/xuancheng/agent_v1/.venv-reference/bin/python",
+              "-I",
+              "-B",
+              "/data/xuancheng/datasets/provenance/macaque_global_acceptance_20261023/runtime_bundle/agent/modules/agent/backend/analysis_global_reference_worker.py"
+            ],
+            "returncode": 0,
+            "worker_sha256": "cb6241eed6e347d4809242468c20425d3528ddab373bc28955aaf6ea1af5ebf0",
+            "reference_sha256": "34dd8dc8243c980bbb1c547103cb6c2c35238575f306d43a6a9a3631e8553f51",
+            "ended_utc": "2026-10-23T18:14:31.234359+00:00",
+            "model_api_requests": 0
+          }
+        }
+      },
+      "pilot_status": {
+        "stage": "computed_pending_independent_output_and_scale_review",
+        "steps_completed": 8,
+        "pid_alive": false
+      }
+    }
+  }
+}
