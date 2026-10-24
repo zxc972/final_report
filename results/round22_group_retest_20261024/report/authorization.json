@@ -1,0 +1,24 @@
+{
+  "status": "closed",
+  "rules": {
+    "model_requests_max_analysis_runs": 6,
+    "per_question_max": 3,
+    "consecutive_same_chain_failure_stop": 2
+  },
+  "real_analysis_runs": 6,
+  "launched_cases": [
+    "R22_G1_1",
+    "R22_G1_2",
+    "R22_G1_3",
+    "R22_G2_1",
+    "R22_G2_2",
+    "R22_G2_3"
+  ],
+  "source_commit": "3b61d7ca1b1493a0fd22c4a75d1cc9e08573b0d8",
+  "active_conversation": null,
+  "round21_remaining_runs_void": true,
+  "closed_utc": "2026-10-24T06:05:58.365701+00:00",
+  "actual_upstream_http_attempts": 148,
+  "remaining_runs_not_used": 0,
+  "closure_reason": "All six fresh Round22 authorized original-question runs have terminal summaries; no further runs"
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "case": "R22_G1_1",
+    "schema": "primatex.conclusion_card.v1",
+    "verdict": "deferred",
+    "reason": "Internal review is unfinished or unavailable; a reviewed conclusion cannot be issued.",
+    "conclusion_text": "No Agent interpretation was supplied.",
+    "scope": "group_inference",
+    "rule_id": "conclusion:qualified"
+  },
+  {
+    "case": "R22_G1_2",
+    "schema": "primatex.conclusion_card.v1",
+    "verdict": "deferred",
+    "reason": "Required independent evidence is unavailable",
+    "conclusion_text": "No Agent interpretation was supplied.",
+    "scope": "supplied_descriptive",
+    "rule_id": "conclusion:missing_checks"
+  },
+  {
+    "case": "R22_G1_3",
+    "schema": "primatex.conclusion_card.v1",
+    "verdict": "deferred",
+    "reason": "Required independent evidence is unavailable",
+    "conclusion_text": "No Agent interpretation was supplied.",
+    "scope": "group_inference",
+    "rule_id": "conclusion:missing_checks"
+  },
+  {
+    "case": "R22_G2_1",
+    "schema": "primatex.conclusion_card.v1",
+    "verdict": "deferred",
+    "reason": "Required independent evidence is unavailable",
+    "conclusion_text": "No Agent interpretation was supplied.",
+    "scope": "group_inference",
+    "rule_id": "conclusion:missing_checks"
+  },
+  {
+    "case": "R22_G2_2",
+    "schema": "primatex.conclusion_card.v1",
+    "verdict": "deferred",
+    "reason": "Required independent evidence is unavailable",
+    "conclusion_text": "No Agent interpretation was supplied.",
+    "scope": "supplied_descriptive",
+    "rule_id": "conclusion:missing_checks"
+  },
+  {
+    "case": "R22_G2_3",
+    "schema": "primatex.conclusion_card.v1",
+    "verdict": "deferred",
+    "reason": "Required independent evidence is unavailable",
+    "conclusion_text": "No Agent interpretation was supplied.",
+    "scope": "supplied_descriptive",
+    "rule_id": "conclusion:missing_checks"
+  }
+]

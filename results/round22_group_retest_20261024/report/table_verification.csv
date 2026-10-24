@@ -1,0 +1,13 @@
+case,file,public_contract_status,rows,expected_rows,public_identity_mismatches,schema_mismatches,host_numeric_status,host_identity_mismatches,host_numeric_mismatches,host_checked_scalars,output_sha256,internal_review_decision,internal_review_protocol_valid
+R22_G1_1,regional_values.csv,pass,1240,1240,0,0,pass,0,0,6200,54ccc10e038ae0be8a91afdbcfddfae18f4eb3f766c281de869684b612fc0085,unreviewed,False
+R22_G1_1,group_results.csv,pass,62,62,0,0,pass,0,0,682,6db56584423407f07ba56463f38c911b0e0bff5f0e18fbcdbe4e4d80284f7eef,unreviewed,False
+R22_G1_2,regional_values.csv,not_performed,,,,,not_configured,,,,,not_performed,
+R22_G1_2,group_results.csv,not_performed,,,,,not_configured,,,,,not_performed,
+R22_G1_3,regional_values.csv,not_performed,,,,,not_configured,,,,,not_performed,
+R22_G1_3,group_results.csv,not_performed,,,,,not_configured,,,,,not_performed,
+R22_G2_1,regional_values.csv,not_performed,,,,,not_configured,,,,,not_performed,
+R22_G2_1,group_results.csv,not_performed,,,,,not_configured,,,,,not_performed,
+R22_G2_2,regional_values.csv,not_performed,,,,,not_configured,,,,,not_performed,
+R22_G2_2,group_results.csv,not_performed,,,,,not_configured,,,,,not_performed,
+R22_G2_3,regional_values.csv,not_performed,,,,,not_configured,,,,,not_performed,
+R22_G2_3,group_results.csv,not_performed,,,,,not_configured,,,,,not_performed,

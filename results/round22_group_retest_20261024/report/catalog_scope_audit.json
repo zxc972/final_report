@@ -1,0 +1,97 @@
+{
+  "audited_utc": "2026-10-24T06:03:43.280743+00:00",
+  "registration_sha256": "d814e305a739b19fc3e901b5010d430223d4ea7231a7fe2a9c05eb640765ce6c",
+  "catalog_sha256": "f23054121ccfd20da16a94d987a8e1dd5ba16283a6b77e1258084ca4064b547a",
+  "registered_subjects": 20,
+  "approved_registration_exact": true,
+  "participants_tables": 1,
+  "human_is_declared_not_independently_verified": true,
+  "held_out_subjects_registered": false,
+  "new_subjects_released": 0,
+  "six_requests": [
+    {
+      "case": "R22_G1_1",
+      "checks": {
+        "original_question_exact": true,
+        "approved_twenty_roots_exact": true,
+        "auto": true,
+        "same_model": true,
+        "human_declared": true,
+        "threads_two": true,
+        "qc_caveat_present": true,
+        "no_user_token_in_public_request": true
+      },
+      "request_public_sha256": "91163c963f4ad7735a980ba5b755bb8d098c3c7b370287596ec44b268842b6c2"
+    },
+    {
+      "case": "R22_G1_2",
+      "checks": {
+        "original_question_exact": true,
+        "approved_twenty_roots_exact": true,
+        "auto": true,
+        "same_model": true,
+        "human_declared": true,
+        "threads_two": true,
+        "qc_caveat_present": true,
+        "no_user_token_in_public_request": true
+      },
+      "request_public_sha256": "579b77894c19b7248d7a45f344636b095d98264414d7e90a3e9435ff80509c97"
+    },
+    {
+      "case": "R22_G1_3",
+      "checks": {
+        "original_question_exact": true,
+        "approved_twenty_roots_exact": true,
+        "auto": true,
+        "same_model": true,
+        "human_declared": true,
+        "threads_two": true,
+        "qc_caveat_present": true,
+        "no_user_token_in_public_request": true
+      },
+      "request_public_sha256": "2b808573f3f620bc7bc44666bbe56509526e0b7f3b8cc325a357308ea5b97dcd"
+    },
+    {
+      "case": "R22_G2_1",
+      "checks": {
+        "original_question_exact": true,
+        "approved_twenty_roots_exact": true,
+        "auto": true,
+        "same_model": true,
+        "human_declared": true,
+        "threads_two": true,
+        "qc_caveat_present": true,
+        "no_user_token_in_public_request": true
+      },
+      "request_public_sha256": "91eca1df97ec6a7181df4321888197eab95923b2fad095e2c3fbdf91c38f268a"
+    },
+    {
+      "case": "R22_G2_2",
+      "checks": {
+        "original_question_exact": true,
+        "approved_twenty_roots_exact": true,
+        "auto": true,
+        "same_model": true,
+        "human_declared": true,
+        "threads_two": true,
+        "qc_caveat_present": true,
+        "no_user_token_in_public_request": true
+      },
+      "request_public_sha256": "77511f036e4fc09c22b1fc63ac723d9a0ef200864fccd1eec92d214a96059950"
+    },
+    {
+      "case": "R22_G2_3",
+      "checks": {
+        "original_question_exact": true,
+        "approved_twenty_roots_exact": true,
+        "auto": true,
+        "same_model": true,
+        "human_declared": true,
+        "threads_two": true,
+        "qc_caveat_present": true,
+        "no_user_token_in_public_request": true
+      },
+      "request_public_sha256": "8f0672d24df24e181ffea390add3365c100ac6597887d63afabf0e8587b304c9"
+    }
+  ]
+}

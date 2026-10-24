@@ -1,0 +1,599 @@
+case,seq,time,stage,status,title
+R22_G1_1,1,2026-10-24T04:53:42.211799+00:00,other,done,Routed to analysis
+R22_G1_1,2,2026-10-24T04:53:43.716683+00:00,data,running,Planning and inspecting data
+R22_G1_1,3,2026-10-24T04:53:43.771861+00:00,data,running,Profiling data: 20 files
+R22_G1_1,4,2026-10-24T04:54:03.567206+00:00,data,done,Built data profile: 20 files
+R22_G1_1,5,2026-10-24T04:54:03.585798+00:00,data,running,Inspect data: inputs
+R22_G1_1,6,2026-10-24T04:54:05.190080+00:00,data,done,Inspect data: inputs
+R22_G1_1,7,2026-10-24T04:54:05.306358+00:00,review,done,Phase tools: unplanned
+R22_G1_1,8,2026-10-24T04:54:14.951314+00:00,data,running,Inspect data: data_card.json
+R22_G1_1,9,2026-10-24T04:54:14.971756+00:00,data,running,Inspect data: data_profile.json
+R22_G1_1,10,2026-10-24T04:54:15.034306+00:00,data,done,Inspect data: data_card.json
+R22_G1_1,11,2026-10-24T04:54:15.060593+00:00,data,done,Inspect data: data_profile.json
+R22_G1_1,12,2026-10-24T04:54:15.145522+00:00,review,done,Phase tools: unplanned
+R22_G1_1,13,2026-10-24T04:54:19.040544+00:00,data,running,Inspect data: data_card.json
+R22_G1_1,14,2026-10-24T04:54:19.051721+00:00,data,running,Inspect data: participants.tsv
+R22_G1_1,15,2026-10-24T04:54:19.119996+00:00,data,done,Inspect data: data_card.json
+R22_G1_1,16,2026-10-24T04:54:19.150339+00:00,data,done,Inspect data: participants.tsv
+R22_G1_1,17,2026-10-24T04:54:19.249840+00:00,review,done,Phase tools: unplanned
+R22_G1_1,18,2026-10-24T04:54:25.241524+00:00,plan,running,Planned analysis candidates
+R22_G1_1,19,2026-10-24T04:54:56.459147+00:00,plan,done,Analysis phase: planned
+R22_G1_1,20,2026-10-24T04:54:56.499384+00:00,plan,warn,Planned analysis candidates
+R22_G1_1,21,2026-10-24T04:54:56.625041+00:00,review,done,Phase tools: planned
+R22_G1_1,22,2026-10-24T04:55:03.353820+00:00,plan,running,Checking plan prerequisites
+R22_G1_1,23,2026-10-24T04:55:05.210972+00:00,plan,done,Analysis phase: sealed
+R22_G1_1,24,2026-10-24T04:55:05.244161+00:00,plan,done,Plan sealed v1
+R22_G1_1,25,2026-10-24T04:55:05.349187+00:00,code,done,Plan sealed: writing analysis code
+R22_G1_1,26,2026-10-24T04:55:55.698000+00:00,code,running,Wrote analysis_glm_thickness_age.py
+R22_G1_1,27,2026-10-24T04:55:55.780304+00:00,code,done,Wrote analysis_glm_thickness_age.py
+R22_G1_1,28,2026-10-24T04:55:55.884639+00:00,code,done,Plan sealed: writing analysis code
+R22_G1_1,29,2026-10-24T04:56:02.987507+00:00,knowledge,running,Read method: evidence
+R22_G1_1,30,2026-10-24T04:56:03.000648+00:00,knowledge,running,Read method: evidence
+R22_G1_1,31,2026-10-24T04:56:03.084164+00:00,knowledge,warn,Read method: evidence
+R22_G1_1,32,2026-10-24T04:56:03.115250+00:00,knowledge,warn,Read method: evidence
+R22_G1_1,33,2026-10-24T04:56:03.227442+00:00,code,done,Plan sealed: writing analysis code
+R22_G1_1,34,2026-10-24T04:56:14.506169+00:00,run,running,Running analysis_glm_thickness_age.py
+R22_G1_1,35,2026-10-24T04:56:17.597186+00:00,review,failed,Analysis phase: executed_failed
+R22_G1_1,36,2026-10-24T04:56:17.625929+00:00,run,failed,Running analysis_glm_thickness_age.py
+R22_G1_1,37,2026-10-24T04:56:17.722065+00:00,review,done,Phase tools: executed_failed
+R22_G1_1,38,2026-10-24T04:56:26.396912+00:00,repair,running,Recording repair hypothesis
+R22_G1_1,39,2026-10-24T04:56:26.461974+00:00,repair,done,Recording repair hypothesis
+R22_G1_1,40,2026-10-24T04:56:26.577848+00:00,review,done,Phase tools: executed_failed
+R22_G1_1,41,2026-10-24T04:57:07.503503+00:00,code,running,Wrote analysis_glm_thickness_age.py
+R22_G1_1,42,2026-10-24T04:57:07.590458+00:00,plan,done,Analysis phase: sealed
+R22_G1_1,43,2026-10-24T04:57:07.625417+00:00,code,done,Wrote analysis_glm_thickness_age.py
+R22_G1_1,44,2026-10-24T04:57:07.730026+00:00,code,done,Plan sealed: writing analysis code
+R22_G1_1,45,2026-10-24T04:57:16.432140+00:00,run,running,Running analysis_glm_thickness_age.py
+R22_G1_1,46,2026-10-24T04:57:19.049293+00:00,review,done,Analysis phase: executed_ok
+R22_G1_1,47,2026-10-24T04:57:19.097676+00:00,review,failed,Analysis phase: executed_failed
+R22_G1_1,48,2026-10-24T04:57:19.129725+00:00,run,done,Running analysis_glm_thickness_age.py
+R22_G1_1,49,2026-10-24T04:57:19.233119+00:00,review,done,Phase tools: executed_failed
+R22_G1_1,50,2026-10-24T04:57:28.253334+00:00,data,running,Inspect data: execution_bundle.v000001.j
+R22_G1_1,51,2026-10-24T04:57:28.315324+00:00,data,blocked,Inspect data: execution_bundle.v000001.j
+R22_G1_1,52,2026-10-24T04:57:28.412198+00:00,review,done,Phase tools: executed_failed
+R22_G1_1,53,2026-10-24T04:57:38.714257+00:00,repair,running,Recording repair hypothesis
+R22_G1_1,54,2026-10-24T04:57:38.777164+00:00,repair,done,Recording repair hypothesis
+R22_G1_1,55,2026-10-24T04:57:38.879743+00:00,review,done,Phase tools: executed_failed
+R22_G1_1,56,2026-10-24T04:58:25.244712+00:00,code,running,Wrote analysis_glm_thickness_age.py
+R22_G1_1,57,2026-10-24T04:58:25.322740+00:00,plan,done,Analysis phase: sealed
+R22_G1_1,58,2026-10-24T04:58:25.355857+00:00,code,done,Wrote analysis_glm_thickness_age.py
+R22_G1_1,59,2026-10-24T04:58:25.459237+00:00,code,done,Plan sealed: writing analysis code
+R22_G1_1,60,2026-10-24T04:58:38.718767+00:00,run,running,Running analysis_glm_thickness_age.py
+R22_G1_1,61,2026-10-24T04:58:41.450951+00:00,review,done,Analysis phase: executed_ok
+R22_G1_1,62,2026-10-24T04:58:41.498971+00:00,review,failed,Analysis phase: executed_failed
+R22_G1_1,63,2026-10-24T04:58:41.526804+00:00,run,done,Running analysis_glm_thickness_age.py
+R22_G1_1,64,2026-10-24T04:58:41.628207+00:00,review,done,Phase tools: executed_failed
+R22_G1_1,65,2026-10-24T04:58:48.945765+00:00,repair,running,Recording repair hypothesis
+R22_G1_1,66,2026-10-24T04:58:49.005361+00:00,repair,done,Recording repair hypothesis
+R22_G1_1,67,2026-10-24T04:58:49.104437+00:00,review,done,Phase tools: executed_failed
+R22_G1_1,68,2026-10-24T04:59:38.870142+00:00,code,running,Wrote analysis_glm_thickness_age.py
+R22_G1_1,69,2026-10-24T04:59:38.952639+00:00,plan,done,Analysis phase: sealed
+R22_G1_1,70,2026-10-24T04:59:38.985988+00:00,code,done,Wrote analysis_glm_thickness_age.py
+R22_G1_1,71,2026-10-24T04:59:39.094893+00:00,code,done,Plan sealed: writing analysis code
+R22_G1_1,72,2026-10-24T04:59:48.820494+00:00,run,running,Running analysis_glm_thickness_age.py
+R22_G1_1,73,2026-10-24T04:59:53.992313+00:00,review,done,Analysis phase: executed_ok
+R22_G1_1,74,2026-10-24T04:59:54.040601+00:00,review,failed,Analysis phase: executed_failed
+R22_G1_1,75,2026-10-24T04:59:54.070169+00:00,run,done,Running analysis_glm_thickness_age.py
+R22_G1_1,76,2026-10-24T04:59:54.173720+00:00,review,done,Phase tools: executed_failed
+R22_G1_1,77,2026-10-24T05:00:11.834623+00:00,data,running,Inspect data: group_results.csv
+R22_G1_1,78,2026-10-24T05:00:11.855157+00:00,data,running,Inspect data: regional_values.csv
+R22_G1_1,79,2026-10-24T05:00:11.919490+00:00,data,blocked,Inspect data: group_results.csv
+R22_G1_1,80,2026-10-24T05:00:11.955050+00:00,data,blocked,Inspect data: regional_values.csv
+R22_G1_1,81,2026-10-24T05:00:12.074430+00:00,review,done,Phase tools: executed_failed
+R22_G1_1,82,2026-10-24T05:00:21.350035+00:00,repair,running,Recording repair hypothesis
+R22_G1_1,83,2026-10-24T05:00:21.408852+00:00,repair,done,Recording repair hypothesis
+R22_G1_1,84,2026-10-24T05:00:21.524022+00:00,review,done,Phase tools: executed_failed
+R22_G1_1,85,2026-10-24T05:00:30.117604+00:00,code,running,Wrote inspect_delimiter.py
+R22_G1_1,86,2026-10-24T05:00:30.196179+00:00,code,failed,Wrote inspect_delimiter.py
+R22_G1_1,87,2026-10-24T05:00:30.312036+00:00,review,done,Phase tools: executed_failed
+R22_G1_1,88,2026-10-24T05:01:20.007768+00:00,code,running,Wrote analysis_glm_thickness_age.py
+R22_G1_1,89,2026-10-24T05:01:20.093505+00:00,plan,done,Analysis phase: sealed
+R22_G1_1,90,2026-10-24T05:01:20.127114+00:00,code,done,Wrote analysis_glm_thickness_age.py
+R22_G1_1,91,2026-10-24T05:01:20.241377+00:00,code,done,Plan sealed: writing analysis code
+R22_G1_1,92,2026-10-24T05:01:24.755179+00:00,run,running,Running analysis_glm_thickness_age.py
+R22_G1_1,93,2026-10-24T05:01:29.831043+00:00,review,done,Analysis phase: executed_ok
+R22_G1_1,94,2026-10-24T05:01:29.942312+00:00,plan,done,Analysis phase: finalized
+R22_G1_1,95,2026-10-24T05:01:37.628703+00:00,run,done,Running analysis_glm_thickness_age.py
+R22_G1_1,96,2026-10-24T05:01:37.748420+00:00,review,done,Phase tools: finalized
+R22_G1_1,97,2026-10-24T05:01:55.806415+00:00,data,done,Planning and inspecting data
+R22_G1_1,98,2026-10-24T05:01:55.836287+00:00,review,running,Checking execution and outputs
+R22_G1_1,99,2026-10-24T05:03:58.532288+00:00,other,warn,Retrying upstream model request
+R22_G1_1,100,2026-10-24T05:07:37.838423+00:00,other,warn,Retrying upstream model request
+R22_G1_1,101,2026-10-24T05:08:06.516971+00:00,review,failed,Analysis phase: executed_failed
+R22_G1_1,102,2026-10-24T05:08:06.541856+00:00,review,warn,Output checks need review
+R22_G1_1,103,2026-10-24T05:08:06.587370+00:00,repair,running,Repairing from tool feedback
+R22_G1_1,104,2026-10-24T05:08:06.643051+00:00,repair,done,Repairing from tool feedback
+R22_G1_1,105,2026-10-24T05:08:06.689061+00:00,data,running,Planning and inspecting data
+R22_G1_1,106,2026-10-24T05:08:06.830635+00:00,review,done,Phase tools: executed_failed
+R22_G1_1,107,2026-10-24T05:08:40.661385+00:00,repair,running,Recording repair hypothesis
+R22_G1_1,108,2026-10-24T05:08:40.729293+00:00,repair,done,Recording repair hypothesis
+R22_G1_1,109,2026-10-24T05:08:40.840249+00:00,review,done,Phase tools: executed_failed
+R22_G1_1,110,2026-10-24T05:08:49.546107+00:00,other,warn,Retrying upstream model request
+R22_G1_1,111,2026-10-24T05:09:07.418514+00:00,data,running,Inspect data: constraints.json
+R22_G1_1,112,2026-10-24T05:09:07.438139+00:00,data,running,Inspect data: validation_feedback.json
+R22_G1_1,113,2026-10-24T05:09:07.516140+00:00,data,blocked,Inspect data: constraints.json
+R22_G1_1,114,2026-10-24T05:09:07.547536+00:00,data,warn,Inspect data: validation_feedback.json
+R22_G1_1,115,2026-10-24T05:09:07.665910+00:00,review,done,Phase tools: executed_failed
+R22_G1_1,116,2026-10-24T05:10:35.170414+00:00,code,running,Wrote analysis_glm_thickness_age.py
+R22_G1_1,117,2026-10-24T05:10:35.249605+00:00,plan,done,Analysis phase: sealed
+R22_G1_1,118,2026-10-24T05:10:35.283910+00:00,code,done,Wrote analysis_glm_thickness_age.py
+R22_G1_1,119,2026-10-24T05:10:35.394089+00:00,code,done,Plan sealed: writing analysis code
+R22_G1_1,120,2026-10-24T05:10:42.966160+00:00,run,running,Running analysis_glm_thickness_age.py
+R22_G1_1,121,2026-10-24T05:10:48.099534+00:00,review,done,Analysis phase: executed_ok
+R22_G1_1,122,2026-10-24T05:10:48.209202+00:00,plan,done,Analysis phase: finalized
+R22_G1_1,123,2026-10-24T05:10:55.805505+00:00,run,done,Running analysis_glm_thickness_age.py
+R22_G1_1,124,2026-10-24T05:10:55.847621+00:00,data,done,Planning and inspecting data
+R22_G1_1,125,2026-10-24T05:10:55.885646+00:00,review,running,Checking execution and outputs
+R22_G1_1,126,2026-10-24T05:10:56.053118+00:00,review,warn,Output checks need review
+R22_G1_1,127,2026-10-24T05:10:56.075227+00:00,result,running,Preparing analysis result
+R22_G1_1,128,2026-10-24T05:10:56.115047+00:00,result,warn,Preparing analysis result
+R22_G1_2,1,2026-10-24T05:13:32.614725+00:00,other,done,Routed to analysis
+R22_G1_2,2,2026-10-24T05:13:33.051967+00:00,data,running,Planning and inspecting data
+R22_G1_2,3,2026-10-24T05:13:33.129717+00:00,data,running,Profiling data: 20 files
+R22_G1_2,4,2026-10-24T05:13:47.981384+00:00,data,done,Built data profile: 20 files
+R22_G1_2,5,2026-10-24T05:13:47.998934+00:00,data,running,Inspect data: inputs
+R22_G1_2,6,2026-10-24T05:13:49.464657+00:00,data,done,Inspect data: inputs
+R22_G1_2,7,2026-10-24T05:13:49.584308+00:00,review,done,Phase tools: unplanned
+R22_G1_2,8,2026-10-24T05:13:56.530522+00:00,data,running,Inspect data: data_card.json
+R22_G1_2,9,2026-10-24T05:13:56.574133+00:00,data,running,Inspect data: data_profile.json
+R22_G1_2,10,2026-10-24T05:13:56.698931+00:00,data,done,Inspect data: data_card.json
+R22_G1_2,11,2026-10-24T05:13:56.751777+00:00,data,done,Inspect data: data_profile.json
+R22_G1_2,12,2026-10-24T05:13:56.933013+00:00,review,done,Phase tools: unplanned
+R22_G1_2,13,2026-10-24T05:14:07.381987+00:00,data,running,Inspect data: participants.tsv
+R22_G1_2,14,2026-10-24T05:14:07.391794+00:00,data,running,Inspect data: 0
+R22_G1_2,15,2026-10-24T05:14:07.470246+00:00,data,done,Inspect data: participants.tsv
+R22_G1_2,16,2026-10-24T05:14:07.499951+00:00,data,done,Inspect data: 0
+R22_G1_2,17,2026-10-24T05:14:07.600728+00:00,review,done,Phase tools: unplanned
+R22_G1_2,18,2026-10-24T05:14:14.845204+00:00,plan,running,Planned analysis candidates
+R22_G1_2,19,2026-10-24T05:15:15.330507+00:00,plan,done,Analysis phase: planned
+R22_G1_2,20,2026-10-24T05:15:15.355256+00:00,plan,warn,Planned analysis candidates
+R22_G1_2,21,2026-10-24T05:15:15.462076+00:00,review,done,Phase tools: planned
+R22_G1_2,22,2026-10-24T05:15:23.403766+00:00,plan,running,Checking plan prerequisites
+R22_G1_2,23,2026-10-24T05:15:25.017626+00:00,plan,failed,Checking plan prerequisites
+R22_G1_2,24,2026-10-24T05:15:25.097927+00:00,review,done,Phase tools: planned
+R22_G1_2,25,2026-10-24T05:15:38.853912+00:00,plan,running,Checking plan prerequisites
+R22_G1_2,26,2026-10-24T05:15:40.524709+00:00,plan,failed,Checking plan prerequisites
+R22_G1_2,27,2026-10-24T05:15:40.602814+00:00,review,done,Phase tools: planned
+R22_G1_2,28,2026-10-24T05:15:59.902789+00:00,plan,running,Checking plan prerequisites
+R22_G1_2,29,2026-10-24T05:16:01.612133+00:00,plan,failed,Checking plan prerequisites
+R22_G1_2,30,2026-10-24T05:16:01.752636+00:00,review,done,Phase tools: planned
+R22_G1_2,31,2026-10-24T05:16:22.905620+00:00,plan,running,Checking plan prerequisites
+R22_G1_2,32,2026-10-24T05:16:24.567441+00:00,plan,failed,Checking plan prerequisites
+R22_G1_2,33,2026-10-24T05:16:24.645490+00:00,review,done,Phase tools: planned
+R22_G1_2,34,2026-10-24T05:16:35.536840+00:00,plan,running,Checking plan prerequisites
+R22_G1_2,35,2026-10-24T05:16:37.137459+00:00,plan,failed,Checking plan prerequisites
+R22_G1_2,36,2026-10-24T05:16:37.220438+00:00,review,done,Phase tools: planned
+R22_G1_2,37,2026-10-24T05:16:45.934531+00:00,plan,running,Checking plan prerequisites
+R22_G1_2,38,2026-10-24T05:16:47.593439+00:00,plan,failed,Checking plan prerequisites
+R22_G1_2,39,2026-10-24T05:16:47.681138+00:00,review,done,Phase tools: planned
+R22_G1_2,40,2026-10-24T05:17:14.400432+00:00,plan,running,Checking plan prerequisites
+R22_G1_2,41,2026-10-24T05:17:16.063646+00:00,plan,failed,Checking plan prerequisites
+R22_G1_2,42,2026-10-24T05:17:16.123361+00:00,review,done,Phase tools: planned
+R22_G1_2,43,2026-10-24T05:17:27.421589+00:00,plan,running,Checking plan prerequisites
+R22_G1_2,44,2026-10-24T05:17:29.107818+00:00,plan,failed,Checking plan prerequisites
+R22_G1_2,45,2026-10-24T05:17:29.187317+00:00,review,done,Phase tools: planned
+R22_G1_2,46,2026-10-24T05:17:34.493801+00:00,plan,running,Checking plan prerequisites
+R22_G1_2,47,2026-10-24T05:17:36.102746+00:00,plan,failed,Checking plan prerequisites
+R22_G1_2,48,2026-10-24T05:17:36.188252+00:00,review,done,Phase tools: planned
+R22_G1_2,49,2026-10-24T05:17:55.835513+00:00,plan,running,Checking plan prerequisites
+R22_G1_2,50,2026-10-24T05:17:57.495199+00:00,plan,failed,Checking plan prerequisites
+R22_G1_2,51,2026-10-24T05:17:57.581837+00:00,review,done,Phase tools: planned
+R22_G1_2,52,2026-10-24T05:18:12.324563+00:00,plan,running,Checking plan prerequisites
+R22_G1_2,53,2026-10-24T05:18:13.980564+00:00,plan,failed,Checking plan prerequisites
+R22_G1_2,54,2026-10-24T05:18:14.056868+00:00,review,done,Phase tools: planned
+R22_G1_2,55,2026-10-24T05:18:37.550311+00:00,plan,running,Checking plan prerequisites
+R22_G1_2,56,2026-10-24T05:18:39.142330+00:00,plan,failed,Checking plan prerequisites
+R22_G1_2,57,2026-10-24T05:18:39.228280+00:00,review,done,Phase tools: planned
+R22_G1_2,58,2026-10-24T05:18:39.260300+00:00,plan,warn,Planning limit: seal or decline
+R22_G1_2,59,2026-10-24T05:18:53.377265+00:00,plan,running,Checking plan prerequisites
+R22_G1_2,60,2026-10-24T05:18:55.039867+00:00,plan,failed,Checking plan prerequisites
+R22_G1_2,61,2026-10-24T05:18:55.119844+00:00,review,done,Phase tools: planned
+R22_G1_2,62,2026-10-24T05:18:55.146451+00:00,plan,warn,Planning limit: seal or decline
+R22_G1_2,63,2026-10-24T05:19:47.964097+00:00,plan,running,Checking plan prerequisites
+R22_G1_2,64,2026-10-24T05:19:49.764134+00:00,plan,failed,Checking plan prerequisites
+R22_G1_2,65,2026-10-24T05:19:49.843580+00:00,data,done,Planning and inspecting data
+R22_G1_2,66,2026-10-24T05:19:49.892948+00:00,review,running,Checking execution and outputs
+R22_G1_2,67,2026-10-24T05:19:49.961459+00:00,review,warn,Output checks need review
+R22_G1_2,68,2026-10-24T05:19:50.065295+00:00,result,running,Preparing analysis result
+R22_G1_2,69,2026-10-24T05:19:50.128657+00:00,result,failed,Preparing analysis result
+R22_G1_3,1,2026-10-24T05:34:17.704685+00:00,other,done,Routed to analysis
+R22_G1_3,2,2026-10-24T05:34:18.112307+00:00,data,running,Planning and inspecting data
+R22_G1_3,3,2026-10-24T05:34:18.176812+00:00,data,running,Profiling data: 20 files
+R22_G1_3,4,2026-10-24T05:34:33.238053+00:00,data,done,Built data profile: 20 files
+R22_G1_3,5,2026-10-24T05:34:33.256180+00:00,data,running,Inspect data: inputs
+R22_G1_3,6,2026-10-24T05:34:34.720561+00:00,data,done,Inspect data: inputs
+R22_G1_3,7,2026-10-24T05:34:34.847286+00:00,review,done,Phase tools: unplanned
+R22_G1_3,8,2026-10-24T05:34:38.302531+00:00,data,running,Inspect data: data_card.json
+R22_G1_3,9,2026-10-24T05:34:38.313037+00:00,data,running,Inspect data: 20
+R22_G1_3,10,2026-10-24T05:34:38.377563+00:00,data,done,Inspect data: data_card.json
+R22_G1_3,11,2026-10-24T05:34:38.420955+00:00,data,done,Inspect data: 20
+R22_G1_3,12,2026-10-24T05:34:38.502059+00:00,review,done,Phase tools: unplanned
+R22_G1_3,13,2026-10-24T05:34:42.921888+00:00,data,running,Inspect data: participants.tsv
+R22_G1_3,14,2026-10-24T05:34:42.930997+00:00,data,running,Inspect data: data_profile.json
+R22_G1_3,15,2026-10-24T05:34:43.004937+00:00,data,done,Inspect data: participants.tsv
+R22_G1_3,16,2026-10-24T05:34:43.032194+00:00,data,done,Inspect data: data_profile.json
+R22_G1_3,17,2026-10-24T05:34:43.117012+00:00,review,done,Phase tools: unplanned
+R22_G1_3,18,2026-10-24T05:34:47.966365+00:00,plan,running,Planned analysis candidates
+R22_G1_3,19,2026-10-24T05:35:19.617059+00:00,plan,done,Analysis phase: planned
+R22_G1_3,20,2026-10-24T05:35:19.714869+00:00,plan,warn,Planned analysis candidates
+R22_G1_3,21,2026-10-24T05:35:19.823821+00:00,review,done,Phase tools: planned
+R22_G1_3,22,2026-10-24T05:35:25.038212+00:00,plan,running,Checking plan prerequisites
+R22_G1_3,23,2026-10-24T05:35:26.908395+00:00,plan,done,Analysis phase: sealed
+R22_G1_3,24,2026-10-24T05:35:26.939910+00:00,plan,done,Plan sealed v1
+R22_G1_3,25,2026-10-24T05:35:27.042657+00:00,code,done,Plan sealed: writing analysis code
+R22_G1_3,26,2026-10-24T05:35:55.753236+00:00,code,running,Wrote dkt_age_sex_glm.py
+R22_G1_3,27,2026-10-24T05:35:55.830380+00:00,code,done,Wrote dkt_age_sex_glm.py
+R22_G1_3,28,2026-10-24T05:35:55.929204+00:00,code,done,Plan sealed: writing analysis code
+R22_G1_3,29,2026-10-24T05:35:59.485273+00:00,run,running,Running dkt_age_sex_glm.py
+R22_G1_3,30,2026-10-24T05:36:01.807783+00:00,review,failed,Analysis phase: executed_failed
+R22_G1_3,31,2026-10-24T05:36:01.840500+00:00,run,failed,Running dkt_age_sex_glm.py
+R22_G1_3,32,2026-10-24T05:36:01.944473+00:00,review,done,Phase tools: executed_failed
+R22_G1_3,33,2026-10-24T05:36:06.969623+00:00,data,running,Inspect data: inputs_manifest.json
+R22_G1_3,34,2026-10-24T05:36:07.034231+00:00,data,blocked,Inspect data: inputs_manifest.json
+R22_G1_3,35,2026-10-24T05:36:07.141233+00:00,review,done,Phase tools: executed_failed
+R22_G1_3,36,2026-10-24T05:36:16.742485+00:00,repair,running,Recording repair hypothesis
+R22_G1_3,37,2026-10-24T05:36:16.760029+00:00,code,running,Wrote diag_manifest.py
+R22_G1_3,38,2026-10-24T05:36:16.832952+00:00,repair,done,Recording repair hypothesis
+R22_G1_3,39,2026-10-24T05:36:16.881328+00:00,code,failed,Wrote diag_manifest.py
+R22_G1_3,40,2026-10-24T05:36:16.990881+00:00,review,done,Phase tools: executed_failed
+R22_G1_3,41,2026-10-24T05:36:23.301489+00:00,data,running,Inspect data: inputs_manifest.json
+R22_G1_3,42,2026-10-24T05:36:23.375340+00:00,data,blocked,Inspect data: inputs_manifest.json
+R22_G1_3,43,2026-10-24T05:36:23.476952+00:00,review,done,Phase tools: executed_failed
+R22_G1_3,44,2026-10-24T05:36:59.746997+00:00,code,running,Wrote dkt_age_sex_glm.py
+R22_G1_3,45,2026-10-24T05:36:59.826110+00:00,plan,done,Analysis phase: sealed
+R22_G1_3,46,2026-10-24T05:36:59.860465+00:00,code,done,Wrote dkt_age_sex_glm.py
+R22_G1_3,47,2026-10-24T05:36:59.969570+00:00,code,done,Plan sealed: writing analysis code
+R22_G1_3,48,2026-10-24T05:37:03.113341+00:00,run,running,Running dkt_age_sex_glm.py
+R22_G1_3,49,2026-10-24T05:37:05.503178+00:00,review,failed,Analysis phase: executed_failed
+R22_G1_3,50,2026-10-24T05:37:05.533038+00:00,run,failed,Running dkt_age_sex_glm.py
+R22_G1_3,51,2026-10-24T05:37:05.625933+00:00,review,done,Phase tools: executed_failed
+R22_G1_3,52,2026-10-24T05:37:14.868385+00:00,repair,running,Recording repair hypothesis
+R22_G1_3,53,2026-10-24T05:37:14.941832+00:00,repair,done,Recording repair hypothesis
+R22_G1_3,54,2026-10-24T05:37:15.035195+00:00,review,done,Phase tools: executed_failed
+R22_G1_3,55,2026-10-24T05:38:34.700792+00:00,code,running,Wrote dkt_age_sex_glm.py
+R22_G1_3,56,2026-10-24T05:38:34.779958+00:00,plan,done,Analysis phase: sealed
+R22_G1_3,57,2026-10-24T05:38:34.814020+00:00,code,done,Wrote dkt_age_sex_glm.py
+R22_G1_3,58,2026-10-24T05:38:34.931927+00:00,code,done,Plan sealed: writing analysis code
+R22_G1_3,59,2026-10-24T05:38:42.725970+00:00,run,running,Running dkt_age_sex_glm.py
+R22_G1_3,60,2026-10-24T05:38:45.050397+00:00,review,failed,Analysis phase: executed_failed
+R22_G1_3,61,2026-10-24T05:38:45.084397+00:00,run,failed,Running dkt_age_sex_glm.py
+R22_G1_3,62,2026-10-24T05:38:45.244122+00:00,review,done,Phase tools: executed_failed
+R22_G1_3,63,2026-10-24T05:38:53.789060+00:00,repair,running,Recording repair hypothesis
+R22_G1_3,64,2026-10-24T05:38:53.852070+00:00,repair,done,Recording repair hypothesis
+R22_G1_3,65,2026-10-24T05:38:53.953004+00:00,review,done,Phase tools: executed_failed
+R22_G1_3,66,2026-10-24T05:39:03.497362+00:00,code,running,Wrote dkt_age_sex_glm.py
+R22_G1_3,67,2026-10-24T05:39:03.572166+00:00,plan,done,Analysis phase: sealed
+R22_G1_3,68,2026-10-24T05:39:03.609745+00:00,code,done,Wrote dkt_age_sex_glm.py
+R22_G1_3,69,2026-10-24T05:39:03.726400+00:00,code,done,Plan sealed: writing analysis code
+R22_G1_3,70,2026-10-24T05:39:06.806394+00:00,run,running,Running dkt_age_sex_glm.py
+R22_G1_3,71,2026-10-24T05:39:08.512874+00:00,review,done,Analysis phase: executed_ok
+R22_G1_3,72,2026-10-24T05:39:08.569261+00:00,review,failed,Analysis phase: executed_failed
+R22_G1_3,73,2026-10-24T05:39:08.604428+00:00,run,done,Running dkt_age_sex_glm.py
+R22_G1_3,74,2026-10-24T05:39:08.710710+00:00,review,done,Phase tools: executed_failed
+R22_G1_3,75,2026-10-24T05:39:17.217437+00:00,code,running,Wrote dkt_age_sex_glm.py
+R22_G1_3,76,2026-10-24T05:39:17.292251+00:00,plan,done,Analysis phase: sealed
+R22_G1_3,77,2026-10-24T05:39:17.327689+00:00,code,done,Wrote dkt_age_sex_glm.py
+R22_G1_3,78,2026-10-24T05:39:17.432863+00:00,code,done,Plan sealed: writing analysis code
+R22_G1_3,79,2026-10-24T05:39:26.458481+00:00,run,running,Running dkt_age_sex_glm.py
+R22_G1_3,80,2026-10-24T05:39:28.146490+00:00,review,done,Analysis phase: executed_ok
+R22_G1_3,81,2026-10-24T05:39:28.190722+00:00,review,failed,Analysis phase: executed_failed
+R22_G1_3,82,2026-10-24T05:39:28.217524+00:00,run,done,Running dkt_age_sex_glm.py
+R22_G1_3,83,2026-10-24T05:39:28.320601+00:00,review,done,Phase tools: executed_failed
+R22_G1_3,84,2026-10-24T05:39:34.867873+00:00,repair,running,Recording repair hypothesis
+R22_G1_3,85,2026-10-24T05:39:34.929637+00:00,repair,done,Recording repair hypothesis
+R22_G1_3,86,2026-10-24T05:39:35.033108+00:00,review,done,Phase tools: executed_failed
+R22_G1_3,87,2026-10-24T05:39:39.545638+00:00,knowledge,running,Read method: evidence
+R22_G1_3,88,2026-10-24T05:39:39.583761+00:00,data,running,Inspect data: label_sets.v000001.json
+R22_G1_3,89,2026-10-24T05:39:39.675848+00:00,knowledge,warn,Read method: evidence
+R22_G1_3,90,2026-10-24T05:39:39.716562+00:00,data,blocked,Inspect data: label_sets.v000001.json
+R22_G1_3,91,2026-10-24T05:39:39.893988+00:00,review,done,Phase tools: executed_failed
+R22_G1_3,92,2026-10-24T05:39:43.230541+00:00,knowledge,running,Read method: evidence
+R22_G1_3,93,2026-10-24T05:39:43.250781+00:00,knowledge,running,Read method: evidence
+R22_G1_3,94,2026-10-24T05:39:43.328458+00:00,knowledge,warn,Read method: evidence
+R22_G1_3,95,2026-10-24T05:39:43.375991+00:00,knowledge,warn,Read method: evidence
+R22_G1_3,96,2026-10-24T05:39:43.492411+00:00,review,done,Phase tools: executed_failed
+R22_G1_3,97,2026-10-24T05:40:45.240038+00:00,code,running,Wrote dkt_age_sex_glm.py
+R22_G1_3,98,2026-10-24T05:40:45.327155+00:00,plan,done,Analysis phase: sealed
+R22_G1_3,99,2026-10-24T05:40:45.359409+00:00,code,done,Wrote dkt_age_sex_glm.py
+R22_G1_3,100,2026-10-24T05:40:45.465602+00:00,code,done,Plan sealed: writing analysis code
+R22_G1_3,101,2026-10-24T05:40:49.927193+00:00,run,running,Running dkt_age_sex_glm.py
+R22_G1_3,102,2026-10-24T05:40:52.410028+00:00,review,failed,Analysis phase: executed_failed
+R22_G1_3,103,2026-10-24T05:40:52.450580+00:00,run,failed,Running dkt_age_sex_glm.py
+R22_G1_3,104,2026-10-24T05:40:52.573939+00:00,review,done,Phase tools: executed_failed
+R22_G1_3,105,2026-10-24T05:41:33.258255+00:00,repair,running,Recording repair hypothesis
+R22_G1_3,106,2026-10-24T05:41:33.325684+00:00,repair,done,Recording repair hypothesis
+R22_G1_3,107,2026-10-24T05:41:33.427286+00:00,review,done,Phase tools: executed_failed
+R22_G1_3,108,2026-10-24T05:42:05.315615+00:00,code,running,Wrote dkt_age_sex_glm.py
+R22_G1_3,109,2026-10-24T05:42:05.398250+00:00,plan,done,Analysis phase: sealed
+R22_G1_3,110,2026-10-24T05:42:05.431375+00:00,code,done,Wrote dkt_age_sex_glm.py
+R22_G1_3,111,2026-10-24T05:42:05.540258+00:00,code,done,Plan sealed: writing analysis code
+R22_G1_3,112,2026-10-24T05:42:09.913235+00:00,run,running,Running dkt_age_sex_glm.py
+R22_G1_3,113,2026-10-24T05:42:12.313046+00:00,review,done,Analysis phase: executed_ok
+R22_G1_3,114,2026-10-24T05:42:12.360611+00:00,review,failed,Analysis phase: executed_failed
+R22_G1_3,115,2026-10-24T05:42:12.388675+00:00,run,done,Running dkt_age_sex_glm.py
+R22_G1_3,116,2026-10-24T05:42:12.492001+00:00,review,done,Phase tools: executed_failed
+R22_G1_3,117,2026-10-24T05:42:20.206145+00:00,repair,running,Recording repair hypothesis
+R22_G1_3,118,2026-10-24T05:42:20.271459+00:00,repair,done,Recording repair hypothesis
+R22_G1_3,119,2026-10-24T05:42:20.390817+00:00,review,done,Phase tools: executed_failed
+R22_G1_3,120,2026-10-24T05:42:50.581314+00:00,code,running,Wrote dkt_age_sex_glm.py
+R22_G1_3,121,2026-10-24T05:42:50.661314+00:00,plan,done,Analysis phase: sealed
+R22_G1_3,122,2026-10-24T05:42:50.699773+00:00,code,done,Wrote dkt_age_sex_glm.py
+R22_G1_3,123,2026-10-24T05:42:50.743837+00:00,data,done,Planning and inspecting data
+R22_G1_3,124,2026-10-24T05:42:50.788733+00:00,review,running,Checking execution and outputs
+R22_G1_3,125,2026-10-24T05:42:50.838844+00:00,review,warn,Output checks need review
+R22_G1_3,126,2026-10-24T05:42:50.892653+00:00,result,running,Preparing analysis result
+R22_G1_3,127,2026-10-24T05:42:50.962400+00:00,result,failed,Preparing analysis result
+R22_G2_1,1,2026-10-24T05:43:01.979024+00:00,other,done,Routed to analysis
+R22_G2_1,2,2026-10-24T05:43:02.382409+00:00,data,running,Planning and inspecting data
+R22_G2_1,3,2026-10-24T05:43:02.445049+00:00,data,running,Profiling data: 20 files
+R22_G2_1,4,2026-10-24T05:43:17.045584+00:00,data,done,Built data profile: 20 files
+R22_G2_1,5,2026-10-24T05:43:17.062804+00:00,data,running,Inspect data: inputs
+R22_G2_1,6,2026-10-24T05:43:18.531789+00:00,data,done,Inspect data: inputs
+R22_G2_1,7,2026-10-24T05:43:18.663369+00:00,review,done,Phase tools: unplanned
+R22_G2_1,8,2026-10-24T05:43:23.616356+00:00,data,running,Inspect data: data_card.json
+R22_G2_1,9,2026-10-24T05:43:23.626539+00:00,data,running,Inspect data: data_profile.json
+R22_G2_1,10,2026-10-24T05:43:23.637507+00:00,data,running,Inspect data: 20
+R22_G2_1,11,2026-10-24T05:43:23.711293+00:00,data,done,Inspect data: data_card.json
+R22_G2_1,12,2026-10-24T05:43:23.741110+00:00,data,done,Inspect data: data_profile.json
+R22_G2_1,13,2026-10-24T05:43:23.786105+00:00,data,done,Inspect data: 20
+R22_G2_1,14,2026-10-24T05:43:23.879410+00:00,review,done,Phase tools: unplanned
+R22_G2_1,15,2026-10-24T05:43:28.857087+00:00,data,running,Inspect data: participants.tsv
+R22_G2_1,16,2026-10-24T05:43:28.867506+00:00,data,running,Inspect data: data_card.json
+R22_G2_1,17,2026-10-24T05:43:28.913517+00:00,data,blocked,Inspect data: data_card.json
+R22_G2_1,18,2026-10-24T05:43:28.940537+00:00,data,done,Inspect data: participants.tsv
+R22_G2_1,19,2026-10-24T05:43:29.023632+00:00,review,done,Phase tools: unplanned
+R22_G2_1,20,2026-10-24T05:43:38.156583+00:00,plan,running,Planned analysis candidates
+R22_G2_1,21,2026-10-24T05:44:09.996751+00:00,plan,done,Analysis phase: planned
+R22_G2_1,22,2026-10-24T05:44:10.033189+00:00,plan,warn,Planned analysis candidates
+R22_G2_1,23,2026-10-24T05:44:10.187057+00:00,review,done,Phase tools: planned
+R22_G2_1,24,2026-10-24T05:44:17.426088+00:00,plan,running,Checking plan prerequisites
+R22_G2_1,25,2026-10-24T05:44:19.231362+00:00,plan,done,Analysis phase: sealed
+R22_G2_1,26,2026-10-24T05:44:19.264262+00:00,plan,done,Plan sealed v1
+R22_G2_1,27,2026-10-24T05:44:19.373719+00:00,code,done,Plan sealed: writing analysis code
+R22_G2_1,28,2026-10-24T05:44:59.864253+00:00,code,running,Wrote analysis_sex_dkt_thickness.py
+R22_G2_1,29,2026-10-24T05:44:59.950514+00:00,code,done,Wrote analysis_sex_dkt_thickness.py
+R22_G2_1,30,2026-10-24T05:45:00.053247+00:00,code,done,Plan sealed: writing analysis code
+R22_G2_1,31,2026-10-24T05:45:04.678048+00:00,run,running,Running analysis_sex_dkt_thickness.py
+R22_G2_1,32,2026-10-24T05:45:08.150802+00:00,review,failed,Analysis phase: executed_failed
+R22_G2_1,33,2026-10-24T05:45:08.177540+00:00,run,failed,Running analysis_sex_dkt_thickness.py
+R22_G2_1,34,2026-10-24T05:45:08.247195+00:00,review,done,Phase tools: executed_failed
+R22_G2_1,35,2026-10-24T05:45:16.936104+00:00,repair,running,Recording repair hypothesis
+R22_G2_1,36,2026-10-24T05:45:16.972655+00:00,data,running,Inspect data: inputs_manifest.json
+R22_G2_1,37,2026-10-24T05:45:17.030459+00:00,repair,done,Recording repair hypothesis
+R22_G2_1,38,2026-10-24T05:45:17.071670+00:00,data,blocked,Inspect data: inputs_manifest.json
+R22_G2_1,39,2026-10-24T05:45:17.194860+00:00,review,done,Phase tools: executed_failed
+R22_G2_1,40,2026-10-24T05:45:27.636344+00:00,data,running,Inspect data: inputs_manifest.json
+R22_G2_1,41,2026-10-24T05:45:27.704522+00:00,data,blocked,Inspect data: inputs_manifest.json
+R22_G2_1,42,2026-10-24T05:45:27.811415+00:00,review,done,Phase tools: executed_failed
+R22_G2_1,43,2026-10-24T05:45:35.332855+00:00,code,running,Wrote inspect_manifest.py
+R22_G2_1,44,2026-10-24T05:45:35.413069+00:00,code,failed,Wrote inspect_manifest.py
+R22_G2_1,45,2026-10-24T05:45:35.535856+00:00,review,done,Phase tools: executed_failed
+R22_G2_1,46,2026-10-24T05:46:13.283784+00:00,code,running,Wrote analysis_sex_dkt_thickness.py
+R22_G2_1,47,2026-10-24T05:46:13.324091+00:00,knowledge,running,Read method: evidence
+R22_G2_1,48,2026-10-24T05:46:13.444654+00:00,plan,done,Analysis phase: sealed
+R22_G2_1,49,2026-10-24T05:46:13.470261+00:00,knowledge,warn,Read method: evidence
+R22_G2_1,50,2026-10-24T05:46:13.488915+00:00,code,done,Wrote analysis_sex_dkt_thickness.py
+R22_G2_1,51,2026-10-24T05:46:13.615919+00:00,code,done,Plan sealed: writing analysis code
+R22_G2_1,52,2026-10-24T05:47:08.199380+00:00,code,running,Wrote analysis_sex_dkt_thickness.py
+R22_G2_1,53,2026-10-24T05:47:08.293918+00:00,code,done,Wrote analysis_sex_dkt_thickness.py
+R22_G2_1,54,2026-10-24T05:47:08.403296+00:00,code,done,Plan sealed: writing analysis code
+R22_G2_1,55,2026-10-24T05:47:14.741556+00:00,run,running,Running analysis_sex_dkt_thickness.py
+R22_G2_1,56,2026-10-24T05:47:17.365389+00:00,review,done,Analysis phase: executed_ok
+R22_G2_1,57,2026-10-24T05:47:17.412845+00:00,review,failed,Analysis phase: executed_failed
+R22_G2_1,58,2026-10-24T05:47:17.439634+00:00,run,done,Running analysis_sex_dkt_thickness.py
+R22_G2_1,59,2026-10-24T05:47:17.558405+00:00,review,done,Phase tools: executed_failed
+R22_G2_1,60,2026-10-24T05:47:26.588177+00:00,repair,running,Recording repair hypothesis
+R22_G2_1,61,2026-10-24T05:47:26.618663+00:00,data,running,Inspect data: execution_bundle.v000001.j
+R22_G2_1,62,2026-10-24T05:47:26.667042+00:00,repair,done,Recording repair hypothesis
+R22_G2_1,63,2026-10-24T05:47:26.695308+00:00,data,blocked,Inspect data: execution_bundle.v000001.j
+R22_G2_1,64,2026-10-24T05:47:26.809926+00:00,review,done,Phase tools: executed_failed
+R22_G2_1,65,2026-10-24T05:47:37.937990+00:00,data,running,Inspect data: execution_bundle.v000001.j
+R22_G2_1,66,2026-10-24T05:47:37.998496+00:00,data,blocked,Inspect data: execution_bundle.v000001.j
+R22_G2_1,67,2026-10-24T05:47:38.105138+00:00,review,done,Phase tools: executed_failed
+R22_G2_1,68,2026-10-24T05:48:57.067852+00:00,code,running,Wrote analysis_sex_dkt_thickness.py
+R22_G2_1,69,2026-10-24T05:48:57.144312+00:00,plan,done,Analysis phase: sealed
+R22_G2_1,70,2026-10-24T05:48:57.197956+00:00,code,done,Wrote analysis_sex_dkt_thickness.py
+R22_G2_1,71,2026-10-24T05:48:57.311100+00:00,code,done,Plan sealed: writing analysis code
+R22_G2_1,72,2026-10-24T05:49:14.912271+00:00,run,running,Running analysis_sex_dkt_thickness.py
+R22_G2_1,73,2026-10-24T05:49:16.730411+00:00,review,done,Analysis phase: executed_ok
+R22_G2_1,74,2026-10-24T05:49:16.779706+00:00,review,failed,Analysis phase: executed_failed
+R22_G2_1,75,2026-10-24T05:49:16.814428+00:00,run,done,Running analysis_sex_dkt_thickness.py
+R22_G2_1,76,2026-10-24T05:49:16.930821+00:00,review,done,Phase tools: executed_failed
+R22_G2_1,77,2026-10-24T05:49:24.667681+00:00,data,running,Inspect data: run_python_6636d431673a4c3
+R22_G2_1,78,2026-10-24T05:49:24.730465+00:00,data,warn,Inspect data: run_python_6636d431673a4c3
+R22_G2_1,79,2026-10-24T05:49:24.852615+00:00,review,done,Phase tools: executed_failed
+R22_G2_1,80,2026-10-24T05:49:29.237422+00:00,data,running,Inspect data: run_python_6636d431673a4c3
+R22_G2_1,81,2026-10-24T05:49:29.294817+00:00,data,blocked,Inspect data: run_python_6636d431673a4c3
+R22_G2_1,82,2026-10-24T05:49:29.400234+00:00,review,done,Phase tools: executed_failed
+R22_G2_1,83,2026-10-24T05:49:44.776914+00:00,code,running,Wrote analysis_sex_dkt_thickness.py
+R22_G2_1,84,2026-10-24T05:49:44.849113+00:00,plan,done,Analysis phase: sealed
+R22_G2_1,85,2026-10-24T05:49:44.884455+00:00,code,done,Wrote analysis_sex_dkt_thickness.py
+R22_G2_1,86,2026-10-24T05:49:44.998125+00:00,code,done,Plan sealed: writing analysis code
+R22_G2_1,87,2026-10-24T05:49:50.694447+00:00,run,running,Running analysis_sex_dkt_thickness.py
+R22_G2_1,88,2026-10-24T05:49:52.400517+00:00,review,done,Analysis phase: executed_ok
+R22_G2_1,89,2026-10-24T05:49:52.451834+00:00,review,failed,Analysis phase: executed_failed
+R22_G2_1,90,2026-10-24T05:49:52.481088+00:00,run,done,Running analysis_sex_dkt_thickness.py
+R22_G2_1,91,2026-10-24T05:49:52.601073+00:00,review,done,Phase tools: executed_failed
+R22_G2_1,92,2026-10-24T05:50:01.767134+00:00,data,running,Inspect data: run_python_fea158118931497
+R22_G2_1,93,2026-10-24T05:50:01.835921+00:00,data,warn,Inspect data: run_python_fea158118931497
+R22_G2_1,94,2026-10-24T05:50:01.961422+00:00,review,done,Phase tools: executed_failed
+R22_G2_1,95,2026-10-24T05:50:11.029921+00:00,code,running,Wrote analysis_sex_dkt_thickness.py
+R22_G2_1,96,2026-10-24T05:50:11.105071+00:00,plan,done,Analysis phase: sealed
+R22_G2_1,97,2026-10-24T05:50:11.142480+00:00,code,done,Wrote analysis_sex_dkt_thickness.py
+R22_G2_1,98,2026-10-24T05:50:11.256161+00:00,code,done,Plan sealed: writing analysis code
+R22_G2_1,99,2026-10-24T05:50:17.076924+00:00,run,running,Running analysis_sex_dkt_thickness.py
+R22_G2_1,100,2026-10-24T05:50:18.893115+00:00,review,done,Analysis phase: executed_ok
+R22_G2_1,101,2026-10-24T05:50:18.944129+00:00,review,failed,Analysis phase: executed_failed
+R22_G2_1,102,2026-10-24T05:50:18.975958+00:00,run,done,Running analysis_sex_dkt_thickness.py
+R22_G2_1,103,2026-10-24T05:50:19.079241+00:00,review,done,Phase tools: executed_failed
+R22_G2_1,104,2026-10-24T05:50:27.331241+00:00,code,running,Wrote analysis_sex_dkt_thickness.py
+R22_G2_1,105,2026-10-24T05:50:27.407392+00:00,plan,done,Analysis phase: sealed
+R22_G2_1,106,2026-10-24T05:50:27.445022+00:00,code,done,Wrote analysis_sex_dkt_thickness.py
+R22_G2_1,107,2026-10-24T05:50:27.561519+00:00,code,done,Plan sealed: writing analysis code
+R22_G2_1,108,2026-10-24T05:50:31.197007+00:00,run,running,Running analysis_sex_dkt_thickness.py
+R22_G2_1,109,2026-10-24T05:50:32.959662+00:00,review,done,Analysis phase: executed_ok
+R22_G2_1,110,2026-10-24T05:50:33.020429+00:00,review,failed,Analysis phase: executed_failed
+R22_G2_1,111,2026-10-24T05:50:33.060598+00:00,run,done,Running analysis_sex_dkt_thickness.py
+R22_G2_1,112,2026-10-24T05:50:33.199318+00:00,review,done,Phase tools: executed_failed
+R22_G2_1,113,2026-10-24T05:50:38.008739+00:00,data,running,Inspect data: run_python_090281469de8489
+R22_G2_1,114,2026-10-24T05:50:38.071066+00:00,data,warn,Inspect data: run_python_090281469de8489
+R22_G2_1,115,2026-10-24T05:50:38.202977+00:00,review,done,Phase tools: executed_failed
+R22_G2_1,116,2026-10-24T05:50:42.835835+00:00,data,running,Inspect data: run_python_090281469de8489
+R22_G2_1,117,2026-10-24T05:50:42.906417+00:00,data,warn,Inspect data: run_python_090281469de8489
+R22_G2_1,118,2026-10-24T05:50:43.021983+00:00,review,done,Phase tools: executed_failed
+R22_G2_1,119,2026-10-24T05:50:53.159335+00:00,code,running,Wrote analysis_sex_dkt_thickness.py
+R22_G2_1,120,2026-10-24T05:50:53.232068+00:00,plan,done,Analysis phase: sealed
+R22_G2_1,121,2026-10-24T05:50:53.264856+00:00,code,done,Wrote analysis_sex_dkt_thickness.py
+R22_G2_1,122,2026-10-24T05:50:53.383277+00:00,code,done,Plan sealed: writing analysis code
+R22_G2_1,123,2026-10-24T05:50:59.052687+00:00,run,running,Running analysis_sex_dkt_thickness.py
+R22_G2_1,124,2026-10-24T05:51:00.804905+00:00,review,done,Analysis phase: executed_ok
+R22_G2_1,125,2026-10-24T05:51:00.851178+00:00,review,failed,Analysis phase: executed_failed
+R22_G2_1,126,2026-10-24T05:51:00.878526+00:00,run,done,Running analysis_sex_dkt_thickness.py
+R22_G2_1,127,2026-10-24T05:51:00.938629+00:00,data,done,Planning and inspecting data
+R22_G2_1,128,2026-10-24T05:51:00.978365+00:00,review,running,Checking execution and outputs
+R22_G2_1,129,2026-10-24T05:51:01.023061+00:00,review,warn,Output checks need review
+R22_G2_1,130,2026-10-24T05:51:01.069635+00:00,result,running,Preparing analysis result
+R22_G2_1,131,2026-10-24T05:51:01.118020+00:00,result,failed,Preparing analysis result
+R22_G2_2,1,2026-10-24T05:51:15.263793+00:00,other,done,Routed to analysis
+R22_G2_2,2,2026-10-24T05:51:15.677457+00:00,data,running,Planning and inspecting data
+R22_G2_2,3,2026-10-24T05:51:15.743286+00:00,data,running,Profiling data: 20 files
+R22_G2_2,4,2026-10-24T05:51:30.201795+00:00,data,done,Built data profile: 20 files
+R22_G2_2,5,2026-10-24T05:51:30.219186+00:00,data,running,Inspect data: inputs
+R22_G2_2,6,2026-10-24T05:51:31.677159+00:00,data,done,Inspect data: inputs
+R22_G2_2,7,2026-10-24T05:51:31.779665+00:00,review,done,Phase tools: unplanned
+R22_G2_2,8,2026-10-24T05:51:38.191700+00:00,data,running,Inspect data: 20
+R22_G2_2,9,2026-10-24T05:51:38.203447+00:00,data,running,Inspect data: data_card.json
+R22_G2_2,10,2026-10-24T05:51:38.268609+00:00,data,done,Inspect data: 20
+R22_G2_2,11,2026-10-24T05:51:38.295639+00:00,data,done,Inspect data: data_card.json
+R22_G2_2,12,2026-10-24T05:51:38.382806+00:00,review,done,Phase tools: unplanned
+R22_G2_2,13,2026-10-24T05:51:45.057428+00:00,data,running,Inspect data: participants.tsv
+R22_G2_2,14,2026-10-24T05:51:45.074888+00:00,data,running,Inspect data: data_profile.json
+R22_G2_2,15,2026-10-24T05:51:45.175574+00:00,data,done,Inspect data: participants.tsv
+R22_G2_2,16,2026-10-24T05:51:45.216816+00:00,data,done,Inspect data: data_profile.json
+R22_G2_2,17,2026-10-24T05:51:45.347447+00:00,review,done,Phase tools: unplanned
+R22_G2_2,18,2026-10-24T05:51:51.030878+00:00,plan,running,Planned analysis candidates
+R22_G2_2,19,2026-10-24T05:52:50.798973+00:00,plan,done,Analysis phase: planned
+R22_G2_2,20,2026-10-24T05:52:50.841440+00:00,plan,warn,Planned analysis candidates
+R22_G2_2,21,2026-10-24T05:52:50.975461+00:00,review,done,Phase tools: planned
+R22_G2_2,22,2026-10-24T05:52:56.061580+00:00,plan,running,Checking plan prerequisites
+R22_G2_2,23,2026-10-24T05:52:57.753473+00:00,plan,failed,Checking plan prerequisites
+R22_G2_2,24,2026-10-24T05:52:57.843533+00:00,review,done,Phase tools: planned
+R22_G2_2,25,2026-10-24T05:53:06.422825+00:00,plan,running,Checking plan prerequisites
+R22_G2_2,26,2026-10-24T05:53:06.438572+00:00,plan,running,Checking plan prerequisites
+R22_G2_2,27,2026-10-24T05:53:08.106341+00:00,plan,failed,Checking plan prerequisites
+R22_G2_2,28,2026-10-24T05:53:09.763191+00:00,plan,failed,Checking plan prerequisites
+R22_G2_2,29,2026-10-24T05:53:09.846212+00:00,review,done,Phase tools: planned
+R22_G2_2,30,2026-10-24T05:53:30.446807+00:00,plan,running,Checking plan prerequisites
+R22_G2_2,31,2026-10-24T05:53:32.037656+00:00,plan,failed,Checking plan prerequisites
+R22_G2_2,32,2026-10-24T05:53:32.123788+00:00,review,done,Phase tools: planned
+R22_G2_2,33,2026-10-24T05:53:43.615510+00:00,plan,running,Checking plan prerequisites
+R22_G2_2,34,2026-10-24T05:53:43.639538+00:00,plan,running,Checking plan prerequisites
+R22_G2_2,35,2026-10-24T05:53:45.415892+00:00,plan,failed,Checking plan prerequisites
+R22_G2_2,36,2026-10-24T05:53:47.006360+00:00,plan,failed,Checking plan prerequisites
+R22_G2_2,37,2026-10-24T05:53:47.132390+00:00,review,done,Phase tools: planned
+R22_G2_2,38,2026-10-24T05:54:08.169891+00:00,plan,running,Checking plan prerequisites
+R22_G2_2,39,2026-10-24T05:54:09.772925+00:00,plan,failed,Checking plan prerequisites
+R22_G2_2,40,2026-10-24T05:54:09.853148+00:00,review,done,Phase tools: planned
+R22_G2_2,41,2026-10-24T05:54:31.603632+00:00,plan,running,Checking plan prerequisites
+R22_G2_2,42,2026-10-24T05:54:33.218219+00:00,plan,failed,Checking plan prerequisites
+R22_G2_2,43,2026-10-24T05:54:33.297597+00:00,review,done,Phase tools: planned
+R22_G2_2,44,2026-10-24T05:54:38.964142+00:00,plan,running,Checking plan prerequisites
+R22_G2_2,45,2026-10-24T05:54:40.638161+00:00,plan,failed,Checking plan prerequisites
+R22_G2_2,46,2026-10-24T05:54:40.723685+00:00,review,done,Phase tools: planned
+R22_G2_2,47,2026-10-24T05:54:51.473555+00:00,plan,running,Checking plan prerequisites
+R22_G2_2,48,2026-10-24T05:54:53.141332+00:00,plan,failed,Checking plan prerequisites
+R22_G2_2,49,2026-10-24T05:54:53.222370+00:00,review,done,Phase tools: planned
+R22_G2_2,50,2026-10-24T05:54:58.396415+00:00,plan,running,Checking plan prerequisites
+R22_G2_2,51,2026-10-24T05:55:00.062110+00:00,plan,failed,Checking plan prerequisites
+R22_G2_2,52,2026-10-24T05:55:00.140874+00:00,review,done,Phase tools: planned
+R22_G2_2,53,2026-10-24T05:55:06.301852+00:00,plan,running,Checking plan prerequisites
+R22_G2_2,54,2026-10-24T05:55:07.978251+00:00,plan,failed,Checking plan prerequisites
+R22_G2_2,55,2026-10-24T05:55:08.068859+00:00,review,done,Phase tools: planned
+R22_G2_2,56,2026-10-24T05:55:36.366376+00:00,plan,running,Planned analysis candidates
+R22_G2_2,57,2026-10-24T05:56:35.814566+00:00,plan,warn,Planned analysis candidates
+R22_G2_2,58,2026-10-24T05:56:35.993180+00:00,review,done,Phase tools: planned
+R22_G2_2,59,2026-10-24T05:56:49.320023+00:00,plan,running,Checking plan prerequisites
+R22_G2_2,60,2026-10-24T05:56:50.907205+00:00,plan,failed,Checking plan prerequisites
+R22_G2_2,61,2026-10-24T05:56:50.991442+00:00,review,done,Phase tools: planned
+R22_G2_2,62,2026-10-24T05:56:51.024468+00:00,plan,warn,Planning limit: seal or decline
+R22_G2_2,63,2026-10-24T05:57:26.835341+00:00,plan,running,Checking plan prerequisites
+R22_G2_2,64,2026-10-24T05:57:28.505512+00:00,plan,failed,Checking plan prerequisites
+R22_G2_2,65,2026-10-24T05:57:28.609820+00:00,review,done,Phase tools: planned
+R22_G2_2,66,2026-10-24T05:57:28.654054+00:00,plan,warn,Planning limit: seal or decline
+R22_G2_2,67,2026-10-24T05:58:07.512823+00:00,plan,running,Checking plan prerequisites
+R22_G2_2,68,2026-10-24T05:58:09.172375+00:00,plan,failed,Checking plan prerequisites
+R22_G2_2,69,2026-10-24T05:58:09.226802+00:00,data,done,Planning and inspecting data
+R22_G2_2,70,2026-10-24T05:58:09.261487+00:00,review,running,Checking execution and outputs
+R22_G2_2,71,2026-10-24T05:58:09.298339+00:00,review,warn,Output checks need review
+R22_G2_2,72,2026-10-24T05:58:09.350778+00:00,result,running,Preparing analysis result
+R22_G2_2,73,2026-10-24T05:58:09.396915+00:00,result,failed,Preparing analysis result
+R22_G2_3,1,2026-10-24T05:58:26.947117+00:00,other,done,Routed to analysis
+R22_G2_3,2,2026-10-24T05:58:27.384366+00:00,data,running,Planning and inspecting data
+R22_G2_3,3,2026-10-24T05:58:27.453498+00:00,data,running,Profiling data: 20 files
+R22_G2_3,4,2026-10-24T05:58:41.977070+00:00,data,done,Built data profile: 20 files
+R22_G2_3,5,2026-10-24T05:58:41.995560+00:00,data,running,Inspect data: inputs
+R22_G2_3,6,2026-10-24T05:58:43.511413+00:00,data,done,Inspect data: inputs
+R22_G2_3,7,2026-10-24T05:58:43.644852+00:00,review,done,Phase tools: unplanned
+R22_G2_3,8,2026-10-24T05:58:52.474255+00:00,data,running,Inspect data: data_card.json
+R22_G2_3,9,2026-10-24T05:58:52.484024+00:00,data,running,Inspect data: data_profile.json
+R22_G2_3,10,2026-10-24T05:58:52.545294+00:00,data,done,Inspect data: data_card.json
+R22_G2_3,11,2026-10-24T05:58:52.572916+00:00,data,done,Inspect data: data_profile.json
+R22_G2_3,12,2026-10-24T05:58:52.659642+00:00,review,done,Phase tools: unplanned
+R22_G2_3,13,2026-10-24T05:59:00.574413+00:00,data,running,Inspect data: participants.tsv
+R22_G2_3,14,2026-10-24T05:59:00.584212+00:00,data,running,Inspect data: data_card.json
+R22_G2_3,15,2026-10-24T05:59:00.660577+00:00,data,done,Inspect data: participants.tsv
+R22_G2_3,16,2026-10-24T05:59:00.690690+00:00,data,done,Inspect data: data_card.json
+R22_G2_3,17,2026-10-24T05:59:00.815914+00:00,review,done,Phase tools: unplanned
+R22_G2_3,18,2026-10-24T05:59:08.151990+00:00,plan,running,Planned analysis candidates
+R22_G2_3,19,2026-10-24T06:00:08.117314+00:00,plan,done,Analysis phase: planned
+R22_G2_3,20,2026-10-24T06:00:08.165765+00:00,plan,warn,Planned analysis candidates
+R22_G2_3,21,2026-10-24T06:00:08.322246+00:00,review,done,Phase tools: planned
+R22_G2_3,22,2026-10-24T06:00:18.778368+00:00,plan,running,Checking plan prerequisites
+R22_G2_3,23,2026-10-24T06:00:20.375319+00:00,plan,failed,Checking plan prerequisites
+R22_G2_3,24,2026-10-24T06:00:20.465089+00:00,review,done,Phase tools: planned
+R22_G2_3,25,2026-10-24T06:00:50.098556+00:00,plan,running,Checking plan prerequisites
+R22_G2_3,26,2026-10-24T06:00:51.799416+00:00,plan,failed,Checking plan prerequisites
+R22_G2_3,27,2026-10-24T06:00:51.880656+00:00,review,done,Phase tools: planned
+R22_G2_3,28,2026-10-24T06:00:58.735484+00:00,other,warn,Retrying upstream model request
+R22_G2_3,29,2026-10-24T06:01:20.792397+00:00,plan,running,Checking plan prerequisites
+R22_G2_3,30,2026-10-24T06:01:22.400463+00:00,plan,failed,Checking plan prerequisites
+R22_G2_3,31,2026-10-24T06:01:22.487966+00:00,review,done,Phase tools: planned
+R22_G2_3,32,2026-10-24T06:01:47.244853+00:00,plan,running,Checking plan prerequisites
+R22_G2_3,33,2026-10-24T06:01:48.855202+00:00,plan,failed,Checking plan prerequisites
+R22_G2_3,34,2026-10-24T06:01:48.941616+00:00,review,done,Phase tools: planned
+R22_G2_3,35,2026-10-24T06:01:57.352905+00:00,plan,running,Checking plan prerequisites
+R22_G2_3,36,2026-10-24T06:01:59.025618+00:00,plan,failed,Checking plan prerequisites
+R22_G2_3,37,2026-10-24T06:01:59.104783+00:00,review,done,Phase tools: planned
+R22_G2_3,38,2026-10-24T06:03:56.520344+00:00,plan,running,Checking plan prerequisites
+R22_G2_3,39,2026-10-24T06:03:58.190650+00:00,plan,failed,Checking plan prerequisites
+R22_G2_3,40,2026-10-24T06:03:58.270401+00:00,review,done,Phase tools: planned
+R22_G2_3,41,2026-10-24T06:04:07.462271+00:00,plan,running,Checking plan prerequisites
+R22_G2_3,42,2026-10-24T06:04:09.066234+00:00,plan,failed,Checking plan prerequisites
+R22_G2_3,43,2026-10-24T06:04:09.151566+00:00,review,done,Phase tools: planned
+R22_G2_3,44,2026-10-24T06:04:15.688824+00:00,plan,running,Checking plan prerequisites
+R22_G2_3,45,2026-10-24T06:04:17.340025+00:00,plan,failed,Checking plan prerequisites
+R22_G2_3,46,2026-10-24T06:04:17.430530+00:00,review,done,Phase tools: planned
+R22_G2_3,47,2026-10-24T06:04:23.546452+00:00,plan,running,Checking plan prerequisites
+R22_G2_3,48,2026-10-24T06:04:25.212449+00:00,plan,failed,Checking plan prerequisites
+R22_G2_3,49,2026-10-24T06:04:25.292976+00:00,review,done,Phase tools: planned
+R22_G2_3,50,2026-10-24T06:04:36.071848+00:00,plan,running,Checking plan prerequisites
+R22_G2_3,51,2026-10-24T06:04:37.684413+00:00,plan,failed,Checking plan prerequisites
+R22_G2_3,52,2026-10-24T06:04:37.783019+00:00,review,done,Phase tools: planned
+R22_G2_3,53,2026-10-24T06:04:44.311244+00:00,plan,running,Checking plan prerequisites
+R22_G2_3,54,2026-10-24T06:04:45.971571+00:00,plan,failed,Checking plan prerequisites
+R22_G2_3,55,2026-10-24T06:04:46.056239+00:00,review,done,Phase tools: planned
+R22_G2_3,56,2026-10-24T06:04:53.811723+00:00,plan,running,Checking plan prerequisites
+R22_G2_3,57,2026-10-24T06:04:55.489323+00:00,plan,failed,Checking plan prerequisites
+R22_G2_3,58,2026-10-24T06:04:55.595487+00:00,review,done,Phase tools: planned
+R22_G2_3,59,2026-10-24T06:04:55.629475+00:00,plan,warn,Planning limit: seal or decline
+R22_G2_3,60,2026-10-24T06:05:16.592538+00:00,plan,running,Checking plan prerequisites
+R22_G2_3,61,2026-10-24T06:05:18.226860+00:00,plan,failed,Checking plan prerequisites
+R22_G2_3,62,2026-10-24T06:05:18.312677+00:00,review,done,Phase tools: planned
+R22_G2_3,63,2026-10-24T06:05:18.343090+00:00,plan,warn,Planning limit: seal or decline
+R22_G2_3,64,2026-10-24T06:05:46.503171+00:00,plan,running,Checking plan prerequisites
+R22_G2_3,65,2026-10-24T06:05:48.154647+00:00,plan,failed,Checking plan prerequisites
+R22_G2_3,66,2026-10-24T06:05:48.192993+00:00,data,done,Planning and inspecting data
+R22_G2_3,67,2026-10-24T06:05:48.222388+00:00,review,running,Checking execution and outputs
+R22_G2_3,68,2026-10-24T06:05:48.261201+00:00,review,warn,Output checks need review
+R22_G2_3,69,2026-10-24T06:05:48.303237+00:00,result,running,Preparing analysis result
+R22_G2_3,70,2026-10-24T06:05:48.351136+00:00,result,failed,Preparing analysis result

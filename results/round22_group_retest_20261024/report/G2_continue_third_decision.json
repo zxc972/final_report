@@ -1,0 +1,10 @@
+{
+  "question": "G2",
+  "first_fault_signature": "postseal_execution / canonical CSV artifact contract missing after analysis was committed",
+  "second_fault_signature": "preseal_planning / 18-call planning limit without a committed execution",
+  "same_chain": false,
+  "stop_rule_triggered": false,
+  "decision": "Proceed to the third and last G2 run; total authorized entries becomes six",
+  "source_commit": "3b61d7ca1b1493a0fd22c4a75d1cc9e08573b0d8",
+  "decided_utc": "2026-10-24T05:58:23.519303+00:00"
+}

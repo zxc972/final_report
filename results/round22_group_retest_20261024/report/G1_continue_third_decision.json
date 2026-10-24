@@ -1,0 +1,19 @@
+{
+  "fault_signatures": [
+    {
+      "case": "R22_G1_1",
+      "terminal_stage": "postexecution_internal_review",
+      "code": "review_unfinished_at_global_model_limit",
+      "global_model_calls": 30
+    },
+    {
+      "case": "R22_G1_2",
+      "terminal_stage": "preseal_planning",
+      "code": "planning_phase_model_limit_without_seal",
+      "planning_model_calls": 18
+    }
+  ],
+  "consecutive_same_chain_failure": false,
+  "decision": "Run original third authorized repetition; same code and settings",
+  "basis": "Different failing stages and limits, not a generic success/failure label"
+}

@@ -1,0 +1,14 @@
+{
+  "pid": 432506,
+  "source_head": "3b61d7ca1b1493a0fd22c4a75d1cc9e08573b0d8",
+  "source_directory": "/data/xuancheng/agent_v1/round22_source",
+  "command": [
+    "/data/xuancheng/agent_v1/.venv-coding/bin/python",
+    "/data/xuancheng/agent_v1/round22_source/agent/experiments/round22/dev_server.py"
+  ],
+  "host": "127.0.0.1",
+  "port": 8122,
+  "launched_utc": "2026-10-24T04:53:23.790499+00:00",
+  "new_development_instance_only": true,
+  "existing_services_restarted": false
+}

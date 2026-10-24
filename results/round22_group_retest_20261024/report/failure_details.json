@@ -1,0 +1,141 @@
+[
+  {
+    "case": "R22_G1_1",
+    "classification": {
+      "category": "review_revision_unfinished",
+      "stop_eligible": true,
+      "reason": "Structured review remained invalid after bounded protocol attempts"
+    },
+    "execution_receipts": [],
+    "internal_review": {
+      "decision": "unreviewed",
+      "protocol_valid": false,
+      "protocol_attempts": 1,
+      "limitations": [
+        "Internal review was not completed after bounded protocol/transport attempts; Agent text remains an unreviewed draft."
+      ],
+      "transport_exhausted": false
+    }
+  },
+  {
+    "case": "R22_G1_2",
+    "classification": {
+      "category": "budget_exhausted",
+      "stop_eligible": true,
+      "reason": "Logical or planning-stage budget was exhausted"
+    },
+    "execution_receipts": [],
+    "internal_review": {
+      "decision": null,
+      "protocol_valid": null,
+      "protocol_attempts": null,
+      "limitations": null,
+      "transport_exhausted": null
+    }
+  },
+  {
+    "case": "R22_G1_3",
+    "classification": {
+      "category": "budget_exhausted",
+      "stop_eligible": true,
+      "reason": "Logical or planning-stage budget was exhausted"
+    },
+    "execution_receipts": [],
+    "internal_review": {
+      "decision": null,
+      "protocol_valid": null,
+      "protocol_attempts": null,
+      "limitations": null,
+      "transport_exhausted": null
+    }
+  },
+  {
+    "case": "R22_G2_1",
+    "classification": {
+      "category": "budget_exhausted",
+      "stop_eligible": true,
+      "reason": "Logical or planning-stage budget was exhausted"
+    },
+    "execution_receipts": [
+      {
+        "receipt_file": "run_python_547bcc40a077442caf36e5db7d88389b.json",
+        "status": "success",
+        "exit_code": 0,
+        "automatic_finalization": {
+          "status": "artifact_contract_failed",
+          "error": "Missing file: regional_values.csv; Missing file: group_results.csv"
+        },
+        "stderr_tail": ""
+      },
+      {
+        "receipt_file": "run_python_6636d431673a4c319ff28bcbd0d118e1.json",
+        "status": "success",
+        "exit_code": 0,
+        "automatic_finalization": {
+          "status": "artifact_contract_failed",
+          "error": "Missing file: regional_values.csv; Missing file: group_results.csv"
+        },
+        "stderr_tail": ""
+      },
+      {
+        "receipt_file": "run_python_090281469de8489693012b32d90e0f6f.json",
+        "status": "success",
+        "exit_code": 0,
+        "automatic_finalization": {
+          "status": "artifact_contract_failed",
+          "error": "Missing file: regional_values.csv; Missing file: group_results.csv"
+        },
+        "stderr_tail": ""
+      },
+      {
+        "receipt_file": "run_python_fea1581189314977acd64b901ae63a87.json",
+        "status": "success",
+        "exit_code": 0,
+        "automatic_finalization": {
+          "status": "artifact_contract_failed",
+          "error": "Missing file: regional_values.csv; Missing file: group_results.csv"
+        },
+        "stderr_tail": ""
+      }
+    ],
+    "internal_review": {
+      "decision": null,
+      "protocol_valid": null,
+      "protocol_attempts": null,
+      "limitations": null,
+      "transport_exhausted": null
+    }
+  },
+  {
+    "case": "R22_G2_2",
+    "classification": {
+      "category": "budget_exhausted",
+      "stop_eligible": true,
+      "reason": "Logical or planning-stage budget was exhausted"
+    },
+    "execution_receipts": [],
+    "internal_review": {
+      "decision": null,
+      "protocol_valid": null,
+      "protocol_attempts": null,
+      "limitations": null,
+      "transport_exhausted": null
+    }
+  },
+  {
+    "case": "R22_G2_3",
+    "classification": {
+      "category": "budget_exhausted",
+      "stop_eligible": true,
+      "reason": "Logical or planning-stage budget was exhausted"
+    },
+    "execution_receipts": [],
+    "internal_review": {
+      "decision": null,
+      "protocol_valid": null,
+      "protocol_attempts": null,
+      "limitations": null,
+      "transport_exhausted": null
+    }
+  }
+]

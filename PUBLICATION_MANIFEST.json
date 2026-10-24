@@ -1,6 +1,6 @@
 {
   "schema": "final_report.publication.v1",
-  "source_snapshot": "2026-10-24 Round20 unchanged region algorithm, native overlap integration, 974 default tests and source-reviewed 83-item blind condition test v2; no canonicalization evaluation, private traces or deployment",
+  "source_snapshot": "2026-10-24 Round22 six frozen original-question retests, aligned native metering and complete outcome report; source unchanged, authorization closed, existing services preserved",
   "files": [
     {
       "path": ".env.example",
@@ -24,8 +24,8 @@
     },
     {
       "path": "SNAPSHOT_MANIFEST.json",
-      "bytes": 732029,
-      "sha256": "628646f3b21fdcf81abc727a7d398568c5bd2dffe3eb8bacf7fe22a4ce5e2a55"
+      "bytes": 730592,
+      "sha256": "a46e844991b7a28aa678f5168ac50de2af6a63a82cdfb45c8e54365354976bdb"
     },
     {
       "path": "agent/.gitignore",
@@ -3708,6 +3708,11 @@
       "sha256": "bb01dfd73c07dc9e1a030d9abd8a2f94ba583c4badd778aa652073df575796ec"
     },
     {
+      "path": "docs/round22/ROUND22_REPORT.md",
+      "bytes": 13725,
+      "sha256": "f397dd835799b7b175d5cf5a180c9665230e657faa1e50c096d28e3723bd0921"
+    },
+    {
       "path": "environment/manifests/AFNI_C3D.dependencies.json",
       "bytes": 964,
       "sha256": "7a010c7e88b25bed145b950f5036cfff4ff3241d6da432a36dca606980fadf7c"
@@ -7051,6 +7056,236 @@
       "path": "results/round21_group_repair_20261024/report/队列与QC_20例.json",
       "bytes": 7107,
       "sha256": "0953771029b811c69153482706f830beb515846ad23ac6c709ce44d8bc1aac13"
+    },
+    {
+      "path": "results/round22_group_retest_20261024/branch_merge.json",
+      "bytes": 1926,
+      "sha256": "a1287d0230b6e4cc7ff57fd3c163c471ea4d2022aebdb3dbfc8ba813b35b4fad"
+    },
+    {
+      "path": "results/round22_group_retest_20261024/export_manifest.json",
+      "bytes": 41730,
+      "sha256": "d45f1c2a49902c0d7b94411610acd55c271344a1d3bcc07834ba7bd029e6438d"
+    },
+    {
+      "path": "results/round22_group_retest_20261024/offline_v2/backend_default_merged.status.json",
+      "bytes": 188,
+      "sha256": "7a68be39d15af64b339cd5d767976404ddfb2f8ff93133e761239451e72ccbe9"
+    },
+    {
+      "path": "results/round22_group_retest_20261024/offline_v2/backend_default_merged.txt",
+      "bytes": 7761,
+      "sha256": "1e2be312c4f2e13d07651f52cc013a01dcf4d9b937bc246d53691482e02240c8"
+    },
+    {
+      "path": "results/round22_group_retest_20261024/offline_v2/offline_all_passed.json",
+      "bytes": 232,
+      "sha256": "c313d3161d1974de947a3485222c978db8f564374d7138c7aa33f9e5dba8a139"
+    },
+    {
+      "path": "results/round22_group_retest_20261024/offline_v2/protected_review.json",
+      "bytes": 55437,
+      "sha256": "69d236f88aa3f79aba475b6193cf67ed1a7d326d8ce98f9add89cd8f86c06257"
+    },
+    {
+      "path": "results/round22_group_retest_20261024/offline_v2/region_algorithm.status.json",
+      "bytes": 182,
+      "sha256": "7c1b7f412e298c4cd68dc98925f62059a33f62f63ff0ed218714af42e6e306bb"
+    },
+    {
+      "path": "results/round22_group_retest_20261024/offline_v2/region_algorithm.txt",
+      "bytes": 98,
+      "sha256": "58745d8011883213acd6d3ad00c73a2860f68e432f60fc956b8cb2a8bb6d8181"
+    },
+    {
+      "path": "results/round22_group_retest_20261024/offline_v2/run_offline_checks.py",
+      "bytes": 2457,
+      "sha256": "06ebb89a40b582ae08ef5ef56d04fc17e12b734293b168c3a5e48ccd97aebf41"
+    },
+    {
+      "path": "results/round22_group_retest_20261024/offline_v2/sdk_binding.junit.xml",
+      "bytes": 2525,
+      "sha256": "881ae9b54699da5def8a386c59a2fbde1be42ec636988b90db430302a3786b05"
+    },
+    {
+      "path": "results/round22_group_retest_20261024/offline_v2/sdk_binding.status.json",
+      "bytes": 177,
+      "sha256": "d7ac4299e02ea0baa355a1ecc27cd5fd9d7e98e995a7f578629daf0f1ef67c58"
+    },
+    {
+      "path": "results/round22_group_retest_20261024/offline_v2/sdk_binding.txt",
+      "bytes": 3486,
+      "sha256": "f800fbcbb99b5734976c2e854f677ac9215e9ce2a0c94aa8d536cb57b975d98c"
+    },
+    {
+      "path": "results/round22_group_retest_20261024/offline_v2/snapshot_verify.txt",
+      "bytes": 60,
+      "sha256": "df9066e9bc5f14d1d994cd70e4b3340286d3e905beb28191d214bfc54f8d187d"
+    },
+    {
+      "path": "results/round22_group_retest_20261024/offline_v2/supervisor.txt",
+      "bytes": 862,
+      "sha256": "96defc11766c34214fadcc71beb062da567c6e033519120c00a8b8598445d97f"
+    },
+    {
+      "path": "results/round22_group_retest_20261024/offline_v2/synthetic_singularity_merged.status.json",
+      "bytes": 194,
+      "sha256": "2f08f663cbde1cd2eed656b434cf13963d35eab3b0109f8e0f6b149b07bd2804"
+    },
+    {
+      "path": "results/round22_group_retest_20261024/offline_v2/synthetic_singularity_merged.txt",
+      "bytes": 1238,
+      "sha256": "3bec1498cf79d9cb8b50eba7da820625baf24c497776ad8bdf085d2b382f93ea"
+    },
+    {
+      "path": "results/round22_group_retest_20261024/offline_v2/targeted_merged.status.json",
+      "bytes": 181,
+      "sha256": "0d841f5e532df60c7fa8e41b17b0600eb493ef3c2ecfa2770cc29b65c6e0fca7"
+    },
+    {
+      "path": "results/round22_group_retest_20261024/offline_v2/targeted_merged.txt",
+      "bytes": 1145,
+      "sha256": "14a7b1353b76454634dd4785cdda9d38c87b1596a472fbcf8aea15b8dfff3425"
+    },
+    {
+      "path": "results/round22_group_retest_20261024/push_before_real_runs.json",
+      "bytes": 333,
+      "sha256": "5580762d8b38a7a71ccbb0af7409faadc244a4ba994f54192ac005bab81cacd4"
+    },
+    {
+      "path": "results/round22_group_retest_20261024/push_round20_delivery.json",
+      "bytes": 415,
+      "sha256": "af906e819fd0f89ff8a8931020add2d1fdb50396a5f4677f85dea4526659d8ba"
+    },
+    {
+      "path": "results/round22_group_retest_20261024/report/G1_continue_third_decision.json",
+      "bytes": 600,
+      "sha256": "51d45a4f46c1270cbf3b378ad27134617a0c689f4d7557c221e98b2e3e4e91f0"
+    },
+    {
+      "path": "results/round22_group_retest_20261024/report/G2_continue_third_decision.json",
+      "bytes": 509,
+      "sha256": "9d1c9df1c16acd4377b8616d57f5f9aea5920c85153c26706ce9916a3f4252d2"
+    },
+    {
+      "path": "results/round22_group_retest_20261024/report/G2_stop_decision.json",
+      "bytes": 414,
+      "sha256": "4097d3b30c59395de4728240ae7c7d15b077ac164d8b629212be378ad76db49f"
+    },
+    {
+      "path": "results/round22_group_retest_20261024/report/authorization.json",
+      "bytes": 684,
+      "sha256": "09aa463e126bc653b3f69df217c16307b5abf94474699f3079bfdb8663326593"
+    },
+    {
+      "path": "results/round22_group_retest_20261024/report/catalog_scope_audit.json",
+      "bytes": 3148,
+      "sha256": "331d06c557fa61c374c54c3e9ce524cedbce6a07e8a2158c82ee820d596b97a6"
+    },
+    {
+      "path": "results/round22_group_retest_20261024/report/conclusion_cards.json",
+      "bytes": 1890,
+      "sha256": "2bcfe29de6befeb16b338329fd79e4f9ae9359044badbf672313b39850db5e03"
+    },
+    {
+      "path": "results/round22_group_retest_20261024/report/configuration_freeze_audit.json",
+      "bytes": 2772,
+      "sha256": "c21780f37583610a63aa0218d62a124392a0486d1b72d1190ad2d1a6a69ae462"
+    },
+    {
+      "path": "results/round22_group_retest_20261024/report/development_launch.json",
+      "bytes": 482,
+      "sha256": "585f9eb35bc144874d70acf6145afe5d26ef46a925288a6717ecb8f215334fec"
+    },
+    {
+      "path": "results/round22_group_retest_20261024/report/development_ready.json",
+      "bytes": 395,
+      "sha256": "35d91e87f02bcd7dbdc6e897999a7ff83ddfd944a72eca5e167292c922425049"
+    },
+    {
+      "path": "results/round22_group_retest_20261024/report/existing_services_after.json",
+      "bytes": 5051,
+      "sha256": "e4d44265a8ce7993b2268313e2f9bbb365168637c9954307c322373a622e90a5"
+    },
+    {
+      "path": "results/round22_group_retest_20261024/report/existing_services_before.json",
+      "bytes": 2157,
+      "sha256": "a4ce91ad561fd45c5cf6d3b9795ceb62918c0f618055a17618d3671f79c9486a"
+    },
+    {
+      "path": "results/round22_group_retest_20261024/report/export_round22_report.py",
+      "bytes": 13755,
+      "sha256": "5efa090e551ff79c659ddf54ee313735d2a30f2626e830433b393531aca761c1"
+    },
+    {
+      "path": "results/round22_group_retest_20261024/report/export_secret_scan.json",
+      "bytes": 276,
+      "sha256": "d1ee2884ede366ae6a8610c9fed88a83975b5d7aeb1ea33e644728117eff0fb1"
+    },
+    {
+      "path": "results/round22_group_retest_20261024/report/failure_details.json",
+      "bytes": 4026,
+      "sha256": "517199715117ff7df00e9c3dda909267aaaa0e947b9965e4b45b8d1debe3d414"
+    },
+    {
+      "path": "results/round22_group_retest_20261024/report/final_safety_audit.json",
+      "bytes": 734,
+      "sha256": "7c28a17c372a85ad22359ed97a7e57d53c737790559f95920d6a7616ead99ca2"
+    },
+    {
+      "path": "results/round22_group_retest_20261024/report/g1_direction_summary.json",
+      "bytes": 3067,
+      "sha256": "0a3b99b9f171e08f3c911f239f51e2045306f62971f9c04006a152a0ed8f97f8"
+    },
+    {
+      "path": "results/round22_group_retest_20261024/report/http_attempts.csv",
+      "bytes": 35225,
+      "sha256": "03eb836936debf36e6712d0b54802531daa190b0e4ee74dbb2472ff175051c05"
+    },
+    {
+      "path": "results/round22_group_retest_20261024/report/http_transport_coverage.json",
+      "bytes": 413,
+      "sha256": "cf71b2b0a588a7d9b5ba6ef3ae094efdfe29e93193b3016a041ca81f72274962"
+    },
+    {
+      "path": "results/round22_group_retest_20261024/report/internal_review_protocol_observations.json",
+      "bytes": 1329,
+      "sha256": "293b06590389582f6225daf389241fb2d6e1aa85d0141ca9227d583e7abb2047"
+    },
+    {
+      "path": "results/round22_group_retest_20261024/report/meter_alignment.json",
+      "bytes": 6019,
+      "sha256": "7eae02bb7c98b28932708fcb7659256de808238150089699253d3af38544fb3b"
+    },
+    {
+      "path": "results/round22_group_retest_20261024/report/offline_release.json",
+      "bytes": 40176,
+      "sha256": "e76543ddab79a5cd51ac6f77ff08106e52dde4d121d1bb8e295cbd6b7c60337c"
+    },
+    {
+      "path": "results/round22_group_retest_20261024/report/run_summaries.json",
+      "bytes": 9123,
+      "sha256": "3ccf994d2c7912946d48a11e53c3c22d5467344437b0fffd56a104755764a363"
+    },
+    {
+      "path": "results/round22_group_retest_20261024/report/shutdown.json",
+      "bytes": 422,
+      "sha256": "8a6f15712dea01aba7b853db8607880e8910122b95aedb753c2b637368fb58ae"
+    },
+    {
+      "path": "results/round22_group_retest_20261024/report/stages.csv",
+      "bytes": 51777,
+      "sha256": "a8b620f0aacf422946effebc4a6d81756d0aae9538dccb87ec3d9a128791b96b"
+    },
+    {
+      "path": "results/round22_group_retest_20261024/report/table_verification.csv",
+      "bytes": 1351,
+      "sha256": "d9142b5a9ef73a782767d006608df530013971da1224b097eed258ceb8f6a351"
+    },
+    {
+      "path": "results/round22_group_retest_20261024/six_file_lineage.json",
+      "bytes": 3698,
+      "sha256": "4373adbf63cc3fa7b8d39602c085a065a6edbcfdb0a3efc014d0949e6884f404"
     },
     {
       "path": "tools/accept_macaque_globals.py",
