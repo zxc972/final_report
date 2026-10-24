@@ -441,6 +441,20 @@ def method_evidence_view(graph, method):
     return view
 
 
+def caller_design_consistency(tools, intent):
+    # Mandatory output contracts are caller-owned. They cannot be silently
+    # weakened by an actor's describe intent. No effect or covariate is guessed.
+    group_output = 'group_results.csv' in set(getattr(tools, 'required_artifacts', []) or [])
+    requested = group_output or intent.design is not None
+    if requested and (intent.comparison not in {'group', 'correlation'} or intent.design is None):
+        return {'status': 'error', 'reason': 'Caller group contract and analysis intent disagree',
+                'caller_required_tables': sorted(set(getattr(tools, 'required_artifacts', []) or [])),
+                'field_errors': [{'field': 'comparison', 'allowed_values': ['group', 'correlation']},
+                                 {'field': 'design', 'message': 'State the requested effect and covariates explicitly; do not infer a different task'}],
+                'next': 'Preserve the requested design and call plan_analysis again. Unsupported methods remain selectable with an explicit mismatch reason; no method is selected automatically.'}
+    return None
+
+
 def requested_design_match(intent, method_id):
     requested = bool(intent.design) or intent.comparison in {'group', 'correlation'}
     supported = not requested or method_id == 'method:v14:group_regional_glm'
@@ -454,6 +468,9 @@ def plan_analysis(tools, raw):
     intent, error = validate_intent(raw)
     if error:
         return error
+    mismatch = caller_design_consistency(tools, intent)
+    if mismatch:
+        return mismatch
     entries = registered_roots(tools, intent)
     from .analysis_participants import table_paths
     paths = discover_paths(entries) + table_paths(tools, entries)
