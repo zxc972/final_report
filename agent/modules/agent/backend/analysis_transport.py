@@ -17,6 +17,7 @@ RATE_DELAYS = (10, 30, 60)
 sleep_sync = time.sleep
 sleep_async = asyncio.sleep
 DEADLINE = ContextVar('primatex_model_deadline', default=None)
+TRANSPORT_RETRY_LIMIT = ContextVar('primatex_transport_retry_limit', default=None)
 
 
 class TransportExhausted(RuntimeError):
@@ -112,6 +113,9 @@ def retry_sync(operation, on_retry=None):
                 raise
             limited = status == 429
             maximum = 3 if limited else 2
+            override = TRANSPORT_RETRY_LIMIT.get()
+            if override is not None:
+                maximum = min(maximum, override)
             exhausted = RateLimited if limited else TransportExhausted
             if attempt >= maximum:
                 raise exhausted(attempt+1, status) from error
@@ -139,6 +143,9 @@ async def retry_async(operation, on_retry=None, session=None):
                 raise
             limited = status == 429
             maximum = 3 if limited else 2
+            override = TRANSPORT_RETRY_LIMIT.get()
+            if override is not None:
+                maximum = min(maximum, override)
             exhausted = RateLimited if limited else TransportExhausted
             if attempt >= maximum:
                 raise exhausted(attempt+1, status) from error

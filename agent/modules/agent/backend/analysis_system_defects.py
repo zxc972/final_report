@@ -2,6 +2,9 @@
 from __future__ import annotations
 from collections import Counter
 
+# Default remains compatible; a closed evaluation can stop on the first defect.
+STOP_AFTER = 2
+
 class SystemDefect(RuntimeError):
     def __init__(self,code,message,**details):
         super().__init__(message);self.code=code;self.details=details
@@ -27,12 +30,12 @@ def _record_unlocked(tools,error):
             tools.control_store.save('phase_budget',snapshot(session))
     events.append({'code':error.code,'message':str(error),'details':error.details,
                    'actual_model_calls':tools.model_calls,'planning_call_exempted':charged})
-    counts=dict(Counter(e['code'] for e in events));stop=any(n>=2 for n in counts.values())
+    counts=dict(Counter(e['code'] for e in events));stop=any(n>=STOP_AFTER for n in counts.values())
     data={'events':events,'counts':counts,'stop':stop}
     if tools.control_store:tools.control_store.save('system_defects',data)
     if session is not None:
         session.record['system_defect_stop']=stop
-        session.record['next']='Stop and report repeated host defect' if stop else 'Report host defect; preserve the requested scope'
+        session.record['next']='Stop and report the host defect' if stop else 'Report host defect; preserve the requested scope'
         tools.control_store.save('session',session.record)
     if tools.events:tools.events.append('plan','failed','Host system defect',events[-1])
     return {'status':'system_defect','error_code':error.code,'error':str(error),'details':error.details,
@@ -41,7 +44,7 @@ def _record_unlocked(tools,error):
             'next':'Stop and report the host defect' if stop else 'Report the host defect; do not reduce the user task or invent a workaround'}
 
 def check_stop(tools):
-    if latest(tools).get('stop'):raise SystemDefectStop('Host system defect repeated twice; stop this analysis without another model call')
+    if latest(tools).get('stop'):raise SystemDefectStop(f'Host system defect threshold {STOP_AFTER} reached; stop this analysis without another model call')
 
 
 def record(tools,error):

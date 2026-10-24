@@ -109,14 +109,15 @@ def test_delimiter_diagnostics_do_not_change_validation(delimiter):
 def test_review_reserve_cannot_be_borrowed_and_persists(tmp_path,monkeypatch):
     tools,_,_=sealed(tmp_path,monkeypatch);monkeypatch.setattr(agent,'MAX_MODEL_CALLS',30)
     tools._internal_review_model=object();b=mod('analysis_review_budget')
-    for _ in range(26):tools._tick(model=True)
+    for _ in range(23):tools._tick(model=True)
     with pytest.raises(b.AgentBudgetExceeded):tools._tick(model=True)
-    assert tools.model_calls==26 and not b.coding_available(tools)
+    assert tools.model_calls==23 and not b.coding_available(tools)
     for _ in range(4):tools._tick(model=True,review=True)
     with pytest.raises(b.ReviewBudgetExceeded):tools._tick(model=True,review=True)
-    assert tools.model_calls==30
+    assert tools.model_calls==27
     restored=b.ReviewBudget(tools).snapshot()
-    assert restored['review_logical_calls']==4 and restored['budget_units_used']==30
+    assert restored['review_logical_calls']==4 and restored['budget_units_used']==27
+    assert restored['revision_credits_remaining']==3 and not restored['revision_authorized']
 
 
 def test_reserved_real_sdk_nonjson_revise_504_rereview_after_coding_limit(tmp_path,monkeypatch):
@@ -145,22 +146,22 @@ def test_reserved_real_sdk_nonjson_revise_504_rereview_after_coding_limit(tmp_pa
     def begin(request):return {'id':current_native_charge()['id']}
     def finish(ticket,response=None,error=None):observed.append({**ticket,'status':response.status_code if response is not None else None})
     try:
-        for _ in range(26):
+        for _ in range(23):
             tools._tick(model=True);session.budget.reserve('analysis')
         model=provider.CompatibleChatOpenAI(model='offline-review',base_url='http://127.0.0.1:'+str(server.server_port)+'/v1',api_key='synthetic-only',temperature=.7,max_retries=0,timeout=10)
         with HTTPObserver(begin,finish),b.review_scope(tools):
             outputs=[]
-            for _ in range(2):
+            for _ in range(3):
                 outputs.append(mod('analysis_internal_review').run_review(tools.workdir,'Synthetic review; no external calls',{},model,lambda:tools._tick(model=True,review=True),evidence_card={'hard_blocks':[]}))
             with pytest.raises(b.ReviewBudgetExceeded):tools._tick(model=True,review=True)
         assert outputs[0]['decision']=='revise' and outputs[0]['protocol_attempts']==2 and outputs[1]['decision']=='pass' and outputs[1]['protocol_attempts']==1
         assert 'Previous review failed strict validation' in str(received[1]['messages'])
-        assert [r['status'] for r in observed]==[200,200,504,200]
-        assert len(received)==4 and len(session.budget.records)==30
-        assert [r['id'] for r in observed]==[r['id'] for r in session.budget.records[-4:]]
+        assert [r['status'] for r in observed]==[200,200,504,200,200]
+        assert len(received)==5 and len(session.budget.records)==28
+        assert [r['id'] for r in observed]==[r['id'] for r in session.budget.records[-5:]]
         snapshot=b.get(tools).snapshot()
-        assert snapshot['nonreview_model_calls']==26 and snapshot['review_logical_calls']==3 and snapshot['review_http_attempts']==4 and snapshot['budget_units_used']==30
-        assert tools.model_calls==29
+        assert snapshot['nonreview_model_calls']==23 and snapshot['review_logical_calls']==4 and snapshot['review_http_attempts']==5 and snapshot['budget_units_used']==27
+        assert tools.model_calls==27
     finally:
         ACTIVE_CHAT.reset(token);server.shutdown();server.server_close();thread.join(timeout=2)
 

@@ -397,6 +397,9 @@ class AnalysisTools:
         Supply only a flat intent: measures, regions, comparison, optional
         subjects/species/space/method_id. This profiles registered inputs and
         checks actual software without calling a model or running preprocessing.
+        Preserve a requested effect/covariate design; do not silently reduce it
+        to a per-subject description. Unsupported alternatives require an explicit
+        mismatch explanation at commitment.
         For group/correlation, design.effect is the participant-table column being
         tested; design.covariates lists adjustment columns; design.reference is
         the baseline level of a categorical effect. Generic example:
@@ -1160,22 +1163,28 @@ def _build_coding_agent(tools: AnalysisTools, *, model: str, base_url: str,
                         "observation": original["result"], "next": "Inspect the error, edit the sealed script and run it again"}
             return tools._call(operation)
         functions = [record_analysis_reflection if fn.__name__ == "record_analysis_reflection" else fn for fn in functions]
-        def commit_plan(candidate_id: str, rationale: str, code_path: str) -> dict[str, Any]:
+        def commit_plan(candidate_id: str, rationale: str, code_path: str,
+                        design_mismatch_reason: str | None = None) -> dict[str, Any]:
             """Seal one feasible plan_analysis candidate; explain your choice in 1-2 sentences.
 
             The program fills data, atlas, scope and constraints. Supply the exact
             /work/*.py path you will write and execute. Do not supply nested plans.
+            If group_design_match is unsupported, design_mismatch_reason must
+            explain the mismatch, the choice, and what design remains unanswered.
             """
             def operation():
                 from .analysis_product_planner import commit_candidate
                 with tools._execution_lock:
+                    if design_mismatch_reason is not None:
+                        return commit_candidate(tools, candidate_id, rationale, code_path, design_mismatch_reason=design_mismatch_reason)
                     return commit_candidate(tools, candidate_id, rationale, code_path)
             return tools._call(operation)
         from .analysis_crossspecies import enabled as cross_enabled
         if cross_enabled(tools):
             def commit_plan(candidate_id: str, rationale: str, code_path: str,
                             success_criteria: str, failure_criteria: str, species: list[str],
-                            scale_status: str, homology_evidence: list[str] | None = None) -> dict[str, Any]:
+                            scale_status: str, homology_evidence: list[str] | None = None,
+                            design_mismatch_reason: str | None = None) -> dict[str, Any]:
                 """Seal the candidate with your nonempty success/failure standards and explicit species/scale declarations.
 
                 Cross-species comparisons also require sourced homology references.
@@ -1187,7 +1196,7 @@ def _build_coding_agent(tools: AnalysisTools, *, model: str, base_url: str,
                 def operation():
                     from .analysis_product_planner import commit_candidate
                     with tools._execution_lock:
-                        return commit_candidate(tools, candidate_id, rationale, code_path, commitment)
+                        return commit_candidate(tools, candidate_id, rationale, code_path, commitment, design_mismatch_reason)
                 return tools._call(operation)
 
             def submit_conclusion(text: str, claim_scope: str, direction: str | None = None) -> dict[str, Any]:
@@ -1477,6 +1486,8 @@ def _build_graph(coding_agent: Any, tools: AnalysisTools, validator: Any,
             if review.get("decision") == "revise" and review.get("protocol_valid") is True:
                 # Reopen the phase even if the outer-round limit is now reached.
                 # Only public/source review feedback is made visible to the model.
+                from .analysis_review_budget import get as review_budget
+                review_budget(tools).authorize_revision(review)
                 tools.session.review_failed(result)
         return {"validation": _safe(result, tools.secret),
                 "model_calls": tools.model_calls, "tool_calls": tools.tool_calls}

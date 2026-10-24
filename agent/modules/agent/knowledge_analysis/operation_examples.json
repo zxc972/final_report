@@ -1,7 +1,7 @@
 {
   "schema": "primatex.synthetic_operation_examples.v1",
   "synthetic_only": true,
-  "library_sha256": "dc75a3fefa8d6372278937ad2504f21a05219973adc9f2d1cea940298e7bfac8",
+  "library_sha256": "368a921c911d383b341ed5a93bbf3c8c90138b9ac18e183dcd1b012a1edb0f98",
   "examples": {
     "read_surface": {
       "python_type": "tuple",
@@ -338,16 +338,18 @@
       ]
     },
     "write_contract_table": {
-      "path": "/work/synthetic.csv",
+      "path": "/work/example.csv",
       "rows": 1,
       "columns": [
         "subject",
-        "value"
+        "value",
+        "units"
       ],
       "encoding": "utf-8",
       "delimiter": ",",
       "header": true,
-      "index": false
+      "index": false,
+      "public_values_prechecked": true
     }
   },
   "round21_extension": {
@@ -357,5 +359,11 @@
       "fdr_bh_by_identity"
     ],
     "original_operation_functions_ast_unchanged": true
+  },
+  "round24_writer_example": {
+    "synthetic_only": true,
+    "script_sha256": "f050216afdf953c2b7f60f134df560130eff071c8544d5df93b095af7d121527",
+    "invalid_row_left_existing_file_unchanged": true,
+    "new_model_calls": 0
   }
 }

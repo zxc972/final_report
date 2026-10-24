@@ -125,7 +125,8 @@ def test_product_tool_schema_and_controls_are_separate(tmp_path, monkeypatch):
     registry = {t.name: t for t in captured["tools"]}
     assert {"plan_analysis", "commit_plan"} <= registry.keys()
     assert not {"profile_data", "compile_constraints", "search_analysis_methods"} & registry.keys()
-    assert set(registry["commit_plan"].args) == {"candidate_id", "rationale", "code_path"}
+    assert set(registry["commit_plan"].args) == {"candidate_id", "rationale", "code_path", "design_mismatch_reason"}
+    assert "design_mismatch_reason" not in registry["commit_plan"].get_input_schema().model_json_schema().get("required", [])
     assert "plan_analysis" in captured["system_prompt"]
     for name in ("method_graph_gated", "legacy_v13"):
         other = tmp_path / name

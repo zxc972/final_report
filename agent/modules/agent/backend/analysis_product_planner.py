@@ -441,6 +441,15 @@ def method_evidence_view(graph, method):
     return view
 
 
+def requested_design_match(intent, method_id):
+    requested = bool(intent.design) or intent.comparison in {'group', 'correlation'}
+    supported = not requested or method_id == 'method:v14:group_regional_glm'
+    return {'requested': requested, 'supported': supported,
+            'design': intent.design.model_dump() if intent.design else None,
+            'reason': None if supported else '不满足请求的组设计；该方法不执行所请求的 effect/covariates 模型',
+            'commit_requires_mismatch_reason': not supported}
+
+
 def plan_analysis(tools, raw):
     intent, error = validate_intent(raw)
     if error:
@@ -559,6 +568,9 @@ def plan_analysis(tools, raw):
                 context, missing, mapping, missing_scopes = _candidate(tools, spec, method, entries, files, atlas_name, intent, domain, profile, solution["assignment"])
                 targets = missing_targets(matching)
                 missing = sorted(set(missing) | {t["need"] for t in targets})
+                design_match = requested_design_match(intent, method["id"])
+                if not design_match["supported"]:
+                    context["analysis_scope"]["notices"].append(design_match["reason"])
                 if design_scope:
                     context["analysis_scope"].update(copy.deepcopy(design_scope))
                 if resolution:
@@ -626,9 +638,11 @@ def plan_analysis(tools, raw):
                     context["analysis_scope"]["notices"].append("CSP result limit reached; narrow subjects, atlas or space to enumerate the remaining assignments.")
                 candidate_id = "candidate_" + digest({"intent": intent.model_dump(), "plan": context, "requirements": req_sha})[:24]
                 record = {"candidate_id": candidate_id, "intent": intent.model_dump(), "plan": context, "product_contract": spec, "mapping_evidence": mapping, "profile_sha256": profile["sha256"], "method_requirements_sha256": req_sha, "pipeline_dependencies_sha256": dep_sha, "domain_graph_sha256": domain_sha, "condition_snapshot": constraints, "operations": operations, "matching_stats": matching["matching_stats"], "matching_assignment": solution["assignment"], "product_types_sha256": type_sha, "condition_templates_sha256": template_sha}
+                record["group_design_match"] = design_match
                 tools.control_store.save(candidate_id, record)
                 summary = {"candidate_id": candidate_id, "method": item["method"], "atlas": {k: context["atlas"][k] for k in ["name", "version", "space", "applicable", "reason"]}, "space": intent.space or "native_stored", "file_count": len(context["data"]["files"]), "subjects": context["data"]["subjects"], "label_counts": {key: len(group["labels"]) for key, group in context["analysis_scope"]["labels"].items()}, "conditions": constraints["summary"], "must_disclose": context["analysis_scope"]["notices"], "protected_ref": candidate_id, "mapping_source_count": len(mapping)}
                 summary["operations"] = operations
+                summary["group_design_match"] = design_match
                 summary["matching_stats"] = matching["matching_stats"]
                 summary["matching_rank"] = {k: solution.get(k) for k in ("soft_violations", "off_preferred_space")}
                 from .analysis_asymmetry_contract import applies as asymmetry_applies, definition as asymmetry_definition
@@ -637,7 +651,11 @@ def plan_analysis(tools, raw):
                 output["candidates"].append(summary)
     if not specs:
         output["infeasible"].append({"reason": "No registered method matches the requested measures and comparison"})
-    output["candidates"].sort(key=lambda c: (c["matching_rank"]["soft_violations"], c["matching_rank"]["off_preferred_space"]))
+    output["candidates"].sort(key=lambda c: (not c["group_design_match"]["supported"], c["matching_rank"]["soft_violations"], c["matching_rank"]["off_preferred_space"]))
+    for category in ("infeasible", "needs_preprocessing"):
+        for item in output[category]:
+            mid = item.get("method", {}).get("id", item.get("method", {}).get("method_id"))
+            item["group_design_match"] = requested_design_match(intent, mid)
     saved = tools.control_store.save("planning_result", output)
     output["protected_ref"] = f"planning_result.v{saved['version']:06d}.json"
     # Large failure observations remain host-owned; expose a bounded explanation.
@@ -647,7 +665,7 @@ def plan_analysis(tools, raw):
     return output
 
 
-def commit_candidate(tools, candidate_id, rationale, code_path, commitment=None):
+def commit_candidate(tools, candidate_id, rationale, code_path, commitment=None, design_mismatch_reason=None):
     from .analysis_constraints import compile_constraints
     from .analysis_plans import commit_plan
     if not isinstance(candidate_id, str) or not re.fullmatch(r"candidate_[a-f0-9]{24}", candidate_id):
@@ -659,6 +677,10 @@ def commit_candidate(tools, candidate_id, rationale, code_path, commitment=None)
     if not saved or not profile or saved["record"]["profile_sha256"] != profile["sha256"]:
         return {"status": "blocked", "reason": "Candidate missing or profile changed; call plan_analysis again"}
     record = saved["record"]
+    mismatch = record.get("group_design_match", {})
+    if mismatch.get("commit_requires_mismatch_reason"):
+        if not isinstance(design_mismatch_reason, str) or not 1 <= len(design_mismatch_reason.strip()) <= 1200:
+            raise ValueError("Candidate does not satisfy requested group design; supply design_mismatch_reason explaining why it is chosen and what part of the requested design remains unanswered")
     if (record["method_requirements_sha256"] != load_knowledge("method_requirements", tools)[1]
             or record["pipeline_dependencies_sha256"] != load_knowledge("workflow_steps", tools)[1]
             or record.get("product_types_sha256") != load_knowledge("product_types", tools)[1]
@@ -675,6 +697,9 @@ def commit_candidate(tools, candidate_id, rationale, code_path, commitment=None)
     context["code_path"] = code_path
     context["candidate_id"] = candidate_id
     context["selection_rationale"] = rationale
+    if mismatch.get("commit_requires_mismatch_reason"):
+        context["selection_rationale"] += "\nGroup design mismatch: " + design_mismatch_reason.strip()
+        context["analysis_scope"]["design_mismatch_reason"] = design_mismatch_reason.strip()
     context["revision_reason"] = rationale
     context["analysis_scope"]["mapping_evidence_ref"] = candidate_id
     from .analysis_crossspecies import enabled as cross_enabled, validate_commitment

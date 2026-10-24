@@ -68,6 +68,8 @@ completion record is distinct from a missing executable. Do not certify prose
 semantics using keyword presence alone. Supplement the required JSON with:
 "hard_block_disclosure":{"complete":true,"undisclosed_constraint_ids":[],
 "evidence_files":["evidence_card","report.md"],"reason":"..."}.
+Use the observed method-qualified constraint_id as its identity. A local ID is
+accepted only if it uniquely identifies one observed blocker; never invent IDs.
 If any material hard blocker is undisclosed, set complete=false, list its id,
 and return revise with a grounded blocking finding. With no blockers, state
 that explicitly. Return only the JSON object. JSON output is not a waiver of
@@ -102,6 +104,13 @@ def parse_structured_review(content, registered, card):
     from .analysis_internal_review import parse_review
 
     value, warnings = first_object(content)
+    from .analysis_constraint_ids import observed_aliases, resolve_observed, register_observed_constraints
+    registered = register_observed_constraints(card, set(registered))
+    aliases = observed_aliases(card)
+    for item in [*value.get("findings", []), value.get("hard_block_disclosure", {})]:
+        if isinstance(item, dict) and isinstance(item.get("evidence_files"), list):
+            item["evidence_files"] = [resolve_observed(key, card) if isinstance(key, str) and key in aliases else key
+                                      for key in item["evidence_files"]]
     result = parse_review(json.dumps(value), registered)
     if any(
         not isinstance(text, str) or len(text) > 1800 for text in result["limitations"]
@@ -111,11 +120,9 @@ def parse_structured_review(content, registered, card):
     if not isinstance(disclosure, dict) or type(disclosure.get("complete")) is not bool:
         raise ValueError("Missing hard_block_disclosure.complete boolean")
     ids = disclosure.get("undisclosed_constraint_ids")
-    known = {row["constraint_id"] for row in card.get("hard_blocks", [])}
-    if not isinstance(ids, list) or any(
-        not isinstance(key, str) or key not in known for key in ids
-    ):
-        raise ValueError("Disclosure must cite observed hard-block ids")
+    from .analysis_constraint_ids import normalize_disclosure
+    ids = normalize_disclosure(ids, card)
+    disclosure["undisclosed_constraint_ids"] = ids
     if disclosure["complete"] != (not ids):
         raise ValueError("Disclosure completeness contradicts undisclosed ids")
     paths = disclosure.get("evidence_files")
@@ -156,6 +163,10 @@ def run_structured_review(
         workdir, request, validation, method_reader, register_execution_receipts
     )
     registered.add("evidence_card")
+    from .analysis_constraint_ids import canonical_row, register_observed_constraints
+    card = {**card, **{name: [canonical_row(row) for row in card.get(name, [])]
+                      for name in ("hard_conditions", "hard_blocks")}}
+    register_observed_constraints(card, registered)
     # These ids are explicitly present in the supplied, protected summary.
     # Register them just like actual execution-receipt ids, not as full files.
     for name in ("software_observations", "hard_conditions", "hard_blocks"):

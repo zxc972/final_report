@@ -137,7 +137,8 @@ def test_all_candidate_hard_blocks_survive_large_previews(tmp_path, monkeypatch)
     tools = setup_products(tmp_path, monkeypatch)
     tools.plan_analysis({"measures": ["lgi"]})
     card = evidence.build_evidence_card(tools, {})
-    ids = {row["constraint_id"] for row in card["hard_blocks"]}
+    ids = {row["local_constraint_id"] for row in card["hard_blocks"]}
+    assert all(row["constraint_id"] == row["method_id"]+":"+row["local_constraint_id"] for row in card["hard_blocks"])
     assert {"software_available", "recon_complete"} <= ids
     assert any(
         row["command"] == "matlab" and row["available"] is False

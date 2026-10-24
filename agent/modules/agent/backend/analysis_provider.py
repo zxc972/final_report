@@ -84,9 +84,9 @@ class CompatibleChatOpenAI(ChatOpenAI):
             result.llm_output = {**(result.llm_output or {}), "observed_provider_model": observed}
         return result
 
-    def _reserve_usage(self, retry_of=None):
+    def _reserve_usage(self, retry_of=None, *, transport_retry=False):
         from .analysis_review_budget import reserve_http_attempt
-        reserve_http_attempt()
+        reserve_http_attempt(retry_of if retry_of is not None else transport_retry)
         from .agent_chat_state import ACTIVE_CHAT
 
         session = ACTIVE_CHAT.get()
@@ -124,7 +124,7 @@ class CompatibleChatOpenAI(ChatOpenAI):
         compat_retried = False
         def attempt(index):
             nonlocal first_charge, compat_retried
-            charge = self._reserve_usage(first_charge[1] if index and first_charge else None)
+            charge = self._reserve_usage(first_charge[1] if index and first_charge else None, transport_retry=bool(index))
             if first_charge is None:
                 first_charge = charge
             try:
@@ -152,7 +152,7 @@ class CompatibleChatOpenAI(ChatOpenAI):
         compat_retried = False
         async def attempt(index):
             nonlocal first_charge, compat_retried
-            charge = self._reserve_usage(first_charge[1] if index and first_charge else None)
+            charge = self._reserve_usage(first_charge[1] if index and first_charge else None, transport_retry=bool(index))
             if first_charge is None:
                 first_charge = charge
             try:

@@ -1,0 +1,24 @@
+{
+  "task_id": "E1_N1_v1",
+  "review_status": "agent-reviewed Draft; not human-approved",
+  "research_evidence_release": "research_evidence_v13",
+  "enable_background_jobs": false,
+  "include_predecessor_outputs": false,
+  "message": "请计算 ION_32198 的额叶平均皮层厚度。",
+  "subjects": [
+    "ION_32198"
+  ],
+  "input_roots": [
+    "/data/xuancheng/datasets/derivatives/primatex_1.7_PRIME_DE/ION_32198/ION_32198"
+  ],
+  "required_artifacts": [],
+  "host_verifier": {
+    "entrypoint": "agent/experiments/round24/host_verifier.py",
+    "case": "N1",
+    "oracle": "Existing protected numeric readers, global subject reference and regional OLS/BH reference; no primatex_ops import",
+    "atol": 1e-09,
+    "rtol": 1e-07,
+    "full_chain": "Original requested scope + exact numeric coverage + existing public contract/internal review/conclusion card; refusals scored separately",
+    "negative_criterion": "Grounded absence of a macaque-appropriate frontal parcellation; no use of human compatibility labels as macaque anatomy"
+  }
+}
