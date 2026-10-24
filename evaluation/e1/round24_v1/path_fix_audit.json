@@ -1,0 +1,25 @@
+{
+  "reason": "Native output_directory is workspace-relative; original host verifier omitted the workspace prefix",
+  "original_actor_source_unchanged": true,
+  "numeric_reference_comparator_tolerances_unchanged": true,
+  "original_grading_records_preserved": true,
+  "same_outputs_regraded_no_analysis_reruns": true,
+  "model_calls": 0,
+  "valid_relative_absolute_fixtures": 2,
+  "rejected_path_or_identity_fixtures": 3,
+  "host_fix_sha256": "367bdb24b054adeb027beda991b7c49d884daf09e873a728b3db38c2d3f440f8",
+  "regraded_cases": [
+    "R24_G1",
+    "R24_G2",
+    "E1_S1",
+    "E1_S2",
+    "E1_S3",
+    "E1_G1",
+    "E1_G2",
+    "E1_G3",
+    "E1_X1",
+    "E1_N1",
+    "E1_N2",
+    "E1_N3"
+  ]
+}

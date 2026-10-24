@@ -1,0 +1,1514 @@
+[
+  {
+    "method": "independent_v2_fs_anatomical_stats",
+    "field": "steps",
+    "index": 1,
+    "statement": "Run mris_anatomical_stats with options followed by subject name and hemisphere.",
+    "source_id": "fs_anatomical_stats",
+    "quote": "mris_anatomical_stats [options] <subjectname> <hemi> [<surfacename>]",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 918,
+      "end": 986,
+      "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+    }
+  },
+  {
+    "method": "independent_v2_fs_anatomical_stats",
+    "field": "steps",
+    "index": 2,
+    "statement": "Optionally restrict thickness values to a specified low and high range.",
+    "source_id": "fs_anatomical_stats",
+    "quote": "only consider thicknesses in the specified range.",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 1230,
+      "end": 1279,
+      "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+    }
+  },
+  {
+    "method": "independent_v2_fs_anatomical_stats",
+    "field": "steps",
+    "index": 3,
+    "statement": "Optionally use a specified thickness file for thickness statistics.",
+    "source_id": "fs_anatomical_stats",
+    "quote": "use specified file for computing thickness statistics",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 1358,
+      "end": 1411,
+      "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+    }
+  },
+  {
+    "method": "independent_v2_fs_anatomical_stats",
+    "field": "steps",
+    "index": 4,
+    "statement": "Optionally compute properties for each label in an annotation file separately.",
+    "source_id": "fs_anatomical_stats",
+    "quote": "compute properties for each label in the annotation file separately",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 1435,
+      "end": 1502,
+      "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+    }
+  },
+  {
+    "method": "independent_v2_fs_anatomical_stats",
+    "field": "steps",
+    "index": 5,
+    "statement": "Optionally smooth the thickness map a number of iterations before use.",
+    "source_id": "fs_anatomical_stats",
+    "quote": "Smooth thicknessmap # of iterations before using it",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 1697,
+      "end": 1748,
+      "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+    }
+  },
+  {
+    "method": "independent_v2_fs_anatomical_stats",
+    "field": "steps",
+    "index": 6,
+    "statement": "Optionally output the annotation file's colortable to a text file.",
+    "source_id": "fs_anatomical_stats",
+    "quote": "Output annotation files's colortable to text file",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 1766,
+      "end": 1815,
+      "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+    }
+  },
+  {
+    "method": "independent_v2_fs_anatomical_stats",
+    "field": "steps",
+    "index": 7,
+    "statement": "Optionally compute vertex-wise volume by dividing each obliquely truncated trilateral pyramid into three tetrahedra.",
+    "source_id": "fs_anatomical_stats",
+    "quote": "Compute vertex-wise volume by dividing each obliquely truncated trilateral pyramid into three tetrahedra",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 1869,
+      "end": 1973,
+      "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+    }
+  },
+  {
+    "method": "independent_v2_fs_anatomical_stats",
+    "field": "outputs",
+    "index": 1,
+    "statement": "Tabular output includes structure name, number of vertices, surface area, gray matter volume, average thickness, and thickness std dev.",
+    "source_id": "fs_anatomical_stats",
+    "quote": "Tabular output includes the following:",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 1984,
+      "end": 2022,
+      "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+    }
+  },
+  {
+    "method": "independent_v2_fs_anatomical_stats",
+    "field": "outputs",
+    "index": 2,
+    "statement": "Tabular output can be produced with the -b flag.",
+    "source_id": "fs_anatomical_stats",
+    "quote": "-b\n\ntabular output",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 1504,
+      "end": 1522,
+      "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+    }
+  },
+  {
+    "method": "independent_v2_fs_anatomical_stats",
+    "field": "outputs",
+    "index": 3,
+    "statement": "Table output can be written to a tablefile with -f, in a different format than -b.",
+    "source_id": "fs_anatomical_stats",
+    "quote": "table output to tablefile (different format than -b).",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 1540,
+      "end": 1593,
+      "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+    }
+  },
+  {
+    "method": "independent_v2_fs_anatomical_stats",
+    "field": "outputs",
+    "index": 4,
+    "statement": "Stats can be written to a file named log with -log.",
+    "source_id": "fs_anatomical_stats",
+    "quote": "Write stats to file named log",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 1652,
+      "end": 1681,
+      "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+    }
+  },
+  {
+    "method": "independent_v2_fs_anatomical_stats",
+    "field": "parameters",
+    "index": 1,
+    "statement": "The -i option takes a low threshold and a high threshold.",
+    "source_id": "fs_anatomical_stats",
+    "quote": "-i <low thresh> <hi thresh>",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 1201,
+      "end": 1228,
+      "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+    }
+  },
+  {
+    "method": "independent_v2_fs_anatomical_stats",
+    "field": "parameters",
+    "index": 2,
+    "statement": "The -nsmooth option takes a number of iterations.",
+    "source_id": "fs_anatomical_stats",
+    "quote": "-nsmooth <#>",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 1683,
+      "end": 1695,
+      "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+    }
+  },
+  {
+    "method": "independent_v2_fs_anatomical_stats",
+    "field": "parameters",
+    "index": 3,
+    "statement": "Global brain stats are computed unless -noglobal is specified.",
+    "source_id": "fs_anatomical_stats",
+    "quote": "-noglobal\n\nDo not compute global brain stats",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 1817,
+      "end": 1861,
+      "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+    }
+  },
+  {
+    "method": "independent_v2_fs_segstats",
+    "field": "steps",
+    "index": 1,
+    "statement": "Provide a segmentation via --seg, or create one from an annotation (--annot) or surface label (--slabel).",
+    "source_id": "fs_segstats",
+    "quote": "create a segmentation from a given surface label. The points in the label are given a value of 1; 0 for outside",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 1605,
+      "end": 1716,
+      "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+    }
+  },
+  {
+    "method": "independent_v2_fs_segstats",
+    "field": "steps",
+    "index": 2,
+    "statement": "Optionally apply masking criteria using mask threshold, sign, frame, and invert parameters.",
+    "source_id": "fs_segstats",
+    "quote": "The masking criteria is set by the mask threshold, sign, frame, and invert parameters (see below).",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 5858,
+      "end": 5956,
+      "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+    }
+  },
+  {
+    "method": "independent_v2_fs_segstats",
+    "field": "steps",
+    "index": 3,
+    "statement": "Optionally compute statistics from another volume with --i, including min, max, range, average, and standard deviation.",
+    "source_id": "fs_segstats",
+    "quote": "Input volume from which to compute more statistics, including min, max, range, average, and standard deviation as measured spatially across each segmentation.",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 2047,
+      "end": 2205,
+      "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+    }
+  },
+  {
+    "method": "independent_v2_fs_segstats",
+    "field": "steps",
+    "index": 4,
+    "statement": "Save summary statistics to an ASCII file with --sum.",
+    "source_id": "fs_segstats",
+    "quote": "ASCII file in which summary statistics are saved",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 1730,
+      "end": 1778,
+      "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+    }
+  },
+  {
+    "method": "independent_v2_fs_segstats",
+    "field": "steps",
+    "index": 5,
+    "statement": "Optionally compute average waveforms per segmentation with --avgwf and save to an ASCII text file.",
+    "source_id": "fs_segstats",
+    "quote": "For each segmentation, computes the average waveform across all the voxels in the segmentation (excluding voxels masked out).",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 7908,
+      "end": 8033,
+      "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+    }
+  },
+  {
+    "method": "independent_v2_fs_segstats",
+    "field": "outputs",
+    "index": 1,
+    "statement": "Summary statistics ASCII file specified by --sum, with header lines beginning with '#'.",
+    "source_id": "fs_segstats",
+    "quote": "The summary file is an ascii file in which the segmentation statistics are reported. This file will have some 'header' information. Each header line begins with a '#'.",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 10613,
+      "end": 10780,
+      "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+    }
+  },
+  {
+    "method": "independent_v2_fs_segstats",
+    "field": "outputs",
+    "index": 2,
+    "statement": "Optional output color table with just the reported segmentations via --ctab-out.",
+    "source_id": "fs_segstats",
+    "quote": "Create an output color table with just the segmentations reported in the output.",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 4435,
+      "end": 4515,
+      "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+    }
+  },
+  {
+    "method": "independent_v2_fs_segstats",
+    "field": "outputs",
+    "index": 3,
+    "statement": "Optional average waveform ASCII text file with rows equal to number of frames and columns equal to number of segmentations reported.",
+    "source_id": "fs_segstats",
+    "quote": "The results are saved in an ascii text file with number of rows equal to the number of frames and number of columns equal to the number of segmentations reported.",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 8034,
+      "end": 8196,
+      "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+    }
+  },
+  {
+    "method": "independent_v2_fs_segstats",
+    "field": "outputs",
+    "index": 4,
+    "statement": "Optional binary MRI volume output of waveforms via --avgwfvol.",
+    "source_id": "fs_segstats",
+    "quote": "Same as --avgwf except that the resulting waveforms are stored in a binary mri volume format",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 8365,
+      "end": 8457,
+      "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+    }
+  },
+  {
+    "method": "independent_v2_fs_segstats",
+    "field": "parameters",
+    "index": 1,
+    "statement": "Frame to report, 0-based; frame is 0 by default.",
+    "source_id": "fs_segstats",
+    "quote": "Report statistics of the input volume at the 0-based frame number. Frame is 0 by default.",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 2366,
+      "end": 2455,
+      "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+    }
+  },
+  {
+    "method": "independent_v2_fs_segstats",
+    "field": "parameters",
+    "index": 2,
+    "statement": "Masking threshold default is 0.5.",
+    "source_id": "fs_segstats",
+    "quote": "Default is 0.5",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 6254,
+      "end": 6268,
+      "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+    }
+  },
+  {
+    "method": "independent_v2_fs_segstats",
+    "field": "parameters",
+    "index": 3,
+    "statement": "Mask sign choices are abs, pos, and neg; default is abs.",
+    "source_id": "fs_segstats",
+    "quote": "Choices are abs, pos, and neg. Default is abs.",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 6323,
+      "end": 6369,
+      "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+    }
+  },
+  {
+    "method": "independent_v2_fs_segstats",
+    "field": "parameters",
+    "index": 4,
+    "statement": "Robust statistics exclude a given percent from high and low values while volume reported remains full volume.",
+    "source_id": "fs_segstats",
+    "quote": "Compute statistics after excluding percent from high and low values (volume reported is still full volume)",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 2475,
+      "end": 2581,
+      "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+    }
+  },
+  {
+    "method": "independent_v2_fs_preproc",
+    "field": "steps",
+    "index": 1,
+    "statement": "Resample surface or volume source data to the surface of the common-space target subject.",
+    "source_id": "fs_preproc",
+    "quote": "resampling surface or volume source data to a common sujbect (usually an average subject)",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 2149,
+      "end": 2238,
+      "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+    }
+  },
+  {
+    "method": "independent_v2_fs_preproc",
+    "field": "steps",
+    "index": 2,
+    "statement": "Concatenate the resampled inputs into one output file.",
+    "source_id": "fs_preproc",
+    "quote": "and then concatenating them into one file",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 2239,
+      "end": 2280,
+      "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+    }
+  },
+  {
+    "method": "independent_v2_fs_preproc",
+    "field": "steps",
+    "index": 3,
+    "statement": "Optionally smooth on the target surface by FWHM mm or by nearest-neighbor iterations.",
+    "source_id": "fs_preproc",
+    "quote": "Smooth the data on the target surface by fwhm mm.",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 4407,
+      "end": 4456,
+      "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+    }
+  },
+  {
+    "method": "independent_v2_fs_preproc",
+    "field": "steps",
+    "index": 4,
+    "statement": "When sampling a volume, sample a fraction of the thickness along the surface normal.",
+    "source_id": "fs_preproc",
+    "quote": "sample a fraction of the thickness along the surface normal",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 4303,
+      "end": 4362,
+      "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+    }
+  },
+  {
+    "method": "independent_v2_fs_preproc",
+    "field": "steps",
+    "index": 5,
+    "statement": "Optionally compute paired differences after concatenation.",
+    "source_id": "fs_preproc",
+    "quote": "After concatenating all the inputs together, create a new output file by computing paired differences",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 4986,
+      "end": 5087,
+      "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+    }
+  },
+  {
+    "method": "independent_v2_fs_preproc",
+    "field": "steps",
+    "index": 6,
+    "statement": "Optionally compute the mean of all inputs after concatenation and possible paired diffs.",
+    "source_id": "fs_preproc",
+    "quote": "After concatenating all the inputs together (and possibly computing paired diffs), compute the mean of all inputs.",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 6553,
+      "end": 6667,
+      "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+    }
+  },
+  {
+    "method": "independent_v2_fs_preproc",
+    "field": "outputs",
+    "index": 1,
+    "statement": "An output file specified with --out containing the concatenated resampled data.",
+    "source_id": "fs_preproc",
+    "quote": "--out outfile\nSave output here.",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 2369,
+      "end": 2400,
+      "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+    }
+  },
+  {
+    "method": "independent_v2_fs_preproc",
+    "field": "outputs",
+    "index": 2,
+    "statement": "With caching, per-subject data are saved in the subject's surf directory as hemi.cachefile.",
+    "source_id": "fs_preproc",
+    "quote": "mris_preproc will save the data for each subject, after resampling to the target and smoothing, in the subjects surf directory as hemi.cachefile.",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 5688,
+      "end": 5833,
+      "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+    }
+  },
+  {
+    "method": "independent_v2_fs_preproc",
+    "field": "outputs",
+    "index": 3,
+    "statement": "Output is a volume-encoded surface file, normally with spatial dimension nvertices-by-1-by-1.",
+    "source_id": "fs_preproc",
+    "quote": "the output volume-encoded surface file will have spatial dimension of nvertices-by-1-by-1",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 7285,
+      "end": 7374,
+      "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+    }
+  },
+  {
+    "method": "independent_v2_fs_preproc",
+    "field": "parameters",
+    "index": 1,
+    "statement": "--projfrac sets the projection fraction for vol2surf and is 0-1, default 0.",
+    "source_id": "fs_preproc",
+    "quote": "projfrac is 0-1. Default is 0.",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 4364,
+      "end": 4394,
+      "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+    }
+  },
+  {
+    "method": "independent_v2_fs_preproc",
+    "field": "parameters",
+    "index": 2,
+    "statement": "--fwhm sets smoothing by FWHM in mm on the target surface; --fwhm-src smooths the source surface instead.",
+    "source_id": "fs_preproc",
+    "quote": "Smooth the data on the target surface by fwhm mm.",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 4407,
+      "end": 4456,
+      "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+    }
+  },
+  {
+    "method": "independent_v2_fs_preproc",
+    "field": "parameters",
+    "index": 3,
+    "statement": "--surfreg sets the surface registration to the common space; default is sphere.reg.",
+    "source_id": "fs_preproc",
+    "quote": "Use hemi.SurfReg as the surface registration to the common space. Default is sphere.reg.",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 7148,
+      "end": 7236,
+      "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+    }
+  },
+  {
+    "method": "independent_v2_fs_preproc",
+    "field": "parameters",
+    "index": 4,
+    "statement": "--srcfmt specifies source format when using --is; --meas implies --srcfmt curv.",
+    "source_id": "fs_preproc",
+    "quote": "--meas implies --srcfmt curv.",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 3836,
+      "end": 3865,
+      "text_sha256": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb"
+    }
+  },
+  {
+    "method": "independent_v2_fs_surf2surf",
+    "field": "steps",
+    "index": 1,
+    "statement": "Specify source subject, source surface values, target subject, target output file, and hemisphere.",
+    "source_id": "fs_surf2surf",
+    "quote": "mri_surf2surf --srcsubject <source subject name> --srcsurfval <sourcefile> --trgsubject <target suhject name> --trgsurfval <target file> --hemi <hemifield>",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 856,
+      "end": 1011,
+      "text_sha256": "02c4e1aef707ab0874c3277e093e442f6a7f99fc5b6ebdfc29491aa4c2f0c6c5"
+    }
+  },
+  {
+    "method": "independent_v2_fs_surf2surf",
+    "field": "steps",
+    "index": 2,
+    "statement": "Optionally smooth input surface values before resampling.",
+    "source_id": "fs_surf2surf",
+    "quote": "--smooth-in smoothes the input surface values prior to any resampling.",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 3884,
+      "end": 3954,
+      "text_sha256": "02c4e1aef707ab0874c3277e093e442f6a7f99fc5b6ebdfc29491aa4c2f0c6c5"
+    }
+  },
+  {
+    "method": "independent_v2_fs_surf2surf",
+    "field": "steps",
+    "index": 3,
+    "statement": "Optionally smooth after resampling.",
+    "source_id": "fs_surf2surf",
+    "quote": "--smooth-out smoothes after any resampling.",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 3955,
+      "end": 3998,
+      "text_sha256": "02c4e1aef707ab0874c3277e093e442f6a7f99fc5b6ebdfc29491aa4c2f0c6c5"
+    }
+  },
+  {
+    "method": "independent_v2_fs_surf2surf",
+    "field": "outputs",
+    "index": 1,
+    "statement": "File where the data on the target surface will be stored.",
+    "source_id": "fs_surf2surf",
+    "quote": "Name of file where the data on the target surface will be stored.",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 1491,
+      "end": 1556,
+      "text_sha256": "02c4e1aef707ab0874c3277e093e442f6a7f99fc5b6ebdfc29491aa4c2f0c6c5"
+    }
+  },
+  {
+    "method": "independent_v2_fs_surf2surf",
+    "field": "parameters",
+    "index": 1,
+    "statement": "Mapping method: nnfr (nearest-neighbor, forward and reverse, default) or nnf (forward only).",
+    "source_id": "fs_surf2surf",
+    "quote": "Legal values are: nnfr (neighest-neighbor, forward and reverse) and nnf (neighest-neighbor, forward only). Default is nnfr.",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 2873,
+      "end": 2996,
+      "text_sha256": "02c4e1aef707ab0874c3277e093e442f6a7f99fc5b6ebdfc29491aa4c2f0c6c5"
+    }
+  },
+  {
+    "method": "independent_v2_fs_surf2surf",
+    "field": "parameters",
+    "index": 2,
+    "statement": "Icosahedron order n, with #vertices=10*4^n+2; largest available generally best.",
+    "source_id": "fs_surf2surf",
+    "quote": "This specifies the size of the icosahedron according to the formula #vertices=10*4^n+2. In general, it is best to use the largest size available.",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 2096,
+      "end": 2241,
+      "text_sha256": "02c4e1aef707ab0874c3277e093e442f6a7f99fc5b6ebdfc29491aa4c2f0c6c5"
+    }
+  },
+  {
+    "method": "independent_v2_fs_surf2surf",
+    "field": "parameters",
+    "index": 3,
+    "statement": "Number of smoothing iterations, each averaging each vertex with its neighbors.",
+    "source_id": "fs_surf2surf",
+    "quote": "Each iteration consists of averaging eeach vertex with its neighbors.",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 3721,
+      "end": 3790,
+      "text_sha256": "02c4e1aef707ab0874c3277e093e442f6a7f99fc5b6ebdfc29491aa4c2f0c6c5"
+    }
+  },
+  {
+    "method": "independent_v2_fs_surf2surf",
+    "field": "parameters",
+    "index": 4,
+    "statement": "Frame number for paint/w output, zero-based, default 0.",
+    "source_id": "fs_surf2surf",
+    "quote": "The frame number is zero-based (default is 0).",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 4133,
+      "end": 4179,
+      "text_sha256": "02c4e1aef707ab0874c3277e093e442f6a7f99fc5b6ebdfc29491aa4c2f0c6c5"
+    }
+  },
+  {
+    "method": "independent_v2_wb_metric_resample",
+    "field": "steps",
+    "index": 1,
+    "statement": "Provide the input metric, current sphere, new sphere, method name, and output metric path.",
+    "source_id": "wb_metric_resample",
+    "quote": "wb_command -metric-resample\n<metric-in> - the metric file to resample, typically a native-mesh metric",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 4767,
+      "end": 4868,
+      "text_sha256": "4be39435118cef7bb22f14f058f4b215a5af9d7e5fef0c1e6a5ebcd0d0b44656"
+    }
+  },
+  {
+    "method": "independent_v2_wb_metric_resample",
+    "field": "steps",
+    "index": 2,
+    "statement": "Optionally specify -area-surfs with current-area and new-area surfaces for vertex area correction.",
+    "source_id": "wb_metric_resample",
+    "quote": "[-area-surfs] - specify surfaces to do vertex area correction based on",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 5283,
+      "end": 5353,
+      "text_sha256": "4be39435118cef7bb22f14f058f4b215a5af9d7e5fef0c1e6a5ebcd0d0b44656"
+    }
+  },
+  {
+    "method": "independent_v2_wb_metric_resample",
+    "field": "steps",
+    "index": 3,
+    "statement": "Optionally specify -area-metrics with current-area and new-area vertex area metric files.",
+    "source_id": "wb_metric_resample",
+    "quote": "[-area-metrics] - specify vertex area metrics to do area correction based\non",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 5495,
+      "end": 5571,
+      "text_sha256": "4be39435118cef7bb22f14f058f4b215a5af9d7e5fef0c1e6a5ebcd0d0b44656"
+    }
+  },
+  {
+    "method": "independent_v2_wb_metric_resample",
+    "field": "steps",
+    "index": 4,
+    "statement": "Optionally use -current-roi to exclude non-data vertices via an input roi metric.",
+    "source_id": "wb_metric_resample",
+    "quote": "[-current-roi] - use an input roi on the current mesh to exclude non-data\nvertices",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 5715,
+      "end": 5797,
+      "text_sha256": "4be39435118cef7bb22f14f058f4b215a5af9d7e5fef0c1e6a5ebcd0d0b44656"
+    }
+  },
+  {
+    "method": "independent_v2_wb_metric_resample",
+    "field": "steps",
+    "index": 5,
+    "statement": "Optionally use -largest to use only the value of the vertex with the largest weight.",
+    "source_id": "wb_metric_resample",
+    "quote": "[-largest] - use only the value of the vertex with the largest weight",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 5976,
+      "end": 6045,
+      "text_sha256": "4be39435118cef7bb22f14f058f4b215a5af9d7e5fef0c1e6a5ebcd0d0b44656"
+    }
+  },
+  {
+    "method": "independent_v2_wb_metric_resample",
+    "field": "steps",
+    "index": 6,
+    "statement": "Optionally use -bypass-sphere-check to allow spheres of arbitrary shape following the same contour.",
+    "source_id": "wb_metric_resample",
+    "quote": "[-bypass-sphere-check] - ADVANCED: allow the current and new 'spheres' to\nhave arbitrary shape as long as they follow the same contour",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 6047,
+      "end": 6181,
+      "text_sha256": "4be39435118cef7bb22f14f058f4b215a5af9d7e5fef0c1e6a5ebcd0d0b44656"
+    }
+  },
+  {
+    "method": "independent_v2_wb_metric_resample",
+    "field": "outputs",
+    "index": 1,
+    "statement": "The output metric file.",
+    "source_id": "wb_metric_resample",
+    "quote": "<metric-out> - output - the output metric",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 5240,
+      "end": 5281,
+      "text_sha256": "4be39435118cef7bb22f14f058f4b215a5af9d7e5fef0c1e6a5ebcd0d0b44656"
+    }
+  },
+  {
+    "method": "independent_v2_wb_metric_resample",
+    "field": "outputs",
+    "index": 2,
+    "statement": "Optional ROI of vertices that got data from valid source vertices, output as a metric.",
+    "source_id": "wb_metric_resample",
+    "quote": "[-valid-roi-out] - output the ROI of vertices that got data from valid\nsource vertices",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 5840,
+      "end": 5926,
+      "text_sha256": "4be39435118cef7bb22f14f058f4b215a5af9d7e5fef0c1e6a5ebcd0d0b44656"
+    }
+  },
+  {
+    "method": "independent_v2_wb_metric_resample",
+    "field": "parameters",
+    "index": 1,
+    "statement": "The method name, one of ADAP_BARY_AREA or BARYCENTRIC.",
+    "source_id": "wb_metric_resample",
+    "quote": "<method> - the method name",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 5213,
+      "end": 5239,
+      "text_sha256": "4be39435118cef7bb22f14f058f4b215a5af9d7e5fef0c1e6a5ebcd0d0b44656"
+    }
+  },
+  {
+    "method": "independent_v2_wb_metric_resample",
+    "field": "parameters",
+    "index": 2,
+    "statement": "For -area-surfs, a current-area anatomical surface with current-sphere mesh and a new-area surface with new-sphere mesh.",
+    "source_id": "wb_metric_resample",
+    "quote": "<current-area> - a relevant anatomical surface with <current-sphere>\nmesh",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 5354,
+      "end": 5427,
+      "text_sha256": "4be39435118cef7bb22f14f058f4b215a5af9d7e5fef0c1e6a5ebcd0d0b44656"
+    }
+  },
+  {
+    "method": "independent_v2_wb_metric_resample",
+    "field": "parameters",
+    "index": 3,
+    "statement": "For -area-metrics, a current-area metric file with vertex areas for current-sphere mesh and a new-area metric file for new-sphere mesh.",
+    "source_id": "wb_metric_resample",
+    "quote": "<current-area> - a metric file with vertex areas for <current-sphere>\nmesh",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 5572,
+      "end": 5646,
+      "text_sha256": "4be39435118cef7bb22f14f058f4b215a5af9d7e5fef0c1e6a5ebcd0d0b44656"
+    }
+  },
+  {
+    "method": "independent_v2_wb_metric_resample",
+    "field": "parameters",
+    "index": 4,
+    "statement": "For -current-roi, the roi as a metric file.",
+    "source_id": "wb_metric_resample",
+    "quote": "<roi-metric> - the roi, as a metric file",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 5798,
+      "end": 5838,
+      "text_sha256": "4be39435118cef7bb22f14f058f4b215a5af9d7e5fef0c1e6a5ebcd0d0b44656"
+    }
+  },
+  {
+    "method": "independent_v2_ants_thickness",
+    "field": "steps",
+    "index": 1,
+    "statement": "Brain extraction is performed with antsBrainExtraction.sh, optionally passing the extraction registration mask.",
+    "source_id": "ants_thickness_script",
+    "quote": "logCmd antsBrainExtraction.sh",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 31385,
+      "end": 31414,
+      "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+    }
+  },
+  {
+    "method": "independent_v2_ants_thickness",
+    "field": "steps",
+    "index": 2,
+    "statement": "The extracted brain is masked and given a quick N4 bias correction before registration.",
+    "source_id": "ants_thickness_script",
+    "quote": "Do a quick N4 on the brain before registration",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 32379,
+      "end": 32425,
+      "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+    }
+  },
+  {
+    "method": "independent_v2_ants_thickness",
+    "field": "steps",
+    "index": 3,
+    "statement": "The template and segmentation priors are registered to the anatomical image and the priors are warped to subject space.",
+    "source_id": "ants_thickness_script",
+    "quote": "Warp priors to ${ANATOMICAL_IMAGES[0]}",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 34118,
+      "end": 34156,
+      "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+    }
+  },
+  {
+    "method": "independent_v2_ants_thickness",
+    "field": "steps",
+    "index": 4,
+    "statement": "N-tissue segmentation is run with antsAtroposN4.sh in two stages, the second using N4-corrected images with 2 iterations.",
+    "source_id": "ants_thickness_script",
+    "quote": "We do two stages of antsAtroposN4.",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 39990,
+      "end": 40024,
+      "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+    }
+  },
+  {
+    "method": "independent_v2_ants_thickness",
+    "field": "steps",
+    "index": 5,
+    "statement": "Cortical thickness is estimated with DiReCT via KellyKapowski using gray and white matter posteriors.",
+    "source_id": "ants_thickness_script",
+    "quote": "Cortical thickness using DiReCT (KellyKapowski)",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 52054,
+      "end": 52101,
+      "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+    }
+  },
+  {
+    "method": "independent_v2_ants_thickness",
+    "field": "steps",
+    "index": 6,
+    "statement": "Optional registration of the brain-masked N4 image to the registration template produces forward and inverse warps and a log Jacobian.",
+    "source_id": "ants_thickness_script",
+    "quote": "Registration brain masked ${HEAD_N4_IMAGE} to ${REGISTRATION_TEMPLATE}",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 46043,
+      "end": 46113,
+      "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+    }
+  },
+  {
+    "method": "independent_v2_ants_thickness",
+    "field": "steps",
+    "index": 7,
+    "statement": "A quality control stage computes summary measurements and tiled mosaic images.",
+    "source_id": "ants_thickness_script",
+    "quote": "Compute summary measurements",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 57778,
+      "end": 57806,
+      "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+    }
+  },
+  {
+    "method": "independent_v2_ants_thickness",
+    "field": "outputs",
+    "index": 1,
+    "statement": "Brain extraction mask in subject space.",
+    "source_id": "ants_thickness_outputs",
+    "quote": "BrainExtractionMask- Brain extraction mask in subject space.",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 1363,
+      "end": 1423,
+      "text_sha256": "73c52afc4087a016c0dc8cbe136f327eb65a9c62abf29b2eb8a4f3338445206a"
+    }
+  },
+  {
+    "method": "independent_v2_ants_thickness",
+    "field": "outputs",
+    "index": 2,
+    "statement": "Segmentation image with one label per tissue class; number of classes is determined by the input priors.",
+    "source_id": "ants_thickness_outputs",
+    "quote": "Segmentation image, one label per tissue class.",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 1791,
+      "end": 1838,
+      "text_sha256": "73c52afc4087a016c0dc8cbe136f327eb65a9c62abf29b2eb8a4f3338445206a"
+    }
+  },
+  {
+    "method": "independent_v2_ants_thickness",
+    "field": "outputs",
+    "index": 3,
+    "statement": "Cortical thickness image in subject space.",
+    "source_id": "ants_thickness_outputs",
+    "quote": "CorticalThickness - Cortical thickness image in subject space.",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 2069,
+      "end": 2131,
+      "text_sha256": "73c52afc4087a016c0dc8cbe136f327eb65a9c62abf29b2eb8a4f3338445206a"
+    }
+  },
+  {
+    "method": "independent_v2_ants_thickness",
+    "field": "outputs",
+    "index": 4,
+    "statement": "Optional forward warps (SubjectToTemplate1Warp, SubjectToTemplate0GenericAffine.mat) and log Jacobian are produced when a registration template is supplied.",
+    "source_id": "ants_thickness_outputs",
+    "quote": "SubjectToTemplate1Warp, SubjectToTemplate0GenericAffine.mat - Transforms to be used when warping images from the subject space to the template space",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 2288,
+      "end": 2436,
+      "text_sha256": "73c52afc4087a016c0dc8cbe136f327eb65a9c62abf29b2eb8a4f3338445206a"
+    }
+  },
+  {
+    "method": "independent_v2_ants_thickness",
+    "field": "parameters",
+    "index": 1,
+    "statement": "Registration max iterations; default is 100x100x70x20.",
+    "source_id": "ants_thickness_script",
+    "quote": "ANTS registration max iterations (default = 100x100x70x20)",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 8683,
+      "end": 8741,
+      "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+    }
+  },
+  {
+    "method": "independent_v2_ants_thickness",
+    "field": "parameters",
+    "index": 2,
+    "statement": "Atropos spatial prior probability weight for segmentation; default is 0.25.",
+    "source_id": "ants_thickness_script",
+    "quote": "Atropos spatial prior *probability* weight for the segmentation (default = 0.25)",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 8792,
+      "end": 8872,
+      "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+    }
+  },
+  {
+    "method": "independent_v2_ants_thickness",
+    "field": "parameters",
+    "index": 3,
+    "statement": "Number of N4 -> Atropos -> N4 iterations during segmentation; default is 3.",
+    "source_id": "ants_thickness_script",
+    "quote": "N4 -> Atropos -> N4 iterations during segmentation (default = 3)",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 8923,
+      "end": 8987,
+      "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+    }
+  },
+  {
+    "method": "independent_v2_fs_ca_label",
+    "field": "steps",
+    "index": 1,
+    "statement": "Run mris_ca_label with options and positional arguments subject, hemi, canonsurf, classifier, outputfile.",
+    "source_id": "fs_ca_label",
+    "quote": "mris_ca_label [options] <subject> <hemi> <canonsurf> <classifier> <outputfile>",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 1309,
+      "end": 1387,
+      "text_sha256": "adec54a1302a3d1d07f108d0f7a11a17359381574733836fc8161e24af1dff5d"
+    }
+  },
+  {
+    "method": "independent_v2_fs_ca_label",
+    "field": "steps",
+    "index": 2,
+    "statement": "Optionally apply a mode filter a specified number of times before writing output (default 10).",
+    "source_id": "fs_ca_label",
+    "quote": "applies mode filter <number> times before writing output (default=10)",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 2460,
+      "end": 2529,
+      "text_sha256": "adec54a1302a3d1d07f108d0f7a11a17359381574733836fc8161e24af1dff5d"
+    }
+  },
+  {
+    "method": "independent_v2_fs_ca_label",
+    "field": "steps",
+    "index": 3,
+    "statement": "Optionally write out snapshots of the gibbs process every <number> iterations to <filename> (default disabled).",
+    "source_id": "fs_ca_label",
+    "quote": "writes-out snapshots of gibbs process every <number> iterations to <filename> (default=disabled)",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 2759,
+      "end": 2855,
+      "text_sha256": "adec54a1302a3d1d07f108d0f7a11a17359381574733836fc8161e24af1dff5d"
+    }
+  },
+  {
+    "method": "independent_v2_fs_ca_label",
+    "field": "outputs",
+    "index": 1,
+    "statement": "annotated surface output file, an annotation file listing the region label for each vertex",
+    "source_id": "fs_ca_label",
+    "quote": "annotated surface output file. Ie: an annotation file listing the region label for each vertex.",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 1816,
+      "end": 1911,
+      "text_sha256": "adec54a1302a3d1d07f108d0f7a11a17359381574733836fc8161e24af1dff5d"
+    }
+  },
+  {
+    "method": "independent_v2_fs_ca_label",
+    "field": "outputs",
+    "index": 2,
+    "statement": "outputfile: labeled cortical surface model",
+    "source_id": "fs_ca_label",
+    "quote": "outputfile:\n\nlabeled cortical surface model",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 2922,
+      "end": 2965,
+      "text_sha256": "adec54a1302a3d1d07f108d0f7a11a17359381574733836fc8161e24af1dff5d"
+    }
+  },
+  {
+    "method": "independent_v2_fs_ca_label",
+    "field": "outputs",
+    "index": 3,
+    "statement": "Optional -p output file containing label probability for each vertex (default none).",
+    "source_id": "fs_ca_label",
+    "quote": "output a file containing label probability for each vertex (default: none)",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 2616,
+      "end": 2690,
+      "text_sha256": "adec54a1302a3d1d07f108d0f7a11a17359381574733836fc8161e24af1dff5d"
+    }
+  },
+  {
+    "method": "independent_v2_fs_ca_label",
+    "field": "parameters",
+    "index": 1,
+    "statement": "-sdir <subject dir>: specify a subjects directory (default=$SUBJECTS_DIR)",
+    "source_id": "fs_ca_label",
+    "quote": "specify a subjects directory (default=$SUBJECTS_DIR)",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 2067,
+      "end": 2119,
+      "text_sha256": "adec54a1302a3d1d07f108d0f7a11a17359381574733836fc8161e24af1dff5d"
+    }
+  },
+  {
+    "method": "independent_v2_fs_ca_label",
+    "field": "parameters",
+    "index": 2,
+    "statement": "-orig <filename>: specify filename of original surface (default=smoothwm)",
+    "source_id": "fs_ca_label",
+    "quote": "specify filename of original surface (default=smoothwm)",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 2139,
+      "end": 2194,
+      "text_sha256": "adec54a1302a3d1d07f108d0f7a11a17359381574733836fc8161e24af1dff5d"
+    }
+  },
+  {
+    "method": "independent_v2_fs_ca_label",
+    "field": "parameters",
+    "index": 3,
+    "statement": "-nbrs <number>: neighborhood size (default=2)",
+    "source_id": "fs_ca_label",
+    "quote": "neighborhood size (default=2)",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 2416,
+      "end": 2445,
+      "text_sha256": "adec54a1302a3d1d07f108d0f7a11a17359381574733836fc8161e24af1dff5d"
+    }
+  },
+  {
+    "method": "independent_v2_fs_ca_label",
+    "field": "parameters",
+    "index": 4,
+    "statement": "-novar: sets all covariance matrices to the identify (default: disabled)",
+    "source_id": "fs_ca_label",
+    "quote": "sets all covariance matrices to the identify (default: disabled)",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 2334,
+      "end": 2398,
+      "text_sha256": "adec54a1302a3d1d07f108d0f7a11a17359381574733836fc8161e24af1dff5d"
+    }
+  },
+  {
+    "method": "independent_v2_wb_surface_resample",
+    "field": "steps",
+    "index": 1,
+    "statement": "Run wb_command -surface-resample with surface-in, current-sphere, new-sphere, method, and surface-out.",
+    "source_id": "wb_surface_resample",
+    "quote": "wb_command -surface-resample",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 4763,
+      "end": 4791,
+      "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+    }
+  },
+  {
+    "method": "independent_v2_wb_surface_resample",
+    "field": "steps",
+    "index": 2,
+    "statement": "Provide the surface file to resample as <surface-in>.",
+    "source_id": "wb_surface_resample",
+    "quote": "<surface-in> - the surface file to resample",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 4792,
+      "end": 4835,
+      "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+    }
+  },
+  {
+    "method": "independent_v2_wb_surface_resample",
+    "field": "steps",
+    "index": 3,
+    "statement": "Provide the current-sphere mesh-registered sphere as <current-sphere>.",
+    "source_id": "wb_surface_resample",
+    "quote": "<current-sphere> - a sphere surface that is in register with <new-sphere>",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 4892,
+      "end": 4965,
+      "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+    }
+  },
+  {
+    "method": "independent_v2_wb_surface_resample",
+    "field": "steps",
+    "index": 4,
+    "statement": "Provide the desired output mesh sphere as <new-sphere>.",
+    "source_id": "wb_surface_resample",
+    "quote": "<new-sphere> - a sphere surface that has the desired output mesh",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 5117,
+      "end": 5181,
+      "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+    }
+  },
+  {
+    "method": "independent_v2_wb_surface_resample",
+    "field": "steps",
+    "index": 5,
+    "statement": "Specify the method name as <method>.",
+    "source_id": "wb_surface_resample",
+    "quote": "<method> - the method name",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 5248,
+      "end": 5274,
+      "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+    }
+  },
+  {
+    "method": "independent_v2_wb_surface_resample",
+    "field": "steps",
+    "index": 6,
+    "statement": "Write the resampled surface to <surface-out>.",
+    "source_id": "wb_surface_resample",
+    "quote": "<surface-out> - output - the output surface file",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 5275,
+      "end": 5323,
+      "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+    }
+  },
+  {
+    "method": "independent_v2_wb_surface_resample",
+    "field": "outputs",
+    "index": 1,
+    "statement": "The output surface file.",
+    "source_id": "wb_surface_resample",
+    "quote": "<surface-out> - output - the output surface file",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 5275,
+      "end": 5323,
+      "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+    }
+  },
+  {
+    "method": "independent_v2_wb_surface_resample",
+    "field": "parameters",
+    "index": 1,
+    "statement": "Optional -area-surfs specifies surfaces for vertex area correction: <current-area> with current-sphere mesh and <new-area> with new-sphere mesh.",
+    "source_id": "wb_surface_resample",
+    "quote": "[-area-surfs] - specify surfaces to do vertex area correction based on",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 5325,
+      "end": 5395,
+      "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+    }
+  },
+  {
+    "method": "independent_v2_wb_surface_resample",
+    "field": "parameters",
+    "index": 2,
+    "statement": "Optional -area-metrics specifies vertex area metric files for current-sphere and new-sphere meshes.",
+    "source_id": "wb_surface_resample",
+    "quote": "[-area-metrics] - specify vertex area metrics to do area correction based",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 5515,
+      "end": 5588,
+      "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+    }
+  },
+  {
+    "method": "independent_v2_wb_surface_resample",
+    "field": "parameters",
+    "index": 3,
+    "statement": "Advanced -bypass-sphere-check allows current and new 'spheres' to have arbitrary shape as long as they follow the same contour.",
+    "source_id": "wb_surface_resample",
+    "quote": "[-bypass-sphere-check] - ADVANCED: allow the current and new 'spheres' to",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 5735,
+      "end": 5808,
+      "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+    }
+  },
+  {
+    "method": "independent_v2_wb_surface_resample",
+    "field": "parameters",
+    "index": 4,
+    "statement": "The method argument must be ADAP_BARY_AREA or BARYCENTRIC.",
+    "source_id": "wb_surface_resample",
+    "quote": "The <method> argument must be one of the following:",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 6417,
+      "end": 6468,
+      "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+    }
+  },
+  {
+    "method": "independent_v2_fsl_first",
+    "field": "steps",
+    "index": 1,
+    "statement": "Run run_first_all with -i specifying the T1-weighted image and -o the output basename.",
+    "source_id": "fsl_first",
+    "quote": "run_first_all -i t1_image -o output_name",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 4698,
+      "end": 4738,
+      "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+    }
+  },
+  {
+    "method": "independent_v2_fsl_first",
+    "field": "steps",
+    "index": 2,
+    "statement": "run_first_all runs lower-level utilities including first_flirt, run_first and first on all structures with tuned settings.",
+    "source_id": "fsl_first",
+    "quote": "This script will run lower-level utilities (including first_flirt, run_first and first) on all the structures",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 4072,
+      "end": 4181,
+      "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+    }
+  },
+  {
+    "method": "independent_v2_fsl_first",
+    "field": "steps",
+    "index": 3,
+    "statement": "first_flirt runs two-stage affine registration to MNI152 space at 1mm resolution.",
+    "source_id": "fsl_first",
+    "quote": "The first_flirt script runs two-stage affine registration to MNI152 space at 1mm resolution",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 31861,
+      "end": 31952,
+      "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+    }
+  },
+  {
+    "method": "independent_v2_fsl_first",
+    "field": "steps",
+    "index": 4,
+    "statement": "run_first segments a single structure given the T1 image, transformation matrix, number of modes, model file and output basename.",
+    "source_id": "fsl_first",
+    "quote": "The run_first script will run FIRST to extract a single structure",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 34617,
+      "end": 34682,
+      "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+    }
+  },
+  {
+    "method": "independent_v2_fsl_first",
+    "field": "steps",
+    "index": 5,
+    "statement": "The final stage of run_first_all ensures there is no overlap between structures in the 3D image.",
+    "source_id": "fsl_first",
+    "quote": "The final stage of the script ensures that there is no overlap between structures",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 4433,
+      "end": 4514,
+      "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+    }
+  },
+  {
+    "method": "independent_v2_fsl_first",
+    "field": "outputs",
+    "index": 1,
+    "statement": "output_name_all_fast_firstseg.nii.gz is a single image showing the segmented output for all structures.",
+    "source_id": "fsl_first",
+    "quote": "output_name_all_fast_firstseg.nii.gz: This is a single image showing the segmented output for all structures",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 6582,
+      "end": 6690,
+      "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+    }
+  },
+  {
+    "method": "independent_v2_fsl_first",
+    "field": "outputs",
+    "index": 2,
+    "statement": "output_name_all_fast_origsegs.nii.gz is a 4D image of individual segmentations without boundary correction.",
+    "source_id": "fsl_first",
+    "quote": "output_name_all_fast_origsegs.nii.gz: This is a 4D image containing the individual structure segmentations",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 7219,
+      "end": 7325,
+      "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+    }
+  },
+  {
+    "method": "independent_v2_fsl_first",
+    "field": "outputs",
+    "index": 3,
+    "statement": "output_name_first.vtk is the mesh representation of the final segmentation.",
+    "source_id": "fsl_first",
+    "quote": "output_name_first.vtk : This is the mesh representation of the final segmentation",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 7741,
+      "end": 7822,
+      "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+    }
+  },
+  {
+    "method": "independent_v2_fsl_first",
+    "field": "outputs",
+    "index": 4,
+    "statement": "output_name_first.bvars contains the mode parameters and the model used and should not be deleted.",
+    "source_id": "fsl_first",
+    "quote": "output_name_first.bvars: Do not delete this file. It contains the mode parameters and the model used",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 7886,
+      "end": 7986,
+      "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+    }
+  },
+  {
+    "method": "independent_v2_fsl_first",
+    "field": "parameters",
+    "index": 1,
+    "statement": "The -m option specifies the boundary correction method; default is auto, other options are fast, thresh or none.",
+    "source_id": "fsl_first",
+    "quote": "-m specifies the boundary correction method. The default is auto",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 5614,
+      "end": 5678,
+      "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+    }
+  },
+  {
+    "method": "independent_v2_fsl_first",
+    "field": "parameters",
+    "index": 2,
+    "statement": "The -s option allows a restricted set of structures to be selected, comma separated with no spaces.",
+    "source_id": "fsl_first",
+    "quote": "-s allows a restricted set of structures (one or more) to be selected",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 5977,
+      "end": 6046,
+      "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+    }
+  },
+  {
+    "method": "independent_v2_fsl_first",
+    "field": "parameters",
+    "index": 3,
+    "statement": "The -b option specifies that the input image is brain extracted, important when calculating the registration.",
+    "source_id": "fsl_first",
+    "quote": "-b specifies that the input image is brain extracted",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 6268,
+      "end": 6320,
+      "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+    }
+  },
+  {
+    "method": "independent_v2_fsl_first",
+    "field": "parameters",
+    "index": 4,
+    "statement": "The -n option sets the number of modes of variation; more modes capture finer details but may reduce robustness.",
+    "source_id": "fsl_first",
+    "quote": "The more modes of variation used the finer details FIRST may capture, however you may decrease the robustness/reliability of the results",
+    "claim_type": "direct",
+    "source_span": {
+      "start": 35231,
+      "end": 35367,
+      "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+    }
+  }
+]

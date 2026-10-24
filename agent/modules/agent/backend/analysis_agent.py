@@ -29,6 +29,7 @@ from .analysis_policy import build_system_prompt
 
 MAX_ROUNDS = 3
 from .analysis_profile import bounded_setting, coding_model_options
+from .analysis_review_budget import coding_available
 
 MAX_TOOL_CALLS = bounded_setting("ANALYSIS_MAX_TOOL_CALLS", 128, 1, 256)
 MAX_MODEL_CALLS = bounded_setting("ANALYSIS_MAX_MODEL_CALLS", 64, 1, 128)
@@ -251,6 +252,7 @@ class AnalysisTools:
         self._lock = threading.Lock()
         self._execution_lock = threading.RLock()
         self.data = DataTools(workspace or workdir, input_roots, workdir)
+        self.data.allow_subject_links = self.knowledge_profile.name == "product_graph_planner"
         self.pipeline = PipelineBridge(self.data, threads) if workspace else None
         self.navigation_calls = 0
         self.feedback_journal = FeedbackJournal(self.workdir)
@@ -273,6 +275,9 @@ class AnalysisTools:
                        "started_time": time.time()}
             if self.control_store.read("context.json") is None:
                 self.control_store.create("context.json", context)
+        if self.control_store is not None and self.knowledge_profile.name == "product_graph_planner":
+            from .analysis_participants import register_tables
+            register_tables(self)
         if ledger:
             self._load_budget(ledger.snapshot())
         self.session = None
@@ -287,32 +292,37 @@ class AnalysisTools:
         for key in ("deadline", "tool_calls", "model_calls", "executions"):
             setattr(self, key, values[key])
 
-    def _tick(self, *, model: bool = False) -> None:
+    def _tick(self, *, model: bool = False, review: bool = False) -> None:
         with self._lock:
             phase = None
+            reservation = None
             if model and self.session is not None:
+                from .analysis_system_defects import check_stop
+                from .analysis_review_budget import get
+                check_stop(self)
+                reservation = get(self)
+                reservation.before(review)
                 from .analysis_planning_budget import before_reserve
                 phase = before_reserve(self)
             if self.ledger:
                 self._load_budget(self.ledger.reserve("model_calls" if model else "tool_calls",
                                                      MAX_MODEL_CALLS if model else MAX_TOOL_CALLS))
-                if phase is not None:
-                    from .analysis_planning_budget import after_reserve
-                    after_reserve(self, phase)
-                return
-            if time.time() >= self.deadline:
-                raise BudgetExceeded("Analysis wall-clock budget exhausted")
-            if model:
-                if self.model_calls >= MAX_MODEL_CALLS:
-                    raise BudgetExceeded("Analysis model-call budget exhausted")
-                self.model_calls += 1
-                if phase is not None:
-                    from .analysis_planning_budget import after_reserve
-                    after_reserve(self, phase)
             else:
-                if self.tool_calls >= MAX_TOOL_CALLS:
-                    raise BudgetExceeded("Analysis tool-call budget exhausted")
-                self.tool_calls += 1
+                if time.time() >= self.deadline:
+                    raise BudgetExceeded("Analysis wall-clock budget exhausted")
+                if model:
+                    if self.model_calls >= MAX_MODEL_CALLS:
+                        raise BudgetExceeded("Analysis model-call budget exhausted")
+                    self.model_calls += 1
+                else:
+                    if self.tool_calls >= MAX_TOOL_CALLS:
+                        raise BudgetExceeded("Analysis tool-call budget exhausted")
+                    self.tool_calls += 1
+            if reservation is not None:
+                reservation.after(review)
+            if phase is not None:
+                from .analysis_planning_budget import after_reserve
+                after_reserve(self, phase)
 
     def _call(self, operation: Callable[[], Any]) -> dict[str, Any]:
         try:
@@ -321,7 +331,9 @@ class AnalysisTools:
             if not isinstance(result, dict):
                 result = {"status": "ok", "result": result}
         except Exception as exc:
-            result = {"status": "error", "error": _safe(str(exc), self.secret)}
+            from .analysis_system_defects import SystemDefect, record
+            result = (record(self, exc) if isinstance(exc, SystemDefect) else
+                      {"status": "error", "error": _safe(str(exc), self.secret)})
         if self.session is not None:
             result["state"] = self.session.state()
         return _safe(result, self.secret)
@@ -352,6 +364,9 @@ class AnalysisTools:
                 raise ValueError("Registered source directories are read-only")
             return candidate
         candidate = root / relative
+        if root != self.workdir and candidate.exists() and self.knowledge_profile.name == "product_graph_planner":
+            from .analysis_input_links import resolve_input
+            return resolve_input(candidate, root)
         _no_links(candidate, root)
         resolved = candidate.resolve()
         if not _inside(resolved, root):
@@ -378,17 +393,32 @@ class AnalysisTools:
     def plan_analysis(self, intent: AnalysisIntent) -> dict[str, Any]:
         """Get feasible candidates, missing-product recipes and observed blockers.
 
+        Whole-brain volume/total area/mean thickness/hull ratio: use measures=["global_morphometry"], regions="global".
         Supply only a flat intent: measures, regions, comparison, optional
         subjects/species/space/method_id. This profiles registered inputs and
         checks actual software without calling a model or running preprocessing.
+        Preserve a requested effect/covariate design; do not silently reduce it
+        to a per-subject description. Unsupported alternatives require an explicit
+        mismatch explanation at commitment.
+        For group/correlation, design.effect is the participant-table column being
+        tested; design.covariates lists adjustment columns; design.reference is
+        the baseline level of a categorical effect. Generic example:
+        某指标 ~ 连续变量 + 分类协变量.
+        Use the data card's registered metric names and subject IDs, or set
+        subjects="全部已登记被试". Argument corrections and actual planner entries
+        have separate limits; the total run budget is unchanged.
         Select a candidate with commit_plan; never hand-construct nested plans.
         """
         def operation():
             if self.knowledge_profile.name != "product_graph_planner":
                 raise ValueError("Product planning is disabled in this profile")
             from .analysis_product_planner import plan_analysis
+            from .analysis_planning_arguments import validate_for_planning
+            validated, error = validate_for_planning(self, intent)
+            if error:
+                return error
             with self._execution_lock:
-                return plan_analysis(self, intent)
+                return plan_analysis(self, validated)
         return self._call(operation)
 
     def commit_plan(self, plan: dict[str, Any]) -> dict[str, Any]:
@@ -979,8 +1009,11 @@ def _build_coding_agent(tools: AnalysisTools, *, model: str, base_url: str,
                     name = request.tool_call["name"]
                     phase = tools.session.state()["phase"]
                     permitted = name in phase_tools(tools.session, allowed_tool_names)
-                    if phase == "executed_failed" and name == "read_file" and getattr(tools, "execution_required", True):
-                        permitted = permitted and read_error_allowed(tools, request.tool_call.get("args", {}))
+                    if phase in {"sealed", "executed_failed"} and name == "read_file" and getattr(tools, "execution_required", True):
+                        from .analysis_execution_guidance import read_document_allowed
+                        args = request.tool_call.get("args", {})
+                        permitted = permitted and (read_document_allowed(tools, args) or
+                            (phase == "executed_failed" and read_error_allowed(tools, args)))
                     if not permitted:
                         tools._tick()
                         return ToolMessage(content=json.dumps({
@@ -995,7 +1028,18 @@ def _build_coding_agent(tools: AnalysisTools, *, model: str, base_url: str,
                 if tools.session is not None and hasattr(schema, "model_validate"):
                     schema.model_validate(request.tool_call.get("args", {}))
                 if tools.session is not None:
-                    from .analysis_planning_tools import reserve_action
+                    from .analysis_planning_tools import reserve_action, reserve_argument_error
+                    if request.tool_call["name"] == "plan_analysis":
+                        from .analysis_planning_arguments import validate_for_planning
+                        _, error = validate_for_planning(tools, request.tool_call.get("args", {}).get("intent"))
+                        if error:
+                            tools._tick()
+                            try:
+                                reserve_argument_error(tools)
+                            except ValueError as exc:
+                                error = {**error, "status": "blocked", "error": str(exc)}
+                            error["planning_counters"] = {key: tools.session.record.get(key, 0) for key in ("planning_argument_errors", "planning_attempts")}
+                            return ToolMessage(content=json.dumps(error, ensure_ascii=False), tool_call_id=request.tool_call["id"], status="error")
                     reserve_action(tools, request.tool_call["name"])
                 return handler(request)
 
@@ -1014,10 +1058,21 @@ def _build_coding_agent(tools: AnalysisTools, *, model: str, base_url: str,
                 # Schema rejection happens before the tool function can reserve
                 # its budget or append state. Count that actual failed attempt.
                 tools._tick()
+                extra = {}
+                if request.tool_call["name"] == "plan_analysis":
+                    from .analysis_planning_tools import reserve_argument_error
+                    from .analysis_planning_arguments import registry
+                    extra = {**registry(tools), "planner_entered": False}
+                    if isinstance(exc, ValidationError):
+                        extra["field_errors"] = [{"field": ".".join(map(str, row["loc"])), "message": row["msg"]} for row in exc.errors(include_input=False, include_url=False)]
+                    try:
+                        reserve_argument_error(tools)
+                    except ValueError as limit:
+                        extra["correction_limit"] = str(limit)
                 response = ToolMessage(
                     content=json.dumps({
                         "status": "error", "argument_validation_failed": True,
-                        "error": _safe(str(exc), tools.secret),
+                        "error": _safe(str(exc), tools.secret), **extra,
                     }, ensure_ascii=False),
                     tool_call_id=request.tool_call["id"], status="error",
                 )
@@ -1033,7 +1088,7 @@ def _build_coding_agent(tools: AnalysisTools, *, model: str, base_url: str,
                     }
                 if isinstance(payload, dict) and tools.session is not None:
                     if request.tool_call["name"] == "commit_plan":
-                        tools.session.record["commit_argument_error"] = payload.get("status") not in {"committed", "ok"}
+                        tools.session.record["commit_argument_error"] = payload.get("status") not in {"committed", "ok", "system_defect"}
                     payload["state"] = tools.session.state()
                     response.content = json.dumps(payload, ensure_ascii=False)
                 if isinstance(payload, dict):
@@ -1049,8 +1104,17 @@ def _build_coding_agent(tools: AnalysisTools, *, model: str, base_url: str,
                     if observation:
                         payload["feedback_observation_id"] = observation["id"]
                         if observation["failed"]:
-                            payload["reflection_required"] = True
-                            payload["feedback_scope"] = "Actual tool failure; diagnose with record_analysis_reflection and check your hypothesis. No external fix or expected values supplied."
+                            response = response.model_copy(update={"status": "error"})
+                            planning_argument_error = payload.get("argument_validation_failed") is True
+                            from .analysis_phase_tools import phase_tools
+                            reflection_open = bool(tools.session is not None and
+                                "record_analysis_reflection" in phase_tools(tools.session, allowed_tool_names))
+                            payload["reflection_required"] = bool(reflection_open and not planning_argument_error and payload.get("status") != "system_defect")
+                            payload["feedback_scope"] = ("Host system defect; report the error without reducing the user's task."
+                                if payload.get("status") == "system_defect" else
+                                "Actual argument rejection; correct the named fields using the registered data-card values."
+                                if planning_argument_error else
+                                "Actual tool failure; record and test a diagnosis using the currently available phase tools. No expected answer is supplied.")
                         response.content = json.dumps(payload, ensure_ascii=False)
                     if tools.model_context is not None:
                         payload = tools.model_context.offload(request.tool_call["name"], payload)
@@ -1099,22 +1163,28 @@ def _build_coding_agent(tools: AnalysisTools, *, model: str, base_url: str,
                         "observation": original["result"], "next": "Inspect the error, edit the sealed script and run it again"}
             return tools._call(operation)
         functions = [record_analysis_reflection if fn.__name__ == "record_analysis_reflection" else fn for fn in functions]
-        def commit_plan(candidate_id: str, rationale: str, code_path: str) -> dict[str, Any]:
+        def commit_plan(candidate_id: str, rationale: str, code_path: str,
+                        design_mismatch_reason: str | None = None) -> dict[str, Any]:
             """Seal one feasible plan_analysis candidate; explain your choice in 1-2 sentences.
 
             The program fills data, atlas, scope and constraints. Supply the exact
             /work/*.py path you will write and execute. Do not supply nested plans.
+            If group_design_match is unsupported, design_mismatch_reason must
+            explain the mismatch, the choice, and what design remains unanswered.
             """
             def operation():
                 from .analysis_product_planner import commit_candidate
                 with tools._execution_lock:
+                    if design_mismatch_reason is not None:
+                        return commit_candidate(tools, candidate_id, rationale, code_path, design_mismatch_reason=design_mismatch_reason)
                     return commit_candidate(tools, candidate_id, rationale, code_path)
             return tools._call(operation)
         from .analysis_crossspecies import enabled as cross_enabled
         if cross_enabled(tools):
             def commit_plan(candidate_id: str, rationale: str, code_path: str,
                             success_criteria: str, failure_criteria: str, species: list[str],
-                            scale_status: str, homology_evidence: list[str] | None = None) -> dict[str, Any]:
+                            scale_status: str, homology_evidence: list[str] | None = None,
+                            design_mismatch_reason: str | None = None) -> dict[str, Any]:
                 """Seal the candidate with your nonempty success/failure standards and explicit species/scale declarations.
 
                 Cross-species comparisons also require sourced homology references.
@@ -1126,18 +1196,20 @@ def _build_coding_agent(tools: AnalysisTools, *, model: str, base_url: str,
                 def operation():
                     from .analysis_product_planner import commit_candidate
                     with tools._execution_lock:
-                        return commit_candidate(tools, candidate_id, rationale, code_path, commitment)
+                        return commit_candidate(tools, candidate_id, rationale, code_path, commitment, design_mismatch_reason)
                 return tools._call(operation)
 
             def submit_conclusion(text: str, claim_scope: str, direction: str | None = None) -> dict[str, Any]:
                 """Submit your conclusion for deterministic typed-claim review; rewrite when verdict is revised."""
-                from .analysis_crossspecies import submit_conclusion as submit
+                from .analysis_crossspecies import submit_conclusion as submit, public_conclusion_feedback
                 def operation():
-                    result = submit(tools, text, claim_scope, direction)
-                    card = result["conclusion_card"]
-                    return {"status": result["status"], "must_rewrite": card["must_rewrite"],
-                            "supported_rewrite_scope": card["supported_rewrite_scope"]}
+                    return public_conclusion_feedback(submit(tools, text, claim_scope, direction))
                 return tools._call(operation)
+            from typing import Literal
+            from .analysis_crossspecies import load_policy
+            submit_conclusion.__annotations__["claim_scope"] = Literal[
+                tuple(row["scope"] for row in load_policy("conclusion_rules")["scope_rules"])
+            ]
             functions.append(submit_conclusion)
         functions.extend([tools.plan_analysis, commit_plan])
     functions = filter_functions(functions, profile)
@@ -1375,12 +1447,14 @@ def _build_graph(coding_agent: Any, tools: AnalysisTools, validator: Any,
                 if tools.session is not None:
                     from .analysis_review_evidence import build_evidence_card
                     evidence_card = build_evidence_card(tools, result)
-                review = run_review(
-                    tools.workdir, state["request"], result,
-                    model=tools._internal_review_model,
-                    reserve=lambda: tools._tick(model=True),
-                    method_reader=method_reader, register_execution_receipts=tools.session is not None,
-                    deadline=tools.deadline, evidence_card=evidence_card)
+                from .analysis_review_budget import review_scope
+                with review_scope(tools):
+                    review = run_review(
+                        tools.workdir, state["request"], result,
+                        model=tools._internal_review_model,
+                        reserve=lambda: tools._tick(model=True, review=True),
+                        method_reader=method_reader, register_execution_receipts=tools.session is not None,
+                        deadline=tools.deadline, evidence_card=evidence_card)
             except Exception as exc:
                 from .analysis_transport import TransportExhausted, AuthenticationFailed
                 unavailable = isinstance(exc, TransportExhausted)
@@ -1412,16 +1486,21 @@ def _build_graph(coding_agent: Any, tools: AnalysisTools, validator: Any,
             if review.get("decision") == "revise" and review.get("protocol_valid") is True:
                 # Reopen the phase even if the outer-round limit is now reached.
                 # Only public/source review feedback is made visible to the model.
+                from .analysis_review_budget import get as review_budget
+                review_budget(tools).authorize_revision(review)
                 tools.session.review_failed(result)
         return {"validation": _safe(result, tools.secret),
                 "model_calls": tools.model_calls, "tool_calls": tools.tool_calls}
 
     def route(state: AnalysisState) -> str:
+        from .analysis_system_defects import latest
+        if latest(tools).get("stop"):
+            return "report"
         validation = state.get("validation", {})
         if validation.get("scope") in {"environment_rate_limited", "environment_auth_failed"}:
             return "report"
         repair_available = (state["iterations"] < MAX_ROUNDS
-                            and tools.model_calls < MAX_MODEL_CALLS
+                            and coding_available(tools)
                             and tools.executions < MAX_EXECUTIONS
                             and tools.tool_calls < MAX_TOOL_CALLS)
         if tools.session is not None:
@@ -1445,7 +1524,7 @@ def _build_graph(coding_agent: Any, tools: AnalysisTools, validator: Any,
         if state.get("execution", {}).get("status") == "blocked":
             return "report"
         return "repair" if (state["iterations"] < MAX_ROUNDS
-                             and tools.model_calls < MAX_MODEL_CALLS
+                             and coding_available(tools)
                              and tools.executions < MAX_EXECUTIONS
                              and tools.tool_calls < MAX_TOOL_CALLS) else "report"
 
@@ -1688,6 +1767,8 @@ def _run_sync(*, message: str, user_id: str, workspace: Path, conversation_id: s
         elif tools.session is not None:
             from .analysis_independent_numeric import result_card
             response["conclusion_card"] = result_card(tools, result.get("draft_message", ""))
+            from .analysis_global_host import attach_result_card
+            response["conclusion_card"] = attach_result_card(tools, response["conclusion_card"])
             from .analysis_overall_status import finalize_card
             response["conclusion_card"] = finalize_card(
                 response["conclusion_card"], result.get("validation", {}), result["status"],
@@ -1706,6 +1787,11 @@ def _run_sync(*, message: str, user_id: str, workspace: Path, conversation_id: s
                     result.get("execution", {}), tools.session.state()["phase"])
             response["overall_status"] = response["conclusion_card"]["overall_status"]
             response["component_statuses"] = response["conclusion_card"]["component_statuses"]
+            from .analysis_global_host import publish_eligible
+            global_summary = publish_eligible(tools, response)
+            if global_summary is not None:
+                response["conclusion_card"]["global_summary"] = global_summary
+                tools.control_store.save("product_conclusion", response["conclusion_card"])
             tools.control_store.save("overall_result", {
                 "overall_status": response["overall_status"],
                 "component_statuses": response["component_statuses"], "native_status": result["status"],
@@ -1713,6 +1799,8 @@ def _run_sync(*, message: str, user_id: str, workspace: Path, conversation_id: s
             from .analysis_planning_budget import planning_limit, EXECUTION_RESERVE
             response["phase_budget"] = {
                 "planning_model_calls": tools.session.record.get("planning_model_calls", 0),
+                "planning_actual_model_calls": tools.session.record.get("planning_actual_model_calls", tools.session.record.get("planning_model_calls",0)),
+                "system_defect_exempt_model_calls": tools.session.record.get("system_defect_exempt_model_calls", []),
                 "postseal_model_calls": tools.session.record.get("postseal_model_calls", 0),
                 "planning_limit": planning_limit(MAX_MODEL_CALLS),
                 "execution_reserve": EXECUTION_RESERVE,
@@ -1720,6 +1808,10 @@ def _run_sync(*, message: str, user_id: str, workspace: Path, conversation_id: s
                 "planning_includes_precharged_router_calls": True,
             }
         if tools.session is not None:
+            from .analysis_system_defects import latest
+            from .analysis_review_budget import get
+            response["system_defects"] = latest(tools)
+            response["review_budget"] = get(tools).snapshot()
             from .analysis_failure_classification import classify
             response["failure_classification"] = classify({**response, "route": "analysis"})
         response["tools"] = result.get("pipeline_tasks", [])

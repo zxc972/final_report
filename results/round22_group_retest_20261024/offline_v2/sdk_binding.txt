@@ -1,0 +1,43 @@
+============================= test session starts ==============================
+platform linux -- Python 3.11.5, pytest-9.1.1, pluggy-1.6.0 -- /data/xuancheng/agent_v1/.venv-coding/bin/python
+cachedir: .pytest_cache
+rootdir: /data/xuancheng/agent_v1/round22_source/agent
+plugins: langsmith-0.14.8, anyio-4.15.1
+collecting ... collected 13 items
+
+modules/agent/tests/test_round21_sdk_http_observer.py::test_real_sdk_httpx2_send_matches_native_charge_id_and_usage[False-False-200] PASSED [  7%]
+modules/agent/tests/test_round21_sdk_http_observer.py::test_real_sdk_httpx2_send_matches_native_charge_id_and_usage[False-True-200] PASSED [ 15%]
+modules/agent/tests/test_round21_sdk_http_observer.py::test_real_sdk_httpx2_send_matches_native_charge_id_and_usage[False-False-429] PASSED [ 23%]
+modules/agent/tests/test_round21_sdk_http_observer.py::test_real_sdk_httpx2_send_matches_native_charge_id_and_usage[True-False-200] PASSED [ 30%]
+modules/agent/tests/test_round21_sdk_http_observer.py::test_real_sdk_httpx2_send_matches_native_charge_id_and_usage[True-True-200] PASSED [ 38%]
+modules/agent/tests/test_round21_sdk_http_observer.py::test_real_sdk_httpx2_send_matches_native_charge_id_and_usage[True-False-429] PASSED [ 46%]
+modules/agent/tests/test_round21_sdk_http_observer.py::test_auto_router_before_chat_activation_and_concurrent_requests[False-backend_httpx] PASSED [ 53%]
+modules/agent/tests/test_round21_sdk_http_observer.py::test_auto_router_before_chat_activation_and_concurrent_requests[False-sdk_httpx2] PASSED [ 61%]
+modules/agent/tests/test_round21_sdk_http_observer.py::test_auto_router_before_chat_activation_and_concurrent_requests[True-backend_httpx] PASSED [ 69%]
+modules/agent/tests/test_round21_sdk_http_observer.py::test_auto_router_before_chat_activation_and_concurrent_requests[True-sdk_httpx2] PASSED [ 76%]
+modules/agent/tests/test_round21_sdk_http_observer.py::test_native_binding_rejects_missing_stale_or_different_reservation[missing_budget] PASSED [ 84%]
+modules/agent/tests/test_round21_sdk_http_observer.py::test_native_binding_rejects_missing_stale_or_different_reservation[wrong_id] PASSED [ 92%]
+modules/agent/tests/test_round21_sdk_http_observer.py::test_native_binding_rejects_missing_stale_or_different_reservation[finished] PASSED [100%]
+
+=============================== warnings summary ===============================
+modules/agent/backend/api.py:183
+  /data/xuancheng/agent_v1/round22_source/agent/modules/agent/backend/api.py:183: DeprecationWarning: 
+          on_event is deprecated, use lifespan event handlers instead.
+  
+          Read more about it in the
+          [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+          
+    app.on_event("shutdown")(shutdown_cleanup)
+
+../../.venv-coding/lib/python3.11/site-packages/fastapi/applications.py:4745
+  /data/xuancheng/agent_v1/.venv-coding/lib/python3.11/site-packages/fastapi/applications.py:4745: DeprecationWarning: 
+          on_event is deprecated, use lifespan event handlers instead.
+  
+          Read more about it in the
+          [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+          
+    return self.router.on_event(event_type)  # ty: ignore[deprecated]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: /data/xuancheng/agent_v1/round22_work/offline_v2/sdk_binding.junit.xml -
+======================== 13 passed, 2 warnings in 0.52s ========================

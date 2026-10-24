@@ -1,0 +1,14 @@
+{
+  "closed_utc": "2026-10-24T09:14:21.497316+00:00",
+  "pid": 484918,
+  "only_new_instance_stopped": true,
+  "process_before_stop": {
+    "pid": 484918,
+    "start_ticks": "536544129",
+    "cwd": "/data/xuancheng/agent_v1/round23_source/agent",
+    "cmdline_sha256": "9a06f4b8dde66e20ea919e22885225651fed227cd8416995a9666f838d5d9800"
+  },
+  "port": 8123,
+  "port_still_open": false,
+  "signal": "SIGTERM"
+}

@@ -1,0 +1,228 @@
+[
+  {
+    "case": "R24_G1",
+    "checks": {
+      "all_native_attempt_ids_present_unique": true,
+      "observed_HTTP_matches_native": true,
+      "observed_logical_matches_native": true,
+      "prompt_tokens_match": true,
+      "completion_tokens_match": true,
+      "unknown_usage_matches": true,
+      "unmetered_logical_calls_zero": true,
+      "initial_within_23": true,
+      "review_logical_within_4": true,
+      "revision_within_3": true,
+      "total_within_30": true,
+      "revision_only_authorized": true,
+      "review_HTTP_matches_observer": true,
+      "each_review_HTTP_within_3": true
+    },
+    "all_passed": true
+  },
+  {
+    "case": "R24_G2",
+    "checks": {
+      "all_native_attempt_ids_present_unique": true,
+      "observed_HTTP_matches_native": true,
+      "observed_logical_matches_native": true,
+      "prompt_tokens_match": true,
+      "completion_tokens_match": true,
+      "unknown_usage_matches": true,
+      "unmetered_logical_calls_zero": true,
+      "initial_within_23": true,
+      "review_logical_within_4": true,
+      "revision_within_3": true,
+      "total_within_30": true,
+      "revision_only_authorized": true,
+      "review_HTTP_matches_observer": true,
+      "each_review_HTTP_within_3": true
+    },
+    "all_passed": true
+  },
+  {
+    "case": "E1_S1",
+    "checks": {
+      "all_native_attempt_ids_present_unique": true,
+      "observed_HTTP_matches_native": true,
+      "observed_logical_matches_native": true,
+      "prompt_tokens_match": true,
+      "completion_tokens_match": true,
+      "unknown_usage_matches": true,
+      "unmetered_logical_calls_zero": true,
+      "initial_within_23": true,
+      "review_logical_within_4": true,
+      "revision_within_3": true,
+      "total_within_30": true,
+      "revision_only_authorized": true,
+      "review_HTTP_matches_observer": true,
+      "each_review_HTTP_within_3": true
+    },
+    "all_passed": true
+  },
+  {
+    "case": "E1_S2",
+    "checks": {
+      "all_native_attempt_ids_present_unique": true,
+      "observed_HTTP_matches_native": true,
+      "observed_logical_matches_native": true,
+      "prompt_tokens_match": true,
+      "completion_tokens_match": true,
+      "unknown_usage_matches": true,
+      "unmetered_logical_calls_zero": true
+    },
+    "all_passed": true
+  },
+  {
+    "case": "E1_S3",
+    "checks": {
+      "all_native_attempt_ids_present_unique": true,
+      "observed_HTTP_matches_native": true,
+      "observed_logical_matches_native": true,
+      "prompt_tokens_match": true,
+      "completion_tokens_match": true,
+      "unknown_usage_matches": true,
+      "unmetered_logical_calls_zero": true
+    },
+    "all_passed": true
+  },
+  {
+    "case": "E1_G1",
+    "checks": {
+      "all_native_attempt_ids_present_unique": true,
+      "observed_HTTP_matches_native": true,
+      "observed_logical_matches_native": true,
+      "prompt_tokens_match": true,
+      "completion_tokens_match": true,
+      "unknown_usage_matches": true,
+      "unmetered_logical_calls_zero": true,
+      "initial_within_23": true,
+      "review_logical_within_4": true,
+      "revision_within_3": true,
+      "total_within_30": true,
+      "revision_only_authorized": true,
+      "review_HTTP_matches_observer": true,
+      "each_review_HTTP_within_3": true
+    },
+    "all_passed": true
+  },
+  {
+    "case": "E1_G2",
+    "checks": {
+      "all_native_attempt_ids_present_unique": true,
+      "observed_HTTP_matches_native": true,
+      "observed_logical_matches_native": true,
+      "prompt_tokens_match": true,
+      "completion_tokens_match": true,
+      "unknown_usage_matches": true,
+      "unmetered_logical_calls_zero": true,
+      "initial_within_23": true,
+      "review_logical_within_4": true,
+      "revision_within_3": true,
+      "total_within_30": true,
+      "revision_only_authorized": true,
+      "review_HTTP_matches_observer": true,
+      "each_review_HTTP_within_3": true
+    },
+    "all_passed": true
+  },
+  {
+    "case": "E1_G3",
+    "checks": {
+      "all_native_attempt_ids_present_unique": true,
+      "observed_HTTP_matches_native": true,
+      "observed_logical_matches_native": true,
+      "prompt_tokens_match": true,
+      "completion_tokens_match": true,
+      "unknown_usage_matches": true,
+      "unmetered_logical_calls_zero": true,
+      "initial_within_23": true,
+      "review_logical_within_4": true,
+      "revision_within_3": true,
+      "total_within_30": true,
+      "revision_only_authorized": true,
+      "review_HTTP_matches_observer": true,
+      "each_review_HTTP_within_3": true
+    },
+    "all_passed": true
+  },
+  {
+    "case": "E1_X1",
+    "checks": {
+      "all_native_attempt_ids_present_unique": true,
+      "observed_HTTP_matches_native": true,
+      "observed_logical_matches_native": true,
+      "prompt_tokens_match": true,
+      "completion_tokens_match": true,
+      "unknown_usage_matches": true,
+      "unmetered_logical_calls_zero": true,
+      "initial_within_23": true,
+      "review_logical_within_4": true,
+      "revision_within_3": true,
+      "total_within_30": true,
+      "revision_only_authorized": true,
+      "review_HTTP_matches_observer": true,
+      "each_review_HTTP_within_3": true
+    },
+    "all_passed": true
+  },
+  {
+    "case": "E1_N1",
+    "checks": {
+      "all_native_attempt_ids_present_unique": true,
+      "observed_HTTP_matches_native": true,
+      "observed_logical_matches_native": true,
+      "prompt_tokens_match": true,
+      "completion_tokens_match": true,
+      "unknown_usage_matches": true,
+      "unmetered_logical_calls_zero": true,
+      "initial_within_23": true,
+      "review_logical_within_4": true,
+      "revision_within_3": true,
+      "total_within_30": true,
+      "revision_only_authorized": true,
+      "review_HTTP_matches_observer": true,
+      "each_review_HTTP_within_3": true
+    },
+    "all_passed": true
+  },
+  {
+    "case": "E1_N2",
+    "checks": {
+      "all_native_attempt_ids_present_unique": true,
+      "observed_HTTP_matches_native": true,
+      "observed_logical_matches_native": true,
+      "prompt_tokens_match": true,
+      "completion_tokens_match": true,
+      "unknown_usage_matches": true,
+      "unmetered_logical_calls_zero": true,
+      "initial_within_23": true,
+      "review_logical_within_4": true,
+      "revision_within_3": true,
+      "total_within_30": true,
+      "revision_only_authorized": true,
+      "review_HTTP_matches_observer": true,
+      "each_review_HTTP_within_3": true
+    },
+    "all_passed": true
+  },
+  {
+    "case": "E1_N3",
+    "checks": {
+      "all_native_attempt_ids_present_unique": true,
+      "observed_HTTP_matches_native": true,
+      "observed_logical_matches_native": true,
+      "prompt_tokens_match": true,
+      "completion_tokens_match": true,
+      "unknown_usage_matches": true,
+      "unmetered_logical_calls_zero": true,
+      "initial_within_23": true,
+      "review_logical_within_4": true,
+      "revision_within_3": true,
+      "total_within_30": true,
+      "revision_only_authorized": true,
+      "review_HTTP_matches_observer": true,
+      "each_review_HTTP_within_3": true
+    },
+    "all_passed": true
+  }
+]

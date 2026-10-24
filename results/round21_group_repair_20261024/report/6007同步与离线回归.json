@@ -1,0 +1,84 @@
+{
+  "sync_receipt": {
+    "status": "six_authorized_files_synchronized",
+    "synchronized_utc": "2026-10-24T04:31:26.463420+00:00",
+    "authorization": "Direct human approval: allow these six code files to 6007 for offline regressions only.",
+    "payload_sha256": "a7534fb7d8410f78c3f8dec7c799739081d30f10957675501c7a8ad1cd6d07ef",
+    "before": {
+      "agent/modules/agent/backend/agent_chat_state.py": "c9ef02b3a56e1dee81a8ed0b46e0f0600cfd0a0bde5a8b7bd8a604c092cb9e84",
+      "agent/modules/agent/backend/analysis_call_context.py": "e5bd229b341f00d5115c34b7ce75dd33950e73c02f9737a35f344dd55abaf1d9",
+      "agent/modules/agent/backend/analysis_http_observer.py": "352001534f6b729e0a57758bdc8278c60212a89b51d000200c4b3bc4627dd9d9",
+      "agent/experiments/round21/dev_server.py": "2136964ac2d1acc361ef7304bc961c4bb600b703e115c0d07d07d3144b25b4bd",
+      "agent/experiments/round21/review_protected_changes.py": "baf7c3b54f87632128db3a00a048620bcd276bd255e19039bba8a7eaf0e6f36c",
+      "agent/modules/agent/tests/test_round21_sdk_http_observer.py": "37d80b2215407d5c2b3144e6e8b887a5ddd7d2176c3918a54f5ff44d21293d0f"
+    },
+    "after": {
+      "agent/modules/agent/backend/agent_chat_state.py": "b0d204bff0c0036855501b4a1f1d0ace786dc79c94e6886c59351e2068f4d0c7",
+      "agent/modules/agent/backend/analysis_call_context.py": "66901bdcb18b321dff82afff02d64a4edca0c6cfa48580fdc7cf2eb5581c1f2d",
+      "agent/modules/agent/backend/analysis_http_observer.py": "ed9f6d3a7f61f5d94c4de0eaab3a2f45d5a984019f7a0b4202fa5ec3dcd81fec",
+      "agent/experiments/round21/dev_server.py": "9472278c0eeaddec3e52b419aff0e4e9ea05f2428f60400e06ee4f8f9376779e",
+      "agent/experiments/round21/review_protected_changes.py": "b6775dec3cd4bc4c281a1a355639835b5e06ba19b04d8e3a05e1d986df0a3af3",
+      "agent/modules/agent/tests/test_round21_sdk_http_observer.py": "25356124fada8b1a23786906767567b544437ae2e2dca7425ec3bc6bc2e38875"
+    },
+    "real_batch_stays_closed": true,
+    "real_analysis_entries": 4,
+    "actual_upstream_sends": 0,
+    "new_real_model_runs_authorized": false
+  },
+  "source": {
+    "remote_branch": "dev/round21-group-repair",
+    "code_commit": "0a229157abf4398613866e9cabff409ab2897043",
+    "inventory_commit": "691350a2d5fd90aed570b1cb87be9004ff41c308",
+    "frozen_real_batch_commit": "2dbaf9b478ed5e5fbcb15fc900e4b797da99feac",
+    "approved_local_code_commit": "604118407f11cf35123dc84a739ae33b48468a63",
+    "six_file_bytes_match_approved_payload": true,
+    "snapshot_verifier": "Verified 1165 source files and 81 research-release digests.",
+    "publication_files_verified": 1170,
+    "checks": [
+      "sdk_binding",
+      "targeted_corrected",
+      "backend_default_corrected",
+      "synthetic_singularity_corrected"
+    ],
+    "real_model_runs_added": 0,
+    "github_push_performed": false
+  },
+  "checks": {
+    "sdk_binding": {
+      "check": "sdk_binding",
+      "exit_code": 0,
+      "started_utc": "2026-10-24T04:31:26.509252+00:00",
+      "ended_utc": "2026-10-24T04:31:27.344469+00:00",
+      "provider_requests": 0,
+      "pytest_summary": "11 passed, 2 warnings in 0.45s"
+    },
+    "targeted_corrected": {
+      "check": "targeted_corrected",
+      "exit_code": 0,
+      "started_utc": "2026-10-24T04:31:27.344664+00:00",
+      "ended_utc": "2026-10-24T04:31:47.503906+00:00",
+      "provider_requests": 0,
+      "pytest_summary": "46 passed, 2 warnings in 19.55s"
+    },
+    "backend_default_corrected": {
+      "check": "backend_default_corrected",
+      "exit_code": 0,
+      "started_utc": "2026-10-24T04:31:47.504076+00:00",
+      "ended_utc": "2026-10-24T04:34:45.488108+00:00",
+      "provider_requests": 0,
+      "pytest_summary": "946 passed, 16 skipped, 144 warnings, 59 subtests passed in 177.18s (0:02:57)"
+    },
+    "synthetic_singularity_corrected": {
+      "check": "synthetic_singularity_corrected",
+      "exit_code": 0,
+      "started_utc": "2026-10-24T04:34:45.488340+00:00",
+      "ended_utc": "2026-10-24T04:35:07.429667+00:00",
+      "provider_requests": 0,
+      "pytest_summary": "2 passed, 2 warnings in 21.34s"
+    }
+  },
+  "real_model_runs_added": 0,
+  "real_batch_closed": true,
+  "original_real_analysis_entries": 4,
+  "actual_upstream_http_sends": 0
+}

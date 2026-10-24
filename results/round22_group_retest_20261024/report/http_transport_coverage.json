@@ -1,0 +1,22 @@
+[
+  {
+    "module": "httpx",
+    "class": "Client",
+    "original_send_module": "httpx._client"
+  },
+  {
+    "module": "httpx",
+    "class": "AsyncClient",
+    "original_send_module": "httpx._client"
+  },
+  {
+    "module": "httpx2",
+    "class": "Client",
+    "original_send_module": "httpx2._client"
+  },
+  {
+    "module": "httpx2",
+    "class": "AsyncClient",
+    "original_send_module": "httpx2._client"
+  }
+]

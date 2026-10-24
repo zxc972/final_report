@@ -1,0 +1,53 @@
+{
+  "suite": "E1",
+  "version": 1,
+  "review_status": "agent-reviewed Draft; executed under direct user authorization, not human-approved",
+  "positive_cases": [
+    "S1",
+    "S2",
+    "S3",
+    "G1",
+    "G2",
+    "G3",
+    "X1"
+  ],
+  "negative_cases": [
+    "N1",
+    "N2",
+    "N3"
+  ],
+  "attempts_per_case": 1,
+  "additional_original_question_retests": [
+    "G1",
+    "G2"
+  ],
+  "max_real_analysis_entries": 12,
+  "fresh_sessions": true,
+  "same_question_first_system_defect_stop": true,
+  "frozen_config": {
+    "model": "deepseek-v4-pro",
+    "profile": "product_graph_planner",
+    "budget": {
+      "logical_model": 30,
+      "initial": 23,
+      "review": 4,
+      "post_revise": 3,
+      "tools": 60,
+      "executions": 8,
+      "wall_seconds": 1200,
+      "outer_iterations": 3
+    },
+    "C": {
+      "E1": true,
+      "original_retests": false
+    },
+    "explanation": "E1 uses the existing full rule configuration; original-question retests preserve Round23 C0 and are not pooled into E1 scores"
+  },
+  "N2": "All 20 approved original IXI roots contain a2009s at preparation. N2 therefore uses a declared controlled missing-product snapshot of IXI064, excluding a2009s files only; original bytes unchanged. This is a product-availability refusal test, not evidence of naturally missing a2009s.",
+  "verifier": "Existing independent raw readers/global reference/OLS/BH; fixed scope, exact identities and existing atol=1e-9/rtol=1e-7; native hard checks/review/conclusion cannot be waived by E1 scoring",
+  "G3_X1_scope": "No guaranteed registered method coverage. Report independent table correctness separately from full chain; unsupported-method coverage is an environment/method coverage limitation, not repaired during trial.",
+  "host_truth_isolation": "Gold/reference/source hashes and task class live only in host batch directory, outside input_roots, /work, model requests and knowledge. Only each current natural user request, input scope, and public artifact names reach Agent.",
+  "model_judge_calls": 0,
+  "semantic_review": "Grounded refusal and claim/scope review is performed offline after each native single attempt, never fed back to the actor.",
+  "confirmation": "No deployment, service restart, retained subject processing, key output or preprocessing submissions in analysis runs."
+}

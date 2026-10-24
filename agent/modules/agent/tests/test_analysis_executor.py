@@ -173,6 +173,53 @@ class ExecutorUnitTests(unittest.TestCase):
         self.assertEqual(executor.probe()["status"], "blocked")
 
 
+    def test_container_executable_defaults_to_apptainer(self):
+        with patch.dict(os.environ, {}, clear=True):
+            executor = SandboxExecutor(self.work, [self.inputs], runtime_image=self.image,
+                                       runtime_env=self.runtime)
+        self.assertEqual(executor.apptainer_binary, "apptainer")
+
+    def test_host_container_settings_preserve_isolation_and_minimal_environment(self):
+        settings = {"ANALYSIS_CONTAINER_CMD": "singularity",
+                    "ANALYSIS_RUNTIME_IMAGE": str(self.image),
+                    "ANALYSIS_RUNTIME_ENV": str(self.runtime)}
+        with patch.dict(os.environ, settings):
+            executor = SandboxExecutor(self.work, [self.inputs])
+        with patch.object(_module.shutil, "which", return_value="/usr/local/bin/singularity"):
+            command = executor._command(self.work, [self.inputs], ["-c", "pass"])
+        self.assertEqual(command[0], "/usr/local/bin/singularity")
+        for flag in ("--cleanenv", "--containall", "--no-home", "--net"):
+            self.assertIn(flag, command)
+        self.assertEqual(command[command.index("--network") + 1], "none")
+        self.assertEqual(command[command.index("--no-mount") + 1], "bind-paths,hostfs,cwd,tmp")
+        self.assertIn(f"{self.inputs}:/inputs/0:ro", command)
+        self.assertIn(f"{self.runtime}:/opt/analysis:ro", command)
+        self.assertIn(f"{self.work}:/work:rw", command)
+        self.assertEqual(set(executor._environment()), {"PATH", "LANG", "HOME"})
+
+    def test_explicit_container_arguments_override_host_environment(self):
+        with patch.dict(os.environ, {"ANALYSIS_CONTAINER_CMD": "missing-container",
+                                     "ANALYSIS_RUNTIME_IMAGE": "/not-the-image",
+                                     "ANALYSIS_RUNTIME_ENV": "/not-the-runtime"}):
+            executor = self.executor()
+        self.assertEqual(executor.apptainer_binary, sys.executable)
+        self.assertEqual(executor.runtime_image, self.image.resolve())
+        self.assertEqual(executor.runtime_env, self.runtime.resolve())
+
+    def test_empty_or_multiline_container_command_is_rejected(self):
+        for value in ("", " ", "singularity\nexec"):
+            with self.subTest(value=value), patch.dict(os.environ, {"ANALYSIS_CONTAINER_CMD": value}):
+                with self.assertRaises(ValueError):
+                    SandboxExecutor(self.work, [self.inputs], runtime_image=self.image,
+                                    runtime_env=self.runtime)
+
+    def test_empty_runtime_environment_setting_is_rejected(self):
+        for variable in ("ANALYSIS_RUNTIME_IMAGE", "ANALYSIS_RUNTIME_ENV"):
+            with self.subTest(variable=variable), patch.dict(os.environ, {variable: ""}):
+                with self.assertRaises(ValueError):
+                    SandboxExecutor(self.work, [self.inputs])
+
+
 class BoundedProcessTests(unittest.TestCase):
     def test_output_is_drained_without_unbounded_retention(self):
         result = _run_bounded([sys.executable, "-c", "import sys;sys.stdout.write('x'*200000);sys.stderr.write('e'*200000)"],

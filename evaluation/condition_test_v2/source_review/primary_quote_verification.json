@@ -1,0 +1,52 @@
+{
+  "methods": [
+    {
+      "method": "independent_v2_fs_anatomical_stats",
+      "card_statements": 20,
+      "annotation_statements": 6,
+      "quarantined": 0
+    },
+    {
+      "method": "independent_v2_fs_segstats",
+      "card_statements": 23,
+      "annotation_statements": 10,
+      "quarantined": 0
+    },
+    {
+      "method": "independent_v2_fs_preproc",
+      "card_statements": 24,
+      "annotation_statements": 11,
+      "quarantined": 0
+    },
+    {
+      "method": "independent_v2_fs_surf2surf",
+      "card_statements": 14,
+      "annotation_statements": 6,
+      "quarantined": 0
+    },
+    {
+      "method": "independent_v2_wb_metric_resample",
+      "card_statements": 19,
+      "annotation_statements": 7,
+      "quarantined": 0
+    },
+    {
+      "method": "independent_v2_ants_thickness",
+      "card_statements": 31,
+      "annotation_statements": 17,
+      "quarantined": 1
+    },
+    {
+      "method": "independent_v2_fs_ca_label",
+      "card_statements": 15,
+      "annotation_statements": 5,
+      "quarantined": 0
+    }
+  ],
+  "annotation_statements": 62,
+  "all_retained_quotes_exact": true,
+  "duplicate_development_or_test_v1_items_excluded": [],
+  "method_disjoint_from_development": true,
+  "annotation_status": "not_labelled",
+  "test_evaluation_calls": 0
+}

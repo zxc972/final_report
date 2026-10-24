@@ -1,0 +1,136 @@
+{
+  "case": "R24_G2",
+  "C": false,
+  "status": "failed",
+  "overall_status": "failed",
+  "route": "analysis",
+  "model_calls": 23,
+  "tool_calls": 26,
+  "executions": 4,
+  "iterations": 1,
+  "elapsed_seconds": 717.571427504532,
+  "internal_review_decision": null,
+  "internal_review_protocol_valid": null,
+  "full_chain_passed": false,
+  "source_commit": "28698e341ef953688e8fa8d314918350772b7fd1",
+  "http_status": 200,
+  "client_error": null,
+  "http_attempts": 23,
+  "known_prompt_tokens": 398331,
+  "known_completion_tokens": 57172,
+  "known_total_tokens": 455503,
+  "unknown_usage_attempts": 0,
+  "observed_native_logical_calls": 23,
+  "all_http_bound_to_native": true,
+  "public_output_contract": {
+    "status": "not_performed",
+    "identity_mismatch_count": 0,
+    "numeric_mismatch_count": 0
+  },
+  "independent_numeric": {
+    "status": "not_configured",
+    "host_verified": false,
+    "assessment_status": "not_assessed",
+    "checked": null,
+    "mismatch_count": null,
+    "identity_mismatch_count": null,
+    "numeric_mismatch_count": null
+  },
+  "request_budget": {
+    "model_calls": 23,
+    "http_attempts": 23,
+    "model_source": "provider_response",
+    "retry_http_attempts": 0,
+    "unmetered_logical_calls": 0,
+    "router_calls": 1,
+    "router_http_attempts": 1,
+    "limit": 30,
+    "known_usage_calls": 23,
+    "unknown_usage_calls": 0,
+    "cost": null,
+    "cost_status": "No verified monetary price; unknown usage is not zero"
+  },
+  "review_budget": {
+    "enabled": true,
+    "total_logical_limit": 30,
+    "review_reserved_attempts": 4,
+    "revision_reserved_calls": 3,
+    "initial_coding_limit": 23,
+    "initial_coding_model_calls": 23,
+    "nonreview_limit": 26,
+    "nonreview_model_calls": 23,
+    "review_logical_calls": 0,
+    "review_http_attempts": 0,
+    "review_http_by_logical": [],
+    "review_transport_retries_maximum": 2,
+    "review_credits_used": 0,
+    "review_credits_remaining": 4,
+    "revision_model_calls": 0,
+    "revision_credits_remaining": 3,
+    "revision_authorized": false,
+    "budget_units_used": 23,
+    "transport_retries_charge_review_pool": false,
+    "native_logical_http_counters_not_reset": true
+  },
+  "phase_budget": {
+    "planning_model_calls": 5,
+    "planning_actual_model_calls": 5,
+    "postseal_model_calls": 18,
+    "planning_limit": 18,
+    "execution_reserve": 9,
+    "planning_includes_precharged_router_calls": true
+  },
+  "system_defect_codes": [],
+  "failure_category": "contract_failed",
+  "source_nodes": {
+    "router": 1,
+    "coding.model": 22
+  },
+  "tables": {
+    "regional_values.csv": {
+      "status": "missing_or_invalid",
+      "error_type": "KeyError"
+    },
+    "group_results.csv": {
+      "status": "missing_or_invalid",
+      "error_type": "KeyError"
+    }
+  },
+  "fixed_scope_numeric_pass": false,
+  "conclusion_card": {
+    "overall_status": "failed",
+    "verdict": "deferred",
+    "review_status": "unreviewed",
+    "scope": "supplied_descriptive",
+    "component_statuses": {
+      "artifacts": "executed_failed",
+      "public_contract": "not_performed",
+      "independent_numeric": "not_assessed",
+      "internal_review": "unreviewed",
+      "execution": "passed",
+      "last_exit_code": 0,
+      "identity_mismatch_count": null,
+      "numeric_mismatch_count": null,
+      "public_identity_mismatch_count": null
+    }
+  },
+  "semantic_audit_required": true,
+  "analysis_model_calls_reported": 23,
+  "logical_call_count_source": "native RequestBudget including router; analysis-only field retained separately",
+  "selected_plans": [
+    {
+      "version": 1,
+      "sha256": "d6f1aeefb646848aee4a6f200511cb0504d34bdb6858e79caaee3998afdc7eb4",
+      "method_id": "method:v12:surface_annotation_roi",
+      "subject_count": 20,
+      "atlas": "aparc.DKTatlas",
+      "design": null,
+      "comparison": "describe",
+      "effect": null,
+      "n": null,
+      "df": null,
+      "metrics": null,
+      "regions": null
+    }
+  ]
+}

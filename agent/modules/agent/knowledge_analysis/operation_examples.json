@@ -1,7 +1,7 @@
 {
   "schema": "primatex.synthetic_operation_examples.v1",
   "synthetic_only": true,
-  "library_sha256": "f2f86392868c798afc9dc0b66f9b0244610708930c832328be8785e6a6681106",
+  "library_sha256": "368a921c911d383b341ed5a93bbf3c8c90138b9ac18e183dcd1b012a1edb0f98",
   "examples": {
     "read_surface": {
       "python_type": "tuple",
@@ -268,6 +268,102 @@
         ]
       ],
       "physical_scale_verified": false
+    },
+    "read_stats_measures": {
+      "MeanThickness": {
+        "value": 2.456789123,
+        "unit": "mm"
+      }
+    },
+    "positive_mask_volume": {
+      "volume_mm3": 27.0,
+      "positive_voxels": 27,
+      "unit_source": "MGH header millimetre convention; acquisition calibration unverified"
+    },
+    "read_group_inputs": {
+      "python_type": "list",
+      "example": [
+        {
+          "subject": "synthetic-A",
+          "hemisphere": "lh",
+          "metric": "sample_metric",
+          "label_key": 1,
+          "name": "parcel",
+          "values": {
+            "python_type": "numpy.ndarray",
+            "dtype": "float64",
+            "shape": [
+              3
+            ],
+            "example": [
+              1.0,
+              2.0,
+              3.0
+            ]
+          }
+        }
+      ]
+    },
+    "fdr_bh_by_identity": {
+      "python_type": "dict",
+      "fields": [
+        "(hemisphere,metric,label_key)"
+      ],
+      "key_type": "tuple[str,str,int]",
+      "example": [
+        {
+          "identity": [
+            "lh",
+            "sample_metric",
+            1
+          ],
+          "q_fdr": 0.02
+        },
+        {
+          "identity": [
+            "rh",
+            "sample_metric",
+            1
+          ],
+          "q_fdr": 0.04
+        },
+        {
+          "identity": [
+            "rh",
+            "sample_metric",
+            2
+          ],
+          "q_fdr": null
+        }
+      ]
+    },
+    "write_contract_table": {
+      "path": "/work/example.csv",
+      "rows": 1,
+      "columns": [
+        "subject",
+        "value",
+        "units"
+      ],
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "header": true,
+      "index": false,
+      "public_values_prechecked": true
     }
+  },
+  "round21_extension": {
+    "synthetic_only": true,
+    "actual_new_function_calls": [
+      "read_group_inputs",
+      "fdr_bh_by_identity"
+    ],
+    "original_operation_functions_ast_unchanged": true
+  },
+  "round24_writer_example": {
+    "synthetic_only": true,
+    "script_sha256": "f050216afdf953c2b7f60f134df560130eff071c8544d5df93b095af7d121527",
+    "invalid_row_left_existing_file_unchanged": true,
+    "new_model_calls": 0
   }
 }

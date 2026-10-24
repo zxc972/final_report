@@ -1,0 +1,12 @@
+{
+  "source_id": "wb_metric_stats",
+  "url": "https://www.humanconnectome.org/software/workbench-command/-metric-stats",
+  "final_url": "https://www.humanconnectome.org/software/workbench-command/-metric-stats",
+  "fetched_at": "2026-10-23T10:00:10.178581+00:00",
+  "http_status": 200,
+  "text_sha256": "019a5139fa7a191282de20bda1328b905477a91cf875583fef08d96b0784e37b",
+  "html_sha256": "7c52d6a44852be4495e4df79ad561f83e36de3347669cb55e22cd78cbfddb9da",
+  "text_characters": 8755,
+  "projection": "stdlib HTMLParser SourceText v1",
+  "evidence_class": "official_documentation"
+}

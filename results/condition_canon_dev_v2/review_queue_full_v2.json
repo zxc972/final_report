@@ -1,0 +1,1235 @@
+[
+  {
+    "item": {
+      "id": 8,
+      "method": "fsl_vbm",
+      "field": "inputs",
+      "statement": "A template_list file containing the names of selected T1 images to be used for template construction, with equal numbers from each group.",
+      "quote": "put all the selected names of exams in a file called template_list in your FSL-VBM directory",
+      "source_id": "fsl_vbm",
+      "gold_template": "advisory",
+      "gold_parameters": null,
+      "review_status": "确认",
+      "review_note": ""
+    },
+    "prediction": {
+      "id": 8,
+      "method": "fsl_vbm",
+      "statement": "A template_list file containing the names of selected T1 images to be used for template construction, with equal numbers from each group.",
+      "quote_support": 1.0,
+      "source_id": "fsl_vbm",
+      "template": "advisory",
+      "parameters": null,
+      "key": "advisory",
+      "support": 0.4,
+      "margin": 0.0,
+      "answered": 4,
+      "invalid_attempts": {},
+      "votes": {
+        "advisory": 2,
+        "product_present:{\"slot\": \"T1\", \"type\": \"type:Volume.T1\"}": 2
+      },
+      "decision": "review",
+      "sampling": {
+        "nominal_samples": 5,
+        "truncation_replacements": 0,
+        "responses": [
+          {
+            "sample": 1,
+            "replacement_of": null,
+            "request_id": "73a1a474956b4eddbdfeb666f4989c59",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": true,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 2,
+            "replacement_of": null,
+            "request_id": "25637e2fc85047259d584f06966fee49",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 3,
+            "replacement_of": null,
+            "request_id": "5d8d59aa79f5437c877881e3a5976fdb",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 4,
+            "replacement_of": null,
+            "request_id": "6367fa7990c343b5aece60be9037bb4f",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 5,
+            "replacement_of": null,
+            "request_id": "8060b8e8124242efbb6d505f87993911",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "item": {
+      "id": 36,
+      "method": "local_gyrification",
+      "field": "inputs",
+      "statement": "The pial surface file (?h.pial) for the subject, produced by the recon-all -all stream.",
+      "quote": "usage of the -localGI feature assumes that a subject has already been processed by the freesurfer {{{recon-all -s <subjid> -all}}} stream, such that the ?h.pial surface files exist",
+      "source_id": "fs_lgi",
+      "gold_template": "product_present",
+      "gold_parameters": {
+        "slot": "pial",
+        "type": "type:Surface.Pial"
+      },
+      "review_status": "确认",
+      "review_note": ""
+    },
+    "prediction": {
+      "id": 36,
+      "method": "local_gyrification",
+      "statement": "The pial surface file (?h.pial) for the subject, produced by the recon-all -all stream.",
+      "quote_support": 1.0,
+      "source_id": "fs_lgi",
+      "template": "provenance",
+      "parameters": {
+        "step": "recon-all"
+      },
+      "key": "provenance:{\"step\": \"recon-all\"}",
+      "support": 0.6,
+      "margin": 0.19999999999999996,
+      "answered": 5,
+      "invalid_attempts": {},
+      "votes": {
+        "provenance:{\"step\": \"recon-all\"}": 3,
+        "product_present:{\"slot\": \"pial\", \"type\": \"type:Surface.Pial\"}": 2
+      },
+      "decision": "review",
+      "sampling": {
+        "nominal_samples": 5,
+        "truncation_replacements": 0,
+        "responses": [
+          {
+            "sample": 1,
+            "replacement_of": null,
+            "request_id": "238ffe6bd69d4cf59376adcab7623341",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": true,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 2,
+            "replacement_of": null,
+            "request_id": "5a76f8f37dcd41169c346e2a6f253b94",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": true,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 3,
+            "replacement_of": null,
+            "request_id": "e8cedf9730214ebeaf8195d1470bc0c2",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 4,
+            "replacement_of": null,
+            "request_id": "d0ec32deaf0c4ed49ec4367b2717608f",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 5,
+            "replacement_of": null,
+            "request_id": "ce777220cd23438685fbdafa2280a9a0",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "item": {
+      "id": 47,
+      "method": "macaque_civet",
+      "field": "conditions",
+      "statement": "The pipeline is designed for macaque brains and uses a length scale of 0.4 relative to human brain size.",
+      "quote": "A length scale of 0.4 was derived from the cubic root of the macaque-to-human volume ratio",
+      "source_id": "civet_macaque",
+      "gold_template": "attr_in",
+      "gold_parameters": {
+        "slot": "T1",
+        "attr": "species",
+        "values": [
+          "macaque"
+        ]
+      },
+      "review_status": "确认",
+      "review_note": ""
+    },
+    "prediction": {
+      "id": 47,
+      "method": "macaque_civet",
+      "statement": "The pipeline is designed for macaque brains and uses a length scale of 0.4 relative to human brain size.",
+      "quote_support": 1.0,
+      "source_id": "civet_macaque",
+      "template": "advisory",
+      "parameters": null,
+      "key": "advisory",
+      "support": 0.4,
+      "margin": 0.0,
+      "answered": 4,
+      "invalid_attempts": {},
+      "votes": {
+        "advisory": 2,
+        "scale_check:{\"metric\": \"length scale (macaque-to-human volume ratio)\"}": 2
+      },
+      "decision": "review",
+      "sampling": {
+        "nominal_samples": 5,
+        "truncation_replacements": 0,
+        "responses": [
+          {
+            "sample": 1,
+            "replacement_of": null,
+            "request_id": "713dcf53305249009eb8dcdd91bac3cd",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": true,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 2,
+            "replacement_of": null,
+            "request_id": "d5d8f8aba717493694ad2d2386f13c72",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": true,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 3,
+            "replacement_of": null,
+            "request_id": "a43a02a1282f490fb83eb5900c8c6485",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 4,
+            "replacement_of": null,
+            "request_id": "4421e86738a74ada9e7392c7e3b371bb",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 5,
+            "replacement_of": null,
+            "request_id": "1566065800fa459b80b5ffc4395663a4",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "item": {
+      "id": 63,
+      "method": "nhp_macapype",
+      "field": "conditions",
+      "statement": "Either -params or -species must be provided; -params is mandatory if -species is omitted, and vice versa.",
+      "quote": "-params : (mandatory if -species is omitted) a json file specifiying the global parameters of the analysis.",
+      "source_id": "macapype_commands",
+      "gold_template": "advisory",
+      "gold_parameters": null,
+      "review_status": "确认",
+      "review_note": ""
+    },
+    "prediction": {
+      "id": 63,
+      "method": "nhp_macapype",
+      "statement": "Either -params or -species must be provided; -params is mandatory if -species is omitted, and vice versa.",
+      "quote_support": 1.0,
+      "source_id": "macapype_commands",
+      "template": "advisory",
+      "parameters": null,
+      "key": "advisory",
+      "support": 0.4,
+      "margin": 0.4,
+      "answered": 2,
+      "invalid_attempts": {},
+      "votes": {
+        "advisory": 2
+      },
+      "decision": "review",
+      "sampling": {
+        "nominal_samples": 5,
+        "truncation_replacements": 0,
+        "responses": [
+          {
+            "sample": 1,
+            "replacement_of": null,
+            "request_id": "14f800cb9fa544e8b98f00e65a043aa5",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 2,
+            "replacement_of": null,
+            "request_id": "6925072d140442348feb889735d880eb",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 3,
+            "replacement_of": null,
+            "request_id": "0d5b3bd5249e4664ad0666c7354fd1f3",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": true,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 4,
+            "replacement_of": null,
+            "request_id": "610b4b1d5ec04e699eac673dd4dbdef5",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 5,
+            "replacement_of": null,
+            "request_id": "691d4574b4cd4279b44b334e8d909c43",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "item": {
+      "id": 71,
+      "method": "samseg_segmentation",
+      "field": "inputs",
+      "statement": "All input volumes must be co-registered with each other and have the same image grid size and voxel dimensions.",
+      "quote": "the only requirement is that all input volumes are co-registered with each other, and have the same image grid size and voxel dimensions",
+      "source_id": "fs_samseg",
+      "gold_template": "attr_equal",
+      "gold_parameters": {
+        "slots": [
+          "T1",
+          "volumes"
+        ],
+        "attrs": [
+          "space",
+          "voxel_size"
+        ]
+      },
+      "review_status": "确认",
+      "review_note": ""
+    },
+    "prediction": {
+      "id": 71,
+      "method": "samseg_segmentation",
+      "statement": "All input volumes must be co-registered with each other and have the same image grid size and voxel dimensions.",
+      "quote_support": 1.0,
+      "source_id": "fs_samseg",
+      "decision": "review",
+      "template": "advisory",
+      "parameters": null,
+      "reason": "no valid answer",
+      "answered": 5,
+      "invalid_attempts": {
+        "attr_equal": 5
+      },
+      "sampling": {
+        "nominal_samples": 5,
+        "truncation_replacements": 0,
+        "responses": [
+          {
+            "sample": 1,
+            "replacement_of": null,
+            "request_id": "288d8d3c6c6f483c88c198fb7aa4feb6",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": true,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 2,
+            "replacement_of": null,
+            "request_id": "11b86e58e7674761b1324dde8e193a75",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 3,
+            "replacement_of": null,
+            "request_id": "b39a473d29fd4b7e80a69e77886677f6",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 4,
+            "replacement_of": null,
+            "request_id": "7e793d9275814515bff11edc70391772",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 5,
+            "replacement_of": null,
+            "request_id": "f7f5f060d2e145249bd9d9d2f0b7dc2f",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": true,
+            "reasoning_tokens": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "item": {
+      "id": 73,
+      "method": "samseg_segmentation",
+      "field": "inputs",
+      "statement": "For longitudinal processing, all time points must be co-registered and reformatted to the same image grid, using an unbiased reference template.",
+      "quote": "longitudinal SAMSEG expects all its input images to have been co-registered and reformatted to the same image grid beforehand",
+      "source_id": "fs_samseg",
+      "gold_template": "attr_equal",
+      "gold_parameters": {
+        "slots": [
+          "T1",
+          "timepoints"
+        ],
+        "attrs": [
+          "space",
+          "voxel_size"
+        ]
+      },
+      "review_status": "确认",
+      "review_note": ""
+    },
+    "prediction": {
+      "id": 73,
+      "method": "samseg_segmentation",
+      "statement": "For longitudinal processing, all time points must be co-registered and reformatted to the same image grid, using an unbiased reference template.",
+      "quote_support": 1.0,
+      "source_id": "fs_samseg",
+      "template": "advisory",
+      "parameters": null,
+      "key": "advisory",
+      "support": 0.2,
+      "margin": 0.2,
+      "answered": 5,
+      "invalid_attempts": {
+        "attr_equal": 4
+      },
+      "votes": {
+        "advisory": 1
+      },
+      "decision": "review",
+      "sampling": {
+        "nominal_samples": 5,
+        "truncation_replacements": 0,
+        "responses": [
+          {
+            "sample": 1,
+            "replacement_of": null,
+            "request_id": "227c1d404eed441791c87a57cf678be7",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 2,
+            "replacement_of": null,
+            "request_id": "fa3ff05161db4bb49c22e6952e9892c4",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": true,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 3,
+            "replacement_of": null,
+            "request_id": "98806c709bca4230a9204fa2770ddb9a",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 4,
+            "replacement_of": null,
+            "request_id": "0c1c8381ffd8419abea9be94adc44c6f",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 5,
+            "replacement_of": null,
+            "request_id": "c8ad889174694f3e9ff9480dfdee9207",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "item": {
+      "id": 75,
+      "method": "samseg_segmentation",
+      "field": "conditions",
+      "statement": "For multi-contrast input, all volumes must be co-registered and have the same image grid size and voxel dimensions.",
+      "quote": "all input volumes are co-registered with each other, and have the same image grid size and voxel dimensions",
+      "source_id": "fs_samseg",
+      "gold_template": "attr_equal",
+      "gold_parameters": {
+        "slots": [
+          "T1",
+          "volumes"
+        ],
+        "attrs": [
+          "space",
+          "voxel_size"
+        ]
+      },
+      "review_status": "确认",
+      "review_note": ""
+    },
+    "prediction": {
+      "id": 75,
+      "method": "samseg_segmentation",
+      "statement": "For multi-contrast input, all volumes must be co-registered and have the same image grid size and voxel dimensions.",
+      "quote_support": 1.0,
+      "source_id": "fs_samseg",
+      "decision": "review",
+      "template": "advisory",
+      "parameters": null,
+      "reason": "no valid answer",
+      "answered": 5,
+      "invalid_attempts": {
+        "attr_equal": 5
+      },
+      "sampling": {
+        "nominal_samples": 5,
+        "truncation_replacements": 0,
+        "responses": [
+          {
+            "sample": 1,
+            "replacement_of": null,
+            "request_id": "aea5d6001ddd48689535b1249a1085cf",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": true,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 2,
+            "replacement_of": null,
+            "request_id": "d0476a4e77f64565963e237193da649a",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 3,
+            "replacement_of": null,
+            "request_id": "c62f83bb6db14dbfb417bc55c469b327",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": true,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 4,
+            "replacement_of": null,
+            "request_id": "b713b12cb1614c63bcb2dc4a0b8c71ce",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": true,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 5,
+            "replacement_of": null,
+            "request_id": "10cf3631c1f44172abd2dc25a59a07a3",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "item": {
+      "id": 76,
+      "method": "samseg_segmentation",
+      "field": "conditions",
+      "statement": "For longitudinal SAMSEG, the same combination of contrasts must be provided for each time point.",
+      "quote": "SAMSEG expects that the same combination of contrasts is provided for each time point",
+      "source_id": "fs_samseg",
+      "gold_template": "advisory",
+      "gold_parameters": null,
+      "review_status": "需你决定",
+      "review_note": "纵向 SAMSEG 每个时间点对比度组合相同：可程序检查，现有模板不直接支持。可选：新增模板，或保留建议性"
+    },
+    "prediction": {
+      "id": 76,
+      "method": "samseg_segmentation",
+      "statement": "For longitudinal SAMSEG, the same combination of contrasts must be provided for each time point.",
+      "quote_support": 1.0,
+      "source_id": "fs_samseg",
+      "template": "advisory",
+      "parameters": null,
+      "key": "advisory",
+      "support": 0.4,
+      "margin": 0.2,
+      "answered": 5,
+      "invalid_attempts": {
+        "attr_equal": 1
+      },
+      "votes": {
+        "advisory": 2,
+        "attr_equal:{\"attrs\": [\"subject\"], \"slots\": [\"T1\", \"T2\"]}": 1,
+        "attr_equal:{\"attrs\": [\"subject\"], \"slots\": [\"T1\", \"T2\", \"timepoints\"]}": 1
+      },
+      "decision": "review",
+      "sampling": {
+        "nominal_samples": 5,
+        "truncation_replacements": 0,
+        "responses": [
+          {
+            "sample": 1,
+            "replacement_of": null,
+            "request_id": "61afd6cc0deb43b687a6b02bd009e086",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": true,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 2,
+            "replacement_of": null,
+            "request_id": "e2ec494df6294da7addd0ee28678ca96",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 3,
+            "replacement_of": null,
+            "request_id": "d67c1e5989b14fdab853d97117b0d632",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 4,
+            "replacement_of": null,
+            "request_id": "b4862b024e2848c99afd191d32cb72a4",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": true,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 5,
+            "replacement_of": null,
+            "request_id": "4ca5e79627054dfda99c5e2f999fce0b",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "item": {
+      "id": 78,
+      "method": "samseg_segmentation",
+      "field": "checks",
+      "statement": "Verify that all input volumes are co-registered and have the same image grid size and voxel dimensions.",
+      "quote": "the only requirement is that all input volumes are co-registered with each other, and have the same image grid size and voxel dimensions",
+      "source_id": "fs_samseg",
+      "gold_template": "attr_equal",
+      "gold_parameters": {
+        "slots": [
+          "T1",
+          "volumes"
+        ],
+        "attrs": [
+          "space",
+          "voxel_size"
+        ]
+      },
+      "review_status": "确认",
+      "review_note": ""
+    },
+    "prediction": {
+      "id": 78,
+      "method": "samseg_segmentation",
+      "statement": "Verify that all input volumes are co-registered and have the same image grid size and voxel dimensions.",
+      "quote_support": 1.0,
+      "source_id": "fs_samseg",
+      "decision": "review",
+      "template": "advisory",
+      "parameters": null,
+      "reason": "no valid answer",
+      "answered": 4,
+      "invalid_attempts": {
+        "attr_equal": 4
+      },
+      "sampling": {
+        "nominal_samples": 5,
+        "truncation_replacements": 0,
+        "responses": [
+          {
+            "sample": 1,
+            "replacement_of": null,
+            "request_id": "9dcf7aa543284d31b5ad890235993700",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": true,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 2,
+            "replacement_of": null,
+            "request_id": "5cac7edc7d4e4505bb5bd6abda818d28",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": true,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 3,
+            "replacement_of": null,
+            "request_id": "98a404eef86942a6845ac025d72a33da",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": true,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 4,
+            "replacement_of": null,
+            "request_id": "c0995b3795be456990009693b290741e",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 5,
+            "replacement_of": null,
+            "request_id": "a3bbfadba2f24020b9c94074c2360d32",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "item": {
+      "id": 82,
+      "method": "samseg_segmentation",
+      "field": "exceptions",
+      "statement": "The first time the MS lesion module is run, the user may be prompted to install Tensorflow.",
+      "quote": "The first time you run this module, you may be prompted to install Tensorflow",
+      "source_id": "fs_samseg",
+      "gold_template": "advisory",
+      "gold_parameters": null,
+      "review_status": "确认",
+      "review_note": ""
+    },
+    "prediction": {
+      "id": 82,
+      "method": "samseg_segmentation",
+      "statement": "The first time the MS lesion module is run, the user may be prompted to install Tensorflow.",
+      "quote_support": 1.0,
+      "source_id": "fs_samseg",
+      "template": "software",
+      "parameters": {
+        "commands": [
+          "tensorflow"
+        ]
+      },
+      "key": "software:{\"commands\": [\"tensorflow\"]}",
+      "support": 0.6,
+      "margin": 0.19999999999999996,
+      "answered": 5,
+      "invalid_attempts": {},
+      "votes": {
+        "software:{\"commands\": [\"tensorflow\"]}": 3,
+        "advisory": 2
+      },
+      "decision": "review",
+      "sampling": {
+        "nominal_samples": 5,
+        "truncation_replacements": 0,
+        "responses": [
+          {
+            "sample": 1,
+            "replacement_of": null,
+            "request_id": "e00fd25b0db548d48a321d76c6c75c5e",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 2,
+            "replacement_of": null,
+            "request_id": "f6dfd1d2a4ff4767be8964cca8fbe943",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": true,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 3,
+            "replacement_of": null,
+            "request_id": "a22b9e539dfe4171982423ae46a2d6b4",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 4,
+            "replacement_of": null,
+            "request_id": "9bdf551b45434f66873f920190b4dff5",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": true,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 5,
+            "replacement_of": null,
+            "request_id": "a01ac22d8b154dd8b8b4ca49c4f004d0",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "item": {
+      "id": 92,
+      "method": "surface_mesh_area",
+      "field": "conditions",
+      "statement": "The mesh must be in triangular format as read by nibabel's read_geometry.",
+      "quote": "Read a triangular format Freesurfer surface mesh.",
+      "source_id": "nibabel_fs",
+      "gold_template": "advisory",
+      "gold_parameters": null,
+      "review_status": "确认",
+      "review_note": ""
+    },
+    "prediction": {
+      "id": 92,
+      "method": "surface_mesh_area",
+      "statement": "The mesh must be in triangular format as read by nibabel's read_geometry.",
+      "quote_support": 1.0,
+      "source_id": "nibabel_fs",
+      "template": "advisory",
+      "parameters": null,
+      "key": "advisory",
+      "support": 0.4,
+      "margin": 0.2,
+      "answered": 4,
+      "invalid_attempts": {},
+      "votes": {
+        "advisory": 2,
+        "attr_in:{\"attr\": \"mesh\", \"slot\": \"surface\", \"values\": [\"triangular\"]}": 1,
+        "software:{\"commands\": [\"nibabel\"]}": 1
+      },
+      "decision": "review",
+      "sampling": {
+        "nominal_samples": 5,
+        "truncation_replacements": 0,
+        "responses": [
+          {
+            "sample": 1,
+            "replacement_of": null,
+            "request_id": "48bd45a8a75246018223a92ef53d0edf",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 2,
+            "replacement_of": null,
+            "request_id": "11573a3016774bc99d12b65483096496",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": true,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 3,
+            "replacement_of": null,
+            "request_id": "e544050da4774519a6caab898f9b0d57",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 4,
+            "replacement_of": null,
+            "request_id": "39778e64b5674068b7337e545b1434e5",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 5,
+            "replacement_of": null,
+            "request_id": "d68debe823794e4d98e5a217c91da8db",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "item": {
+      "id": 95,
+      "method": "surface_mesh_area",
+      "field": "checks",
+      "statement": "Verify that the mesh is in triangular format as expected by read_geometry.",
+      "quote": "Read a triangular format Freesurfer surface mesh.",
+      "source_id": "nibabel_fs",
+      "gold_template": "advisory",
+      "gold_parameters": null,
+      "review_status": "确认",
+      "review_note": ""
+    },
+    "prediction": {
+      "id": 95,
+      "method": "surface_mesh_area",
+      "statement": "Verify that the mesh is in triangular format as expected by read_geometry.",
+      "quote_support": 1.0,
+      "source_id": "nibabel_fs",
+      "template": "attr_in",
+      "parameters": {
+        "slot": "surface",
+        "attr": "mesh",
+        "values": [
+          "triangular"
+        ]
+      },
+      "key": "attr_in:{\"attr\": \"mesh\", \"slot\": \"surface\", \"values\": [\"triangular\"]}",
+      "support": 0.6,
+      "margin": 0.19999999999999996,
+      "answered": 5,
+      "invalid_attempts": {},
+      "votes": {
+        "attr_in:{\"attr\": \"mesh\", \"slot\": \"surface\", \"values\": [\"triangular\"]}": 3,
+        "advisory": 2
+      },
+      "decision": "review",
+      "sampling": {
+        "nominal_samples": 5,
+        "truncation_replacements": 0,
+        "responses": [
+          {
+            "sample": 1,
+            "replacement_of": null,
+            "request_id": "3deb88e128ad4893936996abef53d620",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 2,
+            "replacement_of": null,
+            "request_id": "75e84e96211c4df8b9d03265f40d6fb2",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 3,
+            "replacement_of": null,
+            "request_id": "fa9ee3b859384746b6ec13085d81e4dd",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 4,
+            "replacement_of": null,
+            "request_id": "2fdd4899401f4b47bb7935b9d706f2e4",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": true,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 5,
+            "replacement_of": null,
+            "request_id": "11cfbff9a5eb4db4adc0db3b67fe5d4e",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "item": {
+      "id": 99,
+      "method": "surface_reconstruction_qc",
+      "field": "inputs",
+      "statement": "T1-weighted anatomical image(s) in DICOM or other native scanner format.",
+      "quote": "the raw data from the scan must be converted into a format recognized by FreeSurfer",
+      "source_id": "fs_morph",
+      "gold_template": "product_present",
+      "gold_parameters": {
+        "slot": "T1",
+        "type": "type:Volume.T1"
+      },
+      "review_status": "确认",
+      "review_note": ""
+    },
+    "prediction": {
+      "id": 99,
+      "method": "surface_reconstruction_qc",
+      "statement": "T1-weighted anatomical image(s) in DICOM or other native scanner format.",
+      "quote_support": 1.0,
+      "source_id": "fs_morph",
+      "template": "advisory",
+      "parameters": null,
+      "key": "advisory",
+      "support": 0.4,
+      "margin": 0.0,
+      "answered": 4,
+      "invalid_attempts": {},
+      "votes": {
+        "advisory": 2,
+        "product_present:{\"slot\": \"T1\", \"type\": \"type:Volume.T1\"}": 2
+      },
+      "decision": "review",
+      "sampling": {
+        "nominal_samples": 5,
+        "truncation_replacements": 0,
+        "responses": [
+          {
+            "sample": 1,
+            "replacement_of": null,
+            "request_id": "0c3c6d0806a946878bc50dd808d71065",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 2,
+            "replacement_of": null,
+            "request_id": "771515afef54419283a6ac8e4916797d",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 3,
+            "replacement_of": null,
+            "request_id": "fad4e7625a1746b0809156075ab2eac5",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 4,
+            "replacement_of": null,
+            "request_id": "8b9a1dfc04944f3894f3c052afa9a184",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": true,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 5,
+            "replacement_of": null,
+            "request_id": "6adb5ff1d187424fa8b7a423f99c1b34",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "item": {
+      "id": 101,
+      "method": "surface_reconstruction_qc",
+      "field": "inputs",
+      "statement": "Output volumes from recon-all processing, including T1.mgz, brainmask.mgz, and surface files.",
+      "quote": "load the T1 and brainmask images as underlays in freeview, and overlay the white and pial surfaces",
+      "source_id": "andy_failures",
+      "gold_template": "product_present",
+      "gold_parameters": {
+        "slot": "T1",
+        "type": "type:Volume.T1"
+      },
+      "review_status": "确认",
+      "review_note": ""
+    },
+    "prediction": {
+      "id": 101,
+      "method": "surface_reconstruction_qc",
+      "statement": "Output volumes from recon-all processing, including T1.mgz, brainmask.mgz, and surface files.",
+      "quote_support": 1.0,
+      "source_id": "andy_failures",
+      "template": "provenance",
+      "parameters": {
+        "step": "recon-all"
+      },
+      "key": "provenance:{\"step\": \"recon-all\"}",
+      "support": 0.6,
+      "margin": 0.19999999999999996,
+      "answered": 5,
+      "invalid_attempts": {},
+      "votes": {
+        "provenance:{\"step\": \"recon-all\"}": 3,
+        "advisory": 2
+      },
+      "decision": "review",
+      "sampling": {
+        "nominal_samples": 5,
+        "truncation_replacements": 0,
+        "responses": [
+          {
+            "sample": 1,
+            "replacement_of": null,
+            "request_id": "60a85db4fd1748e287a7bd595a1ac4ef",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": true,
+            "reasoning_tokens": 5275
+          },
+          {
+            "sample": 2,
+            "replacement_of": null,
+            "request_id": "e86aa94685f6409cbacfbe8eb511fae5",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          },
+          {
+            "sample": 3,
+            "replacement_of": null,
+            "request_id": "9c3fdd4ef77c4cc4a1116352a46b1562",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": true,
+            "reasoning_tokens": 1999
+          },
+          {
+            "sample": 4,
+            "replacement_of": null,
+            "request_id": "b5c9ed11f6f246a5acbe5b91ae5ea4c9",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": true,
+            "reasoning_tokens": 2375
+          },
+          {
+            "sample": 5,
+            "replacement_of": null,
+            "request_id": "1e89aff65bcf404992609ede64c404d0",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": true,
+            "reasoning_tokens": 2059
+          }
+        ]
+      }
+    }
+  }
+]

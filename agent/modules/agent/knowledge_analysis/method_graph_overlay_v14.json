@@ -1,0 +1,134 @@
+{
+  "schema": "primatex.method_graph.v1",
+  "overlay_for": "research_v13",
+  "methods": [
+    {
+      "id": "method:v14:group_regional_glm",
+      "name": "Group regional GLM",
+      "purpose": "Group comparison and continuous age association with optional covariates after native DKT parcel summaries",
+      "species_scope": [
+        "human",
+        "macaque"
+      ],
+      "software": [
+        "numpy",
+        "scipy",
+        "nibabel"
+      ],
+      "inputs": [],
+      "conditions": [
+        {
+          "id": "method:v14:group_regional_glm:design",
+          "statement": "Every design column exists and is nonempty; effect has one estimable coefficient"
+        },
+        {
+          "id": "method:v14:group_regional_glm:sample",
+          "statement": "At least two independent subjects per effect level and positive residual degrees of freedom"
+        },
+        {
+          "id": "method:v14:group_regional_glm:identity",
+          "statement": "Same-subject hemisphere mesh bindings and shared atlas/species declarations"
+        },
+        {
+          "id": "method:v14:group_regional_glm:power",
+          "statement": "Report design-based minimum detectable standardized effect and its approximations"
+        },
+        {
+          "id": "method:v14:group_regional_glm:disclosure",
+          "statement": "Report FDR family, exclusions and site/scanner composition"
+        }
+      ],
+      "steps": [
+        {
+          "id": "method:v14:group_regional_glm:regional",
+          "statement": "Summarize each subject with parcel_summary, then fit one OLS per region with intercept and declared terms; two-sided t test."
+        },
+        {
+          "id": "method:v14:group_regional_glm:bh",
+          "statement": "BH across all fitted partitions, both hemispheres and selected metrics together."
+        }
+      ],
+      "checks": [],
+      "source_ids": [
+        "group_glm_v14",
+        "group_fdr_v14"
+      ],
+      "scope_note": "Project registered implementation, not expert-reviewed biological validity; native meshes may differ across subjects, within-subject bindings must agree."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "method:v14:group_regional_glm",
+      "type": "Method",
+      "name": "Group regional GLM"
+    },
+    {
+      "id": "method:v14:group_regional_glm:design",
+      "type": "ApplicabilityCondition",
+      "name": "Every design column exists and is nonempty; effect has one estimable coefficient"
+    },
+    {
+      "id": "method:v14:group_regional_glm:sample",
+      "type": "ApplicabilityCondition",
+      "name": "At least two independent subjects per effect level and positive residual degrees of freedom"
+    },
+    {
+      "id": "method:v14:group_regional_glm:identity",
+      "type": "ApplicabilityCondition",
+      "name": "Same-subject hemisphere mesh bindings and shared atlas/species declarations"
+    },
+    {
+      "id": "method:v14:group_regional_glm:power",
+      "type": "ApplicabilityCondition",
+      "name": "Report design-based minimum detectable standardized effect and its approximations"
+    },
+    {
+      "id": "method:v14:group_regional_glm:disclosure",
+      "type": "ApplicabilityCondition",
+      "name": "Report FDR family, exclusions and site/scanner composition"
+    }
+  ],
+  "edges": [
+    {
+      "source": "method:v14:group_regional_glm",
+      "target": "method:v14:group_regional_glm:design",
+      "type": "hasCondition"
+    },
+    {
+      "source": "method:v14:group_regional_glm",
+      "target": "method:v14:group_regional_glm:sample",
+      "type": "hasCondition"
+    },
+    {
+      "source": "method:v14:group_regional_glm",
+      "target": "method:v14:group_regional_glm:identity",
+      "type": "hasCondition"
+    },
+    {
+      "source": "method:v14:group_regional_glm",
+      "target": "method:v14:group_regional_glm:power",
+      "type": "hasCondition"
+    },
+    {
+      "source": "method:v14:group_regional_glm",
+      "target": "method:v14:group_regional_glm:disclosure",
+      "type": "hasCondition"
+    }
+  ],
+  "sources": [
+    {
+      "id": "group_glm_v14",
+      "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/GroupAnalysis",
+      "text": "Project implementation note: group models bind a subject design and an explicit contrast. This regional method uses native-atlas subject summaries and an additive intercept model; it does not reproduce the tutorial vertexwise DODS pipeline.",
+      "evidence_class": "project_implementation_note_with_primary_source",
+      "text_sha256": "8203101342f1c1024bb2275f0c7358a21bfe41d2e505bd541d9dcdf191449f89"
+    },
+    {
+      "id": "group_fdr_v14",
+      "url": "https://doi.org/10.1111/j.2517-6161.1995.tb02031.x",
+      "text": "Project policy: apply Benjamini-Hochberg adjustment to every fitted regional p value across both hemispheres and all selected metrics in one family. Skipped regions are retained as rows and excluded from that family.",
+      "evidence_class": "project_implementation_policy_with_primary_reference",
+      "text_sha256": "4ebc3ff4dbf7d5fe93ea76e60029f15e65724b84b900a44ee69b56e4a6053ccf"
+    }
+  ]
+}

@@ -1,0 +1,651 @@
+{
+  "created_utc": "2026-10-23T18:14:46.389533+00:00",
+  "prior_four_rows_preserved_exactly": true,
+  "rows": [
+    {
+      "subject": "ION_32198",
+      "species": "Macaca mulatta",
+      "age": "5.81",
+      "sex": "Male",
+      "remaining_k": 1.0,
+      "scale_verified": true,
+      "verdict": "conditional_pass",
+      "area_mm2": 25006.612070429102,
+      "area_per_hemisphere_mm2": 12503.306035214551,
+      "area_deviation_percent": 23.795109259550017,
+      "mean_thickness_mm": 1.683949606346392,
+      "thickness_deviation_percent": -19.811923507314678,
+      "volume_cm3": 106.415875,
+      "hull_ratio": 1.8765998901551444,
+      "input_sha_checked": 11,
+      "reference_exitcode": 0,
+      "thickness_medians": [
+        {
+          "hemisphere": "lh",
+          "all_vertex_median_mm": 1.5789029598236084,
+          "cortex_median_mm": 1.6320247650146484,
+          "finite": true,
+          "cortex_zero_count": 266,
+          "median_in_user_expected_1_5_to_2_5_mm": true
+        },
+        {
+          "hemisphere": "rh",
+          "all_vertex_median_mm": 1.6010634899139404,
+          "cortex_median_mm": 1.6509110927581787,
+          "finite": true,
+          "cortex_zero_count": 14,
+          "median_in_user_expected_1_5_to_2_5_mm": true
+        }
+      ],
+      "bbox_comparison": [
+        {
+          "surface": "white",
+          "extent_tkr_mm": [
+            60.6129264831543,
+            74.82300567626953,
+            44.32425308227539
+          ],
+          "surface_over_mask_extent": [
+            0.9776278465024887,
+            0.9352875709533691,
+            0.91390212540774
+          ],
+          "difference_mm": [
+            -1.3870735168457031,
+            -5.176994323730469,
+            -4.175746917724609
+          ],
+          "centre_span_difference_mm": [
+            -0.8870735168457031,
+            -4.676994323730469,
+            -3.6757469177246094
+          ],
+          "centre_span_two_voxel_pass": false,
+          "difference_in_0_5mm_voxels": [
+            -2.7741470336914062,
+            -10.353988647460938,
+            -8.351493835449219
+          ],
+          "literal_two_voxel_pass": false,
+          "note": "white is an inner white/gray boundary; mask and pial are different outer tissue supports. This note does not relabel a failed literal threshold as pass."
+        },
+        {
+          "surface": "pial",
+          "extent_tkr_mm": [
+            62.17743492126465,
+            78.52067565917969,
+            47.91980743408203
+          ],
+          "surface_over_mask_extent": [
+            1.0028618535687845,
+            0.981508445739746,
+            0.9880372666821038
+          ],
+          "difference_mm": [
+            0.17743492126464844,
+            -1.4793243408203125,
+            -0.5801925659179688
+          ],
+          "centre_span_difference_mm": [
+            0.6774349212646484,
+            -0.9793243408203125,
+            -0.08019256591796875
+          ],
+          "centre_span_two_voxel_pass": true,
+          "difference_in_0_5mm_voxels": [
+            0.3548698425292969,
+            -2.958648681640625,
+            -1.1603851318359375
+          ],
+          "literal_two_voxel_pass": false,
+          "note": "white is an inner white/gray boundary; mask and pial are different outer tissue supports. This note does not relabel a failed literal threshold as pass."
+        }
+      ],
+      "warnings": [
+        "Requested two-voxel bounding-box equality is not met in all dimensions; actual differences retained; white and mask are different tissue boundaries.",
+        "Conflicting NIfTI geometry excluded; final MGZ affine used without modifying originals.",
+        "Global metrics only; human-named compatibility labels not used as macaque parcellation. Anatomical expert QC not completed."
+      ],
+      "source": "/data/xuancheng/datasets/provenance/macaque_global_acceptance_20261023/ION_32198_acceptance_v2"
+    },
+    {
+      "subject": "UCDAVIS_32125",
+      "species": "Macaca mulatta",
+      "age": "22.5",
+      "sex": "F",
+      "remaining_k": 1.0,
+      "scale_verified": true,
+      "verdict": "conditional_pass",
+      "area_mm2": 18791.111579683118,
+      "area_per_hemisphere_mm2": 9395.555789841559,
+      "area_deviation_percent": -6.974695150083576,
+      "mean_thickness_mm": 1.6620886116589424,
+      "thickness_deviation_percent": -20.852923254336076,
+      "volume_cm3": 83.01275,
+      "hull_ratio": 1.748585585776282,
+      "input_sha_checked": 11,
+      "reference_exitcode": 0,
+      "thickness_medians": [
+        {
+          "hemisphere": "lh",
+          "all_vertex_median_mm": 1.622882604598999,
+          "cortex_median_mm": 1.6866521835327148,
+          "finite": true,
+          "cortex_zero_count": 299,
+          "median_in_user_expected_1_5_to_2_5_mm": true
+        },
+        {
+          "hemisphere": "rh",
+          "all_vertex_median_mm": 1.566106915473938,
+          "cortex_median_mm": 1.6381220817565918,
+          "finite": true,
+          "cortex_zero_count": 36,
+          "median_in_user_expected_1_5_to_2_5_mm": true
+        }
+      ],
+      "bbox_comparison": [
+        {
+          "surface": "white",
+          "extent_tkr_mm": [
+            55.701894760131836,
+            69.06966400146484,
+            37.413068771362305
+          ],
+          "surface_over_mask_extent": [
+            0.9283649126688639,
+            0.9333738378576331,
+            0.8803075005026425
+          ],
+          "difference_mm": [
+            -4.298105239868164,
+            -4.930335998535156,
+            -5.086931228637695
+          ],
+          "centre_span_difference_mm": [
+            -3.798105239868164,
+            -4.430335998535156,
+            -4.586931228637695
+          ],
+          "centre_span_two_voxel_pass": false,
+          "difference_in_0_5mm_voxels": [
+            -8.596210479736328,
+            -9.860671997070312,
+            -10.17386245727539
+          ],
+          "literal_two_voxel_pass": false,
+          "note": "white is an inner white/gray boundary; mask and pial are different outer tissue supports. This note does not relabel a failed literal threshold as pass."
+        },
+        {
+          "surface": "pial",
+          "extent_tkr_mm": [
+            58.94962120056152,
+            72.61246109008789,
+            41.75623321533203
+          ],
+          "surface_over_mask_extent": [
+            0.9824936866760254,
+            0.9812494741903769,
+            0.982499605066636
+          ],
+          "difference_mm": [
+            -1.0503787994384766,
+            -1.3875389099121094,
+            -0.7437667846679688
+          ],
+          "centre_span_difference_mm": [
+            -0.5503787994384766,
+            -0.8875389099121094,
+            -0.24376678466796875
+          ],
+          "centre_span_two_voxel_pass": true,
+          "difference_in_0_5mm_voxels": [
+            -2.100757598876953,
+            -2.7750778198242188,
+            -1.4875335693359375
+          ],
+          "literal_two_voxel_pass": false,
+          "note": "white is an inner white/gray boundary; mask and pial are different outer tissue supports. This note does not relabel a failed literal threshold as pass."
+        }
+      ],
+      "warnings": [
+        "Requested two-voxel bounding-box equality is not met in all dimensions; actual differences retained; white and mask are different tissue boundaries.",
+        "Conflicting NIfTI geometry excluded; final MGZ affine used without modifying originals.",
+        "Global metrics only; human-named compatibility labels not used as macaque parcellation. Anatomical expert QC not completed."
+      ],
+      "source": "/data/xuancheng/datasets/provenance/macaque_global_acceptance_20261023/UCDAVIS_32125_automatic_acceptance"
+    },
+    {
+      "subject": "ION_32199",
+      "species": "Macaca mulatta",
+      "age": "4.78",
+      "sex": "Male",
+      "remaining_k": 1.0,
+      "scale_verified": true,
+      "verdict": "conditional_pass",
+      "area_mm2": 24517.03963588465,
+      "area_per_hemisphere_mm2": 12258.519817942324,
+      "area_deviation_percent": 21.371483345963615,
+      "mean_thickness_mm": 1.823410656377777,
+      "thickness_deviation_percent": -13.170921124867762,
+      "volume_cm3": 111.36025,
+      "hull_ratio": 1.8439745170427004,
+      "input_sha_checked": 11,
+      "reference_exitcode": 0,
+      "thickness_medians": [
+        {
+          "hemisphere": "lh",
+          "all_vertex_median_mm": 1.7045891284942627,
+          "cortex_median_mm": 1.7710800170898438,
+          "finite": true,
+          "cortex_zero_count": 137,
+          "median_in_user_expected_1_5_to_2_5_mm": true
+        },
+        {
+          "hemisphere": "rh",
+          "all_vertex_median_mm": 1.6929577589035034,
+          "cortex_median_mm": 1.751161813735962,
+          "finite": true,
+          "cortex_zero_count": 10,
+          "median_in_user_expected_1_5_to_2_5_mm": true
+        }
+      ],
+      "bbox_comparison": [
+        {
+          "surface": "white",
+          "extent_tkr_mm": [
+            56.42970657348633,
+            74.9500503540039,
+            45.81204032897949
+          ],
+          "surface_over_mask_extent": [
+            0.9101565576368763,
+            0.9487348146076444,
+            0.8982753005682254
+          ],
+          "difference_mm": [
+            -5.570293426513672,
+            -4.049949645996094,
+            -5.187959671020508
+          ],
+          "centre_span_difference_mm": [
+            -5.070293426513672,
+            -3.5499496459960938,
+            -4.687959671020508
+          ],
+          "centre_span_two_voxel_pass": false,
+          "difference_in_0_5mm_voxels": [
+            -11.140586853027344,
+            -8.099899291992188,
+            -10.375919342041016
+          ],
+          "literal_two_voxel_pass": false,
+          "note": "white is an inner white/gray boundary; mask and pial are different outer tissue supports. This note does not relabel a failed literal threshold as pass."
+        },
+        {
+          "surface": "pial",
+          "extent_tkr_mm": [
+            61.2404842376709,
+            78.91692352294922,
+            50.0018310546875
+          ],
+          "surface_over_mask_extent": [
+            0.9877497457688854,
+            0.9989483990246737,
+            0.9804280598958334
+          ],
+          "difference_mm": [
+            -0.7595157623291016,
+            -0.08307647705078125,
+            -0.9981689453125
+          ],
+          "centre_span_difference_mm": [
+            -0.25951576232910156,
+            0.41692352294921875,
+            -0.4981689453125
+          ],
+          "centre_span_two_voxel_pass": true,
+          "difference_in_0_5mm_voxels": [
+            -1.5190315246582031,
+            -0.1661529541015625,
+            -1.996337890625
+          ],
+          "literal_two_voxel_pass": true,
+          "note": "white is an inner white/gray boundary; mask and pial are different outer tissue supports. This note does not relabel a failed literal threshold as pass."
+        }
+      ],
+      "warnings": [
+        "Requested two-voxel bounding-box equality is not met in all dimensions; actual differences retained; white and mask are different tissue boundaries.",
+        "Conflicting NIfTI geometry excluded; final MGZ affine used without modifying originals.",
+        "Global metrics only; human-named compatibility labels not used as macaque parcellation. Anatomical expert QC not completed."
+      ],
+      "source": "/data/xuancheng/datasets/provenance/macaque_global_acceptance_20261023/ION_32199_automatic_acceptance"
+    },
+    {
+      "subject": "ION_32201",
+      "species": "Macaca mulatta",
+      "age": "4.69",
+      "sex": "Male",
+      "remaining_k": 1.0,
+      "scale_verified": true,
+      "verdict": "conditional_pass",
+      "area_mm2": 22611.74832377713,
+      "area_per_hemisphere_mm2": 11305.874161888565,
+      "area_deviation_percent": 11.939348137510542,
+      "mean_thickness_mm": 1.6649894918649009,
+      "thickness_deviation_percent": -20.71478610167139,
+      "volume_cm3": 100.90825,
+      "hull_ratio": 1.787711680869827,
+      "input_sha_checked": 11,
+      "reference_exitcode": 0,
+      "thickness_medians": [
+        {
+          "hemisphere": "lh",
+          "all_vertex_median_mm": 1.5937128067016602,
+          "cortex_median_mm": 1.6552085876464844,
+          "finite": true,
+          "cortex_zero_count": 462,
+          "median_in_user_expected_1_5_to_2_5_mm": true
+        },
+        {
+          "hemisphere": "rh",
+          "all_vertex_median_mm": 1.5388233661651611,
+          "cortex_median_mm": 1.5922245979309082,
+          "finite": true,
+          "cortex_zero_count": 63,
+          "median_in_user_expected_1_5_to_2_5_mm": true
+        }
+      ],
+      "bbox_comparison": [
+        {
+          "surface": "white",
+          "extent_tkr_mm": [
+            58.63473701477051,
+            73.61835861206055,
+            43.34671211242676
+          ],
+          "surface_over_mask_extent": [
+            0.9381557922363282,
+            0.9202294826507569,
+            0.912562360261616
+          ],
+          "difference_mm": [
+            -3.865262985229492,
+            -6.381641387939453,
+            -4.153287887573242
+          ],
+          "centre_span_difference_mm": [
+            -3.365262985229492,
+            -5.881641387939453,
+            -3.653287887573242
+          ],
+          "centre_span_two_voxel_pass": false,
+          "difference_in_0_5mm_voxels": [
+            -7.730525970458984,
+            -12.763282775878906,
+            -8.306575775146484
+          ],
+          "literal_two_voxel_pass": false,
+          "note": "white is an inner white/gray boundary; mask and pial are different outer tissue supports. This note does not relabel a failed literal threshold as pass."
+        },
+        {
+          "surface": "pial",
+          "extent_tkr_mm": [
+            61.41806221008301,
+            77.43017578125,
+            46.421260833740234
+          ],
+          "surface_over_mask_extent": [
+            0.9826889953613281,
+            0.967877197265625,
+            0.9772897017629523
+          ],
+          "difference_mm": [
+            -1.0819377899169922,
+            -2.56982421875,
+            -1.0787391662597656
+          ],
+          "centre_span_difference_mm": [
+            -0.5819377899169922,
+            -2.06982421875,
+            -0.5787391662597656
+          ],
+          "centre_span_two_voxel_pass": false,
+          "difference_in_0_5mm_voxels": [
+            -2.1638755798339844,
+            -5.1396484375,
+            -2.1574783325195312
+          ],
+          "literal_two_voxel_pass": false,
+          "note": "white is an inner white/gray boundary; mask and pial are different outer tissue supports. This note does not relabel a failed literal threshold as pass."
+        }
+      ],
+      "warnings": [
+        "Requested two-voxel bounding-box equality is not met in all dimensions; actual differences retained; white and mask are different tissue boundaries.",
+        "Conflicting NIfTI geometry excluded; final MGZ affine used without modifying originals.",
+        "Global metrics only; human-named compatibility labels not used as macaque parcellation. Anatomical expert QC not completed."
+      ],
+      "source": "/data/xuancheng/datasets/provenance/macaque_global_acceptance_20261023/ION_32201_automatic_acceptance"
+    },
+    {
+      "subject": "UCDAVIS_32126",
+      "species": "Macaca mulatta",
+      "age": "21.5",
+      "sex": "F",
+      "remaining_k": 1.0,
+      "scale_verified": true,
+      "verdict": "conditional_pass",
+      "area_mm2": 22815.180938707126,
+      "area_per_hemisphere_mm2": 11407.590469353563,
+      "area_deviation_percent": 12.946440290629347,
+      "mean_thickness_mm": 1.509373538548777,
+      "thickness_deviation_percent": -28.125069592915388,
+      "volume_cm3": 91.3415,
+      "hull_ratio": 1.862509656448595,
+      "input_sha_checked": 11,
+      "reference_exitcode": 0,
+      "thickness_medians": [
+        {
+          "hemisphere": "lh",
+          "all_vertex_median_mm": 1.4365204572677612,
+          "cortex_median_mm": 1.5124605894088745,
+          "finite": true,
+          "cortex_zero_count": 50,
+          "median_in_user_expected_1_5_to_2_5_mm": true
+        },
+        {
+          "hemisphere": "rh",
+          "all_vertex_median_mm": 1.487305998802185,
+          "cortex_median_mm": 1.5593476295471191,
+          "finite": true,
+          "cortex_zero_count": 36,
+          "median_in_user_expected_1_5_to_2_5_mm": true
+        }
+      ],
+      "bbox_comparison": [
+        {
+          "surface": "white",
+          "extent_tkr_mm": [
+            55.657081604003906,
+            70.9843864440918,
+            41.70008659362793
+          ],
+          "surface_over_mask_extent": [
+            0.9514031043419471,
+            0.9401905489283682,
+            0.8778965598658511
+          ],
+          "difference_mm": [
+            -2.8429183959960938,
+            -4.515613555908203,
+            -5.79991340637207
+          ],
+          "centre_span_difference_mm": [
+            -2.3429183959960938,
+            -4.015613555908203,
+            -5.29991340637207
+          ],
+          "centre_span_two_voxel_pass": false,
+          "difference_in_0_5mm_voxels": [
+            -5.6858367919921875,
+            -9.031227111816406,
+            -11.59982681274414
+          ],
+          "literal_two_voxel_pass": false,
+          "note": "white is an inner white/gray boundary; mask and pial are different outer tissue supports. This note does not relabel a failed literal threshold as pass."
+        },
+        {
+          "surface": "pial",
+          "extent_tkr_mm": [
+            57.919382095336914,
+            73.85369873046875,
+            45.30854034423828
+          ],
+          "surface_over_mask_extent": [
+            0.9900749076125969,
+            0.9781946851717715,
+            0.9538640072471217
+          ],
+          "difference_mm": [
+            -0.5806179046630859,
+            -1.64630126953125,
+            -2.1914596557617188
+          ],
+          "centre_span_difference_mm": [
+            -0.08061790466308594,
+            -1.14630126953125,
+            -1.6914596557617188
+          ],
+          "centre_span_two_voxel_pass": false,
+          "difference_in_0_5mm_voxels": [
+            -1.1612358093261719,
+            -3.2926025390625,
+            -4.3829193115234375
+          ],
+          "literal_two_voxel_pass": false,
+          "note": "white is an inner white/gray boundary; mask and pial are different outer tissue supports. This note does not relabel a failed literal threshold as pass."
+        }
+      ],
+      "warnings": [
+        "Requested two-voxel bounding-box equality is not met in all dimensions; actual differences retained; white and mask are different tissue boundaries.",
+        "Conflicting NIfTI geometry excluded; final MGZ affine used without modifying originals.",
+        "Global metrics only; human-named compatibility labels not used as macaque parcellation. Anatomical expert QC not completed."
+      ],
+      "literal_three_check_full_pass": false,
+      "source": "/data/xuancheng/datasets/provenance/round21_macaque_followup_20261024/UCDAVIS_32126_automatic_acceptance"
+    },
+    {
+      "subject": "UCDAVIS_32127",
+      "species": "Macaca mulatta",
+      "age": "21.5",
+      "sex": "F",
+      "remaining_k": 1.0,
+      "scale_verified": true,
+      "verdict": "conditional_pass",
+      "area_mm2": 19890.87440659612,
+      "area_per_hemisphere_mm2": 9945.43720329806,
+      "area_deviation_percent": -1.5303247198211967,
+      "mean_thickness_mm": 1.7736948270754709,
+      "thickness_deviation_percent": -15.538341567834724,
+      "volume_cm3": 94.55125,
+      "hull_ratio": 1.7242020925006576,
+      "input_sha_checked": 11,
+      "reference_exitcode": 0,
+      "thickness_medians": [
+        {
+          "hemisphere": "lh",
+          "all_vertex_median_mm": 1.7479736804962158,
+          "cortex_median_mm": 1.8131084442138672,
+          "finite": true,
+          "cortex_zero_count": 202,
+          "median_in_user_expected_1_5_to_2_5_mm": true
+        },
+        {
+          "hemisphere": "rh",
+          "all_vertex_median_mm": 1.687429666519165,
+          "cortex_median_mm": 1.7594313621520996,
+          "finite": true,
+          "cortex_zero_count": 39,
+          "median_in_user_expected_1_5_to_2_5_mm": true
+        }
+      ],
+      "bbox_comparison": [
+        {
+          "surface": "white",
+          "extent_tkr_mm": [
+            54.991159439086914,
+            68.61139678955078,
+            41.38511085510254
+          ],
+          "surface_over_mask_extent": [
+            0.9320535498150324,
+            0.9271810376966322,
+            0.8621898094813029
+          ],
+          "difference_mm": [
+            -4.008840560913086,
+            -5.388603210449219,
+            -6.614889144897461
+          ],
+          "centre_span_difference_mm": [
+            -3.508840560913086,
+            -4.888603210449219,
+            -6.114889144897461
+          ],
+          "centre_span_two_voxel_pass": false,
+          "difference_in_0_5mm_voxels": [
+            -8.017681121826172,
+            -10.777206420898438,
+            -13.229778289794922
+          ],
+          "literal_two_voxel_pass": false,
+          "note": "white is an inner white/gray boundary; mask and pial are different outer tissue supports. This note does not relabel a failed literal threshold as pass."
+        },
+        {
+          "surface": "pial",
+          "extent_tkr_mm": [
+            57.82644462585449,
+            71.72762298583984,
+            46.11618232727051
+          ],
+          "surface_over_mask_extent": [
+            0.9801092309466863,
+            0.9692922025113493,
+            0.9607537984848022
+          ],
+          "difference_mm": [
+            -1.1735553741455078,
+            -2.2723770141601562,
+            -1.8838176727294922
+          ],
+          "centre_span_difference_mm": [
+            -0.6735553741455078,
+            -1.7723770141601562,
+            -1.3838176727294922
+          ],
+          "centre_span_two_voxel_pass": false,
+          "difference_in_0_5mm_voxels": [
+            -2.3471107482910156,
+            -4.5447540283203125,
+            -3.7676353454589844
+          ],
+          "literal_two_voxel_pass": false,
+          "note": "white is an inner white/gray boundary; mask and pial are different outer tissue supports. This note does not relabel a failed literal threshold as pass."
+        }
+      ],
+      "warnings": [
+        "Requested two-voxel bounding-box equality is not met in all dimensions; actual differences retained; white and mask are different tissue boundaries.",
+        "Conflicting NIfTI geometry excluded; final MGZ affine used without modifying originals.",
+        "Global metrics only; human-named compatibility labels not used as macaque parcellation. Anatomical expert QC not completed."
+      ],
+      "literal_three_check_full_pass": false,
+      "source": "/data/xuancheng/datasets/provenance/round21_macaque_followup_20261024/UCDAVIS_32127_automatic_acceptance"
+    }
+  ],
+  "definitions": "Round19 unchanged: nominal software mm after scale restoration, not independent scanner calibration; no reference-driven rescaling.",
+  "coarse_reference_note": "10100 per-hemisphere white area and 2.1 thickness are descriptive comparators, not a calibration target.",
+  "new_subjects": [
+    "UCDAVIS_32126",
+    "UCDAVIS_32127"
+  ],
+  "macaque_model_api_requests": 0
+}

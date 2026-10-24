@@ -1,0 +1,1347 @@
+{
+ "schema": "primatex.condition_gold.v1",
+ "status": "draft_by_claude_requires_human_review",
+ "slots": {
+  "T1": [
+   "subject",
+   "species",
+   "space",
+   "voxel_size",
+   "scale_status"
+  ],
+  "T2": [
+   "subject",
+   "species",
+   "space",
+   "voxel_size",
+   "scale_status"
+  ],
+  "volumes": [
+   "subject",
+   "species",
+   "space",
+   "voxel_size",
+   "scale_status"
+  ],
+  "timepoints": [
+   "subject",
+   "species",
+   "space",
+   "voxel_size",
+   "scale_status"
+  ],
+  "mask": [
+   "subject",
+   "species",
+   "space",
+   "voxel_size",
+   "scale_status"
+  ],
+  "pial": [
+   "subject",
+   "species",
+   "hemisphere",
+   "space",
+   "mesh",
+   "scale_status"
+  ],
+  "white": [
+   "subject",
+   "species",
+   "hemisphere",
+   "space",
+   "mesh",
+   "scale_status"
+  ],
+  "surface": [
+   "subject",
+   "species",
+   "hemisphere",
+   "space",
+   "mesh",
+   "scale_status"
+  ],
+  "metric": [
+   "subject",
+   "species",
+   "hemisphere",
+   "space",
+   "mesh",
+   "scale_status"
+  ],
+  "thickness": [
+   "subject",
+   "species",
+   "hemisphere",
+   "space",
+   "mesh",
+   "scale_status"
+  ],
+  "annotation": [
+   "subject",
+   "species",
+   "hemisphere",
+   "space",
+   "mesh",
+   "scale_status",
+   "atlas"
+  ],
+  "label": [
+   "subject",
+   "species",
+   "hemisphere",
+   "space",
+   "mesh",
+   "scale_status"
+  ],
+  "design": [
+   "columns",
+   "n_subjects"
+  ]
+ },
+ "notes": "Template-level label for every statement; parameters only for executable templates. Duplicates within a method are kept per statement and merge to one canonical key.",
+ "items": [
+  {
+   "id": 1,
+   "method": "cat_morphometry",
+   "field": "inputs",
+   "statement": "T1-weighted MRI scans, single scans, longitudinal series or BIDS datasets",
+   "quote": "T1-weighted MRI\nSingle scans, longitudinal series or BIDS datasets",
+   "source_id": "cat",
+   "gold_template": "product_present",
+   "gold_parameters": {
+    "slot": "T1",
+    "type": "type:Volume.T1"
+   }
+  },
+  {
+   "id": 2,
+   "method": "cat_morphometry",
+   "field": "conditions",
+   "statement": "For MATLAB users, SPM12 or newer and MATLAB R2020a or newer are required; no additional MATLAB toolboxes are needed.",
+   "quote": "SPM12 or newer\nMATLAB R2020a or newer (Windows: R2022a, Apple Silicon: R2023b)\nNo additional MATLAB toolboxes",
+   "source_id": "cat",
+   "gold_template": "software",
+   "gold_parameters": {
+    "commands": [
+     "matlab",
+     "spm12"
+    ]
+   }
+  },
+  {
+   "id": 3,
+   "method": "cat_morphometry",
+   "field": "conditions",
+   "statement": "Standalone version runs with MATLAB Runtime R2023b and is mainly intended for scripted, headless use on servers and clusters; some features like parallelization and interactive help are not available.",
+   "quote": "Runs with the free MATLAB Runtime R2023b (v232) and is mainly intended for scripted, headless use on servers and clusters. Some features, such as parallelization and the interactive help, are not available.",
+   "source_id": "cat",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 4,
+   "method": "cat_morphometry",
+   "field": "checks",
+   "statement": "Every scan gets a one-page report with tissue volumes, surface measures and image-quality ratings; noise, bias and resolution are combined into a grade from A (excellent) to F (failed).",
+   "quote": "Every scan gets a one-page report with tissue volumes, surface measures and image-quality ratings. Noise, bias and resolution are combined into one grade from A (excellent) to F (failed)",
+   "source_id": "cat",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 5,
+   "method": "cat_morphometry",
+   "field": "checks",
+   "statement": "A sample homogeneity check flags outliers before statistics.",
+   "quote": "Sample homogeneity check flags outliers before statistics",
+   "source_id": "cat",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 6,
+   "method": "cat_morphometry",
+   "field": "exceptions",
+   "statement": "The standalone version lacks some features such as parallelization and interactive help.",
+   "quote": "Some features, such as parallelization and the interactive help, are not available.",
+   "source_id": "cat",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 7,
+   "method": "existing_curvature_sulc_profile",
+   "field": "checks",
+   "statement": "Confirm that the surfaces have been smoothed and topology-corrected before using the morphometry values.",
+   "quote": "Resmooth RH/LH white matter: smooths rh.orig and lh.orig surfaces",
+   "source_id": "fs_morph",
+   "gold_template": "provenance",
+   "gold_parameters": {
+    "step": "topology correction"
+   }
+  },
+  {
+   "id": 8,
+   "method": "fsl_vbm",
+   "field": "inputs",
+   "statement": "A template_list file containing the names of selected T1 images to be used for template construction, with equal numbers from each group.",
+   "quote": "put all the selected names of exams in a file called template_list in your FSL-VBM directory",
+   "source_id": "fsl_vbm",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 9,
+   "method": "fsl_vbm",
+   "field": "inputs",
+   "statement": "design.mat and design.con files specifying the cross-subject statistical model, with row order matching the image order from imglob.",
+   "quote": "create your design.mat and design.con in your FSL-VBM directory; see the randomise manual",
+   "source_id": "fsl_vbm",
+   "gold_template": "product_present",
+   "gold_parameters": {
+    "slot": "design",
+    "type": "type:StatsTable.DesignMatrix"
+   }
+  },
+  {
+   "id": 10,
+   "method": "fsl_vbm",
+   "field": "inputs",
+   "statement": "A GM mask (GM_mask) and the 4D multi-subject concatenated processed data (e.g., GM_mod_merg_s3) for running randomise.",
+   "quote": "a mask of the GM (GM_mask) and the 4D multi-subject concatenated processed data (e.g. GM_mod_merg_s3)",
+   "source_id": "fsl_vbm",
+   "gold_template": "product_present",
+   "gold_parameters": {
+    "slot": "mask",
+    "type": "type:Volume.BrainMask"
+   }
+  },
+  {
+   "id": 11,
+   "method": "fsl_vbm",
+   "field": "conditions",
+   "statement": "All different populations included in the study must be represented in the template construction.",
+   "quote": "All your different populations included in this study MUST be represented in the template construction.",
+   "source_id": "fsl_vbm",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 12,
+   "method": "fsl_vbm",
+   "field": "conditions",
+   "statement": "Use the same number of subjects from each group in the template construction to avoid bias in non-linear registration.",
+   "quote": "You should use the same number of subjects from each in the construction of the study-specific template.",
+   "source_id": "fsl_vbm",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 13,
+   "method": "fsl_vbm",
+   "field": "conditions",
+   "statement": "The order of rows in design.mat must match the order of images when doing imglob * in the FSL-VBM directory.",
+   "quote": "The order of the rows in your design.mat model MUST match the order of your images when doing an imglob * command",
+   "source_id": "fsl_vbm",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 14,
+   "method": "fsl_vbm",
+   "field": "checks",
+   "statement": "Check brain-extracted images (*_brain.*) in the struc directory after fslvbm_1_bet.",
+   "quote": "CHECKING the brain images (*_brain.*) in your struc directory",
+   "source_id": "fsl_vbm",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 15,
+   "method": "fsl_vbm",
+   "field": "checks",
+   "statement": "Check the template_GM_4D image in struc with the movie loop in fsleyes after template creation.",
+   "quote": "CHECK the template_GM_4D image in struc with the movie loop in fsleyes.",
+   "source_id": "fsl_vbm",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 16,
+   "method": "fsl_vbm",
+   "field": "checks",
+   "statement": "Check the 4D image of modulated registered GM images (GM_mod_merg) using the movie loop in fsleyes after fslvbm_3_proc.",
+   "quote": "final CHECK of the 4D image of modulated registered GM images GM_mod_merg using the movie loop in fsleyes.",
+   "source_id": "fsl_vbm",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 17,
+   "method": "fsl_vbm",
+   "field": "exceptions",
+   "statement": "FSL-VBM v1.1 analysis is not compatible with an older analysis due to the switch from IRTK to FNIRT.",
+   "quote": "An FSL-VBM v1.1 analysis is not compatible with an older analysis.",
+   "source_id": "fsl_vbm",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 18,
+   "method": "global_surface_folding",
+   "field": "inputs",
+   "statement": "Pial surface mesh of the cortical ribbon.",
+   "quote": "our proposed method requires the bounding pial and white matter surfaces of the cortical ribbon as input",
+   "source_id": "comparative_folding",
+   "gold_template": "product_present",
+   "gold_parameters": {
+    "slot": "pial",
+    "type": "type:Surface.Pial"
+   }
+  },
+  {
+   "id": 19,
+   "method": "global_surface_folding",
+   "field": "inputs",
+   "statement": "White matter surface mesh of the cortical ribbon.",
+   "quote": "our proposed method requires the bounding pial and white matter surfaces of the cortical ribbon as input",
+   "source_id": "comparative_folding",
+   "gold_template": "product_present",
+   "gold_parameters": {
+    "slot": "white",
+    "type": "type:Surface.White"
+   }
+  },
+  {
+   "id": 20,
+   "method": "global_surface_folding",
+   "field": "inputs",
+   "statement": "Point coordinates for convex hull computation.",
+   "quote": "Coordinates of points to construct a convex hull from",
+   "source_id": "scipy_hull",
+   "gold_template": "product_present",
+   "gold_parameters": {
+    "slot": "pial",
+    "type": "type:Surface.Pial"
+   }
+  },
+  {
+   "id": 21,
+   "method": "global_surface_folding",
+   "field": "inputs",
+   "statement": "Cortical thickness estimate (average) for scaling law.",
+   "quote": "we only had numerical values for the total and exposed surface area, as well a average cortical thickness estimates",
+   "source_id": "comparative_folding",
+   "gold_template": "product_present",
+   "gold_parameters": {
+    "slot": "thickness",
+    "type": "type:SurfaceMetric.Thickness"
+   }
+  },
+  {
+   "id": 22,
+   "method": "global_surface_folding",
+   "field": "conditions",
+   "statement": "Analysis is hemisphere-based, not regionalised.",
+   "quote": "the analysis is always hemisphere-based, as in our previous work",
+   "source_id": "comparative_folding",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 23,
+   "method": "global_surface_folding",
+   "field": "conditions",
+   "statement": "Coarse-graining erases morphological features smaller than the specified scale while preserving surface integrity.",
+   "quote": "removes morphological details smaller than a specified scale while preserving surface integrity",
+   "source_id": "comparative_folding",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 24,
+   "method": "global_surface_folding",
+   "field": "conditions",
+   "statement": "Isometric rescaling is applied to leave dimensionless shape properties unaffected.",
+   "quote": "we apply an isometric rescaling process that leaves all dimensionless shape properties unaffected",
+   "source_id": "comparative_folding",
+   "gold_template": "scale_check",
+   "gold_parameters": {
+    "metric": "shape"
+   }
+  },
+  {
+   "id": 25,
+   "method": "global_surface_folding",
+   "field": "checks",
+   "statement": "Quality check reconstructed surfaces by visual inspection.",
+   "quote": "These boundaries were then quality checked by visual inspection for particularly the young and old cohorts and manually corrected where needed.",
+   "source_id": "comparative_folding",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 26,
+   "method": "global_surface_folding",
+   "field": "checks",
+   "statement": "Verify that coarse-grained cortices follow the scaling law with high R².",
+   "quote": "all species followed a power law (linear regression R2>0.999 for all species)",
+   "source_id": "comparative_folding",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 27,
+   "method": "global_surface_folding",
+   "field": "checks",
+   "statement": "Check that K remains near-invariant across scales and species.",
+   "quote": "The variance in K across scales and all 11 species is <0.01",
+   "source_id": "comparative_folding",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 28,
+   "method": "global_surface_folding",
+   "field": "checks",
+   "statement": "Ensure convex hull computation does not raise QhullError.",
+   "quote": "QhullError\nRaised when Qhull encounters an error condition",
+   "source_id": "scipy_hull",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 29,
+   "method": "global_surface_folding",
+   "field": "exceptions",
+   "statement": "Coarse-grained brain surfaces are algorithmic outputs and not to be directly likened to actual brain surfaces in terms of fold location or shape.",
+   "quote": "the coarse-grained brain surfaces are an output of our algorithm alone and not to be directly/naively likened to actual brain surfaces, e.g., in terms of the location or shape of the folds",
+   "source_id": "comparative_folding",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 30,
+   "method": "global_surface_folding",
+   "field": "exceptions",
+   "statement": "The model cannot capture large-scale features such as the longitudinal fissure, sylvian fissure, and specific gyri and sulci.",
+   "quote": "The shape of the mammalian brain has a number of prominent large-scale features: the longitudinal fissure, the sylvian fissure, and many specific gyri and sulci with important functional correlates that we cannot capture with our minimal model.",
+   "source_id": "global_gyrification",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 31,
+   "method": "global_surface_folding",
+   "field": "exceptions",
+   "statement": "The mechanical model uses simplified geometries and material properties; real tissues may have stress-dependent growth and stress relaxation.",
+   "quote": "Real brain tissues are known to change their growth rates in response to stress (20), and other mechanisms lead to relaxation of elastic stresses over time.",
+   "source_id": "global_gyrification",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 32,
+   "method": "global_surface_folding",
+   "field": "exceptions",
+   "statement": "The scaling law is empirical and does not specify the actual cortical shape beyond a constraint binding three morphometric parameters.",
+   "quote": "this universality, presumed to be arising from universal physical principles and evolutionarily conserved biomechanics, says little about what that cortical shape actually is, beyond a constraint binding three morphometric parameters",
+   "source_id": "comparative_folding",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 33,
+   "method": "hcp_structural_pipeline",
+   "field": "inputs",
+   "statement": "T1/T2 structural images are processed by the three structural batch scripts.",
+   "quote": "处理T1/T2结构像",
+   "source_id": "alex_hcp_pdf",
+   "gold_template": "product_present",
+   "gold_parameters": {
+    "slot": "T1",
+    "type": "type:Volume.T1"
+   }
+  },
+  {
+   "id": 34,
+   "method": "hcp_structural_pipeline",
+   "field": "conditions",
+   "statement": "System: Ubuntu 22.04 LTS was used for testing.",
+   "quote": "我测试使用的系统是Ubuntu 22.04 LTS",
+   "source_id": "alex_hcp_pdf",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 35,
+   "method": "hcp_structural_pipeline",
+   "field": "exceptions",
+   "statement": "On Ubuntu 22.04, freeview fails due to missing libpng12; a workaround installation is provided.",
+   "quote": "在Ubuntu 22.04系统中，由于缺乏 libpng12 这个库，导致 freeview 无法正常使用。",
+   "source_id": "alex_hcp_pdf",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 36,
+   "method": "local_gyrification",
+   "field": "inputs",
+   "statement": "The pial surface file (?h.pial) for the subject, produced by the recon-all -all stream.",
+   "quote": "usage of the -localGI feature assumes that a subject has already been processed by the freesurfer {{{recon-all -s <subjid> -all}}} stream, such that the ?h.pial surface files exist",
+   "source_id": "fs_lgi",
+   "gold_template": "product_present",
+   "gold_parameters": {
+    "slot": "pial",
+    "type": "type:Surface.Pial"
+   }
+  },
+  {
+   "id": 37,
+   "method": "local_gyrification",
+   "field": "inputs",
+   "statement": "The subject's surf directory containing the pial surface files.",
+   "quote": "such that the ?h.pial surface files exist in the subject's <subj>/surf directory",
+   "source_id": "fs_lgi",
+   "gold_template": "product_present",
+   "gold_parameters": {
+    "slot": "pial",
+    "type": "type:Surface.Pial"
+   }
+  },
+  {
+   "id": 38,
+   "method": "local_gyrification",
+   "field": "inputs",
+   "statement": "MATLAB with Image Processing Toolbox and $FREESURFER_HOME/matlab in the MATLAB path.",
+   "quote": "MATLAB is required to use the -localGI feature. Also, you will need their Image Processing Toolbox.",
+   "source_id": "fs_lgi",
+   "gold_template": "software",
+   "gold_parameters": {
+    "commands": [
+     "matlab"
+    ]
+   }
+  },
+  {
+   "id": 39,
+   "method": "local_gyrification",
+   "field": "conditions",
+   "statement": "The subject must have been processed with the full recon-all stream before using -localGI.",
+   "quote": "usage of the -localGI feature assumes that a subject has already been processed by the freesurfer {{{recon-all -s <subjid> -all}}} stream",
+   "source_id": "fs_lgi",
+   "gold_template": "provenance",
+   "gold_parameters": {
+    "step": "recon-all"
+   }
+  },
+  {
+   "id": 40,
+   "method": "local_gyrification",
+   "field": "conditions",
+   "statement": "MATLAB and its Image Processing Toolbox must be installed and accessible.",
+   "quote": "MATLAB is required to use the -localGI feature. Also, you will need their Image Processing Toolbox.",
+   "source_id": "fs_lgi",
+   "gold_template": "software",
+   "gold_parameters": {
+    "commands": [
+     "matlab"
+    ]
+   }
+  },
+  {
+   "id": 41,
+   "method": "local_gyrification",
+   "field": "conditions",
+   "statement": "The MATLAB path must include $FREESURFER_HOME/matlab, set up in ~/matlab/startup.m.",
+   "quote": "You will also need $FREESURFER_HOME/matlab in your matlab path set up in your ~/matlab/starup.m script.",
+   "source_id": "fs_lgi",
+   "gold_template": "software",
+   "gold_parameters": {
+    "commands": [
+     "matlab"
+    ]
+   }
+  },
+  {
+   "id": 42,
+   "method": "local_gyrification",
+   "field": "checks",
+   "statement": "Check for topological defects of the pial surface using mris_euler_number, as defects cause mris_compute_lgi to crash.",
+   "quote": "In case of topological defects of the pial surface (run mris_euler_number), mris_compute_lgi crashes.",
+   "source_id": "fs_lgi",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 43,
+   "method": "local_gyrification",
+   "field": "exceptions",
+   "statement": "If mris_compute_lgi crashes due to topological defects, simply relaunching it is usually sufficient to overcome the issue.",
+   "quote": "Usually, simply relaunching mris_compute_lgi is sufficient to overcome this issue.",
+   "source_id": "fs_lgi",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 44,
+   "method": "macaque_civet",
+   "field": "inputs",
+   "statement": "T1-weighted MR scan of a macaque brain as the primary input.",
+   "quote": "CIVET takes as input a T1w scan and registers if to standardized space, herein the NMT",
+   "source_id": "civet_macaque",
+   "gold_template": "product_present",
+   "gold_parameters": {
+    "slot": "T1",
+    "type": "type:Volume.T1"
+   }
+  },
+  {
+   "id": 45,
+   "method": "macaque_civet",
+   "field": "inputs",
+   "statement": "Optional T2-weighted or proton density scans for multimodal tissue classification.",
+   "quote": "with the possibility of a multimodal classification should T2-weighted and/or proton density scans be available",
+   "source_id": "civet_macaque",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 46,
+   "method": "macaque_civet",
+   "field": "inputs",
+   "statement": "NMT brain mask and tissue priors for registration and classification.",
+   "quote": "Registration, using minctracc, proceeds by specifying the brain mask on the target image only, herein the NMT volume with its associated brain mask",
+   "source_id": "civet_macaque",
+   "gold_template": "product_present",
+   "gold_parameters": {
+    "slot": "mask",
+    "type": "type:Volume.BrainMask"
+   }
+  },
+  {
+   "id": 47,
+   "method": "macaque_civet",
+   "field": "conditions",
+   "statement": "The pipeline is designed for macaque brains and uses a length scale of 0.4 relative to human brain size.",
+   "quote": "A length scale of 0.4 was derived from the cubic root of the macaque-to-human volume ratio",
+   "source_id": "civet_macaque",
+   "gold_template": "attr_in",
+   "gold_parameters": {
+    "slot": "T1",
+    "attr": "species",
+    "values": [
+     "macaque"
+    ]
+   }
+  },
+  {
+   "id": 48,
+   "method": "macaque_civet",
+   "field": "conditions",
+   "statement": "Processing is performed in the NMT standardized space.",
+   "quote": "Processing is performed based on the NIMH Macaque Template (NMT), as the reference template",
+   "source_id": "civet_macaque",
+   "gold_template": "attr_in",
+   "gold_parameters": {
+    "slot": "T1",
+    "attr": "space",
+    "values": [
+     "NMT_v2"
+    ]
+   }
+  },
+  {
+   "id": 49,
+   "method": "macaque_civet",
+   "field": "conditions",
+   "statement": "The pipeline requires T1w scans; T2-weighted or proton density scans are optional for multimodal classification.",
+   "quote": "relies on the T1w scan, with the possibility of a multimodal classification should T2-weighted and/or proton density scans be available",
+   "source_id": "civet_macaque",
+   "gold_template": "product_present",
+   "gold_parameters": {
+    "slot": "T1",
+    "type": "type:Volume.T1"
+   }
+  },
+  {
+   "id": 50,
+   "method": "macaque_civet",
+   "field": "conditions",
+   "statement": "The NMT v2 is the current version of the template, with symmetric and asymmetric variants and multiple resolutions.",
+   "quote": "The NMT v2 is the most current version of this dataset.",
+   "source_id": "nmt",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 51,
+   "method": "macaque_civet",
+   "field": "checks",
+   "statement": "Quality control includes visual inspection of brain masks and surfaces for accuracy.",
+   "quote": "The procedure proved to be very robust at extracting accurate masks on scans of individual subjects (see Fig. 2)",
+   "source_id": "civet_macaque",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 52,
+   "method": "macaque_civet",
+   "field": "checks",
+   "statement": "The N3 spline distance should be empirically determined to ensure uniform gray and white matter intensities.",
+   "quote": "This value can be determined empirically such that the intensities for gray matter and white matter appear mostly uniform across the brain.",
+   "source_id": "civet_macaque",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 53,
+   "method": "macaque_civet",
+   "field": "exceptions",
+   "statement": "The pipeline is not validated for species other than macaques; adaptations for other primates would require appropriate length scales and templates.",
+   "quote": "Further adaptations of the pipeline to other non-human primate brains should be straightforward by introducing the appropriate length scales and supplying species specific templates.",
+   "source_id": "civet_macaque",
+   "gold_template": "attr_in",
+   "gold_parameters": {
+    "slot": "T1",
+    "attr": "species",
+    "values": [
+     "macaque"
+    ]
+   }
+  },
+  {
+   "id": 54,
+   "method": "macaque_civet",
+   "field": "exceptions",
+   "statement": "The NMT v2 is the current version; the paper describes NMT v1.2, so users should be aware of version differences.",
+   "quote": "The NMT v2 is the most current version of this dataset.",
+   "source_id": "nmt",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 55,
+   "method": "macaque_civet",
+   "field": "exceptions",
+   "statement": "The pipeline may require manual intervention for custom brain masks in rare registration failures.",
+   "quote": "In the rare case when registration fails, a custom brain mask in native space can be supplied.",
+   "source_id": "civet_macaque",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 56,
+   "method": "nhp_macapype",
+   "field": "inputs",
+   "statement": "Input data must be in BIDS format, with T1w and T2w images expected.",
+   "quote": "All the data have to be in BIDS format to run properly",
+   "source_id": "macapype_commands",
+   "gold_template": "product_present",
+   "gold_parameters": {
+    "slot": "T1",
+    "type": "type:Volume.T1"
+   }
+  },
+  {
+   "id": 57,
+   "method": "nhp_macapype",
+   "field": "inputs",
+   "statement": "T1 weighted images are expected with the _T1w BIDS extension.",
+   "quote": "_T1w (BIDS) extension is expected for T1 weighted images",
+   "source_id": "macapype_commands",
+   "gold_template": "product_present",
+   "gold_parameters": {
+    "slot": "T1",
+    "type": "type:Volume.T1"
+   }
+  },
+  {
+   "id": 58,
+   "method": "nhp_macapype",
+   "field": "inputs",
+   "statement": "T2 weighted images are expected with the _T2w BIDS extension.",
+   "quote": "_T2w (BIDS) extension is expected for T2 weighted images",
+   "source_id": "macapype_commands",
+   "gold_template": "product_present",
+   "gold_parameters": {
+    "slot": "T2",
+    "type": "type:Volume.T1"
+   }
+  },
+  {
+   "id": 59,
+   "method": "nhp_macapype",
+   "field": "inputs",
+   "statement": "All files with the same extension (T1w or T2w) will be aligned to the first one and averaged.",
+   "quote": "All files with the same extension (T1w or T2w) will be aligned to the first one and averaged",
+   "source_id": "macapype_commands",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 60,
+   "method": "nhp_macapype",
+   "field": "conditions",
+   "statement": "The -data parameter must point to an existing BIDS format directory.",
+   "quote": "-data : path to your data dataset (existing BIDS format directory)",
+   "source_id": "macapype_commands",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 61,
+   "method": "nhp_macapype",
+   "field": "conditions",
+   "statement": "The -out parameter must point to an existing output path.",
+   "quote": "-out : path to the output results (an existing path)",
+   "source_id": "macapype_commands",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 62,
+   "method": "nhp_macapype",
+   "field": "conditions",
+   "statement": "The -soft parameter must be either SPM or ANTS, with SPM requiring a specific version of macapype/skullTo3d not available by default.",
+   "quote": "-soft : can be one of these : SPM or ANTS ( NB: SPM requires a specific version of macapype/skullTo3d, not available by default)",
+   "source_id": "macapype_commands",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 63,
+   "method": "nhp_macapype",
+   "field": "conditions",
+   "statement": "Either -params or -species must be provided; -params is mandatory if -species is omitted, and vice versa.",
+   "quote": "-params : (mandatory if -species is omitted) a json file specifiying the global parameters of the analysis.",
+   "source_id": "macapype_commands",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 64,
+   "method": "nhp_macapype",
+   "field": "checks",
+   "statement": "The -test option can be used to check if the full pipeline is coherent, generating only graph.dot and graph.png.",
+   "quote": "_test : (at the end) to check if the full pipeline is coherent (will only generate the graph.dot and graph.png)",
+   "source_id": "macapype_commands",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 65,
+   "method": "nhp_macapype",
+   "field": "checks",
+   "statement": "The -prep option performs only data preparation, without brain extraction and segmentation.",
+   "quote": "_prep (at the end) will perform data preparation (no brain extraction and segmentation)",
+   "source_id": "macapype_commands",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 66,
+   "method": "nhp_macapype",
+   "field": "checks",
+   "statement": "The -noseg option performs data preparation and brain extraction, but no segmentation.",
+   "quote": "_noseg (at the end) will perform data preparation and brain extraction (no segmentation)",
+   "source_id": "macapype_commands",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 67,
+   "method": "nhp_macapype",
+   "field": "exceptions",
+   "statement": "The _4animal option uses bet4animal (FSL) for brain extraction, for faster computation; by default atlas_brex is used.",
+   "quote": "_4animal : will use bet4animal (FSL) for brain extraction, for faster computation (by default atlas_brex is used)",
+   "source_id": "macapype_commands",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 68,
+   "method": "nhp_macapype",
+   "field": "exceptions",
+   "statement": "The marmoT2 species option can be used for segmenting from the T2w image; by default, T1w is used for marmo.",
+   "quote": "NB : marmoT2 can be used for segmenting from the T2w image (by default, T1w is used for marmo)",
+   "source_id": "macapype_commands",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 69,
+   "method": "nhp_macapype",
+   "field": "exceptions",
+   "statement": "Some templates are available in downgraded versions (e.g., baboon1_0p6, macaque_0p5) showing significant decrease in processing time with low reduction in quality, but not all combinations are available.",
+   "quote": "NB : some templates are available in downgraded versions: baboon1_0p6, baboon2_0p6 baboon3_0p6 and macaque_0p5 and show significant decrease in processing time with low redection in quality. However, not all combinations are available",
+   "source_id": "macapype_commands",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 70,
+   "method": "samseg_segmentation",
+   "field": "inputs",
+   "statement": "One or more co-registered MRI volumes in Nifti (.nii/.nii.gz) or FreeSurfer (.mgz) format.",
+   "quote": "takes one or more co-registered MRI volumes as input",
+   "source_id": "fs_samseg",
+   "gold_template": "product_present",
+   "gold_parameters": {
+    "slot": "volumes",
+    "type": "type:Volume"
+   }
+  },
+  {
+   "id": 71,
+   "method": "samseg_segmentation",
+   "field": "inputs",
+   "statement": "All input volumes must be co-registered with each other and have the same image grid size and voxel dimensions.",
+   "quote": "the only requirement is that all input volumes are co-registered with each other, and have the same image grid size and voxel dimensions",
+   "source_id": "fs_samseg",
+   "gold_template": "attr_equal",
+   "gold_parameters": {
+    "slots": [
+     "T1",
+     "volumes"
+    ],
+    "attrs": [
+     "space",
+     "voxel_size"
+    ]
+   }
+  },
+  {
+   "id": 72,
+   "method": "samseg_segmentation",
+   "field": "inputs",
+   "statement": "For multi-contrast data, it is recommended to select the contrast with the highest spatial resolution and reformat all other contrasts to that grid.",
+   "quote": "it is recommended to select the contrast with the highest spatial resolution (smallest voxel size) and reformat all other contrasts to that",
+   "source_id": "fs_samseg",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 73,
+   "method": "samseg_segmentation",
+   "field": "inputs",
+   "statement": "For longitudinal processing, all time points must be co-registered and reformatted to the same image grid, using an unbiased reference template.",
+   "quote": "longitudinal SAMSEG expects all its input images to have been co-registered and reformatted to the same image grid beforehand",
+   "source_id": "fs_samseg",
+   "gold_template": "attr_equal",
+   "gold_parameters": {
+    "slots": [
+     "T1",
+     "timepoints"
+    ],
+    "attrs": [
+     "space",
+     "voxel_size"
+    ]
+   }
+  },
+  {
+   "id": 74,
+   "method": "samseg_segmentation",
+   "field": "conditions",
+   "statement": "Preprocessing with FreeSurfer is neither required nor recommended for basic SAMSEG.",
+   "quote": "Preprocessing of the scan(s) with FreeSurfer is neither required nor recommended",
+   "source_id": "fs_samseg",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 75,
+   "method": "samseg_segmentation",
+   "field": "conditions",
+   "statement": "For multi-contrast input, all volumes must be co-registered and have the same image grid size and voxel dimensions.",
+   "quote": "all input volumes are co-registered with each other, and have the same image grid size and voxel dimensions",
+   "source_id": "fs_samseg",
+   "gold_template": "attr_equal",
+   "gold_parameters": {
+    "slots": [
+     "T1",
+     "volumes"
+    ],
+    "attrs": [
+     "space",
+     "voxel_size"
+    ]
+   }
+  },
+  {
+   "id": 76,
+   "method": "samseg_segmentation",
+   "field": "conditions",
+   "statement": "For longitudinal SAMSEG, the same combination of contrasts must be provided for each time point.",
+   "quote": "SAMSEG expects that the same combination of contrasts is provided for each time point",
+   "source_id": "fs_samseg",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 77,
+   "method": "samseg_segmentation",
+   "field": "conditions",
+   "statement": "When using the lesion flag, the lesion-mask-pattern is optional but strongly recommended.",
+   "quote": "--lesion-mask-pattern <pattern> (optional but strongly recommended)",
+   "source_id": "fs_samseg",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 78,
+   "method": "samseg_segmentation",
+   "field": "checks",
+   "statement": "Verify that all input volumes are co-registered and have the same image grid size and voxel dimensions.",
+   "quote": "the only requirement is that all input volumes are co-registered with each other, and have the same image grid size and voxel dimensions",
+   "source_id": "fs_samseg",
+   "gold_template": "attr_equal",
+   "gold_parameters": {
+    "slots": [
+     "T1",
+     "volumes"
+    ],
+    "attrs": [
+     "space",
+     "voxel_size"
+    ]
+   }
+  },
+  {
+   "id": 79,
+   "method": "samseg_segmentation",
+   "field": "checks",
+   "statement": "For longitudinal processing, ensure that the same combination of contrasts is provided for each time point.",
+   "quote": "SAMSEG expects that the same combination of contrasts is provided for each time point",
+   "source_id": "fs_samseg",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 80,
+   "method": "samseg_segmentation",
+   "field": "checks",
+   "statement": "When using the lesion flag, verify that the lesion-mask-pattern has one number for each input contrast.",
+   "quote": "The pattern is a sequence of numbers, one number for each input contrast",
+   "source_id": "fs_samseg",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 81,
+   "method": "samseg_segmentation",
+   "field": "exceptions",
+   "statement": "The pallidum is treated internally as a white matter structure by default because it typically cannot be discerned easily from white matter in T1w scans.",
+   "quote": "by default SAMSEG will treat the pallidum internally as a white matter structure, since it typically can't be discerned easily from white matter in T1w scans",
+   "source_id": "fs_samseg",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 82,
+   "method": "samseg_segmentation",
+   "field": "exceptions",
+   "statement": "The first time the MS lesion module is run, the user may be prompted to install Tensorflow.",
+   "quote": "The first time you run this module, you may be prompted to install Tensorflow",
+   "source_id": "fs_samseg",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 83,
+   "method": "samseg_segmentation",
+   "field": "exceptions",
+   "statement": "For longitudinal processing, simply reformatting all follow-up time points to the baseline scan would introduce a longitudinal processing bias.",
+   "quote": "simply reformatting all follow-up time points to the baseline scan would introduce a longitudinal processing bias",
+   "source_id": "fs_samseg",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 84,
+   "method": "surface_annotation_roi",
+   "field": "inputs",
+   "statement": "Optionally a FreeSurfer .label file giving vertex indices, with optional per-vertex scalars.",
+   "quote": "Load in a Freesurfer .label file.",
+   "source_id": "nibabel_fs",
+   "gold_template": "product_present",
+   "gold_parameters": {
+    "slot": "label",
+    "type": "type:Label"
+   }
+  },
+  {
+   "id": 85,
+   "method": "surface_annotation_roi",
+   "field": "inputs",
+   "statement": "Optionally a triangular surface mesh geometry file supplying vertex coordinates and faces.",
+   "quote": "Read a triangular format Freesurfer surface mesh.",
+   "source_id": "nibabel_fs",
+   "gold_template": "product_present",
+   "gold_parameters": {
+    "slot": "surface",
+    "type": "type:Surface"
+   }
+  },
+  {
+   "id": 86,
+   "method": "surface_annotation_roi",
+   "field": "checks",
+   "statement": "Verify that the number of morphometry values matches the number of vertices in the annotation.",
+   "quote": "labelsndarray, shape (n_vertices,)",
+   "source_id": "nibabel_fs",
+   "gold_template": "attr_equal",
+   "gold_parameters": {
+    "slots": [
+     "annotation",
+     "metric"
+    ],
+    "attrs": [
+     "mesh"
+    ]
+   }
+  },
+  {
+   "id": 87,
+   "method": "surface_annotation_roi",
+   "field": "checks",
+   "statement": "Confirm the length of the label names list equals the number of labels in the color table.",
+   "quote": "The names of the labels. The length of the list is n_labels.",
+   "source_id": "nibabel_fs",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 88,
+   "method": "surface_mesh_area",
+   "field": "inputs",
+   "statement": "A FreeSurfer surface mesh file in triangular format, e.g., white or pial surface.",
+   "quote": "Read a triangular format Freesurfer surface mesh.",
+   "source_id": "nibabel_fs",
+   "gold_template": "product_present",
+   "gold_parameters": {
+    "slot": "surface",
+    "type": "type:Surface"
+   }
+  },
+  {
+   "id": 89,
+   "method": "surface_mesh_area",
+   "field": "inputs",
+   "statement": "Vertex coordinates array (nvtx x 3) from the surface mesh.",
+   "quote": "nvtx x 3 array of vertex (x, y, z) coordinates.",
+   "source_id": "nibabel_fs",
+   "gold_template": "product_present",
+   "gold_parameters": {
+    "slot": "surface",
+    "type": "type:Surface"
+   }
+  },
+  {
+   "id": 90,
+   "method": "surface_mesh_area",
+   "field": "inputs",
+   "statement": "Face array (nfaces x 3) defining mesh triangles.",
+   "quote": "nfaces x 3 array of defining mesh triangles.",
+   "source_id": "nibabel_fs",
+   "gold_template": "product_present",
+   "gold_parameters": {
+    "slot": "surface",
+    "type": "type:Surface"
+   }
+  },
+  {
+   "id": 91,
+   "method": "surface_mesh_area",
+   "field": "inputs",
+   "statement": "Triangle vertices in (n, 3, 3) float form for area computation.",
+   "quote": "Functions for dealing with triangle soups in (n, 3, 3) float form.",
+   "source_id": "trimesh_triangles",
+   "gold_template": "product_present",
+   "gold_parameters": {
+    "slot": "surface",
+    "type": "type:Surface"
+   }
+  },
+  {
+   "id": 92,
+   "method": "surface_mesh_area",
+   "field": "conditions",
+   "statement": "The mesh must be in triangular format as read by nibabel's read_geometry.",
+   "quote": "Read a triangular format Freesurfer surface mesh.",
+   "source_id": "nibabel_fs",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 93,
+   "method": "surface_mesh_area",
+   "field": "conditions",
+   "statement": "Triangle vertices must be provided as an (n, 3, 3) float array for area calculation.",
+   "quote": "triangles ((n, 3, 3) float) – Vertices of triangles",
+   "source_id": "trimesh_triangles",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 94,
+   "method": "surface_mesh_area",
+   "field": "conditions",
+   "statement": "The area function computes the sum area of input triangles.",
+   "quote": "Calculates the sum area of input triangles",
+   "source_id": "trimesh_triangles",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 95,
+   "method": "surface_mesh_area",
+   "field": "checks",
+   "statement": "Verify that the mesh is in triangular format as expected by read_geometry.",
+   "quote": "Read a triangular format Freesurfer surface mesh.",
+   "source_id": "nibabel_fs",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 96,
+   "method": "surface_mesh_area",
+   "field": "checks",
+   "statement": "Ensure the triangle array is in (n, 3, 3) float form before calling area.",
+   "quote": "triangles ((n, 3, 3) float) – Vertices of triangles",
+   "source_id": "trimesh_triangles",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 97,
+   "method": "surface_mesh_area",
+   "field": "checks",
+   "statement": "Confirm that the area function returns the summed area, not individual triangle areas, when the sum argument is used.",
+   "quote": "sum (bool) – Return summed area or individual triangle area",
+   "source_id": "trimesh_triangles",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 98,
+   "method": "surface_mesh_area",
+   "field": "exceptions",
+   "statement": "The area function may accept precomputed cross products as a speedup, but this is optional.",
+   "quote": "crosses ((n, 3) float or None) – As a speedup don’t re- compute cross products",
+   "source_id": "trimesh_triangles",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 99,
+   "method": "surface_reconstruction_qc",
+   "field": "inputs",
+   "statement": "T1-weighted anatomical image(s) in DICOM or other native scanner format.",
+   "quote": "the raw data from the scan must be converted into a format recognized by FreeSurfer",
+   "source_id": "fs_morph",
+   "gold_template": "product_present",
+   "gold_parameters": {
+    "slot": "T1",
+    "type": "type:Volume.T1"
+   }
+  },
+  {
+   "id": 100,
+   "method": "surface_reconstruction_qc",
+   "field": "inputs",
+   "statement": "Subject directory created via recon-all -i command.",
+   "quote": "recon-all -i <path-to-first-structural> [-i <path-to-second-structural>] -s <subjid>",
+   "source_id": "fs_morph",
+   "gold_template": "provenance",
+   "gold_parameters": {
+    "step": "recon-all"
+   }
+  },
+  {
+   "id": 101,
+   "method": "surface_reconstruction_qc",
+   "field": "inputs",
+   "statement": "Output volumes from recon-all processing, including T1.mgz, brainmask.mgz, and surface files.",
+   "quote": "load the T1 and brainmask images as underlays in freeview, and overlay the white and pial surfaces",
+   "source_id": "andy_failures",
+   "gold_template": "product_present",
+   "gold_parameters": {
+    "slot": "T1",
+    "type": "type:Volume.T1"
+   }
+  },
+  {
+   "id": 102,
+   "method": "surface_reconstruction_qc",
+   "field": "conditions",
+   "statement": "Anatomical data should have good quality: strong contrast between tissue types, no movement, high resolution.",
+   "quote": "If your anatomical data is of good quality - strong contrast between the tissue types, no movement, high resolution",
+   "source_id": "andy_failures",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 103,
+   "method": "surface_reconstruction_qc",
+   "field": "conditions",
+   "statement": "Soft failures occur when recon-all finishes without errors but output has obvious errors needing fixes.",
+   "quote": "Soft Failures, on the other hand, occur when recon-all has finished without any errors - but upon closer observation of the output there are obvious errors",
+   "source_id": "andy_failures",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 104,
+   "method": "surface_reconstruction_qc",
+   "field": "checks",
+   "statement": "Verify that surfaces follow the true boundaries of gray and white matter by visual inspection.",
+   "quote": "Make sure that the surfaces follow the true boundaries of the top and bottom of the gray matter.",
+   "source_id": "fs_morph",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 105,
+   "method": "surface_reconstruction_qc",
+   "field": "exceptions",
+   "statement": "Small and infrequent discrepancies between FreeSurfer-drawn borders and actual gray/white borders should be left alone, as editing may worsen the problem.",
+   "quote": "as long as the discrepancies are relatively small and infrequent, it’s best to leave them alone. In those cases, sometimes editing the surfaces can make the problem worse, not better.",
+   "source_id": "andy_failures",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 106,
+   "method": "surface_reconstruction_qc",
+   "field": "exceptions",
+   "statement": "White matter segmentation errors caused by lesions or gliomas are relatively uncommon in healthy subjects and are not covered in the tutorial.",
+   "quote": "These are relatively uncommon in healthy subjects, and will not be covered in this course.",
+   "source_id": "andy_failures",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 107,
+   "method": "surface_reconstruction_qc",
+   "field": "exceptions",
+   "statement": "Topological defects are very rare since FreeSurfer version 6.0 and are usually automatically fixed during recon-all.",
+   "quote": "Since the release of FreeSurfer version 6.0 these types of errors are very rare, and they are usually automatically fixed during recon-all.",
+   "source_id": "andy_failures",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  },
+  {
+   "id": 108,
+   "method": "surface_reconstruction_qc",
+   "field": "exceptions",
+   "statement": "For populations where aseg tools are ineffective (e.g., monkey or newborn data), use the -noaseg flag to skip subcortical segmentation.",
+   "quote": "If you are working with a population for which the aseg tools will not be effective, e.g., monkey data and newborn data, use the flag -noaseg.",
+   "source_id": "fs_morph",
+   "gold_template": "advisory",
+   "gold_parameters": null
+  }
+ ]
+}

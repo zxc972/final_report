@@ -1,0 +1,3044 @@
+[
+  {
+    "id": 1,
+    "method": "cat_morphometry",
+    "statement": "T1-weighted MRI scans, single scans, longitudinal series or BIDS datasets",
+    "quote_support": 1.0,
+    "source_id": "cat",
+    "template": "cardinality",
+    "parameters": {
+      "object": "T1",
+      "minimum": 1
+    },
+    "key": "cardinality:{\"minimum\": 1, \"object\": \"T1\"}",
+    "score": 0.7832022318283209,
+    "margin": 0.7832022318283209,
+    "support": 1.0,
+    "candidates": [
+      [
+        "cardinality",
+        0.27734077276107005
+      ],
+      [
+        "advisory",
+        0.0
+      ],
+      [
+        "asymmetry_flip",
+        0.0
+      ]
+    ],
+    "decision": "accepted"
+  },
+  {
+    "id": 2,
+    "method": "cat_morphometry",
+    "statement": "For MATLAB users, SPM12 or newer and MATLAB R2020a or newer are required; no additional MATLAB toolboxes are needed.",
+    "quote_support": 1.0,
+    "source_id": "cat",
+    "template": "software",
+    "parameters": {
+      "commands": [
+        "SPM12 or newer",
+        "MATLAB R2020a or newer (Windows: R2022a, Apple Silicon: R2023b)",
+        "No additional MATLAB toolboxes"
+      ]
+    },
+    "key": "software:{\"commands\": [\"MATLAB R2020a or newer (Windows: R2022a, Apple Silicon: R2023b)\", \"No additional MATLAB toolboxes\", \"SPM12 or newer\"]}",
+    "score": 0.6435892462187945,
+    "margin": 0.6435892462187945,
+    "support": 0.8,
+    "candidates": [
+      [
+        "software",
+        0.2786308207293153
+      ],
+      [
+        "product_present",
+        0.031800521539730786
+      ],
+      [
+        "advisory",
+        0.0
+      ]
+    ],
+    "decision": "accepted"
+  },
+  {
+    "id": 3,
+    "method": "cat_morphometry",
+    "statement": "Standalone version runs with MATLAB Runtime R2023b and is mainly intended for scripted, headless use on servers and clusters; some features like parallelization and interactive help are not available.",
+    "quote_support": 1.0,
+    "source_id": "cat",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {},
+    "candidates": [
+      [
+        "software",
+        0.3189347422875004
+      ],
+      [
+        "provenance",
+        0.15070550507852926
+      ],
+      [
+        "product_present",
+        0.09333827667754561
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 4,
+    "method": "cat_morphometry",
+    "statement": "Every scan gets a one-page report with tissue volumes, surface measures and image-quality ratings; noise, bias and resolution are combined into a grade from A (excellent) to F (failed).",
+    "quote_support": 1.0,
+    "source_id": "cat",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {},
+    "candidates": [
+      [
+        "attr_in",
+        0.19180579704998926
+      ],
+      [
+        "plausibility",
+        0.1082510097935174
+      ],
+      [
+        "asymmetry_flip",
+        0.09943202813236984
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 5,
+    "method": "cat_morphometry",
+    "statement": "A sample homogeneity check flags outliers before statistics.",
+    "quote_support": 1.0,
+    "source_id": "cat",
+    "template": "provenance",
+    "parameters": {
+      "step": "Sample homogeneity check flags outliers before statistics"
+    },
+    "key": "provenance:{\"step\": \"Sample homogeneity check flags outliers before statistics\"}",
+    "score": 0.32723097203431695,
+    "margin": 0.32723097203431695,
+    "support": 0.4,
+    "candidates": [
+      [
+        "cardinality",
+        0.16762241943767286
+      ],
+      [
+        "provenance",
+        0.1574365734477232
+      ],
+      [
+        "plausibility",
+        0.12755833853007495
+      ]
+    ],
+    "decision": "review"
+  },
+  {
+    "id": 6,
+    "method": "cat_morphometry",
+    "statement": "The standalone version lacks some features such as parallelization and interactive help.",
+    "quote_support": 1.0,
+    "source_id": "cat",
+    "template": "software",
+    "parameters": {
+      "commands": [
+        "parallelization",
+        "interactive help"
+      ]
+    },
+    "key": "software:{\"commands\": [\"interactive help\", \"parallelization\"]}",
+    "score": 0.2374263897106036,
+    "margin": 0.2374263897106036,
+    "support": 0.2,
+    "candidates": [
+      [
+        "software",
+        0.3247546323686787
+      ],
+      [
+        "product_present",
+        0.12239067429201643
+      ],
+      [
+        "advisory",
+        0.0
+      ]
+    ],
+    "decision": "review"
+  },
+  {
+    "id": 7,
+    "method": "existing_curvature_sulc_profile",
+    "statement": "Confirm that the surfaces have been smoothed and topology-corrected before using the morphometry values.",
+    "quote_support": 1.0,
+    "source_id": "fs_morph",
+    "template": "provenance",
+    "parameters": {
+      "step": "Resmooth RH/LH white matter: smooths rh.orig and lh.orig surfaces"
+    },
+    "key": "provenance:{\"step\": \"Resmooth RH/LH white matter: smooths rh.orig and lh.orig surfaces\"}",
+    "score": 0.19928419414620732,
+    "margin": 0.01125092499673852,
+    "support": 0.2,
+    "candidates": [
+      [
+        "provenance",
+        0.1976139804873578
+      ],
+      [
+        "plausibility",
+        0.16011089716489607
+      ],
+      [
+        "attr_in",
+        0.12678751218157033
+      ]
+    ],
+    "decision": "review"
+  },
+  {
+    "id": 8,
+    "method": "fsl_vbm",
+    "statement": "A template_list file containing the names of selected T1 images to be used for template construction, with equal numbers from each group.",
+    "quote_support": 1.0,
+    "source_id": "fsl_vbm",
+    "template": "product_present",
+    "parameters": {
+      "slot": "T1",
+      "type": "template_list"
+    },
+    "key": "product_present:{\"slot\": \"T1\", \"type\": \"template_list\"}",
+    "score": 0.313880667937157,
+    "margin": 0.313880667937157,
+    "support": 0.4,
+    "candidates": [
+      [
+        "attr_in",
+        0.38249855929718224
+      ],
+      [
+        "product_present",
+        0.1129355597905235
+      ],
+      [
+        "asymmetry_flip",
+        0.10968606490559667
+      ]
+    ],
+    "decision": "review"
+  },
+  {
+    "id": 9,
+    "method": "fsl_vbm",
+    "statement": "design.mat and design.con files specifying the cross-subject statistical model, with row order matching the image order from imglob.",
+    "quote_support": 1.0,
+    "source_id": "fsl_vbm",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {},
+    "candidates": [
+      [
+        "design_variable",
+        0.4335638249180495
+      ],
+      [
+        "attr_equal",
+        0.10377281526434776
+      ],
+      [
+        "attr_in",
+        0.09889414673687094
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 10,
+    "method": "fsl_vbm",
+    "statement": "A GM mask (GM_mask) and the 4D multi-subject concatenated processed data (e.g., GM_mod_merg_s3) for running randomise.",
+    "quote_support": 1.0,
+    "source_id": "fsl_vbm",
+    "template": "attr_equal",
+    "parameters": {
+      "slots": [
+        "mask",
+        "volumes"
+      ],
+      "attrs": [
+        "subject",
+        "species",
+        "space",
+        "voxel_size",
+        "scale_status"
+      ]
+    },
+    "key": "attr_equal:{\"attrs\": [\"scale_status\", \"space\", \"species\", \"subject\", \"voxel_size\"], \"slots\": [\"mask\", \"volumes\"]}",
+    "score": 0.19059698822430104,
+    "margin": 0.19059698822430104,
+    "support": 0.2,
+    "candidates": [
+      [
+        "attr_equal",
+        0.16865662741433682
+      ],
+      [
+        "provenance",
+        0.13627720767980925
+      ],
+      [
+        "product_present",
+        0.11443478753753192
+      ]
+    ],
+    "decision": "review"
+  },
+  {
+    "id": 11,
+    "method": "fsl_vbm",
+    "statement": "All different populations included in the study must be represented in the template construction.",
+    "quote_support": 1.0,
+    "source_id": "fsl_vbm",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {},
+    "candidates": [
+      [
+        "attr_in",
+        0.5241801617178857
+      ],
+      [
+        "product_present",
+        0.12014336887023752
+      ],
+      [
+        "provenance",
+        0.0969927222353625
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 12,
+    "method": "fsl_vbm",
+    "statement": "Use the same number of subjects from each group in the template construction to avoid bias in non-linear registration.",
+    "quote_support": 1.0,
+    "source_id": "fsl_vbm",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {},
+    "candidates": [
+      [
+        "attr_in",
+        0.403303993521554
+      ],
+      [
+        "cardinality",
+        0.23327196818973894
+      ],
+      [
+        "attr_equal",
+        0.14039637582037778
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 13,
+    "method": "fsl_vbm",
+    "decision": "provider_error",
+    "template": null,
+    "parameters": null,
+    "failure_kind": "provider_transport_or_budget",
+    "error_summary": "Maximum attempts for this logical call were already consumed",
+    "sample_calls": 2
+  },
+  {
+    "id": 14,
+    "method": "fsl_vbm",
+    "statement": "Check brain-extracted images (*_brain.*) in the struc directory after fslvbm_1_bet.",
+    "quote_support": 1.0,
+    "source_id": "fsl_vbm",
+    "template": "plausibility",
+    "parameters": {
+      "metric": "brain-extracted images (*_brain.*) in struc directory after fslvbm_1_bet"
+    },
+    "key": "plausibility:{\"metric\": \"brain-extracted images (*_brain.*) in struc directory after fslvbm_1_bet\"}",
+    "score": 0.15390378119021395,
+    "margin": 0.0,
+    "support": 0.2,
+    "candidates": [
+      [
+        "scale_check",
+        0.2619149240735661
+      ],
+      [
+        "attr_in",
+        0.1990359061010574
+      ],
+      [
+        "plausibility",
+        0.046345937300713194
+      ]
+    ],
+    "decision": "review"
+  },
+  {
+    "id": 15,
+    "method": "fsl_vbm",
+    "statement": "Check the template_GM_4D image in struc with the movie loop in fsleyes after template creation.",
+    "quote_support": 1.0,
+    "source_id": "fsl_vbm",
+    "template": "provenance",
+    "parameters": {
+      "step": "CHECK the template_GM_4D image in struc with the movie loop in fsleyes."
+    },
+    "key": "provenance:{\"step\": \"CHECK the template_GM_4D image in struc with the movie loop in fsleyes.\"}",
+    "score": 0.3087328618398682,
+    "margin": 0.14,
+    "support": 0.4,
+    "candidates": [
+      [
+        "attr_in",
+        0.42543186900855057
+      ],
+      [
+        "asymmetry_flip",
+        0.10691692396594926
+      ],
+      [
+        "provenance",
+        0.09577620613289405
+      ]
+    ],
+    "decision": "review"
+  },
+  {
+    "id": 16,
+    "method": "fsl_vbm",
+    "statement": "Check the 4D image of modulated registered GM images (GM_mod_merg) using the movie loop in fsleyes after fslvbm_3_proc.",
+    "quote_support": 1.0,
+    "source_id": "fsl_vbm",
+    "template": "plausibility",
+    "parameters": {
+      "metric": "GM_mod_merg"
+    },
+    "key": "plausibility:{\"metric\": \"GM_mod_merg\"}",
+    "score": 0.4517072262478738,
+    "margin": 0.2799999999999999,
+    "support": 0.6,
+    "candidates": [
+      [
+        "attr_in",
+        0.39715936746824143
+      ],
+      [
+        "plausibility",
+        0.10569075415957963
+      ],
+      [
+        "scale_check",
+        0.09298800031336167
+      ]
+    ],
+    "decision": "review"
+  },
+  {
+    "id": 17,
+    "method": "fsl_vbm",
+    "statement": "FSL-VBM v1.1 analysis is not compatible with an older analysis due to the switch from IRTK to FNIRT.",
+    "quote_support": 1.0,
+    "source_id": "fsl_vbm",
+    "template": "provenance",
+    "parameters": {
+      "step": "FSL-VBM v1.1 analysis is not compatible with an older analysis due to the switch from IRTK to FNIRT."
+    },
+    "key": "provenance:{\"step\": \"FSL-VBM v1.1 analysis is not compatible with an older analysis due to the switch from IRTK to FNIRT.\"}",
+    "score": 0.19525778880486888,
+    "margin": 0.0,
+    "support": 0.2,
+    "candidates": [
+      [
+        "provenance",
+        0.184192629349563
+      ],
+      [
+        "software",
+        0.17420907614682293
+      ],
+      [
+        "advisory",
+        0.0
+      ]
+    ],
+    "decision": "review"
+  },
+  {
+    "id": 18,
+    "method": "global_surface_folding",
+    "statement": "Pial surface mesh of the cortical ribbon.",
+    "quote_support": 1.0,
+    "source_id": "comparative_folding",
+    "template": "product_present",
+    "parameters": {
+      "slot": "pial",
+      "type": "mesh"
+    },
+    "key": "product_present:{\"slot\": \"pial\", \"type\": \"mesh\"}",
+    "score": 0.18960487013934857,
+    "margin": 0.18960487013934857,
+    "support": 0.2,
+    "candidates": [
+      [
+        "attr_in",
+        0.17128968671943234
+      ],
+      [
+        "product_present",
+        0.16534956713116195
+      ],
+      [
+        "attr_equal",
+        0.08986989424115471
+      ]
+    ],
+    "decision": "review"
+  },
+  {
+    "id": 19,
+    "method": "global_surface_folding",
+    "statement": "White matter surface mesh of the cortical ribbon.",
+    "quote_support": 1.0,
+    "source_id": "comparative_folding",
+    "template": "product_present",
+    "parameters": {
+      "slot": "white",
+      "type": "mesh"
+    },
+    "key": "product_present:{\"slot\": \"white\", \"type\": \"mesh\"}",
+    "score": 0.3296048701393486,
+    "margin": 0.3296048701393486,
+    "support": 0.4,
+    "candidates": [
+      [
+        "attr_in",
+        0.17128968671943234
+      ],
+      [
+        "product_present",
+        0.16534956713116195
+      ],
+      [
+        "attr_equal",
+        0.08986989424115471
+      ]
+    ],
+    "decision": "review"
+  },
+  {
+    "id": 20,
+    "method": "global_surface_folding",
+    "statement": "Point coordinates for convex hull computation.",
+    "quote_support": 1.0,
+    "source_id": "scipy_hull",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {},
+    "candidates": [
+      [
+        "attr_in",
+        0.22659495660489054
+      ],
+      [
+        "advisory",
+        0.0
+      ],
+      [
+        "asymmetry_flip",
+        0.0
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 21,
+    "method": "global_surface_folding",
+    "statement": "Cortical thickness estimate (average) for scaling law.",
+    "quote_support": 1.0,
+    "source_id": "comparative_folding",
+    "template": "plausibility",
+    "parameters": {
+      "metric": "thickness"
+    },
+    "key": "plausibility:{\"metric\": \"thickness\"}",
+    "score": 0.26360969542837115,
+    "margin": 0.0,
+    "support": 0.2,
+    "candidates": [
+      [
+        "plausibility",
+        0.4120323180945705
+      ],
+      [
+        "product_present",
+        0.08426958357792105
+      ],
+      [
+        "attr_in",
+        0.06438650041033948
+      ]
+    ],
+    "decision": "review"
+  },
+  {
+    "id": 22,
+    "method": "global_surface_folding",
+    "statement": "Analysis is hemisphere-based, not regionalised.",
+    "quote_support": 1.0,
+    "source_id": "comparative_folding",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {},
+    "candidates": [
+      [
+        "attr_in",
+        0.2280179660288082
+      ],
+      [
+        "asymmetry_flip",
+        0.19507590923748294
+      ],
+      [
+        "attr_equal",
+        0.17647284961434156
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 23,
+    "method": "global_surface_folding",
+    "statement": "Coarse-graining erases morphological features smaller than the specified scale while preserving surface integrity.",
+    "quote_support": 1.0,
+    "source_id": "comparative_folding",
+    "template": "scale_check",
+    "parameters": {
+      "metric": "voxel_size"
+    },
+    "key": "scale_check:{\"metric\": \"voxel_size\"}",
+    "score": 0.2468121887076254,
+    "margin": 0.2468121887076254,
+    "support": 0.2,
+    "candidates": [
+      [
+        "scale_check",
+        0.356040629025418
+      ],
+      [
+        "product_present",
+        0.1546703573140464
+      ],
+      [
+        "advisory",
+        0.0
+      ]
+    ],
+    "decision": "review"
+  },
+  {
+    "id": 24,
+    "method": "global_surface_folding",
+    "statement": "Isometric rescaling is applied to leave dimensionless shape properties unaffected.",
+    "quote_support": 1.0,
+    "source_id": "comparative_folding",
+    "template": "provenance",
+    "parameters": {
+      "step": "we apply an isometric rescaling process that leaves all dimensionless shape properties unaffected"
+    },
+    "key": "provenance:{\"step\": \"we apply an isometric rescaling process that leaves all dimensionless shape properties unaffected\"}",
+    "score": 0.4981463143545937,
+    "margin": 0.13999999999999996,
+    "support": 0.6,
+    "candidates": [
+      [
+        "provenance",
+        0.2604877145153126
+      ],
+      [
+        "advisory",
+        0.0
+      ],
+      [
+        "asymmetry_flip",
+        0.0
+      ]
+    ],
+    "decision": "review"
+  },
+  {
+    "id": 25,
+    "method": "global_surface_folding",
+    "statement": "Quality check reconstructed surfaces by visual inspection.",
+    "quote_support": 1.0,
+    "source_id": "comparative_folding",
+    "template": "plausibility",
+    "parameters": {
+      "metric": "visual inspection"
+    },
+    "key": "plausibility:{\"metric\": \"visual inspection\"}",
+    "score": 0.3781105287717825,
+    "margin": 0.14,
+    "support": 0.4,
+    "candidates": [
+      [
+        "plausibility",
+        0.32703509590594165
+      ],
+      [
+        "advisory",
+        0.1258751891137609
+      ],
+      [
+        "scale_check",
+        0.07752055269640071
+      ]
+    ],
+    "decision": "review"
+  },
+  {
+    "id": 26,
+    "method": "global_surface_folding",
+    "statement": "Verify that coarse-grained cortices follow the scaling law with high R².",
+    "quote_support": 1.0,
+    "source_id": "comparative_folding",
+    "template": "attr_in",
+    "parameters": {
+      "slot": "surface",
+      "attr": "scale_status",
+      "values": [
+        "coarse-grained"
+      ]
+    },
+    "key": "attr_in:{\"attr\": \"scale_status\", \"slot\": \"surface\", \"values\": [\"coarse-grained\"]}",
+    "score": 0.1853189913209781,
+    "margin": 0.0,
+    "support": 0.2,
+    "candidates": [
+      [
+        "provenance",
+        0.2604877145153126
+      ],
+      [
+        "attr_in",
+        0.15106330440326035
+      ],
+      [
+        "advisory",
+        0.0
+      ]
+    ],
+    "decision": "review"
+  },
+  {
+    "id": 27,
+    "method": "global_surface_folding",
+    "statement": "Check that K remains near-invariant across scales and species.",
+    "quote_support": 1.0,
+    "source_id": "comparative_folding",
+    "template": "plausibility",
+    "parameters": {
+      "metric": "variance in K across scales and all 11 species <0.01"
+    },
+    "key": "plausibility:{\"metric\": \"variance in K across scales and all 11 species <0.01\"}",
+    "score": 0.30439273435204894,
+    "margin": 0.0,
+    "support": 0.4,
+    "candidates": [
+      [
+        "attr_in",
+        0.34918774379588385
+      ],
+      [
+        "provenance",
+        0.10035430474822091
+      ],
+      [
+        "plausibility",
+        0.08130911450682997
+      ]
+    ],
+    "decision": "review"
+  },
+  {
+    "id": 28,
+    "method": "global_surface_folding",
+    "statement": "Ensure convex hull computation does not raise QhullError.",
+    "quote_support": 1.0,
+    "source_id": "scipy_hull",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {},
+    "candidates": [
+      [
+        "advisory",
+        0.0
+      ],
+      [
+        "asymmetry_flip",
+        0.0
+      ],
+      [
+        "attr_equal",
+        0.0
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 29,
+    "method": "global_surface_folding",
+    "statement": "Coarse-grained brain surfaces are algorithmic outputs and not to be directly likened to actual brain surfaces in terms of fold location or shape.",
+    "quote_support": 1.0,
+    "source_id": "comparative_folding",
+    "template": "attr_in",
+    "parameters": {
+      "slot": "surface",
+      "attr": "scale_status",
+      "values": [
+        "coarse-grained"
+      ]
+    },
+    "key": "attr_in:{\"attr\": \"scale_status\", \"slot\": \"surface\", \"values\": [\"coarse-grained\"]}",
+    "score": 0.2419051973371292,
+    "margin": 0.2419051973371292,
+    "support": 0.2,
+    "candidates": [
+      [
+        "attr_in",
+        0.3396839911237641
+      ],
+      [
+        "scale_check",
+        0.15932536185375878
+      ],
+      [
+        "product_present",
+        0.08565600031612752
+      ]
+    ],
+    "decision": "review"
+  },
+  {
+    "id": 30,
+    "method": "global_surface_folding",
+    "statement": "The model cannot capture large-scale features such as the longitudinal fissure, sylvian fissure, and specific gyri and sulci.",
+    "quote_support": 1.0,
+    "source_id": "global_gyrification",
+    "template": "scale_check",
+    "parameters": {
+      "metric": "large-scale features"
+    },
+    "key": "scale_check:{\"metric\": \"large-scale features\"}",
+    "score": 0.3818875363210025,
+    "margin": 0.14,
+    "support": 0.4,
+    "candidates": [
+      [
+        "scale_check",
+        0.33962512107000825
+      ],
+      [
+        "provenance",
+        0.14056023710391216
+      ],
+      [
+        "attr_in",
+        0.12227156618959012
+      ]
+    ],
+    "decision": "review"
+  },
+  {
+    "id": 31,
+    "method": "global_surface_folding",
+    "statement": "The mechanical model uses simplified geometries and material properties; real tissues may have stress-dependent growth and stress relaxation.",
+    "quote_support": 1.0,
+    "source_id": "global_gyrification",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {},
+    "candidates": [
+      [
+        "attr_in",
+        0.3398924349073358
+      ],
+      [
+        "advisory",
+        0.1507556722888818
+      ],
+      [
+        "scale_check",
+        0.1258793715808985
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 32,
+    "method": "global_surface_folding",
+    "statement": "The scaling law is empirical and does not specify the actual cortical shape beyond a constraint binding three morphometric parameters.",
+    "quote_support": 1.0,
+    "source_id": "comparative_folding",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {},
+    "candidates": [
+      [
+        "scale_check",
+        0.19099191472913973
+      ],
+      [
+        "attr_in",
+        0.12678751218157033
+      ],
+      [
+        "product_present",
+        0.12239067429201643
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 33,
+    "method": "hcp_structural_pipeline",
+    "statement": "T1/T2 structural images are processed by the three structural batch scripts.",
+    "quote_support": 1.0,
+    "source_id": "alex_hcp_pdf",
+    "template": "provenance",
+    "parameters": {
+      "step": "处理T1/T2结构像"
+    },
+    "key": "provenance:{\"step\": \"\\u5904\\u7406T1/T2\\u7ed3\\u6784\\u50cf\"}",
+    "score": 0.3471129625266396,
+    "margin": 0.14,
+    "support": 0.4,
+    "candidates": [
+      [
+        "provenance",
+        0.22370987508879867
+      ],
+      [
+        "product_present",
+        0.1878538052084508
+      ],
+      [
+        "advisory",
+        0.0
+      ]
+    ],
+    "decision": "review"
+  },
+  {
+    "id": 34,
+    "method": "hcp_structural_pipeline",
+    "statement": "System: Ubuntu 22.04 LTS was used for testing.",
+    "quote_support": 1.0,
+    "source_id": "alex_hcp_pdf",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {},
+    "candidates": [
+      [
+        "advisory",
+        0.0
+      ],
+      [
+        "asymmetry_flip",
+        0.0
+      ],
+      [
+        "attr_equal",
+        0.0
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 35,
+    "method": "hcp_structural_pipeline",
+    "statement": "On Ubuntu 22.04, freeview fails due to missing libpng12; a workaround installation is provided.",
+    "quote_support": 1.0,
+    "source_id": "alex_hcp_pdf",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {},
+    "candidates": [
+      [
+        "advisory",
+        0.0
+      ],
+      [
+        "asymmetry_flip",
+        0.0
+      ],
+      [
+        "attr_equal",
+        0.0
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 36,
+    "method": "local_gyrification",
+    "statement": "The pial surface file (?h.pial) for the subject, produced by the recon-all -all stream.",
+    "quote_support": 1.0,
+    "source_id": "fs_lgi",
+    "template": "product_present",
+    "parameters": {
+      "slot": "pial",
+      "type": "surface"
+    },
+    "key": "product_present:{\"slot\": \"pial\", \"type\": \"surface\"}",
+    "score": 0.20049288090602232,
+    "margin": 0.20049288090602232,
+    "support": 0.2,
+    "candidates": [
+      [
+        "provenance",
+        0.36568838826922634
+      ],
+      [
+        "product_present",
+        0.2016429363534078
+      ],
+      [
+        "attr_equal",
+        0.11460891180854915
+      ]
+    ],
+    "decision": "review"
+  },
+  {
+    "id": 37,
+    "method": "local_gyrification",
+    "statement": "The subject's surf directory containing the pial surface files.",
+    "quote_support": 1.0,
+    "source_id": "fs_lgi",
+    "template": "product_present",
+    "parameters": {
+      "slot": "pial",
+      "type": "surface"
+    },
+    "key": "product_present:{\"slot\": \"pial\", \"type\": \"surface\"}",
+    "score": 0.33261391008311714,
+    "margin": 0.13999999999999996,
+    "support": 0.4,
+    "candidates": [
+      [
+        "attr_equal",
+        0.2541904465697534
+      ],
+      [
+        "product_present",
+        0.1753797002770573
+      ],
+      [
+        "attr_in",
+        0.12112009902662992
+      ]
+    ],
+    "decision": "review"
+  },
+  {
+    "id": 38,
+    "method": "local_gyrification",
+    "statement": "MATLAB with Image Processing Toolbox and $FREESURFER_HOME/matlab in the MATLAB path.",
+    "quote_support": 1.0,
+    "source_id": "fs_lgi",
+    "template": "software",
+    "parameters": {
+      "commands": [
+        "matlab -nodisplay -nosplash -r \"addpath(fullfile(getenv('FREESURFER_HOME'),'matlab')); assert(~isempty(ver('images'))); exit\""
+      ]
+    },
+    "key": "software:{\"commands\": [\"matlab -nodisplay -nosplash -r \\\"addpath(fullfile(getenv('FREESURFER_HOME'),'matlab')); assert(~isempty(ver('images'))); exit\\\"\"]}",
+    "score": 0.269843036760929,
+    "margin": 0.0,
+    "support": 0.2,
+    "candidates": [
+      [
+        "software",
+        0.43281012253643014
+      ],
+      [
+        "attr_in",
+        0.0911175067599079
+      ],
+      [
+        "provenance",
+        0.052373167178668106
+      ]
+    ],
+    "decision": "review"
+  },
+  {
+    "id": 39,
+    "method": "local_gyrification",
+    "statement": "The subject must have been processed with the full recon-all stream before using -localGI.",
+    "quote_support": 1.0,
+    "source_id": "fs_lgi",
+    "template": "provenance",
+    "parameters": {
+      "step": "recon-all -s <subjid> -all"
+    },
+    "key": "provenance:{\"step\": \"recon-all -s <subjid> -all\"}",
+    "score": 0.4328335732575621,
+    "margin": 0.0,
+    "support": 0.4,
+    "candidates": [
+      [
+        "provenance",
+        0.5094452441918738
+      ],
+      [
+        "product_present",
+        0.09036299937798371
+      ],
+      [
+        "attr_equal",
+        0.0887860474720072
+      ]
+    ],
+    "decision": "review"
+  },
+  {
+    "id": 40,
+    "method": "local_gyrification",
+    "statement": "MATLAB and its Image Processing Toolbox must be installed and accessible.",
+    "quote_support": 1.0,
+    "source_id": "fs_lgi",
+    "template": "software",
+    "parameters": {
+      "commands": [
+        "MATLAB",
+        "Image Processing Toolbox"
+      ]
+    },
+    "key": "software:{\"commands\": [\"Image Processing Toolbox\", \"MATLAB\"]}",
+    "score": 0.4066425102989356,
+    "margin": 0.13999999999999996,
+    "support": 0.4,
+    "candidates": [
+      [
+        "software",
+        0.4221417009964522
+      ],
+      [
+        "product_present",
+        0.14453885130386657
+      ],
+      [
+        "attr_in",
+        0.09982090262136123
+      ]
+    ],
+    "decision": "review"
+  },
+  {
+    "id": 41,
+    "method": "local_gyrification",
+    "statement": "The MATLAB path must include $FREESURFER_HOME/matlab, set up in ~/matlab/startup.m.",
+    "quote_support": 1.0,
+    "source_id": "fs_lgi",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {
+      "software": 1
+    },
+    "candidates": [
+      [
+        "software",
+        0.3360832083814466
+      ],
+      [
+        "attr_in",
+        0.20826378453659528
+      ],
+      [
+        "product_present",
+        0.022007917313032203
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 42,
+    "method": "local_gyrification",
+    "statement": "Check for topological defects of the pial surface using mris_euler_number, as defects cause mris_compute_lgi to crash.",
+    "quote_support": 1.0,
+    "source_id": "fs_lgi",
+    "template": "attr_in",
+    "parameters": {
+      "slot": "pial",
+      "attr": "mesh",
+      "values": [
+        "defective"
+      ]
+    },
+    "key": "attr_in:{\"attr\": \"mesh\", \"slot\": \"pial\", \"values\": [\"defective\"]}",
+    "score": 0.21862534447540904,
+    "margin": 0.21862534447540904,
+    "support": 0.2,
+    "candidates": [
+      [
+        "attr_in",
+        0.2620844815846969
+      ],
+      [
+        "product_present",
+        0.10119828324003421
+      ],
+      [
+        "cardinality",
+        0.09463692047046078
+      ]
+    ],
+    "decision": "review"
+  },
+  {
+    "id": 43,
+    "method": "local_gyrification",
+    "statement": "If mris_compute_lgi crashes due to topological defects, simply relaunching it is usually sufficient to overcome the issue.",
+    "quote_support": 1.0,
+    "source_id": "fs_lgi",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {},
+    "candidates": [
+      [
+        "advisory",
+        0.0
+      ],
+      [
+        "asymmetry_flip",
+        0.0
+      ],
+      [
+        "attr_equal",
+        0.0
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 44,
+    "method": "macaque_civet",
+    "statement": "T1-weighted MR scan of a macaque brain as the primary input.",
+    "quote_support": 1.0,
+    "source_id": "civet_macaque",
+    "template": "attr_in",
+    "parameters": {
+      "slot": "T1",
+      "attr": "species",
+      "values": [
+        "macaque"
+      ]
+    },
+    "key": "attr_in:{\"attr\": \"species\", \"slot\": \"T1\", \"values\": [\"macaque\"]}",
+    "score": 0.6055050309077931,
+    "margin": 0.6055050309077931,
+    "support": 0.8,
+    "candidates": [
+      [
+        "product_present",
+        0.16853916715584213
+      ],
+      [
+        "attr_in",
+        0.15168343635931048
+      ],
+      [
+        "scale_check",
+        0.09699142119350457
+      ]
+    ],
+    "decision": "accepted"
+  },
+  {
+    "id": 45,
+    "method": "macaque_civet",
+    "statement": "Optional T2-weighted or proton density scans for multimodal tissue classification.",
+    "quote_support": 1.0,
+    "source_id": "civet_macaque",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {},
+    "candidates": [
+      [
+        "cardinality",
+        0.19053331453102448
+      ],
+      [
+        "attr_in",
+        0.1352435628734489
+      ],
+      [
+        "product_present",
+        0.11083453610559282
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 46,
+    "method": "macaque_civet",
+    "statement": "NMT brain mask and tissue priors for registration and classification.",
+    "quote_support": 1.0,
+    "source_id": "civet_macaque",
+    "template": "provenance",
+    "parameters": {
+      "step": "Registration, using minctracc, proceeds by specifying the brain mask on the target image only, herein the NMT volume with its associated brain mask"
+    },
+    "key": "provenance:{\"step\": \"Registration, using minctracc, proceeds by specifying the brain mask on the target image only, herein the NMT volume with its associated brain mask\"}",
+    "score": 0.3038482080045421,
+    "margin": 0.13999999999999999,
+    "support": 0.4,
+    "candidates": [
+      [
+        "scale_check",
+        0.2304905198717804
+      ],
+      [
+        "provenance",
+        0.07949402668180708
+      ],
+      [
+        "plausibility",
+        0.06440768967805176
+      ]
+    ],
+    "decision": "review"
+  },
+  {
+    "id": 47,
+    "method": "macaque_civet",
+    "statement": "The pipeline is designed for macaque brains and uses a length scale of 0.4 relative to human brain size.",
+    "quote_support": 1.0,
+    "source_id": "civet_macaque",
+    "template": "scale_check",
+    "parameters": {
+      "metric": "0.4"
+    },
+    "key": "scale_check:{\"metric\": \"0.4\"}",
+    "score": 0.2550237929488541,
+    "margin": 0.0,
+    "support": 0.2,
+    "candidates": [
+      [
+        "scale_check",
+        0.38341264316284696
+      ],
+      [
+        "attr_in",
+        0.20059614032090853
+      ],
+      [
+        "provenance",
+        0.06449397803780334
+      ]
+    ],
+    "decision": "review"
+  },
+  {
+    "id": 48,
+    "method": "macaque_civet",
+    "statement": "Processing is performed in the NMT standardized space.",
+    "quote_support": 1.0,
+    "source_id": "civet_macaque",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {
+      "attr_in": 1
+    },
+    "candidates": [
+      [
+        "attr_in",
+        0.44088362654532676
+      ],
+      [
+        "asymmetry_flip",
+        0.17907331536504836
+      ],
+      [
+        "attr_equal",
+        0.08099815701457626
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 49,
+    "method": "macaque_civet",
+    "statement": "The pipeline requires T1w scans; T2-weighted or proton density scans are optional for multimodal classification.",
+    "quote_support": 1.0,
+    "source_id": "civet_macaque",
+    "template": "cardinality",
+    "parameters": {
+      "object": "T1",
+      "minimum": 1
+    },
+    "key": "cardinality:{\"minimum\": 1, \"object\": \"T1\"}",
+    "score": 0.6256062512184767,
+    "margin": 0.6256062512184767,
+    "support": 0.8,
+    "candidates": [
+      [
+        "cardinality",
+        0.21868750406158904
+      ],
+      [
+        "provenance",
+        0.13693240403359264
+      ],
+      [
+        "attr_in",
+        0.10348523486295715
+      ]
+    ],
+    "decision": "accepted"
+  },
+  {
+    "id": 50,
+    "method": "macaque_civet",
+    "statement": "The NMT v2 is the current version of the template, with symmetric and asymmetric variants and multiple resolutions.",
+    "quote_support": 1.0,
+    "source_id": "nmt",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {},
+    "candidates": [
+      [
+        "attr_in",
+        0.18930440642646676
+      ],
+      [
+        "software",
+        0.15037063096750197
+      ],
+      [
+        "asymmetry_flip",
+        0.13937195793519996
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 51,
+    "method": "macaque_civet",
+    "statement": "Quality control includes visual inspection of brain masks and surfaces for accuracy.",
+    "quote_support": 1.0,
+    "source_id": "civet_macaque",
+    "template": "plausibility",
+    "parameters": {
+      "metric": "accuracy"
+    },
+    "key": "plausibility:{\"metric\": \"accuracy\"}",
+    "score": 0.5875100189643606,
+    "margin": 0.42,
+    "support": 0.8,
+    "candidates": [
+      [
+        "cardinality",
+        0.2666305821143263
+      ],
+      [
+        "attr_in",
+        0.19878721852567618
+      ],
+      [
+        "plausibility",
+        0.09170006321453546
+      ]
+    ],
+    "decision": "review"
+  },
+  {
+    "id": 52,
+    "method": "macaque_civet",
+    "statement": "The N3 spline distance should be empirically determined to ensure uniform gray and white matter intensities.",
+    "quote_support": 1.0,
+    "source_id": "civet_macaque",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {},
+    "candidates": [
+      [
+        "attr_in",
+        0.15023232384517315
+      ],
+      [
+        "product_present",
+        0.14502244818508267
+      ],
+      [
+        "advisory",
+        0.13551612895758144
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 53,
+    "method": "macaque_civet",
+    "statement": "The pipeline is not validated for species other than macaques; adaptations for other primates would require appropriate length scales and templates.",
+    "quote_support": 1.0,
+    "source_id": "civet_macaque",
+    "template": "attr_in",
+    "parameters": {
+      "slot": "T1",
+      "attr": "species",
+      "values": [
+        "macaque"
+      ]
+    },
+    "key": "attr_in:{\"attr\": \"species\", \"slot\": \"T1\", \"values\": [\"macaque\"]}",
+    "score": 0.2175365753766433,
+    "margin": 0.02984015936755907,
+    "support": 0.2,
+    "candidates": [
+      [
+        "attr_in",
+        0.25845525125547775
+      ],
+      [
+        "provenance",
+        0.15898805336361416
+      ],
+      [
+        "advisory",
+        0.09201336391364938
+      ]
+    ],
+    "decision": "review"
+  },
+  {
+    "id": 54,
+    "method": "macaque_civet",
+    "statement": "The NMT v2 is the current version; the paper describes NMT v1.2, so users should be aware of version differences.",
+    "quote_support": 1.0,
+    "source_id": "nmt",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {},
+    "candidates": [
+      [
+        "software",
+        0.19252816675224935
+      ],
+      [
+        "attr_in",
+        0.16158487905477215
+      ],
+      [
+        "advisory",
+        0.07854000104950053
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 55,
+    "method": "macaque_civet",
+    "statement": "The pipeline may require manual intervention for custom brain masks in rare registration failures.",
+    "quote_support": 1.0,
+    "source_id": "civet_macaque",
+    "template": "attr_in",
+    "parameters": {
+      "slot": "mask",
+      "attr": "space",
+      "values": [
+        "native"
+      ]
+    },
+    "key": "attr_in:{\"attr\": \"space\", \"slot\": \"mask\", \"values\": [\"native\"]}",
+    "score": 0.8378183558176138,
+    "margin": 0.8378183558176138,
+    "support": 1.0,
+    "candidates": [
+      [
+        "attr_in",
+        0.4593945193920459
+      ],
+      [
+        "scale_check",
+        0.12044937170430871
+      ],
+      [
+        "advisory",
+        0.07212629750215528
+      ]
+    ],
+    "decision": "accepted"
+  },
+  {
+    "id": 56,
+    "method": "nhp_macapype",
+    "statement": "Input data must be in BIDS format, with T1w and T2w images expected.",
+    "quote_support": 1.0,
+    "source_id": "macapype_commands",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {},
+    "candidates": [
+      [
+        "attr_in",
+        0.4555492683961964
+      ],
+      [
+        "provenance",
+        0.19129742608940087
+      ],
+      [
+        "product_present",
+        0.17202403301536773
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 57,
+    "method": "nhp_macapype",
+    "statement": "T1 weighted images are expected with the _T1w BIDS extension.",
+    "quote_support": 1.0,
+    "source_id": "macapype_commands",
+    "template": "plausibility",
+    "parameters": {
+      "metric": "_T1w"
+    },
+    "key": "plausibility:{\"metric\": \"_T1w\"}",
+    "score": 0.35678226132850066,
+    "margin": 0.13999999999999996,
+    "support": 0.4,
+    "candidates": [
+      [
+        "plausibility",
+        0.2559408710950024
+      ],
+      [
+        "provenance",
+        0.11649364739195953
+      ],
+      [
+        "advisory",
+        0.0
+      ]
+    ],
+    "decision": "review"
+  },
+  {
+    "id": 58,
+    "method": "nhp_macapype",
+    "statement": "T2 weighted images are expected with the _T2w BIDS extension.",
+    "quote_support": 1.0,
+    "source_id": "macapype_commands",
+    "template": "plausibility",
+    "parameters": {
+      "metric": "_T2w (BIDS) extension is expected for T2 weighted images"
+    },
+    "key": "plausibility:{\"metric\": \"_T2w (BIDS) extension is expected for T2 weighted images\"}",
+    "score": 0.35678226132850066,
+    "margin": 0.35678226132850066,
+    "support": 0.4,
+    "candidates": [
+      [
+        "plausibility",
+        0.2559408710950024
+      ],
+      [
+        "provenance",
+        0.11649364739195953
+      ],
+      [
+        "advisory",
+        0.0
+      ]
+    ],
+    "decision": "review"
+  },
+  {
+    "id": 59,
+    "method": "nhp_macapype",
+    "statement": "All files with the same extension (T1w or T2w) will be aligned to the first one and averaged.",
+    "quote_support": 1.0,
+    "source_id": "macapype_commands",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {},
+    "candidates": [
+      [
+        "provenance",
+        0.2174972246722189
+      ],
+      [
+        "attr_equal",
+        0.19853163760093145
+      ],
+      [
+        "attr_in",
+        0.16437125701615718
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 60,
+    "method": "nhp_macapype",
+    "statement": "The -data parameter must point to an existing BIDS format directory.",
+    "quote_support": 1.0,
+    "source_id": "macapype_commands",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {},
+    "candidates": [
+      [
+        "attr_in",
+        0.2589702945907075
+      ],
+      [
+        "software",
+        0.1028542529319595
+      ],
+      [
+        "product_present",
+        0.0673526030866476
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 61,
+    "method": "nhp_macapype",
+    "statement": "The -out parameter must point to an existing output path.",
+    "quote_support": 1.0,
+    "source_id": "macapype_commands",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {},
+    "candidates": [
+      [
+        "software",
+        0.1994124504491934
+      ],
+      [
+        "product_present",
+        0.16155877798199852
+      ],
+      [
+        "attr_in",
+        0.045091148738833235
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 62,
+    "method": "nhp_macapype",
+    "statement": "The -soft parameter must be either SPM or ANTS, with SPM requiring a specific version of macapype/skullTo3d not available by default.",
+    "quote_support": 1.0,
+    "source_id": "macapype_commands",
+    "template": "software",
+    "parameters": {
+      "commands": [
+        "SPM",
+        "ANTS"
+      ]
+    },
+    "key": "software:{\"commands\": [\"ANTS\", \"SPM\"]}",
+    "score": 0.4999204732775643,
+    "margin": 0.4999204732775643,
+    "support": 0.6,
+    "candidates": [
+      [
+        "attr_in",
+        0.2780266748379233
+      ],
+      [
+        "software",
+        0.2664015775918811
+      ],
+      [
+        "product_present",
+        0.15931097640812553
+      ]
+    ],
+    "decision": "review"
+  },
+  {
+    "id": 63,
+    "method": "nhp_macapype",
+    "statement": "Either -params or -species must be provided; -params is mandatory if -species is omitted, and vice versa.",
+    "quote_support": 1.0,
+    "source_id": "macapype_commands",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {},
+    "candidates": [
+      [
+        "attr_in",
+        0.35125393055342385
+      ],
+      [
+        "product_present",
+        0.1532834108634339
+      ],
+      [
+        "advisory",
+        0.0
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 64,
+    "method": "nhp_macapype",
+    "statement": "The -test option can be used to check if the full pipeline is coherent, generating only graph.dot and graph.png.",
+    "quote_support": 1.0,
+    "source_id": "macapype_commands",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {},
+    "candidates": [
+      [
+        "provenance",
+        0.1767513174696196
+      ],
+      [
+        "plausibility",
+        0.1432075399996744
+      ],
+      [
+        "scale_check",
+        0.12599572100941892
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 65,
+    "method": "nhp_macapype",
+    "statement": "The -prep option performs only data preparation, without brain extraction and segmentation.",
+    "quote_support": 1.0,
+    "source_id": "macapype_commands",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {},
+    "candidates": [
+      [
+        "scale_check",
+        0.2251798654558754
+      ],
+      [
+        "cardinality",
+        0.12403056416521493
+      ],
+      [
+        "advisory",
+        0.0
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 66,
+    "method": "nhp_macapype",
+    "statement": "The -noseg option performs data preparation and brain extraction, but no segmentation.",
+    "quote_support": 1.0,
+    "source_id": "macapype_commands",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {},
+    "candidates": [
+      [
+        "scale_check",
+        0.2251798654558754
+      ],
+      [
+        "cardinality",
+        0.12403056416521493
+      ],
+      [
+        "advisory",
+        0.0
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 67,
+    "method": "nhp_macapype",
+    "statement": "The _4animal option uses bet4animal (FSL) for brain extraction, for faster computation; by default atlas_brex is used.",
+    "quote_support": 1.0,
+    "source_id": "macapype_commands",
+    "template": "software",
+    "parameters": {
+      "commands": [
+        "bet4animal",
+        "atlas_brex"
+      ]
+    },
+    "key": "software:{\"commands\": [\"atlas_brex\", \"bet4animal\"]}",
+    "score": 0.19226272284404686,
+    "margin": 0.19226272284404686,
+    "support": 0.2,
+    "candidates": [
+      [
+        "scale_check",
+        0.178020314512709
+      ],
+      [
+        "software",
+        0.17420907614682293
+      ],
+      [
+        "advisory",
+        0.0
+      ]
+    ],
+    "decision": "review"
+  },
+  {
+    "id": 68,
+    "method": "nhp_macapype",
+    "statement": "The marmoT2 species option can be used for segmenting from the T2w image; by default, T1w is used for marmo.",
+    "quote_support": 1.0,
+    "source_id": "macapype_commands",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {
+      "attr_in": 5
+    },
+    "candidates": [
+      [
+        "attr_in",
+        0.2821853193735692
+      ],
+      [
+        "product_present",
+        0.16234418400356568
+      ],
+      [
+        "advisory",
+        0.0
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 69,
+    "method": "nhp_macapype",
+    "statement": "Some templates are available in downgraded versions (e.g., baboon1_0p6, macaque_0p5) showing significant decrease in processing time with low reduction in quality, but not all combinations are available.",
+    "quote_support": 1.0,
+    "source_id": "macapype_commands",
+    "template": "provenance",
+    "parameters": {
+      "step": "NB: some templates are available in downgraded versions: baboon1_0p6, baboon2_0p6, baboon3_0p6 and macaque_0p5, and show significant decrease in processing time with low reduction in quality. However, not all combinations are available"
+    },
+    "key": "provenance:{\"step\": \"NB: some templates are available in downgraded versions: baboon1_0p6, baboon2_0p6, baboon3_0p6 and macaque_0p5, and show significant decrease in processing time with low reduction in quality. However, not all combinations are available\"}",
+    "score": 0.1804216991085139,
+    "margin": 0.1804216991085139,
+    "support": 0.2,
+    "candidates": [
+      [
+        "attr_in",
+        0.3516232300027043
+      ],
+      [
+        "provenance",
+        0.13473899702837971
+      ],
+      [
+        "software",
+        0.09399130086089283
+      ]
+    ],
+    "decision": "review"
+  },
+  {
+    "id": 70,
+    "method": "samseg_segmentation",
+    "statement": "One or more co-registered MRI volumes in Nifti (.nii/.nii.gz) or FreeSurfer (.mgz) format.",
+    "quote_support": 1.0,
+    "source_id": "fs_samseg",
+    "template": "product_present",
+    "parameters": {
+      "slot": "volumes",
+      "type": "MRI"
+    },
+    "key": "product_present:{\"slot\": \"volumes\", \"type\": \"MRI\"}",
+    "score": 0.16320055359710695,
+    "margin": 0.16320055359710695,
+    "support": 0.2,
+    "candidates": [
+      [
+        "attr_in",
+        0.4005670759949739
+      ],
+      [
+        "software",
+        0.08710453807341147
+      ],
+      [
+        "product_present",
+        0.0773351786570232
+      ]
+    ],
+    "decision": "review"
+  },
+  {
+    "id": 71,
+    "method": "samseg_segmentation",
+    "statement": "All input volumes must be co-registered with each other and have the same image grid size and voxel dimensions.",
+    "quote_support": 1.0,
+    "source_id": "fs_samseg",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {},
+    "candidates": [
+      [
+        "scale_check",
+        0.28133623452566564
+      ],
+      [
+        "provenance",
+        0.20154329788124783
+      ],
+      [
+        "attr_in",
+        0.1797594678313717
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 72,
+    "method": "samseg_segmentation",
+    "statement": "For multi-contrast data, it is recommended to select the contrast with the highest spatial resolution and reformat all other contrasts to that grid.",
+    "quote_support": 1.0,
+    "source_id": "fs_samseg",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {},
+    "candidates": [
+      [
+        "provenance",
+        0.2259600859461355
+      ],
+      [
+        "design_variable",
+        0.16157659386676818
+      ],
+      [
+        "attr_in",
+        0.13701211765375024
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 73,
+    "method": "samseg_segmentation",
+    "statement": "For longitudinal processing, all time points must be co-registered and reformatted to the same image grid, using an unbiased reference template.",
+    "quote_support": 1.0,
+    "source_id": "fs_samseg",
+    "template": "provenance",
+    "parameters": {
+      "step": "co-registered and reformatted to the same image grid using an unbiased reference template"
+    },
+    "key": "provenance:{\"step\": \"co-registered and reformatted to the same image grid using an unbiased reference template\"}",
+    "score": 0.4666749577228051,
+    "margin": 0.4666749577228051,
+    "support": 0.6,
+    "candidates": [
+      [
+        "product_present",
+        0.16168244514481667
+      ],
+      [
+        "provenance",
+        0.15558319240935048
+      ],
+      [
+        "attr_in",
+        0.14973135393204184
+      ]
+    ],
+    "decision": "review"
+  },
+  {
+    "id": 74,
+    "method": "samseg_segmentation",
+    "statement": "Preprocessing with FreeSurfer is neither required nor recommended for basic SAMSEG.",
+    "quote_support": 1.0,
+    "source_id": "fs_samseg",
+    "template": "provenance",
+    "parameters": {
+      "step": "Preprocessing of the scan(s) with FreeSurfer is neither required nor recommended"
+    },
+    "key": "provenance:{\"step\": \"Preprocessing of the scan(s) with FreeSurfer is neither required nor recommended\"}",
+    "score": 0.32521165152355874,
+    "margin": 0.32521165152355874,
+    "support": 0.4,
+    "candidates": [
+      [
+        "software",
+        0.24766623685739103
+      ],
+      [
+        "provenance",
+        0.15070550507852926
+      ],
+      [
+        "product_present",
+        0.09333827667754561
+      ]
+    ],
+    "decision": "review"
+  },
+  {
+    "id": 75,
+    "method": "samseg_segmentation",
+    "statement": "For multi-contrast input, all volumes must be co-registered and have the same image grid size and voxel dimensions.",
+    "quote_support": 1.0,
+    "source_id": "fs_samseg",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {},
+    "candidates": [
+      [
+        "scale_check",
+        0.2924925158203248
+      ],
+      [
+        "attr_in",
+        0.18688776110609412
+      ],
+      [
+        "provenance",
+        0.15715156548373826
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 76,
+    "method": "samseg_segmentation",
+    "statement": "For longitudinal SAMSEG, the same combination of contrasts must be provided for each time point.",
+    "quote_support": 1.0,
+    "source_id": "fs_samseg",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {},
+    "candidates": [
+      [
+        "attr_in",
+        0.2558156757974275
+      ],
+      [
+        "attr_equal",
+        0.15449022524376022
+      ],
+      [
+        "product_present",
+        0.1048227773401588
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 77,
+    "method": "samseg_segmentation",
+    "statement": "When using the lesion flag, the lesion-mask-pattern is optional but strongly recommended.",
+    "quote_support": 1.0,
+    "source_id": "fs_samseg",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {},
+    "candidates": [
+      [
+        "advisory",
+        0.0
+      ],
+      [
+        "asymmetry_flip",
+        0.0
+      ],
+      [
+        "attr_equal",
+        0.0
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 78,
+    "method": "samseg_segmentation",
+    "statement": "Verify that all input volumes are co-registered and have the same image grid size and voxel dimensions.",
+    "quote_support": 1.0,
+    "source_id": "fs_samseg",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {
+      "attr_in": 1
+    },
+    "candidates": [
+      [
+        "scale_check",
+        0.30833058987059836
+      ],
+      [
+        "provenance",
+        0.16566111016137652
+      ],
+      [
+        "attr_in",
+        0.12614960578204829
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 79,
+    "method": "samseg_segmentation",
+    "statement": "For longitudinal processing, ensure that the same combination of contrasts is provided for each time point.",
+    "quote_support": 1.0,
+    "source_id": "fs_samseg",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {},
+    "candidates": [
+      [
+        "attr_equal",
+        0.16813117681800469
+      ],
+      [
+        "attr_in",
+        0.16022683039798954
+      ],
+      [
+        "advisory",
+        0.0
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 80,
+    "method": "samseg_segmentation",
+    "statement": "When using the lesion flag, verify that the lesion-mask-pattern has one number for each input contrast.",
+    "quote_support": 1.0,
+    "source_id": "fs_samseg",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {},
+    "candidates": [
+      [
+        "attr_in",
+        0.17021115748638918
+      ],
+      [
+        "design_variable",
+        0.12437102855015472
+      ],
+      [
+        "product_present",
+        0.10953895999342182
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 81,
+    "method": "samseg_segmentation",
+    "statement": "The pallidum is treated internally as a white matter structure by default because it typically cannot be discerned easily from white matter in T1w scans.",
+    "quote_support": 1.0,
+    "source_id": "fs_samseg",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {},
+    "candidates": [
+      [
+        "attr_in",
+        0.37491417066634586
+      ],
+      [
+        "cardinality",
+        0.16762241943767286
+      ],
+      [
+        "product_present",
+        0.09750711126293068
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 82,
+    "method": "samseg_segmentation",
+    "statement": "The first time the MS lesion module is run, the user may be prompted to install Tensorflow.",
+    "quote_support": 1.0,
+    "source_id": "fs_samseg",
+    "template": "provenance",
+    "parameters": {
+      "step": "The first time you run this module, you may be prompted to install Tensorflow"
+    },
+    "key": "provenance:{\"step\": \"The first time you run this module, you may be prompted to install Tensorflow\"}",
+    "score": 0.18723097203431693,
+    "margin": 0.18723097203431693,
+    "support": 0.2,
+    "candidates": [
+      [
+        "advisory",
+        0.18223090879454287
+      ],
+      [
+        "provenance",
+        0.1574365734477232
+      ],
+      [
+        "attr_in",
+        0.10101001672351256
+      ]
+    ],
+    "decision": "review"
+  },
+  {
+    "id": 83,
+    "method": "samseg_segmentation",
+    "statement": "For longitudinal processing, simply reformatting all follow-up time points to the baseline scan would introduce a longitudinal processing bias.",
+    "quote_support": 1.0,
+    "source_id": "fs_samseg",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {},
+    "candidates": [
+      [
+        "asymmetry_flip",
+        0.18585489076997844
+      ],
+      [
+        "provenance",
+        0.184192629349563
+      ],
+      [
+        "advisory",
+        0.0
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 84,
+    "method": "surface_annotation_roi",
+    "statement": "Optionally a FreeSurfer .label file giving vertex indices, with optional per-vertex scalars.",
+    "quote_support": 1.0,
+    "source_id": "nibabel_fs",
+    "template": "software",
+    "parameters": {
+      "commands": [
+        "Load in a Freesurfer .label file."
+      ]
+    },
+    "key": "software:{\"commands\": [\"Load in a Freesurfer .label file.\"]}",
+    "score": 0.17957731692171985,
+    "margin": 0.17957731692171985,
+    "support": 0.2,
+    "candidates": [
+      [
+        "product_present",
+        0.20351693966944154
+      ],
+      [
+        "label_policy",
+        0.2011164989196108
+      ],
+      [
+        "software",
+        0.1319243897390662
+      ]
+    ],
+    "decision": "review"
+  },
+  {
+    "id": 85,
+    "method": "surface_annotation_roi",
+    "statement": "Optionally a triangular surface mesh geometry file supplying vertex coordinates and faces.",
+    "quote_support": 1.0,
+    "source_id": "nibabel_fs",
+    "template": "product_present",
+    "parameters": {
+      "slot": "surface",
+      "type": "mesh"
+    },
+    "key": "product_present:{\"slot\": \"surface\", \"type\": \"mesh\"}",
+    "score": 0.4793564957609992,
+    "margin": 0.4793564957609992,
+    "support": 0.6,
+    "candidates": [
+      [
+        "product_present",
+        0.19785498586999756
+      ],
+      [
+        "attr_equal",
+        0.14338274935724163
+      ],
+      [
+        "software",
+        0.07428299966030348
+      ]
+    ],
+    "decision": "review"
+  },
+  {
+    "id": 86,
+    "method": "surface_annotation_roi",
+    "statement": "Verify that the number of morphometry values matches the number of vertices in the annotation.",
+    "quote_support": 1.0,
+    "source_id": "nibabel_fs",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {},
+    "candidates": [
+      [
+        "attr_in",
+        0.2929827200114631
+      ],
+      [
+        "attr_equal",
+        0.22551201614234667
+      ],
+      [
+        "cardinality",
+        0.11165465140906207
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 87,
+    "method": "surface_annotation_roi",
+    "statement": "Confirm the length of the label names list equals the number of labels in the color table.",
+    "quote_support": 1.0,
+    "source_id": "nibabel_fs",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {},
+    "candidates": [
+      [
+        "label_policy",
+        0.32356786482957534
+      ],
+      [
+        "attr_in",
+        0.23954555326031704
+      ],
+      [
+        "cardinality",
+        0.03604094459649618
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 88,
+    "method": "surface_mesh_area",
+    "statement": "A FreeSurfer surface mesh file in triangular format, e.g., white or pial surface.",
+    "quote_support": 1.0,
+    "source_id": "nibabel_fs",
+    "template": "attr_in",
+    "parameters": {
+      "slot": "surface",
+      "attr": "mesh",
+      "values": [
+        "triangular"
+      ]
+    },
+    "key": "attr_in:{\"attr\": \"mesh\", \"slot\": \"surface\", \"values\": [\"triangular\"]}",
+    "score": 0.47669797752570836,
+    "margin": 0.47669797752570836,
+    "support": 0.6,
+    "candidates": [
+      [
+        "attr_in",
+        0.18899325841902817
+      ],
+      [
+        "product_present",
+        0.1824392003324793
+      ],
+      [
+        "software",
+        0.10274290786810004
+      ]
+    ],
+    "decision": "review"
+  },
+  {
+    "id": 89,
+    "method": "surface_mesh_area",
+    "statement": "Vertex coordinates array (nvtx x 3) from the surface mesh.",
+    "quote_support": 1.0,
+    "source_id": "nibabel_fs",
+    "template": "product_present",
+    "parameters": {
+      "slot": "surface",
+      "type": "vertex_coordinates"
+    },
+    "key": "product_present:{\"slot\": \"surface\", \"type\": \"vertex_coordinates\"}",
+    "score": 0.17788634537533657,
+    "margin": 0.0,
+    "support": 0.2,
+    "candidates": [
+      [
+        "attr_equal",
+        0.13727853101925577
+      ],
+      [
+        "attr_in",
+        0.1308246591928451
+      ],
+      [
+        "product_present",
+        0.1262878179177886
+      ]
+    ],
+    "decision": "review"
+  },
+  {
+    "id": 90,
+    "method": "surface_mesh_area",
+    "statement": "Face array (nfaces x 3) defining mesh triangles.",
+    "quote_support": 1.0,
+    "source_id": "nibabel_fs",
+    "template": "attr_in",
+    "parameters": {
+      "slot": "surface",
+      "attr": "mesh",
+      "values": [
+        "nfaces x 3 array of defining mesh triangles"
+      ]
+    },
+    "key": "attr_in:{\"attr\": \"mesh\", \"slot\": \"surface\", \"values\": [\"nfaces x 3 array of defining mesh triangles\"]}",
+    "score": 0.170400903579629,
+    "margin": 0.170400903579629,
+    "support": 0.2,
+    "candidates": [
+      [
+        "attr_equal",
+        0.2126709857717584
+      ],
+      [
+        "attr_in",
+        0.10133634526543003
+      ],
+      [
+        "advisory",
+        0.0
+      ]
+    ],
+    "decision": "review"
+  },
+  {
+    "id": 91,
+    "method": "surface_mesh_area",
+    "statement": "Triangle vertices in (n, 3, 3) float form for area computation.",
+    "quote_support": 1.0,
+    "source_id": "trimesh_triangles",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {
+      "attr_in": 4
+    },
+    "candidates": [
+      [
+        "attr_in",
+        0.34257937343886463
+      ],
+      [
+        "plausibility",
+        0.10815475808243204
+      ],
+      [
+        "provenance",
+        0.09845510174215816
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 92,
+    "method": "surface_mesh_area",
+    "statement": "The mesh must be in triangular format as read by nibabel's read_geometry.",
+    "quote_support": 1.0,
+    "source_id": "nibabel_fs",
+    "template": "attr_in",
+    "parameters": {
+      "slot": "surface",
+      "attr": "mesh",
+      "values": [
+        "triangular"
+      ]
+    },
+    "key": "attr_in:{\"attr\": \"mesh\", \"slot\": \"surface\", \"values\": [\"triangular\"]}",
+    "score": 0.5253761791660271,
+    "margin": 0.5253761791660271,
+    "support": 0.6,
+    "candidates": [
+      [
+        "attr_in",
+        0.35125393055342385
+      ],
+      [
+        "product_present",
+        0.15328341086343392
+      ],
+      [
+        "attr_equal",
+        0.1346390290761892
+      ]
+    ],
+    "decision": "review"
+  },
+  {
+    "id": 93,
+    "method": "surface_mesh_area",
+    "statement": "Triangle vertices must be provided as an (n, 3, 3) float array for area calculation.",
+    "quote_support": 1.0,
+    "source_id": "trimesh_triangles",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {},
+    "candidates": [
+      [
+        "attr_in",
+        0.2051335286624012
+      ],
+      [
+        "attr_equal",
+        0.173933931401033
+      ],
+      [
+        "product_present",
+        0.11801547790082807
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 94,
+    "method": "surface_mesh_area",
+    "statement": "The area function computes the sum area of input triangles.",
+    "quote_support": 1.0,
+    "source_id": "trimesh_triangles",
+    "template": "product_present",
+    "parameters": {
+      "slot": "surface",
+      "type": "mesh"
+    },
+    "key": "product_present:{\"slot\": \"surface\", \"type\": \"mesh\"}",
+    "score": 0.1718308969314143,
+    "margin": 0.1718308969314143,
+    "support": 0.2,
+    "candidates": [
+      [
+        "plausibility",
+        0.20820513877929203
+      ],
+      [
+        "attr_in",
+        0.10991469886049575
+      ],
+      [
+        "product_present",
+        0.10610298977138102
+      ]
+    ],
+    "decision": "review"
+  },
+  {
+    "id": 95,
+    "method": "surface_mesh_area",
+    "statement": "Verify that the mesh is in triangular format as expected by read_geometry.",
+    "quote_support": 1.0,
+    "source_id": "nibabel_fs",
+    "template": "attr_in",
+    "parameters": {
+      "slot": "surface",
+      "attr": "mesh",
+      "values": [
+        "triangular"
+      ]
+    },
+    "key": "attr_in:{\"attr\": \"mesh\", \"slot\": \"surface\", \"values\": [\"triangular\"]}",
+    "score": 0.638494795515707,
+    "margin": 0.47371342723158794,
+    "support": 0.8,
+    "candidates": [
+      [
+        "attr_in",
+        0.2616493183856902
+      ],
+      [
+        "attr_equal",
+        0.13727853101925577
+      ],
+      [
+        "plausibility",
+        0.08260456094706363
+      ]
+    ],
+    "decision": "accepted"
+  },
+  {
+    "id": 96,
+    "method": "surface_mesh_area",
+    "statement": "Ensure the triangle array is in (n, 3, 3) float form before calling area.",
+    "quote_support": 1.0,
+    "source_id": "trimesh_triangles",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {},
+    "candidates": [
+      [
+        "attr_in",
+        0.30400903579629013
+      ],
+      [
+        "plausibility",
+        0.1279704355475012
+      ],
+      [
+        "provenance",
+        0.11649364739195953
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 97,
+    "method": "surface_mesh_area",
+    "statement": "Confirm that the area function returns the summed area, not individual triangle areas, when the sum argument is used.",
+    "quote_support": 1.0,
+    "source_id": "trimesh_triangles",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {},
+    "candidates": [
+      [
+        "plausibility",
+        0.2861505929944682
+      ],
+      [
+        "advisory",
+        0.0
+      ],
+      [
+        "asymmetry_flip",
+        0.0
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 98,
+    "method": "surface_mesh_area",
+    "statement": "The area function may accept precomputed cross products as a speedup, but this is optional.",
+    "quote_support": 1.0,
+    "source_id": "trimesh_triangles",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {},
+    "candidates": [
+      [
+        "advisory",
+        0.2132007163556104
+      ],
+      [
+        "plausibility",
+        0.20233902474694024
+      ],
+      [
+        "asymmetry_flip",
+        0.0
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 99,
+    "method": "surface_reconstruction_qc",
+    "statement": "T1-weighted anatomical image(s) in DICOM or other native scanner format.",
+    "quote_support": 1.0,
+    "source_id": "fs_morph",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {},
+    "candidates": [
+      [
+        "attr_in",
+        0.5039934781024776
+      ],
+      [
+        "product_present",
+        0.11083453610559284
+      ],
+      [
+        "software",
+        0.08462778636436259
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 100,
+    "method": "surface_reconstruction_qc",
+    "statement": "Subject directory created via recon-all -i command.",
+    "quote_support": 1.0,
+    "source_id": "fs_morph",
+    "template": "software",
+    "parameters": {
+      "commands": [
+        "recon-all -i <path-to-first-structural> [-i <path-to-second-structural>] -s <subjid>"
+      ]
+    },
+    "key": "software:{\"commands\": [\"recon-all -i <path-to-first-structural> [-i <path-to-second-structural>] -s <subjid>\"]}",
+    "score": 0.4792603574933324,
+    "margin": 0.4792603574933324,
+    "support": 0.6,
+    "candidates": [
+      [
+        "provenance",
+        0.278473080337166
+      ],
+      [
+        "software",
+        0.19753452497777482
+      ],
+      [
+        "attr_equal",
+        0.06354761164243836
+      ]
+    ],
+    "decision": "review"
+  },
+  {
+    "id": 101,
+    "method": "surface_reconstruction_qc",
+    "statement": "Output volumes from recon-all processing, including T1.mgz, brainmask.mgz, and surface files.",
+    "quote_support": 1.0,
+    "source_id": "andy_failures",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {},
+    "candidates": [
+      [
+        "provenance",
+        0.2126873282754303
+      ],
+      [
+        "attr_in",
+        0.18501400732335954
+      ],
+      [
+        "product_present",
+        0.17859794486184058
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 102,
+    "method": "surface_reconstruction_qc",
+    "statement": "Anatomical data should have good quality: strong contrast between tissue types, no movement, high resolution.",
+    "quote_support": 1.0,
+    "source_id": "andy_failures",
+    "template": "plausibility",
+    "parameters": {
+      "metric": "anatomical data quality: strong contrast between tissue types, no movement, high resolution"
+    },
+    "key": "plausibility:{\"metric\": \"anatomical data quality: strong contrast between tissue types, no movement, high resolution\"}",
+    "score": 0.46170211757204094,
+    "margin": 0.13999999999999996,
+    "support": 0.6,
+    "candidates": [
+      [
+        "attr_equal",
+        0.2006987244876925
+      ],
+      [
+        "plausibility",
+        0.1390070585734701
+      ],
+      [
+        "attr_in",
+        0.13622530577236797
+      ]
+    ],
+    "decision": "review"
+  },
+  {
+    "id": 103,
+    "method": "surface_reconstruction_qc",
+    "decision": "provider_error",
+    "template": null,
+    "parameters": null,
+    "failure_kind": "provider_transport_or_budget",
+    "error_summary": "Provider request failed (http_error, HTTP 429); see metered ledger",
+    "sample_calls": 3
+  },
+  {
+    "id": 104,
+    "method": "surface_reconstruction_qc",
+    "statement": "Verify that surfaces follow the true boundaries of gray and white matter by visual inspection.",
+    "quote_support": 1.0,
+    "source_id": "fs_morph",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {},
+    "candidates": [
+      [
+        "attr_in",
+        0.22659495660489054
+      ],
+      [
+        "advisory",
+        0.0
+      ],
+      [
+        "asymmetry_flip",
+        0.0
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 105,
+    "method": "surface_reconstruction_qc",
+    "statement": "Small and infrequent discrepancies between FreeSurfer-drawn borders and actual gray/white borders should be left alone, as editing may worsen the problem.",
+    "quote_support": 1.0,
+    "source_id": "andy_failures",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {},
+    "candidates": [
+      [
+        "attr_in",
+        0.2389803723082814
+      ],
+      [
+        "advisory",
+        0.23231776143534044
+      ],
+      [
+        "asymmetry_flip",
+        0.10125996036400017
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 106,
+    "method": "surface_reconstruction_qc",
+    "statement": "White matter segmentation errors caused by lesions or gliomas are relatively uncommon in healthy subjects and are not covered in the tutorial.",
+    "quote_support": 1.0,
+    "source_id": "andy_failures",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {},
+    "candidates": [
+      [
+        "attr_in",
+        0.4347719131579465
+      ],
+      [
+        "cardinality",
+        0.12180494401188198
+      ],
+      [
+        "product_present",
+        0.035427385751814054
+      ]
+    ],
+    "template": "advisory"
+  },
+  {
+    "id": 107,
+    "method": "surface_reconstruction_qc",
+    "statement": "Topological defects are very rare since FreeSurfer version 6.0 and are usually automatically fixed during recon-all.",
+    "quote_support": 1.0,
+    "source_id": "andy_failures",
+    "template": "software",
+    "parameters": {
+      "commands": [
+        "recon-all"
+      ]
+    },
+    "key": "software:{\"commands\": [\"recon-all\"]}",
+    "score": 0.6261076963637203,
+    "margin": 0.41999999999999993,
+    "support": 0.8,
+    "candidates": [
+      [
+        "provenance",
+        0.23298729478391905
+      ],
+      [
+        "software",
+        0.2203589878790681
+      ],
+      [
+        "attr_in",
+        0.10133634526543003
+      ]
+    ],
+    "decision": "accepted"
+  },
+  {
+    "id": 108,
+    "method": "surface_reconstruction_qc",
+    "statement": "For populations where aseg tools are ineffective (e.g., monkey or newborn data), use the -noaseg flag to skip subcortical segmentation.",
+    "quote_support": 1.0,
+    "source_id": "fs_morph",
+    "decision": "advisory",
+    "reason": "no type-valid template",
+    "invalid_attempts": {
+      "attr_in": 4
+    },
+    "candidates": [
+      [
+        "provenance",
+        0.1976139804873578
+      ],
+      [
+        "attr_in",
+        0.12678751218157033
+      ],
+      [
+        "product_present",
+        0.12239067429201643
+      ]
+    ],
+    "template": "advisory"
+  }
+]

@@ -1,0 +1,172 @@
+[
+  {
+    "case": "R24_G1",
+    "receipt_id": "0d29218c0d424bd79f6b2270e534e92a",
+    "script_sha256": "9d29715e5b1554939149a9ad10e1afd3c81e627a9fe3f57f8a089983737012d7",
+    "current_source_matches_execution": true,
+    "source_recovered_from_actual_model_tool_call": true,
+    "generic_writer_present_if_source_matched": true,
+    "exit_code": 0,
+    "status": "success"
+  },
+  {
+    "case": "R24_G1",
+    "receipt_id": "18b5f3c846ef4730b795e70a6674be84",
+    "script_sha256": "ec436240857a3cf4db7af8122fafcf9ab5902fca6bbc5f2cb2a475ef3de8ab4e",
+    "current_source_matches_execution": false,
+    "source_recovered_from_actual_model_tool_call": true,
+    "generic_writer_present_if_source_matched": true,
+    "exit_code": 0,
+    "status": "success"
+  },
+  {
+    "case": "R24_G1",
+    "receipt_id": "aac56a310b2c4debabed51e04f09c96c",
+    "script_sha256": "5139780bc0977f250536b2abff0ebb2b63b7207af67e4c5910cc48becc486163",
+    "current_source_matches_execution": false,
+    "source_recovered_from_actual_model_tool_call": true,
+    "generic_writer_present_if_source_matched": true,
+    "exit_code": 1,
+    "status": "failed"
+  },
+  {
+    "case": "R24_G1",
+    "receipt_id": "f4e658a7a4024b8b9033a7d550ac72b8",
+    "script_sha256": "bb9a67f6be56709562c34cee13ad7b4a0678f50b26e76e17117472c4ce848d48",
+    "current_source_matches_execution": false,
+    "source_recovered_from_actual_model_tool_call": true,
+    "generic_writer_present_if_source_matched": true,
+    "exit_code": 1,
+    "status": "failed"
+  },
+  {
+    "case": "R24_G2",
+    "receipt_id": "4a4538c8542c499689622c19d757ab36",
+    "script_sha256": "6e4be2f58481ab4b9f86fd8072401bb86148290c892f8847076949221eb10afc",
+    "current_source_matches_execution": true,
+    "source_recovered_from_actual_model_tool_call": true,
+    "generic_writer_present_if_source_matched": true,
+    "exit_code": 0,
+    "status": "success"
+  },
+  {
+    "case": "R24_G2",
+    "receipt_id": "5d9cd20ee097434db4d6598cc7dabbd2",
+    "script_sha256": "6bd6ea3825d92fd5a028ec77657df21163ae98f1582983f3190cfdc2651bd92b",
+    "current_source_matches_execution": false,
+    "source_recovered_from_actual_model_tool_call": true,
+    "generic_writer_present_if_source_matched": true,
+    "exit_code": 1,
+    "status": "failed"
+  },
+  {
+    "case": "R24_G2",
+    "receipt_id": "7d706ec3ce414550935daca0761a6091",
+    "script_sha256": "0cab628de0880dbdb4b0f10e1d20e8331168e15deada8fe1495d406c44e9027f",
+    "current_source_matches_execution": false,
+    "source_recovered_from_actual_model_tool_call": true,
+    "generic_writer_present_if_source_matched": true,
+    "exit_code": 0,
+    "status": "success"
+  },
+  {
+    "case": "R24_G2",
+    "receipt_id": "ec82db24eb64444cb759089a88144380",
+    "script_sha256": "df9be493624ce99c3a7e9e59ca0aac22a4064eb1d3ae025891f1daa76544f150",
+    "current_source_matches_execution": false,
+    "source_recovered_from_actual_model_tool_call": true,
+    "generic_writer_present_if_source_matched": true,
+    "exit_code": 1,
+    "status": "failed"
+  },
+  {
+    "case": "E1_S1",
+    "receipt_id": "27776ae7f4d742c49513dd27241a7632",
+    "script_sha256": "22e409ce93c5b25e36bc284c33a15df15880950494756d4b1f159c24edcbb55f",
+    "current_source_matches_execution": true,
+    "source_recovered_from_actual_model_tool_call": true,
+    "generic_writer_present_if_source_matched": true,
+    "exit_code": 0,
+    "status": "success"
+  },
+  {
+    "case": "E1_G2",
+    "receipt_id": "34b80c1993724098a2533266d5889477",
+    "script_sha256": "28f863f3659866ffbc18bd012bd5c57bdc54a9cf9c40b904a3b3c6f90992731e",
+    "current_source_matches_execution": false,
+    "source_recovered_from_actual_model_tool_call": true,
+    "generic_writer_present_if_source_matched": true,
+    "exit_code": 1,
+    "status": "failed"
+  },
+  {
+    "case": "E1_G2",
+    "receipt_id": "87ba63b4f88e4345bdea6aa2ba9f7547",
+    "script_sha256": "56fc4d8df68738e7bc36fd83f65992838ab45c2de568aed21f407be84bd7bd39",
+    "current_source_matches_execution": true,
+    "source_recovered_from_actual_model_tool_call": true,
+    "generic_writer_present_if_source_matched": true,
+    "exit_code": 0,
+    "status": "success"
+  },
+  {
+    "case": "E1_G2",
+    "receipt_id": "d5c6ae9b5f5448f6b2f7681ff8981d05",
+    "script_sha256": "a218397a1785c07f77fa3e6610e787a0656c324c74dff570c12b794c206a3faf",
+    "current_source_matches_execution": false,
+    "source_recovered_from_actual_model_tool_call": true,
+    "generic_writer_present_if_source_matched": false,
+    "exit_code": 0,
+    "status": "success"
+  },
+  {
+    "case": "E1_X1",
+    "receipt_id": "7b0c28f72cd94d5aacc2c46c5640b888",
+    "script_sha256": "79acb21e9f315d2637d5f5079062c44e07dd113bb1ae5763f3828da26ecd9ef3",
+    "current_source_matches_execution": false,
+    "source_recovered_from_actual_model_tool_call": true,
+    "generic_writer_present_if_source_matched": true,
+    "exit_code": 0,
+    "status": "success"
+  },
+  {
+    "case": "E1_X1",
+    "receipt_id": "8f81eaa9567c48e0b2e3a6956437627d",
+    "script_sha256": "e2884eafaab2a6abf1abb9a9754054cf672add8785b99f5a306d66aaacc62e08",
+    "current_source_matches_execution": false,
+    "source_recovered_from_actual_model_tool_call": true,
+    "generic_writer_present_if_source_matched": false,
+    "exit_code": 1,
+    "status": "failed"
+  },
+  {
+    "case": "E1_X1",
+    "receipt_id": "cc10454f7c52481d80ba53491c7f139e",
+    "script_sha256": "b37ee50e735db868150c10efa9825a643940a4a472dc85563eea19705f5f3552",
+    "current_source_matches_execution": true,
+    "source_recovered_from_actual_model_tool_call": true,
+    "generic_writer_present_if_source_matched": false,
+    "exit_code": 0,
+    "status": "success"
+  },
+  {
+    "case": "E1_X1",
+    "receipt_id": "de62ca05eb8b4511be225c1fa4806d6e",
+    "script_sha256": "22dd39049842f8cb60072a6384386fcef03541202de31e633bc8cbd7a4fd30cf",
+    "current_source_matches_execution": false,
+    "source_recovered_from_actual_model_tool_call": true,
+    "generic_writer_present_if_source_matched": false,
+    "exit_code": 0,
+    "status": "success"
+  },
+  {
+    "case": "E1_N3",
+    "receipt_id": "402eddc82519493fbd4ef4c00cefede2",
+    "script_sha256": "e29ac27928e3ca604664c0618284cbb755c186e58629f033d7282242df1684ce",
+    "current_source_matches_execution": true,
+    "source_recovered_from_actual_model_tool_call": true,
+    "generic_writer_present_if_source_matched": true,
+    "exit_code": 0,
+    "status": "success"
+  }
+]

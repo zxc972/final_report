@@ -1,0 +1,10 @@
+{
+  "request_count": 180,
+  "all_private_paths_isolated": true,
+  "no_other_fixed_question_in_requests": true,
+  "all_router_contexts_fresh_and_exact": true,
+  "private_reference_outside_all_input_roots": true,
+  "source_router_unchanged": true,
+  "router_sha256": "2634d1100542247f378c108a7349452fcf31b58191bf2405ae6efd269d53e212",
+  "model_calls_by_audit": 0
+}

@@ -1,0 +1,110 @@
+[
+  {
+    "source_id": "fastsurfer_install",
+    "url": "https://deep-mi.org/FastSurfer/stable/overview/INSTALL.html",
+    "final_url": "https://deep-mi.org/FastSurfer/stable/overview/INSTALL.html",
+    "fetched_at": "2026-10-23T10:00:06.567198+00:00",
+    "http_status": 200,
+    "text_sha256": "03f05ff592ee287c347fe2bff7ff5c84ff307bc49801bd8f238e8da5e36084b5",
+    "html_sha256": "8f1e04db061641cd577acd77766f149bdba059fc03566b59f857c476c632d08c",
+    "text_characters": 7513,
+    "projection": "stdlib HTMLParser SourceText v1",
+    "evidence_class": "official_documentation"
+  },
+  {
+    "source_id": "fastsurfer_run",
+    "url": "https://deep-mi.org/FastSurfer/stable/scripts/RUN_FASTSURFER.html",
+    "final_url": "https://deep-mi.org/FastSurfer/stable/scripts/RUN_FASTSURFER.html",
+    "fetched_at": "2026-10-23T10:00:06.697076+00:00",
+    "http_status": 200,
+    "text_sha256": "86e0b793c322530a30c34aaa6f2c1ec00912fceb693cb4fd554e9860eeea8892",
+    "html_sha256": "56702d9604bf33eb03d0b79f2f61c77f3a24eaf606acccff18c38802ead2546a",
+    "text_characters": 29247,
+    "projection": "stdlib HTMLParser SourceText v1",
+    "evidence_class": "official_documentation"
+  },
+  {
+    "source_id": "fastsurfer_outputs",
+    "url": "https://deep-mi.org/FastSurfer/stable/overview/OUTPUT_FILES.html",
+    "final_url": "https://deep-mi.org/FastSurfer/stable/overview/OUTPUT_FILES.html",
+    "fetched_at": "2026-10-23T10:00:06.502310+00:00",
+    "http_status": 200,
+    "text_sha256": "d8b6e8b2eb5482291eb29cbc2e92f1aa73e8f43f001adce7a8546daf57f5848e",
+    "html_sha256": "cdf3759cce8c4f86af57160070ee2d91960781aef0c9dcd5f3c919a52b8e4545",
+    "text_characters": 18633,
+    "projection": "stdlib HTMLParser SourceText v1",
+    "evidence_class": "official_documentation"
+  },
+  {
+    "source_id": "fs_group_tutorial",
+    "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/GroupAnalysis",
+    "final_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/GroupAnalysis",
+    "fetched_at": "2026-10-23T10:00:08.610810+00:00",
+    "http_status": 200,
+    "text_sha256": "47df6d321ae9ec7a10d07f18b6f6301ae427901f68bbcc4de50181e95d18eaeb",
+    "html_sha256": "55a11470ff416dc99ad9d0a72be7fa10ac7c2c3dbfbd1dd8b59af3c41e7f1ab9",
+    "text_characters": 20124,
+    "projection": "stdlib HTMLParser SourceText v1",
+    "evidence_class": "official_documentation"
+  },
+  {
+    "source_id": "fs_glmfit",
+    "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mri_glmfit",
+    "final_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mri_glmfit",
+    "fetched_at": "2026-10-23T10:00:08.313582+00:00",
+    "http_status": 200,
+    "text_sha256": "a5f4b73f3a2f35110ee8a23127ea3ae6b65332a72ab28deb4ec45b5076843fd8",
+    "html_sha256": "137c2fcb678e5ee2c4dbf7c8e7afe43de1c61dfe4da9a8a208bd6903a76d04a5",
+    "text_characters": 19033,
+    "projection": "stdlib HTMLParser SourceText v1",
+    "evidence_class": "official_documentation"
+  },
+  {
+    "source_id": "wb_vertex_areas",
+    "url": "https://www.humanconnectome.org/software/workbench-command/-surface-vertex-areas",
+    "final_url": "https://www.humanconnectome.org/software/workbench-command/-surface-vertex-areas",
+    "fetched_at": "2026-10-23T10:00:08.727061+00:00",
+    "http_status": 200,
+    "text_sha256": "8e3163dff98453dbb078cd523a393ec13cd0de0bc590306f1e7d4b8059a49e2f",
+    "html_sha256": "8fe85f2d87926af8ff70308aafdd53d9d7ea13052b90bcb9abf2a2a253e14244",
+    "text_characters": 7313,
+    "projection": "stdlib HTMLParser SourceText v1",
+    "evidence_class": "official_documentation"
+  },
+  {
+    "source_id": "wb_metric_stats",
+    "url": "https://www.humanconnectome.org/software/workbench-command/-metric-stats",
+    "final_url": "https://www.humanconnectome.org/software/workbench-command/-metric-stats",
+    "fetched_at": "2026-10-23T10:00:10.178581+00:00",
+    "http_status": 200,
+    "text_sha256": "019a5139fa7a191282de20bda1328b905477a91cf875583fef08d96b0784e37b",
+    "html_sha256": "7c52d6a44852be4495e4df79ad561f83e36de3347669cb55e22cd78cbfddb9da",
+    "text_characters": 8755,
+    "projection": "stdlib HTMLParser SourceText v1",
+    "evidence_class": "official_documentation"
+  },
+  {
+    "source_id": "afni_charm",
+    "url": "https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/nonhuman/macaque_tempatl/atlas_charm.html",
+    "final_url": "https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/nonhuman/macaque_tempatl/atlas_charm.html",
+    "fetched_at": "2026-10-23T10:00:11.102784+00:00",
+    "http_status": 200,
+    "text_sha256": "bb2cb3f01235e020c18a9c1e27a318d5cec676f9523dab8a45d973b82717d77b",
+    "html_sha256": "9987be1bbefe760084f7f76bdd189cc47a5d304de28aef17fcdc69a7529321db",
+    "text_characters": 4571,
+    "projection": "stdlib HTMLParser SourceText v1",
+    "evidence_class": "official_documentation"
+  },
+  {
+    "source_id": "afni_install_nmt",
+    "url": "https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/alpha/@Install_NMT_sphx.html",
+    "final_url": "https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/alpha/@Install_NMT_sphx.html",
+    "fetched_at": "2026-10-23T10:00:16.008646+00:00",
+    "http_status": 200,
+    "text_sha256": "00a6391ddd49949966f42e676ced0b076621477ba9db68f00e02b4622470bf9f",
+    "html_sha256": "4670898e9a9a9faed6dd879aa968fb022688876b1d841a3e1e4014d4287fc210",
+    "text_characters": 2910,
+    "projection": "stdlib HTMLParser SourceText v1",
+    "evidence_class": "official_documentation"
+  }
+]

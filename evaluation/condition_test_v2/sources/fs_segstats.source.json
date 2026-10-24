@@ -1,0 +1,12 @@
+{
+  "source_id": "fs_segstats",
+  "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mri_segstats",
+  "final_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mri_segstats",
+  "fetched_at": "2026-10-24T04:57:05.081014+00:00",
+  "http_status": 200,
+  "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c",
+  "html_sha256": "ab6d351223ef31f62852db1cfebf5a76e4b8f455fe96e62927434283322a5056",
+  "text_characters": 14469,
+  "projection": "stdlib HTMLParser SourceText v1",
+  "evidence_class": "official_documentation"
+}

@@ -1,0 +1,488 @@
+Installation - FastSurfer
+
+Contents
+
+Menu
+
+Expand
+
+Light mode
+
+Dark mode
+
+Auto light/dark, in light mode
+
+Auto light/dark, in dark mode
+
+Skip to content
+
+This documents the latest release. The dev documentation covers changes that are not released yet.
+
+FastSurfer
+
+User Guide
+
+Introduction
+
+Quick Start
+
+Installation
+
+macOS
+
+Linux
+
+Windows
+
+Installing from source
+
+Running FastSurfer in a container
+
+Examples
+
+Output files
+
+Modules
+
+Whole-Brain Segmentation (FastSurferVINN)
+
+Corpus Callosum Pipeline
+
+Cerebellum Sub-Segmentation (CerebNet)
+
+Hypothalamus Sub-Segmentation (HypVINN)
+
+Surface Reconstruction (recon-surf)
+
+Lesion Inpainting Tool (LIT)
+
+Manual Edits
+
+Longitudinal Processing
+
+Reproducibility
+
+Security Policy
+
+FastSurfer License
+
+Command Reference
+
+run_fastsurfer.sh
+
+long_fastsurfer.sh
+
+brun_fastsurfer.sh
+
+srun_fastsurfer.sh
+
+bids_fastsurfer.py
+
+Running modules directly
+
+FastSurferCNN: run_prediction.py
+
+CerebNet: run_prediction.py
+
+HypVINN: run_prediction.py
+
+CorpusCallosum: fastsurfer_cc.py
+
+Surface pipeline: recon-surf.sh
+
+Surface registration: recon-surfreg.sh
+
+Utilities
+
+FastSurferCNN: download_checkpoints.py
+
+FastSurferCNN: conform.py
+
+FastSurferCNN: segstats.py
+
+tools: compare_subjects.py
+
+CorpusCallosum: cc_visualization.py
+
+recon_surf: long_compat_segmentHA.py
+
+Training
+
+FastSurferCNN: generate_hdf5.py
+
+FastSurferCNN: run_model.py
+
+Developer Guide
+
+Contribution Guide
+
+Git hooks
+
+Building Docker images
+
+Code of Conduct
+
+FastSurfer API
+
+FastSurferCNN
+
+FastSurferCNN.download_checkpoints
+
+FastSurferCNN.generate_hdf5
+
+FastSurferCNN.gpu_support
+
+FastSurferCNN.inference
+
+FastSurferCNN.mri_brainvol_stats
+
+FastSurferCNN.mri_segstats
+
+FastSurferCNN.quick_qc
+
+FastSurferCNN.reduce_to_aseg
+
+FastSurferCNN.run_model
+
+FastSurferCNN.run_prediction
+
+FastSurferCNN.segstats
+
+FastSurferCNN.train
+
+FastSurferCNN.version
+
+FastSurferCNN.data_loader
+
+FastSurferCNN.data_loader.augmentation
+
+FastSurferCNN.data_loader.conform
+
+FastSurferCNN.data_loader.data_utils
+
+FastSurferCNN.data_loader.dataset
+
+FastSurferCNN.data_loader.loader
+
+FastSurferCNN.models
+
+FastSurferCNN.models.interpolation_layer
+
+FastSurferCNN.models.losses
+
+FastSurferCNN.models.networks
+
+FastSurferCNN.models.optimizer
+
+FastSurferCNN.models.sub_module
+
+FastSurferCNN.utils
+
+FastSurferCNN.utils.arg_types
+
+FastSurferCNN.utils.brainvolstats
+
+FastSurferCNN.utils.checkpoint
+
+FastSurferCNN.utils.common
+
+FastSurferCNN.utils.dataclasses
+
+FastSurferCNN.utils.load_config
+
+FastSurferCNN.utils.logging
+
+FastSurferCNN.utils.lr_scheduler
+
+FastSurferCNN.utils.mapper
+
+FastSurferCNN.utils.meters
+
+FastSurferCNN.utils.metrics
+
+FastSurferCNN.utils.misc
+
+FastSurferCNN.utils.parallel
+
+FastSurferCNN.utils.parser_defaults
+
+FastSurferCNN.utils.run_tools
+
+CerebNet
+
+CerebNet.apply_warp
+
+CerebNet.inference
+
+CerebNet.run_prediction
+
+CerebNet.data_loader
+
+CerebNet.data_loader.augmentation
+
+CerebNet.data_loader.data_utils
+
+CerebNet.data_loader.dataset
+
+CerebNet.data_loader.loader
+
+CerebNet.datasets
+
+CerebNet.datasets.generate_hdf5
+
+CerebNet.datasets.load_data
+
+CerebNet.datasets.utils
+
+CerebNet.datasets.wm_merge_clean
+
+CerebNet_models
+
+CerebNet.models.networks
+
+CerebNet.models.sub_module
+
+CerebNet.utils
+
+CerebNet.utils.checkpoint
+
+CerebNet.utils.load_config
+
+CerebNet.utils.lr_scheduler
+
+CerebNet.utils.meters
+
+CerebNet.utils.misc
+
+CorpusCallosum
+
+CorpusCallosum.fastsurfer_cc
+
+CorpusCallosum.cc_visualization
+
+CorpusCallosum.paint_cc_into_pred
+
+CorpusCallosum.data
+
+CorpusCallosum.data.constants
+
+CorpusCallosum.data.fsaverage_cc_template
+
+CorpusCallosum.data.read_write
+
+CorpusCallosum.localization
+
+CorpusCallosum.localization.inference
+
+CorpusCallosum.registration
+
+CorpusCallosum.registration.midsagittal_plane_alignment
+
+CorpusCallosum.segmentation
+
+CorpusCallosum.segmentation.inference
+
+CorpusCallosum.segmentation.segmentation_postprocessing
+
+CorpusCallosum.shape
+
+CorpusCallosum.shape.contour
+
+CorpusCallosum.shape.curvature
+
+CorpusCallosum.shape.endpoint_heuristic
+
+CorpusCallosum.shape.mesh
+
+CorpusCallosum.shape.metrics
+
+CorpusCallosum.shape.postprocessing
+
+CorpusCallosum.shape.subsegment_contour
+
+CorpusCallosum.shape.thickness
+
+CorpusCallosum.transforms
+
+CorpusCallosum.transforms.localization
+
+CorpusCallosum.transforms.segmentation
+
+CorpusCallosum.utils
+
+CorpusCallosum.utils.checkpoint
+
+CorpusCallosum.utils.mapping_helpers
+
+CorpusCallosum.utils.types
+
+CorpusCallosum.utils.visualization
+
+HypVINN
+
+HypVINN.inference
+
+HypVINN.run_prediction
+
+HypVINN.data_loader
+
+HypVINN.data_loader.data_utils
+
+HypVINN.data_loader.dataset
+
+HypVINN.models
+
+HypVINN.models.networks
+
+HypVINN.utils
+
+HypVINN.utils.checkpoint
+
+HypVINN.utils.img_processing_utils
+
+HypVINN.utils.load_config
+
+HypVINN.utils.misc
+
+HypVINN.utils.mode_config
+
+HypVINN.utils.preproc
+
+HypVINN.utils.stats_utils
+
+HypVINN.utils.visualization_utils
+
+recon_surf
+
+recon_surf.create_annotation
+
+recon_surf.fs_balabels
+
+recon_surf.image_io
+
+recon_surf.long_compat_segmentHA
+
+recon_surf.map_surf_label
+
+recon_surf.N4_bias_correct
+
+recon_surf.pin_cpu_dispatch
+
+recon_surf.rewrite_mc_surface
+
+recon_surf.rewrite_oriented_surface
+
+recon_surf.rotate_sphere
+
+recon_surf.sample_parc
+
+recon_surf.smooth_aparc
+
+recon_surf.spherically_project
+
+recon_surf.spherically_project_wrapper
+
+Back to top
+
+View this page
+
+Installation¶
+
+FastSurfer works the same way on every system: you call run_fastsurfer.sh with a T1-weighted MRI image. How you
+install it depends on your system. Pick yours:
+
+macOS
+
+Apple silicon: the installer package, with all software included.
+
+Intel Macs: Docker.
+
+macOS
+
+Linux
+
+Apptainer/Singularity or Docker images, for NVIDIA GPUs, AMD GPUs (experimental) or CPU only.
+
+Linux
+
+Windows
+
+Docker in WSL2, for NVIDIA GPUs or CPU only.
+
+Windows
+
+From source
+
+A native installation on Ubuntu, for developers and systems without containers.
+
+Installing from source
+
+Which method should I use?¶
+
+Your system
+
+Recommended
+
+Alternatives
+
+Mac with Apple silicon (M1 or newer)
+
+macOS package
+
+Mac with an Intel CPU
+
+Docker
+
+Linux with NVIDIA GPU (workstation or cluster)
+
+Apptainer/Singularity or Docker
+
+from source
+
+Linux with AMD GPU
+
+Docker, ROCm build
+
+Linux without GPU
+
+Apptainer or Docker, CPU image
+
+Windows
+
+Docker in WSL2
+
+The containers and the macOS package include all software FastSurfer needs (only the
+FreeSurfer license for the surface reconstruction has to be obtained separately), and the
+containers are what we test and validate FastSurfer with (Ubuntu
+24.04). A native installation depends on the software on your system, so its results can differ from
+ours, and we may not be able to help if it does not work.
+
+Before you start¶
+
+Hardware¶
+
+A GPU makes the segmentation much faster. How much memory FastSurfer needs depends on the voxel size and on whether
+the GPU or the CPU does the work; the system requirements list both.
+
+FreeSurfer license¶
+
+The surface pipeline uses some FreeSurfer tools, so it needs a FreeSurfer license file, as does the Talairach
+registration in the segmentation (--tal_reg, used for the estimated total intracranial volume, eTIV). A
+segmentation without --tal_reg does not need one.
+
+The license is free: register at the FreeSurfer website and
+you receive it by email. Save the file in your home folder and pass it to FastSurfer with
+--fs_license <freesurfer_license_path>, or set the FS_LICENSE environment variable to its path. A container also
+needs access to the file, see the examples on the page of your system.
+
+On this page
+
+Installation
+
+Which method should I use?
+
+Before you start
+
+Hardware
+
+FreeSurfer license

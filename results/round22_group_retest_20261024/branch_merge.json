@@ -1,0 +1,36 @@
+{
+  "utc": "2026-10-24T04:42:37.776412+00:00",
+  "worktree": "C:\\Users\\zxc18\\OneDrive\\Desktop\\知识图谱\\work\\round15_algorithms_sync",
+  "main_before": "9d20bd604d9efe47c771627198c936913690e864",
+  "github_main_before": "70964d656b0802c16710b1aff0c07f4a65f8f14e",
+  "round21_delivery": "d6a5e749ecdfa3b65ea751a85c7ca5a4d80e5189",
+  "round20_bundle_sha256": "9767918813707660addc2f8ac597007aa10b8af2c58a405e8354e4422974af5b",
+  "round20_main": "0f22d972a77c968fb610132ccaf2f0931f853254",
+  "merge_base": "68d87c172b4bc4bfe4b97e09f346af5b416d5bf8",
+  "merge_exit_code": 1,
+  "merge_stdout": "Auto-merging PUBLICATION_MANIFEST.json\nCONFLICT (content): Merge conflict in PUBLICATION_MANIFEST.json\nAuto-merging SNAPSHOT_MANIFEST.json\nCONFLICT (content): Merge conflict in SNAPSHOT_MANIFEST.json\nAutomatic merge failed; fix conflicts and then commit the result.\n",
+  "merge_stderr": "",
+  "conflicts": [
+    "PUBLICATION_MANIFEST.json",
+    "SNAPSHOT_MANIFEST.json"
+  ],
+  "status": "resolved",
+  "conflict_resolution": [
+    {
+      "path": "SNAPSHOT_MANIFEST.json",
+      "decision": "Union both parents inventories, preserve archive identity and historical sync records, recompute each merged working-tree file SHA and add Round20 algorithm and Round22 isolated drivers."
+    },
+    {
+      "path": "PUBLICATION_MANIFEST.json",
+      "decision": "Regenerate over the merged tracked-file union; retain both branches results and metadata, no side selected wholesale."
+    }
+  ],
+  "code_conflicts": [],
+  "round22_runtime": "Only isolated source/batch/port/case identity changes versus corrected Round21 driver; begin and finish ASTs identical",
+  "parents": {
+    "main_with_round20": "0f22d972a77c968fb610132ccaf2f0931f853254",
+    "round21_delivery": "d6a5e749ecdfa3b65ea751a85c7ca5a4d80e5189"
+  },
+  "merge_commit": "8a214cc95e0c34ddeceded461b94facc7244b139",
+  "inherited_source_line_endings_preserved": true
+}

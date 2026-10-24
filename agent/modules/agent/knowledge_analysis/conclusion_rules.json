@@ -99,7 +99,8 @@
       "scope": "supplied_descriptive",
       "comparisons": [
         "*"
-      ]
+      ],
+      "meaning": "Describe only the supplied subject observations; no population inference."
     },
     {
       "scope": "group_inference",
@@ -107,14 +108,16 @@
         "group",
         "correlation"
       ],
-      "no_hard_block": true
+      "no_hard_block": true,
+      "meaning": "Registered group inference within the checked design and sample."
     },
     {
       "scope": "hemispheric_asymmetry",
       "comparisons": [
         "asymmetry"
       ],
-      "no_hard_block": true
+      "no_hard_block": true,
+      "meaning": "Within-subject left/right asymmetry with the listed bias qualifications."
     },
     {
       "scope": "cross_species_comparison",
@@ -125,6 +128,23 @@
       "required_pass": [
         "cross:homology_evidence",
         "cross:species_atlas"
+      ],
+      "meaning": "Regional cross-species comparison with verified correspondence."
+    },
+    {
+      "scope": "global_cross_species_ratio",
+      "meaning": "Ratio of verified species means of compatible global metrics; no regional homology claim.",
+      "comparisons": [
+        "cross_species"
+      ],
+      "no_hard_block": true,
+      "required_pass": [
+        "cross:scale_check",
+        "cross:cross_species_measure"
+      ],
+      "global_method_only": true,
+      "required_evaluated": [
+        "cross:plausibility"
       ]
     }
   ]

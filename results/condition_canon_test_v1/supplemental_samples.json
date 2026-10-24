@@ -1,0 +1,27 @@
+{
+  "full_v2": {
+    "interface_replacements": 0,
+    "truncation_replacements": 0,
+    "unavailable_positions": 0
+  },
+  "k1_v2": {
+    "interface_replacements": 0,
+    "truncation_replacements": 0,
+    "unavailable_positions": 0
+  },
+  "direct_v2": {
+    "interface_replacements": 0,
+    "truncation_replacements": 0,
+    "unavailable_positions": 0
+  },
+  "retrieval_only": {
+    "interface_replacements": 0,
+    "truncation_replacements": 0,
+    "unavailable_positions": 0
+  },
+  "dev_full_v2_repair": {
+    "interface_replacements": 0,
+    "truncation_replacements": 0,
+    "unavailable_positions": 0
+  }
+}

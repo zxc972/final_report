@@ -1,0 +1,143 @@
+{
+  "case": "E1_N3",
+  "C": true,
+  "status": "completed",
+  "overall_status": "qualified",
+  "route": "analysis",
+  "model_calls": 17,
+  "tool_calls": 23,
+  "executions": 1,
+  "iterations": 1,
+  "elapsed_seconds": 412.721065223217,
+  "internal_review_decision": "pass",
+  "internal_review_protocol_valid": true,
+  "full_chain_passed": true,
+  "source_commit": "28698e341ef953688e8fa8d314918350772b7fd1",
+  "http_status": 200,
+  "client_error": null,
+  "http_attempts": 17,
+  "known_prompt_tokens": 236618,
+  "known_completion_tokens": 28094,
+  "known_total_tokens": 264712,
+  "unknown_usage_attempts": 0,
+  "observed_native_logical_calls": 17,
+  "all_http_bound_to_native": true,
+  "public_output_contract": {
+    "status": "pass",
+    "identity_mismatch_count": 0,
+    "numeric_mismatch_count": 0,
+    "schema_mismatch_count": 0,
+    "files": [
+      {
+        "status": "pass",
+        "identity_mismatch_count": 0,
+        "numeric_mismatch_count": 0,
+        "output_sha256": "7edc031b9b67554506f620832cc4f63056deb8f8ad8bbebf6cbd6b689e8ef563",
+        "file": "summary.csv",
+        "rows": 62,
+        "expected_rows": 62,
+        "schema_mismatch_count": 0
+      }
+    ]
+  },
+  "independent_numeric": {
+    "status": "pass",
+    "host_verified": true,
+    "assessment_status": "assessed",
+    "checked": 310,
+    "mismatch_count": 0,
+    "identity_mismatch_count": 0,
+    "numeric_mismatch_count": 0
+  },
+  "request_budget": {
+    "model_calls": 17,
+    "http_attempts": 17,
+    "model_source": "provider_response",
+    "retry_http_attempts": 0,
+    "unmetered_logical_calls": 0,
+    "router_calls": 1,
+    "router_http_attempts": 1,
+    "limit": 30,
+    "known_usage_calls": 17,
+    "unknown_usage_calls": 0,
+    "cost": null,
+    "cost_status": "No verified monetary price; unknown usage is not zero"
+  },
+  "review_budget": {
+    "enabled": true,
+    "total_logical_limit": 30,
+    "review_reserved_attempts": 4,
+    "revision_reserved_calls": 3,
+    "initial_coding_limit": 23,
+    "initial_coding_model_calls": 16,
+    "nonreview_limit": 26,
+    "nonreview_model_calls": 16,
+    "review_logical_calls": 1,
+    "review_http_attempts": 1,
+    "review_http_by_logical": [
+      1
+    ],
+    "review_transport_retries_maximum": 2,
+    "review_credits_used": 1,
+    "review_credits_remaining": 3,
+    "revision_model_calls": 0,
+    "revision_credits_remaining": 3,
+    "revision_authorized": false,
+    "budget_units_used": 17,
+    "transport_retries_charge_review_pool": false,
+    "native_logical_http_counters_not_reset": true
+  },
+  "phase_budget": {
+    "planning_model_calls": 7,
+    "planning_actual_model_calls": 7,
+    "postseal_model_calls": 10,
+    "planning_limit": 18,
+    "execution_reserve": 9,
+    "planning_includes_precharged_router_calls": true
+  },
+  "system_defect_codes": [],
+  "failure_category": null,
+  "source_nodes": {
+    "router": 1,
+    "coding.model": 15,
+    "internal_review": 1
+  },
+  "tables": {},
+  "fixed_scope_numeric_pass": false,
+  "conclusion_card": {
+    "overall_status": "qualified",
+    "verdict": "qualified",
+    "review_status": "reviewed",
+    "scope": "supplied_descriptive",
+    "component_statuses": {
+      "artifacts": "finalized",
+      "public_contract": "pass",
+      "independent_numeric": "pass",
+      "internal_review": "reviewed",
+      "execution": "passed",
+      "last_exit_code": 0,
+      "identity_mismatch_count": 0,
+      "numeric_mismatch_count": 0,
+      "public_identity_mismatch_count": 0
+    }
+  },
+  "semantic_audit_required": true,
+  "analysis_model_calls_reported": 17,
+  "logical_call_count_source": "native RequestBudget including router; analysis-only field retained separately",
+  "selected_plans": [
+    {
+      "version": 1,
+      "sha256": "1aab614c7e2f231ee1ae3a9af2c909d406df6f1f5f7e1f2f0e513c5618ffcc2e",
+      "method_id": "method:v12:surface_annotation_roi",
+      "subject_count": 1,
+      "atlas": "aparc.DKTatlas",
+      "design": null,
+      "comparison": "describe",
+      "effect": null,
+      "n": null,
+      "df": null,
+      "metrics": null,
+      "regions": null
+    }
+  ]
+}

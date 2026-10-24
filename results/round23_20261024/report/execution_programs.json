@@ -1,0 +1,68 @@
+[
+  {
+    "case": "R23_G1_1",
+    "receipt_id": "4539c94e37c8482283495f459d5befb8",
+    "script": "/work/analysis_dkt_thickness_age_sex.py",
+    "executed_sha256": "f6919b0471208cd73b8d8aef28df68ac60cdcd87c39434258708635e6b7687ab",
+    "source_recovered": true,
+    "source_origin": "actual_model_write_code",
+    "writer_call_reference_in_executed_source": false,
+    "execution_status": "success",
+    "exit_code": 0
+  },
+  {
+    "case": "R23_G1_3",
+    "receipt_id": "09e5c061bb2e41eebf79c21358903bb9",
+    "script": "/work/run_dkt_thickness_age_glm.py",
+    "executed_sha256": "fc29c8eddebd9b3e64219ae8f5299d5c25171f51d89be25dc74d33f503865215",
+    "source_recovered": true,
+    "source_origin": "actual_model_write_code",
+    "writer_call_reference_in_executed_source": true,
+    "execution_status": "success",
+    "exit_code": 0
+  },
+  {
+    "case": "R23_G2_1",
+    "receipt_id": "98a5b070175f48e09e0f20e6783b5bb5",
+    "script": "/work/analysis_script.py",
+    "executed_sha256": "120074cda05cd88ea2c3f8054bbde4f14927b691af53295622a32bf7fd29ae4d",
+    "source_recovered": true,
+    "source_origin": "actual_model_write_code",
+    "writer_call_reference_in_executed_source": true,
+    "execution_status": "success",
+    "exit_code": 0
+  },
+  {
+    "case": "R23_G2_1",
+    "receipt_id": "d5766c2875374895933a8082b0cce7cd",
+    "script": "/work/analysis_script.py",
+    "executed_sha256": "95337f0bf17f3e1f62ff14ec98f46fca44ac3f29af45e3bde204482b425bf8ee",
+    "source_recovered": true,
+    "source_origin": "actual_model_write_code",
+    "writer_call_reference_in_executed_source": true,
+    "execution_status": "success",
+    "exit_code": 0
+  },
+  {
+    "case": "R23_G2_2",
+    "receipt_id": "4edf00733f5140ebb22affed49b8f6e5",
+    "script": "/work/group_dkt_thickness_sex.py",
+    "executed_sha256": "dd62ffba518519f3fb49d3617f05fc63ac5842152a7d7958085380c70bb6dfc6",
+    "source_recovered": true,
+    "source_origin": "actual_model_write_code",
+    "writer_call_reference_in_executed_source": true,
+    "execution_status": "success",
+    "exit_code": 0
+  },
+  {
+    "case": "R23_G2_3",
+    "receipt_id": "2248dc38e1414f0783a0722fdb8d8e52",
+    "script": "/work/analysis_dkt_thickness_sex.py",
+    "executed_sha256": "3963ac2e0f8a9138f45707898351230fc150002819cdc0fc4ca664848ff81176",
+    "source_recovered": true,
+    "source_origin": "actual_model_write_code",
+    "writer_call_reference_in_executed_source": true,
+    "execution_status": "success",
+    "exit_code": 0
+  }
+]

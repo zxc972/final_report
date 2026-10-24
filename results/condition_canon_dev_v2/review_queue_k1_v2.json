@@ -1,0 +1,476 @@
+[
+  {
+    "item": {
+      "id": 38,
+      "method": "local_gyrification",
+      "field": "inputs",
+      "statement": "MATLAB with Image Processing Toolbox and $FREESURFER_HOME/matlab in the MATLAB path.",
+      "quote": "MATLAB is required to use the -localGI feature. Also, you will need their Image Processing Toolbox.",
+      "source_id": "fs_lgi",
+      "gold_template": "software",
+      "gold_parameters": {
+        "commands": [
+          "matlab"
+        ]
+      },
+      "review_status": "确认",
+      "review_note": ""
+    },
+    "prediction": {
+      "id": 38,
+      "method": "local_gyrification",
+      "statement": "MATLAB with Image Processing Toolbox and $FREESURFER_HOME/matlab in the MATLAB path.",
+      "quote_support": 1.0,
+      "source_id": "fs_lgi",
+      "decision": "review",
+      "template": "advisory",
+      "parameters": null,
+      "reason": "no valid answer",
+      "answered": 0,
+      "invalid_attempts": {},
+      "sampling": {
+        "nominal_samples": 1,
+        "truncation_replacements": 0,
+        "responses": [
+          {
+            "sample": 1,
+            "replacement_of": null,
+            "request_id": "5057892caa09432cb12b3d9cf20ebf79",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "item": {
+      "id": 44,
+      "method": "macaque_civet",
+      "field": "inputs",
+      "statement": "T1-weighted MR scan of a macaque brain as the primary input.",
+      "quote": "CIVET takes as input a T1w scan and registers if to standardized space, herein the NMT",
+      "source_id": "civet_macaque",
+      "gold_template": "product_present",
+      "gold_parameters": {
+        "slot": "T1",
+        "type": "type:Volume.T1"
+      },
+      "review_status": "确认",
+      "review_note": ""
+    },
+    "prediction": {
+      "id": 44,
+      "method": "macaque_civet",
+      "statement": "T1-weighted MR scan of a macaque brain as the primary input.",
+      "quote_support": 1.0,
+      "source_id": "civet_macaque",
+      "decision": "review",
+      "template": "advisory",
+      "parameters": null,
+      "reason": "no valid answer",
+      "answered": 0,
+      "invalid_attempts": {},
+      "sampling": {
+        "nominal_samples": 1,
+        "truncation_replacements": 0,
+        "responses": [
+          {
+            "sample": 1,
+            "replacement_of": null,
+            "request_id": "07f8345c596041af91cdc1caa3a538ea",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "item": {
+      "id": 49,
+      "method": "macaque_civet",
+      "field": "conditions",
+      "statement": "The pipeline requires T1w scans; T2-weighted or proton density scans are optional for multimodal classification.",
+      "quote": "relies on the T1w scan, with the possibility of a multimodal classification should T2-weighted and/or proton density scans be available",
+      "source_id": "civet_macaque",
+      "gold_template": "product_present",
+      "gold_parameters": {
+        "slot": "T1",
+        "type": "type:Volume.T1"
+      },
+      "review_status": "确认",
+      "review_note": ""
+    },
+    "prediction": {
+      "id": 49,
+      "method": "macaque_civet",
+      "statement": "The pipeline requires T1w scans; T2-weighted or proton density scans are optional for multimodal classification.",
+      "quote_support": 1.0,
+      "source_id": "civet_macaque",
+      "decision": "review",
+      "template": "advisory",
+      "parameters": null,
+      "reason": "no valid answer",
+      "answered": 0,
+      "invalid_attempts": {},
+      "sampling": {
+        "nominal_samples": 1,
+        "truncation_replacements": 0,
+        "responses": [
+          {
+            "sample": 1,
+            "replacement_of": null,
+            "request_id": "0a5e4e3fe2e34c1caca586d274558970",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "item": {
+      "id": 55,
+      "method": "macaque_civet",
+      "field": "exceptions",
+      "statement": "The pipeline may require manual intervention for custom brain masks in rare registration failures.",
+      "quote": "In the rare case when registration fails, a custom brain mask in native space can be supplied.",
+      "source_id": "civet_macaque",
+      "gold_template": "advisory",
+      "gold_parameters": null,
+      "review_status": "确认",
+      "review_note": ""
+    },
+    "prediction": {
+      "id": 55,
+      "method": "macaque_civet",
+      "statement": "The pipeline may require manual intervention for custom brain masks in rare registration failures.",
+      "quote_support": 1.0,
+      "source_id": "civet_macaque",
+      "decision": "review",
+      "template": "advisory",
+      "parameters": null,
+      "reason": "no valid answer",
+      "answered": 0,
+      "invalid_attempts": {},
+      "sampling": {
+        "nominal_samples": 1,
+        "truncation_replacements": 0,
+        "responses": [
+          {
+            "sample": 1,
+            "replacement_of": null,
+            "request_id": "184368a671d34e78b3e4f5a5c2705668",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "item": {
+      "id": 63,
+      "method": "nhp_macapype",
+      "field": "conditions",
+      "statement": "Either -params or -species must be provided; -params is mandatory if -species is omitted, and vice versa.",
+      "quote": "-params : (mandatory if -species is omitted) a json file specifiying the global parameters of the analysis.",
+      "source_id": "macapype_commands",
+      "gold_template": "advisory",
+      "gold_parameters": null,
+      "review_status": "确认",
+      "review_note": ""
+    },
+    "prediction": {
+      "id": 63,
+      "method": "nhp_macapype",
+      "statement": "Either -params or -species must be provided; -params is mandatory if -species is omitted, and vice versa.",
+      "quote_support": 1.0,
+      "source_id": "macapype_commands",
+      "decision": "review",
+      "template": "advisory",
+      "parameters": null,
+      "reason": "no valid answer",
+      "answered": 0,
+      "invalid_attempts": {},
+      "sampling": {
+        "nominal_samples": 1,
+        "truncation_replacements": 0,
+        "responses": [
+          {
+            "sample": 1,
+            "replacement_of": null,
+            "request_id": "e1465252912e4de7960b8ce4546383a1",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "item": {
+      "id": 71,
+      "method": "samseg_segmentation",
+      "field": "inputs",
+      "statement": "All input volumes must be co-registered with each other and have the same image grid size and voxel dimensions.",
+      "quote": "the only requirement is that all input volumes are co-registered with each other, and have the same image grid size and voxel dimensions",
+      "source_id": "fs_samseg",
+      "gold_template": "attr_equal",
+      "gold_parameters": {
+        "slots": [
+          "T1",
+          "volumes"
+        ],
+        "attrs": [
+          "space",
+          "voxel_size"
+        ]
+      },
+      "review_status": "确认",
+      "review_note": ""
+    },
+    "prediction": {
+      "id": 71,
+      "method": "samseg_segmentation",
+      "statement": "All input volumes must be co-registered with each other and have the same image grid size and voxel dimensions.",
+      "quote_support": 1.0,
+      "source_id": "fs_samseg",
+      "decision": "review",
+      "template": "advisory",
+      "parameters": null,
+      "reason": "no valid answer",
+      "answered": 1,
+      "invalid_attempts": {
+        "attr_equal": 1
+      },
+      "sampling": {
+        "nominal_samples": 1,
+        "truncation_replacements": 0,
+        "responses": [
+          {
+            "sample": 1,
+            "replacement_of": null,
+            "request_id": "802bff61029d4287a02a2b5074886a04",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "item": {
+      "id": 73,
+      "method": "samseg_segmentation",
+      "field": "inputs",
+      "statement": "For longitudinal processing, all time points must be co-registered and reformatted to the same image grid, using an unbiased reference template.",
+      "quote": "longitudinal SAMSEG expects all its input images to have been co-registered and reformatted to the same image grid beforehand",
+      "source_id": "fs_samseg",
+      "gold_template": "attr_equal",
+      "gold_parameters": {
+        "slots": [
+          "T1",
+          "timepoints"
+        ],
+        "attrs": [
+          "space",
+          "voxel_size"
+        ]
+      },
+      "review_status": "确认",
+      "review_note": ""
+    },
+    "prediction": {
+      "id": 73,
+      "method": "samseg_segmentation",
+      "statement": "For longitudinal processing, all time points must be co-registered and reformatted to the same image grid, using an unbiased reference template.",
+      "quote_support": 1.0,
+      "source_id": "fs_samseg",
+      "decision": "review",
+      "template": "advisory",
+      "parameters": null,
+      "reason": "no valid answer",
+      "answered": 1,
+      "invalid_attempts": {
+        "attr_equal": 1
+      },
+      "sampling": {
+        "nominal_samples": 1,
+        "truncation_replacements": 0,
+        "responses": [
+          {
+            "sample": 1,
+            "replacement_of": null,
+            "request_id": "f74f8868b72a4991bf48dbad21e514e1",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": true,
+            "reasoning_tokens": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "item": {
+      "id": 75,
+      "method": "samseg_segmentation",
+      "field": "conditions",
+      "statement": "For multi-contrast input, all volumes must be co-registered and have the same image grid size and voxel dimensions.",
+      "quote": "all input volumes are co-registered with each other, and have the same image grid size and voxel dimensions",
+      "source_id": "fs_samseg",
+      "gold_template": "attr_equal",
+      "gold_parameters": {
+        "slots": [
+          "T1",
+          "volumes"
+        ],
+        "attrs": [
+          "space",
+          "voxel_size"
+        ]
+      },
+      "review_status": "确认",
+      "review_note": ""
+    },
+    "prediction": {
+      "id": 75,
+      "method": "samseg_segmentation",
+      "statement": "For multi-contrast input, all volumes must be co-registered and have the same image grid size and voxel dimensions.",
+      "quote_support": 1.0,
+      "source_id": "fs_samseg",
+      "decision": "review",
+      "template": "advisory",
+      "parameters": null,
+      "reason": "no valid answer",
+      "answered": 1,
+      "invalid_attempts": {
+        "attr_equal": 1
+      },
+      "sampling": {
+        "nominal_samples": 1,
+        "truncation_replacements": 0,
+        "responses": [
+          {
+            "sample": 1,
+            "replacement_of": null,
+            "request_id": "0f0d33a625604cd3817720ccc3007b0d",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "item": {
+      "id": 78,
+      "method": "samseg_segmentation",
+      "field": "checks",
+      "statement": "Verify that all input volumes are co-registered and have the same image grid size and voxel dimensions.",
+      "quote": "the only requirement is that all input volumes are co-registered with each other, and have the same image grid size and voxel dimensions",
+      "source_id": "fs_samseg",
+      "gold_template": "attr_equal",
+      "gold_parameters": {
+        "slots": [
+          "T1",
+          "volumes"
+        ],
+        "attrs": [
+          "space",
+          "voxel_size"
+        ]
+      },
+      "review_status": "确认",
+      "review_note": ""
+    },
+    "prediction": {
+      "id": 78,
+      "method": "samseg_segmentation",
+      "statement": "Verify that all input volumes are co-registered and have the same image grid size and voxel dimensions.",
+      "quote_support": 1.0,
+      "source_id": "fs_samseg",
+      "decision": "review",
+      "template": "advisory",
+      "parameters": null,
+      "reason": "no valid answer",
+      "answered": 1,
+      "invalid_attempts": {
+        "attr_equal": 1
+      },
+      "sampling": {
+        "nominal_samples": 1,
+        "truncation_replacements": 0,
+        "responses": [
+          {
+            "sample": 1,
+            "replacement_of": null,
+            "request_id": "e46c5188c7c140a299b15795d7970fd1",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          }
+        ]
+      }
+    }
+  },
+  {
+    "item": {
+      "id": 85,
+      "method": "surface_annotation_roi",
+      "field": "inputs",
+      "statement": "Optionally a triangular surface mesh geometry file supplying vertex coordinates and faces.",
+      "quote": "Read a triangular format Freesurfer surface mesh.",
+      "source_id": "nibabel_fs",
+      "gold_template": "advisory",
+      "gold_parameters": null,
+      "review_status": "已修改",
+      "review_note": "文档标明为可选输入"
+    },
+    "prediction": {
+      "id": 85,
+      "method": "surface_annotation_roi",
+      "statement": "Optionally a triangular surface mesh geometry file supplying vertex coordinates and faces.",
+      "quote_support": 1.0,
+      "source_id": "nibabel_fs",
+      "decision": "review",
+      "template": "advisory",
+      "parameters": null,
+      "reason": "no valid answer",
+      "answered": 0,
+      "invalid_attempts": {},
+      "sampling": {
+        "nominal_samples": 1,
+        "truncation_replacements": 0,
+        "responses": [
+          {
+            "sample": 1,
+            "replacement_of": null,
+            "request_id": "110d792d6a564bc39b8b6acca3ca1a9b",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": false,
+            "reasoning_tokens": 0
+          }
+        ]
+      }
+    }
+  }
+]

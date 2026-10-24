@@ -1,0 +1,6 @@
+{
+  "active_sources": 9,
+  "shared_urls": [],
+  "excluded_seen_source": "https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/nonhuman/macaque_tempatl/template_nmtv2.html",
+  "reason": "NMT v2 overview was used by earlier Macapype/CIVET cards; use unseen official CHARM and Install_NMT documents instead"
+}

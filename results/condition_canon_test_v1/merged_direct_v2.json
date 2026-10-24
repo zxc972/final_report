@@ -1,0 +1,179 @@
+[
+  {
+    "method_id": "independent_fastsurfer",
+    "template": "product_present",
+    "parameters": {
+      "slot": "T1",
+      "type": "T1"
+    },
+    "sources": [
+      {
+        "source_id": null,
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      null
+    ]
+  },
+  {
+    "method_id": "independent_fastsurfer",
+    "template": "attr_equal",
+    "parameters": {
+      "slots": [
+        "mask",
+        "T1"
+      ],
+      "attrs": [
+        "space"
+      ]
+    },
+    "sources": [
+      {
+        "source_id": null,
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      null
+    ]
+  },
+  {
+    "method_id": "independent_fastsurfer",
+    "template": "software",
+    "parameters": {
+      "commands": [
+        "docker"
+      ]
+    },
+    "sources": [
+      {
+        "source_id": null,
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      null
+    ]
+  },
+  {
+    "method_id": "independent_fastsurfer",
+    "template": "provenance",
+    "parameters": {
+      "step": "surface registration"
+    },
+    "sources": [
+      {
+        "source_id": null,
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      null
+    ]
+  },
+  {
+    "method_id": "independent_fs_glmfit_group",
+    "template": "product_present",
+    "parameters": {
+      "slot": "volumes",
+      "type": "file"
+    },
+    "sources": [
+      {
+        "source_id": null,
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      null
+    ]
+  },
+  {
+    "method_id": "independent_fs_glmfit_group",
+    "template": "product_present",
+    "parameters": {
+      "slot": "design",
+      "type": "contrast_matrix"
+    },
+    "sources": [
+      {
+        "source_id": null,
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      null
+    ]
+  },
+  {
+    "method_id": "independent_nmt_v2_charm",
+    "template": "attr_in",
+    "parameters": {
+      "slot": "annotation",
+      "attr": "space",
+      "values": [
+        "NMT v2"
+      ]
+    },
+    "sources": [
+      {
+        "source_id": null,
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      null
+    ]
+  },
+  {
+    "method_id": "independent_workbench_area_stats",
+    "template": "product_present",
+    "parameters": {
+      "slot": "surface",
+      "type": "surface"
+    },
+    "sources": [
+      {
+        "source_id": null,
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      null
+    ]
+  },
+  {
+    "method_id": "independent_workbench_area_stats",
+    "template": "product_present",
+    "parameters": {
+      "slot": "metric",
+      "type": "metric"
+    },
+    "sources": [
+      {
+        "source_id": null,
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      null
+    ]
+  },
+  {
+    "method_id": "independent_workbench_area_stats",
+    "template": "plausibility",
+    "parameters": {
+      "metric": "percentile"
+    },
+    "sources": [
+      {
+        "source_id": null,
+        "quote_support": null
+      }
+    ],
+    "statements": [
+      null
+    ]
+  }
+]

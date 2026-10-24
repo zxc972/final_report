@@ -37,7 +37,7 @@ def _work_path(path):
 
 
 def commit_plan(tools, plan):
-    if not isinstance(plan, dict) or len(canonical(plan)) > 100_000:
+    if not isinstance(plan, dict) or len(canonical(plan)) > (2_000_000 if plan.get("method", {}).get("method_id") == "method:v14:group_regional_glm" else 100_000):
         raise ValueError("Bounded structured plan required")
     for key in (
         "question",
@@ -353,6 +353,20 @@ def execution_gate(tools, script, background=False):
                         "reason": "Input fingerprint changed or became unreadable; regenerate the data profile, constraints and plan",
                         "next_steps": NEXT_STEPS,
                     }
+            if record["plan"]["method"]["method_id"] == "method:v14:group_regional_glm":
+                import hashlib
+                bundle = tools.control_store.latest("execution_bundle")
+                manifest = bundle["record"].get("inputs_manifest", {}) if bundle else {}
+                try:
+                    actual = hashlib.sha256(tools.resolve("/work/inputs_manifest.json").read_bytes()).hexdigest()
+                except OSError:
+                    actual = None
+                if not manifest.get("sha256") or actual != manifest["sha256"]:
+                    return {"allowed": False, "status": "blocked", "reason": "Sealed input manifest changed; replan before execution"}
+            from .analysis_execution_guidance import verify_documents
+            public_bundle = tools.control_store.latest("execution_bundle")
+            if public_bundle and not verify_documents(tools, public_bundle["record"]):
+                return {"allowed": False, "status": "blocked", "reason": "Sealed execution documentation changed; replan before execution"}
             return {
                 "allowed": True,
                 "read_only": False,

@@ -1,0 +1,14 @@
+{
+  "http_attempts": 10,
+  "logical_calls": 9,
+  "successful_responses": 9,
+  "http_errors": [
+    429
+  ],
+  "input_tokens_known": 51525,
+  "output_tokens_known": 12705,
+  "unknown_usage_responses": 1,
+  "length_limited_responses": 0,
+  "max_http_attempts": 150,
+  "algorithm_evaluation_calls": 0
+}

@@ -4,7 +4,8 @@ INITIAL = frozenset({"read_file", "ls", "read_operations", "plan_analysis"})
 AFTER_PLAN = frozenset({"commit_plan", "plan_analysis", "read_operations"})
 READ_TOOLS = frozenset({"read_file", "ls"})
 MAX_READS = 4
-MAX_PLANS = 3  # First intent plus at most two revised intents.
+MAX_PLANS = 3  # Actual entries into the planner.
+MAX_ARGUMENT_ERRORS = 3  # Rejected before entering the planner.
 
 
 def selection(session):
@@ -42,5 +43,18 @@ def reserve_action(tools, name):
         else:
             return
         tools.control_store.save("planning_control", {
-            key: record.get(key) for key in ("planning_read_calls", "planning_attempts", "commit_argument_error")
+            key: record.get(key, False if key == "commit_argument_error" else 0) for key in ("planning_read_calls", "planning_attempts", "planning_argument_errors", "commit_argument_error")
+        })
+
+
+def reserve_argument_error(tools):
+    """Separate malformed requests from actual plans; preserve all global budgets."""
+    with tools._lock:
+        record = tools.session.record
+        used = record.get("planning_argument_errors", 0)
+        if used >= MAX_ARGUMENT_ERRORS:
+            raise ValueError("Planning argument correction limit reached (3); no planner attempt was consumed")
+        record["planning_argument_errors"] = used + 1
+        tools.control_store.save("planning_control", {
+            key: record.get(key, False if key == "commit_argument_error" else 0) for key in ("planning_read_calls", "planning_attempts", "planning_argument_errors", "commit_argument_error")
         })

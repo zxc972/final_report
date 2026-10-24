@@ -1,0 +1,12 @@
+{
+  "source_id": "afni_install_nmt",
+  "url": "https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/alpha/@Install_NMT_sphx.html",
+  "final_url": "https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/alpha/@Install_NMT_sphx.html",
+  "fetched_at": "2026-10-23T10:00:16.008646+00:00",
+  "http_status": 200,
+  "text_sha256": "00a6391ddd49949966f42e676ced0b076621477ba9db68f00e02b4622470bf9f",
+  "html_sha256": "4670898e9a9a9faed6dd879aa968fb022688876b1d841a3e1e4014d4287fc210",
+  "text_characters": 2910,
+  "projection": "stdlib HTMLParser SourceText v1",
+  "evidence_class": "official_documentation"
+}

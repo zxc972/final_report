@@ -52,6 +52,16 @@
             ],
             "method:v13:coarse_grained_fractal_scaling": [
               "python:nibabel"
+            ],
+            "method:v14:group_regional_glm": [
+              "python:numpy",
+              "python:scipy",
+              "python:nibabel"
+            ],
+            "method:v15:global_morphometry": [
+              "python:numpy",
+              "python:nibabel",
+              "python:scipy"
             ]
           },
           "lgi_matlab_health": "Image Processing Toolbox and FreeSurfer MATLAB functions"

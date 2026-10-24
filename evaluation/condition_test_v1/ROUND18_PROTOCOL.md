@@ -1,0 +1,15 @@
+# Round18 frozen evaluation protocol
+
+Gold: evaluation/condition_gold/gold_test_v1.json, original bytes SHA-256 e34d6796259e87f44f3bcede9c304eb87b4c1a5e31605cdfd357085bdac45135. IDs/statement fields and quotes verified against the Round17 blind handoff (all 13 file hashes, 45 exact source spans). The six pending labels remain as supplied; also score the 39 nonpending statements.
+
+No canonicalizer, thresholds, definitions/prompts, vocabulary, slots, or scoring rules change. Formal arms: full_v2 K5, k1_v2 K1, direct_v2 K1, retrieval_only. Direct uses the previous no-vocabulary/no-type-check/no-vote ablation. Provider: deepseek-v4.1-flash, temperature 0.7, thinking disabled, JSON object, max_tokens 8192, timeout 180; gateway compliance reported separately.
+
+All new formal/development-repair HTTP attempts, including transport retries and supplemental samples, share a hard 600 cap. Reuse the Round17 metered adapter (max 3 HTTP attempts per logical sample), minimum 2-second adaptive departure spacing, 4 workers. Never retry based on label correctness, invalid parameters, empty content, or non-strict JSON.
+
+On an exhausted interface sample, allow at most ONE supplemental sample per (arm, statement), with a distinct recorded scope and unchanged prompt/model settings. Continue subsequent vote positions even if a sample remains unavailable. An unavailable sample casts no vote and K is unchanged; a statement with no received samples is explicitly provider_error. Retain Round17's separate maximum ONE truncated-sample replacement per (arm, statement). Original responses always remain in the private metered journal.
+
+Development repair: only IDs 1,2,6,11,14,15,16,19. Reuse 16 old successful answers inside these statements verbatim; fill the 8 failed positions and 16 positions never started due to whole-statement early abort (24 positions total). Preserve 100 other predictions and every Round17 artifact unchanged; publish derived repaired predictions separately.
+
+Statistics fixed before any Round18 calls: 2000 paired statement bootstrap resamples, seed 20261023, linear percentile 95% intervals. Recompute the unchanged scorer in each resample, including unique (method,key) set deduplication (duplicates collapse only for key sets); repeated rows retain multiplicity for row metrics and review count. Zero denominator = 0. Both 45 and 39 datasets get all requested metrics/intervals. Exact two-sided binomial McNemar for full_v2 vs direct_v2 and k1_v2 vs direct_v2. Per-statement key correctness uses the original error_rows convention: gold advisory -> None; accepted parameterised prediction -> its key, otherwise None. Thus None-vs-None agreement contributes; report this definition. Two preregistered comparisons, unadjusted p-values.
+
+No parameter tuning, knowledge-layer overwrites, model-based error explanations, deployment, service restarts, preprocessing submissions, analysis runs, or reserved-group processing. Raw journal/checkpoints stay ignored; public reports include sanitized per-request usage and hashes.

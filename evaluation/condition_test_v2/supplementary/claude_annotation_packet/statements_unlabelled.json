@@ -1,0 +1,420 @@
+{
+  "schema": "primatex.condition_annotation_input.v1",
+  "split": "independent_test_candidate",
+  "slots": {
+    "T1": [
+      "subject",
+      "species",
+      "space",
+      "voxel_size",
+      "scale_status"
+    ],
+    "T2": [
+      "subject",
+      "species",
+      "space",
+      "voxel_size",
+      "scale_status"
+    ],
+    "volumes": [
+      "subject",
+      "species",
+      "space",
+      "voxel_size",
+      "scale_status"
+    ],
+    "timepoints": [
+      "subject",
+      "species",
+      "space",
+      "voxel_size",
+      "scale_status"
+    ],
+    "mask": [
+      "subject",
+      "species",
+      "space",
+      "voxel_size",
+      "scale_status"
+    ],
+    "pial": [
+      "subject",
+      "species",
+      "hemisphere",
+      "space",
+      "mesh",
+      "scale_status"
+    ],
+    "white": [
+      "subject",
+      "species",
+      "hemisphere",
+      "space",
+      "mesh",
+      "scale_status"
+    ],
+    "surface": [
+      "subject",
+      "species",
+      "hemisphere",
+      "space",
+      "mesh",
+      "scale_status"
+    ],
+    "metric": [
+      "subject",
+      "species",
+      "hemisphere",
+      "space",
+      "mesh",
+      "scale_status"
+    ],
+    "thickness": [
+      "subject",
+      "species",
+      "hemisphere",
+      "space",
+      "mesh",
+      "scale_status"
+    ],
+    "annotation": [
+      "subject",
+      "species",
+      "hemisphere",
+      "space",
+      "mesh",
+      "scale_status",
+      "atlas"
+    ],
+    "label": [
+      "subject",
+      "species",
+      "hemisphere",
+      "space",
+      "mesh",
+      "scale_status"
+    ],
+    "design": [
+      "columns",
+      "n_subjects"
+    ]
+  },
+  "items": [
+    {
+      "id": 2001,
+      "method": "independent_v2_wb_surface_resample",
+      "field": "inputs",
+      "statement": "The surface file to resample, typically a native-mesh anatomical or inflated surface.",
+      "source_id": "wb_surface_resample",
+      "quote": "<surface-in> - the surface file to resample, typically a native-mesh",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 4792,
+        "end": 4860,
+        "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+      },
+      "source_url": "https://www.humanconnectome.org/software/workbench-command/-surface-resample"
+    },
+    {
+      "id": 2002,
+      "method": "independent_v2_wb_surface_resample",
+      "field": "inputs",
+      "statement": "A sphere surface in register with <new-sphere> that uses the mesh the input surface is currently on, typically a registered native-mesh sphere.",
+      "source_id": "wb_surface_resample",
+      "quote": "<current-sphere> - a sphere surface that is in register with <new-sphere>",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 4892,
+        "end": 4965,
+        "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+      },
+      "source_url": "https://www.humanconnectome.org/software/workbench-command/-surface-resample"
+    },
+    {
+      "id": 2003,
+      "method": "independent_v2_wb_surface_resample",
+      "field": "inputs",
+      "statement": "A sphere surface that has the desired output mesh, typically a standard sphere.",
+      "source_id": "wb_surface_resample",
+      "quote": "<new-sphere> - a sphere surface that has the desired output mesh",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 5117,
+        "end": 5181,
+        "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+      },
+      "source_url": "https://www.humanconnectome.org/software/workbench-command/-surface-resample"
+    },
+    {
+      "id": 2004,
+      "method": "independent_v2_wb_surface_resample",
+      "field": "inputs",
+      "statement": "The method name, which must be one of ADAP_BARY_AREA or BARYCENTRIC.",
+      "source_id": "wb_surface_resample",
+      "quote": "<method> - the method name",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 5248,
+        "end": 5274,
+        "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+      },
+      "source_url": "https://www.humanconnectome.org/software/workbench-command/-surface-resample"
+    },
+    {
+      "id": 2005,
+      "method": "independent_v2_wb_surface_resample",
+      "field": "conditions",
+      "statement": "If ADAP_BARY_AREA is used, exactly one of -area-surfs or -area-metrics must be specified.",
+      "source_id": "wb_surface_resample",
+      "quote": "If ADAP_BARY_AREA is used, exactly one of -area-surfs or",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 5948,
+        "end": 6004,
+        "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+      },
+      "source_url": "https://www.humanconnectome.org/software/workbench-command/-surface-resample"
+    },
+    {
+      "id": 2006,
+      "method": "independent_v2_wb_surface_resample",
+      "field": "exceptions",
+      "statement": "For cut surfaces (including flatmaps), use -surface-cut-resample instead.",
+      "source_id": "wb_surface_resample",
+      "quote": "For cut surfaces (including flatmaps), use -surface-cut-resample.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 6244,
+        "end": 6309,
+        "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+      },
+      "source_url": "https://www.humanconnectome.org/software/workbench-command/-surface-resample"
+    },
+    {
+      "id": 2007,
+      "method": "independent_v2_wb_surface_resample",
+      "field": "exceptions",
+      "statement": "Instead of resampling a spherical surface, the -surface-sphere-project-unproject command is recommended.",
+      "source_id": "wb_surface_resample",
+      "quote": "Instead of resampling a spherical surface, the",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 6311,
+        "end": 6357,
+        "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+      },
+      "source_url": "https://www.humanconnectome.org/software/workbench-command/-surface-resample"
+    },
+    {
+      "id": 2008,
+      "method": "independent_v2_wb_surface_resample",
+      "field": "exceptions",
+      "statement": "ADAP_BARY_AREA is not generally recommended for surface resampling, but is provided for completeness.",
+      "source_id": "wb_surface_resample",
+      "quote": "This method is not generally",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 6038,
+        "end": 6066,
+        "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea"
+      },
+      "source_url": "https://www.humanconnectome.org/software/workbench-command/-surface-resample"
+    },
+    {
+      "id": 2009,
+      "method": "independent_v2_fsl_first",
+      "field": "inputs",
+      "statement": "A good quality T1-weighted image is needed to segment the supported structures.",
+      "source_id": "fsl_first",
+      "quote": "FIRST needs a good quality T1-weighted image",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 250,
+        "end": 294,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      },
+      "source_url": "https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/first.html"
+    },
+    {
+      "id": 2010,
+      "method": "independent_v2_fsl_first",
+      "field": "inputs",
+      "statement": "Only T1-weighted images can be used as input to run_first_all.",
+      "source_id": "fsl_first",
+      "quote": "only T1-weighted images can be used",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 4809,
+        "end": 4844,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      },
+      "source_url": "https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/first.html"
+    },
+    {
+      "id": 2011,
+      "method": "independent_v2_fsl_first",
+      "field": "inputs",
+      "statement": "first_flirt should be used on whole-head (non-betted) images.",
+      "source_id": "fsl_first",
+      "quote": "first_flirt should be used on whole-head (non-betted) images",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 32993,
+        "end": 33053,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      },
+      "source_url": "https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/first.html"
+    },
+    {
+      "id": 2012,
+      "method": "independent_v2_fsl_first",
+      "field": "conditions",
+      "statement": "If the registration stage fails then the model fitting will not work, though run_first_all continues to run and may produce outputs.",
+      "source_id": "fsl_first",
+      "quote": "if the registration stage fails then the models fitting will\nnot work",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 31711,
+        "end": 31780,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      },
+      "source_url": "https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/first.html"
+    },
+    {
+      "id": 2013,
+      "method": "independent_v2_fsl_first",
+      "field": "conditions",
+      "statement": "When fitting the cerebellum models, a different transformation matrix than that used for the other structures must be input.",
+      "source_id": "fsl_first",
+      "quote": "you will need to input a different transformation matrix than that used for the other structures",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 32686,
+        "end": 32782,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      },
+      "source_url": "https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/first.html"
+    },
+    {
+      "id": 2014,
+      "method": "independent_v2_fsl_first",
+      "field": "conditions",
+      "statement": "The -cort flag must be specified for first_flirt to perform the registration needed for cerebellum models.",
+      "source_id": "fsl_first",
+      "quote": "first_flirt will not perform the necessary registration by default - the -cort flag must be specified",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 32784,
+        "end": 32885,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      },
+      "source_url": "https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/first.html"
+    },
+    {
+      "id": 2015,
+      "method": "independent_v2_fsl_first",
+      "field": "conditions",
+      "statement": "The full path name to the model must be used with -m.",
+      "source_id": "fsl_first",
+      "quote": "The full path name to the model must be used",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 35806,
+        "end": 35850,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      },
+      "source_url": "https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/first.html"
+    },
+    {
+      "id": 2016,
+      "method": "independent_v2_fsl_first",
+      "field": "checks",
+      "statement": "Check the log directory error outputs; no output means no errors.",
+      "source_id": "fsl_first",
+      "quote": "cat *.logs/*.e*",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 5422,
+        "end": 5437,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      },
+      "source_url": "https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/first.html"
+    },
+    {
+      "id": 2017,
+      "method": "independent_v2_fsl_first",
+      "field": "checks",
+      "statement": "Check registration quality using slicesdir on the registered images.",
+      "source_id": "fsl_first",
+      "quote": "slicesdir -p ${FSLDIR}/data/standard/MNI152_T1_1mm.nii.gz *_to_std_sub.nii.gz",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 11151,
+        "end": 11228,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      },
+      "source_url": "https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/first.html"
+    },
+    {
+      "id": 2018,
+      "method": "independent_v2_fsl_first",
+      "field": "checks",
+      "statement": "Pay particular attention to the sub-cortical structures when assessing registrations.",
+      "source_id": "fsl_first",
+      "quote": "pay particular attention to the sub-cortical structures",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 11858,
+        "end": 11913,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      },
+      "source_url": "https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/first.html"
+    },
+    {
+      "id": 2019,
+      "method": "independent_v2_fsl_first",
+      "field": "checks",
+      "statement": "Check segmentation quality with first_roi_slicesdir, which generates a webpage summary.",
+      "source_id": "fsl_first",
+      "quote": "first_roi_slicesdir is a script to generate summary images, in a webpage format, for the segmentation outputs",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 12483,
+        "end": 12592,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      },
+      "source_url": "https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/first.html"
+    },
+    {
+      "id": 2020,
+      "method": "independent_v2_fsl_first",
+      "field": "exceptions",
+      "statement": "If there are problems, different segmentation options such as number of modes or boundary correction method can be tried using the individual tools.",
+      "source_id": "fsl_first",
+      "quote": "If there are any problems, you can try different segmentation options",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 13075,
+        "end": 13144,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      },
+      "source_url": "https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/first.html"
+    },
+    {
+      "id": 2021,
+      "method": "independent_v2_fsl_first",
+      "field": "exceptions",
+      "statement": "Boundary correction method none is appropriate for models in the 05mm subdirectory.",
+      "source_id": "fsl_first",
+      "quote": "all boundary voxels are considered as belonging to the structure, and hence none is the appropriate correction method",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 40220,
+        "end": 40337,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      },
+      "source_url": "https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/first.html"
+    }
+  ],
+  "status": "unlabelled_pending_blind_Claude_annotation"
+}

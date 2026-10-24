@@ -1,0 +1,52 @@
+[
+  {
+    "comparison": "group",
+    "completed": true,
+    "tables": {
+      "group_results.csv": {
+        "checked": 44,
+        "identity_mismatch_count": 0,
+        "mismatch_count": 0,
+        "numeric_mismatch_count": 0,
+        "status": "pass"
+      },
+      "regional_values.csv": {
+        "checked": 160,
+        "identity_mismatch_count": 0,
+        "mismatch_count": 0,
+        "numeric_mismatch_count": 0,
+        "status": "pass"
+      }
+    },
+    "execution_card_length": 1332,
+    "provider_http_calls": 0,
+    "review": "pass",
+    "raw_reader": "read_group_inputs",
+    "identity_fdr": "fdr_bh_by_identity"
+  },
+  {
+    "comparison": "correlation",
+    "completed": true,
+    "tables": {
+      "group_results.csv": {
+        "checked": 44,
+        "identity_mismatch_count": 0,
+        "mismatch_count": 0,
+        "numeric_mismatch_count": 0,
+        "status": "pass"
+      },
+      "regional_values.csv": {
+        "checked": 160,
+        "identity_mismatch_count": 0,
+        "mismatch_count": 0,
+        "numeric_mismatch_count": 0,
+        "status": "pass"
+      }
+    },
+    "execution_card_length": 1322,
+    "provider_http_calls": 0,
+    "review": "pass",
+    "raw_reader": "read_group_inputs",
+    "identity_fdr": "fdr_bh_by_identity"
+  }
+]

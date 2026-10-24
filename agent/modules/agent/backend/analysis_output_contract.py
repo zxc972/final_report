@@ -24,6 +24,9 @@ HULL_TYPES = {
 def table_contract(plan, operations):
     """Declare identities solely from the plan, selected inputs and label_sets."""
     method = plan["method"]["method_id"].rsplit(":", 1)[-1]
+    if method == "global_morphometry":
+        from .analysis_global_method import table_contract as global_contract
+        return global_contract(plan)
     labels = plan.get("analysis_scope", {}).get("labels", {})
     expected = []
     if labels:
@@ -80,6 +83,9 @@ def validate_csv(raw, contract, filename="summary.csv"):
     if missing:
         errors.append(f"{filename}: missing columns {','.join(missing)}")
         schema_count += len(missing)
+    if contract.get("extra_columns_allowed") is False and set(columns) - set(contract["columns"]):
+        schema_count += 1
+        errors.append(f"{filename}: undeclared columns; aliases are not mapped")
     if len(columns) != len(set(columns)):
         errors.append(f"{filename}: duplicate column names")
         schema_count += 1
@@ -94,6 +100,8 @@ def validate_csv(raw, contract, filename="summary.csv"):
             value = row.get(column)
             try:
                 if value is None or not str(value).strip():
+                    if column in contract.get("nullable_columns", []):
+                        continue
                     raise ValueError("empty")
                 if kind == "int":
                     if not re.fullmatch(r"[+-]?\d+", str(value)):
@@ -110,6 +118,11 @@ def validate_csv(raw, contract, filename="summary.csv"):
             except (ValueError, TypeError, OverflowError):
                 schema_count += 1
                 errors.append(f"{filename}: row {index} {column} must be finite {kind}; observed {str(value)[:70]!r}")
+        if contract.get("schema") == "primatex.group_table_contract.v1":
+            from .analysis_group_contract import row_errors
+            for reason in row_errors(row, contract):
+                schema_count += 1
+                errors.append(f"{filename}: row {index} {reason}")
         for column, allowed in contract["allowed_values"].items():
             if row.get(column) not in allowed:
                 schema_count += 1
@@ -160,7 +173,12 @@ def check_outputs(tools):
                 continue
             target = tools.resolve("/work/" + filename.removeprefix("/work/"), writable=True)
             raw = _read_regular(target, tools.workdir, MAX_ARTIFACT_BYTES)
-            result = validate_csv(raw, table, filename)
+            declared = bundle["output_contract"].get("tables", {}).get(filename, table)
+            result = validate_csv(raw, declared, filename)
+            if result["status"] == "fail":
+                from .analysis_contract_diagnostics import inspect_bytes, describe
+                result["serialization_diagnostics"] = inspect_bytes(raw)
+                result["errors"].append(describe(result["serialization_diagnostics"]))
             result["output_sha256"] = hashlib.sha256(raw).hexdigest()
             results.append(result)
     summary = {**binding, "status": "fail" if any(r["status"] == "fail" for r in results) else "pass" if results else "not_configured",

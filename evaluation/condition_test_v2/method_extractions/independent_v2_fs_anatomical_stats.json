@@ -1,0 +1,243 @@
+{
+  "method_id": "independent_v2_fs_anatomical_stats",
+  "name": "mris_anatomical_stats",
+  "purpose": "Computes a number of anatomical properties for a hemisphere surface.",
+  "species_scope": "unspecified",
+  "software": [
+    "FreeSurfer"
+  ],
+  "inputs": [
+    {
+      "statement": "Subject name is a required positional argument.",
+      "source_id": "fs_anatomical_stats",
+      "quote": "Required Positional Arguments\n\n<subjectname>\n\nsubject name",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 999,
+        "end": 1057,
+        "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+      }
+    },
+    {
+      "statement": "Hemisphere is a required positional argument.",
+      "source_id": "fs_anatomical_stats",
+      "quote": "Required Positional Arguments\n\n<subjectname>\n\nsubject name\n\n<hemi>\n\nhemisphere",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 999,
+        "end": 1077,
+        "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+      }
+    },
+    {
+      "statement": "Surface name is an optional positional argument.",
+      "source_id": "fs_anatomical_stats",
+      "quote": "Optional Positional Arguments\n\n<surfacename>\n\nsurface name",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1079,
+        "end": 1137,
+        "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+      }
+    },
+    {
+      "statement": "When the -l label-file option is used, calculations are limited to the specified label.",
+      "source_id": "fs_anatomical_stats",
+      "quote": "-l <label file>\n\nlimit calculations to specified label",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1281,
+        "end": 1335,
+        "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "statement": "No flagged arguments are required.",
+      "source_id": "fs_anatomical_stats",
+      "quote": "Required Flagged Arguments\n\nnone",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1139,
+        "end": 1171,
+        "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+      }
+    },
+    {
+      "statement": "Using -f requires either the -a or -l option to specify input.",
+      "source_id": "fs_anatomical_stats",
+      "quote": "-f <tablefile>\n\ntable output to tablefile (different format than -b). Must use -a or -l options to spec input.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1524,
+        "end": 1634,
+        "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "statement": "Run mris_anatomical_stats with options followed by subject name and hemisphere.",
+      "source_id": "fs_anatomical_stats",
+      "quote": "mris_anatomical_stats [options] <subjectname> <hemi> [<surfacename>]",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 918,
+        "end": 986,
+        "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+      }
+    },
+    {
+      "statement": "Optionally restrict thickness values to a specified low and high range.",
+      "source_id": "fs_anatomical_stats",
+      "quote": "-i <low thresh> <hi thresh>\n\nonly consider thicknesses in the specified range.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1201,
+        "end": 1279,
+        "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+      }
+    },
+    {
+      "statement": "Optionally use a specified thickness file for thickness statistics.",
+      "source_id": "fs_anatomical_stats",
+      "quote": "use specified file for computing thickness statistics",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1358,
+        "end": 1411,
+        "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+      }
+    },
+    {
+      "statement": "Optionally compute properties for each label in an annotation file separately.",
+      "source_id": "fs_anatomical_stats",
+      "quote": "compute properties for each label in the annotation file separately",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1435,
+        "end": 1502,
+        "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+      }
+    },
+    {
+      "statement": "Optionally smooth the thickness map a number of iterations before use.",
+      "source_id": "fs_anatomical_stats",
+      "quote": "Smooth thicknessmap # of iterations before using it",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1697,
+        "end": 1748,
+        "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+      }
+    },
+    {
+      "statement": "Optionally output the annotation file's colortable to a text file.",
+      "source_id": "fs_anatomical_stats",
+      "quote": "Output annotation files's colortable to text file",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1766,
+        "end": 1815,
+        "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+      }
+    },
+    {
+      "statement": "Optionally compute vertex-wise volume by dividing each obliquely truncated trilateral pyramid into three tetrahedra.",
+      "source_id": "fs_anatomical_stats",
+      "quote": "Compute vertex-wise volume by dividing each obliquely truncated trilateral pyramid into three tetrahedra",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1869,
+        "end": 1973,
+        "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+      }
+    }
+  ],
+  "checks": [],
+  "exceptions": [],
+  "outputs": [
+    {
+      "statement": "Tabular output includes structure name, number of vertices and surface area.",
+      "source_id": "fs_anatomical_stats",
+      "quote": "Tabular output includes the following:\n\nData column\n\nunits\n\nComments\n\nStructure Name\n\nNA\n\nNumber of Vertices\n\nunitless\n\nSurface Area\n\nmm^2\n\ntotal surface area",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1984,
+        "end": 2142,
+        "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+      }
+    },
+    {
+      "statement": "Tabular output can be produced with the -b flag.",
+      "source_id": "fs_anatomical_stats",
+      "quote": "-b\n\ntabular output",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1504,
+        "end": 1522,
+        "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+      }
+    },
+    {
+      "statement": "Table output can be written to a tablefile with -f, in a different format than -b.",
+      "source_id": "fs_anatomical_stats",
+      "quote": "-f <tablefile>\n\ntable output to tablefile (different format than -b).",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1524,
+        "end": 1593,
+        "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+      }
+    },
+    {
+      "statement": "Stats can be written to a file named log with -log.",
+      "source_id": "fs_anatomical_stats",
+      "quote": "-log <logfile>\n\nWrite stats to file named log",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1636,
+        "end": 1681,
+        "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+      }
+    }
+  ],
+  "parameters": [
+    {
+      "statement": "The -i option takes a low threshold and a high threshold.",
+      "source_id": "fs_anatomical_stats",
+      "quote": "-i <low thresh> <hi thresh>",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1201,
+        "end": 1228,
+        "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+      }
+    },
+    {
+      "statement": "The -nsmooth option takes a number of iterations.",
+      "source_id": "fs_anatomical_stats",
+      "quote": "-nsmooth <#>",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1683,
+        "end": 1695,
+        "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+      }
+    },
+    {
+      "statement": "The -noglobal option disables computation of global brain statistics.",
+      "source_id": "fs_anatomical_stats",
+      "quote": "-noglobal\n\nDo not compute global brain stats",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1817,
+        "end": 1861,
+        "text_sha256": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7"
+      }
+    }
+  ],
+  "quarantined_claims": [],
+  "evidence_status": "exact_quotes_verified_agent_scope_reviewed_blind_gold_pending"
+}

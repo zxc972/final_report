@@ -1,0 +1,127 @@
+{
+  "status": "audited",
+  "frozen_sha256": "054f9a031ef99326289bf925ea8551ae20ac80f5ffa610c1a3f90d61926cb126",
+  "source_code_and_data_unchanged": true,
+  "all_prompt_hashes_match_label_free_inputs": true,
+  "algorithm_defaults_unchanged": true,
+  "authorised_cumulative_http_cap": 1000,
+  "budget_completion": {
+    "items": 55,
+    "attempts": 62,
+    "all_existing_answers_preserved": true
+  },
+  "preserved_initial_ledger_prefix": true,
+  "preserved_completed_predictions": true,
+  "independent_scoring": {
+    "full": {
+      "template_correct": 52,
+      "n": 108,
+      "executable_confusion": {
+        "tp": 4,
+        "fp": 3,
+        "fn": 37,
+        "tn": 64
+      },
+      "gold_keys": 28,
+      "predicted_keys": 7,
+      "correct_keys": 1,
+      "decisions": {
+        "accepted": 7,
+        "advisory": 51,
+        "review": 48,
+        "provider_error": 2
+      }
+    },
+    "k1": {
+      "template_correct": 59,
+      "n": 108,
+      "executable_confusion": {
+        "tp": 13,
+        "fp": 16,
+        "fn": 28,
+        "tn": 51
+      },
+      "gold_keys": 28,
+      "predicted_keys": 28,
+      "correct_keys": 1,
+      "decisions": {
+        "advisory": 78,
+        "accepted": 29,
+        "provider_error": 1
+      }
+    },
+    "retrieval_only": {
+      "template_correct": 19,
+      "n": 108,
+      "executable_confusion": {
+        "tp": 41,
+        "fp": 60,
+        "fn": 0,
+        "tn": 7
+      },
+      "gold_keys": 28,
+      "predicted_keys": 0,
+      "correct_keys": 0,
+      "decisions": {
+        "accepted": 101,
+        "advisory": 7
+      }
+    },
+    "direct": {
+      "template_correct": 60,
+      "n": 108,
+      "executable_confusion": {
+        "tp": 15,
+        "fp": 17,
+        "fn": 26,
+        "tn": 50
+      },
+      "gold_keys": 28,
+      "predicted_keys": 30,
+      "correct_keys": 1,
+      "decisions": {
+        "accepted": 51,
+        "advisory": 57
+      }
+    }
+  },
+  "usage": {
+    "logical_calls": 751,
+    "http_attempts": 862,
+    "successful_requests": 748,
+    "failed_requests": 110,
+    "unfinished_requests": 4,
+    "length_limited_responses": 256,
+    "historical_null_length_responses": 2,
+    "unknown_usage_requests": 114,
+    "input_tokens": 1075438,
+    "output_tokens": 950755,
+    "total_tokens": 2026193,
+    "observed_models": [
+      "deepseek-v4.1-flash"
+    ]
+  },
+  "protected": {
+    "original": 101,
+    "mapped": 100,
+    "matched": 100,
+    "historically_unmapped": 1
+  },
+  "secret_scan": {
+    "files": 559,
+    "matches": 0
+  },
+  "analysis_runs": 0,
+  "preprocessing_submissions": 0,
+  "deployments": 0,
+  "service_restarts": 0,
+  "held_out_processed": 0,
+  "formal_gold_created": false,
+  "artifact_sha256": {
+    "summary.json": "34f04bae6ab4f140b8590b3a5bcec89fadce33cb1023feb16fce0ae121fd883f",
+    "summary.csv": "217a772a7583f0d1f9050cf284469990535f6296cc8bc635d66066425be1188b",
+    "usage.json": "fe93459e0632877c108941364ec9fd64041668c548fc72090f14da8bd44fed1a",
+    "full_errors.json": "e635105cbd22bf3254f59dd06e370dc8c0470c0ee895899a25fedb9ce46b8779",
+    "provider_failures.json": "2e490b28344516e2cfecf0e96581d5bee4154af377775f7b957fac42670b3045"
+  }
+}

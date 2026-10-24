@@ -1,0 +1,831 @@
+run_fastsurfer.sh - FastSurfer
+
+Contents
+
+Menu
+
+Expand
+
+Light mode
+
+Dark mode
+
+Auto light/dark, in light mode
+
+Auto light/dark, in dark mode
+
+Skip to content
+
+This documents the latest release. The dev documentation covers changes that are not released yet.
+
+FastSurfer
+
+User Guide
+
+Introduction
+
+Quick Start
+
+Installation
+
+macOS
+
+Linux
+
+Windows
+
+Installing from source
+
+Running FastSurfer in a container
+
+Examples
+
+Output files
+
+Modules
+
+Whole-Brain Segmentation (FastSurferVINN)
+
+Corpus Callosum Pipeline
+
+Cerebellum Sub-Segmentation (CerebNet)
+
+Hypothalamus Sub-Segmentation (HypVINN)
+
+Surface Reconstruction (recon-surf)
+
+Lesion Inpainting Tool (LIT)
+
+Manual Edits
+
+Longitudinal Processing
+
+Reproducibility
+
+Security Policy
+
+FastSurfer License
+
+Command Reference
+
+run_fastsurfer.sh
+
+long_fastsurfer.sh
+
+brun_fastsurfer.sh
+
+srun_fastsurfer.sh
+
+bids_fastsurfer.py
+
+Running modules directly
+
+FastSurferCNN: run_prediction.py
+
+CerebNet: run_prediction.py
+
+HypVINN: run_prediction.py
+
+CorpusCallosum: fastsurfer_cc.py
+
+Surface pipeline: recon-surf.sh
+
+Surface registration: recon-surfreg.sh
+
+Utilities
+
+FastSurferCNN: download_checkpoints.py
+
+FastSurferCNN: conform.py
+
+FastSurferCNN: segstats.py
+
+tools: compare_subjects.py
+
+CorpusCallosum: cc_visualization.py
+
+recon_surf: long_compat_segmentHA.py
+
+Training
+
+FastSurferCNN: generate_hdf5.py
+
+FastSurferCNN: run_model.py
+
+Developer Guide
+
+Contribution Guide
+
+Git hooks
+
+Building Docker images
+
+Code of Conduct
+
+FastSurfer API
+
+FastSurferCNN
+
+FastSurferCNN.download_checkpoints
+
+FastSurferCNN.generate_hdf5
+
+FastSurferCNN.gpu_support
+
+FastSurferCNN.inference
+
+FastSurferCNN.mri_brainvol_stats
+
+FastSurferCNN.mri_segstats
+
+FastSurferCNN.quick_qc
+
+FastSurferCNN.reduce_to_aseg
+
+FastSurferCNN.run_model
+
+FastSurferCNN.run_prediction
+
+FastSurferCNN.segstats
+
+FastSurferCNN.train
+
+FastSurferCNN.version
+
+FastSurferCNN.data_loader
+
+FastSurferCNN.data_loader.augmentation
+
+FastSurferCNN.data_loader.conform
+
+FastSurferCNN.data_loader.data_utils
+
+FastSurferCNN.data_loader.dataset
+
+FastSurferCNN.data_loader.loader
+
+FastSurferCNN.models
+
+FastSurferCNN.models.interpolation_layer
+
+FastSurferCNN.models.losses
+
+FastSurferCNN.models.networks
+
+FastSurferCNN.models.optimizer
+
+FastSurferCNN.models.sub_module
+
+FastSurferCNN.utils
+
+FastSurferCNN.utils.arg_types
+
+FastSurferCNN.utils.brainvolstats
+
+FastSurferCNN.utils.checkpoint
+
+FastSurferCNN.utils.common
+
+FastSurferCNN.utils.dataclasses
+
+FastSurferCNN.utils.load_config
+
+FastSurferCNN.utils.logging
+
+FastSurferCNN.utils.lr_scheduler
+
+FastSurferCNN.utils.mapper
+
+FastSurferCNN.utils.meters
+
+FastSurferCNN.utils.metrics
+
+FastSurferCNN.utils.misc
+
+FastSurferCNN.utils.parallel
+
+FastSurferCNN.utils.parser_defaults
+
+FastSurferCNN.utils.run_tools
+
+CerebNet
+
+CerebNet.apply_warp
+
+CerebNet.inference
+
+CerebNet.run_prediction
+
+CerebNet.data_loader
+
+CerebNet.data_loader.augmentation
+
+CerebNet.data_loader.data_utils
+
+CerebNet.data_loader.dataset
+
+CerebNet.data_loader.loader
+
+CerebNet.datasets
+
+CerebNet.datasets.generate_hdf5
+
+CerebNet.datasets.load_data
+
+CerebNet.datasets.utils
+
+CerebNet.datasets.wm_merge_clean
+
+CerebNet_models
+
+CerebNet.models.networks
+
+CerebNet.models.sub_module
+
+CerebNet.utils
+
+CerebNet.utils.checkpoint
+
+CerebNet.utils.load_config
+
+CerebNet.utils.lr_scheduler
+
+CerebNet.utils.meters
+
+CerebNet.utils.misc
+
+CorpusCallosum
+
+CorpusCallosum.fastsurfer_cc
+
+CorpusCallosum.cc_visualization
+
+CorpusCallosum.paint_cc_into_pred
+
+CorpusCallosum.data
+
+CorpusCallosum.data.constants
+
+CorpusCallosum.data.fsaverage_cc_template
+
+CorpusCallosum.data.read_write
+
+CorpusCallosum.localization
+
+CorpusCallosum.localization.inference
+
+CorpusCallosum.registration
+
+CorpusCallosum.registration.midsagittal_plane_alignment
+
+CorpusCallosum.segmentation
+
+CorpusCallosum.segmentation.inference
+
+CorpusCallosum.segmentation.segmentation_postprocessing
+
+CorpusCallosum.shape
+
+CorpusCallosum.shape.contour
+
+CorpusCallosum.shape.curvature
+
+CorpusCallosum.shape.endpoint_heuristic
+
+CorpusCallosum.shape.mesh
+
+CorpusCallosum.shape.metrics
+
+CorpusCallosum.shape.postprocessing
+
+CorpusCallosum.shape.subsegment_contour
+
+CorpusCallosum.shape.thickness
+
+CorpusCallosum.transforms
+
+CorpusCallosum.transforms.localization
+
+CorpusCallosum.transforms.segmentation
+
+CorpusCallosum.utils
+
+CorpusCallosum.utils.checkpoint
+
+CorpusCallosum.utils.mapping_helpers
+
+CorpusCallosum.utils.types
+
+CorpusCallosum.utils.visualization
+
+HypVINN
+
+HypVINN.inference
+
+HypVINN.run_prediction
+
+HypVINN.data_loader
+
+HypVINN.data_loader.data_utils
+
+HypVINN.data_loader.dataset
+
+HypVINN.models
+
+HypVINN.models.networks
+
+HypVINN.utils
+
+HypVINN.utils.checkpoint
+
+HypVINN.utils.img_processing_utils
+
+HypVINN.utils.load_config
+
+HypVINN.utils.misc
+
+HypVINN.utils.mode_config
+
+HypVINN.utils.preproc
+
+HypVINN.utils.stats_utils
+
+HypVINN.utils.visualization_utils
+
+recon_surf
+
+recon_surf.create_annotation
+
+recon_surf.fs_balabels
+
+recon_surf.image_io
+
+recon_surf.long_compat_segmentHA
+
+recon_surf.map_surf_label
+
+recon_surf.N4_bias_correct
+
+recon_surf.pin_cpu_dispatch
+
+recon_surf.rewrite_mc_surface
+
+recon_surf.rewrite_oriented_surface
+
+recon_surf.rotate_sphere
+
+recon_surf.sample_parc
+
+recon_surf.smooth_aparc
+
+recon_surf.spherically_project
+
+recon_surf.spherically_project_wrapper
+
+Back to top
+
+View this page
+
+run_fastsurfer.sh¶
+
+Next, you will learn how to specify the <fastsurfer_flags> by replacing <fastsurfer_flags> with your specific options.
+run_fastsurfer.sh is the central command of FastSurfer. In general, run_fastsurfer.sh is called once for each T1w MRI image that is to be processed and each call will result in one “Subject Folder” with segmentation maps, surfaces and statistics tables. If you want to process multiple images, you can either loop through the images yourself or use brun_fastsurfer.sh or srun_fastsurfer.sh, which are multi-subject extensions to run_fastsurfer.sh.
+
+On this page, we explain FastSurfer’s options, usually referred to as <fastsurfer_flags> in this documentation.
+The <fastsurfer_flags> will usually at least include the subject directory (--sd), the subject name/id (--sid) and the path to the input image (--t1). For example:
+
+export FASTSURFER_HOME=${FASTSURFER_HOME:-/path/to/FastSurfer}
+$FASTSURFER_HOME/run_fastsurfer.sh --sd $HOME/my_fastsurfer_analysis \
+--sid subjectX --t1 $HOME/my_mri_data/subjectX/t1_weighted.nii.gz --3T
+
+Additionally, you can use --seg_only or --surf_only to only run a part of the pipeline or --no_biasfield, --no_cereb, --no_hypothal, --no_cc, and --no_asegdkt to switch off individual segmentation modules.
+Here, we have also added the --3T flag, which tells FastSurfer to register against the 3T atlas which is only relevant for the ICV estimation (eTIV).
+
+In the following, we give an overview of the most important options. You can view a full list of options with
+
+export FASTSURFER_HOME=${FASTSURFER_HOME:-/path/to/FastSurfer}
+$FASTSURFER_HOME/run_fastsurfer.sh --help
+
+Required arguments¶
+
+--sd: Output directory $SUBJECTS_DIR (equivalent to FreeSurfer setup –> $SUBJECTS_DIR/<subject_id>/mri; $SUBJECTS_DIR/<subject_id>/surf … will be created).
+
+--sid: Subject ID for directory inside $SUBJECTS_DIR to be created ($SUBJECTS_DIR/<subject_id>/...)
+
+--t1: T1 full head input (does not need to be bias corrected, global path). The network was trained with conformed images (UCHAR, cubic volume, 0.7mm - 1mm voxels and standard slice orientation; typically 256x256x256 at 1mm and larger cubes for higher-resolution isotropic inputs). These specifications are checked in the run_prediction.py script and the image is automatically conformed if it does not comply. By default, outputs are written in the FastSurfer conform space used for segmentation, which closely follows FreeSurfer conforming in mri_convert -c. The --keepgeom path is the exception: it uses an internal soft-LIA reordering for the 2D networks and maps results back to native geometry before writing outputs.
+
+Conditionally required¶
+
+Required for Docker when running surface module:
+
+--fs_license: Path to FreeSurfer license key file (needed for the surface module and, if activated, the talairach registration --tal_reg in the segmentation). For local installs, your local FreeSurfer license will automatically be detected (usually $FREESURFER_HOME/license.txt or $FREESURFER_HOME/.license). Use this flag if autodetection fails or if you use Docker with the surface module. To get a license, register (for free).
+
+Optional arguments¶
+
+Segmentation pipeline arguments¶
+
+--seg_only: Only run the brain segmentation pipeline and skip the surface pipeline.
+
+--seg_log: Name and location for the log-file for the segmentation. Default: $SUBJECTS_DIR/<subject_id>/scripts/deep-seg.log
+
+--viewagg_device: Define where the view aggregation should be run on. Can be “auto” or a device (see –device). By default, the program checks if you have enough memory to run the view aggregation on the GPU. The total memory is considered for this decision. If this fails, or you actively specify “cpu” view aggregation is run on the CPU. Equivalently, if you pass a different device, view aggregation will be run on that device (no memory check will be done).
+
+--device: Select device for neural network segmentation (auto, cpu, cuda, cuda:<device_num>, mps), where cuda means NVIDIA GPU, you can select which one e.g. “cuda:1”. Default: “auto”, check GPU and then CPU. “mps” is the Apple silicon GPU of a Mac (macOS package or native installation), which “auto” picks there.
+
+--asegdkt_segfile: Name of the segmentation file, which includes the aparc+DKTatlas-aseg segmentations. Requires an ABSOLUTE Path! Default location: $SUBJECTS_DIR/<subject_id>/mri/aparc.DKTatlas+aseg.deep.mgz
+
+--no_cereb: Switch off the cerebellum sub-segmentation.
+
+--no_hypothal: Skip the hypothalamus segmentation.
+
+--no_cc: Skip the segmentation and analysis of the corpus callosum.
+
+--lesion_mask <lesion_mask_path>: Path to a binary lesion mask in the same space as the T1 input. If provided, FastSurfer will wrap the segmentation and surface pipelines with lesion inpainting using LIT. This feature is useful for images with tumors or other large lesions; review LIT-modified outputs before downstream use.
+
+--cereb_segfile: Name of the cerebellum segmentation file. Requires an ABSOLUTE Path! Default location: $SUBJECTS_DIR/<subject_id>/mri/cerebellum.CerebNet.nii.gz
+
+--no_biasfield: Deactivate the biasfield correction and calculation of partial volume-corrected statistics in the segmentation modules. HypVINN does run but expects that biasfields are corrected externally.
+
+--native_image or --keepgeom: Only supported for --seg_only. Preserve the native image geometry (orientation, image size, and voxel size) for saved outputs. Internally, FastSurfer may temporarily reorder/flip the image to a soft-LIA layout so the 2D networks still see the expected plane ordering, but written outputs stay in native geometry; only intensity scaling and dtype conversion are applied as needed. This also includes experimental support for anisotropic images (no extreme anisotropy).
+
+Surface pipeline arguments¶
+
+--surf_only: Only run the surface pipeline. The segmentation created by FastSurferVINN must already exist in this case.
+
+--3T: Only affects Talairach registration: use the 3T atlas instead of the 1.5T atlas (which is used if the flag is not provided). This gives better (more consistent with FreeSurfer) ICV estimates (eTIV) for 3T and better Talairach registration matrices, but has little impact on standard volume or surface stats.
+
+--fstess: Use mri_tesselate instead of marching cube (default) for surface creation (not recommended, but more similar to FreeSurfer)
+
+--fsqsphere: Use FreeSurfer default instead of novel spectral spherical projection for qsphere (also not recommended)
+
+--fsaparc: Use FS aparc segmentations in addition to DL prediction (slower in this case and usually the mapped ones from the DL prediction are fine)
+
+--no_fs_T1: Skip generation of T1.mgz (normalized nu.mgz included in standard FreeSurfer output) and create brainmask.mgz directly from norm.mgz instead. Saves 1:30 min.
+
+--no_surfreg: Skip the surface registration (which creates sphere.reg) to safe time. Note, sphere.reg will be needed for any cross-subject statistical analysis of thickness maps, so do not use this option if you plan to perform cross-subject analysis.
+
+Some other flags¶
+
+--threads, --threads_seg and --threads_surf: Target number of threads for all modules, segmentation, and surface pipeline: a number, auto or max.
+Without these flags, an exported OMP_NUM_THREADS sets the budget for both pipelines, and otherwise auto applies: inside a cgroup CPU quota (such as docker run --cpus) or a scheduler job (Slurm, SGE, PBS, LSF) the allocated CPUs, and otherwise the physical cores less one, which stays free for other work. On Apple silicon the efficiency cores stay free instead, so auto uses all performance cores. Either way auto uses at most 4 threads for a segmentation on a GPU, where only the steps around the networks run on the CPU, and at most 8 otherwise, beyond which more threads gain little. For surfaces it uses at least 2 where the CPUs allow, so that the two hemispheres run at the same time. max uses all available CPUs. OMP_THREAD_LIMIT caps the budget in every case.
+For surfaces the value is a total budget: with 2 or more the two hemispheres run at the same time and split it, so 2 gives one thread each and 8 gives four each. --parallel runs the hemispheres at the same time with one thread each even at --threads 1, which keeps every binary single threaded while still using two cores; above 1 it has no effect.
+The topology correction always runs single-threaded regardless, because its result depends on the processing order (see Reproducibility). FastSurfer exports the budget to every library’s own thread variable (OMP_NUM_THREADS, OPENBLAS_NUM_THREADS, MKL_NUM_THREADS, VECLIB_MAXIMUM_THREADS, ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS), so that numpy’s BLAS follows it too. A library variable that you exported with a lower value is kept as a ceiling for that library. The log of each pipeline states the budget and where it came from.
+
+--vox_size: Forces processing at a specific voxel size. If a number between 0.7 and 1 is specified (below is experimental) the T1w image is conformed to that isotropic voxel size and processed.
+If “min” is specified (default), the voxel size is read from the size of the minimal voxel size (smallest per-direction voxel size) in the T1w image:
+If the minimal voxel size is bigger than 0.98mm, the image is conformed to 1mm isotropic.
+If the minimal voxel size is smaller or equal to 0.98mm, the T1w image will be conformed to isotropic voxels of that voxel size.
+The voxel size (whether set manually or derived) determines whether the surfaces are processed with highres options (below 1mm) or not.
+
+--py: Command for python, used in both pipelines. Default: python3 -s (-s keeps packages in your home directory out)
+
+--conformed_name: Name of the file in which the conformed input image will be saved. Default location: $SUBJECTS_DIR/<subject_id>/mri/orig.mgz
+
+-h, --help: Prints help text
+
+Reproducibility¶
+
+Which results stay identical between two runs, how the thread count and the machine affect them,
+and how to compare two runs is described in Reproducibility.
+
+Troubleshooting¶
+
+run_fastsurfer.sh calls python3 by default. If python3 is not the python version your FastSurfer environment was
+set up with, pass that one with --py, for example --py python3.14.
+
+Full list of flags¶
+
+./run_fastsurfer.sh --help
+
+Usage: run_fastsurfer.sh --sid <subject_id> --sd <subjects_dir> \
+--t1 <t1_path> [OPTIONS]
+
+run_fastsurfer.sh takes a T1 full head image and creates:
+(i) a segmentation using FastSurferVINN (equivalent to FreeSurfer
+aparc.DKTatlas+aseg.mgz)
+(ii) surfaces, thickness etc as a FS subject dir using recon-surf
+
+FLAGS:
+
+--fs_license <freesurfer_license_path>
+Path to FreeSurfer license key file. Register at
+https://surfer.nmr.mgh.harvard.edu/registration.html
+for free to obtain it if you do not have FreeSurfer
+installed already
+--sid <subject_id> Subject ID to create directory inside $SUBJECTS_DIR
+--sd <subjects_dir> Output directory $SUBJECTS_DIR (or pass via env var)
+--t1 <t1_path> T1 full head input (not bias corrected). Requires an
+ABSOLUTE Path!
+--lesion_mask <lesion_mask_path>
+Lesion mask input for lesion inpainting.
+Requires an ABSOLUTE Path!
+--asegdkt_segfile <asegdkt_segfile>
+Name of the segmentation file, which includes the
+aparc+DKTatlas-aseg segmentations.
+Requires an ABSOLUTE Path! Default location:
+$SUBJECTS_DIR/$sid/mri/aparc.DKTatlas+aseg.deep.mgz
+--vox_size <0.7-1|min|keep>
+Forces processing at a specific voxel size.
+If a number between 0.7 and 1 is specified (below
+is experimental) the T1w image is conformed to
+that voxel size and processed.
+If "min" is specified (default), the voxel size is
+read from the size of the minimal voxel size
+(smallest per-direction voxel size) in the T1w
+image:
+If the minimal voxel size is bigger than 0.98mm,
+the image is conformed to 1mm isotropic.
+If the minimal voxel size is smaller or equal to
+0.98mm, the T1w image will be conformed to
+isotropic voxels of that voxel size.
+The voxel size (whether set manually or derived)
+determines whether the surfaces are processed with
+highres options (below 1mm) or not.
+If "keep" is specified, the native voxel size is
+preserved. This is experimental and only compatible
+with the segmentation pipeline.
+--edits Enables manual edits by replacing select intermediate/
+result files by manedit substitutes (*.manedit.<ext>).
+Segmentation edits (default paths):
+mri/aparc.DKTatlas+aseg.deep.manedit.mgz
+mri/mask.manedit.mgz
+mri/callosum.CC.upright.manedit.mgz
+Surface: Disables check for existing recon-surf.sh
+run; edits of mri/wm.mgz and brain.finalsurfs.mgz
+as well as FreeSurfer-style WM control points.
+--version <info> Print version information and exit; <info> is
+optional. <info> may be empty, just prints the
+version number, +git_branch also prints the current
+branch, and any combination of +git, +checkpoints,
++pip to print additional for the git status, the
+checkpoints and installed python packages.
+-h --help Print Help
+
+PIPELINES:
+By default, both the segmentation and the surface pipelines are run.
+
+SEGMENTATION PIPELINE:
+--seg_only Run only FastSurferVINN (generate segmentation, do not
+run surface pipeline)
+--seg_log <seg_log> Log-file for the segmentation (FastSurferVINN,
+CerebNet, HypVINN)
+Default: $SUBJECTS_DIR/$sid/scripts/deep-seg.log
+--conformed_name <conformed_path>
+Name of the file in which the conformed input
+image will be saved. Requires an ABSOLUTE Path!
+Default location:
+$SUBJECTS_DIR/$sid/mri/orig.mgz.
+--no_biasfield Deactivate bias field correction. The stats files are
+partial volume-corrected, so they are only written
+if a biasfield corrected image already exists, for
+example from an earlier run.
+--norm_name <norm_path> Name of the biasfield corrected image
+Default location:
+$SUBJECTS_DIR/$sid/mri/orig_nu.mgz
+--tal_reg Perform the talairach registration for eTIV estimates
+in --seg_only stream and stats files (is affected by
+the --3T flag, see below). Manual talairach
+registrations are not replaced in --edits mode.
+To add eTIV to a subject that is already segmented,
+switch off everything that already ran, so only the
+registration and the stats files are redone:
+--seg_only --tal_reg --no_asegdkt --no_biasfield
+--no_cereb --no_hypothal --no_cc
+The stats are rewritten from the files on disk, so
+nothing is re-segmented. Leaving any of these out
+recomputes that module and overwrites its output.
+This works on a subject whose segmentation has run
+but not its surfaces. The surface pipeline always
+computes a talairach registration, so on a fully
+processed subject the above stops rather than
+replace it: delete mri/transforms/talairach.xfm
+first, or add --edits to keep the existing one.
+--native_image OR Output all images and segmentations in the native
+--keepgeom image space with its image geometry (voxel size,
+dimensions, orientation). This setting is not
+compatible with the surface pipeline and implies
+--vox_size keep. Anisotropic voxels are
+experimental.
+
+MODULES:
+By default, all modules are run.
+
+The options below that name an output file are for expert use. Later modules
+and follow-up tools look for the default names, so renaming an output can
+break a later step.
+
+ASEGDKT MODULE:
+--no_asegdkt Skip the asegdkt segmentation (aseg+aparc/DKT
+segmentation)
+--asegdkt_segfile <asegdkt_segfile>
+Name of the segmentation file, which includes the
+aseg+aparc/DKTatlas segmentations.
+Requires an ABSOLUTE Path! Default location:
+$SUBJECTS_DIR/$sid/mri/aparc.DKTatlas+aseg.deep.mgz
+--no_biasfield Skip the partial volume-corrected statistics, unless a
+biasfield corrected image already exists.
+
+CEREBELLUM MODULE:
+--no_cereb Skip the cerebellum segmentation (CerebNet
+segmentation)
+--asegdkt_segfile <asegdkt_segfile>
+Name of the segmentation file (similar to aparc+aseg)
+for cerebellum localization (typically the output of the
+APARC module (see above). Requires an ABSOLUTE Path!
+Default location:
+$SUBJECTS_DIR/$sid/mri/aparc.DKTatlas+aseg.deep.mgz
+--cereb_segfile <seg_output>
+Name of DL-based segmentation file of the cerebellum.
+This segmentation is always at 1mm isotropic
+resolution, since inference is always based on a
+1mm conformed image, if the conformed image is *NOT*
+already an 1mm image, an additional conformed image
+at 1mm will be stored at the --conformed_name, but
+with an additional file suffix of ".1mm".
+Requires an ABSOLUTE Path! Default location:
+$SUBJECTS_DIR/$sid/mri/cerebellum.CerebNet.nii.gz
+--cereb_statsfile <stats_output>
+Name of the statistics file of the cerebellum
+segmentation. Requires an ABSOLUTE Path!
+Default location:
+$SUBJECTS_DIR/$sid/stats/cerebellum.CerebNet.stats
+--no_biasfield Skip the partial volume-corrected statistics, unless a
+biasfield corrected image already exists.
+
+CORPUS CALLOSUM MODULE:
+--no_cc Skip the segmentation and analysis of the corpus callosum.
+--qc_snap Create quality control images in $SUBJECTS_DIR/$sid/qc_snapshots
+to simplify the QC process. Also creates additional volumes
+in mri/ for QC.
+
+HYPOTHALAMUS MODULE (HypVINN):
+--no_hypothal Skip the hypothalamus segmentation.
+--hypo_segfile <seg_output>
+Name of the DL-based segmentation file of the
+hypothalamus. Requires an ABSOLUTE Path!
+Default location:
+$SUBJECTS_DIR/$sid/mri/hypothalamus.HypVINN.nii.gz
+--hypo_statsfile <stats_output>
+Name of the statistics file of the hypothalamus
+segmentation. Requires an ABSOLUTE Path!
+Default location:
+$SUBJECTS_DIR/$sid/stats/hypothalamus.HypVINN.stats
+--no_biasfield Biasfield-corrected inputs are recommended for the
+hypothalamus sub-segmentation. This option implies images
+were corrected externally.
+--t2 <t2_path> *Optional* T2 full head input (must be externally biasfield
+corrected when called with --no_biasfield). Requires an
+ABSOLUTE Path!
+--reg_mode <none|coreg|robust>
+Ignored, if no T2 image is passed.
+Specifies the registration method used to register T1
+and T2 images. Options are 'coreg' (default) for
+mri_coreg, 'robust' for mri_robust_register, and 'none'
+to skip registration (this requires T1 and T2 are
+externally co-registered). With --long, 'none' means
+the T2 is co-registered with the T1 this time point
+was built from, and it is mapped into template space
+with the same transform as that T1.
+--qc_snap Create QC snapshots in $SUBJECTS_DIR/$sid/qc_snapshots
+to simplify the QC process.
+
+SURFACE PIPELINE:
+--surf_only Run surface pipeline only. The segmentation input has
+to exist already in this case.
+--3T Use the 3T atlas for talairach registration (gives
+better eTIV estimates for 3T MR images, default: 1.5T
+atlas).
+
+Resource Options:
+--device <device> Device for the network inference: "auto" (default),
+"cpu", "cuda" (NVIDIA, or AMD with ROCm), a specific
+GPU such as "cuda:1", or "mps" (Apple silicon GPU).
+"auto" uses cuda if available, else mps, else cpu.
+--viewagg_device <str> Define where the view aggregation should be run on.
+Can be "auto" or a device (see --device). By default,
+the program checks if you have enough memory to run
+the view aggregation on the gpu. The total memory is
+considered for this decision. If this fails, or you
+actively overwrote the check with setting with "cpu"
+view agg is run on the cpu. Equivalently, if you
+pass a different device, view agg will be run on that
+device (no memory check will be done).
+--threads <int> Set openMP, BLAS and ITK threads to <int>, "auto" or
+--threads_seg <int> "max", also for definition of threads specific to
+--threads_surf <int> segmentation and surface reconstruction. For
+surfaces this is a total budget: with 2 or more the
+two hemispheres run at the same time and split it,
+so 8 gives four each. Use 1 for a single-threaded
+run. Without these flags, OMP_NUM_THREADS sets the
+budget if exported, else auto: the allocation of a
+cgroup quota or a scheduler job, or else the
+physical cores less one (on Apple silicon all
+performance cores), at most 4 for a GPU
+segmentation and 8 otherwise, and at least 2 for
+surfaces. "max" uses all available CPUs.
+--parallel Run the hemispheres at the same time with one thread
+each, even at --threads 1. That keeps every binary
+single threaded, and so reproducible, while still
+using two cores. No effect at 2 or more surface
+threads, where the hemispheres already run at the
+same time.
+--batch <batch_size> Batch size for inference (default: 1).
+--py <python_cmd> Command for python, used in both pipelines.
+Default: "python3 -s"
+(-s: do no search for packages in home directory)
+
+Dev Flags:
+--ignore_fs_version Switch on to avoid check for FreeSurfer version.
+Program will terminate if the supported version
+(see recon-surf.sh) is not sourced. Can be used for
+testing dev versions.
+--fstess Switch on mri_tesselate for surface creation (default:
+mri_mc).
+--fsqsphere Use FreeSurfer iterative inflation for qsphere
+(default: spectral spherical projection).
+--fsaparc Additionally create FS aparc segmentations and ribbon.
+Skipped by default (--> DL prediction is used which
+is faster, and usually these mapped ones are fine).
+--no_fs_T1 Do not generate T1.mgz (normalized nu.mgz included in
+standard FreeSurfer output) and create brainmask.mgz
+directly from norm.mgz instead. Saves 1:30 min.
+--no_surfreg Do not run Surface registration with FreeSurfer (for
+cross-subject correspondence), Not recommended, but
+speeds up processing if you e.g. just need the
+segmentation stats!
+--allow_root Allow execution as root user.
+
+Longitudinal Flags (non-expert users should use long_fastsurfers.sh for
+sequential processing of longitudinal data):
+--base Longitudinal template (base) processing.
+Only ASEGDKT in segmentation and differences in the
+surface module. Requires longitudinal template
+preparation (recon-surf/long_prepare_template.sh) to
+be completed beforehand! No T2 can be passed. Also
+no T1 is explicitly passed, as it is taken from
+within the prepared template directory.
+--long <template_id> Longitudinal time point processing.
+Requires the base (template) already exists in the
+same SUBJECTS_DIR under the SID <template_id>.
+Processing is identical to the regular cross-sectional
+pipeline for segmentation. Surface module skips
+many steps and initializes from subject template.
+No T2 can be passed. Also no T1 is explicitly passed,
+as it is taken from the prepared template directory.
+
+REFERENCES:
+
+If you use this for research publications, please cite:
+
+Henschel L, Conjeti S, Estrada S, Diers K, Fischl B, Reuter M, FastSurfer - A
+fast and accurate deep learning based neuroimaging pipeline, NeuroImage 219
+(2020), 117012. https://doi.org/10.1016/j.neuroimage.2020.117012
+
+Henschel L*, Kuegler D*, Reuter M. (*co-first). FastSurferVINN: Building
+Resolution-Independence into Deep Learning Segmentation Methods - A Solution
+for HighRes Brain MRI. NeuroImage 251 (2022), 118933.
+https://doi.org/10.1016/j.neuroimage.2022.118933
+
+For cerebellum sub-segmentation:
+Faber J*, Kuegler D*, Bahrami E*, et al. (*co-first). CerebNet: A fast and
+reliable deep-learning pipeline for detailed cerebellum sub-segmentation.
+NeuroImage 264 (2022), 119703.
+https://doi.org/10.1016/j.neuroimage.2022.119703
+
+For corpus callosum segmentation and analysis:
+Pollak C, Diers K, Estrada S, Kuegler D, Reuter M. FastSurfer-CC: A robust,
+accurate, and comprehensive framework for corpus callosum morphometry.
+Imaging Neuroscience (2026). https://doi.org/10.1162/IMAG.a.1221
+
+For hypothalamus sub-segmentation:
+Estrada S, Kuegler D, Bahrami E, Xu P, Mousa D, Breteler MMB, Aziz NA, Reuter M.
+FastSurfer-HypVINN: Automated sub-segmentation of the hypothalamus and adjacent
+structures on high-resolutional brain MRI. Imaging Neuroscience 2023; 1 1–32.
+https://doi.org/10.1162/imag_a_00034
+
+For longitudinal processing:
+Reuter M, Schmansky NJ, Rosas HD, Fischl B. Within-subject template estimation
+for unbiased longitudinal image analysis, NeuroImage 61:4 (2012).
+https://doi.org/10.1016/j.neuroimage.2012.02.084
+
+On this page
+
+run_fastsurfer.sh
+
+Required arguments
+
+Conditionally required
+
+Optional arguments
+
+Segmentation pipeline arguments
+
+Surface pipeline arguments
+
+Some other flags
+
+Reproducibility
+
+Troubleshooting
+
+Full list of flags

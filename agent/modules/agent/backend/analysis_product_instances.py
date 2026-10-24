@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import copy
+import re
 from pathlib import Path
 
 from .analysis_control_store import digest
@@ -53,8 +54,12 @@ def classify(record):
     if fmt == "label":
         return "type:Label.Cortex" if "cortex" in stem else "type:Label"
     if fmt == "stats":
-        return "type:StatsTable.Aseg" if "aseg" in stem else "type:StatsTable.Aparc"
-    if fmt == "tsv":
+        if stem == "aseg.stats":
+            return "type:StatsTable.AsegStats"
+        if re.fullmatch(r"[lr]h\.aparc.*\.stats", stem):
+            return "type:StatsTable.CorticalParcStats"
+        return "type:StatsTable"
+    if fmt in {"tsv", "csv"}:
         return "type:SubjectTable.Participants"
     if fmt in {"nifti", "mgz"}:
         if stem in {"brainmask.mgz", "brainmask.nii.gz"}:
@@ -100,36 +105,9 @@ def import_profile(store, profile, registry, *, activity_id=None):
         return _import_profile(store, profile, registry, activity_id=activity_id)
 
 
-def _import_profile(store, profile, registry, *, activity_id=None):
+def profile_products(profile, registry):
+    """Yield typed observations; also used by offline matching without a database."""
     raw = unwrap(profile)
-    profile_sha = digest(profile)
-    activity = activity_id or "activity:profile:" + profile_sha
-    store.node(
-        activity,
-        "instance",
-        "Activity",
-        "Read-only data profiling",
-        {
-            "activity_type": "profile_observation",
-            "profile_sha256": profile_sha,
-            "scope": "Metadata observation; not creation or reconstruction of source MRI",
-        },
-    )
-    snapshot = "profile:" + profile_sha
-    store.node(
-        snapshot,
-        "instance",
-        "ProfileSnapshot",
-        snapshot,
-        {"profile_sha256": profile_sha, "source_file_generation_claimed": False},
-    )
-    store.edge(
-        snapshot,
-        activity,
-        "wasGeneratedBy",
-        {"prov_namespace": "http://www.w3.org/ns/prov#"},
-    )
-    products = []
     for observed, source_record in zip(raw["files"], profile["files"]):
         path = observed["path"]
         registered = registry_entry(path, registry)
@@ -170,7 +148,7 @@ def _import_profile(store, profile, registry, *, activity_id=None):
                 "basis": "No trusted processing-history binding",
             },
             "atlas": None,
-            "measure": metric.get("measure"),
+            "measure": metric.get("measure") or (Path(path).name.rsplit(".", 1)[-1] if fmt == "surface_metric" else None),
             "label_table": labels.get("label_names"),
             "unit": metric.get("units") or volume.get("units"),
             "voxel_size": volume.get("voxel_size_mm"),
@@ -182,7 +160,16 @@ def _import_profile(store, profile, registry, *, activity_id=None):
                 len(set(observed.get("subject") or [])) if fmt == "tsv" else None
             ),
             "nonempty_columns": (observed.get("table") or {}).get("nonempty_columns"),
+            "column_types": (observed.get("table") or {}).get("column_types"),
         }
+        if registered.get("scale_observation"):
+            from .analysis_global_method import trusted_scale
+            observed_scale = trusted_scale(registered)
+            attrs["scale_status"] = {"rescaled": observed_scale["rescaled"], "factor": observed_scale["k"],
+                                     "verified": observed_scale["host_verified"], "source": observed_scale.get("sources", []),
+                                     "physical_calibration_verified": False}
+        if fmt in {"annot", "stats"} and hemi:
+            attrs["atlas_file_stem"] = Path(path).name[3:].rsplit(".", 1)[0]
         if fmt == "annot":
             from .analysis_atlas_identity import identify
             identity = identify(Path(path).name[3:-6])
@@ -190,6 +177,7 @@ def _import_profile(store, profile, registry, *, activity_id=None):
                 attrs["atlas"] = identity["canonical_name"]
                 attrs["atlas_file_stem"] = identity["file_stem"]
                 attrs["atlas_naming_source"] = identity["source_url"]
+        attrs.update({k: v for k, v in (observed.get("attributes") or {}).items() if k in attrs})
         properties = {
             "path": path,
             "sha256": observed.get("sha256"),
@@ -219,9 +207,43 @@ def _import_profile(store, profile, registry, *, activity_id=None):
             "type_classification": "Format/header plus explicit filename convention for subtype; no species or spatial verification",
             "source_processing_activity": None,
             "read_error": observed.get("read_error"),
-            "profile_sha256": profile_sha,
+            "profile_sha256": digest(profile),
         }
         product_type = classify(observed)
+        yield identifier, product_type, properties, registered
+
+
+def _import_profile(store, profile, registry, *, activity_id=None):
+    profile_sha = digest(profile)
+    activity = activity_id or "activity:profile:" + profile_sha
+    store.node(
+        activity,
+        "instance",
+        "Activity",
+        "Read-only data profiling",
+        {
+            "activity_type": "profile_observation",
+            "profile_sha256": profile_sha,
+            "scope": "Metadata observation; not creation or reconstruction of source MRI",
+        },
+    )
+    snapshot = "profile:" + profile_sha
+    store.node(
+        snapshot,
+        "instance",
+        "ProfileSnapshot",
+        snapshot,
+        {"profile_sha256": profile_sha, "source_file_generation_claimed": False},
+    )
+    store.edge(
+        snapshot,
+        activity,
+        "wasGeneratedBy",
+        {"prov_namespace": "http://www.w3.org/ns/prov#"},
+    )
+    products = []
+    for identifier, product_type, properties, registered in profile_products(profile, registry):
+        path = properties["path"]
         if store.get_node(product_type) is None:
             product_type = "type:Product"
         store.node(identifier, "instance", "Product", Path(path).name, properties)

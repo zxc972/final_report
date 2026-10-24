@@ -1,0 +1,57 @@
+[
+  {
+    "item": {
+      "id": 1002,
+      "method": "independent_fastsurfer",
+      "field": "inputs",
+      "statement": "Optional T2 full-head input must be externally biasfield corrected when --no_biasfield is used.",
+      "source_id": "fastsurfer_run",
+      "quote": "*Optional* T2 full head input (must be externally biasfield\ncorrected when called with --no_biasfield). Requires an\nABSOLUTE Path!",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 22800,
+        "end": 22930,
+        "text_sha256": "86e0b793c322530a30c34aaa6f2c1ec00912fceb693cb4fd554e9860eeea8892"
+      },
+      "source_url": "https://deep-mi.org/FastSurfer/stable/scripts/RUN_FASTSURFER.html",
+      "gold_template": "advisory",
+      "gold_parameters": null,
+      "annotation_note": "可选输入",
+      "pending_user_decision": false
+    },
+    "prediction": {
+      "id": 1002,
+      "method": "independent_fastsurfer",
+      "statement": "Optional T2 full-head input must be externally biasfield corrected when --no_biasfield is used.",
+      "quote_support": 1.0,
+      "source_id": "fastsurfer_run",
+      "decision": "review",
+      "template": "advisory",
+      "parameters": null,
+      "reason": "no valid answer",
+      "answered": 1,
+      "invalid_attempts": {
+        "provenance": 1
+      },
+      "sampling": {
+        "nominal_samples": 1,
+        "interface_replacements": 0,
+        "truncation_replacements": 0,
+        "unavailable_positions": [],
+        "interface_failures": [],
+        "responses": [
+          {
+            "sample": 1,
+            "replacement_of": null,
+            "historical": false,
+            "request_id": "f12807195ef84d71b2d31f9822b2fa90",
+            "finish_reason": "stop",
+            "status": "ok",
+            "reasoning_content_present": true,
+            "reasoning_tokens": 0
+          }
+        ]
+      }
+    }
+  }
+]

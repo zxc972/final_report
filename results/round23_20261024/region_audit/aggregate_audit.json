@@ -1,0 +1,28 @@
+{
+  "status": "audited",
+  "subjects": 21,
+  "approved_development_subjects": 20,
+  "original_condition_records": 126,
+  "independent_csv_rows": 504,
+  "classifier_jobs_successful": 82,
+  "input_changes": 0,
+  "accuracy_distributions_crosschecked": 16,
+  "independent_numpy_dice_quantile_checks": 40,
+  "stability_conditions_crosschecked": 3,
+  "thresholds_unchanged": {
+    "theta": 0.5,
+    "kappa": 0.8,
+    "pi": 0.8,
+    "tau": 0.2,
+    "thetas": [
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8
+    ]
+  },
+  "model_calls": 0,
+  "source_sha256": "62b01ff7899cd760fc530a0de9a98041c9aacbb328874d1e066d14d05e622d8c"
+}

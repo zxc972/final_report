@@ -1,0 +1,758 @@
+[
+  {
+    "id": 1,
+    "method": "cat_morphometry",
+    "decision": "accepted",
+    "template": "cardinality",
+    "parameters": null
+  },
+  {
+    "id": 2,
+    "method": "cat_morphometry",
+    "decision": "accepted",
+    "template": "software",
+    "parameters": null
+  },
+  {
+    "id": 3,
+    "method": "cat_morphometry",
+    "decision": "accepted",
+    "template": "software",
+    "parameters": null
+  },
+  {
+    "id": 4,
+    "method": "cat_morphometry",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null
+  },
+  {
+    "id": 5,
+    "method": "cat_morphometry",
+    "decision": "accepted",
+    "template": "cardinality",
+    "parameters": null
+  },
+  {
+    "id": 6,
+    "method": "cat_morphometry",
+    "decision": "accepted",
+    "template": "software",
+    "parameters": null
+  },
+  {
+    "id": 7,
+    "method": "existing_curvature_sulc_profile",
+    "decision": "accepted",
+    "template": "provenance",
+    "parameters": null
+  },
+  {
+    "id": 8,
+    "method": "fsl_vbm",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null
+  },
+  {
+    "id": 9,
+    "method": "fsl_vbm",
+    "decision": "accepted",
+    "template": "design_variable",
+    "parameters": null
+  },
+  {
+    "id": 10,
+    "method": "fsl_vbm",
+    "decision": "accepted",
+    "template": "attr_equal",
+    "parameters": null
+  },
+  {
+    "id": 11,
+    "method": "fsl_vbm",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null
+  },
+  {
+    "id": 12,
+    "method": "fsl_vbm",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null
+  },
+  {
+    "id": 13,
+    "method": "fsl_vbm",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null
+  },
+  {
+    "id": 14,
+    "method": "fsl_vbm",
+    "decision": "accepted",
+    "template": "scale_check",
+    "parameters": null
+  },
+  {
+    "id": 15,
+    "method": "fsl_vbm",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null
+  },
+  {
+    "id": 16,
+    "method": "fsl_vbm",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null
+  },
+  {
+    "id": 17,
+    "method": "fsl_vbm",
+    "decision": "accepted",
+    "template": "provenance",
+    "parameters": null
+  },
+  {
+    "id": 18,
+    "method": "global_surface_folding",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null
+  },
+  {
+    "id": 19,
+    "method": "global_surface_folding",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null
+  },
+  {
+    "id": 20,
+    "method": "global_surface_folding",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null
+  },
+  {
+    "id": 21,
+    "method": "global_surface_folding",
+    "decision": "accepted",
+    "template": "plausibility",
+    "parameters": null
+  },
+  {
+    "id": 22,
+    "method": "global_surface_folding",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null
+  },
+  {
+    "id": 23,
+    "method": "global_surface_folding",
+    "decision": "accepted",
+    "template": "scale_check",
+    "parameters": null
+  },
+  {
+    "id": 24,
+    "method": "global_surface_folding",
+    "decision": "accepted",
+    "template": "provenance",
+    "parameters": null
+  },
+  {
+    "id": 25,
+    "method": "global_surface_folding",
+    "decision": "accepted",
+    "template": "plausibility",
+    "parameters": null
+  },
+  {
+    "id": 26,
+    "method": "global_surface_folding",
+    "decision": "accepted",
+    "template": "provenance",
+    "parameters": null
+  },
+  {
+    "id": 27,
+    "method": "global_surface_folding",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null
+  },
+  {
+    "id": 28,
+    "method": "global_surface_folding",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null
+  },
+  {
+    "id": 29,
+    "method": "global_surface_folding",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null
+  },
+  {
+    "id": 30,
+    "method": "global_surface_folding",
+    "decision": "accepted",
+    "template": "scale_check",
+    "parameters": null
+  },
+  {
+    "id": 31,
+    "method": "global_surface_folding",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null
+  },
+  {
+    "id": 32,
+    "method": "global_surface_folding",
+    "decision": "accepted",
+    "template": "scale_check",
+    "parameters": null
+  },
+  {
+    "id": 33,
+    "method": "hcp_structural_pipeline",
+    "decision": "accepted",
+    "template": "provenance",
+    "parameters": null
+  },
+  {
+    "id": 34,
+    "method": "hcp_structural_pipeline",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null
+  },
+  {
+    "id": 35,
+    "method": "hcp_structural_pipeline",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null
+  },
+  {
+    "id": 36,
+    "method": "local_gyrification",
+    "decision": "accepted",
+    "template": "provenance",
+    "parameters": null
+  },
+  {
+    "id": 37,
+    "method": "local_gyrification",
+    "decision": "accepted",
+    "template": "attr_equal",
+    "parameters": null
+  },
+  {
+    "id": 38,
+    "method": "local_gyrification",
+    "decision": "accepted",
+    "template": "software",
+    "parameters": null
+  },
+  {
+    "id": 39,
+    "method": "local_gyrification",
+    "decision": "accepted",
+    "template": "provenance",
+    "parameters": null
+  },
+  {
+    "id": 40,
+    "method": "local_gyrification",
+    "decision": "accepted",
+    "template": "software",
+    "parameters": null
+  },
+  {
+    "id": 41,
+    "method": "local_gyrification",
+    "decision": "accepted",
+    "template": "software",
+    "parameters": null
+  },
+  {
+    "id": 42,
+    "method": "local_gyrification",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null
+  },
+  {
+    "id": 43,
+    "method": "local_gyrification",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null
+  },
+  {
+    "id": 44,
+    "method": "macaque_civet",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": null
+  },
+  {
+    "id": 45,
+    "method": "macaque_civet",
+    "decision": "accepted",
+    "template": "cardinality",
+    "parameters": null
+  },
+  {
+    "id": 46,
+    "method": "macaque_civet",
+    "decision": "accepted",
+    "template": "scale_check",
+    "parameters": null
+  },
+  {
+    "id": 47,
+    "method": "macaque_civet",
+    "decision": "accepted",
+    "template": "scale_check",
+    "parameters": null
+  },
+  {
+    "id": 48,
+    "method": "macaque_civet",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null
+  },
+  {
+    "id": 49,
+    "method": "macaque_civet",
+    "decision": "accepted",
+    "template": "cardinality",
+    "parameters": null
+  },
+  {
+    "id": 50,
+    "method": "macaque_civet",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null
+  },
+  {
+    "id": 51,
+    "method": "macaque_civet",
+    "decision": "accepted",
+    "template": "cardinality",
+    "parameters": null
+  },
+  {
+    "id": 52,
+    "method": "macaque_civet",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null
+  },
+  {
+    "id": 53,
+    "method": "macaque_civet",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null
+  },
+  {
+    "id": 54,
+    "method": "macaque_civet",
+    "decision": "accepted",
+    "template": "software",
+    "parameters": null
+  },
+  {
+    "id": 55,
+    "method": "macaque_civet",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null
+  },
+  {
+    "id": 56,
+    "method": "nhp_macapype",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null
+  },
+  {
+    "id": 57,
+    "method": "nhp_macapype",
+    "decision": "accepted",
+    "template": "plausibility",
+    "parameters": null
+  },
+  {
+    "id": 58,
+    "method": "nhp_macapype",
+    "decision": "accepted",
+    "template": "plausibility",
+    "parameters": null
+  },
+  {
+    "id": 59,
+    "method": "nhp_macapype",
+    "decision": "accepted",
+    "template": "provenance",
+    "parameters": null
+  },
+  {
+    "id": 60,
+    "method": "nhp_macapype",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null
+  },
+  {
+    "id": 61,
+    "method": "nhp_macapype",
+    "decision": "accepted",
+    "template": "software",
+    "parameters": null
+  },
+  {
+    "id": 62,
+    "method": "nhp_macapype",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null
+  },
+  {
+    "id": 63,
+    "method": "nhp_macapype",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null
+  },
+  {
+    "id": 64,
+    "method": "nhp_macapype",
+    "decision": "accepted",
+    "template": "provenance",
+    "parameters": null
+  },
+  {
+    "id": 65,
+    "method": "nhp_macapype",
+    "decision": "accepted",
+    "template": "scale_check",
+    "parameters": null
+  },
+  {
+    "id": 66,
+    "method": "nhp_macapype",
+    "decision": "accepted",
+    "template": "scale_check",
+    "parameters": null
+  },
+  {
+    "id": 67,
+    "method": "nhp_macapype",
+    "decision": "accepted",
+    "template": "scale_check",
+    "parameters": null
+  },
+  {
+    "id": 68,
+    "method": "nhp_macapype",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null
+  },
+  {
+    "id": 69,
+    "method": "nhp_macapype",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null
+  },
+  {
+    "id": 70,
+    "method": "samseg_segmentation",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null
+  },
+  {
+    "id": 71,
+    "method": "samseg_segmentation",
+    "decision": "accepted",
+    "template": "scale_check",
+    "parameters": null
+  },
+  {
+    "id": 72,
+    "method": "samseg_segmentation",
+    "decision": "accepted",
+    "template": "provenance",
+    "parameters": null
+  },
+  {
+    "id": 73,
+    "method": "samseg_segmentation",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": null
+  },
+  {
+    "id": 74,
+    "method": "samseg_segmentation",
+    "decision": "accepted",
+    "template": "software",
+    "parameters": null
+  },
+  {
+    "id": 75,
+    "method": "samseg_segmentation",
+    "decision": "accepted",
+    "template": "scale_check",
+    "parameters": null
+  },
+  {
+    "id": 76,
+    "method": "samseg_segmentation",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null
+  },
+  {
+    "id": 77,
+    "method": "samseg_segmentation",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null
+  },
+  {
+    "id": 78,
+    "method": "samseg_segmentation",
+    "decision": "accepted",
+    "template": "scale_check",
+    "parameters": null
+  },
+  {
+    "id": 79,
+    "method": "samseg_segmentation",
+    "decision": "accepted",
+    "template": "attr_equal",
+    "parameters": null
+  },
+  {
+    "id": 80,
+    "method": "samseg_segmentation",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null
+  },
+  {
+    "id": 81,
+    "method": "samseg_segmentation",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null
+  },
+  {
+    "id": 82,
+    "method": "samseg_segmentation",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null
+  },
+  {
+    "id": 83,
+    "method": "samseg_segmentation",
+    "decision": "accepted",
+    "template": "asymmetry_flip",
+    "parameters": null
+  },
+  {
+    "id": 84,
+    "method": "surface_annotation_roi",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": null
+  },
+  {
+    "id": 85,
+    "method": "surface_annotation_roi",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": null
+  },
+  {
+    "id": 86,
+    "method": "surface_annotation_roi",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null
+  },
+  {
+    "id": 87,
+    "method": "surface_annotation_roi",
+    "decision": "accepted",
+    "template": "label_policy",
+    "parameters": null
+  },
+  {
+    "id": 88,
+    "method": "surface_mesh_area",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null
+  },
+  {
+    "id": 89,
+    "method": "surface_mesh_area",
+    "decision": "accepted",
+    "template": "attr_equal",
+    "parameters": null
+  },
+  {
+    "id": 90,
+    "method": "surface_mesh_area",
+    "decision": "accepted",
+    "template": "attr_equal",
+    "parameters": null
+  },
+  {
+    "id": 91,
+    "method": "surface_mesh_area",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null
+  },
+  {
+    "id": 92,
+    "method": "surface_mesh_area",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null
+  },
+  {
+    "id": 93,
+    "method": "surface_mesh_area",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null
+  },
+  {
+    "id": 94,
+    "method": "surface_mesh_area",
+    "decision": "accepted",
+    "template": "plausibility",
+    "parameters": null
+  },
+  {
+    "id": 95,
+    "method": "surface_mesh_area",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null
+  },
+  {
+    "id": 96,
+    "method": "surface_mesh_area",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null
+  },
+  {
+    "id": 97,
+    "method": "surface_mesh_area",
+    "decision": "accepted",
+    "template": "plausibility",
+    "parameters": null
+  },
+  {
+    "id": 98,
+    "method": "surface_mesh_area",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null
+  },
+  {
+    "id": 99,
+    "method": "surface_reconstruction_qc",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null
+  },
+  {
+    "id": 100,
+    "method": "surface_reconstruction_qc",
+    "decision": "accepted",
+    "template": "provenance",
+    "parameters": null
+  },
+  {
+    "id": 101,
+    "method": "surface_reconstruction_qc",
+    "decision": "accepted",
+    "template": "provenance",
+    "parameters": null
+  },
+  {
+    "id": 102,
+    "method": "surface_reconstruction_qc",
+    "decision": "accepted",
+    "template": "attr_equal",
+    "parameters": null
+  },
+  {
+    "id": 103,
+    "method": "surface_reconstruction_qc",
+    "decision": "accepted",
+    "template": "provenance",
+    "parameters": null
+  },
+  {
+    "id": 104,
+    "method": "surface_reconstruction_qc",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null
+  },
+  {
+    "id": 105,
+    "method": "surface_reconstruction_qc",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null
+  },
+  {
+    "id": 106,
+    "method": "surface_reconstruction_qc",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null
+  },
+  {
+    "id": 107,
+    "method": "surface_reconstruction_qc",
+    "decision": "accepted",
+    "template": "provenance",
+    "parameters": null
+  },
+  {
+    "id": 108,
+    "method": "surface_reconstruction_qc",
+    "decision": "accepted",
+    "template": "provenance",
+    "parameters": null
+  }
+]

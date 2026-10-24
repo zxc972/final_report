@@ -1,0 +1,32 @@
+{
+  "status": "ready_for_Claude_not_transmitted_by_a_Claude_tool",
+  "files": {
+    "annotation_schema.json": "dab144fe4504202275524181e46d85d7c4d79a8325ed8d03ef0bc51a694bba54",
+    "annotation_sheet.csv": "b4e11712a59b1ee9560a51c839cb178e8ea5a3cd606fc040fd918c575eec08bd",
+    "README.md": "80474f5ba4896c22f133db2b455bc4475440eb99ed824ae1f81bf58a519093f1",
+    "source_ambiguities.json": "e061acf403809ba5eb0ce649869e9286834fd0d86fa9ab229a16a5f0b3b11792",
+    "source_provenance.json": "b9b5805a8195f7f7ddf8869a7a3c6bb8ebd82abb174b7d216d5377a1d680c66d",
+    "sources/ants_thickness_outputs.txt": "73c52afc4087a016c0dc8cbe136f327eb65a9c62abf29b2eb8a4f3338445206a",
+    "sources/ants_thickness_script.txt": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c",
+    "sources/fs_anatomical_stats.txt": "cc9edc6219d930ec2425584d2ccb6e3bb7f6cdb11465d977d64b5f2fdac9e4f7",
+    "sources/fs_ca_label.txt": "adec54a1302a3d1d07f108d0f7a11a17359381574733836fc8161e24af1dff5d",
+    "sources/fs_preproc.txt": "72e410673e44ceb50254356910245bbd9bbbbe5c9fc75f97513419a84e06f4cb",
+    "sources/fs_segstats.txt": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c",
+    "sources/fs_surf2surf.txt": "02c4e1aef707ab0874c3277e093e442f6a7f99fc5b6ebdfc29491aa4c2f0c6c5",
+    "sources/fsl_first.txt": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958",
+    "sources/wb_metric_resample.txt": "4be39435118cef7bb22f14f058f4b215a5af9d7e5fef0c1e6a5ebcd0d0b44656",
+    "sources/wb_surface_resample.txt": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea",
+    "statements_unlabelled.json": "3aaf455fe183f023dad340e4e46e09b560c9dc67ac14ed85a0f33088c22be7d4"
+  },
+  "n_statements": 83,
+  "fields": {
+    "inputs": 33,
+    "conditions": 24,
+    "checks": 11,
+    "exceptions": 15
+  },
+  "algorithm_predictions_included": false,
+  "gold_labels_included": false,
+  "algorithm_evaluation_calls": 0,
+  "source_scope_review_completed": true
+}

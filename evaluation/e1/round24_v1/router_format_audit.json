@@ -1,0 +1,128 @@
+[
+  {
+    "case": "R24_G1",
+    "seq": 1,
+    "parse_error": null,
+    "task_kind": "analysis_compute",
+    "route": "analysis",
+    "reason_ascii": true,
+    "reason_length": 84
+  },
+  {
+    "case": "R24_G2",
+    "seq": 25,
+    "parse_error": null,
+    "task_kind": "analysis_compute",
+    "route": "analysis",
+    "reason_ascii": true,
+    "reason_length": 85
+  },
+  {
+    "case": "E1_S1",
+    "seq": 48,
+    "parse_error": null,
+    "task_kind": "analysis_compute",
+    "route": "analysis",
+    "reason_ascii": true,
+    "reason_length": 101
+  },
+  {
+    "case": "E1_S2",
+    "seq": 67,
+    "parse_error": "Invalid router reason",
+    "task_kind": "analysis_compute",
+    "route": "analysis",
+    "reason_ascii": false,
+    "reason_length": 36
+  },
+  {
+    "case": "E1_S2",
+    "seq": 68,
+    "parse_error": "Invalid router reason",
+    "task_kind": "analysis_compute",
+    "route": "analysis",
+    "reason_ascii": false,
+    "reason_length": 35
+  },
+  {
+    "case": "E1_S3",
+    "seq": 69,
+    "parse_error": "Invalid router fields",
+    "task_kind": null,
+    "route": null,
+    "reason_ascii": null,
+    "reason_length": null
+  },
+  {
+    "case": "E1_S3",
+    "seq": 70,
+    "parse_error": "Invalid router reason",
+    "task_kind": "analysis_compute",
+    "route": "analysis",
+    "reason_ascii": false,
+    "reason_length": 41
+  },
+  {
+    "case": "E1_G1",
+    "seq": 71,
+    "parse_error": null,
+    "task_kind": "analysis_compute",
+    "route": "analysis",
+    "reason_ascii": true,
+    "reason_length": 106
+  },
+  {
+    "case": "E1_G2",
+    "seq": 92,
+    "parse_error": null,
+    "task_kind": "analysis_compute",
+    "route": "analysis",
+    "reason_ascii": true,
+    "reason_length": 91
+  },
+  {
+    "case": "E1_G3",
+    "seq": 119,
+    "parse_error": null,
+    "task_kind": "analysis_compute",
+    "route": "analysis",
+    "reason_ascii": true,
+    "reason_length": 82
+  },
+  {
+    "case": "E1_X1",
+    "seq": 126,
+    "parse_error": null,
+    "task_kind": "analysis_compute",
+    "route": "analysis",
+    "reason_ascii": true,
+    "reason_length": 76
+  },
+  {
+    "case": "E1_N1",
+    "seq": 150,
+    "parse_error": null,
+    "task_kind": "analysis_compute",
+    "route": "analysis",
+    "reason_ascii": true,
+    "reason_length": 89
+  },
+  {
+    "case": "E1_N2",
+    "seq": 158,
+    "parse_error": null,
+    "task_kind": "analysis_compute",
+    "route": "analysis",
+    "reason_ascii": true,
+    "reason_length": 105
+  },
+  {
+    "case": "E1_N3",
+    "seq": 164,
+    "parse_error": null,
+    "task_kind": "analysis_compute",
+    "route": "analysis",
+    "reason_ascii": true,
+    "reason_length": 63
+  }
+]

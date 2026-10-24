@@ -1,0 +1,190 @@
+{
+  "parameters_unchanged": {
+    "theta": 0.5,
+    "kappa": 0.8,
+    "pi": 0.8,
+    "tau": 0.2,
+    "thetas": [
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8
+    ]
+  },
+  "c1_c2_status": "skipped_no_DKT_annotation",
+  "stability": {
+    "status": "not_assessable",
+    "reason": "Only fsaverage exists in the supplied FreeSurfer subjects directory; fsaverage6/fsaverage5/bert are absent"
+  },
+  "c3_summary": [
+    {
+      "condition": "C3_DK_to_Destrieux",
+      "method": "overlap_weighted",
+      "mean_dice": 0.813008155859463,
+      "min_dice": 0.6330225607445739,
+      "assigned": 146,
+      "labels_total": 148,
+      "official_accuracy": null
+    },
+    {
+      "condition": "C3_DK_to_Destrieux",
+      "method": "overlap_unweighted",
+      "mean_dice": 0.8125326247557054,
+      "min_dice": 0.6330225607445739,
+      "assigned": 144,
+      "labels_total": 148,
+      "official_accuracy": null
+    },
+    {
+      "condition": "C3_DK_to_Destrieux",
+      "method": "name_exact",
+      "mean_dice": 0.0,
+      "min_dice": 0.0,
+      "assigned": 0,
+      "labels_total": 148,
+      "official_accuracy": null
+    },
+    {
+      "condition": "C3_DK_to_Destrieux",
+      "method": "keyword",
+      "mean_dice": 0.67444832935799,
+      "min_dice": 0.5097410018596209,
+      "assigned": 104,
+      "labels_total": 148,
+      "official_accuracy": null
+    }
+  ],
+  "destrieux_rows": 148,
+  "source_program_sha256": "cddfa0ed0183704d3a2a32f39528b1b7a3d68e6e45c3a71937124a2580786e5f",
+  "algorithm_sha256": "bfc4f28059181e25d500977e97367b303a8e8249000b1198370ce607e053b264",
+  "skipped": [
+    {
+      "subject": "fsaverage",
+      "hemi": "lh",
+      "reason": "DKT annotation missing"
+    },
+    {
+      "subject": "fsaverage",
+      "hemi": "rh",
+      "reason": "DKT annotation missing"
+    },
+    {
+      "subject": "fsaverage6",
+      "hemi": "lh",
+      "reason": "surface or DK annotation missing"
+    },
+    {
+      "subject": "fsaverage6",
+      "hemi": "rh",
+      "reason": "surface or DK annotation missing"
+    },
+    {
+      "subject": "fsaverage5",
+      "hemi": "lh",
+      "reason": "surface or DK annotation missing"
+    },
+    {
+      "subject": "fsaverage5",
+      "hemi": "rh",
+      "reason": "surface or DK annotation missing"
+    },
+    {
+      "subject": "bert",
+      "hemi": "lh",
+      "reason": "surface or DK annotation missing"
+    },
+    {
+      "subject": "bert",
+      "hemi": "rh",
+      "reason": "surface or DK annotation missing"
+    }
+  ],
+  "theta_sensitivity": [
+    {
+      "hemi": "lh",
+      "rows": [
+        {
+          "theta": 0.3,
+          "unassigned": 0,
+          "mean_dice": 0.8163154908160536,
+          "resolved": 3
+        },
+        {
+          "theta": 0.4,
+          "unassigned": 1,
+          "mean_dice": 0.8166759923897636,
+          "resolved": 2
+        },
+        {
+          "theta": 0.5,
+          "unassigned": 2,
+          "mean_dice": 0.8165099374261388,
+          "resolved": 1
+        },
+        {
+          "theta": 0.6,
+          "unassigned": 10,
+          "mean_dice": 0.7831545277903228,
+          "resolved": 0
+        },
+        {
+          "theta": 0.7,
+          "unassigned": 14,
+          "mean_dice": 0.7560231582954825,
+          "resolved": 0
+        },
+        {
+          "theta": 0.8,
+          "unassigned": 22,
+          "mean_dice": 0.7200755244388638,
+          "resolved": 0
+        }
+      ]
+    },
+    {
+      "hemi": "rh",
+      "rows": [
+        {
+          "theta": 0.3,
+          "unassigned": 0,
+          "mean_dice": 0.8095063742927873,
+          "resolved": 3
+        },
+        {
+          "theta": 0.4,
+          "unassigned": 0,
+          "mean_dice": 0.8095063742927873,
+          "resolved": 3
+        },
+        {
+          "theta": 0.5,
+          "unassigned": 0,
+          "mean_dice": 0.8095063742927873,
+          "resolved": 3
+        },
+        {
+          "theta": 0.6,
+          "unassigned": 9,
+          "mean_dice": 0.7644238708491619,
+          "resolved": 0
+        },
+        {
+          "theta": 0.7,
+          "unassigned": 13,
+          "mean_dice": 0.7503299333127242,
+          "resolved": 0
+        },
+        {
+          "theta": 0.8,
+          "unassigned": 21,
+          "mean_dice": 0.7151883738390259,
+          "resolved": 0
+        }
+      ]
+    }
+  ],
+  "model_calls": 0,
+  "subjects_directory_writes": 0
+}

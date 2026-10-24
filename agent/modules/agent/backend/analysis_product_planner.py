@@ -23,8 +23,15 @@ PRODUCT_TYPES = {
     "t1_volume", "t2_volume", "brainmask", "wm_segmentation", "aseg_presurf",
     "template", "tissue_priors", "bids_t1", "bids_t2", "parameter_file",
     "gm_4d", "gm_mask", "design_matrix", "contrast", "recon_complete",
-    "coarse_graining_recipe",
+    "coarse_graining_recipe", "aseg_stats", "cortical_parc_stats",
 }
+
+
+class AnalysisDesign(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    effect: StrictStr = Field(min_length=1, max_length=128)
+    covariates: list[StrictStr] = Field(default_factory=list, max_length=16)
+    reference: StrictStr | None = Field(default=None, min_length=1, max_length=128)
 
 
 class AnalysisIntent(BaseModel):
@@ -37,7 +44,8 @@ class AnalysisIntent(BaseModel):
     species: StrictStr | None = None
     space: StrictStr | None = None
     method_id: StrictStr | None = None
-    subjects: list[StrictStr] | None = Field(default=None, max_length=32)
+    design: AnalysisDesign | None = None
+    subjects: list[StrictStr] | Literal["全部已登记被试", "all_registered"] | None = Field(default=None, max_length=128)
     required_inputs: list[StrictStr] | None = Field(default=None, max_length=16)
 
 
@@ -144,6 +152,10 @@ def validate_intent(raw):
         strings = field if isinstance(field, list) else [field]
         if any(isinstance(s, str) and (not s.strip() or len(s) > 500) for s in strings):
             return None, {"status": "error", "field_errors": [{"field": key, "message": "Use nonempty strings of at most 500 characters"}]}
+    if intent.design:
+        columns = [intent.design.effect, *intent.design.covariates]
+        if len(columns) != len(set(columns)) or any(not c.strip() or len(c)>128 for c in columns):
+            return None, {"status": "error", "field_errors": [{"field": "design.covariates", "message": "Use distinct nonempty design column names of at most 128 characters"}]}
     if intent.method_id and intent.method_id.startswith("self:"):
         if not intent.required_inputs or not set(intent.required_inputs) <= PRODUCT_TYPES:
             return None, {"status": "error", "field_errors": [{"field": "required_inputs", "message": "A self: method must list registered product types"}]}
@@ -153,7 +165,10 @@ def validate_intent(raw):
 def normal_measure(name):
     word = re.sub(r"[^a-z0-9]", "", name.lower())
     return {
-        "corticalthickness": "thickness", "curvature": "curv", "sulcaldepth": "sulc",
+        "corticalthickness": "thickness", "brainvolumemm3": "brainvolume",
+        "totalareamm2": "totalarea", "meanthicknessmm": "meanthickness",
+        "globalmetrics": "globalmorphometry", "convexhullratio": "gyrification",
+        "hullratio": "gyrification", "curvature": "curv", "sulcaldepth": "sulc",
         "localgyrificationindex": "lgi", "localgyrification": "lgi",
         "gyrificationindex": "gyrification", "surfacearea": "area",
     }.get(word, word)
@@ -169,10 +184,14 @@ def registered_roots(tools, intent):
         catalogue = json.loads(path.read_text())["roots"]
     entries = []
     for index, root in enumerate(tools.input_roots):
+        if index in {row["index"] for row in getattr(tools, "participants_tables", [])}:
+            continue
         matches = [row for row in catalogue if Path(row["path"]).resolve() == root]
         entry = matches[0] if matches else {"subject_id": root.name, "species_declared": None, "source": "approved root registration; species unavailable"}
         entries.append({**entry, "index": index, "root": root})
-    if intent.subjects:
+    if intent.subjects in ("全部已登记被试", "all_registered") or intent.subjects in (["全部已登记被试"], ["all_registered"]):
+        pass
+    elif intent.subjects:
         entries = [r for r in entries if r["subject_id"] in intent.subjects]
         if {r["subject_id"] for r in entries} != set(intent.subjects):
             raise ValueError("subjects must identify approved registered subjects")
@@ -195,12 +214,22 @@ def discover_paths(entries):
     paths = []
     for entry in entries:
         root, index = entry["root"], entry["index"]
-        for directory in ("surf", "label", "mri"):
+        for directory in ("surf", "label", "mri", "stats"):
             folder = root / directory
-            if not folder.is_dir() or folder.is_symlink():
+            if not folder.is_dir():
+                continue
+            from .analysis_input_links import resolve_input
+            try:
+                resolve_input(folder, root)
+            except (ValueError, OSError, RuntimeError):
                 continue
             for path in sorted(folder.iterdir()):
-                if path.is_symlink() or not path.is_file():
+                if not path.is_file():
+                    continue
+                from .analysis_input_links import resolve_input
+                try:
+                    resolve_input(path, root)
+                except (ValueError, OSError, RuntimeError):
                     continue
                 if directory == "surf" and not re.fullmatch(r"[lr]h\.(white|pial|sphere\.reg|thickness|curv|sulc|area|volume|lgi)", path.name):
                     continue
@@ -208,13 +237,15 @@ def discover_paths(entries):
                     continue
                 if directory == "mri" and path.name not in {"orig.mgz", "T1.mgz", "brainmask.mgz", "wm.mgz", "aseg.presurf.mgz"}:
                     continue
+                if directory == "stats" and not (path.name == "aseg.stats" or re.fullmatch(r"[lr]h\.aparc.*\.stats", path.name)):
+                    continue
                 paths.append(f"/inputs/{index}/" + path.relative_to(root).as_posix())
         if not (root / "surf").exists():
             for path in sorted(root.iterdir()):
                 if path.is_file() and not path.is_symlink() and path.name.endswith((".nii", ".nii.gz", ".mgz", ".tsv")):
                     paths.append(f"/inputs/{index}/" + path.name)
-    if not 1 <= len(paths) <= 128:
-        raise ValueError("Approved product inventory requires 1..128 files; no silent truncation")
+    if not 1 <= len(paths) <= 4096:
+        raise ValueError("Approved product inventory requires 1..4096 files; no silent truncation")
     return paths
 
 
@@ -223,9 +254,9 @@ def ensure_profile(tools, paths):
     stamps = []
     for path in paths:
         target = tools.resolve(path)
-        stamps.append([path, *file_hash(target)])
+        stamps.append([path, str(target), *file_hash(target)])
         scripts = target.parent.parent / "scripts"
-        for name in ("recon-all.done", "recon-all.log"):
+        for name in ("recon-all.done", "recon-all.log", "recon-surf.done", "recon-surf.log"):
             adjacent = scripts / name
             if adjacent.is_file() and not adjacent.is_symlink():
                 stamps.append([str(adjacent), *file_hash(adjacent)])
@@ -245,6 +276,8 @@ def ensure_profile(tools, paths):
 def product_types(item):
     kind, path = value(item["format"]), Path(value(item["path"]))
     found = set()
+    if kind in {"tsv", "csv"}:
+        found.add("subject_table")
     if kind == "surface":
         found.add("surface")
         if path.name.endswith(".pial"):
@@ -271,6 +304,11 @@ def product_types(item):
             found.add("wm_segmentation")
         if path.name == "aseg.presurf.mgz":
             found.add("aseg_presurf")
+    if kind == "stats":
+        if path.name == "aseg.stats":
+            found.add("aseg_stats")
+        elif re.fullmatch(r"[lr]h\.aparc.*\.stats", path.name):
+            found.add("cortical_parc_stats")
     if value(item.get("subject")):
         found.add("subject_table")
     recon = value(item.get("recon"))
@@ -299,57 +337,84 @@ def resolve_regions(names, keys, counts, regions, domain):
     return selected, sources, unmatched
 
 
-def _candidate(tools, spec, method, entries, files, atlas_name, intent, domain, profile):
-    chosen, bindings, labels, mapping = [], [], {}, []
-    missing = set()
-    missing_scopes = {}
-    measures = [normal_measure(m) for m in intent.measures]
+def _candidate(tools, spec, method, entries, files, atlas_name, intent, domain, profile, assignment):
+    if method["id"] == "method:v15:global_morphometry":
+        from .analysis_global_method import candidate
+        binding = {"aseg_stats": None, "mask_volume": None, "hemi_stats": {}, "pial": {}}
+        subject = entries[0]["subject_id"]
+        for need, key in [("aseg_stats", "aseg_stats"), ("brainmask", "mask_volume")]:
+            binding[key] = assignment.get(subject + "/global/" + need)
+        for hemi in ("lh", "rh"):
+            roles = [("cortical_parc_stats", "hemi_stats"), ("pial_surface", "pial")]
+            if spec.get("species_policy") == "macaque_direct_native":
+                roles = [
+                    ("white_surface", "white"),
+                    ("surface_metric:thickness", "thickness"),
+                    ("cortex_label", "cortex_labels"),
+                    ("pial_surface", "pial"),
+                ]
+            for need, key in roles:
+                path = assignment.get(subject + "/" + hemi + "/" + need)
+                if path:
+                    binding.setdefault(key, {})[hemi] = path
+        return candidate(tools, spec, method, entries, files, intent, profile, binding=binding)
+    by_path = {value(f["path"]): f for f in files}
+    chosen = [by_path[path] for path in dict.fromkeys(assignment.values()) if path in by_path]
+    bindings, labels, mapping = [], {}, []
+    missing, missing_scopes = set(), {}
     for entry in entries:
         prefix = f"/inputs/{entry['index']}/"
-        group = [f for f in files if value(f["path"]).startswith(prefix)]
         for hemi in ("lh", "rh"):
-            members = [f for f in group if Path(value(f["path"])).name.startswith(hemi + ".")]
-            by_type = {kind: [f for f in members if kind in product_types(f)] for kind in PRODUCT_TYPES}
-            for need in spec["required_products"]:
-                possible = by_type[need] if need in {"surface", "pial_surface", "white_surface", "surface_metric", "annotation", "cortex_label", "registration_surface"} else [f for f in group if need in product_types(f)]
-                if need == "surface_metric":
-                    possible = [f for f in possible if Path(value(f["path"])).name.split(".")[-1] in measures]
-                if need == "annotation":
-                    possible = [f for f in possible if Path(value(f["path"])).name == f"{hemi}.{atlas_name}.annot"]
-                if need == "surface":
-                    possible.sort(key=lambda f: (not value(f["path"]).endswith(".white"), value(f["path"])))
-                if not possible:
-                    missing.add(need)
-                    missing_scopes.setdefault(entry["subject_id"] + "/" + hemi, []).append(need)
-                else:
-                    chosen.extend(possible if need == "surface_metric" else possible[:1])
-            if spec["needs_parcellation"] and by_type["annotation"]:
-                ann = next((f for f in by_type["annotation"] if value(f["path"]).endswith(f".{atlas_name}.annot")), None)
-                surf = next((f for f in chosen if value(f["path"]).startswith(prefix) and Path(value(f["path"])).name == hemi + ".white"), None)
-                reg = by_type["registration_surface"][:1]
+            scope = entry["subject_id"] + "/" + hemi + "/"
+            if spec["needs_parcellation"]:
+                ann = by_path.get(assignment.get(scope + "annotation"))
+                surf = by_path.get(assignment.get(scope + "surface"))
+                reg_path = assignment.get(scope + "registration_surface")
+                reg = [by_path[reg_path]] if reg_path in by_path else []
                 if ann:
                     detail = value(ann["label"])
                     keys = value(detail.get("label_keys")) or list(range(len(value(detail["label_names"]))))
                     counts = value(detail.get("cortex_retained_label_counts")) or value(detail.get("label_vertex_counts")) or {}
                     from .analysis_lobar_mapping import resolve_lobes
-                    requested, lobe_evidence, lobe_error = resolve_lobes(entry, atlas_name, intent.regions, value(detail["label_names"]), tools=tools)
+                    requested, lobe_evidence, lobe_error = resolve_lobes(entry, atlas_name, intent.regions, value(detail["label_names"]), tools=tools, hemisphere=hemi, annotation_path=value(ann["path"]))
                     selected, evidence, unresolved = resolve_regions(value(detail["label_names"]), keys, counts, requested, domain)
                     evidence.extend(lobe_evidence)
+                    for observation in lobe_evidence:
+                        if observation.get("kind") == "region_overlap":
+                            for source in observation["provenance"]["inputs"].values():
+                                if source["path"] not in by_path:
+                                    lobe_error = "Missing profiled region overlap product: " + source["path"]
+                                else:
+                                    chosen.append(by_path[source["path"]])
                     if lobe_error:
                         missing.add("parcellation_mapping:" + lobe_error)
                         selected = []
                     if unresolved or not selected:
                         missing.add("resolved_regions:" + ",".join(unresolved))
-                    labels[entry["subject_id"] + "/" + hemi] = {"annotation": value(ann["path"]), "labels": selected, "exclude_keys": [-1], "exclude_names": ["unknown", "medialwall", "corpuscallosum"], "cortex_label": prefix + "label/" + hemi + ".cortex.label"}
+                    labels[entry["subject_id"] + "/" + hemi] = {"annotation": value(ann["path"]), "labels": selected, "exclude_keys": [-1], "exclude_names": ["unknown", "medialwall", "corpuscallosum"], "cortex_label": assignment.get(scope + "cortex_label")}
                     mapping.extend(evidence)
                     if surf and reg:
-                        bindings.append({"label": value(ann["path"]), "surface": value(surf["path"]), "mesh_origin": "same approved subject native derivative bundle; anatomical provenance unverified", "space": "native_stored", "registration_ref": value(reg[0]["path"])})
+                        bindings.append({"label": value(ann["path"]), "surface": value(surf["path"]), "mesh_origin": "same approved subject native derivative bundle; anatomical provenance unverified", "space": intent.space or "native_stored", "registration_ref": value(reg[0]["path"])})
+                        for observation in lobe_evidence:
+                            if observation.get("kind") == "region_overlap":
+                                inputs = observation["provenance"]["inputs"]
+                                reference_path = inputs["reference_annotation"]["path"]
+                                if not any(row["label"] == reference_path for row in bindings):
+                                    bindings.append({"label": reference_path, "surface": inputs["white_surface"]["path"], "mesh_origin": "DK reference in the same approved subject native bundle; anatomical correspondence unverified", "space": intent.space or "native_stored", "registration_ref": value(reg[0]["path"])})
     chosen = list({value(f["path"]): f for f in chosen}.values())
-    atlas = {"name": atlas_name or "not applicable", "version": "input annotation fingerprint; acquisition release unknown" if atlas_name else None, "space": "native_stored", "hemisphere_rule": "separate lh/rh; preserve native vertex IDs", "applicable": bool(atlas_name), "reason": None if atlas_name else "Method operates on whole supplied surfaces without a parcellation", "exclude_labels": [-1, "unknown", "medialwall", "corpuscallosum"], "mesh_bindings": bindings}
+    atlas = {"name": atlas_name or "not applicable", "version": "input annotation fingerprint; acquisition release unknown" if atlas_name else None, "space": intent.space or "native_stored", "hemisphere_rule": "separate lh/rh; preserve native vertex IDs", "applicable": bool(atlas_name), "reason": None if atlas_name else "Method operates on whole supplied surfaces without a parcellation", "exclude_labels": [-1, "unknown", "medialwall", "corpuscallosum"], "mesh_bindings": bindings}
     notice = ["Species is user/registration-declared only; not independently verified", "Stored coordinates/values; no verified acquisition-scale or expert anatomical-QC claim"]
     if method["id"].endswith("global_convex_hull_gyrification"):
         notice.append("Global full-pial-area / same-surface 3D convex-hull area is a descriptive alternative, not local gyrification index (lGI)")
     context = {"question": "Describe requested stored products with " + method["name"], "data": {"files": [value(f["path"]) for f in chosen], "subjects": [e["subject_id"] for e in entries], "profile_sha256": profile["sha256"], "profile_ref": f"data_profile.v{profile['version']:06d}.json", "species_declared": intent.species, "species_verified": None}, "atlas": atlas, "method": {"method_id": method["id"], "name": method["name"], "reason": "Candidate for declared measures and comparison; selected by Agent at commitment"}, "outputs": ["summary.csv", "summary.json", "report.md"], "code_path": "/work/analysis.py", "analysis_scope": {"inference": intent.comparison in {"group", "correlation"}, "scale_policy": "dimensionless_per_input" if method["id"].endswith("global_convex_hull_gyrification") else "within_input_only", "comparison": intent.comparison, "labels": labels, "notices": notice}}
+    overlaps = [row for row in mapping if row.get("kind") == "region_overlap"]
+    if overlaps:
+        from .analysis_region_overlap import disclosure
+        context["analysis_scope"]["region_overlap_evidence"] = overlaps
+        context["data"]["species_declared"] = "human"
+        notice.extend(disclosure(row) for row in overlaps)
+    if method["id"] == "method:v14:group_regional_glm":
+        context["outputs"] = ["regional_values.csv", "group_results.csv", "summary.json", "report.md"]
     if atlas_name:
         from .analysis_atlas_identity import identify
         identity = identify(atlas_name)
@@ -376,15 +441,51 @@ def method_evidence_view(graph, method):
     return view
 
 
+def caller_design_consistency(tools, intent):
+    # Mandatory output contracts are caller-owned. They cannot be silently
+    # weakened by an actor's describe intent. No effect or covariate is guessed.
+    group_output = 'group_results.csv' in set(getattr(tools, 'required_artifacts', []) or [])
+    requested = group_output or intent.design is not None
+    if requested and (intent.comparison not in {'group', 'correlation'} or intent.design is None):
+        return {'status': 'error', 'reason': 'Caller group contract and analysis intent disagree',
+                'caller_required_tables': sorted(set(getattr(tools, 'required_artifacts', []) or [])),
+                'field_errors': [{'field': 'comparison', 'allowed_values': ['group', 'correlation']},
+                                 {'field': 'design', 'message': 'State the requested effect and covariates explicitly; do not infer a different task'}],
+                'next': 'Preserve the requested design and call plan_analysis again. Unsupported methods remain selectable with an explicit mismatch reason; no method is selected automatically.'}
+    return None
+
+
+def requested_design_match(intent, method_id):
+    requested = bool(intent.design) or intent.comparison in {'group', 'correlation'}
+    supported = not requested or method_id == 'method:v14:group_regional_glm'
+    return {'requested': requested, 'supported': supported,
+            'design': intent.design.model_dump() if intent.design else None,
+            'reason': None if supported else '不满足请求的组设计；该方法不执行所请求的 effect/covariates 模型',
+            'commit_requires_mismatch_reason': not supported}
+
+
 def plan_analysis(tools, raw):
     intent, error = validate_intent(raw)
     if error:
         return error
+    mismatch = caller_design_consistency(tools, intent)
+    if mismatch:
+        return mismatch
     entries = registered_roots(tools, intent)
-    paths = discover_paths(entries)
+    from .analysis_participants import table_paths
+    paths = discover_paths(entries) + table_paths(tools, entries)
     profile, cached = ensure_profile(tools, paths)
+    design_scope = None
+    if intent.comparison in {"group", "correlation"}:
+        from .analysis_group_design import bind_design
+        design_scope, design_error = bind_design(tools, intent, entries, profile["record"]["files"])
+        if design_error:
+            tools.control_store.save("planning_result", design_error)
+            return design_error
     requirements, req_sha = load_knowledge("method_requirements", tools)
-    dependencies, dep_sha = load_knowledge("pipeline_dependencies", tools)
+    workflow, dep_sha = load_knowledge("workflow_steps", tools)
+    type_document, type_sha = load_knowledge("product_types", tools)
+    templates, template_sha = load_knowledge("condition_templates", tools)
     graph = tools._method_graph()
     from .analysis_unified_runtime import repository_for
     repository = repository_for(tools)
@@ -396,6 +497,11 @@ def plan_analysis(tools, raw):
     registry = [{**{key: val for key, val in entry.items() if key != "root"}, "path": str(entry["root"]), "input_index": entry["index"]} for entry in entries]
     import_profile(repository, profile["record"], registry)
     files = [f for f in profile["record"]["files"] if not f.get("read_error")]
+    from .analysis_matching_adapter import inventory, match, missing_targets, planning_targets
+    from .analysis_completion_adapter import completion, observed_software, record_check
+    from .analysis_csp_matching import domains
+    products = inventory(profile["record"], entries)
+    software_cache = {}
     requested_atlas = None
     resolution = None
     known_atlases = {Path(value(f["path"])).name[3:-6] for f in files
@@ -441,6 +547,8 @@ def plan_analysis(tools, raw):
         return result
     measures = {normal_measure(m) for m in intent.measures}
     specs = [s for s in requirements["methods"] if s["method_id"] != "self:*" and measures <= set(s["measures"]) and intent.comparison in s["comparisons"]]
+    if not (measures & {"globalmorphometry", "brainvolume", "etiv", "totalarea", "meanthickness"}):
+        specs = [s for s in specs if s["method_id"] != "method:v15:global_morphometry"]
     region_tokens = [intent.regions] if isinstance(intent.regions, str) else intent.regions
     if any(t.lower().strip() not in {"global", "whole cortex", "cortex", "both hemispheres"} for t in region_tokens):
         specs = [s for s in specs if not s["method_id"].endswith("existing_curvature_sulc_profile")]
@@ -449,9 +557,13 @@ def plan_analysis(tools, raw):
     if intent.method_id and intent.method_id.startswith("self:"):
         specs = [{"method_id": intent.method_id, "required_products": intent.required_inputs, "needs_parcellation": False, "execution_scope": "supplied_derivatives", "source": [{"type": "project_policy", "note": "Explicit self-written method; scientific applicability unverified"}]}]
     output = {"status": "ok", "candidates": [], "needs_preprocessing": [], "infeasible": [], "profile_cached": cached, "profile_ref": f"data_profile.v{profile['version']:06d}.json", "method_requirements_sha256": req_sha, "pipeline_dependencies_sha256": dep_sha, "domain_graph_sha256": domain_sha, "input_file_count": len(files)}
+    output["workflow_steps_sha256"] = dep_sha
     output["intent_resolution"] = resolution
     from .analysis_constraints import compile_constraints
     for spec in specs:
+        from .analysis_global_policy import specialize
+
+        spec = specialize(spec, entries)
         method = graph.read(spec["method_id"])["method"] if not spec["method_id"].startswith("self:") else {"id": spec["method_id"], "name": spec["method_id"], "conditions": [], "inputs": []}
         if intent.comparison == "cross_species" and spec["needs_parcellation"]:
             output["infeasible"].append({"method": method_evidence_view(graph, method),
@@ -463,62 +575,104 @@ def plan_analysis(tools, raw):
         if requested_atlas and spec["needs_parcellation"]:
             atlases = [name for name in atlases if name == requested_atlas]
         for atlas_name in atlases or ["unavailable"]:
-            context, missing, mapping, missing_scopes = _candidate(tools, spec, method, entries, files, atlas_name, intent, domain, profile)
-            if resolution:
-                context["analysis_scope"]["intent_resolution"] = resolution
-            from .analysis_operations import suggested_operations
-            operations = suggested_operations(context)
-            item = {"operations": operations, "method": method_evidence_view(graph, method), "atlas": context["atlas"], "space": intent.space or "native", "missing_products": missing}
-            if intent.space and intent.space not in {"native", "native_stored", "stored"}:
-                missing = sorted(set(missing) | set(spec["required_products"]))
-            constraints = compile_constraints(tools, method["id"], "group_inference" if intent.comparison in {"group", "correlation"} else "descriptive", context, product_contract=spec)
-            item["conditions"] = constraints["summary"]
-            item["blocked_constraints"] = [row for row in constraints["rows"] if row["verdict"] == "block"]
-            if item["blocked_constraints"]:
-                tools.control_store.save("planning_failure", {
-                    "constraints_sha256": constraints["constraints_sha256"],
-                    "plan_context": context,
-                    "method_id": method["id"],
-                    "reason": "Observed failed candidate prerequisites",
-                })
-            unrepairable = [row for row in item["blocked_constraints"]
-                            if row["constraint_id"] not in {"recon_complete", "mesh_label_match", "product_metric_mesh_identity"}]
-            if unrepairable or (item["blocked_constraints"] and not missing):
-                item["reason"] = "; ".join(row["constraint_id"] + ": " + str(row["tool_observed"].get("reason", "failed observed prerequisite")) for row in item["blocked_constraints"])
-                missing_commands = [c["command"] for row in item["blocked_constraints"] for c in row["tool_observed"].get("commands", []) if not c.get("executable")]
-                if missing_commands:
-                    item["reason"] = "Missing software: " + ", ".join("MATLAB" if c == "matlab" else c for c in missing_commands)
-                output["infeasible"].append(item)
-                continue
-            if any(part.startswith("parcellation_mapping:") for part in missing):
-                item["reason"] = "; ".join(part.split(":",1)[1] for part in missing if part.startswith("parcellation_mapping:"))
-                output["infeasible"].append(item)
-                continue
-            if missing or spec["execution_scope"] == "full_processing":
-                scopes = missing_scopes or {entry["subject_id"] + "/" + hemi: missing or ["complete_analysis_recipe"]
-                                           for entry in entries for hemi in ("lh", "rh")}
-                path = scoped_dependency_plan(entries, files, scopes, dependencies["steps"], intent.space or "native")
-                unresolved = [part.split(":",1)[1] for part in missing if part.startswith("resolved_regions:")]
-                item["reason"] = ("Unresolved region labels: " + "; ".join(unresolved)
-                                  + ". Use actual annotation label names or 'all regions'."
-                                  if unresolved else "Missing or unsupported product/space/complete method recipe")
-                if path:
-                    item["preprocessing_plan"] = path
-                    output["needs_preprocessing"].append(item)
-                else:
+            normalized = {**intent.model_dump(), "measures": [normal_measure(m) for m in intent.measures]}
+            matching = match(spec, entries, products, normalized, atlas_name, templates, type_document)
+            solutions = matching["solutions"]
+            if not solutions:
+                partial = {n: d[0]["id"] for n, d in domains(matching["problem"]["slots"], products, matching["problem"]["hierarchy"]).items() if d}
+                solutions = [{"assignment": partial}]
+            for solution in solutions:
+                context, missing, mapping, missing_scopes = _candidate(tools, spec, method, entries, files, atlas_name, intent, domain, profile, solution["assignment"])
+                targets = missing_targets(matching)
+                missing = sorted(set(missing) | {t["need"] for t in targets})
+                design_match = requested_design_match(intent, method["id"])
+                if not design_match["supported"]:
+                    context["analysis_scope"]["notices"].append(design_match["reason"])
+                if design_scope:
+                    context["analysis_scope"].update(copy.deepcopy(design_scope))
+                if resolution:
+                    context["analysis_scope"]["intent_resolution"] = resolution
+                from .analysis_operations import suggested_operations
+                operations = suggested_operations(context)
+                item = {"operations": operations, "method": method_evidence_view(graph, method), "atlas": context["atlas"], "space": intent.space or "native", "missing_products": missing}
+                item["matching_stats"] = matching["matching_stats"]
+                item["missing_requirements"] = targets
+                if matching["conflicts"]:
+                    item["reason"] = "CSP attr_equal constraints have no compatible assignment"
+                    item["matching_conflicts"] = matching["conflicts"]
                     output["infeasible"].append(item)
-                continue
-            candidate_id = "candidate_" + digest({"intent": intent.model_dump(), "plan": context, "requirements": req_sha})[:24]
-            record = {"candidate_id": candidate_id, "intent": intent.model_dump(), "plan": context, "product_contract": spec, "mapping_evidence": mapping, "profile_sha256": profile["sha256"], "method_requirements_sha256": req_sha, "pipeline_dependencies_sha256": dep_sha, "domain_graph_sha256": domain_sha, "condition_snapshot": constraints, "operations": operations}
-            tools.control_store.save(candidate_id, record)
-            summary = {"candidate_id": candidate_id, "method": item["method"], "atlas": {k: context["atlas"][k] for k in ["name", "version", "space", "applicable", "reason"]}, "space": "native_stored", "file_count": len(context["data"]["files"]), "subjects": context["data"]["subjects"], "label_counts": {key: len(group["labels"]) for key, group in context["analysis_scope"]["labels"].items()}, "conditions": constraints["summary"], "must_disclose": context["analysis_scope"]["notices"], "protected_ref": candidate_id, "mapping_source_count": len(mapping)}
-            summary["operations"] = operations
-            from .analysis_asymmetry_contract import applies as asymmetry_applies, definition as asymmetry_definition
-            if asymmetry_applies(context):
-                summary["asymmetry_contract"] = asymmetry_definition()
-            output["candidates"].append(summary)
+                    continue
+                constraints = (compile_constraints(tools, method["id"], "group_inference" if intent.comparison in {"group", "correlation"} else "descriptive", context, product_contract=spec)
+                               if context["data"]["files"] else {"summary": {"pass": 0, "warn": 0, "block": 0}, "rows": [], "status": "not_evaluated_missing_inputs"})
+                item["conditions"] = constraints["summary"]
+                item["blocked_constraints"] = [row for row in constraints["rows"] if row["verdict"] == "block"]
+                if item["blocked_constraints"]:
+                    tools.control_store.save("planning_failure", {
+                        "constraints_sha256": constraints["constraints_sha256"],
+                        "plan_context": context,
+                        "method_id": method["id"],
+                        "reason": "Observed failed candidate prerequisites",
+                    })
+                unrepairable = [row for row in item["blocked_constraints"]
+                                if row["constraint_id"] not in {"recon_complete", "mesh_label_match", "product_metric_mesh_identity"}]
+                if (unrepairable or item["blocked_constraints"]) and not targets and spec["execution_scope"] != "full_processing":
+                    item["reason"] = "; ".join(row["constraint_id"] + ": " + str(row["tool_observed"].get("reason", "failed observed prerequisite")) for row in item["blocked_constraints"])
+                    missing_commands = [c["command"] for row in item["blocked_constraints"] for c in row["tool_observed"].get("commands", []) if not c.get("executable")]
+                    if missing_commands:
+                        item["reason"] = "Missing software: " + ", ".join("MATLAB" if c == "matlab" else c for c in missing_commands)
+                    output["infeasible"].append(item)
+                    continue
+                if any(part.startswith("parcellation_mapping:") for part in missing):
+                    item["reason"] = "; ".join(part.split(":",1)[1] for part in missing if part.startswith("parcellation_mapping:"))
+                    output["infeasible"].append(item)
+                    continue
+                if missing or spec["execution_scope"] == "full_processing":
+                    targets = planning_targets(matching, spec, entries)
+                    if any(x.startswith("resolved_regions:") for x in missing):
+                        item["reason"] = "Unresolved region labels: " + "; ".join(missing)
+                        output["infeasible"].append(item)
+                        continue
+                    if method["id"] not in software_cache:
+                        software_cache[method["id"]] = observed_software(tools, workflow, method["id"])
+                    software, software_sha = software_cache[method["id"]]
+                    route = completion(targets, products, workflow, matching["problem"]["hierarchy"], software)
+                    record_check(tools, route, method["id"])
+                    item["software_observation_sha256"] = software_sha
+                    item["optimality_check"] = route["optimality_check"]
+                    item["missing_requirements"] = targets
+                    if route["feasible"]:
+                        item["reason"] = "Typed products require workflow completion"
+                        item["preprocessing_plan"] = route
+                        output["needs_preprocessing"].append(item)
+                    else:
+                        item["reason_chain"] = route["reason_chain"]
+                        item["reason"] = "; ".join(route["reason_chain"]) or "No compatible workflow completion"
+                        if "matlab" in item["reason"]:
+                            item["reason"] = "Missing software: MATLAB; " + item["reason"]
+                        output["infeasible"].append(item)
+                    continue
+                if matching["truncated"]:
+                    context["analysis_scope"]["notices"].append("CSP result limit reached; narrow subjects, atlas or space to enumerate the remaining assignments.")
+                candidate_id = "candidate_" + digest({"intent": intent.model_dump(), "plan": context, "requirements": req_sha})[:24]
+                record = {"candidate_id": candidate_id, "intent": intent.model_dump(), "plan": context, "product_contract": spec, "mapping_evidence": mapping, "profile_sha256": profile["sha256"], "method_requirements_sha256": req_sha, "pipeline_dependencies_sha256": dep_sha, "domain_graph_sha256": domain_sha, "condition_snapshot": constraints, "operations": operations, "matching_stats": matching["matching_stats"], "matching_assignment": solution["assignment"], "product_types_sha256": type_sha, "condition_templates_sha256": template_sha}
+                record["group_design_match"] = design_match
+                tools.control_store.save(candidate_id, record)
+                summary = {"candidate_id": candidate_id, "method": item["method"], "atlas": {k: context["atlas"][k] for k in ["name", "version", "space", "applicable", "reason"]}, "space": intent.space or "native_stored", "file_count": len(context["data"]["files"]), "subjects": context["data"]["subjects"], "label_counts": {key: len(group["labels"]) for key, group in context["analysis_scope"]["labels"].items()}, "conditions": constraints["summary"], "must_disclose": context["analysis_scope"]["notices"], "protected_ref": candidate_id, "mapping_source_count": len(mapping)}
+                summary["operations"] = operations
+                summary["group_design_match"] = design_match
+                summary["matching_stats"] = matching["matching_stats"]
+                summary["matching_rank"] = {k: solution.get(k) for k in ("soft_violations", "off_preferred_space")}
+                from .analysis_asymmetry_contract import applies as asymmetry_applies, definition as asymmetry_definition
+                if asymmetry_applies(context):
+                    summary["asymmetry_contract"] = asymmetry_definition()
+                output["candidates"].append(summary)
     if not specs:
         output["infeasible"].append({"reason": "No registered method matches the requested measures and comparison"})
+    output["candidates"].sort(key=lambda c: (not c["group_design_match"]["supported"], c["matching_rank"]["soft_violations"], c["matching_rank"]["off_preferred_space"]))
+    for category in ("infeasible", "needs_preprocessing"):
+        for item in output[category]:
+            mid = item.get("method", {}).get("id", item.get("method", {}).get("method_id"))
+            item["group_design_match"] = requested_design_match(intent, mid)
     saved = tools.control_store.save("planning_result", output)
     output["protected_ref"] = f"planning_result.v{saved['version']:06d}.json"
     # Large failure observations remain host-owned; expose a bounded explanation.
@@ -528,7 +682,7 @@ def plan_analysis(tools, raw):
     return output
 
 
-def commit_candidate(tools, candidate_id, rationale, code_path, commitment=None):
+def commit_candidate(tools, candidate_id, rationale, code_path, commitment=None, design_mismatch_reason=None):
     from .analysis_constraints import compile_constraints
     from .analysis_plans import commit_plan
     if not isinstance(candidate_id, str) or not re.fullmatch(r"candidate_[a-f0-9]{24}", candidate_id):
@@ -540,8 +694,14 @@ def commit_candidate(tools, candidate_id, rationale, code_path, commitment=None)
     if not saved or not profile or saved["record"]["profile_sha256"] != profile["sha256"]:
         return {"status": "blocked", "reason": "Candidate missing or profile changed; call plan_analysis again"}
     record = saved["record"]
+    mismatch = record.get("group_design_match", {})
+    if mismatch.get("commit_requires_mismatch_reason"):
+        if not isinstance(design_mismatch_reason, str) or not 1 <= len(design_mismatch_reason.strip()) <= 1200:
+            raise ValueError("Candidate does not satisfy requested group design; supply design_mismatch_reason explaining why it is chosen and what part of the requested design remains unanswered")
     if (record["method_requirements_sha256"] != load_knowledge("method_requirements", tools)[1]
-            or record["pipeline_dependencies_sha256"] != load_knowledge("pipeline_dependencies", tools)[1]):
+            or record["pipeline_dependencies_sha256"] != load_knowledge("workflow_steps", tools)[1]
+            or record.get("product_types_sha256") != load_knowledge("product_types", tools)[1]
+            or record.get("condition_templates_sha256") != load_knowledge("condition_templates", tools)[1]):
         return {"status": "blocked", "reason": "Requirements changed; call plan_analysis again"}
     if not isinstance(code_path, str) or len(json.dumps(code_path)) > 240:
         raise ValueError("code_path must be a bounded /work Python path")
@@ -554,6 +714,9 @@ def commit_candidate(tools, candidate_id, rationale, code_path, commitment=None)
     context["code_path"] = code_path
     context["candidate_id"] = candidate_id
     context["selection_rationale"] = rationale
+    if mismatch.get("commit_requires_mismatch_reason"):
+        context["selection_rationale"] += "\nGroup design mismatch: " + design_mismatch_reason.strip()
+        context["analysis_scope"]["design_mismatch_reason"] = design_mismatch_reason.strip()
     context["revision_reason"] = rationale
     context["analysis_scope"]["mapping_evidence_ref"] = candidate_id
     from .analysis_crossspecies import enabled as cross_enabled, validate_commitment
@@ -587,9 +750,14 @@ def commit_candidate(tools, candidate_id, rationale, code_path, commitment=None)
             raise ValueError("Refuse to overwrite a versioned label set")
         target.write_bytes(raw)
         bundle["label_sets_ref"] = {"path": label_path, "sha256": hashlib.sha256(raw).hexdigest()}
+        if context["method"]["method_id"] == "method:v14:group_regional_glm":
+            from .analysis_group_manifest import write_manifest
+            bundle["inputs_manifest"] = write_manifest(tools, context, bundle)
         bundle["must_disclose"] += result["must_disclose"]
         bundle_path = f"/work/execution_bundle.v{result['version']:06d}.json"
         bundle["bundle_ref"] = bundle_path
+        from .analysis_execution_guidance import write_documents
+        bundle["execution_documents"] = write_documents(tools, context, bundle, result["version"])
         bundle_copy = {key: val for key, val in bundle.items() if key != "label_sets"}
         from .analysis_agent import _write_regular
         _write_regular(tools.resolve(bundle_path, writable=True), tools.workdir,

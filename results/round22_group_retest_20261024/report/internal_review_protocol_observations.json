@@ -1,0 +1,48 @@
+{
+  "case": "R22_G1_1",
+  "observations": [
+    {
+      "seq": 25,
+      "native_attempt_id": "4054323cc1684aa49aceda2c4f75c611",
+      "native_logical_id": "4054323cc1684aa49aceda2c4f75c611",
+      "http_status": 504,
+      "usage_known": false
+    },
+    {
+      "seq": 26,
+      "native_attempt_id": "bc5a547f6c334295be643741a4072b15",
+      "native_logical_id": "4054323cc1684aa49aceda2c4f75c611",
+      "http_status": 200,
+      "usage_known": true,
+      "finish_reason": "stop",
+      "content_characters": 3099,
+      "decoded_json": false
+    },
+    {
+      "seq": 27,
+      "native_attempt_id": "8e99544315354aa7a14d1494c2ae94a7",
+      "native_logical_id": "8e99544315354aa7a14d1494c2ae94a7",
+      "http_status": 504,
+      "usage_known": false
+    },
+    {
+      "seq": 28,
+      "native_attempt_id": "c7bc2fc42e8943489bd8eb96bed40516",
+      "native_logical_id": "8e99544315354aa7a14d1494c2ae94a7",
+      "http_status": 200,
+      "usage_known": true,
+      "finish_reason": "stop",
+      "content_characters": 5821,
+      "decoded_json": true,
+      "decision_field": "revise",
+      "finding_count": 4,
+      "finding_severity_counts": {
+        "blocking": 2,
+        "warning": 2
+      }
+    }
+  ],
+  "final_status": "unreviewed",
+  "logical_model_limit_reached": 30,
+  "formal_final_review_completed": false
+}

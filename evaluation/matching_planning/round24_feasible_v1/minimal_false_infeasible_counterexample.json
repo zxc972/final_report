@@ -1,0 +1,143 @@
+{
+  "original_case": "FEASIBLE_1_006",
+  "target": [
+    {
+      "type": "type:Volume.T1",
+      "attrs": {
+        "subject": "synthetic_0",
+        "hemisphere": "rh",
+        "species": "macaque"
+      }
+    }
+  ],
+  "minimal_products_for_same_known_optimal_plan": [
+    {
+      "id": "pool_0",
+      "type": "type:Volume.T1",
+      "attrs": {
+        "subject": "synthetic_0",
+        "species": "macaque"
+      }
+    },
+    {
+      "id": "pool_66",
+      "type": "type:Surface.White",
+      "attrs": {
+        "subject": "synthetic_0",
+        "hemisphere": "rh",
+        "species": "macaque"
+      }
+    },
+    {
+      "id": "pool_67",
+      "type": "type:Surface.Pial",
+      "attrs": {
+        "subject": "synthetic_0",
+        "hemisphere": "rh",
+        "species": "macaque"
+      }
+    }
+  ],
+  "exact_steps": [
+    "rescale"
+  ],
+  "original_exact_cost": 1.0,
+  "optimality_after_reduction": "Removing initial products cannot lower the original exact optimum; the same selected steps still achieve it.",
+  "andor_result": {
+    "feasible": false,
+    "steps": [],
+    "cost": null,
+    "per_target": [
+      {
+        "target": {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        "cost": null,
+        "steps": [],
+        "reasons": [
+          "type:Volume.T1 <- rescale <- cycle at type:Volume.T1"
+        ]
+      }
+    ]
+  },
+  "forward_witness": [
+    {
+      "step": "rescale",
+      "bound_inputs": [
+        {
+          "type": "type:Surface.White",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        {
+          "type": "type:Surface.Pial",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "species": "macaque"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "type": "type:Surface.White",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        {
+          "type": "type:Surface.Pial",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        {
+          "type": "type:Volume.T1",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        {
+          "type": "type:SurfaceMetric.Thickness",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        },
+        {
+          "type": "type:StatsTable.CorticalParcStats",
+          "attrs": {
+            "subject": "synthetic_0",
+            "hemisphere": "rh",
+            "species": "macaque"
+          }
+        }
+      ]
+    }
+  ],
+  "diagnosis": "Reverse recursion pushes inherited output attributes into every input. Forward bindings share subject/species, while hemisphere/mesh may differ. See the concrete witness; synthetic normalized-graph counterexample, not a measured clinical failure rate.",
+  "backend_algorithm_modified": false,
+  "model_calls": 0
+}

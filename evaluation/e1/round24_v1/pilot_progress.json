@@ -1,0 +1,22 @@
+{
+  "released_pilots": [
+    "BMINDS_120",
+    "ION_32202"
+  ],
+  "roster_count": 16,
+  "other_unreleased": 14,
+  "status": "reconstruction complete; conditional geometry acceptance; Claude visual surface QC pending",
+  "relative_to_nominal_MRI_remaining_scale_k": 1,
+  "independent_scanner_calibration": false,
+  "QC_images": 12,
+  "QC_cuts": "coronal and axial, 3 adjacent slices per axis per pilot; white+pial",
+  "partial_bbox_checks_failed_preserved": true,
+  "marmoset_intensity_bias_low_GW_contrast_requires_review": true,
+  "parameters_tuned_after_anatomical_results": false,
+  "raw_images_unchanged": true,
+  "model_calls": 0,
+  "local_handoff": "round14/第二十四轮_两只多物种试点_Claude复核包.zip",
+  "QC_images_in_GitHub": false,
+  "IXI542_status": "保留（AI 复核，眶额已覆盖）",
+  "held_out_processing": false
+}

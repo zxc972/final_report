@@ -1,0 +1,12 @@
+{
+  "source_id": "fs_group_tutorial",
+  "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/GroupAnalysis",
+  "final_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/GroupAnalysis",
+  "fetched_at": "2026-10-23T10:00:08.610810+00:00",
+  "http_status": 200,
+  "text_sha256": "47df6d321ae9ec7a10d07f18b6f6301ae427901f68bbcc4de50181e95d18eaeb",
+  "html_sha256": "55a11470ff416dc99ad9d0a72be7fa10ac7c2c3dbfbd1dd8b59af3c41e7f1ab9",
+  "text_characters": 20124,
+  "projection": "stdlib HTMLParser SourceText v1",
+  "evidence_class": "official_documentation"
+}

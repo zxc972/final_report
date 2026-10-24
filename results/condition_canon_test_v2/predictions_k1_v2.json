@@ -1,0 +1,3142 @@
+[
+  {
+    "id": 2001,
+    "method": "independent_v2_fs_anatomical_stats",
+    "statement": "Subject name is a required positional argument.",
+    "quote_support": 1.0,
+    "source_id": "fs_anatomical_stats",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "dff4883ddf454bb087705cd8288eaee1",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2002,
+    "method": "independent_v2_fs_anatomical_stats",
+    "statement": "Hemisphere is a required positional argument.",
+    "quote_support": 1.0,
+    "source_id": "fs_anatomical_stats",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "4f1b94cdcf784c75ba99e7fda9bbca7b",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2003,
+    "method": "independent_v2_fs_anatomical_stats",
+    "statement": "Surface name is an optional positional argument.",
+    "quote_support": 1.0,
+    "source_id": "fs_anatomical_stats",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "c5c4b3a570e9421d8b8d8269fe8c3326",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2004,
+    "method": "independent_v2_fs_anatomical_stats",
+    "statement": "When the -l label-file option is used, calculations are limited to the specified label.",
+    "quote_support": 1.0,
+    "source_id": "fs_anatomical_stats",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "e30ff4b7ee374839b79d1e6b3030232c",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2005,
+    "method": "independent_v2_fs_anatomical_stats",
+    "statement": "No flagged arguments are required.",
+    "quote_support": 1.0,
+    "source_id": "fs_anatomical_stats",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "6ce3b430f9544a5f9a8ff9f9f937e8e0",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2006,
+    "method": "independent_v2_fs_anatomical_stats",
+    "statement": "Using -f requires either the -a or -l option to specify input.",
+    "quote_support": 1.0,
+    "source_id": "fs_anatomical_stats",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "5ebe9cbb01214351b5aa3bafe717be51",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2007,
+    "method": "independent_v2_fs_segstats",
+    "statement": "Input segmentation volume provided with --seg.",
+    "quote_support": 1.0,
+    "source_id": "fs_segstats",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "eb8ae94e86844930a4fa3569d481d3ea",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2008,
+    "method": "independent_v2_fs_segstats",
+    "statement": "If an input volume is supplied, it must be the same size and dimension as the segmentation volume.",
+    "quote_support": 1.0,
+    "source_id": "fs_segstats",
+    "template": "attr_equal",
+    "parameters": {
+      "slots": [
+        "volumes",
+        "mask"
+      ],
+      "attrs": [
+        "voxel_size"
+      ]
+    },
+    "key": "attr_equal:{\"attrs\": [\"voxel_size\"], \"slots\": [\"mask\", \"volumes\"]}",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "attr_equal:{\"attrs\": [\"voxel_size\"], \"slots\": [\"mask\", \"volumes\"]}": 1
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "2f97a37303b5464799a1a4acc01dbbdc",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2009,
+    "method": "independent_v2_fs_segstats",
+    "statement": "If a mask volume is supplied, it must be the same size and dimension as the segmentation volume.",
+    "quote_support": 1.0,
+    "source_id": "fs_segstats",
+    "template": "attr_equal",
+    "parameters": {
+      "slots": [
+        "mask",
+        "volumes"
+      ],
+      "attrs": [
+        "voxel_size",
+        "space"
+      ]
+    },
+    "key": "attr_equal:{\"attrs\": [\"space\", \"voxel_size\"], \"slots\": [\"mask\", \"volumes\"]}",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "attr_equal:{\"attrs\": [\"space\", \"voxel_size\"], \"slots\": [\"mask\", \"volumes\"]}": 1
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ac90adcfec764638ad29c7aec5698324",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2010,
+    "method": "independent_v2_fs_segstats",
+    "statement": "The FreeSurfer color table file maps each segmentation index to a segmentation name and color.",
+    "quote_support": 1.0,
+    "source_id": "fs_segstats",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "c04cb6bf5f3c4b3495031b1533a2e0b4",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2011,
+    "method": "independent_v2_fs_segstats",
+    "statement": "Partial volume compensation with --pv is usually only done when computing anatomical statistics and is not used with --annot.",
+    "quote_support": 1.0,
+    "source_id": "fs_segstats",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "6fb6400e52a143efbb26cc1493e11499",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2012,
+    "method": "independent_v2_fs_segstats",
+    "statement": "If no voxels meet the masking criteria, mri_segstats exits with an error.",
+    "quote_support": 1.0,
+    "source_id": "fs_segstats",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "9dee2043454f4d8397a609b782386989",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2013,
+    "method": "independent_v2_fs_segstats",
+    "statement": "If neither --id nor a color table is specified, all IDs from the segmentation volume are used.",
+    "quote_support": 1.0,
+    "source_id": "fs_segstats",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "9973fe51afcc470ab238993b52712b95",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2014,
+    "method": "independent_v2_fs_segstats",
+    "statement": "If an input volume is supplied, it must be the same size and dimension as the segmentation volume.",
+    "quote_support": 1.0,
+    "source_id": "fs_segstats",
+    "template": "attr_equal",
+    "parameters": {
+      "slots": [
+        "volumes",
+        "mask"
+      ],
+      "attrs": [
+        "voxel_size"
+      ]
+    },
+    "key": "attr_equal:{\"attrs\": [\"voxel_size\"], \"slots\": [\"mask\", \"volumes\"]}",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "attr_equal:{\"attrs\": [\"voxel_size\"], \"slots\": [\"mask\", \"volumes\"]}": 1
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "02c657c2ace540dca7ad538ce2cea3fb",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2015,
+    "method": "independent_v2_fs_segstats",
+    "statement": "If a mask volume is supplied, it must be the same size and dimension as the segmentation volume.",
+    "quote_support": 1.0,
+    "source_id": "fs_segstats",
+    "template": "attr_equal",
+    "parameters": {
+      "slots": [
+        "mask",
+        "volumes"
+      ],
+      "attrs": [
+        "voxel_size"
+      ]
+    },
+    "key": "attr_equal:{\"attrs\": [\"voxel_size\"], \"slots\": [\"mask\", \"volumes\"]}",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "attr_equal:{\"attrs\": [\"voxel_size\"], \"slots\": [\"mask\", \"volumes\"]}": 1
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "17723c1b19a946fea37ce30cef339450",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2016,
+    "method": "independent_v2_fs_segstats",
+    "statement": "If no voxels meet the masking criteria, the program exits with an error.",
+    "quote_support": 1.0,
+    "source_id": "fs_segstats",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b548b168e81b43059467c936d2ceccb2",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2017,
+    "method": "independent_v2_fs_preproc",
+    "statement": "With --meas surfmeasure, input is taken from subject/surf/hemi.surfmeasure.",
+    "quote_support": 1.0,
+    "source_id": "fs_preproc",
+    "template": "product_present",
+    "parameters": {
+      "slot": "surface",
+      "type": "type:Surface"
+    },
+    "key": "product_present:{\"slot\": \"surface\", \"type\": \"type:Surface\"}",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "product_present:{\"slot\": \"surface\", \"type\": \"type:Surface\"}": 1
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "e247b043e2bb4bef97940cece98b88b6",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2018,
+    "method": "independent_v2_fs_preproc",
+    "statement": "The --fsgd option specifies the input subject list from an FSGD file.",
+    "quote_support": 1.0,
+    "source_id": "fs_preproc",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ff1b06f31b0240dbb9c5eb672d3177cc",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2019,
+    "method": "independent_v2_fs_preproc",
+    "statement": "The registration matrix file is of the type accepted or created by tkregister2.",
+    "quote_support": 1.0,
+    "source_id": "fs_preproc",
+    "template": "product_present",
+    "parameters": {
+      "slot": "T1",
+      "type": "type:Transform.Affine"
+    },
+    "key": "product_present:{\"slot\": \"T1\", \"type\": \"type:Transform.Affine\"}",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "product_present:{\"slot\": \"T1\", \"type\": \"type:Transform.Affine\"}": 1
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "36d380b38926461e881e9953616672dd",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2020,
+    "method": "independent_v2_fs_preproc",
+    "statement": "The --target option selects the common-space subject; --hemi selects lh or rh for source and target surfaces.",
+    "quote_support": 1.0,
+    "source_id": "fs_preproc",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "f899daeecfce4a488b86af36f797e5af",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2021,
+    "method": "independent_v2_fs_preproc",
+    "statement": "When subjects are listed using --s, each has its own --s; this option is for use with --meas.",
+    "quote_support": 1.0,
+    "source_id": "fs_preproc",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ef8e33669b4f42f682aaf1e9c74f8a9d",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2022,
+    "method": "independent_v2_fs_preproc",
+    "statement": "The --is option is an alternative to --meas and still requires a supplied subject list.",
+    "quote_support": 1.0,
+    "source_id": "fs_preproc",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "eca21fc599404d6290761c1f547b92d0",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2023,
+    "method": "independent_v2_fs_preproc",
+    "statement": "For --paired-diff there must be an even number of inputs.",
+    "quote_support": 1.0,
+    "source_id": "fs_preproc",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "3f0ea1331f83426e873e58829a69b017",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2024,
+    "method": "independent_v2_fs_preproc",
+    "statement": "When using full paths with --fsgd, subjects must be in the same order as the input surface files.",
+    "quote_support": 1.0,
+    "source_id": "fs_preproc",
+    "decision": "review",
+    "template": "advisory",
+    "parameters": null,
+    "reason": "no valid answer",
+    "answered": 1,
+    "invalid_attempts": {
+      "attr_equal": 1
+    },
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b60b8ba956de4451bb75f624ce694d79",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2025,
+    "method": "independent_v2_fs_preproc",
+    "statement": "--cache-out-only requires supplying a tmpdir.",
+    "quote_support": 1.0,
+    "source_id": "fs_preproc",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "3170106c537045558164a66fdf1ba726",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2026,
+    "method": "independent_v2_fs_preproc",
+    "statement": "ANALYZE and NIFTI formats cannot represent a dimension with more than 32k elements.",
+    "quote_support": 1.0,
+    "source_id": "fs_preproc",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "d801ced6140b4ca084fc76cede77537e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2027,
+    "method": "independent_v2_fs_preproc",
+    "statement": "None of the paired diff options will affect caching.",
+    "quote_support": 1.0,
+    "source_id": "fs_preproc",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "96a0bea777464e16ad4c33d83e597792",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2028,
+    "method": "independent_v2_fs_surf2surf",
+    "statement": "Source subject name in $SUBJECTS_DIR or ico; input data must have been sampled onto this subject's surface.",
+    "quote_support": 1.0,
+    "source_id": "fs_surf2surf",
+    "template": "attr_equal",
+    "parameters": {
+      "slots": [
+        "surface",
+        "metric"
+      ],
+      "attrs": [
+        "subject"
+      ]
+    },
+    "key": "attr_equal:{\"attrs\": [\"subject\"], \"slots\": [\"metric\", \"surface\"]}",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "attr_equal:{\"attrs\": [\"subject\"], \"slots\": [\"metric\", \"surface\"]}": 1
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "6b33278d56164cde8591392f0770b0db",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2029,
+    "method": "independent_v2_fs_surf2surf",
+    "statement": "File containing the data on the source surface.",
+    "quote_support": 1.0,
+    "source_id": "fs_surf2surf",
+    "template": "product_present",
+    "parameters": {
+      "slot": "surface",
+      "type": "type:SurfaceMetric"
+    },
+    "key": "product_present:{\"slot\": \"surface\", \"type\": \"type:SurfaceMetric\"}",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "product_present:{\"slot\": \"surface\", \"type\": \"type:SurfaceMetric\"}": 1
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "bdbe4dd5d8f84cf4b8764ef43fc14bfd",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2030,
+    "method": "independent_v2_fs_surf2surf",
+    "statement": "Target subject name in $SUBJECTS_DIR or ico for icosahedron.",
+    "quote_support": 1.0,
+    "source_id": "fs_surf2surf",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "39ca83ba81bf4ecaac94665bc7e855b6",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2031,
+    "method": "independent_v2_fs_surf2surf",
+    "statement": "If source and target subjects differ, the registration surface is used; sphere.reg is the default.",
+    "quote_support": 1.0,
+    "source_id": "fs_surf2surf",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "194d6ab40ee74eb1bd2ce7a4ca2fa02d",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2032,
+    "method": "independent_v2_fs_surf2surf",
+    "statement": "For trg_type w or paint, use the full path for the target file.",
+    "quote_support": 1.0,
+    "source_id": "fs_surf2surf",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "017f52b6e4df4a4c8251e104ca194ac7",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2033,
+    "method": "independent_v2_fs_surf2surf",
+    "statement": "With paint output, specify the output file with a partial path or it will be written into the subject's anatomical directory.",
+    "quote_support": 1.0,
+    "source_id": "fs_surf2surf",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "5cb257324d294c5db10e194127be6221",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2034,
+    "method": "independent_v2_wb_metric_resample",
+    "statement": "The metric file to resample, typically a native-mesh metric.",
+    "quote_support": 1.0,
+    "source_id": "wb_metric_resample",
+    "template": "product_present",
+    "parameters": {
+      "slot": "metric",
+      "type": "type:SurfaceMetric"
+    },
+    "key": "product_present:{\"slot\": \"metric\", \"type\": \"type:SurfaceMetric\"}",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "product_present:{\"slot\": \"metric\", \"type\": \"type:SurfaceMetric\"}": 1
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "fc3a7238580341a4b82f979ac9188912",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2035,
+    "method": "independent_v2_wb_metric_resample",
+    "statement": "A sphere surface in register with the new sphere and having the mesh the metric is currently on.",
+    "quote_support": 1.0,
+    "source_id": "wb_metric_resample",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "67a7a6bca390456093af0c9d82332598",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2036,
+    "method": "independent_v2_wb_metric_resample",
+    "statement": "A sphere surface that is the desired output mesh, typically a standard sphere.",
+    "quote_support": 1.0,
+    "source_id": "wb_metric_resample",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "75c74c82026b4a44a65eaab0cfa1f105",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2037,
+    "method": "independent_v2_wb_metric_resample",
+    "statement": "The method argument must be one of ADAP_BARY_AREA or BARYCENTRIC.",
+    "quote_support": 1.0,
+    "source_id": "wb_metric_resample",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "e8d39a05d9b846fab00fea836dad6214",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2038,
+    "method": "independent_v2_wb_metric_resample",
+    "statement": "If ADAP_BARY_AREA is used, exactly one of -area-surfs or -area-metrics must be specified.",
+    "quote_support": 1.0,
+    "source_id": "wb_metric_resample",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "aec0e4d43a9547118c34909d1a1259c8",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2039,
+    "method": "independent_v2_wb_metric_resample",
+    "statement": "The current sphere must be in register with the new sphere.",
+    "quote_support": 1.0,
+    "source_id": "wb_metric_resample",
+    "decision": "review",
+    "template": "advisory",
+    "parameters": null,
+    "reason": "no valid answer",
+    "answered": 1,
+    "invalid_attempts": {
+      "attr_equal": 1
+    },
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "2056620feab6437f9be25e57782cbea7",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2040,
+    "method": "independent_v2_wb_metric_resample",
+    "statement": "The -current-roi option only masks the input; the output may be slightly dilated in comparison.",
+    "quote_support": 1.0,
+    "source_id": "wb_metric_resample",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "cd7110afe03340cca541dfa0860c75ef",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2041,
+    "method": "independent_v2_ants_thickness",
+    "statement": "The anatomical input is a structural intensity image, typically T1.",
+    "quote_support": 1.0,
+    "source_id": "ants_thickness_script",
+    "template": "product_present",
+    "parameters": {
+      "slot": "T1",
+      "type": "type:Volume.T1"
+    },
+    "key": "product_present:{\"slot\": \"T1\", \"type\": \"type:Volume.T1\"}",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "product_present:{\"slot\": \"T1\", \"type\": \"type:Volume.T1\"}": 1
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "8131119497eb4d798dbfa8c75ce04b5c",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2042,
+    "method": "independent_v2_ants_thickness",
+    "statement": "Brain segmentation template: an anatomical intensity template that is not skull-stripped.",
+    "quote_support": 1.0,
+    "source_id": "ants_thickness_script",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "f70705c25bcb4ee9a2aa86dcfab3b4b9",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2043,
+    "method": "independent_v2_ants_thickness",
+    "statement": "Brain extraction probability mask in the segmentation template space; a binary mask is acceptable.",
+    "quote_support": 1.0,
+    "source_id": "ants_thickness_script",
+    "decision": "review",
+    "template": "advisory",
+    "parameters": null,
+    "reason": "no valid answer",
+    "answered": 1,
+    "invalid_attempts": {
+      "attr_in": 1
+    },
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "e61d572f714e4c808ec9babe42f35f8b",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2044,
+    "method": "independent_v2_ants_thickness",
+    "statement": "At least four priors must exist, corresponding to CSF, cortical GM, WM and subcortical GM.",
+    "quote_support": 1.0,
+    "source_id": "ants_thickness_script",
+    "template": "cardinality",
+    "parameters": {
+      "object": "priors",
+      "minimum": 4
+    },
+    "key": "cardinality:{\"minimum\": 4, \"object\": \"priors\"}",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "cardinality:{\"minimum\": 4, \"object\": \"priors\"}": 1
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "0415b7c6692348ac826334159b01e624",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2045,
+    "method": "independent_v2_ants_thickness",
+    "statement": "Image dimension must be 2 or 3.",
+    "quote_support": 1.0,
+    "source_id": "ants_thickness_script",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "d1cd9502d6534f6f9a890c253491fbc2",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2046,
+    "method": "independent_v2_ants_thickness",
+    "statement": "If a registration template is supplied with -t, it must be skull-stripped.",
+    "quote_support": 1.0,
+    "source_id": "ants_thickness_script",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "f9b1fd29851240a7b00fa25c4d23ba66",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2047,
+    "method": "independent_v2_ants_thickness",
+    "statement": "If an extraction registration mask is supplied with -f, it is a binary metric mask in the segmentation template space (-e).",
+    "quote_support": 1.0,
+    "source_id": "ants_thickness_script",
+    "decision": "review",
+    "template": "advisory",
+    "parameters": null,
+    "reason": "no valid answer",
+    "answered": 1,
+    "invalid_attempts": {
+      "attr_in": 1
+    },
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "0e06656b39dc49aaa398629a4a6ca2dd",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2048,
+    "method": "independent_v2_ants_thickness",
+    "statement": "At least four prior images are required; fewer causes the script to exit.",
+    "quote_support": 1.0,
+    "source_id": "ants_thickness_script",
+    "template": "cardinality",
+    "parameters": {
+      "object": "prior images",
+      "minimum": 4
+    },
+    "key": "cardinality:{\"minimum\": 4, \"object\": \"prior images\"}",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "cardinality:{\"minimum\": 4, \"object\": \"prior images\"}": 1
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "16f8d91aeb9a465e9b62ee429a846d9a",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2049,
+    "method": "independent_v2_ants_thickness",
+    "statement": "The segmentation template and registration template may be different.",
+    "quote_support": 1.0,
+    "source_id": "ants_thickness_outputs",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "d75510b50e1c4230b10161ef72ff0f1e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2050,
+    "method": "independent_v2_ants_thickness",
+    "statement": "If command -v cannot find a dependency program, the script reports an error.",
+    "quote_support": 1.0,
+    "source_id": "ants_thickness_script",
+    "template": "software",
+    "parameters": {
+      "commands": [
+        "d"
+      ]
+    },
+    "key": "software:{\"commands\": [\"d\"]}",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "software:{\"commands\": [\"d\"]}": 1
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "92d73e3d11834176a27abf8cf8196b85",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2051,
+    "method": "independent_v2_ants_thickness",
+    "statement": "Specified anatomical images are checked for existence.",
+    "quote_support": 1.0,
+    "source_id": "ants_thickness_script",
+    "template": "product_present",
+    "parameters": {
+      "slot": "T1",
+      "type": "type:Volume.T1"
+    },
+    "key": "product_present:{\"slot\": \"T1\", \"type\": \"type:Volume.T1\"}",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "product_present:{\"slot\": \"T1\", \"type\": \"type:Volume.T1\"}": 1
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "14d82fcd104649158bb8661df8bd8453",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2052,
+    "method": "independent_v2_ants_thickness",
+    "statement": "The script tests each expected output image for existence and records missing outputs.",
+    "quote_support": 1.0,
+    "source_id": "ants_thickness_script",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "7ffeb6d6435f4b6d88ad7e5cc6c80e96",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2053,
+    "method": "independent_v2_ants_thickness",
+    "statement": "The script checks for the affine registration transform from the segmentation step.",
+    "quote_support": 1.0,
+    "source_id": "ants_thickness_script",
+    "template": "provenance",
+    "parameters": {
+      "step": "seg-router"
+    },
+    "key": "provenance:{\"step\": \"seg-router\"}",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "provenance:{\"step\": \"seg-router\"}": 1
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "5386ea3f25b7491f92b244d09e7ebe74",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2054,
+    "method": "independent_v2_ants_thickness",
+    "statement": "If a command exits with nonzero status, the script exits unless debug mode is enabled.",
+    "quote_support": 1.0,
+    "source_id": "ants_thickness_script",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "a68f5d3f1cc940888c6a51f68f507e29",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2055,
+    "method": "independent_v2_ants_thickness",
+    "statement": "For Templateflow priors, if SGM is not found then SCGM is used instead.",
+    "quote_support": 1.0,
+    "source_id": "ants_thickness_script",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "641aef7902664a5f8d17e81482414133",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2056,
+    "method": "independent_v2_ants_thickness",
+    "statement": "Prior combinations are only allowed for gray matter or white matter; other labels cause an error exit.",
+    "quote_support": 1.0,
+    "source_id": "ants_thickness_script",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "5acebbc9fdc14e22a9e9aeefa005d2ef",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2057,
+    "method": "independent_v2_ants_thickness",
+    "statement": "If the cortical thickness output is not produced, the script exits with an error.",
+    "quote_support": 1.0,
+    "source_id": "ants_thickness_script",
+    "template": "product_present",
+    "parameters": {
+      "slot": "thickness",
+      "type": "type:SurfaceMetric.Thickness"
+    },
+    "key": "product_present:{\"slot\": \"thickness\", \"type\": \"type:SurfaceMetric.Thickness\"}",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "product_present:{\"slot\": \"thickness\", \"type\": \"type:SurfaceMetric.Thickness\"}": 1
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "adf6e88bb98f40968c4ec9980d5d4fb3",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2058,
+    "method": "independent_v2_fs_ca_label",
+    "statement": "subject id",
+    "quote_support": 1.0,
+    "source_id": "fs_ca_label",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "10b93e7c86f44f4281b988b221ffe7ca",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2059,
+    "method": "independent_v2_fs_ca_label",
+    "statement": "hemisphere: rh or lh",
+    "quote_support": 1.0,
+    "source_id": "fs_ca_label",
+    "decision": "review",
+    "template": "advisory",
+    "parameters": null,
+    "reason": "no valid answer",
+    "answered": 1,
+    "invalid_attempts": {
+      "attr_in": 1
+    },
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "abb33c02f3bd46ada9290f9904804231",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2060,
+    "method": "independent_v2_fs_ca_label",
+    "statement": "canonical surface file, e.g. sphere.reg, describing registration of a subject's vertices to the reference average surface",
+    "quote_support": 1.0,
+    "source_id": "fs_ca_label",
+    "template": "product_present",
+    "parameters": {
+      "slot": "surface",
+      "type": "type:Surface.SphereReg"
+    },
+    "key": "product_present:{\"slot\": \"surface\", \"type\": \"type:Surface.SphereReg\"}",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "product_present:{\"slot\": \"surface\", \"type\": \"type:Surface.SphereReg\"}": 1
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ccbe10a86c6c42c3a4787f5cc71b1a65",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2061,
+    "method": "independent_v2_fs_ca_label",
+    "statement": "Classifier array input file.",
+    "quote_support": 1.0,
+    "source_id": "fs_ca_label",
+    "decision": "review",
+    "template": "advisory",
+    "parameters": null,
+    "reason": "no valid answer",
+    "answered": 1,
+    "invalid_attempts": {
+      "product_present": 1
+    },
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "13956ebb8bd14aa0a5dcd3b09d900378",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2062,
+    "method": "independent_v2_fs_ca_label",
+    "statement": "This automatic procedure employs data from a previously-prepared atlas file.",
+    "quote_support": 1.0,
+    "source_id": "fs_ca_label",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "38aa3bc193bc4cc7915019f46b2c9064",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2063,
+    "method": "independent_v2_wb_surface_resample",
+    "statement": "The surface file to resample, typically a native-mesh anatomical or inflated surface.",
+    "quote_support": 1.0,
+    "source_id": "wb_surface_resample",
+    "template": "product_present",
+    "parameters": {
+      "slot": "surface",
+      "type": "type:Surface"
+    },
+    "key": "product_present:{\"slot\": \"surface\", \"type\": \"type:Surface\"}",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "product_present:{\"slot\": \"surface\", \"type\": \"type:Surface\"}": 1
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ad0246c1c6e048b49d3f4dbea974068a",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2064,
+    "method": "independent_v2_wb_surface_resample",
+    "statement": "A sphere surface in register with <new-sphere> that uses the mesh the input surface is currently on, typically a registered native-mesh sphere.",
+    "quote_support": 1.0,
+    "source_id": "wb_surface_resample",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "78340116b27f4faca9e211a8e8f3eaac",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2065,
+    "method": "independent_v2_wb_surface_resample",
+    "statement": "A sphere surface that has the desired output mesh, typically a standard sphere.",
+    "quote_support": 1.0,
+    "source_id": "wb_surface_resample",
+    "template": "product_present",
+    "parameters": {
+      "slot": "surface",
+      "type": "type:Surface.Sphere"
+    },
+    "key": "product_present:{\"slot\": \"surface\", \"type\": \"type:Surface.Sphere\"}",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "product_present:{\"slot\": \"surface\", \"type\": \"type:Surface.Sphere\"}": 1
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b7e209e1ee3e41648c1a077a5d9b0230",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2066,
+    "method": "independent_v2_wb_surface_resample",
+    "statement": "The method name, which must be one of ADAP_BARY_AREA or BARYCENTRIC.",
+    "quote_support": 1.0,
+    "source_id": "wb_surface_resample",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "1161396e698749ada5af408eb0cb10a5",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2067,
+    "method": "independent_v2_wb_surface_resample",
+    "statement": "If ADAP_BARY_AREA is used, exactly one of -area-surfs or -area-metrics must be specified.",
+    "quote_support": 1.0,
+    "source_id": "wb_surface_resample",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "2ab0c1b580fd4e3a8e32a57d0ac68297",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2068,
+    "method": "independent_v2_wb_surface_resample",
+    "statement": "For cut surfaces (including flatmaps), use -surface-cut-resample instead.",
+    "quote_support": 1.0,
+    "source_id": "wb_surface_resample",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "16dc733664684a2891d07258e7febbd3",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2069,
+    "method": "independent_v2_wb_surface_resample",
+    "statement": "Instead of resampling a spherical surface, the -surface-sphere-project-unproject command is recommended.",
+    "quote_support": 1.0,
+    "source_id": "wb_surface_resample",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "af3a2cbd9b624100aa191c6eb3cf9bac",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2070,
+    "method": "independent_v2_wb_surface_resample",
+    "statement": "ADAP_BARY_AREA is not generally recommended for surface resampling, but is provided for completeness.",
+    "quote_support": 1.0,
+    "source_id": "wb_surface_resample",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "e72f946b86824baf891058694613c6aa",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2071,
+    "method": "independent_v2_fsl_first",
+    "statement": "FIRST needs a good quality T1-weighted image.",
+    "quote_support": 1.0,
+    "source_id": "fsl_first",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b0e8f042a24e484ba3e4f20e2c134510",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2072,
+    "method": "independent_v2_fsl_first",
+    "statement": "Only T1-weighted images can be used as input to run_first_all.",
+    "quote_support": 1.0,
+    "source_id": "fsl_first",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "138f2a2ee23e407abb9f51f8dfc2e516",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2073,
+    "method": "independent_v2_fsl_first",
+    "statement": "first_flirt should be used on whole-head (non-betted) images.",
+    "quote_support": 1.0,
+    "source_id": "fsl_first",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "811fd33eb73441618c621f395b630f0e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2074,
+    "method": "independent_v2_fsl_first",
+    "statement": "If the registration stage fails then the model fitting will not work, though run_first_all continues to run and may produce outputs.",
+    "quote_support": 1.0,
+    "source_id": "fsl_first",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "8da0e70dad8b4bfca08fe4606dc38831",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2075,
+    "method": "independent_v2_fsl_first",
+    "statement": "When fitting the cerebellum models, a different transformation matrix than that used for the other structures must be input.",
+    "quote_support": 1.0,
+    "source_id": "fsl_first",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "e633709061c84916b01e70940761f061",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2076,
+    "method": "independent_v2_fsl_first",
+    "statement": "The -cort flag must be specified for first_flirt to perform the registration needed for cerebellum models.",
+    "quote_support": 1.0,
+    "source_id": "fsl_first",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "996a9825d39a4b0b9a9d619a2b99ef45",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2077,
+    "method": "independent_v2_fsl_first",
+    "statement": "The full path name to the model must be used with -m.",
+    "quote_support": 1.0,
+    "source_id": "fsl_first",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ef9eb7ff5ace4829b84bf7219b43c13b",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2078,
+    "method": "independent_v2_fsl_first",
+    "statement": "Check the log directory error outputs; no output means no errors.",
+    "quote_support": 1.0,
+    "source_id": "fsl_first",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "d8984229f6c24b958bc44d1226e6daef",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2079,
+    "method": "independent_v2_fsl_first",
+    "statement": "Check registration quality using slicesdir on the registered images.",
+    "quote_support": 1.0,
+    "source_id": "fsl_first",
+    "template": "software",
+    "parameters": {
+      "commands": [
+        "slicesdir"
+      ]
+    },
+    "key": "software:{\"commands\": [\"slicesdir\"]}",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "software:{\"commands\": [\"slicesdir\"]}": 1
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "f5260914111a4798b1e9e626a6809c8e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2080,
+    "method": "independent_v2_fsl_first",
+    "statement": "Pay particular attention to the sub-cortical structures when assessing registrations.",
+    "quote_support": 1.0,
+    "source_id": "fsl_first",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "f4ea227403ef4d30abe45db09c66c1e8",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2081,
+    "method": "independent_v2_fsl_first",
+    "statement": "Check segmentation quality with first_roi_slicesdir, which generates a webpage summary.",
+    "quote_support": 1.0,
+    "source_id": "fsl_first",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "dee986d82b30496faca5a8c4578e851d",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2082,
+    "method": "independent_v2_fsl_first",
+    "statement": "If there are problems, different segmentation options such as number of modes or boundary correction method can be tried using the individual tools.",
+    "quote_support": 1.0,
+    "source_id": "fsl_first",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "4ebea990a8cd49bba172d5465e6dcd6e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2083,
+    "method": "independent_v2_fsl_first",
+    "statement": "Boundary correction method none is appropriate for models in the 05mm subdirectory.",
+    "quote_support": 1.0,
+    "source_id": "fsl_first",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 1,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 1,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "e3e3953d9ab14ccfbcd44aabad4a1afe",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,77 @@
+{
+  "date": "2026-10-23",
+  "timezone": "Asia/Shanghai",
+  "bundle_commits": [
+    "151a95f",
+    "ac66f76"
+  ],
+  "main_round15_commits": [
+    "0d09847",
+    "b8e27a1",
+    "bf0c967"
+  ],
+  "algorithm_commits": [
+    {
+      "subject": "Correct typed CSP and AND-OR boundary semantics and shared-step optimality",
+      "commit": "e49db3b5e15ff4dc7c31d90028f940df81a91000"
+    },
+    {
+      "subject": "Integrate CSP product matching and AND-OR workflow completion in plan_analysis",
+      "commit": "de4bf4872a381b5251cbfaa015493e9b175a2776"
+    },
+    {
+      "subject": "Freeze offline planning perturbations and document legacy candidate comparisons",
+      "commit": "5d4c67050bce1be6b8d86f81c6d9c72bc09c569a"
+    }
+  ],
+  "tests": {
+    "bundle_new_passed": 13,
+    "merged_default_passed": 837,
+    "final_default_passed": 853,
+    "final_default_skipped": 14,
+    "final_subtests_passed": 59,
+    "final_default_seconds": 82.78,
+    "initial_environment_failures": 2,
+    "environment_fix": "Use the existing ANALYSIS_REFERENCE_PYTHON with SciPy",
+    "final_source_commit": "2dbbd12f231905246001154bbd4ef49e366f611c"
+  },
+  "candidate_regression": {
+    "equal_baseline_cases": 9,
+    "expected_stricter_cases": 2,
+    "stricter_constraints": [
+      "unary.space",
+      "unary.species"
+    ]
+  },
+  "planning_eval": {
+    "states": 37,
+    "candidate_correct": 37,
+    "missing_correct": 37,
+    "optimal_consistent": 37,
+    "nonempty_plans": 2,
+    "median_ms": 201.153,
+    "max_ms": 2768.042,
+    "profile_sha256": "61680db04360cfb5d872c5a2caa6c08bf44379e74e567d318a931a6790004b55",
+    "frozen_sha256": "ae150f9fc71d7278b94a20ebe33f736cfda3031807db66a58b321435d60c63b1",
+    "csv_sha256": "950428b47da7688bde1c7e2ab8ede1310f921024eaf48e64b7a90e6325eaa7bb",
+    "model_calls": 0,
+    "preprocessing_submissions": 0,
+    "scope": "Typed matching/completion correctness; not numerical analysis, anatomical QC or workflow execution validation."
+  },
+  "protected": {
+    "original_protected_count": 101,
+    "mapped_count": 100,
+    "matching_count": 100,
+    "unmapped_count": 1,
+    "mismatches": [],
+    "scope": "Available repository copies; the original protected set has one historically unmapped file."
+  },
+  "safety": {
+    "model_api_calls": 0,
+    "preprocessing_submissions": 0,
+    "deployments": 0,
+    "service_restarts": 0,
+    "held_out_processed": 0,
+    "pr_merged": false
+  }
+}

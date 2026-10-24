@@ -1,0 +1,73 @@
+{
+  "updated_utc": "2026-10-23T18:14:31.298128+00:00",
+  "pid": 327048,
+  "active": [],
+  "statuses": {
+    "UCDAVIS_32125": {
+      "stage": "computed_pending_independent_output_and_scale_review",
+      "steps_completed": 8,
+      "pid_alive": false
+    },
+    "UCDAVIS_32126": {
+      "stage": "computed_pending_independent_output_and_scale_review",
+      "steps_completed": 8,
+      "pid_alive": false
+    },
+    "UCDAVIS_32127": {
+      "stage": "computed_pending_independent_output_and_scale_review",
+      "steps_completed": 8,
+      "pid_alive": false
+    }
+  },
+  "acceptances": {
+    "ION_32198": {
+      "status": "conditional_pass",
+      "scale_verified": true,
+      "metrics": {
+        "mean_thickness_mm": 1.683949606346392,
+        "total_area_mm2": 25006.612070429102,
+        "brain_volume_mm3": 106415.875,
+        "etiv_mm3": null,
+        "hull_ratio": 1.8765998901551444
+      }
+    },
+    "UCDAVIS_32125": {
+      "status": "conditional_pass",
+      "scale_verified": true,
+      "metrics": {
+        "mean_thickness_mm": 1.6620886116589424,
+        "total_area_mm2": 18791.111579683118,
+        "brain_volume_mm3": 83012.75,
+        "etiv_mm3": null,
+        "hull_ratio": 1.748585585776282
+      }
+    },
+    "UCDAVIS_32126": {
+      "status": "conditional_pass",
+      "scale_verified": true,
+      "metrics": {
+        "mean_thickness_mm": 1.509373538548777,
+        "total_area_mm2": 22815.180938707126,
+        "brain_volume_mm3": 91341.5,
+        "etiv_mm3": null,
+        "hull_ratio": 1.862509656448595
+      }
+    },
+    "UCDAVIS_32127": {
+      "status": "conditional_pass",
+      "scale_verified": true,
+      "metrics": {
+        "mean_thickness_mm": 1.7736948270754709,
+        "total_area_mm2": 19890.87440659612,
+        "brain_volume_mm3": 94551.25,
+        "etiv_mm3": null,
+        "hull_ratio": 1.7242020925006576
+      }
+    }
+  },
+  "holds": [],
+  "model_api_requests": 0,
+  "automatic_retries": 0,
+  "pending": 0,
+  "stage": "finished"
+}

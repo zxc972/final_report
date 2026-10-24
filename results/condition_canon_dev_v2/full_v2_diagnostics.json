@@ -1,0 +1,13 @@
+{
+  "error_items": 30,
+  "primary_causes": {
+    "provider_environment": 8,
+    "template_mismatch": 9,
+    "template_mismatch_with_margin_boundary": 4,
+    "parameter_key_mismatch": 3,
+    "split_or_insufficient_votes": 3,
+    "no_type_valid_answer": 3
+  },
+  "all_answers_preserved": true,
+  "new_model_calls": 0
+}

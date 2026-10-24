@@ -1,0 +1,16 @@
+case,expected_public_rows,file,fixed_scope_checked,fixed_scope_host_status,fixed_scope_identity_mismatches,fixed_scope_numeric_mismatches,native_independent_status,output_sha256,public_contract_status,public_identity_mismatches,public_rows,public_schema_mismatches
+R24_G1,1240,regional_values.csv,6200,pass,0,0,pass,a02f491d26b99d0343092424b6d381eafc382fb09adc6d32e9cfd193bded5919,pass,0,1240,0
+R24_G1,62,group_results.csv,682,pass,0,0,pass,51e71e50d2981abaa28437c4c5014d890518979d14cb9de2bc26c01f2213e2c2,pass,0,62,0
+R24_G2,,regional_values.csv,,missing_or_invalid,,,not_assessed,,not_assessed,,,
+R24_G2,,group_results.csv,,missing_or_invalid,,,not_assessed,,not_assessed,,,
+E1_S1,62,summary.csv,310,pass,0,0,pass,7edc031b9b67554506f620832cc4f63056deb8f8ad8bbebf6cbd6b689e8ef563,pass,0,62,0
+E1_S2,,global_metrics.csv,,missing_or_invalid,,,not_assessed,,not_assessed,,,
+E1_S3,,summary.csv,,missing_or_invalid,,,not_assessed,,not_assessed,,,
+E1_G1,,regional_values.csv,,missing_or_invalid,,,not_assessed,,not_assessed,,,
+E1_G1,,group_results.csv,,missing_or_invalid,,,not_assessed,,not_assessed,,,
+E1_G2,1240,regional_values.csv,6200,pass,0,0,pass,a02f491d26b99d0343092424b6d381eafc382fb09adc6d32e9cfd193bded5919,pass,0,1240,0
+E1_G2,62,group_results.csv,682,pass,0,0,pass,2afd8aa0e16185b6a956f109d881d47564eb8cfa43e7fcea9508582a1516c11d,pass,0,62,0
+E1_G3,,global_area_values.csv,,missing_or_invalid,,,not_assessed,,not_assessed,,,
+E1_G3,,group_results.csv,,missing_or_invalid,,,not_assessed,,not_assessed,,,
+E1_X1,,global_metrics.csv,30,fail,40,11,not_assessed,e28f1c0fc4218f6bffc03567eb155f2e40746715373f11f1c2a0e309a5c68220,not_assessed,,,
+E1_X1,,species_summary.csv,20,fail,1,20,not_assessed,c7836211282878cf84700774b72644a43855864483e06a5d3c8f0e441d94bfd6,not_assessed,,,

@@ -1,0 +1,9 @@
+subject,hemi,condition,method,n_labels,assigned,mean_dice,min_dice,accuracy,precision_assigned,n_errors
+fsaverage,lh,C3_DK_to_Destrieux,overlap_weighted,74,72,0.8165099374261388,0.6626947769911053,,,
+fsaverage,lh,C3_DK_to_Destrieux,overlap_unweighted,74,72,0.8165099374261388,0.6626947769911053,,,
+fsaverage,lh,C3_DK_to_Destrieux,name_exact,74,0,0.0,0.0,,,
+fsaverage,lh,C3_DK_to_Destrieux,keyword,74,52,0.6868560132702388,0.552452722566693,,,
+fsaverage,rh,C3_DK_to_Destrieux,overlap_weighted,74,74,0.8095063742927874,0.6330225607445739,,,
+fsaverage,rh,C3_DK_to_Destrieux,overlap_unweighted,74,72,0.8085553120852721,0.6330225607445739,,,
+fsaverage,rh,C3_DK_to_Destrieux,name_exact,74,0,0.0,0.0,,,
+fsaverage,rh,C3_DK_to_Destrieux,keyword,74,52,0.6620406454457414,0.5097410018596209,,,

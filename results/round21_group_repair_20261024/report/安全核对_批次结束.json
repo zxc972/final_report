@@ -1,0 +1,276 @@
+{
+  "utc": "2026-10-23T17:35:35.141285+00:00",
+  "existing_services": [
+    {
+      "before": {
+        "pid": 302146,
+        "start_ticks": "530347050",
+        "cwd": "/data/xuancheng/agent_v1/round19_source/agent/modules/agent",
+        "cmdline_sha256": "bc7b912d789a9d134312189aa393772aff5faeaea7e306c015576835f8b84d3c"
+      },
+      "after": {
+        "pid": 302146,
+        "start_ticks": "530347050",
+        "cwd": "/data/xuancheng/agent_v1/round19_source/agent/modules/agent",
+        "cmdline_sha256": "bc7b912d789a9d134312189aa393772aff5faeaea7e306c015576835f8b84d3c"
+      },
+      "unchanged": true
+    },
+    {
+      "before": {
+        "pid": 502551,
+        "start_ticks": "35447512",
+        "cwd": "/home/xuancheng",
+        "cmdline_sha256": "6b38d6228763aca1e8bec686a0a31743dfecc876de0806790bea0830bcb305b2"
+      },
+      "after": {
+        "pid": 502551,
+        "start_ticks": "35447512",
+        "cwd": "/home/xuancheng",
+        "cmdline_sha256": "6b38d6228763aca1e8bec686a0a31743dfecc876de0806790bea0830bcb305b2"
+      },
+      "unchanged": true
+    },
+    {
+      "before": {
+        "pid": 1792515,
+        "start_ticks": "27417226",
+        "cwd": "/data/xuancheng/biomedical-agent-kit/server-agent/web_ui",
+        "cmdline_sha256": "b96fdc3e5ce8bceaeaf87201063cd8a375fdc766f9fcb9857731d0dbd5e2e192"
+      },
+      "after": {
+        "pid": 1792515,
+        "start_ticks": "27417226",
+        "cwd": "/data/xuancheng/biomedical-agent-kit/server-agent/web_ui",
+        "cmdline_sha256": "b96fdc3e5ce8bceaeaf87201063cd8a375fdc766f9fcb9857731d0dbd5e2e192"
+      },
+      "unchanged": true
+    },
+    {
+      "before": {
+        "pid": 1796674,
+        "start_ticks": "27585549",
+        "cwd": "/data/xuancheng/biomedical-agent-kit/server-agent",
+        "cmdline_sha256": "9e863baacc6d2ab7cc69b59257520a86c20f4d865575ffd007994275df304368"
+      },
+      "after": {
+        "pid": 1796674,
+        "start_ticks": "27585549",
+        "cwd": "/data/xuancheng/biomedical-agent-kit/server-agent",
+        "cmdline_sha256": "9e863baacc6d2ab7cc69b59257520a86c20f4d865575ffd007994275df304368"
+      },
+      "unchanged": true
+    },
+    {
+      "before": {
+        "pid": 2722243,
+        "start_ticks": "104968963",
+        "cwd": "/home/xuancheng",
+        "cmdline_sha256": "4e1fccb550e6ee30c28509ed10186a107a0f9ecc9b6cf798ad9ba2fd9b00c86d"
+      },
+      "after": {
+        "pid": 2722243,
+        "start_ticks": "104968963",
+        "cwd": "/home/xuancheng",
+        "cmdline_sha256": "4e1fccb550e6ee30c28509ed10186a107a0f9ecc9b6cf798ad9ba2fd9b00c86d"
+      },
+      "unchanged": true
+    },
+    {
+      "before": {
+        "pid": 4052205,
+        "start_ticks": "526744847",
+        "cwd": "/data/xuancheng/agent_v1/repo/agent/modules/gui/monkey-brain-backend",
+        "cmdline_sha256": "bea8783bb6efce91b71d875b5074499cf3f0bcbdd9c8ffd1660627f73e6214c3"
+      },
+      "after": {
+        "pid": 4052205,
+        "start_ticks": "526744847",
+        "cwd": "/data/xuancheng/agent_v1/repo/agent/modules/gui/monkey-brain-backend",
+        "cmdline_sha256": "bea8783bb6efce91b71d875b5074499cf3f0bcbdd9c8ffd1660627f73e6214c3"
+      },
+      "unchanged": true
+    },
+    {
+      "before": {
+        "pid": 4052221,
+        "start_ticks": "526744917",
+        "cwd": "/data/xuancheng/agent_v1/repo/agent/modules/gui/monkey-brain-frontend",
+        "cmdline_sha256": "876273ecea2c5cf00035b5e537c96b2c0b88adac6941175e33544323405b80b3"
+      },
+      "after": {
+        "pid": 4052221,
+        "start_ticks": "526744917",
+        "cwd": "/data/xuancheng/agent_v1/repo/agent/modules/gui/monkey-brain-frontend",
+        "cmdline_sha256": "876273ecea2c5cf00035b5e537c96b2c0b88adac6941175e33544323405b80b3"
+      },
+      "unchanged": true
+    },
+    {
+      "before": {
+        "pid": 4062319,
+        "start_ticks": "526955776",
+        "cwd": "/data/xuancheng/agent_v1/repo/agent/modules/agent",
+        "cmdline_sha256": "998336306b25dff0f3cf0b05c35e21fea3ff24356b1ef2c3e2de061ebff14039"
+      },
+      "after": {
+        "pid": 4062319,
+        "start_ticks": "526955776",
+        "cwd": "/data/xuancheng/agent_v1/repo/agent/modules/agent",
+        "cmdline_sha256": "998336306b25dff0f3cf0b05c35e21fea3ff24356b1ef2c3e2de061ebff14039"
+      },
+      "unchanged": true
+    },
+    {
+      "before": {
+        "pid": 4101450,
+        "start_ticks": "527195203",
+        "cwd": "/data/xuancheng/agent_v1/round15_a3_source/agent/modules/agent",
+        "cmdline_sha256": "ba2622df50f68f89e374966bf45bfd7bbfe25e30c9b813fab86d35217bc34a49"
+      },
+      "after": {
+        "pid": 4101450,
+        "start_ticks": "527195203",
+        "cwd": "/data/xuancheng/agent_v1/round15_a3_source/agent/modules/agent",
+        "cmdline_sha256": "ba2622df50f68f89e374966bf45bfd7bbfe25e30c9b813fab86d35217bc34a49"
+      },
+      "unchanged": true
+    },
+    {
+      "before": {
+        "pid": 4144167,
+        "start_ticks": "527314729",
+        "cwd": "/data/xuancheng/agent_v1/round15_runtime_source/agent/modules/agent",
+        "cmdline_sha256": "7efeef22e7648e9ac92c85372ef9e120ba98425251934a1b98ea75446c501241"
+      },
+      "after": {
+        "pid": 4144167,
+        "start_ticks": "527314729",
+        "cwd": "/data/xuancheng/agent_v1/round15_runtime_source/agent/modules/agent",
+        "cmdline_sha256": "7efeef22e7648e9ac92c85372ef9e120ba98425251934a1b98ea75446c501241"
+      },
+      "unchanged": true
+    }
+  ],
+  "all_existing_services_unchanged": true,
+  "other_manifest_rows_unchanged": true,
+  "approved_human_count": 20,
+  "approved_no_held_out": true,
+  "human_raw_sha_checks": [
+    {
+      "subject": "IXI026",
+      "matches_manifest_sha": true
+    },
+    {
+      "subject": "IXI045",
+      "matches_manifest_sha": true
+    },
+    {
+      "subject": "IXI064",
+      "matches_manifest_sha": true
+    },
+    {
+      "subject": "IXI095",
+      "matches_manifest_sha": true
+    },
+    {
+      "subject": "IXI158",
+      "matches_manifest_sha": true
+    },
+    {
+      "subject": "IXI198",
+      "matches_manifest_sha": true
+    },
+    {
+      "subject": "IXI216",
+      "matches_manifest_sha": true
+    },
+    {
+      "subject": "IXI267",
+      "matches_manifest_sha": true
+    },
+    {
+      "subject": "IXI288",
+      "matches_manifest_sha": true
+    },
+    {
+      "subject": "IXI294",
+      "matches_manifest_sha": true
+    },
+    {
+      "subject": "IXI303",
+      "matches_manifest_sha": true
+    },
+    {
+      "subject": "IXI307",
+      "matches_manifest_sha": true
+    },
+    {
+      "subject": "IXI327",
+      "matches_manifest_sha": true
+    },
+    {
+      "subject": "IXI353",
+      "matches_manifest_sha": true
+    },
+    {
+      "subject": "IXI434",
+      "matches_manifest_sha": true
+    },
+    {
+      "subject": "IXI442",
+      "matches_manifest_sha": true
+    },
+    {
+      "subject": "IXI445",
+      "matches_manifest_sha": true
+    },
+    {
+      "subject": "IXI542",
+      "matches_manifest_sha": true
+    },
+    {
+      "subject": "IXI546",
+      "matches_manifest_sha": true
+    },
+    {
+      "subject": "IXI625",
+      "matches_manifest_sha": true
+    }
+  ],
+  "all_human_raw_sha_match": true,
+  "catalogue_count": 20,
+  "participants_tsv_sha256": "3a885b481e2e49556dcb5b9d3c82fb887888ae1c5fdd40a1aacc41b013245e0c",
+  "synthetic_table_rows": [
+    {
+      "comparison": "group",
+      "tables": {
+        "regional_values.csv": {
+          "rows": 32,
+          "sha256": "3d5cc1434e43708ade96ade96575f1e3e0cd14ea435739c54480003634dbf222"
+        },
+        "group_results.csv": {
+          "rows": 4,
+          "sha256": "313d818284e93482016927fd512773b727d6bd7bc08621759838264b1d2f31ab"
+        }
+      }
+    },
+    {
+      "comparison": "correlation",
+      "tables": {
+        "regional_values.csv": {
+          "rows": 32,
+          "sha256": "3d5cc1434e43708ade96ade96575f1e3e0cd14ea435739c54480003634dbf222"
+        },
+        "group_results.csv": {
+          "rows": 4,
+          "sha256": "34f3318b4e6e860f1d0f085bf87ba05d842fe1e6938769290ff6bcd2e853af51"
+        }
+      }
+    }
+  ],
+  "new_development_process_stopped": true,
+  "all_real_trials_same_commit": true,
+  "source_head": "2dbaf9b478ed5e5fbcb15fc900e4b797da99feac",
+  "model_api_requests_this_audit": 0
+}

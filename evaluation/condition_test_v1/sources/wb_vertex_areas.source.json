@@ -1,0 +1,12 @@
+{
+  "source_id": "wb_vertex_areas",
+  "url": "https://www.humanconnectome.org/software/workbench-command/-surface-vertex-areas",
+  "final_url": "https://www.humanconnectome.org/software/workbench-command/-surface-vertex-areas",
+  "fetched_at": "2026-10-23T10:00:08.727061+00:00",
+  "http_status": 200,
+  "text_sha256": "8e3163dff98453dbb078cd523a393ec13cd0de0bc590306f1e7d4b8059a49e2f",
+  "html_sha256": "8fe85f2d87926af8ff70308aafdd53d9d7ea13052b90bcb9abf2a2a253e14244",
+  "text_characters": 7313,
+  "projection": "stdlib HTMLParser SourceText v1",
+  "evidence_class": "official_documentation"
+}

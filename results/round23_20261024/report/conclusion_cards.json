@@ -1,0 +1,56 @@
+[
+  {
+    "case": "R23_G1_1",
+    "schema": "primatex.conclusion_card.v1",
+    "verdict": "qualified",
+    "reason": "Warnings limit the interpretation",
+    "conclusion_text": "执行已完成（exit 0），automatic finalization 已生成 manifest（artifact_receipt_id 1ed869…），两份 CSV 均通过公开序列化/身份/数值契约检查（schema/identity/numeric mismatch 全为 0）。按 finalized 阶段规则不再调用工具，以下直接给出最终解释与披露。\n\n## 已完成的实际分析\n\n**方法**（sealed plan：`method:v14:group_regional_glm`，DKT/`aparc.DKTatlas`，native stored space）\n- 20 名 IXI 被试（human 仅为登记声明），全部包含（无年龄/性别缺失，无排除）。\n- 每个（被试×半球×标签）分区计算未加权顶点均值 thickness（stored units: mm，未重缩放）。\n- 共 62 个分区（2 半球 × 31 标签），逐分区 OLS：`mean_thickness ~ age + sex`（sex 为分类协变量），两尾 t 检验针对 age 系数；效应量 partial r = t/√(t²+df)；BH-FDR 校正家族 = 全部 62 个拟合分区（两半球全部分区）。\n- raw rows 1240 → regional rows 1240；fitted 62、skipped 0；设计矩阵秩 = 3（截距、age、sex），df = 17。\n\n**观察到的主要结果**（来自本次运行的 stdout 与 summary.json）\n- **FDR<0.05 显著分区 32/62**，最小 q = 0.0002822。\n- 效应量 partial r 范围：**−0.8479 至 +0.1567**（绝大多数为负值→年龄越大皮层越薄；最大正值 +0.157 的分区并非负向）。\n- 年龄范围 20.07–78.58 岁（均值见 `summary.json` 的 `age_stats.mean`）；性别 F=10 / M=10；站点 Guys=7、HH=7、IOP=6；场强 1.5T=13、3.0T=7。\n- 回调中读取文件已被禁用，逐区详情请以实际产物为准：`regional_values.csv`（1240 行：subject/hemisphere/metric/label_key/name/vertex_count/mean/std_population/median/zero_count/units）、`group_results.csv`（62 行：n/estimate/se/t/df/p/q_fdr/effect_size=partial_r/status）、`summary.json`（含 32 个显著分区的完整清单 `fdr.significant`）、`report.md`、`self_checks.json`、`repair_log.json`。\n\n## 必须披露的局限与实际瑕疵（不隐瞒）\n\n1. **report.md 中有一句自相矛盾**：「未发现 q<0.05 的显著分区（62 个检验中 32 个显著）」。正确读数以 `summary.json` 与 `group_results.csv` 为准：**32/62 个分区在 q<0.05 下显著**。该句为报告文本失误，因 phase 已 finalized（write_code/run_python 不可用）无法再改文件。\n2. **self_checks.json 中「BH q monotone nondecreasing in p」检查失败（31 处违例）**：这是检查本身写错了排序——按分区顺序而非按 p 排序比较；BH 算法在按 p 排序时 q 必然单调。两份 CSV 的数值契约检查（含 FDR 列）全部通过，说明 q 值本身正确；修复版自检已写好但因 auto-finalization 无法重跑。`repair_log.json` 如实记录了该失败项。\n3. 物种为登记声明，未独立验证；stored 厚度值未经采集物理尺度验证、未做任何重缩放，无专家解剖 QC 担保。\n4. QC：复查待定 retained=none；自动 QC 标志 retained=**IXI442**（已纳入本分析，待复查）。\n5. n=20 样本量小，未做功效分析，d_min 未计算。\n6. site 与 field_strength 因 n=20 下与 age/sex 构成秩亏设计而未作为协变量（plan_analysis 明确拒绝该设计），仅作描述性组成报告。\n7. 自检为计算一致性检查（身份/覆盖/有限值/CSV 回读），不构成独立参考验证；未设置 scientific_validated=true。",
+    "scope": "group_inference",
+    "rule_id": "conclusion:qualified"
+  },
+  {
+    "case": "R23_G1_2",
+    "schema": "primatex.conclusion_card.v1",
+    "verdict": "deferred",
+    "reason": "Required independent evidence is unavailable",
+    "conclusion_text": "No Agent interpretation was supplied.",
+    "scope": "supplied_descriptive",
+    "rule_id": "conclusion:missing_checks"
+  },
+  {
+    "case": "R23_G1_3",
+    "schema": "primatex.conclusion_card.v1",
+    "verdict": "deferred",
+    "reason": "Internal review is unfinished or unavailable; a reviewed conclusion cannot be issued.",
+    "conclusion_text": "运行已完成并自动封装（exit_code=0，计划封装 manifest 已生成）。finalized 阶段只保留 finalize_artifacts，读取工具已被禁用，因此我无法再重开输出文件逐行核对数字；以下报告基于实际执行状态和写入脚本中实际执行的自我检查逻辑，不虚构任何未观察到的统计数值。\n\n## 执行状态（observed）\n- `run_python /work/run_dkt_thickness_age_glm.py`：退出码 0，`outputs_complete=true`。\n- 自动终检（同一验证器，仅检查文件/列机械元数据）：通过，receipt `f139828a1f014477b120311e116c5d3e`，manifest sha256 `18feb863…`。\n- 计划：`method:v14:group_regional_glm`（唯一可行候选），DKT atlas 适用，20 名被试全部可用，无阻断条件；`surface_annotation_roi` 因组推断要求不适用。\n\n## 交付物（实际路径与内容）\n| 文件 | 种类/行数预期 | 内容与含义 |\n|---|---|---|\n| `/work/regional_values.csv` | CSV；20 被试 × 2 半球 × 31 分区 = 1240 行 | 每分区未加权平均厚度、总体标准差、中位数、顶点数、零值计数、单位 |\n| `/work/group_results.csv` | CSV；62 行（每 DKT 分区一行） | 每个分区 OLS（mean_thickness ~ age + sex）的年龄斜率、SE、t、df=17、p、BH-FDR q、partial_r、状态（ok/跳过理由） |\n| `/work/summary.json` | JSON，含 `methods`、`limitations` | 方法描述、限制、n=20、拟合/跳过分区数、FDR<0.05 分区数、d_min、站点/场强构成 |\n| `/work/report.md` | 文本报告 | 方法、显著分区明细、功效、站点/场强、限制（中文） |\n| `/work/self_checks.json` | JSON | 实际值自查：行数=1240/62、每被试 62 行、均值/统计量有限性、q∈[0,1]、拟合分区 n=20 且 df=17、厚度范围、非有限记录数、参与表完整 |\n| `/work/repair_log.json` | JSON | 无工具失败；记录第一次执行、自查项清单（模型自查非独立参考验证） |\n\n## 方法（已执行）\n- 厚度：存储于 native 空间的 `lh/rh.thickness` 曲面度量，按每例 `lh/rh.aparc.DKTatlas` 标注（每半球 31 分区）取未加权顶点均值。\n- 模型：每分区独立 OLS `mean_thickness ~ 1 + age + sex`（sex 哑变量 M=1，参考 F；reference=null）；年龄斜率双侧 t 检验，df=n−3=17；效应量 partial_r=t/√(t²+df)。\n- 多重比较：BH-FDR，家族=两半球全部拟合分区（本计划均只含 thickness 度量）。\n- 功效：d_min≈0.645（正态近似、双侧 α=0.05、power=0.8、含协变量；未按 FDR 调整）。\n\n## 必须披露的限制\n- 物种为注册/用户声明（human），未经独立验证；存储坐标/数值，采集物理尺度未经独立验证，未做任何重标定（单位按 FreeSurfer mm 约定解释为\"存储值\"）。\n- QC：专家审查待定（retained=none）；自动 QC 标记保留 IXI442，该被试仍纳入分析。\n- 横断面设计，年龄效应为被试间效应；n=20 样本小，站点（Guys/IOP/HH）与场强（1.5T/3.0T）未建模为协变量；d_min 未按 FDR 调整。\n- 本执行为试点运行，计划/证据未经专家评审；模型自查非独立参考验证。\n\n## 结果数值的诚实说明\n具体哪个分区显著、斜率大小等数字存在于 `/work/group_results.csv`、`/work/report.md`、`/work/summary.json` 中，且终端检查（含 FDR<0.05 分区清单打印）执行通过；但该 stdout 内容在 finalized 阶段无法再读取，我在此不凭记忆或推断复述任何未见过的 p/q/斜率数值。如需在我无法访问的只读阶段之外查看这些数字，可直接打开上述 CSV/报告文件；文件已通过自动终检（列齐全、统计量有限或为 None、q∈[0,1]），此机械校验不构成数值/科学独立认证。",
+    "scope": "group_inference",
+    "rule_id": "conclusion:qualified"
+  },
+  {
+    "case": "R23_G2_1",
+    "schema": "primatex.conclusion_card.v1",
+    "verdict": "deferred",
+    "reason": "Evidence or sensitivity is insufficient",
+    "conclusion_text": "阶段已自动 finalize（`automatic_finalization.status=finalized`，receipt `98a5b070175f48e09e0f20e6783b5bb5`，manifest sha256 `18feb863f772efbee52bb2f550336934fb7ec578f911c98eda0e8ab062a7eb83`），按规则停止工具调用并给出最终解读与披露。\n\n# 结果汇报：20 名 IXI 被试中男/女 DKT 各分区平均皮层厚度比较\n\n## 已完成的实际工作（基于已批准数据）\n- **输入**：20 名登记被试的人类 IXI 数据；每例使用 `aparc.DKTatlas` 注释（左右各 31 个带名分区）+ `lh/rh.thickness` 曲面度量（native stored 空间），每例 31+31=62 个分区，共 20×62=1240 个区域行。\n- **统计模型**（规划方法 `v14:group_regional_glm`）：逐分区 OLS `thickness ~ 1 + sex[M]`，参考组=女性，对 sex[M] 系数做双侧 t 检验（估计值=男性均值−女性均值，单位 mm，df=18）；效应量为未校正因素的合并 Cohen's d；多重校正在全部分区、双半球、thickness 指标上以 (hemisphere, metric, label_key) 身份键做 Benjamini–Hochberg FDR（共 62 个拟合分区）。\n- **执行与修复**：首轮因 `effect_size_kind` 非受控词表被契约校验拒绝（62/62 行 schema mismatch、0 数值/身份 mismatch，见 `/work/tool_results/validation_feedback.json`）；已记录反思并定位到词表后修改脚本重跑，第二轮 exit 0 且自动契约校验与 finalize 全部通过。\n\n## 实际产物（/work，均为本次脚本新写入）\n| 文件 | 内容 |\n|---|---|\n| `regional_values.csv` | 1240 行：每被试每分区 subject/hemisphere/metric/label_key/name/vertex_count/mean/std_population/median/zero_count/units（repr/17 位精度） |\n| `group_results.csv` | 62 行：hemisphere/metric/label_key/name/n/effect/estimate/se/t/df/p/q_fdr/effect_size/effect_size_kind/status（全部 status=ok，无跳过） |\n| `summary.json` | methods/limitations/n、检测灵敏度 d_min、最小 p 的分区身份 |\n| `report.md` | 设计、结果摘要、FDR 显著分区、样本量/排除、效应量、d_min、站点/场强构成 |\n| `self_checks.json` | 实际自我核验：20/20 登记被试均有区域行且身份一致；覆盖 1240 行=20×62；区域均值/标准差全部有限；所有 p∈[0,1]、q 有限；FDR 族=62 拟合分区；性别计数 F=10、M=10（脚本内断言全部通过） |\n| `repair_log.json` | 失败证据（词表 mismatch）+ 修复 + 复查记录 |\n\n人工可查看最终数值的位置：`/work/group_results.csv`（p、q_fdr、d、估计值）与 `/work/summary.json`（最小 p 的显著分区身份）。**注意**：在 finalized 阶段读取工具被禁用，我不能在此复述具体数值；但数值已在上述已密封、已校验的产物中，未做任何推断或编造。\n\n## 必须披露的事项（来自密封 bundle，逐条保留）\n1. **物种仅为登记/用户声明**（human），未经独立验证。\n2. **坐标为存储值**，未验证采集物理尺度或专家解剖 QC；thickness 按 FreeSurfer mm 约定、native 空间解读，但物理尺度未核实（软警告 `scale_consistent:physical_scale`）。\n3. **功效警告**：n=20、df=18，设计近似最小可检测效应 d_min=1.2529（双侧 α=0.05、power=0.8、正态近似、未做 FDR 校正）；对中/小性别差异效能不足，p 不显著不能作为“无差异”的证据。\n4. **QC 限制**：QC 为 AI 初步标记而非专家/盲法批准；review 待定、retained=none；自动标记保留 IXI442（仍纳入分析）。\n5. 模型中未纳入协变量（age/site/field_strength），站点构成为 Guys=7、HH=7（其余为 IOP）且场强 1.5T/3.0T 混合——解释性别差异时应考虑混杂。\n\n## 结论（可核查的陈述）\n分析已完整执行并通过最终校验：62/62 个 DKT 分区均完成男−女厚度 GLM 拟合，BH-FDR 显著性及逐分区估计/效应量存于 `group_results.csv`；无排除、无缺失 ROI 输入。鉴于功率上限（d_min≈1.25）与未校正协变量，任何显著/不显著结论都应结合上述披露谨慎解读。",
+    "scope": "group_inference",
+    "rule_id": "conclusion:missing_evidence"
+  },
+  {
+    "case": "R23_G2_2",
+    "schema": "primatex.conclusion_card.v1",
+    "verdict": "deferred",
+    "reason": "Required independent evidence is unavailable",
+    "conclusion_text": "No Agent interpretation was supplied.",
+    "scope": "group_inference",
+    "rule_id": "conclusion:missing_checks"
+  },
+  {
+    "case": "R23_G2_3",
+    "schema": "primatex.conclusion_card.v1",
+    "verdict": "deferred",
+    "reason": "Evidence or sensitivity is insufficient",
+    "conclusion_text": "跑完了。20/20 被试、62 个 DKT 分区全部拟合，输出已通过契约校验。\n\n## 结果\n\n**没有发现任何 DKT 分区存在男女平均皮层厚度差异。**\n\n- 62 个拟合分区（2 半球 × 31 个 DKT 标签）的 p 值范围 **0.118–0.996**，q 值范围 **0.971–0.996**\n- FDR-BH 校正后 **q_fdr < 0.05 的分区：0 个**\n- 所有估计方向为正（F > M），但全部远不显著\n\n也就是说：女性的平均皮层厚度在各区都略高于男性，这个方向和文献一致，但在这个样本里没有一个区能过硬——最强的一个 p 也才 0.118。\n\n## 为什么\n\n**这是功效不足，不是没差异。** 该设计（n=20，10M/10F，无协变量）的最小可检测效应 d_min = **1.25**。这个量级是\"巨大效应\"，而真实的性别皮层厚度差异通常在 d ≈ 0.1–0.3。样本量只能捞到极端大的效应，所以零结果是预期的，不能读成\"男女皮层厚度相同\"。\n\n另外混杂很脏：三个站点（Guys 7 / HH 7 / IOP 6）、两种场强（1.5T 13 / 3.0T 7），模型里没放任何协变量——年龄也没放，而年龄跨度 20–79 岁，年龄本身对皮层厚度的影响比性别大得多。\n\n## 披露\n\n- 物种为用户/登记声明（human），未独立验证\n- 厚度为存储的 native-space 数值，物理采集尺度未验证；单位按 mm 报告但带尺度未验证限定\n- 无专家/盲法解剖 QC：**IXI442 自动 QC 标记保留**（review 待定）；review-pending 保留的被试：除该自动标记外无\n- 上游重建的完成度/QC 未认证——本分析只对提供的原始顶点值做了分区汇总\n\n## 产物\n\n- `regional_values.csv` — 1240 行，每被试每半球每分区的 mean / population SD / median / vertex_count / zero_count\n- `group_results.csv` — 62 行，每分区的 estimate / se / t / df / p / q_fdr / Cohen d\n- `summary.json` — methods + limitations\n- `report.md` — 完整报告\n\n想要结论的话：这个数据集回答不了你要的问题，n=20 加上混杂设计，任何区域性别比较都只是功效展示。要么加协变量重跑（年龄、站点、场强），要么承认这 20 个被试只够说明方向性趋势。",
+    "scope": "group_inference",
+    "rule_id": "conclusion:missing_evidence"
+  }
+]

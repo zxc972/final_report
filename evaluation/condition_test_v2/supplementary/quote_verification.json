@@ -1,0 +1,22 @@
+{
+  "methods": [
+    {
+      "method": "independent_v2_wb_surface_resample",
+      "card_statements": 19,
+      "annotation_statements": 8,
+      "quarantined": 0
+    },
+    {
+      "method": "independent_v2_fsl_first",
+      "card_statements": 26,
+      "annotation_statements": 13,
+      "quarantined": 0
+    }
+  ],
+  "annotation_statements": 21,
+  "all_retained_quotes_exact": true,
+  "duplicate_development_or_test_v1_items_excluded": [],
+  "method_disjoint_from_development": true,
+  "annotation_status": "not_labelled",
+  "test_evaluation_calls": 0
+}

@@ -1,0 +1,16 @@
+{
+  "audited_utc": "2026-10-24T13:04:34.781548+00:00",
+  "files_audited": 84,
+  "remote_export_hashes_verified": 37,
+  "native_HTTP_logical_token_alignment_rechecked": true,
+  "credential_pattern_scan": "pass",
+  "configured_credential_value_scan_of_remote_export": "pass; see public_export_audit.json",
+  "new_receipts_contain_only_status_log_hash_summary_source_hash": true,
+  "raw_provider_body_files": 0,
+  "generated_analysis_source_files": 0,
+  "real_per_subject_tables": 0,
+  "MRI_or_QC_images": 0,
+  "synthetic_experiment_data_included": true,
+  "original_actor_frozen": true,
+  "additional_model_or_analysis_calls": 0
+}

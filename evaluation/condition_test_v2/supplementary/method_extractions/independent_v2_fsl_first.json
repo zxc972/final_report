@@ -1,0 +1,324 @@
+{
+  "method_id": "independent_v2_fsl_first",
+  "name": "FSL FIRST",
+  "purpose": "Model-based segmentation/registration for automatic segmentation of a number of subcortical structures, producing mesh and volumetric outputs.",
+  "species_scope": "unspecified",
+  "software": [
+    "FSL",
+    "FIRST",
+    "run_first_all",
+    "first_flirt",
+    "run_first",
+    "first_boundary_corr",
+    "first_mult_bcorr",
+    "first_utils",
+    "concat_bvars",
+    "randomise",
+    "slicesdir",
+    "first_roi_slicesdir",
+    "fslstats",
+    "FSLeyes"
+  ],
+  "inputs": [
+    {
+      "statement": "A good quality T1-weighted image is needed to segment the supported structures.",
+      "source_id": "fsl_first",
+      "quote": "FIRST needs a good quality T1-weighted image",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 250,
+        "end": 294,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      }
+    },
+    {
+      "statement": "Only T1-weighted images can be used as input to run_first_all.",
+      "source_id": "fsl_first",
+      "quote": "only T1-weighted images can be used",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 4809,
+        "end": 4844,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      }
+    },
+    {
+      "statement": "first_flirt should be used on whole-head (non-betted) images.",
+      "source_id": "fsl_first",
+      "quote": "first_flirt should be used on whole-head (non-betted) images",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 32993,
+        "end": 33053,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "statement": "If the registration stage fails then the model fitting will not work, though run_first_all continues to run and may produce outputs.",
+      "source_id": "fsl_first",
+      "quote": "if the registration stage fails then the models fitting will\nnot work",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 31711,
+        "end": 31780,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      }
+    },
+    {
+      "statement": "When fitting the cerebellum models, a different transformation matrix than that used for the other structures must be input.",
+      "source_id": "fsl_first",
+      "quote": "you will need to input a different transformation matrix than that used for the other structures",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 32686,
+        "end": 32782,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      }
+    },
+    {
+      "statement": "The -cort flag must be specified for first_flirt to perform the registration needed for cerebellum models.",
+      "source_id": "fsl_first",
+      "quote": "first_flirt will not perform the necessary registration by default - the -cort flag must be specified",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 32784,
+        "end": 32885,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      }
+    },
+    {
+      "statement": "The full path name to the model must be used with -m.",
+      "source_id": "fsl_first",
+      "quote": "The full path name to the model must be used",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 35806,
+        "end": 35850,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "statement": "Run run_first_all with -i specifying the T1-weighted image and -o the output basename.",
+      "source_id": "fsl_first",
+      "quote": "run_first_all -i t1_image -o output_name",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 4698,
+        "end": 4738,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      }
+    },
+    {
+      "statement": "run_first_all runs lower-level utilities including first_flirt, run_first and first on all structures with tuned settings.",
+      "source_id": "fsl_first",
+      "quote": "This script will run lower-level utilities (including first_flirt, run_first and first) on all the structures",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 4072,
+        "end": 4181,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      }
+    },
+    {
+      "statement": "first_flirt runs two-stage affine registration to MNI152 space at 1mm resolution.",
+      "source_id": "fsl_first",
+      "quote": "The first_flirt script runs two-stage affine registration to MNI152 space at 1mm resolution",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 31861,
+        "end": 31952,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      }
+    },
+    {
+      "statement": "run_first segments a single structure given the T1 image, transformation matrix, number of modes, model file and output basename.",
+      "source_id": "fsl_first",
+      "quote": "The run_first script will run FIRST to extract a single structure",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 34617,
+        "end": 34682,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      }
+    },
+    {
+      "statement": "The final stage of run_first_all ensures there is no overlap between structures in the 3D image.",
+      "source_id": "fsl_first",
+      "quote": "The final stage of the script ensures that there is no overlap between structures",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 4433,
+        "end": 4514,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      }
+    }
+  ],
+  "checks": [
+    {
+      "statement": "Check the log directory error outputs; no output means no errors.",
+      "source_id": "fsl_first",
+      "quote": "cat *.logs/*.e*",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 5422,
+        "end": 5437,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      }
+    },
+    {
+      "statement": "Check registration quality using slicesdir on the registered images.",
+      "source_id": "fsl_first",
+      "quote": "slicesdir -p ${FSLDIR}/data/standard/MNI152_T1_1mm.nii.gz *_to_std_sub.nii.gz",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 11151,
+        "end": 11228,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      }
+    },
+    {
+      "statement": "Pay particular attention to the sub-cortical structures when assessing registrations.",
+      "source_id": "fsl_first",
+      "quote": "pay particular attention to the sub-cortical structures",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 11858,
+        "end": 11913,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      }
+    },
+    {
+      "statement": "Check segmentation quality with first_roi_slicesdir, which generates a webpage summary.",
+      "source_id": "fsl_first",
+      "quote": "first_roi_slicesdir is a script to generate summary images, in a webpage format, for the segmentation outputs",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 12483,
+        "end": 12592,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      }
+    }
+  ],
+  "exceptions": [
+    {
+      "statement": "If there are problems, different segmentation options such as number of modes or boundary correction method can be tried using the individual tools.",
+      "source_id": "fsl_first",
+      "quote": "If there are any problems, you can try different segmentation options",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 13075,
+        "end": 13144,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      }
+    },
+    {
+      "statement": "Boundary correction method none is appropriate for models in the 05mm subdirectory.",
+      "source_id": "fsl_first",
+      "quote": "all boundary voxels are considered as belonging to the structure, and hence none is the appropriate correction method",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 40220,
+        "end": 40337,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "statement": "output_name_all_fast_firstseg.nii.gz is a single image showing the segmented output for all structures.",
+      "source_id": "fsl_first",
+      "quote": "output_name_all_fast_firstseg.nii.gz: This is a single image showing the segmented output for all structures",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 6582,
+        "end": 6690,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      }
+    },
+    {
+      "statement": "output_name_all_fast_origsegs.nii.gz is a 4D image of individual segmentations without boundary correction.",
+      "source_id": "fsl_first",
+      "quote": "output_name_all_fast_origsegs.nii.gz: This is a 4D image containing the individual structure segmentations",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 7219,
+        "end": 7325,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      }
+    },
+    {
+      "statement": "output_name_first.vtk is the mesh representation of the final segmentation.",
+      "source_id": "fsl_first",
+      "quote": "output_name_first.vtk : This is the mesh representation of the final segmentation",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 7741,
+        "end": 7822,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      }
+    },
+    {
+      "statement": "output_name_first.bvars contains the mode parameters and the model used and should not be deleted.",
+      "source_id": "fsl_first",
+      "quote": "output_name_first.bvars: Do not delete this file. It contains the mode parameters and the model used",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 7886,
+        "end": 7986,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      }
+    }
+  ],
+  "parameters": [
+    {
+      "statement": "The -m option specifies the boundary correction method; default is auto, other options are fast, thresh or none.",
+      "source_id": "fsl_first",
+      "quote": "-m specifies the boundary correction method. The default is auto",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 5614,
+        "end": 5678,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      }
+    },
+    {
+      "statement": "The -s option allows a restricted set of structures to be selected, comma separated with no spaces.",
+      "source_id": "fsl_first",
+      "quote": "-s allows a restricted set of structures (one or more) to be selected",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 5977,
+        "end": 6046,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      }
+    },
+    {
+      "statement": "The -b option specifies that the input image is brain extracted, important when calculating the registration.",
+      "source_id": "fsl_first",
+      "quote": "-b specifies that the input image is brain extracted",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 6268,
+        "end": 6320,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      }
+    },
+    {
+      "statement": "The -n option sets the number of modes of variation; more modes capture finer details but may reduce robustness.",
+      "source_id": "fsl_first",
+      "quote": "The more modes of variation used the finer details FIRST may capture, however you may decrease the robustness/reliability of the results",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 35231,
+        "end": 35367,
+        "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958"
+      }
+    }
+  ],
+  "quarantined_claims": [],
+  "evidence_status": "exact_quotes_verified_semantics_pending_annotation"
+}

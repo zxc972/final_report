@@ -1,0 +1,12 @@
+{
+  "source_id": "fastsurfer_install",
+  "url": "https://deep-mi.org/FastSurfer/stable/overview/INSTALL.html",
+  "final_url": "https://deep-mi.org/FastSurfer/stable/overview/INSTALL.html",
+  "fetched_at": "2026-10-23T10:00:06.567198+00:00",
+  "http_status": 200,
+  "text_sha256": "03f05ff592ee287c347fe2bff7ff5c84ff307bc49801bd8f238e8da5e36084b5",
+  "html_sha256": "8f1e04db061641cd577acd77766f149bdba059fc03566b59f857c476c632d08c",
+  "text_characters": 7513,
+  "projection": "stdlib HTMLParser SourceText v1",
+  "evidence_class": "official_documentation"
+}

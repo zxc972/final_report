@@ -1,0 +1,6541 @@
+[
+  {
+    "id": 2001,
+    "method": "independent_v2_fs_anatomical_stats",
+    "statement": "Subject name is a required positional argument.",
+    "quote_support": 1.0,
+    "source_id": "fs_anatomical_stats",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "3b2385c7263f41ad90ec35421e467151",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "3b3b913299574c118ab0c5e32c7990bc",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "86edf8680269478e863c60befffb7ce8",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "db27b5224bbf473c8f3c47fa74f81633",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "68ef7f28682c4cc784578420c8c50da0",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2002,
+    "method": "independent_v2_fs_anatomical_stats",
+    "statement": "Hemisphere is a required positional argument.",
+    "quote_support": 1.0,
+    "source_id": "fs_anatomical_stats",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "5ab68dc69c794606929d6c586c24a7b0",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "837a5d589db0422da72eec6a8e3e7f63",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "a0762e4c00a24e14a7b35b2e698a12db",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "f4ab082e2d164bdc98a8e86f27d627f0",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "5e3d30b0050040e5a6fdbcddcba3666e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2003,
+    "method": "independent_v2_fs_anatomical_stats",
+    "statement": "Surface name is an optional positional argument.",
+    "quote_support": 1.0,
+    "source_id": "fs_anatomical_stats",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "3622054275ad42f7b70d303a41cb0ec6",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "6efd229e872d4f5ba47ef26ee59c7c68",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "87493ca9c6564dbca009525f6e02ab7f",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "6819bee66be446828f8a3f23227f267a",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "edb1f9cb883541a3935ce2f0446838cf",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2004,
+    "method": "independent_v2_fs_anatomical_stats",
+    "statement": "When the -l label-file option is used, calculations are limited to the specified label.",
+    "quote_support": 1.0,
+    "source_id": "fs_anatomical_stats",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "0f92844641804f199afdec2b7aaa7855",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "fe4510a2aa1b4445858b01ce529a64c8",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "0f2fa9030fc34196aabfb6e22c8b65c1",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "960fb2f3c19a45f3899791102b9f6d19",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "37bd53a91b5f466b8c181c0385b54b9b",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2005,
+    "method": "independent_v2_fs_anatomical_stats",
+    "statement": "No flagged arguments are required.",
+    "quote_support": 1.0,
+    "source_id": "fs_anatomical_stats",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "9c34ca93ee9d46768e53120e5b258312",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "cdc9acece0ce4e1b84129afe20589ca6",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "31a04499f3e64154ad20517102852831",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "58a1702db4c744d7bd4929baa0def017",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "6036eac3a9df434b8fb805d79bf9c40a",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2006,
+    "method": "independent_v2_fs_anatomical_stats",
+    "statement": "Using -f requires either the -a or -l option to specify input.",
+    "quote_support": 1.0,
+    "source_id": "fs_anatomical_stats",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "4babb0c467804bf18809441aa791982d",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "2ce4c34890214c918f71fdb28b5ffa38",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ca1817fe094944fa93c4ff7a5206289b",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b3dc304c12b74cd6bf936cd983421e7b",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "90032a72007f4e46a485f16ba2224485",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2007,
+    "method": "independent_v2_fs_segstats",
+    "statement": "Input segmentation volume provided with --seg.",
+    "quote_support": 1.0,
+    "source_id": "fs_segstats",
+    "template": "product_present",
+    "parameters": {
+      "slot": "volumes",
+      "type": "type:Volume.Aseg"
+    },
+    "key": "product_present:{\"slot\": \"volumes\", \"type\": \"type:Volume.Aseg\"}",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "product_present:{\"slot\": \"volumes\", \"type\": \"type:Volume.Aseg\"}": 5
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "4c37ab51525c4db1b8087f24d7351601",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "1c89a1ddf03b4fecaf48d75f4ae8135f",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "8429a8d59a124cb9aa66b8cdea7bca2d",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b53bc084546e47768db657dffa600151",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "87ffeff67d9f4784bd85de81189afc45",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2008,
+    "method": "independent_v2_fs_segstats",
+    "statement": "If an input volume is supplied, it must be the same size and dimension as the segmentation volume.",
+    "quote_support": 1.0,
+    "source_id": "fs_segstats",
+    "template": "attr_equal",
+    "parameters": {
+      "slots": [
+        "volumes",
+        "mask"
+      ],
+      "attrs": [
+        "voxel_size"
+      ]
+    },
+    "key": "attr_equal:{\"attrs\": [\"voxel_size\"], \"slots\": [\"mask\", \"volumes\"]}",
+    "support": 0.4,
+    "margin": 0.2,
+    "answered": 5,
+    "invalid_attempts": {
+      "attr_equal": 1
+    },
+    "votes": {
+      "attr_equal:{\"attrs\": [\"voxel_size\"], \"slots\": [\"mask\", \"volumes\"]}": 2,
+      "attr_equal:{\"attrs\": [\"space\", \"voxel_size\"], \"slots\": [\"mask\", \"volumes\"]}": 1,
+      "attr_equal:{\"attrs\": [\"space\", \"voxel_size\"], \"slots\": [\"volumes\", \"volumes\"]}": 1
+    },
+    "decision": "review",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "2212adc371e24b13a24d8b2dcc2f84fe",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "6fbd32865044473390973ea19840d8c4",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "1482e184170a4d2ba4e7c9cbdc1c61ce",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "86833d80ab8c4777b15a9e5dc46cb464",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "79ff82ebc06e4be8b4a07c87054c26fb",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2009,
+    "method": "independent_v2_fs_segstats",
+    "statement": "If a mask volume is supplied, it must be the same size and dimension as the segmentation volume.",
+    "quote_support": 1.0,
+    "source_id": "fs_segstats",
+    "template": "attr_equal",
+    "parameters": {
+      "slots": [
+        "mask",
+        "volumes"
+      ],
+      "attrs": [
+        "voxel_size",
+        "space"
+      ]
+    },
+    "key": "attr_equal:{\"attrs\": [\"space\", \"voxel_size\"], \"slots\": [\"mask\", \"volumes\"]}",
+    "support": 0.4,
+    "margin": 0.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "attr_equal:{\"attrs\": [\"space\", \"voxel_size\"], \"slots\": [\"mask\", \"volumes\"]}": 2,
+      "attr_equal:{\"attrs\": [\"voxel_size\"], \"slots\": [\"mask\", \"volumes\"]}": 2,
+      "advisory": 1
+    },
+    "decision": "review",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b6230407353741bfa2ab374840dd6080",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ca8a1e2f302d4b5fad1d7481670303ff",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "855d488197ef4f278e09e1db42637625",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "1290736f34d540b5b84768f3b6dd58c8",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "aa174cfbaecd4ca9802dbb8217f6863c",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2010,
+    "method": "independent_v2_fs_segstats",
+    "statement": "The FreeSurfer color table file maps each segmentation index to a segmentation name and color.",
+    "quote_support": 1.0,
+    "source_id": "fs_segstats",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "6cf3beb2c7504dce93ecb0f0c32b09d8",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "96a1c730b18c462183eb351ccae17564",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ce65bb04fe0c4d8db8a8878cfcd364c7",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "afc8c023295b4819b90c1c7f5613abbe",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "70585e2a3772496e801e3b4c1c0271b5",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2011,
+    "method": "independent_v2_fs_segstats",
+    "statement": "Partial volume compensation with --pv is usually only done when computing anatomical statistics and is not used with --annot.",
+    "quote_support": 1.0,
+    "source_id": "fs_segstats",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "99fae5bc26e049809a97ccaed74f3b2a",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "96fe6dfe24674d0fb11a832773aa2a84",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "4f9736c8fb6048fdbe9da4a567469e22",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "eb97ae2e316147c4a9963fe056fb1b13",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "2570128dcf1747ba93a68a4b6c8b6096",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2012,
+    "method": "independent_v2_fs_segstats",
+    "statement": "If no voxels meet the masking criteria, mri_segstats exits with an error.",
+    "quote_support": 1.0,
+    "source_id": "fs_segstats",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "c3d2bc9e81cb4dc69e12328ac58a45dc",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "dbd54e7d27354438aaf9ce1e6b119f88",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "4efd57809daa4440a7bc3a73905c2631",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "8ba335a142d04dadbaf95cb5528c191f",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "e706b14608764b3ba820efae3aa9d4f6",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2013,
+    "method": "independent_v2_fs_segstats",
+    "statement": "If neither --id nor a color table is specified, all IDs from the segmentation volume are used.",
+    "quote_support": 1.0,
+    "source_id": "fs_segstats",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "9d667d938bba4eb58cedd5ee14c39272",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "4a222b52440d45ea98b57080b24b64d8",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "124219c7a1684eec8648b954b11e7f0d",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "476e520667c54771902e0642b5211b62",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "f3e7dbbdff044be2bd5119e3889fd7a4",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2014,
+    "method": "independent_v2_fs_segstats",
+    "statement": "If an input volume is supplied, it must be the same size and dimension as the segmentation volume.",
+    "quote_support": 1.0,
+    "source_id": "fs_segstats",
+    "template": "attr_equal",
+    "parameters": {
+      "slots": [
+        "volumes",
+        "mask"
+      ],
+      "attrs": [
+        "voxel_size"
+      ]
+    },
+    "key": "attr_equal:{\"attrs\": [\"voxel_size\"], \"slots\": [\"mask\", \"volumes\"]}",
+    "support": 0.8,
+    "margin": 0.8,
+    "answered": 5,
+    "invalid_attempts": {
+      "attr_equal": 1
+    },
+    "votes": {
+      "attr_equal:{\"attrs\": [\"voxel_size\"], \"slots\": [\"mask\", \"volumes\"]}": 4
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "eb33d551e54a45c5a16eadb577517aaa",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "4c0ab5dcd37c4729b7291d73f59804bd",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "a98e941e15bd43b6b5452d38feb2dda8",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "d703961969f848b58d17b3b871309c9b",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "77d11d7d4a5f4c8f88ecfbf7712ba68a",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2015,
+    "method": "independent_v2_fs_segstats",
+    "statement": "If a mask volume is supplied, it must be the same size and dimension as the segmentation volume.",
+    "quote_support": 1.0,
+    "source_id": "fs_segstats",
+    "template": "attr_equal",
+    "parameters": {
+      "slots": [
+        "mask",
+        "volumes"
+      ],
+      "attrs": [
+        "voxel_size"
+      ]
+    },
+    "key": "attr_equal:{\"attrs\": [\"voxel_size\"], \"slots\": [\"mask\", \"volumes\"]}",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "attr_equal:{\"attrs\": [\"voxel_size\"], \"slots\": [\"mask\", \"volumes\"]}": 5
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "5912c7f1252644e4bf855d9962c8102c",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "37a914207f2d4c97aaf43317de7d84bb",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "4990a98ffb834bc69ed26ea10f768496",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "5509010b0de648e18c3d57e1521d8959",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "caf87684a3624206b7bc8ca54232a87a",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2016,
+    "method": "independent_v2_fs_segstats",
+    "statement": "If no voxels meet the masking criteria, the program exits with an error.",
+    "quote_support": 1.0,
+    "source_id": "fs_segstats",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ed494203e71e448885aaa75397997a0f",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "6d21608c2adf4d49892c32c03d5272e2",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ca9252db428d44c593c01f1e9d14b2bc",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "6fbd671cd94941868cc68261858ea1e3",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b7a15eb8150d4e188e850567ebbe13c3",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2017,
+    "method": "independent_v2_fs_preproc",
+    "statement": "With --meas surfmeasure, input is taken from subject/surf/hemi.surfmeasure.",
+    "quote_support": 1.0,
+    "source_id": "fs_preproc",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 0.4,
+    "margin": 0.2,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 2,
+      "product_present:{\"slot\": \"metric\", \"type\": \"type:SurfaceMetric\"}": 1,
+      "product_present:{\"slot\": \"surface\", \"type\": \"type:SurfaceMetric\"}": 1,
+      "product_present:{\"slot\": \"surface\", \"type\": \"type:Surface\"}": 1
+    },
+    "decision": "review",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "0637d6d354e04ae4900a7ac6dffaabcc",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "e31c07e766e541d8a782084c2b205228",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "31820aaa455741cc924eac9b1e39c802",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "306f80f96e78416e878f374d4ae33389",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "38f2a50db6f4433eb08b97e6dbe2b27c",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2018,
+    "method": "independent_v2_fs_preproc",
+    "statement": "The --fsgd option specifies the input subject list from an FSGD file.",
+    "quote_support": 1.0,
+    "source_id": "fs_preproc",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "525548ecde2944a786fa364c613d08e4",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "388ac9bc34b647ef9a2dc610f45a0a75",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ab60d21f8c504fbe85a9ef91523c2867",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "c1f59c5d808c4c0499c033099ed3492b",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "bb2c73c06e2e47bd82fe42cc8fe8fece",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2019,
+    "method": "independent_v2_fs_preproc",
+    "statement": "The registration matrix file is of the type accepted or created by tkregister2.",
+    "quote_support": 1.0,
+    "source_id": "fs_preproc",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 0.6,
+    "margin": 0.39999999999999997,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 3,
+      "product_present:{\"slot\": \"T1\", \"type\": \"type:Transform\"}": 1,
+      "product_present:{\"slot\": \"volumes\", \"type\": \"type:Transform.Affine\"}": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "916dae59ef37477f8ae4f01613d650cb",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "08f1df57dc454039a9a8d6b4ec4cde02",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b7a8dd79d18d482f95a523b687ecaf03",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "833aea339bd3493590fb3d6b281a7a06",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "c7e8c4a02c514aaaa3124fc1251863e9",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2020,
+    "method": "independent_v2_fs_preproc",
+    "statement": "The --target option selects the common-space subject; --hemi selects lh or rh for source and target surfaces.",
+    "quote_support": 1.0,
+    "source_id": "fs_preproc",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "4db23057feb24acdb795fd9a5e35cb38",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "8c1f13838343442bbd08dd7d25275788",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "8766989a1774437a9f707eb97f2153ac",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "85cca3c5f9f647c8b2aa5e4b396345d9",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "1fdd80fdf8684673a6006e8b7b843fea",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2021,
+    "method": "independent_v2_fs_preproc",
+    "statement": "When subjects are listed using --s, each has its own --s; this option is for use with --meas.",
+    "quote_support": 1.0,
+    "source_id": "fs_preproc",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "5cfb9c29c5fa4c29904be9e008319bb3",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "34dcc1fbdf4b48548c93c43f73eb66a8",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "28afeb50f7ac4a1ea51c75c0d33b5d04",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "396ac7f65ac74819ae4e24b0071e39e8",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "365e7b336418438a896324d2607e4b6f",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2022,
+    "method": "independent_v2_fs_preproc",
+    "statement": "The --is option is an alternative to --meas and still requires a supplied subject list.",
+    "quote_support": 1.0,
+    "source_id": "fs_preproc",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "d67006f3379243cb91cfb93f3760b808",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "9bc66ca635e246ccb4a9e52ad46fed93",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "9f5fcef623394165a61708a43c4d14fa",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "68df963c24dc47e9844fd8017b8da9cc",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "f4ce5f63dc8347bf9963c57ddb3696c3",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2023,
+    "method": "independent_v2_fs_preproc",
+    "statement": "For --paired-diff there must be an even number of inputs.",
+    "quote_support": 1.0,
+    "source_id": "fs_preproc",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "7e4de373a7854754901d55cf802e070c",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "67de8568deb543f98f1cfd4b3558a8e6",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b5eb49db5dc94e94a7fbeb7429cb6751",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "9f47be310fb74e4f9246c9e17219f0d4",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b384b23926a6414ba4bcd125783ee162",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2024,
+    "method": "independent_v2_fs_preproc",
+    "statement": "When using full paths with --fsgd, subjects must be in the same order as the input surface files.",
+    "quote_support": 1.0,
+    "source_id": "fs_preproc",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 0.4,
+    "margin": 0.4,
+    "answered": 5,
+    "invalid_attempts": {
+      "attr_equal": 3
+    },
+    "votes": {
+      "advisory": 2
+    },
+    "decision": "review",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "821bbc7b3ba142549fc808fe2b1a0521",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "f2ec4fc3308445c8a4c840e44d4c850f",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "263cb086ee094c7b9e32f09452639399",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "60a32d3da5e1495ba4afdfa81cc51f9c",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ed63171e5c52498a97606fecd06173b1",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2025,
+    "method": "independent_v2_fs_preproc",
+    "statement": "--cache-out-only requires supplying a tmpdir.",
+    "quote_support": 1.0,
+    "source_id": "fs_preproc",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "bfd8cbc77a644f80a683df12019c9460",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "0dc6f1bf190a4122b04d338b02da4357",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "27308f63005c4e16808c765cf3e47c8b",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "fde45c5ec6d246238e610c67b67e70ff",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "9e22a1c3b27443da99b814e7f1fc08d2",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2026,
+    "method": "independent_v2_fs_preproc",
+    "statement": "ANALYZE and NIFTI formats cannot represent a dimension with more than 32k elements.",
+    "quote_support": 1.0,
+    "source_id": "fs_preproc",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "6f3a1db023d54f5eaede035b61cfde57",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "14938abeab6b41cd9d6eef1579717dce",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "7c5e2a07727c4e5bb7fcfa0a7de89ce3",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "438185179fa74368b68df3759cab919e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "e5393e67195448969c80647b8e8b0218",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2027,
+    "method": "independent_v2_fs_preproc",
+    "statement": "None of the paired diff options will affect caching.",
+    "quote_support": 1.0,
+    "source_id": "fs_preproc",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "fbadb94e24814ba5bf63342a12db8425",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "2360c318f01b470ea068ebcc5d494233",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "91e6ced6315e449fa6aab1bfbdb106fa",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "d7a10de563564b09841330d378a365f6",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "f43d656520224a96a3ae584767f2cc5c",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2028,
+    "method": "independent_v2_fs_surf2surf",
+    "statement": "Source subject name in $SUBJECTS_DIR or ico; input data must have been sampled onto this subject's surface.",
+    "quote_support": 1.0,
+    "source_id": "fs_surf2surf",
+    "template": "provenance",
+    "parameters": {
+      "step": "recon-all"
+    },
+    "key": "provenance:{\"step\": \"recon-all\"}",
+    "support": 0.4,
+    "margin": 0.2,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "provenance:{\"step\": \"recon-all\"}": 2,
+      "attr_equal:{\"attrs\": [\"subject\"], \"slots\": [\"metric\", \"surface\"]}": 1,
+      "software:{\"commands\": [\"subjects\"]}": 1,
+      "attr_equal:{\"attrs\": [\"mesh\", \"subject\"], \"slots\": [\"metric\", \"surface\"]}": 1
+    },
+    "decision": "review",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b78dd589c27f48f9b609774ac58faa1e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b210e530c2d54bd58693af841021e114",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "8c7ebf1995034b3796a1de242b1a27af",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "9dcbfb5df8eb42b79fc3c2fde7a7a2b2",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "2a495fe4425448aba2b17db7f9690c0d",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2029,
+    "method": "independent_v2_fs_surf2surf",
+    "statement": "File containing the data on the source surface.",
+    "quote_support": 1.0,
+    "source_id": "fs_surf2surf",
+    "template": "product_present",
+    "parameters": {
+      "slot": "surface",
+      "type": "type:Surface"
+    },
+    "key": "product_present:{\"slot\": \"surface\", \"type\": \"type:Surface\"}",
+    "support": 0.8,
+    "margin": 0.6000000000000001,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "product_present:{\"slot\": \"surface\", \"type\": \"type:Surface\"}": 4,
+      "advisory": 1
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "9811b4ce98684f4c93271aeafad43b9e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "04481addd28c473cba9edbb26505d9e1",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "f69582affb754462ba68326c7b40e456",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "cd79d4f47bb24042a66273d8781162ff",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "5ea8b8f3e9a8467fa21c0a2fa5c0d1c5",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2030,
+    "method": "independent_v2_fs_surf2surf",
+    "statement": "Target subject name in $SUBJECTS_DIR or ico for icosahedron.",
+    "quote_support": 1.0,
+    "source_id": "fs_surf2surf",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "f864d7672b564587aa3bcbe5ec2b5c07",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "717737eb2db143b5a29c8cbeaf2bc48c",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "70cbcd1484cd4756adacca1a3e88dbf0",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "952f9f330b1141fb8d39b30c4fccf1df",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b72761d38b2b4a6ab05ae9a54dc6dd74",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2031,
+    "method": "independent_v2_fs_surf2surf",
+    "statement": "If source and target subjects differ, the registration surface is used; sphere.reg is the default.",
+    "quote_support": 1.0,
+    "source_id": "fs_surf2surf",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b79e789c07f041fbbd535ee37ea74f5f",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "330f48f53a6842e989653886cf0771ae",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "6a40d8983ba849cbb952fbed61a126f3",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "f03a6e6f14854778bd99db741fc84ef2",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "8cc7b0c0e24a4358a095ec28c3a3dfdb",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2032,
+    "method": "independent_v2_fs_surf2surf",
+    "statement": "For trg_type w or paint, use the full path for the target file.",
+    "quote_support": 1.0,
+    "source_id": "fs_surf2surf",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "4fd09cd3da67447ba20bab208b80fdd9",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "f7857ca30bd5461c8f605d29c0fccf1b",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ea02ed8ebd664bfcb59ecb045e4509a3",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "833dec4b9a0e4211aff3ddbbc30b5a32",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "17d1fccefa47464195621282b6eb11e3",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2033,
+    "method": "independent_v2_fs_surf2surf",
+    "statement": "With paint output, specify the output file with a partial path or it will be written into the subject's anatomical directory.",
+    "quote_support": 1.0,
+    "source_id": "fs_surf2surf",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "a9e1ddb31bfc4ca0b01a51e09bbf97b3",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "f0dad2832dba4b7fa68b6b1e41750da0",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "dd3d50e369d544129e612434c91c97b5",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "52d69a428cf94f5ba573cd752b6ccc08",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b9e468fd42744d62b312232cd6b159a1",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2034,
+    "method": "independent_v2_wb_metric_resample",
+    "statement": "The metric file to resample, typically a native-mesh metric.",
+    "quote_support": 1.0,
+    "source_id": "wb_metric_resample",
+    "template": "product_present",
+    "parameters": {
+      "slot": "metric",
+      "type": "type:SurfaceMetric"
+    },
+    "key": "product_present:{\"slot\": \"metric\", \"type\": \"type:SurfaceMetric\"}",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "product_present:{\"slot\": \"metric\", \"type\": \"type:SurfaceMetric\"}": 5
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "c4e88f77409f4d5db92d89c33a73f103",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "e40a2a9186214fd8b5473e8edb83c7d6",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "9a95bc387fd749ec806a056efe3d9ddb",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ab98d1069bf24943858bc8dd01f2e100",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "36b73b113d28488b813f2908b0f79d97",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2035,
+    "method": "independent_v2_wb_metric_resample",
+    "statement": "A sphere surface in register with the new sphere and having the mesh the metric is currently on.",
+    "quote_support": 1.0,
+    "source_id": "wb_metric_resample",
+    "template": "attr_equal",
+    "parameters": {
+      "slots": [
+        "surface",
+        "metric"
+      ],
+      "attrs": [
+        "mesh"
+      ]
+    },
+    "key": "attr_equal:{\"attrs\": [\"mesh\"], \"slots\": [\"metric\", \"surface\"]}",
+    "support": 0.4,
+    "margin": 0.0,
+    "answered": 5,
+    "invalid_attempts": {
+      "attr_equal": 1
+    },
+    "votes": {
+      "attr_equal:{\"attrs\": [\"mesh\"], \"slots\": [\"metric\", \"surface\"]}": 2,
+      "advisory": 2
+    },
+    "decision": "review",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ab071bbcb87948e4914893ecaba35a56",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "dd84e650206b443588583dde2b0904b0",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "f5e0ff43c7e54c4db76450ef34151c3e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b369358881d1496db858354122424c69",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "0730d4b702a944e092d4916272e90958",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2036,
+    "method": "independent_v2_wb_metric_resample",
+    "statement": "A sphere surface that is the desired output mesh, typically a standard sphere.",
+    "quote_support": 1.0,
+    "source_id": "wb_metric_resample",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 0.6,
+    "margin": 0.19999999999999996,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 3,
+      "product_present:{\"slot\": \"surface\", \"type\": \"type:Surface.Sphere\"}": 2
+    },
+    "decision": "review",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "1ca28fa65c1c47e1b7bd8ca27194bcc2",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "78b725f5d7b34a37a8d9e88a529392dd",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "c09b93ce43b34458a1082fc4614cb156",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "d3f9732d09ec403c8df062c0ddf9d6fa",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "6d2ee7bcc4294919a291242ddaf11bd0",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2037,
+    "method": "independent_v2_wb_metric_resample",
+    "statement": "The method argument must be one of ADAP_BARY_AREA or BARYCENTRIC.",
+    "quote_support": 1.0,
+    "source_id": "wb_metric_resample",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "2519f9e45f9e4864a2df5326208dbce7",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b9e3773d99254245b6f667da2b48665b",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "4a176d3ca714414e9ce64118bd44fe43",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "18d26eaf3efa42ceb12dd6341a858ac4",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "884e5ba3bcc343a5b253d7dfdf536852",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2038,
+    "method": "independent_v2_wb_metric_resample",
+    "statement": "If ADAP_BARY_AREA is used, exactly one of -area-surfs or -area-metrics must be specified.",
+    "quote_support": 1.0,
+    "source_id": "wb_metric_resample",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "74c0d0c63f82490db9ef2ab02768f76c",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "c0da59491298402bbf29879aba44be20",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "786c9659faea437eb1c27797fae6fdf7",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "fee4524382fd4809a0b14896a98adea6",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "c5b30d143aef4cdda88152193aad2be7",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2039,
+    "method": "independent_v2_wb_metric_resample",
+    "statement": "The current sphere must be in register with the new sphere.",
+    "quote_support": 1.0,
+    "source_id": "wb_metric_resample",
+    "template": "attr_equal",
+    "parameters": {
+      "slots": [
+        "surface",
+        "surface"
+      ],
+      "attrs": [
+        "space"
+      ]
+    },
+    "key": "attr_equal:{\"attrs\": [\"space\"], \"slots\": [\"surface\", \"surface\"]}",
+    "support": 0.4,
+    "margin": 0.4,
+    "answered": 5,
+    "invalid_attempts": {
+      "attr_equal": 3
+    },
+    "votes": {
+      "attr_equal:{\"attrs\": [\"space\"], \"slots\": [\"surface\", \"surface\"]}": 2
+    },
+    "decision": "review",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "7a89c43102c6407dab10aff19c3ee1c8",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "dbe6fd12845a4c09ba688fcfd9ffd68f",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "da9699f4bd5a494f86163cbe021dfcb1",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "c98367866c80431bb84b62025108a5fe",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "08f8a3bc3fda4ffdb0c035ef81bd1d7a",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2040,
+    "method": "independent_v2_wb_metric_resample",
+    "statement": "The -current-roi option only masks the input; the output may be slightly dilated in comparison.",
+    "quote_support": 1.0,
+    "source_id": "wb_metric_resample",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "915128d907cf4353b45fb1f2591b16a9",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "dd4cf1a3f2f0408390d96532d689fdf4",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "1c7bd195e9064bca9c170f9b2335194c",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "c3926165615543db8a319fc5db3af2ec",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "737443dad72f4d1ca13d98ad5788aeb2",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2041,
+    "method": "independent_v2_ants_thickness",
+    "statement": "The anatomical input is a structural intensity image, typically T1.",
+    "quote_support": 1.0,
+    "source_id": "ants_thickness_script",
+    "template": "product_present",
+    "parameters": {
+      "slot": "T1",
+      "type": "type:Volume.T1"
+    },
+    "key": "product_present:{\"slot\": \"T1\", \"type\": \"type:Volume.T1\"}",
+    "support": 0.8,
+    "margin": 0.6000000000000001,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "product_present:{\"slot\": \"T1\", \"type\": \"type:Volume.T1\"}": 4,
+      "advisory": 1
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "e4c11c0360c04e2bbaf0fa5c90260a7c",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "168cc83eab4b4e218d2b603e6b691fd5",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "205a8f03d602499eb28e79c0a2f6c428",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "a3a326b24c44403685fc886fb2e3344b",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "0b0c9fa4e25749028cc75f0f74f71cad",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2042,
+    "method": "independent_v2_ants_thickness",
+    "statement": "Brain segmentation template: an anatomical intensity template that is not skull-stripped.",
+    "quote_support": 1.0,
+    "source_id": "ants_thickness_script",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "37ec684dbf734570b32ca7930562689d",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "aa35bc79770244e28abd2401386a6aae",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "c6d86118207041a1a7d9d9130185f22e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "4c3810cb5e3145928d02c5735d7fc5e0",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "bc602e59bab34565a3a8a54781a8bff7",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2043,
+    "method": "independent_v2_ants_thickness",
+    "statement": "Brain extraction probability mask in the segmentation template space; a binary mask is acceptable.",
+    "quote_support": 1.0,
+    "source_id": "ants_thickness_script",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 0.8,
+    "margin": 0.8,
+    "answered": 5,
+    "invalid_attempts": {
+      "attr_in": 1
+    },
+    "votes": {
+      "advisory": 4
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "bb714b930cbc464d9987c3cb9b4ccf1b",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "683cdb168b604ca98e764e276dbf1060",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "9717f7b39663406497c34884bfa74e5e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "e33d44ab2af54f6ca73ba14c1c6a7725",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "4ee0252ae1d244beafcdba55ce98b8d8",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2044,
+    "method": "independent_v2_ants_thickness",
+    "statement": "At least four priors must exist, corresponding to CSF, cortical GM, WM and subcortical GM.",
+    "quote_support": 1.0,
+    "source_id": "ants_thickness_script",
+    "template": "cardinality",
+    "parameters": {
+      "object": "priors",
+      "minimum": 4
+    },
+    "key": "cardinality:{\"minimum\": 4, \"object\": \"priors\"}",
+    "support": 0.8,
+    "margin": 0.6000000000000001,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "cardinality:{\"minimum\": 4, \"object\": \"priors\"}": 4,
+      "advisory": 1
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "cf5bc82199494227bd4de718ff54af7e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "519d80ff15e14d308ac7b49ee00ac161",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "8e4c04c505fd4853ab8b3c9e5adb1367",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "4c5bcac121de4c379a951607dd479010",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ac7f6841891e4668b3031e6d7f65d913",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2045,
+    "method": "independent_v2_ants_thickness",
+    "statement": "Image dimension must be 2 or 3.",
+    "quote_support": 1.0,
+    "source_id": "ants_thickness_script",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "f12ab344d2ee42dbbc2b9d1e6389dfa5",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "9df9d5a44cda489ca5a49fd55a2b7ab8",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ce35dcf63fc448fa9785104ffce746fb",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "70cbf32739da473aa1ffe8d8740c829f",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "eeff0e16ab5d4fac9af2b0ba14abb61b",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2046,
+    "method": "independent_v2_ants_thickness",
+    "statement": "If a registration template is supplied with -t, it must be skull-stripped.",
+    "quote_support": 1.0,
+    "source_id": "ants_thickness_script",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 0.6,
+    "margin": 0.39999999999999997,
+    "answered": 5,
+    "invalid_attempts": {
+      "attr_in": 1
+    },
+    "votes": {
+      "advisory": 3,
+      "attr_in:{\"attr\": \"scale_status\", \"slot\": \"T1\", \"values\": [\"skull-stripped\"]}": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ba67834a86db432ca9a3b760727f5763",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "d5d3258debbf47e7917c5855cc6750d7",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "86161d86f4ab48f3a95fb6a04aa043a8",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "caf9e5fb74744e17917f209a22439169",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "7c9c6f5ae55f4217b7a19d986e4ad3f3",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2047,
+    "method": "independent_v2_ants_thickness",
+    "statement": "If an extraction registration mask is supplied with -f, it is a binary metric mask in the segmentation template space (-e).",
+    "quote_support": 1.0,
+    "source_id": "ants_thickness_script",
+    "decision": "review",
+    "template": "advisory",
+    "parameters": null,
+    "reason": "no valid answer",
+    "answered": 5,
+    "invalid_attempts": {
+      "attr_in": 5
+    },
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "f6977e60252c467b9f7c30673009cc71",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "3fa2e56965ef41efaeec8ceb0162abbf",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "92e2641491ea40b7adf44cc81b79ccb1",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "2c74e7828ec641de917074fea72fec73",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "bdbdee7e8f5f4328be55927641514e9f",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2048,
+    "method": "independent_v2_ants_thickness",
+    "statement": "At least four prior images are required; fewer causes the script to exit.",
+    "quote_support": 1.0,
+    "source_id": "ants_thickness_script",
+    "template": "cardinality",
+    "parameters": {
+      "object": "prior images",
+      "minimum": 4
+    },
+    "key": "cardinality:{\"minimum\": 4, \"object\": \"prior images\"}",
+    "support": 0.8,
+    "margin": 0.6000000000000001,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "cardinality:{\"minimum\": 4, \"object\": \"prior images\"}": 4,
+      "advisory": 1
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "2d281d6d0852411bbf044c699bd18838",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "49da62ae78b541ea90c27b86c3c1f1f7",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "726a1f35666d46dbb70ffe26aaa91011",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "c95402ba4a4d4c2e8109e6a40440c5d6",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "0ec3d66355044aa69d2ffadaf3e62856",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2049,
+    "method": "independent_v2_ants_thickness",
+    "statement": "The segmentation template and registration template may be different.",
+    "quote_support": 1.0,
+    "source_id": "ants_thickness_outputs",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "413c6be89ffc418b95238dee93d1684a",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "afa9e22c5b4b429d90e1cb27efb88e5f",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "c64807cd13204ff3b60479de6c44c521",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ca441326c1164e00846a417bcba7c88e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "db0f4455a3f1454087f76da1058cb07c",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2050,
+    "method": "independent_v2_ants_thickness",
+    "statement": "If command -v cannot find a dependency program, the script reports an error.",
+    "quote_support": 1.0,
+    "source_id": "ants_thickness_script",
+    "template": "software",
+    "parameters": {
+      "commands": [
+        "d"
+      ]
+    },
+    "key": "software:{\"commands\": [\"d\"]}",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "software:{\"commands\": [\"d\"]}": 5
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "228d1fc2d2fc4357b0d8524a675a6ba0",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "12581944adde47f8b8a0c2bd24a9ad62",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ba02f94d5f2949ddb976a76549cc150f",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b44a5aab8156495ca5f4ff0486342faf",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "9b1278c27b394ce3bcbfec87854e95d4",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2051,
+    "method": "independent_v2_ants_thickness",
+    "statement": "Specified anatomical images are checked for existence.",
+    "quote_support": 1.0,
+    "source_id": "ants_thickness_script",
+    "template": "product_present",
+    "parameters": {
+      "slot": "T1",
+      "type": "type:Volume.T1"
+    },
+    "key": "product_present:{\"slot\": \"T1\", \"type\": \"type:Volume.T1\"}",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "product_present:{\"slot\": \"T1\", \"type\": \"type:Volume.T1\"}": 5
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "1bfca8133931412e92f762b2dacfaee1",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "8a4c6dab9e184c2a93a64706b5c880c8",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "d0c25524f13c481dbfae52ed6a731993",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "5db1769ef01e45eeba1fe5bf2596af39",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "834109f0184d47c7a9248ac41ce17bd1",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2052,
+    "method": "independent_v2_ants_thickness",
+    "statement": "The script tests each expected output image for existence and records missing outputs.",
+    "quote_support": 1.0,
+    "source_id": "ants_thickness_script",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "8c953fb919614ceeb6dd15512b44984e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "06fe9e76aa214a649dedc3bb40ff5e31",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "f47dde2193e949c3b61086d3b63f7c62",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "a481f3417c8145b882b8898d4a67cc73",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "9c5d3349c93b4b11874e341d6a1790a3",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2053,
+    "method": "independent_v2_ants_thickness",
+    "statement": "The script checks for the affine registration transform from the segmentation step.",
+    "quote_support": 1.0,
+    "source_id": "ants_thickness_script",
+    "template": "provenance",
+    "parameters": {
+      "step": "seg-router"
+    },
+    "key": "provenance:{\"step\": \"seg-router\"}",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "provenance:{\"step\": \"seg-router\"}": 5
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "e814918032ef4b098b8df34ffe1db0b2",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "9b778968379d45299c8d9749bb3b9b3e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "8dbd1c73568f4941987a1ba86ffd8d9c",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ec7d7c8b15d840f4beec9db455136612",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b3f916b2ffae4ac7adcaf504039841cb",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2054,
+    "method": "independent_v2_ants_thickness",
+    "statement": "If a command exits with nonzero status, the script exits unless debug mode is enabled.",
+    "quote_support": 1.0,
+    "source_id": "ants_thickness_script",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b65ebb048d854ea5a808fb01a0d814a0",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "f2c296b4f4bb4ebe8c76b86c5f47845d",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "40db7886a7834d6fb2ed14f0c90095ad",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "a36f52293e9b426588f9815ba723e301",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "d25cf74e50bf4a4ea82429ce113947bf",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2055,
+    "method": "independent_v2_ants_thickness",
+    "statement": "For Templateflow priors, if SGM is not found then SCGM is used instead.",
+    "quote_support": 1.0,
+    "source_id": "ants_thickness_script",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "dd30d400681c41629d0390faadb02f2b",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "15112d4b16a4478fb96ccb7b7394d4d5",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "2f524af71bdf47e784cf01ad11d3b37b",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "e2382c45115a4cb68b3ba2e22b7cd6d0",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "eed8b560d1b6460a8077f0cf191c4203",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2056,
+    "method": "independent_v2_ants_thickness",
+    "statement": "Prior combinations are only allowed for gray matter or white matter; other labels cause an error exit.",
+    "quote_support": 1.0,
+    "source_id": "ants_thickness_script",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 0.6,
+    "margin": 0.39999999999999997,
+    "answered": 5,
+    "invalid_attempts": {
+      "attr_in": 1
+    },
+    "votes": {
+      "advisory": 3,
+      "label_policy:{\"exclude\": [\"not gray matter\", \"not white matter\"], \"slot\": \"label\"}": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "7c031cad6a524f36bf2fdec055c9f49a",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "af81f472010b42bbae115b85caac6566",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "f4bc3be094ba43349c7703c044ab507a",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "d6b287b62b9941beb72fbb172033da32",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "1d0c854e15c94d8c891ff9b582912c92",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2057,
+    "method": "independent_v2_ants_thickness",
+    "statement": "If the cortical thickness output is not produced, the script exits with an error.",
+    "quote_support": 1.0,
+    "source_id": "ants_thickness_script",
+    "template": "product_present",
+    "parameters": {
+      "slot": "thickness",
+      "type": "type:SurfaceMetric.Thickness"
+    },
+    "key": "product_present:{\"slot\": \"thickness\", \"type\": \"type:SurfaceMetric.Thickness\"}",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "product_present:{\"slot\": \"thickness\", \"type\": \"type:SurfaceMetric.Thickness\"}": 5
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "d07e64fea83443ee9ba12d40165d897f",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "a47575262b33467c8ab7ca6e74812e41",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "206b2018747b42949cd25978369b48e5",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "5753b7ad82484e9e9ad573325d6d0c28",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "13598dd62c514301832aadd77099a8db",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2058,
+    "method": "independent_v2_fs_ca_label",
+    "statement": "subject id",
+    "quote_support": 1.0,
+    "source_id": "fs_ca_label",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 0.6,
+    "margin": 0.19999999999999996,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 3,
+      "product_present:{\"slot\": \"T1\", \"type\": \"type:Volume.T1\"}": 2
+    },
+    "decision": "review",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "f3f448b51f264a9d8a5a2dbdca000df5",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "3f56d3bea22447c2b9224443ea0449c4",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "156f219cb5e74e2b85c88d2b9a940429",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "59bbe04121854fd89c9d1e78efcf3ec9",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "8a2c5adb20414b82bece70d754be0b7d",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2059,
+    "method": "independent_v2_fs_ca_label",
+    "statement": "hemisphere: rh or lh",
+    "quote_support": 1.0,
+    "source_id": "fs_ca_label",
+    "template": "attr_in",
+    "parameters": {
+      "slot": "surface",
+      "attr": "hemisphere",
+      "values": [
+        "rh",
+        "lh"
+      ]
+    },
+    "key": "attr_in:{\"attr\": \"hemisphere\", \"slot\": \"surface\", \"values\": [\"lh\", \"rh\"]}",
+    "support": 0.4,
+    "margin": 0.2,
+    "answered": 5,
+    "invalid_attempts": {
+      "attr_in": 2
+    },
+    "votes": {
+      "attr_in:{\"attr\": \"hemisphere\", \"slot\": \"surface\", \"values\": [\"lh\", \"rh\"]}": 2,
+      "attr_in:{\"attr\": \"hemisphere\", \"slot\": \"pial\", \"values\": [\"lh\", \"rh\"]}": 1
+    },
+    "decision": "review",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "fa0412bfecad46589d7ac1992684296f",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "9d83901e95d8403e9c07a312102d3518",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "58b6b0cf2e0f4ae3b47120b63d97a9f3",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "6f3dc3fdac4d4d9ca4751bcfb080f494",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b5604c21c6134568b63f05626cde4004",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2060,
+    "method": "independent_v2_fs_ca_label",
+    "statement": "canonical surface file, e.g. sphere.reg, describing registration of a subject's vertices to the reference average surface",
+    "quote_support": 1.0,
+    "source_id": "fs_ca_label",
+    "template": "product_present",
+    "parameters": {
+      "slot": "surface",
+      "type": "type:Surface.SphereReg"
+    },
+    "key": "product_present:{\"slot\": \"surface\", \"type\": \"type:Surface.SphereReg\"}",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "product_present:{\"slot\": \"surface\", \"type\": \"type:Surface.SphereReg\"}": 5
+    },
+    "decision": "accepted",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ea08fa562223471d8a478ce30ebce869",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "fe398fed15ca4aba82ed460085657243",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "9640e0b1a4bd40f99b5f1311c4d26d5e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "667c906c86c3435384d9cbc58a53bf43",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "a4e9f6e8313e45fc8e736476759174e7",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2061,
+    "method": "independent_v2_fs_ca_label",
+    "statement": "Classifier array input file.",
+    "quote_support": 1.0,
+    "source_id": "fs_ca_label",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 0.6,
+    "margin": 0.6,
+    "answered": 5,
+    "invalid_attempts": {
+      "product_present": 2
+    },
+    "votes": {
+      "advisory": 3
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "970f36ee817b4063a59591348dd48587",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "3e3911dbe3794e509e54ac9e8b03d949",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "72de5a8b3f11420e82669017976b567f",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "cbc3475846a44539baadda3a1d326211",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "24ac0ff4fe5b4304856148600d0750f5",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2062,
+    "method": "independent_v2_fs_ca_label",
+    "statement": "This automatic procedure employs data from a previously-prepared atlas file.",
+    "quote_support": 1.0,
+    "source_id": "fs_ca_label",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "81f8018705664b22b67869e4386d0d05",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "405379ee0fdb48128e69d1cfcd6ef82d",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b45da1024da8461f82a941751a52b5ea",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "c5c28e55ab6a4a92b844e3226f1cf78a",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "c726a5652a9f4a70ade00bf885ded2f3",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2063,
+    "method": "independent_v2_wb_surface_resample",
+    "statement": "The surface file to resample, typically a native-mesh anatomical or inflated surface.",
+    "quote_support": 1.0,
+    "source_id": "wb_surface_resample",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 0.6,
+    "margin": 0.19999999999999996,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 3,
+      "product_present:{\"slot\": \"surface\", \"type\": \"type:Surface\"}": 2
+    },
+    "decision": "review",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "59ed351383e542d1a8f51f2a6f23dc4c",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "78311ec29b4e46c7a1ae092064a013eb",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "5aafa4a69e104425b68c26a61ef67bb5",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "c4fb2f92b5a347a996fa043c8a9843e4",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "e42ebda2b4404250997cb5fd26d0f26d",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2064,
+    "method": "independent_v2_wb_surface_resample",
+    "statement": "A sphere surface in register with <new-sphere> that uses the mesh the input surface is currently on, typically a registered native-mesh sphere.",
+    "quote_support": 1.0,
+    "source_id": "wb_surface_resample",
+    "template": "attr_equal",
+    "parameters": {
+      "slots": [
+        "surface",
+        "surface"
+      ],
+      "attrs": [
+        "mesh"
+      ]
+    },
+    "key": "attr_equal:{\"attrs\": [\"mesh\"], \"slots\": [\"surface\", \"surface\"]}",
+    "support": 0.2,
+    "margin": 0.2,
+    "answered": 5,
+    "invalid_attempts": {
+      "attr_equal": 4
+    },
+    "votes": {
+      "attr_equal:{\"attrs\": [\"mesh\"], \"slots\": [\"surface\", \"surface\"]}": 1
+    },
+    "decision": "review",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b153734fb5d543979d8273d98df344f5",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ed187fab9467439d9e8c725e08567ea6",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "d572d33558eb4425bbed3e9ebfecc697",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "072c096847e54622b3ab31baab2b8e53",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "061a6df376b947fe9fe38356a11b7cbe",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2065,
+    "method": "independent_v2_wb_surface_resample",
+    "statement": "A sphere surface that has the desired output mesh, typically a standard sphere.",
+    "quote_support": 1.0,
+    "source_id": "wb_surface_resample",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "0f4bc6b7314b4652aaf007c5d4286a59",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "6ae335c697dc494a96b83abbf224d1b9",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "908faea2fb0b4744bab25d284dd43e7f",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "6996a7b2da5849eb9a93f43d56d3b08e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "8ca1de0684594aa49fe9dc09152b480e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2066,
+    "method": "independent_v2_wb_surface_resample",
+    "statement": "The method name, which must be one of ADAP_BARY_AREA or BARYCENTRIC.",
+    "quote_support": 1.0,
+    "source_id": "wb_surface_resample",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "fbfc19ab44e240e7ba3d8093b3123a87",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "30373481f1cc48f98294f3c8de576a3f",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "a4228729044b4c6a958b6e76f1530bd8",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "7a2b522f14344144b363ecbc3437e2e8",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "fc29296e9ae74a108418dd03676961c3",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2067,
+    "method": "independent_v2_wb_surface_resample",
+    "statement": "If ADAP_BARY_AREA is used, exactly one of -area-surfs or -area-metrics must be specified.",
+    "quote_support": 1.0,
+    "source_id": "wb_surface_resample",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "3708f8ac236744f9a64e464fdf4076c4",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "d8491e9d6dfd4c24858a395b00a127c4",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "71749cae44f246cbb5c8bded87991dc8",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "58515aa4b88a40889a728c971279a27f",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "8f9f1e40c222493f9cfd0e1187ac50e9",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2068,
+    "method": "independent_v2_wb_surface_resample",
+    "statement": "For cut surfaces (including flatmaps), use -surface-cut-resample instead.",
+    "quote_support": 1.0,
+    "source_id": "wb_surface_resample",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "297293db313c40009089abb76eeab716",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "a2c8cad6afb54846ac1f167b1c1dfee3",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "c42e1d88d8414bc582d38b275a018071",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "3717c58c4e04426e8fa7e4e3b77651fb",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "333ad250acf84a40bdc67b0e9225d499",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2069,
+    "method": "independent_v2_wb_surface_resample",
+    "statement": "Instead of resampling a spherical surface, the -surface-sphere-project-unproject command is recommended.",
+    "quote_support": 1.0,
+    "source_id": "wb_surface_resample",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "8c49db6e843e4549a7bc436fb7eae24a",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "12b5b8eafb774a17924bcdc3ad94e2c7",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "5a2d997da9e44c1a8c6bba88107d22ce",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "d3a014c939ec49c89fbeb6f33cee6be2",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "1d0de625f53c409fb1f12a91479b4d43",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2070,
+    "method": "independent_v2_wb_surface_resample",
+    "statement": "ADAP_BARY_AREA is not generally recommended for surface resampling, but is provided for completeness.",
+    "quote_support": 1.0,
+    "source_id": "wb_surface_resample",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "88725e5c11de444fb3b9bd133bb3036b",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b294045ae00b4595ad827be625ded472",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ec105ea8b336427ab55de3c828eb47e9",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "0792e97e2eb84bc1ad04e6392a32c4ab",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "33792b5b57d24dce995e47ba4502242f",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2071,
+    "method": "independent_v2_fsl_first",
+    "statement": "FIRST needs a good quality T1-weighted image.",
+    "quote_support": 1.0,
+    "source_id": "fsl_first",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "2f1d4bb7068e49d08f28ca381c7d3870",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "f8971819e2024fbda5d5d9dcd6016998",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "5fc15fda247b4fdd9368a3ccdf27d143",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ee0c85a65d4646c393583433033f164e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "78de6159d8dc4d72a41f73dea7612c08",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2072,
+    "method": "independent_v2_fsl_first",
+    "statement": "Only T1-weighted images can be used as input to run_first_all.",
+    "quote_support": 1.0,
+    "source_id": "fsl_first",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 0.4,
+    "margin": 0.2,
+    "answered": 5,
+    "invalid_attempts": {
+      "attr_in": 1
+    },
+    "votes": {
+      "advisory": 2,
+      "attr_in:{\"attr\": \"species\", \"slot\": \"T1\", \"values\": [\"human\"]}": 1,
+      "product_present:{\"slot\": \"T1\", \"type\": \"type:Volume.T1\"}": 1
+    },
+    "decision": "review",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ff950644d37f45619f287ebe2b815e4a",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "80911ac635934faa8e37bbb7e478ac9d",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "bfebf4f4de7f4ed298d166ae691a41db",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ad86bdef6ccf44eb84b2f46b20e6d0ea",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "57dea8310785461fbfe2354f3464c719",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2073,
+    "method": "independent_v2_fsl_first",
+    "statement": "first_flirt should be used on whole-head (non-betted) images.",
+    "quote_support": 1.0,
+    "source_id": "fsl_first",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "65de9654502e4ca1ba9ac86da5d0bddf",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "dcab0a664d0b448eaa27ee6ce2041edb",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b0136610eb8d4e7392fe4150e4a7cbb0",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "a8aa67796e3749a190ba3d0a08935f19",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "e111887d7ebb4d5aa4f7b46e1925fcfd",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2074,
+    "method": "independent_v2_fsl_first",
+    "statement": "If the registration stage fails then the model fitting will not work, though run_first_all continues to run and may produce outputs.",
+    "quote_support": 1.0,
+    "source_id": "fsl_first",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "198298cf83ca4de298861fe733a22b44",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "d2b9f8205b274657bc95aca402799c4f",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "01e5ee1203d64a62aaf27b8ea12f1bd8",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "90b0615322b545f9847d55026888f4f6",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b12b860a25c44ed98e561918811ce3e2",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2075,
+    "method": "independent_v2_fsl_first",
+    "statement": "When fitting the cerebellum models, a different transformation matrix than that used for the other structures must be input.",
+    "quote_support": 1.0,
+    "source_id": "fsl_first",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 0.8,
+    "margin": 0.8,
+    "answered": 5,
+    "invalid_attempts": {
+      "attr_equal": 1
+    },
+    "votes": {
+      "advisory": 4
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "0ca55473bbc746ec92f6273d9deda38b",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "0c1bb6911e784d35880f0290e549ff11",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "d0501109c15245a9a1434a992891a3ff",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "31b909a9e6214a44b67cde33eceab0e0",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "747b64610ba942aea962486fc4df7ffe",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2076,
+    "method": "independent_v2_fsl_first",
+    "statement": "The -cort flag must be specified for first_flirt to perform the registration needed for cerebellum models.",
+    "quote_support": 1.0,
+    "source_id": "fsl_first",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "7677c2c77ad443bd8158a973c39483cd",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "9185bd0964c94582839940a2b30ca1d3",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "591abe4c8cce491699edc987f0efd572",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "3dfcba63d8574cfeababc25c400d2f4f",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "f09cfaeb80934b86887b2bad637bb0a1",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2077,
+    "method": "independent_v2_fsl_first",
+    "statement": "The full path name to the model must be used with -m.",
+    "quote_support": 1.0,
+    "source_id": "fsl_first",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "4c91c9e068ad4e368c51915b37b3cfd9",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "a280ddf60cfa468b86bfb11a572f758f",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "48664804573043bc9b2797be2d9c515b",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "1dc99a35102846bfa2986721fec0f5dc",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "adc7988b82e9491ea4d349940369c0c1",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2078,
+    "method": "independent_v2_fsl_first",
+    "statement": "Check the log directory error outputs; no output means no errors.",
+    "quote_support": 1.0,
+    "source_id": "fsl_first",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "f4227c559cb243cb8ca183785a1d1e9d",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "3bcfa52f62a3441b93b817d10de9935c",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "3cfa9fa3ecb8422d89c99a8ecb778ec9",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "bad8f14d840b488aa3591a59ba1d18f3",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "f8646f41c10f4fa79aa2641c1ee414e1",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2079,
+    "method": "independent_v2_fsl_first",
+    "statement": "Check registration quality using slicesdir on the registered images.",
+    "quote_support": 1.0,
+    "source_id": "fsl_first",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 0.8,
+    "margin": 0.6000000000000001,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 4,
+      "software:{\"commands\": [\"slicesdir\"]}": 1
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "a52f71f158444facad666b800f4d9f08",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "6ac3afc0bb5a46ada6ba7de2bb5843c4",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "fbf8be9bc7de43dbbb9dbd62578dd798",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "6141928de3844a33ae1ff4eeefc7aa46",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "37278f7c432849968f5feba51085bf1d",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2080,
+    "method": "independent_v2_fsl_first",
+    "statement": "Pay particular attention to the sub-cortical structures when assessing registrations.",
+    "quote_support": 1.0,
+    "source_id": "fsl_first",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "2f3296e96b0c4c14b3e794c73d18bb1b",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "9550ea7cb17d4e1583713ef7d325a10e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "1841c8ef030f47d39842d23281f0eec9",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "65486503597e42999dce1c4f3f1c19fa",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "602e336613ea439ea2d7cffc6ac756c0",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2081,
+    "method": "independent_v2_fsl_first",
+    "statement": "Check segmentation quality with first_roi_slicesdir, which generates a webpage summary.",
+    "quote_support": 1.0,
+    "source_id": "fsl_first",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "7f9f1b1f83c94d2ea2508c9a44b041f4",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "c6253119172d47e4864bd3d5d05377f3",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "1c0b0adb90054edfb182a17da59c5425",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "76aae9d4386043f1ac1b8ec7ec4f2d06",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "eaa74db3b15c4f048b20860e6426ca38",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2082,
+    "method": "independent_v2_fsl_first",
+    "statement": "If there are problems, different segmentation options such as number of modes or boundary correction method can be tried using the individual tools.",
+    "quote_support": 1.0,
+    "source_id": "fsl_first",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "405b8bdfbda8474d8c540ba678f5db9c",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b58056da95f54d47aeea73d186143a07",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ea1a2973f07646228473b92c5d61dd6e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "c6da028527bf4cea950663d2810d26e6",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "5cd7ab641f33446e8077ab7cee5fffa5",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2083,
+    "method": "independent_v2_fsl_first",
+    "statement": "Boundary correction method none is appropriate for models in the 05mm subdirectory.",
+    "quote_support": 1.0,
+    "source_id": "fsl_first",
+    "template": "advisory",
+    "parameters": null,
+    "key": "advisory",
+    "support": 1.0,
+    "margin": 1.0,
+    "answered": 5,
+    "invalid_attempts": {},
+    "votes": {
+      "advisory": 5
+    },
+    "decision": "advisory",
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "9dc4a7b55c5a480eb44d7e1d76d809aa",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "f0f0b0613caa497f89f61d136d6efd4c",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "2015975b909d4f0f8f2464a683b37754",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "921ebcd0a388469cbc0473f89757438e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "17d20163a9e8466591261d304db4d7b5",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  }
+]

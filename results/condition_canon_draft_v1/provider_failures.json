@@ -1,0 +1,74 @@
+[
+  {
+    "arm": "full",
+    "item": {
+      "id": 13,
+      "method": "fsl_vbm",
+      "field": "conditions",
+      "statement": "The order of rows in design.mat must match the order of images when doing imglob * in the FSL-VBM directory.",
+      "quote": "The order of the rows in your design.mat model MUST match the order of your images when doing an imglob * command",
+      "source_id": "fsl_vbm",
+      "gold_template": "advisory",
+      "gold_parameters": null
+    },
+    "prediction": {
+      "id": 13,
+      "method": "fsl_vbm",
+      "decision": "provider_error",
+      "template": null,
+      "parameters": null,
+      "failure_kind": "provider_transport_or_budget",
+      "error_summary": "Maximum attempts for this logical call were already consumed",
+      "sample_calls": 2
+    }
+  },
+  {
+    "arm": "full",
+    "item": {
+      "id": 103,
+      "method": "surface_reconstruction_qc",
+      "field": "conditions",
+      "statement": "Soft failures occur when recon-all finishes without errors but output has obvious errors needing fixes.",
+      "quote": "Soft Failures, on the other hand, occur when recon-all has finished without any errors - but upon closer observation of the output there are obvious errors",
+      "source_id": "andy_failures",
+      "gold_template": "advisory",
+      "gold_parameters": null
+    },
+    "prediction": {
+      "id": 103,
+      "method": "surface_reconstruction_qc",
+      "decision": "provider_error",
+      "template": null,
+      "parameters": null,
+      "failure_kind": "provider_transport_or_budget",
+      "error_summary": "Provider request failed (http_error, HTTP 429); see metered ledger",
+      "sample_calls": 3
+    }
+  },
+  {
+    "arm": "k1",
+    "item": {
+      "id": 49,
+      "method": "macaque_civet",
+      "field": "conditions",
+      "statement": "The pipeline requires T1w scans; T2-weighted or proton density scans are optional for multimodal classification.",
+      "quote": "relies on the T1w scan, with the possibility of a multimodal classification should T2-weighted and/or proton density scans be available",
+      "source_id": "civet_macaque",
+      "gold_template": "product_present",
+      "gold_parameters": {
+        "slot": "T1",
+        "type": "type:Volume.T1"
+      }
+    },
+    "prediction": {
+      "id": 49,
+      "method": "macaque_civet",
+      "decision": "provider_error",
+      "template": null,
+      "parameters": null,
+      "failure_kind": "provider_transport_or_budget",
+      "error_summary": "Provider request failed (http_error, HTTP 429); see metered ledger",
+      "sample_calls": 1
+    }
+  }
+]

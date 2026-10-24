@@ -1,0 +1,552 @@
+[
+  {
+    "annotation_id": 2001,
+    "method": "independent_v2_fs_anatomical_stats",
+    "field": "inputs",
+    "old_statement": "Subject name is a required positional argument.",
+    "old_quote": "<subjectname>\n\nsubject name",
+    "statement": null,
+    "quote": "Required Positional Arguments\n\n<subjectname>\n\nsubject name",
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2002,
+    "method": "independent_v2_fs_anatomical_stats",
+    "field": "inputs",
+    "old_statement": "Hemisphere is a required positional argument.",
+    "old_quote": "<hemi>\n\nhemisphere",
+    "statement": null,
+    "quote": "Required Positional Arguments\n\n<subjectname>\n\nsubject name\n\n<hemi>\n\nhemisphere",
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2004,
+    "method": "independent_v2_fs_anatomical_stats",
+    "field": "inputs",
+    "old_statement": "A label file can optionally be supplied to limit calculations.",
+    "old_quote": "-l <label file>\n\nlimit calculations to specified label",
+    "statement": "When the -l label-file option is used, calculations are limited to the specified label.",
+    "quote": null,
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2006,
+    "method": "independent_v2_fs_anatomical_stats",
+    "field": "conditions",
+    "old_statement": "Using -f requires either the -a or -l option to specify input.",
+    "old_quote": "Must use -a or -l options to spec input.",
+    "statement": null,
+    "quote": "-f <tablefile>\n\ntable output to tablefile (different format than -b). Must use -a or -l options to spec input.",
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2008,
+    "method": "independent_v2_fs_segstats",
+    "field": "inputs",
+    "old_statement": "Optional input volume from which more statistics (min, max, range, average, standard deviation) are computed across each segmentation; must be same size and dimension as the segmentation volume.",
+    "old_quote": "The input volume must be the same size and dimension as the segmentation volume.",
+    "statement": "If an input volume is supplied, it must be the same size and dimension as the segmentation volume.",
+    "quote": null,
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2009,
+    "method": "independent_v2_fs_segstats",
+    "field": "inputs",
+    "old_statement": "Optional mask volume; may be binary or continuous and must be the same size and dimension as the segmentation volume.",
+    "old_quote": "The mask volume must be the same size and dimension as the segmentation volume.",
+    "statement": "If a mask volume is supplied, it must be the same size and dimension as the segmentation volume.",
+    "quote": null,
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2010,
+    "method": "independent_v2_fs_segstats",
+    "field": "inputs",
+    "old_statement": "Optional color table file used to map segmentation indices to names and colors.",
+    "old_quote": "Freesurfer color table file. Thi s the file used by FreeSurfer to specify how each segmentation index is mapped to a segmentation name and color.",
+    "statement": "The FreeSurfer color table file maps each segmentation index to a segmentation name and color.",
+    "quote": null,
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2011,
+    "method": "independent_v2_fs_segstats",
+    "field": "conditions",
+    "old_statement": "Partial volume compensation with --pv is usually only done when computing anatomical statistics and is not used with --annot.",
+    "old_quote": "Usually, this is only done when computing anatomical statistics. Usually the mri/norm.mgz volume is used. Not with --annot",
+    "statement": null,
+    "quote": "--pv pvvol\n\nUse pvvol to compenstate for partial voluming. This should result in more accurate volumes. Usually, this is only done when computing anatomical statistics. Usually the mri/norm.mgz volume is used. Not with --annot",
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2013,
+    "method": "independent_v2_fs_segstats",
+    "field": "conditions",
+    "old_statement": "Segmentation list may be specified by --id, by a supplied color table, or else all ids from the segmentation volume are used.",
+    "old_quote": "If the user does not specify either --id or a color table, then all the ids from the segmentation volume are used.",
+    "statement": "If neither --id nor a color table is specified, all IDs from the segmentation volume are used.",
+    "quote": null,
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2014,
+    "method": "independent_v2_fs_segstats",
+    "field": "checks",
+    "old_statement": "Input volume for --i must match the segmentation volume in size and dimension.",
+    "old_quote": "The input volume must be the same size and dimension as the segmentation volume.",
+    "statement": "If an input volume is supplied, it must be the same size and dimension as the segmentation volume.",
+    "quote": null,
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2015,
+    "method": "independent_v2_fs_segstats",
+    "field": "checks",
+    "old_statement": "Mask volume must match the segmentation volume in size and dimension.",
+    "old_quote": "The mask volume must be the same size and dimension as the segmentation volume.",
+    "statement": "If a mask volume is supplied, it must be the same size and dimension as the segmentation volume.",
+    "quote": null,
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2017,
+    "method": "independent_v2_fs_preproc",
+    "field": "inputs",
+    "old_statement": "Surface measure files per subject, specified via --meas, --is, or --iv alternatives.",
+    "old_quote": "--meas surfmeasure\nUse subject/surf/hemi.surfmeasure as input.",
+    "statement": "With --meas surfmeasure, input is taken from subject/surf/hemi.surfmeasure.",
+    "quote": null,
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2018,
+    "method": "independent_v2_fs_preproc",
+    "field": "inputs",
+    "old_statement": "A subject list supplied via repeated --s, an fsgd file (--fsgd), or a subject list file (--f).",
+    "old_quote": "--fsgd fsgdfile\nSpecify the list of input subjects from the fsgd file.",
+    "statement": "The --fsgd option specifies the input subject list from an FSGD file.",
+    "quote": null,
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2019,
+    "method": "independent_v2_fs_preproc",
+    "field": "inputs",
+    "old_statement": "For volume input, a volume file and its registration matrix file of the type accepted/created by tkregister2.",
+    "old_quote": "The registration matrix file is of the type accepted/created by tkregister2.",
+    "statement": "The registration matrix file is of the type accepted or created by tkregister2.",
+    "quote": null,
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2020,
+    "method": "independent_v2_fs_preproc",
+    "field": "inputs",
+    "old_statement": "A target common-space subject and hemisphere (lh or rh) must be given.",
+    "old_quote": "--target subject\nSubject to use as the common-space.",
+    "statement": "The --target option selects the common-space subject; --hemi selects lh or rh for source and target surfaces.",
+    "quote": "--target subject\nSubject to use as the common-space. All the input data will be resampled to the surface of this subject.\n--hemi hemi\nUse hemi for source and target surfaces. hemi can be lh or rh.",
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2021,
+    "method": "independent_v2_fs_preproc",
+    "field": "conditions",
+    "old_statement": "All subjects must each be specified with their own --s on the command line; --s is for use with --meas.",
+    "old_quote": "All subjects must be specified in this way on the command-line (ie, each with its own --s).",
+    "statement": "When subjects are listed using --s, each has its own --s; this option is for use with --meas.",
+    "quote": "--s subjN\nSpecify an input subject on the command-line. All subjects must be specified in this way on the command-line (ie, each with its own --s). For use with --meas.",
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2022,
+    "method": "independent_v2_fs_preproc",
+    "field": "conditions",
+    "old_statement": "--is and --iv are alternatives to --meas but still require that a subject list be supplied.",
+    "old_quote": "This is an alternative to using --meas. This still requires that a subject list be supplied.",
+    "statement": "The --is option is an alternative to --meas and still requires a supplied subject list.",
+    "quote": "--is surfmeasfile\nSpecify full path to input surface measure file. This is an alternative to using --meas. This still requires that a subject list be supplied.",
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2023,
+    "method": "independent_v2_fs_preproc",
+    "field": "conditions",
+    "old_statement": "For --paired-diff there must be an even number of inputs.",
+    "old_quote": "There must be an even number of inputs.",
+    "statement": null,
+    "quote": "--paired-diff\nAfter concatenating all the inputs together, create a new output file by computing paired differences, ie, Input1-Input2, Input3-Input4, etc. There must be an even number of inputs.",
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2024,
+    "method": "independent_v2_fs_preproc",
+    "field": "conditions",
+    "old_statement": "When using full paths with --fsgd, subjects must be in the same order as the input surface files.",
+    "old_quote": "which must be in the same order as the --isp",
+    "statement": null,
+    "quote": "Same as #1 but using full paths. Note there is no --meas, but\n--fsgd still needed to provide list of subjects, which must be in the same order as the --isp.",
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2026,
+    "method": "independent_v2_fs_preproc",
+    "field": "exceptions",
+    "old_statement": "For ANALYZE and NIFTI formats, spatial dimension may not exceed 32k elements, so reshaping is turned on when these formats are automatically detected.",
+    "old_quote": "This will not work for ANALYZE and NIFTI formats because they cannot represent a dimension with more than 32k elements.",
+    "statement": "ANALYZE and NIFTI formats cannot represent a dimension with more than 32k elements.",
+    "quote": null,
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2035,
+    "method": "independent_v2_wb_metric_resample",
+    "field": "inputs",
+    "old_statement": "A sphere surface in register with the new sphere and having the mesh the metric is currently on.",
+    "old_quote": "<current-sphere> - a sphere surface that is in register with <new-sphere>",
+    "statement": null,
+    "quote": "<current-sphere> - a sphere surface that is in register with <new-sphere>\nand has the mesh that the metric is currently on, typically a\nregistered native-mesh sphere",
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2037,
+    "method": "independent_v2_wb_metric_resample",
+    "field": "conditions",
+    "old_statement": "The method argument must be one of ADAP_BARY_AREA or BARYCENTRIC.",
+    "old_quote": "The <method> argument must be one of the following:",
+    "statement": null,
+    "quote": "The <method> argument must be one of the following:\n\nADAP_BARY_AREA\nBARYCENTRIC",
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2041,
+    "method": "independent_v2_ants_thickness",
+    "field": "inputs",
+    "old_statement": "Anatomical structural intensity image, typically T1; if multiple are given, later ones are used in segmentation but only the first in prior registration.",
+    "old_quote": "Structural *intensity* image, typically T1.  If more than one",
+    "statement": "The anatomical input is a structural intensity image, typically T1.",
+    "quote": "Structural *intensity* image, typically T1.",
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2043,
+    "method": "independent_v2_ants_thickness",
+    "field": "inputs",
+    "old_statement": "Brain extraction probability mask in the segmentation template space; a binary mask is acceptable.",
+    "old_quote": "Brain *probability* mask in the segmentation template space. A binary mask",
+    "statement": null,
+    "quote": "Brain *probability* mask in the segmentation template space. A binary mask\n                                                is an acceptable probability image.",
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2044,
+    "method": "independent_v2_ants_thickness",
+    "field": "inputs",
+    "old_statement": "Tissue probability priors in template space; at least four must exist for CSF, Cortical GM, WM, Subcortical GM.",
+    "old_quote": "At least four priors must exist, corresponding to CSF, Cortical GM, WM, Subcortical GM.",
+    "statement": "At least four priors must exist, corresponding to CSF, cortical GM, WM and subcortical GM.",
+    "quote": null,
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2045,
+    "method": "independent_v2_ants_thickness",
+    "field": "conditions",
+    "old_statement": "Image dimension must be 2 or 3; other values cause an error.",
+    "old_quote": "ImageDimension must be 2 or 3",
+    "statement": "Image dimension must be 2 or 3.",
+    "quote": null,
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2046,
+    "method": "independent_v2_ants_thickness",
+    "field": "conditions",
+    "old_statement": "If the optional registration template is supplied, the template must be skull-stripped.",
+    "old_quote": "This template *must* be skull-stripped.",
+    "statement": "If a registration template is supplied with -t, it must be skull-stripped.",
+    "quote": "-t:  template for t1 registration          Anatomical *intensity* template. This template *must* be skull-stripped.",
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2047,
+    "method": "independent_v2_ants_thickness",
+    "field": "conditions",
+    "old_statement": "The optional extraction registration mask must be a binary metric mask defined in the segmentation template space.",
+    "old_quote": "Binary metric mask defined in the segmentation template space (-e).",
+    "statement": "If an extraction registration mask is supplied with -f, it is a binary metric mask in the segmentation template space (-e).",
+    "quote": "-f:  extraction registration mask          Binary metric mask defined in the segmentation template space (-e).",
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2048,
+    "method": "independent_v2_ants_thickness",
+    "field": "conditions",
+    "old_statement": "At least four prior images are required; fewer causes the script to exit.",
+    "old_quote": "Expected at least 4 prior images",
+    "statement": null,
+    "quote": "if [[ ${NUMBER_OF_PRIOR_IMAGES} -lt 4 ]]; then\n  echo \"Expected at least 4 prior images (${NUMBER_OF_PRIOR_IMAGES} are specified).  Check the command line specification.\"\n  exit 1\nfi",
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2049,
+    "method": "independent_v2_ants_thickness",
+    "field": "conditions",
+    "old_statement": "The optional registration template may differ from the segmentation template; output in template space then uses the registration template.",
+    "old_quote": "the segmentation template (used for brain extraction and priors) and registration template (used for final, high-quality registration on brain-extracted images) may be different",
+    "statement": "The segmentation template and registration template may be different.",
+    "quote": null,
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2050,
+    "method": "independent_v2_ants_thickness",
+    "field": "checks",
+    "old_statement": "Required programs and scripts are checked for availability on PATH before processing.",
+    "old_quote": "we can't find the $D program.",
+    "statement": "If command -v cannot find a dependency program, the script reports an error.",
+    "quote": "if ! command -v ${D} &> /dev/null\n      then\n        echo \"Error:  we can't find the $D program.\"",
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2051,
+    "method": "independent_v2_ants_thickness",
+    "field": "checks",
+    "old_statement": "Specified anatomical images are checked for existence.",
+    "old_quote": "does not exist.",
+    "statement": null,
+    "quote": "if [[ ! -f ${ANATOMICAL_IMAGES[$i]} ]];\n    then\n      echo \"The specified image \\\"${ANATOMICAL_IMAGES[$i]}\\\" does not exist.\"\n      exit 1\n    fi",
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2052,
+    "method": "independent_v2_ants_thickness",
+    "field": "checks",
+    "old_statement": "After completion, expected outputs such as BrainExtractionMask, BrainSegmentation and CorticalThickness are checked for existence.",
+    "old_quote": "Missing output image $img",
+    "statement": "The script tests each expected output image for existence and records missing outputs.",
+    "quote": "for img in \"${singleOutputs[@]}\";\n    do\n      if [[ ! -f $img ]];\n        then\n          echo \"Missing output image $img\"\n          missingOutput=1\n        fi",
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2053,
+    "method": "independent_v2_ants_thickness",
+    "field": "checks",
+    "old_statement": "The registration component of segmentation is checked for its transform files.",
+    "old_quote": "The registration component of the segmentation step didn't complete properly.",
+    "statement": "The script checks for the affine registration transform from the segmentation step.",
+    "quote": "if [[ ! -f ${SEGMENTATION_GENERIC_AFFINE} ]];\n          then\n            echo \"The registration component of the segmentation step didn't complete properly.\"",
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2054,
+    "method": "independent_v2_ants_thickness",
+    "field": "exceptions",
+    "old_statement": "If a command exits with nonzero status, the script exits unless debug mode is enabled.",
+    "old_quote": "ERROR: command exited with nonzero status $cmdExit",
+    "statement": null,
+    "quote": "ERROR: command exited with nonzero status $cmdExit\"\n      echo \"Command: $cmd\"\n      echo\n      if [[ ! $DEBUG_MODE -gt 0 ]];\n        then\n          exit 1\n        fi",
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2055,
+    "method": "independent_v2_ants_thickness",
+    "field": "exceptions",
+    "old_statement": "In BIDS prior formatting, a missing required SGM label triggers a fallback to templateflow SCGM; if absent, the script exits.",
+    "old_quote": "Hack for templateflow - try SCGM instead of SGM",
+    "statement": "For Templateflow priors, if SGM is not found then SCGM is used instead.",
+    "quote": "Templateflow labels use \"SCGM\" instead of \"SGM\", if \"SGM\" is not\n                                                found, \"SCGM\" will be used instead.",
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2056,
+    "method": "independent_v2_ants_thickness",
+    "field": "exceptions",
+    "old_statement": "Prior combinations are only allowed for gray matter or white matter; other labels cause an error exit.",
+    "old_quote": "We only combine with the gray matter or the white matter.",
+    "statement": null,
+    "quote": "We only combine with the gray matter or the white matter.\"\n        echo \"The label ${COMBINATION[0]} does not correspond to the gray or white matters.\"\n        exit 1",
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2057,
+    "method": "independent_v2_ants_thickness",
+    "field": "exceptions",
+    "old_statement": "If the cortical thickness output is not produced, the script exits with an error.",
+    "old_quote": "Expected output was not produced.",
+    "statement": null,
+    "quote": "if [[ ! -f ${CORTICAL_THICKNESS_IMAGE} ]];\n      then\n        echo \"Expected output was not produced.  The cortical thickness image doesn't exist:\"\n        echo \"   $CORTICAL_THICKNESS_IMAGE\"\n        exit 1\n      fi",
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2061,
+    "method": "independent_v2_fs_ca_label",
+    "field": "inputs",
+    "old_statement": "classifier array input file (atlas file previously prepared from a training set)",
+    "old_quote": "<classifier>\n\nspecify classifier array input file",
+    "statement": "Classifier array input file.",
+    "quote": null,
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2063,
+    "method": "independent_v2_wb_surface_resample",
+    "field": "inputs",
+    "old_statement": "The surface file to resample, typically a native-mesh anatomical or inflated surface.",
+    "old_quote": "<surface-in> - the surface file to resample, typically a native-mesh",
+    "statement": null,
+    "quote": "<surface-in> - the surface file to resample, typically a native-mesh\nanatomical or inflated surface",
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2064,
+    "method": "independent_v2_wb_surface_resample",
+    "field": "inputs",
+    "old_statement": "A sphere surface in register with <new-sphere> that uses the mesh the input surface is currently on, typically a registered native-mesh sphere.",
+    "old_quote": "<current-sphere> - a sphere surface that is in register with <new-sphere>",
+    "statement": null,
+    "quote": "<current-sphere> - a sphere surface that is in register with <new-sphere>\nand uses the mesh that the input surface is currently on, typically a\nregistered native-mesh sphere",
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2065,
+    "method": "independent_v2_wb_surface_resample",
+    "field": "inputs",
+    "old_statement": "A sphere surface that has the desired output mesh, typically a standard sphere.",
+    "old_quote": "<new-sphere> - a sphere surface that has the desired output mesh",
+    "statement": null,
+    "quote": "<new-sphere> - a sphere surface that has the desired output mesh,\ntypically a standard sphere",
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2066,
+    "method": "independent_v2_wb_surface_resample",
+    "field": "inputs",
+    "old_statement": "The method name, which must be one of ADAP_BARY_AREA or BARYCENTRIC.",
+    "old_quote": "<method> - the method name",
+    "statement": null,
+    "quote": "The <method> argument must be one of the following:\n\nADAP_BARY_AREA\nBARYCENTRIC",
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2067,
+    "method": "independent_v2_wb_surface_resample",
+    "field": "conditions",
+    "old_statement": "If ADAP_BARY_AREA is used, exactly one of -area-surfs or -area-metrics must be specified.",
+    "old_quote": "If ADAP_BARY_AREA is used, exactly one of -area-surfs or",
+    "statement": null,
+    "quote": "If ADAP_BARY_AREA is used, exactly one of -area-surfs or\n-area-metrics must be specified.",
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2069,
+    "method": "independent_v2_wb_surface_resample",
+    "field": "exceptions",
+    "old_statement": "Instead of resampling a spherical surface, the -surface-sphere-project-unproject command is recommended.",
+    "old_quote": "Instead of resampling a spherical surface, the",
+    "statement": null,
+    "quote": "Instead of resampling a spherical surface, the\n-surface-sphere-project-unproject command is recommended.",
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2070,
+    "method": "independent_v2_wb_surface_resample",
+    "field": "exceptions",
+    "old_statement": "ADAP_BARY_AREA is not generally recommended for surface resampling, but is provided for completeness.",
+    "old_quote": "This method is not generally",
+    "statement": null,
+    "quote": "If ADAP_BARY_AREA is used, exactly one of -area-surfs or\n-area-metrics must be specified. This method is not generally\nrecommended for surface resampling, but is provided for completeness.",
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2071,
+    "method": "independent_v2_fsl_first",
+    "field": "inputs",
+    "old_statement": "A good quality T1-weighted image is needed to segment the supported structures.",
+    "old_quote": "FIRST needs a good quality T1-weighted image",
+    "statement": "FIRST needs a good quality T1-weighted image.",
+    "quote": null,
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2072,
+    "method": "independent_v2_fsl_first",
+    "field": "inputs",
+    "old_statement": "Only T1-weighted images can be used as input to run_first_all.",
+    "old_quote": "only T1-weighted images can be used",
+    "statement": null,
+    "quote": "run_first_all -i t1_image -o output_name\n\nThe argument -i specifies the original T1-weighted structural image (only T1-weighted images can be used).",
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2074,
+    "method": "independent_v2_fsl_first",
+    "field": "conditions",
+    "old_statement": "If the registration stage fails then the model fitting will not work, though run_first_all continues to run and may produce outputs.",
+    "old_quote": "if the registration stage fails then the models fitting will\nnot work",
+    "statement": null,
+    "quote": "if the registration stage fails then the models fitting will\nnot work, despite the fact that run_first_all continues to run and may produce outputs.",
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2075,
+    "method": "independent_v2_fsl_first",
+    "field": "conditions",
+    "old_statement": "When fitting the cerebellum models, a different transformation matrix than that used for the other structures must be input.",
+    "old_quote": "you will need to input a different transformation matrix than that used for the other structures",
+    "statement": null,
+    "quote": "When fitting the cerebellum models, you will need to input a different transformation matrix than that used for the other structures.",
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2076,
+    "method": "independent_v2_fsl_first",
+    "field": "conditions",
+    "old_statement": "The -cort flag must be specified for first_flirt to perform the registration needed for cerebellum models.",
+    "old_quote": "first_flirt will not perform the necessary registration by default - the -cort flag must be specified",
+    "statement": null,
+    "quote": "cerebellum models, you will need to input a different transformation matrix than that used for the other structures. first_flirt will not perform the necessary registration by default - the -cort flag must be specified.",
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2077,
+    "method": "independent_v2_fsl_first",
+    "field": "conditions",
+    "old_statement": "The full path name to the model must be used with -m.",
+    "old_quote": "The full path name to the model must be used",
+    "statement": null,
+    "quote": "-m: The model file (e.g. ${FSLDIR}/data/first/models_336_bin/L_Hipp_bin.bmv). The full path name to the model must be used.",
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2078,
+    "method": "independent_v2_fsl_first",
+    "field": "checks",
+    "old_statement": "Check the log directory error outputs; no output means no errors.",
+    "old_quote": "cat *.logs/*.e*",
+    "statement": null,
+    "quote": "cat *.logs/*.e*\n\nand if there are no errors then you will see no output, otherwise you will see what errors have occured.",
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2082,
+    "method": "independent_v2_fsl_first",
+    "field": "exceptions",
+    "old_statement": "If there are problems, different segmentation options such as number of modes or boundary correction method can be tried using the individual tools.",
+    "old_quote": "If there are any problems, you can try different segmentation options",
+    "statement": null,
+    "quote": "If there are any problems, you can try different segmentation options (e.g. number of modes, boundary correction method, etc.) using the individual tools described in the Advanced Usage section.",
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  },
+  {
+    "annotation_id": 2083,
+    "method": "independent_v2_fsl_first",
+    "field": "exceptions",
+    "old_statement": "Boundary correction method none is appropriate for models in the 05mm subdirectory.",
+    "old_quote": "all boundary voxels are considered as belonging to the structure, and hence none is the appropriate correction method",
+    "statement": null,
+    "quote": "For the models contained in ${FSLDIR}/data/first/models_336_bin/05mm/, all boundary voxels are considered as belonging to the structure, and hence none is the appropriate correction method.",
+    "reason": "Complete an exact quotation or narrow the statement to its cited scope; no condition label assigned."
+  }
+]

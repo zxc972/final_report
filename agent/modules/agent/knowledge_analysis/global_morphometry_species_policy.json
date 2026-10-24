@@ -1,0 +1,64 @@
+{
+  "schema": "primatex.global_morphometry_species_policy.v1",
+  "scope": "Global macaque measurements only; no regional or homology claim",
+  "species_aliases": [
+    "macaque",
+    "rhesus",
+    "Macaca mulatta",
+    "Macaca fascicularis",
+    "Macaca fuscata"
+  ],
+  "requirements": {
+    "required_products": [
+      "brainmask",
+      "white_surface",
+      "surface_metric",
+      "cortex_label",
+      "pial_surface"
+    ],
+    "alternative_products": [],
+    "optional_products": [],
+    "metric_measures": [
+      "thickness"
+    ],
+    "needs_parcellation": false
+  },
+  "definitions": {
+    "brain_volume_mm3": "Count strictly positive finite brainmask.mgz voxels multiplied by MGH header voxel volume; brain-extraction support volume, not eTIV or segmentation BrainSegVol.",
+    "total_area_mm2": "Sum triangle areas of the two final native white surfaces.",
+    "mean_thickness_mm": "For each hemisphere, arithmetic mean of final thickness on cortex.label; retain finite zero values. Combine the two hemisphere means weighted by final white surface area. No annot or parcel means.",
+    "hull_ratio": "Sum final pial triangle areas divided by sum per-hemisphere 3D convex-hull areas; not average hemisphere ratios and not local GI.",
+    "etiv_mm3": "Always absent for macaque; never read aseg-derived volume/eTIV/CortexVol."
+  },
+  "excluded_primary_inputs": [
+    "aseg.stats",
+    "aseg-derived volumes",
+    "CortexVol",
+    "eTIV",
+    "aparc.annot",
+    "aparc.a2009s.annot",
+    "aparc.DKTatlas.annot"
+  ],
+  "annotation_policy": "人类命名标签，不作猕猴分区",
+  "scale": {
+    "final_surface_scale_k": "Remaining linear multiplier in final stored coordinates relative to native MRI nominal mm; a restored output has k=1, not k=2 again.",
+    "restored_status": "rescale_applied_and_reverted",
+    "require_source_sha256": true,
+    "physical_calibration": "MRI nominal units and processing-scale verification do not certify independent scanner calibration"
+  },
+  "source": [
+    {
+      "type": "user_method_definition",
+      "date": "2026-10-23",
+      "description": "Explicit macaque-global acceptance and input-selection instructions in this chat"
+    },
+    {
+      "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/MghFormat",
+      "role": "MGH spacing/voxel storage"
+    },
+    {
+      "url": "https://surfer.nmr.mgh.harvard.edu/fswiki/CoordinateSystems",
+      "role": "tkr-RAS and volume coordinate transforms"
+    }
+  ]
+}

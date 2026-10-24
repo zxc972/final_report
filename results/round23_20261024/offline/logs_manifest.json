@@ -1,0 +1,31 @@
+{
+  "final_gate_logs": [
+    {
+      "file": "backend_default.txt",
+      "sha256": "dfda5e4b93a6e40b23d424145187aecd320686806314e4b70aa51b5a39788943",
+      "original_log_sha256": "dfda5e4b93a6e40b23d424145187aecd320686806314e4b70aa51b5a39788943"
+    },
+    {
+      "file": "compatibility.txt",
+      "sha256": "d54b5819e2b5539a6a7e9e2a59c408fa8cb56be835c39628840bcc9751ebc4fa",
+      "original_log_sha256": "d54b5819e2b5539a6a7e9e2a59c408fa8cb56be835c39628840bcc9751ebc4fa"
+    },
+    {
+      "file": "core_targeted.txt",
+      "sha256": "56b00d0c3cbb993a37653fae4d8fbea0253c2ff5a26631e4e5a46fe909713b67",
+      "original_log_sha256": "56b00d0c3cbb993a37653fae4d8fbea0253c2ff5a26631e4e5a46fe909713b67"
+    },
+    {
+      "file": "sdk_binding.txt",
+      "sha256": "ced901a128ae7b2f2db7238bb6d294cac73f2ca274680fb42e667963b4e01219",
+      "original_log_sha256": "ced901a128ae7b2f2db7238bb6d294cac73f2ca274680fb42e667963b4e01219"
+    },
+    {
+      "file": "synthetic_singularity.txt",
+      "sha256": "6d338879b750a972250af0f4ca35c7ada75b7ee977b69314d2c5d3051ef8f651",
+      "original_log_sha256": "6d338879b750a972250af0f4ca35c7ada75b7ee977b69314d2c5d3051ef8f651"
+    }
+  ],
+  "log_bytes_unchanged": true,
+  "no_tests_repeated_for_format": true
+}

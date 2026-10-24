@@ -99,6 +99,9 @@ def species_atlas(parameters, environment, severity="hard"):
 def homology_evidence(parameters, environment, severity="hard"):
     if not environment.get("cross_species"):
         return result("pass", "Not a cross-species comparison")
+    if environment.get("global_scope") is True and environment.get("measure_kind") == "ratio":
+        return result("pass", "Whole-brain ratios require compatible definitions and scale, not regional homology",
+                      {"global_scope": True, "homology_required": False})
     accepted = []
     for record in environment.get("homology", []):
         if (
@@ -331,6 +334,14 @@ def cross_species_measure(parameters, environment, severity="soft"):
 def min_detectable_effect(parameters, environment, severity="soft"):
     if not environment.get("group_inference"):
         return result("pass", "No group inference requested")
+    design = environment.get("group_design")
+    if design is not None:
+        d = design["d_min"]
+        defer = environment.get("negative_result") is True and d > parameters["defer_threshold"]
+        return result("warn" if d > parameters["defer_threshold"] else "pass",
+                      "Design-based approximate minimum detectable effect",
+                      {"d_min": d, "n": design["n"], "df": design["df"], "assumptions": design["power_assumptions"]},
+                      underpowered_negative=defer)
     groups = environment.get("groups", {})
     counts = {name: len(set(values)) for name, values in groups.items()}
     if len(counts) != 2 or min(counts.values(), default=0) < 1:

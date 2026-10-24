@@ -124,7 +124,7 @@ def observed_environment(tools, plan):
         "normalization_ref",
         "measure_kind",
         "independent_numeric",
-        "observed_direction",
+        "observed_direction", "plausibility_required",
     }
     observed = {key: val for key, val in trusted.items() if key in allowed_keys}
     numeric = observed.get("independent_numeric")
@@ -162,7 +162,8 @@ def observed_environment(tools, plan):
         "cross_species": scope.get("comparison") == "cross_species",
         "asymmetry": scope.get("comparison") == "asymmetry",
         "group_inference": scope.get("inference") is True,
-        "scale_check_required": scope.get("comparison") == "cross_species",
+        "scale_check_required": scope.get("comparison") == "cross_species" or scope.get("global_bindings") is not None,
+        "global_scope": bool(scope.get("global_bindings") or scope.get("global_scope")),
         "executed": tools.last_execution.get("status") == "success",
     }
 
@@ -327,12 +328,14 @@ def supported_scopes(plan, checks, repository=None):
         rule["scope"]
         for rule in policy["scope_rules"]
         if ("*" in rule["comparisons"] or comparison in rule["comparisons"])
+        and (not rule.get("global_method_only") or plan.get("method", {}).get("method_id") == "method:v15:global_morphometry")
         and (not rule.get("no_hard_block") or not blocked)
         and all(by_id.get(key) == "pass" for key in rule.get("required_pass", []))
+        and all(by_id.get(key) in {"pass", "warn"} for key in rule.get("required_evaluated", []))
     ]
 
 
-def submit_conclusion(tools, text, claim_scope, direction=None):
+def _submit_conclusion_once(tools, text, claim_scope, direction=None):
     if not enabled(tools):
         raise ValueError("Cross-species conclusion policy is not enabled")
     saved = tools.control_store.latest("plan")
@@ -369,6 +372,8 @@ def submit_conclusion(tools, text, claim_scope, direction=None):
     rows.extend(original_blocks.get(row["constraint_id"], row) for row in posterior_rows)
     covered = {row["constraint_id"] for row in rows}
     rows.extend(row for key, row in original_blocks.items() if key not in covered)
+    from .analysis_region_overlap import conclusion_checks, attach_card
+    rows.extend(conclusion_checks(plan))
     posterior = tools.control_store.save(
         "conclusion_checks",
         {
@@ -386,6 +391,7 @@ def submit_conclusion(tools, text, claim_scope, direction=None):
         supported_scopes(plan, rows, repository),
         direction=direction,
     )
+    card = attach_card(card, plan)
     card["postexecution_checks_ref"] = (
         f"conclusion_checks.v{posterior['version']:06d}.json"
     )
@@ -407,3 +413,66 @@ def submit_conclusion(tools, text, claim_scope, direction=None):
         "status": "revise" if card["must_rewrite"] else "reviewed",
         "conclusion_card": card,
     }
+
+
+MAX_CONCLUSION_SUBMISSIONS = 4
+
+
+def conclusion_scope_options(tools):
+    """Only source-bound scopes for the current protected plan and checks."""
+    from .analysis_constraint_binding import resolve
+    from .analysis_unified_runtime import repository_for
+
+    saved = tools.control_store.latest("plan")
+    plan = saved["record"]["plan"] if saved else {"analysis_scope": {}}
+    constraints, _ = resolve(tools)
+    rows = constraints["record"].get("rows", []) if constraints else []
+    repository = repository_for(tools)
+    names = supported_scopes(plan, rows, repository)
+    policy = load_policy("conclusion_rules", repository)
+    return {row["scope"]: row.get("meaning", row["scope"])
+            for row in policy["scope_rules"] if row["scope"] in names}
+
+
+def public_conclusion_feedback(result):
+    """No numerical oracle: return typed admission feedback and allowed scopes."""
+    card = result["conclusion_card"]
+    return {"status": result["status"], "must_rewrite": card["must_rewrite"],
+            "verdict": card["verdict"], "reason": card["reason"],
+            "allowed_scopes": card["allowed_scopes"],
+            "supported_rewrite_scope": card["supported_rewrite_scope"],
+            "duplicate": result.get("duplicate", False),
+            "submission_count": result.get("submission_count"),
+            "review_status": card.get("review_status")}
+
+
+def submit_conclusion(tools, text, claim_scope, direction=None):
+    """Idempotent bounded submission; stale execution results are never reused."""
+    if not enabled(tools):
+        raise ValueError("Cross-species conclusion policy is not enabled")
+    fingerprint = digest({"text": text, "claim_scope": claim_scope})
+    receipt = tools.last_execution.get("receipt_id")
+    prior = tools.control_store.latest("conclusion_submissions")
+    submissions = copy.deepcopy(prior["record"]["items"]) if prior else []
+    for item in submissions:
+        if item["fingerprint"] == fingerprint and item["execution_receipt_id"] == receipt:
+            return {**copy.deepcopy(item["result"]), "duplicate": True,
+                    "submission_count": len(submissions)}
+    if len(submissions) >= MAX_CONCLUSION_SUBMISSIONS:
+        previous = tools.control_store.latest("conclusion")
+        card = copy.deepcopy(previous["record"]) if previous else {}
+        card.update(verdict="deferred", must_rewrite=False, review_status="unreviewed",
+                    reason="Conclusion submission limit reached (4 distinct submissions).",
+                    conclusion_text=text, scope=claim_scope,
+                    allowed_scopes=list(conclusion_scope_options(tools)),
+                    analysis_execution_receipt_id=receipt)
+        tools.control_store.save("conclusion", card)
+        tools.events.append("result", "warn", "Conclusion review limit reached",
+                            {"submission_count": len(submissions), "review_status": "unreviewed"})
+        return {"status": "unreviewed", "conclusion_card": card,
+                "submission_count": len(submissions)}
+    result = _submit_conclusion_once(tools, text, claim_scope, direction)
+    submissions.append({"fingerprint": fingerprint, "execution_receipt_id": receipt,
+                        "result": copy.deepcopy(result)})
+    tools.control_store.save("conclusion_submissions", {"items": submissions})
+    return {**result, "duplicate": False, "submission_count": len(submissions)}

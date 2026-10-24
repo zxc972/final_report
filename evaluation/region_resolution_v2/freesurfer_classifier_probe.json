@@ -1,0 +1,920 @@
+{
+  "freesurfer_home": "/opt/freesurfer-7.2.0",
+  "recon_all_sha256": "4b7c06e03c5acab1ebcbcedd2978314bc108a966fd2b69061b317cb7e94dfbfe",
+  "recon_gcs_lines": [
+    {
+      "line": 282,
+      "text": "set OLD_OLD_GCS = curvature.buckner40.filled.desikan_killiany.2007-06-20.gcs"
+    },
+    {
+      "line": 283,
+      "text": "set OLD_GCS = curvature.buckner40.filled.desikan_killiany.2009-03-04.gcs"
+    },
+    {
+      "line": 284,
+      "text": "set NEW_OLD_GCS = curvature.buckner40.filled.desikan_killiany.2010-03-25.gcs"
+    },
+    {
+      "line": 286,
+      "text": "set GCS = DKaparc.atlas.acfb40.noaparc.i12.2016-08-02.gcs"
+    },
+    {
+      "line": 290,
+      "text": "set OLD_OLD_DESTRIEUX_GCS = atlas2002_simple.gcs"
+    },
+    {
+      "line": 292,
+      "text": "set OLD_DESTRIEUX_GCS = atlas2005_simple.gcs"
+    },
+    {
+      "line": 294,
+      "text": "set NEW_OLD_DESTRIEUX_GCS = destrieux.simple.2009-07-29.gcs"
+    },
+    {
+      "line": 295,
+      "text": "set DESTRIEUX_GCS = CDaparc.atlas.acfb40.noaparc.i12.2016-08-02.gcs"
+    },
+    {
+      "line": 299,
+      "text": "set DKTATLAS_GCS = DKTaparc.atlas.acfb40.noaparc.i12.2016-08-02.gcs"
+    },
+    {
+      "line": 6251,
+      "text": "      set DKTATLAS_GCS = DKTaparc.atlas.acfb40.noaparc.i12.2020-05-13.gcs"
+    },
+    {
+      "line": 8620,
+      "text": "curvature.buckner40.filled.desikan_killiany.2007-06-20.gcs and is located in"
+    }
+  ],
+  "ca_label_context": [
+    {
+      "line": 689,
+      "text": "\tmri_log_likelihood \\"
+    },
+    {
+      "line": 690,
+      "text": "\tmri_mask \\"
+    },
+    {
+      "line": 691,
+      "text": "\tmri_matrix_multiply \\"
+    },
+    {
+      "line": 692,
+      "text": "\tmri_normalize \\"
+    },
+    {
+      "line": 693,
+      "text": "\tmri_normalize_tp2 \\"
+    },
+    {
+      "line": 694,
+      "text": "        mri_or \\"
+    },
+    {
+      "line": 695,
+      "text": "\tmri_relabel_hypointensities \\"
+    },
+    {
+      "line": 696,
+      "text": "\tmri_relabel_nonwm_hypos \\"
+    },
+    {
+      "line": 697,
+      "text": "\tmri_remove_neck \\"
+    },
+    {
+      "line": 698,
+      "text": "\tmri_robust_register \\"
+    },
+    {
+      "line": 699,
+      "text": "\tmri_robust_template \\"
+    },
+    {
+      "line": 700,
+      "text": "\tmris_anatomical_stats \\"
+    },
+    {
+      "line": 701,
+      "text": "\tmris_ca_label \\"
+    },
+    {
+      "line": 702,
+      "text": "\tmris_calc \\"
+    },
+    {
+      "line": 703,
+      "text": "\tmris_convert \\"
+    },
+    {
+      "line": 704,
+      "text": "\tmris_curvature \\"
+    },
+    {
+      "line": 705,
+      "text": "\tmris_curvature_stats \\"
+    },
+    {
+      "line": 706,
+      "text": "\tmris_diff \\"
+    },
+    {
+      "line": 707,
+      "text": "\tmris_divide_parcellation \\"
+    },
+    {
+      "line": 708,
+      "text": "\tmri_segment \\"
+    },
+    {
+      "line": 709,
+      "text": "\tmri_segstats \\"
+    },
+    {
+      "line": 3864,
+      "text": "#---------------- Cortical Parcellation -----------------#"
+    },
+    {
+      "line": 3865,
+      "text": "##---------------       -cortparc       -----------------#"
+    },
+    {
+      "line": 3866,
+      "text": "#----------------                       -----------------#"
+    },
+    {
+      "line": 3867,
+      "text": "if($DoCortParc) then"
+    },
+    {
+      "line": 3868,
+      "text": "  set CMDFS = () # see earlier notes on -parallel implementation"
+    },
+    {
+      "line": 3869,
+      "text": "  foreach hemi ($hemilist)"
+    },
+    {
+      "line": 3870,
+      "text": "    echo \"#-----------------------------------------\" \\"
+    },
+    {
+      "line": 3871,
+      "text": "      |& tee -a $LF |& tee -a $CF"
+    },
+    {
+      "line": 3872,
+      "text": "    echo \"#@# Cortical Parc $hemi `date`\" \\"
+    },
+    {
+      "line": 3873,
+      "text": "      |& tee -a $SF |& tee -a $LF |& tee -a $CF"
+    },
+    {
+      "line": 3874,
+      "text": "    cd $subjdir/scripts > /dev/null"
+    },
+    {
+      "line": 3875,
+      "text": "    $PWD |& tee -a $LF"
+    },
+    {
+      "line": 3876,
+      "text": "    set xopts = `fsr-getxopts mris_ca_label $XOptsFile $GlobXOptsFile`;"
+    },
+    {
+      "line": 3877,
+      "text": "    set CPAtlas = ${GCSDIR}/$hemi.$GCS"
+    },
+    {
+      "line": 3878,
+      "text": "    set annot = ../label/$hemi.aparc.annot"
+    },
+    {
+      "line": 3879,
+      "text": "    set cmd = (mris_ca_label)"
+    },
+    {
+      "line": 3880,
+      "text": "    if($UseAseg) set cmd = ($cmd -l ../label/$hemi.cortex.label)"
+    },
+    {
+      "line": 3881,
+      "text": "    if($UseAseg) set cmd = ($cmd -aseg ../mri/aseg.presurf.mgz)"
+    },
+    {
+      "line": 3882,
+      "text": "    if($NoRandomness) set cmd = ($cmd -seed $RngSeed)"
+    },
+    {
+      "line": 3883,
+      "text": "    set cmd = ($cmd $xopts)"
+    },
+    {
+      "line": 3884,
+      "text": "    if($longitudinal) then"
+    },
+    {
+      "line": 3885,
+      "text": "      # longitudinal:"
+    },
+    {
+      "line": 3886,
+      "text": "      set cmd = ($cmd -long -R $longbasedir/label/${hemi}.aparc.annot)"
+    },
+    {
+      "line": 3887,
+      "text": "    endif"
+    },
+    {
+      "line": 3888,
+      "text": "    set cmd = ($cmd $subjid $hemi ../surf/$hemi.sphere.reg $CPAtlas $annot)"
+    },
+    {
+      "line": 3889,
+      "text": "    echo \"\\n $cmd \\n\" |& tee -a $LF |& tee -a $CF"
+    },
+    {
+      "line": 3890,
+      "text": "    if($DoParallel) then"
+    },
+    {
+      "line": 3891,
+      "text": "      set CMDF = mris_ca_label_${hemi}.cmd"
+    },
+    {
+      "line": 3892,
+      "text": "      echo \"$cmd\" > $CMDF"
+    },
+    {
+      "line": 3893,
+      "text": "      set CMDFS = ( $CMDFS $CMDF )"
+    },
+    {
+      "line": 3894,
+      "text": "    else"
+    },
+    {
+      "line": 3895,
+      "text": "      if($RunIt) $fs_time $cmd |& tee -a $LF"
+    },
+    {
+      "line": 3896,
+      "text": "      if($status) goto error_exit;"
+    },
+    {
+      "line": 3897,
+      "text": "    endif"
+    },
+    {
+      "line": 3898,
+      "text": "    echo $cmd > $touchdir/$hemi.aparc.touch"
+    },
+    {
+      "line": 3899,
+      "text": "  end # Loop over hemilist"
+    },
+    {
+      "line": 4392,
+      "text": "#---------------- Cortical Parcellation 2 -----------------#"
+    },
+    {
+      "line": 4393,
+      "text": "##---------------       -cortparc2        -----------------#"
+    },
+    {
+      "line": 4394,
+      "text": "#----------------                         -----------------#"
+    },
+    {
+      "line": 4395,
+      "text": "if($DoCortParc2) then"
+    },
+    {
+      "line": 4396,
+      "text": "  set CMDFS = () # see earlier notes on -parallel implementation"
+    },
+    {
+      "line": 4397,
+      "text": "  foreach hemi ($hemilist)"
+    },
+    {
+      "line": 4398,
+      "text": "    echo \"#-----------------------------------------\"\\"
+    },
+    {
+      "line": 4399,
+      "text": "      |& tee -a $LF |& tee -a $CF"
+    },
+    {
+      "line": 4400,
+      "text": "    echo \"#@# Cortical Parc 2 $hemi `date`\" \\"
+    },
+    {
+      "line": 4401,
+      "text": "      |& tee -a $SF |& tee -a $LF |& tee -a $CF"
+    },
+    {
+      "line": 4402,
+      "text": "    cd $subjdir/scripts > /dev/null"
+    },
+    {
+      "line": 4403,
+      "text": "    $PWD |& tee -a $LF"
+    },
+    {
+      "line": 4404,
+      "text": "    set xopts = `fsr-getxopts mris_ca_label $XOptsFile $GlobXOptsFile`;"
+    },
+    {
+      "line": 4405,
+      "text": "    set CPAtlas = ${GCSDIR}/${hemi}.${DESTRIEUX_GCS}"
+    },
+    {
+      "line": 4406,
+      "text": "    set annot = ../label/$hemi.aparc.${DESTRIEUX_NAME}.annot"
+    },
+    {
+      "line": 4407,
+      "text": "    set cmd = (mris_ca_label)"
+    },
+    {
+      "line": 4408,
+      "text": "    if($UseAseg) set cmd = ($cmd -l ../label/$hemi.cortex.label)"
+    },
+    {
+      "line": 4409,
+      "text": "    if($UseAseg) set cmd = ($cmd -aseg ../mri/aseg.presurf.mgz)"
+    },
+    {
+      "line": 4410,
+      "text": "    if($NoRandomness) set cmd = ($cmd -seed $RngSeed)"
+    },
+    {
+      "line": 4411,
+      "text": "    set cmd = ($cmd $xopts)"
+    },
+    {
+      "line": 4412,
+      "text": "    if($longitudinal) then"
+    },
+    {
+      "line": 4413,
+      "text": "      # longitudinal:"
+    },
+    {
+      "line": 4414,
+      "text": "      set cmd = ($cmd -long -R \\"
+    },
+    {
+      "line": 4415,
+      "text": "                   $longbasedir/label/${hemi}.aparc.${DESTRIEUX_NAME}.annot)"
+    },
+    {
+      "line": 4416,
+      "text": "    endif"
+    },
+    {
+      "line": 4417,
+      "text": "    set cmd = ($cmd $subjid $hemi ../surf/$hemi.sphere.reg $CPAtlas $annot)"
+    },
+    {
+      "line": 4418,
+      "text": "    echo \"\\n $cmd \\n\" |& tee -a $LF |& tee -a $CF"
+    },
+    {
+      "line": 4419,
+      "text": "    if($DoParallel) then"
+    },
+    {
+      "line": 4420,
+      "text": "      set CMDF = mris_ca_label_${hemi}.cmd"
+    },
+    {
+      "line": 4421,
+      "text": "      echo \"$cmd\" > $CMDF"
+    },
+    {
+      "line": 4422,
+      "text": "      set CMDFS = ( $CMDFS $CMDF )"
+    },
+    {
+      "line": 4423,
+      "text": "    else"
+    },
+    {
+      "line": 4424,
+      "text": "      if($RunIt) $fs_time $cmd |& tee -a $LF"
+    },
+    {
+      "line": 4425,
+      "text": "      if($status) goto error_exit;"
+    },
+    {
+      "line": 4426,
+      "text": "    endif"
+    },
+    {
+      "line": 4427,
+      "text": "    echo $cmd > $touchdir/$hemi.aparc2.touch"
+    },
+    {
+      "line": 4428,
+      "text": "  end # Loop over hemilist"
+    },
+    {
+      "line": 4436,
+      "text": "#---------------- Cortical Parcellation 3 -----------------#"
+    },
+    {
+      "line": 4437,
+      "text": "##---------------       -cortparc3        -----------------#"
+    },
+    {
+      "line": 4438,
+      "text": "#----------------                         -----------------#"
+    },
+    {
+      "line": 4439,
+      "text": "if($DoCortParc3) then"
+    },
+    {
+      "line": 4440,
+      "text": "  set CMDFS = () # see earlier notes on -parallel implementation"
+    },
+    {
+      "line": 4441,
+      "text": "  foreach hemi ($hemilist)"
+    },
+    {
+      "line": 4442,
+      "text": "    echo \"#-----------------------------------------\"\\"
+    },
+    {
+      "line": 4443,
+      "text": "      |& tee -a $LF |& tee -a $CF"
+    },
+    {
+      "line": 4444,
+      "text": "    echo \"#@# Cortical Parc 3 $hemi `date`\" \\"
+    },
+    {
+      "line": 4445,
+      "text": "      |& tee -a $SF |& tee -a $LF |& tee -a $CF"
+    },
+    {
+      "line": 4446,
+      "text": "    cd $subjdir/scripts > /dev/null"
+    },
+    {
+      "line": 4447,
+      "text": "    $PWD |& tee -a $LF"
+    },
+    {
+      "line": 4448,
+      "text": "    set xopts = `fsr-getxopts mris_ca_label $XOptsFile $GlobXOptsFile`;"
+    },
+    {
+      "line": 4449,
+      "text": "    set CPAtlas = ${GCSDIR}/${hemi}.${DKTATLAS_GCS}"
+    },
+    {
+      "line": 4450,
+      "text": "    set annot = ../label/$hemi.aparc.${DKTATLAS_NAME}.annot"
+    },
+    {
+      "line": 4451,
+      "text": "    set cmd = (mris_ca_label)"
+    },
+    {
+      "line": 4452,
+      "text": "    if($UseAseg) set cmd = ($cmd -l ../label/$hemi.cortex.label)"
+    },
+    {
+      "line": 4453,
+      "text": "    if($UseAseg) set cmd = ($cmd -aseg ../mri/aseg.presurf.mgz)"
+    },
+    {
+      "line": 4454,
+      "text": "    if($NoRandomness) set cmd = ($cmd -seed $RngSeed)"
+    },
+    {
+      "line": 4455,
+      "text": "    set cmd = ($cmd $xopts)"
+    },
+    {
+      "line": 4456,
+      "text": "    if($longitudinal) then"
+    },
+    {
+      "line": 4457,
+      "text": "      # longitudinal:"
+    },
+    {
+      "line": 4458,
+      "text": "      set cmd = ($cmd -long -R \\"
+    },
+    {
+      "line": 4459,
+      "text": "                   $longbasedir/label/${hemi}.aparc.${DKTATLAS_NAME}.annot)"
+    },
+    {
+      "line": 4460,
+      "text": "    endif"
+    },
+    {
+      "line": 4461,
+      "text": "    set cmd = ($cmd $subjid $hemi ../surf/$hemi.sphere.reg $CPAtlas $annot)"
+    },
+    {
+      "line": 4462,
+      "text": "    echo \"\\n $cmd \\n\" |& tee -a $LF |& tee -a $CF"
+    },
+    {
+      "line": 4463,
+      "text": "    if($DoParallel) then"
+    },
+    {
+      "line": 4464,
+      "text": "      set CMDF = mris_ca_label_${hemi}.cmd"
+    },
+    {
+      "line": 4465,
+      "text": "      echo \"$cmd\" > $CMDF"
+    },
+    {
+      "line": 4466,
+      "text": "      set CMDFS = ( $CMDFS $CMDF )"
+    },
+    {
+      "line": 4467,
+      "text": "    else"
+    },
+    {
+      "line": 4468,
+      "text": "      if($RunIt) $fs_time $cmd |& tee -a $LF"
+    },
+    {
+      "line": 4469,
+      "text": "      if($status) goto error_exit;"
+    },
+    {
+      "line": 4470,
+      "text": "    endif"
+    },
+    {
+      "line": 4471,
+      "text": "    echo $cmd > $touchdir/$hemi.aparc2.touch"
+    },
+    {
+      "line": 4472,
+      "text": "  end # Loop over hemilist"
+    },
+    {
+      "line": 8824,
+      "text": "  mri_tessellate"
+    },
+    {
+      "line": 8825,
+      "text": "  mris_smooth"
+    },
+    {
+      "line": 8826,
+      "text": "  mris_inflate"
+    },
+    {
+      "line": 8827,
+      "text": "  mris_sphere"
+    },
+    {
+      "line": 8828,
+      "text": "  mris_fix_topology"
+    },
+    {
+      "line": 8829,
+      "text": "  mris_topo_fixer"
+    },
+    {
+      "line": 8830,
+      "text": "  mris_remove_intersection"
+    },
+    {
+      "line": 8831,
+      "text": "  mris_make_surfaces"
+    },
+    {
+      "line": 8832,
+      "text": "  mris_surf2vol"
+    },
+    {
+      "line": 8833,
+      "text": "  mris_register"
+    },
+    {
+      "line": 8834,
+      "text": "  mris_jacobian"
+    },
+    {
+      "line": 8835,
+      "text": "  mrisp_paint"
+    },
+    {
+      "line": 8836,
+      "text": "  mris_ca_label"
+    },
+    {
+      "line": 8837,
+      "text": "  mris_anatomical_stats"
+    },
+    {
+      "line": 8838,
+      "text": "  mri_aparc2aseg"
+    },
+    {
+      "line": 8839,
+      "text": ""
+    },
+    {
+      "line": 8840,
+      "text": ""
+    },
+    {
+      "line": 8841,
+      "text": "NOTIFICATION FILES"
+    },
+    {
+      "line": 8842,
+      "text": ""
+    },
+    {
+      "line": 8843,
+      "text": "Notification files allow the user to cascade invocations to recon-all,"
+    },
+    {
+      "line": 8844,
+      "text": "with one invocation waiting until another one terminates. This is done"
+    },
+    {
+      "line": 9107,
+      "text": "Average Curvature (-<no>avgcurv)"
+    },
+    {
+      "line": 9108,
+      "text": ""
+    },
+    {
+      "line": 9109,
+      "text": "Resamples the average curvature from the atlas to that of the subject."
+    },
+    {
+      "line": 9110,
+      "text": "Allows the user to display activity on the surface of an individual"
+    },
+    {
+      "line": 9111,
+      "text": "with the folding pattern (ie, anatomy) of a group. Calls mrisp_paint."
+    },
+    {
+      "line": 9112,
+      "text": "Creates surf/?h.avg_curv."
+    },
+    {
+      "line": 9113,
+      "text": ""
+    },
+    {
+      "line": 9114,
+      "text": "Cortical Parcellation (-<no>cortparc, -<no>cortparc2, -<no>cortparc3 )"
+    },
+    {
+      "line": 9115,
+      "text": ""
+    },
+    {
+      "line": 9116,
+      "text": "Assigns a neuroanatomical label to each location on the cortical surface."
+    },
+    {
+      "line": 9117,
+      "text": "Incorporates both geometric information derived from the cortical model"
+    },
+    {
+      "line": 9118,
+      "text": "(sulcus and curvature), and neuroanatomical convention."
+    },
+    {
+      "line": 9119,
+      "text": "Calls mris_ca_label.  -cortparc creates label/?h.aparc.annot,"
+    },
+    {
+      "line": 9120,
+      "text": "-cortparc2 creates /label/?h.aparc.a2009s.annot, and"
+    },
+    {
+      "line": 9121,
+      "text": "-cortparc3 creates /label/?h.aparc.DKTatlas40.annot."
+    },
+    {
+      "line": 9122,
+      "text": ""
+    },
+    {
+      "line": 9123,
+      "text": "Pial Surface (-<no>pial)"
+    },
+    {
+      "line": 9124,
+      "text": ""
+    },
+    {
+      "line": 9125,
+      "text": "Creates the ?h.pial surfaces as well as the thickness file (?h.thickness)."
+    },
+    {
+      "line": 9126,
+      "text": "The pial surface is created by expanding the white surface so that it closely"
+    },
+    {
+      "line": 9127,
+      "text": "follows the gray-CSF intensity gradient as found in the T1 volume.  The"
+    }
+  ],
+  "available_classifiers": [
+    {
+      "name": "lh.CDaparc.atlas.acfb40.noaparc.i12.2016-08-02.gcs",
+      "bytes": 21724500,
+      "sha256": "f726bca3747676e465aaad4572e525dc5370d0a073c435fd41c1beaff2ad6add"
+    },
+    {
+      "name": "lh.DKTaparc.atlas.acfb40.noaparc.i12.2016-08-02.gcs",
+      "bytes": 22003357,
+      "sha256": "6db52238d4c6c5867edd645daf23a7ce1bf753caffa792c9972db40af8229214"
+    },
+    {
+      "name": "lh.DKTaparc.atlas.acfb40.noaparc.i12.2020-05-13.gcs",
+      "bytes": 22000692,
+      "sha256": "1073501a9aa15632b91cd4fe128cae18debe179c516d13aebfa868aa8e58a521"
+    },
+    {
+      "name": "lh.DKTatlas100.gcs",
+      "bytes": 6883965,
+      "sha256": "b3a6f066463ac43a796059c97d8ffeefaa6e83260e56f323f2c7c7b3e3bc515e"
+    },
+    {
+      "name": "lh.DKTatlas40.gcs",
+      "bytes": 19038082,
+      "sha256": "1666ee5d5c4af3d2b8d3ba349092fccf9a98d5abe5fb4e1bf414732e30f218e3"
+    },
+    {
+      "name": "lh.DKaparc.atlas.acfb40.noaparc.i12.2016-08-02.gcs",
+      "bytes": 18842086,
+      "sha256": "721d6f53e8e3edae2c3798d52c5878026f1cdbe6cb286659ae48b920651a4cb6"
+    },
+    {
+      "name": "lh.atlas2002_simple.gcs",
+      "bytes": 23346448,
+      "sha256": "f79febb8e2ef34e74974bc8298a680058d126a401f0b3ccde41b7a1fb06caeb0"
+    },
+    {
+      "name": "lh.atlas2005_simple.gcs",
+      "bytes": 20645340,
+      "sha256": "605bb3f88b17511628cd0ff8a12e5e7194fcceaccb02b4fe3a1ffb02be053c56"
+    },
+    {
+      "name": "lh.curvature.buckner40.filled.desikan_killiany.2010-03-25.gcs",
+      "bytes": 18442546,
+      "sha256": "51c4411ba51e0fe6d9353a7f66e66b2f637d7acd6bb247dc41242c56be7bd7f8"
+    },
+    {
+      "name": "lh.destrieux.simple.2009-07-29.gcs",
+      "bytes": 20341790,
+      "sha256": "2836c8a057c49936e83e93a6be12bd42fcf86d95ce91630d7aa2ddadc5619e7e"
+    },
+    {
+      "name": "lh_trans_toSulc.gcs",
+      "bytes": 23744678,
+      "sha256": "5648206837f26fe74dd551ddf0d0a0c766b1dba426cdc9ba1dbe194568d125b7"
+    },
+    {
+      "name": "rh.CDaparc.atlas.acfb40.noaparc.i12.2016-08-02.gcs",
+      "bytes": 21898679,
+      "sha256": "878f4caae1f7d439ebeae5499537b9b5c1146bf7c369f5fb4cfc1df67e6d0b29"
+    },
+    {
+      "name": "rh.DKTaparc.atlas.acfb40.noaparc.i12.2016-08-02.gcs",
+      "bytes": 21987412,
+      "sha256": "3f6e2ec1f24081f5a3ad2cafcdc1aaa156a2a635b78c30808dbeb8aaf9421498"
+    },
+    {
+      "name": "rh.DKTaparc.atlas.acfb40.noaparc.i12.2020-05-13.gcs",
+      "bytes": 21984695,
+      "sha256": "1f697935a3d97daf708164d6687a3ddaaacf64062eb13e6d3911a08f9973b97b"
+    },
+    {
+      "name": "rh.DKTatlas100.gcs",
+      "bytes": 28769857,
+      "sha256": "5e7a09cc45cbc4f7040718c28e518d70fdcaaa3f86708285c907369faa783936"
+    },
+    {
+      "name": "rh.DKTatlas40.gcs",
+      "bytes": 18886087,
+      "sha256": "e75708997195eb3bdeaa0ea224556ff10d43d0418772124444b54bf05f19423a"
+    },
+    {
+      "name": "rh.DKaparc.atlas.acfb40.noaparc.i12.2016-08-02.gcs",
+      "bytes": 18610793,
+      "sha256": "64e98c907af4242cb79b645a384c97ed37854b7b127a18ad406084b29dc486cf"
+    },
+    {
+      "name": "rh.atlas2002_simple.gcs",
+      "bytes": 23031576,
+      "sha256": "fd231853e22785778c5ab502014bb4cf0e4a7c7fe28611e05fe5ecaacf2138bf"
+    },
+    {
+      "name": "rh.atlas2005_simple.gcs",
+      "bytes": 21468090,
+      "sha256": "c08d7d0917953fd6950becc230def513df1f4939e6519f9f24baa4854cca6849"
+    },
+    {
+      "name": "rh.curvature.buckner40.filled.desikan_killiany.2010-03-25.gcs",
+      "bytes": 19080810,
+      "sha256": "135e9b6db8ec605cd4f93ee8eb94c22c388738567f557514bb7fbd69a9bb8e7e"
+    },
+    {
+      "name": "rh.destrieux.simple.2009-07-29.gcs",
+      "bytes": 20812656,
+      "sha256": "262ecff15ccacc3565d1d0657b3235a1c82bf11c5b45c1aa8676654b4786ea1e"
+    },
+    {
+      "name": "rh_trans_toSulc.gcs",
+      "bytes": 23479274,
+      "sha256": "fb0e3cd1444814f63f78c64dea3d64bfff379059654fc090f44b27a82f7d3556"
+    }
+  ],
+  "fsaverage_surf_files": [
+    "lh.area",
+    "lh.avg_curv",
+    "lh.avg_sulc",
+    "lh.avg_thickness",
+    "lh.cortex.patch.3d",
+    "lh.cortex.patch.flat",
+    "lh.curv",
+    "lh.fsaverage_sym.sphere.reg",
+    "lh.inflated",
+    "lh.inflated.H",
+    "lh.inflated.K",
+    "lh.inflated_avg",
+    "lh.inflated_pre",
+    "lh.orig",
+    "lh.orig.avg.area.mgh",
+    "lh.orig_avg",
+    "lh.pial",
+    "lh.pial.avg.area.mgh",
+    "lh.pial_avg",
+    "lh.pial_semi_inflated",
+    "lh.smoothwm",
+    "lh.sphere",
+    "lh.sphere.reg",
+    "lh.sphere.reg.avg",
+    "lh.sulc",
+    "lh.thickness",
+    "lh.white",
+    "lh.white.avg.area.mgh",
+    "lh.white_avg",
+    "lh.white_avg.H",
+    "lh.white_avg.K",
+    "rh.area",
+    "rh.avg_curv",
+    "rh.avg_sulc",
+    "rh.avg_thickness",
+    "rh.cortex.patch.3d",
+    "rh.cortex.patch.flat",
+    "rh.curv",
+    "rh.fsaverage_sym.sphere.reg",
+    "rh.inflated",
+    "rh.inflated.H",
+    "rh.inflated.K",
+    "rh.inflated_avg",
+    "rh.inflated_pre",
+    "rh.orig",
+    "rh.orig.avg.area.mgh",
+    "rh.orig_avg",
+    "rh.pial",
+    "rh.pial.avg.area.mgh",
+    "rh.pial_avg",
+    "rh.pial_semi_inflated",
+    "rh.smoothwm",
+    "rh.sphere",
+    "rh.sphere.reg",
+    "rh.sphere.reg.avg",
+    "rh.sulc",
+    "rh.thickness",
+    "rh.white",
+    "rh.white.avg.area.mgh",
+    "rh.white_avg",
+    "rh.white_avg.H",
+    "rh.white_avg.K"
+  ]
+}

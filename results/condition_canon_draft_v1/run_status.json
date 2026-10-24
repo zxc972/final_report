@@ -1,0 +1,39 @@
+{
+  "status": "completed_with_provider_failures",
+  "provider_failure_items": 3,
+  "label_status": "draft_by_claude_requires_human_review",
+  "frozen_sha256": "054f9a031ef99326289bf925ea8551ae20ac80f5ffa610c1a3f90d61926cb126",
+  "n_statements": 108,
+  "arms": [
+    "full",
+    "k1",
+    "retrieval_only",
+    "direct"
+  ],
+  "full_error_items": 69,
+  "usage": {
+    "logical_calls": 751,
+    "http_attempts": 862,
+    "successful_requests": 748,
+    "failed_requests": 110,
+    "unfinished_requests": 4,
+    "length_limited_responses": 256,
+    "historical_null_length_responses": 2,
+    "unknown_usage_requests": 114,
+    "input_tokens": 1075438,
+    "output_tokens": 950755,
+    "total_tokens": 2026193,
+    "observed_models": [
+      "deepseek-v4.1-flash"
+    ]
+  },
+  "analysis_runs": 0,
+  "preprocessing_submissions": 0,
+  "formal_gold_created": false,
+  "authorised_cumulative_http_cap": 1000,
+  "primary_http_cap": 800,
+  "budget_completion_http_cap": 200,
+  "budget_completion_items": 55,
+  "budget_completion_http_attempts": 62,
+  "all_existing_answers_preserved": true
+}

@@ -1,0 +1,94 @@
+{
+  "schema": "primatex.independent_card_extraction.v1",
+  "split": "independent_test_candidate",
+  "source_manifest_sha256": "e079715c04f4fec6f4a3a3b80d00786ba8a0ba76f08c83d839882feaa09f0ce6",
+  "script_sha256": "5e8fb1e96af50d80f1213262eb98c65f64adf1df6e5a52c1f96f38dc13886492",
+  "provider_sha256": "ded374b85365f7cb47263cfd242307c80df50f38ee09ea6e4d96bf7a5edb3d27",
+  "prompt_sha256": "b38ae556e892a697f680495f863c06c490163ce7b7c37502d6db275b55d1a73c",
+  "methods": [
+    {
+      "method_id": "independent_v2_fs_anatomical_stats",
+      "name": "FreeSurfer mris_anatomical_stats",
+      "sources": [
+        "fs_anatomical_stats"
+      ],
+      "objective": "完整记录该命令的输入、输出、软件/版本、空间与网格要求、可选项和使用注意"
+    },
+    {
+      "method_id": "independent_v2_fs_segstats",
+      "name": "FreeSurfer mri_segstats",
+      "sources": [
+        "fs_segstats"
+      ],
+      "objective": "完整记录该命令的输入、输出、软件/版本、空间与网格要求、可选项和使用注意"
+    },
+    {
+      "method_id": "independent_v2_fs_preproc",
+      "name": "FreeSurfer mris_preproc",
+      "sources": [
+        "fs_preproc"
+      ],
+      "objective": "完整记录该命令的输入、输出、软件/版本、空间与网格要求、可选项和使用注意"
+    },
+    {
+      "method_id": "independent_v2_fs_surf2surf",
+      "name": "FreeSurfer mri_surf2surf",
+      "sources": [
+        "fs_surf2surf"
+      ],
+      "objective": "完整记录该命令的输入、输出、软件/版本、空间与网格要求、可选项和使用注意"
+    },
+    {
+      "method_id": "independent_v2_wb_metric_resample",
+      "name": "Connectome Workbench -metric-resample",
+      "sources": [
+        "wb_metric_resample"
+      ],
+      "objective": "完整记录该命令的输入、输出、软件/版本、空间与网格要求、可选项和使用注意"
+    },
+    {
+      "method_id": "independent_v2_ants_thickness",
+      "name": "ANTs antsCorticalThickness.sh",
+      "sources": [
+        "ants_thickness_script",
+        "ants_thickness_outputs"
+      ],
+      "objective": "完整记录该命令的输入、输出、软件/版本、空间与网格要求、可选项和使用注意"
+    },
+    {
+      "method_id": "independent_v2_fs_ca_label",
+      "name": "FreeSurfer mris_ca_label",
+      "sources": [
+        "fs_ca_label"
+      ],
+      "objective": "完整记录该命令的输入、输出、软件/版本、空间与网格要求、可选项和使用注意"
+    }
+  ],
+  "provider": {
+    "endpoint_host": "inferaiapi.com",
+    "endpoint_path": "/v1",
+    "model": "deepseek-v4.1-flash",
+    "temperature": 0.7,
+    "timeout": 180,
+    "max_tokens": 8192,
+    "max_attempts": 3,
+    "thinking": {
+      "type": "disabled"
+    },
+    "response_format": {
+      "type": "json_object"
+    }
+  },
+  "max_http_attempts": 150,
+  "budget_scope": "all primary and supplementary method-card extraction calls share one ledger; no algorithm evaluation",
+  "annotation_fields": [
+    "inputs",
+    "conditions",
+    "checks",
+    "exceptions"
+  ],
+  "selection": "all verified items in the same four fields as development; exclude exact normalized quote or statement duplicates against development; no outcome-based selection",
+  "algorithm_calls": 0,
+  "gold_created": false,
+  "annotation_status": "ready_for_Claude_not_labelled"
+}

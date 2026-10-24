@@ -1,0 +1,69 @@
+{
+  "same_configuration_checks": {
+    "knowledge_profile": true,
+    "profiles_sha256": true,
+    "method_requirements_sha256": true,
+    "pipeline_dependencies_sha256": true,
+    "exposure_scope": true,
+    "include_domain_rules": true
+  },
+  "configuration": {
+    "knowledge_profile": "product_graph_planner",
+    "profiles_sha256": "f6af79ea7916ef4be03c7a1b6d394f1fb9bf4b501125585c1132f89d739a6ebd",
+    "method_requirements_sha256": "64f22f906afc72bf7c4a94d010f02bf1851a18cfdcca075602d2e850225a4afb",
+    "pipeline_dependencies_sha256": "558d0988c23f9eaa135cc5443b3ae0f244168700d3e8183ee55aa69c442847ed",
+    "exposure_scope": "Filtered explicit tools; framework-injected tools are denied unless listed",
+    "include_domain_rules": true
+  },
+  "all_six_router_first_success_no_fallback": true,
+  "cases": [
+    {
+      "case": "R22_G1_1",
+      "source_commit": "3b61d7ca1b1493a0fd22c4a75d1cc9e08573b0d8",
+      "operations_sha256": "b9780babc27324c41329f0c7494a810e95a6a3d6f09c47896ccb366d670d7333",
+      "router_fallback": false,
+      "router_parse_status": "first_success",
+      "unmetered_logical_calls": 0
+    },
+    {
+      "case": "R22_G1_2",
+      "source_commit": "3b61d7ca1b1493a0fd22c4a75d1cc9e08573b0d8",
+      "operations_sha256": "b9780babc27324c41329f0c7494a810e95a6a3d6f09c47896ccb366d670d7333",
+      "router_fallback": false,
+      "router_parse_status": "first_success",
+      "unmetered_logical_calls": 0
+    },
+    {
+      "case": "R22_G1_3",
+      "source_commit": "3b61d7ca1b1493a0fd22c4a75d1cc9e08573b0d8",
+      "operations_sha256": "b9780babc27324c41329f0c7494a810e95a6a3d6f09c47896ccb366d670d7333",
+      "router_fallback": false,
+      "router_parse_status": "first_success",
+      "unmetered_logical_calls": 0
+    },
+    {
+      "case": "R22_G2_1",
+      "source_commit": "3b61d7ca1b1493a0fd22c4a75d1cc9e08573b0d8",
+      "operations_sha256": "b9780babc27324c41329f0c7494a810e95a6a3d6f09c47896ccb366d670d7333",
+      "router_fallback": false,
+      "router_parse_status": "first_success",
+      "unmetered_logical_calls": 0
+    },
+    {
+      "case": "R22_G2_2",
+      "source_commit": "3b61d7ca1b1493a0fd22c4a75d1cc9e08573b0d8",
+      "operations_sha256": "b9780babc27324c41329f0c7494a810e95a6a3d6f09c47896ccb366d670d7333",
+      "router_fallback": false,
+      "router_parse_status": "first_success",
+      "unmetered_logical_calls": 0
+    },
+    {
+      "case": "R22_G2_3",
+      "source_commit": "3b61d7ca1b1493a0fd22c4a75d1cc9e08573b0d8",
+      "operations_sha256": "b9780babc27324c41329f0c7494a810e95a6a3d6f09c47896ccb366d670d7333",
+      "router_fallback": false,
+      "router_parse_status": "first_success",
+      "unmetered_logical_calls": 0
+    }
+  ]
+}

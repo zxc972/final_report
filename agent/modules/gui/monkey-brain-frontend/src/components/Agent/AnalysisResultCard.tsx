@@ -60,6 +60,7 @@ export default function AnalysisResultCard({ result }: { result: AnalysisResultI
         Independent check: {['pass', 'fail'].includes(live.numericalReview) ? live.numericalReview : 'not assessed'}
       </span>
       {['pass', 'fail'].includes(live.numericalReview) && live.independentMismatches !== undefined && <span className="px-tag">{live.independentMismatches} mismatches</span>}</>}
+      {live.independentTables?.map(table => <span key={table.file} className="px-tag" aria-label={table.file + ' independent check'}>{table.file}: {table.status}, {table.mismatches} mismatches</span>)}
     </div>
     <div className="px-result-body">
       {unified ? <details className="px-component-review" aria-label="Analysis component status">

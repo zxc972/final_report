@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "checks": [
+    "core_targeted",
+    "compatibility",
+    "sdk_binding",
+    "synthetic_singularity",
+    "backend_default"
+  ],
+  "provider_requests": 0,
+  "real_analysis_requests": 0
+}

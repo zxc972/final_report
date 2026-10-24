@@ -1,0 +1,279 @@
+{
+  "method_id": "independent_v2_fs_segstats",
+  "name": "FreeSurfer mri_segstats",
+  "purpose": "Compute statistics on segmented volumes, including voxel counts and volumes per segmentation, and optionally statistics based on values from another volume such as waveforms averaged inside each segmentation.",
+  "species_scope": "unspecified",
+  "software": [
+    "FreeSurfer",
+    "mri_segstats"
+  ],
+  "inputs": [
+    {
+      "statement": "Input segmentation volume provided with --seg.",
+      "source_id": "fs_segstats",
+      "quote": "--seg segvol\n\ninput segmentation volume",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1464,
+        "end": 1503,
+        "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+      }
+    },
+    {
+      "statement": "Optional input volume from which more statistics (min, max, range, average, standard deviation) are computed across each segmentation; must be same size and dimension as the segmentation volume.",
+      "source_id": "fs_segstats",
+      "quote": "The input volume must be the same size and dimension as the segmentation volume.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 2206,
+        "end": 2286,
+        "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+      }
+    },
+    {
+      "statement": "Optional mask volume; may be binary or continuous and must be the same size and dimension as the segmentation volume.",
+      "source_id": "fs_segstats",
+      "quote": "The mask volume must be the same size and dimension as the segmentation volume.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 5957,
+        "end": 6036,
+        "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+      }
+    },
+    {
+      "statement": "Optional color table file used to map segmentation indices to names and colors.",
+      "source_id": "fs_segstats",
+      "quote": "Freesurfer color table file. Thi s the file used by FreeSurfer to specify how each segmentation index is mapped to a segmentation name and color.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 2986,
+        "end": 3131,
+        "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "statement": "Partial volume compensation with --pv is usually only done when computing anatomical statistics and is not used with --annot.",
+      "source_id": "fs_segstats",
+      "quote": "Usually, this is only done when computing anatomical statistics. Usually the mri/norm.mgz volume is used. Not with --annot",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1912,
+        "end": 2034,
+        "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+      }
+    },
+    {
+      "statement": "If no voxels meet the masking criteria, mri_segstats exits with an error.",
+      "source_id": "fs_segstats",
+      "quote": "If no voxels meet the masking criteria, then mri_segstats exits with an error.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 6037,
+        "end": 6115,
+        "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+      }
+    },
+    {
+      "statement": "Segmentation list may be specified by --id, by a supplied color table, or else all ids from the segmentation volume are used.",
+      "source_id": "fs_segstats",
+      "quote": "If the user does not specify either --id or a color table, then all the ids from the segmentation volume are used.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 9381,
+        "end": 9495,
+        "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "statement": "Provide a segmentation via --seg, or create one from an annotation (--annot) or surface label (--slabel).",
+      "source_id": "fs_segstats",
+      "quote": "create a segmentation from a given surface label. The points in the label are given a value of 1; 0 for outside",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1605,
+        "end": 1716,
+        "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+      }
+    },
+    {
+      "statement": "Optionally apply masking criteria using mask threshold, sign, frame, and invert parameters.",
+      "source_id": "fs_segstats",
+      "quote": "The masking criteria is set by the mask threshold, sign, frame, and invert parameters (see below).",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 5858,
+        "end": 5956,
+        "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+      }
+    },
+    {
+      "statement": "Optionally compute statistics from another volume with --i, including min, max, range, average, and standard deviation.",
+      "source_id": "fs_segstats",
+      "quote": "Input volume from which to compute more statistics, including min, max, range, average, and standard deviation as measured spatially across each segmentation.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 2047,
+        "end": 2205,
+        "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+      }
+    },
+    {
+      "statement": "Save summary statistics to an ASCII file with --sum.",
+      "source_id": "fs_segstats",
+      "quote": "ASCII file in which summary statistics are saved",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1730,
+        "end": 1778,
+        "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+      }
+    },
+    {
+      "statement": "Optionally compute average waveforms per segmentation with --avgwf and save to an ASCII text file.",
+      "source_id": "fs_segstats",
+      "quote": "For each segmentation, computes the average waveform across all the voxels in the segmentation (excluding voxels masked out).",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 7908,
+        "end": 8033,
+        "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+      }
+    }
+  ],
+  "checks": [
+    {
+      "statement": "Input volume for --i must match the segmentation volume in size and dimension.",
+      "source_id": "fs_segstats",
+      "quote": "The input volume must be the same size and dimension as the segmentation volume.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 2206,
+        "end": 2286,
+        "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+      }
+    },
+    {
+      "statement": "Mask volume must match the segmentation volume in size and dimension.",
+      "source_id": "fs_segstats",
+      "quote": "The mask volume must be the same size and dimension as the segmentation volume.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 5957,
+        "end": 6036,
+        "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+      }
+    }
+  ],
+  "exceptions": [
+    {
+      "statement": "If no voxels meet the masking criteria, the program exits with an error.",
+      "source_id": "fs_segstats",
+      "quote": "If no voxels meet the masking criteria, then mri_segstats exits with an error.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 6037,
+        "end": 6115,
+        "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "statement": "Summary statistics ASCII file specified by --sum, with header lines beginning with '#'.",
+      "source_id": "fs_segstats",
+      "quote": "The summary file is an ascii file in which the segmentation statistics are reported. This file will have some 'header' information. Each header line begins with a '#'.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 10613,
+        "end": 10780,
+        "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+      }
+    },
+    {
+      "statement": "Optional output color table with just the reported segmentations via --ctab-out.",
+      "source_id": "fs_segstats",
+      "quote": "Create an output color table with just the segmentations reported in the output.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 4435,
+        "end": 4515,
+        "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+      }
+    },
+    {
+      "statement": "Optional average waveform ASCII text file with rows equal to number of frames and columns equal to number of segmentations reported.",
+      "source_id": "fs_segstats",
+      "quote": "The results are saved in an ascii text file with number of rows equal to the number of frames and number of columns equal to the number of segmentations reported.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 8034,
+        "end": 8196,
+        "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+      }
+    },
+    {
+      "statement": "Optional binary MRI volume output of waveforms via --avgwfvol.",
+      "source_id": "fs_segstats",
+      "quote": "Same as --avgwf except that the resulting waveforms are stored in a binary mri volume format",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 8365,
+        "end": 8457,
+        "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+      }
+    }
+  ],
+  "parameters": [
+    {
+      "statement": "Frame to report, 0-based; frame is 0 by default.",
+      "source_id": "fs_segstats",
+      "quote": "Report statistics of the input volume at the 0-based frame number. Frame is 0 by default.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 2366,
+        "end": 2455,
+        "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+      }
+    },
+    {
+      "statement": "Masking threshold default is 0.5.",
+      "source_id": "fs_segstats",
+      "quote": "Default is 0.5",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 6254,
+        "end": 6268,
+        "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+      }
+    },
+    {
+      "statement": "Mask sign choices are abs, pos, and neg; default is abs.",
+      "source_id": "fs_segstats",
+      "quote": "Choices are abs, pos, and neg. Default is abs.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 6323,
+        "end": 6369,
+        "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+      }
+    },
+    {
+      "statement": "Robust statistics exclude a given percent from high and low values while volume reported remains full volume.",
+      "source_id": "fs_segstats",
+      "quote": "Compute statistics after excluding percent from high and low values (volume reported is still full volume)",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 2475,
+        "end": 2581,
+        "text_sha256": "783ba569d65ab46a8d222864b0bbb10fc49cf1ae8288aa9e4ec2f4808d2daa2c"
+      }
+    }
+  ],
+  "quarantined_claims": [],
+  "evidence_status": "exact_quotes_verified_semantics_pending_annotation"
+}

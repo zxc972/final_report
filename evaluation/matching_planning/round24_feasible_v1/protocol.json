@@ -1,0 +1,25 @@
+{
+  "seed": 20261025,
+  "missing_counts": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "per_count": 50,
+  "workers": 4,
+  "timeout_seconds": 30,
+  "workflow_steps": 14,
+  "population_count": 81,
+  "recoverable_single_deletion_candidates": 24,
+  "conditional_sampling": "Uniform missing sets from single-deletion recoverable products, accept only if full forward closure can recover all; not filtered by AND-OR or oracle outputs",
+  "selection_bias_disclosed": "Feasible-only supplementary panel, not a feasibility-prevalence estimate",
+  "primary_unfiltered_run_retained": "round24_v1",
+  "model_calls": 0,
+  "source_sha256": {
+    "analysis_andor_planner.py": "ed82645d69ccd9eda61950edab89cbe871e3dd32f7dc397424ce75919aea6854",
+    "analysis_product_planner.py": "72c1adb8572fc9ba965c1ec056a2bd0d80ba6719a3fd95310cb5d203a226bf1c"
+  },
+  "runner_sha256": "3c6c17d418dccc7fb21a2b3788d64e6ee798145ad5689427542d1b3348732a68"
+}

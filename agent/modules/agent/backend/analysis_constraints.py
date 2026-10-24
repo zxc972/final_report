@@ -294,7 +294,7 @@ def compile_constraints(
     if saved is None:
         raise ValueError("Call profile_data before compile_constraints")
     profile = saved["record"]
-    if not isinstance(plan_context, dict) or len(canonical(plan_context)) > 100_000:
+    if not isinstance(plan_context, dict) or len(canonical(plan_context)) > (2_000_000 if method_id == "method:v14:group_regional_glm" else 100_000):
         raise ValueError("Bounded proposed plan required")
     if product_contract is not None and tools.knowledge_profile.name != "product_graph_planner":
         raise ValueError("Product contracts are isolated to product_graph_planner")
@@ -436,6 +436,9 @@ def compile_constraints(
                 "on_fail": "warn_and_disclose",
             }
         )
+    if method_id == "method:v14:group_regional_glm":
+        from .analysis_group_constraints import check_group
+        rows.extend(check_group(tools, plan_context, files))
     templated_ids = set()
     environment = environment_for(files, plan_context, {})
     for instance in definitions["extra_method_conditions"]:

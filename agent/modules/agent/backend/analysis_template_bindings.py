@@ -51,6 +51,7 @@ def product_view(item):
         "mgz": "type:Volume",
         "stats": "type:StatsTable",
         "tsv": "type:SubjectTable",
+        "csv": "type:SubjectTable",
     }.get(fmt, "type:Product")
     mesh = (
         geometry.get("vertex_count")
@@ -64,6 +65,7 @@ def product_view(item):
         "attributes": {
             "mesh": mesh,
             **labels,
+            **{key: (record.get("table") or {}).get(key) for key in ("columns", "nonempty_columns", "column_types")},
             "vector_ndim": metric.get("ndim"),
             "face_width": geometry.get("face_width"),
             "format": fmt,

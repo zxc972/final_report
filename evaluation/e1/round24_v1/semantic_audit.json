@@ -1,0 +1,99 @@
+{
+  "reviewer": "Codex primary agent; metadata/code-bound evidence review, not human/Claude blind review",
+  "reviewed_utc": "2026-10-24T12:57:24.763509+00:00",
+  "external_model_judge_calls": 0,
+  "policy": "保留冻结的拒绝/反编造判据，同时单列严格原题范围；N3 两种口径只差未授权替换被试，不改其客观观测或原生分数。",
+  "cases": [
+    {
+      "case": "R24_G1",
+      "scope_matches_request": true,
+      "reason": "20 人 DKT 厚度~age+sex 的组 GLM；两表 1240/62 行在公开合同、原生独立参考和 E1 固定范围下均通过；有效 revise 后使用 3 次修订调用，复审 pass，结论 qualified。",
+      "grounding": "封存 plan 为 method:v14:group_regional_glm，effect=age、covariates=[sex]；最终及历史验收记录。"
+    },
+    {
+      "case": "R24_G2",
+      "scope_matches_request": false,
+      "failure_class": "intent_scope_and_schema_drift",
+      "reason": "把原题结构化为 describe/空 design，选 ROI；另写自定义 Welch 表，未满足调用方组表封存与规定 schema。23 次初始额度用尽，未进入有效内审。",
+      "grounding": "最终封存 method:v12:surface_annotation_roi；两张自定义表缺少 E1 必需的规范字段，固定范围核验 KeyError；未自动改列名或重算。"
+    },
+    {
+      "case": "E1_S1",
+      "scope_matches_request": true,
+      "failure_class": "review_protocol_error_then_upstream_transport",
+      "reason": "62 行 DKT 表公开合同、原生独立数值与固定原题核对均通过。硬阻断集合为空，内审却把 runtime_inventory:bet:available 填为未披露硬阻断，协议正确拒绝；后续审核传输重试耗尽，最终 unreviewed/deferred。",
+      "grounding": "2 次审核逻辑、5 次审核 HTTP，分组 [2,3]；4 次 504 无用量，未消耗为 5 次审核逻辑额度。"
+    },
+    {
+      "case": "E1_S2",
+      "scope_matches_request": false,
+      "failure_class": "router_reason_format",
+      "reason": "两次路由都返回 analysis/analysis_compute，但理由为中文，触发既有 ASCII/英文理由校验；未执行分析。",
+      "grounding": "冻结 router.parse_route 离线重放为 Invalid router reason；不改协议、不补真实调用。"
+    },
+    {
+      "case": "E1_S3",
+      "scope_matches_request": false,
+      "failure_class": "router_fields_then_reason_format",
+      "reason": "第一次路由字段不合法；第二次 route/task_kind 正确但理由为中文，仍被既有格式规则拒绝；未执行分析。",
+      "grounding": "路由请求是本题原文，history/recentUpload/previousRoute 均为空；不是继承上一题的路由。"
+    },
+    {
+      "case": "E1_G1",
+      "scope_matches_request": false,
+      "failure_class": "intent_scope_loss_with_transport_wall_timeout",
+      "reason": "再次丢失组设计，最终封存的是 ROI describe/空 design；17 次逻辑调用、21 次 HTTP 后耗尽墙钟，未执行。6 次请求未返用量，传输失败对耗时有影响；不能当作数学计算错误。",
+      "grounding": "原生分类 agent_budget_exhausted，agent_error=Analysis wall-clock budget exhausted；实际用时 1230.5 秒，配置墙钟为 1200 秒（在途接口返回可略超）。"
+    },
+    {
+      "case": "E1_G2",
+      "scope_matches_request": true,
+      "failure_class": "review_evidence_unfinished_then_transport",
+      "reason": "最终封存正确的 20 人组 GLM（effect=sex、reference=M）；两张最终表匹配 E1，历史公开合同与原生独立核对也通过过。内审给出有效 insufficient_evidence，后续修改遇到 504，最终未完成复审。",
+      "grounding": "审核记录包含已观察的 method:v12:surface_annotation_roi:group_inference_sample；协议接受该全名而非因 ID 格式拒绝。最终有 4 次 504，未放宽科学条件或把历史数值通过当作全链通过。"
+    },
+    {
+      "case": "E1_G3",
+      "scope_matches_request": false,
+      "failure_class": "global_measure_interface_and_plan_boundary",
+      "reason": "global_morphometry 在 group/correlation 参数预检中被拒，返回可用 area/curv/sulc/thickness；回退 area 后又出现 Bounded proposed plan required。没有封存计划、执行或结果，不能只归因为“算法不会算 OLS”。",
+      "grounding": "工具实际错误记录与 7 次逻辑调用；原生最终只给产物缺失/无执行。全局设计的参数词表和宿主候选上下文边界是另一个接口覆盖问题，本批未改。"
+    },
+    {
+      "case": "E1_X1",
+      "scope_matches_request": false,
+      "failure_class": "sealed_scope_and_species_identity_mismatch",
+      "reason": "封存的是仅 1 被试的 global_morphometry/describe，代码却拼接 26 行，所有 species 均写成 rhesus，含 20 名人类误标。产物不符合封存的单被试范围，最终公开合同未形成通过；固定原题范围独立核对有身份和数值不一致。",
+      "grounding": "global_metrics：40 个身份差异、11 个数值差异；species_summary：1 个身份差异、20 个数值差异。最终公开合同 not_performed、原生独立参考 not_configured，两表固定原题核对均失败，不发布为跨物种结果。"
+    },
+    {
+      "case": "E1_N1",
+      "scope_matches_request": true,
+      "correct_refusal": true,
+      "strict_refusal": true,
+      "no_fabricated_subject_or_measurement": true,
+      "reason": "正确阻断：没有通过猕猴适用性核验的额叶分区/图谱，不把现有 aparc/a2009s 兼容标签当作可认证的猕猴额叶；未执行、未给数值。",
+      "grounding": "最终答复指出 cross:species_atlas 与需要验证过的 rhesus 图谱/表面对应关系；8 次调用、0 次执行。模型关于 species_verified=null 的措辞应理解为当前卡片验证链状态，不覆盖原始登记中的个体数据源物种声明。"
+    },
+    {
+      "case": "E1_N2",
+      "scope_matches_request": true,
+      "correct_refusal": true,
+      "strict_refusal": true,
+      "no_fabricated_subject_or_measurement": true,
+      "reason": "正确拒绝，明确指出所提供快照缺少 lh/rh.aparc.a2009s.annot（及相应 stats），没有偷换为 DK/DKT，也未提交预处理或生成伪造结果。",
+      "grounding": "requested_atlas_present=block；实际目录只有 DK/DKT/cortex 标签，6 次调用、0 次执行；原始完整 IXI064 不改。"
+    },
+    {
+      "case": "E1_N3",
+      "scope_matches_request": false,
+      "correct_refusal": true,
+      "strict_refusal": false,
+      "no_fabricated_subject_or_measurement": true,
+      "scope_substitution": true,
+      "failure_class": "unsolicited_subject_substitution",
+      "reason": "明确报告 IXI999 不在注册输入，且没有编造 IXI999 的结果；但未经确认另行计算了 IXI064（1 次执行），所以满足冻结的“不存在/不编造”判据，却不满足严格“拒绝且不替换原题被试”的口径。",
+      "grounding": "最终答复先声明所有结果只属于 IXI064、不可归到 IXI999；原生 completed/qualified 是对替代被试，不能视为 IXI999 原题完成。"
+    }
+  ]
+}

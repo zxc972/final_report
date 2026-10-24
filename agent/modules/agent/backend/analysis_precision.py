@@ -5,7 +5,9 @@ import io
 from decimal import Decimal, InvalidOperation
 
 FLOAT_COLUMNS = {
+    "global_morphometry": ("mean_thickness_mm", "hull_ratio", "stored_mean_thickness_mm", "stored_hull_ratio"),
     "surface_annotation_roi": ("mean", "std_population", "median"),
+    "group_regional_glm": ("mean", "std_population", "median", "estimate", "se", "t", "p", "q_fdr", "effect_size"),
     "global_convex_hull_gyrification": ("surface_area", "hull_area", "area_ratio"),
 }
 
@@ -52,6 +54,8 @@ def check_precision(tools, specs):
     for spec in specs:
         if spec.get("kind") != "csv":
             continue
+        if method == "group_regional_glm":
+            columns = ("mean", "std_population", "median") if spec["path"] == "regional_values.csv" else ("estimate", "se", "t", "p", "q_fdr", "effect_size")
         target = tools.resolve("/work/" + spec["path"], writable=True)
         from .analysis_agent import _read_regular
         from .analysis_validation import MAX_ARTIFACT_BYTES

@@ -1,0 +1,26 @@
+[
+  {
+    "source_id": "wb_surface_resample",
+    "url": "https://www.humanconnectome.org/software/workbench-command/-surface-resample",
+    "final_url": "https://www.humanconnectome.org/software/workbench-command/-surface-resample",
+    "fetched_at": "2026-10-24T05:08:17.055054+00:00",
+    "http_status": 200,
+    "text_sha256": "891e394e8f4814f745cf113242e660c39bf06b0639af530346a47d1aa00a86ea",
+    "html_sha256": "ca92e59d4a911cbb0385c44ea9cfe227b071aad90dccd1f10d1e54f6d5d9237e",
+    "text_characters": 8834,
+    "projection": "stdlib HTMLParser SourceText v1",
+    "evidence_class": "official_documentation"
+  },
+  {
+    "source_id": "fsl_first",
+    "url": "https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/first.html",
+    "final_url": "https://fsl.fmrib.ox.ac.uk/fsl/docs/structural/first.html",
+    "fetched_at": "2026-10-24T05:08:14.240659+00:00",
+    "http_status": 200,
+    "text_sha256": "86a75e45fd4c2c422d7db7a95b0af2b4e6cf6d28952ab3813a35f1ecacf06958",
+    "html_sha256": "7d0e2bedbdd5028d1a8e23861da2b3cdc041e1895a9058ba9e2b5b7a7ee4b521",
+    "text_characters": 43028,
+    "projection": "stdlib HTMLParser SourceText v1",
+    "evidence_class": "official_documentation"
+  }
+]

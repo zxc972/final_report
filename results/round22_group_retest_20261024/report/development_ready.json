@@ -1,0 +1,19 @@
+{
+  "pid": 432506,
+  "port": 8122,
+  "host": "127.0.0.1",
+  "started_utc": "2026-10-24T04:53:24.053759+00:00",
+  "provider_hostname": "inferaiapi.com",
+  "model": "deepseek-v4-pro",
+  "profile": "product_graph_planner",
+  "C": false,
+  "budget": [
+    30,
+    60,
+    8,
+    1200
+  ],
+  "outer_iterations": 3,
+  "no_existing_service_restarted": true,
+  "credentials_printed_or_written": false
+}

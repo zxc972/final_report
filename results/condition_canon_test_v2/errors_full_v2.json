@@ -1,0 +1,1991 @@
+[
+  {
+    "id": 2007,
+    "method": "independent_v2_fs_segstats",
+    "field": "inputs",
+    "statement": "Input segmentation volume provided with --seg.",
+    "quote": "--seg segvol\n\ninput segmentation volume",
+    "source_id": "fs_segstats",
+    "gold_template": "product_present",
+    "gold_parameters": {
+      "slot": "volumes",
+      "type": "type:Volume"
+    },
+    "predicted_decision": "accepted",
+    "predicted_template": "product_present",
+    "predicted_parameters": {
+      "slot": "volumes",
+      "type": "type:Volume.Aseg"
+    },
+    "template_wrong": false,
+    "executable_wrong": false,
+    "statement_key_wrong": true,
+    "invalid_attempts": {},
+    "reasons": [
+      "逐条严格规范键不一致；保留原字符串，不增加同义规则"
+    ],
+    "votes": {
+      "product_present:{\"slot\": \"volumes\", \"type\": \"type:Volume.Aseg\"}": 5
+    },
+    "pending_user_decision": false,
+    "support": 1.0,
+    "margin": 1.0,
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "4c37ab51525c4db1b8087f24d7351601",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "1c89a1ddf03b4fecaf48d75f4ae8135f",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "8429a8d59a124cb9aa66b8cdea7bca2d",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b53bc084546e47768db657dffa600151",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "87ffeff67d9f4784bd85de81189afc45",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2008,
+    "method": "independent_v2_fs_segstats",
+    "field": "inputs",
+    "statement": "If an input volume is supplied, it must be the same size and dimension as the segmentation volume.",
+    "quote": "The input volume must be the same size and dimension as the segmentation volume.",
+    "source_id": "fs_segstats",
+    "gold_template": "advisory",
+    "gold_parameters": null,
+    "predicted_decision": "review",
+    "predicted_template": "attr_equal",
+    "predicted_parameters": {
+      "slots": [
+        "volumes",
+        "mask"
+      ],
+      "attrs": [
+        "voxel_size"
+      ]
+    },
+    "template_wrong": true,
+    "executable_wrong": false,
+    "statement_key_wrong": false,
+    "invalid_attempts": {
+      "attr_equal": 1
+    },
+    "reasons": [
+      "进入审核队列：support=0.4, margin=0.2, answered=5",
+      "主模板与冻结标准不一致",
+      "类型/词表检查排除了部分样本：{\"attr_equal\": 1}"
+    ],
+    "votes": {
+      "attr_equal:{\"attrs\": [\"voxel_size\"], \"slots\": [\"mask\", \"volumes\"]}": 2,
+      "attr_equal:{\"attrs\": [\"space\", \"voxel_size\"], \"slots\": [\"mask\", \"volumes\"]}": 1,
+      "attr_equal:{\"attrs\": [\"space\", \"voxel_size\"], \"slots\": [\"volumes\", \"volumes\"]}": 1
+    },
+    "pending_user_decision": true,
+    "support": 0.4,
+    "margin": 0.2,
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "2212adc371e24b13a24d8b2dcc2f84fe",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "6fbd32865044473390973ea19840d8c4",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "1482e184170a4d2ba4e7c9cbdc1c61ce",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "86833d80ab8c4777b15a9e5dc46cb464",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "79ff82ebc06e4be8b4a07c87054c26fb",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2009,
+    "method": "independent_v2_fs_segstats",
+    "field": "inputs",
+    "statement": "If a mask volume is supplied, it must be the same size and dimension as the segmentation volume.",
+    "quote": "The mask volume must be the same size and dimension as the segmentation volume.",
+    "source_id": "fs_segstats",
+    "gold_template": "advisory",
+    "gold_parameters": null,
+    "predicted_decision": "review",
+    "predicted_template": "attr_equal",
+    "predicted_parameters": {
+      "slots": [
+        "mask",
+        "volumes"
+      ],
+      "attrs": [
+        "voxel_size",
+        "space"
+      ]
+    },
+    "template_wrong": true,
+    "executable_wrong": false,
+    "statement_key_wrong": false,
+    "invalid_attempts": {},
+    "reasons": [
+      "进入审核队列：support=0.4, margin=0.0, answered=5",
+      "主模板与冻结标准不一致"
+    ],
+    "votes": {
+      "attr_equal:{\"attrs\": [\"space\", \"voxel_size\"], \"slots\": [\"mask\", \"volumes\"]}": 2,
+      "attr_equal:{\"attrs\": [\"voxel_size\"], \"slots\": [\"mask\", \"volumes\"]}": 2,
+      "advisory": 1
+    },
+    "pending_user_decision": true,
+    "support": 0.4,
+    "margin": 0.0,
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b6230407353741bfa2ab374840dd6080",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ca8a1e2f302d4b5fad1d7481670303ff",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "855d488197ef4f278e09e1db42637625",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "1290736f34d540b5b84768f3b6dd58c8",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "aa174cfbaecd4ca9802dbb8217f6863c",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2014,
+    "method": "independent_v2_fs_segstats",
+    "field": "checks",
+    "statement": "If an input volume is supplied, it must be the same size and dimension as the segmentation volume.",
+    "quote": "The input volume must be the same size and dimension as the segmentation volume.",
+    "source_id": "fs_segstats",
+    "gold_template": "advisory",
+    "gold_parameters": null,
+    "predicted_decision": "accepted",
+    "predicted_template": "attr_equal",
+    "predicted_parameters": {
+      "slots": [
+        "volumes",
+        "mask"
+      ],
+      "attrs": [
+        "voxel_size"
+      ]
+    },
+    "template_wrong": true,
+    "executable_wrong": true,
+    "statement_key_wrong": true,
+    "invalid_attempts": {
+      "attr_equal": 1
+    },
+    "reasons": [
+      "主模板与冻结标准不一致",
+      "可执行/非可执行判定与冻结标准不一致",
+      "逐条严格规范键不一致；保留原字符串，不增加同义规则",
+      "类型/词表检查排除了部分样本：{\"attr_equal\": 1}"
+    ],
+    "votes": {
+      "attr_equal:{\"attrs\": [\"voxel_size\"], \"slots\": [\"mask\", \"volumes\"]}": 4
+    },
+    "pending_user_decision": true,
+    "support": 0.8,
+    "margin": 0.8,
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "eb33d551e54a45c5a16eadb577517aaa",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "4c0ab5dcd37c4729b7291d73f59804bd",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "a98e941e15bd43b6b5452d38feb2dda8",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "d703961969f848b58d17b3b871309c9b",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "77d11d7d4a5f4c8f88ecfbf7712ba68a",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2015,
+    "method": "independent_v2_fs_segstats",
+    "field": "checks",
+    "statement": "If a mask volume is supplied, it must be the same size and dimension as the segmentation volume.",
+    "quote": "The mask volume must be the same size and dimension as the segmentation volume.",
+    "source_id": "fs_segstats",
+    "gold_template": "advisory",
+    "gold_parameters": null,
+    "predicted_decision": "accepted",
+    "predicted_template": "attr_equal",
+    "predicted_parameters": {
+      "slots": [
+        "mask",
+        "volumes"
+      ],
+      "attrs": [
+        "voxel_size"
+      ]
+    },
+    "template_wrong": true,
+    "executable_wrong": true,
+    "statement_key_wrong": true,
+    "invalid_attempts": {},
+    "reasons": [
+      "主模板与冻结标准不一致",
+      "可执行/非可执行判定与冻结标准不一致",
+      "逐条严格规范键不一致；保留原字符串，不增加同义规则"
+    ],
+    "votes": {
+      "attr_equal:{\"attrs\": [\"voxel_size\"], \"slots\": [\"mask\", \"volumes\"]}": 5
+    },
+    "pending_user_decision": true,
+    "support": 1.0,
+    "margin": 1.0,
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "5912c7f1252644e4bf855d9962c8102c",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "37a914207f2d4c97aaf43317de7d84bb",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "4990a98ffb834bc69ed26ea10f768496",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "5509010b0de648e18c3d57e1521d8959",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "caf87684a3624206b7bc8ca54232a87a",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2017,
+    "method": "independent_v2_fs_preproc",
+    "field": "inputs",
+    "statement": "With --meas surfmeasure, input is taken from subject/surf/hemi.surfmeasure.",
+    "quote": "--meas surfmeasure\nUse subject/surf/hemi.surfmeasure as input.",
+    "source_id": "fs_preproc",
+    "gold_template": "product_present",
+    "gold_parameters": {
+      "slot": "metric",
+      "type": "type:SurfaceMetric"
+    },
+    "predicted_decision": "review",
+    "predicted_template": "advisory",
+    "predicted_parameters": null,
+    "template_wrong": true,
+    "executable_wrong": true,
+    "statement_key_wrong": true,
+    "invalid_attempts": {},
+    "reasons": [
+      "进入审核队列：support=0.4, margin=0.2, answered=5",
+      "主模板与冻结标准不一致",
+      "可执行/非可执行判定与冻结标准不一致",
+      "逐条严格规范键不一致；保留原字符串，不增加同义规则"
+    ],
+    "votes": {
+      "advisory": 2,
+      "product_present:{\"slot\": \"metric\", \"type\": \"type:SurfaceMetric\"}": 1,
+      "product_present:{\"slot\": \"surface\", \"type\": \"type:SurfaceMetric\"}": 1,
+      "product_present:{\"slot\": \"surface\", \"type\": \"type:Surface\"}": 1
+    },
+    "pending_user_decision": true,
+    "support": 0.4,
+    "margin": 0.2,
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "0637d6d354e04ae4900a7ac6dffaabcc",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "e31c07e766e541d8a782084c2b205228",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "31820aaa455741cc924eac9b1e39c802",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "306f80f96e78416e878f374d4ae33389",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "38f2a50db6f4433eb08b97e6dbe2b27c",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2028,
+    "method": "independent_v2_fs_surf2surf",
+    "field": "inputs",
+    "statement": "Source subject name in $SUBJECTS_DIR or ico; input data must have been sampled onto this subject's surface.",
+    "quote": "As found in $SUBJECTS_DIR or ico for icosahedron. The input data must have been sampled onto this subject's surface",
+    "source_id": "fs_surf2surf",
+    "gold_template": "attr_equal",
+    "gold_parameters": {
+      "slots": [
+        "metric",
+        "surface"
+      ],
+      "attrs": [
+        "subject",
+        "mesh"
+      ]
+    },
+    "predicted_decision": "review",
+    "predicted_template": "provenance",
+    "predicted_parameters": {
+      "step": "recon-all"
+    },
+    "template_wrong": true,
+    "executable_wrong": true,
+    "statement_key_wrong": true,
+    "invalid_attempts": {},
+    "reasons": [
+      "进入审核队列：support=0.4, margin=0.2, answered=5",
+      "主模板与冻结标准不一致",
+      "可执行/非可执行判定与冻结标准不一致",
+      "逐条严格规范键不一致；保留原字符串，不增加同义规则"
+    ],
+    "votes": {
+      "provenance:{\"step\": \"recon-all\"}": 2,
+      "attr_equal:{\"attrs\": [\"subject\"], \"slots\": [\"metric\", \"surface\"]}": 1,
+      "software:{\"commands\": [\"subjects\"]}": 1,
+      "attr_equal:{\"attrs\": [\"mesh\", \"subject\"], \"slots\": [\"metric\", \"surface\"]}": 1
+    },
+    "pending_user_decision": false,
+    "support": 0.4,
+    "margin": 0.2,
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b78dd589c27f48f9b609774ac58faa1e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b210e530c2d54bd58693af841021e114",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "8c7ebf1995034b3796a1de242b1a27af",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "9dcbfb5df8eb42b79fc3c2fde7a7a2b2",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "2a495fe4425448aba2b17db7f9690c0d",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2029,
+    "method": "independent_v2_fs_surf2surf",
+    "field": "inputs",
+    "statement": "File containing the data on the source surface.",
+    "quote": "Name of file where the data on the source surface is located.",
+    "source_id": "fs_surf2surf",
+    "gold_template": "product_present",
+    "gold_parameters": {
+      "slot": "metric",
+      "type": "type:SurfaceMetric"
+    },
+    "predicted_decision": "accepted",
+    "predicted_template": "product_present",
+    "predicted_parameters": {
+      "slot": "surface",
+      "type": "type:Surface"
+    },
+    "template_wrong": false,
+    "executable_wrong": false,
+    "statement_key_wrong": true,
+    "invalid_attempts": {},
+    "reasons": [
+      "逐条严格规范键不一致；保留原字符串，不增加同义规则"
+    ],
+    "votes": {
+      "product_present:{\"slot\": \"surface\", \"type\": \"type:Surface\"}": 4,
+      "advisory": 1
+    },
+    "pending_user_decision": false,
+    "support": 0.8,
+    "margin": 0.6000000000000001,
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "9811b4ce98684f4c93271aeafad43b9e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "04481addd28c473cba9edbb26505d9e1",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "f69582affb754462ba68326c7b40e456",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "cd79d4f47bb24042a66273d8781162ff",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "5ea8b8f3e9a8467fa21c0a2fa5c0d1c5",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2031,
+    "method": "independent_v2_fs_surf2surf",
+    "field": "conditions",
+    "statement": "If source and target subjects differ, the registration surface is used; sphere.reg is the default.",
+    "quote": "If the source and target subjects are not the same, this surface is used to register the two surfaces. sphere.reg is used as the default.",
+    "source_id": "fs_surf2surf",
+    "gold_template": "product_present",
+    "gold_parameters": {
+      "slot": "surface",
+      "type": "type:Surface.SphereReg"
+    },
+    "predicted_decision": "advisory",
+    "predicted_template": "advisory",
+    "predicted_parameters": null,
+    "template_wrong": true,
+    "executable_wrong": true,
+    "statement_key_wrong": true,
+    "invalid_attempts": {},
+    "reasons": [
+      "主模板与冻结标准不一致",
+      "可执行/非可执行判定与冻结标准不一致",
+      "逐条严格规范键不一致；保留原字符串，不增加同义规则"
+    ],
+    "votes": {
+      "advisory": 5
+    },
+    "pending_user_decision": true,
+    "support": 1.0,
+    "margin": 1.0,
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b79e789c07f041fbbd535ee37ea74f5f",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "330f48f53a6842e989653886cf0771ae",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "6a40d8983ba849cbb952fbed61a126f3",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "f03a6e6f14854778bd99db741fc84ef2",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "8cc7b0c0e24a4358a095ec28c3a3dfdb",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2035,
+    "method": "independent_v2_wb_metric_resample",
+    "field": "inputs",
+    "statement": "A sphere surface in register with the new sphere and having the mesh the metric is currently on.",
+    "quote": "<current-sphere> - a sphere surface that is in register with <new-sphere>\nand has the mesh that the metric is currently on, typically a\nregistered native-mesh sphere",
+    "source_id": "wb_metric_resample",
+    "gold_template": "product_present",
+    "gold_parameters": {
+      "slot": "surface",
+      "type": "type:Surface.SphereReg"
+    },
+    "predicted_decision": "review",
+    "predicted_template": "attr_equal",
+    "predicted_parameters": {
+      "slots": [
+        "surface",
+        "metric"
+      ],
+      "attrs": [
+        "mesh"
+      ]
+    },
+    "template_wrong": true,
+    "executable_wrong": true,
+    "statement_key_wrong": true,
+    "invalid_attempts": {
+      "attr_equal": 1
+    },
+    "reasons": [
+      "进入审核队列：support=0.4, margin=0.0, answered=5",
+      "主模板与冻结标准不一致",
+      "可执行/非可执行判定与冻结标准不一致",
+      "逐条严格规范键不一致；保留原字符串，不增加同义规则",
+      "类型/词表检查排除了部分样本：{\"attr_equal\": 1}"
+    ],
+    "votes": {
+      "attr_equal:{\"attrs\": [\"mesh\"], \"slots\": [\"metric\", \"surface\"]}": 2,
+      "advisory": 2
+    },
+    "pending_user_decision": false,
+    "support": 0.4,
+    "margin": 0.0,
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ab071bbcb87948e4914893ecaba35a56",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "dd84e650206b443588583dde2b0904b0",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "f5e0ff43c7e54c4db76450ef34151c3e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b369358881d1496db858354122424c69",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "0730d4b702a944e092d4916272e90958",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2039,
+    "method": "independent_v2_wb_metric_resample",
+    "field": "checks",
+    "statement": "The current sphere must be in register with the new sphere.",
+    "quote": "<current-sphere> - a sphere surface that is in register with <new-sphere>",
+    "source_id": "wb_metric_resample",
+    "gold_template": "advisory",
+    "gold_parameters": null,
+    "predicted_decision": "review",
+    "predicted_template": "attr_equal",
+    "predicted_parameters": {
+      "slots": [
+        "surface",
+        "surface"
+      ],
+      "attrs": [
+        "space"
+      ]
+    },
+    "template_wrong": true,
+    "executable_wrong": false,
+    "statement_key_wrong": false,
+    "invalid_attempts": {
+      "attr_equal": 3
+    },
+    "reasons": [
+      "进入审核队列：support=0.4, margin=0.4, answered=5",
+      "主模板与冻结标准不一致",
+      "类型/词表检查排除了部分样本：{\"attr_equal\": 3}"
+    ],
+    "votes": {
+      "attr_equal:{\"attrs\": [\"space\"], \"slots\": [\"surface\", \"surface\"]}": 2
+    },
+    "pending_user_decision": true,
+    "support": 0.4,
+    "margin": 0.4,
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "7a89c43102c6407dab10aff19c3ee1c8",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "dbe6fd12845a4c09ba688fcfd9ffd68f",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "da9699f4bd5a494f86163cbe021dfcb1",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "c98367866c80431bb84b62025108a5fe",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "08f8a3bc3fda4ffdb0c035ef81bd1d7a",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2044,
+    "method": "independent_v2_ants_thickness",
+    "field": "inputs",
+    "statement": "At least four priors must exist, corresponding to CSF, cortical GM, WM and subcortical GM.",
+    "quote": "At least four priors must exist, corresponding to CSF, Cortical GM, WM, Subcortical GM.",
+    "source_id": "ants_thickness_script",
+    "gold_template": "advisory",
+    "gold_parameters": null,
+    "predicted_decision": "accepted",
+    "predicted_template": "cardinality",
+    "predicted_parameters": {
+      "object": "priors",
+      "minimum": 4
+    },
+    "template_wrong": true,
+    "executable_wrong": true,
+    "statement_key_wrong": true,
+    "invalid_attempts": {},
+    "reasons": [
+      "主模板与冻结标准不一致",
+      "可执行/非可执行判定与冻结标准不一致",
+      "逐条严格规范键不一致；保留原字符串，不增加同义规则"
+    ],
+    "votes": {
+      "cardinality:{\"minimum\": 4, \"object\": \"priors\"}": 4,
+      "advisory": 1
+    },
+    "pending_user_decision": false,
+    "support": 0.8,
+    "margin": 0.6000000000000001,
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "cf5bc82199494227bd4de718ff54af7e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "519d80ff15e14d308ac7b49ee00ac161",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "8e4c04c505fd4853ab8b3c9e5adb1367",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "4c5bcac121de4c379a951607dd479010",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ac7f6841891e4668b3031e6d7f65d913",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2048,
+    "method": "independent_v2_ants_thickness",
+    "field": "conditions",
+    "statement": "At least four prior images are required; fewer causes the script to exit.",
+    "quote": "if [[ ${NUMBER_OF_PRIOR_IMAGES} -lt 4 ]]; then\n  echo \"Expected at least 4 prior images (${NUMBER_OF_PRIOR_IMAGES} are specified).  Check the command line specification.\"\n  exit 1\nfi",
+    "source_id": "ants_thickness_script",
+    "gold_template": "advisory",
+    "gold_parameters": null,
+    "predicted_decision": "accepted",
+    "predicted_template": "cardinality",
+    "predicted_parameters": {
+      "object": "prior images",
+      "minimum": 4
+    },
+    "template_wrong": true,
+    "executable_wrong": true,
+    "statement_key_wrong": true,
+    "invalid_attempts": {},
+    "reasons": [
+      "主模板与冻结标准不一致",
+      "可执行/非可执行判定与冻结标准不一致",
+      "逐条严格规范键不一致；保留原字符串，不增加同义规则"
+    ],
+    "votes": {
+      "cardinality:{\"minimum\": 4, \"object\": \"prior images\"}": 4,
+      "advisory": 1
+    },
+    "pending_user_decision": false,
+    "support": 0.8,
+    "margin": 0.6000000000000001,
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "2d281d6d0852411bbf044c699bd18838",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "49da62ae78b541ea90c27b86c3c1f1f7",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "726a1f35666d46dbb70ffe26aaa91011",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "c95402ba4a4d4c2e8109e6a40440c5d6",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "0ec3d66355044aa69d2ffadaf3e62856",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2050,
+    "method": "independent_v2_ants_thickness",
+    "field": "checks",
+    "statement": "If command -v cannot find a dependency program, the script reports an error.",
+    "quote": "if ! command -v ${D} &> /dev/null\n      then\n        echo \"Error:  we can't find the $D program.\"",
+    "source_id": "ants_thickness_script",
+    "gold_template": "software",
+    "gold_parameters": {
+      "commands": [
+        "ants"
+      ]
+    },
+    "predicted_decision": "accepted",
+    "predicted_template": "software",
+    "predicted_parameters": {
+      "commands": [
+        "d"
+      ]
+    },
+    "template_wrong": false,
+    "executable_wrong": false,
+    "statement_key_wrong": true,
+    "invalid_attempts": {},
+    "reasons": [
+      "逐条严格规范键不一致；保留原字符串，不增加同义规则"
+    ],
+    "votes": {
+      "software:{\"commands\": [\"d\"]}": 5
+    },
+    "pending_user_decision": false,
+    "support": 1.0,
+    "margin": 1.0,
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "228d1fc2d2fc4357b0d8524a675a6ba0",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "12581944adde47f8b8a0c2bd24a9ad62",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ba02f94d5f2949ddb976a76549cc150f",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b44a5aab8156495ca5f4ff0486342faf",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "9b1278c27b394ce3bcbfec87854e95d4",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2053,
+    "method": "independent_v2_ants_thickness",
+    "field": "checks",
+    "statement": "The script checks for the affine registration transform from the segmentation step.",
+    "quote": "if [[ ! -f ${SEGMENTATION_GENERIC_AFFINE} ]];\n          then\n            echo \"The registration component of the segmentation step didn't complete properly.\"",
+    "source_id": "ants_thickness_script",
+    "gold_template": "advisory",
+    "gold_parameters": null,
+    "predicted_decision": "accepted",
+    "predicted_template": "provenance",
+    "predicted_parameters": {
+      "step": "seg-router"
+    },
+    "template_wrong": true,
+    "executable_wrong": true,
+    "statement_key_wrong": true,
+    "invalid_attempts": {},
+    "reasons": [
+      "主模板与冻结标准不一致",
+      "可执行/非可执行判定与冻结标准不一致",
+      "逐条严格规范键不一致；保留原字符串，不增加同义规则"
+    ],
+    "votes": {
+      "provenance:{\"step\": \"seg-router\"}": 5
+    },
+    "pending_user_decision": false,
+    "support": 1.0,
+    "margin": 1.0,
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "e814918032ef4b098b8df34ffe1db0b2",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "9b778968379d45299c8d9749bb3b9b3e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "8dbd1c73568f4941987a1ba86ffd8d9c",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ec7d7c8b15d840f4beec9db455136612",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b3f916b2ffae4ac7adcaf504039841cb",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2057,
+    "method": "independent_v2_ants_thickness",
+    "field": "exceptions",
+    "statement": "If the cortical thickness output is not produced, the script exits with an error.",
+    "quote": "if [[ ! -f ${CORTICAL_THICKNESS_IMAGE} ]];\n      then\n        echo \"Expected output was not produced.  The cortical thickness image doesn't exist:\"\n        echo \"   $CORTICAL_THICKNESS_IMAGE\"\n        exit 1\n      fi",
+    "source_id": "ants_thickness_script",
+    "gold_template": "advisory",
+    "gold_parameters": null,
+    "predicted_decision": "accepted",
+    "predicted_template": "product_present",
+    "predicted_parameters": {
+      "slot": "thickness",
+      "type": "type:SurfaceMetric.Thickness"
+    },
+    "template_wrong": true,
+    "executable_wrong": true,
+    "statement_key_wrong": true,
+    "invalid_attempts": {},
+    "reasons": [
+      "主模板与冻结标准不一致",
+      "可执行/非可执行判定与冻结标准不一致",
+      "逐条严格规范键不一致；保留原字符串，不增加同义规则"
+    ],
+    "votes": {
+      "product_present:{\"slot\": \"thickness\", \"type\": \"type:SurfaceMetric.Thickness\"}": 5
+    },
+    "pending_user_decision": false,
+    "support": 1.0,
+    "margin": 1.0,
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "d07e64fea83443ee9ba12d40165d897f",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "a47575262b33467c8ab7ca6e74812e41",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "206b2018747b42949cd25978369b48e5",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "5753b7ad82484e9e9ad573325d6d0c28",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "13598dd62c514301832aadd77099a8db",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2059,
+    "method": "independent_v2_fs_ca_label",
+    "field": "inputs",
+    "statement": "hemisphere: rh or lh",
+    "quote": "<hemi>\n\nhemisphere: rh or lh",
+    "source_id": "fs_ca_label",
+    "gold_template": "advisory",
+    "gold_parameters": null,
+    "predicted_decision": "review",
+    "predicted_template": "attr_in",
+    "predicted_parameters": {
+      "slot": "surface",
+      "attr": "hemisphere",
+      "values": [
+        "rh",
+        "lh"
+      ]
+    },
+    "template_wrong": true,
+    "executable_wrong": false,
+    "statement_key_wrong": false,
+    "invalid_attempts": {
+      "attr_in": 2
+    },
+    "reasons": [
+      "进入审核队列：support=0.4, margin=0.2, answered=5",
+      "主模板与冻结标准不一致",
+      "类型/词表检查排除了部分样本：{\"attr_in\": 2}"
+    ],
+    "votes": {
+      "attr_in:{\"attr\": \"hemisphere\", \"slot\": \"surface\", \"values\": [\"lh\", \"rh\"]}": 2,
+      "attr_in:{\"attr\": \"hemisphere\", \"slot\": \"pial\", \"values\": [\"lh\", \"rh\"]}": 1
+    },
+    "pending_user_decision": false,
+    "support": 0.4,
+    "margin": 0.2,
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "fa0412bfecad46589d7ac1992684296f",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "9d83901e95d8403e9c07a312102d3518",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "58b6b0cf2e0f4ae3b47120b63d97a9f3",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "6f3dc3fdac4d4d9ca4751bcfb080f494",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b5604c21c6134568b63f05626cde4004",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2063,
+    "method": "independent_v2_wb_surface_resample",
+    "field": "inputs",
+    "statement": "The surface file to resample, typically a native-mesh anatomical or inflated surface.",
+    "quote": "<surface-in> - the surface file to resample, typically a native-mesh\nanatomical or inflated surface",
+    "source_id": "wb_surface_resample",
+    "gold_template": "product_present",
+    "gold_parameters": {
+      "slot": "surface",
+      "type": "type:Surface"
+    },
+    "predicted_decision": "review",
+    "predicted_template": "advisory",
+    "predicted_parameters": null,
+    "template_wrong": true,
+    "executable_wrong": true,
+    "statement_key_wrong": true,
+    "invalid_attempts": {},
+    "reasons": [
+      "进入审核队列：support=0.6, margin=0.19999999999999996, answered=5",
+      "主模板与冻结标准不一致",
+      "可执行/非可执行判定与冻结标准不一致",
+      "逐条严格规范键不一致；保留原字符串，不增加同义规则"
+    ],
+    "votes": {
+      "advisory": 3,
+      "product_present:{\"slot\": \"surface\", \"type\": \"type:Surface\"}": 2
+    },
+    "pending_user_decision": false,
+    "support": 0.6,
+    "margin": 0.19999999999999996,
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "59ed351383e542d1a8f51f2a6f23dc4c",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "78311ec29b4e46c7a1ae092064a013eb",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "5aafa4a69e104425b68c26a61ef67bb5",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "c4fb2f92b5a347a996fa043c8a9843e4",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "e42ebda2b4404250997cb5fd26d0f26d",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2064,
+    "method": "independent_v2_wb_surface_resample",
+    "field": "inputs",
+    "statement": "A sphere surface in register with <new-sphere> that uses the mesh the input surface is currently on, typically a registered native-mesh sphere.",
+    "quote": "<current-sphere> - a sphere surface that is in register with <new-sphere>\nand uses the mesh that the input surface is currently on, typically a\nregistered native-mesh sphere",
+    "source_id": "wb_surface_resample",
+    "gold_template": "product_present",
+    "gold_parameters": {
+      "slot": "surface",
+      "type": "type:Surface.SphereReg"
+    },
+    "predicted_decision": "review",
+    "predicted_template": "attr_equal",
+    "predicted_parameters": {
+      "slots": [
+        "surface",
+        "surface"
+      ],
+      "attrs": [
+        "mesh"
+      ]
+    },
+    "template_wrong": true,
+    "executable_wrong": true,
+    "statement_key_wrong": true,
+    "invalid_attempts": {
+      "attr_equal": 4
+    },
+    "reasons": [
+      "进入审核队列：support=0.2, margin=0.2, answered=5",
+      "主模板与冻结标准不一致",
+      "可执行/非可执行判定与冻结标准不一致",
+      "逐条严格规范键不一致；保留原字符串，不增加同义规则",
+      "类型/词表检查排除了部分样本：{\"attr_equal\": 4}"
+    ],
+    "votes": {
+      "attr_equal:{\"attrs\": [\"mesh\"], \"slots\": [\"surface\", \"surface\"]}": 1
+    },
+    "pending_user_decision": false,
+    "support": 0.2,
+    "margin": 0.2,
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "b153734fb5d543979d8273d98df344f5",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ed187fab9467439d9e8c725e08567ea6",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "d572d33558eb4425bbed3e9ebfecc697",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "072c096847e54622b3ab31baab2b8e53",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "061a6df376b947fe9fe38356a11b7cbe",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2071,
+    "method": "independent_v2_fsl_first",
+    "field": "inputs",
+    "statement": "FIRST needs a good quality T1-weighted image.",
+    "quote": "FIRST needs a good quality T1-weighted image",
+    "source_id": "fsl_first",
+    "gold_template": "product_present",
+    "gold_parameters": {
+      "slot": "T1",
+      "type": "type:Volume.T1"
+    },
+    "predicted_decision": "advisory",
+    "predicted_template": "advisory",
+    "predicted_parameters": null,
+    "template_wrong": true,
+    "executable_wrong": true,
+    "statement_key_wrong": true,
+    "invalid_attempts": {},
+    "reasons": [
+      "主模板与冻结标准不一致",
+      "可执行/非可执行判定与冻结标准不一致",
+      "逐条严格规范键不一致；保留原字符串，不增加同义规则"
+    ],
+    "votes": {
+      "advisory": 5
+    },
+    "pending_user_decision": false,
+    "support": 1.0,
+    "margin": 1.0,
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "2f1d4bb7068e49d08f28ca381c7d3870",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "f8971819e2024fbda5d5d9dcd6016998",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "5fc15fda247b4fdd9368a3ccdf27d143",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ee0c85a65d4646c393583433033f164e",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "78de6159d8dc4d72a41f73dea7612c08",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": true,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 2072,
+    "method": "independent_v2_fsl_first",
+    "field": "inputs",
+    "statement": "Only T1-weighted images can be used as input to run_first_all.",
+    "quote": "run_first_all -i t1_image -o output_name\n\nThe argument -i specifies the original T1-weighted structural image (only T1-weighted images can be used).",
+    "source_id": "fsl_first",
+    "gold_template": "product_present",
+    "gold_parameters": {
+      "slot": "T1",
+      "type": "type:Volume.T1"
+    },
+    "predicted_decision": "review",
+    "predicted_template": "advisory",
+    "predicted_parameters": null,
+    "template_wrong": true,
+    "executable_wrong": true,
+    "statement_key_wrong": true,
+    "invalid_attempts": {
+      "attr_in": 1
+    },
+    "reasons": [
+      "进入审核队列：support=0.4, margin=0.2, answered=5",
+      "主模板与冻结标准不一致",
+      "可执行/非可执行判定与冻结标准不一致",
+      "逐条严格规范键不一致；保留原字符串，不增加同义规则",
+      "类型/词表检查排除了部分样本：{\"attr_in\": 1}"
+    ],
+    "votes": {
+      "advisory": 2,
+      "attr_in:{\"attr\": \"species\", \"slot\": \"T1\", \"values\": [\"human\"]}": 1,
+      "product_present:{\"slot\": \"T1\", \"type\": \"type:Volume.T1\"}": 1
+    },
+    "pending_user_decision": false,
+    "support": 0.4,
+    "margin": 0.2,
+    "sampling": {
+      "nominal_samples": 5,
+      "interface_replacements": 0,
+      "truncation_replacements": 0,
+      "unavailable_positions": [],
+      "interface_failures": [],
+      "responses": [
+        {
+          "sample": 1,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ff950644d37f45619f287ebe2b815e4a",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 2,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "80911ac635934faa8e37bbb7e478ac9d",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 3,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "bfebf4f4de7f4ed298d166ae691a41db",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 4,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "ad86bdef6ccf44eb84b2f46b20e6d0ea",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        },
+        {
+          "sample": 5,
+          "replacement_of": null,
+          "historical": false,
+          "request_id": "57dea8310785461fbfe2354f3464c719",
+          "finish_reason": "stop",
+          "status": "ok",
+          "reasoning_content_present": false,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  }
+]

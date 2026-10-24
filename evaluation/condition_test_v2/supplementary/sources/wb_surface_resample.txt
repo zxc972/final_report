@@ -1,0 +1,321 @@
+Connectome - Workbench Commands
+
+Using Workbench Command
+
+Workbench Command is a set of command-line tools that can be used to perform simple and complex operations within
+Connectome Workbench.
+
+Full Documentation:
+
+Documentation Home
+
+Quick Function Reference:
+
+Select Function
+-annotation-resample
+-backend-average-dense-roi
+-backend-average-roi-correlation
+-border-export-color-table
+-border-file-export-to-caret5
+-border-length
+-border-merge
+-border-resample
+-border-to-rois
+-border-to-vertices
+-cifti-all-labels-to-rois
+-cifti-average
+-cifti-average-dense-roi
+-cifti-average-roi-correlation
+-cifti-change-mapping
+-cifti-convert
+-cifti-correlation
+-cifti-correlation-gradient
+-cifti-create-dense-from-template
+-cifti-create-dense-scalar
+-cifti-create-dense-timeseries
+-cifti-create-label
+-cifti-create-parcellated-from-template
+-cifti-create-scalar-series
+-cifti-cross-correlation
+-cifti-dilate
+-cifti-erode
+-cifti-estimate-fwhm
+-cifti-export-dense-mapping
+-cifti-extrema
+-cifti-false-correlation
+-cifti-find-clusters
+-cifti-gradient
+-cifti-label-adjacency
+-cifti-label-export-table
+-cifti-label-import
+-cifti-label-modify-keys
+-cifti-label-probability
+-cifti-label-to-border
+-cifti-label-to-roi
+-cifti-math
+-cifti-merge
+-cifti-merge-dense
+-cifti-merge-parcels
+-cifti-pairwise-correlation
+-cifti-palette
+-cifti-parcel-mapping-to-label
+-cifti-parcellate
+-cifti-reduce
+-cifti-reorder
+-cifti-replace-structure
+-cifti-resample
+-cifti-resample-dconn-memory
+-cifti-restrict-dense-map
+-cifti-roi-average
+-cifti-rois-from-extrema
+-cifti-separate
+-cifti-smoothing
+-cifti-stats
+-cifti-transpose
+-cifti-vector-operation
+-cifti-weighted-stats
+-class-add-member
+-class-create
+-class-create-algorithm
+-class-create-enum
+-class-create-operation
+-convert-affine
+-convert-fiber-orientations
+-convert-matrix4-to-matrix2
+-convert-matrix4-to-workbench-sparse
+-convert-warpfield
+-create-signed-distance-volume
+-estimate-fiber-binghams
+-fiber-dot-products
+-file-convert
+-file-information
+-foci-create
+-foci-get-projection-vertex
+-foci-list-coords
+-foci-resample
+-gifti-all-labels-to-rois
+-gifti-convert
+-gifti-label-add-prefix
+-gifti-label-to-roi
+-label-dilate
+-label-erode
+-label-export-table
+-label-mask
+-label-merge
+-label-modify-keys
+-label-probability
+-label-resample
+-label-to-border
+-label-to-volume-mapping
+-metadata-remove-provenance
+-metadata-string-replace
+-metric-convert
+-metric-dilate
+-metric-erode
+-metric-estimate-fwhm
+-metric-extrema
+-metric-false-correlation
+-metric-fill-holes
+-metric-find-clusters
+-metric-gradient
+-metric-label-import
+-metric-mask
+-metric-math
+-metric-merge
+-metric-palette
+-metric-reduce
+-metric-regression
+-metric-remove-islands
+-metric-resample
+-metric-rois-from-extrema
+-metric-rois-to-border
+-metric-smoothing
+-metric-stats
+-metric-tfce
+-metric-to-volume-mapping
+-metric-vector-operation
+-metric-vector-toward-roi
+-metric-weighted-stats
+-nifti-information
+-probtrackx-dot-convert
+-scene-capture-image
+-scene-file-merge
+-scene-file-relocate
+-scene-file-update
+-set-map-names
+-set-structure
+-signed-distance-to-surface
+-spec-file-merge
+-spec-file-modify
+-spec-file-relocate
+-surface-affine-regression
+-surface-apply-affine
+-surface-apply-warpfield
+-surface-average
+-surface-closest-vertex
+-surface-coordinates-to-metric
+-surface-cortex-layer
+-surface-create-sphere
+-surface-curvature
+-surface-cut-resample
+-surface-distortion
+-surface-flip-lr
+-surface-flip-normals
+-surface-generate-inflated
+-surface-geodesic-distance
+-surface-geodesic-distance-all-to-all
+-surface-geodesic-distance-sparse-text
+-surface-geodesic-rois
+-surface-inflation
+-surface-information
+-surface-match
+-surface-modify-sphere
+-surface-normals
+-surface-resample
+-surface-set-coordinates
+-surface-smoothing
+-surface-sphere-project-unproject
+-surface-sphere-triangular-patches
+-surface-to-surface-3d-distance
+-surface-vertex-areas
+-surface-wedge-volume
+-unit-test
+-volume-all-labels-to-rois
+-volume-capture-plane
+-volume-components-to-frames
+-volume-copy-extensions
+-volume-create
+-volume-dilate
+-volume-distortion
+-volume-erode
+-volume-estimate-fwhm
+-volume-extrema
+-volume-fill-holes
+-volume-find-clusters
+-volume-gradient
+-volume-label-export-table
+-volume-label-import
+-volume-label-modify-keys
+-volume-label-probability
+-volume-label-to-roi
+-volume-label-to-surface-mapping
+-volume-math
+-volume-merge
+-volume-palette
+-volume-parcel-resampling
+-volume-parcel-resampling-generic
+-volume-parcel-smoothing
+-volume-reduce
+-volume-remove-islands
+-volume-reorient
+-volume-resample
+-volume-rois-from-extrema
+-volume-set-space
+-volume-smoothing
+-volume-stats
+-volume-tfce
+-volume-to-surface-mapping
+-volume-vector-operation
+-volume-warpfield-affine-regression
+-volume-weighted-stats
+-wbsparse-merge-dense
+-zip-scene-file
+-zip-spec-file
+
+RESAMPLE A SURFACE TO A DIFFERENT MESH
+wb_command -surface-resample
+<surface-in> - the surface file to resample, typically a native-mesh
+anatomical or inflated surface
+<current-sphere> - a sphere surface that is in register with <new-sphere>
+and uses the mesh that the input surface is currently on, typically a
+registered native-mesh sphere, such as
+{subject}.L.sphere.MSMAll.native.surf.gii
+<new-sphere> - a sphere surface that has the desired output mesh,
+typically a standard sphere, such as L.sphere.32k_fs_LR.surf.gii
+<method> - the method name
+<surface-out> - output - the output surface file
+
+[-area-surfs] - specify surfaces to do vertex area correction based on
+<current-area> - a relevant surface with <current-sphere> mesh
+<new-area> - a relevant surface with <new-sphere> mesh
+
+[-area-metrics] - specify vertex area metrics to do area correction based
+on
+<current-area> - a metric file with vertex areas for <current-sphere>
+mesh
+<new-area> - a metric file with vertex areas for <new-sphere> mesh
+
+[-bypass-sphere-check] - ADVANCED: allow the current and new 'spheres' to
+have arbitrary shape as long as they follow the same contour
+
+Resamples a surface file, given two spherical surfaces that are in
+register. If ADAP_BARY_AREA is used, exactly one of -area-surfs or
+-area-metrics must be specified. This method is not generally
+recommended for surface resampling, but is provided for completeness.
+
+The BARYCENTRIC method is generally recommended for anatomical surfaces,
+in order to minimize smoothing.
+
+For cut surfaces (including flatmaps), use -surface-cut-resample.
+
+Instead of resampling a spherical surface, the
+-surface-sphere-project-unproject command is recommended.
+
+The <method> argument must be one of the following:
+
+ADAP_BARY_AREA
+BARYCENTRIC
+
+Link to this content doc: -surface-resample
+
+Get Connectome Workbench!
+
+Version 2.2.1 of Connectome Workbench is now publicly available for download for Mac, Windows, and Linux. Explore connectivity data and learn the application with our tutorial and sample HCP data set.
+
+Download Now!
+
+Workbench Questions or Issues?
+
+Sign up for the HCP-Users Google Group and submit questions, bug reports, and requests about Connectome Workbench to hcp-users@humanconnectome.org
+
+Sign Up for HCP-Users
+
+Connectome Tools
+
+ConnectomeDB powered by BALSA
+
+Connectome Workbench
+
+Workbench Command
+
+HCP MR Pipelines Reference
+
+HCP MEG Pipelines Reference
+
+FSL
+
+FreeSurfer
+
+Brain Connectivity Toolbox
+
+Fieldtrip
+
+×
+
+Privacy Statement for the Human Connectome Project and Connectome Coordination Facility
+
+Privacy Statement
+
+The member universities of the Human Connectome Project take privacy very seriously, whether dealing with participant data or the data of those visiting this website.
+
+The participant data from our research into the Human Connectome that is stored in our XNAT server is de-identified, and contains no personal health information (PHI).
+
+Our website collects names and email addresses via our contact form. This information is used solely by the administrators and members of the HCP website and is not shared, traded or sold to third parties under any circumstances.
+
+Our website may also collect non-personal data about site visits, sessions, and IP addresses. This information is only used for diagnostic or debugging purposes, to help us optimize our website's performance, and is not shared externally. This is a standard practice for most websites, and this data is never linked with personally identifiable information.
+
+This website contains links to other websites whose content we think is relevant. However, the HCP website is not responsible for maintaining or updating the content of these other sites. If any of these sites are found to contain irrelevant or offensive information, please contact us.
+
+By using humanconnectome.org, you signify your agreement to our privacy policy as stated above. Note that this policy may be revised periodically without notice. Please re-read this policy prior to submitting any personal information if you have concerns about how your information is being collected and used.
+
+OK

@@ -97,7 +97,7 @@ def tool_summary(name, payload, path):
             ]
         }
     elif name == "submit_conclusion":
-        card = payload.get("conclusion_card", {})
+        card = payload.get("conclusion_card", payload)
         summary["conclusion_card"] = {key: card.get(key) for key in (
             "verdict", "reason", "must_rewrite", "supported_rewrite_scope", "allowed_scopes", "not_passed_count")}
     elif name == "read_file":

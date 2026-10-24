@@ -1,0 +1,14 @@
+[
+  {
+    "subject": "UCDAVIS_32126",
+    "raw_sha256": "a12063ed2c78f343f568e36349b045b7f8e18816e1e998ae485e3feb620265d0",
+    "not_held_out": true,
+    "prior_output_absent": true
+  },
+  {
+    "subject": "UCDAVIS_32127",
+    "raw_sha256": "11286716fbfe99ab03ba1e895cfddabe215fd870d615fce61e7c18927439d796",
+    "not_held_out": true,
+    "prior_output_absent": true
+  }
+]

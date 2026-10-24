@@ -1,0 +1,14 @@
+{
+  "question": "G2",
+  "last_two_cases": [
+    "R22_G2_2",
+    "R22_G2_3"
+  ],
+  "last_two_signature": "preseal_planning / 18-call planning limit without execution",
+  "same_chain": true,
+  "stop_rule_triggered_after_third": true,
+  "per_question_three_run_cap_reached": true,
+  "no_additional_run": true,
+  "prior_to_third_first_two_chains_differed": true,
+  "recorded_utc": "2026-10-24T06:06:57.897339+00:00"
+}

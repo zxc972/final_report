@@ -18,6 +18,11 @@ FUNCTIONS = (
     "read_stats_table",
     "convex_hull_area_ratio",
     "nifti_info",
+    "read_stats_measures",
+    "positive_mask_volume",
+    "read_group_inputs",
+    "fdr_bh_by_identity",
+    "write_contract_table",
 )
 
 
@@ -125,7 +130,69 @@ def suggested_operations(context):
                 scope,
                 "Use the reader return arrays and label_sets JSON group.labels; unweighted means, population SD",
             )
-    if not calls:
+    if (
+        method == "method:v15:global_morphometry"
+        and context.get("analysis_scope", {})
+        .get("global_species_policy", {})
+        .get("variant")
+        == "macaque_direct_native"
+    ):
+        for path in files:
+            if path.endswith("brainmask.mgz"):
+                add(
+                    "positive_mask_volume",
+                    {"path": path},
+                    path,
+                    "Primary macaque volume: positive MGZ support, no aseg/eTIV",
+                )
+            elif path.endswith(".white"):
+                add("read_surface", {"path": path}, path, "Final native white mesh")
+                add(
+                    "vertex_area",
+                    {"surface_path": path},
+                    path,
+                    "Sum triangle areas through barycentric per-vertex areas",
+                )
+            elif path.endswith(".pial"):
+                add("read_surface", {"path": path}, path)
+                add(
+                    "convex_hull_area_ratio",
+                    {"surface_path": path},
+                    path,
+                    "Aggregate summed pial and hull areas",
+                )
+            elif path.endswith(".thickness"):
+                add("read_surface_metric", {"path": path}, path)
+            elif path.endswith(".cortex.label"):
+                add(
+                    "read_label",
+                    {"path": path},
+                    path,
+                    "Cortex support; not regional parcellation",
+                )
+        return {
+            "library": {k: v for k, v in catalogue.items() if k != "functions"},
+            "calls": calls,
+            "custom_method_help": "Use final native global inputs only; no stats-derived macaque values",
+            "group_model": None,
+        }
+    if method == "method:v15:global_morphometry":
+        for path in files:
+            if path.endswith(".stats"):
+                add(
+                    "read_stats_measures",
+                    {"path": path},
+                    path,
+                    "Measure short-name maps, no unit conversion",
+                )
+            elif path.endswith("brainmask.mgz"):
+                add(
+                    "positive_mask_volume",
+                    {"path": path},
+                    path,
+                    "Fallback support volume, not BrainSegVol equivalence",
+                )
+    if not calls or method == "method:v15:global_morphometry":
         for path in files:
             if path.endswith((".pial", ".white")):
                 add(
@@ -134,14 +201,16 @@ def suggested_operations(context):
                     path,
                     "Preserve all original vertices and faces",
                 )
-                if method.endswith("global_convex_hull_gyrification"):
+                if method.endswith(
+                    ("global_convex_hull_gyrification", "global_morphometry")
+                ):
                     add(
                         "convex_hull_area_ratio",
                         {"surface_path": path},
                         path,
                         "Pass vertices, faces; full surface, not lGI",
                     )
-                elif method.endswith("mesh_surface_area"):
+                elif method.endswith(("surface_mesh_area", "mesh_surface_area")):
                     add(
                         "vertex_area",
                         {"surface_path": path},
@@ -158,11 +227,20 @@ def suggested_operations(context):
         "library": {k: v for k, v in catalogue.items() if k != "functions"},
         "calls": calls,
         "custom_method_help": "read_operations returns all signatures and unit/return-value conventions",
+        "group_model": (
+            {
+                "implementation": "Agent-written numpy/scipy OLS after per-subject parcel_summary",
+                "design": context.get("analysis_scope", {}).get("design"),
+            }
+            if method.endswith("group_regional_glm")
+            else None
+        ),
     }
 
 
 def execution_bundle(context):
     from .analysis_output_contract import table_contract
+
     operations = suggested_operations(context)
     labels = context.get("analysis_scope", {}).get("labels", {})
     hull = context["method"]["method_id"].endswith("global_convex_hull_gyrification")
@@ -191,9 +269,21 @@ def execution_bundle(context):
         ]
     )
     from .analysis_asymmetry_contract import applies, definition
+
     asymmetry = definition() if applies(context) else None
     if asymmetry:
         columns.append("asymmetry_index")
+    table = table_contract(context, operations)
+    if context["method"]["method_id"] == "method:v15:global_morphometry":
+        columns = list(table["columns"])
+    tables = {}
+    if context["method"]["method_id"] == "method:v14:group_regional_glm":
+        from .analysis_group_contract import group_contract
+
+        tables = {
+            "regional_values.csv": table,
+            "group_results.csv": group_contract(context, table),
+        }
     return {
         "asymmetry_contract": asymmetry,
         "input_paths": context["data"]["files"],
@@ -202,7 +292,8 @@ def execution_bundle(context):
         "output_contract": {
             "files": context["outputs"],
             "csv_columns": columns,
-            "table": table_contract(context, operations),
+            "table": table,
+            "tables": tables,
             "json_required_keys": ["methods", "limitations"],
             "report": "Describe actual method, units, exclusions, observed prerequisites, limitations and all plan versions",
         },

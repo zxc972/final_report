@@ -1,0 +1,37 @@
+{
+  "baseline": "3b61d7ca1b1493a0fd22c4a75d1cc9e08573b0d8",
+  "changed_existing_backend_files": [
+    "agent/modules/agent/backend/analysis_crossspecies.py",
+    "agent/modules/agent/backend/analysis_independent_numeric.py",
+    "agent/modules/agent/backend/analysis_lobar_mapping.py",
+    "agent/modules/agent/backend/analysis_product_planner.py"
+  ],
+  "unchanged_checks": {
+    "agent/modules/agent/backend/analysis_region_resolver.py": true,
+    "compare_rows_ast_unchanged": true,
+    "reference_rows_ast_unchanged": true,
+    "ATOL_ast_unchanged": true,
+    "RTOL_ast_unchanged": true,
+    "agent/modules/agent/backend/analysis_numeric_reference.py": true,
+    "evaluation/verifiers/independent_volume_reference.py": true,
+    "evaluation/verifiers/independent_sbm_source_reference.py": true,
+    "evaluation/verifiers/independent_crossspecies_reference.py": true,
+    "agent/modules/agent/knowledge_analysis/all_tracked_files": true,
+    "knowledge/research_v13/all_tracked_files": true
+  },
+  "knowledge_configuration_changes": [],
+  "region_mapping_recheck_reuses_resolver": true,
+  "region_mapping_is_independent_implementation": false,
+  "numerical_reference_implementation_unchanged": true,
+  "files": {
+    "agent/modules/agent/backend/analysis_crossspecies.py": "99f24b3ab6b8a3201efb9b988362ee62d1092765381c5e46b2e1696f1bfaee40",
+    "agent/modules/agent/backend/analysis_independent_numeric.py": "b98afb76d966fb524a7b2246e8d4f23c3202b12ca79f08725ccc398982a508a6",
+    "agent/modules/agent/backend/analysis_lobar_mapping.py": "a904b6dc44c17704a220d004eefd5d6c678448df1c77a889e363bffff4b2d745",
+    "agent/modules/agent/backend/analysis_product_planner.py": "0e880d1b3fb06db5cfc8f795c7f5923c16b4dc223a506b819cf4c6116745f0ad",
+    "agent/modules/agent/backend/analysis_region_overlap.py": "e5b32e7946af63c2568f829e7182184a8d0fb55c64019ce7df69fc377bbaeef3",
+    "agent/modules/agent/tests/test_round20_region_integration.py": "1271556d494d8fa1188413820952453660b4c814d676dfa3cd88bc0e1ae603e5",
+    "agent/modules/agent/tests/test_round20_condition_cards_v2.py": "2d5c248e0f552b005e096370b4f6701b263e9119423664c7e62affe57d81432b",
+    "tools/knowledge/prepare_condition_test_cards_v2.py": "5e8fb1e96af50d80f1213262eb98c65f64adf1df6e5a52c1f96f38dc13886492",
+    "tools/knowledge/review_condition_test_cards_v2.py": "173889945d512e075d51eef4be9afe6bd5b8006abbf5010a70ff39476269cd62"
+  }
+}

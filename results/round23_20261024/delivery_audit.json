@@ -1,0 +1,35 @@
+{
+  "status": "verified",
+  "runtime_source_commit": "1767b2179959352170a81d0dbf90e6ae9267f014",
+  "real_analysis_entries": 6,
+  "original_question_full_chain_passes": 1,
+  "both_requested_tables_verified_cases": [
+    "R23_G1_1",
+    "R23_G1_3",
+    "R23_G2_1",
+    "R23_G2_3"
+  ],
+  "failure_categories": {
+    "none": 1,
+    "agent_budget_exhausted": 1,
+    "review_incomplete": 3,
+    "contract_failed": 1
+  },
+  "analysis_logical_calls": 119,
+  "analysis_http_attempts": 131,
+  "analysis_http_status_counts": {
+    "200": 117,
+    "504": 14
+  },
+  "analysis_known_prompt_tokens": 2981242,
+  "analysis_known_completion_tokens": 202872,
+  "analysis_unknown_usage_attempts": 14,
+  "condition_http_attempts": 596,
+  "total_paid_http_attempts": 727,
+  "frozen_gold_sha256": "2ca5ca7492d9f09569372085a0cf75715d41a8e78e8bd24a0fc5c38015d84e3e",
+  "public_files_verified": 24,
+  "executed_program_sha_receipts_recovered_on_analysis_host": 6,
+  "raw_analysis_records_transferred": false,
+  "paid_calls_by_delivery_audit": 0,
+  "verified_utc": "2026-10-24T09:19:28.447553+00:00"
+}

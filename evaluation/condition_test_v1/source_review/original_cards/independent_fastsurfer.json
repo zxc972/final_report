@@ -1,0 +1,386 @@
+{
+  "method_id": "independent_fastsurfer",
+  "name": "FastSurfer",
+  "purpose": "Takes a T1 full head image and creates a segmentation using FastSurferVINN and surfaces, thickness etc as a FS subject dir using recon-surf.",
+  "species_scope": "unspecified",
+  "software": [
+    "FastSurfer",
+    "FastSurferVINN",
+    "recon-surf",
+    "FreeSurfer",
+    "CerebNet",
+    "HypVINN",
+    "LIT",
+    "Docker",
+    "Apptainer",
+    "Singularity"
+  ],
+  "inputs": [
+    {
+      "statement": "--t1: T1 full head input (not bias corrected), requiring an absolute path.",
+      "source_id": "fastsurfer_run",
+      "quote": "--t1 <t1_path> T1 full head input (not bias corrected). Requires an",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 16222,
+        "end": 16289,
+        "text_sha256": "86e0b793c322530a30c34aaa6f2c1ec00912fceb693cb4fd554e9860eeea8892"
+      }
+    },
+    {
+      "statement": "Optional T2 full head input for HypVINN; must be externally biasfield corrected when called with --no_biasfield.",
+      "source_id": "fastsurfer_run",
+      "quote": "*Optional* T2 full head input (must be externally biasfield",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 22800,
+        "end": 22859,
+        "text_sha256": "86e0b793c322530a30c34aaa6f2c1ec00912fceb693cb4fd554e9860eeea8892"
+      }
+    },
+    {
+      "statement": "Optional binary lesion mask in the same space as the T1 input; if provided, pipelines are wrapped with LIT lesion inpainting.",
+      "source_id": "fastsurfer_run",
+      "quote": "Path to a binary lesion mask in the same space as the T1 input.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 9869,
+        "end": 9932,
+        "text_sha256": "86e0b793c322530a30c34aaa6f2c1ec00912fceb693cb4fd554e9860eeea8892"
+      }
+    },
+    {
+      "statement": "For --surf_only, the segmentation created by FastSurferVINN must already exist.",
+      "source_id": "fastsurfer_run",
+      "quote": "--surf_only Run surface pipeline only. The segmentation input has",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 23512,
+        "end": 23577,
+        "text_sha256": "86e0b793c322530a30c34aaa6f2c1ec00912fceb693cb4fd554e9860eeea8892"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "statement": "The surface pipeline needs a FreeSurfer license file, as does Talairach registration in segmentation (--tal_reg); a segmentation without --tal_reg does not need one.",
+      "source_id": "fastsurfer_install",
+      "quote": "A\nsegmentation without --tal_reg does not need one.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 7022,
+        "end": 7073,
+        "text_sha256": "03f05ff592ee287c347fe2bff7ff5c84ff307bc49801bd8f238e8da5e36084b5"
+      }
+    },
+    {
+      "statement": "--fs_license is required for Docker when running the surface module; for local installs the license is autodetected.",
+      "source_id": "fastsurfer_run",
+      "quote": "Required for Docker when running surface module:",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 7921,
+        "end": 7969,
+        "text_sha256": "86e0b793c322530a30c34aaa6f2c1ec00912fceb693cb4fd554e9860eeea8892"
+      }
+    },
+    {
+      "statement": "Input images need not be bias corrected; the network was trained with conformed images and non-compliant images are automatically conformed.",
+      "source_id": "fastsurfer_run",
+      "quote": "These specifications are checked in the run_prediction.py script and the image is automatically conformed if it does not comply.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 7453,
+        "end": 7581,
+        "text_sha256": "86e0b793c322530a30c34aaa6f2c1ec00912fceb693cb4fd554e9860eeea8892"
+      }
+    },
+    {
+      "statement": "--native_image or --keepgeom is only supported for --seg_only and is not compatible with the surface pipeline.",
+      "source_id": "fastsurfer_run",
+      "quote": "This setting is not\ncompatible with the surface pipeline and implies",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 20047,
+        "end": 20115,
+        "text_sha256": "86e0b793c322530a30c34aaa6f2c1ec00912fceb693cb4fd554e9860eeea8892"
+      }
+    },
+    {
+      "statement": "A GPU makes the segmentation much faster; memory needs depend on voxel size and whether GPU or CPU does the work.",
+      "source_id": "fastsurfer_install",
+      "quote": "A GPU makes the segmentation much faster.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 6603,
+        "end": 6644,
+        "text_sha256": "03f05ff592ee287c347fe2bff7ff5c84ff307bc49801bd8f238e8da5e36084b5"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "statement": "Call run_fastsurfer.sh once per T1w MRI image with the subject directory, subject id and T1 path.",
+      "source_id": "fastsurfer_run",
+      "quote": "run_fastsurfer.sh is called once for each T1w MRI image that is to be processed",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 5454,
+        "end": 5533,
+        "text_sha256": "86e0b793c322530a30c34aaa6f2c1ec00912fceb693cb4fd554e9860eeea8892"
+      }
+    },
+    {
+      "statement": "The image is checked and automatically conformed if it does not meet the network's conformed-image specifications.",
+      "source_id": "fastsurfer_run",
+      "quote": "These specifications are checked in the run_prediction.py script and the image is automatically conformed if it does not comply.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 7453,
+        "end": 7581,
+        "text_sha256": "86e0b793c322530a30c34aaa6f2c1ec00912fceb693cb4fd554e9860eeea8892"
+      }
+    },
+    {
+      "statement": "Segmentation is performed with FastSurferVINN, equivalent to FreeSurfer aparc.DKTatlas+aseg.mgz.",
+      "source_id": "fastsurfer_run",
+      "quote": "a segmentation using FastSurferVINN (equivalent to FreeSurfer",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 15705,
+        "end": 15766,
+        "text_sha256": "86e0b793c322530a30c34aaa6f2c1ec00912fceb693cb4fd554e9860eeea8892"
+      }
+    },
+    {
+      "statement": "Surfaces, thickness etc. are produced as a FS subject dir using recon-surf.",
+      "source_id": "fastsurfer_run",
+      "quote": "surfaces, thickness etc as a FS subject dir using recon-surf",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 15797,
+        "end": 15857,
+        "text_sha256": "86e0b793c322530a30c34aaa6f2c1ec00912fceb693cb4fd554e9860eeea8892"
+      }
+    },
+    {
+      "statement": "After the surface module, some initial segmentations and volume estimates are fine-tuned (e.g., surface-based partial volume correction, addition of corpus callosum labels).",
+      "source_id": "fastsurfer_outputs",
+      "quote": "some of the initial segmentations and corresponding volume estimates are fine-tuned (e.g., surface-based partial volume correction, addition of corpus callosum labels)",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 10673,
+        "end": 10840,
+        "text_sha256": "d8b6e8b2eb5482291eb29cbc2e92f1aa73e8f43f001adce7a8546daf57f5848e"
+      }
+    },
+    {
+      "statement": "If a lesion mask is provided, LIT inpaints the lesion region, runs the requested modules on the inpainted image, then maps the lesion back into outputs.",
+      "source_id": "fastsurfer_outputs",
+      "quote": "It inpaints the lesion region, runs the requested\nFastSurfer modules on the inpainted image, and then maps the lesion back into the resulting outputs.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 13564,
+        "end": 13714,
+        "text_sha256": "d8b6e8b2eb5482291eb29cbc2e92f1aa73e8f43f001adce7a8546daf57f5848e"
+      }
+    }
+  ],
+  "checks": [
+    {
+      "statement": "--viewagg_device auto checks whether there is enough memory to run view aggregation on the GPU.",
+      "source_id": "fastsurfer_run",
+      "quote": "By default, the program checks if you have enough memory to run the view aggregation on the GPU.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 8780,
+        "end": 8876,
+        "text_sha256": "86e0b793c322530a30c34aaa6f2c1ec00912fceb693cb4fd554e9860eeea8892"
+      }
+    },
+    {
+      "statement": "Unless --ignore_fs_version is set, the program checks the FreeSurfer version and terminates if the supported version is not sourced.",
+      "source_id": "fastsurfer_run",
+      "quote": "Switch on to avoid check for FreeSurfer version.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 25634,
+        "end": 25682,
+        "text_sha256": "86e0b793c322530a30c34aaa6f2c1ec00912fceb693cb4fd554e9860eeea8892"
+      }
+    },
+    {
+      "statement": "--qc_snap creates quality control images to simplify the QC process.",
+      "source_id": "fastsurfer_run",
+      "quote": "--qc_snap Create quality control images in $SUBJECTS_DIR/$sid/qc_snapshots",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 22026,
+        "end": 22100,
+        "text_sha256": "86e0b793c322530a30c34aaa6f2c1ec00912fceb693cb4fd554e9860eeea8892"
+      }
+    },
+    {
+      "statement": "For images with tumors or other large lesions, review LIT-modified outputs before downstream use.",
+      "source_id": "fastsurfer_run",
+      "quote": "review LIT-modified outputs before downstream use.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 10110,
+        "end": 10160,
+        "text_sha256": "86e0b793c322530a30c34aaa6f2c1ec00912fceb693cb4fd554e9860eeea8892"
+      }
+    }
+  ],
+  "exceptions": [
+    {
+      "statement": "Without --no_cereb, CerebNet runs automatically whenever the segmentation module runs.",
+      "source_id": "fastsurfer_outputs",
+      "quote": "Unless switched off by the --no_cereb argument, this module is automatically run whenever the segmentation module is run.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 8490,
+        "end": 8611,
+        "text_sha256": "d8b6e8b2eb5482291eb29cbc2e92f1aa73e8f43f001adce7a8546daf57f5848e"
+      }
+    },
+    {
+      "statement": "Without --no_hypothal, HypVINN runs automatically whenever the segmentation module runs.",
+      "source_id": "fastsurfer_outputs",
+      "quote": "Unless switched off by the --no_hypothal argument, this module is automatically run whenever the segmentation module is run.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 9014,
+        "end": 9138,
+        "text_sha256": "d8b6e8b2eb5482291eb29cbc2e92f1aa73e8f43f001adce7a8546daf57f5848e"
+      }
+    },
+    {
+      "statement": "With --no_biasfield, HypVINN still runs but expects biasfields to be corrected externally.",
+      "source_id": "fastsurfer_run",
+      "quote": "HypVINN does run but expects that biasfields are corrected externally.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 10461,
+        "end": 10531,
+        "text_sha256": "86e0b793c322530a30c34aaa6f2c1ec00912fceb693cb4fd554e9860eeea8892"
+      }
+    },
+    {
+      "statement": "--no_surfreg skips surface registration, but sphere.reg is needed for cross-subject statistical analysis of thickness maps.",
+      "source_id": "fastsurfer_run",
+      "quote": "sphere.reg will be needed for any cross-subject statistical analysis of thickness maps",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 12163,
+        "end": 12249,
+        "text_sha256": "86e0b793c322530a30c34aaa6f2c1ec00912fceb693cb4fd554e9860eeea8892"
+      }
+    },
+    {
+      "statement": "Renaming an output file can break a later step, since later modules and follow-up tools look for the default names.",
+      "source_id": "fastsurfer_run",
+      "quote": "Later modules\nand follow-up tools look for the default names, so renaming an output can\nbreak a later step.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 20277,
+        "end": 20384,
+        "text_sha256": "86e0b793c322530a30c34aaa6f2c1ec00912fceb693cb4fd554e9860eeea8892"
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "statement": "aparc.DKTatlas+aseg.deep.mgz contains the cortical and subcortical segmentation based on the DKT atlas.",
+      "source_id": "fastsurfer_outputs",
+      "quote": "which contains the FastSurfer segmentation of cortical and subcortical structures based on the DKT atlas",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 5419,
+        "end": 5523,
+        "text_sha256": "d8b6e8b2eb5482291eb29cbc2e92f1aa73e8f43f001adce7a8546daf57f5848e"
+      }
+    },
+    {
+      "statement": "aseg+DKT.stats contains summary statistics for the segmented structures.",
+      "source_id": "fastsurfer_outputs",
+      "quote": "which contains summary statistics for these structures",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 5554,
+        "end": 5608,
+        "text_sha256": "d8b6e8b2eb5482291eb29cbc2e92f1aa73e8f43f001adce7a8546daf57f5848e"
+      }
+    },
+    {
+      "statement": "Primary surface outputs are pial, white, and inflated surface files, thickness overlay files, and cortical parcellation (annotation) files.",
+      "source_id": "fastsurfer_outputs",
+      "quote": "The primary output files are pial, white, and inflated surface files, the thickness overlay files, and the cortical parcellation (annotation) files.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 11065,
+        "end": 11213,
+        "text_sha256": "d8b6e8b2eb5482291eb29cbc2e92f1aa73e8f43f001adce7a8546daf57f5848e"
+      }
+    },
+    {
+      "statement": "Cerebellum module adds cerebellum.CerebNet.nii.gz sub-segmentation and cerebellum.CerebNet.stats summary statistics.",
+      "source_id": "fastsurfer_outputs",
+      "quote": "It adds two files, an image with the sub-segmentation of the cerebellum and a text file with summary statistics.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 8612,
+        "end": 8724,
+        "text_sha256": "d8b6e8b2eb5482291eb29cbc2e92f1aa73e8f43f001adce7a8546daf57f5848e"
+      }
+    }
+  ],
+  "parameters": [
+    {
+      "statement": "--vox_size forces processing at a specific voxel size; 'min' (default) derives it from the minimal voxel size in the T1w image.",
+      "source_id": "fastsurfer_run",
+      "quote": "If \"min\" is specified (default), the voxel size is\nread from the size of the minimal voxel size",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 16824,
+        "end": 16919,
+        "text_sha256": "86e0b793c322530a30c34aaa6f2c1ec00912fceb693cb4fd554e9860eeea8892"
+      }
+    },
+    {
+      "statement": "--device selects the inference device: auto (default), cpu, cuda, cuda:<device_num>, or mps.",
+      "source_id": "fastsurfer_run",
+      "quote": "--device: Select device for neural network segmentation (auto, cpu, cuda, cuda:<device_num>, mps)",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 9131,
+        "end": 9228,
+        "text_sha256": "86e0b793c322530a30c34aaa6f2c1ec00912fceb693cb4fd554e9860eeea8892"
+      }
+    },
+    {
+      "statement": "--3T uses the 3T atlas instead of the 1.5T atlas for Talairach registration, giving better eTIV estimates for 3T images.",
+      "source_id": "fastsurfer_run",
+      "quote": "use the 3T atlas instead of the 1.5T atlas (which is used if the flag is not provided)",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 11225,
+        "end": 11311,
+        "text_sha256": "86e0b793c322530a30c34aaa6f2c1ec00912fceb693cb4fd554e9860eeea8892"
+      }
+    },
+    {
+      "statement": "--batch sets the batch size for inference; default is 1.",
+      "source_id": "fastsurfer_run",
+      "quote": "--batch <batch_size> Batch size for inference (default: 1).",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 25408,
+        "end": 25467,
+        "text_sha256": "86e0b793c322530a30c34aaa6f2c1ec00912fceb693cb4fd554e9860eeea8892"
+      }
+    }
+  ],
+  "quarantined_claims": [],
+  "evidence_status": "exact_quotes_verified_semantics_pending_annotation"
+}

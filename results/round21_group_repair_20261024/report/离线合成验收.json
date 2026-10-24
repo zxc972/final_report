@@ -1,0 +1,94 @@
+{
+  "acceptance": [
+    {
+      "comparison": "group",
+      "completed": true,
+      "tables": {
+        "group_results.csv": {
+          "checked": 44,
+          "identity_mismatch_count": 0,
+          "mismatch_count": 0,
+          "numeric_mismatch_count": 0,
+          "status": "pass"
+        },
+        "regional_values.csv": {
+          "checked": 160,
+          "identity_mismatch_count": 0,
+          "mismatch_count": 0,
+          "numeric_mismatch_count": 0,
+          "status": "pass"
+        }
+      },
+      "execution_card_length": 1332,
+      "provider_http_calls": 0,
+      "review": "pass",
+      "raw_reader": "read_group_inputs",
+      "identity_fdr": "fdr_bh_by_identity",
+      "audit_path": "/data/xuancheng/agent_v1/round21_work/synthetic_container_runs_v3/test_round21_group_interfaces_0/work/offline_acceptance.json"
+    },
+    {
+      "comparison": "correlation",
+      "completed": true,
+      "tables": {
+        "group_results.csv": {
+          "checked": 44,
+          "identity_mismatch_count": 0,
+          "mismatch_count": 0,
+          "numeric_mismatch_count": 0,
+          "status": "pass"
+        },
+        "regional_values.csv": {
+          "checked": 160,
+          "identity_mismatch_count": 0,
+          "mismatch_count": 0,
+          "numeric_mismatch_count": 0,
+          "status": "pass"
+        }
+      },
+      "execution_card_length": 1322,
+      "provider_http_calls": 0,
+      "review": "pass",
+      "raw_reader": "read_group_inputs",
+      "identity_fdr": "fdr_bh_by_identity",
+      "audit_path": "/data/xuancheng/agent_v1/round21_work/synthetic_container_runs_v3/test_round21_group_interfaces_1/work/offline_acceptance.json"
+    }
+  ],
+  "actual_rows": [
+    {
+      "comparison": "group",
+      "tables": {
+        "regional_values.csv": {
+          "rows": 32,
+          "sha256": "3d5cc1434e43708ade96ade96575f1e3e0cd14ea435739c54480003634dbf222"
+        },
+        "group_results.csv": {
+          "rows": 4,
+          "sha256": "313d818284e93482016927fd512773b727d6bd7bc08621759838264b1d2f31ab"
+        }
+      }
+    },
+    {
+      "comparison": "correlation",
+      "tables": {
+        "regional_values.csv": {
+          "rows": 32,
+          "sha256": "3d5cc1434e43708ade96ade96575f1e3e0cd14ea435739c54480003634dbf222"
+        },
+        "group_results.csv": {
+          "rows": 4,
+          "sha256": "34f3318b4e6e860f1d0f085bf87ba05d842fe1e6938769290ff6bcd2e853af51"
+        }
+      }
+    }
+  ],
+  "offline_status": {
+    "status": "passed",
+    "checks": [
+      "targeted_v3",
+      "backend_default_v3",
+      "synthetic_singularity_v3"
+    ],
+    "provider_requests": 0,
+    "real_analysis_requests": 0
+  }
+}

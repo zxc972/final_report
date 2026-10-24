@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "metric_interval_crosschecks": 22,
+  "bootstrap_replicates": 2000,
+  "http_calls": 0,
+  "fixture": "mixed advisory/review/accepted, wrong key, duplicate gold key, different method"
+}

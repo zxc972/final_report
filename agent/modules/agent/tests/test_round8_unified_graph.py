@@ -136,7 +136,9 @@ def test_subtyping_dedup_and_quarantine(tmp_path):
     body, sha = store.document("method_requirements")
     assert body["methods"] and len(sha) == 64
     assert set(store.stats()["nodes_by_layer"]) <= {"knowledge", "workflow", "instance"}
-    assert len(store.find_nodes(layer="knowledge", kind="ProductType")) == 46
+    assert len(store.find_nodes(layer="knowledge", kind="ProductType")) == 48
+    assert store.is_subtype("type:StatsTable.AsegStats", "type:StatsTable")
+    assert store.is_subtype("type:StatsTable.CorticalParcStats", "type:StatsTable")
     assert store.find_nodes(kind="Condition")
     assert store.find_nodes(kind="Source")
     assert store.find_nodes(layer="workflow", kind="StepType")

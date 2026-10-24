@@ -1,0 +1,505 @@
+{
+  "cases": [
+    {
+      "case": "R21_G1_1",
+      "question": "这 20 名 IXI 被试，DKT 各分区平均皮层厚度与年龄的关系，控制性别。",
+      "source_commit": "2dbaf9b478ed5e5fbcb15fc900e4b797da99feac",
+      "conversation_id": "round21_R21_G1_1_b1dd11ad947f43ea8672d53532487fa8",
+      "chat_request_id": "399b1022efdf4f04a51e3146f6834d33",
+      "http_status": 200,
+      "status": "route_failed",
+      "elapsed_seconds": 0.18359857611358166,
+      "stage_sequence": [
+        "other/failed: Unable to route request"
+      ],
+      "analysis_phase_sequence": [],
+      "events": [
+        {
+          "detail": {
+            "attempts": 2,
+            "event": "route_failed",
+            "parse_status": "route_failed",
+            "reason": "Router call failed"
+          },
+          "refs": [],
+          "seq": 1,
+          "stage": "other",
+          "status": "failed",
+          "time": "2026-10-23T17:25:20.784600+00:00",
+          "title": "Unable to route request"
+        }
+      ],
+      "native_request_budget": {
+        "model_calls": 2,
+        "http_attempts": 2,
+        "models": [],
+        "model_source": "unavailable",
+        "retry_http_attempts": 0,
+        "unmetered_logical_calls": 0,
+        "router_calls": 2,
+        "router_http_attempts": 2,
+        "limit": 30,
+        "known_usage_calls": 0,
+        "unknown_usage_calls": 2,
+        "known_tokens": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "total_tokens": 0
+        },
+        "cost": null,
+        "cost_status": "No verified monetary price; unknown usage is not zero"
+      },
+      "native_charges": [
+        {
+          "analysis_phase": "router",
+          "id": "77a44098b8924f238cbbc22561fbcb3b",
+          "logical_id": "77a44098b8924f238cbbc22561fbcb3b",
+          "phase": "router",
+          "request_id": "399b1022efdf4f04a51e3146f6834d33",
+          "retry_of": null,
+          "source_node": "router",
+          "status": "call_failed",
+          "time": 1792776320.6832063,
+          "usage": null
+        },
+        {
+          "analysis_phase": "router",
+          "id": "168fa7a8854b47f7a7e689d89fbb2810",
+          "logical_id": "168fa7a8854b47f7a7e689d89fbb2810",
+          "phase": "router",
+          "request_id": "399b1022efdf4f04a51e3146f6834d33",
+          "retry_of": null,
+          "source_node": "router",
+          "status": "call_failed",
+          "time": 1792776320.7447517,
+          "usage": null
+        }
+      ],
+      "actual_http_sends": 0,
+      "executions_observed": 0,
+      "tools_observed": 0,
+      "reported_graph_model_calls": null,
+      "reported_graph_tool_calls": null,
+      "reported_graph_executions": null,
+      "tables": {
+        "regional_values.csv": {
+          "present": false,
+          "public_contract_status": "not_assessed",
+          "independent_status": "not_assessed",
+          "identity_mismatch_count": null,
+          "numeric_mismatch_count": null,
+          "rows": null
+        },
+        "group_results.csv": {
+          "present": false,
+          "public_contract_status": "not_assessed",
+          "independent_status": "not_assessed",
+          "identity_mismatch_count": null,
+          "numeric_mismatch_count": null,
+          "rows": null
+        }
+      },
+      "internal_review": {
+        "status": "not_assessed",
+        "decision": null
+      },
+      "conclusion_card": null,
+      "response_message": "I could not determine the task type. Please clarify whether you want to inspect data, analyse existing results, or preprocess new images.",
+      "d_min_sealed_design": null,
+      "fdr_significant_regions": null,
+      "negative_age_effect_proportion": null,
+      "full_chain_passed": false
+    },
+    {
+      "case": "R21_G1_2",
+      "question": "这 20 名 IXI 被试，DKT 各分区平均皮层厚度与年龄的关系，控制性别。",
+      "source_commit": "2dbaf9b478ed5e5fbcb15fc900e4b797da99feac",
+      "conversation_id": "round21_R21_G1_2_711db99af5094d98a44d608b9e2153a7",
+      "chat_request_id": "5660b0d0eee345efb67cb55832db36f5",
+      "http_status": 200,
+      "status": "route_failed",
+      "elapsed_seconds": 0.15818210132420063,
+      "stage_sequence": [
+        "other/failed: Unable to route request"
+      ],
+      "analysis_phase_sequence": [],
+      "events": [
+        {
+          "detail": {
+            "attempts": 2,
+            "event": "route_failed",
+            "parse_status": "route_failed",
+            "reason": "Router call failed"
+          },
+          "refs": [],
+          "seq": 1,
+          "stage": "other",
+          "status": "failed",
+          "time": "2026-10-23T17:27:20.430367+00:00",
+          "title": "Unable to route request"
+        }
+      ],
+      "native_request_budget": {
+        "model_calls": 2,
+        "http_attempts": 2,
+        "models": [],
+        "model_source": "unavailable",
+        "retry_http_attempts": 0,
+        "unmetered_logical_calls": 0,
+        "router_calls": 2,
+        "router_http_attempts": 2,
+        "limit": 30,
+        "known_usage_calls": 0,
+        "unknown_usage_calls": 2,
+        "known_tokens": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "total_tokens": 0
+        },
+        "cost": null,
+        "cost_status": "No verified monetary price; unknown usage is not zero"
+      },
+      "native_charges": [
+        {
+          "analysis_phase": "router",
+          "id": "02087f5fed5444bbaa5b5a590de25816",
+          "logical_id": "02087f5fed5444bbaa5b5a590de25816",
+          "phase": "router",
+          "request_id": "5660b0d0eee345efb67cb55832db36f5",
+          "retry_of": null,
+          "source_node": "router",
+          "status": "call_failed",
+          "time": 1792776440.3417585,
+          "usage": null
+        },
+        {
+          "analysis_phase": "router",
+          "id": "6eb3d37d43fd46f9a562f9cf9f83bbf5",
+          "logical_id": "6eb3d37d43fd46f9a562f9cf9f83bbf5",
+          "phase": "router",
+          "request_id": "5660b0d0eee345efb67cb55832db36f5",
+          "retry_of": null,
+          "source_node": "router",
+          "status": "call_failed",
+          "time": 1792776440.386537,
+          "usage": null
+        }
+      ],
+      "actual_http_sends": 0,
+      "executions_observed": 0,
+      "tools_observed": 0,
+      "reported_graph_model_calls": null,
+      "reported_graph_tool_calls": null,
+      "reported_graph_executions": null,
+      "tables": {
+        "regional_values.csv": {
+          "present": false,
+          "public_contract_status": "not_assessed",
+          "independent_status": "not_assessed",
+          "identity_mismatch_count": null,
+          "numeric_mismatch_count": null,
+          "rows": null
+        },
+        "group_results.csv": {
+          "present": false,
+          "public_contract_status": "not_assessed",
+          "independent_status": "not_assessed",
+          "identity_mismatch_count": null,
+          "numeric_mismatch_count": null,
+          "rows": null
+        }
+      },
+      "internal_review": {
+        "status": "not_assessed",
+        "decision": null
+      },
+      "conclusion_card": null,
+      "response_message": "I could not determine the task type. Please clarify whether you want to inspect data, analyse existing results, or preprocess new images.",
+      "d_min_sealed_design": null,
+      "fdr_significant_regions": null,
+      "negative_age_effect_proportion": null,
+      "full_chain_passed": false
+    },
+    {
+      "case": "R21_G2_1",
+      "question": "比较这 20 名 IXI 被试中男性和女性的 DKT 各分区平均皮层厚度。",
+      "source_commit": "2dbaf9b478ed5e5fbcb15fc900e4b797da99feac",
+      "conversation_id": "round21_R21_G2_1_4bede87051264dd3be683eecc91d39ac",
+      "chat_request_id": "d529229b26594da48460cab976dc7ec2",
+      "http_status": 200,
+      "status": "route_failed",
+      "elapsed_seconds": 0.1508773062378168,
+      "stage_sequence": [
+        "other/failed: Unable to route request"
+      ],
+      "analysis_phase_sequence": [],
+      "events": [
+        {
+          "detail": {
+            "attempts": 2,
+            "event": "route_failed",
+            "parse_status": "route_failed",
+            "reason": "Router call failed"
+          },
+          "refs": [],
+          "seq": 1,
+          "stage": "other",
+          "status": "failed",
+          "time": "2026-10-23T17:27:40.194802+00:00",
+          "title": "Unable to route request"
+        }
+      ],
+      "native_request_budget": {
+        "model_calls": 2,
+        "http_attempts": 2,
+        "models": [],
+        "model_source": "unavailable",
+        "retry_http_attempts": 0,
+        "unmetered_logical_calls": 0,
+        "router_calls": 2,
+        "router_http_attempts": 2,
+        "limit": 30,
+        "known_usage_calls": 0,
+        "unknown_usage_calls": 2,
+        "known_tokens": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "total_tokens": 0
+        },
+        "cost": null,
+        "cost_status": "No verified monetary price; unknown usage is not zero"
+      },
+      "native_charges": [
+        {
+          "analysis_phase": "router",
+          "id": "a8389920330d46aea036ddb8dfbf0ed6",
+          "logical_id": "a8389920330d46aea036ddb8dfbf0ed6",
+          "phase": "router",
+          "request_id": "d529229b26594da48460cab976dc7ec2",
+          "retry_of": null,
+          "source_node": "router",
+          "status": "call_failed",
+          "time": 1792776460.0965073,
+          "usage": null
+        },
+        {
+          "analysis_phase": "router",
+          "id": "cd8da4e363af4b4db22003a290754144",
+          "logical_id": "cd8da4e363af4b4db22003a290754144",
+          "phase": "router",
+          "request_id": "d529229b26594da48460cab976dc7ec2",
+          "retry_of": null,
+          "source_node": "router",
+          "status": "call_failed",
+          "time": 1792776460.146225,
+          "usage": null
+        }
+      ],
+      "actual_http_sends": 0,
+      "executions_observed": 0,
+      "tools_observed": 0,
+      "reported_graph_model_calls": null,
+      "reported_graph_tool_calls": null,
+      "reported_graph_executions": null,
+      "tables": {
+        "regional_values.csv": {
+          "present": false,
+          "public_contract_status": "not_assessed",
+          "independent_status": "not_assessed",
+          "identity_mismatch_count": null,
+          "numeric_mismatch_count": null,
+          "rows": null
+        },
+        "group_results.csv": {
+          "present": false,
+          "public_contract_status": "not_assessed",
+          "independent_status": "not_assessed",
+          "identity_mismatch_count": null,
+          "numeric_mismatch_count": null,
+          "rows": null
+        }
+      },
+      "internal_review": {
+        "status": "not_assessed",
+        "decision": null
+      },
+      "conclusion_card": null,
+      "response_message": "I could not determine the task type. Please clarify whether you want to inspect data, analyse existing results, or preprocess new images.",
+      "d_min_sealed_design": null,
+      "fdr_significant_regions": null,
+      "negative_age_effect_proportion": null,
+      "full_chain_passed": false
+    },
+    {
+      "case": "R21_G2_2",
+      "question": "比较这 20 名 IXI 被试中男性和女性的 DKT 各分区平均皮层厚度。",
+      "source_commit": "2dbaf9b478ed5e5fbcb15fc900e4b797da99feac",
+      "conversation_id": "round21_R21_G2_2_1634799b69b348fba7c8515da05adaf7",
+      "chat_request_id": "da2f36de0866467ebb7abd0deb33e6eb",
+      "http_status": 200,
+      "status": "route_failed",
+      "elapsed_seconds": 0.15020981524139643,
+      "stage_sequence": [
+        "other/failed: Unable to route request"
+      ],
+      "analysis_phase_sequence": [],
+      "events": [
+        {
+          "detail": {
+            "attempts": 2,
+            "event": "route_failed",
+            "parse_status": "route_failed",
+            "reason": "Router call failed"
+          },
+          "refs": [],
+          "seq": 1,
+          "stage": "other",
+          "status": "failed",
+          "time": "2026-10-23T17:27:57.104674+00:00",
+          "title": "Unable to route request"
+        }
+      ],
+      "native_request_budget": {
+        "model_calls": 2,
+        "http_attempts": 2,
+        "models": [],
+        "model_source": "unavailable",
+        "retry_http_attempts": 0,
+        "unmetered_logical_calls": 0,
+        "router_calls": 2,
+        "router_http_attempts": 2,
+        "limit": 30,
+        "known_usage_calls": 0,
+        "unknown_usage_calls": 2,
+        "known_tokens": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "total_tokens": 0
+        },
+        "cost": null,
+        "cost_status": "No verified monetary price; unknown usage is not zero"
+      },
+      "native_charges": [
+        {
+          "analysis_phase": "router",
+          "id": "d815d4063a964ee992d87605c0e861d0",
+          "logical_id": "d815d4063a964ee992d87605c0e861d0",
+          "phase": "router",
+          "request_id": "da2f36de0866467ebb7abd0deb33e6eb",
+          "retry_of": null,
+          "source_node": "router",
+          "status": "call_failed",
+          "time": 1792776477.0141745,
+          "usage": null
+        },
+        {
+          "analysis_phase": "router",
+          "id": "e5eab0c8687a4522a2b9080a3331fc8c",
+          "logical_id": "e5eab0c8687a4522a2b9080a3331fc8c",
+          "phase": "router",
+          "request_id": "da2f36de0866467ebb7abd0deb33e6eb",
+          "retry_of": null,
+          "source_node": "router",
+          "status": "call_failed",
+          "time": 1792776477.0549526,
+          "usage": null
+        }
+      ],
+      "actual_http_sends": 0,
+      "executions_observed": 0,
+      "tools_observed": 0,
+      "reported_graph_model_calls": null,
+      "reported_graph_tool_calls": null,
+      "reported_graph_executions": null,
+      "tables": {
+        "regional_values.csv": {
+          "present": false,
+          "public_contract_status": "not_assessed",
+          "independent_status": "not_assessed",
+          "identity_mismatch_count": null,
+          "numeric_mismatch_count": null,
+          "rows": null
+        },
+        "group_results.csv": {
+          "present": false,
+          "public_contract_status": "not_assessed",
+          "independent_status": "not_assessed",
+          "identity_mismatch_count": null,
+          "numeric_mismatch_count": null,
+          "rows": null
+        }
+      },
+      "internal_review": {
+        "status": "not_assessed",
+        "decision": null
+      },
+      "conclusion_card": null,
+      "response_message": "I could not determine the task type. Please clarify whether you want to inspect data, analyse existing results, or preprocess new images.",
+      "d_min_sealed_design": null,
+      "fdr_significant_regions": null,
+      "negative_age_effect_proportion": null,
+      "full_chain_passed": false
+    }
+  ],
+  "totals": {
+    "analysis_entry_attempts": 4,
+    "native_logical_reservations": 8,
+    "native_http_reservations": 8,
+    "actual_upstream_http_sends": 0,
+    "native_unknown_usage_reservations": 8,
+    "native_known_tokens": {
+      "prompt_tokens": 0,
+      "completion_tokens": 0
+    },
+    "known_token_zero_is_not_substitute_for_unknown_native_usage": true,
+    "analysis_executions_observed": 0,
+    "full_chain_passed": 0
+  },
+  "stop_decisions": [
+    {
+      "question": "G1",
+      "decision": "stop_after_two_consecutive_same_chain_failures",
+      "cases": [
+        "R21_G1_1",
+        "R21_G1_2"
+      ],
+      "failure_fingerprint": "router_before_ACTIVE_CHAT_activation_blocked_by_exact_native_binding_guard",
+      "evidence": "RequestBudget reserves router attempts; dev begin requires ACTIVE_CHAT; api.py activates ACTIVE_CHAT only after route succeeds. Both responses route_failed; no upstream HTTP sent. Local full-route SDK reproduction to follow.",
+      "third_run": "not_started",
+      "source_commit": "2dbaf9b478ed5e5fbcb15fc900e4b797da99feac",
+      "utc": "2026-10-23T17:27:40.047785+00:00"
+    },
+    {
+      "question": "G2",
+      "decision": "stop_after_two_consecutive_same_chain_failures",
+      "cases": [
+        "R21_G2_1",
+        "R21_G2_2"
+      ],
+      "failure_fingerprint": "router_before_ACTIVE_CHAT_activation_blocked_by_exact_native_binding_guard",
+      "third_run": "not_started",
+      "source_commit": "2dbaf9b478ed5e5fbcb15fc900e4b797da99feac",
+      "utc": "2026-10-23T17:28:23.784389+00:00"
+    }
+  ],
+  "authorization": {
+    "status": "closed_after_per_question_failure_stops",
+    "rules": {
+      "model_requests_max_analysis_runs": 6,
+      "per_question_max": 3,
+      "consecutive_same_chain_failure_stop": 2
+    },
+    "real_analysis_runs": 4,
+    "launched_cases": [
+      "R21_G1_1",
+      "R21_G1_2",
+      "R21_G2_1",
+      "R21_G2_2"
+    ],
+    "source_commit": "2dbaf9b478ed5e5fbcb15fc900e4b797da99feac",
+    "active_conversation": null,
+    "actual_upstream_http_attempts": 0,
+    "remaining_runs_not_used": 2,
+    "closed_utc": "2026-10-23T17:28:23.784389+00:00"
+  }
+}

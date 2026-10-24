@@ -189,7 +189,8 @@ class AnalysisSession:
                     delimiter="\t" if kind == "tsv" else ",",
                 )
                 columns = next(reader, [])
-                required = contract.get("csv_columns", [])
+                declared_table = contract.get("tables", {}).get(path)
+                required = list(declared_table["columns"]) if declared_table else contract.get("csv_columns", [])
                 for column in required:
                     if column not in columns:
                         missing.append(f"{path}: missing column {column}")
@@ -279,9 +280,11 @@ class AnalysisSession:
                 outputs_complete=False,
                 finalized_receipt=None,
             )
+            from .analysis_contract_diagnostics import outputs
             execution["automatic_finalization"] = {
                 "status": "artifact_contract_failed",
                 "error": reason,
+                "serialization_diagnostics": outputs(self.tools),
             }
             return execution["automatic_finalization"]
         self._save(

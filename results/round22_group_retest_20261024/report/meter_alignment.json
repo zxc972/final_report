@@ -1,0 +1,206 @@
+{
+  "created_utc": "2026-10-24T06:06:58.783533+00:00",
+  "partial": false,
+  "cases": [
+    {
+      "case": "R22_G1_1",
+      "checks": {
+        "unmetered_logical_calls_zero": true,
+        "http_count_matches_native_budget": true,
+        "logical_count_matches_native_budget": true,
+        "prompt_tokens_match_native_budget": true,
+        "completion_tokens_match_native_budget": true,
+        "unknown_usage_matches_native_budget": true,
+        "all_http_receipts_match_native_ids_and_usage": true
+      },
+      "logical_calls": 30,
+      "http_attempts": 33,
+      "known_usage_attempts": 30,
+      "unknown_usage_attempts": 3,
+      "known_prompt_tokens": 966603,
+      "known_completion_tokens": 57566,
+      "http_status_counts": {
+        "200": 30,
+        "504": 2,
+        "429": 1
+      },
+      "source_node_attempts": {
+        "router": 1,
+        "coding.model": 28,
+        "internal_review": 4
+      },
+      "phase_attempts": {
+        "router": 1,
+        "unplanned": 3,
+        "planned": 1,
+        "sealed": 8,
+        "executed_failed": 15,
+        "finalized": 5
+      }
+    },
+    {
+      "case": "R22_G1_2",
+      "checks": {
+        "unmetered_logical_calls_zero": true,
+        "http_count_matches_native_budget": true,
+        "logical_count_matches_native_budget": true,
+        "prompt_tokens_match_native_budget": true,
+        "completion_tokens_match_native_budget": true,
+        "unknown_usage_matches_native_budget": true,
+        "all_http_receipts_match_native_ids_and_usage": true
+      },
+      "logical_calls": 18,
+      "http_attempts": 18,
+      "known_usage_attempts": 18,
+      "unknown_usage_attempts": 0,
+      "known_prompt_tokens": 145261,
+      "known_completion_tokens": 25707,
+      "http_status_counts": {
+        "200": 18
+      },
+      "source_node_attempts": {
+        "router": 1,
+        "coding.model": 17
+      },
+      "phase_attempts": {
+        "router": 1,
+        "unplanned": 3,
+        "planned": 14
+      }
+    },
+    {
+      "case": "R22_G1_3",
+      "checks": {
+        "unmetered_logical_calls_zero": true,
+        "http_count_matches_native_budget": true,
+        "logical_count_matches_native_budget": true,
+        "prompt_tokens_match_native_budget": true,
+        "completion_tokens_match_native_budget": true,
+        "unknown_usage_matches_native_budget": true,
+        "all_http_receipts_match_native_ids_and_usage": true
+      },
+      "logical_calls": 30,
+      "http_attempts": 30,
+      "known_usage_attempts": 30,
+      "unknown_usage_attempts": 0,
+      "known_prompt_tokens": 454816,
+      "known_completion_tokens": 30237,
+      "http_status_counts": {
+        "200": 30
+      },
+      "source_node_attempts": {
+        "router": 1,
+        "coding.model": 29
+      },
+      "phase_attempts": {
+        "router": 1,
+        "unplanned": 3,
+        "planned": 1,
+        "sealed": 8,
+        "executed_failed": 17
+      }
+    },
+    {
+      "case": "R22_G2_1",
+      "checks": {
+        "unmetered_logical_calls_zero": true,
+        "http_count_matches_native_budget": true,
+        "logical_count_matches_native_budget": true,
+        "prompt_tokens_match_native_budget": true,
+        "completion_tokens_match_native_budget": true,
+        "unknown_usage_matches_native_budget": true,
+        "all_http_receipts_match_native_ids_and_usage": true
+      },
+      "logical_calls": 30,
+      "http_attempts": 30,
+      "known_usage_attempts": 30,
+      "unknown_usage_attempts": 0,
+      "known_prompt_tokens": 463209,
+      "known_completion_tokens": 20899,
+      "http_status_counts": {
+        "200": 30
+      },
+      "source_node_attempts": {
+        "router": 1,
+        "coding.model": 29
+      },
+      "phase_attempts": {
+        "router": 1,
+        "unplanned": 3,
+        "planned": 1,
+        "sealed": 9,
+        "executed_failed": 16
+      }
+    },
+    {
+      "case": "R22_G2_2",
+      "checks": {
+        "unmetered_logical_calls_zero": true,
+        "http_count_matches_native_budget": true,
+        "logical_count_matches_native_budget": true,
+        "prompt_tokens_match_native_budget": true,
+        "completion_tokens_match_native_budget": true,
+        "unknown_usage_matches_native_budget": true,
+        "all_http_receipts_match_native_ids_and_usage": true
+      },
+      "logical_calls": 18,
+      "http_attempts": 18,
+      "known_usage_attempts": 18,
+      "unknown_usage_attempts": 0,
+      "known_prompt_tokens": 156602,
+      "known_completion_tokens": 20374,
+      "http_status_counts": {
+        "200": 18
+      },
+      "source_node_attempts": {
+        "router": 1,
+        "coding.model": 17
+      },
+      "phase_attempts": {
+        "router": 1,
+        "unplanned": 3,
+        "planned": 14
+      }
+    },
+    {
+      "case": "R22_G2_3",
+      "checks": {
+        "unmetered_logical_calls_zero": true,
+        "http_count_matches_native_budget": true,
+        "logical_count_matches_native_budget": true,
+        "prompt_tokens_match_native_budget": true,
+        "completion_tokens_match_native_budget": true,
+        "unknown_usage_matches_native_budget": true,
+        "all_http_receipts_match_native_ids_and_usage": true
+      },
+      "logical_calls": 18,
+      "http_attempts": 19,
+      "known_usage_attempts": 18,
+      "unknown_usage_attempts": 1,
+      "known_prompt_tokens": 158828,
+      "known_completion_tokens": 27225,
+      "http_status_counts": {
+        "200": 18,
+        "429": 1
+      },
+      "source_node_attempts": {
+        "router": 1,
+        "coding.model": 18
+      },
+      "phase_attempts": {
+        "router": 1,
+        "unplanned": 3,
+        "planned": 15
+      }
+    }
+  ],
+  "actual_analysis_entries": 6,
+  "completed_cases": 6,
+  "all_completed_case_native_meter_checks_passed": true,
+  "actual_upstream_http_requests": 148,
+  "completed_case_http_attempts": 148,
+  "known_prompt_tokens_completed_cases": 2345319,
+  "known_completion_tokens_completed_cases": 182008,
+  "unknown_usage_attempts_completed_cases": 4,
+  "unknown_is_not_zero": true
+}

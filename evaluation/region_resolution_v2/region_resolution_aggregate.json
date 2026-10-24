@@ -1,0 +1,5114 @@
+{
+  "source_sha256": "62b01ff7899cd760fc530a0de9a98041c9aacbb328874d1e066d14d05e622d8c",
+  "subjects": 21,
+  "template": "fsaverage",
+  "development_subjects": 20,
+  "skipped": [],
+  "parameters": {
+    "theta": 0.5,
+    "kappa": 0.8,
+    "pi": 0.8,
+    "tau": 0.2,
+    "thetas": [
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8
+    ]
+  },
+  "units": {
+    "accuracy": "both hemispheres combined, weighted by label count, then 20 subject median/min",
+    "C3_Dice": "each hemisphere x coarse region; fsaverage12 and IXI20 240 observations per method",
+    "stability": "original runner weighted mapping agreement; hemispheres averaged within subject, then subject distribution",
+    "theta": "original frozen weighted resolver sensitivity; hemisphere-level distributions; no parameter selection"
+  },
+  "accuracy": [
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject_accuracy": {
+        "IXI026": 0.9354838709677419,
+        "IXI045": 0.9354838709677419,
+        "IXI064": 0.9354838709677419,
+        "IXI095": 0.9354838709677419,
+        "IXI158": 0.9354838709677419,
+        "IXI198": 0.9354838709677419,
+        "IXI216": 0.9354838709677419,
+        "IXI267": 0.9354838709677419,
+        "IXI288": 0.9354838709677419,
+        "IXI294": 0.9354838709677419,
+        "IXI303": 0.9354838709677419,
+        "IXI307": 0.9354838709677419,
+        "IXI327": 0.9354838709677419,
+        "IXI353": 0.9354838709677419,
+        "IXI434": 0.9354838709677419,
+        "IXI442": 0.9354838709677419,
+        "IXI445": 0.9354838709677419,
+        "IXI542": 0.9354838709677419,
+        "IXI546": 0.9354838709677419,
+        "IXI625": 0.9354838709677419
+      },
+      "distribution": {
+        "n": 20,
+        "min": 0.9354838709677419,
+        "q25": 0.9354838709677419,
+        "median": 0.9354838709677419,
+        "q75": 0.9354838709677419,
+        "max": 0.9354838709677419,
+        "mean": 0.9354838709677419
+      },
+      "errors": 80
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "fsaverage",
+      "subject_accuracy": {
+        "fsaverage": 0.9354838709677419
+      },
+      "distribution": {
+        "n": 1,
+        "min": 0.9354838709677419,
+        "q25": 0.9354838709677419,
+        "median": 0.9354838709677419,
+        "q75": 0.9354838709677419,
+        "max": 0.9354838709677419,
+        "mean": 0.9354838709677419
+      },
+      "errors": 4
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject_accuracy": {
+        "IXI026": 1.0,
+        "IXI045": 1.0,
+        "IXI064": 1.0,
+        "IXI095": 1.0,
+        "IXI158": 1.0,
+        "IXI198": 1.0,
+        "IXI216": 1.0,
+        "IXI267": 1.0,
+        "IXI288": 1.0,
+        "IXI294": 1.0,
+        "IXI303": 1.0,
+        "IXI307": 1.0,
+        "IXI327": 1.0,
+        "IXI353": 1.0,
+        "IXI434": 1.0,
+        "IXI442": 1.0,
+        "IXI445": 1.0,
+        "IXI542": 1.0,
+        "IXI546": 1.0,
+        "IXI625": 1.0
+      },
+      "distribution": {
+        "n": 20,
+        "min": 1.0,
+        "q25": 1.0,
+        "median": 1.0,
+        "q75": 1.0,
+        "max": 1.0,
+        "mean": 1.0
+      },
+      "errors": 0
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "name_exact",
+      "cohort": "fsaverage",
+      "subject_accuracy": {
+        "fsaverage": 1.0
+      },
+      "distribution": {
+        "n": 1,
+        "min": 1.0,
+        "q25": 1.0,
+        "median": 1.0,
+        "q75": 1.0,
+        "max": 1.0,
+        "mean": 1.0
+      },
+      "errors": 0
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "overlap_unweighted",
+      "cohort": "IXI20",
+      "subject_accuracy": {
+        "IXI026": 1.0,
+        "IXI045": 1.0,
+        "IXI064": 1.0,
+        "IXI095": 0.9838709677419355,
+        "IXI158": 1.0,
+        "IXI198": 1.0,
+        "IXI216": 1.0,
+        "IXI267": 1.0,
+        "IXI288": 0.9838709677419355,
+        "IXI294": 1.0,
+        "IXI303": 1.0,
+        "IXI307": 1.0,
+        "IXI327": 1.0,
+        "IXI353": 1.0,
+        "IXI434": 1.0,
+        "IXI442": 1.0,
+        "IXI445": 1.0,
+        "IXI542": 1.0,
+        "IXI546": 1.0,
+        "IXI625": 1.0
+      },
+      "distribution": {
+        "n": 20,
+        "min": 0.9838709677419355,
+        "q25": 1.0,
+        "median": 1.0,
+        "q75": 1.0,
+        "max": 1.0,
+        "mean": 0.9983870967741936
+      },
+      "errors": 2
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "overlap_unweighted",
+      "cohort": "fsaverage",
+      "subject_accuracy": {
+        "fsaverage": 1.0
+      },
+      "distribution": {
+        "n": 1,
+        "min": 1.0,
+        "q25": 1.0,
+        "median": 1.0,
+        "q75": 1.0,
+        "max": 1.0,
+        "mean": 1.0
+      },
+      "errors": 0
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "overlap_weighted",
+      "cohort": "IXI20",
+      "subject_accuracy": {
+        "IXI026": 1.0,
+        "IXI045": 1.0,
+        "IXI064": 1.0,
+        "IXI095": 0.9838709677419355,
+        "IXI158": 1.0,
+        "IXI198": 1.0,
+        "IXI216": 1.0,
+        "IXI267": 1.0,
+        "IXI288": 0.9838709677419355,
+        "IXI294": 1.0,
+        "IXI303": 0.9838709677419355,
+        "IXI307": 1.0,
+        "IXI327": 1.0,
+        "IXI353": 1.0,
+        "IXI434": 1.0,
+        "IXI442": 1.0,
+        "IXI445": 1.0,
+        "IXI542": 1.0,
+        "IXI546": 1.0,
+        "IXI625": 1.0
+      },
+      "distribution": {
+        "n": 20,
+        "min": 0.9838709677419355,
+        "q25": 1.0,
+        "median": 1.0,
+        "q75": 1.0,
+        "max": 1.0,
+        "mean": 0.9975806451612903
+      },
+      "errors": 3
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "overlap_weighted",
+      "cohort": "fsaverage",
+      "subject_accuracy": {
+        "fsaverage": 1.0
+      },
+      "distribution": {
+        "n": 1,
+        "min": 1.0,
+        "q25": 1.0,
+        "median": 1.0,
+        "q75": 1.0,
+        "max": 1.0,
+        "mean": 1.0
+      },
+      "errors": 0
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject_accuracy": {
+        "IXI026": 0.9411764705882353,
+        "IXI045": 0.9411764705882353,
+        "IXI064": 0.9411764705882353,
+        "IXI095": 0.9411764705882353,
+        "IXI158": 0.9411764705882353,
+        "IXI198": 0.9411764705882353,
+        "IXI216": 0.9411764705882353,
+        "IXI267": 0.9411764705882353,
+        "IXI288": 0.9411764705882353,
+        "IXI294": 0.9411764705882353,
+        "IXI303": 0.9411764705882353,
+        "IXI307": 0.9411764705882353,
+        "IXI327": 0.9411764705882353,
+        "IXI353": 0.9411764705882353,
+        "IXI434": 0.9411764705882353,
+        "IXI442": 0.9411764705882353,
+        "IXI445": 0.9411764705882353,
+        "IXI542": 0.9411764705882353,
+        "IXI546": 0.9411764705882353,
+        "IXI625": 0.9411764705882353
+      },
+      "distribution": {
+        "n": 20,
+        "min": 0.9411764705882353,
+        "q25": 0.9411764705882353,
+        "median": 0.9411764705882353,
+        "q75": 0.9411764705882353,
+        "max": 0.9411764705882353,
+        "mean": 0.9411764705882353
+      },
+      "errors": 80
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "fsaverage",
+      "subject_accuracy": {
+        "fsaverage": 0.9411764705882353
+      },
+      "distribution": {
+        "n": 1,
+        "min": 0.9411764705882353,
+        "q25": 0.9411764705882353,
+        "median": 0.9411764705882353,
+        "q75": 0.9411764705882353,
+        "max": 0.9411764705882353,
+        "mean": 0.9411764705882353
+      },
+      "errors": 4
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject_accuracy": {
+        "IXI026": 0.9117647058823529,
+        "IXI045": 0.9117647058823529,
+        "IXI064": 0.9117647058823529,
+        "IXI095": 0.9117647058823529,
+        "IXI158": 0.9117647058823529,
+        "IXI198": 0.9117647058823529,
+        "IXI216": 0.9117647058823529,
+        "IXI267": 0.9117647058823529,
+        "IXI288": 0.9117647058823529,
+        "IXI294": 0.9117647058823529,
+        "IXI303": 0.9117647058823529,
+        "IXI307": 0.9117647058823529,
+        "IXI327": 0.9117647058823529,
+        "IXI353": 0.9117647058823529,
+        "IXI434": 0.9117647058823529,
+        "IXI442": 0.9117647058823529,
+        "IXI445": 0.9117647058823529,
+        "IXI542": 0.9117647058823529,
+        "IXI546": 0.9117647058823529,
+        "IXI625": 0.9117647058823529
+      },
+      "distribution": {
+        "n": 20,
+        "min": 0.9117647058823529,
+        "q25": 0.9117647058823529,
+        "median": 0.9117647058823529,
+        "q75": 0.9117647058823529,
+        "max": 0.9117647058823529,
+        "mean": 0.9117647058823529
+      },
+      "errors": 120
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "fsaverage",
+      "subject_accuracy": {
+        "fsaverage": 0.9117647058823529
+      },
+      "distribution": {
+        "n": 1,
+        "min": 0.9117647058823529,
+        "q25": 0.9117647058823529,
+        "median": 0.9117647058823529,
+        "q75": 0.9117647058823529,
+        "max": 0.9117647058823529,
+        "mean": 0.9117647058823529
+      },
+      "errors": 6
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "overlap_unweighted",
+      "cohort": "IXI20",
+      "subject_accuracy": {
+        "IXI026": 1.0,
+        "IXI045": 1.0,
+        "IXI064": 1.0,
+        "IXI095": 1.0,
+        "IXI158": 1.0,
+        "IXI198": 1.0,
+        "IXI216": 1.0,
+        "IXI267": 1.0,
+        "IXI288": 1.0,
+        "IXI294": 1.0,
+        "IXI303": 1.0,
+        "IXI307": 1.0,
+        "IXI327": 1.0,
+        "IXI353": 1.0,
+        "IXI434": 1.0,
+        "IXI442": 1.0,
+        "IXI445": 1.0,
+        "IXI542": 1.0,
+        "IXI546": 1.0,
+        "IXI625": 1.0
+      },
+      "distribution": {
+        "n": 20,
+        "min": 1.0,
+        "q25": 1.0,
+        "median": 1.0,
+        "q75": 1.0,
+        "max": 1.0,
+        "mean": 1.0
+      },
+      "errors": 0
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "overlap_unweighted",
+      "cohort": "fsaverage",
+      "subject_accuracy": {
+        "fsaverage": 1.0
+      },
+      "distribution": {
+        "n": 1,
+        "min": 1.0,
+        "q25": 1.0,
+        "median": 1.0,
+        "q75": 1.0,
+        "max": 1.0,
+        "mean": 1.0
+      },
+      "errors": 0
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "overlap_weighted",
+      "cohort": "IXI20",
+      "subject_accuracy": {
+        "IXI026": 1.0,
+        "IXI045": 1.0,
+        "IXI064": 1.0,
+        "IXI095": 1.0,
+        "IXI158": 1.0,
+        "IXI198": 1.0,
+        "IXI216": 1.0,
+        "IXI267": 1.0,
+        "IXI288": 1.0,
+        "IXI294": 1.0,
+        "IXI303": 1.0,
+        "IXI307": 1.0,
+        "IXI327": 1.0,
+        "IXI353": 1.0,
+        "IXI434": 1.0,
+        "IXI442": 1.0,
+        "IXI445": 1.0,
+        "IXI542": 1.0,
+        "IXI546": 1.0,
+        "IXI625": 1.0
+      },
+      "distribution": {
+        "n": 20,
+        "min": 1.0,
+        "q25": 1.0,
+        "median": 1.0,
+        "q75": 1.0,
+        "max": 1.0,
+        "mean": 1.0
+      },
+      "errors": 0
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "overlap_weighted",
+      "cohort": "fsaverage",
+      "subject_accuracy": {
+        "fsaverage": 1.0
+      },
+      "distribution": {
+        "n": 1,
+        "min": 1.0,
+        "q25": 1.0,
+        "median": 1.0,
+        "q75": 1.0,
+        "max": 1.0,
+        "mean": 1.0
+      },
+      "errors": 0
+    }
+  ],
+  "errors": [
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "fsaverage",
+      "subject": "fsaverage",
+      "hemisphere": "lh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "fsaverage",
+      "subject": "fsaverage",
+      "hemisphere": "lh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "fsaverage",
+      "subject": "fsaverage",
+      "hemisphere": "lh",
+      "error": {
+        "label": "bankssts",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "fsaverage",
+      "subject": "fsaverage",
+      "hemisphere": "lh",
+      "error": {
+        "label": "frontalpole",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "fsaverage",
+      "subject": "fsaverage",
+      "hemisphere": "lh",
+      "error": {
+        "label": "temporalpole",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "fsaverage",
+      "subject": "fsaverage",
+      "hemisphere": "lh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "fsaverage",
+      "subject": "fsaverage",
+      "hemisphere": "lh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "fsaverage",
+      "subject": "fsaverage",
+      "hemisphere": "rh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "fsaverage",
+      "subject": "fsaverage",
+      "hemisphere": "rh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "fsaverage",
+      "subject": "fsaverage",
+      "hemisphere": "rh",
+      "error": {
+        "label": "bankssts",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "fsaverage",
+      "subject": "fsaverage",
+      "hemisphere": "rh",
+      "error": {
+        "label": "frontalpole",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "fsaverage",
+      "subject": "fsaverage",
+      "hemisphere": "rh",
+      "error": {
+        "label": "temporalpole",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "fsaverage",
+      "subject": "fsaverage",
+      "hemisphere": "rh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "fsaverage",
+      "subject": "fsaverage",
+      "hemisphere": "rh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI026",
+      "hemisphere": "lh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI026",
+      "hemisphere": "lh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI026",
+      "hemisphere": "lh",
+      "error": {
+        "label": "bankssts",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI026",
+      "hemisphere": "lh",
+      "error": {
+        "label": "frontalpole",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI026",
+      "hemisphere": "lh",
+      "error": {
+        "label": "temporalpole",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI026",
+      "hemisphere": "lh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI026",
+      "hemisphere": "lh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI026",
+      "hemisphere": "rh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI026",
+      "hemisphere": "rh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI026",
+      "hemisphere": "rh",
+      "error": {
+        "label": "bankssts",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI026",
+      "hemisphere": "rh",
+      "error": {
+        "label": "frontalpole",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI026",
+      "hemisphere": "rh",
+      "error": {
+        "label": "temporalpole",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI026",
+      "hemisphere": "rh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI026",
+      "hemisphere": "rh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI045",
+      "hemisphere": "lh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI045",
+      "hemisphere": "lh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI045",
+      "hemisphere": "lh",
+      "error": {
+        "label": "bankssts",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI045",
+      "hemisphere": "lh",
+      "error": {
+        "label": "frontalpole",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI045",
+      "hemisphere": "lh",
+      "error": {
+        "label": "temporalpole",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI045",
+      "hemisphere": "lh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI045",
+      "hemisphere": "lh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI045",
+      "hemisphere": "rh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI045",
+      "hemisphere": "rh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI045",
+      "hemisphere": "rh",
+      "error": {
+        "label": "bankssts",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI045",
+      "hemisphere": "rh",
+      "error": {
+        "label": "frontalpole",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI045",
+      "hemisphere": "rh",
+      "error": {
+        "label": "temporalpole",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI045",
+      "hemisphere": "rh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI045",
+      "hemisphere": "rh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI064",
+      "hemisphere": "lh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI064",
+      "hemisphere": "lh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI064",
+      "hemisphere": "lh",
+      "error": {
+        "label": "bankssts",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI064",
+      "hemisphere": "lh",
+      "error": {
+        "label": "frontalpole",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI064",
+      "hemisphere": "lh",
+      "error": {
+        "label": "temporalpole",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI064",
+      "hemisphere": "lh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI064",
+      "hemisphere": "lh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI064",
+      "hemisphere": "rh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI064",
+      "hemisphere": "rh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI064",
+      "hemisphere": "rh",
+      "error": {
+        "label": "bankssts",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI064",
+      "hemisphere": "rh",
+      "error": {
+        "label": "frontalpole",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI064",
+      "hemisphere": "rh",
+      "error": {
+        "label": "temporalpole",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI064",
+      "hemisphere": "rh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI064",
+      "hemisphere": "rh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI095",
+      "hemisphere": "lh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI095",
+      "hemisphere": "lh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI095",
+      "hemisphere": "lh",
+      "error": {
+        "label": "bankssts",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI095",
+      "hemisphere": "lh",
+      "error": {
+        "label": "frontalpole",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI095",
+      "hemisphere": "lh",
+      "error": {
+        "label": "temporalpole",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI095",
+      "hemisphere": "lh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI095",
+      "hemisphere": "lh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "overlap_weighted",
+      "cohort": "IXI20",
+      "subject": "IXI095",
+      "hemisphere": "rh",
+      "error": {
+        "label": "rostralanteriorcingulate",
+        "predicted": "frontal",
+        "reference": "cingulate"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "overlap_unweighted",
+      "cohort": "IXI20",
+      "subject": "IXI095",
+      "hemisphere": "rh",
+      "error": {
+        "label": "rostralanteriorcingulate",
+        "predicted": "frontal",
+        "reference": "cingulate"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI095",
+      "hemisphere": "rh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI095",
+      "hemisphere": "rh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI095",
+      "hemisphere": "rh",
+      "error": {
+        "label": "bankssts",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI095",
+      "hemisphere": "rh",
+      "error": {
+        "label": "frontalpole",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI095",
+      "hemisphere": "rh",
+      "error": {
+        "label": "temporalpole",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI095",
+      "hemisphere": "rh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI095",
+      "hemisphere": "rh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI158",
+      "hemisphere": "lh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI158",
+      "hemisphere": "lh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI158",
+      "hemisphere": "lh",
+      "error": {
+        "label": "bankssts",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI158",
+      "hemisphere": "lh",
+      "error": {
+        "label": "frontalpole",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI158",
+      "hemisphere": "lh",
+      "error": {
+        "label": "temporalpole",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI158",
+      "hemisphere": "lh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI158",
+      "hemisphere": "lh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI158",
+      "hemisphere": "rh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI158",
+      "hemisphere": "rh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI158",
+      "hemisphere": "rh",
+      "error": {
+        "label": "bankssts",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI158",
+      "hemisphere": "rh",
+      "error": {
+        "label": "frontalpole",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI158",
+      "hemisphere": "rh",
+      "error": {
+        "label": "temporalpole",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI158",
+      "hemisphere": "rh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI158",
+      "hemisphere": "rh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI198",
+      "hemisphere": "lh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI198",
+      "hemisphere": "lh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI198",
+      "hemisphere": "lh",
+      "error": {
+        "label": "bankssts",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI198",
+      "hemisphere": "lh",
+      "error": {
+        "label": "frontalpole",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI198",
+      "hemisphere": "lh",
+      "error": {
+        "label": "temporalpole",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI198",
+      "hemisphere": "lh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI198",
+      "hemisphere": "lh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI198",
+      "hemisphere": "rh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI198",
+      "hemisphere": "rh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI198",
+      "hemisphere": "rh",
+      "error": {
+        "label": "bankssts",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI198",
+      "hemisphere": "rh",
+      "error": {
+        "label": "frontalpole",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI198",
+      "hemisphere": "rh",
+      "error": {
+        "label": "temporalpole",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI198",
+      "hemisphere": "rh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI198",
+      "hemisphere": "rh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI216",
+      "hemisphere": "lh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI216",
+      "hemisphere": "lh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI216",
+      "hemisphere": "lh",
+      "error": {
+        "label": "bankssts",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI216",
+      "hemisphere": "lh",
+      "error": {
+        "label": "frontalpole",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI216",
+      "hemisphere": "lh",
+      "error": {
+        "label": "temporalpole",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI216",
+      "hemisphere": "lh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI216",
+      "hemisphere": "lh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI216",
+      "hemisphere": "rh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI216",
+      "hemisphere": "rh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI216",
+      "hemisphere": "rh",
+      "error": {
+        "label": "bankssts",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI216",
+      "hemisphere": "rh",
+      "error": {
+        "label": "frontalpole",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI216",
+      "hemisphere": "rh",
+      "error": {
+        "label": "temporalpole",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI216",
+      "hemisphere": "rh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI216",
+      "hemisphere": "rh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI267",
+      "hemisphere": "lh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI267",
+      "hemisphere": "lh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI267",
+      "hemisphere": "lh",
+      "error": {
+        "label": "bankssts",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI267",
+      "hemisphere": "lh",
+      "error": {
+        "label": "frontalpole",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI267",
+      "hemisphere": "lh",
+      "error": {
+        "label": "temporalpole",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI267",
+      "hemisphere": "lh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI267",
+      "hemisphere": "lh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI267",
+      "hemisphere": "rh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI267",
+      "hemisphere": "rh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI267",
+      "hemisphere": "rh",
+      "error": {
+        "label": "bankssts",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI267",
+      "hemisphere": "rh",
+      "error": {
+        "label": "frontalpole",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI267",
+      "hemisphere": "rh",
+      "error": {
+        "label": "temporalpole",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI267",
+      "hemisphere": "rh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI267",
+      "hemisphere": "rh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "overlap_weighted",
+      "cohort": "IXI20",
+      "subject": "IXI288",
+      "hemisphere": "lh",
+      "error": {
+        "label": "caudalanteriorcingulate",
+        "predicted": "frontal",
+        "reference": "cingulate"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "overlap_unweighted",
+      "cohort": "IXI20",
+      "subject": "IXI288",
+      "hemisphere": "lh",
+      "error": {
+        "label": "caudalanteriorcingulate",
+        "predicted": "frontal",
+        "reference": "cingulate"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI288",
+      "hemisphere": "lh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI288",
+      "hemisphere": "lh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI288",
+      "hemisphere": "lh",
+      "error": {
+        "label": "bankssts",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI288",
+      "hemisphere": "lh",
+      "error": {
+        "label": "frontalpole",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI288",
+      "hemisphere": "lh",
+      "error": {
+        "label": "temporalpole",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI288",
+      "hemisphere": "lh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI288",
+      "hemisphere": "lh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI288",
+      "hemisphere": "rh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI288",
+      "hemisphere": "rh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI288",
+      "hemisphere": "rh",
+      "error": {
+        "label": "bankssts",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI288",
+      "hemisphere": "rh",
+      "error": {
+        "label": "frontalpole",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI288",
+      "hemisphere": "rh",
+      "error": {
+        "label": "temporalpole",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI288",
+      "hemisphere": "rh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI288",
+      "hemisphere": "rh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI294",
+      "hemisphere": "lh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI294",
+      "hemisphere": "lh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI294",
+      "hemisphere": "lh",
+      "error": {
+        "label": "bankssts",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI294",
+      "hemisphere": "lh",
+      "error": {
+        "label": "frontalpole",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI294",
+      "hemisphere": "lh",
+      "error": {
+        "label": "temporalpole",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI294",
+      "hemisphere": "lh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI294",
+      "hemisphere": "lh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI294",
+      "hemisphere": "rh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI294",
+      "hemisphere": "rh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI294",
+      "hemisphere": "rh",
+      "error": {
+        "label": "bankssts",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI294",
+      "hemisphere": "rh",
+      "error": {
+        "label": "frontalpole",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI294",
+      "hemisphere": "rh",
+      "error": {
+        "label": "temporalpole",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI294",
+      "hemisphere": "rh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI294",
+      "hemisphere": "rh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "overlap_weighted",
+      "cohort": "IXI20",
+      "subject": "IXI303",
+      "hemisphere": "lh",
+      "error": {
+        "label": "caudalanteriorcingulate",
+        "predicted": "frontal",
+        "reference": "cingulate"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI303",
+      "hemisphere": "lh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI303",
+      "hemisphere": "lh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI303",
+      "hemisphere": "lh",
+      "error": {
+        "label": "bankssts",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI303",
+      "hemisphere": "lh",
+      "error": {
+        "label": "frontalpole",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI303",
+      "hemisphere": "lh",
+      "error": {
+        "label": "temporalpole",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI303",
+      "hemisphere": "lh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI303",
+      "hemisphere": "lh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI303",
+      "hemisphere": "rh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI303",
+      "hemisphere": "rh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI303",
+      "hemisphere": "rh",
+      "error": {
+        "label": "bankssts",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI303",
+      "hemisphere": "rh",
+      "error": {
+        "label": "frontalpole",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI303",
+      "hemisphere": "rh",
+      "error": {
+        "label": "temporalpole",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI303",
+      "hemisphere": "rh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI303",
+      "hemisphere": "rh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI307",
+      "hemisphere": "lh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI307",
+      "hemisphere": "lh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI307",
+      "hemisphere": "lh",
+      "error": {
+        "label": "bankssts",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI307",
+      "hemisphere": "lh",
+      "error": {
+        "label": "frontalpole",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI307",
+      "hemisphere": "lh",
+      "error": {
+        "label": "temporalpole",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI307",
+      "hemisphere": "lh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI307",
+      "hemisphere": "lh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI307",
+      "hemisphere": "rh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI307",
+      "hemisphere": "rh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI307",
+      "hemisphere": "rh",
+      "error": {
+        "label": "bankssts",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI307",
+      "hemisphere": "rh",
+      "error": {
+        "label": "frontalpole",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI307",
+      "hemisphere": "rh",
+      "error": {
+        "label": "temporalpole",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI307",
+      "hemisphere": "rh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI307",
+      "hemisphere": "rh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI327",
+      "hemisphere": "lh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI327",
+      "hemisphere": "lh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI327",
+      "hemisphere": "lh",
+      "error": {
+        "label": "bankssts",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI327",
+      "hemisphere": "lh",
+      "error": {
+        "label": "frontalpole",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI327",
+      "hemisphere": "lh",
+      "error": {
+        "label": "temporalpole",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI327",
+      "hemisphere": "lh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI327",
+      "hemisphere": "lh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI327",
+      "hemisphere": "rh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI327",
+      "hemisphere": "rh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI327",
+      "hemisphere": "rh",
+      "error": {
+        "label": "bankssts",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI327",
+      "hemisphere": "rh",
+      "error": {
+        "label": "frontalpole",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI327",
+      "hemisphere": "rh",
+      "error": {
+        "label": "temporalpole",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI327",
+      "hemisphere": "rh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI327",
+      "hemisphere": "rh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI353",
+      "hemisphere": "lh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI353",
+      "hemisphere": "lh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI353",
+      "hemisphere": "lh",
+      "error": {
+        "label": "bankssts",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI353",
+      "hemisphere": "lh",
+      "error": {
+        "label": "frontalpole",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI353",
+      "hemisphere": "lh",
+      "error": {
+        "label": "temporalpole",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI353",
+      "hemisphere": "lh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI353",
+      "hemisphere": "lh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI353",
+      "hemisphere": "rh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI353",
+      "hemisphere": "rh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI353",
+      "hemisphere": "rh",
+      "error": {
+        "label": "bankssts",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI353",
+      "hemisphere": "rh",
+      "error": {
+        "label": "frontalpole",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI353",
+      "hemisphere": "rh",
+      "error": {
+        "label": "temporalpole",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI353",
+      "hemisphere": "rh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI353",
+      "hemisphere": "rh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI434",
+      "hemisphere": "lh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI434",
+      "hemisphere": "lh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI434",
+      "hemisphere": "lh",
+      "error": {
+        "label": "bankssts",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI434",
+      "hemisphere": "lh",
+      "error": {
+        "label": "frontalpole",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI434",
+      "hemisphere": "lh",
+      "error": {
+        "label": "temporalpole",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI434",
+      "hemisphere": "lh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI434",
+      "hemisphere": "lh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI434",
+      "hemisphere": "rh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI434",
+      "hemisphere": "rh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI434",
+      "hemisphere": "rh",
+      "error": {
+        "label": "bankssts",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI434",
+      "hemisphere": "rh",
+      "error": {
+        "label": "frontalpole",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI434",
+      "hemisphere": "rh",
+      "error": {
+        "label": "temporalpole",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI434",
+      "hemisphere": "rh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI434",
+      "hemisphere": "rh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI442",
+      "hemisphere": "lh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI442",
+      "hemisphere": "lh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI442",
+      "hemisphere": "lh",
+      "error": {
+        "label": "bankssts",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI442",
+      "hemisphere": "lh",
+      "error": {
+        "label": "frontalpole",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI442",
+      "hemisphere": "lh",
+      "error": {
+        "label": "temporalpole",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI442",
+      "hemisphere": "lh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI442",
+      "hemisphere": "lh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI442",
+      "hemisphere": "rh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI442",
+      "hemisphere": "rh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI442",
+      "hemisphere": "rh",
+      "error": {
+        "label": "bankssts",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI442",
+      "hemisphere": "rh",
+      "error": {
+        "label": "frontalpole",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI442",
+      "hemisphere": "rh",
+      "error": {
+        "label": "temporalpole",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI442",
+      "hemisphere": "rh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI442",
+      "hemisphere": "rh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI445",
+      "hemisphere": "lh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI445",
+      "hemisphere": "lh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI445",
+      "hemisphere": "lh",
+      "error": {
+        "label": "bankssts",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI445",
+      "hemisphere": "lh",
+      "error": {
+        "label": "frontalpole",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI445",
+      "hemisphere": "lh",
+      "error": {
+        "label": "temporalpole",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI445",
+      "hemisphere": "lh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI445",
+      "hemisphere": "lh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI445",
+      "hemisphere": "rh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI445",
+      "hemisphere": "rh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI445",
+      "hemisphere": "rh",
+      "error": {
+        "label": "bankssts",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI445",
+      "hemisphere": "rh",
+      "error": {
+        "label": "frontalpole",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI445",
+      "hemisphere": "rh",
+      "error": {
+        "label": "temporalpole",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI445",
+      "hemisphere": "rh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI445",
+      "hemisphere": "rh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI542",
+      "hemisphere": "lh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI542",
+      "hemisphere": "lh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI542",
+      "hemisphere": "lh",
+      "error": {
+        "label": "bankssts",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI542",
+      "hemisphere": "lh",
+      "error": {
+        "label": "frontalpole",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI542",
+      "hemisphere": "lh",
+      "error": {
+        "label": "temporalpole",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI542",
+      "hemisphere": "lh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI542",
+      "hemisphere": "lh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI542",
+      "hemisphere": "rh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI542",
+      "hemisphere": "rh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI542",
+      "hemisphere": "rh",
+      "error": {
+        "label": "bankssts",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI542",
+      "hemisphere": "rh",
+      "error": {
+        "label": "frontalpole",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI542",
+      "hemisphere": "rh",
+      "error": {
+        "label": "temporalpole",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI542",
+      "hemisphere": "rh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI542",
+      "hemisphere": "rh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI546",
+      "hemisphere": "lh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI546",
+      "hemisphere": "lh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI546",
+      "hemisphere": "lh",
+      "error": {
+        "label": "bankssts",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI546",
+      "hemisphere": "lh",
+      "error": {
+        "label": "frontalpole",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI546",
+      "hemisphere": "lh",
+      "error": {
+        "label": "temporalpole",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI546",
+      "hemisphere": "lh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI546",
+      "hemisphere": "lh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI546",
+      "hemisphere": "rh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI546",
+      "hemisphere": "rh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI546",
+      "hemisphere": "rh",
+      "error": {
+        "label": "bankssts",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI546",
+      "hemisphere": "rh",
+      "error": {
+        "label": "frontalpole",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI546",
+      "hemisphere": "rh",
+      "error": {
+        "label": "temporalpole",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI546",
+      "hemisphere": "rh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI546",
+      "hemisphere": "rh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI625",
+      "hemisphere": "lh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI625",
+      "hemisphere": "lh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI625",
+      "hemisphere": "lh",
+      "error": {
+        "label": "bankssts",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI625",
+      "hemisphere": "lh",
+      "error": {
+        "label": "frontalpole",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI625",
+      "hemisphere": "lh",
+      "error": {
+        "label": "temporalpole",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI625",
+      "hemisphere": "lh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI625",
+      "hemisphere": "lh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI625",
+      "hemisphere": "rh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI625",
+      "hemisphere": "rh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI625",
+      "hemisphere": "rh",
+      "error": {
+        "label": "bankssts",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI625",
+      "hemisphere": "rh",
+      "error": {
+        "label": "frontalpole",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "subject": "IXI625",
+      "hemisphere": "rh",
+      "error": {
+        "label": "temporalpole",
+        "predicted": null,
+        "reference": "temporal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI625",
+      "hemisphere": "rh",
+      "error": {
+        "label": "parstriangularis",
+        "predicted": null,
+        "reference": "frontal"
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "subject": "IXI625",
+      "hemisphere": "rh",
+      "error": {
+        "label": "precuneus",
+        "predicted": null,
+        "reference": "parietal"
+      }
+    }
+  ],
+  "C3_dice": [
+    {
+      "condition": "C3_DK_to_Destrieux",
+      "method": "keyword",
+      "cohort": "IXI20",
+      "distribution": {
+        "n": 240,
+        "min": 0.4649618130600726,
+        "q25": 0.589059227821839,
+        "median": 0.6595073054111598,
+        "q75": 0.8136218125503848,
+        "max": 0.9120070406277397,
+        "mean": 0.6909524921920955
+      }
+    },
+    {
+      "condition": "C3_DK_to_Destrieux",
+      "method": "keyword",
+      "cohort": "fsaverage",
+      "distribution": {
+        "n": 12,
+        "min": 0.5097410018596209,
+        "q25": 0.5800807810242691,
+        "median": 0.6239854860031174,
+        "q75": 0.7863748268499009,
+        "max": 0.8929828619264584,
+        "mean": 0.6744483293579902
+      }
+    },
+    {
+      "condition": "C3_DK_to_Destrieux",
+      "method": "name_exact",
+      "cohort": "IXI20",
+      "distribution": {
+        "n": 240,
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 0.0,
+        "mean": 0.0
+      }
+    },
+    {
+      "condition": "C3_DK_to_Destrieux",
+      "method": "name_exact",
+      "cohort": "fsaverage",
+      "distribution": {
+        "n": 12,
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 0.0,
+        "max": 0.0,
+        "mean": 0.0
+      }
+    },
+    {
+      "condition": "C3_DK_to_Destrieux",
+      "method": "overlap_unweighted",
+      "cohort": "IXI20",
+      "distribution": {
+        "n": 240,
+        "min": 0.47754087899928344,
+        "q25": 0.6888325815365365,
+        "median": 0.8525669275313108,
+        "q75": 0.902526095247903,
+        "max": 0.9410243480990136,
+        "mean": 0.8082036289425145
+      }
+    },
+    {
+      "condition": "C3_DK_to_Destrieux",
+      "method": "overlap_unweighted",
+      "cohort": "fsaverage",
+      "distribution": {
+        "n": 12,
+        "min": 0.6330225607445739,
+        "q25": 0.7091810335522896,
+        "median": 0.8488804314990966,
+        "q75": 0.9039535621758128,
+        "max": 0.9223389231143889,
+        "mean": 0.8125326247557054
+      }
+    },
+    {
+      "condition": "C3_DK_to_Destrieux",
+      "method": "overlap_weighted",
+      "cohort": "IXI20",
+      "distribution": {
+        "n": 240,
+        "min": 0.47754087899928344,
+        "q25": 0.6948745499462666,
+        "median": 0.8521800450086425,
+        "q75": 0.902526095247903,
+        "max": 0.9410243480990136,
+        "mean": 0.8099327232818514
+      }
+    },
+    {
+      "condition": "C3_DK_to_Destrieux",
+      "method": "overlap_weighted",
+      "cohort": "fsaverage",
+      "distribution": {
+        "n": 12,
+        "min": 0.6330225607445739,
+        "q25": 0.7091810335522896,
+        "median": 0.8509644422441802,
+        "q75": 0.9039535621758128,
+        "max": 0.9223389231143889,
+        "mean": 0.813008155859463
+      }
+    }
+  ],
+  "stability": [
+    {
+      "condition": "C1_DK_to_DKT",
+      "method": "overlap_weighted",
+      "anchor": "fsaverage",
+      "subject_mean_hemisphere_agreement": {
+        "IXI026": 1.0,
+        "IXI045": 1.0,
+        "IXI064": 1.0,
+        "IXI095": 0.9838709677419355,
+        "IXI158": 1.0,
+        "IXI198": 1.0,
+        "IXI216": 1.0,
+        "IXI267": 1.0,
+        "IXI288": 0.9838709677419355,
+        "IXI294": 1.0,
+        "IXI303": 0.9838709677419355,
+        "IXI307": 1.0,
+        "IXI327": 1.0,
+        "IXI353": 1.0,
+        "IXI434": 1.0,
+        "IXI442": 1.0,
+        "IXI445": 1.0,
+        "IXI542": 1.0,
+        "IXI546": 1.0,
+        "IXI625": 1.0
+      },
+      "distribution": {
+        "n": 20,
+        "min": 0.9838709677419355,
+        "q25": 1.0,
+        "median": 1.0,
+        "q75": 1.0,
+        "max": 1.0,
+        "mean": 0.9975806451612903
+      }
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "method": "overlap_weighted",
+      "anchor": "fsaverage",
+      "subject_mean_hemisphere_agreement": {
+        "IXI026": 1.0,
+        "IXI045": 1.0,
+        "IXI064": 1.0,
+        "IXI095": 1.0,
+        "IXI158": 1.0,
+        "IXI198": 1.0,
+        "IXI216": 1.0,
+        "IXI267": 1.0,
+        "IXI288": 1.0,
+        "IXI294": 1.0,
+        "IXI303": 1.0,
+        "IXI307": 1.0,
+        "IXI327": 1.0,
+        "IXI353": 1.0,
+        "IXI434": 1.0,
+        "IXI442": 1.0,
+        "IXI445": 1.0,
+        "IXI542": 1.0,
+        "IXI546": 1.0,
+        "IXI625": 1.0
+      },
+      "distribution": {
+        "n": 20,
+        "min": 1.0,
+        "q25": 1.0,
+        "median": 1.0,
+        "q75": 1.0,
+        "max": 1.0,
+        "mean": 1.0
+      }
+    },
+    {
+      "condition": "C3_DK_to_Destrieux",
+      "method": "overlap_weighted",
+      "anchor": "fsaverage",
+      "subject_mean_hemisphere_agreement": {
+        "IXI026": 0.972972972972973,
+        "IXI045": 0.972972972972973,
+        "IXI064": 0.972972972972973,
+        "IXI095": 0.972972972972973,
+        "IXI158": 0.9932432432432432,
+        "IXI198": 0.9662162162162162,
+        "IXI216": 0.9797297297297297,
+        "IXI267": 0.9594594594594594,
+        "IXI288": 0.9594594594594594,
+        "IXI294": 0.9797297297297297,
+        "IXI303": 0.9864864864864865,
+        "IXI307": 0.9864864864864865,
+        "IXI327": 0.9864864864864865,
+        "IXI353": 0.972972972972973,
+        "IXI434": 0.9594594594594594,
+        "IXI442": 0.9662162162162162,
+        "IXI445": 0.9797297297297298,
+        "IXI542": 0.9797297297297298,
+        "IXI546": 0.9662162162162162,
+        "IXI625": 0.9662162162162162
+      },
+      "distribution": {
+        "n": 20,
+        "min": 0.9594594594594594,
+        "q25": 0.9662162162162162,
+        "median": 0.972972972972973,
+        "q75": 0.9797297297297298,
+        "max": 0.9932432432432432,
+        "mean": 0.9739864864864866
+      }
+    }
+  ],
+  "theta_sensitivity": [
+    {
+      "condition": "C1_DK_to_DKT",
+      "cohort": "IXI20",
+      "theta": 0.3,
+      "accuracy": {
+        "n": 40,
+        "min": 0.967741935483871,
+        "q25": 1.0,
+        "median": 1.0,
+        "q75": 1.0,
+        "max": 1.0,
+        "mean": 0.9975806451612903
+      },
+      "mean_dice": {
+        "n": 40,
+        "min": 0.8955558909354394,
+        "q25": 0.9239194327774485,
+        "median": 0.9376850261665762,
+        "q75": 0.9499193500029417,
+        "max": 0.9563433290104576,
+        "mean": 0.9354753313792162
+      },
+      "unassigned": 0,
+      "resolved_regions": 199
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "cohort": "IXI20",
+      "theta": 0.4,
+      "accuracy": {
+        "n": 40,
+        "min": 0.967741935483871,
+        "q25": 1.0,
+        "median": 1.0,
+        "q75": 1.0,
+        "max": 1.0,
+        "mean": 0.9975806451612903
+      },
+      "mean_dice": {
+        "n": 40,
+        "min": 0.8955558909354394,
+        "q25": 0.9239194327774485,
+        "median": 0.9376850261665762,
+        "q75": 0.9499193500029417,
+        "max": 0.9563433290104576,
+        "mean": 0.9354753313792162
+      },
+      "unassigned": 0,
+      "resolved_regions": 199
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "cohort": "IXI20",
+      "theta": 0.5,
+      "accuracy": {
+        "n": 40,
+        "min": 0.967741935483871,
+        "q25": 1.0,
+        "median": 1.0,
+        "q75": 1.0,
+        "max": 1.0,
+        "mean": 0.9975806451612903
+      },
+      "mean_dice": {
+        "n": 40,
+        "min": 0.8955558909354394,
+        "q25": 0.9239194327774485,
+        "median": 0.9376850261665762,
+        "q75": 0.9499193500029417,
+        "max": 0.9563433290104576,
+        "mean": 0.9354753313792162
+      },
+      "unassigned": 0,
+      "resolved_regions": 199
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "cohort": "IXI20",
+      "theta": 0.6,
+      "accuracy": {
+        "n": 40,
+        "min": 0.9354838709677419,
+        "q25": 1.0,
+        "median": 1.0,
+        "q75": 1.0,
+        "max": 1.0,
+        "mean": 0.9919354838709677
+      },
+      "mean_dice": {
+        "n": 40,
+        "min": 0.8952690568391132,
+        "q25": 0.9213242881252808,
+        "median": 0.9376850261665762,
+        "q75": 0.9498652824470053,
+        "max": 0.9563433290104576,
+        "mean": 0.9342118665062611
+      },
+      "unassigned": 10,
+      "resolved_regions": 187
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "cohort": "IXI20",
+      "theta": 0.7,
+      "accuracy": {
+        "n": 40,
+        "min": 0.9032258064516129,
+        "q25": 0.9354838709677419,
+        "median": 0.967741935483871,
+        "q75": 1.0,
+        "max": 1.0,
+        "mean": 0.967741935483871
+      },
+      "mean_dice": {
+        "n": 40,
+        "min": 0.8757261725904337,
+        "q25": 0.9001826917473256,
+        "median": 0.9302685249658006,
+        "q75": 0.9495538920535438,
+        "max": 0.9563433290104576,
+        "mean": 0.9243301888168582
+      },
+      "unassigned": 40,
+      "resolved_regions": 161
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "cohort": "IXI20",
+      "theta": 0.8,
+      "accuracy": {
+        "n": 40,
+        "min": 0.9032258064516129,
+        "q25": 0.9032258064516129,
+        "median": 0.9354838709677419,
+        "q75": 0.9354838709677419,
+        "max": 0.967741935483871,
+        "mean": 0.9274193548387096
+      },
+      "mean_dice": {
+        "n": 40,
+        "min": 0.8704007633154393,
+        "q25": 0.8883455276221773,
+        "median": 0.9110058265743017,
+        "q75": 0.9320650768695996,
+        "max": 0.9496949851004034,
+        "mean": 0.9102772977753304
+      },
+      "unassigned": 90,
+      "resolved_regions": 74
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "cohort": "fsaverage",
+      "theta": 0.3,
+      "accuracy": {
+        "n": 2,
+        "min": 1.0,
+        "q25": 1.0,
+        "median": 1.0,
+        "q75": 1.0,
+        "max": 1.0,
+        "mean": 1.0
+      },
+      "mean_dice": {
+        "n": 2,
+        "min": 0.9410161184470386,
+        "q25": 0.9466200276779269,
+        "median": 0.9522239369088152,
+        "q75": 0.9578278461397035,
+        "max": 0.9634317553705918,
+        "mean": 0.9522239369088152
+      },
+      "unassigned": 0,
+      "resolved_regions": 12
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "cohort": "fsaverage",
+      "theta": 0.4,
+      "accuracy": {
+        "n": 2,
+        "min": 1.0,
+        "q25": 1.0,
+        "median": 1.0,
+        "q75": 1.0,
+        "max": 1.0,
+        "mean": 1.0
+      },
+      "mean_dice": {
+        "n": 2,
+        "min": 0.9410161184470386,
+        "q25": 0.9466200276779269,
+        "median": 0.9522239369088152,
+        "q75": 0.9578278461397035,
+        "max": 0.9634317553705918,
+        "mean": 0.9522239369088152
+      },
+      "unassigned": 0,
+      "resolved_regions": 12
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "cohort": "fsaverage",
+      "theta": 0.5,
+      "accuracy": {
+        "n": 2,
+        "min": 1.0,
+        "q25": 1.0,
+        "median": 1.0,
+        "q75": 1.0,
+        "max": 1.0,
+        "mean": 1.0
+      },
+      "mean_dice": {
+        "n": 2,
+        "min": 0.9410161184470386,
+        "q25": 0.9466200276779269,
+        "median": 0.9522239369088152,
+        "q75": 0.9578278461397035,
+        "max": 0.9634317553705918,
+        "mean": 0.9522239369088152
+      },
+      "unassigned": 0,
+      "resolved_regions": 12
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "cohort": "fsaverage",
+      "theta": 0.6,
+      "accuracy": {
+        "n": 2,
+        "min": 1.0,
+        "q25": 1.0,
+        "median": 1.0,
+        "q75": 1.0,
+        "max": 1.0,
+        "mean": 1.0
+      },
+      "mean_dice": {
+        "n": 2,
+        "min": 0.9410161184470386,
+        "q25": 0.9466200276779269,
+        "median": 0.9522239369088152,
+        "q75": 0.9578278461397035,
+        "max": 0.9634317553705918,
+        "mean": 0.9522239369088152
+      },
+      "unassigned": 0,
+      "resolved_regions": 12
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "cohort": "fsaverage",
+      "theta": 0.7,
+      "accuracy": {
+        "n": 2,
+        "min": 0.967741935483871,
+        "q25": 0.9758064516129032,
+        "median": 0.9838709677419355,
+        "q75": 0.9919354838709677,
+        "max": 1.0,
+        "mean": 0.9838709677419355
+      },
+      "mean_dice": {
+        "n": 2,
+        "min": 0.932970601437335,
+        "q25": 0.9405858899206492,
+        "median": 0.9482011784039635,
+        "q75": 0.9558164668872776,
+        "max": 0.9634317553705918,
+        "mean": 0.9482011784039635
+      },
+      "unassigned": 1,
+      "resolved_regions": 10
+    },
+    {
+      "condition": "C1_DK_to_DKT",
+      "cohort": "fsaverage",
+      "theta": 0.8,
+      "accuracy": {
+        "n": 2,
+        "min": 0.9354838709677419,
+        "q25": 0.9435483870967741,
+        "median": 0.9516129032258065,
+        "q75": 0.9596774193548387,
+        "max": 0.967741935483871,
+        "mean": 0.9516129032258065
+      },
+      "mean_dice": {
+        "n": 2,
+        "min": 0.9209143876509155,
+        "q25": 0.9295447810630928,
+        "median": 0.9381751744752702,
+        "q75": 0.9468055678874476,
+        "max": 0.9554359612996249,
+        "mean": 0.9381751744752702
+      },
+      "unassigned": 3,
+      "resolved_regions": 6
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "cohort": "IXI20",
+      "theta": 0.3,
+      "accuracy": {
+        "n": 40,
+        "min": 1.0,
+        "q25": 1.0,
+        "median": 1.0,
+        "q75": 1.0,
+        "max": 1.0,
+        "mean": 1.0
+      },
+      "mean_dice": {
+        "n": 40,
+        "min": 0.8990135660910538,
+        "q25": 0.9239194327774488,
+        "median": 0.9376850261665759,
+        "q75": 0.9503823783380394,
+        "max": 0.9563433290104572,
+        "mean": 0.9356956562291233
+      },
+      "unassigned": 0,
+      "resolved_regions": 198
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "cohort": "IXI20",
+      "theta": 0.4,
+      "accuracy": {
+        "n": 40,
+        "min": 1.0,
+        "q25": 1.0,
+        "median": 1.0,
+        "q75": 1.0,
+        "max": 1.0,
+        "mean": 1.0
+      },
+      "mean_dice": {
+        "n": 40,
+        "min": 0.8990135660910538,
+        "q25": 0.9239194327774488,
+        "median": 0.9376850261665759,
+        "q75": 0.9503823783380394,
+        "max": 0.9563433290104572,
+        "mean": 0.9356956562291233
+      },
+      "unassigned": 0,
+      "resolved_regions": 198
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "cohort": "IXI20",
+      "theta": 0.5,
+      "accuracy": {
+        "n": 40,
+        "min": 1.0,
+        "q25": 1.0,
+        "median": 1.0,
+        "q75": 1.0,
+        "max": 1.0,
+        "mean": 1.0
+      },
+      "mean_dice": {
+        "n": 40,
+        "min": 0.8990135660910538,
+        "q25": 0.9239194327774488,
+        "median": 0.9376850261665759,
+        "q75": 0.9503823783380394,
+        "max": 0.9563433290104572,
+        "mean": 0.9356956562291233
+      },
+      "unassigned": 0,
+      "resolved_regions": 198
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "cohort": "IXI20",
+      "theta": 0.6,
+      "accuracy": {
+        "n": 40,
+        "min": 1.0,
+        "q25": 1.0,
+        "median": 1.0,
+        "q75": 1.0,
+        "max": 1.0,
+        "mean": 1.0
+      },
+      "mean_dice": {
+        "n": 40,
+        "min": 0.8990135660910538,
+        "q25": 0.9239194327774488,
+        "median": 0.9376850261665759,
+        "q75": 0.9503823783380394,
+        "max": 0.9563433290104572,
+        "mean": 0.9356956562291233
+      },
+      "unassigned": 0,
+      "resolved_regions": 198
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "cohort": "IXI20",
+      "theta": 0.7,
+      "accuracy": {
+        "n": 40,
+        "min": 0.9705882352941176,
+        "q25": 1.0,
+        "median": 1.0,
+        "q75": 1.0,
+        "max": 1.0,
+        "mean": 0.9941176470588236
+      },
+      "mean_dice": {
+        "n": 40,
+        "min": 0.7737539442785025,
+        "q25": 0.9230694363232745,
+        "median": 0.9376850261665759,
+        "q75": 0.9503823783380394,
+        "max": 0.9563433290104572,
+        "mean": 0.9099015247165546
+      },
+      "unassigned": 8,
+      "resolved_regions": 193
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "cohort": "IXI20",
+      "theta": 0.8,
+      "accuracy": {
+        "n": 40,
+        "min": 0.9705882352941176,
+        "q25": 0.9705882352941176,
+        "median": 0.9705882352941176,
+        "q75": 1.0,
+        "max": 1.0,
+        "mean": 0.9801470588235294
+      },
+      "mean_dice": {
+        "n": 40,
+        "min": 0.7737539442785025,
+        "q25": 0.7886138749365554,
+        "median": 0.7983482218616047,
+        "q75": 0.9503823783380394,
+        "max": 0.9563433290104572,
+        "mean": 0.8441618091092675
+      },
+      "unassigned": 27,
+      "resolved_regions": 193
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "cohort": "fsaverage",
+      "theta": 0.3,
+      "accuracy": {
+        "n": 2,
+        "min": 1.0,
+        "q25": 1.0,
+        "median": 1.0,
+        "q75": 1.0,
+        "max": 1.0,
+        "mean": 1.0
+      },
+      "mean_dice": {
+        "n": 2,
+        "min": 0.941016118447039,
+        "q25": 0.9466200276779273,
+        "median": 0.9522239369088156,
+        "q75": 0.9578278461397038,
+        "max": 0.9634317553705921,
+        "mean": 0.9522239369088156
+      },
+      "unassigned": 0,
+      "resolved_regions": 12
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "cohort": "fsaverage",
+      "theta": 0.4,
+      "accuracy": {
+        "n": 2,
+        "min": 1.0,
+        "q25": 1.0,
+        "median": 1.0,
+        "q75": 1.0,
+        "max": 1.0,
+        "mean": 1.0
+      },
+      "mean_dice": {
+        "n": 2,
+        "min": 0.941016118447039,
+        "q25": 0.9466200276779273,
+        "median": 0.9522239369088156,
+        "q75": 0.9578278461397038,
+        "max": 0.9634317553705921,
+        "mean": 0.9522239369088156
+      },
+      "unassigned": 0,
+      "resolved_regions": 12
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "cohort": "fsaverage",
+      "theta": 0.5,
+      "accuracy": {
+        "n": 2,
+        "min": 1.0,
+        "q25": 1.0,
+        "median": 1.0,
+        "q75": 1.0,
+        "max": 1.0,
+        "mean": 1.0
+      },
+      "mean_dice": {
+        "n": 2,
+        "min": 0.941016118447039,
+        "q25": 0.9466200276779273,
+        "median": 0.9522239369088156,
+        "q75": 0.9578278461397038,
+        "max": 0.9634317553705921,
+        "mean": 0.9522239369088156
+      },
+      "unassigned": 0,
+      "resolved_regions": 12
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "cohort": "fsaverage",
+      "theta": 0.6,
+      "accuracy": {
+        "n": 2,
+        "min": 1.0,
+        "q25": 1.0,
+        "median": 1.0,
+        "q75": 1.0,
+        "max": 1.0,
+        "mean": 1.0
+      },
+      "mean_dice": {
+        "n": 2,
+        "min": 0.941016118447039,
+        "q25": 0.9466200276779273,
+        "median": 0.9522239369088156,
+        "q75": 0.9578278461397038,
+        "max": 0.9634317553705921,
+        "mean": 0.9522239369088156
+      },
+      "unassigned": 0,
+      "resolved_regions": 12
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "cohort": "fsaverage",
+      "theta": 0.7,
+      "accuracy": {
+        "n": 2,
+        "min": 1.0,
+        "q25": 1.0,
+        "median": 1.0,
+        "q75": 1.0,
+        "max": 1.0,
+        "mean": 1.0
+      },
+      "mean_dice": {
+        "n": 2,
+        "min": 0.941016118447039,
+        "q25": 0.9466200276779273,
+        "median": 0.9522239369088156,
+        "q75": 0.9578278461397038,
+        "max": 0.9634317553705921,
+        "mean": 0.9522239369088156
+      },
+      "unassigned": 0,
+      "resolved_regions": 12
+    },
+    {
+      "condition": "C2_DKT_to_DK",
+      "cohort": "fsaverage",
+      "theta": 0.8,
+      "accuracy": {
+        "n": 2,
+        "min": 1.0,
+        "q25": 1.0,
+        "median": 1.0,
+        "q75": 1.0,
+        "max": 1.0,
+        "mean": 1.0
+      },
+      "mean_dice": {
+        "n": 2,
+        "min": 0.941016118447039,
+        "q25": 0.9466200276779273,
+        "median": 0.9522239369088156,
+        "q75": 0.9578278461397038,
+        "max": 0.9634317553705921,
+        "mean": 0.9522239369088156
+      },
+      "unassigned": 0,
+      "resolved_regions": 12
+    },
+    {
+      "condition": "C3_DK_to_Destrieux",
+      "cohort": "IXI20",
+      "theta": 0.3,
+      "accuracy": {
+        "n": 0
+      },
+      "mean_dice": {
+        "n": 40,
+        "min": 0.7977040550945573,
+        "q25": 0.8076138141750777,
+        "median": 0.814096387046652,
+        "q75": 0.8209280160678258,
+        "max": 0.8326268470379601,
+        "mean": 0.8140142374112601
+      },
+      "unassigned": 0,
+      "resolved_regions": 142
+    },
+    {
+      "condition": "C3_DK_to_Destrieux",
+      "cohort": "IXI20",
+      "theta": 0.4,
+      "accuracy": {
+        "n": 0
+      },
+      "mean_dice": {
+        "n": 40,
+        "min": 0.7977040550945573,
+        "q25": 0.8076138141750777,
+        "median": 0.814177024997834,
+        "q75": 0.8210243360144482,
+        "max": 0.8328675194718059,
+        "mean": 0.8140873097451905
+      },
+      "unassigned": 13,
+      "resolved_regions": 119
+    },
+    {
+      "condition": "C3_DK_to_Destrieux",
+      "cohort": "IXI20",
+      "theta": 0.5,
+      "accuracy": {
+        "n": 0
+      },
+      "mean_dice": {
+        "n": 40,
+        "min": 0.7762925088756845,
+        "q25": 0.7996694594824392,
+        "median": 0.8109737138186044,
+        "q75": 0.820928675778385,
+        "max": 0.8319336128121008,
+        "mean": 0.8099327232818514
+      },
+      "unassigned": 86,
+      "resolved_regions": 50
+    },
+    {
+      "condition": "C3_DK_to_Destrieux",
+      "cohort": "IXI20",
+      "theta": 0.6,
+      "accuracy": {
+        "n": 0
+      },
+      "mean_dice": {
+        "n": 40,
+        "min": 0.7363773915922187,
+        "q25": 0.7619480288401375,
+        "median": 0.7721759873686663,
+        "q75": 0.7797970397031758,
+        "max": 0.8067524569915979,
+        "mean": 0.7706909148399976
+      },
+      "unassigned": 369,
+      "resolved_regions": 6
+    },
+    {
+      "condition": "C3_DK_to_Destrieux",
+      "cohort": "IXI20",
+      "theta": 0.7,
+      "accuracy": {
+        "n": 0
+      },
+      "mean_dice": {
+        "n": 40,
+        "min": 0.7320289930921131,
+        "q25": 0.7503618537631251,
+        "median": 0.7560355175008158,
+        "q75": 0.7645754684326981,
+        "max": 0.7741614572287308,
+        "mean": 0.7558006759670605
+      },
+      "unassigned": 531,
+      "resolved_regions": 0
+    },
+    {
+      "condition": "C3_DK_to_Destrieux",
+      "cohort": "IXI20",
+      "theta": 0.8,
+      "accuracy": {
+        "n": 0
+      },
+      "mean_dice": {
+        "n": 40,
+        "min": 0.6918021571534007,
+        "q25": 0.7216844907670046,
+        "median": 0.7331394901258038,
+        "q75": 0.7409714865235825,
+        "max": 0.7506934021426153,
+        "mean": 0.7301303128844238
+      },
+      "unassigned": 797,
+      "resolved_regions": 0
+    },
+    {
+      "condition": "C3_DK_to_Destrieux",
+      "cohort": "fsaverage",
+      "theta": 0.3,
+      "accuracy": {
+        "n": 0
+      },
+      "mean_dice": {
+        "n": 2,
+        "min": 0.8095063742927873,
+        "q25": 0.8112086534236038,
+        "median": 0.8129109325544204,
+        "q75": 0.814613211685237,
+        "max": 0.8163154908160536,
+        "mean": 0.8129109325544204
+      },
+      "unassigned": 0,
+      "resolved_regions": 6
+    },
+    {
+      "condition": "C3_DK_to_Destrieux",
+      "cohort": "fsaverage",
+      "theta": 0.4,
+      "accuracy": {
+        "n": 0
+      },
+      "mean_dice": {
+        "n": 2,
+        "min": 0.8095063742927873,
+        "q25": 0.8112987788170314,
+        "median": 0.8130911833412755,
+        "q75": 0.8148835878655195,
+        "max": 0.8166759923897636,
+        "mean": 0.8130911833412755
+      },
+      "unassigned": 1,
+      "resolved_regions": 5
+    },
+    {
+      "condition": "C3_DK_to_Destrieux",
+      "cohort": "fsaverage",
+      "theta": 0.5,
+      "accuracy": {
+        "n": 0
+      },
+      "mean_dice": {
+        "n": 2,
+        "min": 0.8095063742927873,
+        "q25": 0.8112572650761252,
+        "median": 0.8130081558594631,
+        "q75": 0.8147590466428009,
+        "max": 0.8165099374261388,
+        "mean": 0.8130081558594631
+      },
+      "unassigned": 2,
+      "resolved_regions": 4
+    },
+    {
+      "condition": "C3_DK_to_Destrieux",
+      "cohort": "fsaverage",
+      "theta": 0.6,
+      "accuracy": {
+        "n": 0
+      },
+      "mean_dice": {
+        "n": 2,
+        "min": 0.7644238708491619,
+        "q25": 0.7691065350844521,
+        "median": 0.7737891993197423,
+        "q75": 0.7784718635550325,
+        "max": 0.7831545277903228,
+        "mean": 0.7737891993197423
+      },
+      "unassigned": 19,
+      "resolved_regions": 0
+    },
+    {
+      "condition": "C3_DK_to_Destrieux",
+      "cohort": "fsaverage",
+      "theta": 0.7,
+      "accuracy": {
+        "n": 0
+      },
+      "mean_dice": {
+        "n": 2,
+        "min": 0.7503299333127242,
+        "q25": 0.7517532395584138,
+        "median": 0.7531765458041033,
+        "q75": 0.754599852049793,
+        "max": 0.7560231582954825,
+        "mean": 0.7531765458041033
+      },
+      "unassigned": 27,
+      "resolved_regions": 0
+    },
+    {
+      "condition": "C3_DK_to_Destrieux",
+      "cohort": "fsaverage",
+      "theta": 0.8,
+      "accuracy": {
+        "n": 0
+      },
+      "mean_dice": {
+        "n": 2,
+        "min": 0.7151883738390259,
+        "q25": 0.7164101614889854,
+        "median": 0.7176319491389449,
+        "q75": 0.7188537367889043,
+        "max": 0.7200755244388638,
+        "mean": 0.7176319491389449
+      },
+      "unassigned": 43,
+      "resolved_regions": 0
+    }
+  ],
+  "model_calls": 0
+}

@@ -1,0 +1,501 @@
+[
+  {
+    "method_id": "cat_morphometry",
+    "template": "software",
+    "parameters": {
+      "commands": [
+        "SPM12 or newer",
+        "MATLAB R2020a or newer (Windows: R2022a, Apple Silicon: R2023b)",
+        "No additional MATLAB toolboxes"
+      ]
+    },
+    "sources": [
+      {
+        "source_id": "cat",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "For MATLAB users, SPM12 or newer and MATLAB R2020a or newer are required; no additional MATLAB toolboxes are needed."
+    ]
+  },
+  {
+    "method_id": "existing_curvature_sulc_profile",
+    "template": "provenance",
+    "parameters": {
+      "step": "Resmooth RH/LH white matter: smooths rh.orig and lh.orig surfaces"
+    },
+    "sources": [
+      {
+        "source_id": "fs_morph",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "Confirm that the surfaces have been smoothed and topology-corrected before using the morphometry values."
+    ]
+  },
+  {
+    "method_id": "fsl_vbm",
+    "template": "plausibility",
+    "parameters": {
+      "metric": "brain-extracted images (*_brain.*) in the struc directory"
+    },
+    "sources": [
+      {
+        "source_id": "fsl_vbm",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "Check brain-extracted images (*_brain.*) in the struc directory after fslvbm_1_bet."
+    ]
+  },
+  {
+    "method_id": "global_surface_folding",
+    "template": "product_present",
+    "parameters": {
+      "slot": "pial",
+      "type": "mesh"
+    },
+    "sources": [
+      {
+        "source_id": "comparative_folding",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "Pial surface mesh of the cortical ribbon."
+    ]
+  },
+  {
+    "method_id": "global_surface_folding",
+    "template": "product_present",
+    "parameters": {
+      "slot": "white",
+      "type": "mesh"
+    },
+    "sources": [
+      {
+        "source_id": "comparative_folding",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "White matter surface mesh of the cortical ribbon."
+    ]
+  },
+  {
+    "method_id": "global_surface_folding",
+    "template": "attr_in",
+    "parameters": {
+      "slot": "thickness",
+      "attr": "scale_status",
+      "values": [
+        "average"
+      ]
+    },
+    "sources": [
+      {
+        "source_id": "comparative_folding",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "Cortical thickness estimate (average) for scaling law."
+    ]
+  },
+  {
+    "method_id": "global_surface_folding",
+    "template": "scale_check",
+    "parameters": {
+      "metric": "voxel_size"
+    },
+    "sources": [
+      {
+        "source_id": "comparative_folding",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "Coarse-graining erases morphological features smaller than the specified scale while preserving surface integrity."
+    ]
+  },
+  {
+    "method_id": "global_surface_folding",
+    "template": "plausibility",
+    "parameters": {
+      "metric": "visual inspection"
+    },
+    "sources": [
+      {
+        "source_id": "comparative_folding",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "Quality check reconstructed surfaces by visual inspection."
+    ]
+  },
+  {
+    "method_id": "global_surface_folding",
+    "template": "plausibility",
+    "parameters": {
+      "metric": "variance in K across scales and all 11 species <0.01"
+    },
+    "sources": [
+      {
+        "source_id": "comparative_folding",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "Check that K remains near-invariant across scales and species."
+    ]
+  },
+  {
+    "method_id": "global_surface_folding",
+    "template": "attr_equal",
+    "parameters": {
+      "slots": [
+        "T1",
+        "T2"
+      ],
+      "attrs": [
+        "space",
+        "voxel_size",
+        "scale_status"
+      ]
+    },
+    "sources": [
+      {
+        "source_id": "scipy_hull",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "Ensure convex hull computation does not raise QhullError."
+    ]
+  },
+  {
+    "method_id": "global_surface_folding",
+    "template": "attr_in",
+    "parameters": {
+      "slot": "surface",
+      "attr": "scale_status",
+      "values": [
+        "coarse-grained"
+      ]
+    },
+    "sources": [
+      {
+        "source_id": "comparative_folding",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "Coarse-grained brain surfaces are algorithmic outputs and not to be directly likened to actual brain surfaces in terms of fold location or shape."
+    ]
+  },
+  {
+    "method_id": "global_surface_folding",
+    "template": "scale_check",
+    "parameters": {
+      "metric": "large-scale features"
+    },
+    "sources": [
+      {
+        "source_id": "global_gyrification",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "The model cannot capture large-scale features such as the longitudinal fissure, sylvian fissure, and specific gyri and sulci."
+    ]
+  },
+  {
+    "method_id": "local_gyrification",
+    "template": "provenance",
+    "parameters": {
+      "step": "recon-all -s <subjid> -all"
+    },
+    "sources": [
+      {
+        "source_id": "fs_lgi",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "The subject must have been processed with the full recon-all stream before using -localGI."
+    ]
+  },
+  {
+    "method_id": "macaque_civet",
+    "template": "attr_in",
+    "parameters": {
+      "slot": "T1",
+      "attr": "species",
+      "values": [
+        "macaque"
+      ]
+    },
+    "sources": [
+      {
+        "source_id": "civet_macaque",
+        "quote_support": 1.0
+      },
+      {
+        "source_id": "civet_macaque",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "T1-weighted MR scan of a macaque brain as the primary input.",
+      "The pipeline is not validated for species other than macaques; adaptations for other primates would require appropriate length scales and templates."
+    ]
+  },
+  {
+    "method_id": "macaque_civet",
+    "template": "provenance",
+    "parameters": {
+      "step": "Registration, using minctracc, proceeds by specifying the brain mask on the target image only, herein the NMT volume with its associated brain mask"
+    },
+    "sources": [
+      {
+        "source_id": "civet_macaque",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "NMT brain mask and tissue priors for registration and classification."
+    ]
+  },
+  {
+    "method_id": "macaque_civet",
+    "template": "plausibility",
+    "parameters": {
+      "metric": "accuracy"
+    },
+    "sources": [
+      {
+        "source_id": "civet_macaque",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "Quality control includes visual inspection of brain masks and surfaces for accuracy."
+    ]
+  },
+  {
+    "method_id": "macaque_civet",
+    "template": "attr_in",
+    "parameters": {
+      "slot": "mask",
+      "attr": "space",
+      "values": [
+        "native"
+      ]
+    },
+    "sources": [
+      {
+        "source_id": "civet_macaque",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "The pipeline may require manual intervention for custom brain masks in rare registration failures."
+    ]
+  },
+  {
+    "method_id": "nhp_macapype",
+    "template": "software",
+    "parameters": {
+      "commands": [
+        "SPM",
+        "ANTS"
+      ]
+    },
+    "sources": [
+      {
+        "source_id": "macapype_commands",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "The -soft parameter must be either SPM or ANTS, with SPM requiring a specific version of macapype/skullTo3d not available by default."
+    ]
+  },
+  {
+    "method_id": "nhp_macapype",
+    "template": "software",
+    "parameters": {
+      "commands": [
+        "bet4animal",
+        "atlas_brex"
+      ]
+    },
+    "sources": [
+      {
+        "source_id": "macapype_commands",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "The _4animal option uses bet4animal (FSL) for brain extraction, for faster computation; by default atlas_brex is used."
+    ]
+  },
+  {
+    "method_id": "samseg_segmentation",
+    "template": "provenance",
+    "parameters": {
+      "step": "The first time you run this module, you may be prompted to install Tensorflow"
+    },
+    "sources": [
+      {
+        "source_id": "fs_samseg",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "The first time the MS lesion module is run, the user may be prompted to install Tensorflow."
+    ]
+  },
+  {
+    "method_id": "surface_annotation_roi",
+    "template": "software",
+    "parameters": {
+      "commands": [
+        "Load in a Freesurfer .label file."
+      ]
+    },
+    "sources": [
+      {
+        "source_id": "nibabel_fs",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "Optionally a FreeSurfer .label file giving vertex indices, with optional per-vertex scalars."
+    ]
+  },
+  {
+    "method_id": "surface_annotation_roi",
+    "template": "product_present",
+    "parameters": {
+      "slot": "surface",
+      "type": "mesh"
+    },
+    "sources": [
+      {
+        "source_id": "nibabel_fs",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "Optionally a triangular surface mesh geometry file supplying vertex coordinates and faces."
+    ]
+  },
+  {
+    "method_id": "surface_mesh_area",
+    "template": "product_present",
+    "parameters": {
+      "slot": "surface",
+      "type": "vertex coordinates"
+    },
+    "sources": [
+      {
+        "source_id": "nibabel_fs",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "Vertex coordinates array (nvtx x 3) from the surface mesh."
+    ]
+  },
+  {
+    "method_id": "surface_mesh_area",
+    "template": "attr_in",
+    "parameters": {
+      "slot": "surface",
+      "attr": "mesh",
+      "values": [
+        "triangular"
+      ]
+    },
+    "sources": [
+      {
+        "source_id": "nibabel_fs",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "The mesh must be in triangular format as read by nibabel's read_geometry."
+    ]
+  },
+  {
+    "method_id": "surface_mesh_area",
+    "template": "plausibility",
+    "parameters": {
+      "metric": "mesh is in triangular format"
+    },
+    "sources": [
+      {
+        "source_id": "nibabel_fs",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "Verify that the mesh is in triangular format as expected by read_geometry."
+    ]
+  },
+  {
+    "method_id": "surface_reconstruction_qc",
+    "template": "software",
+    "parameters": {
+      "commands": [
+        "recon-all -i <path-to-first-structural> [-i <path-to-second-structural>] -s <subjid>"
+      ]
+    },
+    "sources": [
+      {
+        "source_id": "fs_morph",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "Subject directory created via recon-all -i command."
+    ]
+  },
+  {
+    "method_id": "surface_reconstruction_qc",
+    "template": "plausibility",
+    "parameters": {
+      "metric": "strong contrast between tissue types, no movement, high resolution"
+    },
+    "sources": [
+      {
+        "source_id": "andy_failures",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "Anatomical data should have good quality: strong contrast between tissue types, no movement, high resolution."
+    ]
+  },
+  {
+    "method_id": "surface_reconstruction_qc",
+    "template": "provenance",
+    "parameters": {
+      "step": "Since the release of FreeSurfer version 6.0 these types of errors are very rare, and they are usually automatically fixed during recon-all."
+    },
+    "sources": [
+      {
+        "source_id": "andy_failures",
+        "quote_support": 1.0
+      }
+    ],
+    "statements": [
+      "Topological defects are very rare since FreeSurfer version 6.0 and are usually automatically fixed during recon-all."
+    ]
+  }
+]

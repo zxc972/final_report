@@ -1,0 +1,53 @@
+{
+  "schema": "primatex.independent_card_extraction.v1",
+  "split": "independent_test_candidate",
+  "source_manifest_sha256": "30844a819190da22ac8893869b5501da1b27f05be69ee6216cf1665b8f65817d",
+  "script_sha256": "5e8fb1e96af50d80f1213262eb98c65f64adf1df6e5a52c1f96f38dc13886492",
+  "provider_sha256": "ded374b85365f7cb47263cfd242307c80df50f38ee09ea6e4d96bf7a5edb3d27",
+  "prompt_sha256": "b38ae556e892a697f680495f863c06c490163ce7b7c37502d6db275b55d1a73c",
+  "methods": [
+    {
+      "method_id": "independent_v2_wb_surface_resample",
+      "name": "Connectome Workbench -surface-resample",
+      "sources": [
+        "wb_surface_resample"
+      ],
+      "objective": "完整记录该命令的输入、输出、软件/版本、空间与网格要求、可选项和使用注意"
+    },
+    {
+      "method_id": "independent_v2_fsl_first",
+      "name": "FSL FIRST",
+      "sources": [
+        "fsl_first"
+      ],
+      "objective": "完整记录该命令的输入、输出、软件/版本、空间与网格要求、可选项和使用注意"
+    }
+  ],
+  "provider": {
+    "endpoint_host": "inferaiapi.com",
+    "endpoint_path": "/v1",
+    "model": "deepseek-v4.1-flash",
+    "temperature": 0.7,
+    "timeout": 180,
+    "max_tokens": 8192,
+    "max_attempts": 3,
+    "thinking": {
+      "type": "disabled"
+    },
+    "response_format": {
+      "type": "json_object"
+    }
+  },
+  "max_http_attempts": 150,
+  "budget_scope": "all primary and supplementary method-card extraction calls share one ledger; no algorithm evaluation",
+  "annotation_fields": [
+    "inputs",
+    "conditions",
+    "checks",
+    "exceptions"
+  ],
+  "selection": "all verified items in the same four fields as development; exclude exact normalized quote or statement duplicates against development; no outcome-based selection",
+  "algorithm_calls": 0,
+  "gold_created": false,
+  "annotation_status": "ready_for_Claude_not_labelled"
+}

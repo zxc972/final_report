@@ -1,0 +1,780 @@
+{
+  "schema": "primatex.condition_annotation_input.v1",
+  "split": "independent_test_candidate",
+  "slots": {
+    "T1": [
+      "subject",
+      "species",
+      "space",
+      "voxel_size",
+      "scale_status"
+    ],
+    "T2": [
+      "subject",
+      "species",
+      "space",
+      "voxel_size",
+      "scale_status"
+    ],
+    "volumes": [
+      "subject",
+      "species",
+      "space",
+      "voxel_size",
+      "scale_status"
+    ],
+    "timepoints": [
+      "subject",
+      "species",
+      "space",
+      "voxel_size",
+      "scale_status"
+    ],
+    "mask": [
+      "subject",
+      "species",
+      "space",
+      "voxel_size",
+      "scale_status"
+    ],
+    "pial": [
+      "subject",
+      "species",
+      "hemisphere",
+      "space",
+      "mesh",
+      "scale_status"
+    ],
+    "white": [
+      "subject",
+      "species",
+      "hemisphere",
+      "space",
+      "mesh",
+      "scale_status"
+    ],
+    "surface": [
+      "subject",
+      "species",
+      "hemisphere",
+      "space",
+      "mesh",
+      "scale_status"
+    ],
+    "metric": [
+      "subject",
+      "species",
+      "hemisphere",
+      "space",
+      "mesh",
+      "scale_status"
+    ],
+    "thickness": [
+      "subject",
+      "species",
+      "hemisphere",
+      "space",
+      "mesh",
+      "scale_status"
+    ],
+    "annotation": [
+      "subject",
+      "species",
+      "hemisphere",
+      "space",
+      "mesh",
+      "scale_status",
+      "atlas"
+    ],
+    "label": [
+      "subject",
+      "species",
+      "hemisphere",
+      "space",
+      "mesh",
+      "scale_status"
+    ],
+    "design": [
+      "columns",
+      "n_subjects"
+    ]
+  },
+  "items": [
+    {
+      "id": 1001,
+      "method": "independent_fastsurfer",
+      "field": "inputs",
+      "statement": "--t1: T1 full head input (not bias corrected), requiring an absolute path.",
+      "source_id": "fastsurfer_run",
+      "quote": "--t1 <t1_path> T1 full head input (not bias corrected). Requires an\nABSOLUTE Path!",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 16222,
+        "end": 16304,
+        "text_sha256": "86e0b793c322530a30c34aaa6f2c1ec00912fceb693cb4fd554e9860eeea8892"
+      },
+      "source_url": "https://deep-mi.org/FastSurfer/stable/scripts/RUN_FASTSURFER.html"
+    },
+    {
+      "id": 1002,
+      "method": "independent_fastsurfer",
+      "field": "inputs",
+      "statement": "Optional T2 full-head input must be externally biasfield corrected when --no_biasfield is used.",
+      "source_id": "fastsurfer_run",
+      "quote": "*Optional* T2 full head input (must be externally biasfield\ncorrected when called with --no_biasfield). Requires an\nABSOLUTE Path!",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 22800,
+        "end": 22930,
+        "text_sha256": "86e0b793c322530a30c34aaa6f2c1ec00912fceb693cb4fd554e9860eeea8892"
+      },
+      "source_url": "https://deep-mi.org/FastSurfer/stable/scripts/RUN_FASTSURFER.html"
+    },
+    {
+      "id": 1003,
+      "method": "independent_fastsurfer",
+      "field": "inputs",
+      "statement": "An optional binary lesion mask must be in the same space as the T1 input.",
+      "source_id": "fastsurfer_run",
+      "quote": "Path to a binary lesion mask in the same space as the T1 input.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 9869,
+        "end": 9932,
+        "text_sha256": "86e0b793c322530a30c34aaa6f2c1ec00912fceb693cb4fd554e9860eeea8892"
+      },
+      "source_url": "https://deep-mi.org/FastSurfer/stable/scripts/RUN_FASTSURFER.html"
+    },
+    {
+      "id": 1004,
+      "method": "independent_fastsurfer",
+      "field": "inputs",
+      "statement": "For --surf_only, the segmentation created by FastSurferVINN must already exist.",
+      "source_id": "fastsurfer_run",
+      "quote": "--surf_only: Only run the surface pipeline. The segmentation created by FastSurferVINN must already exist in this case.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 11061,
+        "end": 11180,
+        "text_sha256": "86e0b793c322530a30c34aaa6f2c1ec00912fceb693cb4fd554e9860eeea8892"
+      },
+      "source_url": "https://deep-mi.org/FastSurfer/stable/scripts/RUN_FASTSURFER.html"
+    },
+    {
+      "id": 1005,
+      "method": "independent_fastsurfer",
+      "field": "conditions",
+      "statement": "A segmentation without --tal_reg does not need a FreeSurfer licence.",
+      "source_id": "fastsurfer_install",
+      "quote": "A\nsegmentation without --tal_reg does not need one.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 7022,
+        "end": 7073,
+        "text_sha256": "03f05ff592ee287c347fe2bff7ff5c84ff307bc49801bd8f238e8da5e36084b5"
+      },
+      "source_url": "https://deep-mi.org/FastSurfer/stable/overview/INSTALL.html"
+    },
+    {
+      "id": 1006,
+      "method": "independent_fastsurfer",
+      "field": "conditions",
+      "statement": "Docker runs of the surface module require --fs_license pointing to a FreeSurfer licence file.",
+      "source_id": "fastsurfer_run",
+      "quote": "Required for Docker when running surface module:\n\n--fs_license: Path to FreeSurfer license key file",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 7921,
+        "end": 8020,
+        "text_sha256": "86e0b793c322530a30c34aaa6f2c1ec00912fceb693cb4fd554e9860eeea8892"
+      },
+      "source_url": "https://deep-mi.org/FastSurfer/stable/scripts/RUN_FASTSURFER.html"
+    },
+    {
+      "id": 1007,
+      "method": "independent_fastsurfer",
+      "field": "conditions",
+      "statement": "Input conformation specifications are checked automatically; non-compliant images are conformed.",
+      "source_id": "fastsurfer_run",
+      "quote": "These specifications are checked in the run_prediction.py script and the image is automatically conformed if it does not comply.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 7453,
+        "end": 7581,
+        "text_sha256": "86e0b793c322530a30c34aaa6f2c1ec00912fceb693cb4fd554e9860eeea8892"
+      },
+      "source_url": "https://deep-mi.org/FastSurfer/stable/scripts/RUN_FASTSURFER.html"
+    },
+    {
+      "id": 1008,
+      "method": "independent_fastsurfer",
+      "field": "conditions",
+      "statement": "Keeping native image geometry is incompatible with the surface pipeline.",
+      "source_id": "fastsurfer_run",
+      "quote": "Output all images and segmentations in the native\n--keepgeom image space with its image geometry (voxel size,\ndimensions, orientation). This setting is not\ncompatible with the surface pipeline",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 19911,
+        "end": 20103,
+        "text_sha256": "86e0b793c322530a30c34aaa6f2c1ec00912fceb693cb4fd554e9860eeea8892"
+      },
+      "source_url": "https://deep-mi.org/FastSurfer/stable/scripts/RUN_FASTSURFER.html"
+    },
+    {
+      "id": 1009,
+      "method": "independent_fastsurfer",
+      "field": "conditions",
+      "statement": "A GPU makes segmentation much faster.",
+      "source_id": "fastsurfer_install",
+      "quote": "A GPU makes the segmentation much faster.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 6603,
+        "end": 6644,
+        "text_sha256": "03f05ff592ee287c347fe2bff7ff5c84ff307bc49801bd8f238e8da5e36084b5"
+      },
+      "source_url": "https://deep-mi.org/FastSurfer/stable/overview/INSTALL.html"
+    },
+    {
+      "id": 1010,
+      "method": "independent_fastsurfer",
+      "field": "checks",
+      "statement": "--viewagg_device auto checks whether there is enough memory to run view aggregation on the GPU.",
+      "source_id": "fastsurfer_run",
+      "quote": "By default, the program checks if you have enough memory to run the view aggregation on the GPU.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 8780,
+        "end": 8876,
+        "text_sha256": "86e0b793c322530a30c34aaa6f2c1ec00912fceb693cb4fd554e9860eeea8892"
+      },
+      "source_url": "https://deep-mi.org/FastSurfer/stable/scripts/RUN_FASTSURFER.html"
+    },
+    {
+      "id": 1011,
+      "method": "independent_fastsurfer",
+      "field": "checks",
+      "statement": "Unless --ignore_fs_version is set, the program checks the FreeSurfer version and terminates if the supported version is not sourced.",
+      "source_id": "fastsurfer_run",
+      "quote": "--ignore_fs_version Switch on to avoid check for FreeSurfer version.\nProgram will terminate if the supported version\n(see recon-surf.sh) is not sourced.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 25614,
+        "end": 25766,
+        "text_sha256": "86e0b793c322530a30c34aaa6f2c1ec00912fceb693cb4fd554e9860eeea8892"
+      },
+      "source_url": "https://deep-mi.org/FastSurfer/stable/scripts/RUN_FASTSURFER.html"
+    },
+    {
+      "id": 1012,
+      "method": "independent_fastsurfer",
+      "field": "checks",
+      "statement": "--qc_snap creates quality control images to simplify the QC process.",
+      "source_id": "fastsurfer_run",
+      "quote": "--qc_snap Create quality control images in $SUBJECTS_DIR/$sid/qc_snapshots",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 22026,
+        "end": 22100,
+        "text_sha256": "86e0b793c322530a30c34aaa6f2c1ec00912fceb693cb4fd554e9860eeea8892"
+      },
+      "source_url": "https://deep-mi.org/FastSurfer/stable/scripts/RUN_FASTSURFER.html"
+    },
+    {
+      "id": 1013,
+      "method": "independent_fastsurfer",
+      "field": "checks",
+      "statement": "For images with tumors or other large lesions, review LIT-modified outputs before downstream use.",
+      "source_id": "fastsurfer_run",
+      "quote": "review LIT-modified outputs before downstream use.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 10110,
+        "end": 10160,
+        "text_sha256": "86e0b793c322530a30c34aaa6f2c1ec00912fceb693cb4fd554e9860eeea8892"
+      },
+      "source_url": "https://deep-mi.org/FastSurfer/stable/scripts/RUN_FASTSURFER.html"
+    },
+    {
+      "id": 1014,
+      "method": "independent_fastsurfer",
+      "field": "exceptions",
+      "statement": "Without --no_cereb, CerebNet runs automatically whenever the segmentation module runs.",
+      "source_id": "fastsurfer_outputs",
+      "quote": "Unless switched off by the --no_cereb argument, this module is automatically run whenever the segmentation module is run.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 8490,
+        "end": 8611,
+        "text_sha256": "d8b6e8b2eb5482291eb29cbc2e92f1aa73e8f43f001adce7a8546daf57f5848e"
+      },
+      "source_url": "https://deep-mi.org/FastSurfer/stable/overview/OUTPUT_FILES.html"
+    },
+    {
+      "id": 1015,
+      "method": "independent_fastsurfer",
+      "field": "exceptions",
+      "statement": "Without --no_hypothal, HypVINN runs automatically whenever the segmentation module runs.",
+      "source_id": "fastsurfer_outputs",
+      "quote": "Unless switched off by the --no_hypothal argument, this module is automatically run whenever the segmentation module is run.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 9014,
+        "end": 9138,
+        "text_sha256": "d8b6e8b2eb5482291eb29cbc2e92f1aa73e8f43f001adce7a8546daf57f5848e"
+      },
+      "source_url": "https://deep-mi.org/FastSurfer/stable/overview/OUTPUT_FILES.html"
+    },
+    {
+      "id": 1016,
+      "method": "independent_fastsurfer",
+      "field": "exceptions",
+      "statement": "With --no_biasfield, HypVINN still runs but expects biasfields to be corrected externally.",
+      "source_id": "fastsurfer_run",
+      "quote": "HypVINN does run but expects that biasfields are corrected externally.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 10461,
+        "end": 10531,
+        "text_sha256": "86e0b793c322530a30c34aaa6f2c1ec00912fceb693cb4fd554e9860eeea8892"
+      },
+      "source_url": "https://deep-mi.org/FastSurfer/stable/scripts/RUN_FASTSURFER.html"
+    },
+    {
+      "id": 1017,
+      "method": "independent_fastsurfer",
+      "field": "exceptions",
+      "statement": "--no_surfreg skips surface registration, but sphere.reg is needed for cross-subject statistical analysis of thickness maps.",
+      "source_id": "fastsurfer_run",
+      "quote": "sphere.reg will be needed for any cross-subject statistical analysis of thickness maps",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 12163,
+        "end": 12249,
+        "text_sha256": "86e0b793c322530a30c34aaa6f2c1ec00912fceb693cb4fd554e9860eeea8892"
+      },
+      "source_url": "https://deep-mi.org/FastSurfer/stable/scripts/RUN_FASTSURFER.html"
+    },
+    {
+      "id": 1018,
+      "method": "independent_fastsurfer",
+      "field": "exceptions",
+      "statement": "Renaming an output file can break a later step, since later modules and follow-up tools look for the default names.",
+      "source_id": "fastsurfer_run",
+      "quote": "Later modules\nand follow-up tools look for the default names, so renaming an output can\nbreak a later step.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 20277,
+        "end": 20384,
+        "text_sha256": "86e0b793c322530a30c34aaa6f2c1ec00912fceb693cb4fd554e9860eeea8892"
+      },
+      "source_url": "https://deep-mi.org/FastSurfer/stable/scripts/RUN_FASTSURFER.html"
+    },
+    {
+      "id": 1019,
+      "method": "independent_fs_glmfit_group",
+      "field": "inputs",
+      "statement": "The input data file has each frame as a separate input.",
+      "source_id": "fs_glmfit",
+      "quote": "Path to input file with each frame being a separate input.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 6924,
+        "end": 6982,
+        "text_sha256": "a5f4b73f3a2f35110ee8a23127ea3ae6b65332a72ab28deb4ec45b5076843fd8"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mri_glmfit"
+    },
+    {
+      "id": 1020,
+      "method": "independent_fs_glmfit_group",
+      "field": "inputs",
+      "statement": "Global design matrix specified with a FreeSurfer Group Descriptor File (FSGDF).",
+      "source_id": "fs_glmfit",
+      "quote": "Specify the global design matrix with a FreeSurfer Group Descriptor File (FSGDF).",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 7359,
+        "end": 7440,
+        "text_sha256": "a5f4b73f3a2f35110ee8a23127ea3ae6b65332a72ab28deb4ec45b5076843fd8"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mri_glmfit"
+    },
+    {
+      "id": 1021,
+      "method": "independent_fs_glmfit_group",
+      "field": "inputs",
+      "statement": "One or more contrast matrix files in ASCII text.",
+      "source_id": "fs_glmfit",
+      "quote": "Specify one or more contrasts to test. The contrast.mat file is an ASCII text file with the contrast matrix in it",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 9022,
+        "end": 9135,
+        "text_sha256": "a5f4b73f3a2f35110ee8a23127ea3ae6b65332a72ab28deb4ec45b5076843fd8"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mri_glmfit"
+    },
+    {
+      "id": 1022,
+      "method": "independent_fs_glmfit_group",
+      "field": "inputs",
+      "statement": "Surface-based smoothing requires --surf; otherwise the input is treated as a volume.",
+      "source_id": "fs_glmfit",
+      "quote": "If the data are surface-based, then you must specify --surf, otherwise mri_glmfit assumes that the input is a volume",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 11888,
+        "end": 12004,
+        "text_sha256": "a5f4b73f3a2f35110ee8a23127ea3ae6b65332a72ab28deb4ec45b5076843fd8"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mri_glmfit"
+    },
+    {
+      "id": 1023,
+      "method": "independent_fs_glmfit_group",
+      "field": "conditions",
+      "statement": "Data must be assembled by resampling each subject's data into a common space and concatenating subjects into a single file.",
+      "source_id": "fs_group_tutorial",
+      "quote": "Resampling each subject's data into a common space.\n\nConcatenating all the subjects' into a single file.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 5877,
+        "end": 5981,
+        "text_sha256": "47df6d321ae9ec7a10d07f18b6f6301ae427901f68bbcc4de50181e95d18eaeb"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/GroupAnalysis"
+    },
+    {
+      "id": 1024,
+      "method": "independent_fs_glmfit_group",
+      "field": "conditions",
+      "statement": "The same FSGD used with mris_preproc must be used, maintaining subject order.",
+      "source_id": "fs_group_tutorial",
+      "quote": "Same FSGD used as with mris_preproc. Maintains subject order!",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 9352,
+        "end": 9413,
+        "text_sha256": "47df6d321ae9ec7a10d07f18b6f6301ae427901f68bbcc4de50181e95d18eaeb"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/GroupAnalysis"
+    },
+    {
+      "id": 1025,
+      "method": "independent_fs_glmfit_group",
+      "field": "conditions",
+      "statement": "DODS is specified in the tutorial example and is the default.",
+      "source_id": "fs_group_tutorial",
+      "quote": "DODS is specified (it is the default).",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 9415,
+        "end": 9453,
+        "text_sha256": "47df6d321ae9ec7a10d07f18b6f6301ae427901f68bbcc4de50181e95d18eaeb"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/GroupAnalysis"
+    },
+    {
+      "id": 1026,
+      "method": "independent_fs_glmfit_group",
+      "field": "conditions",
+      "statement": "If data have not been cached, the same operations can be performed manually.",
+      "source_id": "fs_group_tutorial",
+      "quote": "In the case that you have not cached the data, you can perform the same operations manually using the two commands below.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 7778,
+        "end": 7899,
+        "text_sha256": "47df6d321ae9ec7a10d07f18b6f6301ae427901f68bbcc4de50181e95d18eaeb"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/GroupAnalysis"
+    },
+    {
+      "id": 1027,
+      "method": "independent_fs_glmfit_group",
+      "field": "checks",
+      "statement": "The completed GLM has its output subdirectory under the glm directory.",
+      "source_id": "fs_group_tutorial",
+      "quote": "When this command is finished the glm directory will contain a sub-directory called lh.gender_age.glmdir.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 9774,
+        "end": 9879,
+        "text_sha256": "47df6d321ae9ec7a10d07f18b6f6301ae427901f68bbcc4de50181e95d18eaeb"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/GroupAnalysis"
+    },
+    {
+      "id": 1028,
+      "method": "independent_fs_glmfit_group",
+      "field": "checks",
+      "statement": "There is a subdirectory for each specified contrast, named after the contrast matrix file without the .mtx extension.",
+      "source_id": "fs_group_tutorial",
+      "quote": "There will be a subdirectory for each contrast that you specify. The name of the directory will be that of the contrast matrix file (without the .mtx extension).",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 11034,
+        "end": 11195,
+        "text_sha256": "47df6d321ae9ec7a10d07f18b6f6301ae427901f68bbcc4de50181e95d18eaeb"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/GroupAnalysis"
+    },
+    {
+      "id": 1029,
+      "method": "independent_fs_glmfit_group",
+      "field": "checks",
+      "statement": "mri_info can be run on the assembled data to find its dimensions.",
+      "source_id": "fs_group_tutorial",
+      "quote": "Run mri_info on lh.gender_age.thickness.10.mgh to find its dimensions:",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 7650,
+        "end": 7720,
+        "text_sha256": "47df6d321ae9ec7a10d07f18b6f6301ae427901f68bbcc4de50181e95d18eaeb"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/GroupAnalysis"
+    },
+    {
+      "id": 1030,
+      "method": "independent_fs_glmfit_group",
+      "field": "exceptions",
+      "statement": "Temporary directories or log files starting with tmp may appear and can be ignored.",
+      "source_id": "fs_group_tutorial",
+      "quote": "You may also see some temporary directories (with names starting with tmp) or log files, which you can ignore.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 10755,
+        "end": 10865,
+        "text_sha256": "47df6d321ae9ec7a10d07f18b6f6301ae427901f68bbcc4de50181e95d18eaeb"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/GroupAnalysis"
+    },
+    {
+      "id": 1031,
+      "method": "independent_fs_glmfit_group",
+      "field": "exceptions",
+      "statement": "You cannot specify both --X and --osgm, and a contrast cannot be specified with --osgm.",
+      "source_id": "fs_glmfit",
+      "quote": "You cannot specify both --X and --osgm. A contrast cannot be specified either.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 9454,
+        "end": 9532,
+        "text_sha256": "a5f4b73f3a2f35110ee8a23127ea3ae6b65332a72ab28deb4ec45b5076843fd8"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mri_glmfit"
+    },
+    {
+      "id": 1032,
+      "method": "independent_fs_glmfit_group",
+      "field": "exceptions",
+      "statement": "Do not use --prune with --sim; instead run the non-sim analysis with --prune and pass the created mask to the simulation.",
+      "source_id": "fs_glmfit",
+      "quote": "Do not use with --sim. Rather, run the non-sim analysis with --prune, then pass the created mask when running simulation.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 13118,
+        "end": 13239,
+        "text_sha256": "a5f4b73f3a2f35110ee8a23127ea3ae6b65332a72ab28deb4ec45b5076843fd8"
+      },
+      "source_url": "https://surfer.nmr.mgh.harvard.edu/fswiki/mri_glmfit"
+    },
+    {
+      "id": 1033,
+      "method": "independent_workbench_area_stats",
+      "field": "inputs",
+      "statement": "A surface file to measure for -surface-vertex-areas.",
+      "source_id": "wb_vertex_areas",
+      "quote": "<surface> - the surface to measure",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 4809,
+        "end": 4843,
+        "text_sha256": "8e3163dff98453dbb078cd523a393ec13cd0de0bc590306f1e7d4b8059a49e2f"
+      },
+      "source_url": "https://www.humanconnectome.org/software/workbench-command/-surface-vertex-areas"
+    },
+    {
+      "id": 1034,
+      "method": "independent_workbench_area_stats",
+      "field": "inputs",
+      "statement": "An input metric file for -metric-stats.",
+      "source_id": "wb_metric_stats",
+      "quote": "<metric-in> - the input metric",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 4785,
+        "end": 4815,
+        "text_sha256": "019a5139fa7a191282de20bda1328b905477a91cf875583fef08d96b0784e37b"
+      },
+      "source_url": "https://www.humanconnectome.org/software/workbench-command/-metric-stats"
+    },
+    {
+      "id": 1035,
+      "method": "independent_workbench_area_stats",
+      "field": "inputs",
+      "statement": "Optional ROI metric file restricting which data are considered.",
+      "source_id": "wb_metric_stats",
+      "quote": "[-roi] - only consider data inside an roi\n<roi-metric> - the roi, as a metric file",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 5089,
+        "end": 5171,
+        "text_sha256": "019a5139fa7a191282de20bda1328b905477a91cf875583fef08d96b0784e37b"
+      },
+      "source_url": "https://www.humanconnectome.org/software/workbench-command/-metric-stats"
+    },
+    {
+      "id": 1036,
+      "method": "independent_workbench_area_stats",
+      "field": "conditions",
+      "statement": "Exactly one of -reduce or -percentile must be specified for -metric-stats.",
+      "source_id": "wb_metric_stats",
+      "quote": "Exactly one of\n-reduce or -percentile must be specified.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 5653,
+        "end": 5709,
+        "text_sha256": "019a5139fa7a191282de20bda1328b905477a91cf875583fef08d96b0784e37b"
+      },
+      "source_url": "https://www.humanconnectome.org/software/workbench-command/-metric-stats"
+    },
+    {
+      "id": 1037,
+      "method": "independent_workbench_area_stats",
+      "field": "conditions",
+      "statement": "The percentile must be between 0 and 100.",
+      "source_id": "wb_metric_stats",
+      "quote": "must be between 0 and 100",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 4977,
+        "end": 5002,
+        "text_sha256": "019a5139fa7a191282de20bda1328b905477a91cf875583fef08d96b0784e37b"
+      },
+      "source_url": "https://www.humanconnectome.org/software/workbench-command/-metric-stats"
+    },
+    {
+      "id": 1038,
+      "method": "independent_workbench_area_stats",
+      "field": "conditions",
+      "statement": "The reduction operation must be selected from the documented allowed list.",
+      "source_id": "wb_metric_stats",
+      "quote": "The argument to the -reduce option must be one of the following:",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 5711,
+        "end": 5775,
+        "text_sha256": "019a5139fa7a191282de20bda1328b905477a91cf875583fef08d96b0784e37b"
+      },
+      "source_url": "https://www.humanconnectome.org/software/workbench-command/-metric-stats"
+    },
+    {
+      "id": 1039,
+      "method": "independent_nmt_v2_charm",
+      "field": "inputs",
+      "statement": "The NMT v2 template and its accompanying matching CHARM dataset, obtained from the NMT download.",
+      "source_id": "afni_charm",
+      "quote": "The CHARM is distributed with the NMT v2. The NMT v2 has several forms\nand variants (based on symmetry/asymmetry, FOV and voxel size), and\nfor each of these there is an accompanying CHARM.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1379,
+        "end": 1567,
+        "text_sha256": "bb2cb3f01235e020c18a9c1e27a318d5cec676f9523dab8a45d973b82717d77b"
+      },
+      "source_url": "https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/nonhuman/macaque_tempatl/atlas_charm.html"
+    },
+    {
+      "id": 1040,
+      "method": "independent_nmt_v2_charm",
+      "field": "inputs",
+      "statement": "The NMT download also includes a CSV table file of the ROI labels, hierarchically organized.",
+      "source_id": "afni_charm",
+      "quote": "the NMT download also includes a CSV table file of the ROI\nlabels, hierarchically organized",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1579,
+        "end": 1670,
+        "text_sha256": "bb2cb3f01235e020c18a9c1e27a318d5cec676f9523dab8a45d973b82717d77b"
+      },
+      "source_url": "https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/nonhuman/macaque_tempatl/atlas_charm.html"
+    },
+    {
+      "id": 1041,
+      "method": "independent_nmt_v2_charm",
+      "field": "conditions",
+      "statement": "The CHARM is defined in the coordinates/space of the NMT v2 template.",
+      "source_id": "afni_charm",
+      "quote": "This atlas is defined in the coordinates/space of the NMT v2\ntemplate",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 465,
+        "end": 534,
+        "text_sha256": "bb2cb3f01235e020c18a9c1e27a318d5cec676f9523dab8a45d973b82717d77b"
+      },
+      "source_url": "https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/nonhuman/macaque_tempatl/atlas_charm.html"
+    },
+    {
+      "id": 1042,
+      "method": "independent_nmt_v2_charm",
+      "field": "conditions",
+      "statement": "For each form/variant of the NMT (symmetry/asymmetry, FOV, voxel size), there is a matching CHARM dataset.",
+      "source_id": "afni_charm",
+      "quote": "The NMT v2 has several forms\nand variants (based on symmetry/asymmetry, FOV and voxel size), and\nfor each of these there is an accompanying CHARM.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1421,
+        "end": 1567,
+        "text_sha256": "bb2cb3f01235e020c18a9c1e27a318d5cec676f9523dab8a45d973b82717d77b"
+      },
+      "source_url": "https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/nonhuman/macaque_tempatl/atlas_charm.html"
+    },
+    {
+      "id": 1043,
+      "method": "independent_nmt_v2_charm",
+      "field": "conditions",
+      "statement": "The -sym option is valid for the NMT v2 only; in other cases it is ignored.",
+      "source_id": "afni_install_nmt",
+      "quote": "Option is valid for the NMT v2 only--in\nother cases it is ignored.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1596,
+        "end": 1662,
+        "text_sha256": "00a6391ddd49949966f42e676ced0b076621477ba9db68f00e02b4622470bf9f"
+      },
+      "source_url": "https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/alpha/@Install_NMT_sphx.html"
+    },
+    {
+      "id": 1044,
+      "method": "independent_nmt_v2_charm",
+      "field": "exceptions",
+      "statement": "The -overwrite option allows the script to remove a pre-existing NMT directory.",
+      "source_id": "afni_install_nmt",
+      "quote": "-overwrite :allows the script to remove a pre-existing NMT directory",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1682,
+        "end": 1750,
+        "text_sha256": "00a6391ddd49949966f42e676ced0b076621477ba9db68f00e02b4622470bf9f"
+      },
+      "source_url": "https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/programs/alpha/@Install_NMT_sphx.html"
+    },
+    {
+      "id": 1045,
+      "method": "independent_nmt_v2_charm",
+      "field": "exceptions",
+      "statement": "AFNI uses zero-base counting, so CHARM Level 1 is volume \"[0]\" and Level 6 is volume \"[5]\".",
+      "source_id": "afni_charm",
+      "quote": "CHARM Level 1 is volume \"[0]\" and Level 6 is volume\n\"[5]\", because AFNI (like Python and C) use zero-base counting.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1262,
+        "end": 1377,
+        "text_sha256": "bb2cb3f01235e020c18a9c1e27a318d5cec676f9523dab8a45d973b82717d77b"
+      },
+      "source_url": "https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/nonhuman/macaque_tempatl/atlas_charm.html"
+    }
+  ],
+  "status": "unlabelled_pending_blind_Claude_annotation"
+}

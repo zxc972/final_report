@@ -1,0 +1,308 @@
+{
+  "round": 16,
+  "algorithm": "method condition canonicalization",
+  "bundle_commit": "e767445e5fe928f87de883ea9067117fcc68a636",
+  "base_commit": "36d4c73ab87d4c5d723aa384fb41aaa6bf80e533",
+  "concurrent_round15_merge": "d25d4e9",
+  "gold_status": "draft_by_claude_requires_human_review",
+  "statements": 108,
+  "methods": 12,
+  "gold_executable": 41,
+  "gold_advisory": 67,
+  "gold_unique_keys": 28,
+  "model_requested": "deepseek-v4.1-flash",
+  "model_observed": [
+    "deepseek-v4.1-flash"
+  ],
+  "temperature": 0.7,
+  "max_completion_tokens": 2048,
+  "algorithm_unchanged_sha256": "9bf1171fc9fc831b7e9628c982888a7c5e74578bed377f5594f4f749cbbce4e9",
+  "frozen_sha256": "054f9a031ef99326289bf925ea8551ae20ac80f5ffa610c1a3f90d61926cb126",
+  "algorithm_defaults_unchanged": true,
+  "all_prompts_label_free_verified": true,
+  "tests": {
+    "bundle_new_passed": 7,
+    "bundle_default_passed": 860,
+    "final_targeted_passed": 19,
+    "final_default_passed": 877,
+    "skipped": 14,
+    "subtests_passed": 59,
+    "warnings": 144,
+    "seconds": 103.66
+  },
+  "results": {
+    "full": {
+      "n": 108,
+      "template_accuracy": 0.48148148148148145,
+      "executable": {
+        "precision": 0.5714285714285714,
+        "recall": 0.0975609756097561,
+        "f1": 0.16666666666666669,
+        "tp": 4,
+        "fp": 3,
+        "fn": 37
+      },
+      "key": {
+        "precision": 0.14285714285714285,
+        "recall": 0.03571428571428571,
+        "f1": 0.05714285714285715,
+        "tp": 1,
+        "fp": 6,
+        "fn": 27
+      },
+      "review_queue": 48,
+      "rejected_quote": 0,
+      "advisory_or_not_executable": {
+        "precision": 0.6336633663366337,
+        "recall": 0.9552238805970149,
+        "f1": 0.7619047619047619,
+        "tp": 64,
+        "fp": 37,
+        "fn": 3
+      },
+      "decisions": {
+        "accepted": 7,
+        "advisory": 51,
+        "review": 48,
+        "rejected_quote": 0,
+        "inference_error": 0,
+        "provider_error": 2
+      },
+      "usage": {
+        "logical_calls": 535,
+        "http_attempts": 617,
+        "successful_requests": 533,
+        "failed_requests": 80,
+        "unfinished_requests": 4,
+        "length_limited_responses": 182,
+        "historical_null_length_responses": 2,
+        "unknown_usage_requests": 84,
+        "input_tokens": 761320,
+        "output_tokens": 675761,
+        "total_tokens": 1437081,
+        "observed_models": [
+          "deepseek-v4.1-flash"
+        ]
+      },
+      "elapsed_seconds": 2808.94
+    },
+    "k1": {
+      "n": 108,
+      "template_accuracy": 0.5462962962962963,
+      "executable": {
+        "precision": 0.4482758620689655,
+        "recall": 0.3170731707317073,
+        "f1": 0.37142857142857144,
+        "tp": 13,
+        "fp": 16,
+        "fn": 28
+      },
+      "key": {
+        "precision": 0.03571428571428571,
+        "recall": 0.03571428571428571,
+        "f1": 0.03571428571428571,
+        "tp": 1,
+        "fp": 27,
+        "fn": 27
+      },
+      "review_queue": 0,
+      "rejected_quote": 0,
+      "advisory_or_not_executable": {
+        "precision": 0.6455696202531646,
+        "recall": 0.7611940298507462,
+        "f1": 0.6986301369863013,
+        "tp": 51,
+        "fp": 28,
+        "fn": 16
+      },
+      "decisions": {
+        "accepted": 29,
+        "advisory": 78,
+        "review": 0,
+        "rejected_quote": 0,
+        "inference_error": 0,
+        "provider_error": 1
+      },
+      "usage": {
+        "logical_calls": 108,
+        "http_attempts": 125,
+        "successful_requests": 107,
+        "failed_requests": 18,
+        "unfinished_requests": 0,
+        "length_limited_responses": 31,
+        "historical_null_length_responses": 0,
+        "unknown_usage_requests": 18,
+        "input_tokens": 139306,
+        "output_tokens": 134841,
+        "total_tokens": 274147,
+        "observed_models": [
+          "deepseek-v4.1-flash"
+        ]
+      },
+      "elapsed_seconds": 699.032
+    },
+    "retrieval_only": {
+      "n": 108,
+      "template_accuracy": 0.17592592592592593,
+      "executable": {
+        "precision": 0.40594059405940597,
+        "recall": 1.0,
+        "f1": 0.5774647887323945,
+        "tp": 41,
+        "fp": 60,
+        "fn": 0
+      },
+      "key": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 28
+      },
+      "review_queue": 0,
+      "rejected_quote": 0,
+      "advisory_or_not_executable": {
+        "precision": 1.0,
+        "recall": 0.1044776119402985,
+        "f1": 0.18918918918918917,
+        "tp": 7,
+        "fp": 0,
+        "fn": 60
+      },
+      "decisions": {
+        "accepted": 101,
+        "advisory": 7,
+        "review": 0,
+        "rejected_quote": 0,
+        "inference_error": 0,
+        "provider_error": 0
+      },
+      "usage": {
+        "logical_calls": 0,
+        "http_attempts": 0,
+        "successful_requests": 0,
+        "failed_requests": 0,
+        "unfinished_requests": 0,
+        "length_limited_responses": 0,
+        "historical_null_length_responses": 0,
+        "unknown_usage_requests": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "total_tokens": 0,
+        "observed_models": []
+      },
+      "elapsed_seconds": 0.125
+    },
+    "direct": {
+      "n": 108,
+      "template_accuracy": 0.5555555555555556,
+      "executable": {
+        "precision": 0.46875,
+        "recall": 0.36585365853658536,
+        "f1": 0.410958904109589,
+        "tp": 15,
+        "fp": 17,
+        "fn": 26
+      },
+      "key": {
+        "precision": 0.03333333333333333,
+        "recall": 0.03571428571428571,
+        "f1": 0.03448275862068965,
+        "tp": 1,
+        "fp": 29,
+        "fn": 27
+      },
+      "review_queue": 0,
+      "rejected_quote": 0,
+      "advisory_or_not_executable": {
+        "precision": 0.6578947368421053,
+        "recall": 0.746268656716418,
+        "f1": 0.6993006993006994,
+        "tp": 50,
+        "fp": 26,
+        "fn": 17
+      },
+      "decisions": {
+        "accepted": 51,
+        "advisory": 57,
+        "review": 0,
+        "rejected_quote": 0,
+        "inference_error": 0,
+        "provider_error": 0
+      },
+      "usage": {
+        "logical_calls": 108,
+        "http_attempts": 120,
+        "successful_requests": 108,
+        "failed_requests": 12,
+        "unfinished_requests": 0,
+        "length_limited_responses": 43,
+        "historical_null_length_responses": 0,
+        "unknown_usage_requests": 12,
+        "input_tokens": 174812,
+        "output_tokens": 140153,
+        "total_tokens": 314965,
+        "observed_models": [
+          "deepseek-v4.1-flash"
+        ]
+      },
+      "elapsed_seconds": 717.796
+    }
+  },
+  "usage": {
+    "logical_calls": 751,
+    "http_attempts": 862,
+    "successful_requests": 748,
+    "failed_requests": 110,
+    "unfinished_requests": 4,
+    "length_limited_responses": 256,
+    "historical_null_length_responses": 2,
+    "unknown_usage_requests": 114,
+    "input_tokens": 1075438,
+    "output_tokens": 950755,
+    "total_tokens": 2026193,
+    "observed_models": [
+      "deepseek-v4.1-flash"
+    ]
+  },
+  "authorised_cumulative_http_cap": 1000,
+  "budget_completion": {
+    "items": 55,
+    "requests": 62,
+    "all_old_answers_preserved": true
+  },
+  "full_errors": {
+    "union": 69,
+    "template_mismatch": 54,
+    "decision_not_accepted": 12,
+    "parameter_key_mismatch": 1,
+    "provider_environment": 2
+  },
+  "limitations": {
+    "length_responses": 256,
+    "full_length_responses": 182,
+    "full_statements_with_length": 76,
+    "provider_failure_items": 3,
+    "unknown_usage_requests": 114,
+    "resource_limit_preconfigured": true,
+    "draft_gold_not_human_reviewed": true
+  },
+  "protected": {
+    "original": 101,
+    "mapped": 100,
+    "matched": 100,
+    "historically_unmapped": 1
+  },
+  "safety": {
+    "secret_matches": 0,
+    "analysis_runs": 0,
+    "preprocessing_submissions": 0,
+    "deployments": 0,
+    "service_restarts": 0,
+    "held_out_processed": 0,
+    "formal_gold_created": false,
+    "knowledge_instances_overwritten": 0,
+    "pr_merged": false
+  }
+}

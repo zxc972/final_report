@@ -1,0 +1,362 @@
+[
+  {
+    "id": 1001,
+    "method": "independent_fastsurfer",
+    "decision": "accepted",
+    "template": "software",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 1002,
+    "method": "independent_fastsurfer",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 1003,
+    "method": "independent_fastsurfer",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 1004,
+    "method": "independent_fastsurfer",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 1005,
+    "method": "independent_fastsurfer",
+    "decision": "accepted",
+    "template": "software",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 1006,
+    "method": "independent_fastsurfer",
+    "decision": "accepted",
+    "template": "software",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 1007,
+    "method": "independent_fastsurfer",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 1008,
+    "method": "independent_fastsurfer",
+    "decision": "accepted",
+    "template": "provenance",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 1009,
+    "method": "independent_fastsurfer",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 1010,
+    "method": "independent_fastsurfer",
+    "decision": "accepted",
+    "template": "provenance",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 1011,
+    "method": "independent_fastsurfer",
+    "decision": "accepted",
+    "template": "software",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 1012,
+    "method": "independent_fastsurfer",
+    "decision": "accepted",
+    "template": "plausibility",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 1013,
+    "method": "independent_fastsurfer",
+    "decision": "accepted",
+    "template": "provenance",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 1014,
+    "method": "independent_fastsurfer",
+    "decision": "accepted",
+    "template": "provenance",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 1015,
+    "method": "independent_fastsurfer",
+    "decision": "accepted",
+    "template": "provenance",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 1016,
+    "method": "independent_fastsurfer",
+    "decision": "accepted",
+    "template": "provenance",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 1017,
+    "method": "independent_fastsurfer",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 1018,
+    "method": "independent_fastsurfer",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 1019,
+    "method": "independent_fs_glmfit_group",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 1020,
+    "method": "independent_fs_glmfit_group",
+    "decision": "accepted",
+    "template": "design_variable",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 1021,
+    "method": "independent_fs_glmfit_group",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 1022,
+    "method": "independent_fs_glmfit_group",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 1023,
+    "method": "independent_fs_glmfit_group",
+    "decision": "accepted",
+    "template": "attr_equal",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 1024,
+    "method": "independent_fs_glmfit_group",
+    "decision": "accepted",
+    "template": "attr_equal",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 1025,
+    "method": "independent_fs_glmfit_group",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 1026,
+    "method": "independent_fs_glmfit_group",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 1027,
+    "method": "independent_fs_glmfit_group",
+    "decision": "accepted",
+    "template": "provenance",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 1028,
+    "method": "independent_fs_glmfit_group",
+    "decision": "accepted",
+    "template": "design_variable",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 1029,
+    "method": "independent_fs_glmfit_group",
+    "decision": "accepted",
+    "template": "provenance",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 1030,
+    "method": "independent_fs_glmfit_group",
+    "decision": "accepted",
+    "template": "provenance",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 1031,
+    "method": "independent_fs_glmfit_group",
+    "decision": "accepted",
+    "template": "design_variable",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 1032,
+    "method": "independent_fs_glmfit_group",
+    "decision": "accepted",
+    "template": "provenance",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 1033,
+    "method": "independent_workbench_area_stats",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 1034,
+    "method": "independent_workbench_area_stats",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 1035,
+    "method": "independent_workbench_area_stats",
+    "decision": "accepted",
+    "template": "product_present",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 1036,
+    "method": "independent_workbench_area_stats",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 1037,
+    "method": "independent_workbench_area_stats",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 1038,
+    "method": "independent_workbench_area_stats",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 1039,
+    "method": "independent_nmt_v2_charm",
+    "decision": "accepted",
+    "template": "asymmetry_flip",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 1040,
+    "method": "independent_nmt_v2_charm",
+    "decision": "accepted",
+    "template": "label_policy",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 1041,
+    "method": "independent_nmt_v2_charm",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 1042,
+    "method": "independent_nmt_v2_charm",
+    "decision": "accepted",
+    "template": "asymmetry_flip",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 1043,
+    "method": "independent_nmt_v2_charm",
+    "decision": "accepted",
+    "template": "attr_in",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 1044,
+    "method": "independent_nmt_v2_charm",
+    "decision": "advisory",
+    "template": "advisory",
+    "parameters": null,
+    "sampling": {}
+  },
+  {
+    "id": 1045,
+    "method": "independent_nmt_v2_charm",
+    "decision": "accepted",
+    "template": "plausibility",
+    "parameters": null,
+    "sampling": {}
+  }
+]

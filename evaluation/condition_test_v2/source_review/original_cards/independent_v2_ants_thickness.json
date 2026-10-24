@@ -1,0 +1,391 @@
+{
+  "method_id": "independent_v2_ants_thickness",
+  "name": "ANTs antsCorticalThickness.sh",
+  "purpose": "Performs T1 anatomical brain processing: brain extraction, n-tissue segmentation, cortical thickness, and optional registration to a template.",
+  "species_scope": "unspecified",
+  "software": [
+    "antsRegistration",
+    "antsApplyTransforms",
+    "N4BiasFieldCorrection",
+    "Atropos",
+    "KellyKapowski",
+    "antsBrainExtraction.sh",
+    "antsAtroposN4.sh",
+    "ImageMath",
+    "ThresholdImage",
+    "CopyImageHeaderInformation",
+    "CreateJacobianDeterminantImage",
+    "ResampleImage",
+    "ConvertScalarImageToRGB",
+    "CreateTiledMosaic",
+    "SmoothImage"
+  ],
+  "inputs": [
+    {
+      "statement": "Anatomical structural intensity image, typically T1; if multiple are given, later ones are used in segmentation but only the first in prior registration.",
+      "source_id": "ants_thickness_script",
+      "quote": "Structural *intensity* image, typically T1.  If more than one",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1754,
+        "end": 1815,
+        "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+      }
+    },
+    {
+      "statement": "Brain segmentation template: an anatomical intensity template that is not skull-stripped.",
+      "source_id": "ants_thickness_script",
+      "quote": "Anatomical *intensity* template. This template is *not* skull-stripped.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 2276,
+        "end": 2347,
+        "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+      }
+    },
+    {
+      "statement": "Brain extraction probability mask in the segmentation template space; a binary mask is acceptable.",
+      "source_id": "ants_thickness_script",
+      "quote": "Brain *probability* mask in the segmentation template space. A binary mask",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 3022,
+        "end": 3096,
+        "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+      }
+    },
+    {
+      "statement": "Tissue probability priors in template space; at least four must exist for CSF, Cortical GM, WM, Subcortical GM.",
+      "source_id": "ants_thickness_script",
+      "quote": "At least four priors must exist, corresponding to CSF, Cortical GM, WM, Subcortical GM.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 3810,
+        "end": 3897,
+        "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "statement": "Image dimension must be 2 or 3; other values cause an error.",
+      "source_id": "ants_thickness_script",
+      "quote": "ImageDimension must be 2 or 3",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 20520,
+        "end": 20549,
+        "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+      }
+    },
+    {
+      "statement": "If the optional registration template is supplied, the template must be skull-stripped.",
+      "source_id": "ants_thickness_script",
+      "quote": "This template *must* be skull-stripped.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 6476,
+        "end": 6515,
+        "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+      }
+    },
+    {
+      "statement": "The optional extraction registration mask must be a binary metric mask defined in the segmentation template space.",
+      "source_id": "ants_thickness_script",
+      "quote": "Binary metric mask defined in the segmentation template space (-e).",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 8167,
+        "end": 8234,
+        "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+      }
+    },
+    {
+      "statement": "At least four prior images are required; fewer causes the script to exit.",
+      "source_id": "ants_thickness_script",
+      "quote": "Expected at least 4 prior images",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 27207,
+        "end": 27239,
+        "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+      }
+    },
+    {
+      "statement": "The optional registration template may differ from the segmentation template; output in template space then uses the registration template.",
+      "source_id": "ants_thickness_outputs",
+      "quote": "the segmentation template (used for brain extraction and priors) and registration template (used for final, high-quality registration on brain-extracted images) may be different",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 791,
+        "end": 968,
+        "text_sha256": "73c52afc4087a016c0dc8cbe136f327eb65a9c62abf29b2eb8a4f3338445206a"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "statement": "Brain extraction is performed with antsBrainExtraction.sh, optionally passing the extraction registration mask.",
+      "source_id": "ants_thickness_script",
+      "quote": "logCmd antsBrainExtraction.sh",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 31385,
+        "end": 31414,
+        "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+      }
+    },
+    {
+      "statement": "The extracted brain is masked and given a quick N4 bias correction before registration.",
+      "source_id": "ants_thickness_script",
+      "quote": "Do a quick N4 on the brain before registration",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 32379,
+        "end": 32425,
+        "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+      }
+    },
+    {
+      "statement": "The template and segmentation priors are registered to the anatomical image and the priors are warped to subject space.",
+      "source_id": "ants_thickness_script",
+      "quote": "Warp priors to ${ANATOMICAL_IMAGES[0]}",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 34118,
+        "end": 34156,
+        "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+      }
+    },
+    {
+      "statement": "N-tissue segmentation is run with antsAtroposN4.sh in two stages, the second using N4-corrected images with 2 iterations.",
+      "source_id": "ants_thickness_script",
+      "quote": "We do two stages of antsAtroposN4.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 39990,
+        "end": 40024,
+        "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+      }
+    },
+    {
+      "statement": "Cortical thickness is estimated with DiReCT via KellyKapowski using gray and white matter posteriors.",
+      "source_id": "ants_thickness_script",
+      "quote": "Cortical thickness using DiReCT (KellyKapowski)",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 52054,
+        "end": 52101,
+        "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+      }
+    },
+    {
+      "statement": "Optional registration of the brain-masked N4 image to the registration template produces forward and inverse warps and a log Jacobian.",
+      "source_id": "ants_thickness_script",
+      "quote": "Registration brain masked ${HEAD_N4_IMAGE} to ${REGISTRATION_TEMPLATE}",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 46043,
+        "end": 46113,
+        "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+      }
+    },
+    {
+      "statement": "A quality control stage computes summary measurements and tiled mosaic images.",
+      "source_id": "ants_thickness_script",
+      "quote": "Compute summary measurements",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 57778,
+        "end": 57806,
+        "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+      }
+    }
+  ],
+  "checks": [
+    {
+      "statement": "Required programs and scripts are checked for availability on PATH before processing.",
+      "source_id": "ants_thickness_script",
+      "quote": "we can't find the $D program.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 351,
+        "end": 380,
+        "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+      }
+    },
+    {
+      "statement": "Specified anatomical images are checked for existence.",
+      "source_id": "ants_thickness_script",
+      "quote": "does not exist.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 24300,
+        "end": 24315,
+        "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+      }
+    },
+    {
+      "statement": "After completion, expected outputs such as BrainExtractionMask, BrainSegmentation and CorticalThickness are checked for existence.",
+      "source_id": "ants_thickness_script",
+      "quote": "Missing output image $img",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 14846,
+        "end": 14871,
+        "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+      }
+    },
+    {
+      "statement": "The registration component of segmentation is checked for its transform files.",
+      "source_id": "ants_thickness_script",
+      "quote": "The registration component of the segmentation step didn't complete properly.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 38149,
+        "end": 38226,
+        "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+      }
+    }
+  ],
+  "exceptions": [
+    {
+      "statement": "If a command exits with nonzero status, the script exits unless debug mode is enabled.",
+      "source_id": "ants_thickness_script",
+      "quote": "ERROR: command exited with nonzero status $cmdExit",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 17601,
+        "end": 17651,
+        "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+      }
+    },
+    {
+      "statement": "In BIDS prior formatting, a missing required SGM label triggers a fallback to templateflow SCGM; if absent, the script exits.",
+      "source_id": "ants_thickness_script",
+      "quote": "Hack for templateflow - try SCGM instead of SGM",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 26246,
+        "end": 26293,
+        "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+      }
+    },
+    {
+      "statement": "Prior combinations are only allowed for gray matter or white matter; other labels cause an error exit.",
+      "source_id": "ants_thickness_script",
+      "quote": "We only combine with the gray matter or the white matter.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 29165,
+        "end": 29222,
+        "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+      }
+    },
+    {
+      "statement": "If the cortical thickness output is not produced, the script exits with an error.",
+      "source_id": "ants_thickness_script",
+      "quote": "Expected output was not produced.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 56540,
+        "end": 56573,
+        "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "statement": "Brain extraction mask in subject space.",
+      "source_id": "ants_thickness_outputs",
+      "quote": "BrainExtractionMask- Brain extraction mask in subject space.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1363,
+        "end": 1423,
+        "text_sha256": "73c52afc4087a016c0dc8cbe136f327eb65a9c62abf29b2eb8a4f3338445206a"
+      }
+    },
+    {
+      "statement": "Segmentation image with one label per tissue class; number of classes is determined by the input priors.",
+      "source_id": "ants_thickness_outputs",
+      "quote": "Segmentation image, one label per tissue class.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 1791,
+        "end": 1838,
+        "text_sha256": "73c52afc4087a016c0dc8cbe136f327eb65a9c62abf29b2eb8a4f3338445206a"
+      }
+    },
+    {
+      "statement": "Cortical thickness image in subject space.",
+      "source_id": "ants_thickness_outputs",
+      "quote": "CorticalThickness - Cortical thickness image in subject space.",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 2069,
+        "end": 2131,
+        "text_sha256": "73c52afc4087a016c0dc8cbe136f327eb65a9c62abf29b2eb8a4f3338445206a"
+      }
+    },
+    {
+      "statement": "Optional forward warps (SubjectToTemplate1Warp, SubjectToTemplate0GenericAffine.mat) and log Jacobian are produced when a registration template is supplied.",
+      "source_id": "ants_thickness_outputs",
+      "quote": "SubjectToTemplate1Warp, SubjectToTemplate0GenericAffine.mat - Transforms to be used when warping images from the subject space to the template space",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 2288,
+        "end": 2436,
+        "text_sha256": "73c52afc4087a016c0dc8cbe136f327eb65a9c62abf29b2eb8a4f3338445206a"
+      }
+    }
+  ],
+  "parameters": [
+    {
+      "statement": "Registration max iterations; default is 100x100x70x20.",
+      "source_id": "ants_thickness_script",
+      "quote": "ANTS registration max iterations (default = 100x100x70x20)",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 8683,
+        "end": 8741,
+        "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+      }
+    },
+    {
+      "statement": "Atropos spatial prior probability weight for segmentation; default is 0.25.",
+      "source_id": "ants_thickness_script",
+      "quote": "Atropos spatial prior *probability* weight for the segmentation (default = 0.25)",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 8792,
+        "end": 8872,
+        "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+      }
+    },
+    {
+      "statement": "Number of N4 -> Atropos -> N4 iterations during segmentation; default is 3.",
+      "source_id": "ants_thickness_script",
+      "quote": "N4 -> Atropos -> N4 iterations during segmentation (default = 3)",
+      "claim_type": "direct",
+      "source_span": {
+        "start": 8923,
+        "end": 8987,
+        "text_sha256": "cd539f04343981b0d21a7d15b31364b26c374ced4bbe9feae4695feabdf8674c"
+      }
+    }
+  ],
+  "quarantined_claims": [
+    {
+      "field": "parameters",
+      "claim": {
+        "statement": "Cortical thickness prior image in template space; if not specified, the prior is set to 10mm throughout the brain.",
+        "source_id": "ants_thickness_script",
+        "quote": "If not specified, the prior is set to 10mm throughout the brain.",
+        "claim_type": "direct"
+      },
+      "reason": "schema_or_exact_quote_not_verified"
+    }
+  ],
+  "evidence_status": "exact_quotes_verified_semantics_pending_annotation"
+}

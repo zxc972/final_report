@@ -1,0 +1,5 @@
+﻿case,status,elapsed_seconds,source_commit,native_logical_reservations,native_http_reservations,actual_upstream_http_sends,known_prompt_tokens,known_completion_tokens,unknown_usage_reservations,executions_observed,public_contract,independent_numeric,internal_review,full_chain_passed
+R21_G1_1,route_failed,0.18359857611358166,2dbaf9b478ed5e5fbcb15fc900e4b797da99feac,2,2,0,0,0,2,0,not_assessed,not_assessed,not_assessed,False
+R21_G1_2,route_failed,0.15818210132420063,2dbaf9b478ed5e5fbcb15fc900e4b797da99feac,2,2,0,0,0,2,0,not_assessed,not_assessed,not_assessed,False
+R21_G2_1,route_failed,0.1508773062378168,2dbaf9b478ed5e5fbcb15fc900e4b797da99feac,2,2,0,0,0,2,0,not_assessed,not_assessed,not_assessed,False
+R21_G2_2,route_failed,0.15020981524139643,2dbaf9b478ed5e5fbcb15fc900e4b797da99feac,2,2,0,0,0,2,0,not_assessed,not_assessed,not_assessed,False

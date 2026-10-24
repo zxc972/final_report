@@ -1,0 +1,268 @@
+mris_ca_label - Free Surfer Wiki
+
+Search:
+
+Login
+
+mris_ca_label
+
+FreeSurferWiki
+
+RecentChanges
+
+FindPage
+
+HelpContents
+
+mris_ca_label
+
+Immutable Page
+
+Comments
+
+Discussion
+
+Info
+
+Attachments
+
+More Actions:
+
+Raw Text
+Print View
+Render as Docbook
+Delete Cache
+------------------------
+Check Spelling
+Like Pages
+Local Site Map
+------------------------
+Rename Page
+Delete Page
+------------------------
+Subscribe User
+------------------------
+Remove Spam
+Revert to this revision
+Package Pages
+Sync Pages
+------------------------
+Load
+Save
+SlideShow
+
+Index
+
+Contents
+
+Name
+
+Synopsis
+
+Arguments
+
+Positional Arguments
+
+Required Flagged Arguments
+
+Optional Flagged Arguments
+
+Outputs
+
+Example
+
+Bugs
+
+See Also
+
+Links
+
+References
+
+Reporting Bugs
+
+Author/s
+
+Name
+
+mris_ca_label - For a single subject, produces an annotation file, in which each cortical surface vertex is assigned a neuroanatomical label.
+This automatic procedure employs data from a previously-prepared atlas file. An atlas file is created from a training set, capturing region data manually drawn by neuroanatomists combined with statistics on variability correlated to geometric information derived from the cortical model (sulcus and curvature). Besides the atlases provided with FreeSurfer, new ones can be prepared using mris_ca_train).
+
+Synopsis
+
+mris_ca_label [options] <subject> <hemi> <canonsurf> <classifier> <outputfile>
+
+Arguments
+
+Positional Arguments
+
+[options]
+
+-sdir, -orig, -long, -novar, -nbrs, -f, -v, -w, -r, --help, --version
+
+<subject>
+
+subject id
+
+<hemi>
+
+hemisphere: rh or lh
+
+<canonsurf>
+
+canonical surface file. Ie: the name of the spherical surface file which describes the registration of a subject's vertices to the reference "average" surface. Example: sphere.reg
+
+<classifier>
+
+specify classifier array input file
+
+<outputfile>
+
+annotated surface output file. Ie: an annotation file listing the region label for each vertex. See LabelsClutsAnnotationFiles
+
+Required Flagged Arguments
+
+subject hemi canonsurf classifier outputfile
+
+Optional Flagged Arguments
+
+-sdir <subject dir>
+
+specify a subjects directory (default=$SUBJECTS_DIR)
+
+-orig <filename>
+
+specify filename of original surface (default=smoothwm)
+
+-long
+
+refines the initial labeling read-in from -r (default: disabled)
+
+-r <filename>
+
+file containing precomputed parcellation
+
+-novar
+
+sets all covariance matrices to the identify (default: disabled)
+
+-nbrs <number>
+
+neighborhood size (default=2)
+
+-f <number>
+
+applies mode filter <number> times before writing output (default=10)
+
+-t <filename>
+
+specify parcellation table input file (default: none)
+
+-p <filename>
+
+output a file containing label probability for each vertex (default: none)
+
+-v <number>
+
+diagnostic level (default=0)
+
+-w <number> <filename>
+
+writes-out snapshots of gibbs process every <number> iterations to <filename> (default=disabled)
+
+--help
+
+print help info
+
+--version
+
+print version info
+
+Outputs
+
+outputfile:
+
+labeled cortical surface model
+
+Example
+
+mris_ca_label \
+-orig white \
+-novar \
+-t $SUBJECTS_DIR/scripts/colortable_final.txt \
+my_subject \
+lh \
+sphere.reg \
+$SUBJECTS_DIR/average/lh.rahul.gcs \
+$SUBJECTS_DIR/my_subject/label/lh.raparc.annot
+
+In this example, mris_ca_label take sphere.reg as the canonical surface input file, lh.rahul.gcs as the classifier array input file, and writes the annotated surface info to lh.raparc.annot. The file colortable_final.txt is embedded into the output file, so that tksurfer (and other utilities) can read it in.
+
+Bugs
+
+none
+
+See Also
+
+mris_sample_parc, mris_ca_train, SurfaceRegAndTemplates
+
+Links
+
+CorticalParcellation, FreeSurfer, FsFast
+
+References
+
+Automatically Parcellating the Human Cerebral Cortex, Fischl et al., (2004). Cerebral Cortex, 14:11-22.
+
+Reporting Bugs
+
+Report bugs to <analysis-bugs@nmr.mgh.harvard.edu>
+
+Author/s
+
+BruceFischl
+
+mris_ca_label (last edited 2013-11-11 12:40:07 by MaritzaEbling)
+
+Immutable Page
+
+Comments
+
+Discussion
+
+Info
+
+Attachments
+
+More Actions:
+
+Raw Text
+Print View
+Render as Docbook
+Delete Cache
+------------------------
+Check Spelling
+Like Pages
+Local Site Map
+------------------------
+Rename Page
+Delete Page
+------------------------
+Subscribe User
+------------------------
+Remove Spam
+Revert to this revision
+Package Pages
+Sync Pages
+------------------------
+Load
+Save
+SlideShow
+
+MoinMoin Powered
+
+Python Powered
+
+GPL licensed
+
+Valid HTML 4.01

@@ -5,6 +5,7 @@ from .analysis_control_store import digest
 
 
 def build_evidence_card(tools, validation):
+    from .analysis_constraint_ids import qualified
     store = tools.control_store
     checks, commands, disclosures = {}, {}, []
     for path in store.versions("constraints"):
@@ -15,7 +16,7 @@ def build_evidence_card(tools, validation):
         for row in record.get("rows", []):
             observed = row.get("tool_observed", {})
             method = record.get("method_id")
-            checks[(method, row["constraint_id"])] = {
+            checks[qualified(method, row["constraint_id"])] = {
                 "method_id": method,
                 "constraint_id": row["constraint_id"],
                 "severity": row["severity"],
@@ -72,6 +73,8 @@ def build_evidence_card(tools, validation):
             } for item in profile["record"].get("files", [])],
             "scope": "Protected metadata summary; not raw images, independent reference values or expert QC",
         }
+    from .analysis_constraint_ids import canonical_row
+    checks = {key: canonical_row(row) for key, row in checks.items()}
     return {
         "schema": "primatex.review_evidence_card.v2",
         "protected_profile": profile_summary,
@@ -84,6 +87,7 @@ def build_evidence_card(tools, validation):
             for row in checks.values()
             if row["severity"] == "hard" and row["verdict"] == "block"
         ],
+        "group_report_requirements": ({key: plan["record"]["plan"]["analysis_scope"].get(key) for key in ("n", "excluded_subjects", "d_min", "power_assumptions", "site_scanner_composition", "effect")} if plan and plan["record"]["plan"]["method"]["method_id"] == "method:v14:group_regional_glm" else None),
         "public_contract": validation.get("public_output_contract", {}),
         "independent_numeric": (
             {

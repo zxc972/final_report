@@ -21,9 +21,15 @@ def returns_fields(example):
     return type(example).__name__
 
 
-def execution_card(payload):
+def detailed_instructions(payload):
     bundle = payload["execution_bundle"]
     plan = payload["plan"]
+    if plan["method"]["method_id"] == "method:v14:group_regional_glm":
+        from .analysis_group_manifest import instructions
+        return instructions(plan, bundle)
+    if plan["method"]["method_id"] == "method:v15:global_morphometry":
+        from .analysis_global_method import detailed_execution_card
+        return detailed_execution_card(payload)["execution_card"]
     names = {row["function"] for row in bundle["operations"]["calls"]}
     signatures = []
     for row in operations_manifest()["functions"]:
@@ -35,7 +41,7 @@ def execution_card(payload):
     if table:
         contract = [
             "CSV: " + ";".join(key + ":" + kind for key, kind in table["columns"].items()),
-            "Allowed (no aliases): " + ";".join(key + "=" + "|".join(map(str, values)) for key, values in table["allowed_values"].items()),
+            "Allowed values: exact sealed output_contract.table.allowed_values; no aliases.",
             "Identity: " + ",".join(table["identity_columns"]) + "; rows=" + str(table["expected_rows"]) + "; " + ("one/retained label/metric" if bundle.get("label_sets") else "one/hemisphere surface"),
         ]
     labels = bundle.get("label_sets", {})
@@ -50,7 +56,7 @@ def execution_card(payload):
     else:
         label_lines += ["No parcel labels for this method."]
     lines = [
-        "import primatex_ops as ops", *bundle["input_paths"], *label_lines, *signatures,
+        "import primatex_ops as ops", "Input paths: execution_bundle JSON [input_paths / operations.calls].", *label_lines, *signatures,
         "Code: " + plan["code_path"],
         "Outputs: " + ",".join(bundle["output_contract"]["files"]), *contract,
         "JSON: methods,limitations",
@@ -65,6 +71,9 @@ def execution_card(payload):
     if payload.get("path_normalization"):
         lines.insert(-1, "Path normalized: " + payload["path_normalization"]["original"] + " -> " + plan["code_path"])
     card = "\n".join(lines)
-    if len(card) > 2200:
-        raise ValueError("Execution card exceeds 2200 characters; choose a smaller analysis scope")
-    return {"status": "committed", "version": payload["version"], "execution_card": card, "state": payload.get("state")}
+    return card
+
+
+def execution_card(payload):
+    from .analysis_execution_guidance import compact_payload
+    return compact_payload(payload)

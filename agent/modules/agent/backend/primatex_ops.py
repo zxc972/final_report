@@ -303,3 +303,222 @@ def nifti_info(path):
         "affine": image.affine.tolist(),
         "physical_scale_verified": False,
     }
+
+
+
+def read_stats_measures(path):
+    """Read FS '# Measure' short names into {name: {value: float, unit: str}}.
+
+    Does not substitute parcel ThickAvg for global MeanThickness. No rescaling.
+    """
+    measures = {}
+    for line in Path(path).read_text(encoding="utf-8").splitlines():
+        if not line.startswith("# Measure "):
+            continue
+        parts = [part.strip() for part in line[10:].split(",")]
+        if len(parts) < 5:
+            raise ValueError("Malformed Measure row")
+        number = float(parts[-2])
+        if not np.isfinite(number) or parts[1] in measures:
+            raise ValueError("Nonfinite or duplicate Measure short name")
+        measures[parts[1]] = {"value": number, "unit": parts[-1]}
+    return measures
+
+
+def positive_mask_volume(path):
+    """Positive support volume from one finite 3D image, in header mm convention.
+
+    brainmask.mgz is an intensity image: count >0 support, not label IDs.
+    This fallback definition is not the segmentation BrainSegVol definition.
+    """
+    image = nib.load(str(path))
+    data = np.asanyarray(image.dataobj)
+    if data.ndim != 3 or not np.isfinite(data).all():
+        raise ValueError("A finite three-dimensional support image is required")
+    zooms = np.asarray(image.header.get_zooms()[:3], dtype=float)
+    if not np.isfinite(zooms).all() or np.any(zooms <= 0):
+        raise ValueError("Finite positive voxel sizes are required")
+    count = int(np.count_nonzero(data > 0))
+    return {"volume_mm3": float(count * np.prod(zooms)), "positive_voxels": count,
+            "unit_source": "MGH header millimetre convention; acquisition calibration unverified"}
+
+
+
+def read_group_inputs(manifest_path):
+    """Read a group manifest/label_sets into identity-sorted raw vertex rows.
+
+    Manifest is a dict: subjects maps subject IDs to LISTS of hemisphere/metric
+    binding dicts; label_sets_ref.path points to a dict keyed by label_set_scope;
+    each group.labels is a LIST of {key, name} dicts; key becomes row.label_key. Rows contain subject,
+    hemisphere, metric, label_key, name, and read-only float64 values arrays.
+    Identity is (subject, hemisphere, metric, label_key), never name or position.
+    Cortex membership is read as declared. No finite-value removal, summaries,
+    model fitting, multiple correction, rescaling, or output writes occur here.
+    """
+    import json
+    manifest = json.loads(Path(manifest_path).read_text(encoding="utf-8"))
+    subjects = manifest.get("subjects")
+    if not isinstance(subjects, dict):
+        raise ValueError("manifest.subjects must be a dict of subject -> list[bindings]")
+    labels_ref = manifest.get("label_sets_ref", {}).get("path")
+    if not isinstance(labels_ref, str):
+        raise ValueError("manifest.label_sets_ref.path is required")
+    label_sets = json.loads(Path(labels_ref).read_text(encoding="utf-8"))
+    if not isinstance(label_sets, dict):
+        raise ValueError("label_sets must be a dict keyed by label_set_scope")
+    rows, identities = [], set()
+    for subject, bindings in subjects.items():
+        if not isinstance(subject, str) or not isinstance(bindings, list):
+            raise ValueError("Each subject ID must map to a list of binding dicts")
+        for binding in bindings:
+            if not isinstance(binding, dict):
+                raise ValueError("Each hemisphere/metric binding must be a dict")
+            hemisphere = binding["hemisphere"]
+            metric_name = binding.get("metric") or Path(binding["metric_path"]).name.split(".", 1)[-1]
+            if hemisphere not in {"lh", "rh"}:
+                raise ValueError("Binding hemisphere must be lh or rh")
+            group = label_sets[binding["label_set_scope"]]
+            retained = group.get("labels")
+            if not isinstance(retained, list):
+                raise ValueError("label_sets[scope].labels must be a list of label dicts")
+            labels, names, _ = read_annotation(binding["annotation_path"])
+            metric = read_surface_metric(binding["metric_path"])
+            mask_ids = read_label(binding["mask_path"])
+            if len(labels) != len(metric) or (len(mask_ids) and mask_ids.max() >= len(metric)):
+                raise ValueError("Metric, annotation and cortex indices must share a vertex domain")
+            cortex = np.zeros(len(metric), dtype=bool)
+            cortex[mask_ids] = True
+            for label in retained:
+                key, name = label["key"], label["name"]
+                if type(key) is not int or not 0 <= key < len(names) or names[key] != name:
+                    raise ValueError("Retained label identity/name differs from annotation")
+                identity = (subject, hemisphere, metric_name, key)
+                if identity in identities:
+                    raise ValueError("Duplicate regional identity: " + repr(identity))
+                identities.add(identity)
+                values = np.asarray(metric[cortex & (labels == key)], dtype=np.float64)
+                values.setflags(write=False)
+                rows.append({"subject": subject, "hemisphere": hemisphere, "metric": metric_name,
+                             "label_key": key, "name": name, "values": values})
+    return sorted(rows, key=lambda r: (r["subject"], r["hemisphere"], r["metric"], r["label_key"]))
+
+
+def fdr_bh_by_identity(pvalues):
+    """BH correction: mapping[(hemisphere, metric, label_key)] -> p or None.
+
+    Returns the SAME exact identity keys mapped to q (None for an explicitly
+    unfitted partition). The family is every non-None p across both hemispheres
+    and all metrics in this mapping. Names/row order never identify a partition.
+    Finite p in [0,1] required. Host reference uses its own implementation.
+    """
+    from collections.abc import Mapping
+    if not isinstance(pvalues, Mapping):
+        raise ValueError("FDR input must map exact identity tuples to p values")
+    output, fitted = {}, []
+    for identity, p in pvalues.items():
+        if (not isinstance(identity, tuple) or len(identity) != 3
+                or identity[0] not in {"lh", "rh"}
+                or not isinstance(identity[1], str) or not identity[1]
+                or type(identity[2]) is not int or identity[2] < 0):
+            raise ValueError("FDR identity must be (hemisphere, metric, integer label_key)")
+        output[identity] = None
+        if p is None:
+            continue
+        if isinstance(p, (bool, str)) or not np.isfinite(p) or not 0 <= p <= 1:
+            raise ValueError("Fitted p values must be finite numbers in [0,1]")
+        fitted.append((identity, float(p)))
+    fitted.sort(key=lambda item: item[1])
+    previous, count = 1.0, len(fitted)
+    for index in range(count - 1, -1, -1):
+        identity, p = fitted[index]
+        previous = min(previous, p * count / (index + 1))
+        output[identity] = previous
+    return output
+
+
+CONTRACT_WORKDIR = "/work"
+
+
+def write_contract_table(table_name, rows):
+    """Check public identities/fixed values/enums, then serialize canonical CSV.
+
+    No statistics, aliases or value repairs. Invalid data leaves an existing
+    destination unchanged and creates no new destination.
+    """
+    import csv,io,json,math,numbers,os,re,stat
+    from pathlib import Path
+    root=Path(CONTRACT_WORKDIR)
+    tables=json.loads((root/'contract_tables.json').read_text(encoding='utf-8'))['tables']
+    if table_name not in tables:
+        raise ValueError('Unknown sealed table name; choose '+', '.join(tables))
+    relative=Path(table_name)
+    if relative.is_absolute() or len(relative.parts)!=1 or relative.name in {'.','..'}:
+        raise ValueError('Sealed table name must be a filename beneath /work')
+    spec=tables[table_name];columns=spec['columns']
+    if not columns or len(columns)!=len(set(columns)):
+        raise ValueError('Invalid sealed serialization columns')
+    target=root/table_name
+    if target.is_symlink() or (target.exists() and not stat.S_ISREG(target.lstat().st_mode)):
+        raise ValueError('Contract output must be a regular non-symlink file')
+    identities=spec.get('identity_columns',[])
+    def identity(row):
+        result=[]
+        for key in identities:
+            value=str(row.get(key,''))
+            if spec.get('column_types',{}).get(key)=='int' and re.fullmatch(r'[+-]?\d+',value):
+                value=str(int(value))
+            result.append(value)
+        return tuple(result)
+    expected=spec.get('expected_identities')
+    known={identity(row):row for row in expected} if expected is not None else None
+    seen=set();buffer=io.StringIO(newline='');writer=csv.writer(buffer,delimiter=',',lineterminator='\n')
+    writer.writerow(columns);count=0
+    for row in rows:
+        if not isinstance(row,dict):raise ValueError('Contract rows must be dicts keyed by sealed columns')
+        missing=[key for key in columns if key not in row]
+        if missing:raise ValueError('Missing row fields: '+', '.join(missing)+'; allowed columns: '+', '.join(columns))
+        text={}
+        for key in columns:
+            value=row[key]
+            if value is None:value=''
+            elif isinstance(value,numbers.Integral):value=str(int(value))
+            elif isinstance(value,numbers.Real):
+                value=float(value)
+                if not math.isfinite(value):raise ValueError('Non-finite contract value for '+key+'; use None only where allowed')
+                value=repr(value)
+            text[key]=str(value)
+        for key,allowed in spec.get('enums',{}).items():
+            value=text.get(key,'')
+            if not value and key in spec.get('nullable_columns',[]):
+                fitted_enum = spec.get('schema')=='primatex.group_table_contract.v1' and text.get('status')=='ok'
+                if not fitted_enum:continue
+            if value not in allowed:
+                raise ValueError(table_name+': '+key+'='+repr(value)+'; allowed values: '+repr(allowed))
+        for key,value in spec.get('fixed_values',{}).items():
+            if text.get(key)!=str(value):raise ValueError(table_name+': '+key+' fixed value: '+repr(value))
+        if spec.get('schema')=='primatex.group_table_contract.v1':
+            status=text.get('status','')
+            if status!='ok' and not (status.startswith('skipped:') and status[8:].strip()):
+                raise ValueError('status allowed values: ok or skipped:<nonempty reason>')
+        if known is not None:
+            key=identity(text)
+            if key in seen:raise ValueError('Duplicate sealed identity '+repr(key))
+            if key not in known:
+                allowed={column:sorted({str(x.get(column,'')) for x in expected}) for column in identities}
+                preview={column:{'values':values[:30],'total':len(values)} for column,values in allowed.items()}
+                raise ValueError('Unknown sealed identity '+repr(key)+'; allowed identities: '+repr(preview)+'; full list: /work/contract_tables.json')
+            if 'name' in known[key] and text.get('name')!=str(known[key]['name']):
+                raise ValueError('Identity name must match '+repr(known[key]['name']))
+            seen.add(key)
+        writer.writerow([text[key] for key in columns]);count+=1
+    if known is not None and set(known)!=seen:
+        raise ValueError('Missing '+str(len(set(known)-seen))+' sealed identities; full list: /work/contract_tables.json')
+    if spec.get('expected_rows') is not None and count!=spec['expected_rows']:
+        raise ValueError('Expected '+str(spec['expected_rows'])+' rows, received '+str(count))
+    # Only validated complete tables reach the filesystem.
+    descriptor=os.open(target,os.O_WRONLY|os.O_CREAT|os.O_TRUNC|getattr(os,'O_NOFOLLOW',0)|getattr(os,'O_NONBLOCK',0),0o600)
+    if not stat.S_ISREG(os.fstat(descriptor).st_mode):
+        os.close(descriptor);raise ValueError('Contract output must be a regular file')
+    with os.fdopen(descriptor,'w',encoding='utf-8',newline='') as stream:stream.write(buffer.getvalue())
+    return {'path':'/work/'+table_name,'rows':count,'columns':columns,'encoding':'utf-8',
+            'delimiter':',','header':True,'index':False,'public_values_prechecked':True}

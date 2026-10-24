@@ -1,0 +1,8 @@
+{
+  "authorised_at": "2026-10-23T08:32:12.338027+00:00",
+  "user_reply": "1000次上限",
+  "cumulative_http_attempt_cap": 1000,
+  "primary_phase_cap": 800,
+  "completion_phase_cap": 200,
+  "scope": "Only budget-exhausted items without a received model answer. Retain all existing answers, empty answers, failed semantic predictions, model settings and algorithm defaults."
+}

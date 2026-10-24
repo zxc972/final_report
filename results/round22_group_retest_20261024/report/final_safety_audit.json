@@ -1,0 +1,20 @@
+{
+  "audited_utc": "2026-10-24T06:05:59.366960+00:00",
+  "frozen_source_commit": "3b61d7ca1b1493a0fd22c4a75d1cc9e08573b0d8",
+  "protected_runtime_files": 233,
+  "protected_runtime_changes": [],
+  "protected_runtime_unchanged": true,
+  "existing_services": 10,
+  "existing_services_unchanged": true,
+  "old_round21_new_server_still_stopped": true,
+  "new_round22_server_stopped": true,
+  "analysis_entries": 6,
+  "actual_upstream_http_attempts": 148,
+  "new_macaques_released": 0,
+  "preprocessing_submission_blocked_marker_present": false,
+  "preprocessing_submitted": false,
+  "catalog_limited_to_approved_ixi20": true,
+  "held_out_roots_registered": false,
+  "existing_services_restarted_by_this_task": false,
+  "deployed": false
+}

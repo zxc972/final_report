@@ -1,0 +1,25 @@
+{
+  "status": "completed",
+  "frozen_sha256": "3f7738e6ee03e2d2c9be14cf7df64d50a92c5044d4e6dd91d99d6e0396da6426",
+  "gold_sha256": "e34d6796259e87f44f3bcede9c304eb87b4c1a5e31605cdfd357085bdac45135",
+  "usage": {
+    "logical_calls": 339,
+    "http_attempts": 348,
+    "successful_requests": 339,
+    "failed_requests": 9,
+    "unfinished_requests": 0,
+    "length_limited_responses": 0,
+    "historical_null_length_responses": 0,
+    "unknown_usage_requests": 9,
+    "input_tokens": 696644,
+    "output_tokens": 53979,
+    "total_tokens": 750623,
+    "observed_models": [
+      "deepseek-v4.1-flash"
+    ]
+  },
+  "analysis_runs": 0,
+  "preprocessing_submissions": 0,
+  "deployment_or_restart": false,
+  "reserved_groups_touched": false
+}

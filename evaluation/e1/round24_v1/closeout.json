@@ -1,0 +1,19 @@
+{
+  "closed_utc": "2026-10-24T13:00:40.332892+00:00",
+  "batch_closed": true,
+  "entries": 12,
+  "http_attempts": 180,
+  "frozen_inputs_unchanged": true,
+  "frozen_actor_source_unchanged": true,
+  "frozen_source_commit": "28698e341ef953688e8fa8d314918350772b7fd1",
+  "development_pid": 551960,
+  "existing_service_pid": 4144167,
+  "existing_service_start_ticks": "527314729",
+  "existing_service_signalled": false,
+  "deployment": false,
+  "restart_existing_service": false,
+  "additional_model_calls": 0,
+  "development_close_action": "SIGTERM after exact cmdline and closed-ledger checks",
+  "original_service_alive_unchanged": true,
+  "private_records_retained_in_place": "/data/xuancheng/agent_v1/retests/round24_20261024"
+}

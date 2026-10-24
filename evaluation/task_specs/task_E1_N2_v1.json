@@ -1,0 +1,24 @@
+{
+  "task_id": "E1_N2_v1",
+  "review_status": "agent-reviewed Draft; not human-approved",
+  "research_evidence_release": "research_evidence_v13",
+  "enable_background_jobs": false,
+  "include_predecessor_outputs": false,
+  "message": "请使用 Destrieux 分区计算 IXI064 的额叶平均皮层厚度。",
+  "subjects": [
+    "IXI064"
+  ],
+  "input_roots": [
+    "/data/xuancheng/agent_v1/retests/round24_20261024/input_views/n2/IXI064"
+  ],
+  "required_artifacts": [],
+  "host_verifier": {
+    "entrypoint": "agent/experiments/round24/host_verifier.py",
+    "case": "N2",
+    "oracle": "Existing protected numeric readers, global subject reference and regional OLS/BH reference; no primatex_ops import",
+    "atol": 1e-09,
+    "rtol": 1e-07,
+    "full_chain": "Original requested scope + exact numeric coverage + existing public contract/internal review/conclusion card; refusals scored separately",
+    "negative_criterion": "Grounded absence of native a2009s annotation in the provided controlled snapshot; no preprocessing submitted"
+  }
+}

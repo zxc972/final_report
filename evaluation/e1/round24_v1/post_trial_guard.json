@@ -1,0 +1,21 @@
+{
+  "source_commit": "83e3d1c5bc1c90011ef69b44edde16df0778cca0",
+  "applied_after_batch_closed": true,
+  "trial_source_commit": "28698e341ef953688e8fa8d314918350772b7fd1",
+  "trial_actor_modified": false,
+  "additional_real_provider_requests": 0,
+  "additional_real_analysis_entries": 0,
+  "offline": {
+    "targeted_passed": 98,
+    "sdk_passed": 13,
+    "singularity_loops_passed": 2,
+    "backend_passed": 1052,
+    "backend_skipped": 20,
+    "subtests_passed": 59
+  },
+  "tested_source_sha256": {
+    "agent/modules/agent/backend/analysis_product_planner.py": "3cf8844f913192d9275b1f78578cdfd1c235b7a49262356c3f0ebdf7d5a16afa",
+    "agent/modules/agent/tests/test_round24_caller_scope.py": "5ead01d107081462fcf718b31fc0303b85cef2b5a767e6a45c4ae05bac35c5f7"
+  },
+  "inference": "Only offline behavior is established for this supplementary guard; the 12 frozen real entries were not rerun."
+}

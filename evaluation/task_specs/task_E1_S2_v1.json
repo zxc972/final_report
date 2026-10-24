@@ -1,0 +1,26 @@
+{
+  "task_id": "E1_S2_v1",
+  "review_status": "agent-reviewed Draft; not human-approved",
+  "research_evidence_release": "research_evidence_v13",
+  "enable_background_jobs": false,
+  "include_predecessor_outputs": false,
+  "message": "请计算 IXI064 的双侧全局脑形态指标：脑体积、eTIV、皮层总面积、平均皮层厚度和凸包面积比；区分已知和缺失值，并说明尺度及估计定义。",
+  "subjects": [
+    "IXI064"
+  ],
+  "input_roots": [
+    "/data/xuancheng/datasets/slim/IXI/IXI064"
+  ],
+  "required_artifacts": [
+    "global_metrics.csv"
+  ],
+  "host_verifier": {
+    "entrypoint": "agent/experiments/round24/host_verifier.py",
+    "case": "S2",
+    "oracle": "Existing protected numeric readers, global subject reference and regional OLS/BH reference; no primatex_ops import",
+    "atol": 1e-09,
+    "rtol": 1e-07,
+    "full_chain": "Original requested scope + exact numeric coverage + existing public contract/internal review/conclusion card; refusals scored separately",
+    "negative_criterion": null
+  }
+}

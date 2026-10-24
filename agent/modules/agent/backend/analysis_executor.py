@@ -1,4 +1,4 @@
-"""Fail-closed Linux analysis execution using a read-only Apptainer image.
+"""Fail-closed Linux analysis execution using a read-only Apptainer-compatible image.
 
 The security boundary is Apptainer's mount/PID/network namespaces, not Python
 validation or a changed cwd. Only /work is a writable host mount. Inputs are
@@ -10,7 +10,8 @@ and each regular file's size; they are not aggregate memory, process or disk
 quotas. Server configuration uses integer byte values, never model tool args.
 
 Requirements: Linux, Apptainer with an allowed ``--net --network none`` policy,
-the legacy SIF, and the structural_env analysis venv. No unsafe fallback exists.
+the legacy SIF, and the structural_env analysis venv. The executable and runtime
+assets are host-configurable; isolation flags are never reduced. No unsafe fallback exists.
 The command_runner/platform_name arguments are trusted test injection points.
 """
 
@@ -190,8 +191,8 @@ def _run_bounded(
 class SandboxExecutor:
     def __init__(
         self, workdir: Path, input_roots: list[Path], *, backend: str = "apptainer",
-        runtime_image: Path = DEFAULT_IMAGE, runtime_env: Path = DEFAULT_RUNTIME,
-        apptainer_binary: str | Path = "apptainer", output_limit_bytes: int = 16000,
+        runtime_image: Path | None = None, runtime_env: Path | None = None,
+        apptainer_binary: str | Path | None = None, output_limit_bytes: int = 16000,
         memory_limit_bytes: int | None = None, file_size_limit_bytes: int | None = None,
         command_runner: Callable[..., dict[str, Any]] | None = None,
         platform_name: str | None = None,
@@ -201,15 +202,20 @@ class SandboxExecutor:
         if len(self.workdir.parts) < 3:
             raise ValueError("A dedicated work directory is required")
         self.input_roots = [_absolute_path(Path(p)) for p in input_roots]
-        if len(self.input_roots) > 32:
-            raise ValueError("At most 32 input roots are allowed")
+        if len(self.input_roots) > 144:
+            raise ValueError("At most 144 input roots are allowed (128 subjects plus participant tables)")
         for root in self.input_roots:
             if len(root.parts) < 3 or not root.is_dir():
                 raise ValueError("Input roots must be existing dedicated directories")
             if _overlap(root, self.workdir):
                 raise ValueError("Input roots must not overlap the writable work directory")
-        self.runtime_image = Path(runtime_image).resolve()
-        self.runtime_env = Path(runtime_env).resolve()
+        # Trusted host settings only; explicit constructor arguments take precedence.
+        image = runtime_image if runtime_image is not None else os.environ.get("ANALYSIS_RUNTIME_IMAGE", DEFAULT_IMAGE)
+        runtime = runtime_env if runtime_env is not None else os.environ.get("ANALYSIS_RUNTIME_ENV", DEFAULT_RUNTIME)
+        if not str(image).strip() or not str(runtime).strip():
+            raise ValueError("ANALYSIS_RUNTIME_IMAGE and ANALYSIS_RUNTIME_ENV must not be empty")
+        self.runtime_image = Path(image).resolve()
+        self.runtime_env = Path(runtime).resolve()
         if _overlap(self.workdir, self.runtime_env) or self.runtime_image.is_relative_to(self.workdir):
             raise ValueError("The writable work directory must not expose the runtime assets")
         # Only the existing FreeSurfer license file is an additional runtime
@@ -223,7 +229,10 @@ class SandboxExecutor:
         if self.fs_license_file is not None:
             self._validate_license()
         self.backend = backend
-        self.apptainer_binary = str(apptainer_binary)
+        self.apptainer_binary = str(apptainer_binary if apptainer_binary is not None
+                                   else os.environ.get("ANALYSIS_CONTAINER_CMD", "apptainer"))
+        if not self.apptainer_binary.strip() or any(c in self.apptainer_binary for c in "\x00\r\n"):
+            raise ValueError("ANALYSIS_CONTAINER_CMD must name one executable")
         if not isinstance(output_limit_bytes, int) or not 1024 <= output_limit_bytes <= 1048576:
             raise ValueError("output_limit_bytes must be between 1024 and 1048576")
         self.output_limit_bytes = output_limit_bytes
@@ -276,13 +285,22 @@ class SandboxExecutor:
     def _command(self, workdir: Path, inputs: list[Path], python_args: list[str], *,
                  frozen_source: Path | None = None, frozen_target: str | None = None,
                  work_read_only: bool = False) -> list[str]:
-        command = [self.apptainer_binary, "exec", "--cleanenv", "--containall", "--no-home",
+        # Resolve before applying the minimal child PATH (e.g. /usr/local/bin/singularity).
+        binary = shutil.which(self.apptainer_binary) or self.apptainer_binary
+        command = [binary, "exec", "--cleanenv", "--containall", "--no-home",
                    "--no-mount", "bind-paths,hostfs,cwd,tmp", "--net", "--network", "none",
                    "--pwd", "/work", "--bind", _mount_spec(workdir, "/work", "ro" if work_read_only else "rw"),
                    "--bind", _mount_spec(self.runtime_env, "/opt/analysis", "ro")]
         self._validate_license()
         if self.fs_license_file is not None:
             command.extend(["--bind", _mount_spec(self.fs_license_file, CONTAINER_FS_LICENSE, "ro")])
+        for name in ("INPUTS.md", "contract_tables.json"):
+            document = workdir / name
+            if document.exists():
+                _no_symlink_components(document)
+                if not document.is_file():
+                    raise ValueError("Execution documentation must be a regular file")
+                command.extend(["--bind", _mount_spec(document, "/work/" + name, "ro")])
         for i, root in enumerate(inputs):
             command.extend(["--bind", _mount_spec(root, f"/inputs/{i}", "ro")])
         if frozen_source is not None:
@@ -332,7 +350,7 @@ class SandboxExecutor:
         if self.backend not in SUPPORTED_BACKENDS:
             return {**blocked, "reason": "Unsupported backend; no unsafe fallback is available"}
         if shutil.which(self.apptainer_binary) is None:
-            return {**blocked, "reason": "Apptainer executable is unavailable"}
+            return {**blocked, "reason": "Configured container executable is unavailable"}
         if not self.runtime_image.is_file() or not (self.runtime_env / "bin/python").is_file():
             return {**blocked, "reason": "Analysis SIF or Python runtime is unavailable"}
         try:

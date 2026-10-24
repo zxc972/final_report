@@ -1,0 +1,97 @@
+{
+  "baseline_commit": "a2189f3b3fc5dd05afac12fe9bd49e21a50c6b15",
+  "baseline_protected_files": 173,
+  "intentional_changed": [
+    {
+      "path": "agent/modules/agent/backend/analysis_data_card.py",
+      "before_sha256": "b327cb468ff45816f596b44215471c4deac004a0b25246be8a119e705caae869",
+      "after_sha256": "6b2cdb20ec920cae3dacc23b0fd44dee647ef12174435daa80f4caaf149cac82",
+      "reason": "Show dynamically observed registered metric names in compact multi-subject data cards."
+    },
+    {
+      "path": "agent/modules/agent/backend/primatex_ops.py",
+      "before_sha256": "168ebd483e32f1ed04efb4354fb730c3191e0424bbcefaadd10e0de9c799b314",
+      "after_sha256": "b9780babc27324c41329f0c7494a810e95a6a3d6f09c47896ccb366d670d7333",
+      "reason": "Append raw read-only group reader and identity-keyed BH; every pre-existing operation function AST unchanged."
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_agent.py",
+      "before_sha256": "17d2d128b7eb600590b52c28f5553b4bdba94cd8016ea71e1459bee7dc92ca7d",
+      "after_sha256": "49e0ed0b4997b541c61dc11c8f2edf5ef9dbf208993de40b0ae59a1d35f392f4",
+      "reason": "Generic group-design tool documentation, actionable argument rejection before planner quota, and ToolMessage failure synchronization."
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_planning_tools.py",
+      "before_sha256": "5e2cab0eeea686c6412e6a370d336af6115fa73789b9285eb5e024bda0c6652e",
+      "after_sha256": "6f48fa22208a09416321dcf97f8ecdc85329fb798bf510db2f928a5bea586df9",
+      "reason": "Separate up-to-three pre-planner argument rejections from up-to-three actual planner entries; global budgets unchanged."
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_operations.py",
+      "before_sha256": "878491b52cb7a7f3cf6218719fc69ea90ff98965d51004a0cd3651f8845edff5",
+      "after_sha256": "afe8981983b598e4855fe8797b386be59d7ae6391ec9fa462af16993ed44c2cc",
+      "reason": "Register two additional public generic sandbox APIs and bind their actual synthetic examples."
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_call_context.py",
+      "before_sha256": "c5d91d4298de4db89185f99a3b2fb7d6cd0531deec0e7e476ffd826d5e40648a",
+      "after_sha256": "e5bd229b341f00d5115c34b7ce75dd33950e73c02f9737a35f344dd55abaf1d9",
+      "reason": "Add a ContextVar carrying exact native HTTP attempt identity for the transport observer."
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_independent_numeric.py",
+      "before_sha256": "665aaff6d171927a59ccec6776f211ac4cb2df258b2a1d11bfbd1466128a521c",
+      "after_sha256": "b9c8e610504cab5b9cf669d0311b179527079c77da6dc87d57cefca5b4556e3a",
+      "reason": "Only new unassessed observation defaults become null; compare_rows/reference_rows, numerical rules and tolerances unchanged."
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_product_planner.py",
+      "before_sha256": "8b8faf5f9aae230e21363073039d7944a3091d7e7960297cf1eb66c797c1d688",
+      "after_sha256": "ae14561211659123d5d20aa346e9cbcfb06b57876aed8cc613069fc9c9db9adb",
+      "reason": "Accept explicit all-registered subject sentinel; original explicit-ID selection and scientific planning algorithms unchanged."
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_feedback.py",
+      "before_sha256": "4a3b22b2255ffbc6ddf0842497d1f433023df86ac9d4558bfff9f09c0ec54b8b",
+      "after_sha256": "e7bc256041b0c514f9148405f8e6fba5c40615f733f467ea085c77a5f380a360",
+      "reason": "Recognize nested artifact/public-contract failure despite subprocess exit0 and retain bounded original failure reasons."
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_group_manifest.py",
+      "before_sha256": "fbc716395be078bb3a48832d534df3bfcab7084dc7dfb76a081f2fa8a85a9771",
+      "after_sha256": "3ad9241e7e335fb37aefd3e5c13efd5cf51ca79d5c43eba6c9c9965f12b73ef8",
+      "reason": "Explain existing dict/list/key schema and expose raw-reading/keyed-BH interfaces; bind metric names from actual inputs."
+    },
+    {
+      "path": "agent/modules/agent/backend/agent_chat_state.py",
+      "before_sha256": "45d1435762f3f35ad01130143fa11fa759d4453535e2c857e0412f31081652e3",
+      "after_sha256": "c9ef02b3a56e1dee81a8ed0b46e0f0600cfd0a0bde5a8b7bd8a604c092cb9e84",
+      "reason": "Attach native HTTP charge identity to request-local context; reservation/retry/accounting rules unchanged."
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_overall_status.py",
+      "before_sha256": "27a8a0c3df930c400a354e958aaa6b8db429461a45c7058ddcbfa5fefaf6851b",
+      "after_sha256": "f69a434627334b15af6dc8aea48622ed68bef416330015bbef16f2f6b3b05945",
+      "reason": "Separate unassessed host differences from assessed public identity checks; final scientific verdict logic unchanged."
+    }
+  ],
+  "new_backend_files": [
+    {
+      "path": "agent/modules/agent/backend/analysis_http_observer.py",
+      "sha256": "352001534f6b729e0a57758bdc8278c60212a89b51d000200c4b3bc4627dd9d9",
+      "reason": "Install isolated-process httpx/httpx2 sync/async observers without changing retry/transport policy."
+    },
+    {
+      "path": "agent/modules/agent/backend/analysis_planning_arguments.py",
+      "sha256": "5df1ec1188a35bdcbb3a92e0c5774d9130d770154f36db763b411ea91b1d2ce1",
+      "reason": "Validate registered IDs/metrics and required design fields using public data-card/profile metadata."
+    }
+  ],
+  "research_v13_unchanged": true,
+  "research_files": 82,
+  "independent_reference_and_public_contract_files_unchanged": true,
+  "original_ops_function_asts_unchanged": true,
+  "numeric_comparison_and_reference_row_asts_unchanged": true,
+  "ATOL_RTOL_unchanged": true,
+  "unexpected_changes": []
+}

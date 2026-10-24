@@ -1,0 +1,55 @@
+{
+  "container_image": "/data/xuancheng/PrimateX_1_7.sif",
+  "trusted_launcher": "/data/xuancheng/agent_v1/bin/singularity",
+  "observed_utc": "2026-10-24T04:55:30.628056+00:00",
+  "roots": [
+    {
+      "subjects_dir": "/opt/freesurfer-7.2.0/subjects",
+      "subjects": [
+        {
+          "subject": "fsaverage",
+          "exists": true,
+          "annots": [
+            "lh.PALS_B12_Brodmann.annot",
+            "lh.PALS_B12_Lobes.annot",
+            "lh.PALS_B12_OrbitoFrontal.annot",
+            "lh.PALS_B12_Visuotopic.annot",
+            "lh.Yeo2011_17Networks_N1000.annot",
+            "lh.Yeo2011_7Networks_N1000.annot",
+            "lh.aparc.a2005s.annot",
+            "lh.aparc.a2009s.annot",
+            "lh.aparc.annot",
+            "lh.oasis.chubs.annot",
+            "rh.PALS_B12_Brodmann.annot",
+            "rh.PALS_B12_Lobes.annot",
+            "rh.PALS_B12_OrbitoFrontal.annot",
+            "rh.PALS_B12_Visuotopic.annot",
+            "rh.Yeo2011_17Networks_N1000.annot",
+            "rh.Yeo2011_7Networks_N1000.annot",
+            "rh.aparc.a2005s.annot",
+            "rh.aparc.a2009s.annot",
+            "rh.aparc.annot",
+            "rh.oasis.chubs.annot"
+          ]
+        },
+        {
+          "subject": "fsaverage6",
+          "exists": false,
+          "annots": []
+        },
+        {
+          "subject": "fsaverage5",
+          "exists": false,
+          "annots": []
+        },
+        {
+          "subject": "bert",
+          "exists": false,
+          "annots": []
+        }
+      ]
+    }
+  ],
+  "original_subjects_directories_read_only": true,
+  "held_out_host_paths_mounted": false
+}
