@@ -65,7 +65,8 @@ def test_real_sdk_httpx2_send_matches_native_charge_id_and_usage(monkeypatch,asy
 
 
 @pytest.mark.parametrize("transport", ["backend_httpx", "sdk_httpx2"])
-def test_auto_router_before_chat_activation_and_concurrent_requests(monkeypatch, transport):
+@pytest.mark.parametrize("activate_chat", [False, True])
+def test_auto_router_before_chat_activation_and_concurrent_requests(monkeypatch, transport, activate_chat):
     """Real router reserves before API activates ACTIVE_CHAT; two turns stay distinct."""
     from backend.agent_router import route_message
     from backend.llm import call_chat_completions
@@ -103,8 +104,9 @@ def test_auto_router_before_chat_activation_and_concurrent_requests(monkeypatch,
 
     def begin(request):
         assert request.url.host == "127.0.0.1"
-        assert ACTIVE_CHAT.get() is None
         record = current_native_charge()
+        expected_session = next(session for session in sessions if session.request_id == record["request_id"])
+        assert ACTIVE_CHAT.get() is (expected_session if activate_chat else None)
         return {"native_attempt_id": record["id"], "request_id": record["request_id"], "source_node": record["source_node"]}
 
     def finish(ticket, response=None, error=None):
@@ -119,11 +121,15 @@ def test_auto_router_before_chat_activation_and_concurrent_requests(monkeypatch,
             return (await client.chat.completions.create(model=model, messages=messages, **options)).model_dump()
 
     async def route(session):
-        assert ACTIVE_CHAT.get() is None
-        result = await route_message(message="Analyse the registered fixture", history=[], recent_upload=None, previous_route=None, base_url=f"http://127.0.0.1:{server.server_port}/v1", api_key="fake-local-only", model="local-fixture", caller=call_chat_completions if transport == "backend_httpx" else sdk_caller, budget=session.budget)
-        assert result["route"] == "analysis" and result["parse_status"] == "first_success"
-        assert HTTP_ATTEMPT.get() is None and HTTP_BUDGET.get() is None
-        return result
+        token = ACTIVE_CHAT.set(session if activate_chat else None)
+        try:
+            assert ACTIVE_CHAT.get() is (session if activate_chat else None)
+            result = await route_message(message="Analyse the registered fixture", history=[], recent_upload=None, previous_route=None, base_url=f"http://127.0.0.1:{server.server_port}/v1", api_key="fake-local-only", model="local-fixture", caller=call_chat_completions if transport == "backend_httpx" else sdk_caller, budget=session.budget)
+            assert result["route"] == "analysis" and result["parse_status"] == "first_success"
+            assert HTTP_ATTEMPT.get() is None and HTTP_BUDGET.get() is None
+            return result
+        finally:
+            ACTIVE_CHAT.reset(token)
 
     async def execute():
         token = ACTIVE_CHAT.set(None)

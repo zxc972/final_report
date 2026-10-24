@@ -1,6 +1,6 @@
 {
   "schema": "final_report.publication.v1",
-  "source_snapshot": "2026-10-24 Round22 merged Round20 algorithm and Round21 delivery",
+  "source_snapshot": "2026-10-24 Round22 merged source with active/inactive concurrent SDK regression",
   "files": [
     {
       "path": ".env.example",
@@ -24,8 +24,8 @@
     },
     {
       "path": "SNAPSHOT_MANIFEST.json",
-      "bytes": 562183,
-      "sha256": "13291686bc297dfc15f795eb462156e257333754e4e30333cbb37e02397e88e6"
+      "bytes": 562440,
+      "sha256": "3b31133c499a44c5553e45b5d9ecedb0227f59eeaac2497fc74e5f2e476597c3"
     },
     {
       "path": "agent/.gitignore",
@@ -1889,8 +1889,8 @@
     },
     {
       "path": "agent/modules/agent/tests/test_round21_sdk_http_observer.py",
-      "bytes": 9150,
-      "sha256": "25356124fada8b1a23786906767567b544437ae2e2dca7425ec3bc6bc2e38875"
+      "bytes": 9561,
+      "sha256": "6c9227fb6fa7c38855bd0f738921d68ba45776f54a61e3f48870fb53050411f9"
     },
     {
       "path": "agent/modules/agent/tests/test_round6_plan_affordances.py",

@@ -7,7 +7,7 @@
   "source_root": "/data/xuancheng",
   "source_unchanged_check": true,
   "source_files": 1277,
-  "source_bytes": 38042539,
+  "source_bytes": 38042950,
   "excluded_classes": [
     "credentials and .env",
     "FreeSurfer license",
@@ -4150,9 +4150,9 @@
     },
     {
       "path": "agent/modules/agent/tests/test_round21_sdk_http_observer.py",
-      "source": "C:\\Users\\zxc18\\OneDrive\\Desktop\\知识图谱\\round21_implementation\\agent\\modules\\agent\\tests\\test_round21_sdk_http_observer.py",
-      "bytes": 9150,
-      "sha256": "25356124fada8b1a23786906767567b544437ae2e2dca7425ec3bc6bc2e38875",
+      "source": "C:\\Users\\zxc18\\OneDrive\\Desktop\\知识图谱\\work\\round15_algorithms_sync\\agent\\modules\\agent\\tests\\test_round21_sdk_http_observer.py",
+      "bytes": 9561,
+      "sha256": "6c9227fb6fa7c38855bd0f738921d68ba45776f54a61e3f48870fb53050411f9",
       "mode": "100644"
     },
     {
@@ -11317,9 +11317,9 @@
   ],
   "last_incremental_sync": {
     "date": "2026-10-24",
-    "source_commit": "0f22d972a77c968fb610132ccaf2f0931f853254",
-    "merged_parent": "d6a5e749ecdfa3b65ea751a85c7ca5a4d80e5189",
-    "scope": "Round22 merged mainline with unchanged corrected HTTP observer; no real requests before merged offline validation",
+    "source_commit": "8a214cc95e0c34ddeceded461b94facc7244b139",
+    "scope": "Add both inactive and active concurrent real-router/SDK cases required by Round22; no backend or runtime changes",
+    "changed_files": 1,
     "formal_v1_0": false
   },
   "incremental_sync_history": [
@@ -11547,6 +11547,13 @@
       "source_commit": "0f22d972a77c968fb610132ccaf2f0931f853254",
       "merged_parent": "d6a5e749ecdfa3b65ea751a85c7ca5a4d80e5189",
       "scope": "Round22 merged mainline with unchanged corrected HTTP observer; no real requests before merged offline validation",
+      "formal_v1_0": false
+    },
+    {
+      "date": "2026-10-24",
+      "source_commit": "8a214cc95e0c34ddeceded461b94facc7244b139",
+      "scope": "Add both inactive and active concurrent real-router/SDK cases required by Round22; no backend or runtime changes",
+      "changed_files": 1,
       "formal_v1_0": false
     }
   ],
