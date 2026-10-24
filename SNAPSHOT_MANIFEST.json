@@ -6,8 +6,8 @@
   "research_release": "research_evidence_v13",
   "source_root": "/data/xuancheng",
   "source_unchanged_check": true,
-  "source_files": 1190,
-  "source_bytes": 37157971,
+  "source_files": 1213,
+  "source_bytes": 37213955,
   "excluded_classes": [
     "credentials and .env",
     "FreeSurfer license",
@@ -88,9 +88,9 @@
     },
     {
       "path": "agent/experiments/round21/PROTECTED_CHANGES.md",
-      "source": "/data/xuancheng/agent_v1/round21_source/agent/experiments/round21/PROTECTED_CHANGES.md",
-      "bytes": 2896,
-      "sha256": "32305599fa976f4b437dcdfe362602c7187b184a22b6534e108e909c1006550b",
+      "source": "C:\\Users\\zxc18\\OneDrive\\Desktop\\知识图谱\\round21_implementation\\agent\\experiments\\round21\\PROTECTED_CHANGES.md",
+      "bytes": 3066,
+      "sha256": "37328b2533ab9bf2860d57ab20f1bbfcd756736b9ebc19156e3de57128edad27",
       "mode": "100644"
     },
     {
@@ -10284,6 +10284,146 @@
       "mode": "100644"
     },
     {
+      "path": "results/round21_group_repair_20261024/post_stop_validation/PROTECTED_CHANGES.md",
+      "source": "C:\\Users\\zxc18\\OneDrive\\Desktop\\知识图谱\\round21_implementation\\results\\round21_group_repair_20261024\\post_stop_validation\\PROTECTED_CHANGES.md",
+      "bytes": 3066,
+      "sha256": "37328b2533ab9bf2860d57ab20f1bbfcd756736b9ebc19156e3de57128edad27",
+      "mode": "100644"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/post_stop_validation/backend_default_corrected.status.json",
+      "source": "C:\\Users\\zxc18\\OneDrive\\Desktop\\知识图谱\\round21_implementation\\results\\round21_group_repair_20261024\\post_stop_validation\\backend_default_corrected.status.json",
+      "bytes": 191,
+      "sha256": "f5ee0e1e267e4fc5a79bcb0b4919ce51050e90fa23a2ab84f9dea0afe2e06bdc",
+      "mode": "100644"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/post_stop_validation/backend_default_corrected.txt",
+      "source": "C:\\Users\\zxc18\\OneDrive\\Desktop\\知识图谱\\round21_implementation\\results\\round21_group_repair_20261024\\post_stop_validation\\backend_default_corrected.txt",
+      "bytes": 7761,
+      "sha256": "36f451b000ac2231f248d8bed3ba81662c3c92c77e9b7d1cb3c71d82db40f307",
+      "mode": "100644"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/post_stop_validation/inventory_refresh.txt",
+      "source": "C:\\Users\\zxc18\\OneDrive\\Desktop\\知识图谱\\round21_implementation\\results\\round21_group_repair_20261024\\post_stop_validation\\inventory_refresh.txt",
+      "bytes": 53,
+      "sha256": "507075e58262d94e3825ff15d89e43aac4c4f0dbec700484c8b187ab66e6c11f",
+      "mode": "100644"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/post_stop_validation/offline_all_passed.json",
+      "source": "C:\\Users\\zxc18\\OneDrive\\Desktop\\知识图谱\\round21_implementation\\results\\round21_group_repair_20261024\\post_stop_validation\\offline_all_passed.json",
+      "bytes": 217,
+      "sha256": "6214a4e8ddfd8091fbc4704ffe4f9949cd1881e80cb169d892072186bf6dbe29",
+      "mode": "100644"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/post_stop_validation/post_sync_safety.json",
+      "source": "C:\\Users\\zxc18\\OneDrive\\Desktop\\知识图谱\\round21_implementation\\results\\round21_group_repair_20261024\\post_stop_validation\\post_sync_safety.json",
+      "bytes": 6885,
+      "sha256": "c764d3b57ec725c4f77196dae6a8af2f6bac299a305649f7b2242b2e2963b4b3",
+      "mode": "100644"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/post_stop_validation/protected_review.json",
+      "source": "C:\\Users\\zxc18\\OneDrive\\Desktop\\知识图谱\\round21_implementation\\results\\round21_group_repair_20261024\\post_stop_validation\\protected_review.json",
+      "bytes": 5926,
+      "sha256": "10c58fb83c797cbf4707c54eaba47cc244a25d8ce3365bb153c8d456a1bcff7a",
+      "mode": "100644"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/post_stop_validation/run_offline_checks.py",
+      "source": "C:\\Users\\zxc18\\OneDrive\\Desktop\\知识图谱\\round21_implementation\\results\\round21_group_repair_20261024\\post_stop_validation\\run_offline_checks.py",
+      "bytes": 2329,
+      "sha256": "5537c771c88eb5707c26ef2d07cdd7290201f26c98b9ac56f3095f43fca9bd87",
+      "mode": "100644"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/post_stop_validation/sdk_binding.status.json",
+      "source": "C:\\Users\\zxc18\\OneDrive\\Desktop\\知识图谱\\round21_implementation\\results\\round21_group_repair_20261024\\post_stop_validation\\sdk_binding.status.json",
+      "bytes": 177,
+      "sha256": "59a9e5ea55f54e388c0306da36d0921e6765de103867414c03acb29c7684cfba",
+      "mode": "100644"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/post_stop_validation/sdk_binding.txt",
+      "source": "C:\\Users\\zxc18\\OneDrive\\Desktop\\知识图谱\\round21_implementation\\results\\round21_group_repair_20261024\\post_stop_validation\\sdk_binding.txt",
+      "bytes": 1144,
+      "sha256": "2d3398d5c5f953546c2143a7d8e473a0f9edb1c7d3731a2d06e0f826724f6bf6",
+      "mode": "100644"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/post_stop_validation/snapshot_verify.txt",
+      "source": "C:\\Users\\zxc18\\OneDrive\\Desktop\\知识图谱\\round21_implementation\\results\\round21_group_repair_20261024\\post_stop_validation\\snapshot_verify.txt",
+      "bytes": 60,
+      "sha256": "7414216fd8077d81118fb2350421e8f189fbeca5e826ada967c450354889ceb4",
+      "mode": "100644"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/post_stop_validation/sync_receipt.json",
+      "source": "C:\\Users\\zxc18\\OneDrive\\Desktop\\知识图谱\\round21_implementation\\results\\round21_group_repair_20261024\\post_stop_validation\\sync_receipt.json",
+      "bytes": 1999,
+      "sha256": "7c5e3a09806c28a168685891b331031067475d09a86c9f65516db7d091401dc5",
+      "mode": "100644"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/post_stop_validation/synthetic_acceptance.json",
+      "source": "C:\\Users\\zxc18\\OneDrive\\Desktop\\知识图谱\\round21_implementation\\results\\round21_group_repair_20261024\\post_stop_validation\\synthetic_acceptance.json",
+      "bytes": 1271,
+      "sha256": "596200e57dcd81e14de293e5ecde372c52a41f2073bfee515c0cfff71cffd1f0",
+      "mode": "100644"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/post_stop_validation/synthetic_singularity_corrected.status.json",
+      "source": "C:\\Users\\zxc18\\OneDrive\\Desktop\\知识图谱\\round21_implementation\\results\\round21_group_repair_20261024\\post_stop_validation\\synthetic_singularity_corrected.status.json",
+      "bytes": 197,
+      "sha256": "c7a7e8bf5e4be7d34fd3a38920303bbc94d02158a12b003ae47d72853ca0b576",
+      "mode": "100644"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/post_stop_validation/synthetic_singularity_corrected.txt",
+      "source": "C:\\Users\\zxc18\\OneDrive\\Desktop\\知识图谱\\round21_implementation\\results\\round21_group_repair_20261024\\post_stop_validation\\synthetic_singularity_corrected.txt",
+      "bytes": 1238,
+      "sha256": "9341a9ecfcddf4fb93e7ce3d043defa45a18c8490654734a1d29862f4fa3740d",
+      "mode": "100644"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/post_stop_validation/targeted_corrected.status.json",
+      "source": "C:\\Users\\zxc18\\OneDrive\\Desktop\\知识图谱\\round21_implementation\\results\\round21_group_repair_20261024\\post_stop_validation\\targeted_corrected.status.json",
+      "bytes": 184,
+      "sha256": "4e154c11d6b276bf97f80572d416be07e5b021a9554d4db1d64af8088fa7f757",
+      "mode": "100644"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/post_stop_validation/targeted_corrected.txt",
+      "source": "C:\\Users\\zxc18\\OneDrive\\Desktop\\知识图谱\\round21_implementation\\results\\round21_group_repair_20261024\\post_stop_validation\\targeted_corrected.txt",
+      "bytes": 1145,
+      "sha256": "71b143f8a585b19e44bbc8a22b553d486a06e6251a6d554cf5cb739050307ae0",
+      "mode": "100644"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/post_stop_validation/validated_source_record.json",
+      "source": "C:\\Users\\zxc18\\OneDrive\\Desktop\\知识图谱\\round21_implementation\\results\\round21_group_repair_20261024\\post_stop_validation\\validated_source_record.json",
+      "bytes": 699,
+      "sha256": "7f843a1eb1f746535afd1c4d53a978e31c354b42b5cdaf5918332b453ad03448",
+      "mode": "100644"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/report/6007同步与离线回归.json",
+      "source": "C:\\Users\\zxc18\\OneDrive\\Desktop\\知识图谱\\round21_implementation\\results\\round21_group_repair_20261024\\report\\6007同步与离线回归.json",
+      "bytes": 4214,
+      "sha256": "6cb4c894abcdbe85f854d4eb7a2a2c09d6d2746235a7a4e4181a68b56285ade5",
+      "mode": "100644"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/report/6007源码与清单核验.json",
+      "source": "C:\\Users\\zxc18\\OneDrive\\Desktop\\知识图谱\\round21_implementation\\results\\round21_group_repair_20261024\\report\\6007源码与清单核验.json",
+      "bytes": 699,
+      "sha256": "7f843a1eb1f746535afd1c4d53a978e31c354b42b5cdaf5918332b453ad03448",
+      "mode": "100644"
+    },
+    {
       "path": "results/round21_group_repair_20261024/report/QC复核变更.json",
       "source": "C:\\Users\\zxc18\\OneDrive\\Desktop\\知识图谱\\round21_implementation\\results\\round21_group_repair_20261024\\report\\QC复核变更.json",
       "bytes": 2137,
@@ -10293,8 +10433,8 @@
     {
       "path": "results/round21_group_repair_20261024/report/export_manifest.json",
       "source": "C:\\Users\\zxc18\\OneDrive\\Desktop\\知识图谱\\round21_implementation\\results\\round21_group_repair_20261024\\report\\export_manifest.json",
-      "bytes": 4522,
-      "sha256": "911a84416ad31ab5badeb21d46fe4d7aee3207fb18e0773fbf9b49e55d63c380",
+      "bytes": 5406,
+      "sha256": "1f04a78aae57f6f2a4c5710c044f805bdd3737a9e1121f7dd7908b7c14a7ae4b",
       "mode": "100644"
     },
     {
@@ -10319,6 +10459,13 @@
       "mode": "100644"
     },
     {
+      "path": "results/round21_group_repair_20261024/report/受保护文件核验_6007修正版.json",
+      "source": "C:\\Users\\zxc18\\OneDrive\\Desktop\\知识图谱\\round21_implementation\\results\\round21_group_repair_20261024\\report\\受保护文件核验_6007修正版.json",
+      "bytes": 5926,
+      "sha256": "10c58fb83c797cbf4707c54eaba47cc244a25d8ce3365bb153c8d456a1bcff7a",
+      "mode": "100644"
+    },
+    {
       "path": "results/round21_group_repair_20261024/report/受保护文件核验_本地修正版.json",
       "source": "C:\\Users\\zxc18\\OneDrive\\Desktop\\知识图谱\\round21_implementation\\results\\round21_group_repair_20261024\\report\\受保护文件核验_本地修正版.json",
       "bytes": 5536,
@@ -10330,6 +10477,13 @@
       "source": "C:\\Users\\zxc18\\OneDrive\\Desktop\\知识图谱\\round21_implementation\\results\\round21_group_repair_20261024\\report\\安全核对_批次结束.json",
       "bytes": 8495,
       "sha256": "a6dec0541b39876c3297b8f5f830fb384a19f390ee50d16efb4e50c8afecb181",
+      "mode": "100644"
+    },
+    {
+      "path": "results/round21_group_repair_20261024/report/封存后同步安全核对.json",
+      "source": "C:\\Users\\zxc18\\OneDrive\\Desktop\\知识图谱\\round21_implementation\\results\\round21_group_repair_20261024\\report\\封存后同步安全核对.json",
+      "bytes": 6885,
+      "sha256": "c764d3b57ec725c4f77196dae6a8af2f6bac299a305649f7b2242b2e2963b4b3",
       "mode": "100644"
     },
     {
@@ -10438,10 +10592,17 @@
       "mode": "100644"
     },
     {
+      "path": "results/round21_group_repair_20261024/report/离线合成验收_6007修正版.json",
+      "source": "C:\\Users\\zxc18\\OneDrive\\Desktop\\知识图谱\\round21_implementation\\results\\round21_group_repair_20261024\\report\\离线合成验收_6007修正版.json",
+      "bytes": 1271,
+      "sha256": "596200e57dcd81e14de293e5ecde372c52a41f2073bfee515c0cfff71cffd1f0",
+      "mode": "100644"
+    },
+    {
       "path": "results/round21_group_repair_20261024/report/第二十一轮报告.md",
       "source": "C:\\Users\\zxc18\\OneDrive\\Desktop\\知识图谱\\round21_implementation\\results\\round21_group_repair_20261024\\report\\第二十一轮报告.md",
-      "bytes": 15885,
-      "sha256": "0ae7f9eac01199499ba3e1be96f6045fee13b8e3795c0ad724c8b540cd31680b",
+      "bytes": 17278,
+      "sha256": "fb3782cf08d6ceccc39e94751b97c709ef3b97ff67bd6ec0e7c9ad9ab8446d20",
       "mode": "100644"
     },
     {
@@ -10708,9 +10869,9 @@
   ],
   "last_incremental_sync": {
     "date": "2026-10-24",
-    "source_commit": "b177dc4d711b1caae92cc37f6c86b2ac7bc285d8",
-    "scope": "Round21 local post-stop correction; local boundary verified, remote SDK/full regression pending direct human source-sync approval; real batch closed",
-    "changed_files": 25,
+    "source_commit": "9493a635671ea669f8d6c6a68600e4e4c2bf8fb4",
+    "scope": "Round21 post-stop correction directly approved and synchronized to 6007; SDK, targeted, full-backend and synthetic-container regressions passed; original real batch remains closed",
+    "changed_files": 26,
     "formal_v1_0": false
   },
   "incremental_sync_history": [
@@ -10918,7 +11079,14 @@
       "scope": "Round21 local post-stop correction; local boundary verified, remote SDK/full regression pending direct human source-sync approval; real batch closed",
       "changed_files": 25,
       "formal_v1_0": false
+    },
+    {
+      "date": "2026-10-24",
+      "source_commit": "9493a635671ea669f8d6c6a68600e4e4c2bf8fb4",
+      "scope": "Round21 post-stop correction directly approved and synchronized to 6007; SDK, targeted, full-backend and synthetic-container regressions passed; original real batch remains closed",
+      "changed_files": 26,
+      "formal_v1_0": false
     }
   ],
-  "updated_at": "2026-10-24T02:17:48.152841+08:00"
+  "updated_at": "2026-10-24T12:36:51.771721+08:00"
 }
